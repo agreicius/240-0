@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: blue-green                   *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "div.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script>
+</head>
+<body class="ignore-math">
+<article class="project project-like"><h2 class="heading">
+<span class="type">Sage example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Vector operations: <span class="process-math">\(\R^n\)</span> and <span class="process-math">\(\ML_{m\times n}(\R)\)</span>.</span>
+</h2>
+<div class="para">To create an <span class="process-math">\(n\)</span>-tuple in Sage, use the <code class="code-inline tex2jax_ignore">vector()</code> command. The input should be a sequence of numbers enclosed in brackets.<div class="autopermalink" data-description="Paragraph"><a href="#sage_vec_ops-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="sage_vec_ops-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">v=vector([1,2,3,4])
+v
+</script></div>
+<div class="para">You can make use of sequence routines to create special types of <span class="process-math">\(n\)</span>-tuples.<div class="autopermalink" data-description="Paragraph"><a href="#sage_vec_ops-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="sage_vec_ops-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">v=vector(range(3))
+w=vector([1,2]*4)
+v,w
+</script></div>
+<div class="para">If you prefer the two outputs above to not be listed as a pair, you can use the print() command in sequence. (This is a peculiarity of interactive SageCells, not Sage itself.)<div class="autopermalink" data-description="Paragraph"><a href="#sage_vec_ops-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="sage_vec_ops-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">v=vector(range(3))
+w=vector([1,2]*4)
+print(v)
+print(w)
+</script></div>
+<div class="para">The standard vector operations of <span class="process-math">\(\R^n\)</span> are implemented using an intuitive syntax in Sage.<div class="autopermalink" data-description="Paragraph"><a href="#sage_vec_ops-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="sage_vec_ops-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">v=vector([1,2,3,4])
+w=vector([1]*4)
+(-2)*v, v+w, v+2*w
+</script></div>
+<div class="para">Once a vector <code class="code-inline tex2jax_ignore">v</code> is created in Sage, various properties of the vector can be computed using the <code class="code-inline tex2jax_ignore">v.foo()</code> syntax. For example, the command <code class="code-inline tex2jax_ignore">v.length()</code> returns the length of the vector <code class="code-inline tex2jax_ignore">v</code>.<div class="autopermalink" data-description="Paragraph"><a href="#sage_vec_ops-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="sage_vec_ops-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">v=vector([1,2,3]*100)
+v.length()
+</script></div>
+<div class="para">Matrices are created in Sage using the <code class="code-inline tex2jax_ignore">matrix()</code> command, and are entered as a list of lists, where the <span class="process-math">\(i\)</span>-th list of this list represents the <span class="process-math">\(i\)</span>-th row of the matrix, considered as a rectangular array.<div class="autopermalink" data-description="Paragraph"><a href="#sage_vec_ops-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="sage_vec_ops-13" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A=matrix([[1,2,3],[4,5,6]])
+show(A)
+</script></div>
+<div class="autopermalink" data-description="Sage example 1: Vector operations: \R^n and \ML_{m\times n}(\R)"><a href="#sage_vec_ops" title="Copy heading and permalink for Sage example 1: Vector operations: \R^n and \ML_{m\times n}(\R)" aria-label="Copy heading and permalink for Sage example 1: Vector operations: \R^n and \ML_{m\times n}(\R)">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="s_Rn_and_friends.html#sage_vec_ops">In Context</a></span>
+</body>
+</html>

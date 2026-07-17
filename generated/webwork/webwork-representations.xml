@@ -1,0 +1,512 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-representations>
+  <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-webwork-1" ww-id="webwork-1">
+    <static seed="1" source="Library/MontanaState/Sets/5.2A13Sets1.pg">
+      <statement><p>Let <m>f(x) = x^{2}</m>.  Find each set.</p>
+<p><m>f ([4, 6)) =</m> <fillin characters="12" name="AnSwEr0001"/></p>
+<p><m>f ((-4, 6)) =</m> <fillin characters="12" name="AnSwEr0002"/></p>
+</statement>
+      <answer>
+        <p>
+          <m>\left[16,36\right)</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>\left[0,36\right)</m>
+        </p>
+      </answer>
+      <solution><m>x^{2}</m> is not one-to-one, you can not simply plug the endpoints of the  interval into the function to get the endpoints of the answer.  Instead, try graphing the function and shading on the <m>x</m>-axis the input set.  Then use the graph to see which <m>y</m>-values you get out when you put those <m>x</m>'s in. For instance, notice that <m>0 \in (-4, 6)</m>.  Because <m>f(0) = 0</m>, you should have <m>0 \in f( (-4, 6))</m>.  Do you? 
+
+
+
+
+</solution>
+    </static>
+    <rendering-data sourceFilePath="Library/MontanaState/Sets/5.2A13Sets1.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+    <pg source="Library/MontanaState/Sets/5.2A13Sets1.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-webwork-2" ww-id="webwork-2">
+    <static seed="2" source="Library/SUNYSB/oneToOneOnto1.pg">
+      <statement><p>For each of the following functions, 
+    <m>f:\textbf{R}\longrightarrow\textbf{R}</m> state whether they are one-to-one,
+    onto, both or neither. 
+    Use the following key:</p>
+<p><ol>
+<li>
+<p><m>f(x)=x(x-4)(x+4)</m></p>
+</li>
+<li>
+<p><m>f(x)=e^x</m></p>
+</li>
+<li>
+<p><m>f(x)=x + 5\left|x\right|</m></p>
+</li>
+<li>
+<p><m>f(x)=\left|x\right|</m></p>
+</li>
+<li>
+<p><m>f(x)=\sin(x)</m></p>
+</li>
+<li>
+<p><m>f(x)=x^3+4</m></p>
+</li>
+<li>
+<p><m>f(x)=x^2+2</m></p>
+</li>
+</ol></p>
+</statement>
+    </static>
+    <rendering-data sourceFilePath="Library/SUNYSB/oneToOneOnto1.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+    <pg source="Library/SUNYSB/oneToOneOnto1.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-webwork-3" ww-id="webwork-3">
+    <static seed="3" source="Library/LoyolaChicago/Precalc/Chap8Sec2/Q08.pg">
+      <statement><p>Consider the functions
+<m>f(x) = \sqrt[5]{\frac{x}{2}} + 1</m>,
+<m>g(x) = -1 + 2 x^{5}</m>,
+<m>h(x) = \sqrt[5]{\frac{x + 1}{2}}</m>,
+<m>p(x) = \sqrt[5]{\frac{x}{2}} - 1</m>,
+<m>q(x) = \sqrt[5]{\frac{x - 1}{2}}</m>, and
+<m>r(x) = 1 + 2 x^{5}</m>.</p>
+<p>Which of these functions are inverses of each other?</p>
+<p><var form="checkboxes">
+<li>
+<p><m>f(x)</m> and <m>r(x)</m></p>
+</li>
+<li>
+<p><m>q(x)</m> and <m>r(x)</m></p>
+</li>
+<li>
+<p><m>g(x)</m> and <m>h(x)</m></p>
+</li>
+<li>
+<p><m>f(x)</m> and <m>g(x)</m></p>
+</li>
+<li>
+<p><m>g(x)</m> and <m>p(x)</m></p>
+</li>
+<li>
+<p><m>h(x)</m> and <m>r(x)</m></p>
+</li>
+<li>
+<p><m>g(x)</m> and <m>q(x)</m></p>
+</li>
+<li>
+<p><m>p(x)</m> and <m>r(x)</m></p>
+</li>
+<li>
+<p>No pairs of these functions are inverses of each other.</p>
+</li>
+</var></p>
+</statement>
+      <solution><alert>  SOLUTION </alert>
+
+
+
+One way we can check which functions are inverses is to make
+sure they satisfy the identities <m>f \left( f^{-1}(x) \right)=x</m> and
+<m>f^{-1} \left( f(x) \right)=x</m>.  This will show that
+<m>q(x)</m> and <m>r(x)</m> and
+<m>g(x)</m> and <m>h(x)</m> are inverses of each other,
+while the other pairs of functions are not.
+
+
+
+Let's consider <m>q(x)</m> and <m>r(x)</m>.  The composition
+<me>\begin{aligned}
+ q\left(r(x)\right)
+\amp = 1 +  2 \left(\sqrt[5]{ \frac{x - 1}{2}}\right)^{5} \\
+\amp = 1 + 2 \left( \frac{x - 1}{2} \right) \\
+\amp = 1 + (x-1) = x.
+\end{aligned}</me>
+Also,
+<me>\begin{aligned}
+ r\left(q(x)\right)
+\amp = \sqrt[5]{\frac{\left( 1+2 x^{5} \right)-1}{2}} \\
+\amp = \sqrt[5]{x^{5}} = x.
+\end{aligned}</me>
+Thus these are inverses of one another.  We can similarly show that
+<m>g(x)</m> and <m>h(x)</m> are inverses of each other.
+
+
+
+However, the remaining pairs are not inverses.  For example, if we
+consider <m>h(x)</m> and <m>r(x)</m>, we have
+<me>\begin{aligned}
+  h\left(r(x)\right)
+\amp = 1 +  2 \left( \sqrt[5]{ \frac{x + 1}{2}} \right)^{5}\\
+\amp = 1 + (x+1) = x + 2 \ne x.
+\end{aligned}</me>
+Thus these functions are not inverses of each other.
+
+
+
+</solution>
+    </static>
+    <rendering-data sourceFilePath="Library/LoyolaChicago/Precalc/Chap8Sec2/Q08.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+    <pg source="Library/LoyolaChicago/Precalc/Chap8Sec2/Q08.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-webwork-4" ww-id="webwork-4">
+    <static seed="4" source="Library/NAU/setFoundations/MAT320_0201.pg">
+      <statement><p>Assign truth values to the propositions <m>P, Q,</m> and <m>R</m> so that the given proposition is false. Use T for true and F for false.</p>
+<p><me>\left[ P \implies (Q\wedge R) \right] \implies \left[ (P\wedge Q) \vee R\right]</me></p>
+<p>Answer: P: <fillin characters="10" name="AnSwEr0001"/>
+ Q: <fillin characters="10" name="AnSwEr0002"/>
+ R: <fillin characters="10" name="AnSwEr0003"/></p>
+</statement>
+      <answer>
+        <p>F</p>
+      </answer>
+      <answer>
+        <p>No correct answer specified</p>
+      </answer>
+      <answer>
+        <p>F</p>
+      </answer>
+    </static>
+    <rendering-data sourceFilePath="Library/NAU/setFoundations/MAT320_0201.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+    <pg source="Library/NAU/setFoundations/MAT320_0201.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-webwork-5" ww-id="webwork-5">
+    <static seed="5" source="Library/ASU-topics/setDiscrete/katie1.pg">
+      <statement><p>Determine the truth value of the following statements if the universe of
+discourse is the set of real numbers.</p>
+<p><ol>
+<li>
+<p><m>\forall x  (x^2 \neq x )</m></p>
+</li>
+<li>
+<p><m>\exists x (x^2=2)</m></p>
+</li>
+<li>
+<p><m>\exists x  (x^2 &gt; x)</m></p>
+</li>
+<li>
+<p><m>\exists x \forall y (xy=0)</m></p>
+</li>
+<li>
+<p><m>\exists x (x^2+2 &gt; 1)</m></p>
+</li>
+<li>
+<p><m>\exists x (x^2= -1)</m></p>
+</li>
+</ol></p>
+</statement>
+    </static>
+    <rendering-data sourceFilePath="Library/ASU-topics/setDiscrete/katie1.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+    <pg source="Library/ASU-topics/setDiscrete/katie1.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-webwork-6" ww-id="webwork-6">
+    <static seed="6" source="Library/ASU-topics/setDiscrete/katie6.pg">
+      <statement><p>Let <m>C(x)</m> be the statement "<m>x</m>  has a cat", let <m>D(x)</m> be the statement
+"<m>x</m> has a dog" and let <m>F(x)</m> be the statement "<m>x</m>has a ferret". Express each of the following statements in terms of  <m>C(x)</m>, <m>D(x)</m>, and <m>F(x)</m>, quantifiers,
+and logical connectives. Let the universe of discourse consist of all students
+in your class. Put the appropriate letter next to the corresponding symbolic
+form.</p>
+<p><ol>
+<li>
+<p><m>\lnot \exists x (C(x) \wedge D(x) \wedge F(x))</m></p>
+</li>
+<li>
+<p><m>\exists x (C(x)) \wedge (\exists x D(x)) \wedge (\exists x F(x))</m></p>
+</li>
+<li>
+<p><m>\forall x (C(x) \vee D(x) \vee F(x))</m></p>
+</li>
+<li>
+<p><m>\exists x (C(x) \wedge D(x) \wedge F(x))</m></p>
+</li>
+<li>
+<p><m>\exists x (C(x) \wedge F(x) \wedge \lnot D(x))</m></p>
+</li>
+</ol></p>
+<p>a)  A student in your class has a cat, a dog, and a ferret.</p>
+<p>b)  All students in your class have a cat, a dog, or a ferret.</p>
+<p>c)  Some student in your class has a cat and a ferret but not a dog.</p>
+<p>d)  No student in this class has a cat, a dog, and a ferret.</p>
+<p>e)  For each of the three animals, cats, dogs, and ferrets, there is a student in your class who has one of these animals.</p>
+</statement>
+    </static>
+    <rendering-data sourceFilePath="Library/ASU-topics/setDiscrete/katie6.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+    <pg source="Library/ASU-topics/setDiscrete/katie6.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-webwork-7" ww-id="webwork-7">
+    <static seed="7" source="Library/ASU-topics/setDiscrete/katie1.4_2.pg">
+      <statement><p>Let  P(x) be the statement "x  is a duck", let  Q(x) be the statement "x  is one of my poultry", let  R(x) be the statement "x  is an officer", and let S(x) be the statement "x  is willing to waltz". Express each of the following statements in terms of  P(x), Q(x), R(x) and S(x), quantifiers, and logical connectives. Let the universe of discourse consist of all living creatures. Put the appropriate letter next to the corresponding symbolic form.</p>
+<p><ol>
+<li>
+<p><m>\forall x (Q(x) \rightarrow P(x))</m></p>
+</li>
+<li>
+<p><m>\forall x (P(x) \rightarrow \lnot S(x))</m></p>
+</li>
+<li>
+<p><m>\exists x ( P(x) \wedge \lnot S(x))</m></p>
+</li>
+<li>
+<p><m>\forall x (R(x) \rightarrow S(x))</m></p>
+</li>
+<li>
+<p><m>\forall x (Q(x) \rightarrow \lnot R(x))</m></p>
+</li>
+</ol></p>
+<p>a)  Some ducks are not willing to waltz.</p>
+<p>b)  No ducks are willing to waltz.</p>
+<p>c)  No officers ever decline to waltz.</p>
+<p>d)  All my poultry are ducks.</p>
+<p>e)  My poultry are not officers.</p>
+</statement>
+    </static>
+    <rendering-data sourceFilePath="Library/ASU-topics/setDiscrete/katie1.4_2.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+    <pg source="Library/ASU-topics/setDiscrete/katie1.4_2.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-webwork-8" ww-id="webwork-8">
+    <static seed="8" source="Library/NAU/setFoundations/MAT320_0202.pg">
+      <statement><p>Determine whether the given proposition is true or false, for the universe of all real numbers. Use T for true and F for false.</p>
+<p><me>(\forall x)(\exists y)(x^2+y=0)</me></p>
+<p>Answer: <fillin characters="10" name="AnSwEr0001"/></p>
+<p><me>(\exists x)(\forall y)(x^2+y=0)</me></p>
+<p>Answer: <fillin characters="10" name="AnSwEr0002"/></p>
+<p><me>(\exists x)(\exists y)(x^2+y=0)</me></p>
+<p>Answer: <fillin characters="10" name="AnSwEr0003"/></p>
+<p><me>(\forall y)(\exists x)(y=x^2)</me></p>
+<p>Answer: <fillin characters="10" name="AnSwEr0004"/></p>
+<p><me>(\forall y)[y\geq 0 \implies (\exists x)(y=x^2)]</me></p>
+<p>Answer: <fillin characters="10" name="AnSwEr0005"/></p>
+</statement>
+      <answer>
+        <p>T</p>
+      </answer>
+      <answer>
+        <p>F</p>
+      </answer>
+      <answer>
+        <p>T</p>
+      </answer>
+      <answer>
+        <p>F</p>
+      </answer>
+      <answer>
+        <p>T</p>
+      </answer>
+    </static>
+    <rendering-data sourceFilePath="Library/NAU/setFoundations/MAT320_0202.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+    <pg source="Library/NAU/setFoundations/MAT320_0202.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-webwork-9" ww-id="webwork-9">
+    <static seed="9" source="Library/NAU/setFoundations/MAT320_0401.pg">
+      <statement><p>Suppose <m>{ A_i  \ | \ i\in I }</m> is an indexed family of sets. For each statement below, write the letter of the equivalent symbolic form.</p>
+<p><ol>
+<li>
+<p><m>B\subseteq \bigcap_{i\in I} A_i</m></p>
+</li>
+<li>
+<p><m>B \cap (\bigcap_{i \in I} A_i)\not = \emptyset</m></p>
+</li>
+<li>
+<p><m>B\cap A_i \not = \emptyset</m> for every <m>i</m></p>
+</li>
+</ol></p>
+<p><ol label="A.">
+<li>
+<p><m>(\forall i \in I) (\exists x \in B)(x \in A_i)</m></p>
+</li>
+<li>
+<p><m>(\exists x \in B)(\forall i \in I) (x \in A_i)</m></p>
+</li>
+<li>
+<p><m>(\forall x \in B)(\forall i\in I)(x \in A_i)</m></p>
+</li>
+</ol></p>
+</statement>
+    </static>
+    <rendering-data sourceFilePath="Library/NAU/setFoundations/MAT320_0401.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+    <pg source="Library/NAU/setFoundations/MAT320_0401.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-webwork-10" ww-id="webwork-10">
+    <static seed="10" source="Library/PCC/BasicAlgebra/ComplexNumber/complexNumberOperations100.pg">
+      <statement><p>Rewrite the following expression into the form of a+b<m>i</m>:</p>
+<p><m>\displaystyle{ \frac{{5-6i}}{{-6-5i}} = }</m><fillin characters="11" name="AnSwEr0001"/></p>
+</statement>
+      <answer>
+        <p>
+          <m>i</m>
+        </p>
+      </answer>
+      <solution><p>By definition, <m>i=\sqrt{-1}</m>, so we have <m>i^{2}=-1</m>.</p>
+<p>To get rid of <alert><m>i</m></alert> in the denominator, we use the difference of squares formula:</p>
+<p><m>\displaystyle{ 
+ \begin{aligned}
+   \amp \phantom{{}=}(-6+{-5i})(-6-{-5i}) \\
+   \amp = (-6)^{2}-({-5i})^{2} \\
+   \amp = (36)-(-25) \\
+   \amp = 61
+ \end{aligned}
+    }</m></p>
+<p>The full solution is:</p>
+<p><m>\displaystyle{ 
+\begin{aligned}
+   \amp \phantom{{}=} \frac{{5-6i}}{{-6-5i}} \\
+   \amp = \frac{({5-6i})(-6-{-5i})}{({-6-5i})(-6-{-5i})}  \\
+   \amp = \frac{(5)(-6)+(5)(-{-5i})+({-6i})(-6)+({-6i})(-{-5i})}{61}  \\
+   \amp = \frac{(-30)+(25i)+(36i)+(-30)(i^{2})}{61}  \\
+   \amp = \frac{(-30)+(61i)+(-30)(-1)}{61}  \\
+   \amp = \frac{(-30)+(61i)+(30)}{61}  \\
+   \amp = \frac{(0)+(61i)}{61}  \\
+   \amp = \frac{0}{61}+\frac{61i}{61}  \\
+   \amp = {i}
+\end{aligned}
+    }</m></p>
+</solution>
+    </static>
+    <rendering-data sourceFilePath="Library/PCC/BasicAlgebra/ComplexNumber/complexNumberOperations100.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+    <pg source="Library/PCC/BasicAlgebra/ComplexNumber/complexNumberOperations100.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-webwork-11" ww-id="webwork-11">
+    <static seed="11" source="Library/Rochester/setAlgebra11ComplexNumbers/ur_cn_1_14.pg">
+      <statement><p>Let <m>z\ =\ -3-2i</m>. Calculate the following:</p>
+<p>(a) <m>z^2\ +\ 2z+ 1\ =</m> <fillin characters="10" name="AnSwEr0001"/> <m>+</m> <fillin characters="10" name="AnSwEr0002"/> <m>i</m>,</p>
+<p>(b) <m>z^2\ +\ iz\ -\ (-2\ +\ i)\ =</m> <fillin characters="10" name="AnSwEr0003"/> <m>+</m> <fillin characters="10" name="AnSwEr0004"/> <m>i</m>,</p>
+<p>(c) <m>\displaystyle \frac{(z\ -\ 4)^2}{z\ +\ i}\ =</m> <fillin characters="10" name="AnSwEr0005"/> <m>+</m> <fillin characters="10" name="AnSwEr0006"/> <m>i</m>.</p>
+</statement>
+      <answer>
+        <p>
+          <m>0</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>8</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>9</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>8</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>-16.3</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>-3.90000000000001</m>
+        </p>
+      </answer>
+    </static>
+    <rendering-data sourceFilePath="Library/Rochester/setAlgebra11ComplexNumbers/ur_cn_1_14.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+    <pg source="Library/Rochester/setAlgebra11ComplexNumbers/ur_cn_1_14.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-webwork-12" ww-id="webwork-12">
+    <static seed="12" source="Library/Hope/Multi1/05-03-Complex-numbers/Complex_arithmetic_04.pg">
+      <statement><p>Evaluate the following expressions and write them in the form <m>a + b i</m>.</p>
+<p><m>({-3+5i})({8+7i}) =</m> <fillin characters="20" name="AnSwEr0001"/>.</p>
+<p><m>({-3+5i})\overline{({8+7i})} =</m> <fillin characters="20" name="AnSwEr0002"/>.</p>
+<p><m>\overline{({-3+5i})({8+7i})} =</m> <fillin characters="20" name="AnSwEr0003"/>.</p>
+<p><m>({-3+5i})\overline{{-3+5i}} =</m> <fillin characters="20" name="AnSwEr0004"/>.</p>
+<p><m>| {-3+5i} | =</m> <fillin characters="20" name="AnSwEr0005"/>.</p>
+</statement>
+      <answer>
+        <p>
+          <m>-59+19i</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>11+61i</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>-59-19i</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>34</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>5.83095</m>
+        </p>
+      </answer>
+    </static>
+    <rendering-data sourceFilePath="Library/Hope/Multi1/05-03-Complex-numbers/Complex_arithmetic_04.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+    <pg source="Library/Hope/Multi1/05-03-Complex-numbers/Complex_arithmetic_04.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-webwork-13" ww-id="webwork-13">
+    <static seed="13" source="Library/Rochester/setComplexNumbers/ur_cn_1_16.pg">
+      <statement><p>Calculate:</p>
+<p>(a) <m>\displaystyle \Big| \frac{2+3i}{-4-2i} \Big|\ =</m> <fillin characters="20" name="AnSwEr0001"/>,</p>
+<p>(b) <m>\displaystyle \Big| \overline{(1\ +\ i)}(3-3i)(3-i)\Big|\ =</m> <fillin characters="20" name="AnSwEr0002"/>,</p>
+<p>(c) <m>\displaystyle \Big|\frac{i(4+i)^3}{(4-i)^2}\Big|\ =</m> <fillin characters="20" name="AnSwEr0003"/>,</p>
+<p>(d) <m>\displaystyle \Big| \frac{(\pi\ + i) ^{100}}{(\pi\ -\ i)^{100}}\Big|\ =</m> <fillin characters="20" name="AnSwEr0004"/>.</p>
+</statement>
+      <answer>
+        <p>
+          <m>0.806225774829855</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>18.9736659610103</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>4.12310562561766</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>1</m>
+        </p>
+      </answer>
+    </static>
+    <rendering-data sourceFilePath="Library/Rochester/setComplexNumbers/ur_cn_1_16.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+    <pg source="Library/Rochester/setComplexNumbers/ur_cn_1_16.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-webwork-14" ww-id="webwork-14">
+    <static seed="14" source="Library/ASU-topics/setPolynomials/srw3_5_31.pg">
+      <statement><p>Find a degree 3 polynomial whose coefficient of <m>x^3</m> equal to 1.  The zeros of
+this polynomial are
+<m>1</m>, <m>-2 i</m>, and <m>2 i</m>.
+Simplify your answer so that it has only real numbers
+as coefficients.</p>
+<p>Your answer is <fillin characters="20" name="AnSwEr0001"/>.</p>
+</statement>
+      <answer>
+        <p>
+          <m>\left(x-1\right)\mathopen{}\left(x^{2}+4\right)</m>
+        </p>
+      </answer>
+    </static>
+    <rendering-data sourceFilePath="Library/ASU-topics/setPolynomials/srw3_5_31.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+    <pg source="Library/ASU-topics/setPolynomials/srw3_5_31.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-webwork-15" ww-id="webwork-15">
+    <static seed="15" source="Library/ASU-topics/setPolynomials/jj1.pg">
+      <statement><p>The polynomial
+<me>f(x) = 4 x^3 - 5 x^2+ 196 x - 245</me>
+has <m>7 i</m> as a root.  Give <em> all</em> of the roots of <m>f</m> in a
+comma-separated list, including the given one.</p>
+<p>Roots:  <fillin characters="40" name="AnSwEr0001"/></p>
+</statement>
+      <answer>
+        <p>
+          <m>7i, -7i, 1.25</m>
+        </p>
+      </answer>
+    </static>
+    <rendering-data sourceFilePath="Library/ASU-topics/setPolynomials/jj1.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+    <pg source="Library/ASU-topics/setPolynomials/jj1.pg"/>
+  </webwork-reps>
+</webwork-representations>

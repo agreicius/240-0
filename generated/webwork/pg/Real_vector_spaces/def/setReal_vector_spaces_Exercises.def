@@ -1,0 +1,111 @@
+openDate          = 01/01/2027 at 12:00am
+dueDate           = 12/31/2027 at 10:00pm
+answerDate        = 12/31/2027 at 10:00pm
+paperHeaderFile   = Real_vector_spaces/header/Real_vector_spaces_Exercises.pg
+screenHeaderFile  = Real_vector_spaces/header/Real_vector_spaces_Exercises.pg
+description       = Real vector spaces
+problemListV2
+problem_start
+source_file = Library/MontanaState/Sets/5.2A13Sets1.pg
+problem_id = 1
+problem_end
+problem_start
+source_file = Library/SUNYSB/oneToOneOnto1.pg
+problem_id = 2
+problem_end
+problem_start
+source_file = Library/LoyolaChicago/Precalc/Chap8Sec2/Q08.pg
+problem_id = 3
+problem_end
+problem_start
+source_file = Library/NAU/setFoundations/MAT320_0201.pg
+problem_id = 1
+problem_end
+problem_start
+source_file = Library/ASU-topics/setDiscrete/katie1.pg
+problem_id = 2
+problem_end
+problem_start
+source_file = Library/ASU-topics/setDiscrete/katie6.pg
+problem_id = 3
+problem_end
+problem_start
+source_file = Library/ASU-topics/setDiscrete/katie1.4_2.pg
+problem_id = 4
+problem_end
+problem_start
+source_file = Library/NAU/setFoundations/MAT320_0202.pg
+problem_id = 5
+problem_end
+problem_start
+source_file = Library/NAU/setFoundations/MAT320_0401.pg
+problem_id = 6
+problem_end
+problem_start
+source_file = Library/PCC/BasicAlgebra/ComplexNumber/complexNumberOperations100.pg
+problem_id = 1
+problem_end
+problem_start
+source_file = Library/Rochester/setAlgebra11ComplexNumbers/ur_cn_1_14.pg
+problem_id = 2
+problem_end
+problem_start
+source_file = Library/Hope/Multi1/05-03-Complex-numbers/Complex_arithmetic_04.pg
+problem_id = 3
+problem_end
+problem_start
+source_file = Library/Rochester/setComplexNumbers/ur_cn_1_16.pg
+problem_id = 4
+problem_end
+problem_start
+source_file = Library/ASU-topics/setPolynomials/srw3_5_31.pg
+problem_id = 1
+problem_end
+problem_start
+source_file = Library/ASU-topics/setPolynomials/jj1.pg
+problem_id = 2
+problem_end
+problem_start
+source_file = Library/TCNJ/TCNJ_LinearSystems/problem1.pg
+problem_id = 1
+problem_end
+problem_start
+source_file = Library/TCNJ/TCNJ_RowReduction/problem5.pg
+problem_id = 2
+problem_end
+problem_start
+source_file = Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/holt_01_01_024.pg
+problem_id = 3
+problem_end
+problem_start
+source_file = Library/TCNJ/TCNJ_LinearSystems/problem3.pg
+problem_id = 4
+problem_end
+problem_start
+source_file = Library/TCNJ/TCNJ_LinearSystems/problem4.pg
+problem_id = 5
+problem_end
+problem_start
+source_file = Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/holt_01_02_010.pg
+problem_id = 1
+problem_end
+problem_start
+source_file = Library/ASU-topics/set119LinearSystems/p28.pg
+problem_id = 2
+problem_end
+problem_start
+source_file = Library/Mizzou/Finite_Math/Augmented_Matrices/AugMatrix1a.pg
+problem_id = 1
+problem_end
+problem_start
+source_file = Library/Mizzou/Finite_Math/Gauss-Jordan_Elimination/3by3a.pg
+problem_id = 2
+problem_end
+problem_start
+source_file = Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p02.pg
+problem_id = 3
+problem_end
+problem_start
+source_file = Library/TCNJ/TCNJ_LinearSystems/problem17.pg
+problem_id = 4
+problem_end
