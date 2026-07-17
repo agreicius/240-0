@@ -1,0 +1,221 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_functions">
+  <title>Functions</title>
+
+        <definition xml:id="d_function">
+          <title>Functions</title>
+          <idx><h>function</h></idx>
+          <notation>
+            <usage><m>f\colon A\rightarrow B</m></usage>
+            <description>a function from <m>A</m> to <m>B</m></description>
+          </notation>
+          <statement>
+            <p>
+            Let <m>X</m> and <m>Y</m> be two sets. A <term>function from <m>X</m> to <m>Y</m></term>, denoted <m>f\colon X\rightarrow Y</m>, is a rule which, given any <term>input</term> <m>x\in X</m>, returns an <term>output</term> <m>y\in Y</m>. In this case we write <m>y=f(x)</m> and call <m>y</m> the <term>image of <m>x</m> under <m>f</m></term>, or the <term>value of <m>f</m> at <m>x</m> </term>. Similarly, we say <m>f</m> <term>maps</term> (or <term>sends</term>) the input <m>x</m> to the output <m>y</m>.
+            </p>
+            <p>
+              The set <m>X</m> is called the <term>domain</term> of <m>f</m>; the set <m>Y</m> is called the <term>codomain</term> of <m>f</m>.
+            </p>
+            <p>
+              When we wish to indicate what rule defines the function, we use the elaborated notation
+              <md>
+                <mrow>f\colon X \amp\rightarrow Y</mrow>
+                <mrow> x \amp\mapsto f(x)</mrow>
+              </md>.
+              This is read as <q>The function <m>f</m> with domain <m>X</m> and codomain <m>Y</m> maps an input <m>x</m> to the output <m>f(x)</m></q>.
+            </p>
+          </statement>
+        </definition>
+        <example>
+            <statement>
+              <p>
+                Consider the function
+                <md>
+                  <mrow>f\colon \mathbb{Z}\amp \rightarrow \mathbb{Z}</mrow>
+                  <mrow> x\amp\mapsto x^2 </mrow>
+                </md>.
+                This function has domain and codomain equal to <m>\mathbb{Z}</m> and maps an integer to its square.
+              </p>
+            </statement>
+          </example>
+          <example ref="eg_addition_mult_as_functions">
+            <title>Arithmetic operations as functions</title>
+            <statement>
+              <p>
+                Our familiar arithmetic operations can be expressed as functions whose inputs are pairs of numbers: addition is the function
+                <md>
+                  <mrow>a\colon \R\times \R \amp\rightarrow \R </mrow>
+                  <mrow> (x,y) \amp\mapsto x+y </mrow>
+                </md>
+                and multiplication is the function
+                <md>
+                  <mrow>m\colon\mathbb{R}\times \mathbb{R} \amp \rightarrow \mathbb{R}</mrow>
+                  <mrow> (x,y)\amp\mapsto  xy </mrow>
+                </md>
+              </p>
+            </statement>
+
+          </example>
+            <remark xml:id="rm_function_as_relation">
+          <statement>
+            <p>
+              Invoking the notion of a rule in the definition of a function is admittedly somewhat vague. A more precise definition can be given using the Cartesian product. Namely, given sets <m>X</m> and <m>Y</m>, we define a function <m>f\colon X\rightarrow Y</m> to be a subset <m>f\subseteq X\times Y</m> satisfying the following property: for all <m>x\in X</m> there is a unique element <m>(x,y)\in f</m>. The uniqueness of the pair <m>(x,y)</m> then allows us to define the value <m>f(x)</m> of <m>f</m> at <m>x</m> as <m>y</m>, denoted <m>f(x)=y</m>.
+            </p>
+          </statement>
+        </remark>
+        <p>
+        As with sets and tuples, we are obliged to specify what we mean for two functions to be equal. The definition below makes clear how the the domain and codomain, as well as the rule that takes inputs to outputs, are all essential ingredients of a function.
+        </p>
+          <definition xml:id="d_function_equality">
+            <title>Function equality</title>
+            <idx><h>function</h><h>equality</h></idx>
+            <statement>
+              <p>
+              Functions <m>f</m> and <m>g</m> are <term>equal</term> if
+              <ol marker="(i)">
+                <li>
+                  <p>
+                    they have the same domain <m>X</m> and codomain <m>Y</m>, and
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    for all <m>x\in X</m>, we have <m>f(x)=g(x)</m>.
+                  </p>
+                </li>
+              </ol>
+              </p>
+            </statement>
+          </definition>
+          <definition xml:id="d_image">
+      <title>Image of a set</title>
+      <idx><h>function</h><h>image of a set</h></idx>
+      <idx><h>function</h><h>image</h></idx>
+      <notation>
+        <usage><m>f(A)</m></usage>
+        <description>image of the set <m>A</m> under <m>f</m></description>
+      </notation>
+      <notation>
+        <usage><m>\operatorname{im} f</m></usage>
+        <description>image of a function <m>f</m></description>
+      </notation>
+      <statement>
+        <p>
+        Given a function <m>f\colon X\rightarrow Y</m> and a subset <m>A \subseteq X</m>, the <term>image of <m>A</m> under <m>f</m></term>, denoted <m>f(A)</m>, is defined as
+        <me>
+          f(A)=\left\{ y \in Y \colon f(a)=y \text{ for some } a \in A \right\}
+        </me>.
+        In other words, <m>f(A)</m> is the set of all outputs <m>f(a)</m>,  where <m>a\in X</m>.
+       </p>
+        <p>
+        The <term>image of <m>f</m></term>, denoted <m>\operatorname{im} f</m>, is the set of <em>all</em> outputs of <m>f</m>: <ie />,
+        <me>
+          \operatorname{im} f=f(X)=\left\{ y \in Y \colon f(x)=y \text{ for some } x \in X \right\}
+        </me>.
+        </p>
+
+      </statement>
+    </definition>
+    <definition xml:id="d_injective_surjective_bijective">
+      <title>Injective, surjective, bijective</title>
+      <idx><h>invertible</h><h>function</h></idx>
+      <idx><h>bijective</h><h>function</h></idx>
+      <idx><h>injective</h><h>function</h></idx>
+      <idx><h>surjective</h><h>function</h></idx>
+      <idx><h>one-to-one</h><h>function</h></idx>
+      <idx><h>onto</h><h>function</h></idx>
+      <idx><h>one-to-one correspondence</h></idx>
+      <statement>
+        <p>
+          Let <m>f\colon X\rightarrow Y</m> be a function.
+          <ul>
+            <li xml:id="d_injective">
+              <title>Injective</title>
+              <p>
+                The function <m>f</m> is <term>injective</term> (or <term>one-to-one</term>) if for all <m>x,x'\in X</m>, if <m>f(x)=f(x')</m>, then <m>x=x'</m>: equivalently, if <m>x\ne x'</m>, then <m>f(x)\ne f(x')</m>.
+              </p>
+            </li>
+            <li xml:id="d_surjective">
+              <title>Surjective</title>
+              <p>
+                The function <m>f</m> is <term>surjective</term> (or <term>onto</term>) if for all <m>y\in Y</m>, there is an <m>x\in X</m> such that <m>f(x)=y</m>: equivalently, <m>\im f=Y</m>.
+              </p>
+            </li>
+            <li xml:id="d_bijective">
+              <title>Bijective</title>
+              <p>
+                The function <m>f</m> is <term>bijective</term> (or a <term>one-to-one correspondence</term>) if it is injective and surjective.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <example>
+      <title>Role of domain and codomain in injectivity and surjectivity</title>
+      <statement>
+        <p>
+          Consider the following three functions
+          <md>
+            <mrow>f\colon \R \amp\rightarrow \R \amp g\colon [0,\infty)\amp\rightarrow \R \amp h\colon [0,\infty)\amp \rightarrow [0,\infty) </mrow>
+            <mrow> x \amp\mapsto x^2 \amp x \amp\mapsto x^2 \amp x \amp\mapsto x^2 \amp </mrow>
+          </md>.
+          Although all three functions are defined using the same rule (<m>x\mapsto x^2</m>), they are not equal thanks to their differing domains and/or codomains. The choice of domain and codomain in these examples also plays a crucial role in determining whether the function is injective and/or surjective. The function <m>f</m> is neither injective (<m>f(-2)=f(2)=4</m>) nor surjective (<m>f(X)=[0,\infty)\ne \R</m>); the function <m>g</m> is injective but not surjective; the function <m>h</m> is both injective and surjective, hence bijective.
+        </p>
+      </statement>
+    </example>
+    <definition xml:id="d_function_composition">
+    <title>Function composition</title>
+    <idx><h>function</h><h>composition</h></idx>
+    <notation>
+      <usage><m>f\circ g</m></usage>
+      <description>the composition of <m>f</m> and <m>g</m></description>
+    </notation>
+    <statement>
+      <p>
+        Suppose <m>f\colon Z\rightarrow W</m> and <m>g\colon X\rightarrow Y</m> are functions satisfying <m>Y\subseteq Z</m>.  The <term>composition of <m>f</m> and <m>g</m></term> is the function <m>f\circ g\colon X\rightarrow W</m> defined as
+        <m>
+          f\circ g\, (x)=f(g(x))
+        </m>, for all <m>x\in X</m>.
+      </p>
+    </statement>
+  </definition>
+  <definition xml:id="d_invertible_function">
+    <idx><h>function</h><h>invertible</h></idx>
+    <idx><h>function</h><h>inverse</h></idx>
+    <idx><h>function</h><h>identity</h></idx>
+    <title>Identity and inverse functions</title>
+    <statement>
+      <p>
+        For any set <m>X</m> the <term>identity function</term> on <m>X</m> is the function <m>\id_X\colon X\rightarrow X</m> defined as <m>\id_X(x)=x</m> for all <m>x\in X</m>.
+      </p>
+      <p>
+        A function <m>f\colon X\rightarrow Y</m> is <term>invertible</term> if there is a function <m>g\colon Y\rightarrow X</m> satisfying <m>g\circ f=\id_X</m> and <m>f\circ g=\id_Y</m>: <ie />,
+        <md>
+          <mrow>g(f(x))\amp =x  \text{ for all } x\in X, </mrow>
+          <mrow> f(g(y))\amp=y  \text{ for all } y\in Y </mrow>
+        </md>.
+      </p>
+      The function <m>g</m> in this case is called the <term>inverse</term> of <m>f</m>, denoted <m>g=f^{-1}</m>.
+    </statement>
+  </definition>
+    <theorem xml:id="th_invertible_bijective">
+      <title>Invertible is equivalent to bijective</title>
+
+
+      <statement>
+        <p>
+          A function <m>f\colon X\rightarrow Y</m> is invertible if and only if it is bijective.
+        </p>
+      </statement>
+    </theorem>
+    <proof>
+      <p>
+        The proof of this theorem is left as an example of proving <q>if and only if</q> statements. See <xref ref="ex_invertible_bijective"/>.
+      </p>
+    </proof>
+
+
+
+<xi:include href="s_functions_ex.ptx"/>
+
+</section>

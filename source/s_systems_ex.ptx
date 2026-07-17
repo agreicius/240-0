@@ -1,0 +1,377 @@
+<exercises xml:id="s_systems_ex">
+  
+  <subexercises>
+  <title>WeBWork Exercises</title>
+    
+    <exercise>
+      <!-- 1. Systems of equations in 2 variables -->
+      <webwork source="Library/TCNJ/TCNJ_LinearSystems/problem1.pg" />
+    </exercise>
+    
+    <exercise>
+      <!-- 2. System of equations in 2 variable with unknown constant -->
+      <webwork source="Library/TCNJ/TCNJ_RowReduction/problem5.pg" />
+    </exercise>
+    
+    <exercise>
+      <!-- 3. System of equations in 3 variables -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/holt_01_01_024.pg" />
+    </exercise>
+    
+    <exercise>
+      <!-- 5. Geometry in 2 variables -->
+      <webwork source="Library/TCNJ/TCNJ_LinearSystems/problem3.pg" />
+    </exercise>
+    
+    <exercise>
+      <!-- 6. Geometry in 3 variables -->      
+      <webwork source="Library/TCNJ/TCNJ_LinearSystems/problem4.pg" />
+    </exercise>
+  </subexercises>
+  <subexercises>
+  <title>Written exercises</title>
+  <exercise xml:id="ex_solving_sys_geom">
+    <title>Geometry of linear systems</title>
+    <statement>
+      <p>
+        In this exercise we will use the geometry of lines in <m>\R^2</m> and planes in <m>\R^3</m> to help analyze solutions to systems of equations in two and three unknowns, respectively. 
+      <ol>
+        <li>
+          <p>
+            Fix <m>m\gt 1</m> and consider a system of <m>m</m> linear equations in the two unknowns <m>x</m> and <m>y</m>.
+            What does a solution <m>(x,y)</m> to this <em>system</em>
+            of linear equations correspond to geometrically?
+          </p>
+        </li>
+        <li>
+          <p>
+            Use your interpretation in (a) to give a <em>geometric</em>
+            argument that a system of <m>m</m> equations in two unknowns will have either (i) zero solutions, (ii) exactly one solution,
+            or (iii) infinitely many solutions.
+          </p>
+        </li>
+        <li>
+          <p>
+            Use your geometric interpretation to help produce explicit examples of systems in two variables satisfying these three different cases (i)-(iii).
+          </p>
+        </li>
+        <li>
+          <p>
+            Now repeat (a)-(b) for a system of linear equations in three variables <m>x,y, z</m>.
+          </p>
+        </li>
+      </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        (a) Geometrically,
+        each equation in the system represents a line <m>\ell_i\colon a_ix+b_iy=c_i</m>.
+        A solution <m>(x,y)</m> to the <m>i</m>-th equation corresponds to a point on <m>\ell_i</m>.
+        Thus a solution <m>(x,y)</m> to the system corresponds to a point lying on
+        <em>all</em> of the lines:
+        i.e., a point of intersection of the lines.
+      </p>
+      <p>
+        (b) First of all to prove the desired
+        <q>or</q>
+        statement it suffices to prove that if the number of solutions is greater than 1, then there are infinitely many solutions.
+      </p>
+      <p>
+        Now suppose there is more than one solution.
+        Then there are at least two different solutions:
+        <m>P_1=(x_1,y_1)</m> and <m>P_2=(x_2,y_2)</m>.
+        Take any of the two lines <m>\ell_i, \ell_j</m>.
+        By above the intersection of <m>\ell_i</m> and <m>\ell_j</m> contains <m>P_1</m> and <m>P_2</m>.
+        But two <em>distinct</em> lines intersect in at most one point.
+        It follows that <m>\ell_i</m> and <m>\ell_j</m> must be equal.
+        Since <m>\ell_i</m> and <m>\ell_j</m> were arbitrary,
+        it follows <em>all</em> of the lines <m>\ell_i</m> are in fact the same line <m>\ell</m>.
+        But this means the common intersection of the lines is <m>\ell</m>,
+        which has infinitely many points.
+        It follows that the system has infinitely many solutions.
+      </p>
+      <p>
+        (c) We will get 0 solutions if the system includes two different parallel lines:
+        e.g., <m>\ell_1\colon x+y=5</m> and <m>\ell_2\colon x+y=1</m>.
+      </p>
+      <p>
+        We will get exactly one solution when the slopes of each line in the system are distinct.
+      </p>
+      <p>
+        We will get infinitely many solutions when <em>all</em>
+        equations in the system represent the <em>same line</em>.
+        This happens when all equations are multiples of one another.
+      </p>
+      <p>
+        (d) Now each equation in our system defines a plane <m>\mathcal{P}_i\colon a_ix+b_iy+c_iz=d_i</m>.
+        A solution <m>(x,y,z)</m> to the system corresponds to a point
+        <m>P=(x,y,z)</m> of intersection of the planes.
+        We recall two facts from Euclidean geometry:
+        <ol>
+          <li>
+            <title>Fact 1</title>
+            <p>
+              Given two distinct points, there is a unique line containing both of them.
+            </p>
+          </li>
+          <li>
+            <title>Fact 2</title>
+            <p>
+              Given any number of distinct planes,
+              they either do not intersect, or intersect in a line.
+            </p>
+          </li>
+        </ol>
+      </p>
+      <p>
+        We proceed as in part (b) above:
+        that is show that if there are two distinct solutions to the system,
+        then there are infinitely many solutions.
+        First, for simplicity,
+        we may assume that the equations <m>\mathcal{P}_i\colon a_ix+b_iy+c_iz=d_i</m> define
+        <em>distinct</em> planes;
+        if we have two equations defining the same plane,
+        we can delete one of them and not change the set of solutions to the system.
+      </p>
+      <p>
+        Now suppose <m>P=(x_1,y_1,z_1)</m> and
+        <m>Q=(x_2,y_2,z_2)</m> are two distinct solutions to the system.
+        Let <m>\ell</m> be the unique line containing <m>P</m> and <m>Q</m> (Fact 1).
+        I claim that <m>\ell</m> is precisely the set of solutions to the system.
+        To see this, take any two equations in the system
+        <m>\mathcal{P}_i\colon a_ix+b_iy+c_iz=d_i</m> and <m>\mathcal{P}_j\colon a_jx+b_jy+c_iz=d_j</m>.
+        Since the two corresponding planes are distinct,
+        and intersect in at least the points <m>P</m> and <m>Q</m>,
+        they must intersect in a line (Fact 2);
+        since this line contains <m>P</m> and <m>Q</m>,
+        it must be the line <m>\ell</m> (Fact 1).
+        Thus any two planes in the system intersect in the line <m>\ell</m>.
+        From this it follows that: (a) a point satisfying the system must lie in <m>\ell</m>;
+        and (b) all points on <m>\ell</m> satisfy the system
+        (since we have shown that <m>\ell</m> lies in all the planes).
+        It follows that <m>\ell</m> is precisely the set of solutions,
+        and hence that there are infinitely many solutions.
+      </p>
+    </solution>
+  </exercise>
+
+    
+  
+
+  <exercise xml:id="ex_row_ops_preserve">
+    <title>Row operations preserve solutions</title>
+    <statement>
+      <p>
+        We made the claim that each of our three row operations
+        <ol>
+          <li>
+            <p>
+              scalar multiplication (<m>e_i\mapsto c\cdot e_i</m> for <m>c\ne 0</m>),
+            </p>
+          </li>
+          <li>
+            <p>
+              swap (<m>e_i\leftrightarrow e_j</m>),
+            </p>
+          </li>
+          <li>
+            <p>
+              addition (<m>e_i\mapsto e_i+c\cdot e_j</m> for some <m>c</m>)
+            </p>
+          </li>
+        </ol>
+      do not change the set of solutions of a linear system.
+      To prove this claim, let <m>L</m> be a general linear system
+      <me>
+        \numeqsys
+      </me>.
+      Now consider each type of row operation separately,
+      write down the new system <m>L'</m> you get by applying this row operation,
+      and prove that an <m>n</m>-tuple
+      <m>s=(s_1,s_2,\dots ,s_n)</m> is a solution to the original system <m>L</m> if and only if it is a solution to the new system <m>L'</m>.
+      </p>
+    </statement>
+    <solution>
+        <p>
+          Let <m>L</m> be the original system with equations <m>e_1,e_2,\dots ,e_m</m>.
+          For each specified row operation,
+          we will call the resulting new system <m>L'</m> and its equations <m>e'_1,e'_2,\dots , e'_m</m>.
+        </p>
+        <case>
+        <title>Row swap</title>
+              <p>
+                In this case systems <m>L</m> and <m>L'</m> have exactly the same equations,
+                just written in a different order.
+                Thus the <m>n</m>-tuple <m>s</m> satisfies <m>L</m> if and only if it satisfies each of the equations <m>e_i</m>,
+                if and only if it satisfies each of the equations <m>e'_i</m>,
+                since these are the same equations!
+                It follows that <m>s</m> is a solution of <m>L</m> if and only if it is a solution to <m>L'</m>.
+              </p>
+        </case>
+        <case>
+              <title>Scalar multiplication</title>
+              <p>
+                In this case <m>e_j=e'_j</m> for all <m>j\ne i</m>,
+                and <m>e'_i=c\cdot e_i</m> for some <m>c\ne 0</m>.
+                Since only the <m>i</m>-th equation has changed,
+                it suffices to show that <m>s</m> is a solution to <m>e_i</m> if and only if <m>s</m> is a solution to <m>c\cdot e_i</m>.
+                Let's prove each direction of this if and only if separately.
+              </p>
+                <p>
+                  If <m>s</m> satisfies <m>e_1</m>, then <m>a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n=b_i</m>. Multiplying both sides by <m>c</m> we see that
+                  <me>
+                    ca_{i1}s_1+ca_{i2}s_2+\cdots +ca_{in}s_n=cb_i,
+                  </me>
+                  and hence that <m>s</m> is also a solution of <m>c\,e_i=e_i'</m>.
+
+                </p>
+                <p>
+                  For the other direction, if <m>s</m> satisfies <m>c e_i=e_i'</m>, then
+                  <me>
+                    ca_{ii}s_1+ca_{i2}s_2+\cdots ca_{in}s_n=cb_i.
+                  </me>
+                  Now, since <m>c\ne 0</m>, we can multiply both sides of this equation by <m>1/c</m> to see that
+                  <me>
+                    a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n=b_i
+                  </me>
+                  and hence that <m>s</m> is a solution to <m>e_i</m>.
+
+                </p>
+
+            </case>
+            <case>
+              <title>Row addition</title>
+              <p>
+                The only equation of <m>L'</m> that differs from <m>L</m> is
+                <me>
+                  e_i'=e_i+ce_j
+                </me>.
+                Writing this equation out in terms of coefficients gives us
+                <me>
+                  e_i': a_{i1}x_1+a_{i2}x_2+\cdots +a_{in}x_n+c(a_{j1}x_1+a_{j2}x_2+\cdots +a_{jn}x_n)=b_i+cb_j
+                </me>.
+                Now if <m>s</m> satisfies <m>L</m>,
+                then it satisfies <m>e_i</m> and <m>e_j</m>,
+                in which case evaluating the RHS of the <m>e_i'</m> above at <m>s</m> yields
+                <md>
+                  <mrow>a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n+c(a_{j1}s_1+a_{j2}s_2+\cdots +a_{jn}s_n)\amp =b_i+cb_j</mrow>
+                </md>
+                showing that <m>s</m> satisfies <m>e_i'</m>.
+                Now suppose <m>s=(s_1,s_2,\dots,
+                s_n)</m> satisfies <m>L'</m>.
+                Since <m>s</m> satisfies <m>e_j'=e_j</m>, we have
+                <men xml:id="solveeqn" tag="star">
+                  a_{j1}s_1+a_{j2}s_2+\cdots +a_{jn}s_n =b_j
+                </men>
+                Since <m>s</m> satisfies <m>e_i'</m>, we have
+                <me>
+                  a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n+c(a_{j1}s_1+a_{j2}s_2+\cdots +a_{jn}s_n)=b_i+cb_j
+                </me>
+                Substituting <xref ref="solveeqn"/> into the equation above we get
+                <me>
+                  a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n+c(b_j)=b_i+cb_j
+                </me>,
+                and hence
+                <me>
+                  a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n=b_i
+                </me>.
+                This shows that <m>s</m> satisfies <m>e_i</m>.
+                It follows that <m>s</m> satisfies <m>L</m>.
+              </p>
+          </case>
+      </solution>
+  </exercise>
+
+  <exercise xml:id="ex_solving_nonlinear_system">
+<title>Nonlinear systems</title>
+  <statement>
+    A <em>nonlinear</em> system of equations is a collection of equations, at least one of which is nonlinear. Our definition of a solution to a linear system generalizes easily to any system of equations.
+    <ol>
+      <li>
+        <p>
+        Consider the following nonlinear system in the unknowns <m>x, y</m>:
+        <me>
+          \begin{linsys}{2}
+          x^2\amp +\amp y^2\amp =\amp 1\\
+          x\amp +\amp y \amp =\amp \frac{1}{2}
+          \end{linsys}
+        </me>.
+        <ol>
+          <li>
+            <p>
+              Sketch the graphs of each of the two equations in the system on a common coordinate system.
+            </p>
+          </li>
+          <li>
+            <p>
+              Describe geometrically what a solution to the system is in terms of your sketch. Explain your reasoning. How many solutions to the system are there, according to your sketch?
+            </p>
+          </li>
+          <li>
+            <p>
+              Compute the set of all solutions to the system algebraically.
+            </p>
+          </li>
+        </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+          Now consider a more general system
+          <men xml:id="eq_general_nonlinear">
+            \begin{linsys}{2}
+            x^2\amp +\amp y^2\amp =\amp 1\\
+            ax\amp +\amp by \amp =\amp c,
+            \end{linsys}
+          </men>
+          where <m>a,b,c\in\R</m> are fixed constants and at least one of <m>a</m> or <m>b</m> is nonzero.
+        </p>
+        <ol>
+          <li>
+            <p>
+              Explain geometrically what a solution to the system corresponds to in terms of the graphs of its two equations.
+            </p>
+          </li>
+          <li>
+            <p>
+              Use your geometric interpretation in (i) to argue that the system <xref ref="eq_general_nonlinear"/> has either 0, 1, or 2 solutions. Give explicit examples of such systems corresponding to each of these three cases.
+            </p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </statement>
+
+</exercise>
+<exercise>
+  <title>Not all arithmetic operations preserve solutions</title>
+
+  <statement>
+    <p>
+      In this exercise we investigate how the operation of squaring both sides of an equation changes the set of solutions. Let
+      <men xml:id="eq_general_equation">
+        F(x_1,x_2,\dots, x_n)=G(x_1,x_2,\dots, x_n)
+      </men>
+      represent a general equation (linear or nonlinear) in the unknowns <m>x_1,x_2,\dots, x_n</m>, let
+      <men xml:id="eq_general_equation_squared">
+        \left(F(x_1,x_2,\dots, x_n)\right)^2=\left(G(x_1,x_2,\dots, x_n)\right)^2
+      </men>
+      be the equation obtained by squaring both sides of the <xref ref="eq_general_equation"/>, let <m>S_1</m> be the set of solutions to <xref ref="eq_general_equation"/>, and let <m>S_2</m> be the set of solutions to <xref ref="eq_general_equation_squared"/>.
+    </p>
+    <ol>
+      <li>
+        <p>
+          Show that <m>S_1\subseteq S_2</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Given an explicit example of an equation of the form <xref ref="eq_general_equation"/> in two variables for which <m>S_2\not\subseteq S_1</m>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</exercise>
+</subexercises>
+</exercises>

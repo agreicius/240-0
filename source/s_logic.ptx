@@ -1,0 +1,244 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_logic">
+<title>Logic</title>
+<introduction>
+  <p>
+    When dealing with mathematical statements and arguments, we must pay close attention to logical structure. This section introduces both logical connectors and quantifiers, and carefully describes how to determine the truth values of propositions built from these operations.  
+  </p>
+</introduction>
+<subsection xml:id="ss_propositional_calculus">
+  <title>Propositional logic</title>
+  <p>
+    A <em>proposition</em> is a sentence that is either true or false. We build <em>compound propositions</em> from component propositions using <em>logical operators</em> (or <em>logical connectors</em>); the truth value of the compound proposition is defined as a function of the truth values of the component propositions.
+  </p>
+  <definition xml:id="d_logical_ops">
+    <title>Logical operators</title>
+    <statement>
+      <p>
+        <ul>
+          <li>
+            <title>Negation</title>
+            <p>
+              Given a proposition <m>\mathcal{P}</m>, the <term>negation of <m>\mathcal{P}</m></term> is the proposition <q>Not <m>\mathcal{P}</m></q>, denoted <m>\neg\mathcal{P}</m> in logical notation, the truth value of which is defined as follows: <m>\neg\mathcal{P}</m> is true exactly when <m>\mathcal{P}</m> is false.
+            </p>
+          </li>
+          <li>
+            <title>Conjunction (logical and)</title>
+            <p>
+              Given propositions <m>\mathcal{P}</m> and <m>\mathcal{Q}</m>, their <term>conjuction</term> is the proposition <q><m>\mathcal{P}</m> and <m>\mathcal{Q}</m></q>, denoted <m>\mathcal{P}\land \mathcal{Q}</m> in logical notation, the truth value of which is defined as follows:  <m>\mathcal{P}\land\mathcal{Q}</m> is true when both <m>\mathcal{P}</m> and <m>\mathcal{Q}</m> are true, and false otherwise.
+            </p>
+          </li>
+        <li>
+          <title>Disjunction (logical or)</title>
+          <p>
+            Given propositions <m>\mathcal{P}</m> and <m>\mathcal{Q}</m>, their <term>disjunction</term> is the proposition <q><m>\mathcal{P}</m> or <m>\mathcal{Q}</m></q>, denoted <m>\mathcal{P}\lor \mathcal{Q}</m> in logical notation, the truth value of which is defined as follows: <m>\mathcal{P}\lor \mathcal{Q}</m> is true when at least one of <m>\mathcal{P}</m> and <m>\mathcal{Q}</m> is true, and false otherwise.
+          </p>
+        </li>
+        <li>
+          <title>Logical implication (if-then)</title>
+          <p>
+            Given propositions <m>\mathcal{P}</m> and <m>\mathcal{Q}</m>, the proposition <q>If <m>\mathcal{P}</m>, then <m>\mathcal{Q}</m></q>, denoted <m>\mathcal{P}\implies\mathcal{Q}</m> in logical notation, is called an <term>implication</term>, and its truth value is defined as follows: <m>\mathcal{P}\implies\mathcal{Q}</m> is false when <m>\mathcal{P}</m> is true and <m>\mathcal{Q}</m> is false, and true otherwise.
+          </p>
+        </li>
+        <li>
+          <title>Logical equivalence (if and only if)</title>
+          <p>
+            Given propositions <m>\mathcal{P}</m> and <m>\mathcal{Q}</m>, the proposition <q><m>\mathcal{P}</m> if and only if <m>\mathcal{Q}</m></q>, denoted <m>\mathcal{P}\iff\mathcal{Q}</m> in logical notation, is called an <term>equivalence</term>, and its truth value is defined as follows: <m>\mathcal{P}\iff \mathcal{Q}</m> is true when <m>\mathcal{P}</m> and <m>\mathcal{Q}</m> have the same truth value, and false otherwise. We say <m>\mathcal{P}</m> and <m>\mathcal{Q}</m> are <term>logically equivalent</term> when <m>\mathcal{P}\iff \mathcal{Q}</m> is true.
+          </p>
+        </li>
+      </ul>
+      </p>
+    </statement>
+  </definition>
+      <remark xml:id="rm_truth_tables">
+    <statement>
+      <p>
+        A <em>truth table</em> of a compound proposition <m>\mathcal{P}</m> is a concise way of displaying how the truth value of <m>\mathcal{P}</m> depends on the truth values of its component propositions. It contains one row for each possible truth assignment of the component propositions.  As illustration, we give the truth tables for the logical operators defined above:
+        <md>
+          <mrow>\amp\begin{array}{c||c}\mathcal{P}\amp\neg\mathcal{P} \\
+          \hline T\amp F\\F\amp T\end{array} \amp \amp \begin{array}{c|c||c}\mathcal{P}\amp\mathcal{Q}\amp\mathcal{P}\land\mathcal{Q} \\
+          \hline T\amp T\amp T\\T\amp F\amp F\\ F\amp T\amp F\\ F\amp F\amp F\end{array}
+          \amp \amp \begin{array}{c|c||c}\mathcal{P}\amp\mathcal{Q}\amp\mathcal{P}\lor\mathcal{Q} \\
+          \hline T\amp T\amp T\\T\amp F\amp T\\ F\amp T\amp T\\ F\amp F\amp F\end{array}</mrow>
+          <mrow> \amp
+          \begin{array}{c|c||c}\mathcal{P}\amp\mathcal{Q}\amp\mathcal{P}\implies\mathcal{Q} \\
+          \hline T\amp T\amp T\\T\amp F\amp F\\ F\amp T\amp T\\ F\amp F\amp T\end{array}
+          \amp \amp \begin{array}{c|c||c}\mathcal{P}\amp\mathcal{Q}\amp\mathcal{P}\iff\mathcal{Q} \\
+          \hline T\amp T\amp T\\T\amp F\amp F\\ F\amp T\amp F\\ F\amp F\amp T\end{array}</mrow>
+        </md>
+      </p>
+    </statement>
+  </remark>
+<example>
+  <statement>
+    <p>
+      Use a truth table to find all truth value assignments of <m>\mathcal{P}</m> and <m>\mathcal{Q}</m> making the compound proposition
+      <me>
+        \neg\mathcal{P}\implies (\mathcal{Q}\implies P)
+      </me>
+      false.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      We construct a truth table with columns for <m>\mathcal{P}</m>, <m>\mathcal{Q}</m>, <m>\neg\mathcal{P}</m>, <m>\mathcal{Q\implies P}</m>, and <m>\neg\mathcal{P}\implies (\mathcal{Q}\implies P)</m>:
+      <me>
+      \begin{array}{c|c|c|c||c}\mathcal{P}\amp\mathcal{Q}\amp\neg\mathcal{P}\amp \mathcal{Q}\implies \mathcal{P}\amp \neg\mathcal{P}\implies(\mathcal{Q}\implies \mathcal{P}) \\
+      \hline T\amp T\amp F\amp T\amp T\\T\amp F\amp F\amp T\amp T\\ F\amp T\amp T\amp F\amp F\\ F\amp F\amp T\amp T\amp T\end{array}
+      </me>.
+      We conclude that <m>\neg\mathcal{P}\implies (\mathcal{Q}\implies P)</m> is false exactly when <m>\mathcal{P}</m> is false and <m>\mathcal{Q}</m> is true. (It follows that <m>\neg\mathcal{P}\implies (\mathcal{Q}\implies P)</m> is equivalent to <m>Q\implies P</m>. )
+    </p>
+
+  </solution>
+</example>
+    <remark xml:id="rm_logic_vs_vernacular">
+  <statement>
+    <p>
+      Our definitions of the logical operators above are chosen to agree with their usage in a very particular type of discourse: namely, <em>mathematical</em> discourse. They do not always agree with their use in natural language: hence the modifier <q>logical</q> in their titles.
+    </p>
+    <p>For example, disjunctions in natural language of the form <q><m>\mathcal{P}</m> or <m>\mathcal{Q}</m></q> are often understood to be true when <m>\mathcal{P}</m> is true or <m>\mathcal{Q}</m> is true, <em>but not both</em>. This notion of disjunction is called the <em>exclusive or</em> in logic, in contrast to the standard logical or.
+  </p>
+  <p>Similarly, according to our definition, the implication
+      <q>
+      If the President of the US is a dog, then the Vice President of the US is a cat
+    </q>
+    is true, since the proposition <q>The President of the US is a dog</q> is false. (In logic we say the implication is <em>vacuously true</em> in this case.) However, working outside of our logical definitions of truth value, we may have been inclined to treat this implication as false, since both <q>The President of the US is a dog</q> and <q>The Vice President of the US is a cat</q> are false.
+  </p>
+  </statement>
+</remark>
+
+</subsection>
+<subsection xml:id="ss_predicate_logic">
+  <title>Predicate logic</title>
+  <p>
+    Propositions like <q>All humans are mortal</q> and <q>Every positive real number has a square-root</q> are modeled in logic in the form <q>For all <m>x</m>, <m>P(x)</m></q> and <q>For all <m>r</m>, there exists an <m>s</m> such that <m>Q(r,s)</m></q>, where <m>P(x)</m> stands for the phrase <q><m>x</m> is mortal</q> and <m>Q(r,s)</m> stands for the phrase <q><m>s</m> is a square-root of <m>r</m></q>. Observe that <m>P(x)</m> and <m>Q(r,s)</m> on their own are not propositions; there is no truth value to <q><m>x</m> is mortal</q>
+    or <q><m>s</m> is a square-root of <m>r</m></q>. Instead, we think of <m>P(x)</m> and <m>Q(r,s)</m> as <em>functions</em> which return propositions when evaluated at a specific choice for <m>x</m>, or for <m>r</m> and <m>s</m>. For example, evaluating <m>P(x)</m> at <m>x=\text{Aaron Greicius}</m> yields the proposition <q>Aaron Greicius is mortal</q>, which happens to be true at the time of writing. Similarly evaluating <m>Q(r,s)</m> at  <m>r=2, s=11</m> yields the proposition <q><m>11</m> is a square-root of 2</q>, which happens to be false. In logic  <m>P(x)</m> and <m>Q(r,s)</m> are called <em>propositional functions</em> (also called  <em>predicates</em>):
+    functions whose outputs are propositions.
+  </p>
+  <p>
+    The propositions <q>For all <m>x</m>, <m>P(x)</m></q> and <q>For all <m>r</m>, there exists an <m>s</m> such that <m>Q(r,s)</m></q> are obtained from <m>P(x)</m> and <m>Q(r,s)</m> by
+    <em>bounding</em>
+    them with a series of <em>quantifiers</em> (<eg />, <q>for all <m>x</m></q>, <q>there exists an <m>s</m></q>). The definition below allows us to assign truth values to such propositions.
+  </p>
+  <definition xml:id="d_quantifiers">
+  <title>Logical quantifiers</title>
+    <statement>
+      <p>
+        Let <m>D</m> be a set, and let <m>P</m> be a propositional function that assigns to all elements <m>d\in D</m> the proposition <m>P(d)</m>. The set <m>D</m> is called the <term>domain of discourse</term> of <m>P</m>.
+      </p>
+      <ul>
+        <li>
+          <title>Universal quantifier</title>
+          <p>
+            The proposition <q>For all <m>x</m> in <m>D</m>, <m>P(x)</m></q>, denoted <m>\forall x P(x)</m> in logical notation, is called a <term>universal quantification</term>, and its truth value is defined as follows: <m>\forall x P(x)</m> is true if for all elements <m>d</m> of <m>D</m>, the proposition <m>P(d)</m> is true; it is false if there is some <m>d\in D</m> such that <m>P(d)</m> is false.
+          </p>
+        </li>
+        <li>
+          <title>Existential quantifier</title>
+          <p>
+            The proposition <q>There exists an <m>x</m> in <m>D</m> such that <m>P(x)</m></q>, denoted <m>\exists x P(x)</m> in logical notation, is called an <term>existential quantification</term>, and its truth value is defined as follows: <m>\exists x P(x)</m> is true if there is some element <m>d</m> of <m>D</m> for which the proposition <m>P(d)</m> is true; it is false if <m>P(d)</m> is false for all <m>d\in D</m>.
+          </p>
+        </li>
+      </ul>
+    </statement>
+  </definition>
+  <remark xml:id="rm_domain_discourse">
+    <title>Truth depends on domain of discourse</title>
+    <statement>
+      <p>
+        Just as a function is not properly defined before its domain is specified, we do not have a well-defined propositional function, nor well-defined truth values of propositions built from this propositional function, until its domain of discourse is given.
+      </p>
+    <p>For example, let <m>P(x)</m> be <q>x>0</q>. If we declare <m>D=(0,\infty)</m>, then the proposition <m>\forall x P(x)</m> is true, since by definition every <m>d\in (0,\infty)</m> is positive. On the other hand,  if we declare <m>D=\R</m>, the proposition <m>\forall x P(x)</m> is false since not all elements of <m>\R</m> are positive: indeed, <m>-1</m> is negative, making <m>P(-1)</m> false.
+    </p>
+    <p>
+      Because of the important role played by the domain of discourse <m>D</m>, we sometimes include it in our quantifier expressions: <eg />, <m>\forall x\in D P(x)</m>, <m>\exists x\in D P(x)</m>.  Using this convention allows us to see more immediately that  <m>\forall\, x\in (0,\infty)\, P(x)</m> is true and <m>\forall\, x\in\mathbb{R}\, P(x)</m> is false.
+    </p>
+
+    </statement>
+  </remark>
+<example xml:id="ex_model_quant">
+  <title>Modeling <q>Every positive number has a square-root</q></title>
+  <statement>
+    <p>
+    Model the sentence <q>Every positive real number has a square-root</q> in the form <m>\forall x P(x)</m>, where <m>P</m> is a propositional function with domain of discourse <m>D=\R</m>. Determine the truth value of <m>\forall x\, P(x)</m> using <xref ref="d_quantifiers"/>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      Fix our domain of discourse to be <m>D=\R</m>. For any <m>r,s\in \R</m>, let <m>Q(r,s)</m> be the proposition that <m>s</m> is a square-root of <m>r</m>. Define <m>P(x)</m> to be the propositional function
+      <me>x>0 \implies \exists y\, Q(x,y)
+      </me>.
+      Thus for any <m>r\in\R</m>, <m>P(r)</m> is the proposition that if <m>r</m> is positive, then <m>r</m> has a square-root. It follows that <m>\forall x\in\R\, P(x)</m> is the proposition that for all real numbers <m>x</m>, if <m>x</m> is positive, then  <m>x</m> has a square-root. This is clearly equivalent to the proposition that every positive real number has a square-root, as desired.
+    </p>
+    <p>
+    Lastly, we use <xref ref="d_quantifiers"/> to show <m>\forall x\in \R\, P(x)</m> is true. Take any <m>r\in \R</m>. The real number <m>r</m> is either positive or not positive. If <m>r</m> is not positive, then <m>r>0</m> is false and hence <m>P(r)</m>, which is the implication <m>r>0\implies \exists y\, Q(r,y)</m>, is true vacuously.  If <m>r</m> is positive, then <m>r>0</m> is true, and <m>\exists y\, Q(r,y)</m> is true, since <m>r</m> has a square-root in this case: namely, <m>\sqrt{r}</m>. But if <m>r>0</m> is true and <m>\exists y\, Q(r,y)</m> is true, then the implication <m>r>0\implies \exists y\, Q(r,y)</m> is true. We have proved <m>P(r)</m> is true for all <m>r\in \R</m>. Thus <m>\forall x\in\R\, P(x)</m> is true.
+    </p>
+  </solution>
+</example>
+<warning xml:id="warning_order_quantifiers">
+<title>Order of quantifiers matters</title>
+<statement>
+  <p>
+    As <xref ref="ex_model_quant"/> illustrates, we can take a propositional function <m>Q(x,y)</m> in two variables and quantify one of the two variables to obtain a propositional function in one variable: <eg />, <m>P(x)=\exists y\, Q(x,y)</m> or <m>R(y)=\forall x\, Q(x,y)</m>. Proceeding in this manner we engender propositions involving sequences of quantifiers. Mark well that the order of the quantifiers in such sequences is important!
+  </p>
+  <p> For example, letting <m>Q(x,y)</m> be <q><m>y</m> is a square-root of <m>y</m></q> with domain of discourse <m>D=(0,\infty)</m>. The proposition <m>\forall x\in\R\, \exists y\in\R\, Q(x,y)</m> says that every positive real number has a positive square-root (true); the proposition <m>\exists y\in\R\, \forall x\in\R\, Q(x,y)</m> says that there is a positive real number that is the square-root of all real numbers (false).
+  </p>
+  <p>
+    In general to <q>unpack</q> a sequence of quantifiers we start from the leftmost quantifier and proceed to the right.
+  </p>
+</statement>
+
+</warning>
+    <remark xml:id="rm_negating_quantifiers">
+  <title>Negating quantifiers</title>
+  <statement>
+    <p>
+    Let <m>P(x)</m> be a propositional function with domain of discourse <m>D</m>. According to <xref ref="d_quantifiers"/> a universal quantification <m>\forall x\, P(x)</m> is false if it is <em>not the case</em> that <m>P(d)</m> is true for all for all <m>d\in D</m>; that is, if there is some <m>d\in D</m> such that <m>P(d)</m> is false. Letting <m>\neg P(x)</m> be the propositional function defined as <m>\neg P(d)</m> for all <m>d\in D</m>, we see that <m>\forall x\,  P(x) </m> is false if and only if <m>\exists x\, \neg P(x)</m> is true. This proves the equivalence
+    <me>
+      \neg\forall x\, P(x)\iff \exists x\, \neg P(x)
+    </me>.
+    Similarly, we have
+    <me>
+      \neg\exists x\, P(x)\iff \forall x\, \neg P(x)
+    </me>.
+    These equivalences can be understood as rules of negating quantifier statements. They can be summarized as follow: <q>swap quantifiers and negate the predicate.</q>
+    </p>
+  </statement>
+</remark>
+<p>
+  The example below taken from calculus nicely illustrates how to negate  a proposition that involves a sequence of quantifiers.
+</p>
+<example xml:id="ex_limit_doesnt_exist">
+  <title>The limit does not exist</title>
+
+  <statement>
+    <p>
+      Let <m>f(x)</m> be a function with domain <m>\R</m>, and let <m>c\in \R</m> be a point of this domain. By definition, the proposition that <m>\lim\limits_{x\to c}f(x)</m> exists is equivalent to the following proposition:
+      <men xml:id="eq_proposition">
+        \exists L\in\R\,  \forall \epsilon \gt 0\, \exists \delta \gt0\,  \forall x\in\mathbb{R}\ (\val{x-c}\lt\delta\implies \val{f(x)-L}\lt\epsilon)
+      </men>.
+      (We made a number of shortcuts in our logical notation above (<eg /> <m>\forall \epsilon\gt 0</m>, <m>\exists\delta\gt 0</m>) in order to simplify the expression somewhat; the intended meaning should still be clear. )
+    </p>
+    <p>
+      Use the negation rules described in <xref ref="rm_negating_quantifiers" text="title"/> to derive a similar proposition equivalent to the statement that <m>\lim\limits_{x\to c}f(x)</m> do not exist.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      Let <m>\mathcal{P}</m> be the proposition in <xref ref="eq_proposition"/>.
+      Using the negation rules in series, we derive the <em>chain of equivalences</em>  below (see <xref ref="sss_logical_chains" text="title"/>). We've added parentheses to emphasize what is being negated at each step. Note how a quantifiers are <q>swapped</q> each time we pass the negation to the right.
+      <md>
+        <mrow> \neg\mathcal{P}\amp\iff \forall L\in\R\,  \neg\left(\forall \epsilon \gt 0\, \exists \delta \gt0\,  \forall x\in\mathbb{R}\ (\val{x-c}\lt\delta\implies \val{f(x)-L}\lt\epsilon) \right)</mrow>
+        <mrow> \amp\iff  \forall L\in\R\,  \exists \epsilon \gt 0\, \neg\left( \exists \delta \gt0\,  \forall x\in\mathbb{R}\ (\val{x-c}\lt\delta\implies \val{f(x)-L}\lt\epsilon) \right)</mrow>
+        <mrow> \amp\iff  \forall L\in\R\,  \exists \epsilon \gt 0\,  \forall \delta \gt0\, \neg\left( \forall x\in\mathbb{R}\ (\val{x-c}\lt\delta\implies \val{f(x)-L}\lt\epsilon) \right)</mrow>
+        <mrow> \amp\iff  \forall L\in\R\,  \exists \epsilon \gt 0\,  \forall \delta \gt0\, \exists x\in\mathbb{R}\ \neg (\val{x-c}\lt\delta\implies \val{f(x)-L}\lt\epsilon)</mrow>
+        <mrow> \amp\iff  \forall L\in\R\,  \exists \epsilon \gt 0\,  \forall \delta \gt0\, \exists x\in\mathbb{R}\ (\val{x-c}\lt\delta \text{ and } \val{f(x)-L}\not\lt\epsilon)</mrow>
+      </md>.
+      (The last link in our chain uses the fact that <m>\neg(\mathcal{Q}\implies\mathcal{R})</m> is equivalent to <m>\mathcal{Q}\land\neg\mathcal{R}</m>, as a truth table easily shows.) Translating back into English, we conclude that the limit not existing (<m>\neg\mathcal{P}</m>) is equivalent to the following: for every <m>L\in \mathbb{R}</m> there is an <m>\epsilon\gt 0</m> such that for all <m>\delta\gt 0</m> there exists an <m>x\in\mathbb{R}</m> satisfying <m>\val{x-c}\lt \delta</m> and <m>\val{f(x)-L}\not\gt\epsilon</m>. Quite a mouthful!
+    </p>
+  </solution>
+</example>
+</subsection>
+
+<xi:include href="s_logic_ex.ptx"/>
+
+</section>

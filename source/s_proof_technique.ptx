@@ -1,0 +1,514 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_proof_technique">
+<title>Proof techniques</title>
+<introduction>
+  Proof writing is an art, a technical skill you will hone and refine throughout your career; and like any art, proof writing has many tricks of the trade. We gather a few here in the form of a collection of general proof techniques. Part of mastering these techniques involves understanding the circumstances where they can be of use. When selecting a technique, we are guided in part by the logical structure and particular mathematical content of the proposition under consideration. The proof techniques below are organized under this guiding principle.
+</introduction>
+<subsection xml:id="ss_logical_structure">
+  <title>Logical structure</title>
+  <subsubsection xml:id="sss_implication">
+    <title>Implication</title>
+    <p>
+      By <xref ref="d_logical_ops"/> the only time an implication  <m>\mathcal{P}\implies\mathcal{Q}</m> is false is when <m>\mathcal{P}</m> is true and <m>\mathcal{Q}</m> is false. Accordingly, the <em>direct approach</em> to proving an implication <m>\mathcal{P}\implies \mathcal{Q}</m> is to assume <m>\mathcal{P}</m> is true, and use this assumption to prove <m>\mathcal{Q}</m> is true.
+  </p>
+  <p>
+    A common <em>indirect approach</em> used to prove an implication <m>\mathcal{P}\implies \mathcal{Q}</m> is to prove its <em>contrapositive</em>  <m>\neg\mathcal{Q}\implies \neg \mathcal{P} </m>, which is logically equivalent to the original implication. In this case we assume <m>\mathcal{Q}</m> is not true, and show <m>\mathcal{P}</m> is not true. (Exercise: use a truth table to show the contrapositive is logically equivalent to the original implication.)
+  </p>
+  <warning>
+    <statement>
+      <p>
+        The <em>converse</em> of an implication <m>\mathcal{P}\implies \mathcal{Q}</m> is the implication <m>\mathcal{Q}\implies \mathcal{P}</m>; the <em>inverse</em> of <m>\mathcal{P}\implies\mathcal{Q}</m> is the implication <m>\neg\mathcal{P}\implies\neg\mathcal{Q}</m>. Neither the converse nor the inverse is equivalent to the original implication, and thus neither of these can be used to give an indirect proof of <m>\mathcal{P}\implies \mathcal{Q}</m>. (Exercise: use a truth table to show that neither the converse nor the inverse implication is logically equivalent to the original implication. )
+      </p>
+    </statement>
+  </warning>
+
+  </subsubsection>
+  <subsubsection xml:id="sss_disjunction">
+    <title>Disjunction</title>
+    <p>
+      Again, using <xref ref="d_logical_ops"/>, to directly show a disjunction <m>\mathcal{P}\text{ or }\mathcal{Q}</m> is true, we need only show one the two component propositions is true.
+    </p>
+    <p>
+      Alternatively, we can prove either of the implications <m>\neg\mathcal{P}\implies\mathcal{Q}</m> or <m>\neg Q\implies \mathcal{P}</m>, both of which are logically equivalent to <m>\mathcal{P}\text{ or }\mathcal{Q}</m>. (Exercise: use a truth table to show these three propositions are indeed equivalent!)
+    </p>
+  </subsubsection>
+  <subsubsection xml:id="sss_equivalence">
+    <title>Equivalence</title>
+    <p>
+      The equivalence <m>\mathcal{P}\iff\mathcal{Q}</m> is logically equivalent to the conjunction
+    <me>
+      (\mathcal{P}\implies\mathcal{Q})\text{ and } (\mathcal{Q}\implies \mathcal{P})
+    </me>.
+     Accordingly, the standard way of proving <m>\mathcal{P}\iff \mathcal{Q}</m> is to prove the two implications  <m>\mathcal{P}\implies\mathcal{Q}</m> and <m>\mathcal{Q}\implies\mathcal{P}</m> separately. (Exercise: use a truth table to show these propositions are indeed equivalent!)
+    </p>
+  </subsubsection>
+  <subsubsection xml:id="sss_logical_chains">
+    <title>Chains of implications/equivalences</title>
+    <p>
+      The relation <q><m>\mathcal{P}</m> implies <m>\mathcal{Q}</m></q> is transitive: <ie />, if <m>\mathcal{P}\implies\mathcal{Q}</m> and <m>\mathcal{Q}\implies\mathcal{R}</m>, then <m>\mathcal{P}\implies\mathcal{R}</m>. Similarly, the relation <q><m>\mathcal{P}</m> is equivalent to <m>\mathcal{Q}</m></q> is transitive. This allows us to prove an implication or equivalence via a <em>chain of implications</em> or <em>chain of equivalences</em>. When writing up a proof using this technique, use a vertically aligned format like the example below, treating one implication or equivalence per line, and adding a brief justification to the right:
+        <md>
+          <mrow>\mathcal{P} \amp \iff \mathcal{P_1}\amp\text{(justification)}</mrow>
+          <mrow> \amp \iff \mathcal{P_2}\amp\text{(justification)} </mrow>
+          <mrow> \amp \phantom{=}\vdots</mrow>
+          <mrow>  \amp \iff \mathcal{P_n}\amp\text{(justification)} </mrow>
+          <mrow>  \amp \iff \mathcal{Q}\amp\text{(justification)}</mrow>
+        </md>.
+      It is also possible to build an argument as a hybrid chain of equivalences and implications. In this case the chain is only as strong as its weakest link. For example, a chain of the form
+      <md>
+        <mrow>\mathcal{P} \amp\iff\mathcal{Q} \amp\text{(justification)} </mrow>
+        <mrow> \amp\implies \mathcal{R} \amp\text{(justification)} </mrow>
+        <mrow>  \amp\iff \mathcal{S} \amp\text{(justification)}</mrow>
+      </md>
+      only shows that <m>\mathcal{P}\implies\mathcal{S}</m>. Indeed, we will have <m>\mathcal{P}\iff\mathcal{S}</m> if and only if the intervening implication <m>\mathcal{Q}\implies\mathcal{R}</m> is in fact an equivalence (<ie />, the arrow goes both ways).
+    </p>
+    <warning>
+      <statement>
+        <p>
+          It is often tempting, for the sake of space, to try and prove an equivalence <m>\mathcal{P}\iff\mathcal{Q}</m> via a chain of equivalences, as opposed to showing <m>\mathcal{P}\implies \mathcal{Q}</m> and <m>\mathcal{Q}\implies\mathcal{P}</m> separately.
+
+          When proceeding in this manner, make doubly sure that each <m>\iff</m> is indeed an equivalence: <ie />, that the implication arrow really goes both ways at each step. Even if each step in your chain truly is an equivalence, you should consider whether this will be obvious to your reader.
+        </p>
+      </statement>
+    </warning>
+  <p>
+    The example below provides the proof that a function is invertible if and only if it is bijective (<xref ref="th_invertible_bijective"/>). The proof nicely illustrates some of the different techniques used for proving implications and equivalences. Additionally, it is a nice example of how to separate out cases of the argument into clearly distinguished steps.
+  </p>
+  <example xml:id="ex_invertible_bijective">
+    <title>Proof: invertible is equivalent to bijective</title>
+
+    <statement>
+      <p>
+      Let <m>f\colon X\rightarrow Y</m> be a function. Prove: <m>f</m> is invertible if and only if <m>f</m> is bijective.
+      </p>
+    </statement>
+    <solution>
+      <p>
+       Let <m>\mathcal{P}</m> be the proposition that <m>f</m> is invertible, and let <m>\mathcal{Q}</m> be the proposition that <m>f</m> is bijective. We prove the equivalence <m>\mathcal{P}\iff \mathcal{Q}</m> by proving the two implications <m>\mathcal{P}\implies \mathcal{Q}</m> and <m>\mathcal{Q}\implies\mathcal{P}</m>.
+      </p>
+      <case>
+       <title>Proof of <m>\mathcal{P}\implies \mathcal{Q}</m></title>
+      <p>
+      We must show that if <m>f</m> is invertible, then <m>f</m> is bijective. Assume <m>f</m> is invertible. Then <m>f</m> has an inverse <m>f^{-1}</m>. We show separately that <m>f</m> is injective and surjective, hence bijective.
+      </p>
+      <case>
+       <title><m>f</m> is injective</title>
+      <p>
+        We show <m>f(x)=f(x')\implies x=x'</m> via a chain of implications:
+        <md>
+          <mrow>f(x)=f(x') \amp \implies f^{-1}(f(x))=f^{-1}(f(x'))</mrow>
+          <mrow> \amp\implies x=x' \amp (f^{-1}\circ f=\id_X) </mrow>
+        </md>.
+      </p>
+      </case>
+      <case>
+       <title><m>f</m> is surjective</title>
+      <p>
+        Let <m>b</m> be an element of <m>Y</m>. We must show that there is an <m>x\in X</m> such that <m>f(x)=y</m>. Letting <m>x=f^{-1}(y)</m>, we have
+        <md>
+          <mrow>f(x) \amp = f(f^{-1}(y))</mrow>
+          <mrow> \amp = y \amp (f\circ f^{-1}=\id_Y)</mrow>
+        </md>.
+      </p>
+      </case>
+      </case>
+      <case>
+       <title>Proof of <m>\mathcal{Q}\implies\mathcal{P}</m></title>
+      <p>
+      We must show that if <m>f</m> is bijective, then <m>f</m> is invertible. Assume <m>f</m> is bijective. First we define a function <m>g\colon Y\rightarrow X</m> as follows: for all <m>y\in Y</m>, let <m>g(y)</m> be the unique element <m>x\in X</m> such that <m>f(x)=y</m>. Note that our definition of <m>g</m> uses both that <m>f</m> is surjective (there is <em>some</em> element <m>x</m> such that <m>f(x)=y</m>)) and injective (there is <em>exactly one</em> element <m>x</m> such that <m>f(x)=y</m>).
+      </p>
+      <p>
+        We now prove that <m>g</m> is the inverse of <m>f</m>, showing <m>g\circ f=\id_X</m> and <m>f\circ g=\id_Y</m> separately.
+      </p>
+      <case>
+       <title><m>g\circ f=\id_X</m></title>
+      <p>
+      Take any <m>x\in X</m> and let <m>y=f(x)</m>. By definition of <m>g</m>, we have <m>g(y)=x</m> and hence <m>g(f(x))=g(y)=x</m>. This proves <m>g\circ f=\id_X</m>.
+      </p>
+      </case>
+      <case>
+       <title><m>f\circ g=\id_Y</m></title>
+      <p>
+      Take any <m>y\in Y</m>. By definition of <m>g</m>, <m>g(y)</m> is the unique <m>x\in X</m> such that <m>f(x)=y</m>. Thus <m>f(g(y))=f(x)=y</m>. This proves <m>f\circ g=\id_Y</m>.
+      </p>
+      </case>
+      </case>
+    </solution>
+  </example>
+  </subsubsection>
+  <subsubsection xml:id="sss_proof_by_contradiction">
+    <title>Proof by contradiction</title>
+    <p>
+      The technique of <em>proof by contradiction</em> (or <em>reductio ad absurdum</em>) proves a proposition <m>\mathcal{P}</m> by (a) assuming the negation <m>\neg\mathcal{P}</m> is true, and then (b) using this assumption to derive a proposition <m>\mathcal{Q}</m> known to be false. The choice of falsehood <m>\mathcal{Q}</m> is completely up to the person providing the proof. However, in order for the proof to be convincing, it should be clear, either logically or because of theory assumed to be known, that <m>\mathcal{Q}</m> is indeed false.
+    </p>
+    <example xml:id="ex_proof_by_contradiction">
+      <title>Proof by contradiction</title>
+      <statement>
+        <p>
+        Prove by contradiction that <m>0</m> has no multiplicative inverse in the reals: <ie />, there is no <m>r\in\R</m> such that <m>r\cdot 0=1</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We prove the claim by contradiction. Assume there is an <m>r\in \R</m> such that <m>r\cdot 0=1</m>. Since <m>r\cdot 0=0</m> for any <m>r\in \R</m> (a property of multiplication by 0), we have <m>1=r\cdot 0=0</m>: a contradiction since <m>1\ne 0</m>. We conclude that there is no <m>r\in \R</m> such that <m>r\cdot 0=1</m>.
+        </p>
+      </solution>
+    </example>
+        <remark xml:id="rm_proof_by_contradiction">
+      <statement>
+        <p>
+          Proof by contradiction resembles, but is not quite the same  thing as proving an implication via its contrapositive. Letting <m>F</m> denote an arbitrary falsehood (the <m>\mathcal{Q}</m> described above) what we do in a proof by contradiction is show that the implication <m>\neg \mathcal{P}\implies F</m> is true. Since <m>F</m> is false, and the implication is true, <m>\neg \mathcal{P}</m> must be false: equivalently, <m>\mathcal{P}</m> must be true.
+        </p>
+      </statement>
+    </remark>
+    </subsubsection>
+</subsection>
+<subsection xml:id="ss_Equalities">
+  <title>Equalities</title>
+<introduction>
+<p>
+  Equality is not as simple as it may seem. In general an equality is a mathematical statement of the form
+<men xml:id="eq_equality">
+\text{LHS}=\text{RHS}
+</men>.
+Here <q>LHS</q> and <q>RHS</q> stand for left- and right-hand side, respectively. What exactly such an equality means depends very much on what kind of mathematical objects the two sides of the equation are: <eg />, numbers, sets, functions, etc.
+Below we discuss equality for objects of a particular type in detail. (See <xref ref="ss_set_properties"/> and <xref ref="ss_function_properties"/>.) In all settings, the notion of equality will be <em>transitive</em>: <ie />, if <m>x=y</m> and <m>y=z</m>, then <m>x=z</m>. We use transitivity implicitly when proving an equality via a <em>chain of equalities</em> as described below.
+</p>
+</introduction>
+<subsubsection xml:id="sss_chain_equalities">
+  <title>Chain of equalities</title>
+ Often to prove an equality as in <xref ref="eq_equality"/> we proceed in a sequence of intervening bite-size equalities, each of which is easy for the reader to digest. As with chains of implications/equivalences, we present such an argument in a vertically aligned format, with brief justifications to the right:
+  <md>
+    <mrow>\text{LHS} \amp =\text{something}\amp (\text{justifiction})</mrow>
+    <mrow> \amp =\text{something}\amp (\text{justifiction})</mrow>
+    <mrow>  \amp \phantom{=}\vdots </mrow>
+    <mrow>  \amp=\text{RHS} \amp (\text{justifiction})</mrow>
+  </md>.
+<warning>
+<p>
+  Never attempt to prove an equality by starting off with the equality you wish to prove, and then deduce a series of further equalities ending in some inanity: <eg />,
+<md>
+  <mrow> \text{LHS}\amp =\text{RHS} </mrow>
+  <mrow> \text{something}\amp=\text{something} </mrow>
+  <mrow>  \amp\phantom{=}\vdots </mrow>
+  <mrow> 0 \amp = 0</mrow>
+</md>.
+What this suggests is that you are in fact proving an implication: namely, <em>if</em> the desired equality is true, <em>then</em> <m>0=0</m>. Clearly this is not what we set out to prove! This type of fallacious argument is called <q>begging the question</q> (<em>petitio princippii </em> in Latin), as we assume that which was to be proven.
+</p>
+</warning>
+</subsubsection>
+
+</subsection>
+<subsection xml:id="ss_set_properties">
+  <title>Basic set properties</title>
+<subsubsection xml:id="sss_set_inclusion">
+  <title>Set inclusion</title>
+  <p>
+    Let <m>A</m> and <m>B</m> be sets. By <xref ref="d_set_inclusion"/>, to prove <m>A\subseteq B</m> we must show that for all elements <m>x</m> we have
+  <me>
+    x\in A\implies x\in B
+  </me>.
+  This requires proving the implication above for a general element <m>x</m>, and we may use any of  the techniques described in <xref ref="sss_implication" text="title"/> and <xref ref="sss_logical_chains" text="title"/> to do so.
+</p>
+</subsubsection>
+<subsubsection xml:id="sss_set_equality">
+  <title>Set equality</title>
+  <p>
+    Let <m>A</m> and <m>B</m> be sets. To prove <m>A=B</m> directly using <xref ref="d_set_equality"/> we must show that for all elements <m>x</m> we have
+    <me>
+      x\in A \iff x\in B
+    </me>.
+     To prove this universal equivalence, we must give an argument for the equivalence that holds for a general element <m>x</m>.
+  </p>
+  <p>
+    Alternatively, you can prove <m>A=B</m> by proving the two set inclusions <m>A\subseteq B</m> and <m>B\subseteq A</m> separately. This is equivalent to proving the two implications <m>x\in A\implies x\in B</m> and <m>x\in B\implies x\in A</m> separately.
+  </p>
+</subsubsection>
+</subsection>
+<subsection xml:id="ss_function_properties">
+  <title>Basic function properties</title>
+<subsubsection xml:id="sss_function_equality">
+  <title>Function equality</title>
+  <p>
+    According to <xref ref="d_function_equality"/>, in order to show functions <m>f</m> and <m>g</m> are equal we must
+    <ol marker="i">
+      <li>
+        <p>
+          show that <m>f</m> and <m>g</m> have the same domain <m>X</m> and codomain <m>Y</m>, and
+        </p>
+      </li>
+      <li>
+        <p>
+          show that <m>f(x)=g(x)</m> for all <m>x\in X </m>.
+        </p>
+      </li>
+    </ol>
+The universal quantifier <q>for all <m>x\in X</m></q> of item (ii) gives this subtask the feel of proving an <em>identity</em>: we must show that equality <m>f(x)=g(x)</m> holds <em>for all </em> <m>x\in X</m>. By the same token, to show (ii) does not hold, it suffices to show that <m>f(x)\ne g(x)</m> for some <m>x\in X</m>.
+</p>
+</subsubsection>
+<subsubsection xml:id="sss_injective_surjective_bijective">
+  <title>Injective, surjective, bijective</title>
+<p>
+  Let <m>f\colon X\rightarrow Y</m> be a function.
+</p>
+<case>
+ <title>Injectivity</title>
+<p>
+To show <m>f</m> is injective, we must show that the implication
+<me>
+  f(x)=f(x')\implies x=x'
+</me>
+holds for all <m>x,x'\in </m>. Frequently it will be convenient to prove the (universal) contrapositive:
+<me>
+  x\ne x'\implies f(x)\ne f(x')
+</me>
+for all <m>x,x'\in X</m>.
+</p>
+<p>
+  Similarly, to show <m>f</m> is not injective, we simply have to find <m>x, x'\in X</m> satisfying <m>x\ne x'</m> and <m>f(x)=f(x')</m>.
+</p>
+</case>
+<case>
+ <title>Surjectivity</title>
+<p>
+To prove <m>f</m> is surjective, we must prove the universal quantification:
+<me>
+  \text{for all } y\in Y, \text{ there exists an } x\in X\ \text{ such that } f(x)=y
+</me>.
+To prove <m>f</m> is <em>not</em> surjective, we must prove the negation of this proposition (<xref ref="rm_negating_quantifiers"/>): <ie />, there exists a <m>y\in Y</m> for which there is no <m>x\in X</m> with <m>f(x)=y</m>.
+</p>
+</case>
+<case>
+ <title>Bijectivity</title>
+<p>
+To show <m>f</m> is bijective directly using <xref ref="d_injective_surjective_bijective"/>, we must show that <m>f</m> is injective and surjective. This is equivalent to showing that for <m>y\in Y</m> there exists a <em>unique</em> element <m>x\in X</m> such that <m>f(x)=y</m>.
+</p>
+<p>
+  Alternatively, using <xref ref="th_invertible_bijective"/> we can show that <m>f</m> is bijective by providing an inverse function <m>f^{-1}\colon Y\rightarrow X</m>.
+</p>
+</case>
+</subsubsection>
+
+</subsection>
+<subsection xml:id="ss_mathematical_induction">
+  <idx><h>mathematical induction</h></idx>
+  <title>Mathematical induction</title>
+  <introduction>
+  <p>
+    <em>Mathematical induction</em> is a technique for proving universal quantifications of the form
+    <me>
+      \text{For all integers } n\geq b, \, P(n)
+    </me>,
+    where <m>b</m> is a fixed starting integer, called the <term>base</term>, and <m>P</m> is a predicate defined on the integers. If the setting makes clear that <m>n</m> ranges over integers, we write such propositions using logical notation as
+    <me>
+      \forall n\geq b\, P(n)
+    </me>.
+  </p>
+</introduction>
+  <subsubsection xml:id="sss_weak_induction">
+    <idx><h>mathematical induction</h><h>weak induction</h></idx>
+    <title>Proof by induction</title>
+    <p>
+      Suppose <m>P</m> is a predicate of integers. To prove the proposition <m>\forall n\geq b\, P(n)</m> by <term>induction</term> (sometimes called <term>weak induction</term>), we proceed in two steps.
+    </p>
+    <case>
+     <title>Base step</title>
+    <p>
+    Show that <m>P(b)</m> is true.
+    </p>
+    </case>
+    <case>
+     <title>Induction step</title>
+    <p>
+    Prove the universal implication
+    <me>
+      \forall n\geq b\, P(n)\implies P(n+1)
+    </me>.
+    In practice, if proving the implication <m>P(n)\implies P(n+1)</m> directly, this means we assume <m>P(n)</m> is true (the <term>induction hypothesis</term>), and use this assumption to show <m>P(n+1)</m> is true.
+    </p>
+    </case>
+        <remark xml:id="rm_induction">
+      <title><q>Step 0</q> of induction</title>
+      <statement>
+        <p>
+          When meeting a proposition in the wild that we wish to prove by induction, you should first take care to model the proposition in the form
+          <me>\forall n\geq b\, P(n)</me>. Make explicit the predicate <m>P</m> in question, as well as the base case <m>b</m>. We illustrate this preparatory <q>Step 0</q> in the examples below.
+        </p>
+      </statement>
+    </remark>
+    <example xml:id="eg_weak_induction">
+      <title>Weak induction</title>
+      <statement>
+        <p>
+          Prove the identity
+          <me>
+            \sum_{k=1}^n k=\frac{n(n+1)}{2}
+          </me>
+          for all <m>n\geq 1</m>. Recall:
+          <me>
+            \sum_{k=1}^n k=1+2+\cdots +n
+          </me>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We prove the proposition by induction.
+        </p>
+        <case>
+         <title>Step 0: preparation</title>
+        <p>
+          The proposition is modeled logically as <m>\forall n\geq 1 \, P(n)</m>, where <m>P(n)</m> is the proposition that
+          <me>
+            \sum_{k=1}^n k=\frac{n(n+1)}{2}
+          </me>.
+        </p>
+        </case>
+        <case>
+         <title>Base step: <m>n=1</m></title>
+        <p>
+        The proposition <m>P(1)</m> is the statement that
+        <me>
+          1=\frac{1(1+1)}{2}
+        </me>,
+        which is clearly true.
+        </p>
+        </case>
+        <case>
+         <title>Induction step</title>
+        <p>
+        We must show the universal implication
+        <me>
+          \forall n\geq 1\, P(n)\implies P(n+1)
+        </me>.
+        Let <m>n\geq 1</m>, and assume <m>P(n)</m> is true: <ie />,
+        <me>
+          \sum_{k=1}^n k=\frac{n(n+1)}{2}
+        </me>
+        The proposition <m>P(n+1)</m> states that
+        <me>
+          \sum_{k=1}^{n+1} k=\frac{(n+1)(n+2)}{2}
+        </me>. We prove this, assuming <m>P(n)</m>, via a chain of equalities:
+        <md>
+          <mrow> \sum_{k=1}^{n+1} k\amp= \sum_{k=1}^{n} k+(n+1) </mrow>
+          <mrow> \amp=\frac{n(n+1)}{2}+n+1\amp (\text{induction hyp.}) </mrow>
+          <mrow>  \amp =\frac{n(n+1)+2(n+1)}{2}</mrow>
+          <mrow>  \amp =\frac{(n+1)(n+2)}{2}</mrow>
+        </md>,
+        as desired.
+        </p>
+        </case>
+        <p>
+          Having completed our base and induction steps, our proof is now finished.
+        </p>
+      </solution>
+    </example>
+  <p>
+    So why does proof by induction work? In other words, why is it a valid proof technique? Imagine our propositions <m>P(n)</m> as forming an infinite ladder that we wish to ascend. Cautious climbers that we are, we only will step on a rung if we know the corresponding proposition is true. Knowing <m>P(b)</m> is true (the base step) allows us to step onto the first rung. The universal implication <m>\forall n\geq b\, P(n)\implies P(n+1)</m> (induction step) gives us a <em>rule</em> that says if rung <m>n</m> is secure (i.e., true), then so is rung <m>n+1</m>. Since this rule holds for all rungs (i.e., for all <m>n\geq b</m>), we can safely ascend the entire ladder!
+    <figure xml:id="fig_proof_induction">
+      <title>Mathematical induction as ladder of propositions</title>
+      <caption>Mathematical induction as ladder of propositions</caption>
+      <image xml:id="im_proof_induction" width="50%">
+        <latex-image>
+          \begin{tikzcd}
+    \ \amp \ \\
+    \amp  P(b+2) \arrow[u, no head, dotted]\\
+     \amp P(b+1)  \arrow[u, "\text{climb up via}","P(b+1)\implies P(b+2)"']\\
+    \amp P(b) \arrow[u, "\text{climb up via}","P(b)\implies P(b+1)"']\\
+    \  \arrow[ur,"\text{climb on via}","\text{base case}"'] \amp
+      \end{tikzcd}
+        </latex-image>
+      </image>
+</figure>
+<!-- <figure xml:id="fig_proof_induction">
+  <title>Mathematical induction as ladder of propositions</title>
+  <caption>Mathematical induction as ladder of propositions</caption>
+<image xml:id="im_proof_induction" width="50%" source="./images/im_proof_induction.svg"/>
+</figure> -->
+  </p>
+</subsubsection>
+  <subsubsection xml:id="sss_strong_induction">
+    <idx><h>mathematical induction</h><h>strong induction</h></idx>
+    <title>Proof by strong induction</title>
+    <p>
+      Suppose <m>P</m> is a predicate of integers. To prove the proposition <m>\forall n\geq b P(n)</m> by <term>strong induction</term>, we proceed in two steps.
+    </p>
+    <case>
+     <title>Base step: <m>n=b</m></title>
+    <p>
+    Show that <m>P(b)</m> is true.
+    </p>
+  </case>
+  <case>
+  <title>Strong induction step</title>
+ <p>
+ Prove the universal implication
+ <me>
+   \forall n\geq b\, \left(P(b)\land P(b+1)\cdots \land P(n)\right) \implies P(n+1)
+ </me>.
+ This technique is called strong induction, as now the induction hypothesis is much stronger: to prove this implication directly we assume <m>P(k)</m> is true for all <m>1\leq k\leq n</m> (not just <m>k=n</m> as in weak induction), and use this assumption to show <m>P(n+1)</m> is true.
+ </p>
+</case>
+<p>
+  In fact, strong induction is, logically speaking, no stronger than weak induction. Both techniques apply to propositions of the form <m>\forall n\geq b\, P(n)</m>, and you are free to choose which form of induction to use each time. We typically use strong induction out of convenience, when the nature of the predicate <m>P</m> is such that we can prove <m>P(n+1)</m> most elegantly by assuming <m>P(b), P(b+1), \dots, P(n)</m>, as opposed to just <m>P(n)</m>. The following example is characteristic in this regard.
+</p>
+<example xml:id="eg_strong_induction">
+  <title>Strong induction</title>
+  <statement>
+    <p>
+      Prove that every integer <m>n\geq 2</m> can be written as a product of primes.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      We prove the statement by induction.
+    </p>
+    <case>
+     <title>Step 0: preparation</title>
+    <p>
+      The proposition is modeled logically as <m>\forall n\geq 2\, P(n)</m>, where <m>P(n)</m> is the proposition that <m>n</m> is a product of primes.
+    </p>
+    </case>
+    <case>
+     <title>Base step: <m>n=2</m></title>
+    <p>
+      The proposition <m>P(2)</m> asserts that <m>2</m> is a product of primes. This is true since <m>2</m> is itself prime, hence a product of one prime number.
+    </p>
+    </case>
+    <case>
+     <title>Strong induction step</title>
+    <p>
+      We must show the universal implication
+      <me>
+        \forall n\geq 2\, \left( P(1)\land P(2)\land\cdots \land P(n)\right)\implies P(n+1)
+      </me>.
+      Let <m>n\geq 2</m>, and assume <m>P(k)</m> is true for all <m>2\leq k\leq n</m>: <ie />, for all such <m>k</m> we assume <m>k</m> can be written as a product of primes. We use this assumption to prove <m>P(n+1)</m>: <ie />, that <m>n+1</m> is a product of primes. We proceed in two cases, depending on whether <m>n+1</m> is itself prime.
+    </p>
+    <case>
+     <title>Case 1: <m>n+1</m> is prime</title>
+    <p>
+    If <m>n+1</m> is prime, then it is trivially a product of one prime number, just as with the base case.
+    </p>
+    </case>
+    <case>
+     <title>Case2 : <m>n+1</m> is not prime</title>
+    <p>
+     If <m>n+1</m> is not prime, then we can factor <m>n+1</m> nontrivially as  <m>n+1=k_1k_2</m>. Here <q>nontrivially</q> means that we have <m>2\leq k_1,k_2\leq n</m>. Using the strong induction hypothesis, we may assume that <m>k_1</m> and <m>k_2</m> are both products of primes: <ie />, we have
+     <md>
+       <mrow>k_1 \amp=p_1p_2\cdots p_r \amp k_2=q_1q_2\cdots q_s</mrow>
+     </md>,
+     where <m>p_i</m> and <m>q_j</m>  are prime for all <m>1\leq i\leq r</m> and <m>1\leq j\leq s</m>. It follows that
+    <me>
+      n+1=k_1k_2=p_1p_2\cdots p_rq_1q_2\cdots q_s
+    </me>,
+    and hence that <m>n+1</m> is also a product of primes, as desired.
+    </p>
+    </case>
+    </case>
+    <p>
+      Having completed the base and induction steps, our proof by induction is now finished.
+    </p>
+  </solution>
+</example>
+  </subsubsection>
+</subsection>
+
+
+</section>

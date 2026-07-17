@@ -1,0 +1,20 @@
+<exercises xml:id="s_complex_numbers_ex">
+<exercise>
+  <!-- 1. division -->
+  <webwork source="Library/PCC/BasicAlgebra/ComplexNumber/complexNumberOperations100.pg" />
+</exercise>
+<exercise>
+  <!-- 2. arithmetic -->
+  <webwork source="Library/Rochester/setAlgebra11ComplexNumbers/ur_cn_1_14.pg" />
+</exercise>
+<exercise>
+  <!-- 3. arithmetic -->
+  <webwork source="Library/Hope/Multi1/05-03-Complex-numbers/Complex_arithmetic_04.pg" />
+</exercise>
+<exercise>
+  <!-- 4. norm -->
+  <webwork source="Library/Rochester/setComplexNumbers/ur_cn_1_16.pg" />
+</exercise>
+
+
+</exercises>

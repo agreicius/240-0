@@ -1,0 +1,492 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_solving">
+  <title>Solving linear systems</title>
+  <introduction>
+    <p>Let's continue with our <xref ref="eg_model_example">model example</xref>. Summarizing the various steps, we have
+    <md>
+    <mrow>
+    \begin{array}{rcc}
+      -2x_3+7x_5\amp =\amp 12 \\
+      2x_1+4x_2-10x_3+6x_4+12x_5\amp = \amp 28 \\
+      2x_1+4x_2-5x_3+6x_4-5x_5\amp =\amp -1
+    \end{array}
+    \amp \xrightarrow[]{\text{ aug. mat. } }\begin{amatrix}[rrrrr|r]0\amp 0\amp -2\amp 0\amp 7\amp 12\\ 2\amp 4\amp -10\amp 6\amp 12\amp 28\\ 2\amp 4\amp -5\amp 6\amp -5\amp -1 \end{amatrix}</mrow>
+    <mrow>\amp \xrightarrow[]{\text{ Gauss. elim. } }\begin{amatrix}[rrrrr|r]\boxed{1}\amp 2\amp -5\amp 3\amp 6\amp 14\\ 0\amp 0\amp \boxed{1}\amp 0\amp -\frac{7}{2}\amp -6\\ 0\amp 0\amp 0\amp 0\amp \boxed{1}\amp 2 \end{amatrix}</mrow>
+    <mrow>\amp \xrightarrow[]{\text{ new system } }\begin{array}{rcc} x_1+2x_2-5x_3+3x_4+6x_5\amp =\amp 14\\
+    x_3-\frac{7}{2}x_5\amp =\amp -6\\
+    x_5\amp =\amp 2 \end{array}</mrow>
+    </md>.
+    The new system in row echelon form is undoubtedly simpler, but describing <em>all</em> of its solutions still requires some subtle analysis.
+  </p>
+</introduction>
+
+
+
+<subsection xml:id="ss_workingExample">
+  <title>Model example continued</title>
+  <p> We begin by illustrating the general method for solving a linear system, continuing with our <xref ref="eg_model_example" text="custom">model example</xref>.  A careful  description of the procedure, along with a proof of its validity, is found in <xref ref="proc_solveSystem"/>.
+</p>
+<p>
+  A key first step involves separating the variables of the system into <em>free</em> and <em>leading</em> variables.
+</p>
+<definition xml:id="d_free-leading">
+  <title>Free and leading variables</title>
+  <idx>
+    <h>variables</h>
+    <h>leading</h>
+  </idx>
+  <idx>
+    <h>variables</h>
+    <h>free</h>
+  </idx>
+  <statement>
+    <p>
+      Let <m>L</m> be a linear system in the unknowns <m>x_1,x_2,\dots, x_n</m>, and let <m>A</m> be its associated augmented matrix. Assume <m>L</m> (and hence <m>A</m>) is in row echelon form.
+    </p>
+    <p>
+      The unknown <m>x_j</m> is a <term>leading variable</term> if the corresponding column in <m>A</m> (i.e., the <m>i</m>-th column) contains a leading one; it is a <term>free variable</term> if the corresponding column in <m>A</m> does not contain a leading one.
+    </p>
+  </statement>
+</definition>
+<example xml:id="s_solving_eg_free-leading">
+<title>Free and leading variables</title>
+  <statement>
+    <p>
+      Let <m>L</m> be the linear system in the unknowns <m>x_1, x_2, x_3, x_4</m> with augmented matrix
+      <me>
+      A=\begin{amatrix}[cccc|r]\boxed{1}\amp1\amp3\amp2\amp4\\
+      0\amp\boxed{1}\amp1\amp2\amp3\\
+      0\amp0\amp0\amp\boxed{1}\amp-5
+    \end{amatrix}
+    </me>.
+    Then <m>x_1, x_2, x_4</m> are leading variables, since the first, second, and fourth columns of <m>A</m> have leading ones, as indicated by the boxes. The variable <m>x_3</m> is free since the third column of <m>A</m> has no leading one.
+  </p>
+</statement>
+</example>
+<example xml:id="eg_solving_system">
+  <title>Solving linear systems</title>
+  <p>
+  In our model example we transformed the original system <m>L</m> to the equivalent system <m>L'</m> below:
+  <me>
+  \begin{linsys}{5} x_1\amp +\amp 2x_2\amp-\amp 5x_3\amp+\amp 3x_4 \amp +\amp 6x_5\amp =\amp 14\\
+    \amp \amp \amp \amp x_3\amp-\amp \amp \amp \frac{7}{2}x_5\amp =\amp -6\\
+    \amp \amp \amp \amp \amp \amp \amp \amp x_5\amp =\amp 2 \end{linsys}
+    </me>.
+    The free variables of <m>L'</m> are <m>x_2</m> and <m>x_4</m>; the leading variables are <m>x_1, x_3</m>, and <m>x_5</m>. Observe that if we assign <m>x_2=s</m> and <m>x_4=t</m>, where <m>r</m> and <m>s</m> are any real numbers, then we are left with a system <m>L''</m> in three unknowns (<m>x_1,x_3,x_5</m>) of the form
+    <me>
+    \begin{linsys}{3} x_1\amp-\amp 5x_3\amp+\amp 6x_5\amp= \amp 14-2s-3t\\
+      \amp \amp x_3\amp -\amp \frac{7}{2}x_5\amp = \amp -6\\
+      \amp \amp \amp \amp x_5\amp =\amp 2 \end{linsys}
+      </me>.
+      Using back-substitution, we see that the unknowns <m>x_1, x_3, x_5</m> are then uniquely expressed in terms of <m>s</m> and <m>t</m> as
+      <men xml:id="ex_modelSolve">
+        x_5=2, x_3=1, x_1=7-2s-3t.
+      </men>
+      Thus for any choice of real numbers <m>s</m> and <m>t</m> we get a unique solution of the form
+      <me>
+      (x_1,x_2,x_3,x_4,x_5)=(7-2s-3t, s, 1, t, 2)
+      </me>.
+      We conclude the set <m>S</m> of solutions to <m>L</m> is given as
+      <men xml:id="s_solving_eq_setnotation">
+        S=\left\{(7-2s-3t, s, 1, t, 2)\colon s, t\in\R\right\}.
+      </men>
+      Alternatively, we can describe the solutions to <m>L</m> with the <em>parametric equations</em>
+      <men xml:id="s_solving_eq_parametric">
+        x_1=7-2s-3t, x_2=s, x_3=1, x_4=t, x_5=2, \ t,s\in\R
+      </men>.
+    </p>
+</example>
+
+    <remark xml:id="s_solving_rm_parametric">
+      <title>Mandate</title>
+      <idx><h>parametric equations</h></idx>
+        <p>
+          Get used to describing solutions to linear systems using either the set notation format of <xref ref="s_solving_eq_setnotation"/> or the parametric equation format of <xref ref="s_solving_eq_parametric"/>.
+        </p>
+        <p>
+          Note also the distinct roles played by free and leading variables in the description of solutions. We assign each free variable <em>freely</em> to any choice of real parameters (<m>s</m> and <m>t</m> in our example), and then solve for the leading variables in terms of these parameters in a unique manner. In particular, the leading variables are completely determined by our assignment of free variables.
+        </p>
+    </remark>
+  </subsection>
+  <subsection xml:id="ss_solveSystem">
+    <title>General method for solving linear systems</title>
+    <p>
+      Before describing a precise algorithm for computing the set of solutions to a linear system, we must address the possibility that there are no solutions to the system whatsoever. Such a system is called <em>inconsistent</em>.
+    </p>
+    <definition xml:id="d_consistent">
+      <title>Consistent and inconsistent systems</title>
+      <idx><h>consistent</h></idx>
+      <idx><h>inconsistent</h></idx>
+      <statement>
+        <p>
+          A linear system is <term>consistent</term> if it has at least one solution; it is <term>inconsistent</term> if it has no solutions.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      We are now in a position to describe an algorithm for computing the set of solutions of a linear system.
+
+    </p>
+    <algorithm xml:id="proc_solveSystem">
+      <title>Solving linear systems</title>
+
+      <statement>
+        <p>
+          Let <m>L</m> be a linear system in the unknowns <m>x_1,x_2,\dots, x_n</m>, and let <m>S</m> be the set of all solutions of <m>L</m>. We compute <m>S</m> as follows.
+        </p>
+        <dl>
+          <li>
+            <title>Step 1</title>
+            <p>
+              Apply Gaussian elimination to reduce <m>L</m> to an equivalent system <m>L'</m> in row echelon form.
+            </p>
+          </li>
+          <li>
+            <title>Step 2</title>
+            <p>
+              Let <m>U</m> be the augmented matrix associated to <m>L'</m>. If the last column of <m>U</m> has a leading one, then <m>L</m> is inconsistent: <ie />, <m>S=\{ \}</m> is the empty set. Otherwise, proceed to the next step.
+            </p>
+          </li>
+          <li>
+            <title>Step 3</title>
+            <p>
+              Determine which if any of the unknowns are free variables of <m>L'</m>.
+            </p>
+          </li>
+          <li>
+            <title>Step 4</title>
+            <p>
+              If there are no free variables, solve for each unknown using back-substitution. In this case, there is a unique solution to <m>L</m>: <ie />, <m>S=\{(s_1,s_2,\dots, s_n)\}</m> contains exactly one element.
+            </p>
+            <p>
+              Otherwise, let <m>x_{i_1}, x_{i_2},\dots , x_{i_r}</m> be the leading variables of <m>L'</m>, and let <m>x_{j_1},x_{j_2},\dots, x_{j_s}</m> be the free variables. Back-substitution allows us to express each leading variable in terms of the free variables. In other words, we can write
+              <md>
+              <mrow> x_{i_1}\amp=F_1(x_{j_1},x_{j_2},\dots, x_{j_s}) </mrow>
+              <mrow> x_{i_2}\amp =F_2(x_{j_1},x_{j_2},\dots, x_{j_s}) </mrow>
+              <mrow>  \vdots \amp </mrow>
+              <mrow> x_{i_r} \amp =F_s(x_{j_1},x_{j_2},\dots, x_{j_s})
+              </mrow>
+              </md>,
+            where each <m>F_i(x_{j_1},x_{j_2},\dots, x_{j_s})</m> is a linear expression in the free variables.
+            Each solution of <m>L</m> thus corresponds to a <em>unique</em> variable assignment of the form
+            <md>
+            <mrow>\text{Free variables: } x_{j_1}\amp=t_{1}, \ x_{j_2}=t_{2},\dots, x_{j_s}=t_{s}</mrow>
+            <mrow> \text{Leading variables: } x_{i_1}\amp =F_1(t_1,t_2,\dots, t_s) </mrow>
+            <mrow> x_{i_2}\amp =F_2(t_1,t_2,\dots, t_s) </mrow>
+            <mrow>  \vdots \amp </mrow>
+            <mrow> x_{i_r} \amp =F_s(t_1,t_2,\dots, t_s)
+            </mrow>
+            </md>,
+            where <m>t_1,t_2,\dots, t_s</m> are any real numbers.
+          </p>
+        </li>
+      </dl>
+    </statement>
+  </algorithm>
+  <proof>
+    <p>
+      First recall that <m>L</m> and <m>L'</m> have the same set of solutions (<xref ref="s_systems_th_rowops"/>). So it suffices to show that the algorithm returns the correct set of solutions to <m>L'</m>.
+    </p>
+    <p>
+      Regarding consistency: if the last column of the augmented matrix <m>U</m> associated to <m>L'</m> has a leading one in the <m>i</m>-th row, then the corresponding equation in <m>L'</m> is
+      <me>
+      0x_1+0x_2+\cdots 0x_n=1.
+      </me>
+      Clearly this equation has no solutions, and hence the set of solutions to <m>L'</m> is empty.
+    </p>
+    <p>
+      Suppose now that the last column of <m>U</m> does not have a leading one.
+    </p>
+    <case>
+      <title>Case 1: no free variables</title>
+      <statement>
+        <p>
+          Suppose in Step 3 you determine that there are no free variables. Then each of the first <m>n</m> columns of <m>U</m> has a leading one in it. If follows that for each <m>1\leq i \leq n</m> the <m>i</m>-th equation of <m>L'</m> is of the form
+          <men xml:id="s_solving_case1eq">
+            x_i+c_{i,i+1}x_{i+1}+\cdots c_{i,n}x_n=b_i.
+          </men>
+          Since <m>U</m> does not have a leading one in the last column, it follows that all equations beyond the <m>n</m>-th equation are of the form
+          <m>0x_1+0x_2+\cdots 0x_n=0</m>, and as such may be disregarded since they are satisfied by any choice of the <m>x_i</m>.
+          The remaining system of <m>n</m> equations in <m>n</m> unknowns can be solved by back-substitution, yielding a <em>unique</em> solution <m>(x_1,x_2,\dots, x_n)</m> of the form
+          <md>
+          <mrow> x_n \amp =b_n </mrow>
+          <mrow>  x_{n-1}\amp =b_{n-1}-c_{n-1,n}x_n=b_{n-1}-c_{n-1,n}b_n </mrow>
+          <mrow>  x_{n-2}\amp = b_{n-2}-c_{n-2,n}x_{n}-c_{n-2,n-1}x_{n-1}</mrow>
+          <mrow>  \amp =b_{n-2}-c_{n-2,n}b_n-c_{n-2,n-1}(b_{n-1}-c_{n-1,n}b_n)</mrow>
+          <mrow>  \amp \vdots </mrow>
+          </md>
+          Do not concern yourself overly with the exact formulas. The important point here is that once we know there is a unique assignment of the variables <m>x_n, x_{n-1},\dots, x_{i+1}</m> that satisfies the system, <xref ref="s_solving_case1eq"/> allows us to solve for <m>x_i</m> in terms of the the <m>x_j</m>, <m>j>i</m>. As such working our way up from the last equation, we find there is a unique solution to the system.
+        </p>
+      </statement>
+    </case>
+    <case>
+      <title>Case 2: free variables</title>
+      <p>
+        Suppose now that <m>x_{i_1}, x_{i_2},\dots , x_{i_r}</m> are the leading variables of <m>L'</m>, and <m>x_{j_1}, x_{j_2},\dots, x_{j_s}</m> are the free variables. Again, since <m>U</m> does not have a leading one in the last column, there are exactly <m>r</m> nonzero equations in <m>L'</m>: one for each leading variable. After bringing any terms involving free variables to the right, the <m>k</m>-th such equation takes the form
+        <me>
+        x_{i_k}+c_{k,k+1}x_{i_{k+1}}+\cdots c_{k,r}x_{i_{r}}=d_k-G_k(x_{j_1},x_{j_2},\dots, x_{j_s})
+        </me>. As in the previous case, back-substitution now allows us to solve for each leading variable as a function of the free variables:
+        <md>
+        <mrow> x_{i_r}\amp =d_r-G_r(x_{j_1},x_{j_2},\dots, x_{j_s})</mrow>
+        <mrow> \amp =F_s(x_{j_1},x_{j_2},\dots, x_{j_s})</mrow>
+        <mrow> x_{i_{r-1}}\amp=d_{r-1}-c_{r}x_{i_r}-G_{r-1}(x_{j_1},x_{j_2},\dots, x_{j_s})</mrow>
+        <mrow>  \amp = d_{r-1}-c_{r}F_r(x_{j_1},x_{j_2},\dots, x_{j_s})-G_{r-1}(x_{j_1},x_{j_2},\dots, x_{j_s})</mrow>
+        <mrow>  \amp =F_{r-1}(x_{j_1},x_{j_2},\dots, x_{j_s})</mrow>
+        <mrow>  \amp \vdots </mrow>
+        <mrow> x_1 \amp=F_1(x_{j_1},x_{j_2},\dots, x_{j_s}) </mrow>
+        </md>
+        This new system of equations clearly has the same set of solutions as <m>L'</m> (and <m>L</m>), since it was obtained from <m>L'</m> by deleting zero rows of <m>U</m> and using only addition and subtraction operations. Furthermore, it is clear that any assignment of the free variables
+        <me>
+          x_{j_1}=t_1, x_{j_2}=t_2,\dots, x_{j_s}=t_s
+        </me>
+        extends uniquely to the solution of <m>L'</m> that further assigns
+        <me>
+          x_{i_1}=F_1(t_1,t_2,\dots, t_s), x_{i_2}=F_2(t_1,t_2,\dots, t_s), \dots, x_r=F_r(t_1,t_2,\dots, t_s)
+        </me>.
+        The idea behind uniqueness here, is that once you assign values to the free variables, the values of the leading variables are completely determined by the equations <m>x_{i_k}=F_k(x_{j_1},x_{j_2},\dots, x_{j_s})</m>.
+      </p>
+      <p>
+        Lastly, we show that every solution of <m>L'</m> (and <m>L</m>) is obtained in this way. Suppose <m>u=(u_1,u_2,\dots, u_n)</m> is a solution. According to the discussion above <m>u</m> must be the unique solution to <m>L'</m> corresponding to the free variable assignment
+        <me>
+          x_{j_1}=u_{j_1}, x_{j_2}=u_{j_2},\dots , x_{j_s}=u_{j_s}
+        </me>
+         and corresponding leading variable assignment <me>x_{i_1}=F_1(u_{j_1},x_{j_2},\dots, x_{i_2}), x_{i_2}=F_2(u_{j_1},x_{j_2},\dots, x_{j_s}),\dots, x_{i_r}=F_r(u_{j_1},x_{j_2},\dots, x_{j_s})</me>.
+      </p>
+    </case>
+  </proof>
+  <example xml:id="vid_eg_GE1" >
+    <title>Video: solving linear systems</title>
+    <p>
+      <figure>
+        <title>Video: solving linear systems</title>
+      <caption>Video: solving linear systems</caption>
+      <video xml:id="vid_GE_solving_1" youtube="ocmtUODkMQQ" />
+      </figure>
+    </p>
+  </example>
+  <example xml:id="vid_eg_GE2">
+    <title>Video: solving linear systems</title>
+    <p>
+      <figure>
+        <title>Video: solving linear systems 2</title>
+      <caption>Video: solving linear systems 2</caption>
+      <video xml:id="vid_GE_solving_2" youtube="PQ2lJWdTEAY" />
+      </figure>
+    </p>
+  </example>
+  <project xml:id="sage_solve_system">
+    <title>Solving linear systems</title>
+    <p>
+      Sage has a number of means of solving systems of equations, both linear and nonlinear. In the cell below we compute the set of solutions to this section's working example. Note that the three equations are entered as a list.
+    </p>
+    <sage>
+    <input>
+      l=var('x y z w u')
+      solve([-2*z+7*u == 12,2*x+4*y-10*z+6*w+12*u==28, 2*x+4*y-5*z+6*w-5*u == -1], x,y,z,w,u)
+    </input>
+    <output>
+    [[x == r3, y == -1/2*r3 - 3/2*r4 + 7/2, z == 1, w == r4, u == 2]]
+    </output>
+    </sage>
+    <p>
+      Notice that the algorithm used here does not seem to follow the method we describe: the unknowns <m>x</m> and <m>w</m> are set as free parameters <c>r1</c> and <c>r2</c>, and the rest of the unknowns are expressed in terms of these.  The <c>solve</c> routine in Sage allows for an additional option that selects a specific algorithm for solving the system. In the next cell, we specify the <c>sympy</c> algorithm and get an answer more in line with our example.
+    </p>
+    <sage>
+    <input>
+      l=var('x y z w u')
+      solve([-2*z+7*u == 12,2*x+4*y-10*z+6*w+12*u==28, 2*x+4*y-5*z+6*w-5*u == -1],
+      x,y,z,w,u, algorithm='sympy')
+    </input>
+    <output>
+    [{x: -3*w - 2*y + 7, z: 1, u: 2}]
+    </output>
+    </sage>
+    <p>
+      Now all unknowns are expressed in terms of the second and fourth unknowns <m>y</m> and <m>w</m>, which are treated as free variables, just as in our computed example.
+    </p>
+    <p>
+      Lastly, we can take a matrix approach with Sage to solve the system. Below we create the augmented matrix associated to our starting system and then reduce the system to reduced row echelon form using the <c>rref</c> method. From there it is a simple matter of assigning parameter names and using back-substitution, as described in <xref ref="proc_solveSystem"/>. We will elaborate this method further in <xref ref="sage_solve_matrix_eqn"/>
+    </p>
+    <sage>
+    <input>
+      A=Matrix([[0,0,-2,0,7],[2,4,-10,6,12],[2,4,-5,6,-5]])
+      b=vector([12,28,-1])
+      B=A.augment(b)
+      show(B)
+      show(B.rref())
+    </input>
+    <output>
+      [1 2 0 3 0 7]
+      [0 0 1 0 0 1]
+      [0 0 0 0 1 2]
+    </output>
+    </sage>
+  </project>
+  <p>In addition to providing a recipe for describing the full set of solutions to a linear system, <xref ref="proc_solveSystem"/> also tells us that qualitatively this set must take one of three forms: the set is empty (inconsistent, no solutions); there is a unique solution (consistent, no free variables); there are infinitely many solutions (consistent, free variables). We record this fact, useful in its own right, as a corollary.
+  </p>
+  <corollary xml:id="c_qualitative">
+    <title><m>0</m>, <m>1</m>, or <m>\infty</m>-many solutions</title>
+
+    <statement>
+      <p>Let <m>L</m> be a linear system of equations, let <m>L'</m> be an equivalent system in row reduced form, and let <m>U</m> be the augmented matrix associated to <m>L'</m>.</p>
+      <p>The system <m>L</m> has either no solutions, exactly one solution, or infinitely many solutions. In more detail:
+    </p>
+    <ul type="i">
+      <li>
+        <p>
+          If <m>U</m> has a leading one in its last column, then <m>L</m> has no solutions.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>U</m> does not have a leading one in its last column and <m>L'</m> has no free variables, then <m>L</m> has a unique solution.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>U</m> does not have a leading one in its last column and <m>L'</m> has a free variable, then <m>L</m> has infinitely many solutions.
+        </p>
+      </li>
+    </ul>
+  </statement>
+</corollary>
+<p>
+  The decision tree in <xref ref="fig_decision_tree"/> concisely summarizes the different cases articulated in <xref ref="c_qualitative"/>.
+</p>
+<figure xml:id="fig_decision_tree">
+  <title>Decision tree for number of solutions to a system</title>
+  <caption>Decision tree for the number of solutions to a linear system with augmented matrix <m>U</m> in row echelon form. </caption>
+  <image xml:id="im_decision_tree">
+    <latex-image>
+      \begin{tikzpicture}[align=center]
+\node[shape=rectangle, rounded corners,
+    draw, align=center,
+    top color=white, bottom color=blue!20] {Leading one in the last column of $U$?}
+    	child[level distance=5em] { node {System inconsistent. \\ No solutions.} edge from parent node[left] {Yes} }
+	child[sibling distance=30em, level distance=7em] {
+	node[shape=rectangle, rounded corners, draw, align=center, top color=white, bottom color=blue!20] {Any {\em other} columns of $U$ with leading ones?}
+    	child[level distance=5 em] { node {System has $\infty$-many solutions.} edge from parent node[left,yshift=.5em] {Yes}}
+	child[sibling distance=1em,  level distance=5 em] { node {System has unique solution.} edge from parent node[right] {No}} edge from parent node[right, yshift=.5em] {No}
+    };
+      \end{tikzpicture}
+    </latex-image>
+  </image>
+</figure>
+<!-- <figure xml:id="fig_decision_tree">
+  <title>Decision tree for number of solutions to a system</title>
+  <caption>Decision tree for the number of solutions to a linear system with augmented matrix <m>U</m> in row echelon form. </caption>
+  <image xml:id="im_decision_tree" source="./images/im_decision_tree.svg"/>
+</figure> -->
+  <p>
+    Consider the special case of a homogeneous system
+    <me>
+    \homsys
+    </me>
+    Such a system is always consistent. Why? Observe that <m>(x_1,x_2,\dots,
+    x_n)=(0,0,\dots, 0)</m> is guaranteed to be a solution. Alternatively,
+    it is easy to see that row reducing the system results in an augmented matrix <m>U</m> whose last column is a zero column: a zero column certainly contains no leading ones. Thus, in the special case of a homogeneous system, <xref ref="c_qualitative"/> boils down to the following result. </p>
+    <corollary xml:id="s_solving_homogeneous">
+      <title>Solutions to homogeneous equations</title>
+      <statement>
+        <p>
+          Fix a <em>homogeneous</em> linear system in <m>n</m> variables.
+          There are two possibilities:
+          <ul>
+            <li>
+              <p>
+                if all the variables are leading variables,
+                then the system has a unique solution (i.e., <m>1</m> solution);
+              </p>
+            </li>
+            <li>
+              <p>
+                if there is a free variable, then the system has infinitely many solutions.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </corollary>
+
+  </subsection>
+  <subsection>
+<title>Vector parametrization description</title>
+<p>
+  Consider again the solution set to the linear system in <xref ref="eg_solving_system"/>, which we described using parametric equations as 
+  <me>
+    x_1=7-2s-3t, x_2=s, x_3=1, x_4=t, x_5=2, \ s,t \in\R
+  </me>, 
+  and using set building notation as 
+  <me>
+    S=\left\{(7-2s-3t, s, 1, t, 2)\colon s, t\in\R\right\}
+  </me>.
+ Using the vector space structure of <m>\R^5</m>, we can give yet another description of the general solution: 
+ <me>
+  \boldx=(7,0,1,0,2)+s(-2,1,0,0,0)+t(-3,0,0,1,0), \ s,t\in \R
+ </me>.
+ We will call this the <em>vector parametrization</em> description of the solution set. This description is obtained in steps by first breaking up the expression <m>(7-2s-3t, s, 1, t, 2)</m> into a constant vector plus a vector involving the parameters <m>s</m> and <m>t</m>, and then rewriting the latter as a linear combination of two vectors with <m>s</m> and <m>t</m> as the coefficients: 
+ <md>
+  <mrow> (7-2s-3t, s, 1, t, 2) \amp = (7,0,1,0,2)+(-2s-3t,s,0,t,0) </mrow>
+  <mrow> \amp = (7,0,1,0,2)+(-2s,s,0,0,0)+(-3t,0,0,t,0)</mrow>
+  <mrow> \amp =(7,0,1,0,2)+s(-2,1,0,0,0)+t(-3,0,0,1,0)</mrow>
+ </md>.
+ The solution set of any consistent linear system can be described in this manner. In general, given a consistent system in <m>n</m> unknowns with <m>k</m> free variables, the general solution of the system is given by a vector parametrization of the form  
+ <men xml:id="eq_vector_param">
+  (a_1,a_2,\dots, a_n)+t_1\boldv_1+t_2\boldv_2+\cdots +t_k\boldv_k
+ </men>.
+ The vector parametrization <xref ref="eq_vector_param"/> leads to a useful geometric understanding of the set of solutions to a linear system. The point <m>P=(a_1,a_2,\dots, a_n)</m> can be thought of as a <em>particular solution</em> to the equation: the solution you obtain by choosing <m>t_1=t_2=\cdots =t_k=0</m> in <xref ref="eq_vector_param"/>. The general solution is then obtained by adding to the point <m>P</m> any linear combination of the vectors <m>\boldv_1,\boldv_2,\dots, \boldv_k</m>. 
+</p>
+<example>
+  <title>Vector parametrization</title>
+  <p>
+    Consider the linear equation <m>x+y+z=4</m>. The corresponding augmented matrix of this equation is
+    <me>
+      \begin{amatrix}[ccc|c]
+      1 \amp 1\amp 1\amp 4
+      \end{amatrix}
+    </me>,
+    which is already in row echelon form. Using <xref ref="proc_solveSystem"/>, we see that the general solution is 
+    <me>
+      (4-s-t,s,t)=(4,0,0)+s\underset{\boldv}{\underbrace{(-1,1,0)}}+t\underset{\boldw}{\underbrace{(-1,0,1)}}
+    </me>.
+    This vector parametrization description allows us to visualize the plane <m>\mathcal{P}</m> with equation <m>x+y+z=4</m> as the set of all points obtained by translating the point <m>P=(4,0,0)</m> by various linear combinations of <m>\boldv=(-1,1,0)</m> and <m>\boldw=(-1,0,1)</m>. In this manner, the two vectors <m>\boldv</m> and <m>\boldw</m> determine a (non-rectangular) grid on <m>\mathcal{P}</m>. 
+    <figure xml:id="fig_plane_vector_param">
+      <caption>Vector parametrization of plane <m>x+y+z=4</m></caption>
+      <!-- <interactive xml:id="geogebra_plane_grid" platform="geogebra" width="80%" aspect="4:3">
+        <slate surface="geogebra" material="kergy55p" aspect="4:3" marker="train-distance">
+        enableLabelDrags(false);
+        </slate>
+      </interactive> -->
+      <image xml:id="im_plane_vector_param" width="80%">
+        <shortdescription>Vector parametrization of plane</shortdescription>
+        <sageplot variant="3d" aspect="1.0">
+          (u,v,r)=var('u v r')
+          from sage.plot.plot3d.plot3d import axes
+          a=axes(4,1,color='black',ticks=[(0,1,2),(0,1,2),(0,1,2)])
+          n=[1,1,1] #normal vector
+          A=matrix([n])
+          d=vector([4]) # d in ax+by+cz=d
+          P=vector((4,0,0)) #Find a point
+          B=A.right_kernel().basis()
+          w1=vector((-1,1,0)) #Two vectors orth. to n that
+          w2=vector((-1,0,1)) #are not scalar multiples
+          r(u,v)=P+u*w1+v*w2 #The parametrization
+          S=parametric_plot3d(P+u*w1+v*w2,(u,-1,3),(v,-1,3), color='red',opacity=.1)
+          gridu=sum(line([P+r*w2-w1,P+r*w2+3*w1],color='red') for r in srange(-1,3,1))
+          gridv=sum(line([P+r*w1-w2,P+r*w1+3*w2],color='blue') for r in srange(-1,3,1))
+          t1=text3d("v",P+.75*w1+vector([0,0,.2]), fontsize=16)
+          t2=text3d("w",P+.75*w2+vector([0,0,.2]), fontsize=16)
+          t3=text3d("P",P+vector([0,0,.2]), fontsize=16)
+          t4=text3d("n",P+1.2*vector(n).normalized(), fontsize=16)
+          S+point3d(P,size=20)+a+arrow(P,P+w1, color="red", width=1)+arrow(P,P+w2, color='red', width=1)+gridu+gridv+t1+t2+t3
+        </sageplot>
+      </image>
+    </figure>
+  </p>
+</example>
+
+  </subsection>
+
+  <xi:include  href="s_solving_ex.ptx"/>
+
+
+</section>

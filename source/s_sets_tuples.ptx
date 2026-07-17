@@ -1,0 +1,518 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_sets_tuples">
+  <title>Sets and tuples</title>
+
+
+  <introduction>
+    <p>
+    The two main players in the story of linear algebra are <em>vector spaces</em> and <em>linear transformations</em>. As we will see, a vector space is a certain kind of <em>set</em>, and a linear transformation is a special type of <em>function</em>. Moreover, many of the examples of vectors spaces we study will consist of <em>tuples</em> of real numbers. Accordingly, in the next two sections we will gather important notions and notations related to sets, tuples, and functions. 
+  </p>
+</introduction>
+<subsection xml:id="s_sets">
+  <title>Sets</title>
+  <definition xml:id="d_sets">
+      <title>Sets</title>
+      <idx><h>sets</h></idx>
+    <idx><h>sets</h><h>empty sets</h></idx>
+    <idx><h>sets</h><h>membership</h></idx>
+    <notation>
+      <usage> <m>x\in A</m> </usage>
+      <description>set membership</description>
+    </notation>
+      <statement>
+        <p>
+        A <term>set</term> is a collection of objects.
+        An object <m>x</m> is a  <term>member</term> (or <term>element</term>) of a set <m>A</m> if <m>A</m> contains <m>x</m>. In this case, we write <m>x \in A</m>. If <m>x</m> is not a member of <m>A</m>, we write <m>x \notin A</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      We use curly braces to describe the contents of a set. For example, <m>A=\{1,2,3\}</m> is the set containing the first three positive integers, and <m>B=\{1,2,3,\dots\}</m> is the set of all positive integers. The defining property of sets is that they are completely determined by their members, and nothing more. In particular, when describing sets as above, it does not matter in what order the elements are listed, nor if they are repeated: <eg />, <m>\{1,2,3\}</m>, <m>\{2,1,3\}</m>, and <m>\{2,1,1,3,2\}</m> are three descriptions of the same set. This somewhat slippery notion is made perfectly clear by specifying exactly what it means for two sets to be equal, as we do below.
+    </p>
+    <definition xml:id="d_set_equality">
+      <title>Set equality</title>
+      <idx><h>sets</h><h>equality</h></idx>
+      <statement>
+        <p>
+        Sets <m>A</m> and <m>B</m> are <term>equal</term>, denoted <m>A=B</m>, if they have precisely the same elements:  <ie />, if for any object <m>x</m>, we have <m>x\in A</m> if and only if <m>x\in B</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Set membership naturally extends to a notion of one set being within another. Formally, this is captured by the relation of <em>set inclusion</em>. 
+    </p>
+    <definition xml:id="d_set_inclusion">
+      <title>Set inclusion</title>
+      <idx><h>sets</h><h>subset</h></idx>
+      <idx><h>sets</h><h>inclusion</h></idx>
+      <notation>
+        <usage><m>A\subseteq B</m></usage>
+        <description>set inclusion</description>
+      </notation>
+      <statement>
+        <p>
+        A set <m>A</m> is a <term>subset</term> of a set <m>B</m>, denoted <m>A \subseteq B</m>, if every member of <m>A</m> is a member of <m>B</m>:  <ie />, <m>x\in A</m> implies <m>x\in B</m> for any object <m>x</m>. The relation <m>A\subseteq B</m> is called <term>set inclusion</term>.
+        </p>
+      </statement>
+    </definition>
+        <remark xml:id="rm_equal_subset_logic">
+      <p>
+        The definitions of set equality and the subset relation make use of two important logical operations: namely, the <q>if and only if</q> (or <q>iff</q> for short) and <q>if-then</q> operations. We describe these notions in more detail in <xref ref="s_logic" text="title"/>, and we outline techniques for proving <q>if and only if</q> and <q>if-then</q> statements, including statements about set equality and the subset relation, in <xref ref="s_proof_technique" text="title"/>.
+      </p>
+    </remark>
+    <p>
+      With the fundamental notions of membership, equality, and subset in place, we now introduce means of building new sets from existing ones. The first is a manner of carving out a subset of a given set using a specified property.
+    </p>
+    <definition xml:id="d_set_builder_notation">
+      <title>Set-builder notation</title>
+      <idx><h>sets</h><h>set builder notation</h></idx>
+      <statement>
+        <p>
+        Let <m>A</m> be a set, and let <m>P</m> be a property that elements of <m>A</m> either satisfy or do not satisfy. For an element <m>x\in A</m>, let <m>P(x)</m> denote the statement that <m>x</m> satisfies <m>P</m>.  The set of all elements of <m>A</m> satisfying <m>P</m> is denoted
+        <md>
+          \{x \in A \colon P(x) \}
+        </md>.
+        </p>
+      </statement>
+    </definition>
+    <remark xml:id="rm_set_builder">
+      <title>Parsing set builder notation</title>
+      
+      
+      <p>
+        Set builder notation <sq><m>\{x \in A\colon P(x)\}</m></sq> is parsed from left to right as follows:
+        <ul>
+          <li>
+            <p>
+              <sq><m>\{</m></sq> is read as <q>the set of</q>
+            </p>
+          </li>
+            <li>
+              <p>
+                <sq><m>x\in A</m></sq> is read as <q>elements of <m>A</m></q>
+              </p>
+            </li>
+            <li>
+              <p>
+                <sq><m>\colon</m></sq> is read as <q>such that</q>
+              </p>
+            </li>
+            <li>
+              <p>
+                <sq><m>P(x)</m></sq> is read as <q><m>P(x)</m> is true </q>.
+              </p>
+            </li>
+        </ul>
+        Taken altogether we get: <q>The set of elements of <m>A</m> such that <m>P(x)</m> is true</q>.
+      </p>
+    </remark>
+    <example xml:id="ex_set_builder">
+      <statement>
+        <p>
+          Let <m>A=\{0,1,2,\dots \}</m> be the set of nonnegative integers. The subset <m>B=\{0,2,4,\dots\}</m> of <em>even</em> positive integers can be described using set-builder notation as
+          <md>
+            B=\{x\in A\colon x \text{ is even}\}
+          </md>,
+          or alternatively,
+          <md>
+            B=\{x\in A\colon x=2k \text{ for some integer } k\}
+          </md>.
+            </p>
+      </statement>
+    </example>
+    <p>
+      Next we use set builder notation, the set membership relation, and some basic logic to define the union, intersection, and difference of sets.
+    </p>
+    <definition xml:id="d_set_operations">
+      <title>Union, intersection, difference, and complement</title>
+      <idx><h>sets</h><h>union</h></idx>
+      <idx><h>sets</h><h>intersection</h></idx>
+      <idx><h>sets</h><h>complement</h></idx>
+      <idx><h>sets</h><h>difference</h></idx>
+      <notation>
+        <usage><m>A\cup B</m></usage>
+        <description>set union</description>
+      </notation>
+      <notation>
+        <usage><m>A^c</m></usage>
+        <description>set complement</description>
+      </notation>
+      <notation>
+        <usage><m>A\cap B</m></usage>
+        <description>set intersection</description>
+      </notation>
+      <notation>
+        <usage> <m>A-B</m>  </usage>
+        <description>set difference</description>
+      </notation>
+      <statement>
+        <p>
+        Let <m>A</m> and <m>B</m> be subsets of a common set <m>X</m>.
+        
+        <ul>
+          <li>
+              <title>Set union</title>
+            <p>
+              The <term>union</term> <m>A \cup B</m> of <m>A</m> and <m>B</m> is defined as
+              <md>
+                A\cup B=\{x\in X\colon x\in A\text{ or } x\in B\}
+              </md>.
+              More generally, the union <m>A_1\cup A_2\dots \cup A_n</m> of a collection of subsets of <m>A_i\subseteq X</m> is defined as
+              <md>
+                A_1\cup A_2\dots \cup A_n=\{x\in X\colon x\in A_i \text{ for some } 1\leq i\leq n\}
+              </md>.
+
+            </p>
+          </li>
+          <li>
+              <title>Set intersection</title>
+            <p>
+              The <term>intersection</term> <m>A \cap B</m> of <m>A</m> and <m>B</m> is defined as
+              <md>
+                A\cap B=\{x\in X\colon x\in A\text{ and } x\in B\}
+              </md>.
+              More generally, the intersection <m>A_1\cap A_2\dots \cap A_n</m> of a collection of subsets of <m>A_i\subseteq X</m> is defined as
+              <md>
+                A_1\cap A_2\dots \cap A_n=\{x\in X\colon x\in A_i \text{ for all } 1\leq i\leq n\}.
+              </md>
+            </p>
+          </li>
+          <li>
+              <title>Set difference</title>
+            <p>
+              The <term>difference</term> <m>A-B</m> is defined as
+              <md>
+                A-B=\{x\in X\colon x\in A\text{ and } x\notin B\}
+              </md>.
+            </p>
+          </li>
+          <li>
+            <title>Set complement</title>
+            <p>
+              The <term>complement</term> of <m>A</m> in <m>X</m> is defined as <m>X-A</m>. In contexts where there is clear what the larger set <m>X</m> is, we denote the complement of <m>A</m> in <m>X</m> as <m>A^c</m>.
+            </p>
+          </li>
+        </ul>
+</p>
+      </statement>
+    </definition>
+<p>
+  With the help of these set operations, we can now describe some common sets used in mathematics.
+</p>
+<definition xml:id="d_common_sets">
+  <title>Common mathematical sets</title>
+  <idx><h>sets</h><h>empty set</h></idx>
+  <idx><h>real numbers</h></idx>
+  <idx><h>integers</h></idx>
+   <idx><h>rational numbers</h></idx>
+  <notation>
+    <usage><m>\{\ \}, \emptyset</m> </usage>
+    <description>the empty set</description>
+  </notation>
+  <notation>
+    <usage><m>\mathbb{R}</m></usage>
+    <description>real numbers</description>
+  </notation>
+  <notation>
+    <usage><m>\mathbb{Z}</m></usage>
+    <description>integers</description>
+  </notation>
+  <notation>
+    <usage><m>\Z_{+}</m></usage>
+    <description>positive integers</description>
+  </notation>
+  <notation>
+    <usage><m>\Z_{\geq a}</m></usage>
+    <description>the set of all integers greater than or equal to <m>a</m></description>
+  </notation>
+  <notation>
+    <usage><m>\mathbb{Q}</m></usage>
+    <description>rational numbers</description>
+  </notation>
+  <statement>
+    <p>
+      The <term>empty set</term> is the set containing no objects, denoted <m>\{\ \}</m> or <m>\emptyset</m>.
+    </p>
+    <p>
+      We denote by <m>\mathbb{R}</m> the set of all real numbers. The <term>integers</term> <m>\Z</m> and <term>rational numbers</term> <m>\mathbb{Q}</m> are the subsets of <m>\R</m> defined as
+      <md>
+        <mrow>\mathbb{Z} \amp =\{0,1,2,3,\dots\}\cup \{-1,-2,-3,\dots\} </mrow>
+        <mrow> \mathbb{Q} \amp = \{x\in\mathbb{R}\colon x=\tfrac{m}{n} \text{ for some } m,n\in\Z\}  </mrow>
+      </md>.
+      This yields the following chain of subsets:
+      <md xml:id="eq_chain_numbersystems">
+        \mathbb{Z}\subseteq\mathbb{Q}\subseteq\mathbb{R}
+      </md>.
+      Additionally, for any integer <m>a\in \Z</m> we denote by <m>\Z_{\geq a}</m> the set of all integers <m>n\geq a</m>: <ie/>, 
+      <md xml:id="eq_ints_greater_than_a">
+        \Z_{\geq a}=\{n\in \Z\colon n\geq a\}=\{a,a+1,a+2,\dots, \}
+      </md>.
+    Lastly, we denote by <m>\Z_+</m> the set of all positive integers: <ie/>,
+    <md>
+      \Z_+=\{n\in \Z\colon n\geq 0\}=\{1,2,\dots, \}
+    </md>.
+    </p>
+  </statement>
+</definition>
+<p>
+  Lastly, we define the <em>cardinality</em> of a set <m>A</m>, which is a measure of its size. Essentially this is just the number of distinct elements of the set <m>A</m>. However, we take care that our definition encompasses both finite and infinite sets. 
+</p>
+<definition xml:id="d_cardinality">
+    <title>Cardinality of a set</title>
+    <idx><h>cardinality</h><h>of a set</h></idx>
+    <notation>
+      <usage><m>\val{X}</m></usage>
+      <description>the cardinality of the set <m>X</m></description>
+    </notation>
+    <statement>
+      <p>
+      Let <m>A</m> be a set. The <term>cardinality of <m>A</m></term>, denoted <m>\val{A}</m> is defined as follows.
+      <ul>
+        <li>
+          <p>
+            If <m>A</m> is finite, then its cardinality is the number <m>n</m> of distinct elements it contains, written <m>\val{A}=n</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>A</m> is infinite, then we say it has <term>infinite cardinality</term>, and write <m>\val{A}=\infty</m>.
+          </p>
+        </li>
+      </ul>
+      </p>
+    </statement>
+  </definition>
+</subsection>
+<subsection xml:id="ss_tuples">
+  <title>Tuples</title>
+  <p>
+A set is a somewhat paltry thing, structurally speaking. You can think of it as an arbitrary collection of objects thrown into a bag with no real rhyme or reason. In particular, as is commonly said, there is no <em>order</em> to the elements of a set. That is, when we write <m>A=\{1,2,3\}</m>, there is no sense in which <m>1</m> is the <em>first</em> element of <m>A</m>, <m>2</m> is the <em>second</em> element, and <m>3</m> is the <em>third</em>. That particular ordering is simply suggested by the way we have chosen to describe <m>A</m>, but recall that we could just have well described <m>A</m> as <m>\{2,1,3\}</m> or even <m>\{2,1,1,3, 3, 2\}</m>. To give an ordering to <m>A</m> we need to explicitly state which element is the the first, which the second, and which the third. Clearly, this is an additional layer of structure given to the underlying set <m>A</m>, and the typical way to indicate this structure is to use what is often called  <em>ordered list</em>, or <em>sequence</em> notation. For example, we write <m>A=(1,2,3)</m> to denote the set <m>A</m> along with the choice of ordering that designates <m>1</m> as the first element, <m>2</m> as the second, and <m>3</m> as the third; and we write <m>A=(2,3,1)</m> to denote the same set along with the ordering that designates <m>2</m> as the first element, <m>3</m> as the second, and <m>1</m> as the third. Our definition of a <em>tuple</em> both makes this notion of an ordered set precise and greatly generalizes it. 
+  </p>
+  <definition xml:id="d_tuple">
+  <title>Tuples</title>
+  <notation>
+    <usage><m>(a_i)_{i\in I}</m></usage>
+    <description>tuple indexed by <m>I</m></description>
+  </notation>
+  <notation>
+    <usage><m>A^I</m></usage>
+    <description><m>A</m>-valued tuples indexed by <m>I</m></description>
+  </notation>
+  
+  <statement>
+  <p>
+  Let <m>I</m> and <m>A</m> be sets. An <term><m>A</m>-valued tuple indexed by <m>I</m></term> is a rule that assigns to each <term>index</term> <m>i\in I</m> an element <m>a_i\in A</m>, denoted <m>(a_i)_{i\in I}</m>. 
+  </p>
+  <p>
+    Given an <m>A</m>-valued tuple <m>(a_i)_{i\in I}</m>, we call <m>I</m> the <term>index set</term>, and for each index <m>i\in I</m>, we call <m>a_i</m> the <m>i</m>-th <term>component</term> (or <term>coordinate</term>, or <term>entry</term>, or <term>term</term>) of <m>(a_i)_{i\in I}</m>. We call <m>\{a_i\mid i\in I\}</m> the <term>set of values</term> of the tuple <m>(a_i)_{i\in I}</m>. 
+  </p>
+  <p>
+    The set of all <m>A</m>-valued tuples indexed by <m>I</m> is denoted <m>A^I</m>:<ie/>, 
+    <md>
+      A^I=\{(a_i)_{i\in I}\mid a_i\in A \text{ for all } i\in I\}
+    </md>.
+  </p>
+  </statement>
+  </definition>
+  <convention xml:id="not_tuple_notation">
+  <title>Tuple notation</title>
+  <p>
+    Different index sets give rise to different notational conventions for denoting tuples <m>(a_i)_{i\in I}</m> and sets of tuples <m>A^I</m>.  
+  <ul>
+    <li>
+      <p>
+        When <m>I=\{1,2,\dots, n\}</m> for some positive integer <m>n</m>, we will write <m>A^n</m> for <m>A^I</m>, and will use any of the following notations for a tuple of <m>A^n</m>:
+        <md>
+                <mrow> (a_i)_{i\in I}\amp\amp (a_i)_{i=1}^n \amp\amp (a_1,a_2,\dots,a_n) </mrow>
+            </md>.
+        In this case we call <m>(a_i)_{i=1}^n</m> an <term><m>n</m>-tuple</term> with values in <m>A</m>, and we call <m>n</m> the <term>length</term> of the <m>n</m>-tuple. Moreover, we use the following terminology for <m>n=2,3</m>: a <m>2</m>-tuple <m>(a_1,a_2)</m> is a called a <term>pair</term> of elements of <m>A</m>, a <m>3</m>-tuple <m>(a_1,a_2,a_3)</m> is called a <term>triple</term> of elements of <m>A</m>. 
+      </p>
+    </li>
+    <li>
+      <p>
+        When <m>I=\Z_{\geq 1}=\{1,2,\dots\}</m>, we will write <m>A^\infty</m> for <m>A^I</m>, and will use any of the following notations for a tuple of <m>A^\infty</m>:
+        <md>
+                <mrow> (a_i)_{i\in I}\amp\amp (a_i)_{i=1}^\infty \amp\amp (a_1,a_2,\dots) </mrow>
+            </md>.
+        In this context a tuple of <m>A^\infty</m> is often called an <term>infinite sequence</term> of elements of <m>A</m>. 
+      </p>
+    </li>
+  </ul>
+  </p>
+</convention>
+  <p>
+    Given a tuple <m>(a_i)_{i\in I}</m>, the indexing by the set <m>I</m> plays the role of a filing system: given an index <m>i\in I</m>, our filing system returns to us a certain element <m>a_i</m> of <m>A</m> and labels it the <m>i</m>-th element in our system. Different index sets, and different choices of index assignments, give rise to different ways of organizing the elements of the underlying set <m>A</m>. This is the motivation for the following definition of what it means for two <m>A</m>-valued tuples to be equal.   
+  </p>
+  <definition xml:id="d_tuple_equality">
+  <title>Tuple equality</title>
+  <statement>
+  <p>
+  Given a set <m>A</m>, two <m>A</m>-valued tuples <m>(a_i)_{i\in I}</m> and <m>(b_j)_{j\in J}</m> are <term>equal</term>, denoted <m>(a_i)_{i\in I}=(b_j)_{j\in J}</m> if the following two conditions hold. 
+  <ol marker="(i)">
+    <li>
+      <p>
+        <m>I=J</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        <m>a_i=b_i</m> for all <m>i\in I</m>. 
+      </p>
+    </li>
+  </ol>
+  </p>
+  </statement>
+  </definition>
+  <remark>
+  <title>Tuple equality</title>
+  <p>
+  The filing system analogy for tuples might help you make sense of <xref ref="d_tuple_equality"/>. For two filing systems of a certain collection to be equal, they should firstly have the same indexing set (this is the condition <m>I=J</m>); and secondly, to each index in our indexing set, they should assign the same object from our collection. 
+  </p>
+  </remark>
+  <example xml:id="eg_tuple_equality">
+  <title>Tuple equality</title>
+  <statement>
+  <p>
+  Decide whether the given <m>\R</m>-valued tuples are equal. 
+  <ol>
+    <li>
+      <p>
+        <m>\bolda=(1,2,3)</m>, <m>\boldb=(1,2,4)</m>
+      </p>
+    </li>
+    <li>
+      <p>
+        <m>\bolda=(1,2,3)</m>, <m>\boldb=(3,2,1)</m>
+      </p>
+    </li>
+    <li>
+      <p>
+        <m>\bolda=(1,1,1)</m>, <m>\boldb=(1,1,1,1)</m>
+      </p>
+    </li>
+  </ol>
+  </p>
+  </statement>
+  <solution>
+  <p>
+  In all cases we have <m>\bolda\ne \boldb</m>, but for different reasons that illuminate the different nuances of <xref ref="d_tuple_equality"/>.
+<ol>
+  <li>
+    <p>
+      Both tuples have the same index set <m>I=\{1,2,3\}</m> in this case. Write <m>\bolda=(1,2,3)=(a_1,a_2,a_3)</m> and <m>\boldb=(1,2,4)=(b_1,b_2,b_3)</m>. Although we have <m>a_1=b_1</m> and <m>a_2=b_2</m>, since <m>a_3\ne b_3</m>, we see that <m>\bolda\ne\boldb</m>. Note that in this case we do not even have equality between the set of values of the two tuples. That is, <m>\{a_1,a_2,a_3\}=\{1,2,3\}\ne \{1,2,4\}=\{b_1,b_2,b_3\}</m>.
+    </p>
+  </li>
+  <li>
+    <p>
+      Again, both tuples are indexed by <m>I=\{1,2,3\}</m>. Furthermore, in this case the sets of values of the two tuples are equal. However, since the third coordinate of <m>\bolda</m> is not equal to the third coordinate of <m>\boldb</m>, we have <m>\bolda\ne \boldb</m>.  
+    </p>
+  </li>
+  <li>
+    <p>
+      In this case the two tuples fail to be equal due to their having different index sets. The index set of <m>\bolda</m> is <m>I=\{1,2,3\}</m>, and the index set of <m>\boldb</m> is <m>J=\{1,2,3,4\}</m>. 
+    </p>
+  </li>
+</ol>  
+
+</p>
+  
+  </solution>
+  </example>
+  
+  <remark xml:id="rm_tuple_ordered">
+    <title>Ordered list</title>
+<p>
+  Index sets of the form <m>I=\{1,2,\dots, n\}</m> and <m>I=\{1,2,\dots \}</m> are equipped with a natural choice of <em>ordering</em> inherited from the <m>&lt;</m> relation on <m>\Z</m>. That is, we have 
+  <md>
+    1&lt; 2&lt; 3&lt;\dots 
+  </md>.
+  As a result, a tuple <m>(a_1,a_2,\dots, a_n)</m> (or <m>(a_1,a_2,\dots)</m>) indexed by <m>I</m> for one of these types of index sets can be thought of as an <em>ordering</em> of the underlying set. Indeed, in this setting we do not just speak of the <m>i</m>-th element of the tuple <m>(a_i)_{i\in I}</m>, we further call <m>a_1</m> the <em>first</em> element, <m>a_2</m> the <em>second</em> element, <etc/>. This is why tuples of the form <m>(a_i)_{i=1}^n</m> or <m>(a_i)_{i=1}^\infty</m> are often called <em>ordered lists</em> or <em>ordered sequences</em>. 
+</p>
+<p>
+  We take care to add however, that since our general definition of tuples allows for <em>arbitrary</em> index sets <m>I</m>, and since not every set <m>I</m> has a natural choice of ordering, we should not in general think of tuples as ordered lists in this precise sense. Indeed, consider the somewhat peculiar index set <m>I=\{\dagger,*, !\}</m>. There is no natural ordering of the set <m>I</m>, and so a tuple <m>(a_i)_{i\in I}</m> indexed by <m>I</m> also should not be thought of as an ordered list. Indeed, instead of speaking of a first, second, or third element of the tuple <m>(a_i)_{i\in I}</m>, it really only makes sense to speak of the <m>\dagger</m>-th, <m>*</m>-th,  and <m>!</m>-th element of the tuple!  
+</p>
+</remark>
+  <p>
+    There is no restriction to what the elements of a set <m>A</m> are. In particular, these elements could be sets themselves! For example, the set 
+    <md>
+      A=\{\{\},\{1\},\{1,2\}\}
+    </md>
+    contains three elements, all of which are themselves sets: namely, the empty set, the set <m>\{1\}</m>, and the set <m>\{1,2\}</m>. Similarly, our definition of tuples gives no restrictions on what type of objects the coordinates <m>a_i</m> are allowed to be. When we let those coordinates be sets themselves, we arrive at the mathematical notion of a <em>indexed family of sets</em>. 
+  </p>
+  <definition xml:id="d_index_family_sets">
+  <title>Indexed family of sets</title>
+  <statement>
+  <p>
+  An <term>indexed family of sets</term> is a tuple <m>\mathcal{F}=(A_i)_{i\in I}</m>, where <m>A_i</m> is a set for all indices <m>i\in I</m>. 
+  </p>
+  </statement>
+  </definition>
+  <p>
+    The notion of a family of sets allows us in turn to generalize our definitions of finite unions and intersections to arbitrary unions and intersections. 
+  </p>
+  
+  <definition xml:id="d_union_intersect_arbitrary">
+  <title>Arbitrary unions and intersections</title>
+  <statement>
+  <p>
+  Let <m>A</m> be a set, and let <m>(A_i)_{i\in I}</m> be a family of sets with <m>A_i\subseteq A</m> for all <m>i\in I</m>. 
+  <ul>
+    <li>
+      <p>
+        The <term>union</term> of the <m>A_i</m>, denoted <m>\bigcup_{i\in I}A_i</m>, is defined as 
+        <md number="yes">
+        <mrow xml:id="eq_union_arbitrary">\bigcup_{i\in I}A_i \amp =\{a\in A\mid a\in A_i\text{ for some } i\in I\}</mrow>
+        </md>.
+      </p>
+    </li>
+    <li>
+      <p>
+        The <term>intersection</term> of the <m>A_i</m>, denoted <m>\bigcap_{i\in I}A_i</m>, is defined as
+        <md number="yes">
+          <mrow xml:id="eq_intersection_arbitrary">\bigcap_{i\in I}A_i \amp =\{a\in A\mid a\in A_i\text{ for all } i\in I\}</mrow>
+        </md>.
+      </p>
+    </li>
+
+  </ul>
+  </p>
+  </statement>
+  </definition>
+<p>
+Lastly, combining the notions of families of sets and tuples, we arrive at the notion of a <em>Cartesian product</em>, which can be thought of as the set of tuples whose coordinates are restricted to a specified subset <m>A_i</m> for all <m>i</m>.
+</p>
+<definition xml:id="d_cartesian_product">
+  <title>Cartesian product</title>
+  <idx><h>Cartesian product</h></idx>
+  <notation>
+    <usage><m>\prod_{i\in I}A_i</m></usage>
+    <description>Cartesian product of the sets <m>A_i</m></description>
+  </notation>
+  
+
+  
+  <statement>
+    <p>
+      Let <m>A</m> be a set, and let <m>(A_i)_{i\in I}</m> be a family of subsets with <m>A_i\subseteq A</m> for all <m>i\in I</m>. The <term>Cartesian product</term> <m>\prod_{i\in I}A_i</m> of the <m>A_i</m> is defined as
+      <md>
+      <mrow> \prod_{i\in I}A_i\amp =\{(a_i)_{i\in I}\in A^I\mid a_i\in A_i \text{ for all } i\in I\} </mrow>
+      </md>.
+      In other words, the Cartesian product is the set of all <m>A</m>-valued tuples whose <m>i</m>-th coordinate is an element of <m>A_i</m> for all <m>i\in I</m>.
+    </p>
+    <p>
+  In the special case where <m>I=\{1,2,\dots, n\}</m> we write 
+  <md>
+    <mrow>\prod_{i\in \{1,2,\dots, n\}}A_i \amp =A_1\times A_2\times \cdots A_n \amp </mrow>
+    <mrow> \amp = \{(a_1,a_2,\dots, a_n)\colon a_i\in A_i \text{ for all } 1\leq i\leq n\}</mrow>
+  </md>
+  and 
+  <md>
+    A^{\{1,2,\dots, n\}}=A^n
+  </md>,
+  and we call <m>A^n</m> the <term><m>n</m>-fold Cartesian product of <m>A</m></term>.
+</p>
+  </statement>
+</definition>
+</subsection>
+<!-- <xi:include href="s_sets_functions_ex.ptx"/> -->
+
+</section>

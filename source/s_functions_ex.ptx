@@ -1,0 +1,15 @@
+<exercises xml:id="s_functions_ex">
+  <exercise>
+  <!-- 3. image of intervals under a function -->
+    <webwork source="Library/MontanaState/Sets/5.2A13Sets1.pg" />
+  </exercise>
+  <exercise>
+  <!-- 4. one-to-one and onto -->
+    <webwork source="Library/SUNYSB/oneToOneOnto1.pg" />
+  </exercise>
+  <exercise>
+  <!-- 5. inverses -->
+    <webwork source="Library/LoyolaChicago/Precalc/Chap8Sec2/Q08.pg" />
+  </exercise>
+  <!-- No exercises on set differences. -->
+</exercises>

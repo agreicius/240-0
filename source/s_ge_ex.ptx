@@ -1,0 +1,157 @@
+<exercises xml:id="s_ge_ex">
+  <subexercises>
+<title>WeBWork Exercises</title>
+    <!-- Determine whether row echelon form -->
+    <exercise>
+    <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/holt_01_02_010.pg" />
+  </exercise>
+
+<!-- <exercise> -->
+  <!-- Individual row reductions for a 3x3 matrix -->
+  <!-- <webwork source="Library/Mizzou/Finite_Math/MatrixOperations/RowOp3by3e.pg" /> -->
+<!-- </exercise> -->
+
+<exercise>
+  <!-- Combined row reductions for a 3x3 matrix -->
+  <webwork source="Library/ASU-topics/set119LinearSystems/p28.pg" />
+</exercise>
+</subexercises>
+<subexercises>
+<title>Written Exercises</title>
+<exercisegroup>
+  <introduction>
+    <p>
+      Explain why each of the following matrices fails to be in row echelon form.
+    </p>
+  </introduction>
+<exercise>
+  <statement>
+    <p>
+      <m>A=\begin{bmatrix}
+      1 \amp 2\amp 2\amp -3\\
+      0\amp -3\amp 4\amp 0\\
+      0\amp 0\amp 0\amp 1
+      \end{bmatrix}</m>
+    </p>
+  </statement>
+  <solution>
+    <p>
+      The first nonzero term in the second row is not a one.
+    </p>
+  </solution>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <m>A=\begin{bmatrix}
+      0\amp 1\amp 2\amp -3\\
+      0\amp 1\amp 4\amp 0\\
+      0\amp 0\amp 0\amp 1
+      \end{bmatrix}</m>
+    </p>
+  </statement>
+  <!-- <solution>
+    <p>
+
+    </p>
+  </solution> -->
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <m>A=\begin{bmatrix}
+      1\amp 1\amp 2\amp -3\\
+      0\amp 0\amp 0\amp 0\\
+      0\amp 1\amp 1\amp 1
+      \end{bmatrix}</m>
+    </p>
+  </statement>
+  <!-- <solution>
+    <p>
+
+    </p>
+  </solution> -->
+</exercise>
+</exercisegroup>
+
+<exercisegroup>
+<introduction>
+  <p>
+    For each of the given linear systems, find an equivalent system in row echelon form. Use augmented matrices and follow the Gaussian elimination algorithm to the letter.
+  </p>
+</introduction>
+<exercise xml:id="s_ge_equivsys">
+  <statement>
+    <p>
+      <me>
+        \begin{linsys}{4} x_1\amp +\amp 2x_2\amp =\amp x_3\amp +\amp x_4\amp +\amp 3\\ 3x_1\amp +\amp 6x_2\amp =\amp 2x_3\amp -\amp 4x_4\amp +\amp 8\\ -x_1\amp +\amp 2x_3\amp =\amp 2x_2\amp -\amp x_4\amp -\amp 1 \end{linsys}
+      </me>
+    </p>
+  </statement>
+<solution>
+  <p>
+    First bring the system into standard form:
+    <me> L\colon \
+      \begin{linsys}{4} x_1\amp +\amp 2x_2\amp -\amp x_3\amp-\amp x_4\amp=\amp 3\\ 3x_1\amp +\amp 6x_2\amp - \amp 2x_3\amp + \amp 4x_4\amp =\amp 8\\ -x_1\amp - \amp 2x_2 \amp +\amp 2x_3\amp + \amp x_4\amp = \amp -1 \end{linsys}
+    </me>.
+    Then perform Gaussian elimination on the associated augmented matrix:
+    <md>
+      <mrow>\begin{bmatrix}1\amp 2\amp -1\amp -1\amp 3\\ 3\amp 6\amp -2\amp 4\amp 8\\ -1\amp -2\amp 2\amp 1\amp -1 \end{bmatrix} \amp \xrightarrow[\hspace{35pt}]{r_2-3r_1}\amp \begin{bmatrix}1\amp 2\amp -1\amp -1\amp 3\\ 0\amp 0\amp 1\amp 7\amp -1\\ -1\amp -2\amp 2\amp 1\amp -1 \end{bmatrix}</mrow>
+      <mrow>\amp \xrightarrow[\hspace{35pt}]{r_3+r_1 }\amp \begin{bmatrix}1\amp 2\amp -1\amp -1\amp 3\\ 0\amp 0\amp 1\amp 7\amp -1\\ 0\amp 0\amp 1\amp 0\amp 2 \end{bmatrix}</mrow>
+      <mrow>\amp \xrightarrow[\hspace{35pt}]{r_3-r_2 }\amp \begin{bmatrix}1\amp 2\amp -1\amp -1\amp 3\\ 0\amp 0\amp 1\amp 7\amp -1\\ 0\amp 0\amp 0\amp -7\amp 3 \end{bmatrix}</mrow>
+      <mrow>\amp \xrightarrow[\hspace{35pt}]{-\frac{1}{7}r_3}\amp \begin{bmatrix}1\amp 2\amp -1\amp -1\amp 3\\ 0\amp 0\amp 1\amp 7\amp -1\\ 0\amp 0\amp 0\amp 1\amp -\frac{3}{7} \end{bmatrix}</mrow>
+    </md>.
+    The corresponding equivalent system is
+    <me>
+      L'\colon \
+      \begin{linsys}{4} x_1\amp +\amp 2x_2\amp -\amp x_3\amp-\amp x_4\amp=\amp 3\\  \amp \amp \amp \amp x_3\amp + \amp 7x_4\amp =\amp -1\\ \amp \amp \amp \amp \amp  \amp x_4\amp = \amp -\frac{3}{7} \end{linsys}
+    </me>.
+  </p>
+</solution>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>
+      <me>
+        \begin{linsys}{4} x_1\amp +\amp x_2\amp -\amp x_3\amp +\amp x_4\amp =\amp 1\\ -2x_1\amp -\amp 2x_2\amp +\amp 2x_3\amp -\amp 2x_4\amp =\amp -2\\ x_1\amp +\amp x_2\amp +\amp x_3\amp +\amp 2x_4\amp =\amp 3 \end{linsys}
+      </me>
+    </p>
+  </statement>
+
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <me>
+        \begin{linsys}{3} 2x_1 \amp +\amp  2x_2  \amp +\amp 2x_3\amp =\amp 0\\ -2x_1 \amp +\amp  5x_2 \amp +\amp 2x_3\amp =\amp 1\\ 8x_1 \amp +\amp   x_2   \amp +\amp 4x_3\amp =\amp -1 \end{linsys}
+      </me>
+    </p>
+  </statement>
+
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <me>
+        \begin{linsys}{3} \amp \amp -2b  \amp +\amp 3c\amp =\amp 1\\ 3a \amp +\amp  6b \amp -\amp 3c\amp =\amp -2\\ 6a \amp +\amp   6b   \amp +\amp 3c\amp =\amp 5 \end{linsys}
+      </me>
+
+    </p>
+  </statement>
+
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <me>
+        \begin{linsys}{5} \amp  \amp  \amp \amp  T_3\amp +\amp T_4\amp +\amp T_5 \amp =\amp 0\\ -T_1\amp -\amp T_2 \amp +\amp 2T_3 \amp -\amp 3T_4\amp +\amp T_5 \amp =\amp 0\\ T_1\amp + \amp T_2 \amp -\amp 2T_3 \amp \amp \amp -\amp T_5 \amp =\amp 0\\ 2T_1\amp + \amp 2T_2 \amp -\amp T_3 \amp \amp \amp +\amp T_5 \amp =\amp 0 \end{linsys}
+      </me>
+
+    </p>
+  </statement>
+
+</exercise>
+</exercisegroup>
+</subexercises>
+</exercises>

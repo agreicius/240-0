@@ -1,0 +1,34 @@
+<exercises xml:id="s_logic_ex">
+<exercise>
+  <!-- 1. Assign truth values -->
+  <webwork source="Library/NAU/setFoundations/MAT320_0201.pg" />
+</exercise>
+
+<exercise>
+  <!-- 2. Assign truth values to algebra statements with 1 quantifier -->
+  <webwork source="Library/ASU-topics/setDiscrete/katie1.pg" />
+</exercise>
+
+<exercise>
+  <!-- 3. Matching text statements -->
+  <webwork source="Library/ASU-topics/setDiscrete/katie6.pg" />
+</exercise>
+
+<exercise>
+  <!-- 4. Matching text implications -->
+  <webwork source="Library/ASU-topics/setDiscrete/katie1.4_2.pg" />
+</exercise>
+
+<exercise>
+  <!-- 5. Assign truth values to statements with 2 quantifiers -->
+  <webwork source="Library/NAU/setFoundations/MAT320_0202.pg" />
+</exercise>
+
+<exercise>
+  <!-- 6. Describe set relations using quantifiers -->
+  <webwork source="Library/NAU/setFoundations/MAT320_0401.pg" />
+</exercise>
+
+<!-- No exercises on truth tables. -->
+
+</exercises>

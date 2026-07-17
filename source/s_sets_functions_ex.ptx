@@ -1,0 +1,11 @@
+<exercises xml:id="s_sets_functions_ex">
+  <exercise>
+  <!-- 1. union and intersections of sets -->
+    <webwork source="Library/ASU-topics/setSets/ur_st_1_2.pg" />
+  </exercise>
+  <exercise>
+  <!-- 2. products of sets -->
+    <webwork source="Library/SDSU/Discrete/Sets/cartesianprodB4.pg" />
+  </exercise>
+  
+</exercises>

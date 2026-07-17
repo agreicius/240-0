@@ -1,0 +1,10 @@
+<exercises xml:id="s_polynomials_ex">
+<exercise>
+  <!-- 1. construct polynomials -->
+  <webwork source="Library/ASU-topics/setPolynomials/srw3_5_31.pg" />
+</exercise>
+<exercise>
+  <!-- 2. find roots -->
+  <webwork source="Library/ASU-topics/setPolynomials/jj1.pg" />
+</exercise>
+</exercises>

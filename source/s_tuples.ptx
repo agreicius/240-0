@@ -1,0 +1,109 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_tuples">
+  <title>Tuples and Cartesian products</title>
+  <p>
+    We now introduce the notion of a <em>tuple</em>, which is a formal description of an ordered collection of objects.
+  </p>
+ <definition xml:id="d_tuple">
+  
+  <title><m>n</m>-tuple</title>
+  <idx><h>tuple</h><h>finite</h></idx>
+  <notation>
+    <usage><m>(a_1,a_2,\dots, a_n)</m></usage>
+    <description><m>I</m>-tuple</description>
+  </notation>
+  <statement>
+    <p>
+      Let <m>A</m> be a set, and fix a positive integer <m>n</m>. An <term><m>n</m>-tuple</term> (or <term>sequence of length <m>n</m></term>) of elements of <m>A</m> is an ordered sequence <m>(a_1,a_2,\dots, a_n)</m> where <m>a_i\in A</m> for all <m>1\leq i\leq n</m>.
+      </p>
+      <p>We define two <m>n</m>-tuples <m>(a_1,a_2,\dots, a_n)</m>, and <m> (a_1',a_2',\dots, a_n')</m> to be equal, denoted <m>(a_1,a_2,\dots, a_n)=(a_1',a_2',\dots, a_n')</m>, if <m>a_i=a_i'</m> for all <m>1\leq i\leq n</m>.
+      </p>
+      <p>
+        We call <m>n</m> the <term>length</term> of the tuple <m>(a_1,a_2,\dots, a_n)</m>, and for each <m>1\leq i\leq n</m> we call <m>a_i</m> its <term><m>i</m>-th entry</term> or <term>coordinate</term>.
+      </p>
+  </statement>
+</definition>
+
+ <remark xml:id="rm_pairs_triples">
+  <p>
+   We have more suggestive names for <m>n</m>-tuples when <m>n</m> is small: a 2-tuple <m>(a,b)</m> is called a pair, a 3-tuple <m>(a,b,c)</m> is called a triple, a 4-tuple <m>(a,b,c,d)</m> is called a quadruple, <etc />. We will use the generic term <q>tuple</q> to designate a <m>n</m>-tuple of unspecified length.
+  </p>
+</remark>
+<remark xml:id="rm_tuple_ordered">
+<p>
+  Observe how tuples capture the notion of an <em>ordered</em> collection of objects. For example, whereas the sets <m>\{3, 1, 2, 4\}</m> and <m>\{1,2,3,4\}</m> are equal to one another, the 4-tuples <m>(3,1,2,4)</m> and <m>(1,2,3,4)</m> are not.
+</p>
+<p>
+  What about the tuples <m>(1,1,1)</m> and <m>(1,1,1,1)</m>? Are these equal? Technically our definition of equality only applies to tuples living in the same fixed Cartesian product. In particular, for the question of equality to make sense, the tuples must have the same length. As such we will officially avoid writing things like <m>(1,1,1)\ne (1,1,1,1)</m>, although unofficially we consider these two objects as completely different. You should think of <m>(1,1,1)</m> and <m>(1,1,1,1)</m> as creatures living on two different planets in the universe of tuples.
+</p>
+</remark>
+<definition xml:id="d_cartesian_product">
+  
+  <title>Cartesian product (finite)</title>
+  <idx><h>Cartesian product</h><h>finite</h></idx>
+  <notation>
+    <usage> <m>A_1\times A_2\times \cdots A_n</m> </usage>
+    <description>Cartesian product</description>
+  </notation>
+  <statement>
+    <p>
+      Let <m>A_1, A_2, \dots, A_n</m> be subsets of a common set <m>A</m>. The
+    <term>(Cartesian) product</term> of <m>A_1, A_2,\dots, A_n</m>, denoted <m>A_1\times A_2\times\cdots \times A_n</m> or <m>\displaystyle\prod_{i=1}^nA_i</m>, is the set 
+    <me>
+      \prod_{i=1}^nA_i=\{(a_1,a_2,\dots, a_n)\colon a_i\in A_i \text{ for all } 1\leq i\leq n\}
+    </me>.
+    In other words <m>\prod_{i=1}^nA_i</m> is the set of all <m>n</m>-tuples of <m>A</m> whose <m>i</m>-th coordinate lies in <m>A_i</m> for all <m>1\leq i\leq n</m>. 
+  </p>
+  <p>
+    Given a set <m>A</m>, its <term><m>n</m>-ary Cartesian product</term> <m>A^n</m> is defined as
+    <me>
+      A^n=\prod_{i=1}^n A=\underset{n\text{ times}}{\underbrace{A\times A\times\cdots \times A}}
+    </me>.
+  </p>
+  </statement>
+</definition>
+   
+<p>
+  The notion of Cartesian product can be generalized to an infinite list of sets <m>A_1, A_2, \dots</m>, and indeed to any collection <m>\{A_i\}_{i\in I}</m> indexed by a set <m>I</m>. This is accomplished by looking at tuples in a slightly different manner: namely, we can describe a tuple <m>(a_1,a_2,\dots, a_n)\in \prod_{k=1}^nA_i</m> as an <em>assignment</em> to each distinct element <m>i\in \{1,2,\dots, n\}</m> an element <m>a_i\in A_i</m> that we call the coordinate of <m>i</m>. In other words, a tuple <m>(a_1,a_2,\dots, a_n)</m> is just a <em>function</em> that assigns to each <m>i</m> in our <em>index set</em> <m>\{1,2,\dots, n\}</m> an element <m>a_i\in A_i</m>. This notion generalize easily by replacing the finite index set <m>\{1,2,\dots, n\}</m> with an arbitrary set <m>I</m> (finite or infinite). 
+</p>
+<definition xml:id="d_Ituple">
+  
+  <title>I-tuple</title>
+  <idx><h>tuple</h><h>arbitrary</h></idx>
+  <notation>
+    <usage><m>\boldx=(x_i)_{i\in I}</m></usage>
+    <description><m>I</m>-tuple</description>
+  </notation>
+  <statement>
+    <p>
+      Let <m>I</m> be a set. Given a set <m>A</m>, an <term><m>I</m>-tuple</term> of elements of <m>A</m> is a function
+      <m>
+        f\colon I\rightarrow A
+      </m>.
+      Given an <m>I</m>-tuple <m>f</m> and element <m>i\in I</m> we will often denote the value <m>f(i)</m> as <m>a_i</m>, and denote
+      <m>f</m> itself as <m>f=(a_i)_{i\in I}</m>. In analogy to finite tuples, we call <m>a_i</m> the <m>i</m>-th <term>entry</term> or <term>coordinate</term> of <m>f</m>.
+    </p>
+  </statement>
+</definition>
+<definition xml:id="d_cartesian_product_arbitrary">
+  
+  <title>Cartesian product (arbitrary)</title>
+  <idx><h>Cartesian product</h><h>arbitrary</h></idx>
+  <notation>
+    <usage><m>\prod_{i\in I}A_i</m></usage>
+    <description>Cartesian product of the sets <m>A_i</m></description>
+  </notation>
+  <statement>
+    <p>
+      Let <m>A</m> be a set, and let <m>\{A_i\}_{i\in I}</m> be a collection of subsets <m>A_i\subseteq A</m> indexed by the set <m>I</m>. The <term>Cartesian product</term> <m>\prod_{i\in I}A_i</m> of this collection is defined as
+      <md>
+      <mrow> \prod_{i\in I}A_i\amp =\{f\colon I\rightarrow A\colon f(i)\in A_i \text{ for all } i\in I\} </mrow>
+      <mrow>  \amp =\{(a_i)_{i\in I}\colon a_i\in A_i \text{ for all } i\in I\}</mrow>
+      </md>.
+      In other words, the Cartesian product is the set of all <m>I</m>-tuples of elements of <m>A</m> whose <m>i</m>-th coordinate is an element of <m>A_i</m> for all <m>i\in I</m>.
+    </p>
+    <p>
+      In the special case where <m>A_i=A</m> for all <m>i\in I</m>, we denote <m>\prod_{i\in I}A</m> as <m>A^I</m>.
+    </p>
+  </statement>
+</definition>
+</section>

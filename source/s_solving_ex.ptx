@@ -1,0 +1,325 @@
+<exercises xml:id="s_solving_ex">
+
+<subexercises>
+  <title>WeBWork Exercises</title>
+
+  <exercise>
+  <!-- 1. steps for solving a system of equations in 2 variables -->
+    <webwork source="Library/Mizzou/Finite_Math/Augmented_Matrices/AugMatrix1a.pg" />
+  </exercise>
+
+  <exercise>
+  <!-- 2. steps for solving a system of equations in 3 variables -->
+    <webwork source="Library/Mizzou/Finite_Math/Gauss-Jordan_Elimination/3by3a.pg" />
+  </exercise>
+  
+  <exercise>
+  <!-- 3. solve a system of equations in 4 variables -->
+    <webwork source="Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p02.pg" />
+  </exercise>
+
+  <exercise>
+    <!-- 7. Systems of equations in 3 variables -->
+    <webwork source="Library/TCNJ/TCNJ_LinearSystems/problem17.pg" />
+  </exercise>
+</subexercises>
+<subexercises>
+<title>Written Exercises</title>
+
+<exercisegroup>
+<title>Solving linear systems</title>
+
+  <introduction>
+  <p>Solve the following systems of equations.
+  <ul>
+    <li>
+      <p>
+        When row reducing follow Gaussian elimination to the letter.
+      </p>
+    </li>
+    <li>
+      <p>
+        Make sure to indicate how variables are sorted into free and leading variables.
+      </p>
+    </li>
+    <li>
+      <p>
+        Express your answer in both the parametric equation format and set notation format.
+      </p>
+    </li>
+  </ul>
+  </p>
+  </introduction>
+  <exercise>
+    <statement>
+      <p>
+        <me>
+          \begin{linsys}{4} x_1\amp +\amp 2x_2\amp =\amp x_3\amp +\amp x_4\amp +\amp 3\\ 3x_1\amp +\amp 6x_2\amp =\amp 2x_3\amp -\amp 4x_4\amp +\amp 8\\ -x_1\amp +\amp 2x_3\amp =\amp 2x_2\amp -\amp x_4\amp -\amp 1 \end{linsys}
+        </me>
+      </p>
+    </statement>
+    <solution>
+      <p>
+      We saw in <xref ref="s_ge_equivsys"/> that the system is equivalent to a system <m>L'</m> with augmented matrix
+      <me>
+      \begin{amatrix}[rrrr|r]\boxed{1}\amp 2\amp -1\amp -1\amp 3\\ 0\amp 0\amp \boxed{1}\amp 7\amp -1\\ 0\amp 0\amp 0\amp \boxed{1}\amp -\frac{3}{7} \end{amatrix}
+      </me>.
+      The row echelon matrix tells us that <m>x_2=t</m> is the only free variable of <m>L'</m>. Back substitution then yields the parametric equation description:
+      <md>
+        <mrow>x_1\amp = \frac{32}{7}-2t</mrow>
+        <mrow>x_2\amp = t</mrow>
+        <mrow>x_3\amp = 2</mrow>
+        <mrow>x_4\amp = -\frac{3}{7}</mrow>
+      </md>.
+      Thus the set of solutions is
+      <me>
+        \left\{ \left(\frac{32}{7}-2t, t, 2, -\frac{3}{7}\right)\colon t\in \R\right\}
+      </me>.
+    </p>
+    </solution>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        <me>\begin{linsys}{4} x_1\amp +\amp x_2\amp -\amp x_3\amp +\amp x_4\amp =\amp 1\\ -2x_1\amp -\amp 2x_2\amp +\amp 2x_3\amp -\amp 2x_4\amp =\amp -2\\ x_1\amp +\amp x_2\amp +\amp x_3\amp +\amp 2x_4\amp =\amp 3 \end{linsys}
+        </me>
+      </p>
+    </statement>
+
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <me>
+          \begin{linsys}{3} 2x_1 \amp +\amp  2x_2  \amp +\amp 2x_3\amp =\amp 0\\ -2x_1 \amp +\amp  5x_2 \amp +\amp 2x_3\amp =\amp 1\\ 8x_1 \amp +\amp   x_2   \amp +\amp 4x_3\amp =\amp -1 \end{linsys}
+        </me>
+      </p>
+    </statement>
+
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <me>
+          \begin{linsys}{3} \amp \amp -2b  \amp +\amp 3c\amp =\amp 1\\ 3a \amp +\amp  6b \amp -\amp 3c\amp =\amp -2\\ 6a \amp +\amp   6b   \amp +\amp 3c\amp =\amp 5 \end{linsys}
+        </me>
+
+      </p>
+    </statement>
+
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <me>
+          \begin{linsys}{5} \amp  \amp  \amp \amp  T_3\amp +\amp T_4\amp +\amp T_5 \amp =\amp 0\\ -T_1\amp -\amp T_2 \amp +\amp 2T_3 \amp -\amp 3T_4\amp +\amp T_5 \amp =\amp 0\\ T_1\amp + \amp T_2 \amp -\amp 2T_3 \amp \amp \amp -\amp T_5 \amp =\amp 0\\ 2T_1\amp + \amp 2T_2 \amp -\amp T_3 \amp \amp \amp +\amp T_5 \amp =\amp 0 \end{linsys}
+        </me>
+
+      </p>
+    </statement>
+
+  </exercise>
+
+</exercisegroup>
+
+
+
+
+<exercise>
+  <statement>
+    <p>
+      For each system below determine all values of <m>a</m> for which the system below has (a) no solutions,
+      (b) a unique solution, and (c) infinitely many solutions.
+    </p>
+    <ol>
+      <li>
+        <me>
+            \begin{linsys}{3} x\amp +\amp 2y\amp +\amp z\amp =\amp 2\\ 2x\amp -\amp 2y\amp +\amp 3z\amp =\amp 1\\ x\amp +\amp 2y\amp -\amp (a^2-3)z\amp =\amp a \end{linsys}
+          </me>
+      </li>
+      <li>
+        <p>
+          <me>
+            \begin{linsys}{3} x\amp +\amp 2y\amp -\amp 3z\amp =\amp 4\\ 3x\amp -\amp y\amp +\amp 5z\amp =\amp 2\\ 4x\amp +\amp y\amp +\amp (a^2-14)z\amp =\amp a+2 \end{linsys}
+          </me>
+        </p>
+      </li>
+    </ol>
+  </statement>
+  </exercise>
+<exercise>
+  <statement>
+      <p>
+        Show that a linear system with more unknowns than equations has  either 0 solutions or infinitely many solutions.
+    </p>
+  </statement>
+  <!-- <solution>
+    <p>
+      Suppose we have a system of <m>m</m> equations in <m>n</m> unknowns <m>x_1,x_2,\dots, x_n</m>.
+      We assume <m>n>m</m>.
+      Let <m>A</m> be the augmented matrix associated to the system,
+      and suppose <m>A</m> is reduced to a matrix <m>U</m> in row echelon form.
+    </p>
+    <p>
+      Since <m>U</m> has <m>m</m> rows,
+      there are <em>at most</em> <m>m</m> leading ones in <m>U</m>,
+      which means there are at most <m>m</m> leading variables among the <m>x_i</m>.
+      Since <m>n>m</m>, not all the <m>x_i</m> can be leading.
+      Thus the system <em>must</em> have a free variable.
+    </p>
+    <p>
+      What does this mean?
+      Note that the system could still be inconsistent, meaning no solutions.
+      However, the existence of a free variable means if there is a solution,
+      then there are infinitely many,
+      because the parametric equations for the <m>x_i</m> will involve at least one parameter.
+    </p>
+    <p>
+      We conclude that the system is either inconsistent,
+      or has infinitely many solutions.
+    </p>
+  </solution> -->
+</exercise>
+
+<exercise>
+  <statement>
+    <p>
+        True or false. If true, provide a proof; if false, provide an explicit counterexample.
+    </p>
+    <ol marker="(a)">
+      <li>
+        <p>
+        Every matrix has a unique row echelon form.
+        </p>
+      </li>
+      <li>
+      <p>
+      Any homogeneous linear system with more unknowns than equations has infinitely many solutions.
+      </p>
+      </li>
+      <li>
+        <p>If a homogeneous linear system of <m>n</m> equations in <m>n</m> unknowns has a corresponding augmented matrix with a reduced row echelon form containing <m>n</m> leading ones, then the linear system has the unique solution <m>s=(0,0,\dots, 0)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          All leading ones in of a matrix in row echelon form must occur in distinct columns.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          If the reduced row echelon form of the augmented matrix for a linear system has a zero row,
+          then the system must have infinitely many solutions.
+        </p>
+      </li>
+      <li>
+        <p>
+          If a linear system has more unknowns than equations,
+          then it must have infinitely many solutions.
+        </p>
+      </li>
+      </ol>
+      </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Interpret each matrix below as an augmented matrix of a linear system.
+      Asterisks represent an unspecified real number.
+      For each matrix,
+      determine whether the corresponding system is consistent or inconsistent.
+      If the system is consistent,
+      decide further whether the solution is unique or not.
+      If there is not enough information answer <sq>inconclusive</sq> and back up your claim by giving an explicit example where the system is consistent,
+      and an explicit example where the system is inconsistent.
+      <ol marker="(a)">
+        <li>
+          <p>
+            <m>\begin{bmatrix}1\amp *\amp *\amp *\\ 0\amp 1\amp *\amp *\\ 0\amp 0\amp 1\amp 1 \end{bmatrix}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\begin{bmatrix}1\amp 0\amp 0\amp *\\ *\amp 1\amp 0\amp *\\ *\amp *\amp 1\amp * \end{bmatrix}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\begin{bmatrix}1\amp 0\amp 0\amp 0\\ 1\amp 0\amp 0\amp 1\\ 1\amp *\amp *\amp * \end{bmatrix}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\begin{bmatrix}1\amp *\amp *\amp *\\ 1\amp 0\amp 0\amp 1\\ 1\amp 0\amp 0\amp 1 \end{bmatrix}</m>
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+
+</exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        What condition must <m>a, b,</m> and <m>c</m> satisfy in order for the system below to be consistent? Express your answer as an equation involving <m>a, b,</m> and <m>c</m>.
+        <me>
+          \begin{linsys}{3} x\amp +\amp 3y\amp +\amp z\amp =\amp a\\ -x\amp -\amp 2y\amp +\amp z\amp =\amp b\\ 3x\amp +\amp 7y\amp -\amp z\amp =\amp c \end{linsys}
+        </me>
+      </p>
+    </statement>
+
+  </exercise>
+<exercise>
+  <statement>
+    <p>
+      Solve the system of equations below for <m>x</m>, <m>y</m>, and <m>z</m>.
+      <me>
+        \begin{linsys}{3} \frac{1}{x}\amp +\amp \frac{2}{y}\amp -\amp \frac{4}{z}\amp =\amp 1\\ \\ \frac{2}{x}\amp +\amp \frac{3}{y}\amp +\amp \frac{8}{z}\amp =\amp 0\\ \\ -\frac{1}{x}\amp +\amp \frac{9}{y}\amp +\amp \frac{10}{z}\amp =\amp 5 \end{linsys}
+      </me>
+      </p>
+  </statement>
+  <hint>
+    <p>
+      First replace the given <em>nonlinear</em> system with a linear one using a change of variable substitution.
+    </p>
+  </hint>
+  </exercise>
+  <exercise>
+  <statement>
+    <p>
+      If <m>A</m> is a matrix with three rows and five columns,
+      then what is the maximum possible number of leading ones in its reduced row echelon form? Justify your answer.
+    </p>
+    <p>
+      Provide an explicit example of a matrix that attains this maximum number of leading ones.
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      If <m>A</m> is a matrix with three rows and six columns,
+      then what is the maximum possible number of free variables in the general solution of the linear system with augmented matrix <m>A</m>? Justify your answer.
+    </p>
+    <p>
+      Provide an explicit example of a matrix that attains this maximal number of free variables.
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      If <m>A</m> is a matrix with five rows and three columns,
+      then what is the minimum possible number of zero rows in any row echelon form of <m>A</m>?
+    </p>
+    <p>
+      Provide an explicit example of a matrix that attains this minimal number of zero rows.
+    </p>
+  </statement>
+
+</exercise>
+</subexercises>
+</exercises>

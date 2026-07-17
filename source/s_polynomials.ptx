@@ -1,0 +1,167 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_polynomials">
+  <title>Polynomials</title>
+<introduction>
+  Polynomials will play an important role in our treatment of linear algebra both as tools for studying linear transformations. We gather here some basic definitions and properties of polynomials. Although we will primarily be concerned with polynomials with real coefficients in this course, it is convenient to develop the theory over the complex numbers. As with <xref ref="s_complex_numbers"/>, all theorems will be stated without proof.
+</introduction>
+<subsection xml:id="ss_poly_def">
+  <title>Basic definitions</title>
+<definition xml:id="d_polynomials">
+  <title>Polynomials</title>
+  <idx><h>polynomial</h><h>expression</h></idx>
+  <idx><h>polynomial</h><h>degree</h></idx>
+  <idx><h>polynomial</h><h>coefficient</h></idx>
+  <idx><h>polynomial</h><h>leading coefficient</h></idx>
+  <idx><h>polynomial</h><h>leading term</h></idx>
+  <idx><h>polynomial</h><h>constant term</h></idx>
+  <statement>
+    <p>
+      Assume <m>X\subseteq \C</m> a <term>polynomial</term> on <m>X</m> is a function <m>f</m> of the form 
+      <men xml:id="eq_poly_powerseries">
+      f(x)=\sum_{i=1}^\infty a_ix^i
+      </men>,
+      where <m>a_i\in \C</m> for all <m>i</m>, and there is a positive integer <m>n</m> such that <m>a_i=0</m> for all <m>i&gt; n</m>. Equivalently, <m>f</m> is a function of the form 
+      <men xml:id="eq_poly">
+      f(x)=\anpoly
+      </men>,
+      where <m>a_i\in \C</m> for all <m>1\leq i\leq n</m>. 
+      </p>
+      <p>
+        We call <m>a_ix^i</m> the <m>i</m>-th <term>term</term> of <m>f</m>, and <m>a_i</m> the <m>i</m>-th <term>coefficient</term>; <m>a_0</m> is called the <term>constant term</term> of <m>f</m>. Furthermore, if in the expression <xref ref="eq_poly"/> we have <m>a_n\ne 0</m>, then <m>a_nx^{n}</m> is called the <term>leading term</term> of <m>f</m>, and <m>a_{n}</m>
+      its <term>leading coefficient</term>. Lastly, a <term>root</term> of <m>f</m> is a an element <m>c\in X</m> such that <m>f(c)=0</m>. 
+      </p>
+  </statement>
+</definition>
+<remark xml:id="rm_polynomials_powerseries">
+<title>Polynomials as finite power series</title>
+<p>
+  As we see in the expression <xref ref="eq_poly_powerseries"/> we have essentially defined a polynomial to be a function with a finite power series representation. This may seem somewhat overkill in terms of the level of abstraction, but makes for simpler exposition in the discussion below. In any case you are always welcome to revert to the more familiar characterization in <xref ref="eq_poly"/>. 
+</p>
+</remark>
+<theorem xml:id="th_poly_basic">
+  <title>Basic properties of polynomials</title>
+  <statement>
+    <p>
+      Assume <m>X\subseteq \C</m>.
+    <ol>
+      <li>
+        <p>
+          If <m>f</m> and <m>g</m> are polynomials on <m>X</m>, then so are <m>f+g</m>, <m>fg</m>, and <m>cf</m> for any <m>c\in \C</m>. 
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>f</m> is a polynomial on <m>X</m> and <m>c\in X</m> is a root of <m>f</m>, then there is a polynomial <m>g</m> on <m>X</m> such that
+          <men xml:id="eq_poly_factor">
+            f(x)=(x-c)g(x)
+          </men>.
+        </p>
+      </li>
+      <li xml:id="th_at_most_n_roots">
+        <p>
+          If <m>f(x)=\anpoly</m> is a nonzero polynomial on <m>X</m>, then <m>f</m> has at most <m>n</m> distinct roots.
+        </p>
+      </li>
+    </ol>
+    </p>
+  </statement>
+</theorem>
+<p>
+  An important consequence of statement (<xref ref="th_at_most_n_roots" text="local"/>) of <xref ref="th_poly_basic"/> is that the coefficients <m>a_i</m> of a polynomial <m>f(x)=\sum_{i=1}^\infty a_ix^i</m> are uniquely determined by <m>f</m>, as long as the domain <m>X</m> is <em>infinite</em>. This furnishes us with a useful criterion for polynomial equality based on comparing coefficients.  
+</p>
+<corollary xml:id="cor_poly_equality">
+  <title>Polynomial equality via coefficients</title>
+  <statement>
+    <p>
+        Assume <m>X</m> is an infinite subset of <m>\C</m>. Let <m>f</m> and <m>g</m> be polynomials on <m>X</m> of the form 
+        <md>
+          <mrow>f(x) \amp =\sum_{i=1}^\infty a_ix^i </mrow>
+          <mrow>g(x)\amp =\sum_{i=1}^\infty b_ix^i</mrow>
+        </md>. 
+      <ol>
+        <li xml:id="cor_f_is_g">
+          <p>
+            We have <m>f=g</m> if and only if <m>a_i=b_i</m> for all <m>i</m>. 
+          </p>
+        </li>
+        <li xml:id="cor_f_is_0">
+          <p>
+            In particular, <m>f</m> is the zero function on <m>X</m> if and only if <m>a_i=0</m> for all <m>i</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</corollary>
+</subsection>
+<subsection xml:id="ss_degree">
+  <title>Degree of a polynomial</title>
+<introduction>
+  <p>
+    It follows from <xref ref="cor_poly_equality"/> that if <m>X</m> is an infinite subset of <m>\C</m> and <m>f</m> is a nonzero polynomial on <m>X</m>, then <m>f</m> has a unique expression of the form <m>f(x)=\anpoly</m>, where <m>a_n\ne 0</m>. The integer <m>n</m> appearing in this expression is an important invariant of <m>f</m> called its <em>degree</em>. 
+  </p>
+</introduction>
+<definition xml:id="d_poly_degree">
+  <idx><h>polynomial</h><h>degree</h></idx>
+  <title>Degree of a polynomial</title>
+  <notation>
+    <usage><m>\deg f</m></usage>
+    <description>degree of polynomial <m>f</m></description>
+  </notation>
+  <statement>
+    <p>
+      Assume <m>X</m> is an infinite subset of <m>\C</m> and let <m>f</m> be a nonzero polynomial on <m>X</m> of the form <m>f(x)=\anpoly</m> with <m>a_n\ne 0</m>. The integer <m>n</m> in this expression is called the <term>degree</term> of <m>f</m>, denoted <m>\deg f</m>.
+      </p>
+      <p>
+        We call the polynomial <m>f</m> <term>linear</term> if <m>\deg f=1</m>, <term>quadratic</term> if <m>\deg f=2</m>, and <term>cubic</term> if <m>\deg f=3</m>.
+    </p>
+      
+  </statement>
+</definition>
+<p>
+  Defining the degree of the zero function to be <m>-\infty</m> may seem a little peculiar. Do not be disturbed! You can think of this as a convention that allows for clean statements of theorems like the following.
+</p>
+<theorem xml:id="th_poly_degree">
+  <title>Basic properties of degree</title>
+  <statement>
+    <p>
+      Assume <m>X</m> is an infinite subset of <m>\C</m>. Let <m>f</m> and <m>g</m> be polynomials on <m>X</m>. 
+    </p>
+    <ol>
+      <li>
+        <p>
+         <m>\deg fg=\deg f+\deg g</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\deg (f+g)\leq \max\{\deg f, \deg g\}</m>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</theorem>
+</subsection>
+<subsection xml:id="ss_poly_factoring">
+  <title>Factoring polynomials</title>
+  <introduction>
+    <p>
+      Statement (2) of <xref ref="th_poly_basic"/> makes a connection between roots of a polynomial and factorization; and the expression <xref ref="eq_poly_factor"/> can be thought of as a first step in writing the polynomial <m>f</m> as a product of linear polynomials. The existence of roots depends on the given domain of the function. Indeed,  there are plenty of polynomials <m>f\colon \R\rightarrow \R</m> that have no roots whatsoever: for example, from the quadratic formula we know that any quadratic polynomial <m>f(x)=ax^2+bx+c</m> satisfying <m>b^2-4ac\lt 0</m> has no real roots. According to the <xref ref="th_fund_alg" text="custom">fundamental theorem of algebra</xref>, the situation over <m>\C</m> is vastly different: not only does every polymonial have a root in <m>\C</m>, we can factor it completely as a product of linear polynomials. This is one of the main incentives for introducing the complex numbers as a number system.
+    </p>
+  </introduction>
+  <theorem xml:id="th_fund_alg">
+    <title>Fundamental theorem of algebra</title>
+    <statement>
+      <p>
+        Any polynomial <m>f(x)=\anpoly</m>, thought of as a function from <m>\C</m> to itself, can be factored into linear terms as
+        <me>
+          f(x)=(x-z_1)(x-z_2)\cdots (x-z_n)
+        </me>,
+        where the <m>z_i</m> are (not necessarily distinct) complex numbers.
+      </p>
+    </statement>
+  </theorem>
+
+</subsection>
+
+  <xi:include href="./s_polynomials_ex.ptx"/>
+</section>

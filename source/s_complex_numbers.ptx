@@ -1,0 +1,312 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_complex_numbers">
+  <title>Complex numbers</title>
+  <introduction>
+    In this section we begin with a brief treatment of the complex numbers <m>\C</m>. As mentioned below, you should think of the complex numbers as an additional link in our chain of number systems <xref ref="eq_chain_numbersystems"/>. One major advantage of working with <m>\C</m> is that any polynomial factors as a product of linear terms over <m>\C</m> (<xref ref="th_fund_alg"/>). This fact, along with a review of basic definitions and properties of polynomials, will be taken up in <xref ref="s_polynomials"/>. This section is meant mainly as a reference, and as such all theorems will be stated without proof.
+  </introduction>
+  <subsection xml:id="ss_complex_definition">
+    <title>Definition of <m>\C</m></title>
+    <introduction>
+      <p>
+        The complex numbers constitute a number system built by taking the set of all <em>pairs</em> of real numbers and defining operations on these pairs that we call <em>complex addition</em> and <em>complex multiplication</em>.
+      </p>
+    </introduction>
+  <definition xml:id="d_complex_numbers">
+    <idx><h>complex numbers</h></idx>
+    <idx><h>complex numbers</h><h>real part</h></idx>
+    <idx><h>complex numbers</h><h>imaginary part</h></idx>
+    <notation>
+      <usage><m>\C</m></usage>
+      <description>the complex numbers</description>
+    </notation>
+    <notation>
+      <usage><m>\Re z</m></usage>
+      <description>real part of complex number <m>z</m></description>
+    </notation>
+    <notation>
+      <usage><m>\Im z</m></usage>
+      <description>imaginary part of complex number <m>z</m></description>
+    </notation>
+    <title>Complex numbers</title>
+    <notation>
+      <usage><m>\C</m></usage>
+      <description>complex numbers</description>
+    </notation>
+    <statement>
+    <p>
+      The set <m>\C</m> of <term>complex numbers</term>  is defined as the set of all pairs of real numbers: <ie />,
+    <me>
+      \C=\{(a, b)\colon a, b\in \R\}
+    </me>.
+    Given a complex number <m>z=(a,b)</m>, its first entry <m>a</m> is called the <term>real part</term> of <m>z</m>, denoted <m>\Re z</m>, and its second entry <m>b</m> is called the <term>imaginary part</term> of <m>z</m>, denoted <m>\Im z</m>.
+  </p>
+  </statement>
+  </definition>
+  <convention>
+  <p>
+  Henceforth we will primarily denote a complex number <m>z=(a,b)</m> as
+  <men xml:id="eq_complex_notation">
+    z=a+bi
+  </men>.
+  Since <m>a=\Re z</m> and <m>b=\Im z</m>, you can think of the notation <xref ref="eq_complex_notation"/> as a decomposition of <m>z</m> as a sum of its real and imaginary components. In what follows we give actual arithmetic meaning to the symbols <sq><m>+</m></sq> and <sq><m>i</m></sq> used in this notation, but first and foremost <xref ref="eq_complex_equality"/> should simply be thought of as an alternative manner of denoting the pair <m>(a,b)</m>.
+  </p>
+  <p>
+  Additionally we will adopt the following notational conventions: <m>a-bi=a+(-b)i</m>, <m>a=a+0i</m>, <m>a+i=a+1i</m>, <m>bi=0+bi</m>, and <m>i=0+1i</m>.
+  </p>
+  </convention>
+  <remark xml:id="rm_complex_equality">
+  <title>Complex equality</title>
+  <statement>
+  <p>
+    When moving to the notation <xref ref="eq_complex_notation"/> do not lose sight of the essential nature of complex numbers as pairs of real numbers. This is important, for example, for understanding what it means for complex numbers <m>z=(a,b)=a+bi</m> and <m>w=(c,d)=c+di</m> to be equal. According to the general definition of equality for tuples (<xref ref="d_cartesian_product" text="global"/>), we have
+    <men xml:id="eq_complex_equality">
+      z=w\iff a=c \text{ and } b=d \iff \Re z=\Re w \text{ and } \Im z=\Im w
+    </men>.
+  </p>
+  </statement>
+  </remark>
+  <definition xml:id="d_complex_arithmetic">
+    <idx><h>complex numbers</h><h>addition</h></idx>
+    <idx><h>complex numbers</h><h>multiplication</h></idx>
+
+    <title>Complex addition and multiplication</title>
+
+    <statement>
+  <p>
+    We define <term>addition</term> and <term>multiplication</term> operations on <m>\C</m> as follows. Let <m>z=a+bi</m> and <m>w=c+di</m>, where <m>a,b,c,d\in \R</m>.
+  </p>
+  <ol>
+    <li>
+      <title>Complex addition</title>
+      <p>
+        The <term>sum</term> <m>z+w</m> is the complex number defined as
+        <me>
+          z+w=(a+c)+(b+d)i
+          </me>.
+      </p>
+    </li>
+    <li>
+      <title>Complex multiplication</title>
+      <p>
+        The <term>product</term> <m>zw</m> is the complex number defined as
+        <me>
+          z\, w=(ac-bd)+(ad+bc)i</me>.
+      </p>
+    </li>
+  </ol>
+  </statement>
+  </definition>
+  <example xml:id="eg_complex_add_mult">
+    <statement>
+      <p>
+        Let <m>z=2+3i</m> and <m>w=-1+2i</m>. We have
+        <md>
+          <mrow>z+w \amp =(2-1)+(3+2)i=1+5i</mrow>
+          <mrow>zw  \amp=(-2-6)+(4-3)i=-8+i </mrow>
+        </md>
+      </p>
+    </statement>
+  </example>
+
+  <p>
+    Our first theorem indicates that complex addition and multiplication behave in much the same way as real addition and multiplication. A number system that satisfies the properties of <xref ref="th_complex_arithmetic_basic"/> is called a <em>field</em>. You should think of the field properties as guaranteeing that we can perform arithmetic in the complex numbers (or any fied) essentially as we do with real numbers.
+  </p>
+  <theorem xml:id="th_complex_arithmetic_basic">
+    <title>Basic properties of complex arithmetic</title>
+    <statement>
+      <ol>
+        <li>
+          <title>Commutativity</title>
+          <p>
+          For all <m>z, w\in \C</m> we have
+          <md>
+            <mrow>z+ w \amp =  w+z</mrow>
+            <mrow> z w  \amp= wz </mrow>
+          </md>.
+          </p>
+        </li>
+        <li>
+        <title>Associativity</title>
+        <p>
+        For all <m>z, w, u \in \C</m> we have
+        <md>
+          <mrow>z+( w+ u) \amp = (z+ w)+ u</mrow>
+          <mrow> z( w u)  \amp=(z w) u </mrow>
+        </md>.
+        </p>
+      </li>
+      <li>
+      <title>Distributivity</title>
+      <p>
+      For all <m>z, w, u \in \C</m> we have
+      <me>
+        z( w+ u)=z w+z u
+      </me>.
+      </p>
+    </li>
+        <li>
+          <title>Additive identity</title>
+          <p>
+          The complex number <m>0=0+0i\in \C</m> satisfies
+          <me>
+            0+z=z
+          </me>
+            for all <m>z\in \C</m>. We call <m>0</m> the <term>additive identity</term> of <m>\C</m>.
+          </p>
+        </li>
+        <li>
+          <title>Additive inverse</title>
+          <p>
+          For all <m>z=(a,b)=a+bi\in \C</m> the element <m>-z=(-a,-b)=-a+(-b)i\in \C</m> satisfies
+          <me>
+            z+ -z=0
+          </me>.
+          We call <m>-z</m> the <term>additive inverse</term>of <m>z</m>.
+          </p>
+        </li>
+        <li>
+          <title>Multiplicative identity</title>
+          <p>
+          The complex number <m>1=1+0i</m> satisfies
+          <me>
+            1z=z
+          </me>
+            for all <m>z\in \C</m>. We call <m>1</m> the <term>multiplicative identity</term> of <m>\C</m>.
+          </p>
+        </li>
+        <li>
+          <title>Multiplicative inverse</title>
+          <p>
+          For all <em>nonzero</em> complex numbers <m>z=(a,b)=a+bi\in \C</m> (<ie />, <m>a\ne 0</m> of <m>b\ne 0</m>), the complex number <m>z^{-1}=\frac{a}{a^2+b^2}+\frac{-b}{a^2+b^2}i \in \C</m> satisfies
+          <me>
+            z\,z^{-1}=1
+          </me>.
+          The complex number <m>z^{-1}</m>, also denoted <m>1/z</m>, is called the <term>multiplicative inverse</term> of <m>z</m>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </theorem>
+  <example>
+    <statement>
+      <p>
+        Let <m>z=-2+i</m>. According to <xref ref="th_complex_arithmetic_basic"/>, the multiplicative inverse of <m>z</m>  is
+        <me>
+          z^{-1}=\frac{-2}{4+1}+\frac{-1}{4+1}i=\frac{-2}{5}+{-1}{5}i
+        </me>.
+        Let's check that <m>zz^{-1}=1</m>:
+        <md>
+          <mrow>zz^{-1} \amp =(-2+i)(\frac{-2}{5}+{-1}{5}i)</mrow>
+          <mrow> \amp = (\frac{4}{5}+\frac{1}{5})+(\frac{2}{5}+\frac{-2}{5})i </mrow>
+          <mrow>  \amp = 1+0i=1</mrow>
+        </md>.
+      </p>
+    </statement>
+  </example>
+      <remark xml:id="rm_complex_reals">
+        <title>Complex numbers as extension of the reals</title>
+    <statement>
+      <p>
+        From now on we identify the real numbers as the set of complex numbers of the form <m>a=a+0i</m>, where <m>a\in \C</m>: equivalently, the set of complex numbers <m>z</m> satisfying <m>\Im z=0</m>. Under this identification <m>\R</m> can be thought of as a subset of <m>\C</m>, and we may add one more link to the chain of subsets given in <xref ref="eq_chain_numbersystems"/>:
+        <men xml:id="eq_chain_numbersystems_complex">
+          \Z\subseteq\Q\subseteq\R\subseteq\C
+        </men>.
+        Furthermore, it is easy to verify that the various operations on <m>\C</m> agree with their real counterparts when restricting to <m>\R</m>: <eg />,
+        <md>
+          <mrow>(a+0i)+(b+0i) \amp = (a+b)+0i</mrow>
+          <mrow> (a+0i)(b+0i)\amp=ab+0i </mrow>
+          <mrow> -(a+0i) \amp =-a+0i</mrow>
+          <mrow> \frac{1}{a+0i} \amp =\frac{1}{a}+0i</mrow>
+        </md>.
+        This allows us to think of the complex numbers as a larger number system containing the reals, whose arithmetic operations are <em>extensions</em> of real number operations.
+      </p>
+    </statement>
+  </remark>
+  </subsection>
+  <subsection xml:id="ss_complex_conjugation">
+    <title>Absolute value and complex conjugation</title>
+<introduction>
+  <p>
+    We end our introduction to the complex numbers with two further operations: the <em>absolute value</em> and <em>complex conjugation</em>. <xref ref="th_complex_conjugation_modulus"/> is an indication of their usefulness, and articulates how they interact with the other operations on <m>\C</m>.
+  </p>
+</introduction>
+<definition xml:id="d_complex_absolute_conjugation">
+  <idx><h>complex numbers</h><h>modulus</h></idx>
+  <idx><h>complex numbers</h><h>absolute value</h></idx>
+  <idx><h>complex numbers</h><h>conjugation</h></idx>
+  <title>Absolute value and complex conjugation</title>
+  <statement>
+    <p>
+      Let <m>z=(a,b)=a+bi</m> be a complex number. The  <term>absolute value</term> (or <term>modulus</term>) of <m>z</m>, denoted <m>\abs{z}</m>, is defined as
+      <me>
+        \abs{z}=\sqrt{a^2+b^2}
+      </me>.
+      The <term>complex conjugate</term> of <m>z</m>, denoted <m>\overline{z}</m>, is defined as
+      <me>
+        \overline{z}=a-bi
+      </me>.
+    </p>
+  </statement>
+</definition>
+<theorem xml:id="th_complex_conjugation_modulus">
+  <title>Properties of conjugation and modulus</title>
+  <statement>
+    <p>
+      The following properties hold for all <m>\boldz, \boldw\in \C</m>.
+    </p>
+    <ol>
+      <li>
+        <m>\overline{z+w} =\overline{z}+\overline{w}</m>.
+      </li>
+    <li>
+      <p>
+        <m>\overline{zw}=\overline{z}\overline{w}</m>.
+      </p>
+    </li>
+  <li>
+    <p>
+      <m>\abs{zw}=\abs{z}\abs{w}</m>.
+    </p>
+  </li>
+  <li>
+    <p>
+      <m>z\overline{z}=\abs{z}^2</m>.
+    </p>
+  </li>
+  <li>
+    <p>
+      <m>z^{-1}=\frac{z}{\abs{z}}</m> (if <m>z\ne 0</m>).
+    </p>
+  </li>
+  <li>
+    <p>
+      <m>z\in \R\iff \overline{z}=z</m>.
+    </p>
+  </li>
+    </ol>
+  </statement>
+</theorem>
+<example>
+  <statement>
+    <p>
+      Let <m>z=3-i</m>. Observe that
+      <md>
+        <mrow>z\overline{z} \amp=(3-i)(3+i) </mrow>
+        <mrow> \amp=(9+1)+0i </mrow>
+        <mrow>  \amp =\abs{z}^2</mrow>
+      </md>
+      and
+      <md>
+        <mrow>z^{-1} \amp =\frac{3}{10}+\frac{1}{10}i</mrow>
+        <mrow> \amp=\frac{3+i}{10} </mrow>
+        <mrow>  \amp = \frac{\overline{z}}{\abs{z}^2}</mrow>
+      </md>,
+      as claimed in <xref ref="th_complex_conjugation_modulus"/>.
+
+    </p>
+  </statement>
+
+</example>
+</subsection>
+
+<xi:include href="./s_complex_numbers_ex.ptx"/>
+</section>
