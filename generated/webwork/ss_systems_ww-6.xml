@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-ss_systems_ww-6" assembly-id="ss_systems_ww-6">
+  <static seed="22" source="Library/TCNJ/TCNJ_LinearSystems/problem4.pg">
+    <statement><p>Give a geometric description of the following system of equations</p>
+<p><ol>
+<li>
+<p><m>\left\lbrace\begin{array}{rrrrrrr}
+2x \amp  + \amp  4y \amp  - \amp  6z \amp  = \amp  -12 \cr
+-3x \amp  - \amp  6y \amp  + \amp  9z \amp  = \amp  18
+\end{array} \right.</m></p>
+</li>
+<li>
+<p><m>\left\lbrace\begin{array}{rrrrrrr}
+2x \amp  + \amp  4y \amp  - \amp  6z \amp  = \amp  12 \cr
+-x \amp  + \amp  5y \amp  - \amp  9z \amp  = \amp  1
+\end{array} \right.</m></p>
+</li>
+<li>
+<p><m>\left\lbrace\begin{array}{rrrrrrr}
+2x \amp  + \amp  4y \amp  - \amp  6z \amp  = \amp  12 \cr
+-3x \amp  - \amp  6y \amp  + \amp  9z \amp  = \amp  16
+\end{array}\right.</m></p>
+</li>
+</ol></p>
+</statement>
+  </static>
+  <rendering-data sourceFilePath="Library/TCNJ/TCNJ_LinearSystems/problem4.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/TCNJ/TCNJ_LinearSystems/problem4.pg"/>
+</webwork-reps>

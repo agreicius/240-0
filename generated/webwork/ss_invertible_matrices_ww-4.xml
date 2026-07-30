@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-ss_invertible_matrices_ww-4" assembly-id="ss_invertible_matrices_ww-4">
+  <static seed="39" source="Library/Rochester/setLinearAlgebra4InverseMatrix/ur_Ch2_1_4.pg">
+    <statement><p>Are the following matrices invertible?</p>
+<p><ol>
+<li>
+<p><m>\left[\begin{array}{cc}
+-16 \amp 7\cr
+0 \amp 0
+\end{array}\right]</m></p>
+</li>
+<li>
+<p><m>\left[\begin{array}{cc}
+-1 \amp -2\cr
+4 \amp -2
+\end{array}\right]</m></p>
+</li>
+<li>
+<p><m>\left[\begin{array}{cc}
+-2 \amp 1\cr
+-5 \amp -1
+\end{array}\right]</m></p>
+</li>
+<li>
+<p><m>\left[\begin{array}{cc}
+4 \amp 7\cr
+-16 \amp -28
+\end{array}\right]</m></p>
+</li>
+</ol></p>
+</statement>
+  </static>
+  <rendering-data sourceFilePath="Library/Rochester/setLinearAlgebra4InverseMatrix/ur_Ch2_1_4.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/Rochester/setLinearAlgebra4InverseMatrix/ur_Ch2_1_4.pg"/>
+</webwork-reps>

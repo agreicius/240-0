@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 <link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
-<script type="module">import { startMathJax } from './_static/pretext/js/mathjax_startup.js';
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
 startMathJax({
 hasWebworkReps: true,
 hasSage: true,
@@ -30,9 +30,13 @@ htmlPresentation: false,
 </script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
-<meta property="book:title" content="Real vector spaces">
-<meta property="book:author" content="Aaron Greicius">
-<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<meta name="twitter:title" content="Real vector spaces: A first course in linear algebra">
+<meta property="og:title" content="Real vector spaces: A first course in linear algebra">
+<meta property="book:title" content="Real vector spaces: A first course in linear algebra">
+<meta name="twitter:description" content="This is the course resource for Northwestern University's first course in in linear algebra (Math 240-0). Definitions of real vector spaces and linear transformations thereof are given in full generality, but examples focus on vector spaces of real-valued tuples indexed by an arbitrary set.">
+<meta property="og:description" content="This is the course resource for Northwestern University's first course in in linear algebra (Math 240-0). Definitions of real vector spaces and linear transformations thereof are given in full generality, but examples focus on vector spaces of real-valued tuples indexed by an arbitrary set.">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.45"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
 <!--**     log level is 0, Runestone Services are disabled     **-->
@@ -55,16 +59,16 @@ eBookConfig.enableScratchAC = true;
 eBookConfig.acDefaultLanguage = 'python';
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '8.1.14';
+eBookConfig.runestone_version = '8.1.16';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.cb5af2e851de3574.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.f51cd4153b45055d.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<script src="_static/prefix-runtime.279b1f0077454c32.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.db8001875cb726c2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.66fa8a682a32c0ac.css">
-<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body id="NUlinearalgfirstcourse" class="pretext book ignore-math standalone-page">
@@ -185,68 +189,68 @@ eBookConfig.enable_chatcodes =  false;
 }
 \newenvironment{amatrix}[1][ccc|c]{\left[\begin{array}{#1}}{\end{array}\right]}
 \newenvironment{linsys}[2][m]{
-\begin{array}[#1]{@{}*{#2}{rc}r@{}}
+\begin{array}[#1]{*{#2}{rc}c}
 }{
 \end{array}}
 \newcommand{\eqsys}{\begin{array}{rcrcrcr}
-a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
-a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+a_{1,1}\,x_{1}\amp +\amp a_{1,2}\,x_{2}\amp +\,\cdots\,+\amp  a_{1,n}\,x_{n}\amp =\amp b_1\\
+a_{2,1}\,x_{1}\amp +\amp a_{2,2}\,x_{2}\amp +\,\cdots\,+\amp a_{2,n}\,x_{n}\amp =\amp b_2\\
 \amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \\
-a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+a_{m,1}x_{1}\amp +\amp a_{m,2}x_{2}\amp +\,\cdots\,+\amp a_{m,n}x_{n}\amp =\amp b_m
 \end{array}
 }
 \newcommand{\numeqsys}{\begin{array}{rrcrcrcr}
-e_1:\amp  a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp b_1\\
-e_2: \amp a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp b_2\\
+e_1:\amp  a_{1,1}\,x_{1}\amp +\amp a_{1,2}\,x_{2}\amp +\,\cdots\,+\amp  a_{1,n}\,x_{n}\amp =\amp b_1\\
+e_2: \amp a_{2,1}\,x_{1}\amp +\amp a_{2,2}\,x_{2}\amp +\,\cdots\,+\amp a_{2,n}\,x_{n}\amp =\amp b_2\\
 \amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \\
-e_m: \amp a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp b_m
+e_m: \amp a_{m,1}\,x_{1}\amp +\amp a_{m,2}\,x_{2}\amp +\,\cdots\,+\amp a_{m,n}\,x_{n}\amp =\amp b_m
 \end{array}
 }
 \newcommand{\homsys}{\begin{array}{rcrcrcr}
-a_{11}x_{1}\amp +\amp a_{12}x_{2}\amp +\cdots+\amp  a_{1n}x_{n}\amp =\amp 0\\
-a_{21}x_{1}\amp +\amp a_{22}x_{2}\amp +\cdots+\amp a_{2n}x_{n}\amp =\amp 0\\
+a_{1,1}\,x_{1}\amp +\amp a_{1,2}\,x_{2}\amp +\,\cdots\,+\amp  a_{1,n}\,x_{n}\amp =\amp 0\\
+a_{2,1}\,x_{1}\amp +\amp a_{2,2}\,x_{2}\amp +\,\cdots\,+\amp a_{2,n}\,x_{n}\amp =\amp 0\\
 \amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp \\
-a_{m1}x_{1}\amp +\amp a_{m2}x_{2}\amp +\cdots +\amp a_{mn}x_{n}\amp =\amp 0
+a_{m,1}\,x_{1}\amp +\amp a_{m,2}\,x_{2}\amp +\,\cdots\,+\amp a_{m,n}\,x_{n}\amp =\amp 0
 \end{array}
 }
 \newcommand{\vareqsys}[4]{
 \begin{array}{ccccccc}
-#3_{11}x_{1}\amp +\amp #3_{12}x_{2}\amp +\cdots+\amp  #3_{1#2}x_{#2}\amp =\amp #4_1\\
-#3_{21}x_{1}\amp +\amp #3_{22}x_{2}\amp +\cdots+\amp #3_{2#2}x_{#2}\amp =\amp #4_2\\
-\vdots \amp \amp \vdots \amp  \amp \vdots \amp =\amp  \\
-#3_{#1 1}x_{1}\amp +\amp #3_{#1 2}x_{2}\amp +\cdots +\amp #3_{#1 #2}x_{#2}\amp =\amp #4_{#1}
+#3_{1,1}\,x_{1}\amp +\amp #3_{1,2}\,x_{2}\amp +\,\cdots\,+\amp  #3_{1,#2}\,x_{#2}\amp =\amp #4_1\\
+#3_{2,1}\,x_{1}\amp +\amp #3_{2,2}\,x_{2}\amp +\,\cdots\,+\amp #3_{2,#2}\,x_{#2}\amp =\amp #4_2\\
+\vdots \amp \amp \vdots \amp  \amp \vdots \ amp =\amp  \\
+#3_{#1, 1}\,x_{1}\amp +\amp #3_{#1, 2}\,x_{2}\amp +\,\cdots\,+\amp #3_{#1, #2}\,x_{#2}\amp =\amp #4_{#1}
 \end{array}
 }
 \newcommand{\genmatrix}[1][a]{
 \begin{bmatrix}
-#1_{11} \amp  #1_{12} \amp  \cdots \amp  #1_{1n} \\
-#1_{21} \amp  #1_{22} \amp  \cdots \amp  #1_{2n} \\
+#1_{1,1} \amp  #1_{1,2} \amp  \cdots \amp  #1_{1,n} \\
+#1_{2,1} \amp  #1_{2,2} \amp  \cdots \amp  #1_{2,n} \\
 \vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
-#1_{m1} \amp  #1_{m2} \amp  \cdots \amp  #1_{mn}
+#1_{m,1} \amp  #1_{m,2} \amp  \cdots \amp  #1_{m,n}
 \end{bmatrix}
 }
 \newcommand{\varmatrix}[3]{
 \begin{bmatrix}
-#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \\
-#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \\
+#3_{1,1} \amp  #3_{1,2} \amp  \cdots \amp  #3_{1,#2} \\
+#3_{2,1} \amp  #3_{2,2} \amp  \cdots \amp  #3_{2,#2} \\
 \vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
-#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}
+#3_{#1,1} \amp  #3_{#1,2} \amp  \cdots \amp  #3_{#1,#2}
 \end{bmatrix}
 }
 \newcommand{\augmatrix}{
 \begin{amatrix}[cccc|c]
-a_{11} \amp  a_{12} \amp  \cdots \amp  a_{1n} \amp b_{1}\\
-a_{21} \amp  a_{22} \amp  \cdots \amp  a_{2n} \amp b_{2}\\
+a_{1,1} \amp  a_{1,2} \amp  \cdots \amp  a_{1,n} \amp b_{1}\\
+a_{2,1} \amp  a_{2,2} \amp  \cdots \amp  a_{2,n} \amp b_{2}\\
 \vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
-a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
+a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 \end{amatrix}
 }
 \newcommand{\varaugmatrix}[4]{
 \begin{amatrix}[cccc|c]
-#3_{11} \amp  #3_{12} \amp  \cdots \amp  #3_{1#2} \amp #4_{1}\\
-#3_{21} \amp  #3_{22} \amp  \cdots \amp  #3_{2#2} \amp #4_{2}\\
+#3_{1,1} \amp  #3_{1,2} \amp  \cdots \amp  #3_{1,#2} \amp #4_{1}\\
+#3_{2,1} \amp  #3_{2,2} \amp  \cdots \amp  #3_{2,#2} \amp #4_{2}\\
 \vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
-#3_{#1 1} \amp  #3_{#1 2} \amp  \cdots \amp  #3_{#1 #2}\amp #4_{#1}
+#3_{#1,1} \amp  #3_{#1,2} \amp  \cdots \amp  #3_{#1,#2}\amp #4_{#1}
 \end{amatrix}
 }
 \newcommand{\spaceforemptycolumn}{\makebox[\wd\boxofmathplus]{\ }}
@@ -277,9 +281,9 @@ a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\amp b_{m}
 \definecolor{fillinmathshade}{gray}{0.9}
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
-<header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" target="_blank" href=""><img src="external/images/im_holycomm.svg" alt="Logo image"></a><div class="title-container">
-<h1 class="heading"><a href="my-great-book.html"><span class="title">Real vector spaces</span> <span class="subtitle">A first course in linear algebra</span></a></h1>
+<div class="heading ptx-banner-heading"><a href="my-great-book.html"><span class="title">Real vector spaces</span> <span class="subtitle">A first course in linear algebra</span></a></div>
 <p class="byline">Aaron Greicius</p>
 </div>
 </div></header><div class="ptx-page"><main class="ptx-main"><div id="ptx-content"><div class="interactive-iframe-container"><iframe id="geogebra_scal_mult" style="width:600px; height:450px; display: block; " src="geogebra_scal_mult-if.html"></iframe></div></div></main></div>

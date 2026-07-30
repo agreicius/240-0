@@ -94,18 +94,90 @@ source_file = Library/ASU-topics/set119LinearSystems/p28.pg
 problem_id = 2
 problem_end
 problem_start
-source_file = Library/Mizzou/Finite_Math/Augmented_Matrices/AugMatrix1a.pg
+source_file = Library/ASU-topics/set119MatrixAlgebra/p17.pg
 problem_id = 1
 problem_end
 problem_start
-source_file = Library/Mizzou/Finite_Math/Gauss-Jordan_Elimination/3by3a.pg
+source_file = Library/Dartmouth/setMTWCh1S5/problem_1.pg
 problem_id = 2
 problem_end
 problem_start
-source_file = Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p02.pg
+source_file = Library/ASU-topics/set119MatrixAlgebra/p32.pg
 problem_id = 3
 problem_end
 problem_start
-source_file = Library/TCNJ/TCNJ_LinearSystems/problem17.pg
+source_file = Library/ASU-topics/set119MatrixAlgebra/p7.pg
+problem_id = 4
+problem_end
+problem_start
+source_file = Library/ASU-topics/set119MatrixAlgebra/p14.pg
+problem_id = 5
+problem_end
+problem_start
+source_file = Contrib/MountAllison/1-3_Matrices_and_Matrix_Operations/true_false.pg
+problem_id = 1
+problem_end
+problem_start
+source_file = Library/Utah/Business_Algebra/set10_Matrices/p17.pg
+problem_id = 2
+problem_end
+problem_start
+source_file = Library/Utah/Business_Algebra/set10_Matrices/p21.pg
+problem_id = 3
+problem_end
+problem_start
+source_file = Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.48.pg
+problem_id = 1
+problem_end
+problem_start
+source_file = Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.54.pg
+problem_id = 2
+problem_end
+problem_start
+source_file = Library/Rochester/setLinearAlgebra4InverseMatrix/ur_Ch2_1_4.pg
+problem_id = 3
+problem_end
+problem_start
+source_file = Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.59.pg
+problem_id = 4
+problem_end
+problem_start
+source_file = Library/Utah/Business_Algebra/set10_Matrices/p24.pg
+problem_id = 5
+problem_end
+problem_start
+source_file = Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.4.67.pg
+problem_id = 1
+problem_end
+problem_start
+source_file = Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p08.pg
+problem_id = 2
+problem_end
+problem_start
+source_file = Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p09.pg
+problem_id = 3
+problem_end
+problem_start
+source_file = Library/Rochester/setAlgebra35SystemMatrices/sw7_5_19.pg
+problem_id = 4
+problem_end
+problem_start
+source_file = Library/Rochester/setAlgebra35SystemMatrices/sw7_5_23.pg
+problem_id = 5
+problem_end
+problem_start
+source_file = Library/UMN/algebraKaufmannSchwitters/ks_11_4_prob02.pg
+problem_id = 1
+problem_end
+problem_start
+source_file = Library/NAU/setLinearAlgebra/detElementary.pg
+problem_id = 2
+problem_end
+problem_start
+source_file = Library/Rochester/setLinearAlgebra6Determinants/ur_la_6_8.pg
+problem_id = 3
+problem_end
+problem_start
+source_file = Library/Rochester/setLinearAlgebra6Determinants/ur_la_6_9.pg
 problem_id = 4
 problem_end

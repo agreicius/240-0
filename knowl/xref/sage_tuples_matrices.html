@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: blue-green                   *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "div.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script>
+</head>
+<body class="ignore-math">
+<article class="project project-like"><h2 class="heading">
+<span class="type">Sage Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title"><span class="process-math">\(n\)</span>-tuples and matrices.</span>
+</h2>
+<div class="para">To create an <span class="process-math">\(n\)</span>-tuple in Sage, use the <code class="code-inline tex2jax_ignore">vector()</code> command. The input should be a sequence of numbers enclosed in brackets.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sage_tuples_matrices-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="sage_tuples_matrices-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">v=vector([1,2,3,4])
+v
+</script></div>
+<div class="para">You can make use of sequence routines to create special types of <span class="process-math">\(n\)</span>-tuples.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sage_tuples_matrices-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="sage_tuples_matrices-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">v=vector(range(3))
+w=vector([1,2]*4)
+v,w
+</script></div>
+<div class="para">If you prefer the two outputs above to not be listed as a pair, you can use the <code class="code-inline tex2jax_ignore">print()</code> command in sequence. (This is a peculiarity of interactive SageCells, not Sage itself.) Alternatively, use <code class="code-inline tex2jax_ignore">show()</code> for a nicely typeset display of the output.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sage_tuples_matrices-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="sage_tuples_matrices-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">v=vector(range(3))
+w=vector([1,2]*4)
+print(v)
+show(w)
+</script></div>
+<div class="para">Once a vector <code class="code-inline tex2jax_ignore">v</code> is created in Sage, various properties of the vector can be computed using the <code class="code-inline tex2jax_ignore">v.foo()</code> syntax. For example, the command <code class="code-inline tex2jax_ignore">v.length()</code> returns the length of the vector <code class="code-inline tex2jax_ignore">v</code>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sage_tuples_matrices-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="sage_tuples_matrices-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">v=vector([1,2,3]*100)
+v.length()
+</script></div>
+<div class="para">Matrices are created in Sage using the <code class="code-inline tex2jax_ignore">matrix()</code> command, and are entered as a list of lists, where the <span class="process-math">\(i\)</span>-th list of this list represents the <span class="process-math">\(i\)</span>-th row of the matrix, considered as a rectangular array.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sage_tuples_matrices-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="sage_tuples_matrices-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A=matrix([[1,2,3],[4,5,6]])
+show(A)
+</script></div>
+<div class="para">To retrieve entries from <span class="process-math">\(n\)</span>-tuples or matrices, Sage uses the usual Python list syntax: e.g., <code class="code-inline tex2jax_ignore">v[i]</code> and <code class="code-inline tex2jax_ignore">A[i,j]</code>. As with all things Python, we always count from 0. Thus if <code class="code-inline tex2jax_ignore">A</code> is assigned to a matrix in Sage, <code class="code-inline tex2jax_ignore">A[i,j]</code> is its <span class="process-math">\((i+1),(j+1)\)</span>-th entry.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sage_tuples_matrices-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="sage_tuples_matrices-13" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A=matrix(3,4,range(1,13))
+show(A[0,1])
+show(A[1,2])
+show(A[2,3])
+</script></div>
+<div class="para">There are also built-in constructors for matrices consisting entirely of zeros, or entirely of ones.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sage_tuples_matrices-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="sage_tuples_matrices-15" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">show(zero_matrix(3,5))
+show(ones_matrix(2,3))
+</script></div>
+<div class="autopermalink" aria-hidden="true" data-description="Sage Example 1: n-tuples and matrices"><a tabindex="-1" href="#sage_tuples_matrices" title="Copy heading and permalink for Sage Example 1: n-tuples and matrices" aria-label="Copy heading and permalink for Sage Example 1: n-tuples and matrices">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="s_Rn_and_friends.html#sage_tuples_matrices">In Context</a></span>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-ss_matrix_ww-2" assembly-id="ss_matrix_ww-2">
+  <static seed="29" source="Library/ASU-topics/set119MatrixAlgebra/p17.pg">
+    <statement><p>Enter T or F depending on whether the statement is true or false.
+(You must enter T or F -- True and False will not work.)</p>
+<p><ol>
+<li>
+<p>If A is a square matrix such that AA equals the 0 matrix, then A must equal the 0 matrix.</p>
+</li>
+<li>
+<p>If A has dimensions <m>m  \times r</m> and B has dimensions  <m>r \times  n</m> , then AB 
+has dimensions  <m>r \times n</m>.</p>
+</li>
+</ol></p>
+</statement>
+  </static>
+  <rendering-data sourceFilePath="Library/ASU-topics/set119MatrixAlgebra/p17.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/ASU-topics/set119MatrixAlgebra/p17.pg"/>
+</webwork-reps>

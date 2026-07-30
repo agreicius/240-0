@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: blue-green                   *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "div.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script>
+</head>
+<body class="ignore-math">
+<article class="project project-like"><h2 class="heading">
+<span class="type">Sage Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Matrix arithmetic.</span>
+</h2>
+<div class="para">We use <code class="code-inline tex2jax_ignore">+</code> and <code class="code-inline tex2jax_ignore">*</code> for matrix addition and multiplication.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_matrix_mult-11-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="ss_matrix_mult-11-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A=Matrix(4,3,range(12))
+B=Matrix(4,3,range(12,24))
+C=Matrix(3,5,range(-5,10))
+show(A,B,C)
+show(A+B)
+show(A*C)
+</script></div>
+<div class="para">As evidence of Sage’s flexibility, the same symbol <code class="code-inline tex2jax_ignore">*</code> is also used for scalar multiplication.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_matrix_mult-11-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="ss_matrix_mult-11-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">show(5*A*C-2*B*C)
+</script></div>
+<div class="para">Edit the cell below to practice these operations.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_matrix_mult-11-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="ss_matrix_mult-11-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A=matrix([[1,0,-1],[2,-6,6],[4,4,5]])
+B=matrix([[1,2],[2,-4],[0,1]])
+</script></div>
+<div class="autopermalink" aria-hidden="true" data-description="Sage Example 7: Matrix arithmetic"><a tabindex="-1" href="#ss_matrix_mult-11" title="Copy heading and permalink for Sage Example 7: Matrix arithmetic" aria-label="Copy heading and permalink for Sage Example 7: Matrix arithmetic">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="s_matrix.html#ss_matrix_mult-11">In Context</a></span>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: blue-green                   *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="exercise exercise-like"><h2 class="heading">
+<span class="type">Exercise</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span>
+</h2>
+<div class="para">
+<span class="process-math">\(A=\begin{amatrix}[rr]0\amp 1\\2\amp -5 \end{amatrix}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_invertibility_theorem_ex-1-5-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical">
+<div class="para">Row reduce <span class="process-math">\(A\)</span> to the identity matrix:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\begin{amatrix}[rr]0\amp 1\\2\amp -5 \end{amatrix} \amp \xrightarrow[]{r_1\leftrightarrow r_1} \begin{amatrix}[rr]2\amp -5 \\0\amp 1 \end{amatrix}\\
+\amp \xrightarrow[]{\frac{1}{2}r_1} \begin{amatrix}[rr]1\amp -5/2\\ 0\amp 1 \end{amatrix}\\
+\amp \xrightarrow[]{r_1+\frac{5}{2}r_2} \begin{amatrix}[rr]1\amp 0\\ 0\amp 1 \end{amatrix} 
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_invertibility_theorem_ex-1-5-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">The corresponding elementary matrices are</div>
+<div class="displaymath process-math">
+\begin{equation*}
+E_1 = \begin{amatrix}[rr]0\amp 1\\ 1\amp 0 \end{amatrix} , E_2 = \begin{amatrix}[rr]1/2\amp 0\\ 0\amp 1 \end{amatrix}, E_3=\begin{amatrix}[rr]1\amp 5/2\\ 0\amp 1 \end{amatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">It follows that <span class="process-math">\(E_3E_2E_1A=I\text{,}\)</span> and hence that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=E_1^{-1}E_{2}^{-1}E_3^{-1}=\begin{amatrix}[rr]0\amp 1\\ 1\amp 0 \end{amatrix}
+\begin{amatrix}[rr]2\amp 0\\ 0\amp 1 \end{amatrix}
+\begin{amatrix}[rr]1\amp -5/2\\ 0\amp 1 \end{amatrix}\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_invertibility_theorem_ex-1-5-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 2.4.7.11.1"><a tabindex="-1" href="#s_invertibility_theorem_ex-1-5-3-2" title="Copy heading and permalink for Solution 2.4.7.11.1" aria-label="Copy heading and permalink for Solution 2.4.7.11.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 2.4.7.11"><a tabindex="-1" href="#s_invertibility_theorem_ex-1-5-3" title="Copy heading and permalink for Exercise 2.4.7.11" aria-label="Copy heading and permalink for Exercise 2.4.7.11">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="s_invertibility_theorem.html#s_invertibility_theorem_ex-1-5-3">In Context</a></span>
+</body>
+</html>

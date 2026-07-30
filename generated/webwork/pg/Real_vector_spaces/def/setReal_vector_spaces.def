@@ -1,0 +1,207 @@
+openDate          = 01/01/2027 at 12:00am
+dueDate           = 12/31/2027 at 10:00pm
+answerDate        = 12/31/2027 at 10:00pm
+paperHeaderFile   = Real_vector_spaces/header/Real_vector_spaces.pg
+screenHeaderFile  = Real_vector_spaces/header/Real_vector_spaces.pg
+description       = Real vector spaces
+problemListV2
+problem_start
+source_file = Library/ASU-topics/setSets/ur_st_1_2.pg
+problem_id = 20
+problem_end
+problem_start
+source_file = Library/SDSU/Discrete/Sets/cartesianprodB4.pg
+problem_id = 21
+problem_end
+problem_start
+source_file = Library/MontanaState/Sets/5.2A13Sets1.pg
+problem_id = 12
+problem_end
+problem_start
+source_file = Library/SUNYSB/oneToOneOnto1.pg
+problem_id = 13
+problem_end
+problem_start
+source_file = Library/LoyolaChicago/Precalc/Chap8Sec2/Q08.pg
+problem_id = 14
+problem_end
+problem_start
+source_file = Library/NAU/setFoundations/MAT320_0201.pg
+problem_id = 11
+problem_end
+problem_start
+source_file = Library/ASU-topics/setDiscrete/katie1.pg
+problem_id = 12
+problem_end
+problem_start
+source_file = Library/ASU-topics/setDiscrete/katie6.pg
+problem_id = 13
+problem_end
+problem_start
+source_file = Library/ASU-topics/setDiscrete/katie1.4_2.pg
+problem_id = 14
+problem_end
+problem_start
+source_file = Library/NAU/setFoundations/MAT320_0202.pg
+problem_id = 15
+problem_end
+problem_start
+source_file = Library/NAU/setFoundations/MAT320_0401.pg
+problem_id = 16
+problem_end
+problem_start
+source_file = Library/PCC/BasicAlgebra/ComplexNumber/complexNumberOperations100.pg
+problem_id = 12
+problem_end
+problem_start
+source_file = Library/Rochester/setAlgebra11ComplexNumbers/ur_cn_1_14.pg
+problem_id = 13
+problem_end
+problem_start
+source_file = Library/Hope/Multi1/05-03-Complex-numbers/Complex_arithmetic_04.pg
+problem_id = 14
+problem_end
+problem_start
+source_file = Library/Rochester/setComplexNumbers/ur_cn_1_16.pg
+problem_id = 15
+problem_end
+problem_start
+source_file = Library/ASU-topics/setPolynomials/srw3_5_31.pg
+problem_id = 8
+problem_end
+problem_start
+source_file = Library/ASU-topics/setPolynomials/jj1.pg
+problem_id = 9
+problem_end
+problem_start
+source_file = Library/TCNJ/TCNJ_LinearSystems/problem1.pg
+problem_id = 20
+problem_end
+problem_start
+source_file = Library/TCNJ/TCNJ_RowReduction/problem5.pg
+problem_id = 21
+problem_end
+problem_start
+source_file = Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/holt_01_01_024.pg
+problem_id = 22
+problem_end
+problem_start
+source_file = Library/TCNJ/TCNJ_LinearSystems/problem3.pg
+problem_id = 23
+problem_end
+problem_start
+source_file = Library/TCNJ/TCNJ_LinearSystems/problem4.pg
+problem_id = 24
+problem_end
+problem_start
+source_file = Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/holt_01_02_010.pg
+problem_id = 17
+problem_end
+problem_start
+source_file = Library/ASU-topics/set119LinearSystems/p28.pg
+problem_id = 18
+problem_end
+problem_start
+source_file = Library/Mizzou/Finite_Math/Augmented_Matrices/AugMatrix1a.pg
+problem_id = 16
+problem_end
+problem_start
+source_file = Library/Mizzou/Finite_Math/Gauss-Jordan_Elimination/3by3a.pg
+problem_id = 17
+problem_end
+problem_start
+source_file = Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p02.pg
+problem_id = 18
+problem_end
+problem_start
+source_file = Library/TCNJ/TCNJ_LinearSystems/problem17.pg
+problem_id = 19
+problem_end
+problem_start
+source_file = Library/ASU-topics/set119MatrixAlgebra/p17.pg
+problem_id = 36
+problem_end
+problem_start
+source_file = Library/Dartmouth/setMTWCh1S5/problem_1.pg
+problem_id = 37
+problem_end
+problem_start
+source_file = Library/ASU-topics/set119MatrixAlgebra/p32.pg
+problem_id = 38
+problem_end
+problem_start
+source_file = Library/ASU-topics/set119MatrixAlgebra/p7.pg
+problem_id = 39
+problem_end
+problem_start
+source_file = Library/ASU-topics/set119MatrixAlgebra/p14.pg
+problem_id = 40
+problem_end
+problem_start
+source_file = Contrib/MountAllison/1-3_Matrices_and_Matrix_Operations/true_false.pg
+problem_id = 15
+problem_end
+problem_start
+source_file = Library/Utah/Business_Algebra/set10_Matrices/p17.pg
+problem_id = 16
+problem_end
+problem_start
+source_file = Library/Utah/Business_Algebra/set10_Matrices/p21.pg
+problem_id = 17
+problem_end
+problem_start
+source_file = Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.48.pg
+problem_id = 16
+problem_end
+problem_start
+source_file = Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.54.pg
+problem_id = 17
+problem_end
+problem_start
+source_file = Library/Rochester/setLinearAlgebra4InverseMatrix/ur_Ch2_1_4.pg
+problem_id = 18
+problem_end
+problem_start
+source_file = Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.59.pg
+problem_id = 19
+problem_end
+problem_start
+source_file = Library/Utah/Business_Algebra/set10_Matrices/p24.pg
+problem_id = 20
+problem_end
+problem_start
+source_file = Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.4.67.pg
+problem_id = 20
+problem_end
+problem_start
+source_file = Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p08.pg
+problem_id = 21
+problem_end
+problem_start
+source_file = Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p09.pg
+problem_id = 22
+problem_end
+problem_start
+source_file = Library/Rochester/setAlgebra35SystemMatrices/sw7_5_19.pg
+problem_id = 23
+problem_end
+problem_start
+source_file = Library/Rochester/setAlgebra35SystemMatrices/sw7_5_23.pg
+problem_id = 24
+problem_end
+problem_start
+source_file = Library/UMN/algebraKaufmannSchwitters/ks_11_4_prob02.pg
+problem_id = 28
+problem_end
+problem_start
+source_file = Library/NAU/setLinearAlgebra/detElementary.pg
+problem_id = 29
+problem_end
+problem_start
+source_file = Library/Rochester/setLinearAlgebra6Determinants/ur_la_6_8.pg
+problem_id = 30
+problem_end
+problem_start
+source_file = Library/Rochester/setLinearAlgebra6Determinants/ur_la_6_9.pg
+problem_id = 31
+problem_end

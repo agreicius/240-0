@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: blue-green                   *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "div.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script>
+</head>
+<body class="ignore-math">
+<article class="project project-like"><h2 class="heading">
+<span class="type">Sage Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Column and row methods.</span>
+</h2>
+<div class="para">Let’s verify the validity of the column and row methods using Sage in some specific examples. Below we generate random integer matrices <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> of dimension <span class="process-math">\(3\times 5\)</span> and <span class="process-math">\(5\times 4\text{,}\)</span> respectively, and compute their product <span class="process-math">\(C=AB\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_column_row_method-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="s_column_row_method-7-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">R=MatrixSpace(ZZ,3,5)
+S=MatrixSpace(ZZ,5,4)
+A=R.random_element()
+B=S.random_element()
+C=A*B
+show(A,B)
+show(C)
+</script></div>
+<div class="para">Let’s check that the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(C\)</span> is equal to the product of <span class="process-math">\(A\)</span> with the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(B\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_column_row_method-7-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="s_column_row_method-7-5" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">colsA=A.columns()
+rowsA=A.rows()
+colsB=B.columns()
+rowsB=B.rows()
+colsC=C.columns()
+rowsC=C.rows()
+for j in range(0,4):
+  print(A*colsB[j]==colsC[j])
+</script></div>
+<div class="para">Alternatively, we can visually confirm these equalities using the display of <span class="process-math">\(C\)</span> in the first cell above. Observe that the result of <code class="code-inline tex2jax_ignore">A*colsB[i]</code> is displayed by Sage as a tuple, though technically for us this is a column vector.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_column_row_method-7-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="s_column_row_method-7-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">for j in range(0,4):
+  show(A*colsB[j])
+</script></div>
+<div class="para">Next, let’s verify that the result of multiplying <span class="process-math">\(A\)</span> and the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(B\)</span> is the corresponding linear combination of the columns of <span class="process-math">\(A\)</span> given by the coefficients of this column.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_column_row_method-7-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="s_column_row_method-7-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">for j in range(0,4):
+  c=colsB[j]
+  x=c[0]
+  y=c[1]
+  z=c[2]
+  w=c[3]
+  u=c[4]
+  show(x*colsA[0]+y*colsA[1]+z*colsA[2]+w*colsA[3]+u*colsA[4])
+</script></div>
+<div class="para">Now use the Sage cells below to demonstrate the validity of the row method for the product <span class="process-math">\(C=AB\text{.}\)</span> Simply modify the code in the two cells above to reflect the row method, as opposed to the column method.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_column_row_method-7-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="s_column_row_method-7-11" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+</script></div>
+<div id="s_column_row_method-7-12" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+</script></div>
+<div class="autopermalink" aria-hidden="true" data-description="Sage Example 8: Column and row methods"><a tabindex="-1" href="#s_column_row_method-7" title="Copy heading and permalink for Sage Example 8: Column and row methods" aria-label="Copy heading and permalink for Sage Example 8: Column and row methods">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="s_matrix.html#s_column_row_method-7">In Context</a></span>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_invertible_matrices_ex-1-5" assembly-id="s_invertible_matrices_ex-1-5">
+  <static seed="38" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.59.pg">
+    <statement><p>For what values of <m>c</m> will
+<m>\displaystyle A = \begin{bmatrix} 1 \amp  1 \\ c \amp  c^2 \end{bmatrix}</m> be invertible?</p>
+<p>For all <m>c</m> such that <m>c\neq</m> <fillin characters="6" name="AnSwEr0001"/> and <m>c\neq</m> <fillin characters="6" name="AnSwEr0002"/>.</p>
+</statement>
+    <answer>
+      <p>
+        <m>0</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>1</m>
+      </p>
+    </answer>
+    <solution><p><alert>SOLUTION:</alert> 
+The matrix <m>\displaystyle A = \begin{bmatrix} 1 \amp  1 \\ c \amp  c^2 \end{bmatrix}</m> is invertible provided the columns of <m>A</m> are linearly independent, which will be the case if <m>c \neq c^2</m>. Thus, we require that <m>c\neq 0</m> and <m>c \neq 1</m>.</p>
+</solution>
+  </static>
+  <rendering-data sourceFilePath="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.59.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.59.pg"/>
+</webwork-reps>

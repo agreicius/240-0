@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: blue-green                   *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* div with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "div.sagecell-sage",
+  "linked": true,
+  "linkKey": "linked-sage",
+  "autoeval": false,
+  "languages": [
+    "sage"
+  ],
+  "evalButtonText": "Evaluate (Sage)"
+});
+</script>
+</head>
+<body class="ignore-math">
+<article class="project project-like"><h2 class="heading">
+<span class="type">Sage Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Invertible matrices.</span>
+</h2>
+<div class="para logical">
+<div class="para">Sage has a number of useful tools related to invertibility. The boolean function <code class="code-inline tex2jax_ignore">is_invertible()</code> tests for invertibility, and the method <code class="code-inline tex2jax_ignore">inverse()</code> computes the inverse of an invertible matrix. Below we generate a random matrix with rational coefficients, test whether it is invertible, and compute its inverse if it is invertible. The <code class="code-inline tex2jax_ignore">density=0.5</code> ensures that roughly half of the matrix entries are zero; and this in turn increases the likelihood that the matrix is singular, for reasons that will become somewhat clearer later.</div>
+<ul class="disc" id="sage_inv_matrix-2-4">
+<li>
+<div class="para">Evaluate the Sage cell below multiple times.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sage_inv_matrix-2-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sage_inv_matrix-2-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li>
+<div class="para">When the matrix is invertible, verify that <span class="process-math">\(AA^{-1}=A^{-1}A=I\text{.}\)</span> If you like, use the blank Sage cell to compute <span class="process-math">\(AA^{-1}\)</span> and <span class="process-math">\(A^{-1}A\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sage_inv_matrix-2-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sage_inv_matrix-2-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li>
+<div class="para">Try increasing the density setting in <code class="code-inline tex2jax_ignore">random_element()</code> (e.g., <code class="code-inline tex2jax_ignore">density=0.75</code>, <code class="code-inline tex2jax_ignore">density=.875</code>) and see if the matrix is more or less likely to be invertible.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sage_inv_matrix-2-4-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#sage_inv_matrix-2-4-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sage_inv_matrix-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div id="sage_inv_matrix-3" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">R=MatrixSpace(QQ,4,4)
+A=R.random_element(density=0.5)
+print('A=\n',A)
+print('Q: is A invertible?. A:', A.is_invertible())
+if A.is_invertible():
+    print('A^-1=\n')
+    print(A.inverse())
+</script></div>
+<div id="sage_inv_matrix-4" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+</script></div>
+<div class="autopermalink" aria-hidden="true" data-description="Sage Example 10: Invertible matrices"><a tabindex="-1" href="#sage_inv_matrix" title="Copy heading and permalink for Sage Example 10: Invertible matrices" aria-label="Copy heading and permalink for Sage Example 10: Invertible matrices">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="s_invertible_matrices.html#sage_inv_matrix">In Context</a></span>
+</body>
+</html>
