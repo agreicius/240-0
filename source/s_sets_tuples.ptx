@@ -513,6 +513,17 @@ Lastly, combining the notions of families of sets and tuples, we arrive at the n
   </statement>
 </definition>
 </subsection>
-<!-- <xi:include href="s_sets_functions_ex.ptx"/> -->
+
+<subsection xml:id="ss_sets_functions_ww">
+  <title>WeBWork Exercises</title>
+  <exercise>
+  <!-- 1. union and intersections of sets -->
+    <webwork source="Library/ASU-topics/setSets/ur_st_1_2.pg" />
+  </exercise>
+  <exercise>
+  <!-- 2. products of sets -->
+    <webwork source="Library/SDSU/Discrete/Sets/cartesianprodB4.pg" />
+  </exercise>
+</subsection>
 
 </section>

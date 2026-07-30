@@ -1,0 +1,158 @@
+<exercises xml:id="s_matrix_algebra_ex">
+<subexercises>
+<title>Written Exercises</title>
+<exercise>
+  <statement>
+    <p>
+      In this exercise you will complete the proof of <xref ref="th_matrix_alg_props"/>.
+    </p>
+    <ol>
+      <li>
+        <p>
+          Prove the <xref ref="th_matrix_leftdist" text="title"/>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove the <xref ref="th_matrix_rightdist" text="title"/>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove the <xref ref="th_matrixscale_comm" text="title"/>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Prove <xref ref="th_matrix_add_mult_ident"/>.
+    </p>
+  </statement>
+
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      In this exercise you will complete the proof of <xref ref="th_trans_props"/>.
+    </p>
+    <ol>
+      <li>
+        <p>
+          Prove <xref ref="th_trans_scale">Statement</xref>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove <xref ref="th_trans_prod">Statement</xref>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove <xref ref="th_trans_owninverse">Statement</xref>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>
+      Let <m>A</m> an <m>n\times n</m> matrix.
+      We define its <term>square</term> <m>A^2</m>
+      as <m>A^2=AA</m>.
+    </p>
+      <ol>
+        <li>
+          <p>
+            In real number algebra we know that <m>a^2=0\implies a=0</m>. By contrast, show
+            that there are infinitely many <m>2\times 2</m> matrices <m>A</m> satisfying <m>A^2=\boldzero_{2\times 2}</m>.
+          </p>
+          <p>
+            Optional: can you describe in a parametric manner the set of <em>all</em> matrices <m>A</m> satisfying <m>A^2=\boldzero_{2\times 2}</m>?
+          </p>
+
+        </li>
+        <li>
+          <p>
+            In real number algebra we know that <m>a^2=a\implies a=0 \text{ or } a=1</m>. By contrast, show
+            that there are infinitely many <m>2\times 2</m> matrices <m>A</m> satisfying <m>A^2=A</m>.
+          </p>
+
+        </li>
+        <li>
+          <p>
+            In real number algebra we have the identity <m>(x+y)^2=x^2+2xy+y^2</m>. Show that two <m>n\times n</m> matrices <m>A</m>, <m>B</m> satisfy
+            <me>
+              (A+B)^2=A^2+2AB+B^2
+            </me>
+            if and only if <m>AB=BA</m>.
+          </p>
+        </li>
+      </ol>
+  </statement>
+  <hint>
+    <p>
+       For (a) set <m>A=\abcdmatrix{a}{b}{c}{d}</m>, compute <m>A^2</m>, set this matrix equal to <m>\boldzero_{2\times 2}</m>, and try and find some solutions to the corresponding (nonlinear) system of four equations in the unknowns <m>a,b,c,d</m>.
+    </p>
+    <p>
+      Similar hint for (b), only now set <m>A^2=A</m>.
+    </p>
+  </hint>
+</exercise>
+<exercise>
+    <introduction>
+      <p>
+      Consider the matrix equation
+      <m>A\, \begin{bmatrix}
+        1\amp 1\\ 1\amp 1
+      \end{bmatrix}=\begin{bmatrix}
+        1\amp 1\\ 1\amp 1
+      \end{bmatrix}</m>.
+    </p>
+    </introduction>
+    <task>
+      <statement>
+        <p>
+     The following chain of implications is invalid.
+      <md>
+        <mrow> A\, \begin{bmatrix}
+          1\amp 1\\ 1\amp 1
+        \end{bmatrix}=\begin{bmatrix}
+          1\amp 1\\ 1\amp 1
+        \end{bmatrix}\amp\implies A\, \begin{bmatrix}
+          1\amp 1\\ 1\amp 1
+        \end{bmatrix}=I_2\, \begin{bmatrix}
+          1\amp 1\\ 1\amp 1
+        \end{bmatrix} </mrow>
+        <mrow> \amp\implies A=I_2 </mrow>
+      </md>.
+    For each implication in the chain, explain why it is valid or invalid.
+    </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+      Find all <m>A</m> satisfying <me>A\, \begin{bmatrix}
+        1\amp 1\\ 1\amp 1
+      \end{bmatrix}=\begin{bmatrix}
+        1\amp 1\\ 1\amp 1
+      \end{bmatrix}</me>.
+      </p>
+      </statement>
+      <hint>
+        <p>
+          Write <m>A=\begin{bmatrix}
+            a\amp b\\ c\amp d
+          \end{bmatrix}</m> and set up a system of linear equations in the unknowns <m>a,b,c,d</m>.
+        </p>
+      </hint>
+    </task>
+</exercise>
+</subexercises>
+</exercises>

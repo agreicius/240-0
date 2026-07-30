@@ -1,0 +1,412 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_matrix_algebra">
+  <title>Matrix algebra</title>
+  <introduction>
+    <p>The last section was devoted to what might be called the <em>arithmetic</em> of matrices. We learned the basic operations of adding, multiplying, scaling, and transposing matrices. In this section we tackle the <em>algebra</em> of matrices. We will investigate the properties enjoyed (and not enjoyed) by our matrix operations, and will show how to use these operations to solve matrix equations.
+  </p>
+  <p>
+  As you learn about matrix algebra, always keep in mind your old friend, real number algebra. For the most part these two algebraic systems closely resemble one another, as <xref ref="th_matrix_alg_props"/> below makes clear. However, there are two crucial points where they differ (see <xref ref="th_matrix_abnormalities"/>): two important properties of real number algebra that do not hold for matrices. The consequences of these two simple aberrations are far-reaching and imbue matrix algebra with a fascinating richness in comparison to real number algebra.
+  </p>
+  </introduction>
+  \<subsection xml:id="ss_matrix_mult_props">
+    <title>Matrix multiplication properties</title>
+  <p>
+    We begin with a few results that establish a close connection between matrix multiplication and real number multiplication. 
+  </p>
+  <theorem xml:id="th_matrix_alg_props">
+      <title>Properties of matrix multiplication</title>
+      <statement>
+        <p>
+          In what follows <m>m,n,r,s</m> will denote positive integers. 
+          <ol>
+            <li xml:id="th_matrixmult_assoc">
+              <title>Associative law</title>
+              <p>
+                <m>A(BC)=(AB)C</m> for all <m>A\in M_{mr}, B\in M_{rs}, C\in M_{sn}</m>
+              </p>
+            </li>
+            <li xml:id="th_matrix_leftdist">
+              <title>Left-distributive law</title>
+              <p>
+                <m>A(B+C)=AB+AC</m> for all <m>A\in M_{mr}</m> and <m>B,C\in M_{rn}</m>.
+              </p>
+            </li>
+            <li xml:id="th_matrix_rightdist">
+              <title>Right-distributive law</title>
+              <p>
+                <m>(B+C)A=BA+CA</m> for all <m>B,C\in M_{mr}</m> and <m>A\in M_{rn}
+                </m>.
+              </p>
+            </li>
+            <li xml:id="th_matrixscale_comm">
+              <title>Scaling commutative law</title>
+              <p>
+                <m>a(BC)=(aB)C=B(aC)</m> for all <m>a\in \R</m>, <m>B\in M_{mr}</m>, <m>C\in M_{rn}</m>. 
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      How does one actually prove one of these properties?
+      These are all <em>matrix equalities</em> of the form <m>X=Y</m>, so
+      according to the <xref ref="d_matrix_equality" text='custom'> matrix equality definition</xref>
+      we must show (1) that the matrices <m>X</m> and <m>Y</m> have the same size,
+      and (2) that <m>(X)_{ij}=(Y)_{ij}</m> for all <m>(i,j)</m>. The proof below illustrates this technique for the <xref ref="th_matrixmult_assoc" text="custom">multiplication associative law</xref> of <xref ref="th_matrix_alg_props"/>.
+    </p>
+
+  <proof>
+    <title>Proof of (1)</title>
+    <p>We prove only the <xref ref="th_matrixmult_assoc" text="custom">associative law</xref>.
+    Let <m>A=[a_{ij}]_{m\times r}</m>,
+      <m>B=[b_{ij}]_{r\times s}</m>,
+      <m>C=[c_{ij}]_{s\times n}</m>.
+      To show
+      <me>
+        A(BC)=(AB)C
+      </me>,
+      we must show (1) that <m>A(BC)</m> and <m>(AB)C</m> have the same dimension, and (2) that <me>[A(BC)]_{ij}=[(AB)C]_{ij}</me> for all possible <m>(i,j)</m>.
+    </p>
+      <p>
+      The usual observation about <q>inner</q> and <q>outer</q> dimensions shows that both <m>A(BC)</m> and <m>(AB)C</m> have dimension <m>m\times n</m>.
+    </p><xref ref="d_matrix_mult"/>
+    <p> Next, given any  <m>(i,j)</m> with <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>, we have:
+      <md>
+        <mrow> [A(BC)]_{ij}\amp=\sum_{\ell=1}^ra_{i\ell}[BC]_{\ell j}  \amp (<xref ref="d_matrix_mult"/>)</mrow>
+        <mrow>\amp=\sum_{\ell=1}^ra_{i\ell}\left(\sum_{k=1}^sb_{\ell k}c_{kj}\right) \amp (<xref ref="d_matrix_mult"/>)</mrow>
+        <mrow>=\amp \sum_{\ell=1}^r\sum_{k=1}^sa_{i\ell}(b_{\ell k}c_{kj}) \amp \text{ (real dist.) }</mrow>
+        <mrow>=\amp \sum_{k=1}^s\sum_{\ell=1}^r(a_{i\ell}b_{\ell k})c_{kj} \amp \text{ (real comm., real assoc.) }</mrow>
+        <mrow>=\amp \sum_{k=1}^s\left(\sum_{\ell=1}^ra_{i\ell}b_{\ell k}\right)c_{kj} \amp \text{ (real dist.) }</mrow>
+        <mrow>=\amp \sum_{k=1}^s[AB]_{ik}c_{kj}  =\Bigl[(AB)C]_{ij}</mrow>
+      </md>
+    </p>
+    <p>
+      This proves that all entries of the two matrices are equal,
+      and hence <m>A(BC)=(AB)C</m>.
+    </p>
+  </proof>
+  <example xml:id="eg_vid_prove_matrix_assoc">
+    <title>Video example: proving matrix equalities</title>
+    <figure xml:id="fig_proof_assoc">
+      <caption>Video: matrix multiplication is associative</caption>
+      <video xml:id="vid_proof_assoc" youtube="EDGxkEV5mm0" />
+    </figure>
+  </example>
+
+  <p>Like real number algebra, there are certain matrices that satisfy special properties with regard to the operations of addition and multiplication. We have seen examples of this already thanks to the natural vector space structure of <m>M_{mn}</m>. For example, the <m>m\times n</m> zero matrix <m>\boldzero_{m\times n}</m> acts as an <em>additive indentity</em> (<ie/>, <m>\boldzero_{m\times n}+A=A</m> for all <m>A\in M_{mn}</m>) and vector inverses <m>-A</m> act as <em>additive inverses</em> (<ie/>, <m>-A+A=\boldzero_{m\times n}</m> for all <m>A\in M_{mn}</m>). We now introduce the identity matrices <m>I_n</m>, which satisfy a <em>multiplicative identity</em> property with respect to matrix multiplication, and thus play a role analogous to the number <m>1</m> among real numbers. 
+  </p>
+<definition xml:id="d_identity_matrix">
+  <title>Identity matrix</title>
+  <idx><h>identity matrix</h></idx>
+  <idx><h>matrix</h><h>identity matrix</h></idx>
+  <notation>
+    <usage><m>I</m></usage>
+    <description>inverse matrix</description>
+  </notation>
+  <statement>
+    <p>
+      The <term><m>n\times n</m> identity matrix</term>, denoted <m>I_n</m>,
+      is the square <m>n\times n</m> matrix
+      <me>
+        I_n=\begin{bmatrix}1\amp 0\amp 0 \amp \dots\amp 0\\ 0\amp 1 \amp 0 \amp \dots \amp 0\\
+        0\amp 0\amp 1 \amp \dots \amp 0\\
+      \vdots \amp \vdots \amp \amp \ddots \amp \vdots\\
+     0\amp 0\amp \dots \amp 0\amp 1\end{bmatrix}
+      </me>
+        with ones along the diagonal and zeros everywhere else. In other words, for all <m>1\leq i\leq n</m> and <m>1\leq j\leq n</m>, we have
+      <me>
+        (I_n)_{ij}=\begin{cases} 1 \amp \text{if } i=j \\ 0\amp \text{if } i\ne j
+      \end{cases}
+      </me>.
+      When there is no confusion about which dimension indentity matrix is intended, we will often write simply <m>I</m> instead of <m>I_n</m>.
+    </p>
+  </statement>
+  </definition>
+
+  <theorem xml:id="th_matrix_add_mult_ident">
+    <title>Multiplicative identities</title>
+    <statement>
+        <p> Let <m>n</m> be a positive integer. The <m>n\times n</m> identity matrix acts as a multiplicative identity among <m>n\times n</m> matrices in the following sense: for all <m>A\in M_{nn}</m> we have
+          <me>
+            I_n\, A=A\, I_n=A
+          </me>.
+        </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      Left as an exercise.
+    </p>
+  </proof>
+</subsection>
+<subsection xml:id="ss_cancellation">
+  <title>Cancellation laws fulfilled and violated</title>
+  <p>
+    When performing real number algebra, we frequently make use of cancellation laws, and these laws come in a variety of flavors. For example, the <em>additive cancellation law</em> asserts that 
+    <me>
+      x+y=x+z \iff y=z
+    </me>
+    for all <m>x,y,z\in \R</m>. Similarly, the <em>multiplicative cancellation law</em> asserts that for any <em>nonzero</em> <m>x\in \R</m>, we have   
+    <me>
+      xy=xz \iff y=z
+    </me>
+    for all <m>y,z\in \R</m>. We now investigate the extent to which these laws apply in matrix algebra. The results, as you will see, are mixed!
+  </p>
+  <theorem xml:id="c_matrix_additive_canc">
+    <title>Additive cancellation of matrices</title>
+
+    <statement>
+      <p>
+        Given <m>m\times n</m> matrices <m>A, B</m>, and <m>C</m>, we have <m>A+B=A+C</m> if and only if <m>B=C</m>. Using logical notation:
+        <me>
+          A+B=A+C \iff  B=C.
+        </me>
+      </p>
+    </statement>
+    <proof>
+      <p>
+        As simple as this claim might seem, remember that we are dealing with a completely new algebraic system here. We will prove both implications of <q>if and only if</q> statement separately.
+      </p>
+        <case>
+         <title>Proof: <m>A+B=A+C\implies B=C</m></title>
+        <p>
+        We prove this via a chain of implications:
+        <md>
+          <mrow> A+B=A+C\amp \implies -A+(A+B)=-A+(A+C) </mrow>
+          <mrow>  \amp\implies (-A+A)+B=(-A+A)+C </mrow>
+          <mrow>  \amp\implies \boldzero_{m\times n}+B=\boldzero_{m\times n}+C   </mrow>
+          <mrow>  \amp \implies B=C   </mrow>
+        </md>.
+      </p>
+    </case>
+      <case>
+       <title>Proof: <m>B=C\implies A+B=A+C</m></title>
+      <p>
+      This direction is obvious: if <m>B</m> and <m>C</m> are equal matrices, then they remain equal when we add <m>A</m> to each of them.
+      </p>
+      </case>
+    </proof>
+  </theorem>
+
+
+  <remark>
+    <p>
+      The algebraic importance of <xref ref="c_matrix_additive_canc"/> is that we can perform
+      <em>additive cancellation</em>  in matrix equations just as we do in real number algebra. For example, we can solve the matrix equation <m>A+B=3A</m> for <m>B</m> as follows:
+    </p>
+  <md>
+    <mrow>A+B\amp = 3A</mrow>
+    <mrow>A+B\amp = (1+2)A</mrow>
+    <mrow>A+B\amp = A+2A</mrow>
+    <mrow>B\amp = 2A \amp (<xref ref="c_matrix_additive_canc"/>)</mrow>
+  </md>.
+</remark>
+<warning>
+<p>Though we can perform additive cancellation in matrix algebra, we can <em>not</em> always perform <em>multiplicative cancellation</em>. For example, consider the matrices
+<me>
+A=\begin{bmatrix}1\amp 1\\ 1\amp 1\end{bmatrix}, B=\begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix}, C=\begin{bmatrix}0\amp 0\\ 1\amp 0 \end{bmatrix}
+</me>.
+Check for yourself that <m>AB=AC</m>, and yet <m>B\ne C</m>. In other words, we cannot always <q>cancel</q> <m>A</m> from the matrix equation <m>AB=AC</m>.
+</p>
+</warning>
+<p>
+The example in our warning above is but one instance of the general failure of the principle of multiplicative cancellation in matrix algebra. This in turn is a consequence of the following theorem, which identifies the two crucial places where matrix algebra differs significantly from real number algebra.
+</p>
+    <theorem xml:id="th_matrix_abnormalities">
+      <title>Matrix algebra abnormalities</title>
+      <statement>
+        <p>
+          <ol>
+        <li xml:id="th_mult_not_commutative">
+        <title>Matrix multiplication is not commutative</title>
+          <p>
+            Given <m>n\times n</m> matrices <m>A</m> and <m>B</m>, we do <em>not</em> necessarily have <m>AB=BA</m>.
+          </p>
+        </li>
+        <li xml:id="th_mult_has_zero_divisors">
+        <title>Products of nonzero matrices may be equal to zero</title>
+        <p>
+          If the product of two matrices is the zero matrix,
+          we <em>cannot</em> conclude that one of matrices is the zero matrix. In logical notation:
+          <men xml:id="eq_mult_has_zero_divisors">
+            \underset{m\times n}{A}\, \underset{n\times r}{B}=\boldzero_{m\times r}\;\not\!\!\!\!\implies A=\boldzero_{m\times n} \text{ or }  B=\boldzero_{n\times r}
+          </men>.
+              </p>
+            </li>
+          </ol>
+        </p>
+        
+      </statement>
+    </theorem>
+  <p>
+      This is a good place to point out that to prove an identity does not hold, it suffices to provide a single counterexample to that effect. We do so for each failed identity of <xref ref="th_matrix_abnormalities"/> in turn. There is no significance to the particular counterexamples chosen here, and indeed there are infinitely many counterexamples to choose from in both cases.
+    <ol>
+      <li>
+        <p>We have 
+        <md>
+          <mrow> \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix}\amp = \begin{bmatrix} 0\amp 1 \\ 0 \amp 0\end{bmatrix}</mrow>
+          <mrow> \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} \amp = \begin{bmatrix} 0\amp 0\\ 0\amp 0 \end{bmatrix} </mrow>
+        </md>
+        and thus 
+        <me>\begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \ne \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix}
+        </me>.
+        </p>
+      </li>
+      <li>
+        <p>
+            Observe that 
+            <me>
+              \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} =\begin{bmatrix}0\amp 0\\ 0\amp 0 \end{bmatrix} 
+            </me>.
+         This is an example of two nonzero matrices whose product is the zero matrix.
+        </p>
+      </li>
+    </ol>
+</p>
+<p>
+  An important consequence of the abnormality <xref ref="eq_mult_has_zero_divisors"/> is that matrix algebra does not enjoy the property of multiplicative cancellation. 
+</p>
+  <corollary xml:id="th_matrix_cancel">
+    <title>Failure of multiplicative cancellation</title>
+    <statement>
+      <ol>
+        <li>
+          <p>
+            Suppose matrices <m>A, B, C</m> satisfy <m>AB=AC</m> and <m>A\ne \boldzero</m>. We <em>cannot</em> conclude that <m>B=C</m>. In logical notation:
+            <men xml:id="eq_no_left_cancel" >
+              AB=AC \;\not\!\!\!\!\implies B=C
+            </men>
+          </p>
+        </li>
+        <li>
+          <p>
+            Suppose matrices <m>B, C, D</m> satisfy <m>BD=CD</m> and <m>D\ne \boldzero</m>. We <em>cannot</em> conclude that <m>B=C</m>. In logical notation:
+            <men xml:id="eq_no_right_cancel">
+              BD=CD \;\not\!\!\!\!\implies B=C
+            </men>
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </corollary>
+  <proof>
+    <p>
+      Again, we need only provide explicit counterexamples for each statement.
+    </p>
+    <ol>
+      <li>
+        <p> Let <m>A=\begin{bmatrix}1\amp 1\amp 0\\ 0\amp 0\amp 0 \end{bmatrix}</m>, <m>B=\begin{bmatrix}1\amp 0\\ 0\amp 0\\ 0\amp 0 \end{bmatrix}</m>, <m>C=\begin{bmatrix}0\amp 0\\ 1\amp 0\\ 0\amp 0 \end{bmatrix}</m>. Verify for yourself that
+          <me>
+            \begin{bmatrix}1\amp 1\amp 0\\ 0\amp 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 0\amp 0\\ 0\amp 0 \end{bmatrix} = \begin{bmatrix}1\amp 1\amp 0\\ 0\amp 0\amp 0 \end{bmatrix} \begin{bmatrix}0\amp 0\\ 1\amp 0\\ 0\amp 0 \end{bmatrix}=
+              \begin{bmatrix}
+                1\amp 0\\ 0\amp 0\\ 0\amp 0
+              \end{bmatrix}
+          </me>.
+          Thus <m>AB=AC</m>, but clearly <m>B\ne C</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>B=\begin{bmatrix}2\amp 0\\ 0\amp 0 \end{bmatrix}</m>, <m>C=\begin{bmatrix}1\amp 1\\ 0\amp 0 \end{bmatrix}</m>, <m>D=\begin{bmatrix}1\amp 1\amp 1\\ 1\amp 1\amp 1 \end{bmatrix}</m>. We have
+          <me>
+            \begin{bmatrix}2\amp 0\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 1\amp 1\\ 1\amp 1\amp 1 \end{bmatrix} = \begin{bmatrix}1\amp 1\\ 0\amp 0  \end{bmatrix} \begin{bmatrix}1\amp 1\amp 1\\ 1\amp 1\amp 1 \end{bmatrix}=
+            \begin{bmatrix}
+              2\amp 2\amp 2\\ 2\amp 2\amp 2
+            \end{bmatrix}
+          </me>.
+          Thus <m>BD=CD</m>, but <m>B\ne C</m>.
+        </p>
+      </li>
+    </ol>
+  </proof>
+  <remark xml:id="rm_cancel_failure">
+    <p> Mark well this important abnormality of matrix algebra. Confronted with a real number equation of the form <m>ab=ac</m>, we have a deeply ingrained impulse to declare that either <m>a=0</m> or <m>b=c</m>. (If we're sloppy we may forget about that first possibility.) The corresponding maneuver for the matrix equation <m>AB=AC</m> is simply not available to us, unless we know something more about <m>A</m>.
+  </p>
+</remark>
+</subsection>
+<subsection xml:id="ss_transpose_props">
+  <title>Transpostition properties</title>
+  
+
+<p>
+  We end our foray into matrix algebra with some properties articulating how matrix transposition interacts with matrix addition, multiplication and scalar multiplication.
+</p>
+<theorem xml:id="th_trans_props">
+  <title>Properties of matrix transposition</title>
+      <statement>
+        <p>
+          In what follows <m>m,n,r</m> will denote positive integers. 
+        <ol>
+          <li xml:id="th_trans_add" >
+            <p>
+              <m>(A+B)^T=A^T+B^T</m> for all <m>A,B\in M_{mn}</m>.
+            </p>
+          </li>
+          <li xml:id="th_trans_scale" >
+            <p>
+              <m>(cA)^T=cA^T</m> for all <m>c\in \R</m> and <m>A\in M_{mn}</m>.
+            </p>
+          </li>
+          <li xml:id="th_trans_prod">
+            <p>
+              <m>(AB)^T=B^TA^T</m> for all <m>A\in M_{mr}, B\in M_{rn}</m>. 
+            </p>
+          </li>
+          <li xml:id="th_trans_owninverse">
+            <p>
+              <m>\left(A^T\right)^T=A</m> for all <m>A\in M_{mn}</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+      </statement>
+      <proof>
+        <p> We prove only the first statement. First observe that if <m>A</m> is <m>m\times n</m>, then so is <m>B</m> and <m>A+B</m>. Then <m>(A+B)^T</m> is <m>n\times m</m> by <xref ref="d_transpose"/>. Similarly, we see that <m>A^T+B^T</m> is <m>n\times m</m>.
+      </p>
+        <p>
+          Next, given any <m>(i,j)</m> with <m>1\leq i\leq n</m>, <m>1\leq j\leq m</m>, we have
+        <md>
+          <mrow>\left((A+B)^T\right)_{ij}\amp =(A+B)_{ji} \amp (<xref ref="d_transpose"/>)</mrow>
+          <mrow>\amp = A_{ji}+B_{ji} \amp (<xref ref="d_matrix_add_subtract"/>)</mrow>
+          <mrow>\amp =(A^T)_{ij}+(B^T)_{ij} \amp (<xref ref="d_transpose"/> </mrow>
+          <mrow>\amp =(A^T+B^T)_{ij} \amp (<xref ref="d_matrix_add_subtract"/>)</mrow>
+        </md>.
+          Since the <m>ij</m>-entries of both matrices are equal for each <m>(i,j)</m>,
+          it follows that <m>(A+B)^T=A^T+B^T</m>.
+        </p>
+      </proof>
+    </theorem>
+    
+    <example xml:id="eg_vid_prove_matrix_transpose">
+      <title>Video example: proving matrix equalities</title>
+      <figure xml:id="fig_proof_transp">
+        <caption>Video: transpose property</caption>
+        <video xml:id="vid_proof_transp" youtube="twq0_HdpC3w" />
+      </figure>
+    </example>
+  </subsection>
+
+<subsection xml:id="ss_matrix_algebra_ww">
+  <title>WeBWork Exercises</title>
+
+<exercise>
+      <!-- true false multiple types of products -->
+      <webwork source="Contrib/MountAllison/1-3_Matrices_and_Matrix_Operations/true_false.pg" />
+    </exercise>
+
+    <!-- WeBWork Exercises about transpose -->
+
+  <exercise>
+    <!-- write down the dimensions of the transpose matrix -->
+    <webwork source="Library/Utah/Business_Algebra/set10_Matrices/p17.pg" />
+  </exercise>
+  
+  <exercise>
+    <!-- computation problem involving transposes and addition of matrices -->
+    <webwork source="Library/Utah/Business_Algebra/set10_Matrices/p21.pg" />
+  </exercise>
+
+</subsection>
+
+<xi:include  href="s_matrix_algebra_ex.ptx"/>
+</section>

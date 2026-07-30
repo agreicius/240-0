@@ -15,6 +15,7 @@
     <!-- Include chapters -->
     <xi:include href="./c_foundations.ptx"/>
     <xi:include href="./c_lin_sys.ptx" />
+    <xi:include href="./c_matrices.ptx" />
 
     <!-- Include backmatter -->
     <backmatter>

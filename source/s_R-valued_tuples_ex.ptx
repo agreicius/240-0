@@ -1,0 +1,35 @@
+<exercises xml:id="s_R-valued_tuples_ex">
+
+<exercisegroup>
+<title>Tuple building</title>
+
+
+  <introduction>
+    <p>
+      For the given index set <m>I</m> and tuple <m>a=(a_i)_{i\in I}</m>, display the tuple using the appropriate notational conventions introduced in <xref ref="ss_tuples"/>.
+    </p>
+  </introduction>
+
+  <exercise>
+    <statement>
+      <p>
+        <m>I=\{1,2,3,4,5\}</m>, <m>\bolda=(\cos(2\pi j))_{j\in I}</m>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <m>I=\{1,2,3,4\}\times \{1,2,3\}</m>, <m>A=(i+j)_{(i,j)\in I}</m>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <m>I=\Z_+</m>, <m>s=(2^k)_{k\in I}</m>
+      </p>
+    </statement>
+  </exercise>
+</exercisegroup>
+</exercises>

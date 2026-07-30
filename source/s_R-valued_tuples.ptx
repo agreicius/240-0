@@ -243,11 +243,11 @@ Let <m>m</m> and <m>n</m> be positive integers, and let
 <md>
     I = \{1,2,\dots, m\}\times \{1,2,\dots, n\}=\{(i,j)\mid 1\leq i\leq m, 1\leq j\leq n\} 
 </md>.
-A real-valued tuple indexed by <m>I</m> is called a <term>real <m>m\times n</m> matrix</term>, and the integers <m>m</m> and <m>n</m> are called the <term>dimensions</term> of the matrix. To distinguish matrices from <m>n</m>-tuples, we will use a bracket notation and write 
+A real-valued tuple <m>(a_{(i,j)})_{(i,j)\in I}</m> indexed by <m>I</m> is called a <term>real <m>m\times n</m> matrix</term>. We say the matrix has <term>size</term> <m>m\times n</m>, and call <m>m</m> and <m>n</m> the <term>dimensions</term> of the matrix. We will write <m>a_{i,j}</m> instead of <m>a_{(i,j)}</m>, and call <m>a_{i,j}</m> the <term><m>i,j</m>-th entry</term> of the matrix. Additionally, to distinguish matrices from <m>n</m>-tuples, one the following bracket notations will be used:
 <md>
-    (a_{(i,j)})_{(i,j)\in I}=[a_{i,j}]_{m\times n}
+<mrow>    [a_{i,j}]_{(i,j)\in I} \amp \amp [a_{i,j}]_{\substack{1\leq i\leq m\\ 1\leq j\leq n}} \amp \amp [a_{i,j}]_{m\times n} </mrow>
 </md>.
-When naming matrices we will favor capital letters (<ie/>, <m>A, B, C,\dots</m>) and will often display a matrix <m>A=[a_{i,j}]_{(i,j)\in I}</m> as a rectangular array as 
+We will favor capital letters (<ie/>, <m>A, B, C,\dots</m>) when naming matrices, and will often display a matrix <m>A=[a_{i,j}]_{m\times n}</m> as a rectangular array as 
 <md>
      A=\genmatrix
 </md>,
@@ -266,12 +266,12 @@ Display the given matrix <m>A</m> as a rectangular array.
 <ol>
     <li>
         <p>
-            <m>m=n=2</m>,<m>A=[a_{i,j}]_{m\times n}</m>, where <m>a_{i,j}=2(i-1)+j</m>
+            <m>m=n=2</m>, <m>A=[a_{i,j}]_{m\times n}</m>, where <m>a_{i,j}=2(i-1)+j</m>
         </p>
     </li>
     <li>
         <p>
-            <m>m=2</m>, <m>n=3</m>, <m>A=[a_{i,j}]_{m\times n}</m>, where <m>a_{i,j}=2(i-1)+j</m>
+            <m>A=[2(i-1)+j]_{(i,j)\in \{1,2\}\times \{1,2,3\}}</m>
         </p>
     </li>
     <li>
@@ -422,6 +422,200 @@ In other words, two matrices are equal if and only if they have the same dimensi
     </p>
 </proof>
 </proposition>
+<p>
+        In <xref ref="sage_tuples_matrices"/> we introduce <url href="https://www.sagemath.org/">SageMath</url> (or <em>Sage</em>, for short), an open-source computer algebra system that is built on top of the Python programming language. Our exploration of Sage will be a rather casual one, making use of interactive cells called <url href="https://sagecell.sagemath.org/">Sage cells</url>. These cells <xref ref="sage_tuples_matrices"/> can be evaluated by clicking the <c>Evaluate (Sage)</c> button, or by typing <c>shift+return</c>. You can experiment by editing the code in these cells and then evaluating. Sage is built on top of the Python programming language, and so shares its syntax. 
+     </p>
+    <project xml:id="sage_tuples_matrices">
+        <title><m>n</m>-tuples and matrices</title>
+        <p>
+            To create an <m>n</m>-tuple in Sage, use the <c>vector()</c> command.
+            The input should be a sequence of numbers enclosed in brackets.
+        </p>
+            <sage>
+                <input>
+                    v=vector([1,2,3,4])
+                    v
+                </input>
+                <output>
+                    (1,2,3,4)
+                </output>
+            </sage>
+            <p>
+                You can make use of sequence routines to create special types of <m>n</m>-tuples.  
+            </p>
+            <sage>
+                <input>
+                    v=vector(range(3))
+                    w=vector([1,2]*4)
+                    v,w
+                </input>
+                <output>
+                    ((0,1,2), (1,2,1,2,1,2,1,2))
+                </output>
+            </sage>
+        <p>
+            If you prefer the two outputs above to not be listed as a pair, you can use the <c>print()</c> command in sequence. (This is a peculiarity of interactive SageCells, not Sage itself.) Alternatively, use <c>show()</c> for a nicely typeset display of the output.
+        </p>
+            <sage>
+                <input>
+                    v=vector(range(3))
+                    w=vector([1,2]*4)
+                    print(v)
+                    show(w)
+                </input>
+                <output>
+                    (0,1,2)
+                    (1,2,1,2,1,2,1,2)
+                </output>
+            </sage>
+            <p>
+                Once a vector <c>v</c> is created in Sage, various properties of the vector can be computed using the <c>v.foo()</c> syntax. For example, the command <c>v.length()</c> returns the length of the vector <c>v</c>.
+            </p>
+            <sage>
+                <input>
+                    v=vector([1,2,3]*100)
+                    v.length()
+                </input>
+                <output>
+                    300
+                </output>
+            </sage>
+            <p>
+                Matrices are created in Sage using the <c>matrix()</c> command, and are entered as a list of lists, where the <m>i</m>-th list of this list represents the <m>i</m>-th row of the matrix, considered as a rectangular array. 
+            </p>
+            <sage>
+                <input>
+                    A=matrix([[1,2,3],[4,5,6]])
+                    show(A)
+                </input>
+                <output>
+                    
+                </output>
+            </sage>
+            
+            <p>
+                To retrieve entries from <m>n</m>-tuples or matrices, Sage uses the usual Python list syntax: <eg/>, <c>v[i]</c> and <c>A[i,j]</c>. As with all things Python, we always count from 0. Thus if <c>A</c> is assigned to a matrix in Sage, <c>A[i,j]</c> is its <m>(i+1),(j+1)</m>-th entry.
+    </p>
+    <sage>
+    <input>
+    A=matrix(3,4,range(1,13))
+    show(A[0,1])
+    show(A[1,2])
+    show(A[2,3])
+    </input>
+    <output>
+    2
+    7
+    12
+    </output>
+    </sage>  
+    <p>
+        There are also built-in constructors for matrices consisting entirely of zeros, or entirely of ones. 
+    </p>    
+    <sage>
+        <input>
+            show(zero_matrix(3,5))
+            show(ones_matrix(2,3))
+        </input>
+        <output>
+            
+        </output>
+    </sage>
+    </project>
+<p>
+    In this class we will draw our examples almost exclusively from the sets <m>\R^n</m>, <m>\ML_{m,n}(\R)</m>, and <m>\R^\infty</m>. However, note that once we've understood a matrix as a tuple indexed by <em>pairs</em> of integers <m>(i,j)</m>, it is not much of a jump to consider tuples indexed by triples of integers <m>(i,j,k)</m>, or quadruples of integers <m>(i,j,k,l)</m>, <etc/>. Such tuples are called <em>multidimensional arrays</em><fn>These multidimensional arrays are sometimes called <em>tensors</em> by data scientists. We will avoid this, since that term is used in mathematics for a different type of object not discussed in this class.</fn> and appear frequently in data science settings. In full generality, a <em><m>k</m>-dimensional array</em> is real-valued tuple with index set of the form 
+    <md>
+        I=\{(i_1,i_2,\dots, i_k)\mid 1\leq i_1\leq n_1, 1\leq i_2\leq n_2,\dots, 1\leq i_k\leq n_k\}
+    </md>.
+Such a tuple has <em>size</em> <m>n_1\times n_2\times \cdots\times n_k</m>. 
+    In this more general context, a matrix is just a <m>2</m>-dimensional array. The next example describes how a digital image can be thought of as a <m>3</m>-dimensional array. 
+</p>
+    <example xml:id="eg_image_3d-array">
+    <title>Digital image as <m>3</m>-dimensional array</title>
+    <statement>
+    <p>
+Consider a digital image consisting of a <m>1027\times 768</m> array of pixels, each of which displays a color specified by a triple of real numbers <m>(r,g,b)</m> that lists the intensities of the red, blue, and green color channels at that pixel. The image can be stored as a tuple <m>(a_{i,j,k})_{(i,j,k)\in I}</m>, where 
+<md>
+    I=\{(i,j,k)\mid 1\leq i\leq 1027, 1\leq j\leq 768, 1\leq k\leq 3\}
+</md>
+and <m>a_{i,j,k}</m> is the intensity of the <m>k</m>-th color channel (1=red, 2=green, 3=blue) at the pixel in the <m>(i,j)</m>-th position. Our image is thus a <m>3</m>-dimensional array of size <m>1027\times 768\times 3</m>. See <xref ref="sage_image_3d_array"/> for a Sage demonstration of this idea. 
+    </p>
+    <p>
+        Similarly to matrices, we can envision our <m>3</m>-dimensional array <m>(a_{i,j,k})_{(i,j,k)\in I}</m> as a <m>3</m>-d box array of data consisting of three flat sheets stacked vertically: the first sheet consists of the entries <m>a_{i,j,1}</m> arranged as a grid, and similarly, the second and third sheets consist of the entries <m>a_{i,j,2}</m> and <m>a_{i,j,3}</m>, respectively. The mathematical usefulness of such a conception is up for debate. However, we can give some (somewhat dubious) physical intuition in this case as follows. Imagine the first sheet being a red-tinted translucent that colors the <m>(i,j)</m>-th pixel red with intensity <m>a_{i,j,1}</m> for all all pairs <m>(i,j)</m>. Similarly, imagine the second and third sheets as green- and blue-tinted translucents that color the <m>(i,j)</m>-th pixel green (or blue) with intensity <m>a_{i,j,2}</m> (or <m>a_{i,j,3}</m>). Now take all three sheets, stack them on top of one another, shine a light through them, and <foreign>voilà</foreign>, our image appears! 
+    </p>
+    </statement>
+    </example>
+    <project xml:id="sage_image_3d_array">
+    <title>Digital image as <m>3</m>-dimensional array</title>
+    <statement>
+    <p>
+    The Sage cell below creates a <m>3</m>-dimensional array representation of a <m>16\times 16</m> pixel image. Make sure to evaluate that cell!
+    </p>
+    <sage>
+    <input>
+        smiley=[[[0,80,100],[0,80,108],[0,80,116],[0,80,124],[0,80,132],[0,80,140],[0,80,148],[0,80,156],[0,80,164],[0,80,172],[0,80,180],[0,80,188],[0,80,196],[0,80,204],[0,80,212],[0,80,220]],[[0,90,100],[0,90,108],[0,90,116],[0,90,124],[0,90,132],[0,90,140],[0,90,148],[0,90,156],[0,90,164],[0,90,172],[0,90,180],[0,90,188],[0,90,196],[0,90,204],[0,90,212],[0,90,220]],[[0,100,100],[0,100,108],[0,100,116],[0,100,124],[0,100,132],[0,100,140],[0,100,148],[0,100,156],[0,100,164],[0,100,172],[0,100,180],[0,100,188],[0,100,196],[0,100,204],[0,100,212],[0,100,220]],[[0,110,100],[0,110,108],[0,110,116],[0,110,124],[0,110,132],[0,110,140],[0,110,148],[0,110,156],[0,110,164],[0,110,172],[0,110,180],[0,110,188],[0,110,196],[0,110,204],[0,110,212],[0,110,220]],[[0,120,100],[0,120,108],[0,120,116],[0,120,124],[0,0,0],[0,0,0],[0,120,148],[0,120,156],[0,120,164],[0,120,172],[0,0,0],[0,0,0],[0,120,196],[0,120,204],[0,120,212],[0,120,220]],[[0,130,100],[0,130,108],[0,130,116],[0,130,124],[0,0,0],[0,0,0],[0,130,148],[0,130,156],[0,130,164],[0,130,172],[0,0,0],[0,0,0],[0,130,196],[0,130,204],[0,130,212],[0,130,220]],[[0,140,100],[0,140,108],[0,140,116],[0,140,124],[0,140,132],[0,140,140],[0,140,148],[0,140,156],[0,140,164],[0,140,172],[0,140,180],[0,140,188],[0,140,196],[0,140,204],[0,140,212],[0,140,220]],[[0,150,100],[0,150,108],[0,150,116],[0,150,124],[0,150,132],[0,150,140],[0,150,148],[0,150,156],[0,150,164],[0,150,172],[0,150,180],[0,150,188],[0,150,196],[0,150,204],[0,150,212],[0,150,220]],[[0,160,100],[0,160,108],[0,160,116],[0,160,124],[0,160,132],[0,160,140],[0,160,148],[0,160,156],[0,160,164],[0,160,172],[0,160,180],[0,160,188],[0,160,196],[0,160,204],[0,160,212],[0,160,220]],[[0,170,100],[0,170,108],[0,170,116],[0,170,124],[0,170,132],[0,170,140],[0,170,148],[0,170,156],[0,170,164],[0,170,172],[0,170,180],[0,170,188],[0,170,196],[0,170,204],[0,170,212],[0,170,220]],[[0,180,100],[0,180,108],[0,180,116],[0,180,124],[0,180,132],[0,180,140],[0,180,148],[0,180,156],[0,180,164],[0,180,172],[0,180,180],[0,180,188],[0,180,196],[0,180,204],[0,180,212],[0,180,220]],[[0,190,100],[0,190,108],[0,190,116],[0,0,0],[0,190,132],[0,190,140],[0,190,148],[0,190,156],[0,190,164],[0,190,172],[0,190,180],[0,190,188],[0,0,0],[0,190,204],[0,190,212],[0,190,220]],[[0,200,100],[0,200,108],[0,200,116],[0,200,124],[0,0,0],[0,200,140],[0,200,148],[0,200,156],[0,200,164],[0,200,172],[0,200,180],[0,0,0],[0,200,196],[0,200,204],[0,200,212],[0,200,220]],[[0,210,100],[0,210,108],[0,210,116],[0,210,124],[0,210,132],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,210,188],[0,210,196],[0,210,204],[0,210,212],[0,210,220]],[[0,220,100],[0,220,108],[0,220,116],[0,220,124],[0,220,132],[0,220,140],[0,220,148],[0,220,156],[0,220,164],[0,220,172],[0,220,180],[0,220,188],[0,220,196],[0,220,204],[0,220,212],[0,220,220]],[[0,230,100],[0,230,108],[0,230,116],[0,230,124],[0,230,132],[0,230,140],[0,230,148],[0,230,156],[0,230,164],[0,230,172],[0,230,180],[0,230,188],[0,230,196],[0,230,204],[0,230,212],[0,230,220]]]
+    </input>
+    <output>
+        
+    </output>
+</sage>
+<p>
+Recall that Sage captures the double-index nature of a matrix by nesting lists: a matrix is just a list of lists. A <m>3</m>-dimensional array by taking this nesting one step further, as you can see from the definition of the object <c>smiley</c>, which is a list of lists of lists. In its current format, to access the <m>(i,j,k)</m>-th entry of the array, which tells us the intensity of the <m>k</m>-th color channel at <m>(i,j)</m>-th pixel, we use an iterated indexing syntax: <c>smiley[i][j][k]</c>. Let's examine the color of the top-left pixel by determining the three color intensities there. Adopting the <q>count from zero</q> convention of Python, the top-left pixel is given by <m>(i,j)=(0,0)</m>, and the three color channels are encoded as 0=red, 1=green, 2=blue. 
+</p>
+    <sage>
+        <input>
+            print('top-left red intensity=',smiley[0][0][0])
+            print('top-left green intensity=',smiley[0][0][1])
+            print('top-left blue intensity=',smiley[0][0][2])
+        </input>
+        <output>
+            
+        </output>
+    </sage>
+    <p>
+        It looks like this pixel is blue-green, with emphasis on the blue. What about the bottom-left pixel?
+    </p>
+    <sage>
+        <input>
+            print('bottom-right red intensity=',smiley[15][15][0])
+            print('bottom-right green intensity=',smiley[15][15][1])
+            print('bottom-right blue intensity=',smiley[15][15][2])
+        </input>
+        <output>
+            
+        </output>
+    </sage>
+    <p>
+        Interesting! It appears that this pixel is also blue-green, but considerably more green. Before confirming our results by viewing the image, let's convert <c>smiley</c> into the Python's standard multidimensional array format, a <em>NumPy array</em> (or ndarray). As a NumPy array, we can determine the size of the array using <c>smiley.shape</c>  and we can access the <m>(i,j,k)</m>-th entry more naturally as <c>smiley[i,j,k]</c> (although you will notice that we are given some additional information about the data-type of the entry).
+    </p>
+    <sage>
+        <input>
+            import numpy as np
+            smiley=np.array(smiley)
+            print([smiley[0,0,0],smiley[0,0,1],smiley[0,0,2]])
+            print(smiley.shape)
+        </input>
+        <output>
+            
+        </output>
+    </sage>
+    <p>
+        And now it's time for the big reveal. We will view <c>smiley</c> using the data visualization library <c>matplotlib</c>.
+    </p>
+    <sage>
+        <input>
+            import matplotlib.pyplot as plt
+            plt.imshow(smiley)
+            plt.show()
+        </input>
+        <output>
+            
+        </output>
+    </sage>
+    </statement>
+    </project>
+    
+    
 
 
 </subsection>
@@ -527,7 +721,7 @@ In other words, two matrices are equal if and only if they have the same dimensi
                 </p>
             </li>
         </ul>
-    The foregoing is another example of the advantage of working with the general notion of <m>I</m>-tuples. Taking our single definition of vector operations on <m>\R^I</m>, by choosing different types of index sets, we immediately derive a notion of vector addition and scalar multiplication on the set of <m>n</m>-tuples <m>\R^n</m>, the set of infinite sequences <m>\R^\infty</m>, and the set of <m>m\times n</m> matrices <m>\ML_{m,n}(\R)</m>. 
+    The foregoing is another example of the advantage of working with the general notion of <m>I</m>-tuples. Starting from our single definition of vector operations on <m>\R^I</m> (<xref ref="d_tuples_vec_ops"/>), by choosing different types of index sets <m>I</m>, we immediately derive a notion of vector addition and scalar multiplication on three quite different sets of objects:  the set of <m>n</m>-tuples <m>\R^n</m>, the set of infinite sequences <m>\R^\infty</m>, and the set of <m>m\times n</m> matrices <m>\ML_{m,n}(\R)</m>. 
     </p>
     <p>
         In <xref ref="ss_Rn_visual"/> we recall the basic spatial interpretation of the vector operations in the context of <m>\R^2</m> and <m>\R^3</m>. In the meantime, we consider a few explicit examples. 
@@ -555,7 +749,10 @@ In other words, two matrices are equal if and only if they have the same dimensi
                 \end{amatrix}</m> and <m>B=\begin{amatrix}
                 1\amp -1\amp 0\\
                 0\amp -1\amp -1
-                \end{amatrix}</m>. Compute <m>2A+(-7)B</m>. 
+                \end{amatrix}</m>. 
+            </p>
+            <p>
+                Compute <m>2A+(-7)B</m>. 
             </p>
         </li>
     </ol>
@@ -617,7 +814,7 @@ In other words, two matrices are equal if and only if they have the same dimensi
     </solution>
     </example>
     <p>
-        In <xref ref="sage_vec_ops"/> we introduce <url href="https://www.sagemath.org/">SageMath</url> (or <em>Sage</em>, for short), an open-source computer algebra system. Our exploration of Sage will be a rather casual one, making use of interactive cells called <url href="https://sagecell.sagemath.org/">Sage cells</url>. These cells <xref ref="sage_vec_ops"/> can be evaluated by clicking the <c>Evaluate (Sage)</c> button, or by typing <c>shift+return</c>. You can experiment by editing the code in these cells and then evaluating.
+        In <xref ref="sage_vec_ops"/> we introduce <url href="https://www.sagemath.org/">SageMath</url> (or <em>Sage</em>, for short), an open-source computer algebra system. Our exploration of Sage will be a rather casual one, making use of interactive cells called <url href="https://sagecell.sagemath.org/">Sage cells</url>. These cells <xref ref="sage_vec_ops"/> can be evaluated by clicking the <c>Evaluate (Sage)</c> button, or by typing <c>shift+return</c>. You can experiment by editing the code in these cells and then evaluating. Sage is built on top of the Python programming language, and so shares its syntax. 
      </p>
     <project xml:id="sage_vec_ops">
         <title>Vector operations: <m>\R^n</m> and <m>\ML_{m\times n}(\R)</m> </title>
@@ -687,31 +884,54 @@ In other words, two matrices are equal if and only if they have the same dimensi
                 </output>
             </sage>
             <p>
-                Matrices are created in Sage using the <c>matrix()</c> command, and are entered as a list of lists, where the <m>i</m>-th list of this list represents the <m>i</m>-th row of the matrix, considered as a rectangular array. 
+                Matrices are created in Sage using the <c>matrix()</c> command, and are entered as a list of lists, where the <m>i</m>-th list of this list represents the <m>i</m>-th row of the matrix, considered as a rectangular array. Note that <c>show()</c> outputs a typeset display of the matrix, as contrasted with the text ouput of <c>print()</c>.
             </p>
             <sage>
                 <input>
                     A=matrix([[1,2,3],[4,5,6]])
                     show(A)
+                    print(A)
                 </input>
                 <output>
                     
                 </output>
             </sage>
+            <p>
+                The Sage syntax for vector operations in <m>\ML_{m,n}(\R)</m> is identical to that for <m>\R^n</m>. The command <c>matrix(2,3,range(-4,2))</c> used below instructs Sage to create a <m>2\times 3</m> matrix whose entries are the integers from <m>-4</m> to <m>1</m>, arranged by <q>wrapping</q> along the two rows. 
+            </p>
+            <sage>
+                <input>
+                    B=matrix(2,3,range(-4,2))
+                    show(B)
+                    show(-1*B)
+                    show(2*A+7*B)
+                </input>
+                <output>
+                    
+                </output>
+            </sage>
+            <p>
+                Lastly, to retrieve entries from <m>n</m>-tuples or matrices, Sage uses the usual Python list syntax: <eg/>, <c>v[i]</c> and <c>A[i,j]</c>. As with all things Python, we always count from 0. Thus if <c>A</c> is assigned to a matrix in Sage, <c>A[i,j]</c> is its <m>(i+1),(j+1)</m>-th entry.
+    </p>
+    <sage>
+    <input>
+    A=matrix(3,4,range(1,13))
+    show(A[0,1])
+    show(A[1,2])
+    show(A[2,3])
+    </input>
+    <output>
+    2
+    7
+    12
+    </output>
+    </sage>      
     </project>
-</subsection>
-    <subsection xml:id="ss_vec_spaces">
-        <title>Vector spaces</title>
-        <p>
-            We now jump to the heart of the matter, which is that <m>\R^n</m>, together with its standard vector operations, constitutes an example of an important type of mathematical object called a <em>vector space</em>. 
-        </p>
-    
+    <p>
+    So why do we call these operations <em>vector</em> operations? It turns out that a set <m>\R^I</m> together with these two vector operations is an example of an important type of mathematical object called a <em>vector space</em>, which in turn are the main object of study of linear algebra. The definition of a vector space we give below is what is known as an <em>axiomatic definition</em>: it lists a set of properties, called <em>axioms</em>, and defines a vector space to be anything that satisfies these axioms. 
+    </p>
     <definition xml:id="d_vector_space">
         <title>Vector space</title>
-        <idx><h>vector space</h><h>definition</h></idx>
-        <idx><h>vector space</h><h>zero vector</h></idx>
-        <idx><h>vector space</h><h>vector inverse</h></idx>
-        <idx><h>vector space</h><h>vector</h></idx>
           <statement>
             <p>
               A <term>real vector space</term> is a set <m>V</m> together with two operations
@@ -719,7 +939,7 @@ In other words, two matrices are equal if and only if they have the same dimensi
                 <mrow>V\times V \amp \rightarrow V \amp \R\times V\amp \rightarrow V</mrow>
                 <mrow>(\boldv,\boldw) \amp\mapsto \boldv+\boldw \amp (c,\boldv)\amp \mapsto c\boldv </mrow>
               </md>, 
-              called respectively <term>vector addition</term> and <term>scalar multiplication</term>, that satify the following <term>vector space axioms</term>. 
+              called respectively <term>vector addition</term> and <term>scalar multiplication</term>, that satisfy the following <term>vector space axioms</term>. 
             <ol marker="i" cols="2">
               <li>
                 <title>Vector addition is commutative</title>
@@ -791,79 +1011,182 @@ In other words, two matrices are equal if and only if they have the same dimensi
           </p>
       </statement>
         </definition>
-        <remark xml:id="rm_vectorspace_real">
-            <title>(Real) vector spaces</title>
-                <p>
-                    It is possible to define the notion of a vector space over number systems other than the real numbers <m>\R</m>. For example, by replacing every instance of <m>\R</m> in <xref ref="d_vector_space"/> with <m>\C</m>, we get the definition of a complex vector space. For our purposes, we will deal almost exclusively with real vector spaces, and accordingly will not use the <sq>real</sq> modifier unless absolutely necessary.  
-                  </p>
-          </remark>
-          <p>
-            It is essential to understand the very general nature of <xref ref="d_vector_space"/>. The definition does not specify what the underlying set <m>V</m> of the vector space is, or what the vector operations are. Rather, it allows for <em>any</em> set <m>V</m> and <em>any</em> choice of operations to be called a vector space, as long as our choices satisfy the vector space axioms. In this sense, the act of establishing a vector space consists of first making a sequence of declarations (<q>vector addition and scalar multiplication are defined like so</q>, <q>this element is the zero vector of our space</q>, <q>we define the vector inverse of elements like so</q>), and then verifying that these various choices satisfy the vector axioms. <xref ref="proc_vector_space"/> provides a useful model for carrying out these steps. 
-          </p>
-            <algorithm xml:id="proc_vector_space">
-                <title>Verifying vector space axioms</title>
-                <statement>
-                    <p>
-                       To introduce and verify a vector space, proceed as follows. 
-                        <ol>
-                          <li>
-                            <p>
-                              Make explicit the underlying set <m>V</m> of the vector space.
-                            </p>
-                          </li>
-                          <li>
-                            <p>
-                              Define the operations that serve as vector addition and scalar multiplication.
-                            </p>
-                          </li>
-                          <li>
-                            <p>
-                              Identify the zero vector of <m>V</m> and verify that it satisfies the identity of <xref ref="eq_d_zero_vector">Axiom</xref>. 
-                            </p>
-                          </li>
-                          <li>
-                            <p>
-                            Define the rule that assigns to each vector <m>\boldv\in V</m> its vector inverse <m>-\boldv</m> and verify that this definition of <m>-\boldv</m> satisfies the identity of <xref ref="eq_d_vec_inverse">Axiom</xref>. 
-                            </p>
-                          </li>
-                          <li>
-                            <p>
-                              Verify that the vector operations satisfy Axioms i-ii and v-viii.
-                            </p>
-                          </li>
-                        </ol>
-                        </p>
-                </statement>
-            </algorithm>
+        <p>
+        Note that a vector space, as defined by <xref ref="d_vector_space"/> is a very general object. In particular, the definition does not specify what the underlying set <m>V</m> of the vector space is, or what the vector operations are. Rather, it allows for <em>any</em> set <m>V</m> and <em>any</em> choice of two operations to be called a vector space, as long as our choices satisfy the vector space axioms. We will deal with vector spaces in this full generality later in the course. For now, let's show that for any index set <m>I</m> the set <m>\R^I</m> of all <m>I</m>-tuples together with the two vector operations defined in <xref ref="d_tuples_vec_ops"/> satisfies the vector space axioms, and hence is a vector space. 
+        </p>
+        <p>
+            Before getting to that proof, we point out that among the eight vector space axioms, there are two (Axiom iii and Axiom iv) that posit the existence of certain special elements: namely a zero vector and vector inverses. Accordingly, we will often refer to these axioms as the <em>existential axioms</em>. In contrast, the remaining axioms are all algebraic in nature; they stipulate that the two vector operations are well behaved and play nicely with one another. The next definition, and trailing example, introduce some special elements of <m>\R^I</m> that will serve the role of the zero vector and vector inverses as described by the existential vector space axioms. We also take the opportunity to define the indicator vectors <m>\bolde_i</m> of <m>\R^I</m>, which will be useful throughout the course.
+        </p>
+    <definition xml:id="d_tuples_special_elements">
+    <title>Special elements of <m>\R^I</m></title>
+    <notation>
+        <usage><m>\boldzero_n, \boldzero_{m\times n}</m></usage>
+      <description>zero vectors of <m>\R^I</m>, and <m>\ML_{m,n}(\R)</m></description>
+    </notation>
+    <notation>
+        <usage><m>\bolde_i</m></usage>
+    <description>indicator vector of <m>\R^I</m></description>
+    </notation>
+    <statement>
+    <p>
+    Let <m>I</m> be a nonempty set. 
+    <ul>
+        <li>
+        <title>Zero vector</title>
             <p>
-                Note how <xref ref="proc_vector_space"/> highlights the special role played by <xref first="eq_d_zero_vector" last="eq_d_vec_inverse">Axioms</xref>. These are sometimes called the <em>existential axioms</em>, as they posit the existence of certain special elements of <m>V</m>: a vector satisfying the identity of <xref ref="eq_d_zero_vector">Axiom</xref> that is denoted <m>\boldzero</m>, and for all vectors <m>\boldv\in V</m>, a vector inverse denoted <m>-\boldv</m> that satisfies the identity of <xref ref="eq_d_vec_inverse">Axiom</xref>. Note also that our choice of vector inverses in <xref ref="eq_d_vec_inverse">Axiom</xref> depends on our choice of the zero vector <m>\boldzero</m> in <xref ref="eq_d_zero_vector">Axiom</xref>, as this appears in the defining identity of <xref ref="eq_d_vec_inverse">Axiom</xref>. 
+                The <term>zero vector</term> of <m>\R^I</m>, denoted <m>\boldzero_I</m> (or <m>\boldzero</m> for short), is the <m>I</m>-tuple, all of whose entries are equal to <m>0</m>: <ie/>, <m>\boldzero_I=(0)_{i\in I}</m>. 
             </p>
-            <p>Let's apply <xref ref="proc_vector_space"/> to verify that <m>\R^n</m>, together with the vector operations defined in <xref ref="d_Rn_vec_ops"/>, constitutes a vector space. 
-          </p>
-          <theorem xml:id="th_Rn_vector_space">
+            <p>
+                In the special cases <m>\R^n</m> and <m>\ML_{m,n}(\R)</m>, we denote the corresponding zero vectors as <m>\boldzero_n</m> and <m>\boldzero_{m\times n}</m>, respectively.
+            </p>
+        </li>
+        <li>
+            <title>Vector inverse</title>
+            <p>
+                Given an <m>I</m>-tuple <m>\boldx=(x_i)_{i\in I}\in \R^I</m>, the <term>vector inverse</term> of <m>\boldx</m>, denoted <m>-\boldx</m>, is the element of <m>\R^I</m> defined as
+                <md>
+                    -\boldx=(-x_i)_{i\in I}
+                </md>.
+            </p>
+        </li>
+        <li>
+            <title>Indicator vectors</title>
+            <p>
+                Given <m>i\in I</m>, the <term><m>i</m>-th</term> indicator element of <m>\R^I</m>, denoted <m>\bolde_i</m>, is the <m>I</m>-tuple whose <m>i</m>-th entry is equal to <m>1</m> and whose <m>j</m>-th entry is equal to <m>0</m> for all <m>j\ne i</m>. 
+            </p>
+            <p>
+                In the case <m>\R^n</m>, we call <m>\bolde_i</m> the <term><m>i</m>-th standard basis vector</term> of <m>\R^n</m>. 
+            </p>
+            <p>
+                In the case <m>\ML_{m,n}(\R)</m>, we write <m>E_{i,j}</m> for  <m>\bolde_{(i,j)}</m>, and call this the <term><m>i,j</m>-th standard basis vector</term> of <m>\ML_{m,n}(\R)</m>.
+            </p>
+        </li>
+    </ul>
+    </p>
+    </statement>
+    </definition>
+    <example xml:id="eg_zero_inverse_indicator">
+    <title>Zero, inverse, and indicator vectors</title>
+    <statement>
+    <p>
+    For the given index set <m>I</m>, provide (a) the zero vector of <m>\R^I</m>, (b) a general element of <m>\R^I</m> and its vector inverse, and (c) the indicator vectors <m>\bolde_i</m> for all <m>i\in I</m>. 
+    </p>
+    <p>
+        Make use of the notational conventions that apply to each particular type of index set. 
+    <ol>
+        <li>
+            <p>
+                <m>I=\{1,2,3,4\}</m>.
+            </p>
+        </li>
+        <li>
+            <p>
+                <m>I=\{(i,j)\mid 1\leq i\leq 2, 1\leq j\leq 3\}</m>
+            </p>
+        </li>
+    </ol>
+    </p>
+    </statement>
+    <solution>
+    <p>
+    <ol>
+        <li>
+            <p>
+                In this case we have <m>\R^I=\R^4</m>. The zero vector of <m>\R^4</m> is <m>\boldzero=(0,0,0,0)</m>. 
+            </p>
+            <p>
+                A general element of <m>\R^4</m> can be described as <m>\boldx=(x_1,x_2,x_3,x_4)</m>, <m>x_i\in \R</m>, and its vector inverse is <m>-\boldx=(-x_1,-x_2,-x_3,-x_4)</m>.
+            </p>
+            <p>
+                The four indicator vectors of <m>\R^4</m> are called standard basis vectors, and are given as
+                <md>
+                    <mrow>\bolde_1 \amp =(1,0,0,0) \amp \bolde_2=(0,1,0,0)</mrow>
+                    <mrow>\bolde_3 \amp =(0,0,1,0) \amp \bolde_4=(0,0,0,1)</mrow>
+                </md>.
+            </p>
+        </li>
+        <li>
+            <p>
+                In this case we have <m>\R^I=\ML_{2,3}(\R)</m>. The zero vector of <m>\ML_{2,3}(\R)</m> is <m>\boldzero=(0)_{(i,j)\in I}=\begin{amatrix}
+                0\amp 0\amp 0\\
+                0\amp 0\amp 0
+                \end{amatrix}</m>. 
+            </p>
+            <p>
+                A general element of <m>\ML_{2,3}(\R)</m> can be described as <md>A=\begin{amatrix}
+                a_{11}\amp a_{12}\amp a_{13}\\
+                a_{21}\amp a_{22}\amp a_{23}
+                \end{amatrix}</md>, and its vector inverse is 
+                <md>-A=\begin{amatrix}
+                -a_{11}\amp -a_{12}\amp -a_{13}\\
+                -a_{21}\amp -a_{22}\amp -a_{23}
+                \end{amatrix}</md>.
+                The six indicator vectors of <m>\ML_{2,3}(\R)</m> are called standard basis vectors, and are given as
+                <md>
+                <mrow>
+                    E_{1,1}\amp= \begin{amatrix}
+                1\amp 0\amp 0\\
+                0\amp 0\amp 0
+                \end{amatrix} \amp E_{1,2}\amp= \begin{amatrix}
+                0\amp 1\amp 0\\
+                0\amp 0\amp 0
+                \end{amatrix}  </mrow>
+                <mrow> E_{1,3}\amp= \begin{amatrix}
+                0\amp 0\amp 1\\
+                0\amp 0\amp 0
+                \end{amatrix} \amp E_{2,1}\amp= \begin{amatrix}
+                0\amp 0\amp 0\\
+                1\amp 0\amp 0
+                \end{amatrix}  </mrow>
+                <mrow> E_{2,2}\amp= \begin{amatrix}
+                0\amp 0\amp 0\\
+                0\amp 1\amp 0
+                \end{amatrix} \amp E_{2,3}\amp= \begin{amatrix}
+                0\amp 0\amp 0\\
+                0\amp 0\amp 1
+                \end{amatrix}  </mrow>
+                </md>.
+            </p>
+        </li>
+                    
+    </ol>
+    </p>
+    </solution>
+    </example>
+   <p>
+    We now verify that the two operations on <m>\R^I</m> defined in <xref ref="d_tuples_vec_ops"/> satisfy the vector space axioms. As you will see, since the vector operations are defined componen-wise in terms of real number addition and multiplication, the fact that the vector space axioms are satisfied usually follows directly from corresponding properties of these two real number operations.   
+   </p> 
+
+    
+         <theorem xml:id="th_tuples_vector_space">
+            <title><m>\R^I</m> is a vector space</title>
             <statement>
                 <p>
-                    Fix a positive integer <m>n</m>.
+                    Let <m>I</m> be a nonempty set. 
                     <ol>
                         <li>
                             <p>
-                                The set <m>\R^n</m>, together with the vector addition and scalar multiplication operations defined in <xref ref="d_Rn_vec_ops"/>, is a vector space.
+                                The set <m>\R^I</m> together with the vector addition and scalar multiplication operations defined in <xref ref="d_tuples_vec_ops"/> is a vector space.
                             </p>
                         </li>
                         <li>
                             <p>
-                                The zero vector of the vector space <m>\R^n</m> is the <m>n</m>-tuple <m>(0,0,\dots, 0)</m> consisting of all zeros: <ie/>, we have 
+                                The zero vector of the vector space <m>\R^I</m>, as described by <xref ref="eq_d_zero_vector">Axiom</xref>, is the <m>I</m>-tuple <m>(0)_{i\in I}</m>: <ie/>, we have 
                                 <md>
-                                    \boldzero=(0,0,\dots, 0)
+                                    \boldzero=\boldzero_I=(0)_{i\in I}
                                 </md>.
                             </p>
                         </li>
                         <li>
                             <p>
-                                Given a vector <m>\boldx=(x_1,x_2,\dots, x_n)</m>, its vector inverse is <m>(-x_1,-x_2,\dots, -x_n)</m>: <ie/>, we have 
+                                Given a vector <m>\boldx=(x_i)_{i\in I}</m>, its vector inverse <m>-\boldx</m>, as described by <xref ref="eq_d_vec_inverse">Axiom</xref>, is <m>(-x_i)_{i\in I}</m>. 
+                            </p>
+                            <p>
+                                Additionally, we have 
                                 <md>
-                                    -(x_1,x_2,\dots, x_n)=(-x_1,-x_2,\dots, -x_n)
-                                </md>.
+                                    -\boldx=(-1)\boldx
+                                </md>;
+                                that is, the vector inverse of <m>\boldx</m> is equal to the scalar multiple <m>(-1)\boldx</m>.
                             </p>
                         </li>
                     </ol> 
@@ -871,16 +1194,17 @@ In other words, two matrices are equal if and only if they have the same dimensi
             </statement>
             <proof>
                 <p>
-                    The statement itself of the theorem has already taken care of some of the steps of <xref ref="proc_vector_space"/>: it has identified the underlying set <m>\R^n</m> and proposed vector operations (steps (1)-(2)), and it has identified the zero vector and the rule for computing vector inverses (steps (3)-(4)). It remains to show that the proposed zero vectors and vector inverses satisfy the identities of <xref first="eq_d_zero_vector" last="eq_d_vec_inverse">Axioms</xref>, and that Axioms (i)-(ii) and (v)-(viii) are satisfied.  We first consider <xref first="eq_d_zero_vector" last="eq_d_vec_inverse">Axioms</xref>. 
+                    The statement itself of the theorem has already taken care of some of the steps required to verify that something is a vector space. Namely, it has identified the underlying set <m>\R^I</m> and proposed vector operations, and it has identified the elements of <m>\R^I</m> that serve as the zero vector and inverse vectors. It remains to show that the proposed zero vectors and vector inverses satisfy the identities of <xref first="eq_d_zero_vector" last="eq_d_vec_inverse">Axioms</xref>, and that Axioms (i)-(ii) and (v)-(viii) are satisfied.  We first consider <xref first="eq_d_zero_vector" last="eq_d_vec_inverse">Axioms</xref>. 
                 </p>
                 
                 <case>
                     <title>Axiom iii</title>
                     <p>
-                        We claim that <m>(0,0,\dots, 0)</m> satisfies the identity of <xref ref="eq_d_zero_vector">Axiom</xref>, and thus that <m>\boldzero=(0,0,\dots, 0)</m>. Indeed, for all <m>\boldx\in \R^n</m> we have 
+                        We claim that <m>\boldzero_I=(0)_{i\in I}</m> satisfies the identity of <xref ref="eq_d_zero_vector">Axiom</xref>. Indeed, for all <m>\boldx=(x_i)_{i\in I}\in \R^I</m> we have 
                         <md>
-                            <mrow>\boldzero+\boldx \amp = (0+x_1,0+x_2,\dots, 0+x_n)\amp \text{(def. of vec. add.)}</mrow>
-                            <mrow> \amp = (x_1,x_2,\dots, x_n)</mrow>
+                            <mrow>\boldzero_I+\boldx \amp =(0)_{i\in I}+(x_i)_{i\in I}</mrow>
+                            <mrow>\amp =(0+x_i)_{i\in I}\amp \text{(def. of vec. add.)} </mrow>
+                            <mrow> \amp = (x_i)_{i\in I}</mrow>
                             <mrow> \amp =\boldx</mrow>
                         </md>,
                         as desired.
@@ -889,26 +1213,26 @@ In other words, two matrices are equal if and only if they have the same dimensi
                     <case>
                         <title>Axiom iv</title>
                         <p>
-                            We claim that given any <m>\boldx=(x_1,x_2,\dots, x_n)</m>, the vector <m>(-x_1,-x_2,\dots, -x_n)</m> satisfies the identity of <xref ref="eq_d_vec_inverse">Axiom</xref>, and thus that <m>-\boldx=(-x_1,-x_2,\dots, -x_n)</m>. Indeed, we have 
+                            We claim that given any <m>\boldx=(x_i)_{i\in I}\in \R^I</m>, the vector <m>(-x_i)_{i\in I}</m> satisfies the identity of <xref ref="eq_d_vec_inverse">Axiom</xref>, and thus that <m>-\boldx=(-x_i)_{i\in I}</m>. Indeed, we have 
                             <md>
-                                <mrow>(-x_1,-x_2,\dots, -x_n)+(x_1,x_2,\dots, x_n) \amp =(-x_1+x_1,-x_2+x_2,\dots, -x_n+x_n) \amp \text{(def. of vec. add.)}</mrow>
-                                <mrow> \amp = (0,0,\dots, 0)</mrow>
-                                <mrow> \amp = \boldzero</mrow>
+                                <mrow>(-x_i)_{i\in I}+(x_i)_{i\in I} \amp =(-x_i+x_i)_{i\in I} \amp \text{(def. of vec. add.)}</mrow>
+                                <mrow> \amp = (0)_{i\in I}</mrow>
+                                <mrow> \amp = \boldzero_I</mrow>
                             </md>,
                             as desired. 
                         </p>
                         </case>
                         <p>
-                            As for the remaining axioms, we will verify Axioms ii and vi, and leave the rest as an  exercise. As you see below, the desired identities here all boil down to a familiar property of real number arithmetic: <eg/>, commutativity of real number addition, real number distributivity, etc. In what follows, <m>\boldx=(x_1,x_2,\dots, x_n), \boldy=(y_1,y_2,\dots, y_n), \boldz=(z_1,z_2,\dots, z_n)</m> will denote arbitrary elements of <m>\R^n</m>, and  <m>c,d</m> will denote arbitrary elements of <m>\R</m>.
+                            As for the remaining axioms, we will verify Axioms ii and vi, and leave the rest as an  exercise. As you see below, the desired identities here all boil down to a familiar property of real number arithmetic: <eg/>, commutativity of real number addition, real number distributivity, etc. In what follows, <m>\boldx=(x_i)_{i\in I}, \boldy=(y_i)_{i\in I}, \boldz=(z_i)_{i\in I}</m> will denote arbitrary elements of <m>\R^I</m>, and  <m>c,d</m> will denote arbitrary elements of <m>\R</m>.
                         </p>
                 <case>
                     <title>Axiom ii</title>
                     <p>
                     We have 
                     <md>
-                        <mrow>(\boldx+\boldy)+\boldz \amp = (x_1+y_1,x_2+y_2,\dots, x_n+y+n)+\boldz \amp \text{(def. of vec. add.)}</mrow>
-                        <mrow> \amp = ((x_1+y_1)+z_1,(x_2+y_2)+z_2,\dots, (x_n+y_n)+z_n) \amp \text{(def. of vec. add.)}</mrow>
-                        <mrow> \amp = (x_1+(y_1+z_1),\dots, x_n+(y_n+z_n)) \amp \text{(assoc. of real add.)}</mrow>
+                        <mrow>(\boldx+\boldy)+\boldz \amp = (x_i)_{i\in I}+(y_i)_{i\in I}+\boldz \amp \text{(def. of vec. add.)}</mrow>
+                        <mrow> \amp = ((x_i)_{i\in I}+(y_i)_{i\in I})+(z_i)_{i\in I} \amp \text{(def. of vec. add.)}</mrow>
+                        <mrow> \amp = (x_i)_{i\in I}+((y_i)_{i\in I}+(z_i)_{i\in I}) \amp \text{(assoc. of real add.)}</mrow>
                         <mrow> \amp =\boldx+(\boldy+\boldz) </mrow>
                     </md>.
                     </p>
@@ -917,11 +1241,11 @@ In other words, two matrices are equal if and only if they have the same dimensi
                         <case>
                         <title>Axiom vi</title>
                         <p>
-                            For all <m>c,d\in \R</m> and <m>\boldx\in \R^n</m>, we have 
+                            For all <m>c,d\in \R</m> and <m>\boldx\in \R^I</m>, we have 
                             <md>
-                                <mrow> (c+d)\boldx \amp = ((c+d)x_1,(c+d)x_2,\dots, (c+d)x_n) \amp \text{(def. of sc. mult.)} </mrow>
-                                <mrow> \amp =(cx_1+dx_1,cx_2+dx_2,\dots, cx_n+dx_n) \amp \text{(dist. prop. of reals)}</mrow>
-                                <mrow> \amp =(cx_1,\dots, cx_n)+(cy_1,\dots, cy_n) \amp \text{(def. of vec. add.)}</mrow>
+                                <mrow> (c+d)\boldx \amp = ((c+d)x_i)_{i\in I} \amp \text{(def. of sc. mult.)} </mrow>
+                                <mrow> \amp =(cx_i+dx_i)_{i\in I} \amp \text{(dist. prop. of reals)}</mrow>
+                                <mrow> \amp =(cx_i)_{i\in I}+(dx_i)_{i\in I} \amp \text{(def. of vec. add.)}</mrow>
                                 <mrow> \amp =c\boldx+d\boldx \amp \text{(def. of sc. mult.)}</mrow>
                             </md>.
                         </p>
@@ -929,234 +1253,34 @@ In other words, two matrices are equal if and only if they have the same dimensi
             </proof>
           </theorem>
           <p>
-            It should be noted that there are (infinitely) many different ways to define a vector space structure <m>\R^n</m>. From now on, however, we will assume without further comment that the vector operations on <m>\R^n</m> are the standard ones given in <xref ref="d_Rn_vec_ops"/>. With respect to these standard operations the zero vector and vector inverses of <m>\R^n</m> are as described in <xref ref="th_Rn_vector_space"/>. We make this official below.
-          </p>
-          <definition xml:id="d_Rn_vector_space">
-            <title>Vector space terminology for <m>\R^n</m></title>
-            <statement>
-                <p>
-                    Fix a positive integer <m>n</m>. When treating <m>\R^n</m> as a vector space, <m>n</m>-tuples <m>\boldx\in \R^n</m> are called <term><m>n</m>-vectors</term>.The <term>zero vector</term> of <m>\R^n</m> is defined as <m>\boldzero=(0,0,\dots, 0)</m>. Given an <m>n</m>-vector <m>\boldx=(x_1,x_2,\dots, x_n)</m>, its <term>vector inverse</term> is the vector <m>-\boldx</m> defined as <m>-\boldx=(-x_1,-x_2,\dots, -x_n)</m>.  
-                </p>
-            </statement>
-          </definition>
-          <p>
-            Observe that for all <m>n</m>-vectors <m>\boldx=(x_1,x_2,\dots, x_n)\in \R^n</m> we have 
-            <md>
-                -\boldx=(-x_1,-x_2,\dots, -x_n)=(-1)\boldx
-            </md>.
-            In other words, the vector inverse of <m>\boldx</m> is equal to the scalar multiple <m>(-1)\boldx</m>. As it turns out, this is not particular to the specific vector space <m>\R^n</m>, but rather a general property of <em>all</em> vector spaces, as we see in <xref ref="th_vectorspace_props"/>. In order to prove this and other properties for a general vector space <m>V</m>, our arguments must rely only on the vector space axioms. In particular, we cannot assume that <m>V=\R^n</m> along with its standard vector operations, as this is but one example of a vector space.
-          </p>
-          <theorem xml:id="th_vectorspace_props">
-            <title>Basic vector space properties</title>
-            <statement>
-              <p>
-                Let <m>V</m> be a vector space.
-                <ol>
-                  <li>
+            Thanks to <xref ref="th_tuples_vector_space"/>, we now have at our disposal a rich collection of examples of vector spaces: namely, the spaces <m>\R^I</m>, where <m>I</m> is an arbitrary index set. As usual, the particular choice of index set gives rise to a vector space of a particular flavor. Let's quickly run through our three familiar examples. 
+            <ul>
+                <li>
                     <p>
-                      <m>0\, \boldv=\boldzero</m> for all <m>\boldv\in V</m>.
+                        For <m>I=\{1,2,\dots, n\}</m>, our vector space <m>\R^n</m> consists of <m>n</m>-tuples. When emphasizing the vector space structure of <m>\R^n</m>, we will call its elements <term><m>n</m>-vectors</term>. 
                     </p>
-                  </li>
-                  <li>
+                </li>
+                <li>
                     <p>
-                       <m>c\, \boldzero=\boldzero</m> for all <m>c\in \R</m>.
+                        Choosing <m>I=\Z_+=\{1,2,\dots\}</m>, we obtain the vector space <m>\R^\infty</m> of all infinite sequences of real numbers. 
                     </p>
-                  </li>
-                  <li>
+                </li>
+                <li>
                     <p>
-                       <m>(-1)\boldv=-\boldv</m> for all <m>\boldv\in V</m>.
+                        Finally, for <m>I=\{(i,j)\mid 1\leq i\leq m, 1\leq j\leq n\}</m>, we obtain the vector space <m>\ML_{m,n}(\R)</m> of all <m>m\times n</m> matrices. 
                     </p>
-                  </li>
-                  <li>
-                    <p>
-                      For all <m>\boldv\in V</m>, if <m>c\,\boldv=\boldzero</m>, then <m>c=0</m> or <m>\boldv=\boldzero</m>. Using logical shorthand: 
-                      <md>
-                        c\,\boldv=\boldzero\implies c=0 \text{ or } \boldv=\boldzero
-                      </md>.
-                    </p>
-                  </li>
-                </ol>
-              </p>
-            </statement>
-            <proof>
-                <p>
-                  We prove (1), leaving (2)-(4) as an exercise.
-                </p>
-                <p>
-                  First observe that <m>0\boldv=(0+0)\boldv</m>, since <m>0=0+0</m>.
-                </p>
-                <p>
-                  By Axiom (vi) we have <m>(0+0)\boldv=0\boldv+0\boldv</m>.
-                  Thus <m>0\boldv=0\boldv+0\boldv</m>.
-                </p>
-                <p>
-                  Now add <m>-0\boldv</m>, the vector inverse of <m>0\boldv</m>,
-                  to both sides of the last equation:
-                  <md>
-                    -0\boldv+0\boldv=-0\boldv+(0\boldv+0\boldv)
-                  </md>.
-                </p>
-                <p>
-                Now simplify this equation step by step using the axioms:
-                  <md>
-                    <mrow> -0\boldv+0\boldv=-0\boldv+(0\boldv+0\boldv)\amp\implies
-                    \boldzero=(-0\boldv+0\boldv)+0\boldv \amp (\text{Axiom (iv) and Axiom (ii)}) </mrow>
-                    <mrow> \amp\implies \boldzero=\boldzero+0\boldv \amp (\text{(Axiom (iv))})</mrow>
-                    <mrow>  \amp\implies \boldzero=0\boldv </mrow>
-                  </md>.
-                </p>
-              </proof>
-          </theorem>
-          
-          <p>
-            Again, we emphasize that <m>\R^n</m> is just one example of a vector space: albeit, the example that we will mostly focus on. For good measure we include a few more examples of vector spaces here. (And we will also meet a few other examples later.) We begin with the simplest of all vector spaces, the <em>zero space</em>. Elementary as this example is, it serves well to illustrate the axiomatic nature of <xref ref="d_vector_space"/>. 
-          </p>
-          <definition xml:id="d_zero_space">
-            <title>Zero space</title>
-            <statement>
-                <p>
-                    Let <m>V=\{\bot\}</m>, a set containing exactly one element. There is a unique vector space structure that can be given to <m>V</m>, defined as follows. 
-                    <ul>
-                        <li>
-                            <title>Vector operations</title>
-                            <p>
-                                Vector addition on <m>V</m> is defined as <m>\bot+\bot=\bot</m>; scalar multiplication on <m>V</m> is defined as <m>c\cdot \bot=\bot</m> for all <m>c\in \R</m>. 
-                            </p>
-                        </li>
-                        <li>
-                            <title>Zero vector</title>
-                            <p>
-                                The zero vector of <m>V</m> is <m>\bot</m>: <ie/>, <m>\boldzero=\bot</m>.
-                            </p>
-                        </li>
-                        <li>
-                            <title>Vector inverses</title>
-                            <p>
-                                The vector inverse of <m>\bot</m> is <m>\bot</m>: <ie/>, <m>-\bot=\bot</m>. 
-                            </p>
-                        </li>
-                    </ul>
-                    Since <m>\bot=\boldzero</m> with respect to this vector space structure, we have <m>V=\{\boldzero\}</m>. We call <m>V</m> a <term>zero space</term>. 
-                </p>   
-            </statement>
-        </definition>
-        <p>
-            <xref ref="d_zero_space"/> makes two claims: that the given operations make <m>V=\{\bot\}</m> into a vector space, and that this is the <em>only</em> way to make <m>V=\{\bot\}</m> into a vector space. As with all claims in mathematics, these need to be proved, but as you will see, the proof is a very light affair. 
-        </p>
-        <proof>
-            <title>Proof for <xref ref="d_zero_space"/></title>
-            <p>
-                Since <m>V=\{\bot\}</m> only has one item, there is no choice for what vector addition <m>V\times V\rightarrow V</m> and scalar multiplciation <m>\R\times V\rightarrow V</m> can be. They must be defined in the manner given in <xref ref="d_zero_space"/>. Similarly, we must have <m>\boldzero=\bot</m> and <m>-\bot=\bot</m>, as once again, <m>\bot</m> is the only element of <m>V</m>! This shows that there can be <em>at most</em> one way of giving <m>V</m> a vector space structure. 
-            </p>
-            <p>
-                It is now easy to see that these choices do indeed satisfy the vector space axioms. That <m>\bot</m> satisfies the identity of <xref ref="eq_d_zero_vector">Axiom</xref> defining the zero vector <m>\boldzero</m> follows from the fact that 
-                for all <m>\boldv\in V</m> we have <m>\boldv=\bot</m> (since <m>V=\{\bot\}</m>), and thus 
-                    <md>
-                        <mrow>\bot+\boldv \amp =\bot+\bot</mrow>
-                        <mrow> \amp = \bot</mrow>
-                        <mrow> \amp =\boldv</mrow>
-                    </md>.
-                    Thus <m>\bot=\boldzero</m> is the zero vector of the space. 
-            </p>
-            <p>
-                Similarly, to show all elements of <m>V</m> have vector inverses amounts to showing that <m>\bot</m> has a vector inverse, since this is the only element of <m>V</m>. It is claimed that <m>-\bot=\bot</m> (<ie/>, <m>\bot</m> is its own vector inverse), which follows from the fact that 
-                <md>
-                    <mrow>-\bot+\bot \amp = \bot+\bot</mrow>
-                    <mrow> \amp = \bot</mrow>
-                    <mrow> \amp = \boldzero</mrow>
-                </md>.
-                Lastly, the identities of Axioms i-ii and v-viii in this setting all reduce to trivial statements of the form <m>\bot+\bot=\bot+\bot</m>. Consider Axiom vii, for example. For all <m>\boldv,\boldw\in V</m>, we have <m>\boldv=\boldw=\bot</m>, in which case
-                <md>
-                    <mrow>c(\boldv+\boldw) \amp =c(\bot+\bot) </mrow>
-                    <mrow> \amp =c\cdot \bot</mrow>
-                    <mrow> \amp = \bot \amp \text{(def. of sc. mult.)}</mrow>
-                </md> and 
-                <md>
-                    <mrow>c\boldv+d\boldw \amp =c\cdot \bot+d\cdot \bot</mrow>
-                    <mrow> \amp = \bot+\bot</mrow>
-                    <mrow> \amp =\bot</mrow>
-                </md>.
-                Thus 
-                <md>
-                    c(\boldv+\boldw)=\bot=c\boldv+d\boldw 
-                </md>
-                for all <m>\boldv, \boldw\in V</m>. 
-            </p>
-            <p>
-                We leave verification of the rest of the axioms to the reader. 
-            </p>
-        </proof>
-        <p>
-          We also include two <q>exotic</q> examples of vector spaces. We leave verification of the vector space axioms for these spaces as an exercise. (See <xref ref="ex_infinite_sequences"/> and <xref ref="ex_positive_reals"/>.) 
-        </p>
-        <example xml:id="eg_infinite_sequences">
-          <title>Vector space of infinite sequences</title>
-          <statement>
-              <p>
-                Define <m>\R^\infty</m> to be the set of all infinite sequences: <ie/>, 
-                <md>
-                    \R^\infty=\{(a_i)_{i=1}^\infty\colon a_i\in \R\}
-                </md>.
-                Vector addition and scalar multiplication of sequences is defined <em>term-wise</em>, exactly as with <m>\R^n</m>. In other words, given sequences <m>(a_i)_{i=1}^\infty</m> and <m>(b_i)_{i=1}^\infty</m>, and scalar <m>c\in \R</m>, we define
-                <md>
-                    <mrow>(a_i)_{i=1}^\infty+(b_i)_{i=1}^\infty \amp = (a_i+b_i)_{i=1}^\infty </mrow>
-                    <mrow>c(a_i)_{i=1}^\infty \amp = (ca_i)_{i=1}^\infty </mrow>
-                </md>.
-                In case you prefer the expanded notation for infinite sequences, we have: 
-                <md>
-                    <mrow>(a_1,a_2,\dots)+(b_1,b_2,\dots) \amp =(a_1+b_1,a_2+b_2,\dots)</mrow>
-                    <mrow>c(a_1,a_2,\dots) \amp =(ca_1,ca_2,\dots)</mrow>
-                </md>.
-                The set <m>\R^n</m> together with these operations constitutes the <term>vector space of infinite real sequences</term>.
-            </p>
-          </statement>
-          <solution>
-            <p>
-              See <xref ref="ex_infinite_sequences"/>. 
-            </p>
-          </solution>
-        </example>
-        <example xml:id="eg_positive_reals">
-          <title>Vector space of positive reals</title>
-          <notation>
-            <usage><m>\R_{&gt; 0}</m></usage>
-            <description>vector space of positive real numbers</description>
-          </notation>
-          <statement>
-            <p>
-              Define <m>\R_{&gt; 0}</m> to be the set of all positive real numbers: <ie/>, 
-              <md>
-                  \R_{&gt; 0}=\{r\in \R\colon r&gt; 0\}
-              </md>.
-              Define vector addition on <m>\R_{&gt; 0}</m> to be real number multiplication, and define scalar multiplication on <m>\R_{&gt; 0}</m> to be real number exponentiation: 
-              <ie/>, given vectors <m>\boldv=r</m> and <m>\boldw=s</m> in <m>\R_{&gt; 0}</m>, and scalar <m>c\in \R</m>, we define 
-              <md>
-                  <mrow>\boldv\oplus\boldw \amp = r\, s</mrow>
-                  <mrow>c\odot\boldv \amp = r^c </mrow>
-              </md>.
-              Note: we have introduced new notation for our vector operations to help distinguish them from familiar real number arithmetic operations. 
-            </p>
-            <p>
-              The set <m>\R_{&gt; 0}</m> together with these operations constitutes the <term>vector space of positive reals</term>. 
-            </p>
-          </statement>
-          <solution>
-            <p>
-              See <xref ref="ex_positive_reals"/>.
-            </p>
-          </solution>
-        </example>
-        <p>
-            Before returning to <m>\R^n</m>, we introduce another important notion from general vector spaces: linear combinations. As simple as the idea of a linear combination is, you will see that it plays a crucial role in many concepts to come. 
+                </li>
+            </ul>
+        We hasten to add, that although the spaces <m>\R^I</m> furnish us with many interesting examples of vector spaces, not all vector spaces are of this form! (We will say more about this later.) As a result, from now on, when we introduce a new concept connected to general vector spaces, we will state it in full generality in terms of an arbitrary vector space <m>V</m>, and usually follow up with some examples taken from some familiar vector spaces of the form <m>\R^I</m> (<eg/>, <m>\R^n</m> and <m>\ML_{m\times n}(\R)</m>). The following definition and examples put this philosophy into practice.
         </p>
             <definition xml:id="d_lin_comb">
                 <title>Linear combination</title>
                 <statement>
                     <p>
                         Let <m>V</m> be a vector space, and let <m>\boldv_1,\boldv_2,\dots, \boldv_n</m> be a collection of vectors of <m>V</m>. A <term>linear combination</term> of the <m>\boldv_i</m> is a vector expression of the form 
-                        <men xml:id="eq_lin_comb">
+                        <md number="yes" xml:id="eq_lin_comb">
                             c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n
-                        </men>,
+                        </md>,
                     where <m>c_i\in \R</m> for all <m>1\leq i\leq n</m>. The scalars <m>c_i</m> appearing in <xref ref="eq_lin_comb"/> are called the <term>coefficients</term> of the linear combination. The linear combination <xref ref="eq_lin_comb"/> is <term>trivial</term> if <m>c_i=0</m> for all <m>1\leq i\leq n</m>, and <term>nontrivial</term> if <m>c_i\ne 0</m> for some <m>1\leq i\leq n</m>. 
                     </p> 
                     <p>
@@ -1169,46 +1293,67 @@ In other words, two matrices are equal if and only if they have the same dimensi
                 </statement>
             </definition> 
             <example>
-                <title>Linear combination</title>
+                <title>Linear combination: <m>n</m>-vectors</title>
                 <statement>
                     <p>
-                        Let <m>\boldv_1=(1,0,0), \boldv_2=(0,1,0), \boldv_3=(0,0,1)</m>. Show that every vector in <m>\R^3</m> is a linear combination of the <m>\boldv_i</m>.
+                        Show that every vector in <m>\R^3</m> is a linear combination of the standard basis vectors <m>\bolde_1</m>, <m>\bolde_2</m>, and <m>\bolde_3</m>. 
                     </p>
                 </statement>
                 <solution>
                     <p>
                         Given any vector <m>\boldv=(a,b,c)\in \R^3</m>, we have 
                         <md>
-                            <mrow>\boldv\amp =a(1,0,0)+b(0,1,0)+c(0,0,1)  </mrow>
-                            <mrow> \amp \amp =a\boldv_1+b\boldv_2+c\boldv_3</mrow>
+                            <mrow>\boldv\amp =a\bolde_1+b\bolde_2+c\bolde_3  </mrow>
                         </md>.
                     </p>
                 </solution>
             </example>
             <example>
-                <title>Linear combination</title>
+                <title>Linear combination: matrices</title>
                 <statement>
                     <p>
-                        Express <m>\boldzero=(0,0,0,0)</m> as a <em>nontrivial</em> linear combination of <m>\boldv_1=(1,1,1,1)</m> and <m>\boldv_2=(2,2,2,2)</m>. 
+                        Express <m>\boldzero_{2\times 3}</m> as a <em>nontrivial</em> linear combination of <m>A=\begin{amatrix}
+                        1\amp 1\amp 1\\ 1\amp 1\amp 1
+                        \end{amatrix}</m> and <m>B=\begin{amatrix}
+                        2\amp 2\amp 2\\ 2\amp 2\amp 2
+                        \end{amatrix}</m>.
                     </p>
                 </statement>
                 <solution>
                     <p>
-                        Since clearly <m>\boldv_2=2\boldv_1</m>, we have 
+                        It is easy to see that <m>B=2A</m>, and hence
                         <md>
-                            <mrow>\boldzero \amp = 2\boldv_1+ -\boldv_2</mrow>
-                            <mrow> \amp = 2\boldv_1+(-1)\boldv_2</mrow>
+                            <mrow>\boldzero_{2\times 3}=2A+\, -B=2A+(-1)B</mrow>
                         </md>.
-                        This is not the only nontrivial linear combination yielding <m>\boldzero</m>. In fact we have 
+                        More explicitly, we have 
                         <md>
-                            \boldzero=(2r)\boldv_1+(-r)\boldv_2
+<mrow>
+                            \begin{amatrix}
+                            0\amp 0\amp 0\\ 0\amp 0\amp 0
+                        \end{amatrix} \amp =\begin{amatrix}
+                            2\amp 2\amp 2\\ 2\amp 2\amp 2
+                        \end{amatrix}
+                        +\begin{amatrix}[rrr]
+                            -2\amp -2\amp -2\\ -2\amp -2\amp -2
+                        \end{amatrix}
+</mrow>
+<mrow>\amp =2\begin{amatrix}
+                            1\amp 1\amp 1\\ 1\amp 1\amp 1
+                            \end{amatrix}+(-1)\begin{amatrix}
+                            2\amp 2\amp 2\\ 2\amp 2\amp 2
+                            \end{amatrix}</mrow>
+                            <mrow> \amp =2A+(-1)B</mrow>
+                        </md>.
+                        This is not the only nontrivial linear combination yielding <m>\boldzero_{2\times 3}</m>. In fact we have 
+                        <md>
+                            \boldzero_{2\times 3}=(2r)A+(-r)B
                         </md>
                         for any scalar <m>r\in \R</m> (including <m>r=0</m>).
                     </p>
                 </solution>
             </example>
             <p>
-            It is natural to want to rewrite a linear combination of the form <m>2\boldv_1+(-1)\boldv_2</m> as <m>2\boldv_1-\boldv_2</m>. But of course this expression doesn't quite make sense. What we are missing is the <em>vector difference</em> operation. 
+            It is natural to want to rewrite a linear combination of the form <m>2\boldv_1+(-1)\boldv_2</m> as <m>2\boldv_1-\boldv_2</m>, but technically this expression doesn't quite make sense as of yet. What we are missing is the <em>vector difference</em> operation.
             </p>
             <definition xml:id="d_vec_difference">
                 <title>Vector difference</title>
@@ -1216,7 +1361,7 @@ In other words, two matrices are equal if and only if they have the same dimensi
                     <p>
                        Let <m>V</m> be a vector space. Given vectors <m>\boldv,\boldw\in V</m>, we define their <term>difference</term> <m>\boldv-\boldw</m> as 
                        <md>
-                        \boldv-\boldw=\boldv+(-\boldw)=\boldv+(-1)\boldw
+                        \boldv-\boldw=\boldv+(-\boldw)
                        </md>.
                     </p>
                 </statement>
@@ -1228,25 +1373,25 @@ In other words, two matrices are equal if and only if they have the same dimensi
          We will only explicitly visualize (or graph) elements of <m>\R^n</m> for <m>n=2</m> and <m>n=3</m>. However, these special cases bring to light an important <em>point-vector duality</em> in how we conceive of <m>n</m>-tuples that carries over into higher values of <m>n</m>. Fix <m>n=3</m> for now. We will sometimes conceive of a triple <m>(a,b,c)\in \R^3</m> as a <em>point</em>, in which case we will use capital letters to denote the triple (<eg/>, <m>P=(a,b,c)</m>), and will represent the point visually with respect to a coordinate system as the point in <m>3</m>-space reached by starting at the origin <m>O=(0,0,0)</m> and moving a directed distance <m>a</m> units in the <m>x</m>-direction, <m>b</m> units in the <m>y</m>-direction and <m>c</m> units in the <m>z</m>-direction.  
     </p>
     <figure xml:id="fig_point">
-        <title>Point visualization of triple</title>
+        <caption>Point visualization of triple. Made with <url href="https://www.geogebra.org" visual="geogebra.org">GeoGebra</url>.</caption>
         <interactive xml:id="geogebra_point" platform="geogebra" width="100%" aspect="4:3">
           <slate surface="geogebra" material="qdrz2sge" aspect="4:3" marker="train-distance">
           enableLabelDrags(false);
           </slate>
         </interactive>
-        <caption>Point visualization of triple. Made with <url href="https://www.geogebra.org" visual="geogebra.org">GeoGebra</url>.</caption>
+        
       </figure>
     <p>
-    Alternatively, when conceiving of a triple <m>(a,b,c)</m> as a <em>vector</em>, we will use lowercase bold letters to denote it (<eg/>, <m>\boldx=(a,b,c)</m> or <m>\boldv=(a,b,c)</m>), and represent it visually as a directed line segment (<ie/>, an arrow). In more detail, given the 3-vector <m>\boldx=(a,b,c)</m>, we choose an <term>initial point</term> <m>Q=(x_0,y_0,z_0)</m> and represent <m>\boldx</m> as the directed line segment <m>\overrightarrow{QR}</m> that starts at <m>Q</m> and ends at the point <m>R=(x_0+a,y_0+b,z_0+c)</m>, the <term>terminal point</term> of <m>\overrightarrow{QR}</m>. Note that in this manner we get infinitely-many different graphical representations of <m>\boldx</m>, one for each choice of starting point <m>Q</m>. Although these are technically different arrows (they have different starting points), we consider them to be equal as <em>vectors</em>. You can think of each particular choice of arrow-representation <m>\boldx=\overrightarrow{QR}</m> as an instance or incarnation of the vector <m>\boldx=(a,b,c)</m>. When the initial point of our arrow representation is chosen to be the origin <m>O=(0,0,0)</m>, we have <m>\boldx=\overrightarrow{OP}</m>, where <m>P=(a,b,c)</m>. We call <m>\overrightarrow{OP}</m> the <term>position vector</term> of the point <m>P</m>. 
+    Alternatively, when conceiving of a triple <m>(a,b,c)</m> as a <em>vector</em>, we will use lowercase bold letters to denote it (<eg/>, <m>\boldx=(a,b,c)</m> or <m>\boldv=(a,b,c)</m>), and represent it visually as a directed line segment (<ie/>, an arrow). In more detail, given the 3-vector <m>\boldx=(a,b,c)</m>, we choose an <term>initial point</term> <m>Q=(x_0,y_0,z_0)</m> and represent <m>\boldx</m> as the directed line segment <m>\overrightarrow{QR}</m> that starts at <m>Q</m> and ends at the point <m>R=(x_0+a,y_0+b,z_0+c)</m>, the <term>terminal point</term> of <m>\overrightarrow{QR}</m>. Note that in this manner we get infinitely-many different graphical representations of <m>\boldx</m>:  one for each choice of starting point <m>Q</m>. Although these are technically different arrows (they have different starting points), we consider them to be equal as <em>vectors</em>. You can think of each particular choice of arrow-representation <m>\boldx=\overrightarrow{QR}</m> as an instance or incarnation of the vector <m>\boldx=(a,b,c)</m>. When the initial point of our arrow representation is chosen to be the origin <m>O=(0,0,0)</m>, we have <m>\boldx=\overrightarrow{OP}</m>, where <m>P=(a,b,c)</m>. We call <m>\overrightarrow{OP}</m> the <term>position vector</term> of the point <m>P</m>. 
     </p>
     <figure xml:id="fig_vec_vis">
-      <title>Vector visualization of triple</title>
+      <caption>Vector visualization of triple <m>\boldx=\overrightarrow{OP}=\overrightarrow{QR}</m>. Drag <m>P</m> to change the vector <m>\boldx</m>. Drag <m>Q</m> to change the initial point of <m>\overrightarrow{QR}</m>. Made with <url href="https://www.geogebra.org" visual="geogebra.org">GeoGebra</url>.</caption>
       <interactive xml:id="geogebra_vec_vis" platform="geogebra" width="100%" aspect="4:3">
         <slate surface="geogebra" material="ef9phreh" aspect="4:3" marker="train-distance">
         enableLabelDrags(false);
         </slate>
       </interactive>
-      <caption>Vector visualization of triple <m>\boldx=\overrightarrow{OP}=\overrightarrow{QR}</m>. Drag <m>P</m> to change the vector <m>\boldx</m>. Drag <m>Q</m> to change the initial point of <m>\overrightarrow{QR}</m>. Made with <url href="https://www.geogebra.org" visual="geogebra.org">GeoGebra</url>.</caption>
+      
   </figure>
     <p>
         The representation of vectors as arrows gives rise to the so-called <em>tip-to-tail</em> interpretation of vector addition. Let <m>\boldx=(a,b,c)</m> and <m>\boldy=(d,e,f)</m>. Starting with an initial point <m>P=(x_0,y_0,z_0)</m>, we can represent <m>\boldx</m> as <m>\overrightarrow{PQ}</m>, where <m>Q=(x_0+a,y_0+b,z_0+c)</m>, and <m>\boldy=\overrightarrow{QR}</m>, where <m>R=(x_0+a+d,y_0+b+e,z_0+c+f)</m>. But then we have 
@@ -1260,13 +1405,13 @@ In other words, two matrices are equal if and only if they have the same dimensi
         In other words, if we choose our arrow representations so that the terminal point (the tip) of <m>\boldx=\overrightarrow{PQ}</m>  is placed at the initial point (the tail) of <m>\boldy=\overrightarrow{QR}</m> , then <m>\boldx+\boldy</m> is represented by the arrow whose initial point is <m>P</m>, and whose terminal point is reached by first traveling along <m>\boldx</m>, and then traveling along <m>\boldy</m>.
     </p>
     <figure xml:id="fig_tip_tail">
-        <title>Tip-to-tail visualization of vector addition</title>
+        <caption>Tip-to-tail visualization of vector addition. Made with <url href="https://www.geogebra.org" visual="geogebra.org">GeoGebra</url>.</caption>
         <interactive xml:id="geogebra_tip_tail" platform="geogebra" width="100%" aspect="4:3">
           <slate surface="geogebra" material="nrkjwppk" aspect="4:3" marker="train-distance">
           enableLabelDrags(false);
           </slate>
         </interactive>
-        <caption>Tip-to-tail visualization of vector addition. Made with <url href="https://www.geogebra.org" visual="geogebra.org">GeoGebra</url>.</caption>
+        
     </figure>
     <p>
       The tip-to-tail visualization of vector addition gives rise to a similar conceptualization of vector difference. Performing a little vector algebra on the definition 
@@ -1280,28 +1425,28 @@ In other words, two matrices are equal if and only if they have the same dimensi
       Using tip-to-tail terminology, this means if we represent <m>\boldx=\overrightarrow{PQ}</m> and <m>\boldy=\overrightarrow{PR}</m>, then <m>\boldy-\boldx</m> is the arrow <m>\overrightarrow{QR}</m> that starts at the tip of <m>\boldx</m> and ends at the tip of <m>\boldy</m>. We thus have a <em>tip-to-tip</em> description of vector difference. 
     </p>
     <figure xml:id="fig_tip_tip">
-      <title>Tip-to-tip visualization of vector difference</title>
+      <caption>Tip-to-tip visualization of vector difference. Made with <url href="https://www.geogebra.org" visual="geogebra.org">GeoGebra</url>.</caption>
       <interactive xml:id="geogebra_tip_tip" platform="geogebra" width="100%" aspect="4:3">
         <slate surface="geogebra" material="nzgvx2kv" aspect="4:3" marker="train-distance">
         enableLabelDrags(false);
         </slate>
       </interactive>
-      <caption>Tip-to-tip visualization of vector difference. Made with <url href="https://www.geogebra.org" visual="geogebra.org">GeoGebra</url>.</caption>
+      
   </figure>
     <p>
         Next consider scalar multiplication. Given a vector <m>\boldx=(a,b,c)=\overrightarrow{PQ}</m> and a scalar <m>k\in \R</m>, the scalar multiple <m>k\boldx=(ka,kb,kc)</m> can be represented as an arrow that starts at <m>P</m> and points along the line containing <m>\overrightarrow{PQ}</m>. As we will see in the next section, the length of the resulting arrow is multiplied by the factor <m>\abs{k}</m>, resulting in a stretched arrow if <m>\abs{k}&gt; 1</m> and a shrunk arrow if <m>\abs{k}&lt; 1</m>. Furthermore, if <m>k\geq 0</m>, then the arrow representing <m>k\boldx</m> points in the same direction as <m>\overline{PQ}</m>; if <m>k&lt; 0</m>, it points in the opposite direction. 
     </p>
     <figure xml:id="fig_scal_mult">
-        <title>Tip-to-tail visualization of vector addition</title>
+        <caption>Visualization of scalar multiplication. Drag point labeled <m>k</m> to change scalar. Made with <url href="https://www.geogebra.org" visual="geogebra.org">GeoGebra</url>.</caption>
         <interactive xml:id="geogebra_scal_mult" platform="geogebra" width="100%" aspect="4:3">
           <slate surface="geogebra" material="w7sqxgre" aspect="4:3" marker="train-distance">
           enableLabelDrags(false);
           </slate>
         </interactive>
-        <caption>Visualization of scalar multiplication. Drag point labeled <m>k</m> to change scalar. Made with <url href="https://www.geogebra.org" visual="geogebra.org">GeoGebra</url>.</caption>
+        
     </figure>
    </subsection>
-   <!-- <xi:include href="./s_R-valued_tuples_ex.ptx"/> -->
+   <xi:include href="./s_R-valued_tuples_ex.ptx"/>
 
 
 </section>

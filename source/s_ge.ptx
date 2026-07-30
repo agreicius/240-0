@@ -650,6 +650,27 @@ In the first Sage cell below you find a recursive implementation of Gaussian eli
 </project>
 </subsection>
 
-<xi:include  href="s_ge_ex.ptx"/>
 
+
+<subsection xml:id="ss_ge_ww">
+  <title>WeBWork Exercises</title>
+
+<!-- Determine whether row echelon form -->
+    <exercise>
+    <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/holt_01_02_010.pg" />
+  </exercise>
+
+<!-- <exercise> -->
+  <!-- Individual row reductions for a 3x3 matrix -->
+  <!-- <webwork source="Library/Mizzou/Finite_Math/MatrixOperations/RowOp3by3e.pg" /> -->
+<!-- </exercise> -->
+
+<exercise>
+  <!-- Combined row reductions for a 3x3 matrix -->
+  <webwork source="Library/ASU-topics/set119LinearSystems/p28.pg" />
+</exercise>
+
+</subsection>
+
+<xi:include  href="s_ge_ex.ptx"/>
 </section>

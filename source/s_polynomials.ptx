@@ -163,5 +163,18 @@
 
 </subsection>
 
-  <xi:include href="./s_polynomials_ex.ptx"/>
+<subsection xml:id="ss_polynomials_ww">
+  <title>WeBWork Exercises</title>
+
+<exercise>
+  <!-- 1. construct polynomials -->
+  <webwork source="Library/ASU-topics/setPolynomials/srw3_5_31.pg" />
+</exercise>
+
+<exercise>
+  <!-- 2. find roots -->
+  <webwork source="Library/ASU-topics/setPolynomials/jj1.pg" />
+</exercise>
+
+</subsection>
 </section>

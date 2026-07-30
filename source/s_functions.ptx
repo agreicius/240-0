@@ -216,6 +216,23 @@
 
 
 
-<xi:include href="s_functions_ex.ptx"/>
+<subsection xml:id="ss_functions_ww">
+  <title>WeBWork Exercises</title>
 
+<exercise>
+  <!-- 3. image of intervals under a function -->
+    <webwork source="Library/MontanaState/Sets/5.2A13Sets1.pg" />
+  </exercise>
+  
+<exercise>
+  <!-- 4. one-to-one and onto -->
+    <webwork source="Library/SUNYSB/oneToOneOnto1.pg" />
+  </exercise>
+  
+<exercise>
+  <!-- 5. inverses -->
+    <webwork source="Library/LoyolaChicago/Precalc/Chap8Sec2/Q08.pg" />
+  </exercise>
+
+</subsection>
 </section>

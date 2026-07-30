@@ -1,0 +1,1025 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_invertibility_theorem">
+  <title>The invertibility theorem</title>
+  <introduction>
+    <p>
+    We saw in <xref ref="eg_invertible_matrices"/> that verifying directly whether a matrix is invertible, using only <xref ref="d_invertible_matrix"/>, can be quite an involved task. The goal of this section is to make this less onerous by developing some equivalent methods of testing invertibility. Our work culminates in <xref ref="th_invertibility"/> and <xref ref="th_invertibility_algorithm"/>, which draw connections between invertibility, solutions to linear systems, and row echelon forms of a square matrix. Not surprisingly, our old friend Gaussian elimination emerges as the fundamental computational tool.
+    </p>
+  </introduction>
+<subsection xml:id="ss_elementary_matrix">
+  <title>Elementary matrices</title>
+  <p>
+  We begin with a treatment of <em>elementary matrices</em>, which serve as the basic building blocks for invertible matrices, and provide a crucial link between row reduction and matrix multiplication.
+  </p>
+  <definition xml:id="d_elementary_matrix">
+    <idx><h>elementary matrix</h></idx>
+    <idx><h>matrix</h><h>elementary</h></idx>
+    <notation>
+      <usage><m>\underset{cr_i}{E}</m></usage>
+      <description>Scaling elementary matrix</description>
+    </notation>
+    <notation>
+      <usage><m>\underset{r_i\leftrightarrow r_j}{E}</m></usage>
+      <description>Row swap elementary matrix</description>
+    </notation>
+    <notation>
+      <usage><m>\underset{r_i+c\,r_j}{E}</m></usage>
+      <description>Row addition elementary matrix</description>
+    </notation>
+    <title>Elementary matrices</title>
+    <statement>
+      <p>
+        An <m>m\times m</m>  matrix <m>E</m> is
+        <term>elementary</term>
+        if multiplying any <m>m\times n</m> matrix <m>A</m> on the left by <m>E</m> performs one of our row operations on <m>A</m>.
+      </p>
+      <p>
+        We have different types of elementary matrices depending on the type of row operation they perform, and we denote these with an elaboration of our earlier row operation notation:
+        <ul>
+          <li>
+            <p>
+              A <term>scaling elementary matrix </term><m>\underset{c\,r_i}{E}</m> is a matrix such that multiplying a matrix <m>A</m> on the left by <m>\underset{cr_i}{E}</m> scales the <m>i</m>-th row of <m>A</m> by <m>c</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              A <term>row swap elementary matrix </term><m>\underset{r_i\leftrightarrow r_j}{E}</m> is a matrix such that multiplying a matrix <m>A</m> on the left by <m>\underset{r_i\leftrightarrow r_j}{E}</m> swaps the <m>i</m>-th and <m>j</m>-th rows of <m>A</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              A <term>row addition elementary matrix </term><m>\underset{r_i+c\,r_j}{E}</m> is a matrix such that multiplying a matrix <m>A</m> on the left by <m>\underset{r_i+c\,r_j}{E}</m> replaces the <m>i</m>-th row of <m>A</m> with <m>r_i+c\,r_j</m>.
+            </p>
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </definition>
+<p>
+   Naturally, the row method of multiplication is the key to connecting a given row operation with a particular elementary matrix. <xref ref="th_elementary_matrices"/> shows that once you fix the dimension, an elementary matrix is uniquely defined by the row operation it performs.
+</p>
+<theorem xml:id="th_elementary_matrices">
+  <title>Elementary matrix formulas</title>
+  <statement>
+    <p>
+    Fix an integer <m>n\geq 2</m>. The three types of <m>n\times n</m> elementary matrices can be described as follows:
+    </p>
+    <ul>
+      <li>
+        <p>
+          The <m>n\times n </m> scaling matrix <m>\underset{c\,r_i}{E}</m> is the result of scaling the <m>i</m>-th row of <m>I_m</m> by <m>c</m>.
+          <!-- <me>
+            \underset{c\,r_i}{E}=\begin{bmatrix}1\amp 0\amp 0\amp \cdots\amp  0\amp 0\\ 0\amp 1\amp 0\amp \cdots\amp 0\amp 0\\ \vdots\amp  \amp \vdots \amp  \amp  \vdots \\ 0\amp \cdots\amp 0\amp c\amp 0\amp \cdots\\ \vdots\amp  \amp \vdots \amp  \amp  \vdots \\ 0\amp 0\amp \cdots\amp 0\amp 0\amp 1 \end{bmatrix}
+          </me> -->
+          </p>
+          <image xml:id="im_elem_scalar" width="50%">
+            <latex-image>
+              \begin{tikzpicture}[
+              Matrix/.style={
+          matrix of nodes,
+          text height=2.5ex,
+          text depth=0.75ex,
+          text width=3.25ex,
+          align=center,
+          %left delimiter=\{,
+          %right delimiter=\},
+          column sep=5pt,
+          row sep=5pt,
+          nodes in empty cells,
+          },
+          DL/.style={
+           left delimiter=[,
+           right delimiter=],
+           inner sep=-2pt,
+          },
+          DG/.style={
+           line cap= round,
+           line width =15pt,
+           opacity=0.2,
+          }
+          ]
+          \matrix[Matrix] at (0,0) (M){ % Matrix contents
+          \amp   \amp  \amp  \amp\text{$i$-th} \amp \amp \\
+          \amp 1 \amp 0 \amp 0 \amp 0 \amp \dots \amp 0\\
+          \amp 0 \amp 1 \amp 0 \amp 0 \amp \dots \amp 0\\
+          \amp \amp  \vdots \amp  \amp  \amp  \vdots \amp   \\
+          \text{$i$-th} \amp 0 \amp 0 \amp 0 \amp c \amp 0 \amp 0 \\
+          \amp  \amp \vdots \amp  \amp  \amp \vdots \amp  \\
+          \amp 0 \amp 0\amp \dots \amp 0 \amp 0 \amp 1\\
+          \amp    \amp    \amp  \amp $\underset{cr_i}{E}$\\
+          };
+          \begin{scope}[on background layer]
+               \node[DL,fit=(M-2-2)(M-7-7)](subM-1){};
+               \draw[DG,red](M-5-2.center) --(M-5-7.center);
+               \draw[DG,green](M-2-5.center) --(M-7-5.center);
+               \end{scope}
+              \end{tikzpicture}
+            </latex-image>
+          </image>
+      </li>
+      <li>
+        <p>
+          The <m>n\times n </m> row swap matrix <m>\underset{r_i\leftrightarrow r_j}{E}</m> is the result of swapping the <m>i</m>-th and <m>j</m>-th rows of <m>I_m</m>.
+          <!-- <me>
+            \underset{r_i\leftrightarrow r_j}{E}=\begin{bmatrix}1\amp 0\amp 0\amp \cdots\amp  0\amp 0\\ \vdots\amp  \amp \vdots \amp  \amp  \vdots \\ 0\amp 0\amp 0\amp 0\amp 1\amp \cdots\\ \vdots\amp  \amp \vdots \amp  \amp  \vdots \\ 0\amp \cdots\amp 1\amp 0\amp \cdots\amp 0\\ \vdots\amp  \amp \vdots \amp  \amp  \vdots \\ 0\amp 0\amp \cdots\amp 0\amp 0\amp 1 \end{bmatrix}
+          </me> -->
+          <image xml:id="im_elem_swap" width="50%">
+            <latex-image>
+              \begin{tikzpicture}[
+              Matrix/.style={
+          matrix of nodes,
+          text height=2.5ex,
+          text depth=0.75ex,
+          text width=3.25ex,
+          align=center,
+          %left delimiter=\{,
+          %right delimiter=\},
+          column sep=5pt,
+          row sep=5pt,
+          nodes in empty cells,
+          },
+          DL/.style={
+           left delimiter=[,
+           right delimiter=],
+           inner sep=-2pt,
+          },
+          DG/.style={
+           line cap= round,
+           line width =15pt,
+           opacity=0.2,
+          }
+          ]
+          \matrix[Matrix] at (10,0) (M2){ % Matrix contents
+       \amp   \amp  \amp \text{$i$-th} \amp \amp\text{$j$-th} \amp \\
+     \amp 1 \amp 0 \amp 0 \amp \dots \amp 0 \amp 0\\
+  \amp  \amp \vdots \amp  \amp  \amp \vdots \amp \\
+   \text{$i$-th}    \amp 0\amp 0\amp 0   \amp \dots \amp1   \amp0   \\
+   \amp  \amp \vdots \amp  \amp  \amp \vdots \amp \\
+    \text{$j$-th} \amp 0 \amp 0 \amp 1 \amp \dots\amp 0 \amp 0 \\
+     \amp  \amp \vdots \amp  \amp  \amp \vdots \amp  \\
+     \amp 0 \amp 0\amp 0 \amp \dots \amp 0 \amp 1\\
+     \amp \amp \amp \amp $\underset{cr_i}{E}$ \\
+    };
+
+          \begin{scope}[on background layer]
+          \draw[DG,red](M2-6-2.center) --(M2-6-7.center);
+   \draw[DG,green](M2-2-6.center) --(M2-8-6.center);
+   \draw[DG,red](M2-4-2.center) --(M2-4-7.center);
+   \draw[DG,green](M2-2-4.center) --(M2-8-4.center);
+\node[DL,fit=(M2-2-2)(M2-8-7)](subM-1){};
+               \end{scope}
+              \end{tikzpicture}
+            </latex-image>
+          </image>
+        </p>
+      </li>
+      <li>
+        <p>
+          The <m>n\times n </m> row addition matrix <m>\underset{r_i+c\,r_j}{E}</m> is the result of replacing the <m>i</m>-th row of <m>I_m</m> with the sum of its <m>i</m>-th row and <m>c</m> times its <m>j</m>-th row.
+          <!-- <me>
+            \underset{r_i+c\,r_j}{E}=\begin{bmatrix}1\amp 0\amp 0\amp \cdots\amp  0\amp 0\\ \vdots\amp  \amp \vdots \amp  \amp  \vdots \\ \cdots\amp c\amp \cdots\amp 1\amp \cdots\amp 0\\ \vdots\amp  \amp \vdots \amp  \amp  \vdots \\ 0\amp 0\amp \cdots\amp 0\amp 0\amp 1 \end{bmatrix}
+          </me> -->
+        <image xml:id="im_elem_rowadd" width="50%">
+          <latex-image>
+            \begin{tikzpicture}[
+            Matrix/.style={
+        matrix of nodes,
+        text height=2.5ex,
+        text depth=0.75ex,
+        text width=3.25ex,
+        align=center,
+        %left delimiter=\{,
+        %right delimiter=\},
+        column sep=5pt,
+        row sep=5pt,
+        nodes in empty cells,
+        },
+        DL/.style={
+         left delimiter=[,
+         right delimiter=],
+         inner sep=-2pt,
+        },
+        DG/.style={
+         line cap= round,
+         line width =15pt,
+         opacity=0.2,
+        }
+        ]
+        \matrix[Matrix] at (0,0) (M){ % Matrix contents
+    \amp   \amp\text{$j$-th}  \amp  \amp\text{$i$-th} \amp \amp \\
+  \amp 1 \amp 0 \amp 0 \amp 0 \amp \dots \amp 0\\
+  \text{$j$-th}\amp 0 \amp 1 \amp 0 \amp 0 \amp \dots \amp 0\\
+ \amp \amp  \vdots \amp  \amp  \amp  \vdots \amp   \\
+ \text{$i$-th} \amp \dots\amp c \amp \dots \amp1  \amp \dots \amp 0 \\
+  \amp  \amp \vdots \amp  \amp  \amp \vdots \amp  \\
+  \amp 0 \amp 0\amp \dots \amp 0 \amp 0 \amp 1\\
+  \amp    \amp    \amp  \amp $\underset{r_i+cr_j}{E}$\\
+ };
+   \begin{scope}[on background layer]
+            \node[DL,fit=(M-2-2)(M-7-7)](subM-1){};
+            \draw[DG,red](M-5-2.center) --(M-5-7.center);
+            \draw[DG,green](M-2-5.center) --(M-7-5.center);
+             \draw[DG,green](M-2-3.center) --(M-7-3.center);
+            \end{scope}
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+        </p>
+      </li>
+    </ul>
+  </statement>
+  <proof>
+    <p>
+      First we show that if <m>E</m> is one of the <m>m\times m</m> elementary matrices, then it must assume one of the forms described above. Indeed, since multiplying on the left by <m>E</m> performs a certain row operation, and since <m>E=E\,I_m</m>, we see that <m>E</m> itself is the result of performing this particular row operation on the <m>m\times m</m> identity matrix. Thus <m>E</m>  is one of the three types of matrices described above, obtained by performing an elementary row operation on <m>I_m</m>.
+    </p>
+    <p>
+      Next, we must show that any of the <m>m\times m</m> matrices <m>E</m> described above is indeed elementary in the sense of <xref ref="d_elementary_matrix"/>: that is, we must show that multiplying any <m>m\times n</m> matrix <m>A</m> on the left by <m>E</m> performs the relevant row operation on <m>A</m>. This is now a direct consequence of <xref ref="th_row_method"/>.
+    </p>
+    <p> For example, take <m>E=\underset{c\,r_i}{E}</m>. For <m>j\ne i</m>, the <m>j</m>-th row of <m>E\,A</m> is given by the <m>j</m>-th row of <m>E</m> times <m>A</m>. Since the <m>j</m>-th row of <m>E</m> in this case has a one in the <m>j</m>-th entry and zeros elsewhere, the product of this row and <m>A</m> is just the <m>j</m>-th row of <m>A</m>. Similarly, the <m>i</m>-th row of <m>E\, A</m> in this case is <m>c</m> times the <m>i</m>-th row of <m>A</m>. Thus <m>E</m> leaves all the rows of <m>A</m> except for the <m>i</m>-th one, which is scaled by <m>c</m>.
+    </p>
+
+  </proof>
+</theorem>
+<p>
+  Elementary matrices provide us a way of understanding row reduction as a series of matrix multiplications (on the left). Recall that row operations on linear systems are useful in so far as they preserve the set of solutions, and that this is the result of each operation being in some sense  <q>reversible</q>. (See <xref ref="ex_row_ops_preserve"/>.) In terms of matrix multiplication, this reversible attribute is reflected in the fact that elementary matrices are <em>invertible</em>.
+</p>
+  <theorem xml:id="th_inverse_elem">
+    <title>Inverses of elementary matrices</title>
+    <statement>
+      <p>
+        Fix <m>n</m>.
+        All elementary matrices are invertible,
+        and their inverses are elementary matrices.
+        In fact, we have the following formulas:
+        <md>
+          <mrow>\underset{cr_i}{E}^{-1}\amp = \underset{\frac{1}{c}r_i}{E}</mrow> [2ex]
+          <mrow>\underset{r_i\leftrightarrow r_j}{E}^{-1}\amp = \underset{r_i\leftrightarrow r_j}{E}</mrow>[2ex]
+          <mrow>\underset{r_i+c\,r_j}E^{-1}\amp = \underset{r_i-cr_j}E</mrow>
+        </md>
+      </p>
+    </statement>
+    <proof>
+      <p>
+        These formulas all follow easily from <xref ref="th_row_method"/>, and the fact that the proposed inverse elementary matrix performs the <q>reverse</q>, or inverse, of the row operation corresponding to the given elementary matrix.
+      </p>
+    </proof>
+  </theorem>
+<example xml:id="eg_elem_inverse">
+<title>Inverses of elementary matrices</title>
+  <statement>
+      <p>
+        Fix <m>n=3</m>.
+        Verify that the following pairs of <m>3\times 3</m> elementary matrices are indeed inverses of one another.
+      </p>
+        <ul>
+          <li>
+            <p>
+              <me>\underset{2r_3}{E},\  \underset{\frac{1}{2}r_3}{E}</me>
+            </p>
+          </li>
+          <li>
+            <p>
+              <me>\underset{r_1\leftrightarrow r_3}{E}, \  \underset{r_1\leftrightarrow r_3}{E}</me>
+            </p>
+          </li>
+          <li>
+            <p>
+              <me>\underset{r_1+3r_3}{E},\  \underset{r_1-3r_3}{E}</me>
+            </p>
+          </li>
+        </ul>
+  </statement>
+  <solution>
+    <ul>
+      <li>
+        <p>
+          We have
+          <me>\underset{2r_3}{E}=\begin{bmatrix}1\amp 0\amp 0\\0\amp 1\amp 0\\ 0\amp 0\amp 2 \end{bmatrix}</me> and <me>\underset{\frac{1}{2}r_3}{E}=\begin{bmatrix}1\amp 0\amp 0\\0\amp 1\amp 0\\ 0\amp 0\amp 1/2 \end{bmatrix}</me>.
+          You can verify for yourself that <me>\underset{2r_3}{E}\ \underset{\frac{1}{2}r_3}{E}=\underset{\frac{1}{2}r_3}{E}\ \underset{2r_3}{E}=I_3</me>.
+        </p>
+      </li>
+      <li>
+        <p>
+          We have
+          <me>\underset{r_1\leftrightarrow r_3}{E}=\begin{bmatrix}0\amp 0\amp 1\\0\amp 1\amp 0\\ 1\amp 0\amp 0 \end{bmatrix}</me>.
+          You can verify for yourself that <me>\underset{r_1\leftrightarrow r_3}{E}\,\underset{r_1\leftrightarrow r_3}{E}=I_3</me>.
+        </p>
+      </li>
+      <li>
+        <p>
+          We have
+          <me>\underset{r_1+3r_3}{E}=\begin{bmatrix}1\amp 0\amp 3\\0\amp 1\amp 0\\ 0\amp 0\amp 1 \end{bmatrix}</me> and <me>\underset{r_1-3r_3}{E}=\begin{amatrix}[rrr]1\amp 0\amp -3\\0\amp 1\amp 0\\ 0\amp 0\amp 1 \end{amatrix}</me>.
+          You can verify for yourself that <me>\underset{r_1+3r_3}{E}\,\underset{r_1-3r_3}{E}=\underset{r_1-3r_3}{E}\,\underset{r_1+3r_3}{E}=I_3</me>.
+        </p>
+      </li>
+    </ul>
+  </solution>
+</example>
+
+</subsection>
+<subsection xml:id="ss_systems_to_matrix_eqns" >
+  <title>Interlude on matrix equations</title>
+  <p>
+    We take a moment to make the following simple,
+    somewhat overdue observation.
+    Namely, we can represent a <em>system of linear equations</em>
+    <men xml:id="eq_lin_sys">
+      \eqsys
+    </men>
+    as a <em>single matrix equation</em>
+    <men xml:id="eq_matrix_eq">
+      \genmatrix\begin{bmatrix}x_1\\x_2\\ \vdots \\ x_n \end{bmatrix} =\begin{bmatrix}b_1\\ b_2 \\ \vdots \\ b_m \end{bmatrix}
+    </men>,
+    or <me>A\boldx=\boldb</me>, where <m>A=[a_{ij}]</m>,
+    <m>\boldx=[x_i]</m>, <m>\boldb=[b_i]</m>.
+  </p>
+  <p>
+    Indeed if you expand out the left-hand side of <xref ref="eq_matrix_eq"/> into an <m>m\times 1</m> column vector,
+    using the definition of matrix multiplication,
+    and then invoke the definition of matrix equality,
+    then you obtain the linear system <xref ref="eq_lin_sys"/>.
+  </p>
+  <p>
+    By the same token, an <m>n</m>-tuple
+    <m>(s_1,s_2,\dots,
+    s_n)</m> is a solution to the <em>system of equations</em>
+    <m>(*)</m> if and only if its corresponding column vector <m>\underset{n\times 1}{\bolds}=[s_i]</m> is a solution to the
+    <em>matrix equation</em> <m>A\boldx=\boldb</m>.
+  </p>
+  <p>
+  We have thus recast the problem of solving linear systems to the problem of solving a certain matrix equation of the form
+  <me>
+    A\underset{n\times 1}{\boldx}=\underset{m\times 1}{\boldb}
+  </me>
+  for the unknown column vector <m>\boldx</m>.
+    In particular, a <em>homogeneous</em> linear system
+    <me>
+      \homsys
+    </me>
+    can be represented as a matrix equation of the form
+    <me>
+      A\underset{n\times 1}{\boldx}=\underset{m\times 1}{\boldzero}
+    </me>.
+  </p>
+  <p>
+    Lastly, the use of Gaussian elimination to solve a linear system can now be understood in an <em>algebraic</em> way using matrix multiplication.
+  </p>
+  <p>
+    In more detail, suppose our given linear system has augmented matrix <m>\begin{amatrix}[c|c]A\amp \boldb  \end{amatrix}</m> that row reduces to the row echelon matrix <m>\begin{amatrix}[c|c] U \amp \boldb'  \end{amatrix}</m> after performing a sequence of row operations.
+    Denote the <m>i</m>-th row operation <m>\rho_i</m>,
+    and denote by <m>\rho_i(B)</m> the result of applying <m>\rho_i</m> to a matrix <m>B</m>.
+  </p>
+  <p>
+    Our sequence of operations <m>\rho_i</m> translates to the following sequence of matrix equations:
+    <me>
+      \begin{array}{c} A\boldx=\boldb\\  \rho_1(A)\boldx=\rho_1(\boldb)\\  \rho_2(\rho_1(A))\boldx=\rho_2(\rho_1(\boldb))\\  \vdots \\ \rho_r(\rho_{r-1}(\dots \rho_2(\rho_1(A))))\boldx=\rho_r(\rho_{r-1}(\dots \rho_2(\rho_1(\boldb)))) \\
+      U\boldx=\boldb'\end{array}
+    </me>.
+  </p>
+  <p>
+    Let <m>\rho_i</m> correspond to the elementary matrix <m>E_i</m>.
+    Then we represent this same sequence using matrix multiplication:
+    <men xml:id="eq_GE_via_elem_mat">
+      \begin{array}{c} A\boldx=\boldb\\  E_1A\boldx=E_1\boldb\\  E_2E_1A\boldx=E_2E_1\boldb\\  \vdots \\ E_rE_{r-1}\cdots E_2E_1A\boldx=E_rE_{r-1}\cdots E_2E_1\boldb \\
+       U\boldx=\boldb' \end{array}
+    </men>.
+  This depiction of row reduction in terms of successive left-multiplication by elementary matrices will be useful to us in many ways. In particular, it follows from this discussion that two matrices <m>A</m> and <m>B</m> are row equivalent if and only if we have
+  <men xml:id="eq_row_equiv_via_elem_mat">
+    B=E_rE_{r-1}\cdots E_2E_1A
+  </men>
+  for some collection of elementary matrices <m>E_i</m>.
+  </p>
+  </subsection>
+  <subsection xml:id="ss_invertibility_th">
+    <title>The invertibility theorem</title>
+  <p>
+    We are now in position to prove our first big theorem.
+  </p>
+
+
+<theorem xml:id="th_invertibility">
+  <title>Invertibility theorem</title>
+  <statement>
+    <p>
+      Let <m>A=[a_{ij}]</m> be an <m>n\times n</m> matrix.
+      The following statements are equivalent.
+      <ol>
+        <li xml:id="inv_statement_def">
+          <p>
+            <m>A</m> is invertible.
+          </p>
+        </li>
+
+        <li xml:id="inv_statement_unique_sol">
+          <p>
+            The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</me> has a <em>unique solution</em> for any <m>\boldb\in \R^n</m>.
+          </p>
+        </li>
+        <li xml:id="inv_statement_exists_sol">
+          <p>
+            The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</me> has a solution for any <m>\boldb\in \R^n</m>.
+          </p>
+        </li>
+        <li xml:id="inv_statement_trivial_sol">
+          <p>
+            The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldzero}</me> has a unique solution: namely, <m>\boldx=\boldzero_{n\times 1}</m>.
+          </p>
+        </li>
+        <li xml:id="inv_statement_row_equiv">
+          <p>
+            <m>A</m> is row equivalent to <m>I_n</m>,
+            the <m>n\times n</m> identity matrix.
+          </p>
+        </li>
+        <li xml:id="inv_statement_prod_elems">
+          <p>
+            <m>A</m> is a product of elementary matrices.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Recall that to show two statements <m>\mathcal{P}</m> and <m>\mathcal{Q}</m> are equivalent,
+      we must show two implications:
+      <m>\mathcal{P}\implies \mathcal{Q}</m>, and <m>\mathcal{Q}\implies \mathcal{P}</m>. Instead of doing this for each possible pair of sentences above,
+      we ease our work load by instead showing the following
+      <em>cycle</em> of implications:
+      <me>
+        (1)\implies(2)\implies(3)\implies(4)\implies(5)\implies (1)
+      </me>.
+      Since implication is transitive, starting at any point in our cycle and making our way around the chain of implications, we see that any one of the propositions implies any other proposition.
+    </p>
+    <case>
+     <title><m>(1)\implies (2)</m></title>
+    <p>
+    Suppose <m>A^{-1}</m> exists. Given any column vector <m>\boldb</m>, we have
+    <md>
+    <mrow>
+      A\boldx=\boldb \amp \iff \boldx=A^{-1}\boldb \amp (<xref ref="cor_solving_invertible"/>)
+      </mrow>
+    </md>,
+    which shows that <m>\boldx=A^{-1}\boldb</m> is the unique solution to <m>A\boldx=\boldb</m>.
+    </p>
+  </case>
+  <case>
+   <title><m>(2)\implies (3)</m></title>
+  <p>
+  Clearly, if <m>A\boldx=\boldb</m> has a unique solution for <em>any</em> choice of <m>\boldb</m>, then it has a unique solution for the <em>particular</em> choice <m>\boldb=\boldzero</m>. Since <m>\boldx=\boldzero_{n\times 1}</m> is clearly a solution to the equation, it must be the only solution.
+</p>
+  </case>
+  <case>
+   <title><m>(3)\implies (4)</m></title>
+  <p>
+  Row reduce <m>A</m> to a matrix <m>U</m> in <em>reduced</em> row echelon form using Gauss-Jordan elimination. (See <xref ref="th_matrixforms"/>.) Since the set of solutions to <m>A\boldx=\boldzero</m> is identical to the set of solutions to <m>U\boldx=\boldzero</m> (apply <xref ref="s_systems_th_rowops"/> to their corresponding linear systems), we see that <m>\boldzero</m> is the only solution to <m>U\boldx=\boldzero</m>. <xref ref="proc_solveSystem"/> now implies <m>U</m> has a leading one in each column. Since <m>U</m> is <m>n\times n</m> and in <em>reduced</em> row echelon form, it follows that <m>U</m> must be the identity matrix. (Convince yourself of this.) Thus <m>A</m> is row equivalent to <m>U=I</m>, the identity matrix.
+  </p>
+  </case>
+  <case>
+ <title><m>(4)\implies (5)</m></title>
+  <p>
+  If <m>A</m> is row equivalent to <m>I</m>, then according to our discussion after <xref ref="eq_GE_via_elem_mat"/>, we have <m>I=E_rE_{r-1}\cdots E_1A</m> for some collection of elementary matrices <m>E_i</m>. Since elementary matrices are invertible we can multiply both sides of this equation by
+  <me>(E_rE_{r-1}\cdots E_1)^{-1}=E_1^{-1}E_{2}^{-1}\cdots E_r^{-1}</me> to conclude
+  <me>
+    A=E_1^{-1}E_{2}^{-1}\cdots E_r^{-1}
+  </me>.
+  Since inverses of elementary matrices are elementary (<xref ref="th_inverse_elem"/>), we conclude that <m>A</m> is a product of elementary matrices.
+  </p>
+  </case>
+  <case>
+   <title><m>(5)\implies (1)</m></title>
+  <p>
+  If <m>A</m> is a product of elementary matrices, then it is a product of invertible matrices. Since products of invertible matrices are invertible, we conclude that <m>A</m> is invertible.
+  </p>
+  </case>
+  </proof>
+</theorem>
+    <remark xml:id="rm_inv_solutions">
+  <statement>
+    <p>
+      The <xref ref="th_invertibility" text='custom'> invertibility theorem </xref> has an immediate application to linear systems where the number of equations is <em>equal to</em> the number of unknowns. In this special situation, the system is equivalent to a matrix equation of the form
+      <me>
+        A\boldx=\boldb
+      </me>,
+      where <m>A</m> is a <em>square matrix</em>. According to the theorem, if we know <m>A</m> is invertible, then the matrix equation, and hence the linear system, has a unique solution: namely, <m>\boldx=A^{-1}\boldb</m>.
+    </p>
+    <p>
+      What if <m>A</m> is not invertible? Then the theorem only tells us that there is some column vector <m>\boldc</m>, not necessarily the given <m>\boldb</m>, such that the equation
+      <me>
+        A\boldx=\boldc
+      </me>
+      does not have a unique solution. In other words, the theorem alone doesn't allow us to conclude whether the given <m>A\boldx=\boldb</m> has a solution, and we must resort to our usual Gaussian elimination procedure to answer this question.
+    </p>
+  </statement>
+</remark>
+<p>
+  The family of <em>triangular</em> matrices (upper, lower, and diagonal) defined below provides an easy testing ground for our new invertibility theorem.
+</p>
+<definition xml:id="d_diagonal_triangular">
+  <idx><h>matrices</h><h>diagonal</h></idx>
+  <idx><h>matrices</h><h>triangular</h></idx>
+  <idx><h>matrices</h><h>upper triangular</h></idx>
+  <idx><h>matrices</h><h>lower triangular</h></idx>
+  <title>Diagonal and triangular matrices</title>
+  <statement>
+    <p>
+      Let <m>A=[a_{ij}]</m> be <m>n\times n</m>.
+      <ol type="i">
+          <li>
+            <p>
+            For each <m>1\leq i\leq n</m> the entry <m>a_{ii}</m> is called the <m>i</m>-th <term>diagonal entry</term> of <m>A</m>, and subarray of <m>A</m> consisting of  <m>a_{11}, a_{22}, \dots, a_{nn}</m> is called the <term>diagonal</term>. An <term>off-diagonal</term> entry of <m>A</m> is any entry not among the diagonal entries.
+            </p>
+          </li>
+          <li>
+            <p>
+            The matrix <m>A</m> is <term>diagonal</term> if all off-diagonal entries are zero: <ie />,
+            if <m>a_{ij}=0</m> for all <m>1\leq i,j\leq n</m> with <m>i\ne j</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The matrix <m>A</m> is <term>upper triangular</term>
+            if all entries below the diagonal are zero: <ie />, if <m>a_{ij}=0</m> for all <m>1
+            leq j\lt i</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The matrix <m>A</m> is <term>lower triangular</term>
+            if all entries above the diagonal are zero: <ie />, if <m>a_{ij}=0</m> for all <m>1\leq i\lt j </m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The matrix <m>A</m> is <term>triangular</term>
+            if <m>A</m> is upper triangular or lower triangular.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</definition>
+<example xml:id="eg_triang_matrices">
+  <title>Triangular <m>3\times 3</m> matrices</title>
+  <statement>
+    <p>
+      The set <m>W_1</m> of all diagonal <m>3\times 3</m> matrices can be described as
+      <me>
+        W_1=\left\{ \begin{amatrix}[ccc]r\amp 0\amp 0\\ 0\amp s\amp 0 \\ 0\amp 0\amp t  \end{amatrix}\colon r,s,t\in \R\right\}
+      </me>.
+      The set <m>W_2</m> of all upper triangular <m>3\times 3</m> matrices can be described as
+      <me>
+        W_2=\left\{ \begin{amatrix}[ccc]r\amp s\amp t\\ 0\amp u\amp v \\ 0\amp 0\amp w  \end{amatrix}\colon r,s,t,u,v,w\in \R\right\}
+      </me>.
+      The set <m>W_3</m> of all lower triangular <m>3\times 3</m> matrices can be described as
+      <me>
+        W_3=\left\{ \begin{amatrix}[ccc]r\amp 0\amp 0\\ s\amp t\amp 0 \\ u\amp v\amp w  \end{amatrix}\colon r,s,t,u,v,w\in \R\right\}
+      </me>.
+
+    </p>
+  </statement>
+</example>
+<theorem xml:id="th_invertible_triangular">
+  <title>Invertibility of triangular matrices</title>
+  <statement>
+    <p>
+      Let <m>A=[a_{ij}]</m> be a triangular <m>n\times n</m> matrix.
+      Then <m>A</m> is invertible if and only if
+      <m>a_{ii}\ne 0</m> for all <m>1\leq i\leq n</m>.
+    </p>
+    <p>
+      In other words,
+      <m>A</m> is invertible if and only if the diagonal entries of <m>A</m> are all nonzero.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      In this proof we will make use of the fact that a square matrix <m>A</m> is invertible if and only if <m>A^T</m> is invertible. (<xref ref="th_inverse_trans"/>)
+    </p>
+    <case>
+     <title>Case: <m>A</m> is upper triangular</title>
+    <p>
+    If <m>a_{ii}\ne 0</m> for all <m>i</m>, then it is easy to see that we can row reduce <m>A</m> first to a row echelon matrix with leading ones in every diagonal entry, and then further to the identity matrix. Thus <m>A</m> is row equivalent to <m>I</m> in this case, and we conclude from statement (4) of <xref ref="th_invertibility"/> that <m>A</m> is invertible.
+    </p>
+    <p>
+      For the other implication, we show that if it is not the case that <m>a_{ii}\ne 0</m> for all <m>i</m>, then there is a nonzero solution <m>\boldx\ne \boldzero</m> to the matrix equation <m>A\boldx=\boldzero</m>. If this is the case, then since we have two distinct solutions to <m>A\boldx=\boldzero</m>, <m>A</m> is not invertible by Statement (3) of <xref ref="th_invertibility"/>.
+    </p>
+    <p> To this end, assume it is not the case that <m>a_{ii}\ne 0</m> for all <m>i</m>. Then we can find a smallest index <m>k</m> such that <m>a_{kk}=0</m> and <m>a_{ii}\ne 0</m> for any <m>i &lt;k</m>. It is easy to see that <m>A</m> is row equivalent to a matrix <m>A'=[a'_{ij}]</m>, satisfying <m>a_{jj}=1</m>  for <m>1\leq j\leq k-1</m> and <m>a_{ij}=0</m> for all <m>1\leq i &lt; j\leq k-1</m>: i.e., <m>A'</m> is <q>diagonal up until the <m>k</m>-th column</q>.
+  </p>
+    <p>
+    We now provide a nonzero solution <m>\boldx=[x_i]_{n\times 1}</m>to <m>A'\boldx=\boldzero</m>: namely, set <m>x_k=1</m>, <m>x_{i}=0</m> for all <m>i>k</m>, and <m>x_{i}=-a'_{ik}</m> for all <m>i &lt; k</m>. (Verify this for yourself, using the description above of <m>a'_{ij}</m> for <m>j\leq k-1</m>.) Since <m>A'</m> is row equivalent to <m>A</m>, the linear systems corresponding to <m>\begin{amatrix}[cc] A\amp \boldzero\end{amatrix}</m> and <m>\begin{amatrix}[cc] A' \amp \boldzero\end{amatrix}</m> have the same solutions. Hence <m>\boldx</m> is also a nonzero solution to <m>A\boldx=\boldzero</m>. We conclude that <m>A</m> is not invertible by Statement (3) of <xref ref="th_invertibility"/>. This concludes the proof of this implication.
+    </p>
+    </case>
+    <case>
+     <title>Case: <m>A</m> is lower triangular</title>
+    <p>
+    Set <m>B=A^T</m>. Then <m>B</m> is upper triangular, and <m>(B)_{ii}=(A)_{ii}=a_{ii}</m> for all <m>i</m>. Then
+    <md>
+      <mrow>A \text{ invertible} \amp \iff B=A^T \text{ invertible} \amp \text{(see statement at top )}</mrow>
+      <mrow> \amp \iff a_{ii}=0 \text{ for all } i \amp \text{(by previous case)} </mrow>
+    </md>.
+    </p>
+    </case>
+  </proof>
+
+</theorem>
+</subsection>
+<subsection xml:id="ss_invertibility_alg">
+  <title>Invertibility algorithms</title>
+  <p>
+    The proof of the implication <m>(4)\implies (5)</m> of <xref ref="th_invertibility"/> can be expanded into an algorithm that (1) decides whether a given matrix <m>A</m> is invertible, and (2) computes <m>A^{-1}</m> if <m>A</m> is invertible.
+  </p>
+  <algorithm xml:id="th_invertibility_algorithm">
+    <title>Inverse algorithm</title>
+    <statement>
+      <p>
+      Let <m>A</m> be an <m>n\times n</m> matrix. To test for invertibility of <m>A</m> proceed as follows.
+      
+      <ol>
+        <li>
+          <p>
+          Build the <m>n\times 2n</m> augmented matrix <m>\begin{amatrix}[c|c]A\amp I_n\end{amatrix}</m> and use Gaussian elimination to row reduce to the form <m> \begin{amatrix}[c|c]U\amp B\end{amatrix} </m>, where <m>U</m> is in row echelon form.
+          </p>
+          <p>
+            The matrix <m>A</m> is invertible if and only if <m>U</m> has <m>n</m> leading ones.
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>U</m> has <m>n</m> leading ones, row reduce further to a matrix of the form <m>\begin{amatrix}[c|c] I_n\amp C\end{amatrix}</m>. Then <m>A^{-1}=C</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+    </statement>
+    <proof>
+      <p>
+        From the proof of <xref ref="th_invertibility"/> we know <m>A</m> is invertible if and only if <m>U</m> has <m>n</m> leading ones. The question remains as to why reducing the augmented matrix <m>\begin{amatrix}[c|c]A\amp I\end{amatrix}</m>  to <m>\begin{amatrix}[c|c]I\amp C\end{amatrix}</m> tells us that <m>A^{-1}=C</m>. Let <m>E_1, E_2, \dots, E_r</m> be the elementary matrices representing the row operations involved in this process. Then we have
+        <me>
+            E_rE_{r-1}\cdots E_1A=I_n
+        </me>.
+        After a little algebra, we see that
+        <me>
+          A^{-1}=E_rE_{r-1}\cdots E_1
+        </me>.
+        Since <m>C</m> is the result of applying same row operations to <m>I_n</m> we have
+        <me>
+          C=E_rE_{r-1}\cdots E_1I=E_rE_{r-1}\cdots E_1=A^{-1}
+        </me>,
+        as claimed.
+      </p>
+    </proof>
+  </algorithm>
+  <p>
+    From the proof of <xref ref="th_invertibility"/> we also derive an algorithm for writing an invertible matrix as a product of elementary matrices. You should think of this as a first example of the great versatility of Gaussian elimination, as conveyed by our <xref ref="princ_GE"/>.
+  </p>
+  <algorithm xml:id="th_elem_matrices_alg">
+    <title>Product of elementary matrices algorithm</title>
+    <statement>
+      <p>
+      Let <m>A</m> be an <m>n\times n</m> matrix. To (potentially) write <m>A</m> as a product of elementary matrices, proceed as follows.
+      <ol>
+        <li>
+          <p>
+            Attempt to row reduce <m>A</m> to the identity, keeping track of your sequence of row operations in the form of elementary matrices.
+          </p>
+        </li>
+        <li>
+          <p>
+            If you are able to row reduce <m>A</m> to <m>I_n</m> with a sequence of row operatons corresponding to the elementary matrices <m>E_1, E_2, \dots, E_r</m>, then
+            <me>
+              A=E_1^{-1}E_2^{-1}\cdots E_{r}^{-1}.
+            </me>
+            Since the inverse of an elementary matrix is elementary, we have written <m>A</m> as a product of elementary matrices.
+
+          </p>
+        </li>
+      </ol>
+    </p>
+    </statement>
+    <proof>
+      <p>
+        See the proof of the implication <m>(4)\implies (5)</m> in <xref ref="th_invertibility"/>.
+      </p>
+    </proof>
+  </algorithm>
+
+<example xml:id="eg_inv_alg_example">
+  <title>Inverse algorithms</title>
+      <p>
+      Let <me>A=\begin{amatrix}[rrr]1\amp 2\amp 0\\ 1\amp 2\amp 1\\ -1\amp -1\amp 3 \end{amatrix} </me>.
+      Combining both algorithms we can decide whether <m>A</m> is invertible, and if so, compute <m>A^{-1}</m> and write <m>A</m> as a product of elementary matrices.
+    <md>
+      <mrow>\begin{amatrix}[rrr|rrr]1\amp 2\amp 0\amp 1\amp 0\amp 0\\ 1\amp 2\amp 1\amp 0\amp 1\amp 0\\ -1\amp -1\amp 3\amp 0\amp 0\amp 1 \end{amatrix}  \amp \xrightarrow{r_2-r_1} \begin{amatrix}[rrr|rrr]1\amp 2\amp 0\amp 1\amp 0\amp 0\\ 0\amp 0\amp 1\amp -1\amp 1\amp 0\\ -1\amp -1\amp 3\amp 0\amp 0\amp 1 \end{amatrix}</mrow>
+      <mrow>\amp \xrightarrow{r_3+r_1} \begin{amatrix}[rrr|rrr]1\amp 2\amp 0\amp 1\amp 0\amp 0\\ 0\amp 0\amp 1\amp -1\amp 1\amp 0\\ 0\amp 1\amp 3\amp 1\amp 0\amp 1 \end{amatrix}</mrow>
+
+      <mrow>\text{ (three leading ones, thus invertible) }\amp \xrightarrow{r_2\leftrightarrow r_3} \begin{amatrix}[rrr|rrr]\boxed{1}\amp 2\amp 0\amp 1\amp 0\amp 0\\ 0\amp \boxed{1}\amp 3\amp 1\amp 0\amp 1\\ 0\amp 0\amp \boxed{1}\amp -1\amp 1\amp 0 \end{amatrix}</mrow>
+
+      <mrow>\amp \xrightarrow{r_2-3r_3} \begin{amatrix}[rrr|rrr]1\amp 2\amp 0\amp 1\amp 0\amp 0\\ 0\amp 1\amp 0\amp 4\amp -3\amp 1\\ 0\amp 0\amp 1\amp -1\amp 1\amp 0 \end{amatrix}</mrow>
+
+      <mrow>\amp \xrightarrow{r_1-2r_2} \begin{amatrix}[rrr|rrr]1\amp 0\amp 0\amp -7\amp 6\amp -2\\ 0\amp 1\amp 0\amp 4\amp -3\amp 1\\ 0\amp 0\amp 1\amp -1\amp 1\amp 0 \end{amatrix}</mrow>
+      </md>
+      According to <xref ref="th_invertibility_algorithm"/>, the computation shows that <m>A</m> is invertible and
+      <me>
+        A^{-1}=\begin{amatrix}[rrr]-7\amp 6\amp -2\\ 4\amp -3\amp 1\\ -1\amp 1\amp 0 \end{amatrix}
+      </me>.
+      Next, representing our row operations as elementary matrices, we see that
+      <me>
+        E_5E_4E_3E_2E_1A=I
+      </me>,
+      where
+        <md>
+          <mrow> E_1\amp =\begin{amatrix}[rrr] 1\amp 0\amp 0\\
+            -1\amp 1\amp 0\\
+            0\amp 0\amp 1\end{amatrix}  \amp   E_2\amp =\begin{amatrix}[rrr]1\amp 0\amp 0\\
+            0\amp 1\amp 0\\
+            1\amp 0\amp 1\end{amatrix}
+          </mrow>
+          <mrow>E_3\amp =\begin{amatrix}[rrr]1\amp 0\amp 0\\
+            0\amp 0\amp 1\\
+            0\amp 1\amp 0 \end{amatrix} \amp   E_4\amp =\begin{amatrix}[rrr] 1\amp 0\amp 0\\
+            0\amp 1\amp -3\\
+            0\amp 0\amp 1\end{amatrix}
+          </mrow>
+          <mrow>E_5\amp =\begin{amatrix}[rrr]1\amp -2\amp 0\\
+            0\amp 1\amp 0\\
+            0\amp 0\amp 1\end{amatrix}</mrow>
+        </md>.
+        We conclude that
+        <md>
+          <mrow>A \amp =E_1^{-1}E_2^{-1}E_3^{-1}E_4^{-1}E_5^{-1}</mrow>
+          <mrow> \amp= \begin{amatrix}[rrr] 1\amp 0\amp 0\\
+            1\amp 1\amp 0\\
+            0\amp 0\amp 1\end{amatrix}
+            \begin{amatrix}[rrr]1\amp 0\amp 0\\
+            0\amp 1\amp 0\\
+            -1\amp 0\amp 1\end{amatrix}
+            \begin{amatrix}[rrr]1\amp 0\amp 0\\
+              0\amp 0\amp 1\\
+              0\amp 1\amp 0 \end{amatrix}
+              \begin{amatrix}[rrr] 1\amp 0\amp 0\\
+              0\amp 1\amp 3\\
+              0\amp 0\amp 1\end{amatrix}
+              \begin{amatrix}[rrr]1\amp 2\amp 0\\
+                0\amp 1\amp 0\\
+                0\amp 0\amp 1\end{amatrix}
+            </mrow>
+        </md>.
+    </p>
+    </example>
+    <example xml:id="vid_eg_inver_alg">
+      <title>Video example: inverse algorithm</title>
+      <figure xml:id="fig_vid_inver_alg">
+      <caption>Video: inverse algorithm</caption>
+      <video xml:id="vid_inver_alg" youtube="yB80PXgNl7E" />
+      </figure>
+    </example>
+  </subsection>
+
+<subsection xml:id="ss_invertible_loose_ends">
+  <title>Some theoretical loose ends</title>
+<p>
+The two inveribility algorithms above are nice examples of how a <em>theoretical</em> result like our <xref ref="th_invertibility" text="custom">invertibility theorem </xref> can pay some serious <em>computational</em> dividends. Namely, thanks to the theory we have discovered a method of computing the inverse of a matrix that essentially boils down to row reduction.
+</p>
+<p>
+   We finish this section with a number of theoretical implications that tie up some loose ends. The results below are all consequences in some way of <xref ref="th_invertibility"/>. The fist shows that in fact one one of the defining equalities <m>AB=I</m> or <m>BA=I</m> suffices to define the inverse of a matrix.
+</p>
+<corollary xml:id="cor_left-right_inverse">
+  <title>Left-inverse if and only if right-inverse</title>
+
+  <statement>
+    <p>
+      Let <m>A</m> and <m>B</m> be <m>n\times n</m>. Then
+      <ol>
+        <li>
+          <p>
+            <m>BA=I_n\implies AB=I_n</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>AB=I_n\implies BA=I_n</m>.
+          </p>
+        </li>
+      </ol>
+      In plain English: a matrix <m>B</m> is a <em>left-inverse</em> of <m>A</m> if and only if it is a <em>right-inverse</em> of <m>A</m>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      It is enough to prove the first implication:
+      the second then follows by exchanging the roles of <m>A</m> and <m>B</m>.
+    </p>
+    <p>
+      Suppose <m>BA=I_n</m>.
+      We first show that <m>A</m> is invertible.
+      We have
+      <md>
+        <mrow> A\boldx=\boldzero\amp\implies BA\boldx=\boldzero </mrow>
+        <mrow> \amp\implies I\boldx=\boldzero </mrow>
+        <mrow>  \amp \implies \boldx=\boldzero </mrow>
+      </md>.
+      By Statement (3) of <xref ref="th_invertibility"/>, we conclude that <m>A</m> is invertible.
+    </p>
+    <p>
+      Now that we know <m>A^{-1}</m> exists we have
+      <md>
+        <mrow>BA=I_n\amp \implies  BAA^{-1}=IA^{-1} </mrow>
+        <mrow>  \amp \implies B=A^{-1}</mrow>
+        <mrow>  \amp \implies AB=AA^{-1}=I_n </mrow>
+      </md>.
+    </p>
+  </proof>
+</corollary>
+<p>
+  As a further consequence of <xref ref="th_invertibility"/>, we can at last strengthen the implication
+  <me>
+    A \text{ and }  B \text{ invertible }\implies AB \text{ invertibe}
+  </me>
+  to an equivalence.
+</p>
+  <corollary xml:id="cor_inv_prod_eq">
+    <title>Invertibility of product equivalence</title>
+    <statement>
+      <p>
+        Let <m>A</m> and <m>B</m> be <m>n\times n</m>.
+        Then <m>AB</m> is invertible if and only if <m>A</m> and <m>B</m> are both invertible: <ie />,
+        <me>
+          A \text{ and }  B \text{ invertible }\iff AB \text{ invertible}
+        </me>
+      </p>
+    </statement>
+    <proof>
+      <case>
+       <title>Implication: <m>A \text{ and } B \text{ invertible }\implies AB \text{ invertibe}</m></title>
+       <p>
+         We know from <xref ref="th_invertible_prod"/>  that if <m>A</m> and <m>B</m> are invertible, then so is <m>AB</m>.
+       </p>
+      </case>
+      <case>
+       <title>Implication: <m>AB</m> invertible <m>\implies</m> <m>A</m> and <m>B</m> invertible</title>
+       <p>
+          Assume <m>AB</m> is invertible and let <m>C</m> be its inverse. Thus <m>C(AB)=(AB)C=I_n</m>.
+         We first prove <m>B</m> is invertible. We have
+         <md>
+           <mrow>B\boldx=\boldzero\amp \implies  AB\boldx=\boldzero </mrow>
+           <mrow>\amp \implies  \boldx=\boldzero</mrow>
+         </md>.
+        The last implication uses Statement (3) of <xref ref="th_invertibility"/> and the fact that <m>AB</m> is invertible. We have shown that
+        <me>
+          B\boldx=\boldzero\implies \boldx=\boldzero
+        </me>,
+        and hence that <m>B</m> is invertible, using once again Statement (3) of <xref ref="th_invertibility"/>.
+       </p>
+       <p>
+         Next we prove directly that <m>A</m> is invertible. Namely, we claim that <m>A^{-1}=BC</m>.
+         Indeed, since <m>C</m> is the inverse of <m>AB</m>, we have <m>A(BC)=(AB)C=I</m>. Thus <m>BC</m> is a right-inverse of <m>A</m>. <xref ref="cor_left-right_inverse"/> now implies <m>(BC)A=I</m>, and hence that <m>A^{-1}=BC</m>, as claimed.
+       </p>
+       <p>
+         This completes the proof that if <m>AB</m> is invertible, then <m>A</m> and <m>B</m> are invertible.
+       </p>
+      </case>
+
+    </proof>
+  </corollary>
+<p>
+  We conclude with two results related to row reduction. The first provides an equivalent formulation of row equivalence in terms of matrix arithmetic: an elaboration of our discussion in <xref ref="ss_systems_to_matrix_eqns"/>.
+</p>
+<corollary xml:id="cor_row_equivalence_invertibility">
+  <title>Row equivalence and invertible matrices</title>
+  <statement>
+    <p>
+      Let <m>A</m> and <m>B</m> be <m>m\times n</m> matrices. The following statements are equivalent.
+      <ol>
+        <li>
+          <p>
+            The matrices <m>A</m> and <m>B</m> are row equivalent.
+          </p>
+        </li>
+        <li>
+          <p>
+            There are elementary matrices <m>E_1, E_2, \dots, E_r</m> such that 
+            <m>
+              E_rE_{r-1}\cdots E_1A=B
+            </m>. 
+          </p>
+        </li>
+        <li>
+          <p>
+            There is an invertible <m>m\times m</m> matrix <m>Q</m> such that <m>QA=B</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+  <proof>
+   <p>
+    The equivalence of (1) and (2) was shown in the course of our discussion in <xref ref="ss_systems_to_matrix_eqns"/>. The equivalence of (2) and (3) is a direct consequence of (5) of <xref ref="th_invertibility"/> since a matrix <m>Q</m> is invertible if and only if it can be written as
+    <me>
+      Q=E_rE_{r-1}\cdots E_1
+    </me>
+    for some elementary matrices <m>E_i</m>.
+   </p> 
+  </proof>
+</corollary>
+  <remark xml:id="rm_row_equivalence_props">
+  <title>Properties of row equivalence</title>
+  <p>
+   With the help of <xref ref="cor_row_equivalence_invertibility"/>, we can easily show that the row equivalence relation is <em>reflexive</em>, <em>symmetric</em>, and <em>transitive</em>. In other words, letting <m>A\sim B</m> denote that <m>A</m> is row equivalent to <m>B</m>, the following properties hold.
+   <ol marker="i">
+     <li>
+       <title>Reflexivity</title>
+       <p>
+      For any matrix <m>A</m>,  we have <m>A\sim A</m>: <ie />, every matrix is row equivalent to itself.
+       </p>
+     </li>
+     <li>
+       <title>Symmetry</title>
+       <p>
+         For all matrices <m>A</m> and <m>B</m>, if <m>A\sim B</m>, then <m>B\sim A</m>.
+       </p>
+     </li>
+     <li>
+       <title>Transitivity</title>
+       <p>
+         For all matrices <m>A, B, C</m>, if <m>A\sim B</m> and <m>B\sim C</m>, then <m>A\sim C</m>.
+       </p>
+     </li>
+   </ol>
+   The proof of these facts is left as an exercise (<xref ref="ex_row_equiv_props"/>).
+  </p>
+</remark>
+<p>
+  Lastly, we provide at last the proof of the third statement of <xref ref="th_matrixforms"/> promised back in <xref ref="s_ge"/>. This proof is due to Thomas Yuster<fn>Thomas Yuster. <em>The reduced row echelon form of a matrix is unique: a simple proof</em>, Mathematics Magazine <term>57</term> (1984), no. 2, 93-94. </fn>.
+</p>
+<corollary xml:id="cor_RRE_uniqueness">
+  <title>Uniqueness of reduced row echelon form</title>
+  <statement>
+    <p>
+      Any matrix <m>A</m> is row equivalent to a <em>unique</em> matrix in reduced row echelon form.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Let <m>A</m> be an <m>m\times n</m> matrix. Using Gauss-Jordan elimination, we can row reduce <m>A</m> to matrix <m>U</m> in reduced row echelon form. Suppose <m>A</m> is also row equivalent to the matrix <m>U'</m> in reduced row echelon form. Then <m>U</m> and <m>U'</m> are row equivalent, since the row equivalence relation is symmetric and transitive (<xref ref="rm_row_equivalence_props"/>). Thus it suffices to show that if <m>U</m> and <m>U'</m> are row equivalent matrices in reduced row echelon form, then <m>U=U'</m>. We do so by induction on <m>n</m>. The base step is trivial, since there is only one <m>m\times 1</m> matrix in reduced row echelon form.
+    </p>
+    <p>
+      For the induction step we assume that any two row equivalent <m>m\times n</m> matrices in reduced row echelon form are equal.  Suppose by contradiction that <m>U=[u_{ij}]</m> and <m>U'=[u'_{ij}]</m> are row equivalent <m>m\times (n+1)</m> matrices in reduced row echelon form, and that <m>U\ne U'</m>.  By <xref ref="cor_row_equivalence_invertibility"/> there is an invertible matrix <m>Q</m> such that <m>QU=U'</m>. The first <m>n</m> columns of <m>U</m> and <m>U'</m> form matrices <m>V</m> and <m>V'</m>, respectively, that are in reduced row echelon form, as one easily checks. Furthermore, <m>V</m> and <m>V'</m> are row equivalent: indeed, using <xref ref="th_column_method"/> we see that <m>QU=U'</m> implies <m>QV=V'</m>. By the induction hypothesis we must have <m>V=V'</m>, and
+      thus <m>U</m> and <m>U'</m> can only differ in their last column.
+    </p>
+    <p>
+      We claim that <m>U</m> and <m>U'</m> must both have a leading one in the last column. To see why, consider the matrix equation <m>U\boldx=\boldzero</m>, where <m>\boldx=[x_j]</m> is a <m>(n+1)\times 1 </m> column vector. Since <m>QU=U'</m>, we have
+      <md>
+        <mrow>U\boldx=\boldzero \amp\implies QU\boldx=Q\boldzero  </mrow>
+        <mrow> \amp\implies U'\boldx=\boldzero \amp (U'=QU) </mrow>
+      </md>,
+    and thus
+    <me>
+      U\boldx=\boldzero\implies U\boldx-U'\boldx=\boldzero\implies (U-U')\boldx=\boldzero
+    </me>.
+    Because <m>U</m> and <m>U'</m> differ in at most their last column, the first <m>n</m> columns of <m>U-U'</m> are zero columns, and thus we have
+    <men xml:id="eq_unique_rref">
+      (U-U')\boldx=[x_{n+1}(u_{i(n+1)}-u'_{i(n+1)})]=\boldzero
+    </men>.
+    Since <m>U\ne U'</m>, there is some <m>1\leq i\leq m</m> such that <m>u_{i(n+1)}\ne u'_{i(n+1)}</m>. Since <m>x_{n+1}(u_{i(n+1)}-u'_{i(n+1)})=0</m> by <xref ref="eq_unique_rref"/>, we must have <m>x_{n+1}=0</m>. We have shown that for any <m>\boldx=[x_j]</m> satisfying <m>U\boldx=\boldzero</m>, we must have <m>x_{n+1}=0</m>. It follows from <xref ref="proc_solveSystem"/> that <m>U</m> must have a leading in its last column, since otherwise the variable <m>x_{n+1}</m> in the system <m>U\boldx=0</m> would be free, and could assume any value. To see that <m>U'</m> also has a leading one in the last column, we use the same argument, starting with the equation <m>Q^{-1}U'=U</m>.
+    </p>
+    <p>
+      To summarize, starting with row equivalent matrices  <m>U</m> and <m>U'</m> in reduced row echelon form, and assuming by contradiction that <m>U\ne U'</m>, we conclude that (a) the first <m>n</m> columns of <m>U</m> and <m>U'</m> are equal and form matrices in reduced row echelon form, and (b) the last columns of <m>U</m> and <m>U'</m> have leading ones. Since <m>U</m> and <m>U'</m> are in reduced row echelon form, and since the first <m>n</m> columns of <m>U</m> and <m>U'</m> are equal, we see that the leading ones in the last columns of <m>U</m> and <m>U'</m> must occur in the same row: namely, the first zero row of <m>V=V'</m>. It follows that <m>U=U'</m>, a contradiction.
+    </p>
+  </proof>
+
+</corollary>
+
+</subsection>
+
+
+<subsection xml:id="ss_invertibility_theorem_ww">
+  <title>WeBWork Exercises</title>
+
+<exercise>
+      <!-- true/false elementary matrices -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.4.67.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- inverse of a 3x3 matrix -->
+      <webwork source="Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p08.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- solve AX = B for 2x2 matrices -->
+      <webwork source="Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p09.pg" />
+    </exercise>
+    <exercise>
+      <!-- solve 2x2 linear system using inverses -->
+      <webwork source="Library/Rochester/setAlgebra35SystemMatrices/sw7_5_19.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- solve 3x3 linear system using inverses -->
+      <webwork source="Library/Rochester/setAlgebra35SystemMatrices/sw7_5_23.pg" />
+    </exercise>
+
+</subsection>
+
+<xi:include href="./s_invertibility_theorem_ex.ptx"/>
+</section>

@@ -1,28 +1,6 @@
 <exercises xml:id="s_solving_ex">
 
-<subexercises>
-  <title>WeBWork Exercises</title>
 
-  <exercise>
-  <!-- 1. steps for solving a system of equations in 2 variables -->
-    <webwork source="Library/Mizzou/Finite_Math/Augmented_Matrices/AugMatrix1a.pg" />
-  </exercise>
-
-  <exercise>
-  <!-- 2. steps for solving a system of equations in 3 variables -->
-    <webwork source="Library/Mizzou/Finite_Math/Gauss-Jordan_Elimination/3by3a.pg" />
-  </exercise>
-  
-  <exercise>
-  <!-- 3. solve a system of equations in 4 variables -->
-    <webwork source="Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p02.pg" />
-  </exercise>
-
-  <exercise>
-    <!-- 7. Systems of equations in 3 variables -->
-    <webwork source="Library/TCNJ/TCNJ_LinearSystems/problem17.pg" />
-  </exercise>
-</subexercises>
 <subexercises>
 <title>Written Exercises</title>
 
@@ -53,17 +31,19 @@
   <exercise>
     <statement>
       <p>
-        <me>
-          \begin{linsys}{4} x_1\amp +\amp 2x_2\amp =\amp x_3\amp +\amp x_4\amp +\amp 3\\ 3x_1\amp +\amp 6x_2\amp =\amp 2x_3\amp -\amp 4x_4\amp +\amp 8\\ -x_1\amp +\amp 2x_3\amp =\amp 2x_2\amp -\amp x_4\amp -\amp 1 \end{linsys}
-        </me>
+        <md>
+          \begin{array}{rcrcl} x_1\amp +\amp 2x_2\amp =\amp x_3 + x_4 + 3\\ 
+          3x_1\amp +\amp 6x_2\amp =\amp 2x_3 - 4x_4 + 8\\ 
+          -x_1\amp +\amp 2x_3\amp =\amp 2x_2 - x_4 - 1 \end{array}
+        </md>
       </p>
     </statement>
     <solution>
       <p>
       We saw in <xref ref="s_ge_equivsys"/> that the system is equivalent to a system <m>L'</m> with augmented matrix
-      <me>
+      <md>
       \begin{amatrix}[rrrr|r]\boxed{1}\amp 2\amp -1\amp -1\amp 3\\ 0\amp 0\amp \boxed{1}\amp 7\amp -1\\ 0\amp 0\amp 0\amp \boxed{1}\amp -\frac{3}{7} \end{amatrix}
-      </me>.
+      </md>.
       The row echelon matrix tells us that <m>x_2=t</m> is the only free variable of <m>L'</m>. Back substitution then yields the parametric equation description:
       <md>
         <mrow>x_1\amp = \frac{32}{7}-2t</mrow>
@@ -72,9 +52,9 @@
         <mrow>x_4\amp = -\frac{3}{7}</mrow>
       </md>.
       Thus the set of solutions is
-      <me>
+      <md>
         \left\{ \left(\frac{32}{7}-2t, t, 2, -\frac{3}{7}\right)\colon t\in \R\right\}
-      </me>.
+      </md>.
     </p>
     </solution>
   </exercise>
@@ -82,8 +62,12 @@
   <exercise>
     <statement>
       <p>
-        <me>\begin{linsys}{4} x_1\amp +\amp x_2\amp -\amp x_3\amp +\amp x_4\amp =\amp 1\\ -2x_1\amp -\amp 2x_2\amp +\amp 2x_3\amp -\amp 2x_4\amp =\amp -2\\ x_1\amp +\amp x_2\amp +\amp x_3\amp +\amp 2x_4\amp =\amp 3 \end{linsys}
-        </me>
+        <md>
+          \begin{array}{rcrcrcrcc} x_1\amp +\amp x_2\amp -\amp x_3\amp +\amp x_4\amp =\amp 1\\ 
+          -2x_1\amp -\amp 2x_2\amp +\amp 2x_3\amp -\amp 2x_4\amp =\amp -2\\ 
+          x_1\amp +\amp x_2\amp +\amp x_3\amp +\amp 2x_4\amp =\amp 3 
+          \end{array}
+        </md>
       </p>
     </statement>
 
@@ -91,9 +75,9 @@
   <exercise>
     <statement>
       <p>
-        <me>
+        <md>
           \begin{linsys}{3} 2x_1 \amp +\amp  2x_2  \amp +\amp 2x_3\amp =\amp 0\\ -2x_1 \amp +\amp  5x_2 \amp +\amp 2x_3\amp =\amp 1\\ 8x_1 \amp +\amp   x_2   \amp +\amp 4x_3\amp =\amp -1 \end{linsys}
-        </me>
+        </md>
       </p>
     </statement>
 
@@ -101,9 +85,9 @@
   <exercise>
     <statement>
       <p>
-        <me>
+        <md>
           \begin{linsys}{3} \amp \amp -2b  \amp +\amp 3c\amp =\amp 1\\ 3a \amp +\amp  6b \amp -\amp 3c\amp =\amp -2\\ 6a \amp +\amp   6b   \amp +\amp 3c\amp =\amp 5 \end{linsys}
-        </me>
+        </md>
 
       </p>
     </statement>
@@ -112,9 +96,9 @@
   <exercise>
     <statement>
       <p>
-        <me>
+        <md>
           \begin{linsys}{5} \amp  \amp  \amp \amp  T_3\amp +\amp T_4\amp +\amp T_5 \amp =\amp 0\\ -T_1\amp -\amp T_2 \amp +\amp 2T_3 \amp -\amp 3T_4\amp +\amp T_5 \amp =\amp 0\\ T_1\amp + \amp T_2 \amp -\amp 2T_3 \amp \amp \amp -\amp T_5 \amp =\amp 0\\ 2T_1\amp + \amp 2T_2 \amp -\amp T_3 \amp \amp \amp +\amp T_5 \amp =\amp 0 \end{linsys}
-        </me>
+        </md>
 
       </p>
     </statement>
@@ -134,15 +118,15 @@
     </p>
     <ol>
       <li>
-        <me>
+        <md>
             \begin{linsys}{3} x\amp +\amp 2y\amp +\amp z\amp =\amp 2\\ 2x\amp -\amp 2y\amp +\amp 3z\amp =\amp 1\\ x\amp +\amp 2y\amp -\amp (a^2-3)z\amp =\amp a \end{linsys}
-          </me>
+          </md>
       </li>
       <li>
         <p>
-          <me>
+          <md>
             \begin{linsys}{3} x\amp +\amp 2y\amp -\amp 3z\amp =\amp 4\\ 3x\amp -\amp y\amp +\amp 5z\amp =\amp 2\\ 4x\amp +\amp y\amp +\amp (a^2-14)z\amp =\amp a+2 \end{linsys}
-          </me>
+          </md>
         </p>
       </li>
     </ol>
@@ -265,9 +249,9 @@
     <statement>
       <p>
         What condition must <m>a, b,</m> and <m>c</m> satisfy in order for the system below to be consistent? Express your answer as an equation involving <m>a, b,</m> and <m>c</m>.
-        <me>
+        <md>
           \begin{linsys}{3} x\amp +\amp 3y\amp +\amp z\amp =\amp a\\ -x\amp -\amp 2y\amp +\amp z\amp =\amp b\\ 3x\amp +\amp 7y\amp -\amp z\amp =\amp c \end{linsys}
-        </me>
+        </md>
       </p>
     </statement>
 
@@ -276,9 +260,9 @@
   <statement>
     <p>
       Solve the system of equations below for <m>x</m>, <m>y</m>, and <m>z</m>.
-      <me>
+      <md>
         \begin{linsys}{3} \frac{1}{x}\amp +\amp \frac{2}{y}\amp -\amp \frac{4}{z}\amp =\amp 1\\ \\ \frac{2}{x}\amp +\amp \frac{3}{y}\amp +\amp \frac{8}{z}\amp =\amp 0\\ \\ -\frac{1}{x}\amp +\amp \frac{9}{y}\amp +\amp \frac{10}{z}\amp =\amp 5 \end{linsys}
-      </me>
+      </md>
       </p>
   </statement>
   <hint>

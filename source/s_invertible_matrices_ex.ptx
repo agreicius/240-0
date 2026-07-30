@@ -1,0 +1,251 @@
+<exercises xml:id="s_invertible_matrices_ex">
+  <subexercises>
+  <title>Written Exercises</title>
+  <exercise>
+    <statement>
+      <p>
+        For each matrix either provide an inverse or show the matrix is not invertible. Justify your answer.
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>A=\begin{amatrix}[rr]1\amp 4\\ -2\amp -7  \end{amatrix}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A=\begin{amatrix}[rr] 2\amp -1 \\ 1/2 \amp -1/4  \end{amatrix}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A=p\left( \begin{amatrix}[rr] 1\amp -2 \\ -2 \amp 0  \end{amatrix}\right)</m>, where <m>p(x)=x^2+x+1</m>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Each <m>A</m> below is invertible. Find <m>A^{-1}</m> by guess and check. You may want to use the row or column method of matrix multiplication to justify your answer.
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>A=\begin{amatrix}[ccc]1\amp 0\amp 0\\ 0\amp 0\amp 1\\ 0\amp 1\amp 0  \end{amatrix}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A=\begin{amatrix}[rrr]0\amp 0\amp 1 \\0 \amp -1 \amp 0 \\ -1 \amp 0 \amp 0   \end{amatrix}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A=\begin{amatrix}[rrr] 1 \amp 0\amp 0\\ 0\amp 1\amp 2 \\ 0\amp 0\amp 1  \end{amatrix}</m>
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Suppose <m>A</m> is an invertible matrix. Prove: for any <em>nonzero</em>
+        <m>c\in\R</m> the matrix <m>cA</m> is invertible.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Assume <m>A</m> is a square <m>n\times n</m> matrix with <m>n\geq 2</m>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Prove: if <m>A</m> has two identical columns, then <m>A</m> is not invertible.
+          </p>
+        </li>
+        <li>
+          <p>
+            Prove: if <m>A</m> has a row that is a scalar multiple of another row, then <m>A</m> is not invertible.
+          </p>
+        </li>
+      </ol>
+    </statement>
+    <hint>
+      <p>
+        Use the column and/or row method of matrix multiplication to show directly that <m>A</m> cannot have an inverse matrix.
+      </p>
+    </hint>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+          Find all <em>invertible</em> matrices <m>A</m> satisfying the given equation, or show there is no such <m>A</m>. Justify your answer.
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>A^5=\boldzero_{n\times n}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A^{-3}=A^{-4}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A^2-3A=\boldzero_{n\times n}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>((A^T)^2A)^T-(A^{-1}(A^{-1})^T)^{-1}=\boldzero_{n\times n}</m>
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+          Let <m>A=\begin{bmatrix}
+            1\amp 1\\ 0\amp 1
+          \end{bmatrix}</m>.
+          Find a formula for <m>A^r</m>, where <m>r\geq 1</m> is an integer. Justify your answer using a proof by induction.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+          Let <m>A=[1]_{n\times n}</m>, the <m>n\times n</m> matrix consisting of all ones.
+          Find a formula for <m>A^r</m>, where <m>r\geq 1</m> is an integer. Justify your answer using a proof by induction.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>p(x)=x^2-5x+c</m>, where <m>c\in \R</m> is some fixed scalar. Suppose <m>A</m> is an <m>n\times n</m> matrix satisfying <m>p(A)=\boldzero_{n\times n}</m>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Prove: if <m>c\ne 0</m>, then <m>A</m> is invertible.
+          </p>
+        </li>
+        <li>
+          <p>
+            Suppose further that <m>A</m> is not a scalar multiple of <m>I_n</m>.
+          </p>
+          <p>
+            Prove: if <m>c=0</m>, then <m>A</m> is singular.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+  <exercise xml:id="ex_expand_matrix_prod">
+  <title>Expanding matrix products</title>
+    <p>
+      Fix a positive integer <m>n</m>. Given linear combinations of <m>n\times n</m> matrices  
+    <md>
+      <mrow>A \amp =c_1A_1+c_2A_2+\cdots c_rA_r=\sum_{i=1}^rc_iA_i</mrow>
+      <mrow>B \amp =d_1B_1+d_2B_2+\cdots +d_sB_s=\sum_{j=1}^sd_jB_j</mrow>
+    </md>,
+    prove by induction on <m>r\geq 1</m> that 
+    <me>
+      AB=\sum_{i=1}^r\sum_{j=1}^sc_id_jA_iB_j
+    </me>.
+    Note that each step (base and induction) of your induction on <m>r</m> will require an argument that uses induction on <m>s</m>! This is sometimes called <em>double induction</em>.  For example, in the base step <m>r=1</m> you must show that  
+    <me>
+      c_1A_1(d_1B_1+d_2B_2+\cdots +d_sB_s)=c_1d_1A_1B_1+c_1d_2A_1B_2+\cdots c_1d_sA_1B_s
+    </me>
+    for any <m>s\geq 1</m>; this should be proved by induction on <m>s</m>. 
+    </p>
+    
+  </exercise>
+  <exercise xml:id="ex_poly_inA_commute">
+    <title>Polynomial expressions of <m>A</m> commute</title>
+    <statement>
+      <p>
+        Let <m>p(x)=\anpoly</m> and <m>q(x)=\bmpoly</m> be polynomials with real coefficients. 
+        For any square matrix <m>A</m>, show that the matrices <m>p(A)</m> and <m>q(A)</m> commute: i.e.,
+        <me> p(A)q(A)=q(A)p(A)
+        </me>.
+        You may use the result of <xref ref="ex_expand_matrix_prod"/>. 
+      </p>
+    </statement>
+    <!-- <hint>
+      <p>
+        First show by induction that <m>A^nq(A)=q(A)A^n</m> for any <m>n\geq 0</m>.
+      </p>
+    </hint>
+    <solution>
+      <p>
+      We prove by induction that <m>A^nq(A)=q(A)A^n</m> for any <m>n\geq 0</m>, a special case of the result.
+      <case>
+        <title>Base step: <m>n=0</m>
+        </title>
+        <p>
+          In this case we have <m>A^n=A^0=I</m>, and thus
+          <me> A^nq(A)=Iq(A)=q(A)=q(A)I=q(A)A^n
+          </me>,
+          as desired.
+        </p>
+      </case>
+      <case>
+        <title>Case: <m>n=1</m>
+        </title>
+        <p>
+        In this case we have <m>A^n=A</m>, and it is easy to see that
+          <me> Aq(A)=q(A)A=b_mA^{m+1}+b_{m-1}A^{m-1}+\cdots +b_1A^2+b_0A
+          </me>.
+        </p>
+      </case>
+      <case>
+        <title>Induction step </title>
+        <p>
+        Assume that <m>A^nq(A)=q(A)A^n</m>. Then
+          <md>
+            <mrow>A^{n+1}q(A) \amp= A^n\,A\,q(A) </mrow>
+            <mrow> \amp= A^nq(A)A \amp (n=1 \text{ case})</mrow>
+            <mrow> \amp= q(A)A^nA \amp (\text{induction}) </mrow>
+            <mrow> \amp=q(A)A^{n+1} </mrow>
+          </md>.
+        </p>
+      </case>
+      </p>
+      <p>This proves the special case that <m>A^nq(A)=q(A)A^n</m> for all <m>n\geq 0</m>.
+      To show the result for an arbitrary polynomial <m>p(x)=\anpoly</m> we use various distributive properties:
+        <md>
+          <mrow>p(A)q(A)=(a_nA^n+a_{n-1}A^{n-1}+\cdots +a_1A+a_0I)q(A) \amp= a_nA^nq(A)+a_{n-1}A^{n-1}q(A)+\cdots +a_1Aq(A)+a_0q(A) </mrow>
+          <mrow>  \amp=a_nq(A)A^n+a_{n-1}q(A)A^{n-1}+\cdots +a_1q(A)A+a_0q(A) \amp (\text{by special}) </mrow>
+          <mrow> \amp=q(A)(a_nA^n+a_{n-1}A^{n-1}+\cdots +a_1A+a_0I) </mrow>
+          <mrow>  \amp= q(A)p(A) </mrow>
+        </md>
+      </p>
+
+    </solution> -->
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Suppose <m>A</m> is an <m>n\times n</m> matrix satisfying <m>A^r=\boldzero</m> for some <m>r\geq 1</m>.
+      </p>
+      <p>
+        Show that <m>(A-I)</m> is invertible, and that in fact
+        <me> (A-I)^{-1}=-(A^{r-1}+A^{r-2}+\cdots +A+I)
+        </me>.
+        You may use the results of <xref ref="ex_expand_matrix_prod"/> and/or <xref ref="ex_poly_inA_commute"/>.
+.
+      </p>
+    </statement>
+  </exercise>
+  </subexercises>
+</exercises>

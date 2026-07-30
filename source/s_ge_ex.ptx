@@ -1,22 +1,5 @@
 <exercises xml:id="s_ge_ex">
   <subexercises>
-<title>WeBWork Exercises</title>
-    <!-- Determine whether row echelon form -->
-    <exercise>
-    <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/holt_01_02_010.pg" />
-  </exercise>
-
-<!-- <exercise> -->
-  <!-- Individual row reductions for a 3x3 matrix -->
-  <!-- <webwork source="Library/Mizzou/Finite_Math/MatrixOperations/RowOp3by3e.pg" /> -->
-<!-- </exercise> -->
-
-<exercise>
-  <!-- Combined row reductions for a 3x3 matrix -->
-  <webwork source="Library/ASU-topics/set119LinearSystems/p28.pg" />
-</exercise>
-</subexercises>
-<subexercises>
 <title>Written Exercises</title>
 <exercisegroup>
   <introduction>

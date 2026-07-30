@@ -1,0 +1,8 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="c_matrices">
+  <title>Matrices</title>
+  <xi:include  href="s_matrix.ptx"/>
+  <xi:include  href="s_matrix_algebra.ptx"/>
+  <xi:include  href="s_invertible_matrices.ptx"/>
+  <xi:include  href="s_invertibility_theorem.ptx"/>
+  <xi:include  href="s_det.ptx"/>
+</chapter>

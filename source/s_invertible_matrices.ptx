@@ -1,0 +1,747 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_invertible_matrices">
+  <title>Invertible matrices</title>
+  <introduction>
+    <p>Picking up the thread of <xref ref="rm_cancel_failure"/>, we observe that the cancellation property enjoyed in real number algebra is a consequence of the fact that every nonzero real number <m>a\ne 0</m> has a <em>multiplicative inverse</em>, denoted <m>a^{-1}</m> or <m>1/a</m>, that satisfies <m>aa^{-1}=1</m>. Indeed, <q>canceling</q> the <m>a</m> in the equation <m>ab=ac</m> (assuming <m>a\ne 0</m>) is really the act of multiplying both sides of this equation by the multiplicative inverse <m>a^{-1}</m>.
+  </p>
+  <p>
+  Ever on the lookout for connections between real number and matrix algebra, we ask whether there is a sensible analogue of multiplicative inverses for matrices. We have seen already that identity matrices <m>I_n</m> play the role of multiplicative identities for <m>n\times n</m> matrices, just as the number <m>1</m> does for real numbers. This suggests we should restrict our attention to <m>n\times n</m> matrices. The following definition is then the desired analogue of the multiplicative inverse of a nonzero real number.
+  </p>
+  </introduction>
+  <subsection xml:id="subsec-">
+    <title>Invertible matrices</title>
+
+
+  <definition xml:id="d_invertible_matrix">
+    <title>Invertible matrix</title>
+    <idx><h>invertible</h><h>matrix</h></idx>
+    <idx><h>matrix</h><h>inverse</h></idx>
+    <notation>
+      <usage><m>A^{-1}</m></usage>
+      <description>inverse of <m>A</m></description>
+    </notation>
+
+    <statement>
+      <p>
+        An <m>n\times n</m> matrix <m>A</m>  is <term>invertible</term> (or <term>nonsingular</term>)
+        if there is a <m>n\times n</m> matrix <m>B</m> satisfying
+        <men xml:id="eq_matrix_inverse">
+          AB=BA=I_n
+        </men>.
+        When this is the case we call <m>B</m> an
+        <term>inverse</term> of <m>A</m>,
+        and we say that <m>A</m> and <m>B</m> are
+        <term>inverses</term> of one another.
+      </p>
+      <p>
+        A matrix <m>B</m> satisfying <xref ref="eq_matrix_inverse"/> is called an <term>inverse</term> of <m>A</m>, denoted <m>A^{-1}</m>. 
+      </p>
+      <p>
+        A square matrix that is not invertible is called <term>singular</term>.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    The phrase <q>an inverse</q> in <xref ref="d_invertible_matrix"/> is somewhat jarring. Shouldn't we speak of <em>the inverse</em> of a matrix? Not surprisingly, if a matrix is invertible, then it has one and only one inverse. As intuitive as this fact may seem, however, it still requires proof.
+  </p>
+<theorem xml:id="th_inverse_unique">
+  <title>Inverses are unique</title>
+  <statement>
+    <p>
+      If <m>A</m> is an invertible matrix, then its inverse is unique: that is, there is only one matrix <m>B</m> satisfying <m>AB=BA=I</m>.
+      </p>
+  </statement>
+</theorem>
+  <proof>
+    <p>
+      Suppose matrices <m>B</m> and <m>C</m> both satisfy the properties of the multiplicative inverse: i.e.,
+      <md>
+        <mrow>AB\amp =BA=I  </mrow>
+        <mrow> AC\amp=CA=I </mrow>
+      </md>.
+      Then
+      <md>
+        <mrow>AB=I\text{ and } AC=I \amp\implies  AB=AC</mrow>
+        <mrow> \amp \implies BAB=BAC</mrow>
+        <mrow>  \amp \implies I\,B=I\,C </mrow>
+        <mrow>  \amp \implies B=C</mrow>
+      </md>.
+    Thus we see that <m>B=C</m>, showing that the inverse of <m>A</m>, if it exists, is unique.
+    </p>
+  </proof>
+<p>
+  The next theorem tells us that we <em>can</em> multiplicatively cancel a matrix if it is <em>invertible</em>.
+</p>
+<theorem xml:id="th_inverse_cancel">
+  <title>Cancellation with invertible matrices</title>
+  <statement>
+    <p>
+      Suppose <m>Q</m> is an invertible <m>n\times n</m> matrix. <ol>
+        <li>
+          <title>Left-cancellation</title>
+          <p>
+            Given <m>n\times r</m> matrices <m>X</m> and <m>Y</m>, we have 
+      <me>
+        QX=QY \iff X=Y
+      </me>.
+          </p>
+        </li>
+        <li>
+          <title>Right-cancellation</title>
+          <p>
+            Given <m>m\times n</m> matrices <m>X</m> and <m>Y</m>, we have 
+            <me>
+              XQ=YQ \iff X=Y
+            </me>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+  <proof>
+    <p>
+      <ol>
+        <li>
+          <p>
+            We prove both implications of <m>QX=QY \iff X=Y</m> separately. The reverse implication (<m>\Leftarrow</m>) is obvious: 
+            <me>
+              X=Y\implies QX=QY
+            </me>.
+           For the forward implication (<m>\Rightarrow</m>), we have 
+           <md>
+            <mrow> QX=QY \amp \implies Q^{-1}(QX)=Q^{-1}(QY) \amp (Q \text{ inv.})</mrow>
+            <mrow> \amp \implies Q^{-1}QX=Q^{-1}QY </mrow>
+            <mrow> \amp \implies IX=IY</mrow>
+            <mrow> \amp \implies X=Y </mrow>
+           </md>.
+          </p>
+        </li>
+        <li>
+          <p>
+            The argument for right cancellation is exactly similar. 
+          </p>
+        </li>
+      </ol>
+    </p>
+  </proof>
+</theorem>
+<p>
+  The next corollary shows how we can solve some matrix equations uniquely using invertible matrices. 
+</p>
+<corollary xml:id="cor_solving_invertible">
+  <title>Solving with invertible matrices</title>
+  <statement>
+    <p>
+      Suppose <m>Q</m> is an invertible <m>n\times n</m> matrix.
+    <ol>
+      <li>
+        <p>
+          If <m>X</m> and <m>Y</m> are <m>n\times r</m> matrices, then 
+          <me>
+            QX=Y \iff X=Q^{-1}Y
+          </me>.
+        </p>
+      </li>
+      <li>
+        <p>
+          If <m>X</m> and <m>Y</m> are <m>m\times n</m> matrices, then 
+          <me>
+            XQ=Y \iff X=YQ^{-1}
+          </me>.          
+        </p>
+      </li>
+    </ol>
+    </p>
+  </statement>
+  <proof>
+    <p>
+      <ol>
+        <li>
+          <p>
+            We have 
+            <md>
+              <mrow>QX=Y \amp \iff Q^{-1}QX=Q^{-1}Y \amp (<xref ref="th_inverse_cancel" text="global"/>, Q^{-1} \text{ inv.})</mrow>
+              <mrow> \amp \iff X=Q^{-1}Y</mrow>
+            </md>.
+          </p>
+        </li>
+        <li>
+            <p>
+            We have 
+            <md>
+              <mrow>XQ=Y \amp \iff XQQ^{-1}=YQ^{-1} \amp (<xref ref="th_inverse_cancel" text="global"/>, Q^{-1} \text{ inv.})</mrow>
+              <mrow> \amp \iff X=YQ^{-1}</mrow>
+            </md>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </proof>
+</corollary>
+<p>
+  Without any additional theory at our disposal, to show a matrix <m>A</m> is invertible we must exhibit an inverse. The onus is on us to find a matrix <m>B</m> satisfying both <m>AB=I</m> and <m>BA=I</m>. (Remember: since we cannot assume <m>BA=AB</m>, we really need to show both equations hold.)</p>
+  <p>
+  By the same token, to show <m>A</m> is <em>not</em> invertible we must show that an inverse does not exist: that is, we must prove that there is no <m>B</m> satisfying <m>AB=BA=I</m>. The next example illustrates this technique for a variety of matrices.
+</p>
+<example xml:id="eg_invertible_matrices">
+<title>Invertible matrices</title>
+  <statement>
+    <p>
+      <ol>
+        <li>
+          <p>
+            Identity matrices are invertible, and in fact we have <m>I^{-1}=I</m>, as witnessed by the fact that <m>II=I</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Square zero matrices <m>\boldzero</m> are never invertible, since for any square matrix <m>B</m> of the same dimension we have <me>B\,\boldzero=\boldzero B=\boldzero\ne I</me>.
+            Thus there is no matrix satisfying the inverse property <xref ref="eq_matrix_inverse"/> with respect to <m>\boldzero</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+           The inverse of the matrix  <m>\begin{amatrix}[rr]2\amp 1\\ 3\amp 2
+          \end{amatrix}</m> is <m>\begin{amatrix}
+          2\amp -1\\ -3\amp 2
+          \end{amatrix}
+          </m>. Indeed, we have
+          <me>
+          \begin{amatrix}[rr]2\amp 1\\ 3\amp 2
+        \end{amatrix}\begin{amatrix}[rr]
+        2\amp -1\\ -3\amp 2
+        \end{amatrix}=\begin{amatrix}[rr]
+        2\amp -1\\ -3\amp 2
+        \end{amatrix}\begin{amatrix}[rr]2\amp 1\\ 3\amp 2
+      \end{amatrix}=I_2
+          </me>,
+          as you can easily verify.
+
+          </p>
+        </li>
+        <li>
+          <p>
+            The matrix <m>A= \begin{amatrix}[rrr]
+              1\amp 1 \amp 1\\
+              1\amp 1 \amp 1\\
+              1\amp 1\amp 1
+            \end{amatrix}</m> is not invertible. 
+            Indeed, using the <xref ref="th_row_method" text="custom">row method of matrix multiplication</xref>, we see that given any matrix <m>B</m>, each row of <m>AB</m> is given by 
+            <me>\begin{amatrix}1\amp 1\amp 1
+            \end{amatrix}\,B 
+            </me>. 
+            It follows that all the rows of <m>AB</m> are identical, and hence that we cannot have <m>AB=I_3</m>, since the rows of <m>I_3</m> are not identical.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</example>
+<p>
+  As the preceding example illustrates, deciding whether a matrix is invertible is not so straightforward, especially if the matrix is large. For the <m>2\times 2</m> case, however, we have a relatively simple test for invertibility. (We will generalize this to the <m>n\times n</m> case in <xref ref="s_det"/>.)
+</p>
+<theorem xml:id="th_2by2_inverse">
+  <title>Inverses of <m>2\times 2</m> matrices</title>
+  <statement>
+    <p>
+      A matrix <m>A=\abcdmatrix{a}{b}{c}{d}</m> is invertible if and only if <m>ad-bc\ne 0</m>.
+    </p>
+    <p>
+      When this is the case, we have
+      <me>
+        \abcdmatrix{a}{b}{c}{d}^{-1}=\frac{1}{ad-bc}\begin{amatrix}[rr]d\amp -b \\ -c\amp a
+      \end{amatrix}
+      </me>.
+    </p>
+  </statement>
+</theorem>
+<proof>
+  <p>
+    If <m>ad-bc\ne 0</m>, the proposed matrix is indeed an inverse of <m>A</m>, as one readily verifies.
+  </p>
+  <p>
+    Assume <m>ad-bc=0</m>. If <m>A=\boldzero</m>, then <m>A</m> is not invertible, as we saw in the example above. Thus we can assume <m>A</m> is nonzero, in which case <m>B=\begin{amatrix}[rr]d\amp -b\\ -c\amp a
+  \end{amatrix}</m> is also nonzero. An easy computation shows
+  <me>
+    AB=\abcdmatrix{ad-bc}{0}{0}{ad-bc}=\abcdmatrix{0}{0}{0}{0}.
+  </me>
+  This implies <m>A</m> is not invertible. Indeed if it were, then the inverse <m>A^{-1}</m> would exist, and we'd have
+  <md>
+    <mrow>AB=\boldzero \amp\implies A^{-1}AB=\boldzero </mrow>
+    <mrow> \amp \implies IB=\boldzero </mrow>
+    <mrow>  \amp \implies B=\boldzero </mrow>
+  </md>,
+  which is a contradiction. We have proved that if <m>ad-bc=0</m>, then <m>A</m> is not invertible.
+  </p>
+</proof>
+<project xml:id="sage_inv_matrix">
+  <title>Invertible matrices</title>
+  <p>
+  Sage has a number of useful tools related to invertibility. The boolean function <c>is_invertible()</c> tests for invertibility, and the method <c>inverse()</c> computes the inverse of an invertible matrix. Below we generate a random matrix with rational coefficients, test whether it is invertible, and compute its inverse if it is invertible. The <c>density=0.5</c> ensures that roughly half of the matrix entries are zero; and this in turn increases the likelihood that the matrix is singular, for reasons that will become somewhat clearer later.
+  <ul>
+    <li>
+      <p>
+        Evaluate the Sage cell below multiple times.
+      </p>
+    </li>
+    <li>
+      <p>
+        When the matrix is invertible, verify that <m>AA^{-1}=A^{-1}A=I</m>. If you like, use the blank Sage cell to compute <m>AA^{-1}</m> and <m>A^{-1}A</m>.
+      </p>
+    </li>
+    <li>
+      <p>
+        Try increasing the density setting in <c>random_element()</c> (<eg />, <c>density=0.75</c>, <c>density=.875</c>) and see if the matrix is more or less likely to be invertible.
+      </p>
+    </li>
+  </ul>
+  </p>
+  <sage>
+  <input>
+  R=MatrixSpace(QQ,4,4)
+  A=R.random_element(density=0.5)
+  print('A=\n',A)
+  print('Q: is A invertible?. A:', A.is_invertible())
+  if A.is_invertible():
+      print('A^-1=\n')
+      print(A.inverse())
+  </input>
+  <output>
+    A=
+ [  1   0  -2   0]
+[1/2   0   0   2]
+[  0  -1  -2   0]
+[ -1   0   0   0]
+Q: is A invertible?. A: True
+A^-1=
+
+[   0    0    0   -1]
+[   1    0   -1    1]
+[-1/2    0    0 -1/2]
+[   0  1/2    0  1/4]
+  </output>
+  </sage>
+  <sage>
+  <input>
+
+  </input>
+  <output>
+
+  </output>
+  </sage>
+
+</project>
+<p>
+  The next theorem tells us that invertibility is preserved by matrix multiplication: that is, if <m>A</m> and <m>B</m> are invertible <m>n\times n</m> matrices, then so is <m>C=AB</m>.
+</p>
+  <theorem xml:id="th_invertible_prod">
+    <title>Products of invertible matrices</title>
+    <statement>
+      <p>
+        Let <m>A,B</m> be <m>n\times n</m> matrices. If <m>A</m> and <m>B</m> are both invertible, then so is their product <m>AB</m>. Using logical notation:
+        <men xml:id="eq_inv_implies_prod">
+          A\text{ and } B  \text{ invertible } \implies AB \text{ invertible }
+        </men>.
+        In fact when this is the case we have
+        <men xml:id="eq_inv_prod_form">(AB)^{-1}=B^{-1}A^{-1}</men>.
+      </p>
+    </statement>
+  </theorem>
+  <proof>
+    <p>
+      Assume <m>A</m> and <m>B</m> are invertible. The statement of the theorem proposes a candidate for the inverse of <m>AB</m>: namely, <m>C=B^{-1}A^{-1}</m>.
+      We need only show that <m>C</m> satisfies <m>C(AB)=(AB)C=I</m>. Here goes:
+      <md>
+        <mrow>C(AB)\amp =\amp (B^{-1}A^{-1})AB=B^{-1}A^{-1}AB=B^{-1}IB=B^{-1}B=I</mrow>
+        <mrow>(AB)C\amp =\amp (AB)B^{-1}A^{-1}=ABB^{-1}A^{-1}=AIA^{-1}=AA^{-1}=I</mrow>
+      </md>.
+    </p>
+  </proof>
+  <corollary xml:id="c_invertible_prod">
+  <title>Products of invertible matrices</title>
+  
+  
+    <statement>
+      <p>
+        More generally, if <m>A_1,A_2,\dots A_r</m> are invertible <m>n\times n</m> matrices, then their product <m>A_1A_2\cdots A_r</m> is invertible. Furthermore, we have in this case
+
+        <men xml:id="eq_inv_prod_arb_form">
+          (A_1A_2\cdots A_r)^{-1}=A_r^{-1}A_{r-1}^{-1}\cdots A_1^{-1}
+        </men>.
+      </p>
+    </statement>
+  </corollary>
+  <proof>
+    <p>
+      We prove by induction on the number <m>r</m> of matrices, <m>r\geq 1</m>, that if the <m>A_i</m> are invertible, then the proposed inverse formula is valid.
+      <case>
+        <title>Base step: <m>r=1</m></title>
+        <p>
+          For <m>r=1</m>, the inverse formula reads <m>A_1^{-1}=A_1^{-1}</m>, which is clearly true.
+        </p>
+      </case>
+      <case>
+        <title>Induction step</title>
+        <p>
+          For the induction step we assume that the inverse formula is valid for any collection of <m>r-1</m> invertible matrices, and then show it is valid for any collection of <m>r</m> invertible matrices. Let <m>A_1,A_2,\dots, A_r</m> be invertible <m>n\times n</m> matrices. Define <m>A=A_1A_2\cdots A_{r-1}</m>. Then
+          <md>
+            <mrow>(A_1A_2\cdots A_{r-1})^{-1} \amp=\left((A_1A_2\cdots A_{r-1})A_r\right)^{-1} </mrow>
+            <mrow> \amp=(AA_r)^{-1} </mrow>
+            <mrow>  \amp= A_r^{-1}A^{-1} \amp (<xref ref="th_invertible_prod" />)</mrow>
+            <mrow>  \amp =A_r^{-1}(A_{r-1}^{-1}A_{r-2}^{-1}\cdots A_1^{-1}) \amp (\text{induction})</mrow>
+            <mrow>  \amp=A_r^{-1}A_{r-1}^{-1}\cdots A_1^{-1} \amp (\text{assoc.}) </mrow>
+          </md>.
+        </p>
+      </case>
+    </p>
+  </proof>
+  <remark>
+    <p>
+      Whenever confronted with a logical implication of the form <m>\mathcal{P}\implies\mathcal{Q}</m>, where <m>\mathcal{P}</m> and <m>\mathcal{Q}</m> denote arbitrary propositions, you should always ask whether the implication <q>goes the other way</q>. In other words, does the converse implication  <m> \mathcal{Q}\implies \mathcal{P} </m> also hold?
+    </p>
+   <p>
+     The answer with regard to the implication <xref ref="eq_inv_implies_prod"/> is yes, though the proof of this is more difficult then you think. (See <xref ref="cor_inv_prod_eq"/>.)
+   </p>
+  <p> The following argument is a common <em>invalid</em> proof of the reverse implication:
+     <ol>
+       <li>
+         <p>
+           Assume <m>AB</m> is invertible.
+         </p>
+       </li>
+       <li>
+         <p>
+           Then <m>AB</m> has an inverse matrix.
+         </p>
+       </li>
+       <li>
+         <p>
+           Then the inverse of <m>AB</m> is <m>B^{-1}A^{-1}</m>.
+         </p>
+       </li>
+       <li>
+         <p>
+           Then <m>A^{-1}</m> and <m>B^{-1}</m> exist. Hence <m>A</m> and <m>B</m> are invertible.
+         </p>
+       </li>
+     </ol>
+    Where is the flaw in our logic here? The second statement only allows us to conclude that there is some mystery matrix <m>C</m> satisfying <m>(AB)C=C(AB)=I</m>. We cannot yet say that <m>C=B^{-1}A^{-1}</m>, as this formula from <xref ref="th_invertible_prod"/> only applies when we already know that <m>A</m> and <m>B</m> are both invertible. But this is exactly what we are trying to prove! As such we are guilty here of <q>begging the question</q>, or <foreign>petitio principii</foreign> in Latin.
+   </p>
+ </remark>
+ </subsection>
+  <subsection>
+  <title>Powers of matrices, matrix polynomials</title>
+  <p>
+    We end this section by exploring how the matrix inverse operation fits into our matrix algebra. First, we can now use the inverse operation to define matrix powers of the form <m>A^r</m>, where <m>A</m> is a square matrix and <m>r</m> is an arbitrary integer.
+  </p>
+  <definition xml:id="d_matrix_powers">
+    <title>Matrix powers</title>
+    <idx><h>matrix powers</h></idx>
+    <notation>
+      <usage><m>A^r</m></usage>
+      <description>matrix power</description>
+    </notation>
+    <statement>
+      <p>
+      Let <m>A</m> be an <m>n\times n</m> matrix, and let <m>r\in\Z</m> be an integer. We define the power matrix <m>A^r</m> as follows:
+      <me>
+        A^r=\begin{cases} I\amp \text{if } r=0;\\[2ex] \underset{r \text{ times}}{\underbrace{AA\cdots A}}\amp \text{if } r>0; \\[2ex] (A^{-1})^s \amp \text{if } r=-s &lt; 0 \text{ and } A \text{ is invertible}.
+       \end{cases}
+      </me>.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    Equipped with a notion of matrix powers, we can further define matrix polynomials for square matrices.
+  </p>
+  <definition xml:id="d_matrix_polynomials">
+  <title>Matrix polynomials</title>
+    <idx><h>matrix polynomials</h></idx>
+    <notation>
+      <usage><m>f(A)</m></usage>
+      <description>matrix polynomial</description>
+    </notation><statement>
+      <p>
+        Let <m>f(x)=\anpoly</m> be a polynomial with real coefficients. For any square matrix <m>A</m> of size <m>n\times n</m>, we define the matrix <m>f(A)</m> as
+        <men xml:id="eq_matrix_polynomial">
+          f(A)=a_nA^n+a_{n-1}A^{n-1}+\cdots +a_1A+a_0I_n
+        </men>.
+        We call <m>f(A)</m> the result of <term>evaluating</term> the polynomial <m>f</m> at the matrix <m>A</m>.
+      </p>
+    </statement>
+  </definition>
+  <remark xml:id="rem_matrix_polynomials"> 
+  <p>
+    It is both easy and perilous to forget the identity matrix in the term <m>a_0I_n</m> appearing in <xref ref="eq_matrix_polynomial"/>. Take caution not to make this mistake; without an identity matrix of appropriate size, the expression <m>f(A)</m> simply does not make sense.
+  </p>
+  </remark>
+  <example xml:id="eg_matrix_polynomials">
+    <title>Matrix polynomials</title>
+    <statement>
+      <p>
+        Let <m>f(x)=x^2-2x+1</m>. Evaluate <m>f</m> at  the matrices
+        <me>
+          A=\begin{bmatrix}
+            1\amp 1\\
+            0\amp 1
+        \end{bmatrix}
+        </me>
+        and
+        <me>
+          B=\begin{bmatrix}
+            1\amp 1\amp 1\\
+            1\amp 1\amp 1\\
+            1\amp 1\amp 1
+        \end{bmatrix}
+        </me>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We have
+        <md>
+          <mrow>f(A) \amp =A^2-2A+I_2</mrow>
+          <mrow> \amp= \begin{bmatrix}
+            1\amp 2\\ 0\amp 1
+          \end{bmatrix}-2\begin{bmatrix}
+            1\amp 1\\ 0\amp 1
+          \end{bmatrix}+\begin{bmatrix}
+            1\amp 0\\ 0 \amp 1
+          \end{bmatrix} </mrow>
+          <mrow>  \amp = \begin{bmatrix}
+            0\amp 0 \\ 0\amp 0
+          \end{bmatrix}=\underset{2\times 2}\boldzero</mrow>
+        </md> and
+        <md>
+          <mrow>f(B) \amp=B^2-2B+I_3 </mrow>
+          <mrow> \amp=\begin{bmatrix}
+            3\amp 3\amp 3\\ 3\amp 3\amp 3\\ 3\amp 3\amp 3
+          \end{bmatrix}-2\begin{bmatrix}
+            1\amp 1\amp 1\\
+            1\amp 1\amp 1\\
+            1\amp 1\amp 1
+        \end{bmatrix}+\begin{bmatrix}
+          1\amp 0\amp 0 \\ 0\amp 1\amp 0\\ 0\amp 0\amp 1
+        \end{bmatrix} </mrow>
+        <mrow>  \amp = \begin{bmatrix}
+          2\amp 1\amp 1\\
+          1\amp 2\amp 1\\
+          1\amp 1\amp 2
+      \end{bmatrix}</mrow>
+        </md>.
+      </p>
+    </solution>
+  </example>
+  <project>
+    <title>Matrix polynomials</title>
+    <p>
+      An integer matrix power <m>A^n</m> is computed in Sage as <c>A^n</c>.
+    </p>
+    <sage>
+    <input>
+    A=Matrix([[1,1,1],[1,2,1],[-1,1,0]])
+    show(A^3)
+    show(A^-1)
+    show(A^-2)
+    </input>
+    <output>
+      [ 3 11  5]
+  [ 5 17  8]
+  [ 1  2  1]
+
+  [-1  1 -1]
+  [-1  1  0]
+  [ 3 -2  1]
+
+  [-3  2  0]
+  [ 0  0  1]
+  [ 2 -1 -2]
+    </output>
+    </sage>
+    <p>
+      Of course the matrix needs to be invertible for a negative of power to be computed. Sage will throw an error in this case if the matrix is singular.
+    </p>
+    <sage>
+    <input>
+    B=Matrix([[1,1],[1,1]])
+    show(B.is_invertible())
+    show(B^-2)
+    </input>
+    <output>
+    False
+
+---------------------------------------------------------------------------
+ZeroDivisionError: matrix must be nonsingular
+    </output>
+    </sage>
+    <p>
+      Polynomial expressions can then be easily computed manually in Sage. The next cell computes <m>f(A)</m> and <m>f(B)</m> for <m>f(x)=x^2-3x+33</m>.
+    </p>
+    <sage>
+    <input>
+    show(A^2-3*A+33*identity_matrix(3))
+    show(B^2-3*B+33*identity_matrix(2))
+    </input>
+    <output>
+      [31  1 -1]
+  [-1 33  0]
+  [ 3 -2 33]
+
+  [32 -1]
+  [-1 32]
+    </output>
+    </sage>
+    <p>
+      We took care to heed the warning in <xref ref="rem_matrix_polynomials"/>, making sure to include <m>I_3</m> for <m>f(A)</m> (<c>identity_matrix(3)</c>) and <m>I_2</m> for <m>f(B)</m> (<c>identity_matrix(2)</c>). Interestingly, Sage is smart enough to figure out what we mean even if we are sloppy in this regard.
+    </p>
+    <sage>
+    <input>
+    show(A^2-3*A+33)
+    show(B^2-3*B+33)
+    </input>
+    <output>
+      [31  1 -1]
+  [-1 33  0]
+  [ 3 -2 33]
+
+  [32 -1]
+  [-1 32]
+    </output>
+    </sage>
+  </project>
+<theorem xml:id="th_power_rules">
+  <title>Properties of matrix powers</title>
+
+  <statement>
+    <p>
+      The following properties hold for all matrices <m>A, B</m>, all scalars <m>c\in \R</m>, and all integers <m>r,s\in\Z</m> for which the given expression makes sense.
+      <ol>
+        <li>
+          <p>
+            <m>A^{r+s}=A^rA^s</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(A^r)^s=A^{rs}</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(cA)^r=c^rA^r</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>(A^{-1})^{-1}=A</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A^{-r}=(A^{-1})^r</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+  <proof>
+    <p>
+      The proofs of the first three statements are elementary, and closely resemble proofs of similar results in real number algebra. We leave these as an (unassigned) exercise.
+    </p>
+    <p>
+      For the fourth statement to make sense, we must assume that <m>A</m> is invertible. The claim here is that <m>A^{-1}</m> is invertible, and that its inverse is <m>A</m> itself. To prove this we need only show <m>A^{-1}A=AA^{-1}=I</m>, which follows from the definition of the inverse.
+    </p>
+    <p>
+      The fifth statement also tacitly assumes <m>A</m> is invertible. To prove it, we consider the three cases <m>r=0</m>, <m>r>0</m> and <m>r &lt; 0</m>.
+    </p>
+    <p>
+      If <m>r=0</m>, then by definition  <m>A^{-r}=A^0=I=(A^{-1})^0=(A^{-1})^r</m>.
+    </p>
+    <p>
+      If <m>r>0</m>, then by definition <m>A^{-r}=(A^{-1})^r</m>.
+    </p>
+    <p>
+      Suppose <m>r=-s &lt; 0</m>. Then
+      <md>
+        <mrow>(A^{-1})^{r} \amp = ((A^{-1})^{-1})^s \amp (<xref ref="d_matrix_powers"/>) </mrow>
+        <mrow> \amp =A^s \amp ((A^{-1})^{-1}=A)</mrow>
+        <mrow>  \amp=A^{-r} \amp (r=-s) </mrow></md>.
+    </p>
+  </proof>
+</theorem>
+
+
+  <theorem xml:id="th_inverse_trans">
+    <title>Inverse and transpose</title>
+
+    <statement>
+      <p>
+        Let <m>A</m> be invertible. We have 
+        <me>
+          A \text{ invertible} \iff A^T \text{ invertible}
+        </me>,
+        in which case 
+        <men xml:id="eq_inverse_trans">
+        \left(A^T\right)^{-1}=\left(A^{-1}\right)^T
+        </men>.
+      </p>
+    </statement>
+    <proof>
+      <p>
+        We prove both implications of the if and only if statement separately. 
+      </p>
+      <p>
+        Suppose <m>A</m> is invertible with inverse <m>A^{-1}</m>. To see that <m>A^T</m> is invertible, with inverse as specified in  <xref ref="eq_inverse_trans"/>, we need only show that
+        <me>
+          A^T(A^{-1})^T=(A^{-1})^T\, A^T=I
+        </me>.
+        We verify the two equalities separately:
+        <md>
+          <mrow>A^T(A^{-1})^T\amp =\left(A^{-1}A\right)^T \amp (<xref ref="th_trans_props"/>)</mrow>
+          <mrow>\amp =I_n^T </mrow>
+          <mrow> \amp =I_n  \checkmark</mrow>
+        </md>
+        <md>
+          <mrow>(A^{-1})^TA^T \amp =(AA^{-1})^T \amp (<xref ref="th_trans_props"/>)</mrow>
+          <mrow>\amp =I_n^T=I_n \ \checkmark</mrow>
+        </md>.
+        In both chains of equality we make use of the obvious claim <m>I^T=I</m>.
+      </p>
+      <p>
+        For the other direction, assume <m>A^T</m> is invertible. Setting <m>B=A^T</m>, we see that <m>A=(A^T)^T=B^T</m>. By the first implication, we know that if <m>B</m> is invertible, then so is <m>B^T=A</m>. 
+      </p>
+    </proof>
+  </theorem>
+</subsection>
+
+<subsection xml:id="ss_invertible_matrices_ww">
+  <title>WeBWork Exercises</title>
+
+<exercise>
+      <!-- true/false -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.48.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- solve for X using matrix inverses -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.54.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- true/false invertible 2x2 matrices -->
+      <webwork source="Library/Rochester/setLinearAlgebra4InverseMatrix/ur_Ch2_1_4.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- 2x2 invertibility involving a variable -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.59.pg" />
+    </exercise>
+
+    <exercise>
+    <!-- computation problem involving transposes and addition of matrices -->
+    <webwork source="Library/Utah/Business_Algebra/set10_Matrices/p24.pg" />
+  </exercise>
+
+</subsection>
+
+<xi:include href="./s_invertible_matrices_ex.ptx"/>
+</section>
