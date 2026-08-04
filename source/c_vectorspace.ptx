@@ -1,0 +1,8 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="c_vectorspace">
+  <title>Vector spaces</title>
+  <xi:include  href="s_subspace.ptx"/>
+  <xi:include  href="s_span_independence.ptx"/>
+  <xi:include  href="s_basis.ptx"/>
+  <xi:include  href="s_dimension.ptx"/>
+  <xi:include  href="s_rank_nullity.ptx"/>
+</chapter>

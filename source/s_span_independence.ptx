@@ -1,0 +1,788 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_span_independence">
+  <title>Span and linear independence</title>
+  <introduction>
+    <p>
+      There are many situations in mathematics where we want to describe an infinite set in a concise manner. We saw this at work already in <xref ref="s_solving"/>, where infinite sets of solutions to linear systems were neatly described with parametric expressions.
+    </p>
+    <p>
+      A similar issue arises when describing vector spaces and their subspaces. As we know, any vector space is either the zero space or infinite (<xref ref="ex_vs_zero_or_infinite"/>). If we happen to be dealing with a subspace of <m>\R^n</m>, then there is the possibility of giving a parametric description; but how do we proceed when working in one of our more exotic vector spaces like <m>C^1(\R)</m>?
+    </p>
+    <p>
+    As we will see in <xref ref="s_basis"/> the relevant linear algebraic tool for this purpose is the concept of a <em>basis</em>. Loosely speaking, a basis for a vector space <m>V</m> is a set of vectors that is large enough to <em>generate</em> the entire space, and small enough to contain <em>no redundancies</em>. What exactly we mean by <q>generate</q> is captured by the rigorous notion of <em>span</em>; and what we mean by <q>no redundancies</q> is captured by <em>linear independence</em>.
+    </p>
+  </introduction>
+
+  <subsection>
+    <title>Span</title>
+    <p>
+      Recall that a linear combination
+      in a vector space <m>V</m> is a vector of the form
+      <me>
+        \boldv=c_1\boldv_1+c_2\boldv_2\cdots +c_n\boldv_n
+      </me>,
+      where <m>c_i\in \R</m> are scalars.
+      We use this notion to define the
+      <em>span</em> of a set of vectors.
+    </p>
+    <definition xml:id="d_span">
+      <title>Span</title>
+      <idx><h>span</h><h>of a set of vectors</h></idx>
+      <notation>
+        <usage><m>\Span S</m></usage>
+        <description>the span of <m>S</m></description>
+      </notation>
+        <statement>
+          <p>
+            Let <m>V</m> be a vector space, and let <m>S\subseteq V</m> be any subset of <m>V</m>. The <term>span of <m>S</m></term>, denoted <m>\Span S</m>, is the subset of <m>V</m> defined as follows:
+            <ul>
+              <li>
+                <p>
+                  If <m>S=\emptyset</m>, then <m>\Span S=\{\boldzero_V\}</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Otherwise we define <m>\Span S</m> to be the set of all linear combinations of elements of <m>S</m>: <ie />,
+                  <me>
+                    \Span S=\{\boldv\in V\colon \boldv=c_1\boldv_1+c_2\boldv_2\cdots +c_n\boldv_n \text{ for some } \boldv_i\in S \text{ and } c_i\in \R\}
+                  </me>.
+                </p>
+              </li>
+            </ul>
+          </p>
+        </statement>
+      </definition>
+          <remark xml:id="rm_span">
+        <statement>
+          <p>
+          Let <m>S</m> be a subset of <m>V</m>. Some simple observations:
+          <ol>
+            <li>
+              <p>
+                The zero vector is always an element of <m>\Span S</m>.  Indeed, if <m>S=\emptyset</m>, then <m>\Span S=\{\boldzero\}</m> by definition. Otherwise, given any <m>\boldv\in S</m>, the linear combination <m>0\boldv=\boldzero</m> is an element of <m>\Span S</m>.
+              </p>
+            </li>
+            <li>
+                <p>
+                  We have <m>S\subseteq \Span S</m>: <ie />, <m>\Span S</m> includes <m>S</m> itself. Indeed, given any <m>\boldv\in S</m>, the linear combination <m>1\boldv=\boldv</m> is an element of <m>\Span S</m>.
+                </p>
+            </li>
+
+            <li>
+              <p>
+                If <m>S=\{\boldv\}</m> contains exactly one element, then <m>\Span S=\{c\boldv\colon c\in \R\}</m> is simply the set of all scalar multiples of <m>\boldv</m>.
+              </p>
+              <p>
+                If <m>\boldv\ne \boldzero</m>, then we know that this set is infinite (<xref ref="ex_vs_zero_or_infinite"/>). Thus even when <m>S</m> is <em>finite</em>, <m>\Span S</m> will be <em>infinite</em>, as long as <m>S</m> contains nonzero vectors.
+              </p>
+            </li>
+          </ol>
+          </p>
+        </statement>
+      </remark>
+    <example xml:id="eg_span_2space">
+      <title>Examples in <m>\R^2</m></title>
+      <statement>
+        <p>
+        Let <m>V=\R^2</m>. For each <m>S</m>, identify <m>\Span S</m> as a familiar geometric object.
+        </p>
+        <ol>
+          <li>
+            <p>
+              <m>S=\{ \}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>S=\{(0,0)\}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>S=\{\boldv\}</m>, <m>\boldv=(a,b)\ne (0,0)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>S=\{ (1,0), (0,1)\}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>S=\{ (1,1), (2,2)\}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>S=\{(1,1),(1,2)\}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>S=\R^2</m>
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <p>
+        <ol>
+          <li>
+            <p>
+              <m>\Span S=\{\boldzero\}</m>, the set containing just the origin, by definition.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\Span S</m> is the set of all scalar multiples of <m>(0,0)</m>. Thus <m>\Span S=\{\boldzero\}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\Span S</m> is the set of all scalar multiples of the nonzero vector <m>(a,b)</m>. Geometrically, this is the line that passes through the the origin and the point <m>(a,b)</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              By definition
+              <me>
+                S=\{a(1,0)+b(0,1)\colon a,b\in \R\}=\{(a,b)\colon a,b\in\R\}
+              </me>.
+              Thus <m>\Span S=\R^2</m>, the entire <m>xy</m>-plane.
+            </p>
+          </li>
+          <li>
+            <p>
+              By definition
+              <me>
+                S=\{a(1,1)+b(2,2)\colon a,b\in \R\}=\{(a+2b,a+2b)\colon a,b\in\R\}
+              </me>.
+              It is easy to see that <m>S=\{(c,c)\colon t\in \R\}</m>, the line with equation <m>y=x</m>. Note that in this case we have
+              <me>
+                S=\Span\{(1,1), (2,2)\}=\Span \{(1,1)\}
+              </me>,
+              and thus that the vector <m>(2,2)</m> is in some sense redundant.
+            </p>
+          </li>
+          <li>
+            <p>
+              By definition
+              <me>
+                S=\{a(1,1)+b(1,2)\colon a,b\in \R\}=\{(a+b,a+2b)\colon a,b\in\R\}
+              </me>.
+              Claim: <m>\Span S=\R^2</m>. Proving the claim amounts to showing that for all <m>(c,d)\in \R^2</m> there exist <m>a,b\in \R</m> such that
+              <me>
+                \begin{array}{ccccc}
+                  a \amp +\amp b \amp =\amp c\\
+                  a \amp +\amp 2b \amp =\amp d
+                \end{array}
+              </me>.
+                Solving this system using Gaussian elimination, we see that the system has the unique solution
+                <md>
+                <mrow>
+                  a\amp =2c-d \amp b\amp =d-c
+                </mrow>
+                </md>,
+                and thus that
+                <me>
+                  (2c-d)(1,1)+(d-c)(1,2)=(c,d)
+                </me>.
+                This proves <m>\Span S=\R^2</m>, as claimed.
+              </p>
+            </li>
+            <li>
+              <p>
+                By <xref ref="rm_span"/>, we have <m>S\subseteq \Span S</m>. Thus <m>\R^2\subseteq \Span \R^2</m>. Since <m>\Span \R^2\subseteq \R^2</m> by definition, we conclude that <m>\Span S=\R^2</m>.
+              </p>
+            </li>
+        </ol>
+      </p>
+      </solution>
+    </example>
+    <example xml:id="vid_eg_span">
+      <title>Video example: computing span</title>
+      <figure xml:id="fig_vid_span">
+      <caption>Video: computing span</caption>
+      <video xml:id="vid_span" youtube="WN_5qI2r2ks" />
+      </figure>
+    </example>
+    <p>
+      You may have noticed that each span computation in the previous example produced a subspace of <m>\R^2</m>. This is no accident!
+    </p>
+    <theorem xml:id="th_span">
+      <title>Spans are subspaces</title>
+      <statement>
+        <p>
+          Let <m>S</m> be a subset of the vector space <m>V</m>.
+          <ol>
+            <li>
+              <p>
+               The set <m>\Span S</m> is a subspace of <m>V</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>W</m> is any subspace containing <m>S</m>, then <m>\Span S\subseteq W</m>.
+              </p>
+            </li>
+          </ol>
+          Taken together, (1) and (2) imply that <m>\Span S</m> is the <em>smallest subspace of <m>V</m> containing <m>S</m></em>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          We prove each statement separately.
+        </p>
+        <case>
+         <title>Statement (1)</title>
+        <p>
+        To show <m>\Span S</m> is a subspace, we use the two-step technique.
+        <ol>
+          <li>
+            <p>
+              By <xref ref="rm_span"/> we know that <m>\boldzero\in \Span S </m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Suppose <m>\boldv, \boldw\in S</m>. By definition we have
+              <md>
+                <mrow>\boldv \amp =c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r \amp \boldw \amp = c_{r+1}\boldv_{r+1}+c_{r+2}\boldv_{r+2}+\cdots +c_{r+s}\boldv_{r+s}</mrow>
+              </md>
+              for some vectors <m>\boldv_1, \boldv_2, \dots, \boldv_{r+s}\in S</m> and scalars <m>c_1,c_2,\dots, c_{r+s}</m>. Then for any <m>c,d\in \R</m> we have
+              <me>
+              c\boldv+d\boldw=cc_1\boldv_1+cc_2\boldv_2+\cdots +cc_r\boldv_r+dc_{r+1}\boldv_{r+1}+dc_{r+2}\boldv_{r+2}+\cdots +dc_{r+s}\boldv_{r+s}
+              </me>,
+              which is clearly a linear combination of elements of <m>S</m>. Thus <m>c\boldv+d\boldw\in \Span S</m>, as desired.
+            </p>
+          </li>
+        </ol>
+        </p>
+        </case>
+        <case>
+         <title>Statement (2)</title>
+        <p>
+        Let <m>W\subseteq V</m> be a subspace that contains all elements of <m>S</m>. Since <m>W</m> is closed under arbitrary linear combinations, it must contain any linear combination of elements of <m>S</m>, and thus <m>\Span S\subseteq W</m>.
+        </p>
+        </case>
+      </proof>
+
+    </theorem>
+    <p>
+      The results of <xref ref="th_span"/> motivate the following additional terminology.
+    </p>
+    <definition xml:id="d_spanning_set">
+      <title>Spanning set</title>
+      <idx><h>spanning set</h></idx>
+      <statement>
+        <p>
+          Let <m>S</m>  be a subset of the vector space <m>V</m>. We call <m>W=\Span S</m> the subspace of <m>V</m> <term>generated by S</term>, and we call <m>S</m> a <term>spanning set</term> for <m>W</m>.
+        </p>
+      </statement>
+    </definition>
+    <remark xml:id="rm_spanning_sets">
+    <title>Some standard spanning sets</title>
+    <idx><h>spanning set</h><h>standard examples</h></idx>
+    <statement>
+        <p>
+        For most of the vector spaces we've met a natural spanning set springs to mind. We will refer to these loosely as <em>standard</em> spanning sets. Some examples:
+        <ul>
+          <li>
+            <title>Zero space</title>
+            <p>
+            Let <m>V=\{\boldzero\}</m>. By definition the empty set <m>S=\emptyset=\{ \}</m> is a spanning set of <m>V</m>.
+            </p>
+          </li>
+          <li>
+            <title>Tuples</title>
+            <p>
+            Let <m>V=\R^n</m>. For <m>1\leq i\leq n</m>, define <m>\bolde_i</m> to be the <m>n</m>-tuple with a one in the <m>i</m>-th entry, and zeros elsewhere. Then <m>S=\{\bolde_1, \bolde_2,\dots, \bolde_n\}</m> is a spanning set for <m>\R^n</m>.
+            </p>
+          </li>
+          <li>
+            <title>Matrices</title>
+            <p>
+            Let <m>V=M_{mn}</m>. For each <m>(i,j)</m> with <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>, define <m>E_{ij}</m> to be the <m>m\times n</m> matrix with a one in the <m>ij</m>-th entry, and zeros elsewhere. Then <m>S=\{E_{ij}\colon 1\leq i\leq m, 1\leq j\leq n\}</m> is a spanning set for <m>M_{mn}</m>.
+            </p>
+          </li>
+          <!-- <li>
+            <title>Polynomials of bounded degree</title>
+            <p>
+            Let <m>V=P_n</m>. The set <m>S=\{x^n, x^{n-1}, \dots, x, 1\}</m> clearly spans <m>P_n</m>. This is just another way of saying that the <em>monomials</em> of degree at most <m>n</m> generate the polynomials of degree at most <m>n</m>.
+            </p>
+          </li>
+          <li>
+            <title>Polynomials</title>
+            <p>
+            Let <m>V=P</m>, the space of <em>all</em> polynomials. In a similar vein, the set
+            <me>S=\{1, x, x^2, \dots\}=\{x^i\colon i\geq 0\} </me>
+            of <em>all</em> monomials is a spanning set for <m>P</m>.
+            </p>
+          </li> -->
+        </ul>
+        <!-- Note the glaring difference between the first three examples, and the last: our standard spanning set for <m>P</m> is <em>infinite</em>, whereas the previous examples are all finite spanning sets. You suspect, no doubt, that there is no finite spanning set for <m>P</m>. We will be able to prove this shortly. -->
+        </p>
+      </statement>
+    </remark>
+    <p>
+      It is important to observe that spanning sets for vector spaces are not unique. Far from it! In general, for any nonzero vector space there are infinitely many choices of spanning sets.
+    </p>
+    <example>
+      <title>Spanning sets are not unique</title>
+      <statement>
+        <p>
+        For each <m>V</m> and <m>S</m> below, verify that <m>S</m> is a spanning set for <m>V</m>.
+        <ol>
+          <li>
+            <p>
+              <m>V=\R^2</m>, <m>S=\{(1,1), (1,2)\}</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>V=M_{22}</m>, <m>S=\{A_1, A_2, A_3, A_4\}</m>,
+              <me>
+                A_1=\begin{amatrix}[rr]1\amp 1\\ 1\amp 1  \end{amatrix},
+                A_2=\begin{amatrix}[rr]1\amp -1\\ 0\amp 0  \end{amatrix},
+                A_3=\begin{amatrix}[rr]0\amp 0\\ 1\amp -1  \end{amatrix},
+                A_4=\begin{amatrix}[rr]1\amp 1\\ -1\amp -1  \end{amatrix}
+              </me>.
+            </p>
+          </li>
+          <!-- <li>
+            <p>
+              <m>V=P_2</m>, <m>S=\{x^2+x+1, x^2-x, x-1\}</m>
+            </p>
+          </li> -->
+        </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <ol>
+            <li>
+              <p>
+                This was shown in <xref ref="eg_span_2space"/>
+              </p>
+            </li>
+            <li>
+              <p>
+                We must show, given any <m>A=\begin{amatrix}[rr]a\amp b\\ c\amp d  \end{amatrix}</m>, we can find <m>c_1, c_2, c_3, c_4\in \R</m> such that
+                <me>
+                  c_1A_1+c_2A_2+c_3A_3+c_4A_4=\begin{amatrix}[rr]a\amp b\\ c\amp d  \end{amatrix}
+                </me>,
+                or
+                <me>
+                  \begin{amatrix}[rr]c_1+c_2+c_4 \amp c_1-c_2+c_4\\
+                  c_1+c_3-c_4\amp c_1-c_3-c_4  \end{amatrix}
+                  =
+                  \begin{amatrix}[rr]a\amp b \\ c\amp d  \end{amatrix}
+                </me>.
+                We can find such <m>c_i</m> if and only if the system with augmented matrix
+                <me>
+                  \begin{amatrix}[rrrr|r]
+                  1\amp 1\amp 0\amp 1\amp a\\
+                  1\amp -1\amp 0\amp 1\amp b \\
+                  1\amp 0\amp 1\amp -1\amp c\\
+                  1\amp 0\amp -1\amp -1\amp d
+                \end{amatrix}
+                </me>
+                is consistent. This matrix row reduces to
+                <me>
+                \begin{amatrix}[rrrr|r]
+                \boxed{1}\amp 1\amp 0\amp 1\amp a\\
+                0\amp \boxed{1}\amp 0\amp 0\amp \frac{a-b}{2} \\
+                0\amp 0\amp \boxed{1}\amp -2\amp c-\frac{a+b}{2}\\
+                0\amp 0\amp 0\amp \boxed{1}\amp \frac{a+b-c-d}{4}
+              \end{amatrix}
+                </me>.
+                Since the last column will never contain a leading one, we conclude that the system is consistent for any choice of <m>a,b,c,d</m>, and thus that <m>\Span S=M_{22}</m>, as claimed.
+              </p>
+            </li>
+            <!-- <li>
+              <p>
+                We must show that given any <m>p(x)=ax^2+bx+c</m> we can find <m>c_1,c_2,c_3</m> such that
+                <me>
+                  c_1(x^2+x+1)+c_2(x^2-1)+c_3(x-1)=ax^2+bx+c
+                </me>,
+                or
+                <me>
+                  (c_1+c_2)x^2+(c_1+c_3)x+(c_1-c_2-c_3)=ax^2+bx+c
+                </me>.
+                According to <xref ref="th_poly_equality"/> this equality holds if and only if
+                <me>
+                  \begin{linsys}{3}
+                    c_1 \amp +\amp c_2 \amp  \amp \amp = \amp a\\
+                    c_1 \amp \amp \amp + \amp c_3 \amp = \amp b\\
+                    c_1 \amp -\amp c_2 \amp - \amp c_3 \amp = \amp c
+                  \end{linsys}
+                </me>.
+                As in the examples above, our reasoning implies  <m>\Span S=P_2</m> if and only if this system is consistent for <em>any</em> choice of <m>a,b,c</m>. Thus usual Gaussian elimination procedure tells us that this is indeed so. We leave the details to you.
+              </p>
+            </li> -->
+          </ol>
+        </p>
+      </solution>
+    </example>
+
+    </subsection>
+
+
+    
+  <subsection  xml:id="ss_linear_independence">
+    <title>Linear independence</title>
+    <p>
+      As mentioned at the top, the notion of <em>linear independence</em> is precisely what we need to guarantee that a given spanning set has no <q>redundancies</q>. 
+    </p>
+    <definition xml:id="d_linear_independence">
+      <title>Linear independence</title>
+      <idx><h>linear independence</h></idx>
+      <statement>
+        <p>
+          Let <m>V</m> be a vector space. A subset <m>S\subseteq V</m> is <term>linearly independent</term> if for any collection <m>\boldv_1,\boldv_2,\dots, \boldv_n</m> of distinct vectors of <m>S</m> (<ie/>, <m>\boldv_i\ne \boldv_j</m> for <m>i\ne j</m>), and any scalars <m>c_1,c_2,\dots, c_n\in \R</m>, the following implication holds:
+          <me>
+            c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n=\boldzero \implies c_1=c_2=\cdots =c_n=0
+          </me>.
+          A subset <m>S</m> is <term>linearly dependent</term>
+          if it is not linearly independent: <ie/>, if we can find distinct vectors <m>\boldv_1,\boldv_2,\dots, \boldv_n\in S</m>, and scalars <m>c_1, c_2,\dots, c_n</m> with <m>c_i\ne 0</m> for some <m>i</m>, such that 
+          <me>
+            c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n=\boldzero
+          </me>.
+          <!-- In other words, <m>S</m> is linearly independent if there is no non-trivial linear combination of equal to <m>\boldzero</m>, and linearly dependent if there is a nontrivial linear combination of the <m>\boldv_i</m> equal to <m>\boldzero</m>. --> 
+        </p>
+      </statement>
+    </definition>
+    <remark>
+      <title>Linear independence</title>
+      <p>
+        Recalling the notion of trivial and nontrivial linear combinations from <xref ref="d_lin_comb"/>, we can summarize <xref ref="d_linear_independence"/> in plain English as follows: 
+        <ul>
+          <li>
+            <p>
+              A set <m>S</m> is linearly independent if there is no nontrivial linear combination of distinct elements of <m>S</m> equal to the zero vector. 
+            </p>
+          </li>
+          <li>
+            <p>
+              A set <m>S</m> is linearly dependent if there is a nontrivial linear combination of elements of <m>S</m> equal to the zero vector. 
+            </p>
+          </li>
+        </ul>
+      </p>
+    </remark>
+    <p>
+      As stated, our definition of linear independence is pleasingly general in that it places no restriction on the subset in question; in particular, the definition applies to both finite and infinite subsets of vector spaces. That said, one drawback to this definition is that in order to determine whether <m>S</m> is linearly independent, we must look at <em>each</em> finite subset of elements of <m>S</m> and determine for this collection whether or not there is a nontrivial linear combination equal to the zero vector. To do so directly would be quite time consuming. Thankfully, we will focus on finite sets <m>S</m>, and in this case it turns out that the only subset we need to consider is <m>S</m> itself.  
+    </p>
+    <theorem xml:id="th_lin_ind_finite">
+      <title>Linear independence of finite sets</title>
+      <statement>
+        <p>
+          Let <m>V</m> be a vector space, and let <m>S=\{\boldv_1,\boldv_2,\dots, \boldv_n\}\subseteq V</m>, where the <m>\boldv_i</m> are distinct. The following are equivalent. 
+          <ol>
+            <li>
+              <p>
+                <m>S</m> is linearly independent. 
+              </p>
+            </li>
+            <li>
+              <p>
+                For all <m>c_1,c_2,\dots, c_n\in \R</m>,
+                <men xml:id="eq_d_lin_ind">
+                 c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n=\boldzero \implies c_1=c_2=\cdots =c_n=0
+                </men>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+    <example xml:id="eg_independence_basic_examples">
+      <title>Elementary examples</title>
+      <statement>
+        <p>
+          Let <m>V</m> be a vector space, and let <m>S</m> be a subset.
+        <ol>
+          <li>
+            <p>
+              If <m>\boldzero\in S</m>, then <m>S</m> is linearly dependent: indeed, we have the nontrivial linear combination <m>1\, \boldzero=\boldzero</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>S=\{\boldv\}</m>, then <m>S</m> is linearly independent if and only if <m>\boldv\ne \boldzero</m>. The previous comment shows why <m>\boldv\ne \boldzero</m> is a necessary condition. Let's see why it is sufficient.
+            </p>
+            <p> Suppose <m>\boldv\ne\boldzero</m>, and suppose we have <m>c\boldv=\boldzero</m>. By <xref ref="th_vectorspace_props"/> we have <m>c=0</m> or <m>\boldv=\boldzero</m> (<xref ref="th_vectorspace_props"/>). Since <m>\boldv\ne 0</m>, we conclude <m>c=0</m>. This shows that the only linear combination of <m>S</m> yielding <m>\boldzero</m> is the trivial one.
+            </p>
+          </li>
+          <li>
+            <p>
+              Suppose <m>S=\{\boldv, \boldw\}</m>, where <m>\boldv\ne\boldw</m>. If <m>S</m> is linearly dependent, then we have 
+              <me>c\boldv+d\boldw=\boldzero</me>,
+              where <m>c\ne 0</m> or <m>d\ne 0</m>. 
+              If <m>c\ne 0</m>, then we can solve 
+              <me>\boldv=-\frac{d}{c}\boldw</me>. Similarly, if <m>d\ne 0</m>, then we have 
+              <me>\boldw=-\frac{c}{d}\boldv</me>. In both cases, we see that one of the vectors is a scalar multiple of the other. Conversely, if one the two vectors is a scalar multiple of the other, then it is easy to see that there is a nontrivial linear combination equal to <m>\boldzero</m>: <eg/>, if <m>\boldv=c\boldw</m>, then <m>\boldv-c\boldw=\boldzero</m>. We conclude that <m>S</m> is linearly dependent of if and only if one of the vectors is a scalar multiple of the other, and linearly independent if and only if neither vector is a scalar multiple of the other. 
+            </p>
+          </li>
+        </ol>
+      </p>
+      </statement>
+    </example>
+    <p>
+      The simple test in <xref ref="eg_independence_basic_examples"/> for linear independence of a set of two vectors unfortunately does not extend to larger sets. For example, the set <m>S=\{(1,1),(1,0), (0,1)\}</m> can be shown to be linearly dependent, and yet no element of <m>S</m> is a scalar multiple of any other element. What is true in these cases, is that some element of <m>S</m> can be written as a <em>linear combination</em> of the others, as articulated in <xref ref="rm_lin_ind_redund"/>. 
+      </p>
+    <remark xml:id="rm_lin_ind_redund">
+      <title>Linear dependence and redundancy</title>
+      <p>
+        Let <m>S=\{\boldv_1,\boldv_2, \dots, \boldv_n\}</m> be a subset of the vector space <m>V</m>, where the <m>\boldv_i</m> are distinct. If <m>n\geq 2</m>, then <m>S</m> is linearly dependent if and only if we can express some element of <m>S</m> as a linear combination of the others: <ie/>, if and only if we have 
+        <men xml:id="eq_lin_dep">
+          \boldv_i=\sum_{j\ne i}\boldv_j
+        </men>.
+        Indeed, assume we have a vector equation of the form <xref ref="eq_lin_dep"/> for some <m>1\leq i\leq n</m>. If <m>\boldv_i=\boldzero</m>, then <m>S</m> is automatically dependent. (See (1) from <xref ref="eg_independence_basic_examples"/>.) Otherwise the linear combination on the right side of <xref ref="eq_lin_dep"/> must be nontrivial, in which case 
+        <me>
+          \boldv_i+\sum_{j\ne i}-c_j\boldv_j=\boldzero
+        </me>
+        is a nontrivial linear combination of distinct elements equal to <m>\boldzero</m>. Thus <m>S</m> is linearly dependent. 
+      </p>
+      <p>
+        Conversely, if <m>S</m> is linearly dependent, then there are scalars <m>c_1,c_2,\dots, c_n\in \R</m> such that 
+        <me>
+          c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n=\boldzero
+        </me>
+        and <m>\boldc_i\ne 0</m> for some <m>1\leq i\leq n</m>, in which case
+        <me>
+          \boldv_i=\sum_{j\ne i}-\frac{c_j}{c_i}\boldv_j
+        </me>.
+      </p>
+      
+    </remark>
+    <p>
+        Using <xref ref="th_lin_ind_finite"/>, to decide whether a finite set <m>S</m> is linearly independent, we need to determine whether there is a nontrivial linear combination of its elements equal to the zero vector. As described in the <xref ref="proc_linear_independence"/>, this boils down to a question about the solutions to a certain system of linear equations. 
+    </p>
+<algorithm xml:id="proc_linear_independence">
+  <title>Linear independence of a finite set</title>
+  <statement>
+    <p>Let <m>V</m> be a vector space, and let <m>S=\{\boldv_1,\boldv_2,\dots, \boldv_n\}\subseteq V</m>, where the <m>\boldv_i</m> are distinct. 
+    <ol>
+      <li>
+        <p>
+          Write out the general <em>vector equation</em>
+          <me>
+          c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n=\boldzero
+          </me>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Translate this vector equation into a <em>homogeneous linear system</em> in the unknowns <m>c_1,c_2,\dots, c_n </m>, using the definition of equality for your vector space.
+        </p>
+      </li>
+      <li>
+        <p>
+          Decide, using Gaussian elimination, whether this system has any nonzero (<ie />, nontrivial) solutions. If it has no nontrivial solution, <m>S</m> is linearly independent; if it has a nontrivial solution, <m>S</m> is linearly dependent. 
+        </p>
+      </li>
+    </ol>
+  </p>
+  </statement>
+</algorithm>
+<p>
+  This is a fitting point to recall our <xref ref="princ_GE" text="title"/>. As you can see, even as we move into more and more abstract realms of linear algebra (linear independence, span, <etc />), Gaussian elimination remains our most important tool.
+</p>
+    <!-- <theorem>
+      <statement>
+        <p>
+          The set <m>S</m> is linearly independent if and only if no element
+          <m>\boldv_i</m> can be written as a linear combination of the other <m>\boldv_j</m>.
+          Similarly, <m>S</m> is linearly dependent if and only if one of the elements
+          <m>\boldv_i</m> can be written as a linear combination of the remaining <m>\boldv_j</m>.
+        </p>
+      </statement>
+    </theorem> -->
+  <example xml:id="ex_linear_independence">
+    <title>Linear independence</title>
+    <statement>
+      <p>
+        For each subset <m>S</m> of the given vector space <m>V</m>, decide whether <m>S</m> is linearly independent.
+      <ol>
+        <li>
+          <p>
+            <m>V=\R^3</m>, <m>S=\{(1,1,2),(1,0,1), (-2,1,-1)\}</m>
+          </p>
+        </li>
+  
+        <li>
+          <p>
+            <m>V=M_{22}</m>, <m>S=\{A_1, A_2, A_3, A_4\}</m>, where
+            <me>
+              A_1=\begin{bmatrix}3\amp 1\\ 2\amp -3 \end{bmatrix} , A_2= \begin{bmatrix}0\amp 4\\ 2\amp 0 \end{bmatrix} , A_3=\begin{bmatrix}-2\amp -2\\ -2\amp 2 \end{bmatrix}
+            </me>.
+          </p>
+        </li>
+      </ol>
+    </p>
+    </statement>
+    <solution>
+    <ol>
+      <li>
+        <p>
+        We have
+        <me>
+          a(1,1,2)+b(1,0,1)+c(-2,1,-1)=(0,0,0)
+        </me>
+        if and only if
+        <me>
+          \begin{linsys}{3}
+            a \amp +\amp b\amp -\amp 2c\amp =0\\
+            a \amp \amp \amp +\amp c\amp =0\\
+            2a \amp +\amp b\amp -\amp c\amp =0\\
+          \end{linsys}
+        </me>.
+        After a little Gaussian elimination we see that
+        <m>(a,b,c)=(1,-3,-1)</m> is a nonzero solution to this system, and thus that
+        <me>
+          (1,1,2)-3(1,0,1)-(-2,1,-1)=(0,0,0)
+        </me>
+        Since there is a nontrivial linear combination of elements of <m>S</m> yielding the zero vector, we conclude <m>S</m> is linearly dependent.
+        </p>
+      </li>
+      
+      <li>
+        <p>
+          We have
+          <md>
+            <mrow>a\begin{bmatrix}3\amp 1\\ 2\amp -3 \end{bmatrix} +b\begin{bmatrix}0\amp 4\\ 2\amp 0 \end{bmatrix} +c\begin{bmatrix}-2\amp -2\\ -2\amp 2 \end{bmatrix}= \begin{bmatrix}0\amp 0\\0\amp 0 \end{bmatrix}
+            \amp \iff
+            \begin{bmatrix}3a-2c\amp a+4b-2c\\ 2a+2b-2c\amp -3a+2c \end{bmatrix}=\begin{bmatrix}0\amp 0\\0\amp 0 \end{bmatrix}</mrow>
+              <mrow>  \amp </mrow>
+              <mrow>  \amp \iff \begin{linsys}{3} 3a\amp \amp \amp -\amp 2c\amp =\amp 0\\ a\amp +\amp 4b\amp -\amp 2c\amp =\amp 0\\ 2a\amp +\amp 2b \amp -\amp 2c \amp =\amp 0\\ -3a\amp \amp \amp +\amp 2c\amp =\amp 0 \end{linsys} </mrow>
+          </md>.
+          Row reduction reveals that this last linear system has a free variable, and hence that there are infinitely many solutions to this system: <eg />, <m>(a,b,c)=(2,1,3)</m>. We conclude that <m>S</m> is linearly dependent.
+        </p>
+      </li>
+    </ol>
+    </solution>
+  </example>
+  
+
+  </subsection>
+  <subsection xml:id="subsec-invertibility-span-and-linear-independence">
+    <title>Invertibility, span, and linear independence</title>
+    <p>
+      Equipped with the concepts of span and linear independence, we can add some useful additional statements to our invertibility theorem. 
+    </p>
+    <theorem xml:id="th_invertibility_3">
+      <title>Invertibility theorem</title>
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>n\times n</m> matrix.
+          The following statements are equivalent.
+        <ol cols="2">
+          <li xml:id="inv3_statement_def">
+            <p>
+              <m>A</m> is invertible.
+            </p>
+          </li>
+
+          <li xml:id="inv3_statement_unique_sol">
+            <p>
+              The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</me> has a unique solution for any <m>\boldb\in \R^n</m>.
+            </p>
+          </li>
+          <li xml:id="inv3_statement_exists_sol">
+            <p>
+              The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</me> has a solution for any <m>\boldb\in \R^n</m>.
+            </p>
+          </li>
+          <li xml:id="inv3_statement_trivial_sol">
+            <p>
+              The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldzero}</me> has a unique solution: namely, <m>\boldx=\boldzero_{n\times 1}</m>.
+            </p>
+          </li>
+          <li xml:id="inv3_statement_row_equiv">
+            <p>
+              <m>A</m> is row equivalent to <m>I_n</m>,
+              the <m>n\times n</m> identity matrix.
+            </p>
+          </li>
+          <li xml:id="inv3_statement_prod_elems">
+            <p>
+              <m>A</m> is a product of elementary matrices.
+            </p>
+          </li>
+          <li xml:id="inv3_statement_det">
+            <p>
+              <m>\det A\ne 0</m>.
+            </p>
+          </li>
+          <li xml:id="inv3_statement_cols_span">
+            <p>
+              The set of columns of <m>A</m> spans <m>\R^n</m>.
+            </p>
+          </li>
+          <li xml:id="inv3_statement_cols_ind">
+            <p>
+              The set of columns of <m>A</m> is linearly independent. 
+            </p>
+          </li>
+          <li xml:id="inv3_statement_rows_span">
+            <p>
+              The set of rows of <m>A</m> spans <m>\R^n</m>.
+            </p>
+          </li>
+          <li xml:id="inv3_statement_rows_ind">
+            <p>
+              The set of rows of <m>A</m> is linearly independent. 
+            </p>
+          </li>
+        </ol>
+      </p>
+      </statement>
+      <proof>
+       <p>
+        <xref first="inv3_statement_cols_span" last="inv3_statement_cols_ind">Statements</xref>, can be shown to be equivalent to one of the previous statements of the invertibilty theorem using the <xref ref="th_column_method">column method</xref> of matrix multiplication. Indeed, given <m>\boldb\in \R^n</m> the matrix equation <m>A\boldx=\boldb</m> has a solution if and only if <m>\boldb</m> can be written as a linear combination of the columns of <m>A</m>. Thus, the matrix equation <m>A\boldx=\boldb</m> has a solution for all <m>\boldb\in \R^n</m> if and only if all vectors <m>\boldb\in \R^n</m> lie in the span of the rows of <m>A</m>. This proves <xref ref="inv3_statement_cols_span">statement</xref> is equivalent to <xref ref="inv3_statement_exists_sol">statement</xref>.  Similarly, the matrix equation <m>A\boldx=\boldzero</m> has a nontrivial solution if and only if there is a nontrivial linear combination of the columns of <m>A</m> equal to <m>\boldzero</m>, if and only if the columns of <m>A</m> are linearly independent. This proves <xref ref="inv3_statement_cols_ind">statement</xref> is equivalent to <xref ref="inv3_statement_trivial_sol">statement</xref>. 
+       </p>
+       <p>
+        <xref first="inv3_statement_cols_span" last="inv3_statement_rows_span">Statements</xref> are easily seen to be equivalent to <xref first="inv3_statement_cols_span" last="inv3_statement_rows_span">statements</xref> using the fact that <m>A</m> is invertible if and only if <m>A^T</m> is invertible.  
+       </p>
+      </proof>
+    </theorem>
+
+  </subsection>
+
+<xi:include href="./s_span_independence_ex.ptx"/>
+
+  <!-- <subsection>
+  <title>$C^\infty(a,b)$ and the Wronskian</title>
+  <p>
+    Let's consider this observation in the special example of
+    <em>differentiable</em> functions.
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Suppose <m>f_1,f_2,\dots f_n</m> are each <m>(n-1)</m>-differentiable functions on <m>(a,b)</m>.
+        We define the Wronskian of the <m>f_i</m> as the function
+        <md>
+          W(x)=\begin{vmatrix}f_1(x)\amp f_2(x)\amp \cdots \amp f_n(x)\\ f_1'(x)\amp f_2'(x)\amp \cdots \amp f_n'(x)\\ \vdots\amp \cdots \amp  \amp \vdots \\ f_1^{(n-1)}(x)\amp f_2^{(n-1)}(x)\amp \cdots \amp f_n^{(n-1)}(x) \end{vmatrix}.
+        </md>
+      </p>
+    </statement>
+  </definition>
+  <theorem>
+    <title>Wronskian</title>
+    <statement>
+      <p>
+        Let <m>V=C^{\infty}(X)</m>, where <m>X</m> is a fixed interval
+        (usually <m>X=\R</m>),
+        and let <m>S=\{f_1,f_2,\dots ,f_n\}</m> be a set of elements of <m>V</m>.
+        Let <m>W(x)</m> be the Wronskian of the <m>f_i</m>.
+        Then
+        <me>
+          W\ne\boldzero\Rightarrow \text{ \(S\) is linearly independent }
+        </me>.
+      </p>
+    </statement>
+  </theorem> -->
+
+</section>

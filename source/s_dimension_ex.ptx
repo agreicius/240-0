@@ -1,0 +1,240 @@
+<exercises xml:id="s_dimension_ex">
+  <subexercises>
+    <title>WeBWork Exercises</title>
+    
+    <exercise>
+      <!-- true/false -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.48_54a.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- multiple choice -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.55.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- multiple choice -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.56.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- compute dimension -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.17_21a.pg" />
+    </exercise>
+  </subexercises>
+
+  <exercisegroup>
+    <title>Street smarts</title>
+    <introduction>
+      <p> For each vector space <m>V</m> and subset <m>S</m> use an appropriate statement from <xref
+          ref="cor_street_smarts" /> to help decide whether <m>S</m> is a basis for <m>V</m>.
+        Justify your answer. </p>
+    </introduction>
+
+    <exercise>
+      <statement>
+        <p>
+          <m>V=\R^4</m>, <m>S=\{(1,1,1,1), (0,1,1,1), (0,0,1,1), (0,0,0,1) \}</m>
+        </p>
+      </statement>
+
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          <m>V=\R^3</m>, <m>S=\{(-217, 3e^2, 3), (1,1,1), (-\log 81, 15, 17), (2,-\sqrt{17},
+          \sqrt{19})\}</m>
+        </p>
+      </statement>
+
+    </exercise>
+    <exercise>
+      <p>
+       <m>V=M_{22}</m>, <m>S=\{A_1,A_2,A_3\}</m>, where 
+       <md>
+        <mrow>A_1\amp = \begin{amatrix}
+        -99\amp \sqrt{17} \\
+        2201\amp 0
+        \end{amatrix}
+         \amp 
+         A_2\amp = \begin{amatrix}
+        1\amp 1 \\
+        1\amp 1
+        \end{amatrix}
+        \amp 
+        A_3\amp = \begin{amatrix}
+        2\pi \amp \sin 17 \\
+        0 \amp  1
+        \end{amatrix}
+        </mrow>
+       </md>.
+      </p>
+    </exercise>
+  </exercisegroup>
+  <exercise>
+    <statement>
+      <p> Let <m>W\subseteq \R^3</m> be the set of solutions to the following homogeneous system: <md>
+          <mrow>x+y+z\amp =\amp 0</mrow>
+          <mrow>3x+2y-2z\amp =\amp 0</mrow>
+          <mrow>4x+3y-z \amp =\amp 0</mrow>
+          <mrow>6x+5y+z \amp =\amp 0</mrow>
+        </md>. </p>
+      <ol>
+        <li>
+          <p> Compute a basis of <m>W</m>. Justify your answer. </p>
+        </li>
+        <li>
+          <p> Compute <m>\dim W</m>. </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+  <exercisegroup>
+    <title>By-inspection basis technique</title>
+    <introduction>
+    <p>
+    For each given <m>V</m> and subspace <m>W\subseteq V</m>, compute <m>\dim W</m> using <xref ref="proc_dimension"/>.
+    </p>
+    </introduction>
+    <exercise>
+      <statement>
+        <p>
+          <m>V=\R^3</m>, <m>W=\{x,y,z)\colon x+2y-z=0\}</m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>V=\R^4</m>, <m>W=\{(x,y,z,w)\colon x+y=z+w\}</m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>V=\R^4</m>, <m>W=\{(x,y,z,w)\in\R^4\colon w=x+y, z=x-y\}</m> 
+        </p>
+      </statement>
+      
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>V=M_{33}</m>, <m>W=\{A\in M_{33}\colon A^T=A\}</m>
+        </p>
+      </statement>
+    </exercise>
+    
+    <exercise>
+      <statement>
+        <p>
+          <m>V=M_{23}</m>, <m>W</m> is set of all matrices whose rows and columns all sum to zero
+        </p>
+      </statement>
+    </exercise>
+    </exercisegroup>
+  <exercise>
+    <statement>
+      <p> Suppoe <m>B=\{\boldv_1,\boldv_2,\boldv_3\}</m> be a basis for the vector space<m>V</m>.
+        Let <m>B'=\{\boldu_1,\boldu_2,\boldu_3\}</m>, where <me>
+          \boldu_1 = \boldv_1, \boldu_2 = \boldv_1 + \boldv_2, \boldu_3 = \boldv_1 +\boldv_2 +
+        \boldv_3
+        </me>.
+        Prove that <m>B'</m> is a basis. </p>
+    </statement>
+    <hint>
+      <p> First explain why it is enough to show that <m>B'</m> is linearly independent. </p>
+    </hint>
+  </exercise>
+  <exercise>
+    <title>Two-dimensional subspaces of <m>\R^3</m></title>
+    <statement>
+      <p> Prove that the 2-dimensional subspaces of <m>\R^3</m> are precisely the planes
+        that pass through the origin. In other words, show (a) that any plane <m>
+        \mathcal{P}\subseteq\R^3</m> passing through the origin is a 2-dimensional subspace, and
+        conversely, (b) that any 2-dimensional subspace <m>W\subseteq \R^3</m> is a plane passing
+        through the origin. </p>
+    </statement>
+    <hint>
+      <p> For (b), begin with a basis of <m>B=\{(a,b,c), (d,e,f)\}</m> of <m>W</m>, and use the
+        cross product to find a normal vector <m>\boldn</m> that defines <m>W</m> as a plane. </p>
+    </hint>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p> Let <m>V=M_{33}</m>, <m>W=\{A\in M_{33}\colon A^T=-A\}</m>, and <m>W'=\Span\{ A_1, A_2,
+        A_3\}</m>, where <me>
+          A_1=\begin{bmatrix}0\amp 1\amp 2\\ -1\amp 0\amp 1\\ -2\amp -1\amp 0 \end{bmatrix} , \
+        A_2=\begin{bmatrix}0\amp 1\amp -1\\ -1\amp 0\amp 1\\ 1\amp -1\amp 0 \end{bmatrix} ,\
+        A_3=\begin{bmatrix}0\amp 1\amp 0\\ -1\amp 0\amp -1\\ 0\amp 1\amp 0 \end{bmatrix}
+        </me>
+        Show that <m>W'=W</m> as follows: <ol>
+          <li> Show that <m>W'\subseteq W</m>. </li>
+          <li>
+            <p> Compute the dimensions of <m>W'</m> and <m>W</m> and use <xref
+                ref="cor_dimension_subspace" />. </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p> Let <m>V=M_{23}</m> and define <me>
+          W=\{A\in M_{23}\colon \text{ all rows and columns of \(A\) sum to 0 } \}
+        </me>.
+        Find a basis for <m>W</m> by inspection and compute its dimension. </p>
+    </statement>
+  </exercise>
+  
+  <exercise xml:id="ex_dimension_matrix_families">
+    <title>Dimensions of important matrix subspaces</title>
+    <statement>
+      <p> Let <m>V=M_{nn}</m>. Compute <m>\dim W</m> for each subspace <m>W\subset M_{nn}</m>. </p>
+      <ol>
+        <li>
+          <title>Upper triangular matrices</title>
+          <p>
+            <m>W=\{A\in M_{nn}\colon A \text{ is upper triangular}\}</m>
+          </p>
+        </li>
+        <li>
+          <title>Symmetric matrices</title>
+          <p>
+            <m>W=\{A\in M_{nn}\colon A^T=A\}</m>
+          </p>
+        </li>
+        <li>
+          <title>Skew-symmetric matrices</title>
+          <p>
+            <m>W=\{A\in M_{nn}\colon A^T=-A\}</m>
+          </p>
+        </li>
+      </ol>
+    </statement>
+    <hint>
+      <p> Use your results from <xref ref="ex_basis_matrix_families" />. The identity <me>
+        \sum_{i=1}^n i=\frac{(n+1)n}{2}
+        </me> will be helpful. </p>
+    </hint>
+  </exercise>
+  <exercise>
+    <statement>
+      <p> Let <m>A\in M_{nn}</m>. Show that there is a nonzero polynomial <m>p(x)=a_{n^2}x^{n^2}+a_{n^2-1}x^{n^2-1}+\cdots
+        +a_1x+a_0</m> such that <me>
+          p(A)=a_{n^2}A^{n^2}+a_{n^2-1}A^{n^2-1}+\cdots +a_1A+a_0I_n=\underset{n\times n}{\boldzero}
+        </me>
+        .
+    </p>
+    </statement>
+    <hint>
+      <p> Consider the set <m>S=\{A^{n^2}, A^{n^2-1}, \dots, A, I\}\subseteq M_{nn}</m> and use a
+        relevant statement from <xref ref="th_dimension_compendium" />. Treat two cases separately:
+        (a) the powers of <m>A</m> are all distinct; (b) <m>A^i=A^j</m> for some <m>0\leq i &lt;
+        j\leq n^2</m>. </p>
+    </hint>
+  </exercise>
+</exercises>

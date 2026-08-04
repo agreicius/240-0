@@ -1,0 +1,207 @@
+<exercises xml:id="s_basis_ex">
+<subexercises>
+  <title>WeBWork Exercises</title>
+    <exercise>
+      <!-- basis of trace 0 matrices -->
+      <webwork source="Library/NAU/setLinearAlgebra/basisTrace0.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- basis of half magic matrices -->
+      <webwork source="Library/NAU/setLinearAlgebra/basisHalfMagic.pg" />
+    </exercise>
+</subexercises>
+
+<exercisegroup>
+<title>One-step basis technique</title>
+<introduction>
+<p>
+For each vector space <m>V</m> and subset <m>S</m>, use the one-step technique (<xref ref="proc_basis_onestep"/>) to decide whether <m>S</m> is a basis for <m>V</m>.
+</p>
+</introduction>
+<exercise>
+  <statement>
+    <p>
+      <m>V=\R^3</m>
+    </p>
+    <ol>
+      <li>
+        <p>
+          <m>S=\{(1,1,2),(1,-1,-4), (3,-1,0) \}</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>S=\{(1,1,2),(1,-1,-4), (1,-3,1) \}</m>
+        </p>
+      </li>
+    </ol>
+  </statement>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>
+      <m>V=M_{22}</m>
+    </p>
+    <ol>
+      <li>
+        <p>
+          <m>S=\{A_1, A_2, A_3, A_4 \}</m>, where
+          <me>
+            A_1=\begin{bmatrix}1\amp 1\\ 1\amp 1 \end{bmatrix},  \ A_2=\begin{bmatrix}1\amp -1\\ 0\amp 0 \end{bmatrix}, \ A_3=\begin{bmatrix}0\amp -1\\ 1\amp 0 \end{bmatrix},  \ A_4=\begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix}
+          </me>
+
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>S=\{A_1, A_2, A_3, A_4 \}</m>, where
+          <me>
+            A_1=\begin{bmatrix}1\amp 1\\ 1\amp 1 \end{bmatrix},  \ A_2=\begin{bmatrix}1\amp -1\\ -1\amp 0 \end{bmatrix}, \ A_3=\begin{bmatrix}0\amp 1\\ 1\amp 0 \end{bmatrix},  \ A_4=\begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix}
+          </me>
+        </p>
+      </li>
+    </ol>
+  </statement>
+</exercise>
+</exercisegroup>
+<exercisegroup>
+<title>By-inspection basis technique</title>
+<introduction>
+<p>
+For each given <m>V</m> and subspace <m>W\subseteq V</m>, provide a basis for <m>W</m> using the <q>by inspection</q> technique <xref ref="proc_provide_basis"/>. In more detail: 
+</p>
+<ul>
+  <li>
+    <p>
+      Give a simple parametric description of the elements of <m>W</m>.
+    </p>
+  </li>
+  <li>
+    <p>
+      If your parametric description is simple enough, you should be able to find an obvious spanning set <m>S</m> of <m>W</m>.
+    </p>
+  </li>
+  <li>
+    <p>
+      Argue that your spanning set is linearly independent.
+    </p>
+  </li>
+</ul>
+</introduction>
+
+<exercise>
+  <statement>
+    <p>
+      <m>V=\R^3</m>, <m>W=\{x,y,z)\colon x+2y-z=0\}</m>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <m>V=\R^4</m>, <m>W=\{(x,y,z,w)\colon x+y=z+w\}</m>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <m>V=M_{33}</m>, <m>W=\{A\in M_{33}\colon A^T=A\}</m>
+    </p>
+  </statement>
+</exercise>
+
+<exercise>
+  <statement>
+    <p>
+      <m>V=M_{23}</m>, <m>W</m> is set of all matrices whose rows and columns all sum to zero
+    </p>
+  </statement>
+</exercise>
+
+</exercisegroup>
+
+<exercise>
+  <statement>
+    <p>
+      Suppose <m>B=\{\boldv_1,\boldv_2,\boldv_3\}</m> be a basis for the vector space<m>V</m>.
+      Let <m>B'=\{\boldu_1,\boldu_2,\boldu_3\}</m>, where
+      <me>
+      \boldu_1 = \boldv_1, \boldu_2 = \boldv_1 + \boldv_2, \boldu_3 = \boldv_1 +\boldv_2 + \boldv_3
+      </me>.
+      Prove that <m>B'</m> is a basis.
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Let <m>S=\{\boldv_1, \boldv_2, \dots, \boldv_k\}</m> be a set of <m>k</m> distinct elements of <m>\R^n</m>, let <m>A</m> be an invertible <m>n\times n</m> matrix, and let <m>S'=\{A\boldv_1, A\boldv_2,\dots, A\boldv_k\}</m>. Prove that <m>S</m> is a basis of <m>\R^n</m> if and only if <m>S'</m> is a basis of <m>\R^n</m> as follows.
+    </p>
+    <ol>
+      <li>
+        <p>
+          Prove that <m>A\boldv_i\ne A\boldv_j</m> for all <m>i\ne j</m>: <ie />, <m>S'</m> contains <m>k</m> distinct elements.
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove that if <m>\{\boldv_1, \boldv_2, \dots, \boldv_k\}</m> is a basis of <m>\R^n</m>, then <m>\{A\boldv_1, A\boldv_2,\dots, A\boldv_k\}</m> is also a basis for any invertible <m>n\times n</m> matrix <m>A</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Now prove that if <m>\{A\boldv_1, A\boldv_2,\dots, A\boldv_k\}</m> is a basis of <m>\R^n</m> for the invertible matrix <m>A</m>, then <m>\{\boldv_1, \boldv_2, \dots, \boldv_k\}</m> is a basis of <m>\R^n</m>. 
+        </p>
+        <p>
+          Hint: in (b) you showed that if you start with <em>any</em> basis and apply <em>any</em> invertible matrix to the elements of this basis, then you end up with another basis; think of a useful choice of matrix for the present situation. 
+        </p>
+      </li>
+    </ol>
+  </statement>
+
+</exercise>
+<exercise xml:id="ex_basis_matrix_families">
+  <title>Bases for important matrix subspaces</title>
+  <statement>
+    <p>
+      Let <m>V=M_{nn}</m>.
+      For each of the following subspaces <m>W\subset M_{nn}</m>,
+      give a basis <m>B</m> of <m>W</m>.
+      You must explicitly describe the elements of your basis as linear combinations of the elements <m>E_{ij}</m> of the standard basis for <m>M_{nn}</m>. No justification needed, as long as your proposed basis is simple enough.
+    </p>
+      <ol>
+        <li>
+          <title>Upper triangular matrices</title>
+          <p>
+            <m>W=\{A\in M_{nn}\colon A \text{ is upper triangular}\}</m>
+          </p>
+        </li>
+        <li>
+          <title>Symmetric matrices</title>
+          <p>
+            <m>W=\{A\in M_{nn}\colon A^T=A\}</m>
+          </p>
+        </li>
+        <li>
+          <title>Skew-symmetric matrices</title>
+          <p>
+            <m>W=\{A\in M_{nn}\colon A^T=-A\}</m>
+          </p>
+        </li>
+      </ol>
+  </statement>
+  <hint>
+    <p>
+      It might help to look at the <m>n=2</m> and <m>n=3</m> cases to get an idea of what these bases should be.
+    </p>
+  </hint>
+
+</exercise>
+
+
+
+
+</exercises>

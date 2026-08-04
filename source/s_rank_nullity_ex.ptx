@@ -1,0 +1,299 @@
+<exercises xml:id="s_rank_nullity_ex">
+<subexercises>
+  <title>WeBWork Exercises</title>
+    <exercise>
+      <!-- fill in the blanks -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.3.15.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- true/false -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.48_54a.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- true/false -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.41_47a.pg" />
+    </exercise>
+
+
+    
+</subexercises>
+
+  
+ 
+  <exercise>
+    <statement>
+      <p>
+        For each matrix <m>A</m> (i) row reduce <m>A</m> to a matrix <m>U</m> in row echelon form, (ii) compute bases for <m>\CS A</m> and <m>\CS U</m>, (iii) compute <m>\dim \CS A</m> and <m>\dim \CS U</m>,and (iv) decide whether <m>\CS A=\CS U</m>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            <me>A=\boldzero_{n\times n}</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            <me>A=\begin{amatrix}[rr]-2 \amp 1\\ 1\amp 5  \end{amatrix}</me>
+          </p>
+        </li>
+        <li>
+          <p>
+            <me>A=\begin{amatrix}[rrr]1 \amp 1 \amp 3 \\ 1 \amp 2 \amp 1 \\ 1 \amp 3 \amp -1  \end{amatrix}</me>
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p> For each matrix below, (i) compute bases for each fundamental space, (ii) identify these spaces as familiar geometric objects in <m>\R^2</m> or <m>\R^3</m>, and (iii) provide sketches of each space. The sketches of <m>\NS A</m> and <m>\RS A</m> should be combined in the same coordinate system.
+      </p>
+      <ol>
+        <li>
+          <p>
+            <me>
+              A=\begin{amatrix}[rrr]1\amp 0\amp 0\\ 0\amp 1\amp 0  \end{amatrix}
+            </me>
+
+          </p>
+        </li>
+        <li>
+          <p>
+            <me>
+              A=\begin{amatrix}[rrr]1\amp 1\amp -2\\ 3\amp -4\amp 1  \end{amatrix}
+            </me>
+          </p>
+        </li>
+        <li>
+          <p>
+            <me>
+              A=\begin{amatrix}[rr] 1\amp 2\\ 0\amp 0 \\ -1\amp -2  \end{amatrix}
+            </me>
+
+          </p>
+        </li>
+      </ol>
+    </statement>
+
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+      For each <m>A</m> compute bases for each fundamental space. In each case, you can find bases for one of the fundamental spaces by inspection, and then use the rank-nullity theorem to reduce your workload for the other spaces. See first solution for a model example.
+      </p>
+        <ol>
+          <li>
+            <p>
+              <me>A=\begin{amatrix}[rrrr]1\amp 1\amp 1\amp 1\\ 1\amp 1\amp 1\amp 1\\ \end{amatrix}</me>
+            </p>
+          </li>
+          <li>
+            <p>
+              <me>A=\begin{bmatrix}1\amp 1\amp 1\amp 1\\ 2\amp 1\amp 2\amp 1\\ 1\amp 1\amp 1\amp 1 \end{bmatrix}</me>
+            </p>
+          </li>
+        </ol>
+    </statement>
+    <solution>
+    <ol>
+      <li>
+      <p>
+        Clearly, <m>B=\{(1,1)\}</m> is a basis for <m>\CS A</m>, and <m>B'=\{(1,1,1,1)\}</m> is a basis for <m>\RS A</m>. It follows that <m>\rank A=1</m> and hence <m>\nullity A=4-1=3</m>. Thus we need to find three linearly independent elements of <m>\NS A</m> to find a basis. We can do so by inspection with the help of the column method. Namely, observe that <m>\boldv_1=(1,-1,0,0), \boldv_2=(0,1,-1,0), \boldv_3=(0,0,1,-1)</m> are all in <m>\NS A</m> (column method). The location of zeros in these vectors make it clear that <m>B''=\{\boldv_1,\boldv_2, \boldv_3\}</m> are linearly independent. Since <m>\dim NS A=3</m>, and <m>\val{B''}=3</m>, we conclude that <m>B''</m> is a basis of <m>\NS A</m> (<xref ref="cor_dimension_subspace" text="global"/>).
+      </p>
+    </li>
+  </ol>
+    </solution>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        For each <m>A</m> use <xref ref="proc_fund_spaces"/> to compute bases for each fundamental space.
+      </p>
+      <ol>
+        <li>
+          <p>
+            <me>
+              A= \begin{bmatrix}1\amp 2\amp 4\amp 5\\ 0\amp 1\amp -3\amp 0\\ 0\amp 0\amp 1\amp -3\\ 0\amp 0\amp 0\amp 0 \end{bmatrix}
+            </me>
+          </p>
+        </li>
+        <li>
+          <p>
+            <me>
+              A= \begin{bmatrix}1\amp 2\amp -1\amp 5\\ 0\amp 1\amp 4\amp 3\\ 0\amp 0\amp 1\amp -7\\ 0\amp 0\amp 0\amp 1 \end{bmatrix}
+            </me>
+          </p>
+        </li>
+        <li>
+          <p>
+            <me>
+              A = \begin{bmatrix}1\amp 4\amp 5\amp 6\amp 9\\ 3\amp -2\amp 1\amp 4\amp -1\\ -1\amp 0\amp -1\amp -2\amp -1\\ 2\amp 3\amp 5\amp 7\amp 8 \end{bmatrix}
+            </me>
+          </p>
+        </li>
+      </ol>
+    </statement>
+
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Find the rank and nullity of each matrix by reducing it to row echelon form.
+      </p>
+      <ol>
+          <li>
+            <p>
+              <me>
+                A = \begin{amatrix}[rrrrr] 1\amp 0\amp -2\amp 1\amp 0\\ 0\amp -1\amp -3\amp 1\amp 3\\ -2\amp -1\amp 1\amp -1\amp 3\\ 0\amp 1\amp 3\amp 0\amp -4 \end{amatrix}
+              </me>
+            </p>
+          </li>
+          <li>
+            <p>
+              <me>
+                A = \begin{amatrix}[rrrr] 1\amp 3\amp 1\amp 3\\ 0\amp 1\amp 1\amp 0\\ -3\amp 0\amp 6\amp -1\\ 3\amp 4\amp -2\amp 1\\ 2\amp 0\amp -4\amp -2 \end{amatrix}
+              </me>
+            </p>
+          </li>
+        </ol>
+    </statement>
+  </exercise>
+  <exercisegroup>
+    <title>Rank-nullity theorem for matrices</title>
+    <introduction>
+      <p>
+        For each scenario use the rank-nullity theorem for matrices to compute the desired information from the given information. 
+      </p>
+    </introduction>
+  
+    <exercise>
+      <statement>
+        <p>
+          Suppose <m>A\in M_{7\times 5}</m> and <m>\nullity A=2</m>, compute <m>\rank A</m>. 
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Suppose <m>A\in M_{7\times 5}</m> and <m>\nullity A=2</m>, compute <m>\dim \RS A</m>. 
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Suppose <m>A\in M_{3\times 5}</m> and <m>\CS A=\R^3</m>, compute <m>\nullity A</m>. 
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Suppose <m>A\in M_{7\times 5}</m> and <m>\NS A=\{\boldzero\}</m>, compute <m>\dim \CS A</m>. 
+        </p>
+      </statement>
+    </exercise>
+  </exercisegroup>
+
+  <exercise>
+    <statement>
+      <p>
+        Let <m>A</m> be <m>m\times n</m> with <m>n\lt m</m>.
+        Prove that there is a
+        <m>\boldb\in\R^m</m> such that the system <m>A\boldx=\boldb</m> is inconsistent.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Use <xref ref="th_col_space"/> and <xref ref="th_rank_nullity_matrix"/>.
+      </p>
+    </hint>
+  </exercise>
+
+  <exercise xml:id="ex_col_inv">
+    <statement>
+      <p>
+        We know that in general that row equivalent matrices do not have equal column spaces, but show that this is the case if the matrices are invertible. In other words, prove that if <m>A</m> is invertible and <m>A</m> is row equivalent to <m>B</m>, then <m>\CS A=\CS B</m>. 
+      </p>
+    </statement>
+  </exercise>
+  
+  <exercise>
+    <statement>
+      <p>
+        Let <m>A</m> be an <m>n\times n</m> matrix.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Prove: <m>A^2=\boldzero_{n\times n}</m> if and only if <m>\CS A\subseteq \NS A</m>.
+          </p>
+        </li>
+        <li>
+          Construct a <m>2\times 2</m> matrix <m>A</m> with <m>\NS A=\CS A=\Span\{(1,2)\}</m>. Verify that your <m>A</m> satisfies <m>A^2=\boldzero_{2\times 2}</m>.
+        </li>
+      </ol>
+
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Suppose <m>A</m> is <m>m\times n</m> with <m>m\ne n</m>.
+      </p>
+      <p>
+        Prove: either the rows of <m>A</m> are linearly dependent or the columns of <m>A</m> are linearly dependent.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Prove: <m>\nullity A=\nullity A^T</m> if and only if <m>A</m> is a square matrix.
+      </p>
+    </statement>
+  </exercise>
+  <!-- <exercise>
+    <statement>
+      <p>
+        Suppose <m>A</m> and <m>B</m> are row equivalent <m>m\times n</m> matrices. For each <m>1\leq j\leq n</m> let <m>\bolda_j</m> and <m>\boldb_j</m> be the <m>j</m>-th columns of <m>A</m> and <m>B</m>, respectively.
+      </p>
+      <p>
+        Prove: columns <m>\boldb_{i_1}, \boldb_{i_2}, \dots, \boldb_{i_r}</m> of <m>B</m> are linearly independent if and only if the corresponding columns <m>\bolda_{i_1}, \bolda_{i_2},\dots, \bolda_{i_r}</m> are linearly independent.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        By <xref ref="cor_row_equivalence_invertibility"/> there is an invertible <m>Q</m> such that <m>QA=B</m>. Let <m>A'</m> and <m>B'</m> be the submatrices of <m>A</m> and <m>B</m> obtained by taking columns <m>i_1, i_2, \dots, i_r</m>. Show that we still have <m>QA'=B'</m> and relate linear independence of the columns to solutions of the matrix equations <m>A'\boldx=\boldzero</m> and <m>B'\boldx=\boldzero</m>.
+       </p>
+    </hint>
+  </exercise> -->
+  <exercise xml:id="ex_invertibility_supersized">
+    <title>Invertibility theorem</title>
+    <statement>
+      <p>
+        Prove <xref ref="th_invertibility_supersized"/> as follows.
+      </p>
+      <ol>
+        <li>
+          <p>
+            First show that all three statements of <xref ref="inv4_statement_cols" text="global"/> are equivalent, and that all three statements of <xref ref="inv4_statement_rows" text="global"/> are equivalent. (Use <xref ref="th_dimension_compendium"/>.)
+          </p>
+        </li>
+        <li>
+          <p>
+            Show that statements <xref first="inv4_statement_nullspace" last="inv4_statement_rows" text="global"/> are equivalent with the help of <xref ref="th_rank_nullity_matrix"/>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Choose a statement from <xref first="inv4_statement_def" last="inv4_statement_det" text="global"/> that can be easily shown to be equivalent to one of the statements from <xref first="inv4_statement_nullspace" last="inv4_statement_rows" text="global"/>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+</exercises>

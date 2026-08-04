@@ -14,8 +14,10 @@
 
     <!-- Include chapters -->
     <xi:include href="./c_foundations.ptx"/>
+    <xi:include href="c_intro_vectorspaces.ptx" />
     <xi:include href="./c_lin_sys.ptx" />
     <xi:include href="./c_matrices.ptx" />
+    <xi:include href="./c_vectorspace.ptx" />
 
     <!-- Include backmatter -->
     <backmatter>

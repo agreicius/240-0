@@ -2,7 +2,7 @@
 
 <section xml:id="s_Rn_and_friends" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Real-valued tuples</title>
-    <objectives>
+    <!-- <objectives>
         <ol>
             <li>
                 <p>
@@ -20,7 +20,12 @@
                 </p>
             </li>
         </ol>
-    </objectives>
+    </objectives> -->
+    <introduction>
+        <p>
+            Our study of linear algebra begins on a somewhat formal note with the introduction of the set <m>\R^I</m> of real-valued tuples indexed by an arbitrary set <m>I</m>. Conceptually, this construction is a straightforward generalization of the sets <m>\R^2</m> and <m>\R^3</m> of real-valued pairs and triples. The payoff of this mild formalism is a vast generalization of those two familiar sets that gives us a unified framework for developing the mathematical theory of objects as disparate as <m>n</m>-tuples, matrices, and infinite sequences. In particular, we show how the so-called <em>vector operations</em> of <m>\R^2</m> and <m>\R^3</m> extend easily to these more general sets <m>\R^I</m>. As a result, we are lead naturally to introduce at this early stage the notion of a <em>real vector space</em>, thereby foregrounding the central object of study of linear algebra. 
+        </p>
+    </introduction>
     <subsection xml:id="ss_R-valued_tuples">
     <title>Real-valued tuples</title>
     <p>
@@ -32,7 +37,7 @@
         In that setting it is easy to motivate the discussion by interpreting pairs and triples as specifying locations or directions in 2- or 3-space. This both imbues the mathematical objects involved with some familiar concrete meaning and allows us to visualize related constructions as geometric objects in 2- or 3-space. 
     </p>
     <p>
-            With the public's ever-growing familiarity with data collection and analysis, however, there is no need to rely as heavily on spatial intuition for motivation. A marketing analyst studying the sales of a certain product might be interested in knowing the height, weight, age, and yearly income of the product's consumers. Thus for each consumer, the marketer collects a quadruple <m>(a_1,a_2,a_3,a_4)</m> of real numbers, where <m>a_1</m> is the height of the consumer, <m>a_2</m> the weight, <m>a_3</m> the age, and <m>a_4</m> the yearly income. And the aggregate data the marketer collects is a subset of 
+            With the public's ever-growing familiarity with data science, however, there is no need to rely on spatial intuition for motivation. A marketing analyst studying the sales of a certain product might be interested in knowing the height, weight, age, and yearly income of the product's consumers. Thus for each consumer, the marketer collects a quadruple <m>(a_1,a_2,a_3,a_4)</m> of real numbers, where <m>a_1</m> is the height of the consumer, <m>a_2</m> the weight, <m>a_3</m> the age, and <m>a_4</m> the yearly income. And the aggregate data the marketer collects is a subset of 
 <md>
     <mrow>\R^4 \amp =\{(a_1,a_2,a_3,a_4)\mid a_i\in \R\}</mrow>
 </md>,
@@ -43,7 +48,7 @@ To give a slightly less simplistic example, consider an internet search engine t
 </p>
 <p>
 The point here is that for the modern student of mathematics there should be nothing too forbidding or abstract about <m>n</m>-tuples of real numbers of arbitrary length <m>n</m>, nor the set <m>\R^n</m> of all such tuples.   
-In this course, we will take things one small step further by considering <em>real-valued tuples</em> indexed by an arbitrary <em>index set</em> <m>I</m>. Let us dispense first with the formal definition, then make sense of it. 
+In this course, we will take things one small step further by considering a generalization of a list or sequence of real numbers. This is the notion of a <term>tuple</term> indexed by a set <m>I</m>.  Let us dispense first with the formal definition, then make sense of it. 
 </p>
 <definition xml:id="d_tuple_real">
 <title>Real-valued tuple</title>
@@ -53,7 +58,7 @@ In this course, we will take things one small step further by considering <em>re
 </notation>
 <statement>
 <p>
-Let <m>I</m> be a nonempty set. A <term>real-valued tuple indexed by <m>I</m></term> (or <term>real-valued <m>I</m>-tuple</term>) is a rule that assigns to each <term>index</term> <m>i\in I</m> an element <m>a_i\in \R</m>, and is denoted <m>(a_i)_{i\in I}</m>. 
+Let <m>I</m> be a nonempty set. A <term>real-valued tuple indexed by <m>I</m></term> (or <term><m>I</m>-tuple</term> of real numbers) is a rule that assigns to each <term>index</term> <m>i\in I</m> an element <m>a_i\in \R</m>, and is denoted <m>(a_i)_{i\in I}</m>. 
   </p>
   <p>
 Given an <m>I</m>-tuple <m>(a_i)_{i\in I}</m>, we call <m>I</m> the <term>index set</term>, and for each index <m>i\in I</m>, we call <m>a_i</m> the <m>i</m>-th <term>component</term> (or <term>coordinate</term>, or <term>entry</term>, or <term>term</term>) of <m>(a_i)_{i\in I}</m>. We call <m>\{a_i\mid i\in I\}</m> the <term>set of values</term> of the tuple <m>(a_i)_{i\in I}</m>. 
@@ -68,7 +73,7 @@ The set of all real-valued <m>I</m>-tuples is denoted <m>\R^I</m>:<ie/>,
 </definition>
 <aside>
 <p>
-All this talk of rules and assignments may remind you of the general definition of a function. Good for you! In truth a tuple is simply a function <m>f\colon I\rightarrow \R</m> that assigns to each index <m>i\in I</m> a real number <m>f(i)=a_i</m>. However, since the goal here is to have you understand tuples as a straightforward generalization of pairs and triples, we decided to conceal this function connection somewhat.
+All this talk of rules and assignments may remind you of the general definition of a function. This is no accident! In truth a tuple is simply a function <m>f\colon I\rightarrow \R</m> that assigns to each index <m>i\in I</m> a real number <m>f(i)=a_i</m>. However, since the goal here is to have you understand tuples as a straightforward generalization of pairs and triples, we decided to conceal this function connection somewhat.
 </p> 
 </aside>
 <remark>
@@ -79,7 +84,10 @@ You find a more general discussion of tuples in <xref ref="ss_tuples"/>. In this
 </remark>
 
 <p>
-Do not be intimidated by the formality of <xref ref="d_tuple_real"/>! As a first step to coming to grips with it, let's see how <m>\R^n</m> can be understood as a particular example of our more general construction <m>\R^I</m>. For concreteness, we consider the case <m>n=3</m>. To define a triple <m>(a_1,a_2,a_3)</m> of <m>\R^3</m>, we need to specify the three coordinates <m>a_1</m>, <m>a_2</m>, and <m>a_3</m>. This is equivalent to <em>assigning</em> to each of the <em>indices</em> <m>i\in \{1,2,3\}</m> a real number <m>a_i</m>. Thus a triple in <m>\R^3</m> is the same thing as a real-valued tuple indexed by the index set <m>I=\{1,2,3\}</m>, and furthermore we have
+Do not be intimidated by the formality of <xref ref="d_tuple_real"/>! The basic underlying idea is that just as a triple of real numbers <m>(a_1,a_2,a_3)</m> is determined by knowing each of its three components <m>a_1</m>, <m>a_2</m>, and <m>a_3</m>, a tuple <m>(a_i)_{i\in I}</m> is determined by knowing each component <m>a_i</m> for all indices <m>i</m> in the index set <m>I</m>. 
+</p>
+<p>
+     As a first step to coming to grips with this new concept, let's see how <m>\R^n</m> can be understood as a particular example of our more general construction <m>\R^I</m>. For concreteness, we consider the case <m>n=3</m>. To define a triple <m>(a_1,a_2,a_3)</m> of <m>\R^3</m>, we need to specify the three coordinates <m>a_1</m>, <m>a_2</m>, and <m>a_3</m>. This is equivalent to <em>assigning</em> to each of the <em>indices</em> <m>i\in \{1,2,3\}</m> a real number <m>a_i</m>. Thus a triple in <m>\R^3</m> is the same thing as a real-valued tuple indexed by the index set <m>I=\{1,2,3\}</m>, and we have
 <md>
     <mrow>\R^3 \amp=\R^I=\R^{\{1,2,3\}} </mrow>
 </md>.
@@ -93,7 +101,7 @@ This reasoning generalizes easily to lists of real numbers of arbitrary length <
 </notation>
 <statement>
 <p>
-Let <m>n</m> be a positive integer, and let <m>I=\{1,2,\dots, n\}</m>. A real-valued tuple indexed by <m>I</m> is called an <term><m>n</m>-tuple</term> and we call <m>n</m> the <term>length</term> of the tuple. We will use any of the following notations for tuples indexed by <m>I=\{1,2,\dots, n\}</m>:
+Let <m>n</m> be a positive integer, and let <m>I=\{1,2,\dots, n\}</m>. A real-valued tuple indexed by <m>I</m> is called an <term><m>n</m>-tuple</term> and we call <m>n</m> the <term>length</term> of the tuple. We will favor bold lower case letters when naming <m>n</m>-tuples (<eg/>, <m>\boldx</m>, <m>\boldy</m>, <m>\bolda</m>, <m>\boldb</m>) and use any of the following notations for tuples indexed by <m>I=\{1,2,\dots, n\}</m>:
         <md>
                 <mrow> (a_i)_{i\in I}\amp\amp (a_i)_{i=1}^n \amp\amp (a_1,a_2,\dots,a_n) </mrow>
             </md>. 
@@ -105,10 +113,10 @@ Furthermore, the set <m>\R^I</m> of all <m>n</m>-tuples is denoted <m>\R^n</m>: 
 </statement>
 </definition>
 <p>
-Notationally, we see already how our more general <m>\R^I</m> framework can simplify things for us. When treating <m>\R^5</m>, which corresponds to the index set <m>I=\{1,2,3,4,5\}</m>, it is much easier to write <m>(a_i)_{i\in I}</m> or <m>(a_i)_{i=1}^5</m> than <m>(a_1,a_2,a_3,a_4,a_5)</m> or even <m>(a_1,a_2,\dots, a_5)</m>. More generally, once we have set in stone that <m>I=\{1,2,\dots, n\}</m>, the compact <m>(a_i)_{i\in I}</m> notation absorbs the complexity that comes along with dealing with tuples of arbitrary length <m>n</m>.  
+It should be clear at least that the more general notion of tuples comes with a notational advantage: namely, it takes less time/space to write <m>(a_i)_{i\in I}</m> or <m>(a_i)_{i=1}^5</m> than <m>(a_1,a_2,a_3,a_4,a_5)</m>. The more powerful, conceptual advantage of the notion of an <m>I</m>-tuple lies in the fact that our index set <m>I</m> can be taken to be anything we like, not just a set of the form <m>\{1,2,\dots, n\}</m>. By choosing different, possibly more complicated index sets <m>I</m>, we are able to model other common mathematical objects within the same unifying tuple framework.   
 </p>
 <p>
-The real power of <xref ref="d_tuple_real"/>, however, lies in the fact that our index set <m>I</m> can be taken to be anything we like. For example consider the index set <m>I</m> consisting of all positive integers: <ie/>, 
+For example consider the index set <m>I</m> consisting of all positive integers: <ie/>, 
 <md>
     I=\Z_+=\{1,2,\dots \}
 </md>.
@@ -116,7 +124,7 @@ In this case, to specify a tuple <m>(a_i)_{i\in I}</m> in <m>\R^I</m> we must pr
 <md>
     a_1,a_2,a_3,\dots
 </md>.
-Sound familiar? This is just an infinite sequence of real numbers!
+Sound familiar? This is just an infinite sequence of real numbers! Again, we make this observation official and introduce some special notation. 
 </p>
 <definition xml:id="d_infinite_sequence">
 <title>Infinite sequences of real numbers</title>
@@ -196,11 +204,11 @@ For each defined sequence <m>s=(a_i)_{i\in I}</m>, expand <m>s</m> in the form <
 </solution>
 </example>
 <p>
-The last two examples illustrate how our tuple definition nicely unifies the notions of finite and infinite sequences into a more general framework. The two types of tuples are not so very different in nature, and this can be understood as a result of the similarity between their index sets. Indeed the finite index set <m>I=\{1,2,\dots, n\}</m> is what is called an <em>initial segment</em> of the the infinite index set <m>\Z_+=\{1,2,\dots,\}</m>. Furthermore, in both cases, the natural ordering
+Comparing <m>n</m>-tuples and infinite sequences, we see that these two types of tuples are not so very different in nature; and furthermore, this similarity can be understood as resulting from the underlying similarity of their index sets. Indeed the finite index set <m>I=\{1,2,\dots, n\}</m> is what is called an <em>initial segment</em> of the the infinite index set <m>\Z_+=\{1,2,\dots,\}</m>. In both cases, the natural ordering
     <md>
         1&lt; 2&lt; 3&lt; \dots
     </md>
-of <m>\Z_+</m> transfers to an ordering of the elements of a tuple <m>(a_i)_{i\in I}</m> in both these cases, allowing us to speak of its <em>first</em> entry, <em>second</em> entry, <etc/>. This illustrates how any additional structure of the index set <m>I</m> can be used to induce some structure on our tuples <m>(a_i)_{i\in I}</m>. As a result, when modelling different types of data as tuples, a careful choice of index set <m>I</m> can capture particular features of the data we study. 
+of <m>\Z_+</m> transfers to an ordering of the components of a tuple <m>(a_i)_{i\in I}</m>, allowing us to speak of the <em>first</em> entry, <em>second</em> entry, <etc/>. This illustrates how any additional structure of the index set <m>I</m> can be used to induce some structure on our tuples <m>(a_i)_{i\in I}</m>. As a result, when modelling different types of data as tuples, a careful choice of index set <m>I</m> can capture particular features of the data we study. 
 </p>
 <p>
 For example, suppose we are interested in comparing the first and second half performances of football players and so record for each player and game the number of goals, assists, and tackles made in the first and second halves of the game. A typical datum collected for a given player and game might be displayed in a table as follows.  
@@ -352,7 +360,7 @@ Display the given matrix <m>A</m> as a rectangular array.
    <md>
     <mrow>\rowvec{1\amp 1\amp 1} \amp\amp \colvec{1\\ 1\\ 1} \amp\amp (1,1,1) </mrow>
    </md>.
-   The three are clearly quite similar, each consisting essentially of three entries equal to <m>1</m>, and yet visibly no two are quite the same: the third is enclosed in parentheses while the first two use brackets; the first is displayed as a single row while the second is displayed as a single column. Of course, that is not a very rigorous way of distinguishing between tuples. Unpacking our notational conventions allows to more precisely locate the difference between the three tuples: namely, they have three very different index sets. Following the order of the tuples displayed above, the corresponding index sets are 
+   The three are clearly quite similar, each consisting of three entries equal to <m>1</m>, and yet visibly no two are quite the same: the third is enclosed in parentheses while the first two use brackets; the first is displayed as a single row while the second is displayed as a single column. Of course, that is not a very rigorous way of distinguishing between tuples. Unpacking our notational conventions allows to more precisely locate the difference between the three tuples: namely, they have three very different index sets. Following the order of the tuples displayed above, the corresponding index sets are 
    <md>
     <mrow>I_1  \amp= \{(1,1),(1,2),(1,3)\} \amp I_2\amp =\{(1,1),(2,1),(3,1)\} \amp I_3=\{1,2,3\} </mrow>
    </md>.
@@ -523,7 +531,7 @@ In other words, two matrices are equal if and only if they have the same dimensi
     </sage>
     </project>
 <p>
-    In this class we will draw our examples almost exclusively from the sets <m>\R^n</m>, <m>\ML_{m,n}(\R)</m>, and <m>\R^\infty</m>. However, note that once we've understood a matrix as a tuple indexed by <em>pairs</em> of integers <m>(i,j)</m>, it is not much of a jump to consider tuples indexed by triples of integers <m>(i,j,k)</m>, or quadruples of integers <m>(i,j,k,l)</m>, <etc/>. Such tuples are called <em>multidimensional arrays</em><fn>These multidimensional arrays are sometimes called <em>tensors</em> by data scientists. We will avoid this, since that term is used in mathematics for a different type of object not discussed in this class.</fn> and appear frequently in data science settings. In full generality, a <em><m>k</m>-dimensional array</em> is real-valued tuple with index set of the form 
+    In this class we will draw our examples almost exclusively from the sets <m>\R^n</m>, <m>\ML_{m,n}(\R)</m>, and <m>\R^\infty</m>. However, note that once we've understood a matrix as a tuple indexed by <em>pairs</em> of integers <m>(i,j)</m>, it is not much of a jump to consider tuples indexed by triples of integers <m>(i,j,k)</m>, or quadruples of integers <m>(i,j,k,l)</m>, <etc/>. Such tuples are called <em>multidimensional arrays</em><fn>These multidimensional arrays are sometimes called <em>tensors</em> by data scientists. We will avoid this, however, as that term is used in mathematics for a slightly more complicated type of object not discussed in this class.</fn> and appear frequently in data science settings. In full generality, a <em><m>k</m>-dimensional array</em> is real-valued tuple with index set of the form 
     <md>
         I=\{(i_1,i_2,\dots, i_k)\mid 1\leq i_1\leq n_1, 1\leq i_2\leq n_2,\dots, 1\leq i_k\leq n_k\}
     </md>.
@@ -1320,7 +1328,7 @@ Recall that Sage captures the double-index nature of a matrix by nesting lists: 
         </statement>
         </definition>
         <p>
-        For now, we will mainly focus on vector spaces of the form <m>V=\R^I</m> or <m>V=\{\boldzero\}</m>, leaving a more thorough investigation of the notion of an abstract vector space for later. However, as we introduce new concepts connected to vector spaces, we will always state them in full generality for a general vector space <m>V</m>. This is done mainly out of convenience, so that we do not have to repeat the same definition later on. Since our emphasis is on vector spaces of the form <m>\R^I</m>, we will take care to follow up any new definition with some examples taken from some familiar vector spaces of the form <m>\R^n</m>, <m>\ML_{m\times n}(\R)</m>, <m>\R^\infty</m>. We put this into practice with our next definition. 
+        For now, we will mainly focus on vector spaces of the form <m>V=\R^I</m> or <m>V=\{\boldzero\}</m>, leaving a more thorough investigation of vector spaces in all of their abstract glory until <xref ref="c_vectorspace"/>. However, as we introduce new concepts connected to vector spaces, we will always state them in full generality for a general vector space <m>V</m>. This is done mainly out of convenience, so that we do not have to repeat the same definition later on. Since our emphasis is on vector spaces of the form <m>\R^I</m>, we will take care to follow up any new definition with some examples taken from some familiar vector spaces of the form <m>\R^n</m>, <m>\ML_{m\times n}(\R)</m>, <m>\R^\infty</m>. We put this into practice with our next definition. 
         </p>
             <definition xml:id="d_lin_comb">
                 <title>Linear combination</title>

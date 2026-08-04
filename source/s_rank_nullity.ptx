@@ -1,0 +1,800 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_rank_nullity">
+  <title>Fundamental spaces</title>
+  <introduction>
+    <p>This section is in a sense just a long-format example of how to compute bases and dimensions of certain subspaces of <m>\R^n</m>. The subspaces in question will be defined as so-called <xref ref="d_fundamental_space" text="custom">fundamental spaces</xref> of matrices. It should thus come as little surprise that the algorithms used in these computations make use of Gaussian elimination, fabled <xref ref="princ_GE" text="custom">workhorse of linear algebra</xref>. Lastly, we will also meet the matrix version of the famous <em>rank-nullity theorem</em>, sometimes called the <em>fundamental theorem of linear algebra</em>.  
+  </p>
+  </introduction>
+
+  <subsection xml:id="ss_fundamental_spaces">
+    <title>Fundamental spaces of matrices</title>
+    <p>
+      Let <m>A</m> be an <m>m\times n</m> matrix. In addition to its null space <m>\NS A\subseteq \R^n</m>, <m>A</m> gives rise to two additional naturally defined subspaces, called the <em>row space</em> and <em>column space</em> of the matrix. Taken together, these three subspaces associated to <m>A</m> are called its <em>fundamental spaces</em>. Observe that <m>\NS A</m> was defined previously (<xref ref="d_nullspace_matrix" text="global"/>). We include it below to gather all the fundamental spaces together under one definition.
+    </p>
+    <definition xml:id="d_fundamental_space">
+      <title>Fundamental spaces</title>
+      <idx><h>fundamental space</h><h>of a matrix</h></idx>
+      <idx><h>null space</h><h>of a matrix</h></idx>
+      <idx><h>row space</h><h>of a matrix</h></idx>
+      <idx><h>column space</h><h>of a matrix</h></idx>
+      <notation>
+        <usage><m>\NS A</m></usage>
+        <description>the null space of matrix <m>A</m></description>
+      </notation>
+      <notation>
+        <usage><m>\RS A</m></usage>
+        <description>the row space of a matrix <m>A</m></description>
+      </notation>
+      <notation>
+        <usage><m>\CS A</m></usage>
+        <description>the column space of a matrix <m>A</m></description>
+      </notation>
+      
+      <statement>
+        <p>
+          Let <m>A</m> be a an <m>m\times n</m> matrix. Let <m>\boldr_1,\dots, \boldr_m\in \R^n
+          </m> be the <m>m</m> rows of <m>A</m>, and let <m>\boldc_1,\dots \boldc_n\in \R^m</m> be its <m>n</m> columns. The following subspaces are called the <term>fundamental subspaces of <m>A</m></term>.
+        </p>
+        <ul>
+          <li>
+            <title>Null space</title>
+            <p>
+              The <term>null space of <m>A</m></term>, denoted <m>\NS A</m> is defined as
+              <me>
+              \NS A =\{\boldx\in\R^n\colon A\boldx=\boldzero\}\subseteq \R^n.
+              </me>.
+            </p>
+          </li>
+          <li>
+            <title>Row space</title>
+            <p>
+              The <term>row space of <m>A</m></term>, denoted <m>\RS A</m>, is defined as
+              <me>
+              \RS A=\Span \{\boldr_1, \boldr_2, \dots, \boldr_m\}\subseteq \R^n
+              </me>.
+            </p>
+          </li>
+          <li>
+            <title>Column space</title>
+            <p>
+              The <term>column space of <m>A</m></term>, denoted <m>\CS A</m>, is defined as
+              <me>
+              \CS A=\Span \{\boldc_1, \boldc_2, \dots, \boldc_n\}\subseteq \R^m
+              </me>.
+            </p>
+          </li>
+          
+        </ul>
+      </statement>
+    </definition>
+    <remark>
+      <title>Fundamental spaces</title>
+      <p>
+        Note that the fundamental spaces of a matrix <m>A\in M_{mn}</m> are indeed subspaces. This is a simple consequences of theorems <xref ref="th_subspace_matrix_solutions" text="global"/> and <xref ref="th_span" text="global"/>, which tell us that null spaces of matrices and spans of vectors are subspaces. 
+      </p>
+      <p> 
+        A good practice when dealing with fundamental spaces of a matrix, is to first sort out the ambient space where each of these subspaces lives: if <m>A\in M_{mn}</m>, then both <m>\NS A</m> and <m>\RS A</m> are subspaces of <m>\R^n</m>, and <m>\CS A</m> is a subspace of <m>\R^m</m>. 
+      </p>
+    </remark>
+    <p>
+      Our goal is to be able to determine the various fundamental spaces of a matrix in an efficient manner. More specifically, we want to be able to compute bases for these spaces, and compute their dimension. Our first example is elementary enough to allow us to do this essentially by inspection. 
+    </p>
+    <example xml:id="eg_fund_spaces_elem">
+      <title>Fundamental spaces: elementary example</title>
+      <statement>
+        <p>
+          Provide bases and compute the dimension of the three fundamental spaces of 
+          <me>A=\begin{amatrix}[rrr]
+          1 \amp 2\amp 3 \\
+          1 \amp 2\amp 3 
+          \end{amatrix}
+          </me>.  
+        </p>
+      </statement>
+        <solution>
+          <p>
+        By definition, we have 
+        <md>
+          <mrow>\NS A=\{\boldx\in \R^3\colon A\boldx=\boldzero\}\amp \subseteq \R^3 \amp </mrow>
+          <mrow>\RS A=\Span\{(1,2,3),(1,2,3)\} \amp\subseteq \R^3 </mrow>
+          <mrow>\CS A=\Span\{(1,1),(2,2),(3,3)\}\amp \subseteq \R^2 </mrow>
+        </md>.
+        We see easily by inspection that 
+        <me>
+          \RS A=\Span\{(1,2,3),(1,2,3)\}=\Span\{(1,2,3)\}
+        </me>,
+        a line in <m>\R^3</m> passing through the origin, 
+        and 
+        <me>
+          \CS A=\Span\{(1,1),(2,2),(3,3)\}=\Span\{(1,1)\}
+        </me>,
+        a line in <m>\R^2</m> passing through the origin. Since the sets <m>B_1=\{(1,2,3)\}</m> and <m>B_2=\{(1,1)\}</m> are each linearly independent, they are clearly bases for their spans <m>\RS A </m> and <m>\CS A</m>, respectively. It follows that <m>\dim \RS A=\dim \CS A=1</m>. 
+      </p>
+      <p>
+        Next, by definition <m>\NS A</m> is the set of vectors  <m>\boldx=(x_1,x_2,x_3)\in \R^3</m> satisfying 
+        <me>
+          A\boldx=\begin{bmatrix}
+          x_1+2x_2+3x_3\\
+          x_1+2x_2+3x_3
+          \end{bmatrix}
+          =\begin{bmatrix}
+          0 \\
+          0
+          \end{bmatrix}
+        </me>,
+        or equivalently, the solutions to the linear equation
+        <m>
+          x_1+2x_2+3x_3=0
+        </m>,
+        a plane in <m>\R^3</m> passing through the origin. 
+        Using <xref ref="proc_solveSystem"/> we derive the parametric description 
+        <md>
+          <mrow> \NS A\amp=\{(-(2s+3t),s,t)\colon s,t\in \R\}</mrow>
+          <mrow> \amp =\{s(-2,1,0),+t(-3,0,1)\colon s,t\in \R\} </mrow>
+        </md>,
+        from which we see that 
+        <me>
+          \NS A=\Span\{(-2,1,0),(-3,0,1)\}
+        </me>.
+        Since <m>B_3=\{(-2,1,0),(-3,0,1)\}</m> is linearly independent and spans <m>\NS A</m>, it is a basis for <m>\NS A</m>. We conclude <m>\dim \NS A=2</m>. 
+        </p>
+        </solution>
+    </example>
+    <p>
+      The various fundamental spaces computed in <xref ref="eg_fund_spaces_elem"/> are represented in <xref ref="fig_fund_spaces_elem"/>. Note that separate graphs are presented for <m>\NS A</m> and <m>\RS A</m>, which live in <m>\R^3</m>, and <m>\CS A</m>, which lives in <m>\R^2</m>. 
+    </p>
+    <figure xml:id="fig_fund_spaces_elem">
+      <caption>Fundamental spaces of <m>A=\begin{bmatrix}1\amp 2\amp 3\\ 1\amp 2\amp 3\end{bmatrix}</m></caption>
+      <sidebyside widths="50% 50%">
+        <figure xml:id="fig_fund_spaces_nullrow">
+          <caption><m>\NS A, \RS A\subseteq \R^3</m></caption>
+            
+            <interactive xml:id="geogebra_null_row" platform="geogebra" width="100%" aspect="4:3">
+              <slate surface="geogebra" material="jrcmzgwd" aspect="4:3" material-width="800">
+              <!-- enableLabelDrags(false); -->
+              <!-- setCoordSystem(-10, 10, -10, 10,-3,5,false); -->
+              </slate>
+            </interactive>
+        </figure>
+        <figure xml:id="fig_fund_spaces_col">
+          <caption><m>\CS A\subseteq \R^2</m></caption>
+          
+          <interactive xml:id="geogebra_col" platform="geogebra" width="100%" aspect="4:3">
+            <slate surface="geogebra" material="davmcjvd" aspect="4:3">
+              setAxisSteps(1, 1, 1, 1);
+              setCoordSystem(-2, 2, -2, 2);
+              <!-- enableShiftDragZoom(false); -->
+              </slate>
+           </interactive>
+        </figure>
+      </sidebyside>
+    </figure>
+    <p>
+      The null space of a matrix <m>A</m> has an obvious connection with systems of linear equations, it being the set of solutions to the homogeneous linear system represented by <m>A\boldx=\boldzero</m>. The next theorem provides an interpretation of the column space of <m>A</m> in terms of linear systems.   
+    </p>
+    <theorem xml:id="th_col_space">
+      <title>Column space and linear systems</title>
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>m\times n</m> matrix, and let <m>\boldb\in \R^m</m>. The following statements are equivalent. 
+          <ol>
+            <li>
+              <p>
+                <m>\boldb\in \CS A</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                There exists <m>\boldx\in \R^n</m> such that <m>\boldb=A\boldx</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The linear system <m>A\boldx=\boldb</m> is consistent. 
+              </p>
+            </li>
+          </ol>
+          As a consequence, we have xre
+          <mdn>
+            <mrow xml:id="eq_col_im">\CS A \amp =\{\boldb\in \R^m \colon \boldb=A\boldx \text{ for some } \boldx\in \R^n\}</mrow>
+            <mrow xml:id="eq_col_consistent"> \amp = \{\boldb\in \R^m\colon \text{ the linear system } A\boldx=\boldb \text{ is consistent}\}</mrow>
+          </mdn>.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Statements (2) and (3) are equivalent by virtue of the definition of a consistent system. Statements (1) and (2) are equivalent thanks to the column method of matrix multiplication. Indeed, letting <m>\bolda_1, \bolda_2,\dots, \bolda_n\in \R^m</m> be the columns of <m>A</m>, so that 
+          <me>
+            A=\begin{bmatrix}
+            \vert \amp \vert \amp \amp \vert \\
+            \bolda_1\amp \bolda_2\amp \cdots \amp \bolda_n\\
+            \vert \amp \vert \amp \amp \vert
+            \end{bmatrix}
+          </me>,
+          we have 
+          <md>
+            <mrow>\boldb\in \CS A \amp \iff \boldb=c_1\bolda_1+c_2\bolda_2+\cdots +c_n\bolda_n \text{ for some } c_i\in \R \amp (\text{def.})</mrow>
+            <mrow> \amp \iff \boldb=A\boldx, \text{ where } \boldx=(c_1,c_2,\dots, c_n)\in \R^n \amp <xref ref="th_column_method" text="global"/></mrow>
+          </md>.
+          The set equalities <xref first="eq_col_im" last="eq_col_consistent"/> follow immediately from the equivalence of statements (1)-(3). 
+        </p>
+      </proof>
+    </theorem>
+    <remark>
+      <title>What about the row space?</title>
+      <p>
+        You might be wondering why we give the row space of a matrix such short shrift here. As it turns out, the null space and column space of a matrix will be of the most importance to us algorithmically, with row space playing more of a supporting role of convenience. That said, as we will be able to show once we know more about inner products, the row space of a matrix <m>A</m> also has a connection with linear systems associated to <m>A</m>: namely, it is the <em>orthogonal complement</em> of the null space of <m>A</m>.   
+      </p>
+    </remark>
+    <p>
+      For more matrices more complicated than the one in <xref ref="eg_fund_spaces"/>, the key to computing the various fundamental spaces lies with Gaussian elimination. Our first theorem lays out how exactly this procedure affects the fundamental spaces of a matrix. 
+    </p>
+    <p>
+      The next theorem indicates how row reduction affects fundamental spaces.
+    </p>
+    <theorem xml:id="th_fundspaces_rowreduce">
+      <title>Fundamental spaces and row operations</title>
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>m\times n</m> matrix, and suppose <m>A</m> is row equivalent to <m>B</m>. The fundamental spaces of <m>A</m> and <m>B</m> are related as follows. 
+          <ol>
+            <li>
+              <p>
+                <m>\NS A=\NS B</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\RS A=\RS B</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                In general <m>\CS A </m> is not equal to <m>\CS B</m>. However, we do have 
+                <me>
+                  \dim \CS A=\dim \CS B
+                </me>.
+                In fact, letting <m>\bolda_i, \boldb_i\in \R^m</m> be the columns of <m>A</m> and <m>B</m>, respectively, the columns <m>\bolda_{i_1}, \bolda_{i_2},\dots, \bolda_{i_r}</m> form a basis of <m>\CS A</m> if and only if the columns <m>\boldb_{i_1}, \boldb_{i_2},\dots, \boldb_{i_r}</m> form a basis of <m>\CS B</m>.
+              </p>
+            </li>
+          </ol>
+          </p>
+      </statement>
+      <proof>
+        <p>
+          Assume that <m>A</m> is row equivalent to <m>B</m>. Using <xref ref="cor_row_equivalence_invertibility"/>, we see that this means there is an invertible matrix <m>Q</m> such that <m>B=QA</m>, and hence also <m>A=Q^{-1}B</m>. We will make use of this matrix <m>Q</m> below.
+          <ol>
+            <li>
+          <p>
+            The fact that <m>\NS A=\NS B</m> is a consequence of <xref ref="s_systems_th_rowops"/>, since if <m>A</m> is row equivalent to <m>B</m>, then so are the linear systems with augmented matrices <m>[A\vert\boldzero]</m> and <m>[B\vert\boldzero]</m>. 
+          </p>
+        </li>
+        <li>
+          <p>
+            First we show that <m>\RS B\subseteq \RS A</m>. Since <m>\RS B</m> is defined as the span of the rows of <m>B</m>, by <xref ref="th_span"/> it is enough to show that each row of <m>B</m> is an element of <m>\RS A</m>.  For all <m>1\leq i\leq m</m>, let <m>\bolda_i, \boldb_i, \boldq_i</m> denote the <m>i</m>th rows of <m>A</m>, <m>B</m>, and <m>Q</m>, respectively, treated as row vectors.   Applying <xref ref="th_row_method"/> to the matrix product <m>B=QA</m>, we have <m>\underset{1\times n}{\boldb_i}=\underset{1\times n}{\boldq_i} A</m> for all <m>1\leq i\leq m</m>. Furthermore, using <xref ref="th_row_method"/> again, the row vector <m>\underset{1\times n}{\boldb_i}=\underset{1\times n}{\boldq_i} A</m> is itself a linear combination of the rows <m>\bolda_i</m>of <m>A</m>. By definition of row space, this means <m>\boldb_i\in \RS A</m> for all <m>1\leq i\leq m</m>, and hence <m>\boldr_i\in\RS A</m>, as desired.
+          </p>
+          <p>
+            It remains to show that <m>\RS A\subseteq \RS B</m>. But this follows using the same argument as above, using the fact that <m>A=Q^{-1}B</m>: <ie/>, by swapping the roles of <m>A</m> and <m>B</m>, and replacing <m>Q</m> with <m>Q^{-1}</m>. 
+          </p>
+        </li>
+        <li>
+          <p>
+            We now let <m>\bolda_j, \boldb_j</m> be the columns of <m>A</m> and <m>B</m>, respectively, where <m>1\leq j\leq n</m>. Since <m>\CS A=\Span\{\bolda_1,\bolda_2,\dots, \bolda_n\}</m>, by <xref ref="th_basis_contract_expand"/> there is a subset of columns that forms a basis of <m>\CS A</m>. Let <m>S=\{\bolda_{i_1}, \bolda_{i_2},\dots, \bolda_{i_r}\}</m> be any such a basis, so that <m>\dim \CS A=r</m>. We claim that the corresponding set of columns of <m>S'=\{\boldb_{i_1},\boldb_{i_2},\dots, \boldb_{i_r}\}</m> is a basis of <m>\CS B</m>, in which case <m>\dim \CS B=\dim \CS A=r</m>. To do so, we will use <xref ref="th_basis_equivalence"/>: in more detail, we will show that given any <m>\boldw\in \CS B</m>, we can write
+            <me>
+              \boldw=c_{i_1}\boldb_{i_1}+c_{i_2}\boldb_{i_2}+\cdots +c_{i_r}\boldb_{i_r}
+            </me>,
+            in a unique way. Indeed, we have 
+            <md>
+              <mrow>\boldw\in \CS B \amp \iff \boldw\in \CS QA \amp (B=QA)</mrow>
+              <mrow> \amp \iff \boldw=QA\boldx \text{ for some } \boldx\in \R^n</mrow>
+              <mrow> \amp \iff Q^{-1}\boldw=A\boldx \text{ for some } \boldx\in \R^n</mrow>
+              <mrow> \amp \iff Q^{-1}\boldw\in \CS A</mrow>
+              <mrow> \amp \iff Q^{-1}\boldw=c_{i_1}\bolda_{i_1}+\cdots +c_{i_r}\bolda_{i_r}</mrow>
+            </md>
+            for a unique <m>r</m>-tuple <m>(c_{i_1}, c_{i_2},\dots, c_{i_r})</m>. Here we have used the fact that the subset <m>\{\bolda_{i_1},\bolda_{i_2},\dots, \bolda_{i_r}\}</m> is a basis of <m>\CS A</m>. But this means 
+            <md>
+              <mrow>\boldw \amp =Q(c_{i_1}\bolda_{i_1}+\cdots +c_{i_r}\bolda_{i_r})</mrow>
+              <mrow> \amp = c_{i_1}Q\bolda_{i_1}+\cdots +c_{i_r}Q\bolda_{i_r}</mrow>
+              <mrow> \amp =c_{i_1}\boldb_{i_1}+\cdots +c_{i_r}\boldb_{i_r}</mrow>
+            </md>, 
+            since <m>\boldb_{i}=Q\bolda_i</m> for all <m>1\leq i\leq n</m> by <xref ref="th_column_method"/>. Furthermore, the coefficients in the linear combination
+            <me>
+              \boldw=c_{i_1}\boldb_{i_1}+\cdots +c_{i_r}\boldb_{i_r}
+            </me>
+            are unique, since our work above shows that 
+            <me>
+              \boldw=c_{i_1}\boldb_{i_1}+\cdots +c_{i_r}\boldb_{i_r} \iff Q^{-1}\boldw=c_{i_1}\bolda_{i_1}+\cdots +c_{i_r}\bolda_{i_r}
+            </me>.
+          </p>
+        </li>
+       </ol>
+    </p>
+  
+    </proof>
+    </theorem>
+    <remark>
+      <title>Column space and row reduction</title>
+      <p>
+        Suppose the matrices <m>A</m> and <m>B</m> are row equivalent. Though it is true that their column spaces are of equal dimension, they will not in general be equal as sets. That is, we will often have <m>\CS A\ne \CS B</m>. It is useful to have simple examples of this phenomenon at the ready. <xref ref="eg_colspace_change"/> provides one such example. 
+      </p>
+    </remark>
+    
+<example xml:id="eg_colspace_change">
+  <title>Column space and row reduction</title>
+  <p>
+    The matrix 
+    <md>
+      <mrow>A \amp = \begin{bmatrix}1\amp 1\\ 1\amp 1 \end{bmatrix}</mrow>
+    </md>
+    row reduces to the matrix 
+    <md>
+      <mrow>U \amp = \begin{bmatrix}1\amp 1\\ 0 \amp 0\end{bmatrix}</mrow>
+    </md>
+    in row echelon form. By inspection we see that 
+    <md>
+      <mrow>\CS A \amp =\Span\{(1,1)\}=\{(t,t)\colon t\in \R\}</mrow>
+      <mrow>\CS U \amp =\Span\{(1,0)\}=\{(t,0)\colon t\in \R\}</mrow>
+    </md>.
+    It is clear algebraically from the two set descriptions that <m>\CS A\ne \CS U</m>. Geometrically, the two spaces are two distinct lines in <m>\R^2</m> passing through the origin: <m>\CS A</m> is the line defined by the equation <m>y=x</m> and <m>\CS U</m> is the <m>x</m>-axis. 
+  </p>
+  <p>
+    By contrast consider the matrix 
+    <me>
+      A=\begin{bmatrix}1\amp 1\\ 0\amp 1 \end{bmatrix}
+    </me>,
+    which is row equivalent to 
+    <me>
+      U=\begin{bmatrix}
+      1\amp 0 \\
+      0\amp 1
+      \end{bmatrix}      
+    </me>.
+    In this case we have 
+    <md>
+      <mrow>\CS A \amp =\Span\{(1,0),(1,1)\}=\R^2</mrow>
+      <mrow>\CS U \amp =\Span\{(1,0),(0,1)\}=\R^2</mrow>
+    </md>,
+    and thus <m>\CS A=\CS U</m>. (See <xref ref="ex_col_inv"/> for a more general take on this example.)
+  </p>
+</example>
+    
+
+<p>
+  Using <xref ref="th_fundspaces_rowreduce"/>, to find bases of the fundamental spaces of a matrix, we can first row reduce to a matrix <m>U</m> in row echelon form. Some work still needs to be done, however, in determining bases for the fundamental spaces of matrices in row echelon form. We state our results in the form of a procedure, and provide a proof of its validity.
+</p>
+<algorithm xml:id="proc_fund_spaces">
+  <title>Fundamental spaces</title>
+  <statement>
+    <p>
+      To compute bases for the fundamental spaces of an <m>m\times n</m> matrix <m>A</m>, proceed as follows.
+    <ol>
+      <li>
+        <p>
+          Row reduce <m>A</m> to a matrix <m>U</m> in row echelon form.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>t_1,t_2,\dots, t_r</m> be the free parameters appearing in the parametric description of solutions to the linear system <m>U\boldx=\boldzero</m>, and for all <m>1\leq i\leq r</m>, let <m>\boldv_i</m> be the element of <m>\NS A=\NS U</m> obtained by setting <m>t_i=1</m> and <m>t_j=0</m> for all <m>j\ne i</m>. The set
+          <me>
+            B=\{\boldv_1,\boldv_2,\dots, \boldv_r\}
+          </me>
+          is a basis of <m>\NS A</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The set of nonzero rows of <m>U</m> is a basis for <m>\RS A</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>\bolda_i, \boldu_i</m> be the columns of <m>A</m> and <m>U</m>, respectively, and let <m>\boldu_{i_1},\boldu_{i_2},\dots, \boldu_{i_s}</m> be the columns of <m>U</m> that contain a leading one. The set 
+          <me>\{\bolda_{i_1}, \bolda_{i_2},\dots, \bolda_{i_s}\}</me>
+          consisting of the corresponding columns of <m>A</m> is a basis of <m>\CS A</m>.
+        </p>
+      </li>
+    </ol>
+  </p>
+  </statement>
+  <proof>
+    <p>
+      <case>
+        <title>Null space</title>
+          <p>
+            We must show that the vectors <m>\boldv_j</m> described form a basis for <m>\NS A=\NS U</m>. Let <m>x_1,x_2,\dots, x_n</m> be the unknowns of the linear system corresponding to <m>U\boldx=\boldzero</m>, and let <m>x_{i_1},x_{i_2},\dots, x_{i_r}</m> be the free variables among these unknowns. Thus <m>\boldv_j</m> is the vector obtained from the parametric description of the solutions to <m>U\boldx=\boldzero</m> obtained by setting <m>x_{i_j}=1</m> and <m>x_{i_k}=0</m> for all <m>k\ne j</m>. Suppose we have
+            <me>
+              a_1\boldv_1+a_2\boldv_2+\cdots +a_r\boldv_r=\boldzero
+            </me>.
+            For each <m>1\leq j\leq r</m>, since <m>\boldv_j</m> is the only vector with a nonzero entry in the <m>i_j</m>-th term, we must have <m>a_j=0</m>. This proves that the set <m>B=\{\boldv_1,\boldv_2,\dots, \boldv_r\}</m> is linearly independent.  
+          </p>
+          <p>
+            We now show that <m>\Span B=\NS A</m>. Assume <m>\boldv\in \NS U</m>, and let <m>t_{i_j}</m> be the <m>i_j</m>-th entry of <m>\boldv</m> for each <m>1\leq j\leq r</m>. In other words, these are the entries of <m>\boldv</m> corresponding to the free variables of the system. We claim that 
+            <men xml:id="eq_null_space_basis">
+              \boldv=t_{i_1}\boldv_1+t_{i_2}\boldv_2+\cdots +t_{i_r}\boldv_r
+            </men>,
+            from which it follows that <m>\Span B=\NS U</m>. To see why this is true, let <m>\boldw</m> be  
+            the right side of <xref ref="eq_null_space_basis"/>. Observe first that <m>\boldw</m> is an element of <m>\NS U</m> (since <m>\boldv_i\in \NS U</m> for all <m>i</m>), and thus a solution to <m>U\boldx=\boldzero</m>. Furthermore, arguing as above, we see that the <m>i_k</m>-th entry of <m>\boldw</m> is equal to <m>t_{i_k}</m> for all <m>1\leq k\leq r</m>.  But according to <xref ref="proc_solveSystem"/>, there is a <em>unique</em> solution corresponding to each choice of assignment of the free variables <m>x_{i_k}</m>. Since <m>\boldv</m> and <m>\boldw</m> are both solutions to <m>A\boldx=\boldzero</m> and have the same free variable entries, we conclude that <m>\boldv=\boldw</m>, as desired. 
+          </p>
+        </case>
+        <case>
+          <title>Row space</title>
+          <p>
+            Since <m>\RS A=\RS U</m> by <xref ref="th_fundspaces_rowreduce"/>, it suffices to show that the that the nonzero rows of <m>U</m> form a basis of <m>\RS U</m>. Clearly the nonzero rows span <m>\RS U</m>, since any linear combination of all the rows of <m>U</m> can be expressed as a linear combination of the nonzero rows. Furthermore, since <m>U</m> is in row echelon form, the staircase pattern of the leading ones appearing in the nonzero rows assures that these row vectors are linearly independent.
+          </p>
+        </case>
+        <case>
+          <title>Column space</title>
+
+          <p>
+        Let <m>\boldu_{i_1},\dots, \boldu_{i_s}</m> be the columns of <m>U</m> with leading ones, and let
+        <m>\boldu_{j_1}, \boldu_{j_2}, \dots, \boldu_{j_r}</m> be the columns without leading ones.
+        To prove the <m>\boldu_{i_k}</m> form a basis for <m>\CS U</m>, we will show that given any
+        <m>\boldy\in \CS U</m> there is a <em>unique</em>
+        choice of scalars <m>c_1, c_2,\dots,
+        c_r</m> such that <m>c_1\boldu_{i_1}+\cdots +c_s\boldu_{i_s}=\boldy</m>.
+        (Recall that the uniqueness of this choice implies linear independence by <xref ref="th_basis_equivalence"/>.) 
+        Given <m>\boldy\in \CS U</m>,
+        we can find <m>\boldx\in\R^n</m> such that <m>U\boldx=\boldy</m> (<xref ref="th_col_space" text="global"/>),
+        which means the linear system with augmented matrix <m>[\ U\ \vert \ \boldy]</m> is consistent.
+        Using our Gaussian elimination theory (specifically, <xref ref="proc_solveSystem"/>),
+        we know that the solutions
+        <m>\boldx=(x_1,x_2,\dots,
+        x_n)</m> to this system are in 1-1 correspondence with choices for the free variables <m>x_{j_1}=t_{j_1}, x_{j_2}=t_{j_2}, \dots,
+        x_{j_r}=t_{j_r}</m>.
+        (Remember that the columns
+        <m>\boldw_{j_k}</m> without leading ones correspond to the free variables.)
+        In particular, there is a unique solution to
+        <m>U\boldx=\boldy</m> where we set all the free variables equal to 0.
+        Using <xref ref="th_column_method"/>, we see that this gives rise to 
+        a unique linear combination the columns
+        <m>\boldu_{i_k}</m> with leading ones equal to <m>\boldy</m>.
+        This proves the claim, and shows that the columns with leading ones form a basis for <m>\CS U</m>. Lastly, by <xref ref="th_fundspaces_rowreduce"/>, the corresponding columns form a basis for <m>\CS A</m>. 
+    </p>
+        </case>
+    </p>
+  </proof>
+</algorithm>
+<example xml:id="eg_fund_spaces">
+  <title>Fundamental spaces</title>
+  <statement>
+    <p>
+      Compute bases and dimensions for the three fundamental spaces of 
+      <me>
+        A=\begin{amatrix}[rrrrr]
+        1 \amp 3 \amp 1 \amp -3 \amp 2 \\
+        0 \amp 1 \amp 1 \amp -3 \amp 0 \\
+        -1 \amp -2 \amp 0 \amp 0 \amp -1 \\
+        1 \amp 2 \amp 0 \amp 0 \amp 2      
+        \end{amatrix}
+      </me>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      The matrix <m>A</m> row reduces as 
+      <me>
+        A\xrightarrow{\text{row ops.}} U=\begin{amatrix}[rrrrr]
+        \boxed{1} \amp 3 \amp 1 \amp -3 \amp 2 \\
+        0 \amp \boxed{1} \amp 1 \amp -3 \amp 0 \\
+        0 \amp 0 \amp 0 \amp 0 \amp \boxed{1} \\
+        0 \amp 0 \amp 0 \amp 0 \amp 0
+        \end{amatrix}
+      </me>.
+      To compute <m>\NS A=\NS U</m>, we first give a parametric description of the solutions to the linear system represented by <m>U\boldx=\boldzero</m>, following <xref ref="proc_solveSystem"/>. We conclude 
+      <me>
+        \NS A=\{(2s-6t,-s+3t ,s,t,0)\colon s,t\in \R\}
+      </me>.
+      From this parametric description we extract by inspection the spanning set 
+      <me>
+        B_1=\{\boldx_1=(2,-1,1,0,0), \boldv_2=(-6,3,0,1,0)\}
+      </me>.
+      Since <m>B_1</m> is easily seen to be linearly independent, we conclude it is a basis. (Alternatively, <m>B_1</m> is the basis one obtains using <xref ref="proc_fund_spaces"/>. That is, <m>\boldv_1</m> is the result of assigning <m>s=1,t=0</m> in our parametric description, and <m>\boldv_2</m> is the result of assigning <m>s=0</m>, <m>t=1</m>.) Since <m>\abs{B_1}=2</m>, we have <m>\dim \NS A=2</m>. 
+    </p>
+    <p>
+      According to <xref ref="proc_fund_spaces"/>, the nonzero rows of <m>U</m> form a basis of <m>\RS A</m>. Thus <m>B_2=\{(1,3,1-3,2),(0,1,1-3,0),(0,0,0,0,1)\}</m> is a basis of <m>\RS A</m>, and <m>\dim \RS A=3</m>. 
+    </p>
+    <p>
+      Lastly, since the first, second and fifth columns of <m>U</m> contain leading ones, the corresponding columns of <m>A</m> form a basis of <m>\CS A</m>. Thus <m>B_{3}=\{(1,0,-1,1),(3,1,-2,2),(2,0,-1,2)\}</m> is a basis of <m>\CS A</m>, and <m>\dim \CS A=3</m>. 
+    </p>
+  </solution>
+</example>
+<p>
+  Given <m>A</m> and <m>U</m> as in <xref ref="proc_fund_spaces"/>, let <m>r</m> be the number columns of <m>U</m> without leading ones, and let <m>s</m> be the number of columns of <m>U</m> with leading ones: <ie/>, <m>r</m> is the number of free variables the linear system <m>U\boldx=\boldzero</m>, and <m>s</m> is the number of leading variables. It follows from the bases descriptions in <xref ref="proc_fund_spaces"/> that 
+  <me>
+    \dim \NS A=r
+  </me>,
+  and 
+  <me>
+    \dim \CS A=\dim \RS A=s
+  </me>.
+  Furthermore, since <m>U</m> has <m>n</m>, <m>r</m> of which do not have a leading one, and the other <m>s</m> of which do contain leading a leading one, we have <m>n=r+s</m>. It follows that 
+  <me>
+  n=\dim\NS A+\dim \CS A
+  </me>.
+  We have just proved the rank-nullity theorem for matrix, the name of which derives from the following definition. 
+</p>
+<definition xml:id="d_rank_nullity_matrix">
+  <title>Rank and nullity of matrix</title>
+  <idx><h>rank</h><h>of a matrix</h></idx>
+  <idx><h>nullity</h><h>of a matrix</h></idx>
+  <notation>
+    <usage><m>\rank A</m></usage>
+    <description>the rank of a matrix <m>A</m></description>
+  </notation>
+  <notation>
+    <usage><m>\nullity A</m></usage>
+    <description>the nullity of a matrix <m>A</m></description>
+  </notation>
+  <statement>
+    <p>
+      Let <m>A</m> be an <m>m\times n</m> matrix. The <term>nullity</term> of <m>A</m>, denoted <m>\nullity A</m>, is defined as the dimension of the null space of <m>A</m>; the <term>rank</term> of <m>A</m>, denoted <m>\rank A</m>, is defined as the dimension of the column space of <m>A</m>. In other words, we have 
+      <md>
+        <mrow>\nullity A \amp =\dim \NS A \amp \rank A\amp =\dim \CS A</mrow>
+      </md>.
+    </p>
+  </statement>
+</definition>
+
+<corollary xml:id="th_rank_nullity_matrix">
+  <title>Rank-nullity for matrices</title>
+  <statement>
+    <p>
+      Let <m>A</m> be an <m>m\times n</m> matrix. 
+      <ol>
+        <li>
+          <title>Column and row space dimension</title>
+         <p>
+          <men xml:id="eq_col_row">\dim \CS A=\dim \RS A</men>.
+         </p>
+        </li>
+        <li>
+          <title>Rank-nullity</title>
+          <p>
+            <mdn>
+              <mrow xml:id="eq_rank_nullity_rank">n \amp= \nullity A+\rank A </mrow>
+              <mrow xml:id="eq_rank_nullity_col"> \amp =\dim\NS A+\dim\CS A </mrow>
+              <mrow xml:id="eq_rank_nullity_row"> \amp =\dim\NS A+\dim\RS A </mrow>
+            </mdn>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+</corollary>
+  <example xml:id="eg_rank_nullity_eg">
+    <title>Rank-nullity</title>
+    <statement>
+      <p>
+        Verify the rank-nullity theorem for matrices for the matrix 
+        <me>
+          A=\begin{amatrix}[rrrrr]
+          1 \amp 3 \amp 1 \amp -3 \amp 2 \\
+          0 \amp 1 \amp 1 \amp -3 \amp 0 \\
+          -1 \amp -2 \amp 0 \amp 0 \amp -1 \\
+          1 \amp 2 \amp 0 \amp 0 \amp 2      
+          \end{amatrix}
+        </me>
+        of <xref ref="eg_fund_spaces"/>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We saw that <m>\dim \RS A=\dim \CS A=3</m>, and thus that that the row and columns spaces have equal dimension, as predicted by the rank-nullity theorem. Furthermore, we saw that <m>\NS A=2</m>. It follows that  
+        <me>\dim \NS A+\dim\CS A=2+3=5</me>, the number of columns of <m>A</m>, as predicted by the rank-nullity theorem for matrices. 
+      </p>
+    </solution>
+  </example>
+  <example xml:id="eg_rank_nullity">
+    <title>Using the rank-nullity theorem</title>
+    <statement>
+      <p>
+        Suppose <m>A</m> is a <m>3\times 7</m> matrix, and that <m>\nullity A=4</m>. Show that <m>\CS A=\R^3</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        By the rank-nullity theorem we have 
+        <md>
+          <mrow>\dim\CS A \amp =7-\dim \NS A </mrow>
+          <mrow> \amp =7-4</mrow>
+          <mrow> \amp = 3</mrow>
+        </md>.
+        Since <m>\CS A\subseteq \R^3</m> and <m>\dim \CS A=\dim \R^3</m>, we conclude by <xref ref="cor_dimension_subspace"/> that <m>\CS A=\R^3</m>, as desired. 
+      </p>
+    </solution>
+  </example>
+    <example xml:id="ss_vid_eg_fund_space">
+      <title>Video example: fundamental spaces</title>
+      <figure xml:id="fig_vid_fund_space">
+      <caption>Video: computing fundamental spaces</caption>
+      <video xml:id="vid_fund_space" youtube="Ua3RDLgVoTg" />
+      </figure>
+    </example>
+    
+  </subsection>
+  <subsection xml:id="ss_expand_contract">
+    <title>Contracting and expanding to bases</title>
+    <p>
+      Thanks to <xref ref="th_basis_dimension"/> we know that spanning sets can be contracted to bases, and linearly independent sets can be extended to bases; and we have already seen a few instances where this result has been put to good use. However, neither the theorem nor its proof provide a practical means of performing this contraction or extension. We would like a systematic way of determining which vectors to throw out (when contracting), or which vectors to chuck in (when extending). When dealing with subspaces of <m>\R^n</m>, we can adapt <xref ref="proc_fund_spaces"/> to our needs.
+    </p>
+    <algorithm xml:id="proc_contract_extend">
+      <title>Contracting and extending to bases of <m>\R^n</m></title>
+      <statement>
+        <p>
+          Let <m>S=\{\boldv_1, \boldv_2,\dots, \boldv_r\}\subseteq \R^n</m>.
+        </p>
+        <dl>
+          <li>
+            <title>Contract to a basis</title>
+            <p>
+              Let <m>W=\Span S</m>. To find a subset of <m>S</m> that forms a basis of <m>W</m>, proceed as follows.
+            </p>
+            <ol>
+              <li>
+                <p>
+                  Let <m>A</m> be the <m>n\times r</m> matrix whose <m>j</m>-th column is given by <m>\boldv_j</m> for all <m>1\leq j\leq r</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Use the column space procedure (<xref ref="proc_fund_spaces" text="global"/>) to compute a basis <m>B</m> of <m>\CS A</m> consisting of columns of <m>A</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  The subset <m>B\subseteq S</m> is a basis for <m>W=\Span S</m>.
+                </p>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <title>Extend to a basis</title>
+            <p>
+              Assume <m>S</m> is linearly independent. To extend <m>S</m> to a basis <m>B</m> of <m>\R^n</m> proceed as follows.
+            </p>
+            <ol>
+              <li>
+                <p>
+                  Let <m>A</m> be the <m>n\times (r+n)</m> matrix whose first <m>r</m> columns are the elements of <m>S</m>, and whose remaining <m>n</m> columns consist of <m>\bolde_1, \bolde_2, \dots, \bolde_n</m>, the standard basis elements of <m>\R^n</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Use the column space procedure (<xref ref="proc_fund_spaces" text="global"/>) to compute a basis <m>B</m> of <m>\CS A</m>, chosen from among the original columns of <m>A</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  The set <m>B</m> is a basis for <m>\R^n</m> containing <m>S</m>.
+                </p>
+              </li>
+            </ol>
+          </li>
+        </dl>
+      </statement>
+      <proof>
+        <p>
+          Let's see why in both cases the procedure produces a basis of <m>\R^n</m> that is either a sub- or superset of <m>S</m>.
+        </p>
+        <case>
+          <title>Contracting to a basis</title>
+          <p>
+            By putting the vectors in as the columns of <m>A</m>, we assure that <m>W=\Span S=\CSD A</m>. The column space procedure produces a basis <m>B</m> of <m>\CS A</m> consisting of columns of <m>A</m>. Thus <m>B</m> is a basis of <m>W=\Span S=\CS A</m> and is a subset of the original spanning set <m>S</m>. 
+          </p>
+        </case>
+        <case>
+          <title>Extending to a basis</title>
+          <p>
+            Since <m>\CS A</m> contains <m>\bolde_j</m> for all <m>1\leq j\leq n</m>, we have <m>\CS A=\R^n</m>. Thus <m>B</m> is a basis for <m>\R^n</m>. Since the first <m>r</m> columns of <m>A</m> are linearly independent (they are the elements of <m>S</m>), when we row reduce <m>A</m> to a matrix <m>U</m> in row echelon form, the first <m>r</m> columns of <m>U</m> will contain leading ones. (To see this, imagine row reducing the <m>n\times r</m> submatrix <m>A'</m> consisting of the first <m>r</m> columns of <m>A</m> to a row echelon matrix <m>U'</m>. Since these columns are linearly independent, they already form a basis for <m>\CS A'</m>. Thus the corresponding colmns of <m>U'</m> must all have leading ones. )
+            It follows that the first <m>r</m> columns of <m>A</m> are selected to be in the basis <m>B</m>, and hence that <m>S\subseteq B</m>, as desired.
+          </p>
+        </case>
+      </proof>
+
+    </algorithm>
+    <example xml:id="ss_vid_eg_contract_basis">
+      <title>Video example: contracting to a basis</title>
+      <figure xml:id="fig_vid_contract_basis">
+      <caption>Video: contracting to a basis</caption>
+      <video xml:id="vid_contract_basis" youtube="ZjbqE8yR7aU" />
+      </figure>
+    </example>
+
+  </subsection>
+  <subsection xml:id="ss_fund_spaces_inv_th">
+    <title>Fundamental spaces and invertibility</title>
+    <p>
+      The language of fundamental spaces allows to enlarge our invertibility theorem yet again, bringing our tally to a whopping 14 equivalent statements. For most of the additional statements in this new theorem, it is easy to identify an earlier statement that they are equivalent to. For example, it is clear that <xref first="inv4_statement_nullspace"
+      last="inv4_statement_nullity">statements</xref> are equivalent to <xref ref="inv4_statement_trivial_sol"/>. Some of the theory from this section, as well as <xref ref="s_dimension"/> come to our aid to prove that <xref first="inv4_statement_cols" last="inv4_statement_rows">statements</xref> can be woven into our fabric of equivalences. We leave the details to the reader. 
+    </p> 
+     <theorem xml:id="th_invertibility_supersized">
+       <title>Invertibility theorem</title>
+       <statement>
+         <p>
+           Let <m>A</m> be an <m>n\times n</m> matrix.
+           The following statements are equivalent.
+         <ol cols="2">
+           <li xml:id="inv4_statement_def">
+             <p>
+               <m>A</m> is invertible.
+             </p>
+           </li>
+ 
+           <li xml:id="inv4_statement_unique_sol">
+             <p>
+               The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</me> has a <em>unique solution</em> for any <m>\boldb\in \R^n</m>.
+             </p>
+           </li>
+           <li xml:id="inv4_statement_exists_sol">
+             <p>
+               The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</me> has a solution for any <m>\boldb\in \R^n</m>.
+             </p>
+           </li>
+           <li xml:id="inv4_statement_trivial_sol">
+             <p>
+               The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldzero}</me> has a unique solution: namely, <m>\boldx=\boldzero_{n\times 1}</m>.
+             </p>
+           </li>
+           <li xml:id="inv4_statement_row_equiv">
+             <p>
+               <m>A</m> is row equivalent to <m>I_n</m>,
+               the <m>n\times n</m> identity matrix.
+             </p>
+           </li>
+           <li xml:id="inv4_statement_prod_elems">
+             <p>
+               <m>A</m> is a product of elementary matrices.
+             </p>
+           </li>
+           <li xml:id="inv4_statement_det">
+             <p>
+               <m>\det A\ne 0</m>.
+             </p>
+           </li>
+           <li xml:id="inv4_statement_nullspace">
+             <p>
+               <m>\NS A=\{\boldzero\}</m>
+             </p>
+           </li>
+           <li xml:id="inv4_statement_nullity">
+             <p>
+               <m>\nullity A=0</m>
+             </p>
+           </li>
+           <li xml:id="inv4_statement_rank">
+             <p>
+               <m>\rank A=n</m>
+             </p>
+           </li>
+           <li xml:id="inv4_statement_rowspace">
+             <p>
+               <m>\RS A=\R^n</m>
+             </p>
+           </li>
+           <li xml:id="inv4_statement_colspace">
+             <p>
+               <m>\CS A=\R^n</m>
+             </p>
+           </li>
+           <li xml:id="inv4_statement_cols">
+             <p>
+               Any of the following equivalent conditions about the set <m>S</m> of columns of <m>A</m> hold: <m>S</m> is a basis of <m>\R^n</m>; <m>S</m> spans <m>\R^n</m>; <m>S</m> is linearly independent.
+             </p>
+           </li>
+           <li xml:id="inv4_statement_rows">
+             <p>
+               Any of the following equivalent conditions about the set <m>S</m> of rows of <m>A</m> hold: <m>S</m> is a basis of <m>\R^n</m>; <m>S</m> spans <m>\R^n</m>; <m>S</m> is linearly independent.
+             </p>
+           </li>
+         </ol>
+       </p>
+       </statement>
+       <proof>
+        <p>
+          See <xref ref="ex_invertibility_supersized"/> for a roadmap for adding these new propositions to our list of equivalent statments of invertibility. 
+        </p>
+       </proof>
+     </theorem>
+  </subsection>
+  <xi:include href="./s_rank_nullity_ex.ptx"/>
+</section>

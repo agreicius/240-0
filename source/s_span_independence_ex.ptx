@@ -1,0 +1,127 @@
+<exercises xml:id="s_span_independence_ex">
+  <subexercises>
+    <title>WeBWork Exercises</title>
+    <exercise>
+      <!-- another similar problem: Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/2.2.62.pg -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/2.2.61.pg" />
+    </exercise>
+
+
+    <exercise>
+      <!-- several similar multiple questions from 2.3.45 to 2.3.52 -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/2.3.45.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- several similar multiple questions from 2.3.45 to 2.3.52 -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/2.3.46.pg" />
+    </exercise>
+
+    
+
+    <exercise>
+      <!-- linear independence of vectors -->
+      <webwork source="Library/Rochester/setLinearAlgebra9Dependence/ur_la_9_1b.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- span of matrices -->
+      <webwork source="Library/NAU/setLinearAlgebra/span.pg" />
+    </exercise>
+  </subexercises>
+  <exercisegroup>
+<introduction>
+<p>
+In each exercise, determine whether the given subset <m>S</m> of the vector space <m>V</m> is linearly independent. Justify your answer.
+</p>
+</introduction>
+<exercise>
+  <statement>
+    <p>
+      <m>V=\R^4</m>, <m>S=\{(3,8,7,-3), (1,5,3,-1), (2,-1,2,6), (4,2,6,4)\}</m>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <p>
+    <m>V=M_{22}</m>, <m>S=\left\{\begin{amatrix}[rr]1\amp 1\\1\amp -3\end{amatrix},
+      \begin{amatrix}[rr]1\amp -1\\1\amp -1\end{amatrix},
+      \begin{amatrix}[rr]2\amp 1 \\-1\amp -2\end{amatrix},
+      \begin{amatrix}[rr]0\amp 1\\1\amp -2\end{amatrix}   \right\}</m>
+  </p>
+</exercise>
+</exercisegroup>
+<exercise>
+  <statement>
+    <p>
+      Let <m>V=M_{22}</m> and let <m>S=\{ A_1, A_2, A_3\}</m>, where
+      <me>
+        A_1=\begin{bmatrix}1\amp 0\\ 1\amp c \end{bmatrix},  A_2=\begin{bmatrix}-1\amp 0\\ c\amp 1 \end{bmatrix},  A_3=\begin{bmatrix}2\amp 0\\ 1\amp 3 \end{bmatrix}
+      </me>.
+      Determine all values <m>c\in \R</m> for which <m>S</m> is linearly independent.
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Let <m>V=M_{22}</m>,
+      and define <m>A_1=\begin{bmatrix}1\amp 1\\1\amp 1 \end{bmatrix}</m>,
+      <m>A_2=\begin{bmatrix}0\amp 1\\1\amp 0 \end{bmatrix}</m>,
+      <m>A_3=\begin{bmatrix}1\amp 1\\ 1\amp 0 \end{bmatrix}</m>.
+    </p>
+    <ol>
+      <li>
+        <p>
+          Compute <m>W=\Span(\{A_1,A_2,A_3\})</m>,
+          identifying it as a certain <em>familiar</em> set of matrices.
+        </p>
+      </li>
+      <li>
+        <p>
+          Decide whether <m>S=\{A_1,A_2,A_3\}</m> is independent.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</exercise>
+<exercise xml:id="ex_linear_independence_arbitrary">
+  <statement>
+    <p>
+      Let <m>V</m> be a vector space, and let <m>S=\{\boldv_1, \boldv_2, \dots, \boldv_n\}</m> be a subset of distinct vectors. Assume <m>S</m> is linearly independent. Show that any subset <m>T\subseteq S</m> is linearly independent.
+    </p>
+  </statement>
+</exercise>
+<exercise xml:id="ex_span_independence_inveribility">
+  <title>Span, independence, and invertibility</title>
+
+  <statement>
+    <p>
+      In this exercise we identify elements of <m>V=\R^n</m> with <m>n\times 1</m> column vectors.
+    </p>
+    <p> Let <m>S=\{\boldv_1,\boldv_2,\dots, \boldv_n\}</m> be a subset of <m>\R^n</m>, and let <m>A</m> be the <m>n\times n</m> matrix whose <m>j</m>-th column is <m>\boldv_j</m>: <ie />,
+      <me>
+      A=\begin{bmatrix}\vert \amp \vert \amp \cdots \amp \vert\\ \boldv_1\amp \boldv_2\amp  \amp \boldv_n\\ \vert \amp \vert \amp \cdots \amp \vert \end{bmatrix}
+      </me>.
+    </p>
+    <ol>
+      <li>
+        <p>
+          Prove: <m>\Span S=\R^n</m> if and only if <m>A</m> is invertible.
+        </p>
+      </li>
+      <li>
+        <p>
+          Prove: <m>S</m> is linearly independent if and only if <m>A</m> is invertible.
+        </p>
+      </li>
+    </ol>
+  </statement>
+  <hint>
+    <p>
+      Use the column method (<xref ref="th_column_method"/>) and the invertibility theorem (<xref ref="th_invertibility_expanded"/>)
+    </p>
+  </hint>
+</exercise>
+
+</exercises>

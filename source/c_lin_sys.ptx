@@ -2,8 +2,6 @@
 
 <chapter xml:id="c_lin_sys" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Systems of linear equations</title>
-
-    <xi:include href="s_R-valued_tuples.ptx" />
     <xi:include  href="s_systems.ptx"/>
     <xi:include  href="s_ge.ptx"/>
     <xi:include  href="s_solving.ptx"/>
