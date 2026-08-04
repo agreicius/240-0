@@ -1,0 +1,740 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_subspace">
+  <title>Subspaces</title>
+  <introduction>
+    <p>
+      We return now to our main object of study: vector spaces. Our foray into the theory of matrices will prove to be useful in this regard in two ways: on the one hand, matrix spaces <m>M_{mn}</m> are themselves interesting examples of vector spaces; on the other hand, matrices serve as an essential computational tool for describing and investigating general vector spaces. 
+    </p>
+    <p>
+      In this section we will study <xref ref="d_subspace" text="custom">subspaces</xref>, which are special subsets of vector spaces that <em>respect</em> the defining structure of a vector spaces: namely, the two vector operations. <xref ref="d_subspace"/> makes precise what we mean here by <sq>respect</sq>. 
+    </p>
+    <p>
+      Subspaces arise naturally in any setting where vector spaces are at play, and are closely connected to solutions to linear systems. As we will see in <xref ref="th_subspace_vectorspace"/>, subspaces of vector spaces are themselves examples of vector spaces, furnishing us with yet more interesting examples of vector spaces. 
+    </p>
+  </introduction>
+  <subsection xml:id="ss_subspace">
+    <title>Definition of subspace</title>
+    <definition xml:id="d_subspace">
+      <title>Subspace</title>
+      <idx><h>subspace</h></idx>
+      <idx><h>vector space</h><h>subspace</h></idx>
+      <statement>
+        <p>
+          Let <m>V</m> be a vector space.
+          A subset <m>W\subseteq V</m> is a
+          <term>subspace</term> of <m>V</m> if the following conditions hold:
+        <ol marker="i">
+          <li xml:id="d_subspace_zero">
+            <title><m>W</m> contains the zero vector</title>
+            <p>
+              We have <m>\boldzero\in W</m>.
+            </p>
+          </li>
+          <li xml:id="d_subspace_add" >
+            <title><m>W</m> is closed under addition</title>
+            <p> For all <m>\boldv_1,\boldv_2\in V</m>, if <m>\boldv_1,\boldv_2\in W</m>, then <m>\boldv_1+\boldv_2\in W</m>. Using logical notation:
+            <me>
+            \boldv_1,\boldv_2\in W\implies \boldv_1+\boldv_2\in W
+            </me>.
+          </p>
+        </li>
+        <li xml:id="d_subspace_mult">
+          <title><m>W</m> is closed under scalar multiplication</title>
+          <p> For all <m>c\in \R</m> and <m>\boldv\in V</m>, if <m>\boldv\in W</m>, then <m>c\boldv\in W</m>. In logical notation:
+          <me>\boldv\in W\Rightarrow c\boldv\in W</me>.
+        </p>
+      </li>
+    </ol>
+    </p>
+  </statement>
+</definition>
+<example>
+  <statement>
+    <p>
+      Let <m>V=\R^2</m> and let
+      <me>W=\{(t,t)\in\R^2 \colon t\in\R\}
+      </me>.
+      Prove that <m>W</m> is a subspace.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      We must show properties (i)-(iii) hold for <m>W</m>.
+    <ol marker="i">
+      <li>
+        <p>
+          The zero element of <m>V</m> is <m>\boldzero=(0,0)</m>,
+          which is certainly of the form <m>(t,t)</m>.
+          Thus <m>\boldzero\in W</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          We must prove the implication <m>\boldv_1, \boldv_2\in W\Rightarrow \boldv_1+\boldv_2\in W</m>.
+          <md>
+          <mrow>\boldv_1,\boldv_2\in W\amp \Rightarrow\amp  \boldv_1=(t,t), \boldv_2=(s,s) \text{ for some \(t,s\in\R\) }</mrow>
+          <mrow>\amp \Rightarrow\amp \boldv_1+\boldv_2=(t+s,t+s)</mrow>
+          <mrow>\amp \Rightarrow\amp \boldv_1+\boldv_2\in W</mrow>
+          </md>.
+        </p>
+      </li>
+      <li>
+        <p>
+          We must prove the implication <m>\boldv\in W\Rightarrow c\boldv\in W</m>, for any <m>c\in \R</m>. We have
+          <md>
+          <mrow>\boldv\in W\amp \Rightarrow\amp  \boldv=(t,t)</mrow>
+          <mrow>\amp \Rightarrow\amp  c\boldv=(ct,ct)</mrow>
+          <mrow>\amp \Rightarrow\amp  c\boldv\in W</mrow>
+          </md>
+        </p>
+      </li>
+    </ol>
+    </p>
+  </solution>
+</example>
+<example>
+  <statement>
+    <p>
+      Let <m>V=\R^n</m> and let
+      <me>
+      W=\{(x,y)\in \R^2\colon x, y\geq 0\}
+      </me>.
+      Is <m>W</m> a vector space? Decide which of the of properties (i)-(iii) in <xref ref="d_subspace"/> (if any) are satisfied by <m>W</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <ol marker="i">
+      <li>
+        <p>
+          Clearly <m>\boldzero=(0,0)\in W</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Suppose <m>\boldv_1=(x_1,y_1), \boldv_2=(x_2,y_2)\in W</m>. Then <m>x_1, x_2, y_1, y_2\geq 0</m>, in which case <m>x_1+x_2, y_1+y_2\geq 0</m>, and hence <m>\boldv_1+\boldv_2\in W</m>. Thus <m>W</m> is closed under addition.
+        </p>
+      </li>
+      <li>
+        <p>
+          The set <m>W</m> is <em>not</em> closed under scalar multiplication. Indeed, let <m>\boldv=(1,1)\in W</m>. Then <m>(-2)\boldv=(-2,-2)\notin W</m>.
+        </p>
+      </li>
+    </ol>
+    </p>
+    
+  </solution>
+</example>
+
+<algorithm xml:id="proc_twostep_proof">
+  <title>Two-step proof for subspaces</title>
+  <statement>
+    <p>
+      As with proofs regarding linearity of functions, we can merge conditions (ii)-(iii) of <xref ref="d_subspace"/> into a single statement about linear combinations, deriving the following two-step method for proving a set <m>W</m> is a subspace of a vector space <m>V</m>.
+    <ol marker="i">
+      <li xml:id="proc_subspace_zero">
+        <p>
+          Show <m>\boldzero_V\in W</m>
+        </p>
+      </li>
+      <li xml:id="proc_subspace_ops">
+        <p>
+          Show that
+          <me>
+          \boldv_1, \boldv_2\in W\implies c\boldv_1+d\boldv_2\in W
+          </me>,
+          for all <m>c,d\in\R</m>.
+        </p>
+      </li>
+    </ol>
+    </p>
+  </statement>
+</algorithm>
+<example xml:id="vid_eg_subspace1">
+  <title>Video example: deciding if <m>W\subseteq V</m> is a subspace</title>
+  <figure xml:id="fig_vid_subspace1">
+    <caption>Video: deciding if <m>W\subseteq V</m> is a subspace</caption>
+    <video xml:id="vid_subspace1" youtube="y1t5ijAopz4" />
+  </figure>
+</example>
+  <!-- <figure xml:id="fig_vid_subspace2">
+    <title>Video: deciding if <m>W\subseteq V</m> is a subspace</title>
+    <caption>Video: deciding if <m>W\subseteq V</m> is a subspace</caption>
+    <video xml:id="vid_subspace2" youtube="Sup7AxtjZDw" />
+  </figure> -->
+<p>
+  If <m>W</m> is a subspace of a vector space <m>V</m>, then it <em>inherits</em> a vector space structure from <m>V</m> by simply  <em>restricting</em> the vector operations defined on <m>V</m> to the subset <m>W</m>.
+</p>
+<theorem xml:id="th_subspace_vectorspace">
+  <title>Subspaces are vector spaces</title>
+  <statement>
+    <p>
+    Let <m>W</m> be a subspace of the vector space <m>V</m>. 
+    <ol>
+      <li>
+        <p>
+          The vector operations of <m>V</m> restrict to operations on <m>W</m> that satisfy the vector space axioms. 
+        </p>
+      </li>
+      <li>
+        <p>
+          The zero vector of <m>W</m>, considered as a vector space, is the zero vector of <m>V</m>. 
+        </p>
+      </li>
+      <li>
+        <p>
+          Given an element <m>\boldw\in W</m>, its vector inverse with respect to the vector space structure of <m>W</m> is equal to its vector inverse with respect to the vector space structure of <m>V</m>.  
+        </p>
+      </li>
+    </ol>
+  </p>
+</statement>
+<proof>
+  <p>
+          Since <m>\boldw_1+\boldw_2\in W</m> for all <m>w_1,w_2\in W</m>, the vector addition on <m>V</m> gives rise by restriction to a well-defined operation on <m>W</m>; similarly, since <m>c\boldw\in W</m> for all <m>c\in \R</m> and <m>\boldw\in W</m>, the scalar multiplication operation on <m>V</m> gives rise by restriction to a well-defined scalar multiplication on <m>W</m>. 
+  </p>
+  <p>
+    By <xref ref="d_subspace_zero">Axiom</xref>, the zero vector <m>\boldzero</m> of <m>V</m> is an element of <m>W</m>. Since this element satisfies <m>\boldzero+\boldv=\boldv</m> for all <m>\boldv\in V</m>, and since <m>W\subseteq V</m>, it also satisfies <m>\boldzero+\boldw=\boldw</m> for all <m>\boldw\in W</m>. Thus <m>\boldzero</m> acts as a zero vector for the subspace <m>W</m>.   
+  </p>
+</proof>
+</theorem>
+  <p>
+    It is important to understand how <xref first="d_subspace_zero" last="d_subspace_mult">Axioms</xref> of <xref ref="d_subspace"/> come into play here. Without them we would not be able to say that restricting the vector operations of <m>V</m> to elements of <m>W</m> actually gives rise to well-defined operations on <m>W</m>. To be well-defined the operations must output elements that lie not just in <m>V</m>, but in <m>W</m> itself. This is precisely what being closed under addition and scalar multiplication guarantees.
+  </p>
+  <p>
+    Once we know restriction gives rise to well-defined operations on <m>W</m>, verifying the axioms of  <xref ref="d_vector_space"/> mostly amounts to observing that if a condition is true for all <m>\boldv</m> in <m>V</m>, it is certainly true for all <m>\boldv</m> in the subset <m>W</m>.
+  </p>
+  <p>
+    The <q>existential axioms</q> (iii) and (iv) of <xref ref="d_vector_space"/>, however, require special consideration. By definition, a subspace <m>W</m> contains the zero vector of <m>V</m>, and clearly this still acts as the zero vector when we restrict the vector operations to <m>W</m>. What about vector inverses? We know that for any <m>\boldv\in W</m> there is a vector inverse <m>-\boldv</m> lying somewhere in <m>V</m>. We must show that in fact <m>-\boldv</m> lies in <m>W</m>: <ie /> we need to show that the operation of taking the vector inverse is well-defined on <m>W</m>. We prove this as follows:
+    <md>
+    <mrow>\boldv\in W \amp\implies (-1)\boldv\in W \amp (<xref ref="d_subspace"/>, \text{(iii) } )</mrow>
+    <mrow> \amp\implies -\boldv\in W \amp (<xref ref="th_vectorspace_props"/>, (iii)) </mrow>
+    </md>.
+  </p>
+<p>
+  We now know how to determine whether a given subset of a vector space is in fact a subspace. We are also interested in means of constructing subspaces from some given ingredients. The result below tells us that taking the intersection of a given collection of subspaces results in a subspace. 
+</p>
+<theorem xml:id="th_subspace_intersection">
+  <title>Intersection of subspaces</title>
+
+  <statement>
+    <p>
+      Let <m>V</m> be a vector space. Given a collection <m>W_1, W_2,\dots, W_r</m>, where each <m>W_i</m> is a subspace of <m>V</m>, the intersection
+      <me> W=W_1\cap W_2\cdots \cap W_r</me>
+      is a subspace.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Exercise.
+    </p>
+  </proof>
+</theorem>
+<remark xml:id="rm_subspace_union">
+  <title>Unions of subspaces</title>
+  <p>
+    While the intersection of subspaces is again a subspace, the same is not true for unions of subspaces.
+  </p>
+  <p>
+    For example, take <m>V=\R^2</m>,
+    <m>W_1=\{(t,t)\colon t\in\R\}</m> and <m>W_2=\{(t,-t)\colon t\in\R\}</m>.
+    Then each <m>W_i</m> is a subspace,
+    but their union <m>W_1\cup W_2</m> is not.
+  </p>
+  <p>
+    Indeed, observe that <m>\boldw_1=(1,1)\in W_1\subset W_1\cup W_2</m> and <m>\boldw_2=(1,-1)\in W_2\subset W_1\cup W_2</m>,
+    but <m>\boldw_1+\boldw_2=(2,0)\notin W_1\cup W_2</m>. Thus <m>W_1\cup W_2</m> is not closed under addition. (Interestingly, it is closed under scalar multiplication.)
+  </p>
+</remark>
+</subsection>
+<subsection xml:id="ss_subspaces_tuples">
+  <title>Subspaces of <m>\R^n</m></title>
+  <p>
+    <xref ref="th_subspace_matrix_solutions"/> gives a convenient method of producing a subspace <m>W</m> of <m>\R^n</m>: namely, given any <m>m\times n</m> matrix <m>A</m>, the set 
+    <me>
+    W=\{\boldx\in \R^n\colon A\boldx=\boldzero\}
+    </me>
+    of all solutions to the homogeneous linear system <m>A\boldx=\boldzero</m> 
+    is guaranteed to be a subspace of <m>\R^n</m>. We call this set the <em>null space</em> of the matrix <m>A</m>. 
+  </p>
+  <definition xml:id="d_nullspace_matrix">
+    <title>Null space of matrix</title>
+    <statement>
+      <p>
+        Let <m>A\in M_{mn}</m>. The <term>null space</term> of <m>A</m>, denoted <m>\NS A</m>, is the set of all solutions to the matrix equation 
+        <men xml:id="eq_nullspace_matrix">
+          A\boldx=\underset{m\times 1}{\boldzero}
+        </men>.
+        In other words, 
+        <me>
+          \NS A=\{\boldx\in \R^n\colon A\boldx=\boldzero\}
+        </me>.
+        Equivalently, thinking in terms of linear systems, <m>\NS A</m> is the set of solutions to the homogeneous linear system represented by <xref ref="eq_nullspace_matrix"/>. 
+      </p>
+    </statement>
+  </definition>
+  <theorem xml:id="th_subspace_matrix_solutions">
+    <title>Null spaces of matrices</title>
+    <statement>
+      <p>
+        Given any <m>A\in M_{mn}</m>, its null space 
+        <me>
+          \NS A=\{\boldx\in \R^n\colon A\boldx=\boldzero\}
+        </me>
+        is a subspace of <m>\R^n</m>. 
+      </p>
+    </statement>
+    <proof>
+      <p>
+        Following the two-step technique, we first show that the zero vector <m>\boldzero=(0,0,\dots, 0)</m> of <m>\R^n</m> lies in <m>\NS A</m>. 
+         This is clear, since 
+         <me>
+          A\underset{n\times 1}{\boldzero}=\underset{m\times 1}{\boldzero}
+        </me>. 
+      </p>
+      <p>
+        Next, we show that for any <m>\boldx_1, \boldx_2\in \R^n</m> and any <m>c_1, c_2\in \R</m> we have
+        <me>
+        \boldx_1, \boldx_2\in \NS A\implies c_1\boldw_1+c_2\boldw_2\in \NS A
+        </me>.
+        If <m>\boldx_1, \boldx_2\in \NS A</m>, then we have <m>A\boldx_1=A\boldx_2=\boldzero</m>, by definition. It then follows that the vector <m>c_1\boldx_1+c_2\boldx_2</m> satisfies
+        <md>
+        <mrow> A(c_1\boldx_1+c_2\boldx_2)  \amp= c_1A\boldx_1+c_2A\boldx_2 \amp (<xref ref="th_matrix_alg_props" text="global"/>) </mrow>
+        <mrow> \amp c_1A\boldzero_m+c_2\boldzero_m \amp  (\boldx_1, \boldx_2\in W) </mrow>
+        <mrow>  \amp = \boldzero</mrow>
+        </md>.
+        Since <m>A(c\boldx_1+d\boldx_2)=\boldzero</m>, we have <m>c_1\boldx_1+c_2\boldx_2\in \NS A</m>, as desired.
+      </p>
+    </proof>
+  </theorem>
+      <!-- <remark xml:id="rm_subspace_matrix_solution">
+      <title>Solutions to homogeneous linear systems form a subspace</title>
+    <p>
+      Recall from <xref ref="ss_systems_to_matrix_eqns" text="title"/> that the set of solutions to a matrix equation <m>A\boldx=\boldb</m> is the same thing as the set of solutions to the system of linear equations with augmented matrix <m>\begin{amatrix}[c|c] A\amp \boldb  \end{amatrix}</m>. Thus, <xref ref="th_subspace_matrix_solutions"/> implies that the set of solutions to a homogeneous system of linear equations forms a subspace.
+    </p>
+  </remark> -->
+    <remark xml:id="rm_subspace_alt">
+  <title>Alternative subspace method</title>
+    <p>
+        <xref ref="th_subspace_matrix_solutions"/> provides an alternative way of showing that a subset <m>W\subseteq \R^n</m>: namely, find an <m>m\times n</m> matrix <m>A</m> for which we have <m>W=\{\boldx\in \R^n\colon A\boldx=\boldzero\}</m>. This is often much faster than using the two-step technique.
+    </p>
+</remark>
+  <example xml:id="eg_subspace_alt">
+    <title>Subspace as null space</title>
+    
+    
+    <statement>
+      <p>
+        Define the subset <m>W</m> of <m>\R^3</m> as
+        <me>
+        W=\{(x,y,z)\in \R^3\colon x+2y+3z=x-y-z=0\}
+        </me>.
+        <ol>
+          <li>
+            <p>
+              Prove that <m>W</m> is a subspace by identifying it as the set of solutions to a homogeneous matrix equation.
+            </p>
+          </li>
+          <li>
+            <p>
+              Use (a) and Gaussian elimination to compute a parametric description of <m>W</m>.
+            </p>
+          </li>
+        </ol>
+
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+        <li>
+          <p>
+            It is easy to see that
+            <me>
+              W=\{\boldx\in \R^n\colon A\boldx=\boldzero\}
+            </me>
+            where
+            <me>
+              A=\begin{amatrix}[rrr]1\amp 2\amp 3\\ 1\amp -1\amp -1  \end{amatrix}
+            </me>.
+            We conclude <m>W</m> is a subspace.
+          </p>
+        </li>
+        <li>
+          <p>
+The augmented matrix <m>\begin{amatrix}[c|c]A\amp\boldzero \end{amatrix}</m> row reduces to
+<me>
+  U=\begin{amatrix}[rrr|r]\boxed{1}\amp 2\amp 3\amp 0\\ 0 \amp \boxed{1}\amp 1\amp 0  \end{amatrix}
+</me>.
+Following <xref ref="proc_solveSystem"/> we conclude that
+<me>
+  W=\{(-t,-2t,t)\colon t\in \R\}
+</me>.
+Geometrically this is the line in <m>\R^3</m> passing through <m>(0,0,0)</m> with direction vector <m>(1,2,-1)</m>.
+          </p>
+        </li>
+      </ol>
+      </p>
+
+    </solution>
+  </example>
+<warning>
+  <title>Subspace as null space</title>
+  <p>
+    As convenient as the method described in <xref ref="rm_subspace_alt"/> and illustrated in <xref ref="eg_subspace_alt"/> may be, bear in mind that it cannot always be used. Indeed, by definition the null space of an <m>m\times n</m> matrix is a subset of <m>\R^n</m>. Thus this method can only be employed when the ambient vector space is <m>\R^n</m>. Don't forget that there are other vector spaces besides <m>\R^n</m>. Indeed, in <xref ref="ss_subspace_matrices"/> we consider subspaces of matrix vector spaces <m>M_{mn}</m>. In this setting, our null space trick does not apply. 
+  </p>
+</warning>
+  <p>
+  Let <m>A</m> be an <m>m\times n</m> matrix. If <m>\boldb\in \R^m</m> is <em>nonzero</em>, then the set of solutions <m>S</m> to <m>A\boldx=\boldb</m> is <em>not</em> a subspace of <m>\R^n</m>, and for a very simple reason: since <me>A\underset{n\times 1}{\boldzero}=\underset{m\times 1}{\boldzero}\ne \boldb
+  </me>, we see that <m>\underset{n\times 1}{\boldzero}\notin S</m>, and thus <m>S</m> is not a subspace. Thus, thinking in terms of linear systems, we see that while the set of solutions to a <em>homogenous</em> linear system constitutes a subspace, the set of solutions to a <em>nonhomogeneous</em> system does not. On the other hand, as articulated by <xref ref="th_nullspace_linsys"/>, the set of solutions to a nonhomogeneous linear system can be thought of as a <em>translate</em> of a vector space. 
+</p>
+  <theorem xml:id="th_nullspace_linsys">
+    <title>Null space and linear systems</title>
+    <statement>
+      <p>
+        Let <m>A\in M_{mn}</m> and <m>\boldb\in \R^m</m>, and let <m>S</m> be the set of all solutions to the linear system 
+        <men xml:id="eq_nullspace_linsys">
+          A\boldx=\boldb
+        </men>.
+        <ol>
+          <li>
+            <p>
+              <m>S</m> is a subspace of <m>\R^n</m> if and only if <m>\boldb=\boldzero</m>: <ie/>, if and only if the linear system <xref ref="eq_nullspace_linsys"/> is homogeneous. 
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>\boldx_p</m> is a solution to <xref ref="eq_nullspace_linsys"/>, then we have 
+              <me>
+                S=\boldx_p+\NS A=\{\boldx_p+\boldw\colon \boldw\in \NS A\}
+              </me>.
+              In other words, given a particular solution <m>\boldx_p</m> to <xref ref="eq_nullspace_linsys"/>, the general solution is given by 
+              <me>
+                \boldx_p+\boldx_h
+              </me>
+              where <m>\boldx_h\in \NS A</m> is a solution to the homogeneous linear system 
+              <men xml:id="eq_nullspace_homog">
+                A\boldx=\boldzero
+              </men>.
+            </p>
+          </li>
+        </ol> 
+      </p>
+    </statement>
+    <proof>
+<p>
+  <ol>
+    <li>
+      <p>
+        If <m>\boldb=\boldzero</m>, then <m>S=\NS A</m>, and this is a subspace by <xref ref="th_subspace_matrix_solutions"/>. If <m>\boldb\ne \boldzero</m>, then <m>\boldzero\notin S</m>, and hence <m>S</m> is not a subspace. 
+      </p>
+    </li>
+    <li>
+      <p>
+        Let <m>\boldx_p</m> satisfy <xref ref="eq_nullspace_linsys"/>. We show that 
+        <me>
+          S=\boldx_p+\NS A
+        </me>
+        by showing the two inclusions 
+        <md>
+          <mrow>\boldx_p+\NS A\amp \subseteq S  \amp  S\amp \boldx_p+\NS A</mrow>
+        </md>.
+        If <m>\boldv\in \boldx_p+\NS A</m>, then we have <m>\boldv=\boldx_p+\boldw</m> for some <m>\boldw\in \NS A</m>, in which case 
+        <md>
+          <mrow>A\boldv \amp = A(\boldx_p+\boldw)</mrow>
+          <mrow> \amp = A\boldx_p+A\boldw</mrow>
+          <mrow> \amp = \boldb+\boldzerp \amp (\boldx_p\in S, \boldw\in \NS A)</mrow>
+          <mrow> \amp = \boldb</mrow>
+        </md>.
+        This shows that if <m>\boldv\in \boldx_p+\NS A</m>, then <m>\boldv\in S</m>, and thus that <m>\boldx_p+A\subseteq S</m>. For the other inclusion, if <m>\boldv\in S</m>, then we have 
+        <md>
+          <mrow>A(\boldx_p-\boldv) \amp = A\boldx_p-A\boldv</mrow>
+          <mrow> \amp = \boldb-\boldb</mrow>
+          <mrow> \amp = \boldzero</mrow>    
+        </md>, 
+        showing that <m>(\boldx_p-\boldv)\in \NS A</m>. But then we have 
+        <me>
+          \boldv=\boldx_p+\underset{\boldw}{(\boldx_p-\boldv)}
+        </me>,
+        where <m>\boldw=(\boldx_p-\boldv)\in \NS A</m>. Thus <m>\boldv\in \boldx_p+\NS A</m>, showing that <m>S\subseteq \boldx_p+\NS A</m>. 
+      </p>
+    </li>
+  </ol>
+</p>
+    </proof>
+  </theorem>
+  <corollary xml:id="cor_matrix_equations">
+    <title>Null space and linear systems</title>
+    <statement>
+      <p>
+        Let <m>A\in M_{mn}</m> and <m>\boldb\in \R^m</m>, and suppose the linear system <m>A\boldx=\boldb</m> is consistent.
+        <ol>
+          <li>
+            <p>
+              There is a unique solution to the system if and only if <m>\NS A=\{\boldzero\}</m>: <ie/>, if and only if the only solution to <m>A\boldx=\boldzero</m> is the trivial one <m>\boldx=\boldzero</m>. 
+            </p>
+          </li>
+          <li>
+            <p>
+              There are infinitely many solutions if and only if there is a nonzero solution to <m>A\boldx=\boldzero</m>. 
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </corollary>
+  <project xml:id="sage_solve_matrix_eqn">
+    <title>Solving matrix equations</title>
+    <p>
+      Let's use Sage and  <xref ref="cor_matrix_equations"/> to find the set of solutions <m>S\subseteq \R^5</m> to the matrix equation
+      <men xml:id="eq_sage_matrix_eqn">
+        \begin{amatrix}[rrrrr]
+          0\amp 0\amp -2\amp 0\amp 7\\
+          2\amp 4\amp -10\amp 6\amp 12\\
+          2\amp 4\amp -5\amp 6\amp -5
+        \end{amatrix}
+        \begin{amatrix}[c] x_1\\ x_2\\ x_3\\ x_4\\ x_5   \end{amatrix}=
+        \begin{amatrix}[r] 12\\ 28\\ -1  \end{amatrix}
+      </men>.
+      This is the matrix equation form of the linear system we investigated in <xref ref="sage_solve_system"/>.
+      The method <c>solve_right</c> can be used to find a <em>particular solution</em> <m>\boldx_p</m> to <xref ref="eq_sage_matrix_eqn"/>.
+    </p>
+    <sage>
+    <input>
+      A=Matrix([[0,0,-2,0,7],[2,4,-10,6,12],[2,4,-5,6,-5]])
+      b=vector([12,28,-1])
+      xp=A.solve_right(b)
+      show(xp)
+      show(A*xp) # Check xp is solution
+    </input>
+    <output>
+    (7, 0, 1, 0, 2)
+    </output>
+    </sage>
+    <p>
+      We get the entire set of solutions <m>S</m> by translating <m>\NS A</m> by the particular solution <m>\boldx_p</m>:
+      <me>
+        S=\{\boldx_p+\boldu\colon \boldu\in \NS A\}=\boldx_p+\NS A
+      </me>.
+      We can illustrate this in Sage by taking random elements of <m>\NS A</m> (computed using <c>right_kernel</c>), adding them to <c>xp</c>, and verifying that the result is a solution to <xref ref="eq_sage_matrix_eqn"/>. Each time you evaluate the cell below, a randomly generated element of <m>S</m> will be outputted.
+    </p>
+    <sage>
+    <input>
+      NS=A.right_kernel()
+      u=NS.random_element(1,-50,50)
+      x=xp+u
+      show(x) # A solution
+      show(A*x) # Check that A*x=(12,28,-1)
+    </input>
+    <output>
+      (22, -99, 1, 61, 2)
+
+      (12, 28, -1)
+    </output>
+    </sage>
+    <p>
+      You may wonder just how random these elements of <m>S</m> are, considering that the entries always seem to be integers! Indeed, soliciting information about <c>NS</c> from Sage, we see that it has the structure of a <q>free module</q> defined over the the <q>Integer Ring</q>.
+    </p>
+    <sage>
+    <input>
+    NS
+    </input>
+    <output>
+      Free module of degree 5 and rank 2 over Integer Ring
+      Echelon basis matrix:
+      [ 1  1  0 -1  0]
+      [ 0  3  0 -2  0]
+    </output>
+    </sage>
+    <p>
+      Without getting too far into the weeds, this is a result of our initial definition of <m>A</m> using <c>Matrix()</c>.
+      Without further information, Sage interprets this as a matrix with <em>integer</em> coefficients, as opposed to <em>real</em> coefficients. All further computations (<eg />, <c>xp</c> and <c>NS</c>) are done in a similar spirit. More precisely, the object <c>NS</c> generated by Sage consists of all <em>integer</em> linear combinations of the two rows in the <q>echelon basis matrix</q> displayed in the cell above.
+      The next cell shows you how things change when we alert Sage to the fact that we are dealing with matrices over the reals. The only change is adding <c>RR</c> to <c>Matrix()</c>,
+      which specifies that matrix coefficients should be understood as real numbers.
+    </p>
+    <sage>
+    <input>
+      A=Matrix(RR,[[0,0,-2,0,7],[2,4,-10,6,12],[2,4,-5,6,-5]])
+      b=vector([12,28,-1])
+      xp=A.solve_right(b)
+      NS=A.right_kernel()
+      u=NS.random_element(1,-50,50)
+      x=xp+u
+      show(x) # A solution
+      show(A*x) # Check that A*x=(12,28,-1)
+    </input>
+    <output>
+        (-33.2604254229467, -14.3105503616973, 1.00000000000000, 22.9605087154471, 2.00000000000000)
+        (12.0000000000000, 28.0000000000000, -1.00000000000000)
+    </output>
+
+    </sage>
+  </project>
+  <remark xml:id="rm_hyperplanes">
+    <title>Hyperplanes and subspaces</title>
+    <p>
+      Recall that a <xref ref="d_hyperplane" text="custom">hyperplane</xref> is the set of solutions <m>H\subseteq \R^n</m> to a linear system of the form 
+      <men xml:id="eq_rm_hyperplane">
+        a_1x_1+a_2x_2+\cdots +a_nx_n=b
+      </men>,
+      where <m>a_i\ne 0</m> for some <m>i</m>. In terms of <xref ref="th_nullspace_linsys"/>, <m>H</m> is just the set of solutions to the matrix equation <m>A\boldx=\boldb</m>, where 
+      <md>
+        <mrow>A \amp =\begin{bmatrix}
+          a_1\amp a_2\amp \dots \amp a_n
+          \end{bmatrix}
+          \amp \boldb=\begin{bmatrix}
+          b
+          \end{bmatrix} </mrow>
+      </md>. 
+      It follows from <xref ref="th_nullspace_linsys"/> that <m>H</m> is a subspace if and only if <m>b=0</m>: <ie/>, if and only if <m>H</m> passes through the origin. Furthermore, if <m>b\ne 0</m>, we have 
+      <me>
+        H=\boldx_p+H_0
+      </me>,
+      where <m>\boldx_p</m> is any solution to <xref ref="eq_rm_hyperplane"/>, and <m>H_0</m> is the set of solutions to the corresponding homogeneous equation 
+      <men xml:id="eq_rm_hyperplane_homog">
+        a_1x_1+a_2x_2+\cdots +a_nx_n=0
+      </men>.
+      In other words, although it is not true in general that every hyperplane <m>H\subseteq \R^n</m> is a subspace (since it may not pass through the origin), it is true that <m>H=\boldx_p+H_0</m> is a <em>translate</em> of a hyperplane <m>H_0</m> that is a subspace (since <m>H_0</m> passes through the origin).
+    </p>
+  </remark>
+ <!-- <p>
+  The example above identifies some nice geometric subspaces of <m>\R^2</m> and <m>\R^3</m>. The question naturally arises: can we describe <em>all</em> subspaces of <m>\R^2</m> and <m>\R^3</m> geometrically? The answer is yes, and will be easy to show once we have some dimension theory at our disposal. See <xref ref="eg_subspaces_R3"/>. 
+ </p>  -->
+</subsection>
+<subsection xml:id="ss_subspace_matrices">
+  <title>Important subspaces of <m>M_{nn}</m></title>
+  <p>
+    In <xref ref="s_invertibility_theorem" text="title"/> we met three families of square matrices: namely, the diagonal, upper triangular, and lower triangular matrices. (See <xref ref="d_diagonal_triangular"/>). We now introduce three more naturally occurring families. Before doing so, we give an official definition of the trace function. 
+  </p>
+  <definition xml:id="d_trace">
+  <title>Trace of a matrix</title>
+    <idx><h>trace of a matrix</h></idx>
+    <notation>
+      <usage><m>\tr A</m></usage>
+      <description>the trace of <m>A</m></description>
+    </notation>
+    
+    <statement>
+      <p>
+        Let <m>A=[a_{ij}]</m> be an <m>n\times n</m> matrix. The <term>trace</term> of <m>A</m>, denoted <m>\tr A</m> is defined as the sum of the diagonal entries of <m>A</m>: <ie />,
+        <me>
+          \tr A=a_{11}+a_{22}+\cdots +a_{nn}
+        </me>.
+      </p>
+    </statement>
+  </definition>
+  <definition xml:id="d_tracezero_symmetric_skewsymmetric">
+  <title>Trace-zero, symmetric, and skew-symmetric</title>
+    <idx><h>trace-zero matrix</h></idx>
+    <idx><h>symmetric matrix</h></idx>
+    <idx><h>skew-symmetric matrix</h></idx>
+    <statement>
+      <p>
+        Fix an integer <m>n\geq 1</m>.
+      
+      <ol>
+        <li>
+          <p>
+            A matrix <m>A\in M_{nn}</m> is said to be a <term>trace-zero</term> matrix if <m>\tr A=0</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            A matrix <m>A\in M_{nn}</m> is <term>symmetric</term> if <m>A^T=A</m>: equivalently, if <m>[A]_{ij}=[A]_{ji}</m> for all <m>1\leq i,j\leq n</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            A matrix <m>A\in M_{nn}</m> is <term>skew-symmetric</term> if <m>A^T=-A</m>: equivalently, if <m>[A]_{ij}=-[A]_{ji}</m> for all <m>1\leq i,j\leq n</m>.
+          </p>
+        </li>
+      </ol>
+      </p>
+    </statement>
+  </definition>
+  <example>
+    <title>Trace-zero symmetric, and skew-symmetric <m>2\times 2</m> matrices</title>
+    <statement>
+      <p>
+        The set <m>W_1</m> of all trace-zero <m>2\times 2</m> matrices can be described as
+        <me>
+          W_1=\left\{ \begin{amatrix}[rr]a\amp b\\ c\amp -a  \end{amatrix}\colon a,b,c\in \R\right\}
+        </me>.
+        The set <m>W_2</m> of all symmetric <m>2\times 2</m> matrices can be described as
+        <me>
+          W_2=\left\{ \begin{amatrix}[rr]a\amp b\\ b\amp c  \end{amatrix}\colon a,b,c\in \R\right\}
+        </me>.
+        The set <m>W_3</m> of all skew-symmetric <m>2\times 2</m> matrices can be described as
+        <me>
+          W_3=\left\{ \begin{amatrix}[rr]0\amp a\\ -a\amp 0  \end{amatrix}\colon a,b\in \R\right\}
+        </me>.
+      </p>
+    </statement>
+  </example>
+      <remark xml:id="rm_skew-symmetric">
+    <p>
+      Assume <m>A</m> is a skew-symmetric <m>n\times n</m> matrix. By definition, for all <m>1\leq i\leq n</m> we must have <m>[A]_{ii}=-[A]_{ii}</m>. It follows that <m>[A]_{ii}=0</m> for all <m>1\leq i\leq n</m>. Thus the diagonal entries of a skew-symmetric matrix are always equal to 0.
+    </p>
+  </remark>
+  <p>
+    It will come as no surprise that all of the afore mentioned matrix families are in fact subspaces of <m>M_{nn}</m>.
+  </p>
+  <theorem xml:id="th_matrix_subspaces">
+    <title>Matrix subspaces</title>
+    
+    
+    <statement>
+      <p>
+      Fix an integer <m>n\geq 1</m>.  Each of the following subsets of <m>M_{nn}</m> is a subspace.
+  
+      <ol>
+        <li>
+          <title>Diagonal matrices</title>
+          <p>
+            <m>W=\{A\in M_{nn}\colon A\text{ is diagonal}\}</m>
+          </p>
+        </li>
+        <li>
+          <title>Upper triangular matrices</title>
+          <p>
+            <m>W=\{A\in M_{nn}\colon A\text{ is upper triangular}\}</m>
+          </p>
+        </li>
+        <li>
+          <title>Lower triangular matrices</title>
+          <p>
+            <m>W=\{A\in M_{nn}\colon A\text{ is lower triangular}\}</m>
+          </p>
+        </li>
+        <li>
+          <title>Trace-zero matrix</title>
+          <p>
+            <m>W=\{A\in M_{nn}\colon \tr A=\boldzero \}</m>
+          </p>
+        </li>
+        <li>
+          <title>Symmetric matrices</title>
+          <p>
+            <m>W=\{A\in M_{nn}\colon A^T=A \}</m>
+          </p>
+        </li>
+        <li>
+          <title>Skew-symmetric matrices</title>
+          <p>
+            <m>W=\{A\in M_{nn}\colon A^T=-A \}</m>
+          </p>
+        </li>
+      </ol>
+      </p>
+    </statement>
+    <proof>
+      <p>
+        See <xref ref="ex_matrix_subspaces"/>
+      </p>
+    </proof>
+
+  </theorem>
+</subsection>
+
+<xi:include href="./s_subspace_ex.ptx"/>
+
+</section>

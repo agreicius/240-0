@@ -1,0 +1,196 @@
+<exercises xml:id="s_subspace_ex">
+  <exercise>
+<statement>
+<p>
+Let <m>V</m> be {\em dyad}: <ie/>, <m>V</m> is a set containing exactly two elements. Show that there is no choice of operations 
+<md>
+  <mrow>V\times V \amp \rightarrow V \amp \R\times V\amp \rightarrow V</mrow>
+  <mrow>(\boldv,\boldw) \amp \mapsto \boldv+\boldw \amp (c,\boldv)\amp \mapsto c\boldv</mrow>
+</md>
+turning <m>V</m> into a vector space. In other words, show that for any choice of such operations, at least one of the axioms of <xref ref="d_vector_space"/> will fail.
+</p>
+</statement>
+<hint>
+  <p>
+    Write <m>V=\{\boldu, \boldw\}</m>, where <m>\boldu\ne \boldw</m>, and suppose <em>by contradiction</em> that there are operations <m>+</m> and <m>\cdot</m> satisfying the axioms of <xref ref="d_vector_space"/>. Derive a contradiction as follows: 
+    <ol>
+      <li>
+        <p>
+          Since one the elements of <m>V</m> must be the zero vector, we can assume without loss of generality that <m>\boldu=\boldzero</m>, and thus <m>V=\{\boldzero, \boldw\}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Show in this case that there is exactly one choice of addition operation satisfying Axioms i-iv. Make this operation explicit by writing out all four sums.
+        </p>
+      </li>
+      <li>
+        <p>
+          
+        </p>
+      </li>
+    </ol>
+  </p>
+</hint>
+</exercise>
+<exercisegroup>
+<introduction>
+<p>
+For each subset <m>W</m> of <m>\R^2</m> described below: (a) sketch <m>W</m> as a region of <m>\R^2</m>, and (b) determine whether <m>W</m> is a subspace. Justify your answer either with a proof or explicit counterexample.
+</p>
+</introduction>
+<exercise>
+  <statement>
+    <p>
+      <m>W=\{(x,y)\in \R^2\colon 2x+3y=0\}</m>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <m>W=\{(x,y)\in \R^2\colon \val{x}\geq \val{y}\}</m>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <m>W=\{(x,y)\in \R^2\colon x^2+2y^2\leq 1\}</m>
+    </p>
+  </statement>
+</exercise>
+</exercisegroup>
+<exercisegroup>
+<introduction>
+<p>
+Determine whether the subset <m>W</m> of <m>M_{nn}</m> described is a subspace of <m>M_{nn}</m>. Justify your answer either with a proof or explicit counterexample.
+</p>
+</introduction>
+<exercise>
+  <statement>
+    <p>
+      <m>W=\{A\in M_{nn}\colon \det A=0\}</m>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <m>W=\{A\in M_{nn}\colon A_{11}=A_{nn}\}</m>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      Fix a matrix <m>B\in M_{nn}</m> and define <m>W=\{A\in M_{nn}\colon AB=BA\}</m>, the set of matrices that <em>commute</em> with <m>B</m>.
+    </p>
+  </statement>
+</exercise>
+</exercisegroup>
+
+<exercisegroup>
+<introduction>
+<p>
+For each given subset <m>W\subseteq \R^n</m>: (a) show that <m>W</m> is a subspace by identifying it with the set of solutions to a matrix equation, and (b) give a parametric description of <m>W</m>.
+</p>
+</introduction>
+<exercise>
+  <statement>
+    <p>
+      <m>W=\{(x,y,z)\colon 2x+y-z=0\}</m>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <m>W=\{(x_1,x_2,x_3,x_4)\colon x_1-x_4=x_2+x_3=x_1+x_2+x_3=0\}\subseteq \R^4</m>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <m>W=\{(x,y)\colon x+3y=-x+2y=0\}\subseteq \R^2</m>
+    </p>
+  </statement>
+</exercise>
+</exercisegroup>
+
+  <exercise>
+    <statement>
+      <p>
+        Prove <xref ref="th_subspace_intersection"/>.
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="ex_matrix_subspaces">
+    <statement>
+      <p>
+        Prove (1)-(6) of <xref ref="th_matrix_subspaces"/>.
+      </p>
+    </statement>
+  </exercise>
+
+  <exercisegroup>
+    <title>Nonhomogeneous solutions related to homogeneous solutions</title>
+    <introduction>
+    <p>
+    For each <m>m\times n</m> matrix <m>A</m> and vector <m>\boldb\in \R^m</m>:
+    <ol>
+      <li>
+        <p>
+          Find a <em>particular</em> solution <m>\boldx_p</m> to <m>A\boldx=\boldb</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Find all solutions to the corresponding homogeneous matrix equation <m>A\boldx=\boldzero</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Use (a), (b), and <xref ref="cor_matrix_equations"/> to describe <em>all</em> solutions to <m>A\boldx=\boldb</m>.
+        </p>
+      </li>
+    </ol>
+    </p>
+    </introduction>
+    <exercise>
+      <statement>
+        <p>
+          <me>
+            A=\begin{amatrix}[rrrr]1\amp 2\amp 1\amp 1\\ 1\amp 1\amp 2\amp 3  \end{amatrix},
+            \boldb=(3,2)
+          </me>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <me>
+            A=\begin{amatrix}[rrr]1\amp 1\amp -3 \\ 3\amp -1\amp -1 \\
+            1\amp 0\amp -1  \end{amatrix},
+            \boldb=(2,1,-4)
+          </me>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <me>
+            A=\begin{amatrix}[rrr]1\amp 2\amp 1 \\ 1\amp 1\amp -3 \\ 1\amp 0\amp -1  \end{amatrix},
+            \boldb=(1,1,1)
+          </me>
+        </p>
+      </statement>
+    </exercise>
+    </exercisegroup>
+    
+</exercises>
+

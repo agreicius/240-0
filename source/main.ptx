@@ -37,7 +37,7 @@
       </appendix>
       <appendix xml:id="appendix-thms">
         <title>Theory and procedures</title>
-        <list-of elements="theorem corollary algorithm" divisions="section" />
+        <list-of elements="theorem proposition lemma corollary algorithm" divisions="section" />
       </appendix>
 
       <appendix xml:id="appendix-egs">

@@ -383,7 +383,7 @@ Display the given matrix <m>A</m> as a rectangular array.
 <p>
     It is worth further unpacking this definition in the special cases of <m>n</m>-tuples and matrices.
 </p>
-<proposition xml:id="prop_tuple_equality_sequences_matrices">
+<proposition xml:id="prop_ntuple_equality">
 <title>Equality of <m>n</m>-tuples</title>
 <statement>
 <p>
@@ -396,7 +396,7 @@ The <m>m</m>-tuple <m>(a_i)_{i=1}^m</m> is equal to the <m>n</m>-tuple <m>(b_i)_
     </p>
 </proof>
 </proposition>
-<proposition xml:id="d_equality_matrix">
+<proposition xml:id="prop_equality_matrix">
 <title>Equality of matrices</title>
 <statement>
 <p>
@@ -1058,7 +1058,7 @@ Recall that Sage captures the double-index nature of a matrix by nesting lists: 
                 In the case <m>\R^n</m>, we call <m>\bolde_i</m> the <term><m>i</m>-th standard basis vector</term> of <m>\R^n</m>. 
             </p>
             <p>
-                In the case <m>\ML_{m,n}(\R)</m>, we write <m>E_{i,j}</m> for  <m>\bolde_{(i,j)}</m>, and call this the <term><m>i,j</m>-th standard basis vector</term> of <m>\ML_{m,n}(\R)</m>.
+                In the case <m>\ML_{m,n}(\R)</m>, we write <m>E_{i,j}</m> for  <m>\bolde_{(i,j)}</m>, and call this the <term><m>i,j</m>-th standard basis matrix</term> of <m>\ML_{m,n}(\R)</m>.
             </p>
         </li>
     </ul>
@@ -1194,7 +1194,7 @@ Recall that Sage captures the double-index nature of a matrix by nesting lists: 
             </statement>
             <proof>
                 <p>
-                    The statement itself of the theorem has already taken care of some of the steps required to verify that something is a vector space. Namely, it has identified the underlying set <m>\R^I</m> and proposed vector operations, and it has identified the elements of <m>\R^I</m> that serve as the zero vector and inverse vectors. It remains to show that the proposed zero vectors and vector inverses satisfy the identities of <xref first="eq_d_zero_vector" last="eq_d_vec_inverse">Axioms</xref>, and that Axioms (i)-(ii) and (v)-(viii) are satisfied.  We first consider <xref first="eq_d_zero_vector" last="eq_d_vec_inverse">Axioms</xref>. 
+                    The statement itself of the theorem has already taken care of some of the steps required to verify that something is a vector space. Namely, it has identified the underlying set <m>\R^I</m> and proposed vector operations, and it has identified the elements of <m>\R^I</m> that serve as the zero vector and inverse vectors. It remains to show that the eight axioms of <xref ref="d_vector_space"/> are satisfied. We will verify the existential axioms (Axiom iii-iv), as well as one of the algebraic axioms (Axioms ii and vi), and leave the rest as an exercise. 
                 </p>
                 
                 <case>
@@ -1271,24 +1271,76 @@ Recall that Sage captures the double-index nature of a matrix by nesting lists: 
                     </p>
                 </li>
             </ul>
-        We hasten to add, that although the spaces <m>\R^I</m> furnish us with many interesting examples of vector spaces, not all vector spaces are of this form! (We will say more about this later.) As a result, from now on, when we introduce a new concept connected to general vector spaces, we will state it in full generality in terms of an arbitrary vector space <m>V</m>, and usually follow up with some examples taken from some familiar vector spaces of the form <m>\R^I</m> (<eg/>, <m>\R^n</m> and <m>\ML_{m\times n}(\R)</m>). The following definition and examples put this philosophy into practice.
+        We hasten to add, that although the spaces <m>\R^I</m> furnish us with many interesting examples of vector spaces, not all vector spaces are of this form! Indeed, the <em>zero space</em> defined below is such an example. 
+        </p>
+        <theorem xml:id="th_zero_space">
+        <title>Zero space</title>
+        <statement>
+        <p>
+        Let <m>V</m> be a singleton: <ie/>, <m>V</m> is a set containing exactly one element. There is a unique choice of operations 
+        <md>
+            <mrow> V\times V\amp \rightarrow V \amp \R\times V\amp \rightarrow V </mrow>
+            <mrow>(\boldv, \boldw) \amp \mapsto \boldv+\boldw \amp (c,\boldv)\amp \mapsto c\boldv</mrow>
+        </md>
+        making <m>V</m> into a vector space.
+        </p>
+        </statement>
+        <proof>
+        <p>
+            Let <m>V=\{\boldu\}</m>. Since 
+            <md>
+                V\times V=\{(\boldu,\boldu)\}
+            </md>,
+            to define a vector addition operation
+            <md>
+                <mrow>V\times V \amp \rightarrow V</mrow>
+                <mrow>(\boldv,\boldw) \amp \rightarrow \boldv+\boldw</mrow>
+            </md>,
+            we only need to define what <m>\boldu+\boldu</m> is. Furthermore, since by definition we must have <m>\boldu+\boldu\in V=\{\boldu\}</m>, we have no choice here: we must define <m>\boldu+\boldu=\boldu</m>! 
+        </p>
+        <p>
+            Similarly, it is easy to see that there is only one possible scalar multiplication operation, defined as <m>c\boldu=\boldu</m> for all <m>c\in\R</m>. These two operations being so simple, it is now easy to verify that they satisfy all of the algebriac axioms. Furthermore, we have no choice for the zero vector and inverse vectors: we must choose <m>\boldzero=\boldu</m>, and <m>-\boldu=\boldu</m>. This seems somewhat odd, since <m>\boldu</m> is its own vector inverse, but it is easy to verify that these choices satisfy Axioms iii and iv:
+            <md>
+                <mrow>\boldzero+\boldu \amp =\boldu+\boldu \amp (\text{def. of } \boldzero)</mrow>
+                <mrow> \amp = \boldu \amp (\text{def. of } +)</mrow>
+                <mrow>-\boldu+\boldu \amp =\boldu+\boldu \amp (\text{def. of } -\boldu)</mrow>
+                <mrow> \amp = \boldu \amp (\text{def. of } +)</mrow>
+                <mrow> \amp = \boldzero \amp (\text{def. of } \boldzero)</mrow>
+            </md>.
+            The remaining axioms can be verified in a similar elementary fashion. We leave their verification as an exercise. 
+        </p>
+        </proof>
+        </theorem>
+        <definition xml:id="d_zero_space">
+        <title>Zero space</title>
+        <statement>
+        <p>
+        A singleton <m>V=\{\boldu\}</m>, together with its uniquely defined vector operations, is called a <term>zero space</term>. Since <m>\boldu=\boldzero</m> with respect to this vector space structure, we will write <m>V=\{\boldzero\}</m> for a zero space. 
+        </p>
+        </statement>
+        </definition>
+        <p>
+        For now, we will mainly focus on vector spaces of the form <m>V=\R^I</m> or <m>V=\{\boldzero\}</m>, leaving a more thorough investigation of the notion of an abstract vector space for later. However, as we introduce new concepts connected to vector spaces, we will always state them in full generality for a general vector space <m>V</m>. This is done mainly out of convenience, so that we do not have to repeat the same definition later on. Since our emphasis is on vector spaces of the form <m>\R^I</m>, we will take care to follow up any new definition with some examples taken from some familiar vector spaces of the form <m>\R^n</m>, <m>\ML_{m\times n}(\R)</m>, <m>\R^\infty</m>. We put this into practice with our next definition. 
         </p>
             <definition xml:id="d_lin_comb">
                 <title>Linear combination</title>
                 <statement>
                     <p>
-                        Let <m>V</m> be a vector space, and let <m>\boldv_1,\boldv_2,\dots, \boldv_n</m> be a collection of vectors of <m>V</m>. A <term>linear combination</term> of the <m>\boldv_i</m> is a vector expression of the form 
+                        Let <m>V</m> be a vector space, and let <m>S</m> be a nonempty subset of <m>V</m>. A <term>linear combination</term> of <m>S</m> is a vector of the form 
                         <md number="yes" xml:id="eq_lin_comb">
                             c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n
                         </md>,
-                    where <m>c_i\in \R</m> for all <m>1\leq i\leq n</m>. The scalars <m>c_i</m> appearing in <xref ref="eq_lin_comb"/> are called the <term>coefficients</term> of the linear combination. The linear combination <xref ref="eq_lin_comb"/> is <term>trivial</term> if <m>c_i=0</m> for all <m>1\leq i\leq n</m>, and <term>nontrivial</term> if <m>c_i\ne 0</m> for some <m>1\leq i\leq n</m>. 
+                    where <m>\boldv_i\in S</m> and <m>c_i\in \R</m> for all <m>1\leq i\leq n</m>. The scalars <m>c_i</m> appearing in <xref ref="eq_lin_comb"/> are called the <term>coefficients</term> of the linear combination. The linear combination <xref ref="eq_lin_comb"/> is <term>trivial</term> if <m>c_i=0</m> for all <m>1\leq i\leq n</m>, and <term>nontrivial</term> if <m>c_i\ne 0</m> for some <m>1\leq i\leq n</m>. 
                     </p> 
                     <p>
-                        A vector <m>\boldv\in V</m> is a linear combination of the <m>\boldv_i</m> if we have 
-                    <md>
-                        \boldv=c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n
-                    </md>
-                    for some choice of scalars <m>c_i\in \R</m>.     
+                        In the special case where <m>S</m> is described enumeratively as <m>S=\{\boldv_1,\boldv_2,\dots, \boldv_n\}</m> or <m>S=\{\boldv_1,\boldv_2,\dots\}</m>, we will call a linear combination of <m>S</m> a linear combination of the <m>\boldv_i</m> for short. 
+                    </p>
+                    <p>
+                        We will sometimes use sigma notation for linear combinations, writing 
+                        <md>
+                            \sum_{i=1}^nc_i\boldv_i
+                        </md>
+                        for the linear combination of the vectors <m>\boldv_1,\boldv_2,\dots, \boldv_n</m> whose <m>i</m>-th coefficient is <m>c_i</m>.
                     </p>
                 </statement>
             </definition> 
