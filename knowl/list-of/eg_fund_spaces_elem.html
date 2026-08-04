@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: blue-green                   *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Fundamental spaces: elementary example.</span>
+</h4>
+<div class="para logical">
+<div class="para">Provide bases and compute the dimension of the three fundamental spaces of</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{amatrix}[rrr]
+1 \amp 2\amp 3 \\
+1 \amp 2\amp 3 
+\end{amatrix}\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#eg_fund_spaces_elem-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical">
+<div class="para">By definition, we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\NS A=\{\boldx\in \R^3\colon A\boldx=\boldzero\}\amp \subseteq \R^3 \amp \\
+\RS A=\Span\{(1,2,3),(1,2,3)\} \amp\subseteq \R^3 \\
+\CS A=\Span\{(1,1),(2,2),(3,3)\}\amp \subseteq \R^2 \text{.}
+\end{align*}
+</div>
+<div class="para">We see easily by inspection that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\RS A=\Span\{(1,2,3),(1,2,3)\}=\Span\{(1,2,3)\}\text{,}
+\end{equation*}
+</div>
+<div class="para">a line in <span class="process-math">\(\R^3\)</span> passing through the origin, and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\CS A=\Span\{(1,1),(2,2),(3,3)\}=\Span\{(1,1)\}\text{,}
+\end{equation*}
+</div>
+<div class="para">a line in <span class="process-math">\(\R^2\)</span> passing through the origin. Since the sets <span class="process-math">\(B_1=\{(1,2,3)\}\)</span> and <span class="process-math">\(B_2=\{(1,1)\}\)</span> are each linearly independent, they are clearly bases for their spans <span class="process-math">\(\RS A \)</span> and <span class="process-math">\(\CS A\text{,}\)</span> respectively. It follows that <span class="process-math">\(\dim \RS A=\dim \CS A=1\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#eg_fund_spaces_elem-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Next, by definition <span class="process-math">\(\NS A\)</span> is the set of vectors  <span class="process-math">\(\boldx=(x_1,x_2,x_3)\in \R^3\)</span> satisfying</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_solveSystem.html">
+\begin{equation*}
+A\boldx=\begin{bmatrix}
+x_1+2x_2+3x_3\\
+x_1+2x_2+3x_3
+\end{bmatrix}
+=\begin{bmatrix}
+0 \\
+0
+\end{bmatrix}\text{,}
+\end{equation*}
+</div>
+<div class="para">or equivalently, the solutions to the linear equation <span class="process-math">\(x_1+2x_2+3x_3=0
+\text{,}\)</span> a plane in <span class="process-math">\(\R^3\)</span> passing through the origin. Using <a href="s_solving.html#proc_solveSystem" class="xref" data-knowl="./knowl/xref/proc_solveSystem.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 2.3.6: Solving linear systems">Procedure 2.3.6</a> we derive the parametric description</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_solveSystem.html">
+\begin{align*}
+\NS A\amp=\{(-(2s+3t),s,t)\colon s,t\in \R\}\\
+\amp =\{s(-2,1,0),+t(-3,0,1)\colon s,t\in \R\} \text{,}
+\end{align*}
+</div>
+<div class="para">from which we see that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_solveSystem.html">
+\begin{equation*}
+\NS A=\Span\{(-2,1,0),(-3,0,1)\}\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(B_3=\{(-2,1,0),(-3,0,1)\}\)</span> is linearly independent and spans <span class="process-math">\(\NS A\text{,}\)</span> it is a basis for <span class="process-math">\(\NS A\text{.}\)</span> We conclude <span class="process-math">\(\dim \NS A=2\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#eg_fund_spaces_elem-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.5.3.1"><a href="#eg_fund_spaces_elem-3" title="Copy heading and permalink for Solution 4.5.3.1" aria-label="Copy heading and permalink for Solution 4.5.3.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.5.3: Fundamental spaces: elementary example"><a href="#eg_fund_spaces_elem" title="Copy heading and permalink for Example 4.5.3: Fundamental spaces: elementary example" aria-label="Copy heading and permalink for Example 4.5.3: Fundamental spaces: elementary example">🔗</a></div></article><span class="incontext"><a class="internal" href="s_rank_nullity.html#eg_fund_spaces_elem">in-context</a></span>
+</body>
+</html>

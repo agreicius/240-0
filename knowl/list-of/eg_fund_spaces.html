@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: blue-green                   *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Fundamental spaces.</span>
+</h4>
+<div class="para logical">
+<div class="para">Compute bases and dimensions for the three fundamental spaces of</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{amatrix}[rrrrr]
+1 \amp 3 \amp 1 \amp -3 \amp 2 \\
+0 \amp 1 \amp 1 \amp -3 \amp 0 \\
+-1 \amp -2 \amp 0 \amp 0 \amp -1 \\
+1 \amp 2 \amp 0 \amp 0 \amp 2      
+\end{amatrix}\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#eg_fund_spaces-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical">
+<div class="para">The matrix <span class="process-math">\(A\)</span> row reduces as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_solveSystem.html ./knowl/xref/proc_fund_spaces.html">
+\begin{equation*}
+A\xrightarrow{\text{row ops.}} U=\begin{amatrix}[rrrrr]
+\boxed{1} \amp 3 \amp 1 \amp -3 \amp 2 \\
+0 \amp \boxed{1} \amp 1 \amp -3 \amp 0 \\
+0 \amp 0 \amp 0 \amp 0 \amp \boxed{1} \\
+0 \amp 0 \amp 0 \amp 0 \amp 0
+\end{amatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">To compute <span class="process-math">\(\NS A=\NS U\text{,}\)</span> we first give a parametric description of the solutions to the linear system represented by <span class="process-math">\(U\boldx=\boldzero\text{,}\)</span> following <a href="s_solving.html#proc_solveSystem" class="xref" data-knowl="./knowl/xref/proc_solveSystem.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 2.3.6: Solving linear systems">Procedure 2.3.6</a>. We conclude</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_solveSystem.html ./knowl/xref/proc_fund_spaces.html">
+\begin{equation*}
+\NS A=\{(2s-6t,-s+3t ,s,t,0)\colon s,t\in \R\}\text{.}
+\end{equation*}
+</div>
+<div class="para">From this parametric description we extract by inspection the spanning set</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_solveSystem.html ./knowl/xref/proc_fund_spaces.html">
+\begin{equation*}
+B_1=\{\boldx_1=(2,-1,1,0,0), \boldv_2=(-6,3,0,1,0)\}\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(B_1\)</span> is easily seen to be linearly independent, we conclude it is a basis. (Alternatively, <span class="process-math">\(B_1\)</span> is the basis one obtains using <a href="s_rank_nullity.html#proc_fund_spaces" class="xref" data-knowl="./knowl/xref/proc_fund_spaces.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 4.5.10: Fundamental spaces">Procedure 4.5.10</a>. That is, <span class="process-math">\(\boldv_1\)</span> is the result of assigning <span class="process-math">\(s=1,t=0\)</span> in our parametric description, and <span class="process-math">\(\boldv_2\)</span> is the result of assigning <span class="process-math">\(s=0\text{,}\)</span> <span class="process-math">\(t=1\text{.}\)</span>) Since <span class="process-math">\(\abs{B_1}=2\text{,}\)</span> we have <span class="process-math">\(\dim \NS A=2\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#eg_fund_spaces-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">According to <a href="s_rank_nullity.html#proc_fund_spaces" class="xref" data-knowl="./knowl/xref/proc_fund_spaces.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 4.5.10: Fundamental spaces">Procedure 4.5.10</a>, the nonzero rows of <span class="process-math">\(U\)</span> form a basis of <span class="process-math">\(\RS A\text{.}\)</span> Thus <span class="process-math">\(B_2=\{(1,3,1-3,2),(0,1,1-3,0),(0,0,0,0,1)\}\)</span> is a basis of <span class="process-math">\(\RS A\text{,}\)</span> and <span class="process-math">\(\dim \RS A=3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#eg_fund_spaces-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">Lastly, since the first, second and fifth columns of <span class="process-math">\(U\)</span> contain leading ones, the corresponding columns of <span class="process-math">\(A\)</span> form a basis of <span class="process-math">\(\CS A\text{.}\)</span> Thus <span class="process-math">\(B_{3}=\{(1,0,-1,1),(3,1,-2,2),(2,0,-1,2)\}\)</span> is a basis of <span class="process-math">\(\CS A\text{,}\)</span> and <span class="process-math">\(\dim \CS A=3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#eg_fund_spaces-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 4.5.11.1"><a href="#eg_fund_spaces-3" title="Copy heading and permalink for Solution 4.5.11.1" aria-label="Copy heading and permalink for Solution 4.5.11.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 4.5.11: Fundamental spaces"><a href="#eg_fund_spaces" title="Copy heading and permalink for Example 4.5.11: Fundamental spaces" aria-label="Copy heading and permalink for Example 4.5.11: Fundamental spaces">🔗</a></div></article><span class="incontext"><a class="internal" href="s_rank_nullity.html#eg_fund_spaces">in-context</a></span>
+</body>
+</html>

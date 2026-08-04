@@ -20,23 +20,84 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 <link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
-<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
-startMathJax({
-hasWebworkReps: true,
-hasSage: true,
-isReact: false,
-htmlPresentation: false,
-});
-</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
-<meta name="twitter:title" content="Real vector spaces: A first course in linear algebra">
-<meta property="og:title" content="Real vector spaces: A first course in linear algebra">
-<meta property="book:title" content="Real vector spaces: A first course in linear algebra">
-<meta name="twitter:description" content="This is the course resource for Northwestern University's first course in in linear algebra (Math 240-0). Definitions of real vector spaces and linear transformations thereof are given in full generality, but examples focus on vector spaces of real-valued tuples indexed by an arbitrary set.">
-<meta property="og:description" content="This is the course resource for Northwestern University's first course in in linear algebra (Math 240-0). Definitions of real vector spaces and linear transformations thereof are given in full generality, but examples focus on vector spaces of real-valued tuples indexed by an arbitrary set.">
-<meta name="twitter:card" content="summary">
-<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.45"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<meta property="book:title" content="Real vector spaces">
+<meta property="book:author" content="Aaron Greicius">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
 <!--**     log level is 0, Runestone Services are disabled     **-->
@@ -59,59 +120,51 @@ eBookConfig.enableScratchAC = true;
 eBookConfig.acDefaultLanguage = 'python';
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '8.1.16';
+eBookConfig.runestone_version = '8.2.2';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.279b1f0077454c32.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.db8001875cb726c2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.66fa8a682a32c0ac.css">
-<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/dist/pretext-webwork/2.20/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="_static/prefix-runtime.ed2cce180827a7ad.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.18fa7ea1d9f376c1.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8086b62682b271d1.css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/pretext-webwork/2.20/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body id="NUlinearalgfirstcourse" class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" target="_blank" href=""><img src="external/images/im_holycomm.svg" alt="Logo image"></a><div class="title-container">
-<div class="heading ptx-banner-heading"><a href="my-great-book.html"><span class="title">Real vector spaces</span> <span class="subtitle">A first course in linear algebra</span></a></div>
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Real vector spaces</span> <span class="subtitle">A first course in linear algebra</span></a></h1>
 <p class="byline">Aaron Greicius</p>
 </div>
 </div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
-<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
-<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
-<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
-<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
 </div>
-<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
-<h2 class="heading ptx-search-results-heading">Search Results: </h2>
-<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
-<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
 </div>
-<span class="nav-other-controls"><button type="button" id="ptx-calculator-toggle" class="ptx-calculator-toggle button" title="Calculator"><span class="icon material-symbols-outlined" aria-hidden="true">&#xea5f;</span><span class="name">Calculator</span></button><dialog id="ptx-calculator-container" class="ptx-dialog ptx-calculator-container" aria-label="Calculator"><div id="ptx-geogebra-calculator" class="ptx-geogebra-calculator"></div>
-<script id="ptx-geogebra-calculator-params">
-let ggbParams = {
-    "appName": "classic"
-};
-</script></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
-<h2 class="heading">Readability settings</h2>
-<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
 </div>
-<div class="ptx-readability-options-group">
-<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
-</div>
-<div class="ptx-readability-options-group">
-<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
-</div>
-<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
-<legend>Theme</legend>
-<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
-</fieldset>
-<fieldset class="ptx-readability-options-group">
-<legend>Assistive technologies</legend>
-<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
-</fieldset>
-<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="s_logic.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_foundations.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_complex_numbers.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span><span class="nav-runestone-controls"><button onclick="runestoneComponents.popupScratchAC()" class="activecode-toggle button" title="Scratch ActiveCode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf097;</span><span class="name">Scratch ActiveCode</span></button></span>
+<span class="nav-other-controls"><button id="calculator-toggle" class="calculator-toggle button" title="Show calculator" aria-expanded="false" aria-controls="calculator-container"><span class="icon material-symbols-outlined" aria-hidden="true">&#xea5f;</span><span class="name">Calc</span></button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "classic",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_logic.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_foundations.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_complex_numbers.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span><span class="nav-runestone-controls"><button onclick="runestoneComponents.popupScratchAC()" class="activecode-toggle button" title="Open Scratch ActiveCode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf097;</span><span class="name">Scratch ActiveCode</span></button></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
 \newcommand{\Q}{{\mathbb Q}}
 \newcommand{\R}{{\mathbb R}}
@@ -322,14 +375,14 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="c_foundations.html" class="internal"><span class="codenumber">0</span> <span class="title">Foundations</span></a></div>
-<ul class="structural toc-item-list contains-active" id="ptx-toc-group-c_foundations">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_sets_tuples.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Sets and tuples</span></a></div>
-<ul id="ptx-toc-group-s_sets_tuples" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_tuples.html#s_sets" class="internal"><span class="codenumber">0.1.1</span> <span class="title">Sets</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_tuples.html#ss_tuples" class="internal"><span class="codenumber">0.1.2</span> <span class="title">Tuples</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_tuples.html#ss_sets_functions_ww" class="internal"><span class="codenumber">0.1.3</span> <span class="title">WeBWork Exercises</span></a></div></li>
@@ -337,11 +390,11 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_functions.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Functions</span></a></div>
-<ul id="ptx-toc-group-s_functions" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_functions.html#ss_functions_ww" class="internal"><span class="codenumber">0.2.1</span> <span class="title">WeBWork Exercises</span></a></div></li></ul>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_functions.html#ss_functions_ww" class="internal"><span class="codenumber">0.2.1</span> <span class="title">WeBWork Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_logic.html" class="internal"><span class="codenumber">0.3</span> <span class="title">Logic</span></a></div>
-<ul id="ptx-toc-group-s_logic" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_propositional_calculus" class="internal"><span class="codenumber">0.3.1</span> <span class="title">Propositional logic</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_predicate_logic" class="internal"><span class="codenumber">0.3.2</span> <span class="title">Predicate logic</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_logic_ww" class="internal"><span class="codenumber">0.3.3</span> <span class="title">WeBWork Exercises</span></a></div></li>
@@ -349,10 +402,10 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="s_proof_technique.html" class="internal"><span class="codenumber">0.4</span> <span class="title">Proof techniques</span></a></div>
-<ul class="structural toc-item-list active" id="ptx-toc-group-s_proof_technique">
+<ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="s_proof_technique.html#ss_logical_structure" class="internal"><span class="codenumber">0.4.1</span> <span class="title">Logical structure</span></a></div>
-<ul id="ptx-toc-group-ss_logical_structure" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_implication" class="internal"><span class="title">Implication</span></a></div></li>
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_disjunction" class="internal"><span class="title">Disjunction</span></a></div></li>
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_equivalence" class="internal"><span class="title">Equivalence</span></a></div></li>
@@ -362,25 +415,25 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="s_proof_technique.html#ss_Equalities" class="internal"><span class="codenumber">0.4.2</span> <span class="title">Equalities</span></a></div>
-<ul id="ptx-toc-group-ss_Equalities" class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_chain_equalities" class="internal"><span class="title">Chain of equalities</span></a></div></li></ul>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_chain_equalities" class="internal"><span class="title">Chain of equalities</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="s_proof_technique.html#ss_set_properties" class="internal"><span class="codenumber">0.4.3</span> <span class="title">Basic set properties</span></a></div>
-<ul id="ptx-toc-group-ss_set_properties" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_inclusion" class="internal"><span class="title">Set inclusion</span></a></div></li>
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_equality" class="internal"><span class="title">Set equality</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="s_proof_technique.html#ss_function_properties" class="internal"><span class="codenumber">0.4.4</span> <span class="title">Basic function properties</span></a></div>
-<ul id="ptx-toc-group-ss_function_properties" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_function_equality" class="internal"><span class="title">Function equality</span></a></div></li>
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_injective_surjective_bijective" class="internal"><span class="title">Injective, surjective, bijective</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="s_proof_technique.html#ss_mathematical_induction" class="internal"><span class="codenumber">0.4.5</span> <span class="title">Mathematical induction</span></a></div>
-<ul id="ptx-toc-group-ss_mathematical_induction" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_weak_induction" class="internal"><span class="title">Proof by induction</span></a></div></li>
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_strong_induction" class="internal"><span class="title">Proof by strong induction</span></a></div></li>
 </ul>
@@ -389,7 +442,7 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_complex_numbers.html" class="internal"><span class="codenumber">0.5</span> <span class="title">Complex numbers</span></a></div>
-<ul id="ptx-toc-group-s_complex_numbers" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_complex_numbers.html#ss_complex_definition" class="internal"><span class="codenumber">0.5.1</span> <span class="title">Definition of <span class="process-math">\(\C\)</span></span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_complex_numbers.html#ss_complex_conjugation" class="internal"><span class="codenumber">0.5.2</span> <span class="title">Absolute value and complex conjugation</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_complex_numbers.html#ss_complex_numbers_ww" class="internal"><span class="codenumber">0.5.3</span> <span class="title">WeBWork Exercises</span></a></div></li>
@@ -397,7 +450,7 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_polynomials.html" class="internal"><span class="codenumber">0.6</span> <span class="title">Polynomials</span></a></div>
-<ul id="ptx-toc-group-s_polynomials" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_polynomials.html#ss_poly_def" class="internal"><span class="codenumber">0.6.1</span> <span class="title">Basic definitions</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_polynomials.html#ss_degree" class="internal"><span class="codenumber">0.6.2</span> <span class="title">Degree of a polynomial</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_polynomials.html#ss_poly_factoring" class="internal"><span class="codenumber">0.6.3</span> <span class="title">Factoring polynomials</span></a></div></li>
@@ -407,111 +460,161 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="c_lin_sys.html" class="internal"><span class="codenumber">1</span> <span class="title">Systems of linear equations</span></a></div>
-<ul id="ptx-toc-group-c_lin_sys" class="structural toc-item-list">
-<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="c_tuples.html" class="internal"><span class="codenumber">1</span> <span class="title">Introduction to vector spaces</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_Rn_and_friends.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Real-valued tuples</span></a></div>
-<ul id="ptx-toc-group-s_Rn_and_friends" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_Rn_and_friends.html#ss_R-valued_tuples" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Real-valued tuples</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_Rn_and_friends.html#ss_tuples_vector_ops" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Vector operations on <span class="process-math">\(\R^I\)</span></span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_Rn_and_friends.html#ss_Rn_visual" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Visualizing <span class="process-math">\(\R^n\)</span></span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_Rn_and_friends.html#s_R-valued_tuples_ex" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
+</li></ul>
 </li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="c_lin_sys.html" class="internal"><span class="codenumber">2</span> <span class="title">Systems of linear equations</span></a></div>
+<ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="s_systems.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Systems of linear equations</span></a></div>
-<ul id="ptx-toc-group-s_systems" class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_systems.html#ss_linear_equations" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Systems of linear equations</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_systems.html#ss_row_equivalence" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Row operations</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_systems.html#ss_systems_ww" class="internal"><span class="codenumber">1.2.3</span> <span class="title">WeBWork Exercises</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_systems.html#s_systems_ex" class="internal"><span class="codenumber">1.2.4</span> <span class="title">Exercises</span></a></div></li>
+<div class="toc-title-box"><a href="s_systems.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Systems of linear equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_systems.html#ss_linear_equations" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Systems of linear equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_systems.html#ss_row_equivalence" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Row operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_systems.html#ss_systems_ww" class="internal"><span class="codenumber">2.1.3</span> <span class="title">WeBWork Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_systems.html#s_systems_ex" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="s_ge.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Gaussian elimination</span></a></div>
-<ul id="ptx-toc-group-s_ge" class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ge.html#ss_ge_row_echelon" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Row echelon matrices</span></a></div></li>
+<div class="toc-title-box"><a href="s_ge.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Gaussian elimination</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ge.html#ss_ge_row_echelon" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Row echelon matrices</span></a></div></li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="s_ge.html#ss_gaussian_elimination" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Gaussian elimination</span></a></div>
-<ul id="ptx-toc-group-ss_gaussian_elimination" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ge.html#ss_gaussian_elimination-8" class="internal"><span class="title">Model example</span></a></div></li></ul>
+<div class="toc-title-box"><a href="s_ge.html#ss_gaussian_elimination" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Gaussian elimination</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ge.html#ss_gaussian_elimination-8" class="internal"><span class="title">Model example</span></a></div></li></ul>
 </li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ge.html#ss_ge_ww" class="internal"><span class="codenumber">1.3.3</span> <span class="title">WeBWork Exercises</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_ge.html#s_ge_ex" class="internal"><span class="codenumber">1.3.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ge.html#ss_ge_ww" class="internal"><span class="codenumber">2.2.3</span> <span class="title">WeBWork Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_ge.html#s_ge_ex" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="s_solving.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Solving linear systems</span></a></div>
-<ul id="ptx-toc-group-s_solving" class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_solving.html#ss_workingExample" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Model example continued</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_solving.html#ss_solveSystem" class="internal"><span class="codenumber">1.4.2</span> <span class="title">General method for solving linear systems</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_solving.html#s_solving-5" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Vector parametrization description</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_solving.html#ss_solving_ww" class="internal"><span class="codenumber">1.4.4</span> <span class="title">WeBWork Exercises</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_solving.html#s_solving_ex" class="internal"><span class="codenumber">1.4.5</span> <span class="title">Exercises</span></a></div></li>
+<div class="toc-title-box"><a href="s_solving.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Solving linear systems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_solving.html#ss_workingExample" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Model example continued</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_solving.html#ss_solveSystem" class="internal"><span class="codenumber">2.3.2</span> <span class="title">General method for solving linear systems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_solving.html#s_solving-5" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Vector parametrization description</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_solving.html#ss_solving_ww" class="internal"><span class="codenumber">2.3.4</span> <span class="title">WeBWork Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_solving.html#s_solving_ex" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="c_matrices.html" class="internal"><span class="codenumber">2</span> <span class="title">Matrices</span></a></div>
-<ul id="ptx-toc-group-c_matrices" class="structural toc-item-list">
+<div class="toc-title-box"><a href="c_matrices.html" class="internal"><span class="codenumber">3</span> <span class="title">Matrices</span></a></div>
+<ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="s_matrix.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Matrix arithmetic</span></a></div>
-<ul id="ptx-toc-group-s_matrix" class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#ss_matrix_attributes" class="internal"><span class="codenumber">2.1.1</span> <span class="title">The basics</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#ss_matrix_arithmetic" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Vector space structure of <span class="process-math">\(M_{mn}\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#ss_matrix_mult" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Matrix multiplication</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#s_column_row_method" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Alternative methods of multiplication</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#s_matrix-7" class="internal"><span class="codenumber">2.1.5</span> <span class="title">Transpose of a matrix</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#ss_matrix_ww" class="internal"><span class="codenumber">2.1.6</span> <span class="title">WeBWork Exercises</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_matrix.html#s_matrix_ex" class="internal"><span class="codenumber">2.1.7</span> <span class="title">Exercises</span></a></div></li>
+<div class="toc-title-box"><a href="s_matrix.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Matrix arithmetic</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#ss_matrix_attributes" class="internal"><span class="codenumber">3.1.1</span> <span class="title">The basics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#ss_matrix_arithmetic" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Vector space structure of <span class="process-math">\(M_{mn}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#ss_matrix_mult" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Matrix multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#s_column_row_method" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Alternative methods of multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#s_matrix-7" class="internal"><span class="codenumber">3.1.5</span> <span class="title">Transpose of a matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#ss_matrix_ww" class="internal"><span class="codenumber">3.1.6</span> <span class="title">WeBWork Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_matrix.html#s_matrix_ex" class="internal"><span class="codenumber">3.1.7</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="s_matrix_algebra.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Matrix algebra</span></a></div>
-<ul id="ptx-toc-group-s_matrix_algebra" class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix_algebra.html#ss_matrix_mult_props" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Matrix multiplication properties</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix_algebra.html#ss_cancellation" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Cancellation laws fulfilled and violated</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix_algebra.html#ss_transpose_props" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Transpostition properties</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix_algebra.html#ss_matrix_algebra_ww" class="internal"><span class="codenumber">2.2.4</span> <span class="title">WeBWork Exercises</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_matrix_algebra.html#s_matrix_algebra_ex" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Exercises</span></a></div></li>
+<div class="toc-title-box"><a href="s_matrix_algebra.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Matrix algebra</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix_algebra.html#ss_matrix_mult_props" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Matrix multiplication properties</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix_algebra.html#ss_cancellation" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Cancellation laws fulfilled and violated</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix_algebra.html#ss_transpose_props" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Transpostition properties</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix_algebra.html#ss_matrix_algebra_ww" class="internal"><span class="codenumber">3.2.4</span> <span class="title">WeBWork Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_matrix_algebra.html#s_matrix_algebra_ex" class="internal"><span class="codenumber">3.2.5</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="s_invertible_matrices.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Invertible matrices</span></a></div>
-<ul id="ptx-toc-group-s_invertible_matrices" class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertible_matrices.html#subsec-" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Invertible matrices</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertible_matrices.html#s_invertible_matrices-4" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Powers of matrices, matrix polynomials</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertible_matrices.html#ss_invertible_matrices_ww" class="internal"><span class="codenumber">2.3.3</span> <span class="title">WeBWork Exercises</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_invertible_matrices.html#s_invertible_matrices_ex" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Exercises</span></a></div></li>
+<div class="toc-title-box"><a href="s_invertible_matrices.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Invertible matrices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertible_matrices.html#subsec-" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Invertible matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertible_matrices.html#s_invertible_matrices-4" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Powers of matrices, matrix polynomials</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertible_matrices.html#ss_invertible_matrices_ww" class="internal"><span class="codenumber">3.3.3</span> <span class="title">WeBWork Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_invertible_matrices.html#s_invertible_matrices_ex" class="internal"><span class="codenumber">3.3.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="s_invertibility_theorem.html" class="internal"><span class="codenumber">2.4</span> <span class="title">The invertibility theorem</span></a></div>
-<ul id="ptx-toc-group-s_invertibility_theorem" class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_elementary_matrix" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Elementary matrices</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_systems_to_matrix_eqns" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Interlude on matrix equations</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_invertibility_th" class="internal"><span class="codenumber">2.4.3</span> <span class="title">The invertibility theorem</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_invertibility_alg" class="internal"><span class="codenumber">2.4.4</span> <span class="title">Invertibility algorithms</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_invertible_loose_ends" class="internal"><span class="codenumber">2.4.5</span> <span class="title">Some theoretical loose ends</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_invertibility_theorem_ww" class="internal"><span class="codenumber">2.4.6</span> <span class="title">WeBWork Exercises</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_invertibility_theorem.html#s_invertibility_theorem_ex" class="internal"><span class="codenumber">2.4.7</span> <span class="title">Exercises</span></a></div></li>
+<div class="toc-title-box"><a href="s_invertibility_theorem.html" class="internal"><span class="codenumber">3.4</span> <span class="title">The invertibility theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_elementary_matrix" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Elementary matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_systems_to_matrix_eqns" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Interlude on matrix equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_invertibility_th" class="internal"><span class="codenumber">3.4.3</span> <span class="title">The invertibility theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_invertibility_alg" class="internal"><span class="codenumber">3.4.4</span> <span class="title">Invertibility algorithms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_invertible_loose_ends" class="internal"><span class="codenumber">3.4.5</span> <span class="title">Some theoretical loose ends</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_invertibility_theorem_ww" class="internal"><span class="codenumber">3.4.6</span> <span class="title">WeBWork Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_invertibility_theorem.html#s_invertibility_theorem_ex" class="internal"><span class="codenumber">3.4.7</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="s_det.html" class="internal"><span class="codenumber">2.5</span> <span class="title">The determinant</span></a></div>
-<ul id="ptx-toc-group-s_det" class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_det.html#ss_det" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Definition of the determinant</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_det.html#ss_expansion_rows_columns" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Expansion along rows and columns</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_det.html#ss_det_row_ops" class="internal"><span class="codenumber">2.5.3</span> <span class="title">Row operations and determinant</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_det.html#ss_det_ww" class="internal"><span class="codenumber">2.5.4</span> <span class="title">WeBWork Exercises</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_det.html#s_det_ex" class="internal"><span class="codenumber">2.5.5</span> <span class="title">Exercises</span></a></div></li>
+<div class="toc-title-box"><a href="s_det.html" class="internal"><span class="codenumber">3.5</span> <span class="title">The determinant</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_det.html#ss_det" class="internal"><span class="codenumber">3.5.1</span> <span class="title">Definition of the determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_det.html#ss_expansion_rows_columns" class="internal"><span class="codenumber">3.5.2</span> <span class="title">Expansion along rows and columns</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_det.html#ss_det_row_ops" class="internal"><span class="codenumber">3.5.3</span> <span class="title">Row operations and determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_det.html#ss_det_ww" class="internal"><span class="codenumber">3.5.4</span> <span class="title">WeBWork Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_det.html#s_det_ex" class="internal"><span class="codenumber">3.5.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="c_vectorspace.html" class="internal"><span class="codenumber">4</span> <span class="title">Vector spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_subspace.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Subspaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace.html#ss_subspace" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Definition of subspace</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace.html#ss_subspaces_tuples" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Subspaces of <span class="process-math">\(\R^n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace.html#ss_subspace_matrices" class="internal"><span class="codenumber">4.1.3</span> <span class="title">Important subspaces of <span class="process-math">\(M_{nn}\)</span></span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_subspace.html#s_subspace_ex" class="internal"><span class="codenumber">4.1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_span_independence.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Span and linear independence</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_independence.html#s_span_independence-3" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Span</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_independence.html#ss_linear_independence" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Linear independence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_independence.html#subsec-invertibility-span-and-linear-independence" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Invertibility, span, and linear independence</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_span_independence.html#s_span_independence_ex" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_basis.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Bases</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_basis.html#ss_bases" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Bases of vector spaces</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_basis.html#s_basis_ex" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_dimension.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Dimension</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_dimension.html#ss_dimension" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Dimension of a vector space</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_dimension.html#ss_further_props" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Further properties of dimension</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_dimension.html#s_dimension_ex" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_rank_nullity.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Fundamental spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_rank_nullity.html#ss_fundamental_spaces" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Fundamental spaces of matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_rank_nullity.html#ss_expand_contract" class="internal"><span class="codenumber">4.5.2</span> <span class="title">Contracting and expanding to bases</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_rank_nullity.html#ss_fund_spaces_inv_th" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Fundamental spaces and invertibility</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_rank_nullity.html#s_rank_nullity_ex" class="internal"><span class="codenumber">4.5.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
-<div class="toc-title-box"><a href="my-great-book-7.html" class="internal"><span class="title">Backmatter</span></a></div>
-<ul id="ptx-toc-group-my-great-book-7" class="structural toc-item-list">
+<div class="toc-title-box"><a href="my-great-book-9.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
 <li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-notation.html" class="internal"><span class="codenumber">A</span> <span class="title">Notation</span></a></div></li>
 <li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-exercises.html" class="internal"><span class="codenumber">B</span> <span class="title">Exercises</span></a></div></li>
 <li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-defs.html" class="internal"><span class="codenumber">C</span> <span class="title">Definitions</span></a></div></li>
@@ -523,46 +626,34 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content">
-<section class="section" id="s_proof_technique">
-<h1 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_proof_technique"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Proof techniques</span>
-</h1>
-<section class="introduction" id="s_proof_technique-2"></section>
-<section class="subsection" id="ss_logical_structure">
-<h2 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.4.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Logical structure</span>
 </h2>
-<section class="subsubsection" id="sss_implication">
-<h3 class="heading hide-type">
+<section class="introduction" id="s_proof_technique-2"></section><section class="subsection" id="ss_logical_structure"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.4.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Logical structure</span>
+</h3>
+<section class="subsubsection" id="sss_implication"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Implication</span>
-</h3>
-<div class="para" id="sss_implication-2">By <a href="s_logic.html#d_logical_ops" class="xref" data-knowl="./knowl/xref/d_logical_ops.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.3.1: Logical operators">Definition 0.3.1</a> the only time an implication  <span class="process-math">\(\mathcal{P}\implies\mathcal{Q}\)</span> is false is when <span class="process-math">\(\mathcal{P}\)</span> is true and <span class="process-math">\(\mathcal{Q}\)</span> is false. Accordingly, the <em class="emphasis">direct approach</em> to proving an implication <span class="process-math">\(\mathcal{P}\implies \mathcal{Q}\)</span> is to assume <span class="process-math">\(\mathcal{P}\)</span> is true, and use this assumption to prove <span class="process-math">\(\mathcal{Q}\)</span> is true.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sss_implication-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="para" id="sss_implication-3">A common <em class="emphasis">indirect approach</em> used to prove an implication <span class="process-math">\(\mathcal{P}\implies \mathcal{Q}\)</span> is to prove its <em class="emphasis">contrapositive</em>  <span class="process-math">\(\neg\mathcal{Q}\implies \neg \mathcal{P} \text{,}\)</span> which is logically equivalent to the original implication. In this case we assume <span class="process-math">\(\mathcal{Q}\)</span> is not true, and show <span class="process-math">\(\mathcal{P}\)</span> is not true. (Exercise: use a truth table to show the contrapositive is logically equivalent to the original implication.)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sss_implication-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<article class="warning remark-like" id="sss_implication-4"><h4 class="heading">
-<span class="type">Warning</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.4.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="sss_implication-4-1-1">The <em class="emphasis">converse</em> of an implication <span class="process-math">\(\mathcal{P}\implies \mathcal{Q}\)</span> is the implication <span class="process-math">\(\mathcal{Q}\implies \mathcal{P}\text{;}\)</span> the <em class="emphasis">inverse</em> of <span class="process-math">\(\mathcal{P}\implies\mathcal{Q}\)</span> is the implication <span class="process-math">\(\neg\mathcal{P}\implies\neg\mathcal{Q}\text{.}\)</span> Neither the converse nor the inverse is equivalent to the original implication, and thus neither of these can be used to give an indirect proof of <span class="process-math">\(\mathcal{P}\implies \mathcal{Q}\text{.}\)</span> (Exercise: use a truth table to show that neither the converse nor the inverse implication is logically equivalent to the original implication. )<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sss_implication-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sss_implication-2">By <a href="s_logic.html#d_logical_ops" class="xref" data-knowl="./knowl/xref/d_logical_ops.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.3.1: Logical operators">Definition 0.3.1</a> the only time an implication  <span class="process-math">\(\mathcal{P}\implies\mathcal{Q}\)</span> is false is when <span class="process-math">\(\mathcal{P}\)</span> is true and <span class="process-math">\(\mathcal{Q}\)</span> is false. Accordingly, the <em class="emphasis">direct approach</em> to proving an implication <span class="process-math">\(\mathcal{P}\implies \mathcal{Q}\)</span> is to assume <span class="process-math">\(\mathcal{P}\)</span> is true, and use this assumption to prove <span class="process-math">\(\mathcal{Q}\)</span> is true.<div class="autopermalink" data-description="Paragraph"><a href="#sss_implication-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Warning 0.4.1"><a tabindex="-1" href="#sss_implication-4" title="Copy heading and permalink for Warning 0.4.1" aria-label="Copy heading and permalink for Warning 0.4.1">🔗</a></div>
-</article><div class="autopermalink" aria-hidden="true" data-description="Subsubsection: Implication"><a tabindex="-1" href="#sss_implication" title="Copy heading and permalink for Subsubsection: Implication" aria-label="Copy heading and permalink for Subsubsection: Implication">🔗</a></div>
-</section>
-<section class="subsubsection" id="sss_disjunction">
-<h3 class="heading hide-type">
+<div class="para" id="sss_implication-3">A common <em class="emphasis">indirect approach</em> used to prove an implication <span class="process-math">\(\mathcal{P}\implies \mathcal{Q}\)</span> is to prove its <em class="emphasis">contrapositive</em>  <span class="process-math">\(\neg\mathcal{Q}\implies \neg \mathcal{P} \text{,}\)</span> which is logically equivalent to the original implication. In this case we assume <span class="process-math">\(\mathcal{Q}\)</span> is not true, and show <span class="process-math">\(\mathcal{P}\)</span> is not true. (Exercise: use a truth table to show the contrapositive is logically equivalent to the original implication.)<div class="autopermalink" data-description="Paragraph"><a href="#sss_implication-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="warning remark-like" id="sss_implication-4"><h5 class="heading">
+<span class="type">Warning</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.4.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h5>
+<div class="para" id="sss_implication-4-1-1">The <em class="emphasis">converse</em> of an implication <span class="process-math">\(\mathcal{P}\implies \mathcal{Q}\)</span> is the implication <span class="process-math">\(\mathcal{Q}\implies \mathcal{P}\text{;}\)</span> the <em class="emphasis">inverse</em> of <span class="process-math">\(\mathcal{P}\implies\mathcal{Q}\)</span> is the implication <span class="process-math">\(\neg\mathcal{P}\implies\neg\mathcal{Q}\text{.}\)</span> Neither the converse nor the inverse is equivalent to the original implication, and thus neither of these can be used to give an indirect proof of <span class="process-math">\(\mathcal{P}\implies \mathcal{Q}\text{.}\)</span> (Exercise: use a truth table to show that neither the converse nor the inverse implication is logically equivalent to the original implication. )<div class="autopermalink" data-description="Paragraph"><a href="#sss_implication-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Warning 0.4.1"><a href="#sss_implication-4" title="Copy heading and permalink for Warning 0.4.1" aria-label="Copy heading and permalink for Warning 0.4.1">🔗</a></div></article><div class="autopermalink" data-description="Subsubsection: Implication"><a href="#sss_implication" title="Copy heading and permalink for Subsubsection: Implication" aria-label="Copy heading and permalink for Subsubsection: Implication">🔗</a></div></section><section class="subsubsection" id="sss_disjunction"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Disjunction</span>
-</h3>
-<div class="para" id="sss_disjunction-2">Again, using <a href="s_logic.html#d_logical_ops" class="xref" data-knowl="./knowl/xref/d_logical_ops.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.3.1: Logical operators">Definition 0.3.1</a>, to directly show a disjunction <span class="process-math">\(\mathcal{P}\text{ or }\mathcal{Q}\)</span> is true, we need only show one the two component propositions is true.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sss_disjunction-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h4>
+<div class="para" id="sss_disjunction-2">Again, using <a href="s_logic.html#d_logical_ops" class="xref" data-knowl="./knowl/xref/d_logical_ops.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.3.1: Logical operators">Definition 0.3.1</a>, to directly show a disjunction <span class="process-math">\(\mathcal{P}\text{ or }\mathcal{Q}\)</span> is true, we need only show one the two component propositions is true.<div class="autopermalink" data-description="Paragraph"><a href="#sss_disjunction-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sss_disjunction-3">Alternatively, we can prove either of the implications <span class="process-math">\(\neg\mathcal{P}\implies\mathcal{Q}\)</span> or <span class="process-math">\(\neg Q\implies \mathcal{P}\text{,}\)</span> both of which are logically equivalent to <span class="process-math">\(\mathcal{P}\text{ or }\mathcal{Q}\text{.}\)</span> (Exercise: use a truth table to show these three propositions are indeed equivalent!)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sss_disjunction-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sss_disjunction-3">Alternatively, we can prove either of the implications <span class="process-math">\(\neg\mathcal{P}\implies\mathcal{Q}\)</span> or <span class="process-math">\(\neg Q\implies \mathcal{P}\text{,}\)</span> both of which are logically equivalent to <span class="process-math">\(\mathcal{P}\text{ or }\mathcal{Q}\text{.}\)</span> (Exercise: use a truth table to show these three propositions are indeed equivalent!)<div class="autopermalink" data-description="Paragraph"><a href="#sss_disjunction-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Subsubsection: Disjunction"><a tabindex="-1" href="#sss_disjunction" title="Copy heading and permalink for Subsubsection: Disjunction" aria-label="Copy heading and permalink for Subsubsection: Disjunction">🔗</a></div>
-</section>
-<section class="subsubsection" id="sss_equivalence">
-<h3 class="heading hide-type">
+<div class="autopermalink" data-description="Subsubsection: Disjunction"><a href="#sss_disjunction" title="Copy heading and permalink for Subsubsection: Disjunction" aria-label="Copy heading and permalink for Subsubsection: Disjunction">🔗</a></div></section><section class="subsubsection" id="sss_equivalence"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Equivalence</span>
-</h3>
+</h4>
 <div class="para logical" id="sss_equivalence-2">
 <div class="para">The equivalence <span class="process-math">\(\mathcal{P}\iff\mathcal{Q}\)</span> is logically equivalent to the conjunction</div>
 <div class="displaymath process-math" id="sss_equivalence-2-2">
@@ -571,14 +662,11 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 \end{equation*}
 </div>
 <div class="para">Accordingly, the standard way of proving <span class="process-math">\(\mathcal{P}\iff \mathcal{Q}\)</span> is to prove the two implications  <span class="process-math">\(\mathcal{P}\implies\mathcal{Q}\)</span> and <span class="process-math">\(\mathcal{Q}\implies\mathcal{P}\)</span> separately. (Exercise: use a truth table to show these propositions are indeed equivalent!)</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sss_equivalence-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sss_equivalence-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Subsubsection: Equivalence"><a tabindex="-1" href="#sss_equivalence" title="Copy heading and permalink for Subsubsection: Equivalence" aria-label="Copy heading and permalink for Subsubsection: Equivalence">🔗</a></div>
-</section>
-<section class="subsubsection" id="sss_logical_chains">
-<h3 class="heading hide-type">
+<div class="autopermalink" data-description="Subsubsection: Equivalence"><a href="#sss_equivalence" title="Copy heading and permalink for Subsubsection: Equivalence" aria-label="Copy heading and permalink for Subsubsection: Equivalence">🔗</a></div></section><section class="subsubsection" id="sss_logical_chains"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Chains of implications/equivalences</span>
-</h3>
+</h4>
 <div class="para logical" id="sss_logical_chains-2">
 <div class="para">The relation “<span class="process-math">\(\mathcal{P}\)</span> implies <span class="process-math">\(\mathcal{Q}\)</span>” is transitive: i.e., if <span class="process-math">\(\mathcal{P}\implies\mathcal{Q}\)</span> and <span class="process-math">\(\mathcal{Q}\implies\mathcal{R}\text{,}\)</span> then <span class="process-math">\(\mathcal{P}\implies\mathcal{R}\text{.}\)</span> Similarly, the relation “<span class="process-math">\(\mathcal{P}\)</span> is equivalent to <span class="process-math">\(\mathcal{Q}\)</span>” is transitive. This allows us to prove an implication or equivalence via a <em class="emphasis">chain of implications</em> or <em class="emphasis">chain of equivalences</em>. When writing up a proof using this technique, use a vertically aligned format like the example below, treating one implication or equivalence per line, and adding a brief justification to the right:</div>
 <div class="displaymath process-math" id="sss_logical_chains-2-9">
@@ -599,29 +687,25 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 \end{align*}
 </div>
 <div class="para">only shows that <span class="process-math">\(\mathcal{P}\implies\mathcal{S}\text{.}\)</span> Indeed, we will have <span class="process-math">\(\mathcal{P}\iff\mathcal{S}\)</span> if and only if the intervening implication <span class="process-math">\(\mathcal{Q}\implies\mathcal{R}\)</span> is in fact an equivalence (i.e., the arrow goes both ways).</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sss_logical_chains-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sss_logical_chains-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="warning remark-like" id="sss_logical_chains-3"><h4 class="heading">
+<article class="warning remark-like" id="sss_logical_chains-3"><h5 class="heading">
 <span class="type">Warning</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.4.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4>
-<div class="para" id="sss_logical_chains-3-1-1">It is often tempting, for the sake of space, to try and prove an equivalence <span class="process-math">\(\mathcal{P}\iff\mathcal{Q}\)</span> via a chain of equivalences, as opposed to showing <span class="process-math">\(\mathcal{P}\implies \mathcal{Q}\)</span> and <span class="process-math">\(\mathcal{Q}\implies\mathcal{P}\)</span> separately. When proceeding in this manner, make doubly sure that each <span class="process-math">\(\iff\)</span> is indeed an equivalence: i.e., that the implication arrow really goes both ways at each step. Even if each step in your chain truly is an equivalence, you should consider whether this will be obvious to your reader.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sss_logical_chains-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h5>
+<div class="para" id="sss_logical_chains-3-1-1">It is often tempting, for the sake of space, to try and prove an equivalence <span class="process-math">\(\mathcal{P}\iff\mathcal{Q}\)</span> via a chain of equivalences, as opposed to showing <span class="process-math">\(\mathcal{P}\implies \mathcal{Q}\)</span> and <span class="process-math">\(\mathcal{Q}\implies\mathcal{P}\)</span> separately. When proceeding in this manner, make doubly sure that each <span class="process-math">\(\iff\)</span> is indeed an equivalence: i.e., that the implication arrow really goes both ways at each step. Even if each step in your chain truly is an equivalence, you should consider whether this will be obvious to your reader.<div class="autopermalink" data-description="Paragraph"><a href="#sss_logical_chains-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Warning 0.4.2"><a tabindex="-1" href="#sss_logical_chains-3" title="Copy heading and permalink for Warning 0.4.2" aria-label="Copy heading and permalink for Warning 0.4.2">🔗</a></div>
-</article>
-<div class="para" id="sss_logical_chains-4">The example below provides the proof that a function is invertible if and only if it is bijective (<a href="s_functions.html#th_invertible_bijective" class="xref" data-knowl="./knowl/xref/th_invertible_bijective.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 0.2.11: Invertible is equivalent to bijective">Theorem 0.2.11</a>). The proof nicely illustrates some of the different techniques used for proving implications and equivalences. Additionally, it is a nice example of how to separate out cases of the argument into clearly distinguished steps.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sss_logical_chains-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Warning 0.4.2"><a href="#sss_logical_chains-3" title="Copy heading and permalink for Warning 0.4.2" aria-label="Copy heading and permalink for Warning 0.4.2">🔗</a></div></article><div class="para" id="sss_logical_chains-4">The example below provides the proof that a function is invertible if and only if it is bijective (<a href="s_functions.html#th_invertible_bijective" class="xref" data-knowl="./knowl/xref/th_invertible_bijective.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 0.2.11: Invertible is equivalent to bijective">Theorem 0.2.11</a>). The proof nicely illustrates some of the different techniques used for proving implications and equivalences. Additionally, it is a nice example of how to separate out cases of the argument into clearly distinguished steps.<div class="autopermalink" data-description="Paragraph"><a href="#sss_logical_chains-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="example example-like" id="ex_invertible_bijective"><h4 class="heading">
+<article class="example example-like" id="ex_invertible_bijective"><h5 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.4.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Proof: invertible is equivalent to bijective.</span>
-</h4>
-<div class="para" id="ex_invertible_bijective-2-1">Let <span class="process-math">\(f\colon X\rightarrow Y\)</span> be a function. Prove: <span class="process-math">\(f\)</span> is invertible if and only if <span class="process-math">\(f\)</span> is bijective.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_invertible_bijective-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h5>
+<div class="para" id="ex_invertible_bijective-2-1">Let <span class="process-math">\(f\colon X\rightarrow Y\)</span> be a function. Prove: <span class="process-math">\(f\)</span> is invertible if and only if <span class="process-math">\(f\)</span> is bijective.<div class="autopermalink" data-description="Paragraph"><a href="#ex_invertible_bijective-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions">
-<details id="ex_invertible_bijective-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
-<div class="solution solution-like knowl__content">
-<div class="para" id="ex_invertible_bijective-3-1">Let <span class="process-math">\(\mathcal{P}\)</span> be the proposition that <span class="process-math">\(f\)</span> is invertible, and let <span class="process-math">\(\mathcal{Q}\)</span> be the proposition that <span class="process-math">\(f\)</span> is bijective. We prove the equivalence <span class="process-math">\(\mathcal{P}\iff \mathcal{Q}\)</span> by proving the two implications <span class="process-math">\(\mathcal{P}\implies \mathcal{Q}\)</span> and <span class="process-math">\(\mathcal{Q}\implies\mathcal{P}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_invertible_bijective-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="solutions"><details id="ex_invertible_bijective-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex_invertible_bijective-3-1">Let <span class="process-math">\(\mathcal{P}\)</span> be the proposition that <span class="process-math">\(f\)</span> is invertible, and let <span class="process-math">\(\mathcal{Q}\)</span> be the proposition that <span class="process-math">\(f\)</span> is bijective. We prove the equivalence <span class="process-math">\(\mathcal{P}\iff \mathcal{Q}\)</span> by proving the two implications <span class="process-math">\(\mathcal{P}\implies \mathcal{Q}\)</span> and <span class="process-math">\(\mathcal{Q}\implies\mathcal{P}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex_invertible_bijective-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="case" id="ex_invertible_bijective-3-2"><h5 class="heading">Proof of <span class="process-math">\(\mathcal{P}\implies \mathcal{Q}\)</span>.</h5>
-<div class="para" id="ex_invertible_bijective-3-2-2">We must show that if <span class="process-math">\(f\)</span> is invertible, then <span class="process-math">\(f\)</span> is bijective. Assume <span class="process-math">\(f\)</span> is invertible. Then <span class="process-math">\(f\)</span> has an inverse <span class="process-math">\(f^{-1}\text{.}\)</span> We show separately that <span class="process-math">\(f\)</span> is injective and surjective, hence bijective.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_invertible_bijective-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="case" id="ex_invertible_bijective-3-2"><h6 class="heading">Proof of <span class="process-math">\(\mathcal{P}\implies \mathcal{Q}\)</span>.</h6>
+<div class="para" id="ex_invertible_bijective-3-2-2">We must show that if <span class="process-math">\(f\)</span> is invertible, then <span class="process-math">\(f\)</span> is bijective. Assume <span class="process-math">\(f\)</span> is invertible. Then <span class="process-math">\(f\)</span> has an inverse <span class="process-math">\(f^{-1}\text{.}\)</span> We show separately that <span class="process-math">\(f\)</span> is injective and surjective, hence bijective.<div class="autopermalink" data-description="Paragraph"><a href="#ex_invertible_bijective-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="case" id="ex_invertible_bijective-3-2-3"><h6 class="heading">
 <span class="process-math">\(f\)</span> is injective.</h6>
@@ -633,11 +717,9 @@ f(x)=f(x') \amp \implies f^{-1}(f(x))=f^{-1}(f(x'))\\
 \amp\implies x=x' \amp (f^{-1}\circ f=\id_X) \text{.}
 \end{align*}
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_invertible_bijective-3-2-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex_invertible_bijective-3-2-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Case: f is injective"><a tabindex="-1" href="#ex_invertible_bijective-3-2-3" title="Copy heading and permalink for Case: f is injective" aria-label="Copy heading and permalink for Case: f is injective">🔗</a></div>
-</article>
-<article class="case" id="ex_invertible_bijective-3-2-4"><h6 class="heading">
+<div class="autopermalink" data-description="Case: f is injective"><a href="#ex_invertible_bijective-3-2-3" title="Copy heading and permalink for Case: f is injective" aria-label="Copy heading and permalink for Case: f is injective">🔗</a></div></article><article class="case" id="ex_invertible_bijective-3-2-4"><h6 class="heading">
 <span class="process-math">\(f\)</span> is surjective.</h6>
 <div class="para logical" id="ex_invertible_bijective-3-2-4-2">
 <div class="para">Let <span class="process-math">\(b\)</span> be an element of <span class="process-math">\(Y\text{.}\)</span> We must show that there is an <span class="process-math">\(x\in X\)</span> such that <span class="process-math">\(f(x)=y\text{.}\)</span> Letting <span class="process-math">\(x=f^{-1}(y)\text{,}\)</span> we have</div>
@@ -647,70 +729,47 @@ f(x) \amp = f(f^{-1}(y))\\
 \amp = y \amp (f\circ f^{-1}=\id_Y)\text{.}
 \end{align*}
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_invertible_bijective-3-2-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex_invertible_bijective-3-2-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Case: f is surjective"><a tabindex="-1" href="#ex_invertible_bijective-3-2-4" title="Copy heading and permalink for Case: f is surjective" aria-label="Copy heading and permalink for Case: f is surjective">🔗</a></div>
-</article><div class="autopermalink" aria-hidden="true" data-description="Case: Proof of \mathcal{P}\implies \mathcal{Q}"><a tabindex="-1" href="#ex_invertible_bijective-3-2" title="Copy heading and permalink for Case: Proof of \mathcal{P}\implies \mathcal{Q}" aria-label="Copy heading and permalink for Case: Proof of \mathcal{P}\implies \mathcal{Q}">🔗</a></div>
-</article>
-<article class="case" id="ex_invertible_bijective-3-3"><h5 class="heading">Proof of <span class="process-math">\(\mathcal{Q}\implies\mathcal{P}\)</span>.</h5>
-<div class="para" id="ex_invertible_bijective-3-3-2">We must show that if <span class="process-math">\(f\)</span> is bijective, then <span class="process-math">\(f\)</span> is invertible. Assume <span class="process-math">\(f\)</span> is bijective. First we define a function <span class="process-math">\(g\colon Y\rightarrow X\)</span> as follows: for all <span class="process-math">\(y\in Y\text{,}\)</span> let <span class="process-math">\(g(y)\)</span> be the unique element <span class="process-math">\(x\in X\)</span> such that <span class="process-math">\(f(x)=y\text{.}\)</span> Note that our definition of <span class="process-math">\(g\)</span> uses both that <span class="process-math">\(f\)</span> is surjective (there is <em class="emphasis">some</em> element <span class="process-math">\(x\)</span> such that <span class="process-math">\(f(x)=y\)</span>)) and injective (there is <em class="emphasis">exactly one</em> element <span class="process-math">\(x\)</span> such that <span class="process-math">\(f(x)=y\)</span>).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_invertible_bijective-3-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Case: f is surjective"><a href="#ex_invertible_bijective-3-2-4" title="Copy heading and permalink for Case: f is surjective" aria-label="Copy heading and permalink for Case: f is surjective">🔗</a></div></article><div class="autopermalink" data-description="Case: Proof of \mathcal{P}\implies \mathcal{Q}"><a href="#ex_invertible_bijective-3-2" title="Copy heading and permalink for Case: Proof of \mathcal{P}\implies \mathcal{Q}" aria-label="Copy heading and permalink for Case: Proof of \mathcal{P}\implies \mathcal{Q}">🔗</a></div></article><article class="case" id="ex_invertible_bijective-3-3"><h6 class="heading">Proof of <span class="process-math">\(\mathcal{Q}\implies\mathcal{P}\)</span>.</h6>
+<div class="para" id="ex_invertible_bijective-3-3-2">We must show that if <span class="process-math">\(f\)</span> is bijective, then <span class="process-math">\(f\)</span> is invertible. Assume <span class="process-math">\(f\)</span> is bijective. First we define a function <span class="process-math">\(g\colon Y\rightarrow X\)</span> as follows: for all <span class="process-math">\(y\in Y\text{,}\)</span> let <span class="process-math">\(g(y)\)</span> be the unique element <span class="process-math">\(x\in X\)</span> such that <span class="process-math">\(f(x)=y\text{.}\)</span> Note that our definition of <span class="process-math">\(g\)</span> uses both that <span class="process-math">\(f\)</span> is surjective (there is <em class="emphasis">some</em> element <span class="process-math">\(x\)</span> such that <span class="process-math">\(f(x)=y\)</span>)) and injective (there is <em class="emphasis">exactly one</em> element <span class="process-math">\(x\)</span> such that <span class="process-math">\(f(x)=y\)</span>).<div class="autopermalink" data-description="Paragraph"><a href="#ex_invertible_bijective-3-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ex_invertible_bijective-3-3-3">We now prove that <span class="process-math">\(g\)</span> is the inverse of <span class="process-math">\(f\text{,}\)</span> showing <span class="process-math">\(g\circ f=\id_X\)</span> and <span class="process-math">\(f\circ g=\id_Y\)</span> separately.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_invertible_bijective-3-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex_invertible_bijective-3-3-3">We now prove that <span class="process-math">\(g\)</span> is the inverse of <span class="process-math">\(f\text{,}\)</span> showing <span class="process-math">\(g\circ f=\id_X\)</span> and <span class="process-math">\(f\circ g=\id_Y\)</span> separately.<div class="autopermalink" data-description="Paragraph"><a href="#ex_invertible_bijective-3-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="case" id="ex_invertible_bijective-3-3-4"><h6 class="heading">
 <span class="process-math">\(g\circ f=\id_X\)</span>.</h6>
-<div class="para" id="ex_invertible_bijective-3-3-4-2">Take any <span class="process-math">\(x\in X\)</span> and let <span class="process-math">\(y=f(x)\text{.}\)</span> By definition of <span class="process-math">\(g\text{,}\)</span> we have <span class="process-math">\(g(y)=x\)</span> and hence <span class="process-math">\(g(f(x))=g(y)=x\text{.}\)</span> This proves <span class="process-math">\(g\circ f=\id_X\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_invertible_bijective-3-3-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex_invertible_bijective-3-3-4-2">Take any <span class="process-math">\(x\in X\)</span> and let <span class="process-math">\(y=f(x)\text{.}\)</span> By definition of <span class="process-math">\(g\text{,}\)</span> we have <span class="process-math">\(g(y)=x\)</span> and hence <span class="process-math">\(g(f(x))=g(y)=x\text{.}\)</span> This proves <span class="process-math">\(g\circ f=\id_X\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex_invertible_bijective-3-3-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Case: g\circ f=\id_X"><a tabindex="-1" href="#ex_invertible_bijective-3-3-4" title="Copy heading and permalink for Case: g\circ f=\id_X" aria-label="Copy heading and permalink for Case: g\circ f=\id_X">🔗</a></div>
-</article>
-<article class="case" id="ex_invertible_bijective-3-3-5"><h6 class="heading">
+<div class="autopermalink" data-description="Case: g\circ f=\id_X"><a href="#ex_invertible_bijective-3-3-4" title="Copy heading and permalink for Case: g\circ f=\id_X" aria-label="Copy heading and permalink for Case: g\circ f=\id_X">🔗</a></div></article><article class="case" id="ex_invertible_bijective-3-3-5"><h6 class="heading">
 <span class="process-math">\(f\circ g=\id_Y\)</span>.</h6>
-<div class="para" id="ex_invertible_bijective-3-3-5-2">Take any <span class="process-math">\(y\in Y\text{.}\)</span> By definition of <span class="process-math">\(g\text{,}\)</span> <span class="process-math">\(g(y)\)</span> is the unique <span class="process-math">\(x\in X\)</span> such that <span class="process-math">\(f(x)=y\text{.}\)</span> Thus <span class="process-math">\(f(g(y))=f(x)=y\text{.}\)</span> This proves <span class="process-math">\(f\circ g=\id_Y\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_invertible_bijective-3-3-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex_invertible_bijective-3-3-5-2">Take any <span class="process-math">\(y\in Y\text{.}\)</span> By definition of <span class="process-math">\(g\text{,}\)</span> <span class="process-math">\(g(y)\)</span> is the unique <span class="process-math">\(x\in X\)</span> such that <span class="process-math">\(f(x)=y\text{.}\)</span> Thus <span class="process-math">\(f(g(y))=f(x)=y\text{.}\)</span> This proves <span class="process-math">\(f\circ g=\id_Y\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex_invertible_bijective-3-3-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Case: f\circ g=\id_Y"><a tabindex="-1" href="#ex_invertible_bijective-3-3-5" title="Copy heading and permalink for Case: f\circ g=\id_Y" aria-label="Copy heading and permalink for Case: f\circ g=\id_Y">🔗</a></div>
-</article><div class="autopermalink" aria-hidden="true" data-description="Case: Proof of \mathcal{Q}\implies\mathcal{P}"><a tabindex="-1" href="#ex_invertible_bijective-3-3" title="Copy heading and permalink for Case: Proof of \mathcal{Q}\implies\mathcal{P}" aria-label="Copy heading and permalink for Case: Proof of \mathcal{Q}\implies\mathcal{P}">🔗</a></div>
-</article><div class="autopermalink" aria-hidden="true" data-description="Solution 0.4.3.1"><a tabindex="-1" href="#ex_invertible_bijective-3" title="Copy heading and permalink for Solution 0.4.3.1" aria-label="Copy heading and permalink for Solution 0.4.3.1">🔗</a></div>
-</div></details>
-</div>
-<div class="autopermalink" aria-hidden="true" data-description="Example 0.4.3: Proof: invertible is equivalent to bijective"><a tabindex="-1" href="#ex_invertible_bijective" title="Copy heading and permalink for Example 0.4.3: Proof: invertible is equivalent to bijective" aria-label="Copy heading and permalink for Example 0.4.3: Proof: invertible is equivalent to bijective">🔗</a></div>
-</article><div class="autopermalink" aria-hidden="true" data-description="Subsubsection: Chains of implications/equivalences"><a tabindex="-1" href="#sss_logical_chains" title="Copy heading and permalink for Subsubsection: Chains of implications/equivalences" aria-label="Copy heading and permalink for Subsubsection: Chains of implications/equivalences">🔗</a></div>
-</section>
-<section class="subsubsection" id="sss_proof_by_contradiction">
-<h3 class="heading hide-type">
+<div class="autopermalink" data-description="Case: f\circ g=\id_Y"><a href="#ex_invertible_bijective-3-3-5" title="Copy heading and permalink for Case: f\circ g=\id_Y" aria-label="Copy heading and permalink for Case: f\circ g=\id_Y">🔗</a></div></article><div class="autopermalink" data-description="Case: Proof of \mathcal{Q}\implies\mathcal{P}"><a href="#ex_invertible_bijective-3-3" title="Copy heading and permalink for Case: Proof of \mathcal{Q}\implies\mathcal{P}" aria-label="Copy heading and permalink for Case: Proof of \mathcal{Q}\implies\mathcal{P}">🔗</a></div></article><div class="autopermalink" data-description="Solution 0.4.3.1"><a href="#ex_invertible_bijective-3" title="Copy heading and permalink for Solution 0.4.3.1" aria-label="Copy heading and permalink for Solution 0.4.3.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 0.4.3: Proof: invertible is equivalent to bijective"><a href="#ex_invertible_bijective" title="Copy heading and permalink for Example 0.4.3: Proof: invertible is equivalent to bijective" aria-label="Copy heading and permalink for Example 0.4.3: Proof: invertible is equivalent to bijective">🔗</a></div></article><div class="autopermalink" data-description="Subsubsection: Chains of implications/equivalences"><a href="#sss_logical_chains" title="Copy heading and permalink for Subsubsection: Chains of implications/equivalences" aria-label="Copy heading and permalink for Subsubsection: Chains of implications/equivalences">🔗</a></div></section><section class="subsubsection" id="sss_proof_by_contradiction"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Proof by contradiction</span>
-</h3>
-<div class="para" id="sss_proof_by_contradiction-2">The technique of <em class="emphasis">proof by contradiction</em> (or <em class="emphasis">reductio ad absurdum</em>) proves a proposition <span class="process-math">\(\mathcal{P}\)</span> by (a) assuming the negation <span class="process-math">\(\neg\mathcal{P}\)</span> is true, and then (b) using this assumption to derive a proposition <span class="process-math">\(\mathcal{Q}\)</span> known to be false. The choice of falsehood <span class="process-math">\(\mathcal{Q}\)</span> is completely up to the person providing the proof. However, in order for the proof to be convincing, it should be clear, either logically or because of theory assumed to be known, that <span class="process-math">\(\mathcal{Q}\)</span> is indeed false.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sss_proof_by_contradiction-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h4>
+<div class="para" id="sss_proof_by_contradiction-2">The technique of <em class="emphasis">proof by contradiction</em> (or <em class="emphasis">reductio ad absurdum</em>) proves a proposition <span class="process-math">\(\mathcal{P}\)</span> by (a) assuming the negation <span class="process-math">\(\neg\mathcal{P}\)</span> is true, and then (b) using this assumption to derive a proposition <span class="process-math">\(\mathcal{Q}\)</span> known to be false. The choice of falsehood <span class="process-math">\(\mathcal{Q}\)</span> is completely up to the person providing the proof. However, in order for the proof to be convincing, it should be clear, either logically or because of theory assumed to be known, that <span class="process-math">\(\mathcal{Q}\)</span> is indeed false.<div class="autopermalink" data-description="Paragraph"><a href="#sss_proof_by_contradiction-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="example example-like" id="ex_proof_by_contradiction"><h4 class="heading">
+<article class="example example-like" id="ex_proof_by_contradiction"><h5 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.4.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Proof by contradiction.</span>
-</h4>
-<div class="para" id="ex_proof_by_contradiction-2-1">Prove by contradiction that <span class="process-math">\(0\)</span> has no multiplicative inverse in the reals: i.e., there is no <span class="process-math">\(r\in\R\)</span> such that <span class="process-math">\(r\cdot 0=1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_proof_by_contradiction-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h5>
+<div class="para" id="ex_proof_by_contradiction-2-1">Prove by contradiction that <span class="process-math">\(0\)</span> has no multiplicative inverse in the reals: i.e., there is no <span class="process-math">\(r\in\R\)</span> such that <span class="process-math">\(r\cdot 0=1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex_proof_by_contradiction-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions">
-<details id="ex_proof_by_contradiction-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
-<div class="solution solution-like knowl__content">
-<div class="para" id="ex_proof_by_contradiction-3-1">We prove the claim by contradiction. Assume there is an <span class="process-math">\(r\in \R\)</span> such that <span class="process-math">\(r\cdot 0=1\text{.}\)</span> Since <span class="process-math">\(r\cdot 0=0\)</span> for any <span class="process-math">\(r\in \R\)</span> (a property of multiplication by 0), we have <span class="process-math">\(1=r\cdot 0=0\text{:}\)</span> a contradiction since <span class="process-math">\(1\ne 0\text{.}\)</span> We conclude that there is no <span class="process-math">\(r\in \R\)</span> such that <span class="process-math">\(r\cdot 0=1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_proof_by_contradiction-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="solutions"><details id="ex_proof_by_contradiction-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="ex_proof_by_contradiction-3-1">We prove the claim by contradiction. Assume there is an <span class="process-math">\(r\in \R\)</span> such that <span class="process-math">\(r\cdot 0=1\text{.}\)</span> Since <span class="process-math">\(r\cdot 0=0\)</span> for any <span class="process-math">\(r\in \R\)</span> (a property of multiplication by 0), we have <span class="process-math">\(1=r\cdot 0=0\text{:}\)</span> a contradiction since <span class="process-math">\(1\ne 0\text{.}\)</span> We conclude that there is no <span class="process-math">\(r\in \R\)</span> such that <span class="process-math">\(r\cdot 0=1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex_proof_by_contradiction-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Solution 0.4.4.1"><a tabindex="-1" href="#ex_proof_by_contradiction-3" title="Copy heading and permalink for Solution 0.4.4.1" aria-label="Copy heading and permalink for Solution 0.4.4.1">🔗</a></div>
-</div></details>
-</div>
-<div class="autopermalink" aria-hidden="true" data-description="Example 0.4.4: Proof by contradiction"><a tabindex="-1" href="#ex_proof_by_contradiction" title="Copy heading and permalink for Example 0.4.4: Proof by contradiction" aria-label="Copy heading and permalink for Example 0.4.4: Proof by contradiction">🔗</a></div>
-</article>
-<article class="remark remark-like" id="rm_proof_by_contradiction"><h4 class="heading">
+<div class="autopermalink" data-description="Solution 0.4.4.1"><a href="#ex_proof_by_contradiction-3" title="Copy heading and permalink for Solution 0.4.4.1" aria-label="Copy heading and permalink for Solution 0.4.4.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 0.4.4: Proof by contradiction"><a href="#ex_proof_by_contradiction" title="Copy heading and permalink for Example 0.4.4: Proof by contradiction" aria-label="Copy heading and permalink for Example 0.4.4: Proof by contradiction">🔗</a></div></article><article class="remark remark-like" id="rm_proof_by_contradiction"><h5 class="heading">
 <span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.4.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4>
-<div class="para" id="rm_proof_by_contradiction-1-1">Proof by contradiction resembles, but is not quite the same  thing as proving an implication via its contrapositive. Letting <span class="process-math">\(F\)</span> denote an arbitrary falsehood (the <span class="process-math">\(\mathcal{Q}\)</span> described above) what we do in a proof by contradiction is show that the implication <span class="process-math">\(\neg \mathcal{P}\implies F\)</span> is true. Since <span class="process-math">\(F\)</span> is false, and the implication is true, <span class="process-math">\(\neg \mathcal{P}\)</span> must be false: equivalently, <span class="process-math">\(\mathcal{P}\)</span> must be true.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rm_proof_by_contradiction-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h5>
+<div class="para" id="rm_proof_by_contradiction-1-1">Proof by contradiction resembles, but is not quite the same  thing as proving an implication via its contrapositive. Letting <span class="process-math">\(F\)</span> denote an arbitrary falsehood (the <span class="process-math">\(\mathcal{Q}\)</span> described above) what we do in a proof by contradiction is show that the implication <span class="process-math">\(\neg \mathcal{P}\implies F\)</span> is true. Since <span class="process-math">\(F\)</span> is false, and the implication is true, <span class="process-math">\(\neg \mathcal{P}\)</span> must be false: equivalently, <span class="process-math">\(\mathcal{P}\)</span> must be true.<div class="autopermalink" data-description="Paragraph"><a href="#rm_proof_by_contradiction-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Remark 0.4.5"><a tabindex="-1" href="#rm_proof_by_contradiction" title="Copy heading and permalink for Remark 0.4.5" aria-label="Copy heading and permalink for Remark 0.4.5">🔗</a></div>
-</article><div class="autopermalink" aria-hidden="true" data-description="Subsubsection: Proof by contradiction"><a tabindex="-1" href="#sss_proof_by_contradiction" title="Copy heading and permalink for Subsubsection: Proof by contradiction" aria-label="Copy heading and permalink for Subsubsection: Proof by contradiction">🔗</a></div>
-</section><div class="autopermalink" aria-hidden="true" data-description="Subsection 0.4.1: Logical structure"><a tabindex="-1" href="#ss_logical_structure" title="Copy heading and permalink for Subsection 0.4.1: Logical structure" aria-label="Copy heading and permalink for Subsection 0.4.1: Logical structure">🔗</a></div>
-</section>
-<section class="subsection" id="ss_Equalities">
-<h2 class="heading hide-type">
+<div class="autopermalink" data-description="Remark 0.4.5"><a href="#rm_proof_by_contradiction" title="Copy heading and permalink for Remark 0.4.5" aria-label="Copy heading and permalink for Remark 0.4.5">🔗</a></div></article><div class="autopermalink" data-description="Subsubsection: Proof by contradiction"><a href="#sss_proof_by_contradiction" title="Copy heading and permalink for Subsubsection: Proof by contradiction" aria-label="Copy heading and permalink for Subsubsection: Proof by contradiction">🔗</a></div></section><div class="autopermalink" data-description="Subsection 0.4.1: Logical structure"><a href="#ss_logical_structure" title="Copy heading and permalink for Subsection 0.4.1: Logical structure" aria-label="Copy heading and permalink for Subsection 0.4.1: Logical structure">🔗</a></div></section><section class="subsection" id="ss_Equalities"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.4.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Equalities</span>
-</h2>
-<section class="introduction" id="ss_Equalities-2">
-<div class="para logical" id="ss_Equalities-2-1">
+</h3>
+<section class="introduction" id="ss_Equalities-2"><div class="para logical" id="ss_Equalities-2-1">
 <div class="para">Equality is not as simple as it may seem. In general an equality is a mathematical statement of the form</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ss_set_properties.html ./knowl/xref/ss_function_properties.html" id="eq_equality">
 \begin{equation}
@@ -718,12 +777,10 @@ f(x) \amp = f(f^{-1}(y))\\
 \end{equation}
 </div>
 <div class="para">Here “LHS” and “RHS” stand for left- and right-hand side, respectively. What exactly such an equality means depends very much on what kind of mathematical objects the two sides of the equation are: e.g., numbers, sets, functions, etc. Below we discuss equality for objects of a particular type in detail. (See <a href="s_proof_technique.html#ss_set_properties" class="internal" title="Subsection 0.4.3: Basic set properties">Subsection 0.4.3</a> and <a href="s_proof_technique.html#ss_function_properties" class="internal" title="Subsection 0.4.4: Basic function properties">Subsection 0.4.4</a>.) In all settings, the notion of equality will be <em class="emphasis">transitive</em>: i.e., if <span class="process-math">\(x=y\)</span> and <span class="process-math">\(y=z\text{,}\)</span> then <span class="process-math">\(x=z\text{.}\)</span> We use transitivity implicitly when proving an equality via a <em class="emphasis">chain of equalities</em> as described below.</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_Equalities-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></section>
-<section class="subsubsection" id="sss_chain_equalities">
-<h3 class="heading hide-type">
+<div class="autopermalink" data-description="Paragraph"><a href="#ss_Equalities-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><section class="subsubsection" id="sss_chain_equalities"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Chain of equalities</span>
-</h3>
+</h4>
 <a href="s_proof_technique.html#eq_equality" class="xref" data-knowl="./knowl/xref/eq_equality.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 0.4.1">(0.4.1)</a><div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_equality.html" id="sss_chain_equalities-3">
 \begin{align*}
 \text{LHS} \amp =\text{something}\amp (\text{justifiction})\\
@@ -732,9 +789,9 @@ f(x) \amp = f(f^{-1}(y))\\
 \amp=\text{RHS} \amp (\text{justifiction})\text{.}
 \end{align*}
 </div>
-<article class="warning remark-like" id="sss_chain_equalities-4"><h4 class="heading">
+<article class="warning remark-like" id="sss_chain_equalities-4"><h5 class="heading">
 <span class="type">Warning</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.4.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h4>
+</h5>
 <div class="para logical" id="sss_chain_equalities-4-1">
 <div class="para">Never attempt to prove an equality by starting off with the equality you wish to prove, and then deduce a series of further equalities ending in some inanity: e.g.,</div>
 <div class="displaymath process-math" id="sss_chain_equalities-4-1-2">
@@ -746,20 +803,14 @@ f(x) \amp = f(f^{-1}(y))\\
 \end{align*}
 </div>
 <div class="para">What this suggests is that you are in fact proving an implication: namely, <em class="emphasis">if</em> the desired equality is true, <em class="emphasis">then</em> <span class="process-math">\(0=0\text{.}\)</span> Clearly this is not what we set out to prove! This type of fallacious argument is called “begging the question” (<em class="emphasis">petitio princippii</em> in Latin), as we assume that which was to be proven.</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sss_chain_equalities-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sss_chain_equalities-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Warning 0.4.6"><a tabindex="-1" href="#sss_chain_equalities-4" title="Copy heading and permalink for Warning 0.4.6" aria-label="Copy heading and permalink for Warning 0.4.6">🔗</a></div>
-</article><div class="autopermalink" aria-hidden="true" data-description="Subsubsection: Chain of equalities"><a tabindex="-1" href="#sss_chain_equalities" title="Copy heading and permalink for Subsubsection: Chain of equalities" aria-label="Copy heading and permalink for Subsubsection: Chain of equalities">🔗</a></div>
-</section><div class="autopermalink" aria-hidden="true" data-description="Subsection 0.4.2: Equalities"><a tabindex="-1" href="#ss_Equalities" title="Copy heading and permalink for Subsection 0.4.2: Equalities" aria-label="Copy heading and permalink for Subsection 0.4.2: Equalities">🔗</a></div>
-</section>
-<section class="subsection" id="ss_set_properties">
-<h2 class="heading hide-type">
+<div class="autopermalink" data-description="Warning 0.4.6"><a href="#sss_chain_equalities-4" title="Copy heading and permalink for Warning 0.4.6" aria-label="Copy heading and permalink for Warning 0.4.6">🔗</a></div></article><div class="autopermalink" data-description="Subsubsection: Chain of equalities"><a href="#sss_chain_equalities" title="Copy heading and permalink for Subsubsection: Chain of equalities" aria-label="Copy heading and permalink for Subsubsection: Chain of equalities">🔗</a></div></section><div class="autopermalink" data-description="Subsection 0.4.2: Equalities"><a href="#ss_Equalities" title="Copy heading and permalink for Subsection 0.4.2: Equalities" aria-label="Copy heading and permalink for Subsection 0.4.2: Equalities">🔗</a></div></section><section class="subsection" id="ss_set_properties"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.4.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Basic set properties</span>
-</h2>
-<section class="subsubsection" id="sss_set_inclusion">
-<h3 class="heading hide-type">
-<span class="type">Subsubsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Set inclusion</span>
 </h3>
+<section class="subsubsection" id="sss_set_inclusion"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Set inclusion</span>
+</h4>
 <div class="para logical" id="sss_set_inclusion-2">
 <div class="para">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be sets. By <a href="s_sets_tuples.html#d_set_inclusion" class="xref" data-knowl="./knowl/xref/d_set_inclusion.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.1.3: Set inclusion">Definition 0.1.3</a>, to prove <span class="process-math">\(A\subseteq B\)</span> we must show that for all elements <span class="process-math">\(x\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_set_inclusion.html ./knowl/xref/sss_implication.html ./knowl/xref/sss_logical_chains.html" id="sss_set_inclusion-2-6">
@@ -768,14 +819,11 @@ x\in A\implies x\in B\text{.}
 \end{equation*}
 </div>
 <div class="para">This requires proving the implication above for a general element <span class="process-math">\(x\text{,}\)</span> and we may use any of  the techniques described in <a href="s_proof_technique.html#sss_implication" class="internal" title="Subsubsection: Implication">Implication</a> and <a href="s_proof_technique.html#sss_logical_chains" class="internal" title="Subsubsection: Chains of implications/equivalences">Chains of implications/equivalences</a> to do so.</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sss_set_inclusion-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sss_set_inclusion-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Subsubsection: Set inclusion"><a tabindex="-1" href="#sss_set_inclusion" title="Copy heading and permalink for Subsubsection: Set inclusion" aria-label="Copy heading and permalink for Subsubsection: Set inclusion">🔗</a></div>
-</section>
-<section class="subsubsection" id="sss_set_equality">
-<h3 class="heading hide-type">
+<div class="autopermalink" data-description="Subsubsection: Set inclusion"><a href="#sss_set_inclusion" title="Copy heading and permalink for Subsubsection: Set inclusion" aria-label="Copy heading and permalink for Subsubsection: Set inclusion">🔗</a></div></section><section class="subsubsection" id="sss_set_equality"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Set equality</span>
-</h3>
+</h4>
 <div class="para logical" id="sss_set_equality-2">
 <div class="para">Let <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be sets. To prove <span class="process-math">\(A=B\)</span> directly using <a href="s_sets_tuples.html#d_set_equality" class="xref" data-knowl="./knowl/xref/d_set_equality.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.1.2: Set equality">Definition 0.1.2</a> we must show that for all elements <span class="process-math">\(x\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_set_equality.html" id="sss_set_equality-2-6">
@@ -785,48 +833,40 @@ x\in A \iff x\in B\text{.}
 </div>
 <div class="para">To prove this universal equivalence, we must give an argument for the equivalence that holds for a general element <span class="process-math">\(x\text{.}\)</span>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sss_set_equality-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sss_set_equality-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sss_set_equality-3">Alternatively, you can prove <span class="process-math">\(A=B\)</span> by proving the two set inclusions <span class="process-math">\(A\subseteq B\)</span> and <span class="process-math">\(B\subseteq A\)</span> separately. This is equivalent to proving the two implications <span class="process-math">\(x\in A\implies x\in B\)</span> and <span class="process-math">\(x\in B\implies x\in A\)</span> separately.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sss_set_equality-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sss_set_equality-3">Alternatively, you can prove <span class="process-math">\(A=B\)</span> by proving the two set inclusions <span class="process-math">\(A\subseteq B\)</span> and <span class="process-math">\(B\subseteq A\)</span> separately. This is equivalent to proving the two implications <span class="process-math">\(x\in A\implies x\in B\)</span> and <span class="process-math">\(x\in B\implies x\in A\)</span> separately.<div class="autopermalink" data-description="Paragraph"><a href="#sss_set_equality-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Subsubsection: Set equality"><a tabindex="-1" href="#sss_set_equality" title="Copy heading and permalink for Subsubsection: Set equality" aria-label="Copy heading and permalink for Subsubsection: Set equality">🔗</a></div>
-</section><div class="autopermalink" aria-hidden="true" data-description="Subsection 0.4.3: Basic set properties"><a tabindex="-1" href="#ss_set_properties" title="Copy heading and permalink for Subsection 0.4.3: Basic set properties" aria-label="Copy heading and permalink for Subsection 0.4.3: Basic set properties">🔗</a></div>
-</section>
-<section class="subsection" id="ss_function_properties">
-<h2 class="heading hide-type">
+<div class="autopermalink" data-description="Subsubsection: Set equality"><a href="#sss_set_equality" title="Copy heading and permalink for Subsubsection: Set equality" aria-label="Copy heading and permalink for Subsubsection: Set equality">🔗</a></div></section><div class="autopermalink" data-description="Subsection 0.4.3: Basic set properties"><a href="#ss_set_properties" title="Copy heading and permalink for Subsection 0.4.3: Basic set properties" aria-label="Copy heading and permalink for Subsection 0.4.3: Basic set properties">🔗</a></div></section><section class="subsection" id="ss_function_properties"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.4.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Basic function properties</span>
-</h2>
-<section class="subsubsection" id="sss_function_equality">
-<h3 class="heading hide-type">
-<span class="type">Subsubsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Function equality</span>
 </h3>
+<section class="subsubsection" id="sss_function_equality"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Function equality</span>
+</h4>
 <div class="para logical" id="sss_function_equality-2">
 <div class="para">According to <a href="s_functions.html#d_function_equality" class="xref" data-knowl="./knowl/xref/d_function_equality.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.2.5: Function equality">Definition 0.2.5</a>, in order to show functions <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are equal we must</div>
 <ol class="lower-roman ol-marker-3" id="sss_function_equality-2-4">
 <li id="sss_function_equality-2-4-1">
-<div class="para" id="sss_function_equality-2-4-1-1">show that <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> have the same domain <span class="process-math">\(X\)</span> and codomain <span class="process-math">\(Y\text{,}\)</span> and<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sss_function_equality-2-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sss_function_equality-2-4-1-1">show that <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> have the same domain <span class="process-math">\(X\)</span> and codomain <span class="process-math">\(Y\text{,}\)</span> and<div class="autopermalink" data-description="Paragraph"><a href="#sss_function_equality-2-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item i"><a tabindex="-1" href="#sss_function_equality-2-4-1" title="Copy heading and permalink for Item i" aria-label="Copy heading and permalink for Item i">🔗</a></div>
+<div class="autopermalink" data-description="Item i"><a href="#sss_function_equality-2-4-1" title="Copy heading and permalink for Item i" aria-label="Copy heading and permalink for Item i">🔗</a></div>
 </li>
 <li id="sss_function_equality-2-4-2">
-<div class="para" id="sss_function_equality-2-4-2-1">show that <span class="process-math">\(f(x)=g(x)\)</span> for all <span class="process-math">\(x\in X \text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sss_function_equality-2-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sss_function_equality-2-4-2-1">show that <span class="process-math">\(f(x)=g(x)\)</span> for all <span class="process-math">\(x\in X \text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sss_function_equality-2-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item ii"><a tabindex="-1" href="#sss_function_equality-2-4-2" title="Copy heading and permalink for Item ii" aria-label="Copy heading and permalink for Item ii">🔗</a></div>
+<div class="autopermalink" data-description="Item ii"><a href="#sss_function_equality-2-4-2" title="Copy heading and permalink for Item ii" aria-label="Copy heading and permalink for Item ii">🔗</a></div>
 </li>
 </ol>
 <div class="para">The universal quantifier “for all <span class="process-math">\(x\in X\)</span>” of item (ii) gives this subtask the feel of proving an <em class="emphasis">identity</em>: we must show that equality <span class="process-math">\(f(x)=g(x)\)</span> holds <em class="emphasis">for all</em> <span class="process-math">\(x\in X\text{.}\)</span> By the same token, to show (ii) does not hold, it suffices to show that <span class="process-math">\(f(x)\ne g(x)\)</span> for some <span class="process-math">\(x\in X\text{.}\)</span>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sss_function_equality-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sss_function_equality-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Subsubsection: Function equality"><a tabindex="-1" href="#sss_function_equality" title="Copy heading and permalink for Subsubsection: Function equality" aria-label="Copy heading and permalink for Subsubsection: Function equality">🔗</a></div>
-</section>
-<section class="subsubsection" id="sss_injective_surjective_bijective">
-<h3 class="heading hide-type">
+<div class="autopermalink" data-description="Subsubsection: Function equality"><a href="#sss_function_equality" title="Copy heading and permalink for Subsubsection: Function equality" aria-label="Copy heading and permalink for Subsubsection: Function equality">🔗</a></div></section><section class="subsubsection" id="sss_injective_surjective_bijective"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Injective, surjective, bijective</span>
-</h3>
-<div class="para" id="sss_injective_surjective_bijective-2">Let <span class="process-math">\(f\colon X\rightarrow Y\)</span> be a function.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sss_injective_surjective_bijective-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h4>
+<div class="para" id="sss_injective_surjective_bijective-2">Let <span class="process-math">\(f\colon X\rightarrow Y\)</span> be a function.<div class="autopermalink" data-description="Paragraph"><a href="#sss_injective_surjective_bijective-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="case" id="sss_injective_surjective_bijective-3"><h4 class="heading">Injectivity.</h4>
+<article class="case" id="sss_injective_surjective_bijective-3"><h5 class="heading">Injectivity.</h5>
 <div class="para logical" id="sss_injective_surjective_bijective-3-2">
 <div class="para">To show <span class="process-math">\(f\)</span> is injective, we must show that the implication</div>
 <div class="displaymath process-math" id="sss_injective_surjective_bijective-3-2-2">
@@ -842,13 +882,11 @@ x\ne x'\implies f(x)\ne f(x')
 </div>
 <div class="para">for all <span class="process-math">\(x,x'\in X\text{.}\)</span>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sss_injective_surjective_bijective-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sss_injective_surjective_bijective-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sss_injective_surjective_bijective-3-3">Similarly, to show <span class="process-math">\(f\)</span> is not injective, we simply have to find <span class="process-math">\(x, x'\in X\)</span> satisfying <span class="process-math">\(x\ne x'\)</span> and <span class="process-math">\(f(x)=f(x')\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sss_injective_surjective_bijective-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sss_injective_surjective_bijective-3-3">Similarly, to show <span class="process-math">\(f\)</span> is not injective, we simply have to find <span class="process-math">\(x, x'\in X\)</span> satisfying <span class="process-math">\(x\ne x'\)</span> and <span class="process-math">\(f(x)=f(x')\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sss_injective_surjective_bijective-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Case: Injectivity"><a tabindex="-1" href="#sss_injective_surjective_bijective-3" title="Copy heading and permalink for Case: Injectivity" aria-label="Copy heading and permalink for Case: Injectivity">🔗</a></div>
-</article>
-<article class="case" id="sss_injective_surjective_bijective-4"><h4 class="heading">Surjectivity.</h4>
+<div class="autopermalink" data-description="Case: Injectivity"><a href="#sss_injective_surjective_bijective-3" title="Copy heading and permalink for Case: Injectivity" aria-label="Copy heading and permalink for Case: Injectivity">🔗</a></div></article><article class="case" id="sss_injective_surjective_bijective-4"><h5 class="heading">Surjectivity.</h5>
 <div class="para logical" id="sss_injective_surjective_bijective-4-2">
 <div class="para">To prove <span class="process-math">\(f\)</span> is surjective, we must prove the universal quantification:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/rm_negating_quantifiers.html" id="sss_injective_surjective_bijective-4-2-2">
@@ -858,25 +896,17 @@ x\ne x'\implies f(x)\ne f(x')
 </div>
 <div class="para">To prove <span class="process-math">\(f\)</span> is <em class="emphasis">not</em> surjective, we must prove the negation of this proposition (<a href="s_logic.html#rm_negating_quantifiers" class="xref" data-knowl="./knowl/xref/rm_negating_quantifiers.html" data-reveal-label="Reveal" data-close-label="Close" title="Remark 0.3.9: Negating quantifiers">Remark 0.3.9</a>): i.e., there exists a <span class="process-math">\(y\in Y\)</span> for which there is no <span class="process-math">\(x\in X\)</span> with <span class="process-math">\(f(x)=y\text{.}\)</span>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sss_injective_surjective_bijective-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sss_injective_surjective_bijective-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Case: Surjectivity"><a tabindex="-1" href="#sss_injective_surjective_bijective-4" title="Copy heading and permalink for Case: Surjectivity" aria-label="Copy heading and permalink for Case: Surjectivity">🔗</a></div>
-</article>
-<article class="case" id="sss_injective_surjective_bijective-5"><h4 class="heading">Bijectivity.</h4>
-<div class="para" id="sss_injective_surjective_bijective-5-2">To show <span class="process-math">\(f\)</span> is bijective directly using <a href="s_functions.html#d_injective_surjective_bijective" class="xref" data-knowl="./knowl/xref/d_injective_surjective_bijective.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.2.7: Injective, surjective, bijective">Definition 0.2.7</a>, we must show that <span class="process-math">\(f\)</span> is injective and surjective. This is equivalent to showing that for <span class="process-math">\(y\in Y\)</span> there exists a <em class="emphasis">unique</em> element <span class="process-math">\(x\in X\)</span> such that <span class="process-math">\(f(x)=y\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sss_injective_surjective_bijective-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Case: Surjectivity"><a href="#sss_injective_surjective_bijective-4" title="Copy heading and permalink for Case: Surjectivity" aria-label="Copy heading and permalink for Case: Surjectivity">🔗</a></div></article><article class="case" id="sss_injective_surjective_bijective-5"><h5 class="heading">Bijectivity.</h5>
+<div class="para" id="sss_injective_surjective_bijective-5-2">To show <span class="process-math">\(f\)</span> is bijective directly using <a href="s_functions.html#d_injective_surjective_bijective" class="xref" data-knowl="./knowl/xref/d_injective_surjective_bijective.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.2.7: Injective, surjective, bijective">Definition 0.2.7</a>, we must show that <span class="process-math">\(f\)</span> is injective and surjective. This is equivalent to showing that for <span class="process-math">\(y\in Y\)</span> there exists a <em class="emphasis">unique</em> element <span class="process-math">\(x\in X\)</span> such that <span class="process-math">\(f(x)=y\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sss_injective_surjective_bijective-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sss_injective_surjective_bijective-5-3">Alternatively, using <a href="s_functions.html#th_invertible_bijective" class="xref" data-knowl="./knowl/xref/th_invertible_bijective.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 0.2.11: Invertible is equivalent to bijective">Theorem 0.2.11</a> we can show that <span class="process-math">\(f\)</span> is bijective by providing an inverse function <span class="process-math">\(f^{-1}\colon Y\rightarrow X\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sss_injective_surjective_bijective-5-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="sss_injective_surjective_bijective-5-3">Alternatively, using <a href="s_functions.html#th_invertible_bijective" class="xref" data-knowl="./knowl/xref/th_invertible_bijective.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 0.2.11: Invertible is equivalent to bijective">Theorem 0.2.11</a> we can show that <span class="process-math">\(f\)</span> is bijective by providing an inverse function <span class="process-math">\(f^{-1}\colon Y\rightarrow X\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sss_injective_surjective_bijective-5-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Case: Bijectivity"><a tabindex="-1" href="#sss_injective_surjective_bijective-5" title="Copy heading and permalink for Case: Bijectivity" aria-label="Copy heading and permalink for Case: Bijectivity">🔗</a></div>
-</article><div class="autopermalink" aria-hidden="true" data-description="Subsubsection: Injective, surjective, bijective"><a tabindex="-1" href="#sss_injective_surjective_bijective" title="Copy heading and permalink for Subsubsection: Injective, surjective, bijective" aria-label="Copy heading and permalink for Subsubsection: Injective, surjective, bijective">🔗</a></div>
-</section><div class="autopermalink" aria-hidden="true" data-description="Subsection 0.4.4: Basic function properties"><a tabindex="-1" href="#ss_function_properties" title="Copy heading and permalink for Subsection 0.4.4: Basic function properties" aria-label="Copy heading and permalink for Subsection 0.4.4: Basic function properties">🔗</a></div>
-</section>
-<section class="subsection" id="ss_mathematical_induction">
-<h2 class="heading hide-type">
+<div class="autopermalink" data-description="Case: Bijectivity"><a href="#sss_injective_surjective_bijective-5" title="Copy heading and permalink for Case: Bijectivity" aria-label="Copy heading and permalink for Case: Bijectivity">🔗</a></div></article><div class="autopermalink" data-description="Subsubsection: Injective, surjective, bijective"><a href="#sss_injective_surjective_bijective" title="Copy heading and permalink for Subsubsection: Injective, surjective, bijective" aria-label="Copy heading and permalink for Subsubsection: Injective, surjective, bijective">🔗</a></div></section><div class="autopermalink" data-description="Subsection 0.4.4: Basic function properties"><a href="#ss_function_properties" title="Copy heading and permalink for Subsection 0.4.4: Basic function properties" aria-label="Copy heading and permalink for Subsection 0.4.4: Basic function properties">🔗</a></div></section><section class="subsection" id="ss_mathematical_induction"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.4.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Mathematical induction</span>
-</h2>
-<section class="introduction" id="ss_mathematical_induction-3">
-<div class="para logical" id="ss_mathematical_induction-3-1">
+</h3>
+<section class="introduction" id="ss_mathematical_induction-3"><div class="para logical" id="ss_mathematical_induction-3-1">
 <div class="para">
 <em class="emphasis">Mathematical induction</em> is a technique for proving universal quantifications of the form</div>
 <div class="displaymath process-math" id="ss_mathematical_induction-3-1-2">
@@ -890,20 +920,16 @@ x\ne x'\implies f(x)\ne f(x')
 \forall n\geq b\, P(n)\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_mathematical_induction-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></section>
-<section class="subsubsection" id="sss_weak_induction">
-<h3 class="heading hide-type">
+<div class="autopermalink" data-description="Paragraph"><a href="#ss_mathematical_induction-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><section class="subsubsection" id="sss_weak_induction"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Proof by induction</span>
-</h3>
-<div class="para" id="sss_weak_induction-3">Suppose <span class="process-math">\(P\)</span> is a predicate of integers. To prove the proposition <span class="process-math">\(\forall n\geq b\, P(n)\)</span> by <dfn class="terminology">induction</dfn> (sometimes called <dfn class="terminology">weak induction</dfn>), we proceed in two steps.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sss_weak_induction-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h4>
+<div class="para" id="sss_weak_induction-3">Suppose <span class="process-math">\(P\)</span> is a predicate of integers. To prove the proposition <span class="process-math">\(\forall n\geq b\, P(n)\)</span> by <dfn class="terminology">induction</dfn> (sometimes called <dfn class="terminology">weak induction</dfn>), we proceed in two steps.<div class="autopermalink" data-description="Paragraph"><a href="#sss_weak_induction-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="case" id="sss_weak_induction-4"><h4 class="heading">Base step.</h4>
-<div class="para" id="sss_weak_induction-4-2">Show that <span class="process-math">\(P(b)\)</span> is true.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sss_weak_induction-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="case" id="sss_weak_induction-4"><h5 class="heading">Base step.</h5>
+<div class="para" id="sss_weak_induction-4-2">Show that <span class="process-math">\(P(b)\)</span> is true.<div class="autopermalink" data-description="Paragraph"><a href="#sss_weak_induction-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Case: Base step"><a tabindex="-1" href="#sss_weak_induction-4" title="Copy heading and permalink for Case: Base step" aria-label="Copy heading and permalink for Case: Base step">🔗</a></div>
-</article>
-<article class="case" id="sss_weak_induction-5"><h4 class="heading">Induction step.</h4>
+<div class="autopermalink" data-description="Case: Base step"><a href="#sss_weak_induction-4" title="Copy heading and permalink for Case: Base step" aria-label="Copy heading and permalink for Case: Base step">🔗</a></div></article><article class="case" id="sss_weak_induction-5"><h5 class="heading">Induction step.</h5>
 <div class="para logical" id="sss_weak_induction-5-2">
 <div class="para">Prove the universal implication</div>
 <div class="displaymath process-math" id="sss_weak_induction-5-2-1">
@@ -912,13 +938,11 @@ x\ne x'\implies f(x)\ne f(x')
 \end{equation*}
 </div>
 <div class="para">In practice, if proving the implication <span class="process-math">\(P(n)\implies P(n+1)\)</span> directly, this means we assume <span class="process-math">\(P(n)\)</span> is true (the <dfn class="terminology">induction hypothesis</dfn>), and use this assumption to show <span class="process-math">\(P(n+1)\)</span> is true.</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sss_weak_induction-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sss_weak_induction-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Case: Induction step"><a tabindex="-1" href="#sss_weak_induction-5" title="Copy heading and permalink for Case: Induction step" aria-label="Copy heading and permalink for Case: Induction step">🔗</a></div>
-</article>
-<article class="remark remark-like" id="rm_induction"><h4 class="heading">
+<div class="autopermalink" data-description="Case: Induction step"><a href="#sss_weak_induction-5" title="Copy heading and permalink for Case: Induction step" aria-label="Copy heading and permalink for Case: Induction step">🔗</a></div></article><article class="remark remark-like" id="rm_induction"><h5 class="heading">
 <span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.4.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">“Step 0” of induction.</span>
-</h4>
+</h5>
 <div class="para logical" id="rm_induction-2-1">
 <div class="para">When meeting a proposition in the wild that we wish to prove by induction, you should first take care to model the proposition in the form</div>
 <div class="displaymath process-math" id="rm_induction-2-1-1">
@@ -927,13 +951,11 @@ x\ne x'\implies f(x)\ne f(x')
 \end{equation*}
 </div>
 <div class="para">Make explicit the predicate <span class="process-math">\(P\)</span> in question, as well as the base case <span class="process-math">\(b\text{.}\)</span> We illustrate this preparatory “Step 0” in the examples below.</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rm_induction-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#rm_induction-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description='Remark 0.4.7: "Step 0" of induction'><a tabindex="-1" href="#rm_induction" title='Copy heading and permalink for Remark 0.4.7: "Step 0" of induction' aria-label='Copy heading and permalink for Remark 0.4.7: "Step 0" of induction'>🔗</a></div>
-</article>
-<article class="example example-like" id="eg_weak_induction"><h4 class="heading">
+<div class="autopermalink" data-description='Remark 0.4.7: "Step 0" of induction'><a href="#rm_induction" title='Copy heading and permalink for Remark 0.4.7: "Step 0" of induction' aria-label='Copy heading and permalink for Remark 0.4.7: "Step 0" of induction'>🔗</a></div></article><article class="example example-like" id="eg_weak_induction"><h5 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.4.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Weak induction.</span>
-</h4>
+</h5>
 <div class="para logical" id="eg_weak_induction-2-1">
 <div class="para">Prove the identity</div>
 <div class="displaymath process-math" id="eg_weak_induction-2-1-1">
@@ -947,14 +969,12 @@ x\ne x'\implies f(x)\ne f(x')
 \sum_{k=1}^n k=1+2+\cdots +n\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_weak_induction-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#eg_weak_induction-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions">
-<details id="eg_weak_induction-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
-<div class="solution solution-like knowl__content">
-<div class="para" id="eg_weak_induction-3-1">We prove the proposition by induction.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_weak_induction-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="solutions"><details id="eg_weak_induction-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="eg_weak_induction-3-1">We prove the proposition by induction.<div class="autopermalink" data-description="Paragraph"><a href="#eg_weak_induction-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="case" id="eg_weak_induction-3-2"><h5 class="heading">Step 0: preparation.</h5>
+<article class="case" id="eg_weak_induction-3-2"><h6 class="heading">Step 0: preparation.</h6>
 <div class="para logical" id="eg_weak_induction-3-2-2">
 <div class="para">The proposition is modeled logically as <span class="process-math">\(\forall n\geq 1 \, P(n)\text{,}\)</span> where <span class="process-math">\(P(n)\)</span> is the proposition that</div>
 <div class="displaymath process-math" id="eg_weak_induction-3-2-2-3">
@@ -962,11 +982,9 @@ x\ne x'\implies f(x)\ne f(x')
 \sum_{k=1}^n k=\frac{n(n+1)}{2}\text{.}
 \end{equation*}
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_weak_induction-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#eg_weak_induction-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Case: Step 0: preparation"><a tabindex="-1" href="#eg_weak_induction-3-2" title="Copy heading and permalink for Case: Step 0: preparation" aria-label="Copy heading and permalink for Case: Step 0: preparation">🔗</a></div>
-</article>
-<article class="case" id="eg_weak_induction-3-3"><h5 class="heading">Base step: <span class="process-math">\(n=1\)</span>.</h5>
+<div class="autopermalink" data-description="Case: Step 0: preparation"><a href="#eg_weak_induction-3-2" title="Copy heading and permalink for Case: Step 0: preparation" aria-label="Copy heading and permalink for Case: Step 0: preparation">🔗</a></div></article><article class="case" id="eg_weak_induction-3-3"><h6 class="heading">Base step: <span class="process-math">\(n=1\)</span>.</h6>
 <div class="para logical" id="eg_weak_induction-3-3-2">
 <div class="para">The proposition <span class="process-math">\(P(1)\)</span> is the statement that</div>
 <div class="displaymath process-math" id="eg_weak_induction-3-3-2-2">
@@ -975,11 +993,9 @@ x\ne x'\implies f(x)\ne f(x')
 \end{equation*}
 </div>
 <div class="para">which is clearly true.</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_weak_induction-3-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#eg_weak_induction-3-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Case: Base step: n=1"><a tabindex="-1" href="#eg_weak_induction-3-3" title="Copy heading and permalink for Case: Base step: n=1" aria-label="Copy heading and permalink for Case: Base step: n=1">🔗</a></div>
-</article>
-<article class="case" id="eg_weak_induction-3-4"><h5 class="heading">Induction step.</h5>
+<div class="autopermalink" data-description="Case: Base step: n=1"><a href="#eg_weak_induction-3-3" title="Copy heading and permalink for Case: Base step: n=1" aria-label="Copy heading and permalink for Case: Base step: n=1">🔗</a></div></article><article class="case" id="eg_weak_induction-3-4"><h6 class="heading">Induction step.</h6>
 <div class="para logical" id="eg_weak_induction-3-4-2">
 <div class="para">We must show the universal implication</div>
 <div class="displaymath process-math" id="eg_weak_induction-3-4-2-1">
@@ -1009,36 +1025,24 @@ x\ne x'\implies f(x)\ne f(x')
 \end{align*}
 </div>
 <div class="para">as desired.</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_weak_induction-3-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#eg_weak_induction-3-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Case: Induction step"><a tabindex="-1" href="#eg_weak_induction-3-4" title="Copy heading and permalink for Case: Induction step" aria-label="Copy heading and permalink for Case: Induction step">🔗</a></div>
-</article>
-<div class="para" id="eg_weak_induction-3-5">Having completed our base and induction steps, our proof is now finished.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_weak_induction-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Case: Induction step"><a href="#eg_weak_induction-3-4" title="Copy heading and permalink for Case: Induction step" aria-label="Copy heading and permalink for Case: Induction step">🔗</a></div></article><div class="para" id="eg_weak_induction-3-5">Having completed our base and induction steps, our proof is now finished.<div class="autopermalink" data-description="Paragraph"><a href="#eg_weak_induction-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Solution 0.4.8.1"><a tabindex="-1" href="#eg_weak_induction-3" title="Copy heading and permalink for Solution 0.4.8.1" aria-label="Copy heading and permalink for Solution 0.4.8.1">🔗</a></div>
-</div></details>
+<div class="autopermalink" data-description="Solution 0.4.8.1"><a href="#eg_weak_induction-3" title="Copy heading and permalink for Solution 0.4.8.1" aria-label="Copy heading and permalink for Solution 0.4.8.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 0.4.8: Weak induction"><a href="#eg_weak_induction" title="Copy heading and permalink for Example 0.4.8: Weak induction" aria-label="Copy heading and permalink for Example 0.4.8: Weak induction">🔗</a></div></article><div class="para" id="sss_weak_induction-8">So why does proof by induction work? In other words, why is it a valid proof technique? Imagine our propositions <span class="process-math">\(P(n)\)</span> as forming an infinite ladder that we wish to ascend. Cautious climbers that we are, we only will step on a rung if we know the corresponding proposition is true. Knowing <span class="process-math">\(P(b)\)</span> is true (the base step) allows us to step onto the first rung. The universal implication <span class="process-math">\(\forall n\geq b\, P(n)\implies P(n+1)\)</span> (induction step) gives us a <em class="emphasis">rule</em> that says if rung <span class="process-math">\(n\)</span> is secure (i.e., true), then so is rung <span class="process-math">\(n+1\text{.}\)</span> Since this rule holds for all rungs (i.e., for all <span class="process-math">\(n\geq b\)</span>), we can safely ascend the entire ladder! <figure class="figure figure-like" id="fig_proof_induction"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/im_proof_induction.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.4.9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Mathematical induction as ladder of propositions<div class="autopermalink" data-description="Figure 0.4.9: Mathematical induction as ladder of propositions"><a href="#fig_proof_induction" title="Copy heading and permalink for Figure 0.4.9: Mathematical induction as ladder of propositions" aria-label="Copy heading and permalink for Figure 0.4.9: Mathematical induction as ladder of propositions">🔗</a></div></figcaption></figure> <div class="autopermalink" data-description="Paragraph"><a href="#sss_weak_induction-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Example 0.4.8: Weak induction"><a tabindex="-1" href="#eg_weak_induction" title="Copy heading and permalink for Example 0.4.8: Weak induction" aria-label="Copy heading and permalink for Example 0.4.8: Weak induction">🔗</a></div>
-</article>
-<div class="para" id="sss_weak_induction-8">So why does proof by induction work? In other words, why is it a valid proof technique? Imagine our propositions <span class="process-math">\(P(n)\)</span> as forming an infinite ladder that we wish to ascend. Cautious climbers that we are, we only will step on a rung if we know the corresponding proposition is true. Knowing <span class="process-math">\(P(b)\)</span> is true (the base step) allows us to step onto the first rung. The universal implication <span class="process-math">\(\forall n\geq b\, P(n)\implies P(n+1)\)</span> (induction step) gives us a <em class="emphasis">rule</em> that says if rung <span class="process-math">\(n\)</span> is secure (i.e., true), then so is rung <span class="process-math">\(n+1\text{.}\)</span> Since this rule holds for all rungs (i.e., for all <span class="process-math">\(n\geq b\)</span>), we can safely ascend the entire ladder! 
-<figure class="figure figure-like" id="fig_proof_induction"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/im_proof_induction.svg" role="img" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.4.9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Mathematical induction as ladder of propositions<div class="autopermalink" aria-hidden="true" data-description="Figure 0.4.9: Mathematical induction as ladder of propositions"><a tabindex="-1" href="#fig_proof_induction" title="Copy heading and permalink for Figure 0.4.9: Mathematical induction as ladder of propositions" aria-label="Copy heading and permalink for Figure 0.4.9: Mathematical induction as ladder of propositions">🔗</a></div></figcaption>
-</figure> <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sss_weak_induction-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" aria-hidden="true" data-description="Subsubsection: Proof by induction"><a tabindex="-1" href="#sss_weak_induction" title="Copy heading and permalink for Subsubsection: Proof by induction" aria-label="Copy heading and permalink for Subsubsection: Proof by induction">🔗</a></div>
-</section>
-<section class="subsubsection" id="sss_strong_induction">
-<h3 class="heading hide-type">
+<div class="autopermalink" data-description="Subsubsection: Proof by induction"><a href="#sss_weak_induction" title="Copy heading and permalink for Subsubsection: Proof by induction" aria-label="Copy heading and permalink for Subsubsection: Proof by induction">🔗</a></div></section><section class="subsubsection" id="sss_strong_induction"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Proof by strong induction</span>
-</h3>
-<div class="para" id="sss_strong_induction-3">Suppose <span class="process-math">\(P\)</span> is a predicate of integers. To prove the proposition <span class="process-math">\(\forall n\geq b P(n)\)</span> by <dfn class="terminology">strong induction</dfn>, we proceed in two steps.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sss_strong_induction-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h4>
+<div class="para" id="sss_strong_induction-3">Suppose <span class="process-math">\(P\)</span> is a predicate of integers. To prove the proposition <span class="process-math">\(\forall n\geq b P(n)\)</span> by <dfn class="terminology">strong induction</dfn>, we proceed in two steps.<div class="autopermalink" data-description="Paragraph"><a href="#sss_strong_induction-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="case" id="sss_strong_induction-4"><h4 class="heading">Base step: <span class="process-math">\(n=b\)</span>.</h4>
-<div class="para" id="sss_strong_induction-4-2">Show that <span class="process-math">\(P(b)\)</span> is true.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sss_strong_induction-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="case" id="sss_strong_induction-4"><h5 class="heading">Base step: <span class="process-math">\(n=b\)</span>.</h5>
+<div class="para" id="sss_strong_induction-4-2">Show that <span class="process-math">\(P(b)\)</span> is true.<div class="autopermalink" data-description="Paragraph"><a href="#sss_strong_induction-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Case: Base step: n=b"><a tabindex="-1" href="#sss_strong_induction-4" title="Copy heading and permalink for Case: Base step: n=b" aria-label="Copy heading and permalink for Case: Base step: n=b">🔗</a></div>
-</article>
-<article class="case" id="sss_strong_induction-5"><h4 class="heading">Strong induction step.</h4>
+<div class="autopermalink" data-description="Case: Base step: n=b"><a href="#sss_strong_induction-4" title="Copy heading and permalink for Case: Base step: n=b" aria-label="Copy heading and permalink for Case: Base step: n=b">🔗</a></div></article><article class="case" id="sss_strong_induction-5"><h5 class="heading">Strong induction step.</h5>
 <div class="para logical" id="sss_strong_induction-5-2">
 <div class="para">Prove the universal implication</div>
 <div class="displaymath process-math" id="sss_strong_induction-5-2-1">
@@ -1047,33 +1051,25 @@ x\ne x'\implies f(x)\ne f(x')
 \end{equation*}
 </div>
 <div class="para">This technique is called strong induction, as now the induction hypothesis is much stronger: to prove this implication directly we assume <span class="process-math">\(P(k)\)</span> is true for all <span class="process-math">\(1\leq k\leq n\)</span> (not just <span class="process-math">\(k=n\)</span> as in weak induction), and use this assumption to show <span class="process-math">\(P(n+1)\)</span> is true.</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sss_strong_induction-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sss_strong_induction-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Case: Strong induction step"><a tabindex="-1" href="#sss_strong_induction-5" title="Copy heading and permalink for Case: Strong induction step" aria-label="Copy heading and permalink for Case: Strong induction step">🔗</a></div>
-</article>
-<div class="para" id="sss_strong_induction-6">In fact, strong induction is, logically speaking, no stronger than weak induction. Both techniques apply to propositions of the form <span class="process-math">\(\forall n\geq b\, P(n)\text{,}\)</span> and you are free to choose which form of induction to use each time. We typically use strong induction out of convenience, when the nature of the predicate <span class="process-math">\(P\)</span> is such that we can prove <span class="process-math">\(P(n+1)\)</span> most elegantly by assuming <span class="process-math">\(P(b), P(b+1), \dots, P(n)\text{,}\)</span> as opposed to just <span class="process-math">\(P(n)\text{.}\)</span> The following example is characteristic in this regard.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#sss_strong_induction-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Case: Strong induction step"><a href="#sss_strong_induction-5" title="Copy heading and permalink for Case: Strong induction step" aria-label="Copy heading and permalink for Case: Strong induction step">🔗</a></div></article><div class="para" id="sss_strong_induction-6">In fact, strong induction is, logically speaking, no stronger than weak induction. Both techniques apply to propositions of the form <span class="process-math">\(\forall n\geq b\, P(n)\text{,}\)</span> and you are free to choose which form of induction to use each time. We typically use strong induction out of convenience, when the nature of the predicate <span class="process-math">\(P\)</span> is such that we can prove <span class="process-math">\(P(n+1)\)</span> most elegantly by assuming <span class="process-math">\(P(b), P(b+1), \dots, P(n)\text{,}\)</span> as opposed to just <span class="process-math">\(P(n)\text{.}\)</span> The following example is characteristic in this regard.<div class="autopermalink" data-description="Paragraph"><a href="#sss_strong_induction-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="example example-like" id="eg_strong_induction"><h4 class="heading">
+<article class="example example-like" id="eg_strong_induction"><h5 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.4.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Strong induction.</span>
-</h4>
-<div class="para" id="eg_strong_induction-2-1">Prove that every integer <span class="process-math">\(n\geq 2\)</span> can be written as a product of primes.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_strong_induction-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h5>
+<div class="para" id="eg_strong_induction-2-1">Prove that every integer <span class="process-math">\(n\geq 2\)</span> can be written as a product of primes.<div class="autopermalink" data-description="Paragraph"><a href="#eg_strong_induction-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions">
-<details id="eg_strong_induction-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
-<div class="solution solution-like knowl__content">
-<div class="para" id="eg_strong_induction-3-1">We prove the statement by induction.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_strong_induction-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="solutions"><details id="eg_strong_induction-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="eg_strong_induction-3-1">We prove the statement by induction.<div class="autopermalink" data-description="Paragraph"><a href="#eg_strong_induction-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="case" id="eg_strong_induction-3-2"><h5 class="heading">Step 0: preparation.</h5>
-<div class="para" id="eg_strong_induction-3-2-2">The proposition is modeled logically as <span class="process-math">\(\forall n\geq 2\, P(n)\text{,}\)</span> where <span class="process-math">\(P(n)\)</span> is the proposition that <span class="process-math">\(n\)</span> is a product of primes.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_strong_induction-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<article class="case" id="eg_strong_induction-3-2"><h6 class="heading">Step 0: preparation.</h6>
+<div class="para" id="eg_strong_induction-3-2-2">The proposition is modeled logically as <span class="process-math">\(\forall n\geq 2\, P(n)\text{,}\)</span> where <span class="process-math">\(P(n)\)</span> is the proposition that <span class="process-math">\(n\)</span> is a product of primes.<div class="autopermalink" data-description="Paragraph"><a href="#eg_strong_induction-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Case: Step 0: preparation"><a tabindex="-1" href="#eg_strong_induction-3-2" title="Copy heading and permalink for Case: Step 0: preparation" aria-label="Copy heading and permalink for Case: Step 0: preparation">🔗</a></div>
-</article>
-<article class="case" id="eg_strong_induction-3-3"><h5 class="heading">Base step: <span class="process-math">\(n=2\)</span>.</h5>
-<div class="para" id="eg_strong_induction-3-3-2">The proposition <span class="process-math">\(P(2)\)</span> asserts that <span class="process-math">\(2\)</span> is a product of primes. This is true since <span class="process-math">\(2\)</span> is itself prime, hence a product of one prime number.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_strong_induction-3-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Case: Step 0: preparation"><a href="#eg_strong_induction-3-2" title="Copy heading and permalink for Case: Step 0: preparation" aria-label="Copy heading and permalink for Case: Step 0: preparation">🔗</a></div></article><article class="case" id="eg_strong_induction-3-3"><h6 class="heading">Base step: <span class="process-math">\(n=2\)</span>.</h6>
+<div class="para" id="eg_strong_induction-3-3-2">The proposition <span class="process-math">\(P(2)\)</span> asserts that <span class="process-math">\(2\)</span> is a product of primes. This is true since <span class="process-math">\(2\)</span> is itself prime, hence a product of one prime number.<div class="autopermalink" data-description="Paragraph"><a href="#eg_strong_induction-3-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Case: Base step: n=2"><a tabindex="-1" href="#eg_strong_induction-3-3" title="Copy heading and permalink for Case: Base step: n=2" aria-label="Copy heading and permalink for Case: Base step: n=2">🔗</a></div>
-</article>
-<article class="case" id="eg_strong_induction-3-4"><h5 class="heading">Strong induction step.</h5>
+<div class="autopermalink" data-description="Case: Base step: n=2"><a href="#eg_strong_induction-3-3" title="Copy heading and permalink for Case: Base step: n=2" aria-label="Copy heading and permalink for Case: Base step: n=2">🔗</a></div></article><article class="case" id="eg_strong_induction-3-4"><h6 class="heading">Strong induction step.</h6>
 <div class="para logical" id="eg_strong_induction-3-4-2">
 <div class="para">We must show the universal implication</div>
 <div class="displaymath process-math" id="eg_strong_induction-3-4-2-1">
@@ -1082,14 +1078,12 @@ x\ne x'\implies f(x)\ne f(x')
 \end{equation*}
 </div>
 <div class="para">Let <span class="process-math">\(n\geq 2\text{,}\)</span> and assume <span class="process-math">\(P(k)\)</span> is true for all <span class="process-math">\(2\leq k\leq n\text{:}\)</span> i.e., for all such <span class="process-math">\(k\)</span> we assume <span class="process-math">\(k\)</span> can be written as a product of primes. We use this assumption to prove <span class="process-math">\(P(n+1)\text{:}\)</span> i.e., that <span class="process-math">\(n+1\)</span> is a product of primes. We proceed in two cases, depending on whether <span class="process-math">\(n+1\)</span> is itself prime.</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_strong_induction-3-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#eg_strong_induction-3-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="case" id="eg_strong_induction-3-4-3"><h6 class="heading">Case 1: <span class="process-math">\(n+1\)</span> is prime.</h6>
-<div class="para" id="eg_strong_induction-3-4-3-2">If <span class="process-math">\(n+1\)</span> is prime, then it is trivially a product of one prime number, just as with the base case.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_strong_induction-3-4-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="eg_strong_induction-3-4-3-2">If <span class="process-math">\(n+1\)</span> is prime, then it is trivially a product of one prime number, just as with the base case.<div class="autopermalink" data-description="Paragraph"><a href="#eg_strong_induction-3-4-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Case: Case 1: n+1 is prime"><a tabindex="-1" href="#eg_strong_induction-3-4-3" title="Copy heading and permalink for Case: Case 1: n+1 is prime" aria-label="Copy heading and permalink for Case: Case 1: n+1 is prime">🔗</a></div>
-</article>
-<article class="case" id="eg_strong_induction-3-4-4"><h6 class="heading">Case2 : <span class="process-math">\(n+1\)</span> is not prime.</h6>
+<div class="autopermalink" data-description="Case: Case 1: n+1 is prime"><a href="#eg_strong_induction-3-4-3" title="Copy heading and permalink for Case: Case 1: n+1 is prime" aria-label="Copy heading and permalink for Case: Case 1: n+1 is prime">🔗</a></div></article><article class="case" id="eg_strong_induction-3-4-4"><h6 class="heading">Case2 : <span class="process-math">\(n+1\)</span> is not prime.</h6>
 <div class="para logical" id="eg_strong_induction-3-4-4-2">
 <div class="para">If <span class="process-math">\(n+1\)</span> is not prime, then we can factor <span class="process-math">\(n+1\)</span> nontrivially as  <span class="process-math">\(n+1=k_1k_2\text{.}\)</span> Here “nontrivially” means that we have <span class="process-math">\(2\leq k_1,k_2\leq n\text{.}\)</span> Using the strong induction hypothesis, we may assume that <span class="process-math">\(k_1\)</span> and <span class="process-math">\(k_2\)</span> are both products of primes: i.e., we have</div>
 <div class="displaymath process-math" id="eg_strong_induction-3-4-4-2-9">
@@ -1104,22 +1098,13 @@ n+1=k_1k_2=p_1p_2\cdots p_rq_1q_2\cdots q_s\text{,}
 \end{equation*}
 </div>
 <div class="para">and hence that <span class="process-math">\(n+1\)</span> is also a product of primes, as desired.</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_strong_induction-3-4-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#eg_strong_induction-3-4-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Case: Case2 : n+1 is not prime"><a tabindex="-1" href="#eg_strong_induction-3-4-4" title="Copy heading and permalink for Case: Case2 : n+1 is not prime" aria-label="Copy heading and permalink for Case: Case2 : n+1 is not prime">🔗</a></div>
-</article><div class="autopermalink" aria-hidden="true" data-description="Case: Strong induction step"><a tabindex="-1" href="#eg_strong_induction-3-4" title="Copy heading and permalink for Case: Strong induction step" aria-label="Copy heading and permalink for Case: Strong induction step">🔗</a></div>
-</article>
-<div class="para" id="eg_strong_induction-3-5">Having completed the base and induction steps, our proof by induction is now finished.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_strong_induction-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Case: Case2 : n+1 is not prime"><a href="#eg_strong_induction-3-4-4" title="Copy heading and permalink for Case: Case2 : n+1 is not prime" aria-label="Copy heading and permalink for Case: Case2 : n+1 is not prime">🔗</a></div></article><div class="autopermalink" data-description="Case: Strong induction step"><a href="#eg_strong_induction-3-4" title="Copy heading and permalink for Case: Strong induction step" aria-label="Copy heading and permalink for Case: Strong induction step">🔗</a></div></article><div class="para" id="eg_strong_induction-3-5">Having completed the base and induction steps, our proof by induction is now finished.<div class="autopermalink" data-description="Paragraph"><a href="#eg_strong_induction-3-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Solution 0.4.10.1"><a tabindex="-1" href="#eg_strong_induction-3" title="Copy heading and permalink for Solution 0.4.10.1" aria-label="Copy heading and permalink for Solution 0.4.10.1">🔗</a></div>
-</div></details>
-</div>
-<div class="autopermalink" aria-hidden="true" data-description="Example 0.4.10: Strong induction"><a tabindex="-1" href="#eg_strong_induction" title="Copy heading and permalink for Example 0.4.10: Strong induction" aria-label="Copy heading and permalink for Example 0.4.10: Strong induction">🔗</a></div>
-</article><div class="autopermalink" aria-hidden="true" data-description="Subsubsection: Proof by strong induction"><a tabindex="-1" href="#sss_strong_induction" title="Copy heading and permalink for Subsubsection: Proof by strong induction" aria-label="Copy heading and permalink for Subsubsection: Proof by strong induction">🔗</a></div>
-</section><div class="autopermalink" aria-hidden="true" data-description="Subsection 0.4.5: Mathematical induction"><a tabindex="-1" href="#ss_mathematical_induction" title="Copy heading and permalink for Subsection 0.4.5: Mathematical induction" aria-label="Copy heading and permalink for Subsection 0.4.5: Mathematical induction">🔗</a></div>
-</section><div class="autopermalink" aria-hidden="true" data-description="Section 0.4: Proof techniques"><a tabindex="-1" href="#s_proof_technique" title="Copy heading and permalink for Section 0.4: Proof techniques" aria-label="Copy heading and permalink for Section 0.4: Proof techniques">🔗</a></div>
-</section>
-</div>
+<div class="autopermalink" data-description="Solution 0.4.10.1"><a href="#eg_strong_induction-3" title="Copy heading and permalink for Solution 0.4.10.1" aria-label="Copy heading and permalink for Solution 0.4.10.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 0.4.10: Strong induction"><a href="#eg_strong_induction" title="Copy heading and permalink for Example 0.4.10: Strong induction" aria-label="Copy heading and permalink for Example 0.4.10: Strong induction">🔗</a></div></article><div class="autopermalink" data-description="Subsubsection: Proof by strong induction"><a href="#sss_strong_induction" title="Copy heading and permalink for Subsubsection: Proof by strong induction" aria-label="Copy heading and permalink for Subsubsection: Proof by strong induction">🔗</a></div></section><div class="autopermalink" data-description="Subsection 0.4.5: Mathematical induction"><a href="#ss_mathematical_induction" title="Copy heading and permalink for Subsection 0.4.5: Mathematical induction" aria-label="Copy heading and permalink for Subsection 0.4.5: Mathematical induction">🔗</a></div></section><div class="autopermalink" data-description="Section 0.4: Proof techniques"><a href="#s_proof_technique" title="Copy heading and permalink for Section 0.4: Proof techniques" aria-label="Copy heading and permalink for Section 0.4: Proof techniques">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="s_logic.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_complex_numbers.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

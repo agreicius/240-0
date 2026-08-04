@@ -880,16 +880,16 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.1",
   "title": "Real-valued tuples",
-  "body": " Real-valued tuples     Define the notion of a real-valued tuple indexed by an arbitrary set and the set of all such tuples.    Define the basic vector operations on and discuss their important properties.    Visualize points, vectors, and vector operations in and .      Real-valued tuples  Most multivariable courses begin by introducing , the set of all pairs of real numbers, and , the set of all triples of real numbers. Using set notation: . In that setting it is easy to motivate the discussion by interpreting pairs and triples as specifying locations or directions in 2- or 3-space. This both imbues the mathematical objects involved with some familiar concrete meaning and allows us to visualize related constructions as geometric objects in 2- or 3-space.  With the public's ever-growing familiarity with data collection and analysis, however, there is no need to rely as heavily on spatial intuition for motivation. A marketing analyst studying the sales of a certain product might be interested in knowing the height, weight, age, and yearly income of the product's consumers. Thus for each consumer, the marketer collects a quadruple of real numbers, where is the height of the consumer, the weight, the age, and the yearly income. And the aggregate data the marketer collects is a subset of , the set of all quadruples of real numbers.  To give a slightly less simplistic example, consider an internet search engine that, given a search query, assigns to each of its different indexed webpages a real number score in the interval measuring the page's relevance to the given query. For each query entered, the search engine produces a -tuple , where is the score of the first webpage in its index, is the score of the second page in its index, . (Note: as defined more formally in , an -tuple is just a list or sequence of length .)  The point here is that for the modern student of mathematics there should be nothing too forbidding or abstract about -tuples of real numbers of arbitrary length , nor the set of all such tuples. In this course, we will take things one small step further by considering real-valued tuples indexed by an arbitrary index set  . Let us dispense first with the formal definition, then make sense of it.   Real-valued tuple    set of real-valued -tuples    Let be a nonempty set. A real-valued tuple indexed by (or real-valued -tuple ) is a rule that assigns to each index  an element , and is denoted .  Given an -tuple , we call the index set , and for each index , we call the -th component (or coordinate , or entry , or term ) of . We call the set of values of the tuple .  The set of all real-valued -tuples is denoted : , .     All this talk of rules and assignments may remind you of the general definition of a function. Good for you! In truth a tuple is simply a function that assigns to each index a real number . However, since the goal here is to have you understand tuples as a straightforward generalization of pairs and triples, we decided to conceal this function connection somewhat.    More general tuples  You find a more general discussion of tuples in . In this course, since we will primarily be focused on real-valued tuples, we will typically drop the real-valued , and just speak of -tuples.   Do not be intimidated by the formality of ! As a first step to coming to grips with it, let's see how can be understood as a particular example of our more general construction . For concreteness, we consider the case . To define a triple of , we need to specify the three coordinates , , and . This is equivalent to assigning to each of the indices  a real number . Thus a triple in is the same thing as a real-valued tuple indexed by the index set , and furthermore we have . This reasoning generalizes easily to lists of real numbers of arbitrary length : such a list is the same thing as a real-valued tuple indexed by the the set that assigns to each index a real number . This allows us to define for arbitrary as , where . We now make this official and take the opportunity to introduce some special notation and terminology for this particular type of tuple.   Real-valued -tuples    set of real-valued -tuples    Let be a positive integer, and let . A real-valued tuple indexed by is called an -tuple and we call the length of the tuple. We will use any of the following notations for tuples indexed by : . Furthermore, the set of all -tuples is denoted : , .    Notationally, we see already how our more general framework can simplify things for us. When treating , which corresponds to the index set , it is much easier to write or than or even . More generally, once we have set in stone that , the compact notation absorbs the complexity that comes along with dealing with tuples of arbitrary length .  The real power of , however, lies in the fact that our index set can be taken to be anything we like. For example consider the index set consisting of all positive integers: , . In this case, to specify a tuple in we must provide a list of real numbers . Sound familiar? This is just an infinite sequence of real numbers!   Infinite sequences of real numbers    set of all infinite sequences    Let . A real-valued tuple indexed by is called an infinite sequence . We will use any of the following notations for tuples indexed by : . Furthermore, the set of all infinite sequences is denoted : , .     Infinite sequences   For each defined sequence , expand in the form including at least the first four terms.                   , where            .     .     .     .       The last two examples illustrate how our tuple definition nicely unifies the notions of finite and infinite sequences into a more general framework. The two types of tuples are not so very different in nature, and this can be understood as a result of the similarity between their index sets. Indeed the finite index set is what is called an initial segment of the the infinite index set . Furthermore, in both cases, the natural ordering of transfers to an ordering of the elements of a tuple in both these cases, allowing us to speak of its first entry, second entry, . This illustrates how any additional structure of the index set can be used to induce some structure on our tuples . As a result, when modelling different types of data as tuples, a careful choice of index set can capture particular features of the data we study.  For example, suppose we are interested in comparing the first and second half performances of football players and so record for each player and game the number of goals, assists, and tackles made in the first and second halves of the game. A typical datum collected for a given player and game might be displayed in a table as follows.   First and second half performance datum    Goals Assists Tackles    First half 1 0 9    Second half 0 2 4     We can model such a datum as a tuple where , and for : equivalently, is the entry in the -th row and -th column of the table version of our datum displayed as above. Note the big difference between the index set in this example, as contrasted with our previous two examples. Now our indices themselves consist of pairs which reflects the fact that the six components of our datum depend on two independent features: the type of action (goal, assist, or tackle), and the half in which it was made. This brings us to a third tuple type that will play an outsized role in this course: matrices . As defined below, a matrix is just an -tuple where the index set is of the special form . As with -tuples and infinite sequences, we will introduce special notational conventions for this particular type of tuple.   Real-valued matrices   Let and be positive integers, and let . A real-valued tuple indexed by is called a real matrix . We say the matrix has size  , and call and the dimensions of the matrix. We will write instead of , and call the -th entry of the matrix. Additionally, to distinguish matrices from -tuples, one the following bracket notations will be used: . We will favor capital letters ( , ) when naming matrices, and will often display a matrix as a rectangular array as , where the entry in the -th row and -th column of the array is . The set of all real matrices is denoted : , .     Matrices   Display the given matrix as a rectangular array.    , , where           , ,      , ,            is in this case (two rows, two columns), and we have .     is in this case (two rows, three columns), and we have .     is in this case (one row, three columns), and we have .     is in this case (three rows, one column), and we have .       The last two examples in reveal a subtlety about the notion of equality between tuples. Consider the tuples . The three are clearly quite similar, each consisting essentially of three entries equal to , and yet visibly no two are quite the same: the third is enclosed in parentheses while the first two use brackets; the first is displayed as a single row while the second is displayed as a single column. Of course, that is not a very rigorous way of distinguishing between tuples. Unpacking our notational conventions allows to more precisely locate the difference between the three tuples: namely, they have three very different index sets. Following the order of the tuples displayed above, the corresponding index sets are . This illustrates the fact that equality between two tuples and depends not just on the entry values and , but also on the index sets and . This detail is made explicit in the general definition of tuple equality given in . Below we repeat this definition for the special case of real-valued tuples.   Tuple equality   Two real-valued tuples and are equal , denoted if the following two conditions hold.    .     for all .   In plain English, two tuples are equal if they have the same index set and assign the same values to each element of the index set.    It is worth further unpacking this definition in the special cases of -tuples and matrices.   Equality of -tuples   The -tuple is equal to the -tuple if and only if and for all .    Unpacking the the notational conventions, we have , where and , where . By , the two tuples are equal if and only if and for all . The first condition is equivalent to , and the second condition is equivalent to for all .     Equality of matrices   The matrix is equal to the matrix if and only if    and ;     for all and .   In other words, two matrices are equal if and only if they have the same dimensions and the same entries in each position.    Unpacking the the notational conventions, we have , where and , where . By , the two matrices are equal if and only if and for all . The first condition is equivalent to and , and the second condition is equivalent to for all and .    In we introduce SageMath (or Sage , for short), an open-source computer algebra system that is built on top of the Python programming language. Our exploration of Sage will be a rather casual one, making use of interactive cells called Sage cells . These cells can be evaluated by clicking the Evaluate (Sage) button, or by typing shift+return . You can experiment by editing the code in these cells and then evaluating. Sage is built on top of the Python programming language, and so shares its syntax.   -tuples and matrices  To create an -tuple in Sage, use the vector() command. The input should be a sequence of numbers enclosed in brackets.   You can make use of sequence routines to create special types of -tuples.   If you prefer the two outputs above to not be listed as a pair, you can use the print() command in sequence. (This is a peculiarity of interactive SageCells, not Sage itself.) Alternatively, use show() for a nicely typeset display of the output.   Once a vector v is created in Sage, various properties of the vector can be computed using the v.foo() syntax. For example, the command v.length() returns the length of the vector v .   Matrices are created in Sage using the matrix() command, and are entered as a list of lists, where the -th list of this list represents the -th row of the matrix, considered as a rectangular array.   To retrieve entries from -tuples or matrices, Sage uses the usual Python list syntax: , v[i] and A[i,j] . As with all things Python, we always count from 0. Thus if A is assigned to a matrix in Sage, A[i,j] is its -th entry.   There are also built-in constructors for matrices consisting entirely of zeros, or entirely of ones.    In this class we will draw our examples almost exclusively from the sets , , and . However, note that once we've understood a matrix as a tuple indexed by pairs of integers , it is not much of a jump to consider tuples indexed by triples of integers , or quadruples of integers , . Such tuples are called multidimensional arrays These multidimensional arrays are sometimes called tensors by data scientists. We will avoid this, since that term is used in mathematics for a different type of object not discussed in this class. and appear frequently in data science settings. In full generality, a -dimensional array is real-valued tuple with index set of the form . Such a tuple has size  . In this more general context, a matrix is just a -dimensional array. The next example describes how a digital image can be thought of as a -dimensional array.   Digital image as -dimensional array   Consider a digital image consisting of a array of pixels, each of which displays a color specified by a triple of real numbers that lists the intensities of the red, blue, and green color channels at that pixel. The image can be stored as a tuple , where and is the intensity of the -th color channel (1=red, 2=green, 3=blue) at the pixel in the -th position. Our image is thus a -dimensional array of size . See for a Sage demonstration of this idea.  Similarly to matrices, we can envision our -dimensional array as a -d box array of data consisting of three flat sheets stacked vertically: the first sheet consists of the entries arranged as a grid, and similarly, the second and third sheets consist of the entries and , respectively. The mathematical usefulness of such a conception is up for debate. However, we can give some (somewhat dubious) physical intuition in this case as follows. Imagine the first sheet being a red-tinted translucent that colors the -th pixel red with intensity for all all pairs . Similarly, imagine the second and third sheets as green- and blue-tinted translucents that color the -th pixel green (or blue) with intensity (or ). Now take all three sheets, stack them on top of one another, shine a light through them, and voilà , our image appears!     Digital image as -dimensional array   The Sage cell below creates a -dimensional array representation of a pixel image. Make sure to evaluate that cell!   Recall that Sage captures the double-index nature of a matrix by nesting lists: a matrix is just a list of lists. A -dimensional array by taking this nesting one step further, as you can see from the definition of the object smiley , which is a list of lists of lists. In its current format, to access the -th entry of the array, which tells us the intensity of the -th color channel at -th pixel, we use an iterated indexing syntax: smiley[i][j][k] . Let's examine the color of the top-left pixel by determining the three color intensities there. Adopting the count from zero convention of Python, the top-left pixel is given by , and the three color channels are encoded as 0=red, 1=green, 2=blue.   It looks like this pixel is blue-green, with emphasis on the blue. What about the bottom-left pixel?   Interesting! It appears that this pixel is also blue-green, but considerably more green. Before confirming our results by viewing the image, let's convert smiley into the Python's standard multidimensional array format, a NumPy array (or ndarray). As a NumPy array, we can determine the size of the array using smiley.shape and we can access the -th entry more naturally as smiley[i,j,k] (although you will notice that we are given some additional information about the data-type of the entry).   And now it's time for the big reveal. We will view smiley using the data visualization library matplotlib .       Vector operations on  Returning for a moment to the hypothetical multivariable calculus class you took long ago, you may remember that after introducing the sets and , the next thing you did was to define the notions of vector addition and scalar multiplication . For these are defined as . Notice that the two operations are defined component-wise . In plain English, the sum of two triples in is the triple whose -th component is the sum of the two -th components; and to scale a triple by the scalar , we multiply (or scale) each component by . This component-wise nature of the two operations allows us to easily generalize them to the more general setting of for arbitrary index sets .   Vector operations of   Let be a nonempty set. We will call the operations below the standard vector operations on .   Vector addition on  Given elements -tuples and , we define their vector sum  as . The operation is called vector addition .    Scalar multiplication on  Given an -tuple and a real number , the -tuple defined as is called the scalar multiple of by . The operation is called scalar multiplication .        Vector operations input\/output  It is a good habit, when dealing with a variety of types of mathematical operations, to give a qualitative summary of what their inputs and outputs are. For example, vector addition in takes as input a pair of -tuples, and , and returns as output the -tuple . By contrast, scalar multiplication in is a sort of hybrid operation that takes as input a real number and -tuple and returns as output a new -tuple .   Taking the three special types of index sets discussed in , we see that gives rise to naturally defined operations on -tuples, infinite sequences, and matrices. We summarize each in turn below.   -tuples  Let . In this case we have and the two vector operations are given by .    Infinite sequences  Let . In this case we have and the two vector operations are given by .    Matrices  Let . In this case we have and the two vector operations are given by .   The foregoing is another example of the advantage of working with the general notion of -tuples. Starting from our single definition of vector operations on ( ), by choosing different types of index sets , we immediately derive a notion of vector addition and scalar multiplication on three quite different sets of objects: the set of -tuples , the set of infinite sequences , and the set of matrices .  In we recall the basic spatial interpretation of the vector operations in the context of and . In the meantime, we consider a few explicit examples.   Tuple vector operations      Let and . Compute .    Consider the infinite sequences and . Compute and .    Let and .  Compute .          We have .    We have , and .    We have .       In we introduce SageMath (or Sage , for short), an open-source computer algebra system. Our exploration of Sage will be a rather casual one, making use of interactive cells called Sage cells . These cells can be evaluated by clicking the Evaluate (Sage) button, or by typing shift+return . You can experiment by editing the code in these cells and then evaluating. Sage is built on top of the Python programming language, and so shares its syntax.   Vector operations: and   To create an -tuple in Sage, use the vector() command. The input should be a sequence of numbers enclosed in brackets.   You can make use of sequence routines to create special types of -tuples.   If you prefer the two outputs above to not be listed as a pair, you can use the print() command in sequence. (This is a peculiarity of interactive SageCells, not Sage itself.)   The standard vector operations of are implemented using an intuitive syntax in Sage.   Once a vector v is created in Sage, various properties of the vector can be computed using the v.foo() syntax. For example, the command v.length() returns the length of the vector v .   Matrices are created in Sage using the matrix() command, and are entered as a list of lists, where the -th list of this list represents the -th row of the matrix, considered as a rectangular array. Note that show() outputs a typeset display of the matrix, as contrasted with the text ouput of print() .   The Sage syntax for vector operations in is identical to that for . The command matrix(2,3,range(-4,2)) used below instructs Sage to create a matrix whose entries are the integers from to , arranged by wrapping along the two rows.   Lastly, to retrieve entries from -tuples or matrices, Sage uses the usual Python list syntax: , v[i] and A[i,j] . As with all things Python, we always count from 0. Thus if A is assigned to a matrix in Sage, A[i,j] is its -th entry.    So why do we call these operations vector operations? It turns out that a set together with these two vector operations is an example of an important type of mathematical object called a vector space , which in turn are the main object of study of linear algebra. The definition of a vector space we give below is what is known as an axiomatic definition : it lists a set of properties, called axioms , and defines a vector space to be anything that satisfies these axioms.   Vector space   A real vector space is a set together with two operations , called respectively vector addition and scalar multiplication , that satisfy the following vector space axioms .   Vector addition is commutative   for all .    Vector addition is associative   for all .    Zero vector  There is an element such that for all , we have . We call the zero vector of .    Vector inverses  For all , there is another element satisfying . We call the vector inverse of .    Distribution over vector addition   for all and .    Distribution over scalar addition   for all and .    Scalar multiplication is associative   for all and all .    Scalar multiplication identity   for all .   We call elements of a vector space vectors and the elements of  scalars .    Note that a vector space, as defined by is a very general object. In particular, the definition does not specify what the underlying set of the vector space is, or what the vector operations are. Rather, it allows for any set and any choice of two operations to be called a vector space, as long as our choices satisfy the vector space axioms. We will deal with vector spaces in this full generality later in the course. For now, let's show that for any index set the set of all -tuples together with the two vector operations defined in satisfies the vector space axioms, and hence is a vector space.  Before getting to that proof, we point out that among the eight vector space axioms, there are two (Axiom iii and Axiom iv) that posit the existence of certain special elements: namely a zero vector and vector inverses. Accordingly, we will often refer to these axioms as the existential axioms . In contrast, the remaining axioms are all algebraic in nature; they stipulate that the two vector operations are well behaved and play nicely with one another. The next definition, and trailing example, introduce some special elements of that will serve the role of the zero vector and vector inverses as described by the existential vector space axioms. We also take the opportunity to define the indicator vectors of , which will be useful throughout the course.   Special elements of    zero vectors of , and     indicator vector of    Let be a nonempty set.   Zero vector  The zero vector of , denoted (or for short), is the -tuple, all of whose entries are equal to : , .  In the special cases and , we denote the corresponding zero vectors as and , respectively.    Vector inverse  Given an -tuple , the vector inverse of , denoted , is the element of defined as .    Indicator vectors  Given , the -th indicator element of , denoted , is the -tuple whose -th entry is equal to and whose -th entry is equal to for all .  In the case , we call the -th standard basis vector of .  In the case , we write for , and call this the -th standard basis matrix of .        Zero, inverse, and indicator vectors   For the given index set , provide (a) the zero vector of , (b) a general element of and its vector inverse, and (c) the indicator vectors for all .  Make use of the notational conventions that apply to each particular type of index set.    .               In this case we have . The zero vector of is .  A general element of can be described as , , and its vector inverse is .  The four indicator vectors of are called standard basis vectors, and are given as .    In this case we have . The zero vector of is .  A general element of can be described as , and its vector inverse is . The six indicator vectors of are called standard basis vectors, and are given as .       We now verify that the two operations on defined in satisfy the vector space axioms. As you will see, since the vector operations are defined componen-wise in terms of real number addition and multiplication, the fact that the vector space axioms are satisfied usually follows directly from corresponding properties of these two real number operations.   is a vector space   Let be a nonempty set.   The set together with the vector addition and scalar multiplication operations defined in is a vector space.    The zero vector of the vector space , as described by Axiom , is the -tuple : , we have .    Given a vector , its vector inverse , as described by Axiom , is .  Additionally, we have ; that is, the vector inverse of is equal to the scalar multiple .       The statement itself of the theorem has already taken care of some of the steps required to verify that something is a vector space. Namely, it has identified the underlying set and proposed vector operations, and it has identified the elements of that serve as the zero vector and inverse vectors. It remains to show that the eight axioms of are satisfied. We will verify the existential axioms (Axiom iii-iv), as well as one of the algebraic axioms (Axioms ii and vi), and leave the rest as an exercise.   Axiom iii  We claim that satisfies the identity of Axiom . Indeed, for all we have , as desired.    Axiom iv  We claim that given any , the vector satisfies the identity of Axiom , and thus that . Indeed, we have , as desired.   As for the remaining axioms, we will verify Axioms ii and vi, and leave the rest as an exercise. As you see below, the desired identities here all boil down to a familiar property of real number arithmetic: , commutativity of real number addition, real number distributivity, etc. In what follows, will denote arbitrary elements of , and will denote arbitrary elements of .   Axiom ii  We have .    Axiom vi  For all and , we have .     Thanks to , we now have at our disposal a rich collection of examples of vector spaces: namely, the spaces , where is an arbitrary index set. As usual, the particular choice of index set gives rise to a vector space of a particular flavor. Let's quickly run through our three familiar examples.   For , our vector space consists of -tuples. When emphasizing the vector space structure of , we will call its elements -vectors .    Choosing , we obtain the vector space of all infinite sequences of real numbers.    Finally, for , we obtain the vector space of all matrices.   We hasten to add, that although the spaces furnish us with many interesting examples of vector spaces, not all vector spaces are of this form! Indeed, the zero space defined below is such an example.   Zero space   Let be a singleton: , is a set containing exactly one element. There is a unique choice of operations making into a vector space.    Let . Since , to define a vector addition operation , we only need to define what is. Furthermore, since by definition we must have , we have no choice here: we must define !  Similarly, it is easy to see that there is only one possible scalar multiplication operation, defined as for all . These two operations being so simple, it is now easy to verify that they satisfy all of the algebriac axioms. Furthermore, we have no choice for the zero vector and inverse vectors: we must choose , and . This seems somewhat odd, since is its own vector inverse, but it is easy to verify that these choices satisfy Axioms iii and iv: . The remaining axioms can be verified in a similar elementary fashion. We leave their verification as an exercise.     Zero space   A singleton , together with its uniquely defined vector operations, is called a zero space . Since with respect to this vector space structure, we will write for a zero space.    For now, we will mainly focus on vector spaces of the form or , leaving a more thorough investigation of the notion of an abstract vector space for later. However, as we introduce new concepts connected to vector spaces, we will always state them in full generality for a general vector space . This is done mainly out of convenience, so that we do not have to repeat the same definition later on. Since our emphasis is on vector spaces of the form , we will take care to follow up any new definition with some examples taken from some familiar vector spaces of the form , , . We put this into practice with our next definition.   Linear combination   Let be a vector space, and let be a nonempty subset of . A linear combination of is a vector of the form , where and for all . The scalars appearing in are called the coefficients of the linear combination. The linear combination is trivial if for all , and nontrivial if for some .  In the special case where is described enumeratively as or , we will call a linear combination of a linear combination of the for short.  We will sometimes use sigma notation for linear combinations, writing for the linear combination of the vectors whose -th coefficient is .     Linear combination: -vectors   Show that every vector in is a linear combination of the standard basis vectors , , and .    Given any vector , we have .     Linear combination: matrices   Express as a nontrivial linear combination of and .    It is easy to see that , and hence . More explicitly, we have . This is not the only nontrivial linear combination yielding . In fact we have for any scalar (including ).    It is natural to want to rewrite a linear combination of the form as , but technically this expression doesn't quite make sense as of yet. What we are missing is the vector difference operation.   Vector difference   Let be a vector space. Given vectors , we define their difference  as .      Visualizing  We will only explicitly visualize (or graph) elements of for and . However, these special cases bring to light an important point-vector duality in how we conceive of -tuples that carries over into higher values of . Fix for now. We will sometimes conceive of a triple as a point , in which case we will use capital letters to denote the triple ( , ), and will represent the point visually with respect to a coordinate system as the point in -space reached by starting at the origin and moving a directed distance units in the -direction, units in the -direction and units in the -direction.   Point visualization of triple. Made with GeoGebra .    Alternatively, when conceiving of a triple as a vector , we will use lowercase bold letters to denote it ( , or ), and represent it visually as a directed line segment ( , an arrow). In more detail, given the 3-vector , we choose an initial point  and represent as the directed line segment that starts at and ends at the point , the terminal point of . Note that in this manner we get infinitely-many different graphical representations of : one for each choice of starting point . Although these are technically different arrows (they have different starting points), we consider them to be equal as vectors . You can think of each particular choice of arrow-representation as an instance or incarnation of the vector . When the initial point of our arrow representation is chosen to be the origin , we have , where . We call the position vector of the point .   Vector visualization of triple . Drag to change the vector . Drag to change the initial point of . Made with GeoGebra .    The representation of vectors as arrows gives rise to the so-called tip-to-tail interpretation of vector addition. Let and . Starting with an initial point , we can represent as , where , and , where . But then we have , or alternatively, . In other words, if we choose our arrow representations so that the terminal point (the tip) of is placed at the initial point (the tail) of , then is represented by the arrow whose initial point is , and whose terminal point is reached by first traveling along , and then traveling along .   Tip-to-tail visualization of vector addition. Made with GeoGebra .    The tip-to-tail visualization of vector addition gives rise to a similar conceptualization of vector difference. Performing a little vector algebra on the definition , we see that . Using tip-to-tail terminology, this means if we represent and , then is the arrow that starts at the tip of and ends at the tip of . We thus have a tip-to-tip description of vector difference.   Tip-to-tip visualization of vector difference. Made with GeoGebra .    Next consider scalar multiplication. Given a vector and a scalar , the scalar multiple can be represented as an arrow that starts at and points along the line containing . As we will see in the next section, the length of the resulting arrow is multiplied by the factor , resulting in a stretched arrow if and a shrunk arrow if . Furthermore, if , then the arrow representing points in the same direction as ; if , it points in the opposite direction.   Visualization of scalar multiplication. Drag point labeled to change scalar. Made with GeoGebra .       Tuple building   For the given index set and tuple indexed by , display the tuple using the appropriate notational conventions introduced in .      ,        ,        ,        ,        , , where       Tuple equality   Explain why the given tuples are not equal. Your justification must refer to a specific condition of , , or .      ,        ,        ,        ,        ,       Vector operations of   Compute the given expressions using the vector operations of the relevant vector space .     Let .                       Let .                       Let , where . Express your answers below as expanded infinite sequences with enough terms provided to see a pattern.                        Show that every element of can be written as a linear combination of . In other words, every element of is a linear combination of the standard basis vectors of .      Show that every element of can be written as a linear combination of . In other words, every element of is a linear combination of the standard basis matrices of .      Show that it is not the case that every element of can be written as a linear combination of the set of indicator vectors of . In more detail, provide an explicit infinite sequence that is not a linear combination of .    Show that any linear combination of is of the form for some positive integer and scalars (some of which could be zero). Expand out this linear combination as an infinite sequence and provide an infinite sequence that doesn't look like this!    The underlying issue here is that by definition a linear combination of any set of vectors is a finite sum of scalar multiples of vectors from that set. In the present case, that means an arbitrary linear combination of is of the form for some positive integers and scalars . Letting and setting , we have . This shows that any linear combination of can be expressed in the form , as claimed in the hint. Now since by definition is the infinite sequence we have . This shows that any linear combination of the is a sequence with only finitely many nonzero terms! In particular the infinite sequence is not a linear combination of the .      Finish the proof of . That is, show that the vector operations of satisfy Axioms i, v, vii, and viii of .      Finish the proof of . That is, show that the unique operations defined satisfy Axioms i-ii, and v-viii of .     True or false   True or false: if true, provide a proof; if false, provide an explicit counterexample.   If -tuples and have the same set of values (see ), then .    Every element of can be written as a linear combination of the vectors and .    Every element of can be written as a linear combination of the matrices .    If is finite, then every element of can be written as a linear combination of the indicator vectors , .    If is a vector space, then is infinite.        "
+  "body": " Real-valued tuples    Our study of linear algebra begins on a somewhat formal note with the introduction of the set of real-valued tuples indexed by an arbitrary set . Conceptually, this construction is a straightforward generalization of the sets and of real-valued pairs and triples. The payoff of this mild formalism is a vast generalization of those two familiar sets that gives us a unified framework for developing the mathematical theory of objects as disparate as -tuples, matrices, and infinite sequences. In particular, we show how the so-called vector operations of and extend easily to these more general sets . As a result, we are lead naturally to introduce at this early stage the notion of a real vector space , thereby foregrounding the central object of study of linear algebra.    Real-valued tuples  Most multivariable courses begin by introducing , the set of all pairs of real numbers, and , the set of all triples of real numbers. Using set notation: . In that setting it is easy to motivate the discussion by interpreting pairs and triples as specifying locations or directions in 2- or 3-space. This both imbues the mathematical objects involved with some familiar concrete meaning and allows us to visualize related constructions as geometric objects in 2- or 3-space.  With the public's ever-growing familiarity with data science, however, there is no need to rely on spatial intuition for motivation. A marketing analyst studying the sales of a certain product might be interested in knowing the height, weight, age, and yearly income of the product's consumers. Thus for each consumer, the marketer collects a quadruple of real numbers, where is the height of the consumer, the weight, the age, and the yearly income. And the aggregate data the marketer collects is a subset of , the set of all quadruples of real numbers.  To give a slightly less simplistic example, consider an internet search engine that, given a search query, assigns to each of its different indexed webpages a real number score in the interval measuring the page's relevance to the given query. For each query entered, the search engine produces a -tuple , where is the score of the first webpage in its index, is the score of the second page in its index, . (Note: as defined more formally in , an -tuple is just a list or sequence of length .)  The point here is that for the modern student of mathematics there should be nothing too forbidding or abstract about -tuples of real numbers of arbitrary length , nor the set of all such tuples. In this course, we will take things one small step further by considering a generalization of a list or sequence of real numbers. This is the notion of a tuple indexed by a set . Let us dispense first with the formal definition, then make sense of it.   Real-valued tuple    set of real-valued -tuples    Let be a nonempty set. A real-valued tuple indexed by (or -tuple of real numbers) is a rule that assigns to each index  an element , and is denoted .  Given an -tuple , we call the index set , and for each index , we call the -th component (or coordinate , or entry , or term ) of . We call the set of values of the tuple .  The set of all real-valued -tuples is denoted : , .     All this talk of rules and assignments may remind you of the general definition of a function. This is no accident! In truth a tuple is simply a function that assigns to each index a real number . However, since the goal here is to have you understand tuples as a straightforward generalization of pairs and triples, we decided to conceal this function connection somewhat.    More general tuples  You find a more general discussion of tuples in . In this course, since we will primarily be focused on real-valued tuples, we will typically drop the real-valued , and just speak of -tuples.   Do not be intimidated by the formality of ! The basic underlying idea is that just as a triple of real numbers is determined by knowing each of its three components , , and , a tuple is determined by knowing each component for all indices in the index set .  As a first step to coming to grips with this new concept, let's see how can be understood as a particular example of our more general construction . For concreteness, we consider the case . To define a triple of , we need to specify the three coordinates , , and . This is equivalent to assigning to each of the indices  a real number . Thus a triple in is the same thing as a real-valued tuple indexed by the index set , and we have . This reasoning generalizes easily to lists of real numbers of arbitrary length : such a list is the same thing as a real-valued tuple indexed by the the set that assigns to each index a real number . This allows us to define for arbitrary as , where . We now make this official and take the opportunity to introduce some special notation and terminology for this particular type of tuple.   Real-valued -tuples    set of real-valued -tuples    Let be a positive integer, and let . A real-valued tuple indexed by is called an -tuple and we call the length of the tuple. We will favor bold lower case letters when naming -tuples ( , , , , ) and use any of the following notations for tuples indexed by : . Furthermore, the set of all -tuples is denoted : , .    It should be clear at least that the more general notion of tuples comes with a notational advantage: namely, it takes less time\/space to write or than . The more powerful, conceptual advantage of the notion of an -tuple lies in the fact that our index set can be taken to be anything we like, not just a set of the form . By choosing different, possibly more complicated index sets , we are able to model other common mathematical objects within the same unifying tuple framework.  For example consider the index set consisting of all positive integers: , . In this case, to specify a tuple in we must provide a list of real numbers . Sound familiar? This is just an infinite sequence of real numbers! Again, we make this observation official and introduce some special notation.   Infinite sequences of real numbers    set of all infinite sequences    Let . A real-valued tuple indexed by is called an infinite sequence . We will use any of the following notations for tuples indexed by : . Furthermore, the set of all infinite sequences is denoted : , .     Infinite sequences   For each defined sequence , expand in the form including at least the first four terms.                   , where            .     .     .     .       Comparing -tuples and infinite sequences, we see that these two types of tuples are not so very different in nature; and furthermore, this similarity can be understood as resulting from the underlying similarity of their index sets. Indeed the finite index set is what is called an initial segment of the the infinite index set . In both cases, the natural ordering of transfers to an ordering of the components of a tuple , allowing us to speak of the first entry, second entry, . This illustrates how any additional structure of the index set can be used to induce some structure on our tuples . As a result, when modelling different types of data as tuples, a careful choice of index set can capture particular features of the data we study.  For example, suppose we are interested in comparing the first and second half performances of football players and so record for each player and game the number of goals, assists, and tackles made in the first and second halves of the game. A typical datum collected for a given player and game might be displayed in a table as follows.   First and second half performance datum    Goals Assists Tackles    First half 1 0 9    Second half 0 2 4     We can model such a datum as a tuple where , and for : equivalently, is the entry in the -th row and -th column of the table version of our datum displayed as above. Note the big difference between the index set in this example, as contrasted with our previous two examples. Now our indices themselves consist of pairs which reflects the fact that the six components of our datum depend on two independent features: the type of action (goal, assist, or tackle), and the half in which it was made. This brings us to a third tuple type that will play an outsized role in this course: matrices . As defined below, a matrix is just an -tuple where the index set is of the special form . As with -tuples and infinite sequences, we will introduce special notational conventions for this particular type of tuple.   Real-valued matrices   Let and be positive integers, and let . A real-valued tuple indexed by is called a real matrix . We say the matrix has size  , and call and the dimensions of the matrix. We will write instead of , and call the -th entry of the matrix. Additionally, to distinguish matrices from -tuples, one the following bracket notations will be used: . We will favor capital letters ( , ) when naming matrices, and will often display a matrix as a rectangular array as , where the entry in the -th row and -th column of the array is . The set of all real matrices is denoted : , .     Matrices   Display the given matrix as a rectangular array.    , , where           , ,      , ,            is in this case (two rows, two columns), and we have .     is in this case (two rows, three columns), and we have .     is in this case (one row, three columns), and we have .     is in this case (three rows, one column), and we have .       The last two examples in reveal a subtlety about the notion of equality between tuples. Consider the tuples . The three are clearly quite similar, each consisting essentially of three entries equal to , and yet visibly no two are quite the same: the third is enclosed in parentheses while the first two use brackets; the first is displayed as a single row while the second is displayed as a single column. Of course, that is not a very rigorous way of distinguishing between tuples. Unpacking our notational conventions allows to more precisely locate the difference between the three tuples: namely, they have three very different index sets. Following the order of the tuples displayed above, the corresponding index sets are . This illustrates the fact that equality between two tuples and depends not just on the entry values and , but also on the index sets and . This detail is made explicit in the general definition of tuple equality given in . Below we repeat this definition for the special case of real-valued tuples.   Tuple equality   Two real-valued tuples and are equal , denoted if the following two conditions hold.    .     for all .   In plain English, two tuples are equal if they have the same index set and assign the same values to each element of the index set.    It is worth further unpacking this definition in the special cases of -tuples and matrices.   Equality of -tuples   The -tuple is equal to the -tuple if and only if and for all .    Unpacking the the notational conventions, we have , where and , where . By , the two tuples are equal if and only if and for all . The first condition is equivalent to , and the second condition is equivalent to for all .     Equality of matrices   The matrix is equal to the matrix if and only if    and ;     for all and .   In other words, two matrices are equal if and only if they have the same dimensions and the same entries in each position.    Unpacking the the notational conventions, we have , where and , where . By , the two matrices are equal if and only if and for all . The first condition is equivalent to and , and the second condition is equivalent to for all and .    In we introduce SageMath (or Sage , for short), an open-source computer algebra system that is built on top of the Python programming language. Our exploration of Sage will be a rather casual one, making use of interactive cells called Sage cells . These cells can be evaluated by clicking the Evaluate (Sage) button, or by typing shift+return . You can experiment by editing the code in these cells and then evaluating. Sage is built on top of the Python programming language, and so shares its syntax.   -tuples and matrices  To create an -tuple in Sage, use the vector() command. The input should be a sequence of numbers enclosed in brackets.   You can make use of sequence routines to create special types of -tuples.   If you prefer the two outputs above to not be listed as a pair, you can use the print() command in sequence. (This is a peculiarity of interactive SageCells, not Sage itself.) Alternatively, use show() for a nicely typeset display of the output.   Once a vector v is created in Sage, various properties of the vector can be computed using the v.foo() syntax. For example, the command v.length() returns the length of the vector v .   Matrices are created in Sage using the matrix() command, and are entered as a list of lists, where the -th list of this list represents the -th row of the matrix, considered as a rectangular array.   To retrieve entries from -tuples or matrices, Sage uses the usual Python list syntax: , v[i] and A[i,j] . As with all things Python, we always count from 0. Thus if A is assigned to a matrix in Sage, A[i,j] is its -th entry.   There are also built-in constructors for matrices consisting entirely of zeros, or entirely of ones.    In this class we will draw our examples almost exclusively from the sets , , and . However, note that once we've understood a matrix as a tuple indexed by pairs of integers , it is not much of a jump to consider tuples indexed by triples of integers , or quadruples of integers , . Such tuples are called multidimensional arrays These multidimensional arrays are sometimes called tensors by data scientists. We will avoid this, however, as that term is used in mathematics for a slightly more complicated type of object not discussed in this class. and appear frequently in data science settings. In full generality, a -dimensional array is real-valued tuple with index set of the form . Such a tuple has size  . In this more general context, a matrix is just a -dimensional array. The next example describes how a digital image can be thought of as a -dimensional array.   Digital image as -dimensional array   Consider a digital image consisting of a array of pixels, each of which displays a color specified by a triple of real numbers that lists the intensities of the red, blue, and green color channels at that pixel. The image can be stored as a tuple , where and is the intensity of the -th color channel (1=red, 2=green, 3=blue) at the pixel in the -th position. Our image is thus a -dimensional array of size . See for a Sage demonstration of this idea.  Similarly to matrices, we can envision our -dimensional array as a -d box array of data consisting of three flat sheets stacked vertically: the first sheet consists of the entries arranged as a grid, and similarly, the second and third sheets consist of the entries and , respectively. The mathematical usefulness of such a conception is up for debate. However, we can give some (somewhat dubious) physical intuition in this case as follows. Imagine the first sheet being a red-tinted translucent that colors the -th pixel red with intensity for all all pairs . Similarly, imagine the second and third sheets as green- and blue-tinted translucents that color the -th pixel green (or blue) with intensity (or ). Now take all three sheets, stack them on top of one another, shine a light through them, and voilà , our image appears!     Digital image as -dimensional array   The Sage cell below creates a -dimensional array representation of a pixel image. Make sure to evaluate that cell!   Recall that Sage captures the double-index nature of a matrix by nesting lists: a matrix is just a list of lists. A -dimensional array by taking this nesting one step further, as you can see from the definition of the object smiley , which is a list of lists of lists. In its current format, to access the -th entry of the array, which tells us the intensity of the -th color channel at -th pixel, we use an iterated indexing syntax: smiley[i][j][k] . Let's examine the color of the top-left pixel by determining the three color intensities there. Adopting the count from zero convention of Python, the top-left pixel is given by , and the three color channels are encoded as 0=red, 1=green, 2=blue.   It looks like this pixel is blue-green, with emphasis on the blue. What about the bottom-left pixel?   Interesting! It appears that this pixel is also blue-green, but considerably more green. Before confirming our results by viewing the image, let's convert smiley into the Python's standard multidimensional array format, a NumPy array (or ndarray). As a NumPy array, we can determine the size of the array using smiley.shape and we can access the -th entry more naturally as smiley[i,j,k] (although you will notice that we are given some additional information about the data-type of the entry).   And now it's time for the big reveal. We will view smiley using the data visualization library matplotlib .       Vector operations on  Returning for a moment to the hypothetical multivariable calculus class you took long ago, you may remember that after introducing the sets and , the next thing you did was to define the notions of vector addition and scalar multiplication . For these are defined as . Notice that the two operations are defined component-wise . In plain English, the sum of two triples in is the triple whose -th component is the sum of the two -th components; and to scale a triple by the scalar , we multiply (or scale) each component by . This component-wise nature of the two operations allows us to easily generalize them to the more general setting of for arbitrary index sets .   Vector operations of   Let be a nonempty set. We will call the operations below the standard vector operations on .   Vector addition on  Given elements -tuples and , we define their vector sum  as . The operation is called vector addition .    Scalar multiplication on  Given an -tuple and a real number , the -tuple defined as is called the scalar multiple of by . The operation is called scalar multiplication .        Vector operations input\/output  It is a good habit, when dealing with a variety of types of mathematical operations, to give a qualitative summary of what their inputs and outputs are. For example, vector addition in takes as input a pair of -tuples, and , and returns as output the -tuple . By contrast, scalar multiplication in is a sort of hybrid operation that takes as input a real number and -tuple and returns as output a new -tuple .   Taking the three special types of index sets discussed in , we see that gives rise to naturally defined operations on -tuples, infinite sequences, and matrices. We summarize each in turn below.   -tuples  Let . In this case we have and the two vector operations are given by .    Infinite sequences  Let . In this case we have and the two vector operations are given by .    Matrices  Let . In this case we have and the two vector operations are given by .   The foregoing is another example of the advantage of working with the general notion of -tuples. Starting from our single definition of vector operations on ( ), by choosing different types of index sets , we immediately derive a notion of vector addition and scalar multiplication on three quite different sets of objects: the set of -tuples , the set of infinite sequences , and the set of matrices .  In we recall the basic spatial interpretation of the vector operations in the context of and . In the meantime, we consider a few explicit examples.   Tuple vector operations      Let and . Compute .    Consider the infinite sequences and . Compute and .    Let and .  Compute .          We have .    We have , and .    We have .       In we introduce SageMath (or Sage , for short), an open-source computer algebra system. Our exploration of Sage will be a rather casual one, making use of interactive cells called Sage cells . These cells can be evaluated by clicking the Evaluate (Sage) button, or by typing shift+return . You can experiment by editing the code in these cells and then evaluating. Sage is built on top of the Python programming language, and so shares its syntax.   Vector operations: and   To create an -tuple in Sage, use the vector() command. The input should be a sequence of numbers enclosed in brackets.   You can make use of sequence routines to create special types of -tuples.   If you prefer the two outputs above to not be listed as a pair, you can use the print() command in sequence. (This is a peculiarity of interactive SageCells, not Sage itself.)   The standard vector operations of are implemented using an intuitive syntax in Sage.   Once a vector v is created in Sage, various properties of the vector can be computed using the v.foo() syntax. For example, the command v.length() returns the length of the vector v .   Matrices are created in Sage using the matrix() command, and are entered as a list of lists, where the -th list of this list represents the -th row of the matrix, considered as a rectangular array. Note that show() outputs a typeset display of the matrix, as contrasted with the text ouput of print() .   The Sage syntax for vector operations in is identical to that for . The command matrix(2,3,range(-4,2)) used below instructs Sage to create a matrix whose entries are the integers from to , arranged by wrapping along the two rows.   Lastly, to retrieve entries from -tuples or matrices, Sage uses the usual Python list syntax: , v[i] and A[i,j] . As with all things Python, we always count from 0. Thus if A is assigned to a matrix in Sage, A[i,j] is its -th entry.    So why do we call these operations vector operations? It turns out that a set together with these two vector operations is an example of an important type of mathematical object called a vector space , which in turn are the main object of study of linear algebra. The definition of a vector space we give below is what is known as an axiomatic definition : it lists a set of properties, called axioms , and defines a vector space to be anything that satisfies these axioms.   Vector space   A real vector space is a set together with two operations , called respectively vector addition and scalar multiplication , that satisfy the following vector space axioms .   Vector addition is commutative   for all .    Vector addition is associative   for all .    Zero vector  There is an element such that for all , we have . We call the zero vector of .    Vector inverses  For all , there is another element satisfying . We call the vector inverse of .    Distribution over vector addition   for all and .    Distribution over scalar addition   for all and .    Scalar multiplication is associative   for all and all .    Scalar multiplication identity   for all .   We call elements of a vector space vectors and the elements of  scalars .    Note that a vector space, as defined by is a very general object. In particular, the definition does not specify what the underlying set of the vector space is, or what the vector operations are. Rather, it allows for any set and any choice of two operations to be called a vector space, as long as our choices satisfy the vector space axioms. We will deal with vector spaces in this full generality later in the course. For now, let's show that for any index set the set of all -tuples together with the two vector operations defined in satisfies the vector space axioms, and hence is a vector space.  Before getting to that proof, we point out that among the eight vector space axioms, there are two (Axiom iii and Axiom iv) that posit the existence of certain special elements: namely a zero vector and vector inverses. Accordingly, we will often refer to these axioms as the existential axioms . In contrast, the remaining axioms are all algebraic in nature; they stipulate that the two vector operations are well behaved and play nicely with one another. The next definition, and trailing example, introduce some special elements of that will serve the role of the zero vector and vector inverses as described by the existential vector space axioms. We also take the opportunity to define the indicator vectors of , which will be useful throughout the course.   Special elements of    zero vectors of , and     indicator vector of    Let be a nonempty set.   Zero vector  The zero vector of , denoted (or for short), is the -tuple, all of whose entries are equal to : , .  In the special cases and , we denote the corresponding zero vectors as and , respectively.    Vector inverse  Given an -tuple , the vector inverse of , denoted , is the element of defined as .    Indicator vectors  Given , the -th indicator element of , denoted , is the -tuple whose -th entry is equal to and whose -th entry is equal to for all .  In the case , we call the -th standard basis vector of .  In the case , we write for , and call this the -th standard basis matrix of .        Zero, inverse, and indicator vectors   For the given index set , provide (a) the zero vector of , (b) a general element of and its vector inverse, and (c) the indicator vectors for all .  Make use of the notational conventions that apply to each particular type of index set.    .               In this case we have . The zero vector of is .  A general element of can be described as , , and its vector inverse is .  The four indicator vectors of are called standard basis vectors, and are given as .    In this case we have . The zero vector of is .  A general element of can be described as , and its vector inverse is . The six indicator vectors of are called standard basis vectors, and are given as .       We now verify that the two operations on defined in satisfy the vector space axioms. As you will see, since the vector operations are defined componen-wise in terms of real number addition and multiplication, the fact that the vector space axioms are satisfied usually follows directly from corresponding properties of these two real number operations.   is a vector space   Let be a nonempty set.   The set together with the vector addition and scalar multiplication operations defined in is a vector space.    The zero vector of the vector space , as described by Axiom , is the -tuple : , we have .    Given a vector , its vector inverse , as described by Axiom , is .  Additionally, we have ; that is, the vector inverse of is equal to the scalar multiple .       The statement itself of the theorem has already taken care of some of the steps required to verify that something is a vector space. Namely, it has identified the underlying set and proposed vector operations, and it has identified the elements of that serve as the zero vector and inverse vectors. It remains to show that the eight axioms of are satisfied. We will verify the existential axioms (Axiom iii-iv), as well as one of the algebraic axioms (Axioms ii and vi), and leave the rest as an exercise.   Axiom iii  We claim that satisfies the identity of Axiom . Indeed, for all we have , as desired.    Axiom iv  We claim that given any , the vector satisfies the identity of Axiom , and thus that . Indeed, we have , as desired.   As for the remaining axioms, we will verify Axioms ii and vi, and leave the rest as an exercise. As you see below, the desired identities here all boil down to a familiar property of real number arithmetic: , commutativity of real number addition, real number distributivity, etc. In what follows, will denote arbitrary elements of , and will denote arbitrary elements of .   Axiom ii  We have .    Axiom vi  For all and , we have .     Thanks to , we now have at our disposal a rich collection of examples of vector spaces: namely, the spaces , where is an arbitrary index set. As usual, the particular choice of index set gives rise to a vector space of a particular flavor. Let's quickly run through our three familiar examples.   For , our vector space consists of -tuples. When emphasizing the vector space structure of , we will call its elements -vectors .    Choosing , we obtain the vector space of all infinite sequences of real numbers.    Finally, for , we obtain the vector space of all matrices.   We hasten to add, that although the spaces furnish us with many interesting examples of vector spaces, not all vector spaces are of this form! Indeed, the zero space defined below is such an example.   Zero space   Let be a singleton: , is a set containing exactly one element. There is a unique choice of operations making into a vector space.    Let . Since , to define a vector addition operation , we only need to define what is. Furthermore, since by definition we must have , we have no choice here: we must define !  Similarly, it is easy to see that there is only one possible scalar multiplication operation, defined as for all . These two operations being so simple, it is now easy to verify that they satisfy all of the algebriac axioms. Furthermore, we have no choice for the zero vector and inverse vectors: we must choose , and . This seems somewhat odd, since is its own vector inverse, but it is easy to verify that these choices satisfy Axioms iii and iv: . The remaining axioms can be verified in a similar elementary fashion. We leave their verification as an exercise.     Zero space   A singleton , together with its uniquely defined vector operations, is called a zero space . Since with respect to this vector space structure, we will write for a zero space.    For now, we will mainly focus on vector spaces of the form or , leaving a more thorough investigation of vector spaces in all of their abstract glory until . However, as we introduce new concepts connected to vector spaces, we will always state them in full generality for a general vector space . This is done mainly out of convenience, so that we do not have to repeat the same definition later on. Since our emphasis is on vector spaces of the form , we will take care to follow up any new definition with some examples taken from some familiar vector spaces of the form , , . We put this into practice with our next definition.   Linear combination   Let be a vector space, and let be a nonempty subset of . A linear combination of is a vector of the form , where and for all . The scalars appearing in are called the coefficients of the linear combination. The linear combination is trivial if for all , and nontrivial if for some .  In the special case where is described enumeratively as or , we will call a linear combination of a linear combination of the for short.  We will sometimes use sigma notation for linear combinations, writing for the linear combination of the vectors whose -th coefficient is .     Linear combination: -vectors   Show that every vector in is a linear combination of the standard basis vectors , , and .    Given any vector , we have .     Linear combination: matrices   Express as a nontrivial linear combination of and .    It is easy to see that , and hence . More explicitly, we have . This is not the only nontrivial linear combination yielding . In fact we have for any scalar (including ).    It is natural to want to rewrite a linear combination of the form as , but technically this expression doesn't quite make sense as of yet. What we are missing is the vector difference operation.   Vector difference   Let be a vector space. Given vectors , we define their difference  as .      Visualizing  We will only explicitly visualize (or graph) elements of for and . However, these special cases bring to light an important point-vector duality in how we conceive of -tuples that carries over into higher values of . Fix for now. We will sometimes conceive of a triple as a point , in which case we will use capital letters to denote the triple ( , ), and will represent the point visually with respect to a coordinate system as the point in -space reached by starting at the origin and moving a directed distance units in the -direction, units in the -direction and units in the -direction.   Point visualization of triple. Made with GeoGebra .    Alternatively, when conceiving of a triple as a vector , we will use lowercase bold letters to denote it ( , or ), and represent it visually as a directed line segment ( , an arrow). In more detail, given the 3-vector , we choose an initial point  and represent as the directed line segment that starts at and ends at the point , the terminal point of . Note that in this manner we get infinitely-many different graphical representations of : one for each choice of starting point . Although these are technically different arrows (they have different starting points), we consider them to be equal as vectors . You can think of each particular choice of arrow-representation as an instance or incarnation of the vector . When the initial point of our arrow representation is chosen to be the origin , we have , where . We call the position vector of the point .   Vector visualization of triple . Drag to change the vector . Drag to change the initial point of . Made with GeoGebra .    The representation of vectors as arrows gives rise to the so-called tip-to-tail interpretation of vector addition. Let and . Starting with an initial point , we can represent as , where , and , where . But then we have , or alternatively, . In other words, if we choose our arrow representations so that the terminal point (the tip) of is placed at the initial point (the tail) of , then is represented by the arrow whose initial point is , and whose terminal point is reached by first traveling along , and then traveling along .   Tip-to-tail visualization of vector addition. Made with GeoGebra .    The tip-to-tail visualization of vector addition gives rise to a similar conceptualization of vector difference. Performing a little vector algebra on the definition , we see that . Using tip-to-tail terminology, this means if we represent and , then is the arrow that starts at the tip of and ends at the tip of . We thus have a tip-to-tip description of vector difference.   Tip-to-tip visualization of vector difference. Made with GeoGebra .    Next consider scalar multiplication. Given a vector and a scalar , the scalar multiple can be represented as an arrow that starts at and points along the line containing . As we will see in the next section, the length of the resulting arrow is multiplied by the factor , resulting in a stretched arrow if and a shrunk arrow if . Furthermore, if , then the arrow representing points in the same direction as ; if , it points in the opposite direction.   Visualization of scalar multiplication. Drag point labeled to change scalar. Made with GeoGebra .       Tuple building   For the given index set and tuple indexed by , display the tuple using the appropriate notational conventions introduced in .      ,        ,        ,        ,        , , where       Tuple equality   Explain why the given tuples are not equal. Your justification must refer to a specific condition of , , or .      ,        ,        ,        ,        ,       Vector operations of   Compute the given expressions using the vector operations of the relevant vector space .     Let .                       Let .                       Let , where . Express your answers below as expanded infinite sequences with enough terms provided to see a pattern.                        Show that every element of can be written as a linear combination of . In other words, every element of is a linear combination of the standard basis vectors of .      Show that every element of can be written as a linear combination of . In other words, every element of is a linear combination of the standard basis matrices of .      Show that it is not the case that every element of can be written as a linear combination of the set of indicator vectors of . In more detail, provide an explicit infinite sequence that is not a linear combination of .    Show that any linear combination of is of the form for some positive integer and scalars (some of which could be zero). Expand out this linear combination as an infinite sequence and provide an infinite sequence that doesn't look like this!    The underlying issue here is that by definition a linear combination of any set of vectors is a finite sum of scalar multiples of vectors from that set. In the present case, that means an arbitrary linear combination of is of the form for some positive integers and scalars . Letting and setting , we have . This shows that any linear combination of can be expressed in the form , as claimed in the hint. Now since by definition is the infinite sequence we have . This shows that any linear combination of the is a sequence with only finitely many nonzero terms! In particular the infinite sequence is not a linear combination of the .      Finish the proof of . That is, show that the vector operations of satisfy Axioms i, v, vii, and viii of .      Finish the proof of . That is, show that the unique operations defined satisfy Axioms i-ii, and v-viii of .     True or false   True or false: if true, provide a proof; if false, provide an explicit counterexample.   If -tuples and have the same set of values (see ), then .    Every element of can be written as a linear combination of the vectors and .    Every element of can be written as a linear combination of the matrices .    If is finite, then every element of can be written as a linear combination of the indicator vectors , .    If is a vector space, then is infinite.        "
 },
 {
-  "id": "s_Rn_and_friends-2",
+  "id": "ss_R-valued_tuples-5",
   "level": "2",
-  "url": "s_Rn_and_friends.html#s_Rn_and_friends-2",
-  "type": "Objectives",
-  "number": "1.1",
+  "url": "s_Rn_and_friends.html#ss_R-valued_tuples-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
   "title": "",
-  "body": "   Define the notion of a real-valued tuple indexed by an arbitrary set and the set of all such tuples.    Define the basic vector operations on and discuss their important properties.    Visualize points, vectors, and vector operations in and .    "
+  "body": "tuple "
 },
 {
   "id": "d_tuple_real",
@@ -898,7 +898,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "1.1.1",
   "title": "Real-valued tuple.",
-  "body": " Real-valued tuple    set of real-valued -tuples    Let be a nonempty set. A real-valued tuple indexed by (or real-valued -tuple ) is a rule that assigns to each index  an element , and is denoted .  Given an -tuple , we call the index set , and for each index , we call the -th component (or coordinate , or entry , or term ) of . We call the set of values of the tuple .  The set of all real-valued -tuples is denoted : , .   "
+  "body": " Real-valued tuple    set of real-valued -tuples    Let be a nonempty set. A real-valued tuple indexed by (or -tuple of real numbers) is a rule that assigns to each index  an element , and is denoted .  Given an -tuple , we call the index set , and for each index , we call the -th component (or coordinate , or entry , or term ) of . We call the set of values of the tuple .  The set of all real-valued -tuples is denoted : , .   "
 },
 {
   "id": "ss_R-valued_tuples-8",
@@ -916,7 +916,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "1.1.3",
   "title": "Real-valued <span class=\"process-math\">\\(n\\)<\/span>-tuples.",
-  "body": " Real-valued -tuples    set of real-valued -tuples    Let be a positive integer, and let . A real-valued tuple indexed by is called an -tuple and we call the length of the tuple. We will use any of the following notations for tuples indexed by : . Furthermore, the set of all -tuples is denoted : , .   "
+  "body": " Real-valued -tuples    set of real-valued -tuples    Let be a positive integer, and let . A real-valued tuple indexed by is called an -tuple and we call the length of the tuple. We will favor bold lower case letters when naming -tuples ( , , , , ) and use any of the following notations for tuples indexed by : . Furthermore, the set of all -tuples is denoted : , .   "
 },
 {
   "id": "d_infinite_sequence",
@@ -937,9 +937,9 @@ var ptx_lunr_docs = [
   "body": " Infinite sequences   For each defined sequence , expand in the form including at least the first four terms.                   , where            .     .     .     .      "
 },
 {
-  "id": "ss_R-valued_tuples-17",
+  "id": "ss_R-valued_tuples-18",
   "level": "2",
-  "url": "s_Rn_and_friends.html#ss_R-valued_tuples-17",
+  "url": "s_Rn_and_friends.html#ss_R-valued_tuples-18",
   "type": "Table",
   "number": "1.1.6",
   "title": "First and second half performance datum",
@@ -1382,7 +1382,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "s_systems.html",
   "type": "Section",
-  "number": "1.2",
+  "number": "2.1",
   "title": "Systems of linear equations",
   "body": " Systems of linear equations   Computing and studying solutions to equations, and systems of equations , unquestionably plays an important role in mathematics; though we hasten to add that this is not all that mathematicians do! In this chapter we will develop an essentially complete theory of a particularly simple family of mathematical equations: namely, linear equations . This will serve as a somewhat indirect introduction to our study of linear algebra, as lurking below our parametric descriptions of solutions to linear systems lie vector space notions like subspace, span, and linear independence. Furthermore, we will introduce one of the most important computational tools of linear algebra: Gaussian elimination .    Systems of linear equations   Linear equations  linear equation   A linear expression in the unknowns (or variables) is an expression of the form , where are fixed real numbers.  A linear equation in the unknowns is an equation that can be simplified, using only addition and subtraction, to an equation of the form which we call its standard form . An equation in the unknowns is nonlinear if it cannot be simplified to the form using only addition and subtraction.  Given a linear equation with standard form , the equation is called homogeneous if , and nonhomogeneous if .     Linear and nonlinear equations      Consider . This is a linear equation in the unknowns . Its standard form is . Since the right-hand side is nonzero, we see that the equation is nonhomogeneous.    The equation is a nonlinear equation in the unknowns and .    The equation is nonlinear. Interestingly, however, the set of solutions to this equation is equal to the set of solutions to the linear equation . This illustrates that is concerned strictly with the form of an equation, and not with the solutions to that equation.       We next provide a precise definition of a solution of a linear equation. This definition will involve -tuples of real numbers.   Solutions to linear equations   A solution to a linear equation  is an -tuple of real numbers for which the variable assignment makes the equation true: , the tuple satisfies . We say  solves the equation in this case.    Given a linear equation , we will be interested in finding and describing the set of all of its solutions. As you may recall, a (nontrivial) linear equation in two unknowns defines a line in , and a (nontrivial) equation in three unknowns defines a plane in . These types of subsets (of and , respectively) have distinctive geometric properties that we will elucidate in coming sections. Generalizing this notion to an arbitrary number of unknowns leads to the notion of a hyperplane .   Hyperplane   A linear equation is nontrivial if for some . Given a nontrivial equation , the set of solutions is called a hyperplane in . We have the two following special cases, corresponding to and :   A hyperplane in is the set of solutions to a nontrivial equation , and is called a line .    A hyperplane in is the set of solutions to a nontrivial equation , and is called a plane .        Visualizing lines in  Let be a line: , is the solution to some nontrivial linear equation . Since the equation is nontrivial, we have or . If , we may put the equation in the form , in which case we recognize as the slope of and as the -intercept. If , then , and the equation can be solved as , which we recognize as the vertical line passing through the point .  It is easy to see that the equation defining is homogenous if and only if is a point on : , is defined by a homogeneous equation if and only if it passes through the origin.   Lines in   Lines in R2       Visualizing planes in  Let be a plane defined by the nontrivial equation . Later we will describe an approach to visualizing in terms of its normal vector  . For now we recall a more elementary approach. Namely, simply find by inspection three non-colinear points satisfying , sketch the triangle in they define, and then envision as the plane in containing this triangle. In practice we can find three such points by picking arbitrary values for two of the three variables, and solving for the third variable using .  For example, if is the plane with equation , we see easily that lie on , allowing us to produce the graph in .  As with lines, it is easy to see that the equation defining is homogeneous if and only if passes through the origin .   Using Sage to visualize via normal vector  Visualizing        Next we introduce linear systems , which are just collections of linear equations.   Systems of linear equations  linear system   A system of linear equations (or linear system ) is a set of linear equations. The linear system is homogeneous if each of its equations is homogeneous: , if for all .  A solution to the system is an -tuple that is a solution to each of the system's equations. We say  solves the system in this case.  A linear system is consistent if a solution to the system exists, and inconsistent otherwise.    When displaying a system of equations in the unknowns , we typically write each equation in standard form and align the corresponding terms of each equation into columns: A homogeneous system is thus typically written as:    Displaying linear systems  As indicated in , when displaying a system of equations in the unknowns , we typically write each individual equation in standard form and align the corresponding terms of each equation into columns. The presence of multiple equations and multiple unknowns necessitates the use of double-indexing for the coefficients appearing in the system. The following breakdown will hopefully help you orient yourself with respect to the double-indexing:   The appearing in and indicates the -th row in our displayed system, or equivalently, the -th equation.    The appearing in indicates the -th column in our displayed system, which is associated to the -th variable, for .       Solutions to elementary systems   For each system, compute the set of solutions.                 The first equation implies . Substituting for in the second equation, we would then have , a contradiction. Thus there are no solutions: i.e., is the empty set, denoted or .    The first equation implies . Making this substitution in the second equation yields , or . Thus is the unique solution, and .    The second equation is just twice the first. It follows that both equations have the exact same set of solutions, and so we need only find all solutions to . Note that we can set for any real number . Solving for in terms of we get for any , and thus , an infinite set!       The solutions to the the three linear systems of can be described qualitatively as follows: nonexistent, unique, and infinite. This turns out to be characteristic more generally of all linear systems. In other words, given a linear system , the set of solutions will take one of three qualitative forms:    : , there are no solutions and the system is inconsistent.     contains exactly one element: , there is a unique solution.     is infinite: , there are infinitely many solutions.   We will prove this in full rigor in . However, we get an inkling of why this should be true in the case of two or three unknowns, where we can put our geometric understanding to work. For example, consider a general system of equations in just two unknowns and : Assume for simplicity that each equation in the system is nontrivial, and thus that for each , the -th equation of this system defines a line . A solution of the system, being a solution of each equation , must lie on each of the lines . In other words, the set of solutions to the system is precisely the set of points lying in the common intersection of all of these lines. Thus our qualitative description of the set of solutions to this system amounts to the geometric fact that the intersection of any collection of lines in is either empty, contains a unique point, or is infinite. has you prove this geometric fact, as well as the analogous statement for systems of equations in three unknowns. For now we illustrate this by reexamining from a geometric point of view.   Solutions to elementary systems (again)   For each system in , use a geometric argument to determine how many solutions there are.    We proceed geometrically by observing that each equation in a given system defines a line, that a pair is a solution to the given equation if and only if it is a point on the corresponding line, and thus that a pair is a solution to both equations if and only if it is a point lying on both lines. Thus, geometrically speaking, the set of solutions to a given system is equal to the intersection of the two corresponding lines.   In this case the two lines and are parallel (and not equal to one another). It follows that their intersection is empty. We conclude that there are no solutions to the system.    In this case the two lines and are nonparallel. It follows that they intersect in a single point. We conclude that the system has a unique solution.    In this case the two equations and define the same line , and thus that their intersection is also equal to . The set of solutions to the system is then equal to the set of points of , which is infinite.         Row operations  In we were able to combine some simple logic and arithmetic to solve each system completely. Of course, things get more complicated as the number of equations and\/or unknowns in the system increases.  For example, consider the system Observe first that the triple is not a solution to the system; one easily checks that is satisfies the first and second equations, but not the third. Similarly, it is easy to verify that and are both solutions to the system. The question remains: How do we find all solutions to the linear system in a systematic way?   Notice the somewhat funny spacing in . This is in force in order to align the unknowns in separate columns. In general, when handed a linear system in the wild, your first step should be to write each equation in standard form, and make sure the unknowns are aligned vertically in this manner.    Some systems are easier to solve than others  Below you find two systems of three equations in three unknowns. The staircase pattern of allows us to solve easily by backwards substitution . In more detail:   Equation 3 in tells us that .    Now substitute into Equation 2 of and solve for to get .    Finally, substitute and into Equation 1 of and solve for to get . We conclude that is a solution to .    Furthermore, since at each step we had no choice in the matter ( must be equal to 2, then must be equal to 4, etc.), we see that in fact is the only solution to .   Our method for solving a more complicated system, like above, will be to transform it to a simpler system like .   Key point . In order for this method to work, we need to make sure that the transformed system has exactly the same solutions as the original system! To this end we will restrict our permissible transformations to the elementary operations define below.   Elementary operations on linear systems  elementary operations linear systems  elementary operations linear systems scalar multiplication  elementary operations linear systems equation swap  elementary operations linear systems equation addition  row reduction of systems   An elementary operation (or elementary row operation ) is one of the three types of operations on linear systems described below.   Scalar multiplication  Multiply an equation by a nonzero number : i.e., replace the -th equation of the system with for . Note: is the result of multiplying the left and right sides of equation by .    Equation swap  Swap the -th and -th equations of the system, : i.e., replace equation of the system with , and replace equation with .    Equation addition  Add a multiple of one equation to another: i.e., replace with for some , , and .   The act of transforming a system of equations using elementary operations is called reduction (or row reduction ).    After reducing a linear system using elementary operations, we are left with a new system . The systems and will generally look very different from one another. Note, however, that the two systems will have the same number of equations, and the same number of variables. More importantly, the two systems will have identical sets of solutions; that is, the set of solutions of the new system is identical to the set of solutions to !  To convince ourselves of this last assertion, it suffices to show that the application of any one of these elementary row operations produces a new system with exactly the same set of solutions as ; if this is so, then performing any finite sequence of elementary row operations must also preserve the set of solutions in this sense. makes this argument official. First we introduce the notion of equivalent linear systems , mainly to spare ourselves from the mouthful that is obtained by applying a finite sequence of elementary row operations .   Row equivalent linear systems   We say two systems of linear equations are row equivalent if the one can be obtained from the other by a finite sequence of elementary operations.     Row equivalence theorem   Row equivalent systems of linear equations have identical sets of solutions.    We prove by induction that if system is the result of applying elementary operations to system , , then and have the same set of solutions.   Base case:  In this case (we have applied no operations) and the statement is obvious.    Induction step  Assume that applying a sequence of elementary operations to a linear system preserves the set of solutions.  Suppose is the result of applying elementary operations to the system . Let be the result of applying the first of these operations. By the induction hypothesis, systems and have the same set of solutions.  Since the system is obtained from by applying exactly one elementary operation, it now suffices to show that applying a single row operation does not change the set of solutions to a linear system. This is the result of . (Note that a solution is provided to that exercise.)  We conclude that and have the same set of solutions, as desired.       Complete example  Consider again the linear system   We transform the system as as follows:   Now put the logic together. Our original linear system was transformed by a sequence of elementary row operations to a new system :   We saw already that the second system has exactly one solution, namely the triple .  Since transforming a system by row operations preserves solutions, the first and second systems have exactly the same solutions .  Thus is the only solution to the original system!    Notation  As we will see later, keeping track of the exact sequence of row operations is important in some situations. The notation used in the last example is useful for this bookkeeping. Let's explicate the notation somewhat.  The notation indicates that system is obtained from by replacing equation with .  The notation indicates that system is obtained from by swapping rows and .  The notation indicates that system is obtained from by replacing equation with .    Mandate  You may be tempted to do multiple operations in a single step during this procedure. Resist this temptation for now until we have a better understanding of things.  Furthermore, if later on you do give in to this temptation, make sure that the two (or more row operations) you perform are independent of one another. For example, do not swap with and replace with in the same step.     WeBWork Exercises      Determine whether the following system has no solution, an infinite number of solutions or a unique solution.                       Suppose that the following   is a consistent system. Then                  Find the set of solutions for the linear system  Use s1 , s2 , etc. for the free variables if necessary.   , ,                   SOLUTION: Equation 3 . Substitute into equation 2, . Substitute into equation 1, .            Give a geometric description of the following systems of equations                       Give a geometric description of the following system of equations                      Written exercises   Geometry of linear systems   In this exercise we will use the geometry of lines in and planes in to help analyze solutions to systems of equations in two and three unknowns, respectively.   Fix and consider a system of linear equations in the two unknowns and . What does a solution to this system of linear equations correspond to geometrically?    Use your interpretation in (a) to give a geometric argument that a system of equations in two unknowns will have either (i) zero solutions, (ii) exactly one solution, or (iii) infinitely many solutions.    Use your geometric interpretation to help produce explicit examples of systems in two variables satisfying these three different cases (i)-(iii).    Now repeat (a)-(b) for a system of linear equations in three variables .       (a) Geometrically, each equation in the system represents a line . A solution to the -th equation corresponds to a point on . Thus a solution to the system corresponds to a point lying on all of the lines: i.e., a point of intersection of the lines.  (b) First of all to prove the desired or statement it suffices to prove that if the number of solutions is greater than 1, then there are infinitely many solutions.  Now suppose there is more than one solution. Then there are at least two different solutions: and . Take any of the two lines . By above the intersection of and contains and . But two distinct lines intersect in at most one point. It follows that and must be equal. Since and were arbitrary, it follows all of the lines are in fact the same line . But this means the common intersection of the lines is , which has infinitely many points. It follows that the system has infinitely many solutions.  (c) We will get 0 solutions if the system includes two different parallel lines: e.g., and .  We will get exactly one solution when the slopes of each line in the system are distinct.  We will get infinitely many solutions when all equations in the system represent the same line . This happens when all equations are multiples of one another.  (d) Now each equation in our system defines a plane . A solution to the system corresponds to a point of intersection of the planes. We recall two facts from Euclidean geometry:   Fact 1  Given two distinct points, there is a unique line containing both of them.    Fact 2  Given any number of distinct planes, they either do not intersect, or intersect in a line.     We proceed as in part (b) above: that is show that if there are two distinct solutions to the system, then there are infinitely many solutions. First, for simplicity, we may assume that the equations define distinct planes; if we have two equations defining the same plane, we can delete one of them and not change the set of solutions to the system.  Now suppose and are two distinct solutions to the system. Let be the unique line containing and (Fact 1). I claim that is precisely the set of solutions to the system. To see this, take any two equations in the system and . Since the two corresponding planes are distinct, and intersect in at least the points and , they must intersect in a line (Fact 2); since this line contains and , it must be the line (Fact 1). Thus any two planes in the system intersect in the line . From this it follows that: (a) a point satisfying the system must lie in ; and (b) all points on satisfy the system (since we have shown that lies in all the planes). It follows that is precisely the set of solutions, and hence that there are infinitely many solutions.     Row operations preserve solutions   We made the claim that each of our three row operations   scalar multiplication ( for ),    swap ( ),    addition ( for some )   do not change the set of solutions of a linear system. To prove this claim, let be a general linear system . Now consider each type of row operation separately, write down the new system you get by applying this row operation, and prove that an -tuple is a solution to the original system if and only if it is a solution to the new system .    Let be the original system with equations . For each specified row operation, we will call the resulting new system and its equations .   Row swap  In this case systems and have exactly the same equations, just written in a different order. Thus the -tuple satisfies if and only if it satisfies each of the equations , if and only if it satisfies each of the equations , since these are the same equations! It follows that is a solution of if and only if it is a solution to .    Scalar multiplication  In this case for all , and for some . Since only the -th equation has changed, it suffices to show that is a solution to if and only if is a solution to . Let's prove each direction of this if and only if separately.  If satisfies , then . Multiplying both sides by we see that and hence that is also a solution of .  For the other direction, if satisfies , then Now, since , we can multiply both sides of this equation by to see that and hence that is a solution to .    Row addition  The only equation of that differs from is . Writing this equation out in terms of coefficients gives us . Now if satisfies , then it satisfies and , in which case evaluating the RHS of the above at yields showing that satisfies . Now suppose satisfies . Since satisfies , we have Since satisfies , we have Substituting into the equation above we get , and hence . This shows that satisfies . It follows that satisfies .      Nonlinear systems  A nonlinear system of equations is a collection of equations, at least one of which is nonlinear. Our definition of a solution to a linear system generalizes easily to any system of equations.   Consider the following nonlinear system in the unknowns : .   Sketch the graphs of each of the two equations in the system on a common coordinate system.    Describe geometrically what a solution to the system is in terms of your sketch. Explain your reasoning. How many solutions to the system are there, according to your sketch?    Compute the set of all solutions to the system algebraically.       Now consider a more general system where are fixed constants and at least one of or is nonzero.    Explain geometrically what a solution to the system corresponds to in terms of the graphs of its two equations.    Use your geometric interpretation in (i) to argue that the system has either 0, 1, or 2 solutions. Give explicit examples of such systems corresponding to each of these three cases.         Not all arithmetic operations preserve solutions   In this exercise we investigate how the operation of squaring both sides of an equation changes the set of solutions. Let represent a general equation (linear or nonlinear) in the unknowns , let be the equation obtained by squaring both sides of the , let be the set of solutions to , and let be the set of solutions to .    Show that .    Given an explicit example of an equation of the form in two variables for which .        "
 },
@@ -1391,7 +1391,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#d_lin-equation",
   "type": "Definition",
-  "number": "1.2.1",
+  "number": "2.1.1",
   "title": "Linear equations.",
   "body": " Linear equations  linear equation   A linear expression in the unknowns (or variables) is an expression of the form , where are fixed real numbers.  A linear equation in the unknowns is an equation that can be simplified, using only addition and subtraction, to an equation of the form which we call its standard form . An equation in the unknowns is nonlinear if it cannot be simplified to the form using only addition and subtraction.  Given a linear equation with standard form , the equation is called homogeneous if , and nonhomogeneous if .   "
 },
@@ -1400,7 +1400,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#ss_linear_equations-3",
   "type": "Example",
-  "number": "1.2.2",
+  "number": "2.1.2",
   "title": "Linear and nonlinear equations.",
   "body": " Linear and nonlinear equations      Consider . This is a linear equation in the unknowns . Its standard form is . Since the right-hand side is nonzero, we see that the equation is nonhomogeneous.    The equation is a nonlinear equation in the unknowns and .    The equation is nonlinear. Interestingly, however, the set of solutions to this equation is equal to the set of solutions to the linear equation . This illustrates that is concerned strictly with the form of an equation, and not with the solutions to that equation.      "
 },
@@ -1409,7 +1409,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#d_lin_eq_sol",
   "type": "Definition",
-  "number": "1.2.3",
+  "number": "2.1.3",
   "title": "Solutions to linear equations.",
   "body": " Solutions to linear equations   A solution to a linear equation  is an -tuple of real numbers for which the variable assignment makes the equation true: , the tuple satisfies . We say  solves the equation in this case.   "
 },
@@ -1418,7 +1418,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#d_hyperplane",
   "type": "Definition",
-  "number": "1.2.4",
+  "number": "2.1.4",
   "title": "Hyperplane.",
   "body": " Hyperplane   A linear equation is nontrivial if for some . Given a nontrivial equation , the set of solutions is called a hyperplane in . We have the two following special cases, corresponding to and :   A hyperplane in is the set of solutions to a nontrivial equation , and is called a line .    A hyperplane in is the set of solutions to a nontrivial equation , and is called a plane .      "
 },
@@ -1427,7 +1427,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#eg_vis_lines_R2",
   "type": "Example",
-  "number": "1.2.5",
+  "number": "2.1.5",
   "title": "Visualizing lines in <span class=\"process-math\">\\(\\R^2\\)<\/span>.",
   "body": " Visualizing lines in  Let be a line: , is the solution to some nontrivial linear equation . Since the equation is nontrivial, we have or . If , we may put the equation in the form , in which case we recognize as the slope of and as the -intercept. If , then , and the equation can be solved as , which we recognize as the vertical line passing through the point .  It is easy to see that the equation defining is homogenous if and only if is a point on : , is defined by a homogeneous equation if and only if it passes through the origin.   Lines in   Lines in R2     "
 },
@@ -1436,7 +1436,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#eg_vis_plane",
   "type": "Example",
-  "number": "1.2.7",
+  "number": "2.1.7",
   "title": "Visualizing planes in <span class=\"process-math\">\\(\\R^3\\)<\/span>.",
   "body": " Visualizing planes in  Let be a plane defined by the nontrivial equation . Later we will describe an approach to visualizing in terms of its normal vector  . For now we recall a more elementary approach. Namely, simply find by inspection three non-colinear points satisfying , sketch the triangle in they define, and then envision as the plane in containing this triangle. In practice we can find three such points by picking arbitrary values for two of the three variables, and solving for the third variable using .  For example, if is the plane with equation , we see easily that lie on , allowing us to produce the graph in .  As with lines, it is easy to see that the equation defining is homogeneous if and only if passes through the origin .   Using Sage to visualize via normal vector  Visualizing       "
 },
@@ -1445,7 +1445,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#d_lin-sys",
   "type": "Definition",
-  "number": "1.2.9",
+  "number": "2.1.9",
   "title": "Systems of linear equations.",
   "body": " Systems of linear equations  linear system   A system of linear equations (or linear system ) is a set of linear equations. The linear system is homogeneous if each of its equations is homogeneous: , if for all .  A solution to the system is an -tuple that is a solution to each of the system's equations. We say  solves the system in this case.  A linear system is consistent if a solution to the system exists, and inconsistent otherwise.   "
 },
@@ -1454,7 +1454,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#ss_linear_equations-13",
   "type": "Remark",
-  "number": "1.2.10",
+  "number": "2.1.10",
   "title": "Displaying linear systems.",
   "body": " Displaying linear systems  As indicated in , when displaying a system of equations in the unknowns , we typically write each individual equation in standard form and align the corresponding terms of each equation into columns. The presence of multiple equations and multiple unknowns necessitates the use of double-indexing for the coefficients appearing in the system. The following breakdown will hopefully help you orient yourself with respect to the double-indexing:   The appearing in and indicates the -th row in our displayed system, or equivalently, the -th equation.    The appearing in indicates the -th column in our displayed system, which is associated to the -th variable, for .     "
 },
@@ -1463,7 +1463,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#s_systems_eg_2eqns2varss",
   "type": "Example",
-  "number": "1.2.11",
+  "number": "2.1.11",
   "title": "Solutions to elementary systems.",
   "body": " Solutions to elementary systems   For each system, compute the set of solutions.                 The first equation implies . Substituting for in the second equation, we would then have , a contradiction. Thus there are no solutions: i.e., is the empty set, denoted or .    The first equation implies . Making this substitution in the second equation yields , or . Thus is the unique solution, and .    The second equation is just twice the first. It follows that both equations have the exact same set of solutions, and so we need only find all solutions to . Note that we can set for any real number . Solving for in terms of we get for any , and thus , an infinite set!      "
 },
@@ -1472,7 +1472,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#eg_system_of_lines",
   "type": "Example",
-  "number": "1.2.12",
+  "number": "2.1.12",
   "title": "Solutions to elementary systems (again).",
   "body": " Solutions to elementary systems (again)   For each system in , use a geometric argument to determine how many solutions there are.    We proceed geometrically by observing that each equation in a given system defines a line, that a pair is a solution to the given equation if and only if it is a point on the corresponding line, and thus that a pair is a solution to both equations if and only if it is a point lying on both lines. Thus, geometrically speaking, the set of solutions to a given system is equal to the intersection of the two corresponding lines.   In this case the two lines and are parallel (and not equal to one another). It follows that their intersection is empty. We conclude that there are no solutions to the system.    In this case the two lines and are nonparallel. It follows that they intersect in a single point. We conclude that the system has a unique solution.    In this case the two equations and define the same line , and thus that their intersection is also equal to . The set of solutions to the system is then equal to the set of points of , which is infinite.      "
 },
@@ -1481,7 +1481,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#ss_row_equivalence-4",
   "type": "Remark",
-  "number": "1.2.13",
+  "number": "2.1.13",
   "title": "",
   "body": " Notice the somewhat funny spacing in . This is in force in order to align the unknowns in separate columns. In general, when handed a linear system in the wild, your first step should be to write each equation in standard form, and make sure the unknowns are aligned vertically in this manner.  "
 },
@@ -1490,7 +1490,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#d_eqops",
   "type": "Definition",
-  "number": "1.2.14",
+  "number": "2.1.14",
   "title": "Elementary operations on linear systems.",
   "body": " Elementary operations on linear systems  elementary operations linear systems  elementary operations linear systems scalar multiplication  elementary operations linear systems equation swap  elementary operations linear systems equation addition  row reduction of systems   An elementary operation (or elementary row operation ) is one of the three types of operations on linear systems described below.   Scalar multiplication  Multiply an equation by a nonzero number : i.e., replace the -th equation of the system with for . Note: is the result of multiplying the left and right sides of equation by .    Equation swap  Swap the -th and -th equations of the system, : i.e., replace equation of the system with , and replace equation with .    Equation addition  Add a multiple of one equation to another: i.e., replace with for some , , and .   The act of transforming a system of equations using elementary operations is called reduction (or row reduction ).   "
 },
@@ -1499,7 +1499,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#d_rowequivalent",
   "type": "Definition",
-  "number": "1.2.15",
+  "number": "2.1.15",
   "title": "Row equivalent linear systems.",
   "body": " Row equivalent linear systems   We say two systems of linear equations are row equivalent if the one can be obtained from the other by a finite sequence of elementary operations.   "
 },
@@ -1508,7 +1508,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#s_systems_th_rowops",
   "type": "Theorem",
-  "number": "1.2.16",
+  "number": "2.1.16",
   "title": "Row equivalence theorem.",
   "body": " Row equivalence theorem   Row equivalent systems of linear equations have identical sets of solutions.    We prove by induction that if system is the result of applying elementary operations to system , , then and have the same set of solutions.   Base case:  In this case (we have applied no operations) and the statement is obvious.    Induction step  Assume that applying a sequence of elementary operations to a linear system preserves the set of solutions.  Suppose is the result of applying elementary operations to the system . Let be the result of applying the first of these operations. By the induction hypothesis, systems and have the same set of solutions.  Since the system is obtained from by applying exactly one elementary operation, it now suffices to show that applying a single row operation does not change the set of solutions to a linear system. This is the result of . (Note that a solution is provided to that exercise.)  We conclude that and have the same set of solutions, as desired.    "
 },
@@ -1517,7 +1517,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#eg_systems_eg_long",
   "type": "Example",
-  "number": "1.2.17",
+  "number": "2.1.17",
   "title": "Complete example.",
   "body": " Complete example  Consider again the linear system   We transform the system as as follows:   Now put the logic together. Our original linear system was transformed by a sequence of elementary row operations to a new system :   We saw already that the second system has exactly one solution, namely the triple .  Since transforming a system by row operations preserves solutions, the first and second systems have exactly the same solutions .  Thus is the only solution to the original system!  "
 },
@@ -1526,7 +1526,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#s_systems_notation_rowops",
   "type": "Remark",
-  "number": "1.2.18",
+  "number": "2.1.18",
   "title": "Notation.",
   "body": " Notation  As we will see later, keeping track of the exact sequence of row operations is important in some situations. The notation used in the last example is useful for this bookkeeping. Let's explicate the notation somewhat.  The notation indicates that system is obtained from by replacing equation with .  The notation indicates that system is obtained from by swapping rows and .  The notation indicates that system is obtained from by replacing equation with .  "
 },
@@ -1535,7 +1535,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#s_systems_rm_oneoperation",
   "type": "Remark",
-  "number": "1.2.19",
+  "number": "2.1.19",
   "title": "Mandate.",
   "body": " Mandate  You may be tempted to do multiple operations in a single step during this procedure. Resist this temptation for now until we have a better understanding of things.  Furthermore, if later on you do give in to this temptation, make sure that the two (or more row operations) you perform are independent of one another. For example, do not swap with and replace with in the same step.  "
 },
@@ -1544,7 +1544,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#ss_systems_ww-2",
   "type": "WeBWorK",
-  "number": "1.2.20",
+  "number": "2.1.20",
   "title": "",
   "body": "    Determine whether the following system has no solution, an infinite number of solutions or a unique solution.                  "
 },
@@ -1553,7 +1553,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#ss_systems_ww-3",
   "type": "WeBWorK",
-  "number": "1.2.21",
+  "number": "2.1.21",
   "title": "",
   "body": "    Suppose that the following   is a consistent system. Then             "
 },
@@ -1562,7 +1562,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#ss_systems_ww-4",
   "type": "WeBWorK",
-  "number": "1.2.22",
+  "number": "2.1.22",
   "title": "",
   "body": "    Find the set of solutions for the linear system  Use s1 , s2 , etc. for the free variables if necessary.   , ,                   SOLUTION: Equation 3 . Substitute into equation 2, . Substitute into equation 1, .       "
 },
@@ -1571,7 +1571,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#ss_systems_ww-5",
   "type": "WeBWorK",
-  "number": "1.2.23",
+  "number": "2.1.23",
   "title": "",
   "body": "    Give a geometric description of the following systems of equations                  "
 },
@@ -1580,7 +1580,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#ss_systems_ww-6",
   "type": "WeBWorK",
-  "number": "1.2.24",
+  "number": "2.1.24",
   "title": "",
   "body": "    Give a geometric description of the following system of equations                  "
 },
@@ -1589,7 +1589,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#ex_solving_sys_geom",
   "type": "Exercise",
-  "number": "1.2.4.1",
+  "number": "2.1.4.1",
   "title": "Geometry of linear systems.",
   "body": " Geometry of linear systems   In this exercise we will use the geometry of lines in and planes in to help analyze solutions to systems of equations in two and three unknowns, respectively.   Fix and consider a system of linear equations in the two unknowns and . What does a solution to this system of linear equations correspond to geometrically?    Use your interpretation in (a) to give a geometric argument that a system of equations in two unknowns will have either (i) zero solutions, (ii) exactly one solution, or (iii) infinitely many solutions.    Use your geometric interpretation to help produce explicit examples of systems in two variables satisfying these three different cases (i)-(iii).    Now repeat (a)-(b) for a system of linear equations in three variables .       (a) Geometrically, each equation in the system represents a line . A solution to the -th equation corresponds to a point on . Thus a solution to the system corresponds to a point lying on all of the lines: i.e., a point of intersection of the lines.  (b) First of all to prove the desired or statement it suffices to prove that if the number of solutions is greater than 1, then there are infinitely many solutions.  Now suppose there is more than one solution. Then there are at least two different solutions: and . Take any of the two lines . By above the intersection of and contains and . But two distinct lines intersect in at most one point. It follows that and must be equal. Since and were arbitrary, it follows all of the lines are in fact the same line . But this means the common intersection of the lines is , which has infinitely many points. It follows that the system has infinitely many solutions.  (c) We will get 0 solutions if the system includes two different parallel lines: e.g., and .  We will get exactly one solution when the slopes of each line in the system are distinct.  We will get infinitely many solutions when all equations in the system represent the same line . This happens when all equations are multiples of one another.  (d) Now each equation in our system defines a plane . A solution to the system corresponds to a point of intersection of the planes. We recall two facts from Euclidean geometry:   Fact 1  Given two distinct points, there is a unique line containing both of them.    Fact 2  Given any number of distinct planes, they either do not intersect, or intersect in a line.     We proceed as in part (b) above: that is show that if there are two distinct solutions to the system, then there are infinitely many solutions. First, for simplicity, we may assume that the equations define distinct planes; if we have two equations defining the same plane, we can delete one of them and not change the set of solutions to the system.  Now suppose and are two distinct solutions to the system. Let be the unique line containing and (Fact 1). I claim that is precisely the set of solutions to the system. To see this, take any two equations in the system and . Since the two corresponding planes are distinct, and intersect in at least the points and , they must intersect in a line (Fact 2); since this line contains and , it must be the line (Fact 1). Thus any two planes in the system intersect in the line . From this it follows that: (a) a point satisfying the system must lie in ; and (b) all points on satisfy the system (since we have shown that lies in all the planes). It follows that is precisely the set of solutions, and hence that there are infinitely many solutions.   "
 },
@@ -1598,7 +1598,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#ex_row_ops_preserve",
   "type": "Exercise",
-  "number": "1.2.4.2",
+  "number": "2.1.4.2",
   "title": "Row operations preserve solutions.",
   "body": " Row operations preserve solutions   We made the claim that each of our three row operations   scalar multiplication ( for ),    swap ( ),    addition ( for some )   do not change the set of solutions of a linear system. To prove this claim, let be a general linear system . Now consider each type of row operation separately, write down the new system you get by applying this row operation, and prove that an -tuple is a solution to the original system if and only if it is a solution to the new system .    Let be the original system with equations . For each specified row operation, we will call the resulting new system and its equations .   Row swap  In this case systems and have exactly the same equations, just written in a different order. Thus the -tuple satisfies if and only if it satisfies each of the equations , if and only if it satisfies each of the equations , since these are the same equations! It follows that is a solution of if and only if it is a solution to .    Scalar multiplication  In this case for all , and for some . Since only the -th equation has changed, it suffices to show that is a solution to if and only if is a solution to . Let's prove each direction of this if and only if separately.  If satisfies , then . Multiplying both sides by we see that and hence that is also a solution of .  For the other direction, if satisfies , then Now, since , we can multiply both sides of this equation by to see that and hence that is a solution to .    Row addition  The only equation of that differs from is . Writing this equation out in terms of coefficients gives us . Now if satisfies , then it satisfies and , in which case evaluating the RHS of the above at yields showing that satisfies . Now suppose satisfies . Since satisfies , we have Since satisfies , we have Substituting into the equation above we get , and hence . This shows that satisfies . It follows that satisfies .    "
 },
@@ -1607,7 +1607,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#ex_solving_nonlinear_system",
   "type": "Exercise",
-  "number": "1.2.4.3",
+  "number": "2.1.4.3",
   "title": "Nonlinear systems.",
   "body": " Nonlinear systems  A nonlinear system of equations is a collection of equations, at least one of which is nonlinear. Our definition of a solution to a linear system generalizes easily to any system of equations.   Consider the following nonlinear system in the unknowns : .   Sketch the graphs of each of the two equations in the system on a common coordinate system.    Describe geometrically what a solution to the system is in terms of your sketch. Explain your reasoning. How many solutions to the system are there, according to your sketch?    Compute the set of all solutions to the system algebraically.       Now consider a more general system where are fixed constants and at least one of or is nonzero.    Explain geometrically what a solution to the system corresponds to in terms of the graphs of its two equations.    Use your geometric interpretation in (i) to argue that the system has either 0, 1, or 2 solutions. Give explicit examples of such systems corresponding to each of these three cases.       "
 },
@@ -1616,7 +1616,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#s_systems_ex-1-5",
   "type": "Exercise",
-  "number": "1.2.4.4",
+  "number": "2.1.4.4",
   "title": "Not all arithmetic operations preserve solutions.",
   "body": " Not all arithmetic operations preserve solutions   In this exercise we investigate how the operation of squaring both sides of an equation changes the set of solutions. Let represent a general equation (linear or nonlinear) in the unknowns , let be the equation obtained by squaring both sides of the , let be the set of solutions to , and let be the set of solutions to .    Show that .    Given an explicit example of an equation of the form in two variables for which .     "
 },
@@ -1625,7 +1625,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "s_ge.html",
   "type": "Section",
-  "number": "1.3",
+  "number": "2.2",
   "title": "Gaussian elimination",
   "body": " Gaussian elimination   In we sketched a procedure for solving a linear system . That procedure involved applying a sequence of row operations to to obtain a simpler system .  We will fill out this sketch in the next two sections. Specifically, we will   describe precisely what we mean by a simpler system,    provide an algorithm (or recipe) that decides exactly what sequence of row operations to apply to obtain this simpler system,    explain how to find all solutions of the resulting simpler system.       Row echelon matrices  Our first step in this direction will be to introduce a notational convenience. As you may have noticed, when performing row operations on a system of equations, we essentially treat the unknowns, as well as the plus and equals symbols, as placeholders; the only things that actually change in a given step are the coefficients in the equations. The augmented matrix associated to a linear system is a formal way of extracting just the information of the coefficients from a linear system.   Augmented matrix  augmented matrix    augmented matrix    Let be the linear system . The augmented matrix associated to  is the matrix .     As defined more thoroughly in , a matrix is just a rectangular array of numbers.    Note that a system of equations in unknowns gives rise to an augmented matrix that has rows (one row for each equation) and columns (one column for each unknown and an additional column for the right-hand side constants ). The vertical line in the augmented matrix helps distinguish between the columns corresponding to unknowns (to the left of the vertical line) and the column of constants (to the right of the vertical line). When we wish to further emphasize this distinction among the columns, we will label the first columns with their corresponding variable name as in .   Augmented matrix with labeled columns   Augmented matrix with labeled columns      Here is our precise formulation of a simple linear system; it is a system whose associated augmented matrix is in row echelon form , as described below.   Row echelon form   A zero row of a matrix, is a row whose entries are all equal to zero; a nonzero row is a row that contains at least one nonzero entry.  A matrix is in row echelon form if the following conditions hold.  (i)  In any nonzero row the first (i.e., leftmost) nonzero entry is equal to one. A leading one of a matrix is such an entry: i.e., an entry of a row that is equal to one, and that is also the first nonzero entry of that row.   (ii)  All zero rows are grouped together at the bottom of the matrix.   (iii)  Given any two nonzero rows in the matrix, the leading one of the lower row occurs strictly to the right of the leading one of the row above it.     A matrix is in reduced row echelon form if in addition to conditions (i)-(iii) it also satisfies the following condition.   (iv) Any column of the matrix that contains a leading one has zeros elsewhere. In other words, if a column contains a leading one, then that is the only nonzero entry of that column.    A linear system is in row echelon form (resp. reduced row echelon form ) if its augmented matrix is in row echelon form (resp. reduced row echelon form).    A matrix in row echelon form displays a staircase pattern of ones as illustrated in .  Staircase pattern of row echelon form   Staircase pattern of row echelon form    In practice to decide whether a matrix is in in (reduced) row echelon form, follow these steps:   First verify whether all zero rows are at the bottom.    For each nonzero row, determine whether the first nonzero entry is a 1, and put a box around it.    Make sure your boxes make a staircase pattern.    (For reduced row echelon form only.) Decide whether each column with a box has 0's everywhere else.      Row echelon versus reduced row echelon form   For each matrix decide (a) whether it is in row echelon form, and (b) whether it is in reduced row echelon form.                  Below you find the matrix with leading ones boxed. This matrix fails to be in row echelon form (and hence also reduced row echelon form) for a variety of reasons: the zero rows are not all grouped at the bottom; the first row is nonzero, but does not have a leading one; the leading one of the fourth row is to the left of the leading one of the leading one in the row above it.     Below you find the matrix with leading ones boxed. This matrix is in row echelon form: the zero rows (rows 4 and 5) are grouped at the bottom; each nonzero row has a leading one (boxed in the matrix below); the leading ones step strictly to the right as we move down the rows. The matrix is not in reduced row echelon form, as the last column contains a leading one in its third row, and a nonzero entry in its first row.        Gaussian elimination  We will now describe a systematic procedure, called Gaussian elimination , that allows us to reduce a given linear system to a system in row echelon form. In keeping with the foregoing discussion, we will identify a system with its augmented matrix . Furthermore, reducing a linear system using elementary operations on equations is now cast as performing elementary row operations on matrices. At the risk of redundancy we now officially translate a number of our former notions regarding reduction of linear systems to the setting of matrices.   Elementary row operations on matrices  elementary row operations  elementary row operations scalar multiplication  elementary row operations row swap  elementary row operations row addition  row reduction of matrices  row equivalence of matrices   An elementary row operation is one of the three following types of matrix operations. Let be a given matrix, and denote by the -th row of .    Scalar multplication  Multiply a row by a nonzero number : i.e., replace with , the result of multiplying all entries of the row by .    Row swap  Swap two rows of .    Row addition  Add a multiple of one row to another: i.e., replace with for some , , and .    The act of transforming a matrix using elementary row operations is called row reduction .  Two matrices are row equivalent if the one can be obtained from the other by performing a finite sequence of elementary row operations.     Notation    scalar multiplication     row swap     replace with  Our former elementary operation notation easily transfers to row operations on matrices. The expressions denote the operations that replace row in with , swap rows and in , and replace in with , respectively.  At last we are ready to define Gaussian elimination. In its essence this is simply a procedure, or algorithm , that takes an input matrix and row reduces it to a matrix in row echelon form. It is important to note that although we employ Gaussian elimination in this chapter primarily to the end of simplifying and solving linear systems, this is not its only application. Indeed, we will come back to the procedure again and again, in a great variety of contexts and to greatly diverse ends. Gaussian elimination is one of linear algebra's most important tools. We memorialize this here as an official principle.   Gaussian elimination mantra   Gaussian elimination is the workhorse of linear algebra.     Gaussian elimination  Gaussian elimination    Gaussian elimination is the algorithm described below. It takes as an input a matrix and returns as an output a row equivalent matrix in row echelon form.    Step 1  Find the leftmost nonzero column and perform a row swap to move the row with this nonzero entry to the top of the matrix.    Step 2  Scale the new top row to produce a leading one in the row. Call this new row .    Step 3  For each row below perform a row operation of the form to replace all entries below the leading one of with zeros.    Step 4  Begin again with Step 1 applied to the matrix consisting of all rows below . Continue until the matrix is in row echelon form.       Model example  Use the following example as a model of how to both perform and annotate the steps in Gaussian elimination. When first learning this procedure, make sure to follow it to the letter . In particular, in the spirit of the mandate issued in , you should only perform one row operation at a time, and only in the sequence prescribed in Steps 1-4 of .   Row echelon form  We use Gaussian elimination to reduce the linear system to a system in row echelon form.  First we apply Gaussian elimination to the augmented matrix associated to our system. . We conclude that our original system is equivalent to the system , which is in row echelon form.   The matrix outputted by Gaussian elimination is guaranteed to be in row echelon form, but it may not be in reduced row echelon form. Gauss-Jordan elimination describes a systematic way to continue reducing to this even simpler state.    Gauss-Jordan elimination    Gauss-Jordan elimination is the algorithm described below. It takes as an input a matrix and returns a row equivalent matrix in reduced row echelon form.    Steps 1-4  Apply Gaussian elimination to transform to a matrix in row echelon form.    Step 5  Find the rightmost column of the matrix containing a leading one. Let be the row containing this leading one. For each row above perform a row operation of the form to replace all entries above the leading one with zeros.    Step 6  Begin again with Step 5 applied to the next column to the left that contains a leading one. Continue until the matrix is in reduced row echelon form.       Reduced row echelon form  We continue our work in to reach a matrix in reduced row echelon form. . Notice that the resulting system is slightly simpler than the system in row echelon form of : .    and are really theorems in disguise, and we make this official in .   Row equivalent matrix forms     Row echelon forms exist  Any matrix is row equivalent to a matrix in row echelon form. Indeed, Gaussian elimination row reduces any matrix to a matrix in row echelon form.    Reduced row echelon forms exist  Any matrix is row equivalent to a matrix in reduced row echelon form. Indeed, Gauss-Jordan elimination row reduces any matrix to a matrix in reduced row echelon form.    Reduced row echelon forms are unique  Any matrix is row equivalent to a unique matrix in reduced row echelon form.      We will make heavy use of the first two results of . The proofs of these statements are not difficult, but not especially illuminating. Accordingly we omit them here, and point the interested reader to Robert Beezer's A First Course in Linear Algebra . (See Theorem REMEF .)  The third statement of , that every matrix is row equivalent to a unique matrix in reduced row echelon form, does in fact have an enlightening proof. We will postpone this proof, however, until we have a little more theory at our disposal. (See .) Until then we will conscientiously not make use of this fact when developing any of our further theory.   Row echelon form is not unique   Show that a matrix may be row equivalent to two or more matrices in row echelon form.    Take . This row reduces to using Gaussian elimination; and it row reduces further to using Gauss-Jordan elimination. Thus we see that is row equivalent to two different matrices in row echelon form. (According to , the matrix is the only matrix in reduced row echelon that is row equivalent to .)     Gaussian elimination  In the first Sage cell below you find a recursive implementation of Gaussian elimination in Sage that includes explanatory comments. Evaluate this cell in order to load the row_echelon_form function. The second cell allows you to apply the Gaussian elimination algorithm to a matrix of your choosing. As you can see, the show function provides a nice latex version of the output.    Sage has its own row reduction method, rref , which transforms a matrix to reduced row echelon form. Let's compare the outputs of these two algorithms.   The following activities could be useful for implementing Gaussian elimination in a manner that shows all intervening steps. Use the empty Sage cell below to experiment.   Modify the row_echelon_form code to make a non-recursive algorithm.    Add show commands to your non-recursive version of row_echelon_form to show steps in the row reduction.         WeBWork Exercises      Determine if the matrix   is in echelon form, reduced row echelon form, or neither. Choose the most appropriate answer.  Answer:  select   echelon form   reduced row echelon form   not in echelon form  .        SOLUTION: Reduced row echelon form.                On the augmented matrix below , perform all three row operations in the order given, ((a) followed by (b) followed by (c)) and then write the resulting augmented matrix.                                                                                               Written Exercises    Explain why each of the following matrices fails to be in row echelon form.          The first nonzero term in the second row is not a one.                       For each of the given linear systems, find an equivalent system in row echelon form. Use augmented matrices and follow the Gaussian elimination algorithm to the letter.          First bring the system into standard form: . Then perform Gaussian elimination on the associated augmented matrix: . The corresponding equivalent system is .                                   "
 },
@@ -1634,7 +1634,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#d_augmented_matrix",
   "type": "Definition",
-  "number": "1.3.1",
+  "number": "2.2.1",
   "title": "Augmented matrix.",
   "body": " Augmented matrix  augmented matrix    augmented matrix    Let be the linear system . The augmented matrix associated to  is the matrix .   "
 },
@@ -1643,7 +1643,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#s_ge_rm_see_def",
   "type": "Remark",
-  "number": "1.3.2",
+  "number": "2.2.2",
   "title": "",
   "body": " As defined more thoroughly in , a matrix is just a rectangular array of numbers.  "
 },
@@ -1652,7 +1652,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#ss_ge_row_echelon-5",
   "type": "Remark",
-  "number": "1.3.3",
+  "number": "2.2.3",
   "title": "",
   "body": " Note that a system of equations in unknowns gives rise to an augmented matrix that has rows (one row for each equation) and columns (one column for each unknown and an additional column for the right-hand side constants ). The vertical line in the augmented matrix helps distinguish between the columns corresponding to unknowns (to the left of the vertical line) and the column of constants (to the right of the vertical line). When we wish to further emphasize this distinction among the columns, we will label the first columns with their corresponding variable name as in .   Augmented matrix with labeled columns   Augmented matrix with labeled columns     "
 },
@@ -1661,7 +1661,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#d_row_echelon",
   "type": "Definition",
-  "number": "1.3.5",
+  "number": "2.2.5",
   "title": "Row echelon form.",
   "body": " Row echelon form   A zero row of a matrix, is a row whose entries are all equal to zero; a nonzero row is a row that contains at least one nonzero entry.  A matrix is in row echelon form if the following conditions hold.  (i)  In any nonzero row the first (i.e., leftmost) nonzero entry is equal to one. A leading one of a matrix is such an entry: i.e., an entry of a row that is equal to one, and that is also the first nonzero entry of that row.   (ii)  All zero rows are grouped together at the bottom of the matrix.   (iii)  Given any two nonzero rows in the matrix, the leading one of the lower row occurs strictly to the right of the leading one of the row above it.     A matrix is in reduced row echelon form if in addition to conditions (i)-(iii) it also satisfies the following condition.   (iv) Any column of the matrix that contains a leading one has zeros elsewhere. In other words, if a column contains a leading one, then that is the only nonzero entry of that column.    A linear system is in row echelon form (resp. reduced row echelon form ) if its augmented matrix is in row echelon form (resp. reduced row echelon form).   "
 },
@@ -1670,7 +1670,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#fig_echelon",
   "type": "Figure",
-  "number": "1.3.6",
+  "number": "2.2.6",
   "title": "",
   "body": " Staircase pattern of row echelon form   Staircase pattern of row echelon form    "
 },
@@ -1679,7 +1679,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#ss_ge_row_echelon-9",
   "type": "Example",
-  "number": "1.3.7",
+  "number": "2.2.7",
   "title": "Row echelon versus reduced row echelon form.",
   "body": " Row echelon versus reduced row echelon form   For each matrix decide (a) whether it is in row echelon form, and (b) whether it is in reduced row echelon form.                  Below you find the matrix with leading ones boxed. This matrix fails to be in row echelon form (and hence also reduced row echelon form) for a variety of reasons: the zero rows are not all grouped at the bottom; the first row is nonzero, but does not have a leading one; the leading one of the fourth row is to the left of the leading one of the leading one in the row above it.     Below you find the matrix with leading ones boxed. This matrix is in row echelon form: the zero rows (rows 4 and 5) are grouped at the bottom; each nonzero row has a leading one (boxed in the matrix below); the leading ones step strictly to the right as we move down the rows. The matrix is not in reduced row echelon form, as the last column contains a leading one in its third row, and a nonzero entry in its first row.     "
 },
@@ -1688,7 +1688,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#d_rowops",
   "type": "Definition",
-  "number": "1.3.8",
+  "number": "2.2.8",
   "title": "Elementary row operations on matrices.",
   "body": " Elementary row operations on matrices  elementary row operations  elementary row operations scalar multiplication  elementary row operations row swap  elementary row operations row addition  row reduction of matrices  row equivalence of matrices   An elementary row operation is one of the three following types of matrix operations. Let be a given matrix, and denote by the -th row of .    Scalar multplication  Multiply a row by a nonzero number : i.e., replace with , the result of multiplying all entries of the row by .    Row swap  Swap two rows of .    Row addition  Add a multiple of one row to another: i.e., replace with for some , , and .    The act of transforming a matrix using elementary row operations is called row reduction .  Two matrices are row equivalent if the one can be obtained from the other by performing a finite sequence of elementary row operations.   "
 },
@@ -1697,7 +1697,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#s_ge_notation",
   "type": "Remark",
-  "number": "1.3.9",
+  "number": "2.2.9",
   "title": "Notation.",
   "body": " Notation    scalar multiplication     row swap     replace with  Our former elementary operation notation easily transfers to row operations on matrices. The expressions denote the operations that replace row in with , swap rows and in , and replace in with , respectively. "
 },
@@ -1706,7 +1706,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#princ_GE",
   "type": "Mantra",
-  "number": "1.3.10",
+  "number": "2.2.10",
   "title": "Gaussian elimination mantra.",
   "body": " Gaussian elimination mantra   Gaussian elimination is the workhorse of linear algebra.   "
 },
@@ -1715,7 +1715,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#d_GE",
   "type": "Procedure",
-  "number": "1.3.11",
+  "number": "2.2.11",
   "title": "Gaussian elimination.",
   "body": " Gaussian elimination  Gaussian elimination    Gaussian elimination is the algorithm described below. It takes as an input a matrix and returns as an output a row equivalent matrix in row echelon form.    Step 1  Find the leftmost nonzero column and perform a row swap to move the row with this nonzero entry to the top of the matrix.    Step 2  Scale the new top row to produce a leading one in the row. Call this new row .    Step 3  For each row below perform a row operation of the form to replace all entries below the leading one of with zeros.    Step 4  Begin again with Step 1 applied to the matrix consisting of all rows below . Continue until the matrix is in row echelon form.     "
 },
@@ -1724,7 +1724,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#eg_model_example",
   "type": "Example",
-  "number": "1.3.12",
+  "number": "2.2.12",
   "title": "Row echelon form.",
   "body": " Row echelon form  We use Gaussian elimination to reduce the linear system to a system in row echelon form.  First we apply Gaussian elimination to the augmented matrix associated to our system. . We conclude that our original system is equivalent to the system , which is in row echelon form.  "
 },
@@ -1733,7 +1733,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#d_GaussJordan",
   "type": "Procedure",
-  "number": "1.3.13",
+  "number": "2.2.13",
   "title": "Gauss-Jordan elimination.",
   "body": " Gauss-Jordan elimination    Gauss-Jordan elimination is the algorithm described below. It takes as an input a matrix and returns a row equivalent matrix in reduced row echelon form.    Steps 1-4  Apply Gaussian elimination to transform to a matrix in row echelon form.    Step 5  Find the rightmost column of the matrix containing a leading one. Let be the row containing this leading one. For each row above perform a row operation of the form to replace all entries above the leading one with zeros.    Step 6  Begin again with Step 5 applied to the next column to the left that contains a leading one. Continue until the matrix is in reduced row echelon form.     "
 },
@@ -1742,7 +1742,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#eg_model_rref",
   "type": "Example",
-  "number": "1.3.14",
+  "number": "2.2.14",
   "title": "Reduced row echelon form.",
   "body": " Reduced row echelon form  We continue our work in to reach a matrix in reduced row echelon form. . Notice that the resulting system is slightly simpler than the system in row echelon form of : .  "
 },
@@ -1751,7 +1751,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#th_matrixforms",
   "type": "Theorem",
-  "number": "1.3.15",
+  "number": "2.2.15",
   "title": "Row equivalent matrix forms.",
   "body": " Row equivalent matrix forms     Row echelon forms exist  Any matrix is row equivalent to a matrix in row echelon form. Indeed, Gaussian elimination row reduces any matrix to a matrix in row echelon form.    Reduced row echelon forms exist  Any matrix is row equivalent to a matrix in reduced row echelon form. Indeed, Gauss-Jordan elimination row reduces any matrix to a matrix in reduced row echelon form.    Reduced row echelon forms are unique  Any matrix is row equivalent to a unique matrix in reduced row echelon form.     "
 },
@@ -1760,7 +1760,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#s_ge_ex_REFnotunique",
   "type": "Example",
-  "number": "1.3.16",
+  "number": "2.2.16",
   "title": "Row echelon form is not unique.",
   "body": " Row echelon form is not unique   Show that a matrix may be row equivalent to two or more matrices in row echelon form.    Take . This row reduces to using Gaussian elimination; and it row reduces further to using Gauss-Jordan elimination. Thus we see that is row equivalent to two different matrices in row echelon form. (According to , the matrix is the only matrix in reduced row echelon that is row equivalent to .)   "
 },
@@ -1778,7 +1778,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#ss_ge_ww-2",
   "type": "WeBWorK",
-  "number": "1.3.17",
+  "number": "2.2.17",
   "title": "",
   "body": "   Determine if the matrix   is in echelon form, reduced row echelon form, or neither. Choose the most appropriate answer.  Answer:  select   echelon form   reduced row echelon form   not in echelon form  .        SOLUTION: Reduced row echelon form.       "
 },
@@ -1787,7 +1787,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#ss_ge_ww-3",
   "type": "WeBWorK",
-  "number": "1.3.18",
+  "number": "2.2.18",
   "title": "",
   "body": "    On the augmented matrix below , perform all three row operations in the order given, ((a) followed by (b) followed by (c)) and then write the resulting augmented matrix.                                                                                           "
 },
@@ -1796,7 +1796,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#s_ge_ex-1-2-2",
   "type": "Exercise",
-  "number": "1.3.4.1",
+  "number": "2.2.4.1",
   "title": "",
   "body": "       The first nonzero term in the second row is not a one.   "
 },
@@ -1805,7 +1805,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#s_ge_ex-1-2-3",
   "type": "Exercise",
-  "number": "1.3.4.2",
+  "number": "2.2.4.2",
   "title": "",
   "body": "       "
 },
@@ -1814,7 +1814,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#s_ge_ex-1-2-4",
   "type": "Exercise",
-  "number": "1.3.4.3",
+  "number": "2.2.4.3",
   "title": "",
   "body": "       "
 },
@@ -1823,7 +1823,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#s_ge_equivsys",
   "type": "Exercise",
-  "number": "1.3.4.4",
+  "number": "2.2.4.4",
   "title": "",
   "body": "       First bring the system into standard form: . Then perform Gaussian elimination on the associated augmented matrix: . The corresponding equivalent system is .   "
 },
@@ -1832,7 +1832,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#s_ge_ex-1-3-3",
   "type": "Exercise",
-  "number": "1.3.4.5",
+  "number": "2.2.4.5",
   "title": "",
   "body": "      "
 },
@@ -1841,7 +1841,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#s_ge_ex-1-3-4",
   "type": "Exercise",
-  "number": "1.3.4.6",
+  "number": "2.2.4.6",
   "title": "",
   "body": "      "
 },
@@ -1850,7 +1850,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#s_ge_ex-1-3-5",
   "type": "Exercise",
-  "number": "1.3.4.7",
+  "number": "2.2.4.7",
   "title": "",
   "body": "      "
 },
@@ -1859,7 +1859,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#s_ge_ex-1-3-6",
   "type": "Exercise",
-  "number": "1.3.4.8",
+  "number": "2.2.4.8",
   "title": "",
   "body": "      "
 },
@@ -1868,7 +1868,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "s_solving.html",
   "type": "Section",
-  "number": "1.4",
+  "number": "2.3",
   "title": "Solving linear systems",
   "body": " Solving linear systems   Let's continue with our model example . Summarizing the various steps, we have . The new system in row echelon form is undoubtedly simpler, but describing all of its solutions still requires some subtle analysis.    Model example continued  We begin by illustrating the general method for solving a linear system, continuing with our model example . A careful description of the procedure, along with a proof of its validity, is found in .  A key first step involves separating the variables of the system into free and leading variables.   Free and leading variables   variables  leading    variables  free    Let be a linear system in the unknowns , and let be its associated augmented matrix. Assume (and hence ) is in row echelon form.  The unknown is a leading variable if the corresponding column in (i.e., the -th column) contains a leading one; it is a free variable if the corresponding column in does not contain a leading one.     Free and leading variables   Let be the linear system in the unknowns with augmented matrix . Then are leading variables, since the first, second, and fourth columns of have leading ones, as indicated by the boxes. The variable is free since the third column of has no leading one.     Solving linear systems  In our model example we transformed the original system to the equivalent system below: . The free variables of are and ; the leading variables are , and . Observe that if we assign and , where and are any real numbers, then we are left with a system in three unknowns ( ) of the form . Using back-substitution, we see that the unknowns are then uniquely expressed in terms of and as Thus for any choice of real numbers and we get a unique solution of the form . We conclude the set of solutions to is given as Alternatively, we can describe the solutions to with the parametric equations  .    Mandate  parametric equations  Get used to describing solutions to linear systems using either the set notation format of or the parametric equation format of .  Note also the distinct roles played by free and leading variables in the description of solutions. We assign each free variable freely to any choice of real parameters ( and in our example), and then solve for the leading variables in terms of these parameters in a unique manner. In particular, the leading variables are completely determined by our assignment of free variables.     General method for solving linear systems  Before describing a precise algorithm for computing the set of solutions to a linear system, we must address the possibility that there are no solutions to the system whatsoever. Such a system is called inconsistent .   Consistent and inconsistent systems  consistent  inconsistent   A linear system is consistent if it has at least one solution; it is inconsistent if it has no solutions.    We are now in a position to describe an algorithm for computing the set of solutions of a linear system.   Solving linear systems   Let be a linear system in the unknowns , and let be the set of all solutions of . We compute as follows.    Step 1  Apply Gaussian elimination to reduce to an equivalent system in row echelon form.    Step 2  Let be the augmented matrix associated to . If the last column of has a leading one, then is inconsistent: , is the empty set. Otherwise, proceed to the next step.    Step 3  Determine which if any of the unknowns are free variables of .    Step 4  If there are no free variables, solve for each unknown using back-substitution. In this case, there is a unique solution to : , contains exactly one element.  Otherwise, let be the leading variables of , and let be the free variables. Back-substitution allows us to express each leading variable in terms of the free variables. In other words, we can write , where each is a linear expression in the free variables. Each solution of thus corresponds to a unique variable assignment of the form , where are any real numbers.       First recall that and have the same set of solutions ( ). So it suffices to show that the algorithm returns the correct set of solutions to .  Regarding consistency: if the last column of the augmented matrix associated to has a leading one in the -th row, then the corresponding equation in is Clearly this equation has no solutions, and hence the set of solutions to is empty.  Suppose now that the last column of does not have a leading one.   Case 1: no free variables   Suppose in Step 3 you determine that there are no free variables. Then each of the first columns of has a leading one in it. If follows that for each the -th equation of is of the form Since does not have a leading one in the last column, it follows that all equations beyond the -th equation are of the form , and as such may be disregarded since they are satisfied by any choice of the . The remaining system of equations in unknowns can be solved by back-substitution, yielding a unique solution of the form Do not concern yourself overly with the exact formulas. The important point here is that once we know there is a unique assignment of the variables that satisfies the system, allows us to solve for in terms of the the , . As such working our way up from the last equation, we find there is a unique solution to the system.     Case 2: free variables  Suppose now that are the leading variables of , and are the free variables. Again, since does not have a leading one in the last column, there are exactly nonzero equations in : one for each leading variable. After bringing any terms involving free variables to the right, the -th such equation takes the form . As in the previous case, back-substitution now allows us to solve for each leading variable as a function of the free variables: This new system of equations clearly has the same set of solutions as (and ), since it was obtained from by deleting zero rows of and using only addition and subtraction operations. Furthermore, it is clear that any assignment of the free variables extends uniquely to the solution of that further assigns . The idea behind uniqueness here, is that once you assign values to the free variables, the values of the leading variables are completely determined by the equations .  Lastly, we show that every solution of (and ) is obtained in this way. Suppose is a solution. According to the discussion above must be the unique solution to corresponding to the free variable assignment and corresponding leading variable assignment .     Video: solving linear systems    Video: solving linear systems  Video: solving linear systems       Video: solving linear systems    Video: solving linear systems 2  Video: solving linear systems 2       Solving linear systems  Sage has a number of means of solving systems of equations, both linear and nonlinear. In the cell below we compute the set of solutions to this section's working example. Note that the three equations are entered as a list.   Notice that the algorithm used here does not seem to follow the method we describe: the unknowns and are set as free parameters r1 and r2 , and the rest of the unknowns are expressed in terms of these. The solve routine in Sage allows for an additional option that selects a specific algorithm for solving the system. In the next cell, we specify the sympy algorithm and get an answer more in line with our example.   Now all unknowns are expressed in terms of the second and fourth unknowns and , which are treated as free variables, just as in our computed example.  Lastly, we can take a matrix approach with Sage to solve the system. Below we create the augmented matrix associated to our starting system and then reduce the system to reduced row echelon form using the rref method. From there it is a simple matter of assigning parameter names and using back-substitution, as described in . We will elaborate this method further in     In addition to providing a recipe for describing the full set of solutions to a linear system, also tells us that qualitatively this set must take one of three forms: the set is empty (inconsistent, no solutions); there is a unique solution (consistent, no free variables); there are infinitely many solutions (consistent, free variables). We record this fact, useful in its own right, as a corollary.   , , or -many solutions   Let be a linear system of equations, let be an equivalent system in row reduced form, and let be the augmented matrix associated to .  The system has either no solutions, exactly one solution, or infinitely many solutions. In more detail:    If has a leading one in its last column, then has no solutions.    If does not have a leading one in its last column and has no free variables, then has a unique solution.    If does not have a leading one in its last column and has a free variable, then has infinitely many solutions.      The decision tree in concisely summarizes the different cases articulated in .   Decision tree for number of solutions to a system  Decision tree for the number of solutions to a linear system with augmented matrix in row echelon form.       Consider the special case of a homogeneous system Such a system is always consistent. Why? Observe that is guaranteed to be a solution. Alternatively, it is easy to see that row reducing the system results in an augmented matrix whose last column is a zero column: a zero column certainly contains no leading ones. Thus, in the special case of a homogeneous system, boils down to the following result.   Solutions to homogeneous equations   Fix a homogeneous linear system in variables. There are two possibilities:   if all the variables are leading variables, then the system has a unique solution (i.e., solution);    if there is a free variable, then the system has infinitely many solutions.         Vector parametrization description  Consider again the solution set to the linear system in , which we described using parametric equations as , and using set building notation as . Using the vector space structure of , we can give yet another description of the general solution: . We will call this the vector parametrization description of the solution set. This description is obtained in steps by first breaking up the expression into a constant vector plus a vector involving the parameters and , and then rewriting the latter as a linear combination of two vectors with and as the coefficients: . The solution set of any consistent linear system can be described in this manner. In general, given a consistent system in unknowns with free variables, the general solution of the system is given by a vector parametrization of the form . The vector parametrization leads to a useful geometric understanding of the set of solutions to a linear system. The point can be thought of as a particular solution to the equation: the solution you obtain by choosing in . The general solution is then obtained by adding to the point any linear combination of the vectors .   Vector parametrization  Consider the linear equation . The corresponding augmented matrix of this equation is , which is already in row echelon form. Using , we see that the general solution is . This vector parametrization description allows us to visualize the plane with equation as the set of all points obtained by translating the point by various linear combinations of and . In this manner, the two vectors and determine a (non-rectangular) grid on .  Vector parametrization of plane    Vector parametrization of plane         WeBWork Exercises      Solve the following system using augmented matrix methods:  (a) The initial matrix is:              (b) First, perform the Row Operation . The resulting matrix is:              (c) Next, perform the operation . The resulting matrix is:              (d) Finish simplifying the augmented matrix to reduced row echelon form. The reduced matrix is:              (e) How many solutions does the system have? If infinitely many, enter \"Infinity\".  (f) What are the solutions to the system?  If there are no solutions, write \"No Solution\" or \"None\" for each answer. If there are infinitely many solutions let and solve for in terms of .                                                                                                                                                       Solve the following system using augmented matrix methods:  (a) The initial matrix is:                      (b) First, perform the Row Operation . The resulting matrix is:                      (c) Next, perform the operations   .  The resulting matrix is:                      (d) Finish simplifying the augmented matrix down to reduced row echelon form. The reduced matrix is:                      Remember: This matrix must be simplified all the way to reduced form.  (e) How many solutions does the system have? If infinitely many, enter \"Infinity\". If none, enter 0.  (f) What are the solutions of the system?        Note: In part (f), if there are no solutions, write \"No Solution\" or \"None\" in the answer blank after each equal sign. If there are infinitely many solutions, and the solution set describes a line (that is, if there is only one free variable), set and solve for the remaining variables in terms of . If there are infinitely many solutions, and the solution set describes a plane (that is, if the solution set has two free variables), set the variables and , and then solve for in terms of and .                                                                                                                                                                                                                                                                                Solve  = , = , = , = .                                Determine whether the following system has no solution, an infinite number of solutions or a unique solution.                         Written Exercises   Solving linear systems   Solve the following systems of equations.   When row reducing follow Gaussian elimination to the letter.    Make sure to indicate how variables are sorted into free and leading variables.    Express your answer in both the parametric equation format and set notation format.             We saw in that the system is equivalent to a system with augmented matrix . The row echelon matrix tells us that is the only free variable of . Back substitution then yields the parametric equation description: . Thus the set of solutions is .                                   For each system below determine all values of for which the system below has (a) no solutions, (b) a unique solution, and (c) infinitely many solutions.                Show that a linear system with more unknowns than equations has either 0 solutions or infinitely many solutions.       True or false. If true, provide a proof; if false, provide an explicit counterexample.    Every matrix has a unique row echelon form.    Any homogeneous linear system with more unknowns than equations has infinitely many solutions.    If a homogeneous linear system of equations in unknowns has a corresponding augmented matrix with a reduced row echelon form containing leading ones, then the linear system has the unique solution .    All leading ones in of a matrix in row echelon form must occur in distinct columns.    If the reduced row echelon form of the augmented matrix for a linear system has a zero row, then the system must have infinitely many solutions.    If a linear system has more unknowns than equations, then it must have infinitely many solutions.        Interpret each matrix below as an augmented matrix of a linear system. Asterisks represent an unspecified real number. For each matrix, determine whether the corresponding system is consistent or inconsistent. If the system is consistent, decide further whether the solution is unique or not. If there is not enough information answer inconclusive and back up your claim by giving an explicit example where the system is consistent, and an explicit example where the system is inconsistent.                            What condition must and satisfy in order for the system below to be consistent? Express your answer as an equation involving and .       Solve the system of equations below for , , and .     First replace the given nonlinear system with a linear one using a change of variable substitution.      If is a matrix with three rows and five columns, then what is the maximum possible number of leading ones in its reduced row echelon form? Justify your answer.  Provide an explicit example of a matrix that attains this maximum number of leading ones.      If is a matrix with three rows and six columns, then what is the maximum possible number of free variables in the general solution of the linear system with augmented matrix ? Justify your answer.  Provide an explicit example of a matrix that attains this maximal number of free variables.      If is a matrix with five rows and three columns, then what is the minimum possible number of zero rows in any row echelon form of ?  Provide an explicit example of a matrix that attains this minimal number of zero rows.      "
 },
@@ -1877,7 +1877,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#d_free-leading",
   "type": "Definition",
-  "number": "1.4.1",
+  "number": "2.3.1",
   "title": "Free and leading variables.",
   "body": " Free and leading variables   variables  leading    variables  free    Let be a linear system in the unknowns , and let be its associated augmented matrix. Assume (and hence ) is in row echelon form.  The unknown is a leading variable if the corresponding column in (i.e., the -th column) contains a leading one; it is a free variable if the corresponding column in does not contain a leading one.   "
 },
@@ -1886,7 +1886,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#s_solving_eg_free-leading",
   "type": "Example",
-  "number": "1.4.2",
+  "number": "2.3.2",
   "title": "Free and leading variables.",
   "body": " Free and leading variables   Let be the linear system in the unknowns with augmented matrix . Then are leading variables, since the first, second, and fourth columns of have leading ones, as indicated by the boxes. The variable is free since the third column of has no leading one.   "
 },
@@ -1895,7 +1895,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#eg_solving_system",
   "type": "Example",
-  "number": "1.4.3",
+  "number": "2.3.3",
   "title": "Solving linear systems.",
   "body": " Solving linear systems  In our model example we transformed the original system to the equivalent system below: . The free variables of are and ; the leading variables are , and . Observe that if we assign and , where and are any real numbers, then we are left with a system in three unknowns ( ) of the form . Using back-substitution, we see that the unknowns are then uniquely expressed in terms of and as Thus for any choice of real numbers and we get a unique solution of the form . We conclude the set of solutions to is given as Alternatively, we can describe the solutions to with the parametric equations  .  "
 },
@@ -1904,7 +1904,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#s_solving_rm_parametric",
   "type": "Remark",
-  "number": "1.4.4",
+  "number": "2.3.4",
   "title": "Mandate.",
   "body": " Mandate  parametric equations  Get used to describing solutions to linear systems using either the set notation format of or the parametric equation format of .  Note also the distinct roles played by free and leading variables in the description of solutions. We assign each free variable freely to any choice of real parameters ( and in our example), and then solve for the leading variables in terms of these parameters in a unique manner. In particular, the leading variables are completely determined by our assignment of free variables.  "
 },
@@ -1913,7 +1913,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#d_consistent",
   "type": "Definition",
-  "number": "1.4.5",
+  "number": "2.3.5",
   "title": "Consistent and inconsistent systems.",
   "body": " Consistent and inconsistent systems  consistent  inconsistent   A linear system is consistent if it has at least one solution; it is inconsistent if it has no solutions.   "
 },
@@ -1922,7 +1922,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#proc_solveSystem",
   "type": "Procedure",
-  "number": "1.4.6",
+  "number": "2.3.6",
   "title": "Solving linear systems.",
   "body": " Solving linear systems   Let be a linear system in the unknowns , and let be the set of all solutions of . We compute as follows.    Step 1  Apply Gaussian elimination to reduce to an equivalent system in row echelon form.    Step 2  Let be the augmented matrix associated to . If the last column of has a leading one, then is inconsistent: , is the empty set. Otherwise, proceed to the next step.    Step 3  Determine which if any of the unknowns are free variables of .    Step 4  If there are no free variables, solve for each unknown using back-substitution. In this case, there is a unique solution to : , contains exactly one element.  Otherwise, let be the leading variables of , and let be the free variables. Back-substitution allows us to express each leading variable in terms of the free variables. In other words, we can write , where each is a linear expression in the free variables. Each solution of thus corresponds to a unique variable assignment of the form , where are any real numbers.     "
 },
@@ -1931,7 +1931,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#ss_solveSystem-6",
   "type": "Proof",
-  "number": "1.4.2.1",
+  "number": "2.3.2.1",
   "title": "",
   "body": " First recall that and have the same set of solutions ( ). So it suffices to show that the algorithm returns the correct set of solutions to .  Regarding consistency: if the last column of the augmented matrix associated to has a leading one in the -th row, then the corresponding equation in is Clearly this equation has no solutions, and hence the set of solutions to is empty.  Suppose now that the last column of does not have a leading one.   Case 1: no free variables   Suppose in Step 3 you determine that there are no free variables. Then each of the first columns of has a leading one in it. If follows that for each the -th equation of is of the form Since does not have a leading one in the last column, it follows that all equations beyond the -th equation are of the form , and as such may be disregarded since they are satisfied by any choice of the . The remaining system of equations in unknowns can be solved by back-substitution, yielding a unique solution of the form Do not concern yourself overly with the exact formulas. The important point here is that once we know there is a unique assignment of the variables that satisfies the system, allows us to solve for in terms of the the , . As such working our way up from the last equation, we find there is a unique solution to the system.     Case 2: free variables  Suppose now that are the leading variables of , and are the free variables. Again, since does not have a leading one in the last column, there are exactly nonzero equations in : one for each leading variable. After bringing any terms involving free variables to the right, the -th such equation takes the form . As in the previous case, back-substitution now allows us to solve for each leading variable as a function of the free variables: This new system of equations clearly has the same set of solutions as (and ), since it was obtained from by deleting zero rows of and using only addition and subtraction operations. Furthermore, it is clear that any assignment of the free variables extends uniquely to the solution of that further assigns . The idea behind uniqueness here, is that once you assign values to the free variables, the values of the leading variables are completely determined by the equations .  Lastly, we show that every solution of (and ) is obtained in this way. Suppose is a solution. According to the discussion above must be the unique solution to corresponding to the free variable assignment and corresponding leading variable assignment .   "
 },
@@ -1940,7 +1940,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#vid_eg_GE1",
   "type": "Example",
-  "number": "1.4.7",
+  "number": "2.3.7",
   "title": "Video: solving linear systems.",
   "body": " Video: solving linear systems    Video: solving linear systems  Video: solving linear systems     "
 },
@@ -1949,7 +1949,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#vid_eg_GE2",
   "type": "Example",
-  "number": "1.4.9",
+  "number": "2.3.9",
   "title": "Video: solving linear systems.",
   "body": " Video: solving linear systems    Video: solving linear systems 2  Video: solving linear systems 2     "
 },
@@ -1967,7 +1967,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#c_qualitative",
   "type": "Corollary",
-  "number": "1.4.11",
+  "number": "2.3.11",
   "title": "<span class=\"process-math\">\\(0\\text{,}\\)<\/span> <span class=\"process-math\">\\(1\\text{,}\\)<\/span> or <span class=\"process-math\">\\(\\infty\\)<\/span>-many solutions.",
   "body": " , , or -many solutions   Let be a linear system of equations, let be an equivalent system in row reduced form, and let be the augmented matrix associated to .  The system has either no solutions, exactly one solution, or infinitely many solutions. In more detail:    If has a leading one in its last column, then has no solutions.    If does not have a leading one in its last column and has no free variables, then has a unique solution.    If does not have a leading one in its last column and has a free variable, then has infinitely many solutions.     "
 },
@@ -1976,7 +1976,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#fig_decision_tree",
   "type": "Figure",
-  "number": "1.4.12",
+  "number": "2.3.12",
   "title": "Decision tree for number of solutions to a system",
   "body": " Decision tree for number of solutions to a system  Decision tree for the number of solutions to a linear system with augmented matrix in row echelon form.     "
 },
@@ -1985,7 +1985,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#s_solving_homogeneous",
   "type": "Corollary",
-  "number": "1.4.13",
+  "number": "2.3.13",
   "title": "Solutions to homogeneous equations.",
   "body": " Solutions to homogeneous equations   Fix a homogeneous linear system in variables. There are two possibilities:   if all the variables are leading variables, then the system has a unique solution (i.e., solution);    if there is a free variable, then the system has infinitely many solutions.      "
 },
@@ -1994,7 +1994,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#s_solving-5-3",
   "type": "Example",
-  "number": "1.4.14",
+  "number": "2.3.14",
   "title": "Vector parametrization.",
   "body": " Vector parametrization  Consider the linear equation . The corresponding augmented matrix of this equation is , which is already in row echelon form. Using , we see that the general solution is . This vector parametrization description allows us to visualize the plane with equation as the set of all points obtained by translating the point by various linear combinations of and . In this manner, the two vectors and determine a (non-rectangular) grid on .  Vector parametrization of plane    Vector parametrization of plane      "
 },
@@ -2003,7 +2003,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#ss_solving_ww-2",
   "type": "WeBWorK",
-  "number": "1.4.16",
+  "number": "2.3.16",
   "title": "",
   "body": "    Solve the following system using augmented matrix methods:  (a) The initial matrix is:              (b) First, perform the Row Operation . The resulting matrix is:              (c) Next, perform the operation . The resulting matrix is:              (d) Finish simplifying the augmented matrix to reduced row echelon form. The reduced matrix is:              (e) How many solutions does the system have? If infinitely many, enter \"Infinity\".  (f) What are the solutions to the system?  If there are no solutions, write \"No Solution\" or \"None\" for each answer. If there are infinitely many solutions let and solve for in terms of .                                                                                                                                                  "
 },
@@ -2012,7 +2012,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#ss_solving_ww-3",
   "type": "WeBWorK",
-  "number": "1.4.17",
+  "number": "2.3.17",
   "title": "",
   "body": "    Solve the following system using augmented matrix methods:  (a) The initial matrix is:                      (b) First, perform the Row Operation . The resulting matrix is:                      (c) Next, perform the operations   .  The resulting matrix is:                      (d) Finish simplifying the augmented matrix down to reduced row echelon form. The reduced matrix is:                      Remember: This matrix must be simplified all the way to reduced form.  (e) How many solutions does the system have? If infinitely many, enter \"Infinity\". If none, enter 0.  (f) What are the solutions of the system?        Note: In part (f), if there are no solutions, write \"No Solution\" or \"None\" in the answer blank after each equal sign. If there are infinitely many solutions, and the solution set describes a line (that is, if there is only one free variable), set and solve for the remaining variables in terms of . If there are infinitely many solutions, and the solution set describes a plane (that is, if the solution set has two free variables), set the variables and , and then solve for in terms of and .                                                                                                                                                                                                                                                                           "
 },
@@ -2021,7 +2021,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#ss_solving_ww-4",
   "type": "WeBWorK",
-  "number": "1.4.18",
+  "number": "2.3.18",
   "title": "",
   "body": "    Solve  = , = , = , = .                           "
 },
@@ -2030,7 +2030,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#ss_solving_ww-5",
   "type": "WeBWorK",
-  "number": "1.4.19",
+  "number": "2.3.19",
   "title": "",
   "body": "    Determine whether the following system has no solution, an infinite number of solutions or a unique solution.                     "
 },
@@ -2039,7 +2039,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#s_solving_ex-1-2-3",
   "type": "Exercise",
-  "number": "1.4.5.1",
+  "number": "2.3.5.1",
   "title": "",
   "body": "       We saw in that the system is equivalent to a system with augmented matrix . The row echelon matrix tells us that is the only free variable of . Back substitution then yields the parametric equation description: . Thus the set of solutions is .   "
 },
@@ -2048,7 +2048,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#s_solving_ex-1-2-4",
   "type": "Exercise",
-  "number": "1.4.5.2",
+  "number": "2.3.5.2",
   "title": "",
   "body": "      "
 },
@@ -2057,7 +2057,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#s_solving_ex-1-2-5",
   "type": "Exercise",
-  "number": "1.4.5.3",
+  "number": "2.3.5.3",
   "title": "",
   "body": "      "
 },
@@ -2066,7 +2066,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#s_solving_ex-1-2-6",
   "type": "Exercise",
-  "number": "1.4.5.4",
+  "number": "2.3.5.4",
   "title": "",
   "body": "      "
 },
@@ -2075,7 +2075,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#s_solving_ex-1-2-7",
   "type": "Exercise",
-  "number": "1.4.5.5",
+  "number": "2.3.5.5",
   "title": "",
   "body": "      "
 },
@@ -2084,7 +2084,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#s_solving_ex-1-3",
   "type": "Exercise",
-  "number": "1.4.5.6",
+  "number": "2.3.5.6",
   "title": "",
   "body": "  For each system below determine all values of for which the system below has (a) no solutions, (b) a unique solution, and (c) infinitely many solutions.             "
 },
@@ -2093,7 +2093,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#s_solving_ex-1-4",
   "type": "Exercise",
-  "number": "1.4.5.7",
+  "number": "2.3.5.7",
   "title": "",
   "body": "  Show that a linear system with more unknowns than equations has either 0 solutions or infinitely many solutions.    "
 },
@@ -2102,7 +2102,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#s_solving_ex-1-5",
   "type": "Exercise",
-  "number": "1.4.5.8",
+  "number": "2.3.5.8",
   "title": "",
   "body": "  True or false. If true, provide a proof; if false, provide an explicit counterexample.    Every matrix has a unique row echelon form.    Any homogeneous linear system with more unknowns than equations has infinitely many solutions.    If a homogeneous linear system of equations in unknowns has a corresponding augmented matrix with a reduced row echelon form containing leading ones, then the linear system has the unique solution .    All leading ones in of a matrix in row echelon form must occur in distinct columns.    If the reduced row echelon form of the augmented matrix for a linear system has a zero row, then the system must have infinitely many solutions.    If a linear system has more unknowns than equations, then it must have infinitely many solutions.     "
 },
@@ -2111,7 +2111,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#s_solving_ex-1-6",
   "type": "Exercise",
-  "number": "1.4.5.9",
+  "number": "2.3.5.9",
   "title": "",
   "body": "  Interpret each matrix below as an augmented matrix of a linear system. Asterisks represent an unspecified real number. For each matrix, determine whether the corresponding system is consistent or inconsistent. If the system is consistent, decide further whether the solution is unique or not. If there is not enough information answer inconclusive and back up your claim by giving an explicit example where the system is consistent, and an explicit example where the system is inconsistent.                         "
 },
@@ -2120,7 +2120,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#s_solving_ex-1-7",
   "type": "Exercise",
-  "number": "1.4.5.10",
+  "number": "2.3.5.10",
   "title": "",
   "body": "  What condition must and satisfy in order for the system below to be consistent? Express your answer as an equation involving and .    "
 },
@@ -2129,7 +2129,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#s_solving_ex-1-8",
   "type": "Exercise",
-  "number": "1.4.5.11",
+  "number": "2.3.5.11",
   "title": "",
   "body": "  Solve the system of equations below for , , and .     First replace the given nonlinear system with a linear one using a change of variable substitution.   "
 },
@@ -2138,7 +2138,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#s_solving_ex-1-9",
   "type": "Exercise",
-  "number": "1.4.5.12",
+  "number": "2.3.5.12",
   "title": "",
   "body": "  If is a matrix with three rows and five columns, then what is the maximum possible number of leading ones in its reduced row echelon form? Justify your answer.  Provide an explicit example of a matrix that attains this maximum number of leading ones.   "
 },
@@ -2147,7 +2147,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#s_solving_ex-1-10",
   "type": "Exercise",
-  "number": "1.4.5.13",
+  "number": "2.3.5.13",
   "title": "",
   "body": "  If is a matrix with three rows and six columns, then what is the maximum possible number of free variables in the general solution of the linear system with augmented matrix ? Justify your answer.  Provide an explicit example of a matrix that attains this maximal number of free variables.   "
 },
@@ -2156,7 +2156,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#s_solving_ex-1-11",
   "type": "Exercise",
-  "number": "1.4.5.14",
+  "number": "2.3.5.14",
   "title": "",
   "body": "  If is a matrix with five rows and three columns, then what is the minimum possible number of zero rows in any row echelon form of ?  Provide an explicit example of a matrix that attains this minimal number of zero rows.   "
 },
@@ -2165,7 +2165,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "s_matrix.html",
   "type": "Section",
-  "number": "2.1",
+  "number": "3.1",
   "title": "Matrix arithmetic",
   "body": " Matrix arithmetic   Matrices played a small supporting role in our discussion of linear systems in . In this chapter we bring them to center stage and give them a full-blown treatment as independent mathematical objects in their own right.  Like any mathematical entity worth its salt, matrices can be employed in a vast multitude of ways. As such it is important to allow matrices to transcend their humble beginnings in this course as boiled down systems of linear equations. We record this observation as another principle.  Matrix mantra   A matrix is a matrix is a matrix.  Not every matrix should be thought of as an augmented matrix associated to a linear system.       The basics We begin with some elementary definitions about matrices, matrix equality, and special types of matrices. As the next definition makes clear, a matrix is just an ordered sequence of numbers arranged in a very particular manner.  Matrix  matrix    set of all matrices    A (real) matrix is a rectangular array of real numbers . The number located in the -th row and -th column of is called the -entry (or -th entry ) of .  A matrix with rows and columns is said to have size (or dimension ) . The set of all matrices is denoted .    The displayed matrix in is costly both in the space it takes up in show, and the time it takes to write down or typeset. Accordingly we introduce two somewhat complementary forms of notation to help describe matrices.   Matrix notation    Matrix whose -th entry is     -th entry of the matrix       Matrix-building notation  matrix matrix-building notation  The notation denotes the matrix whose -th entry ( -th row, -th column) is . When there is no danger of confusion, this notation is often shortened to .    Matrix entry notation  matrix matrix entry notation  Given a matrix , the notation denotes the -th entry of .   Thus if , then for all and .     The matrix-building notation is often used simply to give names to the entries of an arbitrary matrix. However, it can also be used to describe a matrix whose -th entry is given by specified rule or formula.  For example, let , where . This is the matrix whose -th entry is . Thus . In this example we have and for .   Using matrix notation we can now precisely define what the rows and columns of a matrix are.   Rows and columns of a matrix   Let be an matrix. For each , -th row of is the -tuple . Similarly, for each , the -th column of is the -tuple . Given -tuples , we denote by the matrix whose -th row is .  Similarly, given -tuples , we denote by the matrix whose -th column is .    In everyday language the notion of equality is taken as self-evident. Two things are equal if they are the same. What more is there to say? In mathematics, each time we introduce a new type of mathematical object (e.g., sets, functions, -tuples, etc.) we need to spell out exactly what we mean for two objects to be considered equal. We do so now with matrices.   Matrix equality   Let and be matrices of dimension and , respectively. The two matrices are equal if    and ;     for all and .     In other words, we have if and only if and have the same shape, and each entry of is equal to the corresponding entry of .     Matrix equality   The matrices are not equal to one another, despite their having the same entries that appear roughly in the same order. In this case equality does not hold as and have different shapes: is , and is .  The matrices and have the same dimension, but are not equal since .     Matrices of particular shape  matrix square   matrix row vector   matrix column vector   matrix diagonal of square matrix  matrix zero matrix   A matrix is square if its dimension is : , if . The diagonal of a square matrix consists of the entries of of the form for .  A matrix is called a row vector . The -th entry of a row vector is denoted   An matrix , is called a column vector . The -th entry of a column vector is denoted .     Tuples, row vectors, and column vectors  You are perhaps wondering why we make a distinction between -tuples, row vectors, and column vectors. One answer is that a matrix is not simply an ordered sequence: it is an ordered sequence arranged in a very particular way. This subtlety is baked into the very definition of matrix equality, and allows us to say that . There are situations, however, where we don't need this extra layer of structure, where we want to treat an ordered sequence simply as an ordered sequence. In such situations tuples are preferred to row or column vectors.  Of course there will be times where we wish to treat an ordered sequence now as a tuple and now as a row or column vector. In these situations we will clarify what is meant by using the phrase treated as a tuple , treated as a row vector , or treated as a column vector . For example, the tuple , treated as a row vector, is the matrix .  That said, the close connection between linear systems and matrix equations makes it very convenient to be able to treat an -tuple as if it were the column vector , and vice versa. This conflation is so convenient, in fact, that we will simply declare it to be true by fiat! This means that going forward we are permitted to treat tuples as column vectors and vice versa without further comment.    Tuples shall be column vectors, and vice versa   We hereby declare that for all we have . In other words, tuples are henceforth the same as column vectors.     Matrix entries, rows, and columns  Sage syntax for accessing specific entries of a matrix is similar in spirit to our matrix entry notation. However, as with all things Python, we always count from 0. Thus if A is assigned to a matrix in Sage, A[i,j] is its -th entry.   Prescribed subsets of matrix entries are obtained via slicing methods: for example, A[a:b, c:d] returns the collection of entries with and , arranged as a matrix.   Leaving the left or right side of : blank in this notation removes the corresponding restriction bound (left or right) from the index in question. Thus A[2, :] returns the third row of , and A[1:, 3] returns the portion of the fourth column of beginning with its second entry.   Alternatively, we can obtain a list of all rows or columns of using the the methods rows() and columns() .   Use the empty cell below to try out some of these commands.      Vector space structure of  We now lay out the various algebraic operations we will use to combine and transform matrices; we refer to the use of these operations loosely as matrix arithmetic . Some of these operations resemble familiar operations from real arithmetic in terms of their notation and definition. Do not be lulled into complacency! These are new operations defined for a new class of mathematical objects, and must be treated carefully. In particular, pay close attention to (a) exactly what type of mathematical objects serve as inputs for each operation (the ingredients of the operation), and (b) what type of mathematical object is outputted.   Matrix addition and scalar multiplication  matrix addition  matrix scalar multiplication   Let and be positive integers.   Matrix addition  Given matrices , we define their matrix sum  to be the matrix satisfying for all and . Equivalently, if and , then . The operation is called matrix addition .    Given an matrix and scalar , the scalar multiple of by is the matrix satisfying for all and . Equivalently, if , then . The operation is called matrix scalar multiplication .        Observe that matrix addition is not defined for any pair of matrices. The ingredients of matrix addition are two matrices of the same dimension ; and the output is a third matrix of this common dimension.   Not surprisingly, as the names of our matrix operations suggest, the set of all matrices constitutes a vector space with respect to matrix addition and scalar multiplication. Before proving this fact, we introduce what will be the zero vectors and vector inverses of these vector spaces.   Zero matrices    the zero matrix    The  zero matrix , denoted , is the matrix, all of whose entries are equal to zero: i.e., for all and .  When there is no confusion about which dimension zero matrix is intended, we will often write simply instead of .     Additive inverse matrix   The additive inverse of an matrix is the matrix defined as .     Additive inverse matrix   Additive inverse matrix is admittedly a bit clunky. We are taking pains here not to call simply the inverse of , as this term is reserved for multiplicative inverses of matrices. (See .)    Vector space structure of   Let and be positive integers.   The set , together with the matrix addition and scalar multiplication, is a vector space.    The zero vector of is the zero matrix .    Given a matrix its vector inverse is the additive inverse matrix .       Having identified the relevant operations, as well as the proposed zero vector and vector inverses, we must verify that the vector axioms hold. We do so for Axioms i, iii, and iv, leaving the rest as an exercise.   Axiom i      Axiom iii      Axiom iv        Matrix difference and matrix linear combination  Having established that is a vector space under matrix addition and scalar multiplication, this set of matrices automatically inherits the various features and properties enjoyed by general vector spaces. For example, the vector difference operation (defined for any vector space) gives rise in the case of to a matrix difference operation. Namely, for any we have . Similarly, the general notion of a linear combination of vectors, gives rise to the notion of matrix linear combinations . Namely, given , and scalars , we have the matrix linear combination .    Matrix linear combinations   Let and . Compute .     .     Expressing matrix as a linear combination   Show that can be expressed as a linear combination of the matrices .    We must solve the matrix (or row vector) equation for the scalars . Computing the linear combination on the left yields the matrix equation . Using the definition of matrix equality ( ), we get the system of equations . Using Gaussian elimination we find that there is a unique solution to this system: namely, . We conclude that .     Let be matrices. An easy induction argument on shows that for any scalars we have for all , . (See . )     Matrix multiplication  So how do we define the product of two matrices? Looking at the previous operations, you might have guessed that we should define the product of two matrices by taking the product of their corresponding entries. Not so!   Matrix multiplication  matrix multiplication   Let be positive integers. Given an matrix and an matrix , we define their product to be the matrix satisfying for all and . Equivalently, if and , then , where . The operation is called matrix multiplication .     Visualizing matrix multiplication  In , the -th entry is computed by moving across the -th row of and down the -th column of .       Size and matrix multiplication  Observe how, like addition, matrix multiplication is not defined for any pair of matrices: there must be a certain agreement in their dimensions.  In more detail, for the product of and to be defined, we need . In other words we need the inner dimensions of and to be equal: . If this condition is met, the dimension of the resulting matrix is determined by the outer dimensions of and . Schematically, you can think of the inner dimensions as being canceled out :     Matrix multiplication  Consider the matrices . Since the inner dimensions of and agree, we can form the product matrix , which has dimension . Let for all . Using , we compute . We conclude that .   Formula for the -th entry of a matrix product is easily identified as the dot product of the -th row of with the -th column of . This gives us a succinct way of describing the entries of the product in terms of the dot product.   Dot product and matrix multiplication   Let be positive integers. Given matrices and , let be the -th row of for all , and let be -th column of for all , so that . For all , we have . In other words, the -th entry of is the dot product of the -th row of and the -th column of .    Let and , so that for all and . Given any pair with and , we have , as claimed.     Matrix multiplication via dot product  Consider the matrices . The two rows of are . The two columns of are . Using the dot product description of matrix multiplication, we compute .   The definition of a matrix product is undoubtedly more complicated than you expected, and seems to come completely out of the blue. All of this will make more sense once we begin thinking of matrices as defining certain functions . Our formula for the entries of is chosen precisely so that this new matrix corresponds to the composition of the functions and : so that . (See .) Under this interpretation, the ponderous restriction on the dimensions of the ingredient matrices ensures that the two functions and can be composed.   Matrix arithmetic  We use + and * for matrix addition and multiplication.   As evidence of Sage's flexibility, the same symbol * is also used for scalar multiplication.   Edit the cell below to practice these operations.      Alternative methods of multiplication  In addition to the given definition of matrix multiplication, we will make heavy use of two further ways of computing matrix products, called the column and row methods of matrix multiplication.   Column method of matrix multiplication  matrix multiplication column method   Let and . The column method of matrix multiplication computes using the two steps below.   Step 1  Let be the -th column of , considered as a column vector. Then .    Step 2  Let be the -th column of , considered as a column vector. Given any column vector we have .       We prove the equalities in both steps separately.   Proof of Step 1  We must show , where . First we show and have the same size. By definition of matrix multiplication, is . By construction has columns and its -th column is . Since and have size and , respectively, has size . Thus each of the columns of is an column vector. It follows that is , as desired.  Next we show that for all , . Since the -th entry of is the -th entry of the -th column of , we have .    Proof of Step 2  We must show that , where . The usual argument shows that both and are column vectors. It remains only to show that the -th entry of the column is equal to the -th entry of for all . For any such we have .       amounts to a two-step process for computing an arbitrary matrix product .  The first statement (Step 1) tells us that the -th column of the matrix can be obtained by computing the product of with the -th column of .  The second statement (Step 2) tells us that each product can itself be computed as a certain linear combination of the columns of with coefficients drawn from .  A similar remark applies to computing matrix products using the row method, as described below in .    Row method of matrix multiplication  matrix multiplication row method   Let and . The row method of matrix multiplication computes using the two steps below.   Step 1  Let be the -th row of . Then .    Step 2  Let be the -th row of . Given any row vector we have .       The proof is very similar to that of and is left to the reader.     Column and row methods   Let and   Compute using (a) the definition of matrix multiplication, (b) the column method, (c) the row method.       Using the definition, we see easily that     Let be the columns of , and let be the columns of . We have     Now let be the rows of , and let be the rows of . We have         Column and row methods  Let's verify the validity of the column and row methods using Sage in some specific examples. Below we generate random integer matrices and of dimension and , respectively, and compute their product .   Let's check that the -th column of is equal to the product of with the -th column of .   Alternatively, we can visually confirm these equalities using the display of in the first cell above. Observe that the result of A*colsB[i] is displayed by Sage as a tuple, though technically for us this is a column vector.   Next, let's verify that the result of multiplying and the -th column of is the corresponding linear combination of the columns of given by the coefficients of this column.   Now use the Sage cells below to demonstrate the validity of the row method for the product . Simply modify the code in the two cells above to reflect the row method, as opposed to the column method.      Video example of matrix multiplication   Video: three methods of matrix multiplication       Transpose of a matrix  We end this section with one last operation, matrix transposition . We will not make much use of this operation until later, but this is as good a place as any to introduce it.   Matrix transposition  matrix transposition  transpose   Given an matrix its transpose is the matrix whose -entry is the -th entry of . In other words, is the matrix satisfying for all and .     Given a matrix we can give a column- or row-based description of as follows:    is the matrix whose -th row is the -th column of .     is the matrix whose -th column is the -th row of .       Transpose   Let ; then .  Let , then .     Matrix transposition  Matrix transposition is implemented in Sage as the transpose() method. In the cell below we (a) choose random integers , (b) choose a random matrix with integer entries, and (c) compute the transpose of .   As usual, experiment with the Sage cell below.      WeBWork Exercises      Enter T or F depending on whether the statement is true or false. (You must enter T or F -- True and False will not work.)    If A is a square matrix such that AA equals the 0 matrix, then A must equal the 0 matrix.    If A has dimensions and B has dimensions , then AB has dimensions .              Matrix Products: Consider the matrices   Of the possible matrix products ,  which make sense?    C            If A is B is and C is then:  a) BA has dimension    b) CB has dimension    c) AC has dimension                                            Determine and such that                           Determine the value(s) of such that   =  Note: If there is more than one value separate them by commas.                Written Exercises    For each part below write down the most general matrix satisfying the given condition (use letter names ,etc. for entries).     for all .     for all      for .        Let  . Compute the following matrices, or else explain why the given expression is not well defined.                       Let . Compute the following using either the row or column method of matrix multiplication. Make sure to show how you are using the relevant method.   the first column of ;    the second row of ;    the third column of .          Using expansion by columns, the first column of is given by times the first column of . We compute          Use the row or column method to quickly compute the following product:     I'll just describe the row method here.  Note that the rows of are all identical, and equal to . From the row method it follows that each row of is given by .  Thus the rows of are all identical, and the row method computes the product above by taking the corresponding alternating sum of the rows of : .  Thus is the the matrix, all of whose rows are .      Each of the matrices below performs a specific row operation when multiplying a matrix on the left; i.e., the matrix is the result of performing a certain row operation on the matrix . Use the row method of matrix multiplication to decide what row operation each performs. .       Let be an integer. Prove, by induction on , that for any matrices and scalars , we have for all , .      "
 },
@@ -2174,7 +2174,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#princ_matrix_mantra",
   "type": "Mantra",
-  "number": "2.1.1",
+  "number": "3.1.1",
   "title": "Matrix mantra.",
   "body": " Matrix mantra   A matrix is a matrix is a matrix.  Not every matrix should be thought of as an augmented matrix associated to a linear system.   "
 },
@@ -2183,7 +2183,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#d_matrix",
   "type": "Definition",
-  "number": "2.1.2",
+  "number": "3.1.2",
   "title": "Matrix.",
   "body": " Matrix  matrix    set of all matrices    A (real) matrix is a rectangular array of real numbers . The number located in the -th row and -th column of is called the -entry (or -th entry ) of .  A matrix with rows and columns is said to have size (or dimension ) . The set of all matrices is denoted .   "
 },
@@ -2192,7 +2192,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#d_matrix_notation",
   "type": "Definition",
-  "number": "2.1.3",
+  "number": "3.1.3",
   "title": "Matrix notation.",
   "body": " Matrix notation    Matrix whose -th entry is     -th entry of the matrix       Matrix-building notation  matrix matrix-building notation  The notation denotes the matrix whose -th entry ( -th row, -th column) is . When there is no danger of confusion, this notation is often shortened to .    Matrix entry notation  matrix matrix entry notation  Given a matrix , the notation denotes the -th entry of .   Thus if , then for all and .   "
 },
@@ -2201,7 +2201,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#ss_matrix_attributes-5",
   "type": "Remark",
-  "number": "2.1.4",
+  "number": "3.1.4",
   "title": "",
   "body": " The matrix-building notation is often used simply to give names to the entries of an arbitrary matrix. However, it can also be used to describe a matrix whose -th entry is given by specified rule or formula.  For example, let , where . This is the matrix whose -th entry is . Thus . In this example we have and for .  "
 },
@@ -2210,7 +2210,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#d_rows_columns",
   "type": "Definition",
-  "number": "2.1.5",
+  "number": "3.1.5",
   "title": "Rows and columns of a matrix.",
   "body": " Rows and columns of a matrix   Let be an matrix. For each , -th row of is the -tuple . Similarly, for each , the -th column of is the -tuple . Given -tuples , we denote by the matrix whose -th row is .  Similarly, given -tuples , we denote by the matrix whose -th column is .   "
 },
@@ -2219,7 +2219,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#d_matrix_equality",
   "type": "Definition",
-  "number": "2.1.6",
+  "number": "3.1.6",
   "title": "Matrix equality.",
   "body": " Matrix equality   Let and be matrices of dimension and , respectively. The two matrices are equal if    and ;     for all and .     In other words, we have if and only if and have the same shape, and each entry of is equal to the corresponding entry of .   "
 },
@@ -2228,7 +2228,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#eg_inequality",
   "type": "Example",
-  "number": "2.1.7",
+  "number": "3.1.7",
   "title": "Matrix equality.",
   "body": " Matrix equality   The matrices are not equal to one another, despite their having the same entries that appear roughly in the same order. In this case equality does not hold as and have different shapes: is , and is .  The matrices and have the same dimension, but are not equal since .   "
 },
@@ -2237,7 +2237,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#d_square_matrices",
   "type": "Definition",
-  "number": "2.1.8",
+  "number": "3.1.8",
   "title": "Matrices of particular shape.",
   "body": " Matrices of particular shape  matrix square   matrix row vector   matrix column vector   matrix diagonal of square matrix  matrix zero matrix   A matrix is square if its dimension is : , if . The diagonal of a square matrix consists of the entries of of the form for .  A matrix is called a row vector . The -th entry of a row vector is denoted   An matrix , is called a column vector . The -th entry of a column vector is denoted .   "
 },
@@ -2246,7 +2246,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#rm_tuples_rows_columns",
   "type": "Remark",
-  "number": "2.1.9",
+  "number": "3.1.9",
   "title": "Tuples, row vectors, and column vectors.",
   "body": " Tuples, row vectors, and column vectors  You are perhaps wondering why we make a distinction between -tuples, row vectors, and column vectors. One answer is that a matrix is not simply an ordered sequence: it is an ordered sequence arranged in a very particular way. This subtlety is baked into the very definition of matrix equality, and allows us to say that . There are situations, however, where we don't need this extra layer of structure, where we want to treat an ordered sequence simply as an ordered sequence. In such situations tuples are preferred to row or column vectors.  Of course there will be times where we wish to treat an ordered sequence now as a tuple and now as a row or column vector. In these situations we will clarify what is meant by using the phrase treated as a tuple , treated as a row vector , or treated as a column vector . For example, the tuple , treated as a row vector, is the matrix .  That said, the close connection between linear systems and matrix equations makes it very convenient to be able to treat an -tuple as if it were the column vector , and vice versa. This conflation is so convenient, in fact, that we will simply declare it to be true by fiat! This means that going forward we are permitted to treat tuples as column vectors and vice versa without further comment.  "
 },
@@ -2255,7 +2255,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#declaration_tuples_columns",
   "type": "Fiat",
-  "number": "2.1.10",
+  "number": "3.1.10",
   "title": "Tuples shall be column vectors, and vice versa.",
   "body": " Tuples shall be column vectors, and vice versa   We hereby declare that for all we have . In other words, tuples are henceforth the same as column vectors.   "
 },
@@ -2273,7 +2273,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#d_matrix_add_subtract",
   "type": "Definition",
-  "number": "2.1.11",
+  "number": "3.1.11",
   "title": "Matrix addition and scalar multiplication.",
   "body": " Matrix addition and scalar multiplication  matrix addition  matrix scalar multiplication   Let and be positive integers.   Matrix addition  Given matrices , we define their matrix sum  to be the matrix satisfying for all and . Equivalently, if and , then . The operation is called matrix addition .    Given an matrix and scalar , the scalar multiple of by is the matrix satisfying for all and . Equivalently, if , then . The operation is called matrix scalar multiplication .      "
 },
@@ -2282,7 +2282,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#ss_matrix_arithmetic-4",
   "type": "Remark",
-  "number": "2.1.12",
+  "number": "3.1.12",
   "title": "",
   "body": " Observe that matrix addition is not defined for any pair of matrices. The ingredients of matrix addition are two matrices of the same dimension ; and the output is a third matrix of this common dimension.  "
 },
@@ -2291,7 +2291,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#d_zero_matrix",
   "type": "Definition",
-  "number": "2.1.13",
+  "number": "3.1.13",
   "title": "Zero matrices.",
   "body": " Zero matrices    the zero matrix    The  zero matrix , denoted , is the matrix, all of whose entries are equal to zero: i.e., for all and .  When there is no confusion about which dimension zero matrix is intended, we will often write simply instead of .   "
 },
@@ -2300,7 +2300,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#d_additive_inverse",
   "type": "Definition",
-  "number": "2.1.14",
+  "number": "3.1.14",
   "title": "Additive inverse matrix.",
   "body": " Additive inverse matrix   The additive inverse of an matrix is the matrix defined as .   "
 },
@@ -2309,7 +2309,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#ss_matrix_arithmetic-8",
   "type": "Remark",
-  "number": "2.1.15",
+  "number": "3.1.15",
   "title": "Additive inverse matrix.",
   "body": " Additive inverse matrix   Additive inverse matrix is admittedly a bit clunky. We are taking pains here not to call simply the inverse of , as this term is reserved for multiplicative inverses of matrices. (See .)  "
 },
@@ -2318,7 +2318,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#th_matrix_vector_space",
   "type": "Theorem",
-  "number": "2.1.16",
+  "number": "3.1.16",
   "title": "Vector space structure of <span class=\"process-math\">\\(M_{mn}\\)<\/span>.",
   "body": " Vector space structure of   Let and be positive integers.   The set , together with the matrix addition and scalar multiplication, is a vector space.    The zero vector of is the zero matrix .    Given a matrix its vector inverse is the additive inverse matrix .       Having identified the relevant operations, as well as the proposed zero vector and vector inverses, we must verify that the vector axioms hold. We do so for Axioms i, iii, and iv, leaving the rest as an exercise.   Axiom i      Axiom iii      Axiom iv      "
 },
@@ -2327,7 +2327,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#rm_matrix_diff",
   "type": "Remark",
-  "number": "2.1.17",
+  "number": "3.1.17",
   "title": "Matrix difference and matrix linear combination.",
   "body": " Matrix difference and matrix linear combination  Having established that is a vector space under matrix addition and scalar multiplication, this set of matrices automatically inherits the various features and properties enjoyed by general vector spaces. For example, the vector difference operation (defined for any vector space) gives rise in the case of to a matrix difference operation. Namely, for any we have . Similarly, the general notion of a linear combination of vectors, gives rise to the notion of matrix linear combinations . Namely, given , and scalars , we have the matrix linear combination .  "
 },
@@ -2336,7 +2336,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#eg_matrix_lin_comb",
   "type": "Example",
-  "number": "2.1.18",
+  "number": "3.1.18",
   "title": "Matrix linear combinations.",
   "body": " Matrix linear combinations   Let and . Compute .     .   "
 },
@@ -2345,7 +2345,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#eg_matrix_lin_comb_solve",
   "type": "Example",
-  "number": "2.1.19",
+  "number": "3.1.19",
   "title": "Expressing matrix as a linear combination.",
   "body": " Expressing matrix as a linear combination   Show that can be expressed as a linear combination of the matrices .    We must solve the matrix (or row vector) equation for the scalars . Computing the linear combination on the left yields the matrix equation . Using the definition of matrix equality ( ), we get the system of equations . Using Gaussian elimination we find that there is a unique solution to this system: namely, . We conclude that .   "
 },
@@ -2354,7 +2354,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#rm_entry_lin_comb",
   "type": "Remark",
-  "number": "2.1.20",
+  "number": "3.1.20",
   "title": "",
   "body": " Let be matrices. An easy induction argument on shows that for any scalars we have for all , . (See . )  "
 },
@@ -2363,7 +2363,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#d_matrix_mult",
   "type": "Definition",
-  "number": "2.1.21",
+  "number": "3.1.21",
   "title": "Matrix multiplication.",
   "body": " Matrix multiplication  matrix multiplication   Let be positive integers. Given an matrix and an matrix , we define their product to be the matrix satisfying for all and . Equivalently, if and , then , where . The operation is called matrix multiplication .   "
 },
@@ -2372,7 +2372,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#fig_matrix_mult",
   "type": "Figure",
-  "number": "2.1.22",
+  "number": "3.1.22",
   "title": "Visualizing matrix multiplication",
   "body": " Visualizing matrix multiplication  In , the -th entry is computed by moving across the -th row of and down the -th column of .     "
 },
@@ -2381,7 +2381,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#ss_matrix_mult-5",
   "type": "Remark",
-  "number": "2.1.23",
+  "number": "3.1.23",
   "title": "Size and matrix multiplication.",
   "body": " Size and matrix multiplication  Observe how, like addition, matrix multiplication is not defined for any pair of matrices: there must be a certain agreement in their dimensions.  In more detail, for the product of and to be defined, we need . In other words we need the inner dimensions of and to be equal: . If this condition is met, the dimension of the resulting matrix is determined by the outer dimensions of and . Schematically, you can think of the inner dimensions as being canceled out :   "
 },
@@ -2390,7 +2390,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#eg_matrix_mult",
   "type": "Example",
-  "number": "2.1.24",
+  "number": "3.1.24",
   "title": "Matrix multiplication.",
   "body": " Matrix multiplication  Consider the matrices . Since the inner dimensions of and agree, we can form the product matrix , which has dimension . Let for all . Using , we compute . We conclude that .  "
 },
@@ -2399,7 +2399,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#th_matrix_mult_dot_product",
   "type": "Theorem",
-  "number": "2.1.25",
+  "number": "3.1.25",
   "title": "Dot product and matrix multiplication.",
   "body": " Dot product and matrix multiplication   Let be positive integers. Given matrices and , let be the -th row of for all , and let be -th column of for all , so that . For all , we have . In other words, the -th entry of is the dot product of the -th row of and the -th column of .    Let and , so that for all and . Given any pair with and , we have , as claimed.   "
 },
@@ -2408,7 +2408,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#eg_matrix_mult_dot_prod",
   "type": "Example",
-  "number": "2.1.26",
+  "number": "3.1.26",
   "title": "Matrix multiplication via dot product.",
   "body": " Matrix multiplication via dot product  Consider the matrices . The two rows of are . The two columns of are . Using the dot product description of matrix multiplication, we compute .  "
 },
@@ -2426,7 +2426,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#th_column_method",
   "type": "Theorem",
-  "number": "2.1.27",
+  "number": "3.1.27",
   "title": "Column method of matrix multiplication.",
   "body": " Column method of matrix multiplication  matrix multiplication column method   Let and . The column method of matrix multiplication computes using the two steps below.   Step 1  Let be the -th column of , considered as a column vector. Then .    Step 2  Let be the -th column of , considered as a column vector. Given any column vector we have .       We prove the equalities in both steps separately.   Proof of Step 1  We must show , where . First we show and have the same size. By definition of matrix multiplication, is . By construction has columns and its -th column is . Since and have size and , respectively, has size . Thus each of the columns of is an column vector. It follows that is , as desired.  Next we show that for all , . Since the -th entry of is the -th entry of the -th column of , we have .    Proof of Step 2  We must show that , where . The usual argument shows that both and are column vectors. It remains only to show that the -th entry of the column is equal to the -th entry of for all . For any such we have .    "
 },
@@ -2435,7 +2435,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#s_column_row_method-4",
   "type": "Remark",
-  "number": "2.1.28",
+  "number": "3.1.28",
   "title": "",
   "body": "  amounts to a two-step process for computing an arbitrary matrix product .  The first statement (Step 1) tells us that the -th column of the matrix can be obtained by computing the product of with the -th column of .  The second statement (Step 2) tells us that each product can itself be computed as a certain linear combination of the columns of with coefficients drawn from .  A similar remark applies to computing matrix products using the row method, as described below in .  "
 },
@@ -2444,7 +2444,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#th_row_method",
   "type": "Theorem",
-  "number": "2.1.29",
+  "number": "3.1.29",
   "title": "Row method of matrix multiplication.",
   "body": " Row method of matrix multiplication  matrix multiplication row method   Let and . The row method of matrix multiplication computes using the two steps below.   Step 1  Let be the -th row of . Then .    Step 2  Let be the -th row of . Given any row vector we have .       The proof is very similar to that of and is left to the reader.   "
 },
@@ -2453,7 +2453,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#s_matrix_ex_product",
   "type": "Example",
-  "number": "2.1.30",
+  "number": "3.1.30",
   "title": "Column and row methods.",
   "body": " Column and row methods   Let and   Compute using (a) the definition of matrix multiplication, (b) the column method, (c) the row method.       Using the definition, we see easily that     Let be the columns of , and let be the columns of . We have     Now let be the rows of , and let be the rows of . We have       "
 },
@@ -2471,7 +2471,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#video_eg_matrix_mult_vid",
   "type": "Example",
-  "number": "2.1.31",
+  "number": "3.1.31",
   "title": "Video example of matrix multiplication.",
   "body": " Video example of matrix multiplication   Video: three methods of matrix multiplication    "
 },
@@ -2480,7 +2480,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#d_transpose",
   "type": "Definition",
-  "number": "2.1.33",
+  "number": "3.1.33",
   "title": "Matrix transposition.",
   "body": " Matrix transposition  matrix transposition  transpose   Given an matrix its transpose is the matrix whose -entry is the -th entry of . In other words, is the matrix satisfying for all and .   "
 },
@@ -2489,7 +2489,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#s_matrix-7-4",
   "type": "Remark",
-  "number": "2.1.34",
+  "number": "3.1.34",
   "title": "",
   "body": " Given a matrix we can give a column- or row-based description of as follows:    is the matrix whose -th row is the -th column of .     is the matrix whose -th column is the -th row of .     "
 },
@@ -2498,7 +2498,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#eg_transpose",
   "type": "Example",
-  "number": "2.1.35",
+  "number": "3.1.35",
   "title": "Transpose.",
   "body": " Transpose   Let ; then .  Let , then .   "
 },
@@ -2516,7 +2516,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#ss_matrix_ww-2",
   "type": "WeBWorK",
-  "number": "2.1.36",
+  "number": "3.1.36",
   "title": "",
   "body": "    Enter T or F depending on whether the statement is true or false. (You must enter T or F -- True and False will not work.)    If A is a square matrix such that AA equals the 0 matrix, then A must equal the 0 matrix.    If A has dimensions and B has dimensions , then AB has dimensions .         "
 },
@@ -2525,7 +2525,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#ss_matrix_ww-3",
   "type": "WeBWorK",
-  "number": "2.1.37",
+  "number": "3.1.37",
   "title": "",
   "body": "    Matrix Products: Consider the matrices   Of the possible matrix products ,  which make sense?    C       "
 },
@@ -2534,7 +2534,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#ss_matrix_ww-4",
   "type": "WeBWorK",
-  "number": "2.1.38",
+  "number": "3.1.38",
   "title": "",
   "body": "    If A is B is and C is then:  a) BA has dimension    b) CB has dimension    c) AC has dimension                                       "
 },
@@ -2543,7 +2543,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#ss_matrix_ww-5",
   "type": "WeBWorK",
-  "number": "2.1.39",
+  "number": "3.1.39",
   "title": "",
   "body": "    Determine and such that                      "
 },
@@ -2552,7 +2552,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#ss_matrix_ww-6",
   "type": "WeBWorK",
-  "number": "2.1.40",
+  "number": "3.1.40",
   "title": "",
   "body": "    Determine the value(s) of such that   =  Note: If there is more than one value separate them by commas.            "
 },
@@ -2561,7 +2561,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#s_matrix_ex-1-2",
   "type": "Exercise",
-  "number": "2.1.7.1",
+  "number": "3.1.7.1",
   "title": "",
   "body": "  For each part below write down the most general matrix satisfying the given condition (use letter names ,etc. for entries).     for all .     for all      for .     "
 },
@@ -2570,7 +2570,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#s_matrix_ex-1-3",
   "type": "Exercise",
-  "number": "2.1.7.2",
+  "number": "3.1.7.2",
   "title": "",
   "body": "  Let  . Compute the following matrices, or else explain why the given expression is not well defined.                    "
 },
@@ -2579,7 +2579,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#s_matrix_ex-1-4",
   "type": "Exercise",
-  "number": "2.1.7.3",
+  "number": "3.1.7.3",
   "title": "",
   "body": "  Let . Compute the following using either the row or column method of matrix multiplication. Make sure to show how you are using the relevant method.   the first column of ;    the second row of ;    the third column of .          Using expansion by columns, the first column of is given by times the first column of . We compute       "
 },
@@ -2588,7 +2588,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#s_matrix_ex-1-5",
   "type": "Exercise",
-  "number": "2.1.7.4",
+  "number": "3.1.7.4",
   "title": "",
   "body": "  Use the row or column method to quickly compute the following product:     I'll just describe the row method here.  Note that the rows of are all identical, and equal to . From the row method it follows that each row of is given by .  Thus the rows of are all identical, and the row method computes the product above by taking the corresponding alternating sum of the rows of : .  Thus is the the matrix, all of whose rows are .   "
 },
@@ -2597,7 +2597,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#s_matrix_ex-1-6",
   "type": "Exercise",
-  "number": "2.1.7.5",
+  "number": "3.1.7.5",
   "title": "",
   "body": "  Each of the matrices below performs a specific row operation when multiplying a matrix on the left; i.e., the matrix is the result of performing a certain row operation on the matrix . Use the row method of matrix multiplication to decide what row operation each performs. .    "
 },
@@ -2606,7 +2606,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#ex_entry_lin_comb",
   "type": "Exercise",
-  "number": "2.1.7.6",
+  "number": "3.1.7.6",
   "title": "",
   "body": "  Let be an integer. Prove, by induction on , that for any matrices and scalars , we have for all , .   "
 },
@@ -2615,7 +2615,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "s_matrix_algebra.html",
   "type": "Section",
-  "number": "2.2",
+  "number": "3.2",
   "title": "Matrix algebra",
   "body": " Matrix algebra   The last section was devoted to what might be called the arithmetic of matrices. We learned the basic operations of adding, multiplying, scaling, and transposing matrices. In this section we tackle the algebra of matrices. We will investigate the properties enjoyed (and not enjoyed) by our matrix operations, and will show how to use these operations to solve matrix equations.  As you learn about matrix algebra, always keep in mind your old friend, real number algebra. For the most part these two algebraic systems closely resemble one another, as below makes clear. However, there are two crucial points where they differ (see ): two important properties of real number algebra that do not hold for matrices. The consequences of these two simple aberrations are far-reaching and imbue matrix algebra with a fascinating richness in comparison to real number algebra.  \\  Matrix multiplication properties  We begin with a few results that establish a close connection between matrix multiplication and real number multiplication.   Properties of matrix multiplication   In what follows will denote positive integers.   Associative law   for all     Left-distributive law   for all and .    Right-distributive law   for all and .    Scaling commutative law   for all , , .       How does one actually prove one of these properties? These are all matrix equalities of the form , so according to the matrix equality definition we must show (1) that the matrices and have the same size, and (2) that for all . The proof below illustrates this technique for the multiplication associative law of .   Proof of (1)  We prove only the associative law . Let , , . To show , we must show (1) that and have the same dimension, and (2) that for all possible .  The usual observation about inner and outer dimensions shows that both and have dimension .  Next, given any with and , we have:   This proves that all entries of the two matrices are equal, and hence .    Video example: proving matrix equalities   Video: matrix multiplication is associative     Like real number algebra, there are certain matrices that satisfy special properties with regard to the operations of addition and multiplication. We have seen examples of this already thanks to the natural vector space structure of . For example, the zero matrix acts as an additive indentity ( , for all ) and vector inverses act as additive inverses ( , for all ). We now introduce the identity matrices , which satisfy a multiplicative identity property with respect to matrix multiplication, and thus play a role analogous to the number among real numbers.   Identity matrix  identity matrix  matrix identity matrix    inverse matrix    The identity matrix , denoted , is the square matrix with ones along the diagonal and zeros everywhere else. In other words, for all and , we have . When there is no confusion about which dimension indentity matrix is intended, we will often write simply instead of .     Multiplicative identities   Let be a positive integer. The identity matrix acts as a multiplicative identity among matrices in the following sense: for all we have .     Left as an exercise.     Cancellation laws fulfilled and violated  When performing real number algebra, we frequently make use of cancellation laws, and these laws come in a variety of flavors. For example, the additive cancellation law asserts that for all . Similarly, the multiplicative cancellation law asserts that for any nonzero  , we have for all . We now investigate the extent to which these laws apply in matrix algebra. The results, as you will see, are mixed!   Additive cancellation of matrices   Given matrices , and , we have if and only if . Using logical notation:     As simple as this claim might seem, remember that we are dealing with a completely new algebraic system here. We will prove both implications of if and only if statement separately.   Proof:  We prove this via a chain of implications: .    Proof:  This direction is obvious: if and are equal matrices, then they remain equal when we add to each of them.      The algebraic importance of is that we can perform additive cancellation in matrix equations just as we do in real number algebra. For example, we can solve the matrix equation for as follows:  .   Though we can perform additive cancellation in matrix algebra, we can not always perform multiplicative cancellation . For example, consider the matrices . Check for yourself that , and yet . In other words, we cannot always cancel  from the matrix equation .   The example in our warning above is but one instance of the general failure of the principle of multiplicative cancellation in matrix algebra. This in turn is a consequence of the following theorem, which identifies the two crucial places where matrix algebra differs significantly from real number algebra.   Matrix algebra abnormalities      Matrix multiplication is not commutative  Given matrices and , we do not necessarily have .    Products of nonzero matrices may be equal to zero  If the product of two matrices is the zero matrix, we cannot conclude that one of matrices is the zero matrix. In logical notation: .       This is a good place to point out that to prove an identity does not hold, it suffices to provide a single counterexample to that effect. We do so for each failed identity of in turn. There is no significance to the particular counterexamples chosen here, and indeed there are infinitely many counterexamples to choose from in both cases.   We have and thus .    Observe that . This is an example of two nonzero matrices whose product is the zero matrix.     An important consequence of the abnormality is that matrix algebra does not enjoy the property of multiplicative cancellation.   Failure of multiplicative cancellation     Suppose matrices satisfy and . We cannot conclude that . In logical notation:     Suppose matrices satisfy and . We cannot conclude that . In logical notation:        Again, we need only provide explicit counterexamples for each statement.    Let , , . Verify for yourself that . Thus , but clearly .    Let , , . We have . Thus , but .      Mark well this important abnormality of matrix algebra. Confronted with a real number equation of the form , we have a deeply ingrained impulse to declare that either or . (If we're sloppy we may forget about that first possibility.) The corresponding maneuver for the matrix equation is simply not available to us, unless we know something more about .     Transpostition properties  We end our foray into matrix algebra with some properties articulating how matrix transposition interacts with matrix addition, multiplication and scalar multiplication.   Properties of matrix transposition   In what follows will denote positive integers.    for all .     for all and .     for all .     for all .       We prove only the first statement. First observe that if is , then so is and . Then is by . Similarly, we see that is .  Next, given any with , , we have . Since the -entries of both matrices are equal for each , it follows that .     Video example: proving matrix equalities   Video: transpose property       WeBWork Exercises      Determine which of the following statements are true and which are false.    If and are square matrices of the same size then .    If and are matrices such that and , then .    If and are square matrices of the same size, then .    The matrices and are always defined, regardless of the size of .    If is a square matrix for which , then either or .               Let be a 5 by 9 matrix. Then is a by matrix, and is a by matrix.                                Let   Then   where  ,  ,  ,  ,  and   where  ,  ,  ,  .                                                   Written Exercises    In this exercise you will complete the proof of .    Prove the .    Prove the .    Prove the .        Prove .      In this exercise you will complete the proof of .    Prove Statement .    Prove Statement .    Prove Statement .        Let an matrix. We define its square  as .    In real number algebra we know that . By contrast, show that there are infinitely many matrices satisfying .  Optional: can you describe in a parametric manner the set of all matrices satisfying ?    In real number algebra we know that . By contrast, show that there are infinitely many matrices satisfying .    In real number algebra we have the identity . Show that two matrices , satisfy if and only if .      For (a) set , compute , set this matrix equal to , and try and find some solutions to the corresponding (nonlinear) system of four equations in the unknowns .  Similar hint for (b), only now set .      Consider the matrix equation .     The following chain of implications is invalid. . For each implication in the chain, explain why it is valid or invalid.      Find all satisfying .    Write and set up a system of linear equations in the unknowns .       "
 },
@@ -2624,7 +2624,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix_algebra.html#th_matrix_alg_props",
   "type": "Theorem",
-  "number": "2.2.1",
+  "number": "3.2.1",
   "title": "Properties of matrix multiplication.",
   "body": " Properties of matrix multiplication   In what follows will denote positive integers.   Associative law   for all     Left-distributive law   for all and .    Right-distributive law   for all and .    Scaling commutative law   for all , , .      "
 },
@@ -2633,7 +2633,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix_algebra.html#ss_matrix_mult_props-5",
   "type": "Proof",
-  "number": "2.2.1.1",
+  "number": "3.2.1.1",
   "title": "Proof of (1).",
   "body": " Proof of (1)  We prove only the associative law . Let , , . To show , we must show (1) that and have the same dimension, and (2) that for all possible .  The usual observation about inner and outer dimensions shows that both and have dimension .  Next, given any with and , we have:   This proves that all entries of the two matrices are equal, and hence .  "
 },
@@ -2642,7 +2642,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix_algebra.html#eg_vid_prove_matrix_assoc",
   "type": "Example",
-  "number": "2.2.2",
+  "number": "3.2.2",
   "title": "Video example: proving matrix equalities.",
   "body": " Video example: proving matrix equalities   Video: matrix multiplication is associative    "
 },
@@ -2651,7 +2651,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix_algebra.html#d_identity_matrix",
   "type": "Definition",
-  "number": "2.2.4",
+  "number": "3.2.4",
   "title": "Identity matrix.",
   "body": " Identity matrix  identity matrix  matrix identity matrix    inverse matrix    The identity matrix , denoted , is the square matrix with ones along the diagonal and zeros everywhere else. In other words, for all and , we have . When there is no confusion about which dimension indentity matrix is intended, we will often write simply instead of .   "
 },
@@ -2660,7 +2660,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix_algebra.html#th_matrix_add_mult_ident",
   "type": "Theorem",
-  "number": "2.2.5",
+  "number": "3.2.5",
   "title": "Multiplicative identities.",
   "body": " Multiplicative identities   Let be a positive integer. The identity matrix acts as a multiplicative identity among matrices in the following sense: for all we have .   "
 },
@@ -2669,7 +2669,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix_algebra.html#ss_matrix_mult_props-10",
   "type": "Proof",
-  "number": "2.2.1.2",
+  "number": "3.2.1.2",
   "title": "",
   "body": " Left as an exercise.  "
 },
@@ -2678,7 +2678,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix_algebra.html#c_matrix_additive_canc",
   "type": "Theorem",
-  "number": "2.2.6",
+  "number": "3.2.6",
   "title": "Additive cancellation of matrices.",
   "body": " Additive cancellation of matrices   Given matrices , and , we have if and only if . Using logical notation:     As simple as this claim might seem, remember that we are dealing with a completely new algebraic system here. We will prove both implications of if and only if statement separately.   Proof:  We prove this via a chain of implications: .    Proof:  This direction is obvious: if and are equal matrices, then they remain equal when we add to each of them.    "
 },
@@ -2687,7 +2687,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix_algebra.html#ss_cancellation-4",
   "type": "Remark",
-  "number": "2.2.7",
+  "number": "3.2.7",
   "title": "",
   "body": " The algebraic importance of is that we can perform additive cancellation in matrix equations just as we do in real number algebra. For example, we can solve the matrix equation for as follows:  . "
 },
@@ -2696,7 +2696,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix_algebra.html#ss_cancellation-5",
   "type": "Warning",
-  "number": "2.2.8",
+  "number": "3.2.8",
   "title": "",
   "body": " Though we can perform additive cancellation in matrix algebra, we can not always perform multiplicative cancellation . For example, consider the matrices . Check for yourself that , and yet . In other words, we cannot always cancel  from the matrix equation .  "
 },
@@ -2705,7 +2705,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix_algebra.html#th_matrix_abnormalities",
   "type": "Theorem",
-  "number": "2.2.9",
+  "number": "3.2.9",
   "title": "Matrix algebra abnormalities.",
   "body": " Matrix algebra abnormalities      Matrix multiplication is not commutative  Given matrices and , we do not necessarily have .    Products of nonzero matrices may be equal to zero  If the product of two matrices is the zero matrix, we cannot conclude that one of matrices is the zero matrix. In logical notation: .      "
 },
@@ -2714,7 +2714,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix_algebra.html#th_matrix_cancel",
   "type": "Corollary",
-  "number": "2.2.10",
+  "number": "3.2.10",
   "title": "Failure of multiplicative cancellation.",
   "body": " Failure of multiplicative cancellation     Suppose matrices satisfy and . We cannot conclude that . In logical notation:     Suppose matrices satisfy and . We cannot conclude that . In logical notation:      "
 },
@@ -2723,7 +2723,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix_algebra.html#ss_cancellation-11",
   "type": "Proof",
-  "number": "2.2.2.1",
+  "number": "3.2.2.1",
   "title": "",
   "body": " Again, we need only provide explicit counterexamples for each statement.    Let , , . Verify for yourself that . Thus , but clearly .    Let , , . We have . Thus , but .    "
 },
@@ -2732,7 +2732,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix_algebra.html#rm_cancel_failure",
   "type": "Remark",
-  "number": "2.2.11",
+  "number": "3.2.11",
   "title": "",
   "body": " Mark well this important abnormality of matrix algebra. Confronted with a real number equation of the form , we have a deeply ingrained impulse to declare that either or . (If we're sloppy we may forget about that first possibility.) The corresponding maneuver for the matrix equation is simply not available to us, unless we know something more about .  "
 },
@@ -2741,7 +2741,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix_algebra.html#th_trans_props",
   "type": "Theorem",
-  "number": "2.2.12",
+  "number": "3.2.12",
   "title": "Properties of matrix transposition.",
   "body": " Properties of matrix transposition   In what follows will denote positive integers.    for all .     for all and .     for all .     for all .       We prove only the first statement. First observe that if is , then so is and . Then is by . Similarly, we see that is .  Next, given any with , , we have . Since the -entries of both matrices are equal for each , it follows that .   "
 },
@@ -2750,7 +2750,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix_algebra.html#eg_vid_prove_matrix_transpose",
   "type": "Example",
-  "number": "2.2.13",
+  "number": "3.2.13",
   "title": "Video example: proving matrix equalities.",
   "body": " Video example: proving matrix equalities   Video: transpose property    "
 },
@@ -2759,7 +2759,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix_algebra.html#ss_matrix_algebra_ww-2",
   "type": "WeBWorK",
-  "number": "2.2.15",
+  "number": "3.2.15",
   "title": "",
   "body": "    Determine which of the following statements are true and which are false.    If and are square matrices of the same size then .    If and are matrices such that and , then .    If and are square matrices of the same size, then .    The matrices and are always defined, regardless of the size of .    If is a square matrix for which , then either or .         "
 },
@@ -2768,7 +2768,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix_algebra.html#ss_matrix_algebra_ww-3",
   "type": "WeBWorK",
-  "number": "2.2.16",
+  "number": "3.2.16",
   "title": "",
   "body": "    Let be a 5 by 9 matrix. Then is a by matrix, and is a by matrix.                           "
 },
@@ -2777,7 +2777,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix_algebra.html#ss_matrix_algebra_ww-4",
   "type": "WeBWorK",
-  "number": "2.2.17",
+  "number": "3.2.17",
   "title": "",
   "body": "    Let   Then   where  ,  ,  ,  ,  and   where  ,  ,  ,  .                                               "
 },
@@ -2786,7 +2786,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix_algebra.html#s_matrix_algebra_ex-1-2",
   "type": "Exercise",
-  "number": "2.2.5.1",
+  "number": "3.2.5.1",
   "title": "",
   "body": "  In this exercise you will complete the proof of .    Prove the .    Prove the .    Prove the .     "
 },
@@ -2795,7 +2795,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix_algebra.html#s_matrix_algebra_ex-1-3",
   "type": "Exercise",
-  "number": "2.2.5.2",
+  "number": "3.2.5.2",
   "title": "",
   "body": "  Prove .   "
 },
@@ -2804,7 +2804,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix_algebra.html#s_matrix_algebra_ex-1-4",
   "type": "Exercise",
-  "number": "2.2.5.3",
+  "number": "3.2.5.3",
   "title": "",
   "body": "  In this exercise you will complete the proof of .    Prove Statement .    Prove Statement .    Prove Statement .     "
 },
@@ -2813,7 +2813,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix_algebra.html#s_matrix_algebra_ex-1-5",
   "type": "Exercise",
-  "number": "2.2.5.4",
+  "number": "3.2.5.4",
   "title": "",
   "body": "  Let an matrix. We define its square  as .    In real number algebra we know that . By contrast, show that there are infinitely many matrices satisfying .  Optional: can you describe in a parametric manner the set of all matrices satisfying ?    In real number algebra we know that . By contrast, show that there are infinitely many matrices satisfying .    In real number algebra we have the identity . Show that two matrices , satisfy if and only if .      For (a) set , compute , set this matrix equal to , and try and find some solutions to the corresponding (nonlinear) system of four equations in the unknowns .  Similar hint for (b), only now set .   "
 },
@@ -2822,7 +2822,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix_algebra.html#s_matrix_algebra_ex-1-6",
   "type": "Exercise",
-  "number": "2.2.5.5",
+  "number": "3.2.5.5",
   "title": "",
   "body": "  Consider the matrix equation .     The following chain of implications is invalid. . For each implication in the chain, explain why it is valid or invalid.      Find all satisfying .    Write and set up a system of linear equations in the unknowns .    "
 },
@@ -2831,7 +2831,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "s_invertible_matrices.html",
   "type": "Section",
-  "number": "2.3",
+  "number": "3.3",
   "title": "Invertible matrices",
   "body": " Invertible matrices   Picking up the thread of , we observe that the cancellation property enjoyed in real number algebra is a consequence of the fact that every nonzero real number has a multiplicative inverse , denoted or , that satisfies . Indeed, canceling the in the equation (assuming ) is really the act of multiplying both sides of this equation by the multiplicative inverse .  Ever on the lookout for connections between real number and matrix algebra, we ask whether there is a sensible analogue of multiplicative inverses for matrices. We have seen already that identity matrices play the role of multiplicative identities for matrices, just as the number does for real numbers. This suggests we should restrict our attention to matrices. The following definition is then the desired analogue of the multiplicative inverse of a nonzero real number.    Invertible matrices   Invertible matrix  invertible matrix  matrix inverse    inverse of    An matrix is invertible (or nonsingular ) if there is a matrix satisfying . When this is the case we call an inverse of , and we say that and are inverses of one another.  A matrix satisfying is called an inverse of , denoted .  A square matrix that is not invertible is called singular .    The phrase an inverse in is somewhat jarring. Shouldn't we speak of the inverse of a matrix? Not surprisingly, if a matrix is invertible, then it has one and only one inverse. As intuitive as this fact may seem, however, it still requires proof.   Inverses are unique   If is an invertible matrix, then its inverse is unique: that is, there is only one matrix satisfying .     Suppose matrices and both satisfy the properties of the multiplicative inverse: i.e., . Then . Thus we see that , showing that the inverse of , if it exists, is unique.   The next theorem tells us that we can multiplicatively cancel a matrix if it is invertible .   Cancellation with invertible matrices   Suppose is an invertible matrix.   Left-cancellation  Given matrices and , we have .    Right-cancellation  Given matrices and , we have .          We prove both implications of separately. The reverse implication ( ) is obvious: . For the forward implication ( ), we have .    The argument for right cancellation is exactly similar.       The next corollary shows how we can solve some matrix equations uniquely using invertible matrices.   Solving with invertible matrices   Suppose is an invertible matrix.   If and are matrices, then .    If and are matrices, then .          We have .    We have .       Without any additional theory at our disposal, to show a matrix is invertible we must exhibit an inverse. The onus is on us to find a matrix satisfying both and . (Remember: since we cannot assume , we really need to show both equations hold.)  By the same token, to show is not invertible we must show that an inverse does not exist: that is, we must prove that there is no satisfying . The next example illustrates this technique for a variety of matrices.   Invertible matrices      Identity matrices are invertible, and in fact we have , as witnessed by the fact that .    Square zero matrices are never invertible, since for any square matrix of the same dimension we have . Thus there is no matrix satisfying the inverse property with respect to .    The inverse of the matrix is . Indeed, we have , as you can easily verify.    The matrix is not invertible. Indeed, using the row method of matrix multiplication , we see that given any matrix , each row of is given by . It follows that all the rows of are identical, and hence that we cannot have , since the rows of are not identical.       As the preceding example illustrates, deciding whether a matrix is invertible is not so straightforward, especially if the matrix is large. For the case, however, we have a relatively simple test for invertibility. (We will generalize this to the case in .)   Inverses of matrices   A matrix is invertible if and only if .  When this is the case, we have .     If , the proposed matrix is indeed an inverse of , as one readily verifies.  Assume . If , then is not invertible, as we saw in the example above. Thus we can assume is nonzero, in which case is also nonzero. An easy computation shows This implies is not invertible. Indeed if it were, then the inverse would exist, and we'd have , which is a contradiction. We have proved that if , then is not invertible.    Invertible matrices  Sage has a number of useful tools related to invertibility. The boolean function is_invertible() tests for invertibility, and the method inverse() computes the inverse of an invertible matrix. Below we generate a random matrix with rational coefficients, test whether it is invertible, and compute its inverse if it is invertible. The density=0.5 ensures that roughly half of the matrix entries are zero; and this in turn increases the likelihood that the matrix is singular, for reasons that will become somewhat clearer later.   Evaluate the Sage cell below multiple times.    When the matrix is invertible, verify that . If you like, use the blank Sage cell to compute and .    Try increasing the density setting in random_element() ( , density=0.75 , density=.875 ) and see if the matrix is more or less likely to be invertible.        The next theorem tells us that invertibility is preserved by matrix multiplication: that is, if and are invertible matrices, then so is .   Products of invertible matrices   Let be matrices. If and are both invertible, then so is their product . Using logical notation: . In fact when this is the case we have .     Assume and are invertible. The statement of the theorem proposes a candidate for the inverse of : namely, . We need only show that satisfies . Here goes: .    Products of invertible matrices   More generally, if are invertible matrices, then their product is invertible. Furthermore, we have in this case .     We prove by induction on the number of matrices, , that if the are invertible, then the proposed inverse formula is valid.  Base step:  For , the inverse formula reads , which is clearly true.    Induction step  For the induction step we assume that the inverse formula is valid for any collection of invertible matrices, and then show it is valid for any collection of invertible matrices. Let be invertible matrices. Define . Then .      Whenever confronted with a logical implication of the form , where and denote arbitrary propositions, you should always ask whether the implication goes the other way . In other words, does the converse implication also hold?  The answer with regard to the implication is yes, though the proof of this is more difficult then you think. (See .)  The following argument is a common invalid proof of the reverse implication:   Assume is invertible.    Then has an inverse matrix.    Then the inverse of is .    Then and exist. Hence and are invertible.   Where is the flaw in our logic here? The second statement only allows us to conclude that there is some mystery matrix satisfying . We cannot yet say that , as this formula from only applies when we already know that and are both invertible. But this is exactly what we are trying to prove! As such we are guilty here of begging the question , or petitio principii in Latin.     Powers of matrices, matrix polynomials  We end this section by exploring how the matrix inverse operation fits into our matrix algebra. First, we can now use the inverse operation to define matrix powers of the form , where is a square matrix and is an arbitrary integer.   Matrix powers  matrix powers    matrix power    Let be an matrix, and let be an integer. We define the power matrix as follows: .    Equipped with a notion of matrix powers, we can further define matrix polynomials for square matrices.   Matrix polynomials  matrix polynomials    matrix polynomial   Let be a polynomial with real coefficients. For any square matrix of size , we define the matrix as . We call the result of evaluating the polynomial at the matrix .     It is both easy and perilous to forget the identity matrix in the term appearing in . Take caution not to make this mistake; without an identity matrix of appropriate size, the expression simply does not make sense.    Matrix polynomials   Let . Evaluate at the matrices and .    We have and .     Matrix polynomials  An integer matrix power is computed in Sage as A^n .   Of course the matrix needs to be invertible for a negative of power to be computed. Sage will throw an error in this case if the matrix is singular.   Polynomial expressions can then be easily computed manually in Sage. The next cell computes and for .   We took care to heed the warning in , making sure to include for ( identity_matrix(3) ) and for ( identity_matrix(2) ). Interestingly, Sage is smart enough to figure out what we mean even if we are sloppy in this regard.     Properties of matrix powers   The following properties hold for all matrices , all scalars , and all integers for which the given expression makes sense.                        .       The proofs of the first three statements are elementary, and closely resemble proofs of similar results in real number algebra. We leave these as an (unassigned) exercise.  For the fourth statement to make sense, we must assume that is invertible. The claim here is that is invertible, and that its inverse is itself. To prove this we need only show , which follows from the definition of the inverse.  The fifth statement also tacitly assumes is invertible. To prove it, we consider the three cases , and .  If , then by definition .  If , then by definition .  Suppose . Then .     Inverse and transpose   Let be invertible. We have , in which case .    We prove both implications of the if and only if statement separately.  Suppose is invertible with inverse . To see that is invertible, with inverse as specified in , we need only show that . We verify the two equalities separately:  . In both chains of equality we make use of the obvious claim .  For the other direction, assume is invertible. Setting , we see that . By the first implication, we know that if is invertible, then so is .      WeBWork Exercises      If and are invertible matrices, then the inverse of is .   True   False         SOLUTION: False. For example, let , and , then , which is not invertible.            Solve for the matrix if . Assume that all matrices are and invertible as needed.         SOLUTION: Note that            Are the following matrices invertible?                          For what values of will be invertible?  For all such that  and  .             SOLUTION: The matrix is invertible provided the columns of are linearly independent, which will be the case if . Thus, we require that and .            Let   Then   where  ,  ,  ,  ,   where  ,  ,  ,  ,  and   where  ,  ,  ,  .                                                                       Written Exercises    For each matrix either provide an inverse or show the matrix is not invertible. Justify your answer.               , where .        Each below is invertible. Find by guess and check. You may want to use the row or column method of matrix multiplication to justify your answer.                       Suppose is an invertible matrix. Prove: for any nonzero  the matrix is invertible.      Assume is a square matrix with .    Prove: if has two identical columns, then is not invertible.    Prove: if has a row that is a scalar multiple of another row, then is not invertible.      Use the column and\/or row method of matrix multiplication to show directly that cannot have an inverse matrix.      Find all invertible matrices satisfying the given equation, or show there is no such . Justify your answer.     .     .                  Let . Find a formula for , where is an integer. Justify your answer using a proof by induction.      Let , the matrix consisting of all ones. Find a formula for , where is an integer. Justify your answer using a proof by induction.      Let , where is some fixed scalar. Suppose is an matrix satisfying .    Prove: if , then is invertible.    Suppose further that is not a scalar multiple of .  Prove: if , then is singular.       Expanding matrix products  Fix a positive integer . Given linear combinations of matrices , prove by induction on that . Note that each step (base and induction) of your induction on will require an argument that uses induction on ! This is sometimes called double induction . For example, in the base step you must show that for any ; this should be proved by induction on .    Polynomial expressions of commute   Let and be polynomials with real coefficients. For any square matrix , show that the matrices and commute: i.e., . You may use the result of .       Suppose is an matrix satisfying for some .  Show that is invertible, and that in fact . You may use the results of and\/or . .      "
 },
@@ -2840,7 +2840,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#d_invertible_matrix",
   "type": "Definition",
-  "number": "2.3.1",
+  "number": "3.3.1",
   "title": "Invertible matrix.",
   "body": " Invertible matrix  invertible matrix  matrix inverse    inverse of    An matrix is invertible (or nonsingular ) if there is a matrix satisfying . When this is the case we call an inverse of , and we say that and are inverses of one another.  A matrix satisfying is called an inverse of , denoted .  A square matrix that is not invertible is called singular .   "
 },
@@ -2849,7 +2849,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#th_inverse_unique",
   "type": "Theorem",
-  "number": "2.3.2",
+  "number": "3.3.2",
   "title": "Inverses are unique.",
   "body": " Inverses are unique   If is an invertible matrix, then its inverse is unique: that is, there is only one matrix satisfying .   "
 },
@@ -2858,7 +2858,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#subsec--5",
   "type": "Proof",
-  "number": "2.3.1.1",
+  "number": "3.3.1.1",
   "title": "",
   "body": " Suppose matrices and both satisfy the properties of the multiplicative inverse: i.e., . Then . Thus we see that , showing that the inverse of , if it exists, is unique.  "
 },
@@ -2867,7 +2867,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#th_inverse_cancel",
   "type": "Theorem",
-  "number": "2.3.3",
+  "number": "3.3.3",
   "title": "Cancellation with invertible matrices.",
   "body": " Cancellation with invertible matrices   Suppose is an invertible matrix.   Left-cancellation  Given matrices and , we have .    Right-cancellation  Given matrices and , we have .          We prove both implications of separately. The reverse implication ( ) is obvious: . For the forward implication ( ), we have .    The argument for right cancellation is exactly similar.      "
 },
@@ -2876,7 +2876,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#cor_solving_invertible",
   "type": "Corollary",
-  "number": "2.3.4",
+  "number": "3.3.4",
   "title": "Solving with invertible matrices.",
   "body": " Solving with invertible matrices   Suppose is an invertible matrix.   If and are matrices, then .    If and are matrices, then .          We have .    We have .      "
 },
@@ -2885,7 +2885,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#eg_invertible_matrices",
   "type": "Example",
-  "number": "2.3.5",
+  "number": "3.3.5",
   "title": "Invertible matrices.",
   "body": " Invertible matrices      Identity matrices are invertible, and in fact we have , as witnessed by the fact that .    Square zero matrices are never invertible, since for any square matrix of the same dimension we have . Thus there is no matrix satisfying the inverse property with respect to .    The inverse of the matrix is . Indeed, we have , as you can easily verify.    The matrix is not invertible. Indeed, using the row method of matrix multiplication , we see that given any matrix , each row of is given by . It follows that all the rows of are identical, and hence that we cannot have , since the rows of are not identical.      "
 },
@@ -2894,7 +2894,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#th_2by2_inverse",
   "type": "Theorem",
-  "number": "2.3.6",
+  "number": "3.3.6",
   "title": "Inverses of <span class=\"process-math\">\\(2\\times 2\\)<\/span> matrices.",
   "body": " Inverses of matrices   A matrix is invertible if and only if .  When this is the case, we have .   "
 },
@@ -2903,7 +2903,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#subsec--15",
   "type": "Proof",
-  "number": "2.3.1.2",
+  "number": "3.3.1.2",
   "title": "",
   "body": " If , the proposed matrix is indeed an inverse of , as one readily verifies.  Assume . If , then is not invertible, as we saw in the example above. Thus we can assume is nonzero, in which case is also nonzero. An easy computation shows This implies is not invertible. Indeed if it were, then the inverse would exist, and we'd have , which is a contradiction. We have proved that if , then is not invertible.  "
 },
@@ -2921,7 +2921,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#th_invertible_prod",
   "type": "Theorem",
-  "number": "2.3.7",
+  "number": "3.3.7",
   "title": "Products of invertible matrices.",
   "body": " Products of invertible matrices   Let be matrices. If and are both invertible, then so is their product . Using logical notation: . In fact when this is the case we have .   "
 },
@@ -2930,7 +2930,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#subsec--19",
   "type": "Proof",
-  "number": "2.3.1.3",
+  "number": "3.3.1.3",
   "title": "",
   "body": " Assume and are invertible. The statement of the theorem proposes a candidate for the inverse of : namely, . We need only show that satisfies . Here goes: .  "
 },
@@ -2939,7 +2939,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#c_invertible_prod",
   "type": "Corollary",
-  "number": "2.3.8",
+  "number": "3.3.8",
   "title": "Products of invertible matrices.",
   "body": " Products of invertible matrices   More generally, if are invertible matrices, then their product is invertible. Furthermore, we have in this case .   "
 },
@@ -2948,7 +2948,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#subsec--21",
   "type": "Proof",
-  "number": "2.3.1.4",
+  "number": "3.3.1.4",
   "title": "",
   "body": " We prove by induction on the number of matrices, , that if the are invertible, then the proposed inverse formula is valid.  Base step:  For , the inverse formula reads , which is clearly true.    Induction step  For the induction step we assume that the inverse formula is valid for any collection of invertible matrices, and then show it is valid for any collection of invertible matrices. Let be invertible matrices. Define . Then .    "
 },
@@ -2957,7 +2957,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#subsec--22",
   "type": "Remark",
-  "number": "2.3.9",
+  "number": "3.3.9",
   "title": "",
   "body": " Whenever confronted with a logical implication of the form , where and denote arbitrary propositions, you should always ask whether the implication goes the other way . In other words, does the converse implication also hold?  The answer with regard to the implication is yes, though the proof of this is more difficult then you think. (See .)  The following argument is a common invalid proof of the reverse implication:   Assume is invertible.    Then has an inverse matrix.    Then the inverse of is .    Then and exist. Hence and are invertible.   Where is the flaw in our logic here? The second statement only allows us to conclude that there is some mystery matrix satisfying . We cannot yet say that , as this formula from only applies when we already know that and are both invertible. But this is exactly what we are trying to prove! As such we are guilty here of begging the question , or petitio principii in Latin.  "
 },
@@ -2966,7 +2966,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#d_matrix_powers",
   "type": "Definition",
-  "number": "2.3.10",
+  "number": "3.3.10",
   "title": "Matrix powers.",
   "body": " Matrix powers  matrix powers    matrix power    Let be an matrix, and let be an integer. We define the power matrix as follows: .   "
 },
@@ -2975,7 +2975,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#d_matrix_polynomials",
   "type": "Definition",
-  "number": "2.3.11",
+  "number": "3.3.11",
   "title": "Matrix polynomials.",
   "body": " Matrix polynomials  matrix polynomials    matrix polynomial   Let be a polynomial with real coefficients. For any square matrix of size , we define the matrix as . We call the result of evaluating the polynomial at the matrix .   "
 },
@@ -2984,7 +2984,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#rem_matrix_polynomials",
   "type": "Remark",
-  "number": "2.3.12",
+  "number": "3.3.12",
   "title": "",
   "body": " It is both easy and perilous to forget the identity matrix in the term appearing in . Take caution not to make this mistake; without an identity matrix of appropriate size, the expression simply does not make sense.  "
 },
@@ -2993,7 +2993,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#eg_matrix_polynomials",
   "type": "Example",
-  "number": "2.3.13",
+  "number": "3.3.13",
   "title": "Matrix polynomials.",
   "body": " Matrix polynomials   Let . Evaluate at the matrices and .    We have and .   "
 },
@@ -3011,7 +3011,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#th_power_rules",
   "type": "Theorem",
-  "number": "2.3.14",
+  "number": "3.3.14",
   "title": "Properties of matrix powers.",
   "body": " Properties of matrix powers   The following properties hold for all matrices , all scalars , and all integers for which the given expression makes sense.                        .       The proofs of the first three statements are elementary, and closely resemble proofs of similar results in real number algebra. We leave these as an (unassigned) exercise.  For the fourth statement to make sense, we must assume that is invertible. The claim here is that is invertible, and that its inverse is itself. To prove this we need only show , which follows from the definition of the inverse.  The fifth statement also tacitly assumes is invertible. To prove it, we consider the three cases , and .  If , then by definition .  If , then by definition .  Suppose . Then .   "
 },
@@ -3020,7 +3020,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#th_inverse_trans",
   "type": "Theorem",
-  "number": "2.3.15",
+  "number": "3.3.15",
   "title": "Inverse and transpose.",
   "body": " Inverse and transpose   Let be invertible. We have , in which case .    We prove both implications of the if and only if statement separately.  Suppose is invertible with inverse . To see that is invertible, with inverse as specified in , we need only show that . We verify the two equalities separately:  . In both chains of equality we make use of the obvious claim .  For the other direction, assume is invertible. Setting , we see that . By the first implication, we know that if is invertible, then so is .   "
 },
@@ -3029,7 +3029,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#ss_invertible_matrices_ww-2",
   "type": "WeBWorK",
-  "number": "2.3.16",
+  "number": "3.3.16",
   "title": "",
   "body": "    If and are invertible matrices, then the inverse of is .   True   False         SOLUTION: False. For example, let , and , then , which is not invertible.       "
 },
@@ -3038,7 +3038,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#ss_invertible_matrices_ww-3",
   "type": "WeBWorK",
-  "number": "2.3.17",
+  "number": "3.3.17",
   "title": "",
   "body": "    Solve for the matrix if . Assume that all matrices are and invertible as needed.         SOLUTION: Note that       "
 },
@@ -3047,7 +3047,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#ss_invertible_matrices_ww-4",
   "type": "WeBWorK",
-  "number": "2.3.18",
+  "number": "3.3.18",
   "title": "",
   "body": "    Are the following matrices invertible?                     "
 },
@@ -3056,7 +3056,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#ss_invertible_matrices_ww-5",
   "type": "WeBWorK",
-  "number": "2.3.19",
+  "number": "3.3.19",
   "title": "",
   "body": "    For what values of will be invertible?  For all such that  and  .             SOLUTION: The matrix is invertible provided the columns of are linearly independent, which will be the case if . Thus, we require that and .       "
 },
@@ -3065,7 +3065,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#ss_invertible_matrices_ww-6",
   "type": "WeBWorK",
-  "number": "2.3.20",
+  "number": "3.3.20",
   "title": "",
   "body": "    Let   Then   where  ,  ,  ,  ,   where  ,  ,  ,  ,  and   where  ,  ,  ,  .                                                                   "
 },
@@ -3074,7 +3074,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#s_invertible_matrices_ex-1-2",
   "type": "Exercise",
-  "number": "2.3.4.1",
+  "number": "3.3.4.1",
   "title": "",
   "body": "  For each matrix either provide an inverse or show the matrix is not invertible. Justify your answer.               , where .     "
 },
@@ -3083,7 +3083,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#s_invertible_matrices_ex-1-3",
   "type": "Exercise",
-  "number": "2.3.4.2",
+  "number": "3.3.4.2",
   "title": "",
   "body": "  Each below is invertible. Find by guess and check. You may want to use the row or column method of matrix multiplication to justify your answer.                    "
 },
@@ -3092,7 +3092,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#s_invertible_matrices_ex-1-4",
   "type": "Exercise",
-  "number": "2.3.4.3",
+  "number": "3.3.4.3",
   "title": "",
   "body": "  Suppose is an invertible matrix. Prove: for any nonzero  the matrix is invertible.   "
 },
@@ -3101,7 +3101,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#s_invertible_matrices_ex-1-5",
   "type": "Exercise",
-  "number": "2.3.4.4",
+  "number": "3.3.4.4",
   "title": "",
   "body": "  Assume is a square matrix with .    Prove: if has two identical columns, then is not invertible.    Prove: if has a row that is a scalar multiple of another row, then is not invertible.      Use the column and\/or row method of matrix multiplication to show directly that cannot have an inverse matrix.   "
 },
@@ -3110,7 +3110,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#s_invertible_matrices_ex-1-6",
   "type": "Exercise",
-  "number": "2.3.4.5",
+  "number": "3.3.4.5",
   "title": "",
   "body": "  Find all invertible matrices satisfying the given equation, or show there is no such . Justify your answer.     .     .               "
 },
@@ -3119,7 +3119,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#s_invertible_matrices_ex-1-7",
   "type": "Exercise",
-  "number": "2.3.4.6",
+  "number": "3.3.4.6",
   "title": "",
   "body": "  Let . Find a formula for , where is an integer. Justify your answer using a proof by induction.   "
 },
@@ -3128,7 +3128,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#s_invertible_matrices_ex-1-8",
   "type": "Exercise",
-  "number": "2.3.4.7",
+  "number": "3.3.4.7",
   "title": "",
   "body": "  Let , the matrix consisting of all ones. Find a formula for , where is an integer. Justify your answer using a proof by induction.   "
 },
@@ -3137,7 +3137,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#s_invertible_matrices_ex-1-9",
   "type": "Exercise",
-  "number": "2.3.4.8",
+  "number": "3.3.4.8",
   "title": "",
   "body": "  Let , where is some fixed scalar. Suppose is an matrix satisfying .    Prove: if , then is invertible.    Suppose further that is not a scalar multiple of .  Prove: if , then is singular.     "
 },
@@ -3146,7 +3146,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#ex_expand_matrix_prod",
   "type": "Exercise",
-  "number": "2.3.4.9",
+  "number": "3.3.4.9",
   "title": "Expanding matrix products.",
   "body": " Expanding matrix products  Fix a positive integer . Given linear combinations of matrices , prove by induction on that . Note that each step (base and induction) of your induction on will require an argument that uses induction on ! This is sometimes called double induction . For example, in the base step you must show that for any ; this should be proved by induction on .  "
 },
@@ -3155,7 +3155,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#ex_poly_inA_commute",
   "type": "Exercise",
-  "number": "2.3.4.10",
+  "number": "3.3.4.10",
   "title": "Polynomial expressions of <span class=\"process-math\">\\(A\\)<\/span> commute.",
   "body": " Polynomial expressions of commute   Let and be polynomials with real coefficients. For any square matrix , show that the matrices and commute: i.e., . You may use the result of .    "
 },
@@ -3164,7 +3164,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#s_invertible_matrices_ex-1-12",
   "type": "Exercise",
-  "number": "2.3.4.11",
+  "number": "3.3.4.11",
   "title": "",
   "body": "  Suppose is an matrix satisfying for some .  Show that is invertible, and that in fact . You may use the results of and\/or . .   "
 },
@@ -3173,7 +3173,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "s_invertibility_theorem.html",
   "type": "Section",
-  "number": "2.4",
+  "number": "3.4",
   "title": "The invertibility theorem",
   "body": " The invertibility theorem   We saw in that verifying directly whether a matrix is invertible, using only , can be quite an involved task. The goal of this section is to make this less onerous by developing some equivalent methods of testing invertibility. Our work culminates in and , which draw connections between invertibility, solutions to linear systems, and row echelon forms of a square matrix. Not surprisingly, our old friend Gaussian elimination emerges as the fundamental computational tool.    Elementary matrices  We begin with a treatment of elementary matrices , which serve as the basic building blocks for invertible matrices, and provide a crucial link between row reduction and matrix multiplication.   elementary matrix  matrix elementary    Scaling elementary matrix     Row swap elementary matrix     Row addition elementary matrix   Elementary matrices   An matrix is elementary if multiplying any matrix on the left by performs one of our row operations on .  We have different types of elementary matrices depending on the type of row operation they perform, and we denote these with an elaboration of our earlier row operation notation:   A scaling elementary matrix is a matrix such that multiplying a matrix on the left by scales the -th row of by .    A row swap elementary matrix is a matrix such that multiplying a matrix on the left by swaps the -th and -th rows of .    A row addition elementary matrix is a matrix such that multiplying a matrix on the left by replaces the -th row of with .       Naturally, the row method of multiplication is the key to connecting a given row operation with a particular elementary matrix. shows that once you fix the dimension, an elementary matrix is uniquely defined by the row operation it performs.   Elementary matrix formulas   Fix an integer . The three types of elementary matrices can be described as follows:    The scaling matrix is the result of scaling the -th row of by .        The row swap matrix is the result of swapping the -th and -th rows of .        The row addition matrix is the result of replacing the -th row of with the sum of its -th row and times its -th row.          First we show that if is one of the elementary matrices, then it must assume one of the forms described above. Indeed, since multiplying on the left by performs a certain row operation, and since , we see that itself is the result of performing this particular row operation on the identity matrix. Thus is one of the three types of matrices described above, obtained by performing an elementary row operation on .  Next, we must show that any of the matrices described above is indeed elementary in the sense of : that is, we must show that multiplying any matrix on the left by performs the relevant row operation on . This is now a direct consequence of .  For example, take . For , the -th row of is given by the -th row of times . Since the -th row of in this case has a one in the -th entry and zeros elsewhere, the product of this row and is just the -th row of . Similarly, the -th row of in this case is times the -th row of . Thus leaves all the rows of except for the -th one, which is scaled by .    Elementary matrices provide us a way of understanding row reduction as a series of matrix multiplications (on the left). Recall that row operations on linear systems are useful in so far as they preserve the set of solutions, and that this is the result of each operation being in some sense reversible . (See .) In terms of matrix multiplication, this reversible attribute is reflected in the fact that elementary matrices are invertible .   Inverses of elementary matrices   Fix . All elementary matrices are invertible, and their inverses are elementary matrices. In fact, we have the following formulas:     These formulas all follow easily from , and the fact that the proposed inverse elementary matrix performs the reverse , or inverse, of the row operation corresponding to the given elementary matrix.     Inverses of elementary matrices   Fix . Verify that the following pairs of elementary matrices are indeed inverses of one another.                       We have and . You can verify for yourself that .    We have . You can verify for yourself that .    We have and . You can verify for yourself that .        Interlude on matrix equations  We take a moment to make the following simple, somewhat overdue observation. Namely, we can represent a system of linear equations  as a single matrix equation  , or , where , , .  Indeed if you expand out the left-hand side of into an column vector, using the definition of matrix multiplication, and then invoke the definition of matrix equality, then you obtain the linear system .  By the same token, an -tuple is a solution to the system of equations  if and only if its corresponding column vector is a solution to the matrix equation  .  We have thus recast the problem of solving linear systems to the problem of solving a certain matrix equation of the form for the unknown column vector . In particular, a homogeneous linear system can be represented as a matrix equation of the form .  Lastly, the use of Gaussian elimination to solve a linear system can now be understood in an algebraic way using matrix multiplication.  In more detail, suppose our given linear system has augmented matrix that row reduces to the row echelon matrix after performing a sequence of row operations. Denote the -th row operation , and denote by the result of applying to a matrix .  Our sequence of operations translates to the following sequence of matrix equations: .  Let correspond to the elementary matrix . Then we represent this same sequence using matrix multiplication: . This depiction of row reduction in terms of successive left-multiplication by elementary matrices will be useful to us in many ways. In particular, it follows from this discussion that two matrices and are row equivalent if and only if we have for some collection of elementary matrices .    The invertibility theorem  We are now in position to prove our first big theorem.   Invertibility theorem   Let be an matrix. The following statements are equivalent.    is invertible.    The matrix equation has a unique solution for any .    The matrix equation has a solution for any .    The matrix equation has a unique solution: namely, .     is row equivalent to , the identity matrix.     is a product of elementary matrices.       Recall that to show two statements and are equivalent, we must show two implications: , and . Instead of doing this for each possible pair of sentences above, we ease our work load by instead showing the following cycle of implications: . Since implication is transitive, starting at any point in our cycle and making our way around the chain of implications, we see that any one of the propositions implies any other proposition.    Suppose exists. Given any column vector , we have , which shows that is the unique solution to .     Clearly, if has a unique solution for any choice of , then it has a unique solution for the particular choice . Since is clearly a solution to the equation, it must be the only solution.     Row reduce to a matrix in reduced row echelon form using Gauss-Jordan elimination. (See .) Since the set of solutions to is identical to the set of solutions to (apply to their corresponding linear systems), we see that is the only solution to . now implies has a leading one in each column. Since is and in reduced row echelon form, it follows that must be the identity matrix. (Convince yourself of this.) Thus is row equivalent to , the identity matrix.     If is row equivalent to , then according to our discussion after , we have for some collection of elementary matrices . Since elementary matrices are invertible we can multiply both sides of this equation by to conclude . Since inverses of elementary matrices are elementary ( ), we conclude that is a product of elementary matrices.     If is a product of elementary matrices, then it is a product of invertible matrices. Since products of invertible matrices are invertible, we conclude that is invertible.       The invertibility theorem has an immediate application to linear systems where the number of equations is equal to the number of unknowns. In this special situation, the system is equivalent to a matrix equation of the form , where is a square matrix . According to the theorem, if we know is invertible, then the matrix equation, and hence the linear system, has a unique solution: namely, .  What if is not invertible? Then the theorem only tells us that there is some column vector , not necessarily the given , such that the equation does not have a unique solution. In other words, the theorem alone doesn't allow us to conclude whether the given has a solution, and we must resort to our usual Gaussian elimination procedure to answer this question.    The family of triangular matrices (upper, lower, and diagonal) defined below provides an easy testing ground for our new invertibility theorem.   matrices diagonal  matrices triangular  matrices upper triangular  matrices lower triangular  Diagonal and triangular matrices   Let be .   For each the entry is called the -th diagonal entry of , and subarray of consisting of is called the diagonal . An off-diagonal entry of is any entry not among the diagonal entries.    The matrix is diagonal if all off-diagonal entries are zero: , if for all with .    The matrix is upper triangular if all entries below the diagonal are zero: , if for all .    The matrix is lower triangular if all entries above the diagonal are zero: , if for all .    The matrix is triangular if is upper triangular or lower triangular.        Triangular matrices   The set of all diagonal matrices can be described as . The set of all upper triangular matrices can be described as . The set of all lower triangular matrices can be described as .     Invertibility of triangular matrices   Let be a triangular matrix. Then is invertible if and only if for all .  In other words, is invertible if and only if the diagonal entries of are all nonzero.    In this proof we will make use of the fact that a square matrix is invertible if and only if is invertible. ( )   Case: is upper triangular  If for all , then it is easy to see that we can row reduce first to a row echelon matrix with leading ones in every diagonal entry, and then further to the identity matrix. Thus is row equivalent to in this case, and we conclude from statement (4) of that is invertible.  For the other implication, we show that if it is not the case that for all , then there is a nonzero solution to the matrix equation . If this is the case, then since we have two distinct solutions to , is not invertible by Statement (3) of .  To this end, assume it is not the case that for all . Then we can find a smallest index such that and for any . It is easy to see that is row equivalent to a matrix , satisfying for and for all : i.e., is diagonal up until the -th column .  We now provide a nonzero solution to : namely, set , for all , and for all . (Verify this for yourself, using the description above of for .) Since is row equivalent to , the linear systems corresponding to and have the same solutions. Hence is also a nonzero solution to . We conclude that is not invertible by Statement (3) of . This concludes the proof of this implication.    Case: is lower triangular  Set . Then is upper triangular, and for all . Then .       Invertibility algorithms  The proof of the implication of can be expanded into an algorithm that (1) decides whether a given matrix is invertible, and (2) computes if is invertible.   Inverse algorithm   Let be an matrix. To test for invertibility of proceed as follows.   Build the augmented matrix and use Gaussian elimination to row reduce to the form , where is in row echelon form.  The matrix is invertible if and only if has leading ones.    If has leading ones, row reduce further to a matrix of the form . Then .       From the proof of we know is invertible if and only if has leading ones. The question remains as to why reducing the augmented matrix to tells us that . Let be the elementary matrices representing the row operations involved in this process. Then we have . After a little algebra, we see that . Since is the result of applying same row operations to we have , as claimed.    From the proof of we also derive an algorithm for writing an invertible matrix as a product of elementary matrices. You should think of this as a first example of the great versatility of Gaussian elimination, as conveyed by our .   Product of elementary matrices algorithm   Let be an matrix. To (potentially) write as a product of elementary matrices, proceed as follows.   Attempt to row reduce to the identity, keeping track of your sequence of row operations in the form of elementary matrices.    If you are able to row reduce to with a sequence of row operatons corresponding to the elementary matrices , then Since the inverse of an elementary matrix is elementary, we have written as a product of elementary matrices.       See the proof of the implication in .     Inverse algorithms  Let . Combining both algorithms we can decide whether is invertible, and if so, compute and write as a product of elementary matrices. According to , the computation shows that is invertible and . Next, representing our row operations as elementary matrices, we see that , where . We conclude that .    Video example: inverse algorithm   Video: inverse algorithm       Some theoretical loose ends  The two inveribility algorithms above are nice examples of how a theoretical result like our invertibility theorem can pay some serious computational dividends. Namely, thanks to the theory we have discovered a method of computing the inverse of a matrix that essentially boils down to row reduction.  We finish this section with a number of theoretical implications that tie up some loose ends. The results below are all consequences in some way of . The fist shows that in fact one one of the defining equalities or suffices to define the inverse of a matrix.   Left-inverse if and only if right-inverse   Let and be . Then    .     .   In plain English: a matrix is a left-inverse of if and only if it is a right-inverse of .    It is enough to prove the first implication: the second then follows by exchanging the roles of and .  Suppose . We first show that is invertible. We have . By Statement (3) of , we conclude that is invertible.  Now that we know exists we have .    As a further consequence of , we can at last strengthen the implication to an equivalence.   Invertibility of product equivalence   Let and be . Then is invertible if and only if and are both invertible: ,      Implication:  We know from that if and are invertible, then so is .    Implication: invertible  and invertible  Assume is invertible and let be its inverse. Thus . We first prove is invertible. We have . The last implication uses Statement (3) of and the fact that is invertible. We have shown that , and hence that is invertible, using once again Statement (3) of .  Next we prove directly that is invertible. Namely, we claim that . Indeed, since is the inverse of , we have . Thus is a right-inverse of . now implies , and hence that , as claimed.  This completes the proof that if is invertible, then and are invertible.     We conclude with two results related to row reduction. The first provides an equivalent formulation of row equivalence in terms of matrix arithmetic: an elaboration of our discussion in .   Row equivalence and invertible matrices   Let and be matrices. The following statements are equivalent.   The matrices and are row equivalent.    There are elementary matrices such that .    There is an invertible matrix such that .       The equivalence of (1) and (2) was shown in the course of our discussion in . The equivalence of (2) and (3) is a direct consequence of (5) of since a matrix is invertible if and only if it can be written as for some elementary matrices .     Properties of row equivalence  With the help of , we can easily show that the row equivalence relation is reflexive , symmetric , and transitive . In other words, letting denote that is row equivalent to , the following properties hold.   Reflexivity  For any matrix , we have : , every matrix is row equivalent to itself.    Symmetry  For all matrices and , if , then .    Transitivity  For all matrices , if and , then .   The proof of these facts is left as an exercise ( ).   Lastly, we provide at last the proof of the third statement of promised back in . This proof is due to Thomas Yuster Thomas Yuster. The reduced row echelon form of a matrix is unique: a simple proof , Mathematics Magazine 57 (1984), no. 2, 93-94. .   Uniqueness of reduced row echelon form   Any matrix is row equivalent to a unique matrix in reduced row echelon form.    Let be an matrix. Using Gauss-Jordan elimination, we can row reduce to matrix in reduced row echelon form. Suppose is also row equivalent to the matrix in reduced row echelon form. Then and are row equivalent, since the row equivalence relation is symmetric and transitive ( ). Thus it suffices to show that if and are row equivalent matrices in reduced row echelon form, then . We do so by induction on . The base step is trivial, since there is only one matrix in reduced row echelon form.  For the induction step we assume that any two row equivalent matrices in reduced row echelon form are equal. Suppose by contradiction that and are row equivalent matrices in reduced row echelon form, and that . By there is an invertible matrix such that . The first columns of and form matrices and , respectively, that are in reduced row echelon form, as one easily checks. Furthermore, and are row equivalent: indeed, using we see that implies . By the induction hypothesis we must have , and thus and can only differ in their last column.  We claim that and must both have a leading one in the last column. To see why, consider the matrix equation , where is a column vector. Since , we have , and thus . Because and differ in at most their last column, the first columns of are zero columns, and thus we have . Since , there is some such that . Since by , we must have . We have shown that for any satisfying , we must have . It follows from that must have a leading in its last column, since otherwise the variable in the system would be free, and could assume any value. To see that also has a leading one in the last column, we use the same argument, starting with the equation .  To summarize, starting with row equivalent matrices and in reduced row echelon form, and assuming by contradiction that , we conclude that (a) the first columns of and are equal and form matrices in reduced row echelon form, and (b) the last columns of and have leading ones. Since and are in reduced row echelon form, and since the first columns of and are equal, we see that the leading ones in the last columns of and must occur in the same row: namely, the first zero row of . It follows that , a contradiction.      WeBWork Exercises      True or false: Suppose that and are two elementary matrices. Then  .   True   False         SOLUTION: False. If then but            Let  Then   where  ,  ,  ,  ,  ,  ,  ,  ,  .                                                         Let   Find and use it to solve where    where  and  .                      Solve the system of equations by converting to a matrix equation and using the inverse of the coefficient matrix.                          Solve the system of equations by converting to a matrix equation and using the inverse of the coefficient matrix.                                Written Exercises   Linear systems and matrix equations   Find a matrix and column vectors and such that the given linear system is equivalent to the matrix equation .                   Solving linear systems with matrix inverses   Find an invertible matrix and column vectors and such that the given linear system is equivalent to the matrix equation . Compute and use this to find the unique solution to the linear system. (See .)                   Inverse algorithm   Use the inverse algorithm to determine whether each matrix is invertible, and to compute its inverse if possible.  You are not required to follow Gaussian elimination to the letter, and you may perform multiple operations at the same time, as long as they are independent of one another. For example, do not do and in the same step.          We use the inverse algorithm: . We conclude that .                            ,        ,       Product of elementary matrices algorithm   Each matrix below is invertible. Use the product of elementary matrices algorithm to write as a product of elementary matrices.  Here you should perform Gaussian elimination to the letter, one row operation at a time.          Row reduce to the identity matrix:   The corresponding elementary matrices are . It follows that , and hence that .       .              .       According to Statement (2) of the invertibility theorem, a matrix is invertible if and only if for all column vectors the matrix equation has a unique solution. Show that we can add the following, weaker-looking version of (2) to our list of equivalent statements:   (2') The matrix equation has a solution for any column vector .     Try to logically weave Statement (2') into our original list of equivalent statements by (a) finding a statement from our original list that implies (2'), and (b) find a statement in our original list that is implied by (2').  You may make use of in your argument.     Properties of row equivalence   Let denote that matrix is row equivalent to . Use to show that the relation is reflexive, symmetric, and transitive, as described in .      Let be an matrix, and let be an invertible matrix.  Show that the two matrix equations have the same set of solutions. In other words show that .      Suppose and are row equivalent square matrices. Prove: is invertible if and only if is invertible.      Use the provided information to determine whether the given square matrix is invertible. Justify your answer using the inveribility theorem or one of its corollaries.    There are column vectors such that .     is invertible.     for some .    The sum of the columns of is equal to the zero column vector.      Answer true or false. If true, provide a proof; if false, exhibit an explicit counterexample.    The product of two elementary matrices is elementary.    The product of two elementary matrices is invertible.    The sum of two invertible matrices is invertible.    If is a singular matrix, then the linear system has infinitely many solutions.    If is obtained from the invertible matrix by replacing its second row with the sum of its first and second rows, then is invertible.    If is square matrix, and is a column vector such that the matrix equation has a unique solution, then is invertible.    If and are row equivalent, then the matrix equations and have the same solution set.    If or is singular, then is singular.      "
 },
@@ -3182,7 +3182,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#d_elementary_matrix",
   "type": "Definition",
-  "number": "2.4.1",
+  "number": "3.4.1",
   "title": "Elementary matrices.",
   "body": " elementary matrix  matrix elementary    Scaling elementary matrix     Row swap elementary matrix     Row addition elementary matrix   Elementary matrices   An matrix is elementary if multiplying any matrix on the left by performs one of our row operations on .  We have different types of elementary matrices depending on the type of row operation they perform, and we denote these with an elaboration of our earlier row operation notation:   A scaling elementary matrix is a matrix such that multiplying a matrix on the left by scales the -th row of by .    A row swap elementary matrix is a matrix such that multiplying a matrix on the left by swaps the -th and -th rows of .    A row addition elementary matrix is a matrix such that multiplying a matrix on the left by replaces the -th row of with .      "
 },
@@ -3191,7 +3191,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#th_elementary_matrices",
   "type": "Theorem",
-  "number": "2.4.2",
+  "number": "3.4.2",
   "title": "Elementary matrix formulas.",
   "body": " Elementary matrix formulas   Fix an integer . The three types of elementary matrices can be described as follows:    The scaling matrix is the result of scaling the -th row of by .        The row swap matrix is the result of swapping the -th and -th rows of .        The row addition matrix is the result of replacing the -th row of with the sum of its -th row and times its -th row.          First we show that if is one of the elementary matrices, then it must assume one of the forms described above. Indeed, since multiplying on the left by performs a certain row operation, and since , we see that itself is the result of performing this particular row operation on the identity matrix. Thus is one of the three types of matrices described above, obtained by performing an elementary row operation on .  Next, we must show that any of the matrices described above is indeed elementary in the sense of : that is, we must show that multiplying any matrix on the left by performs the relevant row operation on . This is now a direct consequence of .  For example, take . For , the -th row of is given by the -th row of times . Since the -th row of in this case has a one in the -th entry and zeros elsewhere, the product of this row and is just the -th row of . Similarly, the -th row of in this case is times the -th row of . Thus leaves all the rows of except for the -th one, which is scaled by .   "
 },
@@ -3200,7 +3200,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#th_inverse_elem",
   "type": "Theorem",
-  "number": "2.4.3",
+  "number": "3.4.3",
   "title": "Inverses of elementary matrices.",
   "body": " Inverses of elementary matrices   Fix . All elementary matrices are invertible, and their inverses are elementary matrices. In fact, we have the following formulas:     These formulas all follow easily from , and the fact that the proposed inverse elementary matrix performs the reverse , or inverse, of the row operation corresponding to the given elementary matrix.   "
 },
@@ -3209,7 +3209,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#eg_elem_inverse",
   "type": "Example",
-  "number": "2.4.4",
+  "number": "3.4.4",
   "title": "Inverses of elementary matrices.",
   "body": " Inverses of elementary matrices   Fix . Verify that the following pairs of elementary matrices are indeed inverses of one another.                       We have and . You can verify for yourself that .    We have . You can verify for yourself that .    We have and . You can verify for yourself that .     "
 },
@@ -3218,7 +3218,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#th_invertibility",
   "type": "Theorem",
-  "number": "2.4.5",
+  "number": "3.4.5",
   "title": "Invertibility theorem.",
   "body": " Invertibility theorem   Let be an matrix. The following statements are equivalent.    is invertible.    The matrix equation has a unique solution for any .    The matrix equation has a solution for any .    The matrix equation has a unique solution: namely, .     is row equivalent to , the identity matrix.     is a product of elementary matrices.       Recall that to show two statements and are equivalent, we must show two implications: , and . Instead of doing this for each possible pair of sentences above, we ease our work load by instead showing the following cycle of implications: . Since implication is transitive, starting at any point in our cycle and making our way around the chain of implications, we see that any one of the propositions implies any other proposition.    Suppose exists. Given any column vector , we have , which shows that is the unique solution to .     Clearly, if has a unique solution for any choice of , then it has a unique solution for the particular choice . Since is clearly a solution to the equation, it must be the only solution.     Row reduce to a matrix in reduced row echelon form using Gauss-Jordan elimination. (See .) Since the set of solutions to is identical to the set of solutions to (apply to their corresponding linear systems), we see that is the only solution to . now implies has a leading one in each column. Since is and in reduced row echelon form, it follows that must be the identity matrix. (Convince yourself of this.) Thus is row equivalent to , the identity matrix.     If is row equivalent to , then according to our discussion after , we have for some collection of elementary matrices . Since elementary matrices are invertible we can multiply both sides of this equation by to conclude . Since inverses of elementary matrices are elementary ( ), we conclude that is a product of elementary matrices.     If is a product of elementary matrices, then it is a product of invertible matrices. Since products of invertible matrices are invertible, we conclude that is invertible.    "
 },
@@ -3227,7 +3227,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#rm_inv_solutions",
   "type": "Remark",
-  "number": "2.4.6",
+  "number": "3.4.6",
   "title": "",
   "body": "  The invertibility theorem has an immediate application to linear systems where the number of equations is equal to the number of unknowns. In this special situation, the system is equivalent to a matrix equation of the form , where is a square matrix . According to the theorem, if we know is invertible, then the matrix equation, and hence the linear system, has a unique solution: namely, .  What if is not invertible? Then the theorem only tells us that there is some column vector , not necessarily the given , such that the equation does not have a unique solution. In other words, the theorem alone doesn't allow us to conclude whether the given has a solution, and we must resort to our usual Gaussian elimination procedure to answer this question.   "
 },
@@ -3236,7 +3236,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#d_diagonal_triangular",
   "type": "Definition",
-  "number": "2.4.7",
+  "number": "3.4.7",
   "title": "Diagonal and triangular matrices.",
   "body": " matrices diagonal  matrices triangular  matrices upper triangular  matrices lower triangular  Diagonal and triangular matrices   Let be .   For each the entry is called the -th diagonal entry of , and subarray of consisting of is called the diagonal . An off-diagonal entry of is any entry not among the diagonal entries.    The matrix is diagonal if all off-diagonal entries are zero: , if for all with .    The matrix is upper triangular if all entries below the diagonal are zero: , if for all .    The matrix is lower triangular if all entries above the diagonal are zero: , if for all .    The matrix is triangular if is upper triangular or lower triangular.      "
 },
@@ -3245,7 +3245,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#eg_triang_matrices",
   "type": "Example",
-  "number": "2.4.8",
+  "number": "3.4.8",
   "title": "Triangular <span class=\"process-math\">\\(3\\times 3\\)<\/span> matrices.",
   "body": " Triangular matrices   The set of all diagonal matrices can be described as . The set of all upper triangular matrices can be described as . The set of all lower triangular matrices can be described as .   "
 },
@@ -3254,7 +3254,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#th_invertible_triangular",
   "type": "Theorem",
-  "number": "2.4.9",
+  "number": "3.4.9",
   "title": "Invertibility of triangular matrices.",
   "body": " Invertibility of triangular matrices   Let be a triangular matrix. Then is invertible if and only if for all .  In other words, is invertible if and only if the diagonal entries of are all nonzero.    In this proof we will make use of the fact that a square matrix is invertible if and only if is invertible. ( )   Case: is upper triangular  If for all , then it is easy to see that we can row reduce first to a row echelon matrix with leading ones in every diagonal entry, and then further to the identity matrix. Thus is row equivalent to in this case, and we conclude from statement (4) of that is invertible.  For the other implication, we show that if it is not the case that for all , then there is a nonzero solution to the matrix equation . If this is the case, then since we have two distinct solutions to , is not invertible by Statement (3) of .  To this end, assume it is not the case that for all . Then we can find a smallest index such that and for any . It is easy to see that is row equivalent to a matrix , satisfying for and for all : i.e., is diagonal up until the -th column .  We now provide a nonzero solution to : namely, set , for all , and for all . (Verify this for yourself, using the description above of for .) Since is row equivalent to , the linear systems corresponding to and have the same solutions. Hence is also a nonzero solution to . We conclude that is not invertible by Statement (3) of . This concludes the proof of this implication.    Case: is lower triangular  Set . Then is upper triangular, and for all . Then .    "
 },
@@ -3263,7 +3263,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#th_invertibility_algorithm",
   "type": "Procedure",
-  "number": "2.4.10",
+  "number": "3.4.10",
   "title": "Inverse algorithm.",
   "body": " Inverse algorithm   Let be an matrix. To test for invertibility of proceed as follows.   Build the augmented matrix and use Gaussian elimination to row reduce to the form , where is in row echelon form.  The matrix is invertible if and only if has leading ones.    If has leading ones, row reduce further to a matrix of the form . Then .       From the proof of we know is invertible if and only if has leading ones. The question remains as to why reducing the augmented matrix to tells us that . Let be the elementary matrices representing the row operations involved in this process. Then we have . After a little algebra, we see that . Since is the result of applying same row operations to we have , as claimed.   "
 },
@@ -3272,7 +3272,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#th_elem_matrices_alg",
   "type": "Procedure",
-  "number": "2.4.11",
+  "number": "3.4.11",
   "title": "Product of elementary matrices algorithm.",
   "body": " Product of elementary matrices algorithm   Let be an matrix. To (potentially) write as a product of elementary matrices, proceed as follows.   Attempt to row reduce to the identity, keeping track of your sequence of row operations in the form of elementary matrices.    If you are able to row reduce to with a sequence of row operatons corresponding to the elementary matrices , then Since the inverse of an elementary matrix is elementary, we have written as a product of elementary matrices.       See the proof of the implication in .   "
 },
@@ -3281,7 +3281,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#eg_inv_alg_example",
   "type": "Example",
-  "number": "2.4.12",
+  "number": "3.4.12",
   "title": "Inverse algorithms.",
   "body": " Inverse algorithms  Let . Combining both algorithms we can decide whether is invertible, and if so, compute and write as a product of elementary matrices. According to , the computation shows that is invertible and . Next, representing our row operations as elementary matrices, we see that , where . We conclude that .  "
 },
@@ -3290,7 +3290,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#vid_eg_inver_alg",
   "type": "Example",
-  "number": "2.4.13",
+  "number": "3.4.13",
   "title": "Video example: inverse algorithm.",
   "body": " Video example: inverse algorithm   Video: inverse algorithm    "
 },
@@ -3299,7 +3299,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#cor_left-right_inverse",
   "type": "Corollary",
-  "number": "2.4.15",
+  "number": "3.4.15",
   "title": "Left-inverse if and only if right-inverse.",
   "body": " Left-inverse if and only if right-inverse   Let and be . Then    .     .   In plain English: a matrix is a left-inverse of if and only if it is a right-inverse of .    It is enough to prove the first implication: the second then follows by exchanging the roles of and .  Suppose . We first show that is invertible. We have . By Statement (3) of , we conclude that is invertible.  Now that we know exists we have .   "
 },
@@ -3308,7 +3308,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#cor_inv_prod_eq",
   "type": "Corollary",
-  "number": "2.4.16",
+  "number": "3.4.16",
   "title": "Invertibility of product equivalence.",
   "body": " Invertibility of product equivalence   Let and be . Then is invertible if and only if and are both invertible: ,      Implication:  We know from that if and are invertible, then so is .    Implication: invertible  and invertible  Assume is invertible and let be its inverse. Thus . We first prove is invertible. We have . The last implication uses Statement (3) of and the fact that is invertible. We have shown that , and hence that is invertible, using once again Statement (3) of .  Next we prove directly that is invertible. Namely, we claim that . Indeed, since is the inverse of , we have . Thus is a right-inverse of . now implies , and hence that , as claimed.  This completes the proof that if is invertible, then and are invertible.    "
 },
@@ -3317,7 +3317,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#cor_row_equivalence_invertibility",
   "type": "Corollary",
-  "number": "2.4.17",
+  "number": "3.4.17",
   "title": "Row equivalence and invertible matrices.",
   "body": " Row equivalence and invertible matrices   Let and be matrices. The following statements are equivalent.   The matrices and are row equivalent.    There are elementary matrices such that .    There is an invertible matrix such that .       The equivalence of (1) and (2) was shown in the course of our discussion in . The equivalence of (2) and (3) is a direct consequence of (5) of since a matrix is invertible if and only if it can be written as for some elementary matrices .   "
 },
@@ -3326,7 +3326,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#rm_row_equivalence_props",
   "type": "Remark",
-  "number": "2.4.18",
+  "number": "3.4.18",
   "title": "Properties of row equivalence.",
   "body": " Properties of row equivalence  With the help of , we can easily show that the row equivalence relation is reflexive , symmetric , and transitive . In other words, letting denote that is row equivalent to , the following properties hold.   Reflexivity  For any matrix , we have : , every matrix is row equivalent to itself.    Symmetry  For all matrices and , if , then .    Transitivity  For all matrices , if and , then .   The proof of these facts is left as an exercise ( ).  "
 },
@@ -3344,7 +3344,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#cor_RRE_uniqueness",
   "type": "Corollary",
-  "number": "2.4.19",
+  "number": "3.4.19",
   "title": "Uniqueness of reduced row echelon form.",
   "body": " Uniqueness of reduced row echelon form   Any matrix is row equivalent to a unique matrix in reduced row echelon form.    Let be an matrix. Using Gauss-Jordan elimination, we can row reduce to matrix in reduced row echelon form. Suppose is also row equivalent to the matrix in reduced row echelon form. Then and are row equivalent, since the row equivalence relation is symmetric and transitive ( ). Thus it suffices to show that if and are row equivalent matrices in reduced row echelon form, then . We do so by induction on . The base step is trivial, since there is only one matrix in reduced row echelon form.  For the induction step we assume that any two row equivalent matrices in reduced row echelon form are equal. Suppose by contradiction that and are row equivalent matrices in reduced row echelon form, and that . By there is an invertible matrix such that . The first columns of and form matrices and , respectively, that are in reduced row echelon form, as one easily checks. Furthermore, and are row equivalent: indeed, using we see that implies . By the induction hypothesis we must have , and thus and can only differ in their last column.  We claim that and must both have a leading one in the last column. To see why, consider the matrix equation , where is a column vector. Since , we have , and thus . Because and differ in at most their last column, the first columns of are zero columns, and thus we have . Since , there is some such that . Since by , we must have . We have shown that for any satisfying , we must have . It follows from that must have a leading in its last column, since otherwise the variable in the system would be free, and could assume any value. To see that also has a leading one in the last column, we use the same argument, starting with the equation .  To summarize, starting with row equivalent matrices and in reduced row echelon form, and assuming by contradiction that , we conclude that (a) the first columns of and are equal and form matrices in reduced row echelon form, and (b) the last columns of and have leading ones. Since and are in reduced row echelon form, and since the first columns of and are equal, we see that the leading ones in the last columns of and must occur in the same row: namely, the first zero row of . It follows that , a contradiction.   "
 },
@@ -3353,7 +3353,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#ss_invertibility_theorem_ww-2",
   "type": "WeBWorK",
-  "number": "2.4.20",
+  "number": "3.4.20",
   "title": "",
   "body": "    True or false: Suppose that and are two elementary matrices. Then  .   True   False         SOLUTION: False. If then but       "
 },
@@ -3362,7 +3362,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#ss_invertibility_theorem_ww-3",
   "type": "WeBWorK",
-  "number": "2.4.21",
+  "number": "3.4.21",
   "title": "",
   "body": "    Let  Then   where  ,  ,  ,  ,  ,  ,  ,  ,  .                                                    "
 },
@@ -3371,7 +3371,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#ss_invertibility_theorem_ww-4",
   "type": "WeBWorK",
-  "number": "2.4.22",
+  "number": "3.4.22",
   "title": "",
   "body": "    Let   Find and use it to solve where    where  and  .                 "
 },
@@ -3380,7 +3380,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#ss_invertibility_theorem_ww-5",
   "type": "WeBWorK",
-  "number": "2.4.23",
+  "number": "3.4.23",
   "title": "",
   "body": "    Solve the system of equations by converting to a matrix equation and using the inverse of the coefficient matrix.                     "
 },
@@ -3389,7 +3389,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#ss_invertibility_theorem_ww-6",
   "type": "WeBWorK",
-  "number": "2.4.24",
+  "number": "3.4.24",
   "title": "",
   "body": "    Solve the system of equations by converting to a matrix equation and using the inverse of the coefficient matrix.                            "
 },
@@ -3398,7 +3398,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-2-3",
   "type": "Exercise",
-  "number": "2.4.7.1",
+  "number": "3.4.7.1",
   "title": "",
   "body": "      "
 },
@@ -3407,7 +3407,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-2-4",
   "type": "Exercise",
-  "number": "2.4.7.2",
+  "number": "3.4.7.2",
   "title": "",
   "body": "      "
 },
@@ -3416,7 +3416,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-3-3",
   "type": "Exercise",
-  "number": "2.4.7.3",
+  "number": "3.4.7.3",
   "title": "",
   "body": "      "
 },
@@ -3425,7 +3425,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-3-4",
   "type": "Exercise",
-  "number": "2.4.7.4",
+  "number": "3.4.7.4",
   "title": "",
   "body": "      "
 },
@@ -3434,7 +3434,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-4-3",
   "type": "Exercise",
-  "number": "2.4.7.5",
+  "number": "3.4.7.5",
   "title": "",
   "body": "       We use the inverse algorithm: . We conclude that .   "
 },
@@ -3443,7 +3443,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-4-4",
   "type": "Exercise",
-  "number": "2.4.7.6",
+  "number": "3.4.7.6",
   "title": "",
   "body": "      "
 },
@@ -3452,7 +3452,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-4-5",
   "type": "Exercise",
-  "number": "2.4.7.7",
+  "number": "3.4.7.7",
   "title": "",
   "body": "      "
 },
@@ -3461,7 +3461,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-4-6",
   "type": "Exercise",
-  "number": "2.4.7.8",
+  "number": "3.4.7.8",
   "title": "",
   "body": "      "
 },
@@ -3470,7 +3470,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-4-7",
   "type": "Exercise",
-  "number": "2.4.7.9",
+  "number": "3.4.7.9",
   "title": "",
   "body": "   ,    "
 },
@@ -3479,7 +3479,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-4-8",
   "type": "Exercise",
-  "number": "2.4.7.10",
+  "number": "3.4.7.10",
   "title": "",
   "body": "   ,    "
 },
@@ -3488,7 +3488,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-5-3",
   "type": "Exercise",
-  "number": "2.4.7.11",
+  "number": "3.4.7.11",
   "title": "",
   "body": "       Row reduce to the identity matrix:   The corresponding elementary matrices are . It follows that , and hence that .   "
 },
@@ -3497,7 +3497,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-5-4",
   "type": "Exercise",
-  "number": "2.4.7.12",
+  "number": "3.4.7.12",
   "title": "",
   "body": "   .   "
 },
@@ -3506,7 +3506,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-5-5",
   "type": "Exercise",
-  "number": "2.4.7.13",
+  "number": "3.4.7.13",
   "title": "",
   "body": "      "
 },
@@ -3515,7 +3515,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-5-6",
   "type": "Exercise",
-  "number": "2.4.7.14",
+  "number": "3.4.7.14",
   "title": "",
   "body": "   .   "
 },
@@ -3524,7 +3524,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#ex_th_inv_exists_sol",
   "type": "Exercise",
-  "number": "2.4.7.15",
+  "number": "3.4.7.15",
   "title": "",
   "body": "  According to Statement (2) of the invertibility theorem, a matrix is invertible if and only if for all column vectors the matrix equation has a unique solution. Show that we can add the following, weaker-looking version of (2) to our list of equivalent statements:   (2') The matrix equation has a solution for any column vector .     Try to logically weave Statement (2') into our original list of equivalent statements by (a) finding a statement from our original list that implies (2'), and (b) find a statement in our original list that is implied by (2').  You may make use of in your argument.   "
 },
@@ -3533,7 +3533,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#ex_row_equiv_props",
   "type": "Exercise",
-  "number": "2.4.7.16",
+  "number": "3.4.7.16",
   "title": "Properties of row equivalence.",
   "body": " Properties of row equivalence   Let denote that matrix is row equivalent to . Use to show that the relation is reflexive, symmetric, and transitive, as described in .   "
 },
@@ -3542,7 +3542,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-8",
   "type": "Exercise",
-  "number": "2.4.7.17",
+  "number": "3.4.7.17",
   "title": "",
   "body": "  Let be an matrix, and let be an invertible matrix.  Show that the two matrix equations have the same set of solutions. In other words show that .   "
 },
@@ -3551,7 +3551,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-9",
   "type": "Exercise",
-  "number": "2.4.7.18",
+  "number": "3.4.7.18",
   "title": "",
   "body": "  Suppose and are row equivalent square matrices. Prove: is invertible if and only if is invertible.   "
 },
@@ -3560,7 +3560,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-10",
   "type": "Exercise",
-  "number": "2.4.7.19",
+  "number": "3.4.7.19",
   "title": "",
   "body": "  Use the provided information to determine whether the given square matrix is invertible. Justify your answer using the inveribility theorem or one of its corollaries.    There are column vectors such that .     is invertible.     for some .    The sum of the columns of is equal to the zero column vector.   "
 },
@@ -3569,7 +3569,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-11",
   "type": "Exercise",
-  "number": "2.4.7.20",
+  "number": "3.4.7.20",
   "title": "",
   "body": "  Answer true or false. If true, provide a proof; if false, exhibit an explicit counterexample.    The product of two elementary matrices is elementary.    The product of two elementary matrices is invertible.    The sum of two invertible matrices is invertible.    If is a singular matrix, then the linear system has infinitely many solutions.    If is obtained from the invertible matrix by replacing its second row with the sum of its first and second rows, then is invertible.    If is square matrix, and is a column vector such that the matrix equation has a unique solution, then is invertible.    If and are row equivalent, then the matrix equations and have the same solution set.    If or is singular, then is singular.   "
 },
@@ -3578,7 +3578,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "s_det.html",
   "type": "Section",
-  "number": "2.5",
+  "number": "3.5",
   "title": "The determinant",
   "body": " The determinant   The determinant is a map that assigns to a square matrix a scalar . The definition given below of the determinant is far from intuitive, and we will do little to motivate it up front. Instead, we allow its various properties to speak for themselves by way of retroactive motivation. In particular, we will see that , making the determinant an important tool for investigating invertibility.    Definition of the determinant  Our definition of the determinant is a recursive one; given an matrix its determinant is defined in terms of the determinant of certain submatrices of dimension . This necessitates some notation to help our discussion along.   Submatrix notation  submatrix    submatrix of    Let be an matrix with . Given , the submatrix of obtained by removing the -th row and -th column of is denoted .      Do not conflate the submatrix notation with matrix entry notation : the former returns the submatrix of obtained by deleting the -th row and -th column; the latter returns the -th entry of .     The determinant  determinant    determinant of    Let . The determinant is defined as follows:   Base case:  When we have and we define .    Recursive case:  When we define .        Small cases   Let's look at determinant formulas for the cases. You may remember the formula for matrices from ; we will make the connection more explicit in .  Given , we have . The formula for the case is simple enough to serve as a second base case , allowing us to end the recursive process of computing a general matrix once we get to expressions involving matrices.  Given , we have .    The recursive nature of the determinant definition makes induction arguments particularly useful when proving properties of the determinant, as illustrated by the next theorem.   Determinant of triangular matrices   Let be triangular (upper, lower, or diagonal). Then . In other words, the determinant of a triangular matrix is the product of its diagonal entries.    We only give the proof for lower triangular matrices; the proof in the upper triangular case is nearly identical.  For any let denote the proposition: The determinant of any lower triangular matrix is the product of its diagonal entries . We prove by induction that is true for all .   Base step: show is true  In this case , and is indeed the product of the diagonal entries of .    Induction step: show for all  Let be a lower triangular matrix. Then for all , and hence the determinant of is given by . Claim: is lower triangular. Indeed, first observe that we have for all ; by deleting the first row and first column we effectively bump each index up by one. Since is lower triangular we have for all , and hence also for all , proving the claim.  Lastly, assuming is true (the induction hypothesis) we have , as desired.      Determinant of identity matrices   Let be the identity matrix. Then .    This follows directly from since the diagonal entries of are all ones.      Expansion along rows and columns   Morally speaking, we should give some examples of higher-dimensional determinants, but we first introduce some theory that affords us more leeway in our computations.    Minors and expansions along rows\/columns  minor of matrix  expansion along row\/column    the -th minor of a matrix    Given an matrix , for any pair the -th minor of is defined as .  For any the expression is called the expansion along the -th row of .  For any , the expression is called the expansion along the -th column of .     Expansion along rows   Let . For any we have . In other words, we can compute by expanding along any row of .    The proof is by induction on the size of the matrix.   Base step:  For there is nothing to prove. Given expanding along either row yields , as one easily verifies.    Induction step  Assume the claim is true of any matrix. Given we have . Expanding along the -th row of for any , on the other hand, we get . To show these two expressions are equal we use the induction hypothesis to compute each by expanding along its -th row: . The matrix is the result of first deleting row 1 and column from , and then deleting row and column of the resulting matrix. To deal with such iterated submatrices, we make some simple observations relating the rows and columns of and with those of .   The -th row of corresponds to the -th row of , and the first row of corresponds to the first row of .    If , then the -th column of corresponds to the -th column of ; if , then the -th column of corresponds to the -th column of .    If , then the -th column of corresponds to the -th column of ; if , then the -th column of corresponds to the -th column of .   From these observations we derive the following table of formulas: . We now begin to unpack : . This completes the induction step, and thus the proof is finished.     Surprisingly, it turns out that we can compute the determinant of a matrix by expanding along any column ( ). This is a consequence of the following theorem, which is useful in its own right. The proof below is taken from Robert Beezer's A First Course in Linear Algebra . (See Theorem DT .) It uses induction and a wonderful trick starting from the observation that for any .   Determinant and transposition   Let be an matrix. Then .    The proof is by induction on . The base case ( ) is trivial since for any matrix .  For induction we assume that for all we have for any matrix. Suppose is an matrix. We have . This completes the proof by induction. (Note how in the second equality in the chain above we compute in the -th term of by expanding along the -th row of . A similar observation applies to the penultimate equality.)     Expansion along columns   Let . For any we have . In other words, we can compute by expanding along any column of .    For any , we have .      Compute for .    First we compute by expanding along the second row. The only nonzero term of this expansion is the last one, yielding . We have . To compute its determinant we expand along its third column: We conclude that .     Matrix of signs   When expanding along a row or column, it is easy to get tripped up by the sign in front of the -th coefficient. A matrix of signs is a sort of mnemonic device to help you in this regard. It is easily generated by observing that the sign in front of the -th entry is always a (since ), and that any horizontal or vertical step within the matrix is accompanied by a change of sign. As an example, for we have the following matrix of signs: .     Video example: determinant   Video: determinant     The freedom to compute the determinant by expanding along any row or column gives rise to the following intuitive property.   Zero rows\/columns, swapping rows\/columns, identical rows\/columns   Let be an matrix.   If has a zero row or zero column, then     Assume . Let be the matrix obtained by swapping two rows (or two columns) of . Then .    Assume . If has two identical rows or two identical columns, then .       The first statement is obvious since according to and we may compute the determinant by expanding along the zero row or zero column in question.  The third statement follows from the second. Indeed, if has two identical rows or columns, then the matrix obtained from by swapping the rows (or columns) in question is itself. Thus by the second statement, and we conclude that .  It remains only to show the second statement. We prove only the statement regarding swapping rows; the corresponding statement about columns follows from . The proof is by induction.   Base step:  Let . Then , and .    Induction step  We assume by induction that the result holds for any matrices, , and show the same is true for any matrix.  Let be an matrix, and suppose is the result of swapping the -th and -th rows of . We compute the determinants of and by expanding along the -th row, where and . This is possible since .  Moving along the -th row, notice that each submatrix is the result of swapping the two rows of that originally corresponded to the -th and -th rows of . Since these submatrices are of dimension , we have by induction. Lastly, since the -th rows of and are the same we have .     As a further consequence of and , we can derive the adjoint matrix formula .   Adjoint matrix  adjoint matrix    adjoint of a square matrix    Let be an matrix. The adjoint matrix of , denoted , is the matrix whose -th entry is defined as follows: .      Be careful of the order reversal in this definition. The -th entry of is equal to plus or minus the -th minor of . Let's see this in action for some small matrices.  For we have .  For we have .     Adjoint matrix formula   Given an matrix , we have . As a consequence, if , then is invertible and .    First observe that the second statement regarding invertibility follows directly from , since in this case setting we have .  Thus it suffices to prove . To do so, we must show that .   Case:  In this case we have . A similar argument shows that , though in this case we use expansion along a column.    Case:  When we have , where is the matrix obtained by replacing the -th row of with a copy of its -th row. Since has two identical rows implies , as desired. Once again, a similar argument using expansion along a column shows that .       Use the adjoint matrix formula to compute , where .    First compute by expanding along the third row: . Next, compute . Then we have .      Before you get too excited about the adjoint matrix formula, you should know that as grows, this procedure becomes much more costly in terms of number of arithmetic operations involved than our inverse algorithm based on Gauss-Jordan elimination. You get a sense of this already from the previous example. In general, the Gauss-Jordan inverse algorithm is the way to go.      Row operations and determinant  Suppose the square matrix can be row reduced to via sequence of row operations. In general we do not have , but we can compute from by keeping track of which operations are used.   Row operations and determinant   Let be an matrix. Using the notation from we have:              .   In particular, taking , we have .    The first statement follows easily by computing by expanding along the -th row. The second statement is in fact a rephrasing of the second statement of . It remains to prove the third statement.  Let , and set . Then is identical to with the exception of the -th row, whose -th entry is . It follows that , where is the matrix obtained by replacing the -th row of with a row identical with its -th row. By we conclude , and thus , as desired.      In the language of row operations, translates as follows:   Scaling a row of a matrix by has the effect of scaling the determinant by .    Swapping two rows of a matrix changes the sign of the determinant.    Performing a row addition operation on a matrix has no effect on the determinant.        Column operations and the determinant   As shown in the determinant behaves in a similar manner with respect to elementary column operations : , scaling a column by a nonzero constant scales the determinant by , swapping columns multiplies the determinant by , adding a multiple of one column to another leaves the determinant unchanged.     Determinant and products of elementary matrices   Let be an matrix, and suppose we have for some collection of elementary matrices . Then .    This is an easy proof by induction on the number of elementary matrices involved, the base case ( ) of which is covered by .     has both computational and theoretical applications.  On the computational side, it suggests an alternative method of computing : first row reduce to a simpler matrix , making sure to keep track of the operations you use; set up an equation as in representing the row reduction; then solve the corresponding equation for in terms of and the .   Determinant via row reduction   Suppose the matrix can be row reduced to by perfomring the following sequence of row operations:   First swap the second and third rows.    Then scale the first row by     Then replace the second row with the second row plus the first row.   Compute .    In terms of elementary matrices we have and hence We conclude that .    On the theoretical side, implies both and .   Determinant and invertibility   Let be an matrix. Then is invertible if and only if .    The implication was proved in .  For the other direction, assume is invertible. Then implies is a product of elementary matrices: . Then implies . Since for all ( ), we conclude .     Determinant is multiplicative   Let and be matrices. Then .    We consider two cases based on the invertibility of and\/or .   or is not invertible  In this case is not invertible ( ), and hence by . By the same reasoning we must have or . It follows that in this case.    and both invertible  In this case we can write for some elementary matrices and ( ). Then .     We end this section and chapter with a slight expansion of our invertibility theorem. The equivalence of statement is a direct consequence of . The equivalence of the equivalence of statement was given earlier as an exercise. (See .)   Invertibility theorem   Let be an matrix. The following statements are equivalent.    is invertible.    The matrix equation has a unique solution for any .    The matrix equation has a solution for any .    The matrix equation has a unique solution: namely, .     is row equivalent to , the identity matrix.     is a product of elementary matrices.     .         WeBWork Exercises      Use the appropriate property of determinants to find  Do not evaluate the determinants. Answer:                  Consider the following Gauss elimination:   What is the determinant of ?                   Find such that the following matrix is singular.                   If and are matrices, , , then   ,   ,   ,   ,   .                                    Written Exercises    Let    Compute by expanding along the second row.    Compute by expanding along the third column.        Row\/column expansion   Compute the determinant of the given matrix. Indicate which row or column you expand along.                          Determinant and invertibility   For each matrix, find all values of (if any) making the matrix invertible. Use the determinant.                                 Adjoint matrix formula  Use the adjoint matrix formula to compute the inverse of each matrix.                   Let . Show without computing the determinant directly. In other words, use a row reduction technique or .      Let be an matrix, and let be a scalar. State and prove a formula relating with .        Assume is a matrix satisfying . Compute the determinant of the given matrix.                            Let and be matrices, and suppose is invertible. Prove the following:     .     .         Assume the square matrix satisfies . Show that .      Prove that a square matrix is invertible if and only if is invertible.     Adjoint matrix   The following exercises explore the relationship between a square matrix and its adjoint .     Give an explicit example of a square matrix satisfying and .  In other words, show that it is possible for a nonzero matrix to have a zero adjoint matrix.      Let be an matrix. Prove: .      Prove: is invertible if and only if is invertible.      Assume is invertible. Prove: .       In our proof of statement (2) of we only showed that if is a square matrix with two identical rows, then . Assuming this, show that the same is true if has two identical columns.      State and prove an analogue to that describes how the corresponding column operations (i.e., scale a column by , swap two columns, column addition) affect the determinant of a matrix. (See ).    Express each of these types of column operations as multiplication on the right by an elementary matrix.      Let be the matrix with along the diagonal and 's elsewhere: i.e., . State and prove a formula for . (Your formula will involve , , and .)  Look at the and cases first. To prove the formula in the general case you may want to make use of row reduction and .      Given scalars the Vandermonde matrix is defined as . In other words, we have Prove: .      "
 },
@@ -3587,7 +3587,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#d_minors",
   "type": "Definition",
-  "number": "2.5.1",
+  "number": "3.5.1",
   "title": "Submatrix notation.",
   "body": " Submatrix notation  submatrix    submatrix of    Let be an matrix with . Given , the submatrix of obtained by removing the -th row and -th column of is denoted .   "
 },
@@ -3596,7 +3596,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#rm_minors",
   "type": "Warning",
-  "number": "2.5.2",
+  "number": "3.5.2",
   "title": "",
   "body": "  Do not conflate the submatrix notation with matrix entry notation : the former returns the submatrix of obtained by deleting the -th row and -th column; the latter returns the -th entry of .   "
 },
@@ -3605,7 +3605,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#d_det",
   "type": "Definition",
-  "number": "2.5.3",
+  "number": "3.5.3",
   "title": "The determinant.",
   "body": " The determinant  determinant    determinant of    Let . The determinant is defined as follows:   Base case:  When we have and we define .    Recursive case:  When we define .      "
 },
@@ -3614,7 +3614,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#rm_det_small_cases",
   "type": "Remark",
-  "number": "2.5.4",
+  "number": "3.5.4",
   "title": "Small <span class=\"process-math\">\\(n\\)<\/span> cases.",
   "body": " Small cases   Let's look at determinant formulas for the cases. You may remember the formula for matrices from ; we will make the connection more explicit in .  Given , we have . The formula for the case is simple enough to serve as a second base case , allowing us to end the recursive process of computing a general matrix once we get to expressions involving matrices.  Given , we have .   "
 },
@@ -3623,7 +3623,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#th_det_triangular",
   "type": "Theorem",
-  "number": "2.5.5",
+  "number": "3.5.5",
   "title": "Determinant of triangular matrices.",
   "body": " Determinant of triangular matrices   Let be triangular (upper, lower, or diagonal). Then . In other words, the determinant of a triangular matrix is the product of its diagonal entries.    We only give the proof for lower triangular matrices; the proof in the upper triangular case is nearly identical.  For any let denote the proposition: The determinant of any lower triangular matrix is the product of its diagonal entries . We prove by induction that is true for all .   Base step: show is true  In this case , and is indeed the product of the diagonal entries of .    Induction step: show for all  Let be a lower triangular matrix. Then for all , and hence the determinant of is given by . Claim: is lower triangular. Indeed, first observe that we have for all ; by deleting the first row and first column we effectively bump each index up by one. Since is lower triangular we have for all , and hence also for all , proving the claim.  Lastly, assuming is true (the induction hypothesis) we have , as desired.    "
 },
@@ -3632,7 +3632,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#cor_det_identity",
   "type": "Corollary",
-  "number": "2.5.6",
+  "number": "3.5.6",
   "title": "Determinant of identity matrices.",
   "body": " Determinant of identity matrices   Let be the identity matrix. Then .    This follows directly from since the diagonal entries of are all ones.   "
 },
@@ -3641,7 +3641,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#d_minors_expansions",
   "type": "Definition",
-  "number": "2.5.7",
+  "number": "3.5.7",
   "title": "Minors and expansions along rows\/columns.",
   "body": " Minors and expansions along rows\/columns  minor of matrix  expansion along row\/column    the -th minor of a matrix    Given an matrix , for any pair the -th minor of is defined as .  For any the expression is called the expansion along the -th row of .  For any , the expression is called the expansion along the -th column of .   "
 },
@@ -3650,7 +3650,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#th_expansion_row",
   "type": "Theorem",
-  "number": "2.5.8",
+  "number": "3.5.8",
   "title": "Expansion along rows.",
   "body": " Expansion along rows   Let . For any we have . In other words, we can compute by expanding along any row of .    The proof is by induction on the size of the matrix.   Base step:  For there is nothing to prove. Given expanding along either row yields , as one easily verifies.    Induction step  Assume the claim is true of any matrix. Given we have . Expanding along the -th row of for any , on the other hand, we get . To show these two expressions are equal we use the induction hypothesis to compute each by expanding along its -th row: . The matrix is the result of first deleting row 1 and column from , and then deleting row and column of the resulting matrix. To deal with such iterated submatrices, we make some simple observations relating the rows and columns of and with those of .   The -th row of corresponds to the -th row of , and the first row of corresponds to the first row of .    If , then the -th column of corresponds to the -th column of ; if , then the -th column of corresponds to the -th column of .    If , then the -th column of corresponds to the -th column of ; if , then the -th column of corresponds to the -th column of .   From these observations we derive the following table of formulas: . We now begin to unpack : . This completes the induction step, and thus the proof is finished.    "
 },
@@ -3659,7 +3659,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#th_det_transpose",
   "type": "Theorem",
-  "number": "2.5.9",
+  "number": "3.5.9",
   "title": "Determinant and transposition.",
   "body": " Determinant and transposition   Let be an matrix. Then .    The proof is by induction on . The base case ( ) is trivial since for any matrix .  For induction we assume that for all we have for any matrix. Suppose is an matrix. We have . This completes the proof by induction. (Note how in the second equality in the chain above we compute in the -th term of by expanding along the -th row of . A similar observation applies to the penultimate equality.)   "
 },
@@ -3668,7 +3668,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#cor_expansion_columns",
   "type": "Corollary",
-  "number": "2.5.10",
+  "number": "3.5.10",
   "title": "Expansion along columns.",
   "body": " Expansion along columns   Let . For any we have . In other words, we can compute by expanding along any column of .    For any , we have .   "
 },
@@ -3677,7 +3677,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#ss_expansion_rows_columns-8",
   "type": "Example",
-  "number": "2.5.11",
+  "number": "3.5.11",
   "title": "",
   "body": "  Compute for .    First we compute by expanding along the second row. The only nonzero term of this expansion is the last one, yielding . We have . To compute its determinant we expand along its third column: We conclude that .   "
 },
@@ -3686,7 +3686,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#rm_sign_matrix",
   "type": "Remark",
-  "number": "2.5.12",
+  "number": "3.5.12",
   "title": "Matrix of signs.",
   "body": " Matrix of signs   When expanding along a row or column, it is easy to get tripped up by the sign in front of the -th coefficient. A matrix of signs is a sort of mnemonic device to help you in this regard. It is easily generated by observing that the sign in front of the -th entry is always a (since ), and that any horizontal or vertical step within the matrix is accompanied by a change of sign. As an example, for we have the following matrix of signs: .   "
 },
@@ -3695,7 +3695,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#fig_vid_det",
   "type": "Figure",
-  "number": "2.5.13",
+  "number": "3.5.13",
   "title": "",
   "body": " Video: determinant   "
 },
@@ -3704,7 +3704,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#th_det_zero_repeated_row",
   "type": "Theorem",
-  "number": "2.5.14",
+  "number": "3.5.14",
   "title": "Zero rows\/columns, swapping rows\/columns, identical rows\/columns.",
   "body": " Zero rows\/columns, swapping rows\/columns, identical rows\/columns   Let be an matrix.   If has a zero row or zero column, then     Assume . Let be the matrix obtained by swapping two rows (or two columns) of . Then .    Assume . If has two identical rows or two identical columns, then .       The first statement is obvious since according to and we may compute the determinant by expanding along the zero row or zero column in question.  The third statement follows from the second. Indeed, if has two identical rows or columns, then the matrix obtained from by swapping the rows (or columns) in question is itself. Thus by the second statement, and we conclude that .  It remains only to show the second statement. We prove only the statement regarding swapping rows; the corresponding statement about columns follows from . The proof is by induction.   Base step:  Let . Then , and .    Induction step  We assume by induction that the result holds for any matrices, , and show the same is true for any matrix.  Let be an matrix, and suppose is the result of swapping the -th and -th rows of . We compute the determinants of and by expanding along the -th row, where and . This is possible since .  Moving along the -th row, notice that each submatrix is the result of swapping the two rows of that originally corresponded to the -th and -th rows of . Since these submatrices are of dimension , we have by induction. Lastly, since the -th rows of and are the same we have .    "
 },
@@ -3713,7 +3713,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#d_adjoint",
   "type": "Definition",
-  "number": "2.5.15",
+  "number": "3.5.15",
   "title": "Adjoint matrix.",
   "body": " Adjoint matrix  adjoint matrix    adjoint of a square matrix    Let be an matrix. The adjoint matrix of , denoted , is the matrix whose -th entry is defined as follows: .   "
 },
@@ -3722,7 +3722,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#rm_adjoint",
   "type": "Remark",
-  "number": "2.5.16",
+  "number": "3.5.16",
   "title": "",
   "body": "  Be careful of the order reversal in this definition. The -th entry of is equal to plus or minus the -th minor of . Let's see this in action for some small matrices.  For we have .  For we have .   "
 },
@@ -3731,7 +3731,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#th_adjoint",
   "type": "Theorem",
-  "number": "2.5.17",
+  "number": "3.5.17",
   "title": "Adjoint matrix formula.",
   "body": " Adjoint matrix formula   Given an matrix , we have . As a consequence, if , then is invertible and .    First observe that the second statement regarding invertibility follows directly from , since in this case setting we have .  Thus it suffices to prove . To do so, we must show that .   Case:  In this case we have . A similar argument shows that , though in this case we use expansion along a column.    Case:  When we have , where is the matrix obtained by replacing the -th row of with a copy of its -th row. Since has two identical rows implies , as desired. Once again, a similar argument using expansion along a column shows that .    "
 },
@@ -3740,7 +3740,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#ss_expansion_rows_columns-17",
   "type": "Example",
-  "number": "2.5.18",
+  "number": "3.5.18",
   "title": "",
   "body": "  Use the adjoint matrix formula to compute , where .    First compute by expanding along the third row: . Next, compute . Then we have .   "
 },
@@ -3749,7 +3749,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#rm_adjoint_form",
   "type": "Remark",
-  "number": "2.5.19",
+  "number": "3.5.19",
   "title": "",
   "body": "  Before you get too excited about the adjoint matrix formula, you should know that as grows, this procedure becomes much more costly in terms of number of arithmetic operations involved than our inverse algorithm based on Gauss-Jordan elimination. You get a sense of this already from the previous example. In general, the Gauss-Jordan inverse algorithm is the way to go.   "
 },
@@ -3758,7 +3758,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#th_det_row_ops",
   "type": "Theorem",
-  "number": "2.5.20",
+  "number": "3.5.20",
   "title": "Row operations and determinant.",
   "body": " Row operations and determinant   Let be an matrix. Using the notation from we have:              .   In particular, taking , we have .    The first statement follows easily by computing by expanding along the -th row. The second statement is in fact a rephrasing of the second statement of . It remains to prove the third statement.  Let , and set . Then is identical to with the exception of the -th row, whose -th entry is . It follows that , where is the matrix obtained by replacing the -th row of with a row identical with its -th row. By we conclude , and thus , as desired.   "
 },
@@ -3767,7 +3767,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#rm_det_row_ops",
   "type": "Remark",
-  "number": "2.5.21",
+  "number": "3.5.21",
   "title": "",
   "body": "  In the language of row operations, translates as follows:   Scaling a row of a matrix by has the effect of scaling the determinant by .    Swapping two rows of a matrix changes the sign of the determinant.    Performing a row addition operation on a matrix has no effect on the determinant.      "
 },
@@ -3776,7 +3776,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#rm_det_col_ops",
   "type": "Remark",
-  "number": "2.5.22",
+  "number": "3.5.22",
   "title": "Column operations and the determinant.",
   "body": " Column operations and the determinant   As shown in the determinant behaves in a similar manner with respect to elementary column operations : , scaling a column by a nonzero constant scales the determinant by , swapping columns multiplies the determinant by , adding a multiple of one column to another leaves the determinant unchanged.   "
 },
@@ -3785,7 +3785,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#cor_det_prod_elem",
   "type": "Corollary",
-  "number": "2.5.23",
+  "number": "3.5.23",
   "title": "Determinant and products of elementary matrices.",
   "body": " Determinant and products of elementary matrices   Let be an matrix, and suppose we have for some collection of elementary matrices . Then .    This is an easy proof by induction on the number of elementary matrices involved, the base case ( ) of which is covered by .   "
 },
@@ -3794,7 +3794,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#ss_det_row_ops-9",
   "type": "Example",
-  "number": "2.5.24",
+  "number": "3.5.24",
   "title": "Determinant via row reduction.",
   "body": " Determinant via row reduction   Suppose the matrix can be row reduced to by perfomring the following sequence of row operations:   First swap the second and third rows.    Then scale the first row by     Then replace the second row with the second row plus the first row.   Compute .    In terms of elementary matrices we have and hence We conclude that .   "
 },
@@ -3803,7 +3803,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#th_inv_iff_det",
   "type": "Theorem",
-  "number": "2.5.25",
+  "number": "3.5.25",
   "title": "Determinant and invertibility.",
   "body": " Determinant and invertibility   Let be an matrix. Then is invertible if and only if .    The implication was proved in .  For the other direction, assume is invertible. Then implies is a product of elementary matrices: . Then implies . Since for all ( ), we conclude .   "
 },
@@ -3812,7 +3812,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#th_det_mult",
   "type": "Theorem",
-  "number": "2.5.26",
+  "number": "3.5.26",
   "title": "Determinant is multiplicative.",
   "body": " Determinant is multiplicative   Let and be matrices. Then .    We consider two cases based on the invertibility of and\/or .   or is not invertible  In this case is not invertible ( ), and hence by . By the same reasoning we must have or . It follows that in this case.    and both invertible  In this case we can write for some elementary matrices and ( ). Then .    "
 },
@@ -3821,7 +3821,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#th_invertibility_expanded",
   "type": "Theorem",
-  "number": "2.5.27",
+  "number": "3.5.27",
   "title": "Invertibility theorem.",
   "body": " Invertibility theorem   Let be an matrix. The following statements are equivalent.    is invertible.    The matrix equation has a unique solution for any .    The matrix equation has a solution for any .    The matrix equation has a unique solution: namely, .     is row equivalent to , the identity matrix.     is a product of elementary matrices.     .      "
 },
@@ -3830,7 +3830,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#ss_det_ww-2",
   "type": "WeBWorK",
-  "number": "2.5.28",
+  "number": "3.5.28",
   "title": "",
   "body": "    Use the appropriate property of determinants to find  Do not evaluate the determinants. Answer:             "
 },
@@ -3839,7 +3839,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#ss_det_ww-3",
   "type": "WeBWorK",
-  "number": "2.5.29",
+  "number": "3.5.29",
   "title": "",
   "body": "    Consider the following Gauss elimination:   What is the determinant of ?              "
 },
@@ -3848,7 +3848,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#ss_det_ww-4",
   "type": "WeBWorK",
-  "number": "2.5.30",
+  "number": "3.5.30",
   "title": "",
   "body": "    Find such that the following matrix is singular.              "
 },
@@ -3857,7 +3857,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#ss_det_ww-5",
   "type": "WeBWorK",
-  "number": "2.5.31",
+  "number": "3.5.31",
   "title": "",
   "body": "    If and are matrices, , , then   ,   ,   ,   ,   .                                "
 },
@@ -3866,7 +3866,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#s_det_ex-1-2",
   "type": "Exercise",
-  "number": "2.5.5.1",
+  "number": "3.5.5.1",
   "title": "",
   "body": "  Let    Compute by expanding along the second row.    Compute by expanding along the third column.      "
 },
@@ -3875,7 +3875,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#s_det_ex-1-3-3",
   "type": "Exercise",
-  "number": "2.5.5.2",
+  "number": "3.5.5.2",
   "title": "",
   "body": "      "
 },
@@ -3884,7 +3884,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#s_det_ex-1-3-4",
   "type": "Exercise",
-  "number": "2.5.5.3",
+  "number": "3.5.5.3",
   "title": "",
   "body": "      "
 },
@@ -3893,7 +3893,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#s_det_ex-1-3-5",
   "type": "Exercise",
-  "number": "2.5.5.4",
+  "number": "3.5.5.4",
   "title": "",
   "body": "      "
 },
@@ -3902,7 +3902,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#s_det_ex-1-4-3",
   "type": "Exercise",
-  "number": "2.5.5.5",
+  "number": "3.5.5.5",
   "title": "",
   "body": "      "
 },
@@ -3911,7 +3911,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#s_det_ex-1-4-4",
   "type": "Exercise",
-  "number": "2.5.5.6",
+  "number": "3.5.5.6",
   "title": "",
   "body": "      "
 },
@@ -3920,7 +3920,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#s_det_ex-1-4-5",
   "type": "Exercise",
-  "number": "2.5.5.7",
+  "number": "3.5.5.7",
   "title": "",
   "body": "      "
 },
@@ -3929,7 +3929,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#s_det_ex-1-4-6",
   "type": "Exercise",
-  "number": "2.5.5.8",
+  "number": "3.5.5.8",
   "title": "",
   "body": "      "
 },
@@ -3938,7 +3938,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#s_det_ex-1-5-3",
   "type": "Exercise",
-  "number": "2.5.5.9",
+  "number": "3.5.5.9",
   "title": "",
   "body": "      "
 },
@@ -3947,7 +3947,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#s_det_ex-1-5-4",
   "type": "Exercise",
-  "number": "2.5.5.10",
+  "number": "3.5.5.10",
   "title": "",
   "body": "      "
 },
@@ -3956,7 +3956,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#s_det_ex-1-6",
   "type": "Exercise",
-  "number": "2.5.5.11",
+  "number": "3.5.5.11",
   "title": "",
   "body": "  Let . Show without computing the determinant directly. In other words, use a row reduction technique or .   "
 },
@@ -3965,7 +3965,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#s_det_ex-1-7",
   "type": "Exercise",
-  "number": "2.5.5.12",
+  "number": "3.5.5.12",
   "title": "",
   "body": "  Let be an matrix, and let be a scalar. State and prove a formula relating with .     "
 },
@@ -3974,7 +3974,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#s_det_ex-1-8",
   "type": "Exercise",
-  "number": "2.5.5.13",
+  "number": "3.5.5.13",
   "title": "",
   "body": "  Assume is a matrix satisfying . Compute the determinant of the given matrix.                         "
 },
@@ -3983,7 +3983,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#s_det_ex-1-9",
   "type": "Exercise",
-  "number": "2.5.5.14",
+  "number": "3.5.5.14",
   "title": "",
   "body": "  Let and be matrices, and suppose is invertible. Prove the following:     .     .      "
 },
@@ -3992,7 +3992,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#s_det_ex-1-10",
   "type": "Exercise",
-  "number": "2.5.5.15",
+  "number": "3.5.5.15",
   "title": "",
   "body": "  Assume the square matrix satisfies . Show that .   "
 },
@@ -4001,7 +4001,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#s_det_ex-1-11",
   "type": "Exercise",
-  "number": "2.5.5.16",
+  "number": "3.5.5.16",
   "title": "",
   "body": "  Prove that a square matrix is invertible if and only if is invertible.   "
 },
@@ -4010,7 +4010,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#s_det_ex-1-12-3",
   "type": "Exercise",
-  "number": "2.5.5.17",
+  "number": "3.5.5.17",
   "title": "",
   "body": "  Give an explicit example of a square matrix satisfying and .  In other words, show that it is possible for a nonzero matrix to have a zero adjoint matrix.   "
 },
@@ -4019,7 +4019,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#s_det_ex-1-12-4",
   "type": "Exercise",
-  "number": "2.5.5.18",
+  "number": "3.5.5.18",
   "title": "",
   "body": "  Let be an matrix. Prove: .   "
 },
@@ -4028,7 +4028,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#s_det_ex-1-12-5",
   "type": "Exercise",
-  "number": "2.5.5.19",
+  "number": "3.5.5.19",
   "title": "",
   "body": "  Prove: is invertible if and only if is invertible.   "
 },
@@ -4037,7 +4037,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#s_det_ex-1-12-6",
   "type": "Exercise",
-  "number": "2.5.5.20",
+  "number": "3.5.5.20",
   "title": "",
   "body": "  Assume is invertible. Prove: .   "
 },
@@ -4046,7 +4046,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#s_det_ex-1-13",
   "type": "Exercise",
-  "number": "2.5.5.21",
+  "number": "3.5.5.21",
   "title": "",
   "body": "  In our proof of statement (2) of we only showed that if is a square matrix with two identical rows, then . Assuming this, show that the same is true if has two identical columns.   "
 },
@@ -4055,7 +4055,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#ex_det_col_ops",
   "type": "Exercise",
-  "number": "2.5.5.22",
+  "number": "3.5.5.22",
   "title": "",
   "body": "  State and prove an analogue to that describes how the corresponding column operations (i.e., scale a column by , swap two columns, column addition) affect the determinant of a matrix. (See ).    Express each of these types of column operations as multiplication on the right by an elementary matrix.   "
 },
@@ -4064,7 +4064,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#s_det_ex-1-15",
   "type": "Exercise",
-  "number": "2.5.5.23",
+  "number": "3.5.5.23",
   "title": "",
   "body": "  Let be the matrix with along the diagonal and 's elsewhere: i.e., . State and prove a formula for . (Your formula will involve , , and .)  Look at the and cases first. To prove the formula in the general case you may want to make use of row reduction and .   "
 },
@@ -4073,9 +4073,1503 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#s_det_ex-1-16",
   "type": "Exercise",
-  "number": "2.5.5.24",
+  "number": "3.5.5.24",
   "title": "",
   "body": "  Given scalars the Vandermonde matrix is defined as . In other words, we have Prove: .   "
+},
+{
+  "id": "s_subspace",
+  "level": "1",
+  "url": "s_subspace.html",
+  "type": "Section",
+  "number": "4.1",
+  "title": "Subspaces",
+  "body": " Subspaces   We return now to our main object of study: vector spaces. Our foray into the theory of matrices will prove to be useful in this regard in two ways: on the one hand, matrix spaces are themselves interesting examples of vector spaces; on the other hand, matrices serve as an essential computational tool for describing and investigating general vector spaces.  In this section we will study subspaces , which are special subsets of vector spaces that respect the defining structure of a vector spaces: namely, the two vector operations. makes precise what we mean here by respect .  Subspaces arise naturally in any setting where vector spaces are at play, and are closely connected to solutions to linear systems. As we will see in , subspaces of vector spaces are themselves examples of vector spaces, furnishing us with yet more interesting examples of vector spaces.    Definition of subspace   Subspace  subspace  vector space subspace   Let be a vector space. A subset is a subspace of if the following conditions hold:   contains the zero vector  We have .    is closed under addition  For all , if , then . Using logical notation: .    is closed under scalar multiplication  For all and , if , then . In logical notation: .         Let and let . Prove that is a subspace.    We must show properties (i)-(iii) hold for .   The zero element of is , which is certainly of the form . Thus .    We must prove the implication . .    We must prove the implication , for any . We have          Let and let . Is a vector space? Decide which of the of properties (i)-(iii) in (if any) are satisfied by .       Clearly .    Suppose . Then , in which case , and hence . Thus is closed under addition.    The set is not closed under scalar multiplication. Indeed, let . Then .        Two-step proof for subspaces   As with proofs regarding linearity of functions, we can merge conditions (ii)-(iii) of into a single statement about linear combinations, deriving the following two-step method for proving a set is a subspace of a vector space .   Show     Show that , for all .        Video example: deciding if is a subspace   Video: deciding if is a subspace      If is a subspace of a vector space , then it inherits a vector space structure from by simply restricting the vector operations defined on to the subset .   Subspaces are vector spaces   Let be a subspace of the vector space .   The vector operations of restrict to operations on that satisfy the vector space axioms.    The zero vector of , considered as a vector space, is the zero vector of .    Given an element , its vector inverse with respect to the vector space structure of is equal to its vector inverse with respect to the vector space structure of .       Since for all , the vector addition on gives rise by restriction to a well-defined operation on ; similarly, since for all and , the scalar multiplication operation on gives rise by restriction to a well-defined scalar multiplication on .  By Axiom , the zero vector of is an element of . Since this element satisfies for all , and since , it also satisfies for all . Thus acts as a zero vector for the subspace .    It is important to understand how Axioms of come into play here. Without them we would not be able to say that restricting the vector operations of to elements of actually gives rise to well-defined operations on . To be well-defined the operations must output elements that lie not just in , but in itself. This is precisely what being closed under addition and scalar multiplication guarantees.  Once we know restriction gives rise to well-defined operations on , verifying the axioms of mostly amounts to observing that if a condition is true for all in , it is certainly true for all in the subset .  The existential axioms (iii) and (iv) of , however, require special consideration. By definition, a subspace contains the zero vector of , and clearly this still acts as the zero vector when we restrict the vector operations to . What about vector inverses? We know that for any there is a vector inverse lying somewhere in . We must show that in fact lies in : we need to show that the operation of taking the vector inverse is well-defined on . We prove this as follows: .  We now know how to determine whether a given subset of a vector space is in fact a subspace. We are also interested in means of constructing subspaces from some given ingredients. The result below tells us that taking the intersection of a given collection of subspaces results in a subspace.   Intersection of subspaces   Let be a vector space. Given a collection , where each is a subspace of , the intersection is a subspace.    Exercise.     Unions of subspaces  While the intersection of subspaces is again a subspace, the same is not true for unions of subspaces.  For example, take , and . Then each is a subspace, but their union is not.  Indeed, observe that and , but . Thus is not closed under addition. (Interestingly, it is closed under scalar multiplication.)     Subspaces of   gives a convenient method of producing a subspace of : namely, given any matrix , the set of all solutions to the homogeneous linear system is guaranteed to be a subspace of . We call this set the null space of the matrix .   Null space of matrix   Let . The null space of , denoted , is the set of all solutions to the matrix equation . In other words, . Equivalently, thinking in terms of linear systems, is the set of solutions to the homogeneous linear system represented by .     Null spaces of matrices   Given any , its null space is a subspace of .    Following the two-step technique, we first show that the zero vector of lies in . This is clear, since .  Next, we show that for any and any we have . If , then we have , by definition. It then follows that the vector satisfies . Since , we have , as desired.      Alternative subspace method   provides an alternative way of showing that a subset : namely, find an matrix for which we have . This is often much faster than using the two-step technique.    Subspace as null space   Define the subset of as .   Prove that is a subspace by identifying it as the set of solutions to a homogeneous matrix equation.    Use (a) and Gaussian elimination to compute a parametric description of .          It is easy to see that where . We conclude is a subspace.    The augmented matrix row reduces to . Following we conclude that . Geometrically this is the line in passing through with direction vector .        Subspace as null space  As convenient as the method described in and illustrated in may be, bear in mind that it cannot always be used. Indeed, by definition the null space of an matrix is a subset of . Thus this method can only be employed when the ambient vector space is . Don't forget that there are other vector spaces besides . Indeed, in we consider subspaces of matrix vector spaces . In this setting, our null space trick does not apply.   Let be an matrix. If is nonzero , then the set of solutions to is not a subspace of , and for a very simple reason: since , we see that , and thus is not a subspace. Thus, thinking in terms of linear systems, we see that while the set of solutions to a homogenous linear system constitutes a subspace, the set of solutions to a nonhomogeneous system does not. On the other hand, as articulated by , the set of solutions to a nonhomogeneous linear system can be thought of as a translate of a vector space.   Null space and linear systems   Let and , and let be the set of all solutions to the linear system .    is a subspace of if and only if : , if and only if the linear system is homogeneous.    If is a solution to , then we have . In other words, given a particular solution to , the general solution is given by where is a solution to the homogeneous linear system .          If , then , and this is a subspace by . If , then , and hence is not a subspace.    Let satisfy . We show that by showing the two inclusions . If , then we have for some , in which case . This shows that if , then , and thus that . For the other inclusion, if , then we have , showing that . But then we have , where . Thus , showing that .        Null space and linear systems   Let and , and suppose the linear system is consistent.   There is a unique solution to the system if and only if : , if and only if the only solution to is the trivial one .    There are infinitely many solutions if and only if there is a nonzero solution to .        Solving matrix equations  Let's use Sage and to find the set of solutions to the matrix equation . This is the matrix equation form of the linear system we investigated in . The method solve_right can be used to find a particular solution  to .   We get the entire set of solutions by translating by the particular solution : . We can illustrate this in Sage by taking random elements of (computed using right_kernel ), adding them to xp , and verifying that the result is a solution to . Each time you evaluate the cell below, a randomly generated element of will be outputted.   You may wonder just how random these elements of are, considering that the entries always seem to be integers! Indeed, soliciting information about NS from Sage, we see that it has the structure of a free module defined over the the Integer Ring .   Without getting too far into the weeds, this is a result of our initial definition of using Matrix() . Without further information, Sage interprets this as a matrix with integer coefficients, as opposed to real coefficients. All further computations ( , xp and NS ) are done in a similar spirit. More precisely, the object NS generated by Sage consists of all integer linear combinations of the two rows in the echelon basis matrix displayed in the cell above. The next cell shows you how things change when we alert Sage to the fact that we are dealing with matrices over the reals. The only change is adding RR to Matrix() , which specifies that matrix coefficients should be understood as real numbers.     Hyperplanes and subspaces  Recall that a hyperplane is the set of solutions to a linear system of the form , where for some . In terms of , is just the set of solutions to the matrix equation , where . It follows from that is a subspace if and only if : , if and only if passes through the origin. Furthermore, if , we have , where is any solution to , and is the set of solutions to the corresponding homogeneous equation . In other words, although it is not true in general that every hyperplane is a subspace (since it may not pass through the origin), it is true that is a translate of a hyperplane that is a subspace (since passes through the origin).      Important subspaces of  In we met three families of square matrices: namely, the diagonal, upper triangular, and lower triangular matrices. (See ). We now introduce three more naturally occurring families. Before doing so, we give an official definition of the trace function.   Trace of a matrix  trace of a matrix    the trace of    Let be an matrix. The trace of , denoted is defined as the sum of the diagonal entries of : , .     Trace-zero, symmetric, and skew-symmetric  trace-zero matrix  symmetric matrix  skew-symmetric matrix   Fix an integer .   A matrix is said to be a trace-zero matrix if .    A matrix is symmetric if : equivalently, if for all .    A matrix is skew-symmetric if : equivalently, if for all .        Trace-zero symmetric, and skew-symmetric matrices   The set of all trace-zero matrices can be described as . The set of all symmetric matrices can be described as . The set of all skew-symmetric matrices can be described as .     Assume is a skew-symmetric matrix. By definition, for all we must have . It follows that for all . Thus the diagonal entries of a skew-symmetric matrix are always equal to 0.   It will come as no surprise that all of the afore mentioned matrix families are in fact subspaces of .   Matrix subspaces   Fix an integer . Each of the following subsets of is a subspace.   Diagonal matrices       Upper triangular matrices       Lower triangular matrices       Trace-zero matrix       Symmetric matrices       Skew-symmetric matrices          See         Let be {\\em dyad}: , is a set containing exactly two elements. Show that there is no choice of operations turning into a vector space. In other words, show that for any choice of such operations, at least one of the axioms of will fail.    Write , where , and suppose by contradiction that there are operations and satisfying the axioms of . Derive a contradiction as follows:   Since one the elements of must be the zero vector, we can assume without loss of generality that , and thus .    Show in this case that there is exactly one choice of addition operation satisfying Axioms i-iv. Make this operation explicit by writing out all four sums.             For each subset of described below: (a) sketch as a region of , and (b) determine whether is a subspace. Justify your answer either with a proof or explicit counterexample.                           Determine whether the subset of described is a subspace of . Justify your answer either with a proof or explicit counterexample.                   Fix a matrix and define , the set of matrices that commute with .       For each given subset : (a) show that is a subspace by identifying it with the set of solutions to a matrix equation, and (b) give a parametric description of .                           Prove .      Prove (1)-(6) of .     Nonhomogeneous solutions related to homogeneous solutions   For each matrix and vector :   Find a particular solution to .    Find all solutions to the corresponding homogeneous matrix equation .    Use (a), (b), and to describe all solutions to .                             "
+},
+{
+  "id": "d_subspace",
+  "level": "2",
+  "url": "s_subspace.html#d_subspace",
+  "type": "Definition",
+  "number": "4.1.1",
+  "title": "Subspace.",
+  "body": " Subspace  subspace  vector space subspace   Let be a vector space. A subset is a subspace of if the following conditions hold:   contains the zero vector  We have .    is closed under addition  For all , if , then . Using logical notation: .    is closed under scalar multiplication  For all and , if , then . In logical notation: .      "
+},
+{
+  "id": "ss_subspace-3",
+  "level": "2",
+  "url": "s_subspace.html#ss_subspace-3",
+  "type": "Example",
+  "number": "4.1.2",
+  "title": "",
+  "body": "  Let and let . Prove that is a subspace.    We must show properties (i)-(iii) hold for .   The zero element of is , which is certainly of the form . Thus .    We must prove the implication . .    We must prove the implication , for any . We have       "
+},
+{
+  "id": "ss_subspace-4",
+  "level": "2",
+  "url": "s_subspace.html#ss_subspace-4",
+  "type": "Example",
+  "number": "4.1.3",
+  "title": "",
+  "body": "  Let and let . Is a vector space? Decide which of the of properties (i)-(iii) in (if any) are satisfied by .       Clearly .    Suppose . Then , in which case , and hence . Thus is closed under addition.    The set is not closed under scalar multiplication. Indeed, let . Then .      "
+},
+{
+  "id": "proc_twostep_proof",
+  "level": "2",
+  "url": "s_subspace.html#proc_twostep_proof",
+  "type": "Procedure",
+  "number": "4.1.4",
+  "title": "Two-step proof for subspaces.",
+  "body": " Two-step proof for subspaces   As with proofs regarding linearity of functions, we can merge conditions (ii)-(iii) of into a single statement about linear combinations, deriving the following two-step method for proving a set is a subspace of a vector space .   Show     Show that , for all .      "
+},
+{
+  "id": "vid_eg_subspace1",
+  "level": "2",
+  "url": "s_subspace.html#vid_eg_subspace1",
+  "type": "Example",
+  "number": "4.1.5",
+  "title": "Video example: deciding if <span class=\"process-math\">\\(W\\subseteq V\\)<\/span> is a subspace.",
+  "body": " Video example: deciding if is a subspace   Video: deciding if is a subspace    "
+},
+{
+  "id": "th_subspace_vectorspace",
+  "level": "2",
+  "url": "s_subspace.html#th_subspace_vectorspace",
+  "type": "Theorem",
+  "number": "4.1.7",
+  "title": "Subspaces are vector spaces.",
+  "body": " Subspaces are vector spaces   Let be a subspace of the vector space .   The vector operations of restrict to operations on that satisfy the vector space axioms.    The zero vector of , considered as a vector space, is the zero vector of .    Given an element , its vector inverse with respect to the vector space structure of is equal to its vector inverse with respect to the vector space structure of .       Since for all , the vector addition on gives rise by restriction to a well-defined operation on ; similarly, since for all and , the scalar multiplication operation on gives rise by restriction to a well-defined scalar multiplication on .  By Axiom , the zero vector of is an element of . Since this element satisfies for all , and since , it also satisfies for all . Thus acts as a zero vector for the subspace .   "
+},
+{
+  "id": "th_subspace_intersection",
+  "level": "2",
+  "url": "s_subspace.html#th_subspace_intersection",
+  "type": "Theorem",
+  "number": "4.1.8",
+  "title": "Intersection of subspaces.",
+  "body": " Intersection of subspaces   Let be a vector space. Given a collection , where each is a subspace of , the intersection is a subspace.    Exercise.   "
+},
+{
+  "id": "rm_subspace_union",
+  "level": "2",
+  "url": "s_subspace.html#rm_subspace_union",
+  "type": "Remark",
+  "number": "4.1.9",
+  "title": "Unions of subspaces.",
+  "body": " Unions of subspaces  While the intersection of subspaces is again a subspace, the same is not true for unions of subspaces.  For example, take , and . Then each is a subspace, but their union is not.  Indeed, observe that and , but . Thus is not closed under addition. (Interestingly, it is closed under scalar multiplication.)  "
+},
+{
+  "id": "d_nullspace_matrix",
+  "level": "2",
+  "url": "s_subspace.html#d_nullspace_matrix",
+  "type": "Definition",
+  "number": "4.1.10",
+  "title": "Null space of matrix.",
+  "body": " Null space of matrix   Let . The null space of , denoted , is the set of all solutions to the matrix equation . In other words, . Equivalently, thinking in terms of linear systems, is the set of solutions to the homogeneous linear system represented by .   "
+},
+{
+  "id": "th_subspace_matrix_solutions",
+  "level": "2",
+  "url": "s_subspace.html#th_subspace_matrix_solutions",
+  "type": "Theorem",
+  "number": "4.1.11",
+  "title": "Null spaces of matrices.",
+  "body": " Null spaces of matrices   Given any , its null space is a subspace of .    Following the two-step technique, we first show that the zero vector of lies in . This is clear, since .  Next, we show that for any and any we have . If , then we have , by definition. It then follows that the vector satisfies . Since , we have , as desired.   "
+},
+{
+  "id": "rm_subspace_alt",
+  "level": "2",
+  "url": "s_subspace.html#rm_subspace_alt",
+  "type": "Remark",
+  "number": "4.1.12",
+  "title": "Alternative subspace method.",
+  "body": " Alternative subspace method   provides an alternative way of showing that a subset : namely, find an matrix for which we have . This is often much faster than using the two-step technique.  "
+},
+{
+  "id": "eg_subspace_alt",
+  "level": "2",
+  "url": "s_subspace.html#eg_subspace_alt",
+  "type": "Example",
+  "number": "4.1.13",
+  "title": "Subspace as null space.",
+  "body": " Subspace as null space   Define the subset of as .   Prove that is a subspace by identifying it as the set of solutions to a homogeneous matrix equation.    Use (a) and Gaussian elimination to compute a parametric description of .          It is easy to see that where . We conclude is a subspace.    The augmented matrix row reduces to . Following we conclude that . Geometrically this is the line in passing through with direction vector .      "
+},
+{
+  "id": "ss_subspaces_tuples-7",
+  "level": "2",
+  "url": "s_subspace.html#ss_subspaces_tuples-7",
+  "type": "Warning",
+  "number": "4.1.14",
+  "title": "Subspace as null space.",
+  "body": " Subspace as null space  As convenient as the method described in and illustrated in may be, bear in mind that it cannot always be used. Indeed, by definition the null space of an matrix is a subset of . Thus this method can only be employed when the ambient vector space is . Don't forget that there are other vector spaces besides . Indeed, in we consider subspaces of matrix vector spaces . In this setting, our null space trick does not apply.  "
+},
+{
+  "id": "th_nullspace_linsys",
+  "level": "2",
+  "url": "s_subspace.html#th_nullspace_linsys",
+  "type": "Theorem",
+  "number": "4.1.15",
+  "title": "Null space and linear systems.",
+  "body": " Null space and linear systems   Let and , and let be the set of all solutions to the linear system .    is a subspace of if and only if : , if and only if the linear system is homogeneous.    If is a solution to , then we have . In other words, given a particular solution to , the general solution is given by where is a solution to the homogeneous linear system .          If , then , and this is a subspace by . If , then , and hence is not a subspace.    Let satisfy . We show that by showing the two inclusions . If , then we have for some , in which case . This shows that if , then , and thus that . For the other inclusion, if , then we have , showing that . But then we have , where . Thus , showing that .      "
+},
+{
+  "id": "cor_matrix_equations",
+  "level": "2",
+  "url": "s_subspace.html#cor_matrix_equations",
+  "type": "Corollary",
+  "number": "4.1.16",
+  "title": "Null space and linear systems.",
+  "body": " Null space and linear systems   Let and , and suppose the linear system is consistent.   There is a unique solution to the system if and only if : , if and only if the only solution to is the trivial one .    There are infinitely many solutions if and only if there is a nonzero solution to .      "
+},
+{
+  "id": "sage_solve_matrix_eqn",
+  "level": "2",
+  "url": "s_subspace.html#sage_solve_matrix_eqn",
+  "type": "Sage Example",
+  "number": "12",
+  "title": "Solving matrix equations.",
+  "body": " Solving matrix equations  Let's use Sage and to find the set of solutions to the matrix equation . This is the matrix equation form of the linear system we investigated in . The method solve_right can be used to find a particular solution  to .   We get the entire set of solutions by translating by the particular solution : . We can illustrate this in Sage by taking random elements of (computed using right_kernel ), adding them to xp , and verifying that the result is a solution to . Each time you evaluate the cell below, a randomly generated element of will be outputted.   You may wonder just how random these elements of are, considering that the entries always seem to be integers! Indeed, soliciting information about NS from Sage, we see that it has the structure of a free module defined over the the Integer Ring .   Without getting too far into the weeds, this is a result of our initial definition of using Matrix() . Without further information, Sage interprets this as a matrix with integer coefficients, as opposed to real coefficients. All further computations ( , xp and NS ) are done in a similar spirit. More precisely, the object NS generated by Sage consists of all integer linear combinations of the two rows in the echelon basis matrix displayed in the cell above. The next cell shows you how things change when we alert Sage to the fact that we are dealing with matrices over the reals. The only change is adding RR to Matrix() , which specifies that matrix coefficients should be understood as real numbers.   "
+},
+{
+  "id": "rm_hyperplanes",
+  "level": "2",
+  "url": "s_subspace.html#rm_hyperplanes",
+  "type": "Remark",
+  "number": "4.1.17",
+  "title": "Hyperplanes and subspaces.",
+  "body": " Hyperplanes and subspaces  Recall that a hyperplane is the set of solutions to a linear system of the form , where for some . In terms of , is just the set of solutions to the matrix equation , where . It follows from that is a subspace if and only if : , if and only if passes through the origin. Furthermore, if , we have , where is any solution to , and is the set of solutions to the corresponding homogeneous equation . In other words, although it is not true in general that every hyperplane is a subspace (since it may not pass through the origin), it is true that is a translate of a hyperplane that is a subspace (since passes through the origin).  "
+},
+{
+  "id": "d_trace",
+  "level": "2",
+  "url": "s_subspace.html#d_trace",
+  "type": "Definition",
+  "number": "4.1.18",
+  "title": "Trace of a matrix.",
+  "body": " Trace of a matrix  trace of a matrix    the trace of    Let be an matrix. The trace of , denoted is defined as the sum of the diagonal entries of : , .   "
+},
+{
+  "id": "d_tracezero_symmetric_skewsymmetric",
+  "level": "2",
+  "url": "s_subspace.html#d_tracezero_symmetric_skewsymmetric",
+  "type": "Definition",
+  "number": "4.1.19",
+  "title": "Trace-zero, symmetric, and skew-symmetric.",
+  "body": " Trace-zero, symmetric, and skew-symmetric  trace-zero matrix  symmetric matrix  skew-symmetric matrix   Fix an integer .   A matrix is said to be a trace-zero matrix if .    A matrix is symmetric if : equivalently, if for all .    A matrix is skew-symmetric if : equivalently, if for all .      "
+},
+{
+  "id": "ss_subspace_matrices-5",
+  "level": "2",
+  "url": "s_subspace.html#ss_subspace_matrices-5",
+  "type": "Example",
+  "number": "4.1.20",
+  "title": "Trace-zero symmetric, and skew-symmetric <span class=\"process-math\">\\(2\\times 2\\)<\/span> matrices.",
+  "body": " Trace-zero symmetric, and skew-symmetric matrices   The set of all trace-zero matrices can be described as . The set of all symmetric matrices can be described as . The set of all skew-symmetric matrices can be described as .   "
+},
+{
+  "id": "rm_skew-symmetric",
+  "level": "2",
+  "url": "s_subspace.html#rm_skew-symmetric",
+  "type": "Remark",
+  "number": "4.1.21",
+  "title": "",
+  "body": " Assume is a skew-symmetric matrix. By definition, for all we must have . It follows that for all . Thus the diagonal entries of a skew-symmetric matrix are always equal to 0.  "
+},
+{
+  "id": "th_matrix_subspaces",
+  "level": "2",
+  "url": "s_subspace.html#th_matrix_subspaces",
+  "type": "Theorem",
+  "number": "4.1.22",
+  "title": "Matrix subspaces.",
+  "body": " Matrix subspaces   Fix an integer . Each of the following subsets of is a subspace.   Diagonal matrices       Upper triangular matrices       Lower triangular matrices       Trace-zero matrix       Symmetric matrices       Skew-symmetric matrices          See    "
+},
+{
+  "id": "s_subspace_ex-1",
+  "level": "2",
+  "url": "s_subspace.html#s_subspace_ex-1",
+  "type": "Exercise",
+  "number": "4.1.4.1",
+  "title": "",
+  "body": "  Let be {\\em dyad}: , is a set containing exactly two elements. Show that there is no choice of operations turning into a vector space. In other words, show that for any choice of such operations, at least one of the axioms of will fail.    Write , where , and suppose by contradiction that there are operations and satisfying the axioms of . Derive a contradiction as follows:   Since one the elements of must be the zero vector, we can assume without loss of generality that , and thus .    Show in this case that there is exactly one choice of addition operation satisfying Axioms i-iv. Make this operation explicit by writing out all four sums.          "
+},
+{
+  "id": "s_subspace_ex-2-2",
+  "level": "2",
+  "url": "s_subspace.html#s_subspace_ex-2-2",
+  "type": "Exercise",
+  "number": "4.1.4.2",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_subspace_ex-2-3",
+  "level": "2",
+  "url": "s_subspace.html#s_subspace_ex-2-3",
+  "type": "Exercise",
+  "number": "4.1.4.3",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_subspace_ex-2-4",
+  "level": "2",
+  "url": "s_subspace.html#s_subspace_ex-2-4",
+  "type": "Exercise",
+  "number": "4.1.4.4",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_subspace_ex-3-2",
+  "level": "2",
+  "url": "s_subspace.html#s_subspace_ex-3-2",
+  "type": "Exercise",
+  "number": "4.1.4.5",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_subspace_ex-3-3",
+  "level": "2",
+  "url": "s_subspace.html#s_subspace_ex-3-3",
+  "type": "Exercise",
+  "number": "4.1.4.6",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_subspace_ex-3-4",
+  "level": "2",
+  "url": "s_subspace.html#s_subspace_ex-3-4",
+  "type": "Exercise",
+  "number": "4.1.4.7",
+  "title": "",
+  "body": "  Fix a matrix and define , the set of matrices that commute with .   "
+},
+{
+  "id": "s_subspace_ex-4-2",
+  "level": "2",
+  "url": "s_subspace.html#s_subspace_ex-4-2",
+  "type": "Exercise",
+  "number": "4.1.4.8",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_subspace_ex-4-3",
+  "level": "2",
+  "url": "s_subspace.html#s_subspace_ex-4-3",
+  "type": "Exercise",
+  "number": "4.1.4.9",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_subspace_ex-4-4",
+  "level": "2",
+  "url": "s_subspace.html#s_subspace_ex-4-4",
+  "type": "Exercise",
+  "number": "4.1.4.10",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_subspace_ex-5",
+  "level": "2",
+  "url": "s_subspace.html#s_subspace_ex-5",
+  "type": "Exercise",
+  "number": "4.1.4.11",
+  "title": "",
+  "body": "  Prove .   "
+},
+{
+  "id": "ex_matrix_subspaces",
+  "level": "2",
+  "url": "s_subspace.html#ex_matrix_subspaces",
+  "type": "Exercise",
+  "number": "4.1.4.12",
+  "title": "",
+  "body": "  Prove (1)-(6) of .   "
+},
+{
+  "id": "s_subspace_ex-7-3",
+  "level": "2",
+  "url": "s_subspace.html#s_subspace_ex-7-3",
+  "type": "Exercise",
+  "number": "4.1.4.13",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_subspace_ex-7-4",
+  "level": "2",
+  "url": "s_subspace.html#s_subspace_ex-7-4",
+  "type": "Exercise",
+  "number": "4.1.4.14",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_subspace_ex-7-5",
+  "level": "2",
+  "url": "s_subspace.html#s_subspace_ex-7-5",
+  "type": "Exercise",
+  "number": "4.1.4.15",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_span_independence",
+  "level": "1",
+  "url": "s_span_independence.html",
+  "type": "Section",
+  "number": "4.2",
+  "title": "Span and linear independence",
+  "body": " Span and linear independence   There are many situations in mathematics where we want to describe an infinite set in a concise manner. We saw this at work already in , where infinite sets of solutions to linear systems were neatly described with parametric expressions.  A similar issue arises when describing vector spaces and their subspaces. As we know, any vector space is either the zero space or infinite ( ). If we happen to be dealing with a subspace of , then there is the possibility of giving a parametric description; but how do we proceed when working in one of our more exotic vector spaces like ?  As we will see in the relevant linear algebraic tool for this purpose is the concept of a basis . Loosely speaking, a basis for a vector space is a set of vectors that is large enough to generate the entire space, and small enough to contain no redundancies . What exactly we mean by generate is captured by the rigorous notion of span ; and what we mean by no redundancies is captured by linear independence .    Span  Recall that a linear combination in a vector space is a vector of the form , where are scalars. We use this notion to define the span of a set of vectors.   Span  span of a set of vectors    the span of    Let be a vector space, and let be any subset of . The span of , denoted , is the subset of defined as follows:   If , then .    Otherwise we define to be the set of all linear combinations of elements of : , .         Let be a subset of . Some simple observations:   The zero vector is always an element of . Indeed, if , then by definition. Otherwise, given any , the linear combination is an element of .    We have : , includes itself. Indeed, given any , the linear combination is an element of .    If contains exactly one element, then is simply the set of all scalar multiples of .  If , then we know that this set is infinite ( ). Thus even when is finite , will be infinite , as long as contains nonzero vectors.        Examples in   Let . For each , identify as a familiar geometric object.     .          ,                               , the set containing just the origin, by definition.     is the set of all scalar multiples of . Thus .     is the set of all scalar multiples of the nonzero vector . Geometrically, this is the line that passes through the the origin and the point .    By definition . Thus , the entire -plane.    By definition . It is easy to see that , the line with equation . Note that in this case we have , and thus that the vector is in some sense redundant.    By definition . Claim: . Proving the claim amounts to showing that for all there exist such that . Solving this system using Gaussian elimination, we see that the system has the unique solution , and thus that . This proves , as claimed.    By , we have . Thus . Since by definition, we conclude that .        Video example: computing span   Video: computing span     You may have noticed that each span computation in the previous example produced a subspace of . This is no accident!   Spans are subspaces   Let be a subset of the vector space .   The set is a subspace of .    If is any subspace containing , then .   Taken together, (1) and (2) imply that is the smallest subspace of containing .    We prove each statement separately.   Statement (1)  To show is a subspace, we use the two-step technique.   By we know that .    Suppose . By definition we have for some vectors and scalars . Then for any we have , which is clearly a linear combination of elements of . Thus , as desired.       Statement (2)  Let be a subspace that contains all elements of . Since is closed under arbitrary linear combinations, it must contain any linear combination of elements of , and thus .     The results of motivate the following additional terminology.   Spanning set  spanning set   Let be a subset of the vector space . We call the subspace of  generated by S , and we call a spanning set for .     Some standard spanning sets  spanning set standard examples   For most of the vector spaces we've met a natural spanning set springs to mind. We will refer to these loosely as standard spanning sets. Some examples:   Zero space  Let . By definition the empty set is a spanning set of .    Tuples  Let . For , define to be the -tuple with a one in the -th entry, and zeros elsewhere. Then is a spanning set for .    Matrices  Let . For each with and , define to be the matrix with a one in the -th entry, and zeros elsewhere. Then is a spanning set for .         It is important to observe that spanning sets for vector spaces are not unique. Far from it! In general, for any nonzero vector space there are infinitely many choices of spanning sets.   Spanning sets are not unique   For each and below, verify that is a spanning set for .    ,      , , .           This was shown in     We must show, given any , we can find such that , or . We can find such if and only if the system with augmented matrix is consistent. This matrix row reduces to . Since the last column will never contain a leading one, we conclude that the system is consistent for any choice of , and thus that , as claimed.          Linear independence  As mentioned at the top, the notion of linear independence is precisely what we need to guarantee that a given spanning set has no redundancies .   Linear independence  linear independence   Let be a vector space. A subset is linearly independent if for any collection of distinct vectors of ( , for ), and any scalars , the following implication holds: . A subset is linearly dependent if it is not linearly independent: , if we can find distinct vectors , and scalars with for some , such that .      Linear independence  Recalling the notion of trivial and nontrivial linear combinations from , we can summarize in plain English as follows:   A set is linearly independent if there is no nontrivial linear combination of distinct elements of equal to the zero vector.    A set is linearly dependent if there is a nontrivial linear combination of elements of equal to the zero vector.      As stated, our definition of linear independence is pleasingly general in that it places no restriction on the subset in question; in particular, the definition applies to both finite and infinite subsets of vector spaces. That said, one drawback to this definition is that in order to determine whether is linearly independent, we must look at each finite subset of elements of and determine for this collection whether or not there is a nontrivial linear combination equal to the zero vector. To do so directly would be quite time consuming. Thankfully, we will focus on finite sets , and in this case it turns out that the only subset we need to consider is itself.   Linear independence of finite sets   Let be a vector space, and let , where the are distinct. The following are equivalent.    is linearly independent.    For all , .        Elementary examples   Let be a vector space, and let be a subset.   If , then is linearly dependent: indeed, we have the nontrivial linear combination .    If , then is linearly independent if and only if . The previous comment shows why is a necessary condition. Let's see why it is sufficient.  Suppose , and suppose we have . By we have or ( ). Since , we conclude . This shows that the only linear combination of yielding is the trivial one.    Suppose , where . If is linearly dependent, then we have , where or . If , then we can solve . Similarly, if , then we have . In both cases, we see that one of the vectors is a scalar multiple of the other. Conversely, if one the two vectors is a scalar multiple of the other, then it is easy to see that there is a nontrivial linear combination equal to : , if , then . We conclude that is linearly dependent of if and only if one of the vectors is a scalar multiple of the other, and linearly independent if and only if neither vector is a scalar multiple of the other.       The simple test in for linear independence of a set of two vectors unfortunately does not extend to larger sets. For example, the set can be shown to be linearly dependent, and yet no element of is a scalar multiple of any other element. What is true in these cases, is that some element of can be written as a linear combination of the others, as articulated in .   Linear dependence and redundancy  Let be a subset of the vector space , where the are distinct. If , then is linearly dependent if and only if we can express some element of as a linear combination of the others: , if and only if we have . Indeed, assume we have a vector equation of the form for some . If , then is automatically dependent. (See (1) from .) Otherwise the linear combination on the right side of must be nontrivial, in which case is a nontrivial linear combination of distinct elements equal to . Thus is linearly dependent.  Conversely, if is linearly dependent, then there are scalars such that and for some , in which case .   Using , to decide whether a finite set is linearly independent, we need to determine whether there is a nontrivial linear combination of its elements equal to the zero vector. As described in the , this boils down to a question about the solutions to a certain system of linear equations.   Linear independence of a finite set   Let be a vector space, and let , where the are distinct.   Write out the general vector equation  .    Translate this vector equation into a homogeneous linear system in the unknowns , using the definition of equality for your vector space.    Decide, using Gaussian elimination, whether this system has any nonzero ( , nontrivial) solutions. If it has no nontrivial solution, is linearly independent; if it has a nontrivial solution, is linearly dependent.       This is a fitting point to recall our . As you can see, even as we move into more and more abstract realms of linear algebra (linear independence, span, ), Gaussian elimination remains our most important tool.    Linear independence   For each subset of the given vector space , decide whether is linearly independent.    ,      , , where .         We have if and only if . After a little Gaussian elimination we see that is a nonzero solution to this system, and thus that Since there is a nontrivial linear combination of elements of yielding the zero vector, we conclude is linearly dependent.    We have . Row reduction reveals that this last linear system has a free variable, and hence that there are infinitely many solutions to this system: , . We conclude that is linearly dependent.        Invertibility, span, and linear independence  Equipped with the concepts of span and linear independence, we can add some useful additional statements to our invertibility theorem.   Invertibility theorem   Let be an matrix. The following statements are equivalent.    is invertible.    The matrix equation has a unique solution for any .    The matrix equation has a solution for any .    The matrix equation has a unique solution: namely, .     is row equivalent to , the identity matrix.     is a product of elementary matrices.     .    The set of columns of spans .    The set of columns of is linearly independent.    The set of rows of spans .    The set of rows of is linearly independent.        Statements , can be shown to be equivalent to one of the previous statements of the invertibilty theorem using the column method of matrix multiplication. Indeed, given the matrix equation has a solution if and only if can be written as a linear combination of the columns of . Thus, the matrix equation has a solution for all if and only if all vectors lie in the span of the rows of . This proves statement is equivalent to statement . Similarly, the matrix equation has a nontrivial solution if and only if there is a nontrivial linear combination of the columns of equal to , if and only if the columns of are linearly independent. This proves statement is equivalent to statement .   Statements are easily seen to be equivalent to statements using the fact that is invertible if and only if is invertible.       WeBWork Exercises      Let be a linear combination of .  Select the best statement.    We only know that .    There is no obvious relationship between and .    .    when is a scalar multiple of one of .    none of the above     span .           Let be a linearly independent set of vectors.  Select the best statement.    is also a linearly independent set of vectors unless .    could be a linearly independent or linearly dependent set of vectors depending on the vectors chosen.    is always a linearly dependent set of vectors.    is also a linearly independent set of vectors unless is a scalar multiple another vector in the set.    is always a linearly independent set of vectors.    none of the above     is a linear combination of then is linearly dependent. Otherwise the set in linearly independent. could be a linearly independent or linearly dependent set of vectors depending on the vectors chosen.           Let be a linearly dependent set of vectors.  Select the best statement.    is a linearly independent set of vectors unless is a linear combination of other vectors in the set.    is always a linearly independent set of vectors.    could be a linearly independent or linearly dependent set of vectors depending on the vectors chosen.    is a linearly independent set of vectors unless .    is always a linearly dependent set of vectors.    none of the above     is always a linearly dependent set of vectors.           Are the vectors , and linearly independent?   Choose   linearly dependent   linearly independent   If they are linearly dependent, find scalars that are not all zero such that the equation below is true. If they are linearly independent, find the only scalars that will make the equation below true.        .                      Let be the vector space of symmetric matrices and be the subspace  a. Find a nonzero element in .    b. Find an element in that is not in .             In each exercise, determine whether the given subset of the vector space is linearly independent. Justify your answer.      ,       ,       Let and let , where . Determine all values for which is linearly independent.      Let , and define , , .    Compute , identifying it as a certain familiar set of matrices.    Decide whether is independent.        Let be a vector space, and let be a subset of distinct vectors. Assume is linearly independent. Show that any subset is linearly independent.     Span, independence, and invertibility   In this exercise we identify elements of with column vectors.  Let be a subset of , and let be the matrix whose -th column is : , .    Prove: if and only if is invertible.    Prove: is linearly independent if and only if is invertible.      Use the column method ( ) and the invertibility theorem ( )      "
+},
+{
+  "id": "d_span",
+  "level": "2",
+  "url": "s_span_independence.html#d_span",
+  "type": "Definition",
+  "number": "4.2.1",
+  "title": "Span.",
+  "body": " Span  span of a set of vectors    the span of    Let be a vector space, and let be any subset of . The span of , denoted , is the subset of defined as follows:   If , then .    Otherwise we define to be the set of all linear combinations of elements of : , .      "
+},
+{
+  "id": "rm_span",
+  "level": "2",
+  "url": "s_span_independence.html#rm_span",
+  "type": "Remark",
+  "number": "4.2.2",
+  "title": "",
+  "body": "  Let be a subset of . Some simple observations:   The zero vector is always an element of . Indeed, if , then by definition. Otherwise, given any , the linear combination is an element of .    We have : , includes itself. Indeed, given any , the linear combination is an element of .    If contains exactly one element, then is simply the set of all scalar multiples of .  If , then we know that this set is infinite ( ). Thus even when is finite , will be infinite , as long as contains nonzero vectors.      "
+},
+{
+  "id": "eg_span_2space",
+  "level": "2",
+  "url": "s_span_independence.html#eg_span_2space",
+  "type": "Example",
+  "number": "4.2.3",
+  "title": "Examples in <span class=\"process-math\">\\(\\R^2\\)<\/span>.",
+  "body": " Examples in   Let . For each , identify as a familiar geometric object.     .          ,                               , the set containing just the origin, by definition.     is the set of all scalar multiples of . Thus .     is the set of all scalar multiples of the nonzero vector . Geometrically, this is the line that passes through the the origin and the point .    By definition . Thus , the entire -plane.    By definition . It is easy to see that , the line with equation . Note that in this case we have , and thus that the vector is in some sense redundant.    By definition . Claim: . Proving the claim amounts to showing that for all there exist such that . Solving this system using Gaussian elimination, we see that the system has the unique solution , and thus that . This proves , as claimed.    By , we have . Thus . Since by definition, we conclude that .      "
+},
+{
+  "id": "vid_eg_span",
+  "level": "2",
+  "url": "s_span_independence.html#vid_eg_span",
+  "type": "Example",
+  "number": "4.2.4",
+  "title": "Video example: computing span.",
+  "body": " Video example: computing span   Video: computing span    "
+},
+{
+  "id": "th_span",
+  "level": "2",
+  "url": "s_span_independence.html#th_span",
+  "type": "Theorem",
+  "number": "4.2.6",
+  "title": "Spans are subspaces.",
+  "body": " Spans are subspaces   Let be a subset of the vector space .   The set is a subspace of .    If is any subspace containing , then .   Taken together, (1) and (2) imply that is the smallest subspace of containing .    We prove each statement separately.   Statement (1)  To show is a subspace, we use the two-step technique.   By we know that .    Suppose . By definition we have for some vectors and scalars . Then for any we have , which is clearly a linear combination of elements of . Thus , as desired.       Statement (2)  Let be a subspace that contains all elements of . Since is closed under arbitrary linear combinations, it must contain any linear combination of elements of , and thus .    "
+},
+{
+  "id": "d_spanning_set",
+  "level": "2",
+  "url": "s_span_independence.html#d_spanning_set",
+  "type": "Definition",
+  "number": "4.2.7",
+  "title": "Spanning set.",
+  "body": " Spanning set  spanning set   Let be a subset of the vector space . We call the subspace of  generated by S , and we call a spanning set for .   "
+},
+{
+  "id": "rm_spanning_sets",
+  "level": "2",
+  "url": "s_span_independence.html#rm_spanning_sets",
+  "type": "Remark",
+  "number": "4.2.8",
+  "title": "Some standard spanning sets.",
+  "body": " Some standard spanning sets  spanning set standard examples   For most of the vector spaces we've met a natural spanning set springs to mind. We will refer to these loosely as standard spanning sets. Some examples:   Zero space  Let . By definition the empty set is a spanning set of .    Tuples  Let . For , define to be the -tuple with a one in the -th entry, and zeros elsewhere. Then is a spanning set for .    Matrices  Let . For each with and , define to be the matrix with a one in the -th entry, and zeros elsewhere. Then is a spanning set for .        "
+},
+{
+  "id": "s_span_independence-3-13",
+  "level": "2",
+  "url": "s_span_independence.html#s_span_independence-3-13",
+  "type": "Example",
+  "number": "4.2.9",
+  "title": "Spanning sets are not unique.",
+  "body": " Spanning sets are not unique   For each and below, verify that is a spanning set for .    ,      , , .           This was shown in     We must show, given any , we can find such that , or . We can find such if and only if the system with augmented matrix is consistent. This matrix row reduces to . Since the last column will never contain a leading one, we conclude that the system is consistent for any choice of , and thus that , as claimed.       "
+},
+{
+  "id": "d_linear_independence",
+  "level": "2",
+  "url": "s_span_independence.html#d_linear_independence",
+  "type": "Definition",
+  "number": "4.2.10",
+  "title": "Linear independence.",
+  "body": " Linear independence  linear independence   Let be a vector space. A subset is linearly independent if for any collection of distinct vectors of ( , for ), and any scalars , the following implication holds: . A subset is linearly dependent if it is not linearly independent: , if we can find distinct vectors , and scalars with for some , such that .    "
+},
+{
+  "id": "ss_linear_independence-4",
+  "level": "2",
+  "url": "s_span_independence.html#ss_linear_independence-4",
+  "type": "Remark",
+  "number": "4.2.11",
+  "title": "Linear independence.",
+  "body": " Linear independence  Recalling the notion of trivial and nontrivial linear combinations from , we can summarize in plain English as follows:   A set is linearly independent if there is no nontrivial linear combination of distinct elements of equal to the zero vector.    A set is linearly dependent if there is a nontrivial linear combination of elements of equal to the zero vector.     "
+},
+{
+  "id": "th_lin_ind_finite",
+  "level": "2",
+  "url": "s_span_independence.html#th_lin_ind_finite",
+  "type": "Theorem",
+  "number": "4.2.12",
+  "title": "Linear independence of finite sets.",
+  "body": " Linear independence of finite sets   Let be a vector space, and let , where the are distinct. The following are equivalent.    is linearly independent.    For all , .      "
+},
+{
+  "id": "eg_independence_basic_examples",
+  "level": "2",
+  "url": "s_span_independence.html#eg_independence_basic_examples",
+  "type": "Example",
+  "number": "4.2.13",
+  "title": "Elementary examples.",
+  "body": " Elementary examples   Let be a vector space, and let be a subset.   If , then is linearly dependent: indeed, we have the nontrivial linear combination .    If , then is linearly independent if and only if . The previous comment shows why is a necessary condition. Let's see why it is sufficient.  Suppose , and suppose we have . By we have or ( ). Since , we conclude . This shows that the only linear combination of yielding is the trivial one.    Suppose , where . If is linearly dependent, then we have , where or . If , then we can solve . Similarly, if , then we have . In both cases, we see that one of the vectors is a scalar multiple of the other. Conversely, if one the two vectors is a scalar multiple of the other, then it is easy to see that there is a nontrivial linear combination equal to : , if , then . We conclude that is linearly dependent of if and only if one of the vectors is a scalar multiple of the other, and linearly independent if and only if neither vector is a scalar multiple of the other.      "
+},
+{
+  "id": "rm_lin_ind_redund",
+  "level": "2",
+  "url": "s_span_independence.html#rm_lin_ind_redund",
+  "type": "Remark",
+  "number": "4.2.14",
+  "title": "Linear dependence and redundancy.",
+  "body": " Linear dependence and redundancy  Let be a subset of the vector space , where the are distinct. If , then is linearly dependent if and only if we can express some element of as a linear combination of the others: , if and only if we have . Indeed, assume we have a vector equation of the form for some . If , then is automatically dependent. (See (1) from .) Otherwise the linear combination on the right side of must be nontrivial, in which case is a nontrivial linear combination of distinct elements equal to . Thus is linearly dependent.  Conversely, if is linearly dependent, then there are scalars such that and for some , in which case .  "
+},
+{
+  "id": "proc_linear_independence",
+  "level": "2",
+  "url": "s_span_independence.html#proc_linear_independence",
+  "type": "Procedure",
+  "number": "4.2.15",
+  "title": "Linear independence of a finite set.",
+  "body": " Linear independence of a finite set   Let be a vector space, and let , where the are distinct.   Write out the general vector equation  .    Translate this vector equation into a homogeneous linear system in the unknowns , using the definition of equality for your vector space.    Decide, using Gaussian elimination, whether this system has any nonzero ( , nontrivial) solutions. If it has no nontrivial solution, is linearly independent; if it has a nontrivial solution, is linearly dependent.      "
+},
+{
+  "id": "ex_linear_independence",
+  "level": "2",
+  "url": "s_span_independence.html#ex_linear_independence",
+  "type": "Example",
+  "number": "4.2.16",
+  "title": "Linear independence.",
+  "body": " Linear independence   For each subset of the given vector space , decide whether is linearly independent.    ,      , , where .         We have if and only if . After a little Gaussian elimination we see that is a nonzero solution to this system, and thus that Since there is a nontrivial linear combination of elements of yielding the zero vector, we conclude is linearly dependent.    We have . Row reduction reveals that this last linear system has a free variable, and hence that there are infinitely many solutions to this system: , . We conclude that is linearly dependent.     "
+},
+{
+  "id": "th_invertibility_3",
+  "level": "2",
+  "url": "s_span_independence.html#th_invertibility_3",
+  "type": "Theorem",
+  "number": "4.2.17",
+  "title": "Invertibility theorem.",
+  "body": " Invertibility theorem   Let be an matrix. The following statements are equivalent.    is invertible.    The matrix equation has a unique solution for any .    The matrix equation has a solution for any .    The matrix equation has a unique solution: namely, .     is row equivalent to , the identity matrix.     is a product of elementary matrices.     .    The set of columns of spans .    The set of columns of is linearly independent.    The set of rows of spans .    The set of rows of is linearly independent.        Statements , can be shown to be equivalent to one of the previous statements of the invertibilty theorem using the column method of matrix multiplication. Indeed, given the matrix equation has a solution if and only if can be written as a linear combination of the columns of . Thus, the matrix equation has a solution for all if and only if all vectors lie in the span of the rows of . This proves statement is equivalent to statement . Similarly, the matrix equation has a nontrivial solution if and only if there is a nontrivial linear combination of the columns of equal to , if and only if the columns of are linearly independent. This proves statement is equivalent to statement .   Statements are easily seen to be equivalent to statements using the fact that is invertible if and only if is invertible.   "
+},
+{
+  "id": "s_span_independence_ex-1-2",
+  "level": "2",
+  "url": "s_span_independence.html#s_span_independence_ex-1-2",
+  "type": "Exercise",
+  "number": "4.2.4.1",
+  "title": "",
+  "body": "    Let be a linear combination of .  Select the best statement.    We only know that .    There is no obvious relationship between and .    .    when is a scalar multiple of one of .    none of the above     span .      "
+},
+{
+  "id": "s_span_independence_ex-1-3",
+  "level": "2",
+  "url": "s_span_independence.html#s_span_independence_ex-1-3",
+  "type": "Exercise",
+  "number": "4.2.4.2",
+  "title": "",
+  "body": "    Let be a linearly independent set of vectors.  Select the best statement.    is also a linearly independent set of vectors unless .    could be a linearly independent or linearly dependent set of vectors depending on the vectors chosen.    is always a linearly dependent set of vectors.    is also a linearly independent set of vectors unless is a scalar multiple another vector in the set.    is always a linearly independent set of vectors.    none of the above     is a linear combination of then is linearly dependent. Otherwise the set in linearly independent. could be a linearly independent or linearly dependent set of vectors depending on the vectors chosen.      "
+},
+{
+  "id": "s_span_independence_ex-1-4",
+  "level": "2",
+  "url": "s_span_independence.html#s_span_independence_ex-1-4",
+  "type": "Exercise",
+  "number": "4.2.4.3",
+  "title": "",
+  "body": "    Let be a linearly dependent set of vectors.  Select the best statement.    is a linearly independent set of vectors unless is a linear combination of other vectors in the set.    is always a linearly independent set of vectors.    could be a linearly independent or linearly dependent set of vectors depending on the vectors chosen.    is a linearly independent set of vectors unless .    is always a linearly dependent set of vectors.    none of the above     is always a linearly dependent set of vectors.      "
+},
+{
+  "id": "s_span_independence_ex-1-5",
+  "level": "2",
+  "url": "s_span_independence.html#s_span_independence_ex-1-5",
+  "type": "Exercise",
+  "number": "4.2.4.4",
+  "title": "",
+  "body": "    Are the vectors , and linearly independent?   Choose   linearly dependent   linearly independent   If they are linearly dependent, find scalars that are not all zero such that the equation below is true. If they are linearly independent, find the only scalars that will make the equation below true.        .                 "
+},
+{
+  "id": "s_span_independence_ex-1-6",
+  "level": "2",
+  "url": "s_span_independence.html#s_span_independence_ex-1-6",
+  "type": "Exercise",
+  "number": "4.2.4.5",
+  "title": "",
+  "body": "    Let be the vector space of symmetric matrices and be the subspace  a. Find a nonzero element in .    b. Find an element in that is not in .         "
+},
+{
+  "id": "s_span_independence_ex-2-2",
+  "level": "2",
+  "url": "s_span_independence.html#s_span_independence_ex-2-2",
+  "type": "Exercise",
+  "number": "4.2.4.6",
+  "title": "",
+  "body": "   ,    "
+},
+{
+  "id": "s_span_independence_ex-2-3",
+  "level": "2",
+  "url": "s_span_independence.html#s_span_independence_ex-2-3",
+  "type": "Exercise",
+  "number": "4.2.4.7",
+  "title": "",
+  "body": "  ,   "
+},
+{
+  "id": "s_span_independence_ex-3",
+  "level": "2",
+  "url": "s_span_independence.html#s_span_independence_ex-3",
+  "type": "Exercise",
+  "number": "4.2.4.8",
+  "title": "",
+  "body": "  Let and let , where . Determine all values for which is linearly independent.   "
+},
+{
+  "id": "s_span_independence_ex-4",
+  "level": "2",
+  "url": "s_span_independence.html#s_span_independence_ex-4",
+  "type": "Exercise",
+  "number": "4.2.4.9",
+  "title": "",
+  "body": "  Let , and define , , .    Compute , identifying it as a certain familiar set of matrices.    Decide whether is independent.     "
+},
+{
+  "id": "ex_linear_independence_arbitrary",
+  "level": "2",
+  "url": "s_span_independence.html#ex_linear_independence_arbitrary",
+  "type": "Exercise",
+  "number": "4.2.4.10",
+  "title": "",
+  "body": "  Let be a vector space, and let be a subset of distinct vectors. Assume is linearly independent. Show that any subset is linearly independent.   "
+},
+{
+  "id": "ex_span_independence_inveribility",
+  "level": "2",
+  "url": "s_span_independence.html#ex_span_independence_inveribility",
+  "type": "Exercise",
+  "number": "4.2.4.11",
+  "title": "Span, independence, and invertibility.",
+  "body": " Span, independence, and invertibility   In this exercise we identify elements of with column vectors.  Let be a subset of , and let be the matrix whose -th column is : , .    Prove: if and only if is invertible.    Prove: is linearly independent if and only if is invertible.      Use the column method ( ) and the invertibility theorem ( )   "
+},
+{
+  "id": "s_basis",
+  "level": "1",
+  "url": "s_basis.html",
+  "type": "Section",
+  "number": "4.3",
+  "title": "Bases",
+  "body": " Bases   Now that we have the notions of span and linear independence in place, we simply combine them to define a basis of a vector space. In the spirit of , a basis of a vector space should be understood as a minimal spanning set.  This section includes a number of theoretical results. There are two in particular that are worth highlighting, especially in regard to computational techniques for abstract vector spaces:   If is a basis of containing exactly elements, then any other basis also contains exactly elements. ( )    If is a basis for , then every element of can be written as a linear combination of elements of in a unique way . ( )   The first result allows us to define the dimension of a vector space as the number of elements in any given basis. The second result allows us to take any -dimensional vector space with chosen basis and effectively identify vectors with the sequence , where . This observation has the following consequence: given any -dimensional vector space , no matter how exotic, once we choose a basis of , we can reduce any and all linear algebraic questions or computations about to a corresponding question in . We will elaborate this idea further in .    Bases of vector spaces   Basis  basis of a vector space   A subset of a vector space is called a basis if    spans , and     is linearly independent.        Some standard bases  The examples of standard spanning sets in are easily seen to be linearly independent, and hence are in fact bases. We list them again here, using the same notation, and refer to these as standard bases for the given spaces.   Zero space  Let . The empty is a basis for . Note that spans by definition ( ), and it satisfies the defining implication of linear independence ( ) trivially.    Tuples  Let . The set is the standard basis of .    Matrices  Let . The set is the standard basis of .      Just as with spanning sets, bases are not in general unique: in fact, for any nonzero vector space there are infinitely many different bases.   Some nonstandard bases   For each and below, verify that is a basis of .    , .     , .       Each verification amounts to showing, using the techniques from , that the given spans the given and is linearly independent.    Since neither element of is a scalar multiple of the other, the set is linearly independent. To see that spans we show that for any we have for some . Indeed we may take and . (These formulas were obtained by solving the corresponding system of two equations in the unknowns and .)    First we show that spans . Given an arbitrary element , we must show that there exist scalars satisfying . Expanding out the left side of the above equality, we would have . Thus we have if and only if the linear system with augmented matrix is consistent. This augmented matrix row reduces to . Since there is no leading one in the last column, we see that the corresponding system is consistent, and thus , as desired.  Turning to linear independence of , we now endeavor to show that the only solution to is the trivial one . Just as above, such a solution corresponds to a solution to the linear system with augmented matrix , which row reduces to . Since the first four columns of this matrix contain leading ones, none of the unknowns is free, which means that is the unique solution to the system. This proves that , as desired.      Proceeding directly from the definition, to show a set is a basis of we have to do two steps: (i) show ; (ii) show that is linearly independent. The following theorem gives rise to a convenient one-step technique for proving a finite set is a basis: show that every element of can be written as a linear combination of elements of in a unique way .   Basis equivalence   Let be a vector space, and let , where the are distinct. The following statements are equivalent.     is a basis of .    Every element can be written as a linear combination of elements of in a unique way: , for all there is a unique -tuple such that .       Implication:  Suppose is a basis. By definition, spans , and so every element of can be written as a linear combination of elements of . It remains to show that this linear combination is unique in the sense described. This follows from the fact that is linearly independent. Indeed, if , then after some algebra we have . Since is linearly independent and since the are distinct, we must have , and hence for all .    Implication:  If satisfies (2), then clearly it spans . The uniqueness of linear combinations of elements of now easily implies is linearly independent: , where the last step uses the fact that is the unique expression of as a linear combination of the elements of .      yields the following one-step technique for proving a set is a basis.   One-step technique for bases   Let be a vector space, and let , where the are distinct. To decide whether is a basis, proceed as follows.   Write out the vector equation , where is an arbitrary element of the vector space . (Typically you will give some parametric description of in terms of a finite list of unknowns.)    Translate the vector equation into an equivalent linear system of equations in the unknowns .    If the system in (2) has a unique solution no matter what is chosen, then is a basis. If there is a choice of for which either the system in (2) has no solution ( , is inconsistent) or has infinitely many solutions, then is not a basis.        One-step technique for   Use the one step technique to decide whether the set is a basis of .    We ask whether for all elements we can write for a unique choice of . This is equivalent to asking whether the matrix equation . has a unique solution for any choice of . Performing Gaussian elimination on the corresponding augmented matrix yields . Since the third column of does not have a leading one, we conclude that the corresponding system has a free variable, and hence that for any given the equation has either no solutions (inconsistent) or infinitely many solutions. In particular, it is not true that there is always a unique solution. Thus is not a basis according to the one-step technique.  In fact, our Gaussian elimination analysis tells us exactly how fails to be a basis. Since the last column of does not have a leading one, the corresponding system is always consistent: , there is always at least one solution to for each . This tells us that is a spanning set of . On the other hand, the existence of the free variable tells us that for , we will have infinitely many choices satisfying . This shows that is not linearly independent.     Video example: deciding if a set is a basis ( )   Video: deciding if a set is a basis ( )      Video example: deciding if a set is a basis ( )   Video: deciding if a set is a basis     Besides deciding whether a given set is a basis, we will often want to come up with a basis of a given space on our own. The following by inspection technique often comes in handy in cases where the elements of the vector space can be described in a simple parametric manner.   By-inspection basis technique   To produce a basis of a vector space  by inspection , proceed as follows.   Parametric description  Give a simple parametric description of the general element of .    Spanning set  If your parametric description is simple enough, you should be able to extract from it a natural spanning set of .    Linear independence  If your parametric description is free of redundancies, then will likely be linearly independent. Verify this using .        By-inspection basis technique   Use to compute a basis of the subspace defined as .    The two equations give two independent conditions on and , and no condition on . We see that the general element of can be described as for arbitrary scalars . It follows immediately that spans . Furthermore, using , we have for any scalars . Thus is linearly independent. We conclude is a basis.     By-inspection basis technique   Let be the subspace of all symmetric matrices. Use to compute a basis of .    We follow the three steps of .   A general symmetric matrix can be described parametrically as .    We have . It follows immediately that the set is a spanning set, where .    The expression tells us that . This proves is linearly independent.   Since is a linearly independent spanning set of , it is a basis of .       WeBWork Exercises      Find a basis for the vector space of matrices with trace 0.   , ,  .            A square matrix is half-magic if the sum of the numbers in each row and column is the same. Find a basis for the vector space of half-magic squares.   ,  .          One-step basis technique   For each vector space and subset , use the one-step technique ( ) to decide whether is a basis for .                              , where      , where         By-inspection basis technique   For each given and subspace , provide a basis for using the by inspection technique . In more detail:    Give a simple parametric description of the elements of .    If your parametric description is simple enough, you should be able to find an obvious spanning set of .    Argue that your spanning set is linearly independent.        ,        ,        ,        , is set of all matrices whose rows and columns all sum to zero       Suppose be a basis for the vector space . Let , where . Prove that is a basis.      Let be a set of distinct elements of , let be an invertible matrix, and let . Prove that is a basis of if and only if is a basis of as follows.    Prove that for all : , contains distinct elements.    Prove that if is a basis of , then is also a basis for any invertible matrix .    Now prove that if is a basis of for the invertible matrix , then is a basis of .  Hint: in (b) you showed that if you start with any basis and apply any invertible matrix to the elements of this basis, then you end up with another basis; think of a useful choice of matrix for the present situation.       Bases for important matrix subspaces   Let . For each of the following subspaces , give a basis of . You must explicitly describe the elements of your basis as linear combinations of the elements of the standard basis for . No justification needed, as long as your proposed basis is simple enough.    Upper triangular matrices       Symmetric matrices       Skew-symmetric matrices         It might help to look at the and cases to get an idea of what these bases should be.     "
+},
+{
+  "id": "d_basis",
+  "level": "2",
+  "url": "s_basis.html#d_basis",
+  "type": "Definition",
+  "number": "4.3.1",
+  "title": "Basis.",
+  "body": " Basis  basis of a vector space   A subset of a vector space is called a basis if    spans , and     is linearly independent.      "
+},
+{
+  "id": "rm_standard_bases",
+  "level": "2",
+  "url": "s_basis.html#rm_standard_bases",
+  "type": "Remark",
+  "number": "4.3.2",
+  "title": "Some standard bases.",
+  "body": " Some standard bases  The examples of standard spanning sets in are easily seen to be linearly independent, and hence are in fact bases. We list them again here, using the same notation, and refer to these as standard bases for the given spaces.   Zero space  Let . The empty is a basis for . Note that spans by definition ( ), and it satisfies the defining implication of linear independence ( ) trivially.    Tuples  Let . The set is the standard basis of .    Matrices  Let . The set is the standard basis of .     "
+},
+{
+  "id": "ss_bases-5",
+  "level": "2",
+  "url": "s_basis.html#ss_bases-5",
+  "type": "Example",
+  "number": "4.3.3",
+  "title": "Some nonstandard bases.",
+  "body": " Some nonstandard bases   For each and below, verify that is a basis of .    , .     , .       Each verification amounts to showing, using the techniques from , that the given spans the given and is linearly independent.    Since neither element of is a scalar multiple of the other, the set is linearly independent. To see that spans we show that for any we have for some . Indeed we may take and . (These formulas were obtained by solving the corresponding system of two equations in the unknowns and .)    First we show that spans . Given an arbitrary element , we must show that there exist scalars satisfying . Expanding out the left side of the above equality, we would have . Thus we have if and only if the linear system with augmented matrix is consistent. This augmented matrix row reduces to . Since there is no leading one in the last column, we see that the corresponding system is consistent, and thus , as desired.  Turning to linear independence of , we now endeavor to show that the only solution to is the trivial one . Just as above, such a solution corresponds to a solution to the linear system with augmented matrix , which row reduces to . Since the first four columns of this matrix contain leading ones, none of the unknowns is free, which means that is the unique solution to the system. This proves that , as desired.     "
+},
+{
+  "id": "th_basis_equivalence",
+  "level": "2",
+  "url": "s_basis.html#th_basis_equivalence",
+  "type": "Theorem",
+  "number": "4.3.4",
+  "title": "Basis equivalence.",
+  "body": " Basis equivalence   Let be a vector space, and let , where the are distinct. The following statements are equivalent.     is a basis of .    Every element can be written as a linear combination of elements of in a unique way: , for all there is a unique -tuple such that .       Implication:  Suppose is a basis. By definition, spans , and so every element of can be written as a linear combination of elements of . It remains to show that this linear combination is unique in the sense described. This follows from the fact that is linearly independent. Indeed, if , then after some algebra we have . Since is linearly independent and since the are distinct, we must have , and hence for all .    Implication:  If satisfies (2), then clearly it spans . The uniqueness of linear combinations of elements of now easily implies is linearly independent: , where the last step uses the fact that is the unique expression of as a linear combination of the elements of .    "
+},
+{
+  "id": "proc_basis_onestep",
+  "level": "2",
+  "url": "s_basis.html#proc_basis_onestep",
+  "type": "Procedure",
+  "number": "4.3.5",
+  "title": "One-step technique for bases.",
+  "body": " One-step technique for bases   Let be a vector space, and let , where the are distinct. To decide whether is a basis, proceed as follows.   Write out the vector equation , where is an arbitrary element of the vector space . (Typically you will give some parametric description of in terms of a finite list of unknowns.)    Translate the vector equation into an equivalent linear system of equations in the unknowns .    If the system in (2) has a unique solution no matter what is chosen, then is a basis. If there is a choice of for which either the system in (2) has no solution ( , is inconsistent) or has infinitely many solutions, then is not a basis.      "
+},
+{
+  "id": "eg_basis_onestep_R3",
+  "level": "2",
+  "url": "s_basis.html#eg_basis_onestep_R3",
+  "type": "Example",
+  "number": "4.3.6",
+  "title": "One-step technique for <span class=\"process-math\">\\(\\R^3\\)<\/span>.",
+  "body": " One-step technique for   Use the one step technique to decide whether the set is a basis of .    We ask whether for all elements we can write for a unique choice of . This is equivalent to asking whether the matrix equation . has a unique solution for any choice of . Performing Gaussian elimination on the corresponding augmented matrix yields . Since the third column of does not have a leading one, we conclude that the corresponding system has a free variable, and hence that for any given the equation has either no solutions (inconsistent) or infinitely many solutions. In particular, it is not true that there is always a unique solution. Thus is not a basis according to the one-step technique.  In fact, our Gaussian elimination analysis tells us exactly how fails to be a basis. Since the last column of does not have a leading one, the corresponding system is always consistent: , there is always at least one solution to for each . This tells us that is a spanning set of . On the other hand, the existence of the free variable tells us that for , we will have infinitely many choices satisfying . This shows that is not linearly independent.   "
+},
+{
+  "id": "vid_eg_basis",
+  "level": "2",
+  "url": "s_basis.html#vid_eg_basis",
+  "type": "Example",
+  "number": "4.3.7",
+  "title": "Video example: deciding if a set is a basis (<span class=\"process-math\">\\(\\R^n\\)<\/span>).",
+  "body": " Video example: deciding if a set is a basis ( )   Video: deciding if a set is a basis ( )    "
+},
+{
+  "id": "vid_eg_basis_exotic",
+  "level": "2",
+  "url": "s_basis.html#vid_eg_basis_exotic",
+  "type": "Example",
+  "number": "4.3.9",
+  "title": "Video example: deciding if a set is a basis (<span class=\"process-math\">\\(M_{nn}\\)<\/span>).",
+  "body": " Video example: deciding if a set is a basis ( )   Video: deciding if a set is a basis    "
+},
+{
+  "id": "proc_provide_basis",
+  "level": "2",
+  "url": "s_basis.html#proc_provide_basis",
+  "type": "Procedure",
+  "number": "4.3.11",
+  "title": "By-inspection basis technique.",
+  "body": " By-inspection basis technique   To produce a basis of a vector space  by inspection , proceed as follows.   Parametric description  Give a simple parametric description of the general element of .    Spanning set  If your parametric description is simple enough, you should be able to extract from it a natural spanning set of .    Linear independence  If your parametric description is free of redundancies, then will likely be linearly independent. Verify this using .      "
+},
+{
+  "id": "eg_byinspection_R5",
+  "level": "2",
+  "url": "s_basis.html#eg_byinspection_R5",
+  "type": "Example",
+  "number": "4.3.12",
+  "title": "By-inspection basis technique.",
+  "body": " By-inspection basis technique   Use to compute a basis of the subspace defined as .    The two equations give two independent conditions on and , and no condition on . We see that the general element of can be described as for arbitrary scalars . It follows immediately that spans . Furthermore, using , we have for any scalars . Thus is linearly independent. We conclude is a basis.   "
+},
+{
+  "id": "eg_byinspection_basis",
+  "level": "2",
+  "url": "s_basis.html#eg_byinspection_basis",
+  "type": "Example",
+  "number": "4.3.13",
+  "title": "By-inspection basis technique.",
+  "body": " By-inspection basis technique   Let be the subspace of all symmetric matrices. Use to compute a basis of .    We follow the three steps of .   A general symmetric matrix can be described parametrically as .    We have . It follows immediately that the set is a spanning set, where .    The expression tells us that . This proves is linearly independent.   Since is a linearly independent spanning set of , it is a basis of .   "
+},
+{
+  "id": "s_basis_ex-1-2",
+  "level": "2",
+  "url": "s_basis.html#s_basis_ex-1-2",
+  "type": "Exercise",
+  "number": "4.3.2.1",
+  "title": "",
+  "body": "    Find a basis for the vector space of matrices with trace 0.   , ,  .       "
+},
+{
+  "id": "s_basis_ex-1-3",
+  "level": "2",
+  "url": "s_basis.html#s_basis_ex-1-3",
+  "type": "Exercise",
+  "number": "4.3.2.2",
+  "title": "",
+  "body": "    A square matrix is half-magic if the sum of the numbers in each row and column is the same. Find a basis for the vector space of half-magic squares.   ,  .       "
+},
+{
+  "id": "s_basis_ex-2-3",
+  "level": "2",
+  "url": "s_basis.html#s_basis_ex-2-3",
+  "type": "Exercise",
+  "number": "4.3.2.3",
+  "title": "",
+  "body": "                  "
+},
+{
+  "id": "s_basis_ex-2-4",
+  "level": "2",
+  "url": "s_basis.html#s_basis_ex-2-4",
+  "type": "Exercise",
+  "number": "4.3.2.4",
+  "title": "",
+  "body": "        , where      , where      "
+},
+{
+  "id": "s_basis_ex-3-3",
+  "level": "2",
+  "url": "s_basis.html#s_basis_ex-3-3",
+  "type": "Exercise",
+  "number": "4.3.2.5",
+  "title": "",
+  "body": "   ,    "
+},
+{
+  "id": "s_basis_ex-3-4",
+  "level": "2",
+  "url": "s_basis.html#s_basis_ex-3-4",
+  "type": "Exercise",
+  "number": "4.3.2.6",
+  "title": "",
+  "body": "   ,    "
+},
+{
+  "id": "s_basis_ex-3-5",
+  "level": "2",
+  "url": "s_basis.html#s_basis_ex-3-5",
+  "type": "Exercise",
+  "number": "4.3.2.7",
+  "title": "",
+  "body": "   ,    "
+},
+{
+  "id": "s_basis_ex-3-6",
+  "level": "2",
+  "url": "s_basis.html#s_basis_ex-3-6",
+  "type": "Exercise",
+  "number": "4.3.2.8",
+  "title": "",
+  "body": "   , is set of all matrices whose rows and columns all sum to zero   "
+},
+{
+  "id": "s_basis_ex-4",
+  "level": "2",
+  "url": "s_basis.html#s_basis_ex-4",
+  "type": "Exercise",
+  "number": "4.3.2.9",
+  "title": "",
+  "body": "  Suppose be a basis for the vector space . Let , where . Prove that is a basis.   "
+},
+{
+  "id": "s_basis_ex-5",
+  "level": "2",
+  "url": "s_basis.html#s_basis_ex-5",
+  "type": "Exercise",
+  "number": "4.3.2.10",
+  "title": "",
+  "body": "  Let be a set of distinct elements of , let be an invertible matrix, and let . Prove that is a basis of if and only if is a basis of as follows.    Prove that for all : , contains distinct elements.    Prove that if is a basis of , then is also a basis for any invertible matrix .    Now prove that if is a basis of for the invertible matrix , then is a basis of .  Hint: in (b) you showed that if you start with any basis and apply any invertible matrix to the elements of this basis, then you end up with another basis; think of a useful choice of matrix for the present situation.     "
+},
+{
+  "id": "ex_basis_matrix_families",
+  "level": "2",
+  "url": "s_basis.html#ex_basis_matrix_families",
+  "type": "Exercise",
+  "number": "4.3.2.11",
+  "title": "Bases for important matrix subspaces.",
+  "body": " Bases for important matrix subspaces   Let . For each of the following subspaces , give a basis of . You must explicitly describe the elements of your basis as linear combinations of the elements of the standard basis for . No justification needed, as long as your proposed basis is simple enough.    Upper triangular matrices       Symmetric matrices       Skew-symmetric matrices         It might help to look at the and cases to get an idea of what these bases should be.   "
+},
+{
+  "id": "s_dimension",
+  "level": "1",
+  "url": "s_dimension.html",
+  "type": "Section",
+  "number": "4.4",
+  "title": "Dimension",
+  "body": " Dimension   Intuitively, we think of as a two-dimensional space, and as three-dimensional one. Why? Loosely speaking this notion of dimension has something to do with the number of degrees of freedom involved in specifying a particular element of the given space: to specify an element of we need to give its two coordinates; to specify an element of we need to give its three coordinates. Clearly, this conception is too imprecise to serve as a mathematical definition. What exactly does degrees of freedom mean? And how do you quantify the number of degrees of freedom needed for a given space? For example, we also think of a plane passing through the origin as a two-dimensional object; it is not immediately clear how to square this intuition with our vague degrees of freedom formulation. In this section we introduce the definition of the dimension of a vector space, which will be a rigorous articulation of these notions. Our definition, which relies on the concept of bases, seems simple enough: the dimension of a vector space is defined as the number of elements contained in any basis of . However, as we will see there is considerable work involved (a) in proving that this definition is well-defined, and (b) in showing that it captures the intuition of dimension described above.    Dimension of a vector space  Before getting to the definition of dimension, we introduce the notion of the cardinality of a set, which essentially is just the number of distinct elements the set contains.   Cardinality of a set  cardinality of a set    the cardinality of the set    Let be a set. The cardinality of , denoted is defined as follows:   If is finite, then its cardinality is the number of distinct elements it contains, written .    If is infinite, then we say it has infinite cardinality , and write .       We are now ready to define the dimension of a vector space.   Dimension of a vector space  dimension of a vector space    dimension of    Let be a vector space. The dimension of , denoted , is defined as follows:   If has a finite basis , then the dimension of is the number of elements of : , .    If does not have a finite basis, then we say is infinite dimensional , and write .       There are two subtleties in our definition that we address in .   Infinite dimension  Wouldn't it have been more natural to simply say is infinite dimensional if it has an infinite basis? That way we could dispense with the cases of and simply define as the cardinality of any basis of . As it turns out, our defined notion of having infinite dimension is indeed equivalent to not having a finite basis, but to prove this we need to establish the general fact that every vector space has a basis. As intuitive as that claim may sound ( , that bases always exist), its proof requires some set theory methods that are not covered in this text. As such we will not include it in our treatment of dimension, and so will have to make do with our slightly awkward definition of infinite-dimensional vector spaces.    Dimension is well-defined  Another issue with our definition is the question of whether or not our notion of dimension is well-defined. Recall that a nonzero vector space has infinitely many different bases. For the notion of dimension defined in to make sense, each one of these different bases must have the same cardinality. Who's to say that a vector space cannot have one basis of cardinality two and another of cardinality 5: or worse, one basis that is finite and another that is infinite? It turns out that in fact all bases of a vector space must have the same cardinality, but this is a nontrivial fact that requires proof. (See .)   Before getting to the theory required to show our definition of dimension is well-defined, we illustrate its application to some familiar finite-dimensional vector spaces. Note that by definition, to show a vector space has dimension , we simply must exhibit a basis with . This is especially easy to do for a vector space when we have a basis at the ready, as is the case for our list of familiar vector spaces.   Dimensions of familiar spaces  For each below we provide its standard basis and compute .    Zero space   , ,     Tuples   , ,     Matrices   , ,      Even when we do not have a standard basis at our disposal, there are many situations when we can produce a basis of a space by inspection, allowing us to then easily compute the dimension.   Dimension of subspace   Use to compute the dimension of the subspace defined as .    We saw in that is a basis of . Thus .     Dimension of symmetric matrices   Let be the space of symmetric matrices. Compute using . You may take for granted that is a subspace.    We saw in that is a basis of , where . We conclude that .     Video example: computing dimension   Video: computing dimension     The following theorem about spanning sets is the crucial result needed to show that any two finite bases of a vector space have the same cardinality.   Spanning set bound   Suppose is a finite spanning set for the vector space and let . If is a finite set with , then is linearly dependent.    Let , and let . Since spans , each element of is a linear combination of elements of : , we have for all . Now consider the following chain of equivalences: . From the last vector equation, we see that if we can find a nonzero sequence satisfying for all , then there is a nontrivial combination of the equal to the zero vector, and hence that is linearly dependent. Such a sequence corresponds to a solution to the homogeneous linear with augmented matrix , where . Since this is a homogeneous system of equations in unknowns, and since , there are in fact infinitely many solutions. (The system has at most leading ones, and so there must be a free variable since one of the columns in the equivalent row echelon matrix must fail to contain a leading one.) In particular there is a nonzero solution , and we conclude that is linearly dependent.    The next theorem not only ensures that our definition of dimension ( ) is well-defined, it also characterizes dimension as the minimal cardinality of a spanning set, and the maximal cardinality of a linearly independent set.   Basis bounds   Let be a basis of the vector space , and suppose     If spans , then .    If is linearly independent, then .    If is a basis for , then .         Suppose by contradiction that and . Then would imply is linearly dependent. Since this is a contradiction, we conclude that .    This also follows from : since is a spanning set of any set containing more than elements must be linearly dependent.    This follows from (1) and (2): if is a basis, then since spans, we have (1); and since is linearly independent we have (2). We conclude that .       The following corollary of provides a useful means for showing that a space is infinite dimensional.   Infinite dimensional spaces   Let be a vector space. If for all integers we can find a linearly independent subset with , then is infinite dimensional. In other words, if contains linearly independent subsets of arbitrarily large cardinality, then .    We give a proof by contradiction. Let be a vector space satisfying the stated condition: , contains linearly independent sets of arbitrarily large cardinality. Suppose by contradiction that is finite dimensional. By this means there is a finite basis with . But then by any linearly independent set must satisfy . This contradictions the assumption that contains linearly independent sets of arbitrarily large cardinality. Since we have reached a contradiction, we conclude that must be infinite dimensional.     Infinite dimensional space   Let be the vector space of infinite sequences of real numbers. (See .) Prove that .    For each positive integer , define to the infinite sequence whose -th term is equal to one, and whose other terms are all equal to zero: , . We will show that for all positive integers the set is linearly independent. It will then follow from that is infinite dimensional, since it contains linearly independent sets of arbitrarily large cardinality.  To show is linearly independent, assume we have for some scalars . Since , we conclude that , proving that is linearly independent.    We can now describe a complete procedure for computing the dimension of a vector space : either find a finite basis for and compute its cardinality, or else show that is infinite dimensional, perhaps by using .   Computing dimension   To compute the dimension of a vector space proceed as follows.   Basis  Attempt to produce a basis of , possibly with the help of the by-inspection basis technique .    Dimension     If you found a finite basis in Step 1, then determine the cardinality by counting the number of distinct elements of . We have in this case.      If you found an infinite basis in Step 1, or were able to show that no finite basis exists (perhaps by using ), then .            Further properties of dimension  The contracting and expanding theorem below is a very useful theoretical consequence of . It allows us to construct a customized basis from a given set .   Contracting and expanding to bases   Let be a vector space of dimension , and let be a finite subset.    Contract to basis  If spans , then there is a subset of that is a basis of : , we can contract a spanning set to a basis.    Extend to basis  If is linearly independent, then is contained in a basis of : , we can extend a linearly independent set to a basis.      Let .   Assume . Let be a subset of of minimal cardinality such that is still equal to . Such a set is guaranteed to exist: since is finite, it has a finite number of subsets; of these subsets some will span, others will not; of the subsets that do span, there will be one (or more) that has the least number of elements.  We claim that such a spanning subset of minimal cardinality is linearly independent, and hence is a basis for , as desired. We give a proof by contradiction. Suppose, by contradiction, that is linearly dependent. It follows that some element of , call it , can be expressed as a linear combination of the other elements ( ). This means that the element is redundant with respect to span. In other words, if we let , the set obtained by throwing out  , then we have . Since , this contradicts our choice of as a spanning set of minimal cardinality. We conclude that is linearly independent, completing the proof.    Assume is linearly independent. The procedure below constructs a finite chain of sets that ends with a basis .   Initialization  Let     Expansion loop  If , return . Otherwise set , where is any element of that is not contained in and repeat.   Some observations:   Each is linearly independent. This can be shown by induction, the crucial point being that if is linearly independent, and if , then is linearly independent. The proof is left as an exercise.    The procedure must halt. Why? Since , and since each is linearly independent, we must have for all by . Since and , the procedure must halt in at most steps.   From (ii) we may assume the procedure halts at for some . From (i) we know that is linearly independent. Furthermore, since the procedure halts at , we know that . It follows that is a basis containing , as desired.       The following corollary follows from and . We call it a street smarts result as the first two statements give us a quick and dirty way of dashing a set's hopes of being a basis. The third statement asserts that when a finite set's cardinality matches the dimension of a space, then to prove it is a basis it suffices to prove either one of the two defining properties of .   Street smarts   Let be a vector space of dimension , and let be a subset.    If , then does not span .    If , then is linearly dependent.    If , then the following are equivalent:   The set is a basis.    The set spans .    The set is linearly independent.         Statements (1) and (2) follow directly from . Statement (3) is an easy consequence of . For example, if spans , then there is a subset of that is a basis of ; since all bases of have elements, and since , we must have ; thus is a basis. The proof for a linear independent set is similar, and is left to the reader.    We are often in a situation where we wish to show a given subspace of a vector space is in fact the entire space. For example, when deciding whether a set spans a vector space , we are asking whether is all of . As another example, given a linear transformation , one of the first things we wish to determine is whether the subspace is in fact all of . As the next result illustrates, dimension is a very useful tool in this regard.   Dimension of subspaces   Let be a vector space.    If is a subspace, then .    If is a subspace, then if and only if .         Firstly, if , then clearly for any subspace .  Now assume . Apply the extending to a basis procedure described in the proof of to the emptyset , which is lienarly independent, considered as a subset of : , at each stage, if the current set is not a basis of , add any element . Since , and since , the linearly independent sets cannot have more than elements; thus the procedure must halt with a basis of satisfying . We conclude that .    Clearly, if , then . For the other direction, assume . Let be a basis for . Since is lienarly independent, it can be extended to a basis of ( ). Since , and since all bases of have cardinality , we must have . It follows that is also a basis of , and hence that .        Dimension of subspace   Let , where . Let be the space of symmetric matrices. Use and the fact that to prove that .       Since each is symmetric, and since the set of symmetric matrices is a subspace, we have by statement (2) of .    The set is linearly independent: . Thus is a basis of , and we conclude that .    We saw in that : , the space of symmetric is -dimensional. Since is a subspace of and , we conclude that by .        is also of use in situations where we wish to characterize all subspaces of a given -dimensional vector space . By the corollary, any such subspace must have dimension for some ; and this in turn means that must have a basis of cardinality . We thus have the beginnings of a systematic description of all subspaces , organized by dimension , for .   Subspaces of  We describe all subspaces of ordered by dimension.    If , then must have the empty set as a basis (by definition of dimension), and hence , the zero subspace.     If , then has a basis consisting of a single nonzero vector . In this case we have , which is a line passing through the origin with direction vector . Thus -dimensional subspaces of are lines passing through the origin.     If , then has a basis containing two non-parallel vectors in . You learn in multivariable calculus that is the plane in passing through the origin with direction vectors  . In fact, you can show that the cross product  is a normal vector for the plane in this case. Thus the -dimensional subspaces of are planes passing through the origin.     Assume . Since is a subspace of , and since , we must have according to . It is as simple as that! Thus is the only -dimensional subspace of .      That was quite a dose of theory! For your convenience, we collect the various results on dimension, together with their nicknames, in one omnibus theorem.   Dimension theory compendium   Let be a vector space of dimension .   Contract  If spans , then can be contracted to a basis of .    Expand  If is linearly independent, then can be extended to a basis of .    Street smarts  If and , then does not span .    Street smarts  If and , then is linearly dependent.    Street smarts  If and , then is a basis if and only if spans if and only if is linearly independent.    Dimension of subspaces  If is a subspace, then    , and     if and only if .             WeBWork Exercises      Are the following statements true or false?    Let . Then { } in can form a basis for if the correct vectors are added to .    If is of dimension 3 and is a subspace of , then there can not exist a subspace of such that with and .    The set {0} forms a basis for the zero subspace.    Let . Then { } in can form a basis for if the correct vectors are removed from .    has exactly one subspace of dimension for each of .              Suppose that and are nonzero subspaces, with contained inside , and suppose that .  (a) What are the possible dimensions of ?  1   2   3   1 or 2   1,2, or 3   (b) If then what are the possible dimensions of ?  1   2   3   1 or 2   1,2, or 3              (a) The dimension of cannot exceed the dimension of since is contained in . is non-zero, and thus its dimension cannot be 0. Hence 1, 2, or 3 are the possible dimensions of . (b) If , then is properly contained in , and the dimension of is strictly less than the dimension of . Thus only 1 or 2 are possible dimensions of .           Suppose that and are nonzero subspaces, with contained inside , and suppose that    What are the possible dimensions of ?    If , then what are the possible dimensions of ?     cannot exceed the dimension of , since is contained in . us non-zero, and thus the its dimension cannot be zero. Hence the possible dimensions of are 1, 2, 3, and 4. b) If , then is properly contained in , and the dimension of is strictly less than the dimension of . So the possible dimensions of are 1, 2, and 3.           By deleting linearly dependent vectors, find a basis of each subspace and give the dimension of the subspace.  A. The dimension of is .  B. The dimension of is .  C. The dimension of is .  D. The dimension of is .  E. The dimension of is .                                   Street smarts   For each vector space and subset use an appropriate statement from to help decide whether is a basis for . Justify your answer.      ,        ,       , , where .      Let be the set of solutions to the following homogeneous system: .    Compute a basis of . Justify your answer.    Compute .       By-inspection basis technique   For each given and subspace , compute using .      ,        ,        ,        ,        , is set of all matrices whose rows and columns all sum to zero       Suppoe be a basis for the vector space . Let , where . Prove that is a basis.    First explain why it is enough to show that is linearly independent.     Two-dimensional subspaces of   Prove that the 2-dimensional subspaces of are precisely the planes that pass through the origin. In other words, show (a) that any plane passing through the origin is a 2-dimensional subspace, and conversely, (b) that any 2-dimensional subspace is a plane passing through the origin.    For (b), begin with a basis of of , and use the cross product to find a normal vector that defines as a plane.      Let , , and , where Show that as follows:  Show that .   Compute the dimensions of and and use .         Let and define . Find a basis for by inspection and compute its dimension.     Dimensions of important matrix subspaces   Let . Compute for each subspace .    Upper triangular matrices       Symmetric matrices       Skew-symmetric matrices         Use your results from . The identity will be helpful.      Let . Show that there is a nonzero polynomial such that .    Consider the set and use a relevant statement from . Treat two cases separately: (a) the powers of are all distinct; (b) for some .     "
+},
+{
+  "id": "d_cardinality",
+  "level": "2",
+  "url": "s_dimension.html#d_cardinality",
+  "type": "Definition",
+  "number": "4.4.1",
+  "title": "Cardinality of a set.",
+  "body": " Cardinality of a set  cardinality of a set    the cardinality of the set    Let be a set. The cardinality of , denoted is defined as follows:   If is finite, then its cardinality is the number of distinct elements it contains, written .    If is infinite, then we say it has infinite cardinality , and write .      "
+},
+{
+  "id": "d_dimension",
+  "level": "2",
+  "url": "s_dimension.html#d_dimension",
+  "type": "Definition",
+  "number": "4.4.2",
+  "title": "Dimension of a vector space.",
+  "body": " Dimension of a vector space  dimension of a vector space    dimension of    Let be a vector space. The dimension of , denoted , is defined as follows:   If has a finite basis , then the dimension of is the number of elements of : , .    If does not have a finite basis, then we say is infinite dimensional , and write .      "
+},
+{
+  "id": "rm_basis_existence",
+  "level": "2",
+  "url": "s_dimension.html#rm_basis_existence",
+  "type": "Remark",
+  "number": "4.4.3",
+  "title": "Infinite dimension.",
+  "body": " Infinite dimension  Wouldn't it have been more natural to simply say is infinite dimensional if it has an infinite basis? That way we could dispense with the cases of and simply define as the cardinality of any basis of . As it turns out, our defined notion of having infinite dimension is indeed equivalent to not having a finite basis, but to prove this we need to establish the general fact that every vector space has a basis. As intuitive as that claim may sound ( , that bases always exist), its proof requires some set theory methods that are not covered in this text. As such we will not include it in our treatment of dimension, and so will have to make do with our slightly awkward definition of infinite-dimensional vector spaces.  "
+},
+{
+  "id": "rm_dim_defined",
+  "level": "2",
+  "url": "s_dimension.html#rm_dim_defined",
+  "type": "Remark",
+  "number": "4.4.4",
+  "title": "Dimension is well-defined.",
+  "body": " Dimension is well-defined  Another issue with our definition is the question of whether or not our notion of dimension is well-defined. Recall that a nonzero vector space has infinitely many different bases. For the notion of dimension defined in to make sense, each one of these different bases must have the same cardinality. Who's to say that a vector space cannot have one basis of cardinality two and another of cardinality 5: or worse, one basis that is finite and another that is infinite? It turns out that in fact all bases of a vector space must have the same cardinality, but this is a nontrivial fact that requires proof. (See .)  "
+},
+{
+  "id": "eg_dimension_familiar",
+  "level": "2",
+  "url": "s_dimension.html#eg_dimension_familiar",
+  "type": "Example",
+  "number": "4.4.5",
+  "title": "Dimensions of familiar spaces.",
+  "body": " Dimensions of familiar spaces  For each below we provide its standard basis and compute .    Zero space   , ,     Tuples   , ,     Matrices   , ,     "
+},
+{
+  "id": "eg_dim_R5",
+  "level": "2",
+  "url": "s_dimension.html#eg_dim_R5",
+  "type": "Example",
+  "number": "4.4.6",
+  "title": "Dimension of subspace.",
+  "body": " Dimension of subspace   Use to compute the dimension of the subspace defined as .    We saw in that is a basis of . Thus .   "
+},
+{
+  "id": "eg_dim_symm",
+  "level": "2",
+  "url": "s_dimension.html#eg_dim_symm",
+  "type": "Example",
+  "number": "4.4.7",
+  "title": "Dimension of symmetric matrices.",
+  "body": " Dimension of symmetric matrices   Let be the space of symmetric matrices. Compute using . You may take for granted that is a subspace.    We saw in that is a basis of , where . We conclude that .   "
+},
+{
+  "id": "vid_eg_computing_dim",
+  "level": "2",
+  "url": "s_dimension.html#vid_eg_computing_dim",
+  "type": "Example",
+  "number": "4.4.8",
+  "title": "Video example: computing dimension.",
+  "body": " Video example: computing dimension   Video: computing dimension    "
+},
+{
+  "id": "th_basis_span_bounds",
+  "level": "2",
+  "url": "s_dimension.html#th_basis_span_bounds",
+  "type": "Theorem",
+  "number": "4.4.10",
+  "title": "Spanning set bound.",
+  "body": " Spanning set bound   Suppose is a finite spanning set for the vector space and let . If is a finite set with , then is linearly dependent.    Let , and let . Since spans , each element of is a linear combination of elements of : , we have for all . Now consider the following chain of equivalences: . From the last vector equation, we see that if we can find a nonzero sequence satisfying for all , then there is a nontrivial combination of the equal to the zero vector, and hence that is linearly dependent. Such a sequence corresponds to a solution to the homogeneous linear with augmented matrix , where . Since this is a homogeneous system of equations in unknowns, and since , there are in fact infinitely many solutions. (The system has at most leading ones, and so there must be a free variable since one of the columns in the equivalent row echelon matrix must fail to contain a leading one.) In particular there is a nonzero solution , and we conclude that is linearly dependent.   "
+},
+{
+  "id": "th_basis_dimension",
+  "level": "2",
+  "url": "s_dimension.html#th_basis_dimension",
+  "type": "Theorem",
+  "number": "4.4.11",
+  "title": "Basis bounds.",
+  "body": " Basis bounds   Let be a basis of the vector space , and suppose     If spans , then .    If is linearly independent, then .    If is a basis for , then .         Suppose by contradiction that and . Then would imply is linearly dependent. Since this is a contradiction, we conclude that .    This also follows from : since is a spanning set of any set containing more than elements must be linearly dependent.    This follows from (1) and (2): if is a basis, then since spans, we have (1); and since is linearly independent we have (2). We conclude that .      "
+},
+{
+  "id": "cor_dim_infinite",
+  "level": "2",
+  "url": "s_dimension.html#cor_dim_infinite",
+  "type": "Corollary",
+  "number": "4.4.12",
+  "title": "Infinite dimensional spaces.",
+  "body": " Infinite dimensional spaces   Let be a vector space. If for all integers we can find a linearly independent subset with , then is infinite dimensional. In other words, if contains linearly independent subsets of arbitrarily large cardinality, then .    We give a proof by contradiction. Let be a vector space satisfying the stated condition: , contains linearly independent sets of arbitrarily large cardinality. Suppose by contradiction that is finite dimensional. By this means there is a finite basis with . But then by any linearly independent set must satisfy . This contradictions the assumption that contains linearly independent sets of arbitrarily large cardinality. Since we have reached a contradiction, we conclude that must be infinite dimensional.   "
+},
+{
+  "id": "eg_infinite_dim",
+  "level": "2",
+  "url": "s_dimension.html#eg_infinite_dim",
+  "type": "Example",
+  "number": "4.4.13",
+  "title": "Infinite dimensional space.",
+  "body": " Infinite dimensional space   Let be the vector space of infinite sequences of real numbers. (See .) Prove that .    For each positive integer , define to the infinite sequence whose -th term is equal to one, and whose other terms are all equal to zero: , . We will show that for all positive integers the set is linearly independent. It will then follow from that is infinite dimensional, since it contains linearly independent sets of arbitrarily large cardinality.  To show is linearly independent, assume we have for some scalars . Since , we conclude that , proving that is linearly independent.   "
+},
+{
+  "id": "proc_dimension",
+  "level": "2",
+  "url": "s_dimension.html#proc_dimension",
+  "type": "Procedure",
+  "number": "4.4.14",
+  "title": "Computing dimension.",
+  "body": " Computing dimension   To compute the dimension of a vector space proceed as follows.   Basis  Attempt to produce a basis of , possibly with the help of the by-inspection basis technique .    Dimension     If you found a finite basis in Step 1, then determine the cardinality by counting the number of distinct elements of . We have in this case.      If you found an infinite basis in Step 1, or were able to show that no finite basis exists (perhaps by using ), then .         "
+},
+{
+  "id": "th_basis_contract_expand",
+  "level": "2",
+  "url": "s_dimension.html#th_basis_contract_expand",
+  "type": "Theorem",
+  "number": "4.4.15",
+  "title": "Contracting and expanding to bases.",
+  "body": " Contracting and expanding to bases   Let be a vector space of dimension , and let be a finite subset.    Contract to basis  If spans , then there is a subset of that is a basis of : , we can contract a spanning set to a basis.    Extend to basis  If is linearly independent, then is contained in a basis of : , we can extend a linearly independent set to a basis.      Let .   Assume . Let be a subset of of minimal cardinality such that is still equal to . Such a set is guaranteed to exist: since is finite, it has a finite number of subsets; of these subsets some will span, others will not; of the subsets that do span, there will be one (or more) that has the least number of elements.  We claim that such a spanning subset of minimal cardinality is linearly independent, and hence is a basis for , as desired. We give a proof by contradiction. Suppose, by contradiction, that is linearly dependent. It follows that some element of , call it , can be expressed as a linear combination of the other elements ( ). This means that the element is redundant with respect to span. In other words, if we let , the set obtained by throwing out  , then we have . Since , this contradicts our choice of as a spanning set of minimal cardinality. We conclude that is linearly independent, completing the proof.    Assume is linearly independent. The procedure below constructs a finite chain of sets that ends with a basis .   Initialization  Let     Expansion loop  If , return . Otherwise set , where is any element of that is not contained in and repeat.   Some observations:   Each is linearly independent. This can be shown by induction, the crucial point being that if is linearly independent, and if , then is linearly independent. The proof is left as an exercise.    The procedure must halt. Why? Since , and since each is linearly independent, we must have for all by . Since and , the procedure must halt in at most steps.   From (ii) we may assume the procedure halts at for some . From (i) we know that is linearly independent. Furthermore, since the procedure halts at , we know that . It follows that is a basis containing , as desired.      "
+},
+{
+  "id": "cor_street_smarts",
+  "level": "2",
+  "url": "s_dimension.html#cor_street_smarts",
+  "type": "Corollary",
+  "number": "4.4.16",
+  "title": "Street smarts.",
+  "body": " Street smarts   Let be a vector space of dimension , and let be a subset.    If , then does not span .    If , then is linearly dependent.    If , then the following are equivalent:   The set is a basis.    The set spans .    The set is linearly independent.         Statements (1) and (2) follow directly from . Statement (3) is an easy consequence of . For example, if spans , then there is a subset of that is a basis of ; since all bases of have elements, and since , we must have ; thus is a basis. The proof for a linear independent set is similar, and is left to the reader.   "
+},
+{
+  "id": "cor_dimension_subspace",
+  "level": "2",
+  "url": "s_dimension.html#cor_dimension_subspace",
+  "type": "Corollary",
+  "number": "4.4.17",
+  "title": "Dimension of subspaces.",
+  "body": " Dimension of subspaces   Let be a vector space.    If is a subspace, then .    If is a subspace, then if and only if .         Firstly, if , then clearly for any subspace .  Now assume . Apply the extending to a basis procedure described in the proof of to the emptyset , which is lienarly independent, considered as a subset of : , at each stage, if the current set is not a basis of , add any element . Since , and since , the linearly independent sets cannot have more than elements; thus the procedure must halt with a basis of satisfying . We conclude that .    Clearly, if , then . For the other direction, assume . Let be a basis for . Since is lienarly independent, it can be extended to a basis of ( ). Since , and since all bases of have cardinality , we must have . It follows that is also a basis of , and hence that .      "
+},
+{
+  "id": "eg_subspace_dimension",
+  "level": "2",
+  "url": "s_dimension.html#eg_subspace_dimension",
+  "type": "Example",
+  "number": "4.4.18",
+  "title": "Dimension of subspace.",
+  "body": " Dimension of subspace   Let , where . Let be the space of symmetric matrices. Use and the fact that to prove that .       Since each is symmetric, and since the set of symmetric matrices is a subspace, we have by statement (2) of .    The set is linearly independent: . Thus is a basis of , and we conclude that .    We saw in that : , the space of symmetric is -dimensional. Since is a subspace of and , we conclude that by .      "
+},
+{
+  "id": "eg_subspaces_R3",
+  "level": "2",
+  "url": "s_dimension.html#eg_subspaces_R3",
+  "type": "Example",
+  "number": "4.4.19",
+  "title": "Subspaces of <span class=\"process-math\">\\(\\R^3\\)<\/span>.",
+  "body": " Subspaces of  We describe all subspaces of ordered by dimension.    If , then must have the empty set as a basis (by definition of dimension), and hence , the zero subspace.     If , then has a basis consisting of a single nonzero vector . In this case we have , which is a line passing through the origin with direction vector . Thus -dimensional subspaces of are lines passing through the origin.     If , then has a basis containing two non-parallel vectors in . You learn in multivariable calculus that is the plane in passing through the origin with direction vectors  . In fact, you can show that the cross product  is a normal vector for the plane in this case. Thus the -dimensional subspaces of are planes passing through the origin.     Assume . Since is a subspace of , and since , we must have according to . It is as simple as that! Thus is the only -dimensional subspace of .     "
+},
+{
+  "id": "th_dimension_compendium",
+  "level": "2",
+  "url": "s_dimension.html#th_dimension_compendium",
+  "type": "Theorem",
+  "number": "4.4.20",
+  "title": "Dimension theory compendium.",
+  "body": " Dimension theory compendium   Let be a vector space of dimension .   Contract  If spans , then can be contracted to a basis of .    Expand  If is linearly independent, then can be extended to a basis of .    Street smarts  If and , then does not span .    Street smarts  If and , then is linearly dependent.    Street smarts  If and , then is a basis if and only if spans if and only if is linearly independent.    Dimension of subspaces  If is a subspace, then    , and     if and only if .         "
+},
+{
+  "id": "s_dimension_ex-1-2",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-1-2",
+  "type": "Exercise",
+  "number": "4.4.3.1",
+  "title": "",
+  "body": "    Are the following statements true or false?    Let . Then { } in can form a basis for if the correct vectors are added to .    If is of dimension 3 and is a subspace of , then there can not exist a subspace of such that with and .    The set {0} forms a basis for the zero subspace.    Let . Then { } in can form a basis for if the correct vectors are removed from .    has exactly one subspace of dimension for each of .         "
+},
+{
+  "id": "s_dimension_ex-1-3",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-1-3",
+  "type": "Exercise",
+  "number": "4.4.3.2",
+  "title": "",
+  "body": "    Suppose that and are nonzero subspaces, with contained inside , and suppose that .  (a) What are the possible dimensions of ?  1   2   3   1 or 2   1,2, or 3   (b) If then what are the possible dimensions of ?  1   2   3   1 or 2   1,2, or 3              (a) The dimension of cannot exceed the dimension of since is contained in . is non-zero, and thus its dimension cannot be 0. Hence 1, 2, or 3 are the possible dimensions of . (b) If , then is properly contained in , and the dimension of is strictly less than the dimension of . Thus only 1 or 2 are possible dimensions of .      "
+},
+{
+  "id": "s_dimension_ex-1-4",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-1-4",
+  "type": "Exercise",
+  "number": "4.4.3.3",
+  "title": "",
+  "body": "    Suppose that and are nonzero subspaces, with contained inside , and suppose that    What are the possible dimensions of ?    If , then what are the possible dimensions of ?     cannot exceed the dimension of , since is contained in . us non-zero, and thus the its dimension cannot be zero. Hence the possible dimensions of are 1, 2, 3, and 4. b) If , then is properly contained in , and the dimension of is strictly less than the dimension of . So the possible dimensions of are 1, 2, and 3.      "
+},
+{
+  "id": "s_dimension_ex-1-5",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-1-5",
+  "type": "Exercise",
+  "number": "4.4.3.4",
+  "title": "",
+  "body": "    By deleting linearly dependent vectors, find a basis of each subspace and give the dimension of the subspace.  A. The dimension of is .  B. The dimension of is .  C. The dimension of is .  D. The dimension of is .  E. The dimension of is .                                "
+},
+{
+  "id": "s_dimension_ex-2-3",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-2-3",
+  "type": "Exercise",
+  "number": "4.4.3.5",
+  "title": "",
+  "body": "   ,    "
+},
+{
+  "id": "s_dimension_ex-2-4",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-2-4",
+  "type": "Exercise",
+  "number": "4.4.3.6",
+  "title": "",
+  "body": "   ,    "
+},
+{
+  "id": "s_dimension_ex-2-5",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-2-5",
+  "type": "Exercise",
+  "number": "4.4.3.7",
+  "title": "",
+  "body": "  , , where .  "
+},
+{
+  "id": "s_dimension_ex-3",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-3",
+  "type": "Exercise",
+  "number": "4.4.3.8",
+  "title": "",
+  "body": "  Let be the set of solutions to the following homogeneous system: .    Compute a basis of . Justify your answer.    Compute .     "
+},
+{
+  "id": "s_dimension_ex-4-3",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-4-3",
+  "type": "Exercise",
+  "number": "4.4.3.9",
+  "title": "",
+  "body": "   ,    "
+},
+{
+  "id": "s_dimension_ex-4-4",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-4-4",
+  "type": "Exercise",
+  "number": "4.4.3.10",
+  "title": "",
+  "body": "   ,    "
+},
+{
+  "id": "s_dimension_ex-4-5",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-4-5",
+  "type": "Exercise",
+  "number": "4.4.3.11",
+  "title": "",
+  "body": "   ,    "
+},
+{
+  "id": "s_dimension_ex-4-6",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-4-6",
+  "type": "Exercise",
+  "number": "4.4.3.12",
+  "title": "",
+  "body": "   ,    "
+},
+{
+  "id": "s_dimension_ex-4-7",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-4-7",
+  "type": "Exercise",
+  "number": "4.4.3.13",
+  "title": "",
+  "body": "   , is set of all matrices whose rows and columns all sum to zero   "
+},
+{
+  "id": "s_dimension_ex-5",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-5",
+  "type": "Exercise",
+  "number": "4.4.3.14",
+  "title": "",
+  "body": "  Suppoe be a basis for the vector space . Let , where . Prove that is a basis.    First explain why it is enough to show that is linearly independent.   "
+},
+{
+  "id": "s_dimension_ex-6",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-6",
+  "type": "Exercise",
+  "number": "4.4.3.15",
+  "title": "Two-dimensional subspaces of <span class=\"process-math\">\\(\\R^3\\)<\/span>.",
+  "body": " Two-dimensional subspaces of   Prove that the 2-dimensional subspaces of are precisely the planes that pass through the origin. In other words, show (a) that any plane passing through the origin is a 2-dimensional subspace, and conversely, (b) that any 2-dimensional subspace is a plane passing through the origin.    For (b), begin with a basis of of , and use the cross product to find a normal vector that defines as a plane.   "
+},
+{
+  "id": "s_dimension_ex-7",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-7",
+  "type": "Exercise",
+  "number": "4.4.3.16",
+  "title": "",
+  "body": "  Let , , and , where Show that as follows:  Show that .   Compute the dimensions of and and use .      "
+},
+{
+  "id": "s_dimension_ex-8",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-8",
+  "type": "Exercise",
+  "number": "4.4.3.17",
+  "title": "",
+  "body": "  Let and define . Find a basis for by inspection and compute its dimension.   "
+},
+{
+  "id": "ex_dimension_matrix_families",
+  "level": "2",
+  "url": "s_dimension.html#ex_dimension_matrix_families",
+  "type": "Exercise",
+  "number": "4.4.3.18",
+  "title": "Dimensions of important matrix subspaces.",
+  "body": " Dimensions of important matrix subspaces   Let . Compute for each subspace .    Upper triangular matrices       Symmetric matrices       Skew-symmetric matrices         Use your results from . The identity will be helpful.   "
+},
+{
+  "id": "s_dimension_ex-10",
+  "level": "2",
+  "url": "s_dimension.html#s_dimension_ex-10",
+  "type": "Exercise",
+  "number": "4.4.3.19",
+  "title": "",
+  "body": "  Let . Show that there is a nonzero polynomial such that .    Consider the set and use a relevant statement from . Treat two cases separately: (a) the powers of are all distinct; (b) for some .   "
+},
+{
+  "id": "s_rank_nullity",
+  "level": "1",
+  "url": "s_rank_nullity.html",
+  "type": "Section",
+  "number": "4.5",
+  "title": "Fundamental spaces",
+  "body": " Fundamental spaces   This section is in a sense just a long-format example of how to compute bases and dimensions of certain subspaces of . The subspaces in question will be defined as so-called fundamental spaces of matrices. It should thus come as little surprise that the algorithms used in these computations make use of Gaussian elimination, fabled workhorse of linear algebra . Lastly, we will also meet the matrix version of the famous rank-nullity theorem , sometimes called the fundamental theorem of linear algebra .    Fundamental spaces of matrices  Let be an matrix. In addition to its null space , gives rise to two additional naturally defined subspaces, called the row space and column space of the matrix. Taken together, these three subspaces associated to are called its fundamental spaces . Observe that was defined previously ( ). We include it below to gather all the fundamental spaces together under one definition.   Fundamental spaces  fundamental space of a matrix  null space of a matrix  row space of a matrix  column space of a matrix    the null space of matrix     the row space of a matrix     the column space of a matrix    Let be a an matrix. Let be the rows of , and let be its columns. The following subspaces are called the fundamental subspaces of .    Null space  The null space of , denoted is defined as .    Row space  The row space of , denoted , is defined as .    Column space  The column space of , denoted , is defined as .       Fundamental spaces  Note that the fundamental spaces of a matrix are indeed subspaces. This is a simple consequences of theorems and , which tell us that null spaces of matrices and spans of vectors are subspaces.  A good practice when dealing with fundamental spaces of a matrix, is to first sort out the ambient space where each of these subspaces lives: if , then both and are subspaces of , and is a subspace of .   Our goal is to be able to determine the various fundamental spaces of a matrix in an efficient manner. More specifically, we want to be able to compute bases for these spaces, and compute their dimension. Our first example is elementary enough to allow us to do this essentially by inspection.   Fundamental spaces: elementary example   Provide bases and compute the dimension of the three fundamental spaces of .    By definition, we have . We see easily by inspection that , a line in passing through the origin, and , a line in passing through the origin. Since the sets and are each linearly independent, they are clearly bases for their spans and , respectively. It follows that .  Next, by definition is the set of vectors satisfying , or equivalently, the solutions to the linear equation , a plane in passing through the origin. Using we derive the parametric description , from which we see that . Since is linearly independent and spans , it is a basis for . We conclude .    The various fundamental spaces computed in are represented in . Note that separate graphs are presented for and , which live in , and , which lives in .   Fundamental spaces of             The null space of a matrix has an obvious connection with systems of linear equations, it being the set of solutions to the homogeneous linear system represented by . The next theorem provides an interpretation of the column space of in terms of linear systems.   Column space and linear systems   Let be an matrix, and let . The following statements are equivalent.    .    There exists such that .    The linear system is consistent.   As a consequence, we have xre .    Statements (2) and (3) are equivalent by virtue of the definition of a consistent system. Statements (1) and (2) are equivalent thanks to the column method of matrix multiplication. Indeed, letting be the columns of , so that , we have . The set equalities follow immediately from the equivalence of statements (1)-(3).     What about the row space?  You might be wondering why we give the row space of a matrix such short shrift here. As it turns out, the null space and column space of a matrix will be of the most importance to us algorithmically, with row space playing more of a supporting role of convenience. That said, as we will be able to show once we know more about inner products, the row space of a matrix also has a connection with linear systems associated to : namely, it is the orthogonal complement of the null space of .   For more matrices more complicated than the one in , the key to computing the various fundamental spaces lies with Gaussian elimination. Our first theorem lays out how exactly this procedure affects the fundamental spaces of a matrix.  The next theorem indicates how row reduction affects fundamental spaces.   Fundamental spaces and row operations   Let be an matrix, and suppose is row equivalent to . The fundamental spaces of and are related as follows.    .     .    In general is not equal to . However, we do have . In fact, letting be the columns of and , respectively, the columns form a basis of if and only if the columns form a basis of .       Assume that is row equivalent to . Using , we see that this means there is an invertible matrix such that , and hence also . We will make use of this matrix below.   The fact that is a consequence of , since if is row equivalent to , then so are the linear systems with augmented matrices and .    First we show that . Since is defined as the span of the rows of , by it is enough to show that each row of is an element of . For all , let denote the th rows of , , and , respectively, treated as row vectors. Applying to the matrix product , we have for all . Furthermore, using again, the row vector is itself a linear combination of the rows of . By definition of row space, this means for all , and hence , as desired.  It remains to show that . But this follows using the same argument as above, using the fact that : , by swapping the roles of and , and replacing with .    We now let be the columns of and , respectively, where . Since , by there is a subset of columns that forms a basis of . Let be any such a basis, so that . We claim that the corresponding set of columns of is a basis of , in which case . To do so, we will use : in more detail, we will show that given any , we can write , in a unique way. Indeed, we have for a unique -tuple . Here we have used the fact that the subset is a basis of . But this means , since for all by . Furthermore, the coefficients in the linear combination are unique, since our work above shows that .        Column space and row reduction  Suppose the matrices and are row equivalent. Though it is true that their column spaces are of equal dimension, they will not in general be equal as sets. That is, we will often have . It is useful to have simple examples of this phenomenon at the ready. provides one such example.    Column space and row reduction  The matrix row reduces to the matrix in row echelon form. By inspection we see that . It is clear algebraically from the two set descriptions that . Geometrically, the two spaces are two distinct lines in passing through the origin: is the line defined by the equation and is the -axis.  By contrast consider the matrix , which is row equivalent to . In this case we have , and thus . (See for a more general take on this example.)   Using , to find bases of the fundamental spaces of a matrix, we can first row reduce to a matrix in row echelon form. Some work still needs to be done, however, in determining bases for the fundamental spaces of matrices in row echelon form. We state our results in the form of a procedure, and provide a proof of its validity.   Fundamental spaces   To compute bases for the fundamental spaces of an matrix , proceed as follows.   Row reduce to a matrix in row echelon form.    Let be the free parameters appearing in the parametric description of solutions to the linear system , and for all , let be the element of obtained by setting and for all . The set is a basis of .    The set of nonzero rows of is a basis for .    Let be the columns of and , respectively, and let be the columns of that contain a leading one. The set consisting of the corresponding columns of is a basis of .         Null space  We must show that the vectors described form a basis for . Let be the unknowns of the linear system corresponding to , and let be the free variables among these unknowns. Thus is the vector obtained from the parametric description of the solutions to obtained by setting and for all . Suppose we have . For each , since is the only vector with a nonzero entry in the -th term, we must have . This proves that the set is linearly independent.  We now show that . Assume , and let be the -th entry of for each . In other words, these are the entries of corresponding to the free variables of the system. We claim that , from which it follows that . To see why this is true, let be the right side of . Observe first that is an element of (since for all ), and thus a solution to . Furthermore, arguing as above, we see that the -th entry of is equal to for all . But according to , there is a unique solution corresponding to each choice of assignment of the free variables . Since and are both solutions to and have the same free variable entries, we conclude that , as desired.    Row space  Since by , it suffices to show that the that the nonzero rows of form a basis of . Clearly the nonzero rows span , since any linear combination of all the rows of can be expressed as a linear combination of the nonzero rows. Furthermore, since is in row echelon form, the staircase pattern of the leading ones appearing in the nonzero rows assures that these row vectors are linearly independent.    Column space  Let be the columns of with leading ones, and let be the columns without leading ones. To prove the form a basis for , we will show that given any there is a unique choice of scalars such that . (Recall that the uniqueness of this choice implies linear independence by .) Given , we can find such that ( ), which means the linear system with augmented matrix is consistent. Using our Gaussian elimination theory (specifically, ), we know that the solutions to this system are in 1-1 correspondence with choices for the free variables . (Remember that the columns without leading ones correspond to the free variables.) In particular, there is a unique solution to where we set all the free variables equal to 0. Using , we see that this gives rise to a unique linear combination the columns with leading ones equal to . This proves the claim, and shows that the columns with leading ones form a basis for . Lastly, by , the corresponding columns form a basis for .       Fundamental spaces   Compute bases and dimensions for the three fundamental spaces of .    The matrix row reduces as . To compute , we first give a parametric description of the solutions to the linear system represented by , following . We conclude . From this parametric description we extract by inspection the spanning set . Since is easily seen to be linearly independent, we conclude it is a basis. (Alternatively, is the basis one obtains using . That is, is the result of assigning in our parametric description, and is the result of assigning , .) Since , we have .  According to , the nonzero rows of form a basis of . Thus is a basis of , and .  Lastly, since the first, second and fifth columns of contain leading ones, the corresponding columns of form a basis of . Thus is a basis of , and .    Given and as in , let be the number columns of without leading ones, and let be the number of columns of with leading ones: , is the number of free variables the linear system , and is the number of leading variables. It follows from the bases descriptions in that , and . Furthermore, since has , of which do not have a leading one, and the other of which do contain leading a leading one, we have . It follows that . We have just proved the rank-nullity theorem for matrix, the name of which derives from the following definition.   Rank and nullity of matrix  rank of a matrix  nullity of a matrix    the rank of a matrix     the nullity of a matrix    Let be an matrix. The nullity of , denoted , is defined as the dimension of the null space of ; the rank of , denoted , is defined as the dimension of the column space of . In other words, we have .     Rank-nullity for matrices   Let be an matrix.   Column and row space dimension   .    Rank-nullity   .        Rank-nullity   Verify the rank-nullity theorem for matrices for the matrix of .    We saw that , and thus that that the row and columns spaces have equal dimension, as predicted by the rank-nullity theorem. Furthermore, we saw that . It follows that , the number of columns of , as predicted by the rank-nullity theorem for matrices.     Using the rank-nullity theorem   Suppose is a matrix, and that . Show that .    By the rank-nullity theorem we have . Since and , we conclude by that , as desired.     Video example: fundamental spaces   Video: computing fundamental spaces       Contracting and expanding to bases  Thanks to we know that spanning sets can be contracted to bases, and linearly independent sets can be extended to bases; and we have already seen a few instances where this result has been put to good use. However, neither the theorem nor its proof provide a practical means of performing this contraction or extension. We would like a systematic way of determining which vectors to throw out (when contracting), or which vectors to chuck in (when extending). When dealing with subspaces of , we can adapt to our needs.   Contracting and extending to bases of   Let .    Contract to a basis  Let . To find a subset of that forms a basis of , proceed as follows.    Let be the matrix whose -th column is given by for all .    Use the column space procedure ( ) to compute a basis of consisting of columns of .    The subset is a basis for .      Extend to a basis  Assume is linearly independent. To extend to a basis of proceed as follows.    Let be the matrix whose first columns are the elements of , and whose remaining columns consist of , the standard basis elements of .    Use the column space procedure ( ) to compute a basis of , chosen from among the original columns of .    The set is a basis for containing .        Let's see why in both cases the procedure produces a basis of that is either a sub- or superset of .   Contracting to a basis  By putting the vectors in as the columns of , we assure that . The column space procedure produces a basis of consisting of columns of . Thus is a basis of and is a subset of the original spanning set .    Extending to a basis  Since contains for all , we have . Thus is a basis for . Since the first columns of are linearly independent (they are the elements of ), when we row reduce to a matrix in row echelon form, the first columns of will contain leading ones. (To see this, imagine row reducing the submatrix consisting of the first columns of to a row echelon matrix . Since these columns are linearly independent, they already form a basis for . Thus the corresponding colmns of must all have leading ones. ) It follows that the first columns of are selected to be in the basis , and hence that , as desired.      Video example: contracting to a basis   Video: contracting to a basis       Fundamental spaces and invertibility  The language of fundamental spaces allows to enlarge our invertibility theorem yet again, bringing our tally to a whopping 14 equivalent statements. For most of the additional statements in this new theorem, it is easy to identify an earlier statement that they are equivalent to. For example, it is clear that statements are equivalent to . Some of the theory from this section, as well as come to our aid to prove that statements can be woven into our fabric of equivalences. We leave the details to the reader.   Invertibility theorem   Let be an matrix. The following statements are equivalent.    is invertible.    The matrix equation has a unique solution for any .    The matrix equation has a solution for any .    The matrix equation has a unique solution: namely, .     is row equivalent to , the identity matrix.     is a product of elementary matrices.     .                             Any of the following equivalent conditions about the set of columns of hold: is a basis of ; spans ; is linearly independent.    Any of the following equivalent conditions about the set of rows of hold: is a basis of ; spans ; is linearly independent.       See for a roadmap for adding these new propositions to our list of equivalent statments of invertibility.       WeBWork Exercises      Suppose that is a matrix that has an echelon form with one zero row. Find the dimension of the row space of , the dimension of the column space of , and the dimension of the null space of .  The dimension of the row space of is .  The dimension of the column space of is .  The dimension of the null space of is .                  The dimension of the row space is the number of nonzero rows in the echelon form, or The dimension of the column space is the same as the dimension of the row space, and the dimension of the null space is            Are the following statements true or false?    Let . Then { } in can form a basis for if the correct vectors are removed from .    The nullity of a matrix A is the same as the dimension of the subspace spanned be the columns of A.    If { } is a basis for , then span{ } is a plane.    If is of dimension 3 and is a subspace of , then there can not exist a subspace of such that with and .    has exactly one subspace of dimension for each of .              Let be a finite dimensional vector space ( , for example), let be subspaces of and let be subsets of  Which of the following statements are true for every  and every possible choice of subspaces and subsets? Which are false for some  and some choice of subsets and subspaces?  A. If \\(\\ S_1 \\) and \\(\\ S_2 \\) are subspaces of \\( R^n\\) of the same dimension, then \\(S_1=S_2\\).  B. Three nonzero vectors that lie in a plane in \\(\\mathbf{R}^3\\) might form a basis for \\(\\mathbf{R}^3\\).  C. If a set of vectors \\(U\\) is linearly independent in a subspace \\( S\\) then zero or more vectors can be added to \\(U\\) to create a basis for \\(S\\) (i.e. there is a set of vectors \\(V\\) with \\(U\\subseteq V\\) which is a basis of \\(S\\)).  D. If a set of vectors \\(U\\) spans a subspace \\(S\\), then zero or more vectors can be added to \\(U\\) to create a basis for \\(S\\) (i.e. there is a set of vectors \\(V\\) with \\(U\\subseteq V\\) which i-s a basis of \\(S\\)).  E. If \\( \\ S = \\text{span}\\{u_1, u_2, u_3 \\}\\) then \\(\\text{dim}(S) = 3\\) .                              False. In the \\(x,y\\)-plane the coordinate axes are 1-dimensional subspaces, but they are not the same.    False. If three vectors lie in a plane they can't be linearly independent, so they can't be a basis for \\(\\mathbf{R}^3\\).    True. If \\(U\\) spans \\(S\\) then \\(U\\) is a basis for \\(S\\). Otherwise \\(S\\) contains a vector that is not in the span of \\(U\\). If you include that vector in \\(U\\) you'll get a larger set that is still linearly independent. Repeating this process you'll get larger and larger sets of linearly independent vectors until the number of vectors in the set equals the dimension of \\(S\\). When that happens the set of vectors will be a basis for \\(S\\). (That it's a basis isn't obvious but it's proved in linear algebra texts. The fact that \\(S\\) is finite-dimensional is crucial. It is finite dimensonal because \\(S\\subseteq X\\) and \\(X\\) is finite dimensional. Infinite dimensonal spaces are much trickier).    False. If the vectors in \\(U\\) are not linearly independent then \\(U\\) cannot be a subset of a basis.    False. The vectors (1,0), (0,1), and (1,1) span the \\(x,y\\)-plane, but the \\(x,y\\)-plane is 2-dimensional. These vectors are not linearly independent.             For each matrix (i) row reduce to a matrix in row echelon form, (ii) compute bases for and , (iii) compute and ,and (iv) decide whether .                       For each matrix below, (i) compute bases for each fundamental space, (ii) identify these spaces as familiar geometric objects in or , and (iii) provide sketches of each space. The sketches of and should be combined in the same coordinate system.                       For each compute bases for each fundamental space. In each case, you can find bases for one of the fundamental spaces by inspection, and then use the rank-nullity theorem to reduce your workload for the other spaces. See first solution for a model example.                  Clearly, is a basis for , and is a basis for . It follows that and hence . Thus we need to find three linearly independent elements of to find a basis. We can do so by inspection with the help of the column method. Namely, observe that are all in (column method). The location of zeros in these vectors make it clear that are linearly independent. Since , and , we conclude that is a basis of ( ).        For each use to compute bases for each fundamental space.                       Find the rank and nullity of each matrix by reducing it to row echelon form.                 Rank-nullity theorem for matrices   For each scenario use the rank-nullity theorem for matrices to compute the desired information from the given information.     Suppose and , compute .      Suppose and , compute .      Suppose and , compute .      Suppose and , compute .       Let be with . Prove that there is a such that the system is inconsistent.    Use and .      We know that in general that row equivalent matrices do not have equal column spaces, but show that this is the case if the matrices are invertible. In other words, prove that if is invertible and is row equivalent to , then .      Let be an matrix.    Prove: if and only if .   Construct a matrix with . Verify that your satisfies .       Suppose is with .  Prove: either the rows of are linearly dependent or the columns of are linearly dependent.      Prove: if and only if is a square matrix.      Invertibility theorem   Prove as follows.    First show that all three statements of are equivalent, and that all three statements of are equivalent. (Use .)    Show that statements are equivalent with the help of .    Choose a statement from that can be easily shown to be equivalent to one of the statements from .       "
+},
+{
+  "id": "d_fundamental_space",
+  "level": "2",
+  "url": "s_rank_nullity.html#d_fundamental_space",
+  "type": "Definition",
+  "number": "4.5.1",
+  "title": "Fundamental spaces.",
+  "body": " Fundamental spaces  fundamental space of a matrix  null space of a matrix  row space of a matrix  column space of a matrix    the null space of matrix     the row space of a matrix     the column space of a matrix    Let be a an matrix. Let be the rows of , and let be its columns. The following subspaces are called the fundamental subspaces of .    Null space  The null space of , denoted is defined as .    Row space  The row space of , denoted , is defined as .    Column space  The column space of , denoted , is defined as .     "
+},
+{
+  "id": "ss_fundamental_spaces-4",
+  "level": "2",
+  "url": "s_rank_nullity.html#ss_fundamental_spaces-4",
+  "type": "Remark",
+  "number": "4.5.2",
+  "title": "Fundamental spaces.",
+  "body": " Fundamental spaces  Note that the fundamental spaces of a matrix are indeed subspaces. This is a simple consequences of theorems and , which tell us that null spaces of matrices and spans of vectors are subspaces.  A good practice when dealing with fundamental spaces of a matrix, is to first sort out the ambient space where each of these subspaces lives: if , then both and are subspaces of , and is a subspace of .  "
+},
+{
+  "id": "eg_fund_spaces_elem",
+  "level": "2",
+  "url": "s_rank_nullity.html#eg_fund_spaces_elem",
+  "type": "Example",
+  "number": "4.5.3",
+  "title": "Fundamental spaces: elementary example.",
+  "body": " Fundamental spaces: elementary example   Provide bases and compute the dimension of the three fundamental spaces of .    By definition, we have . We see easily by inspection that , a line in passing through the origin, and , a line in passing through the origin. Since the sets and are each linearly independent, they are clearly bases for their spans and , respectively. It follows that .  Next, by definition is the set of vectors satisfying , or equivalently, the solutions to the linear equation , a plane in passing through the origin. Using we derive the parametric description , from which we see that . Since is linearly independent and spans , it is a basis for . We conclude .   "
+},
+{
+  "id": "fig_fund_spaces_elem",
+  "level": "2",
+  "url": "s_rank_nullity.html#fig_fund_spaces_elem",
+  "type": "Figure",
+  "number": "4.5.4",
+  "title": "",
+  "body": " Fundamental spaces of            "
+},
+{
+  "id": "th_col_space",
+  "level": "2",
+  "url": "s_rank_nullity.html#th_col_space",
+  "type": "Theorem",
+  "number": "4.5.5",
+  "title": "Column space and linear systems.",
+  "body": " Column space and linear systems   Let be an matrix, and let . The following statements are equivalent.    .    There exists such that .    The linear system is consistent.   As a consequence, we have xre .    Statements (2) and (3) are equivalent by virtue of the definition of a consistent system. Statements (1) and (2) are equivalent thanks to the column method of matrix multiplication. Indeed, letting be the columns of , so that , we have . The set equalities follow immediately from the equivalence of statements (1)-(3).   "
+},
+{
+  "id": "ss_fundamental_spaces-11",
+  "level": "2",
+  "url": "s_rank_nullity.html#ss_fundamental_spaces-11",
+  "type": "Remark",
+  "number": "4.5.6",
+  "title": "What about the row space?",
+  "body": " What about the row space?  You might be wondering why we give the row space of a matrix such short shrift here. As it turns out, the null space and column space of a matrix will be of the most importance to us algorithmically, with row space playing more of a supporting role of convenience. That said, as we will be able to show once we know more about inner products, the row space of a matrix also has a connection with linear systems associated to : namely, it is the orthogonal complement of the null space of .  "
+},
+{
+  "id": "th_fundspaces_rowreduce",
+  "level": "2",
+  "url": "s_rank_nullity.html#th_fundspaces_rowreduce",
+  "type": "Theorem",
+  "number": "4.5.7",
+  "title": "Fundamental spaces and row operations.",
+  "body": " Fundamental spaces and row operations   Let be an matrix, and suppose is row equivalent to . The fundamental spaces of and are related as follows.    .     .    In general is not equal to . However, we do have . In fact, letting be the columns of and , respectively, the columns form a basis of if and only if the columns form a basis of .       Assume that is row equivalent to . Using , we see that this means there is an invertible matrix such that , and hence also . We will make use of this matrix below.   The fact that is a consequence of , since if is row equivalent to , then so are the linear systems with augmented matrices and .    First we show that . Since is defined as the span of the rows of , by it is enough to show that each row of is an element of . For all , let denote the th rows of , , and , respectively, treated as row vectors. Applying to the matrix product , we have for all . Furthermore, using again, the row vector is itself a linear combination of the rows of . By definition of row space, this means for all , and hence , as desired.  It remains to show that . But this follows using the same argument as above, using the fact that : , by swapping the roles of and , and replacing with .    We now let be the columns of and , respectively, where . Since , by there is a subset of columns that forms a basis of . Let be any such a basis, so that . We claim that the corresponding set of columns of is a basis of , in which case . To do so, we will use : in more detail, we will show that given any , we can write , in a unique way. Indeed, we have for a unique -tuple . Here we have used the fact that the subset is a basis of . But this means , since for all by . Furthermore, the coefficients in the linear combination are unique, since our work above shows that .      "
+},
+{
+  "id": "ss_fundamental_spaces-15",
+  "level": "2",
+  "url": "s_rank_nullity.html#ss_fundamental_spaces-15",
+  "type": "Remark",
+  "number": "4.5.8",
+  "title": "Column space and row reduction.",
+  "body": " Column space and row reduction  Suppose the matrices and are row equivalent. Though it is true that their column spaces are of equal dimension, they will not in general be equal as sets. That is, we will often have . It is useful to have simple examples of this phenomenon at the ready. provides one such example.  "
+},
+{
+  "id": "eg_colspace_change",
+  "level": "2",
+  "url": "s_rank_nullity.html#eg_colspace_change",
+  "type": "Example",
+  "number": "4.5.9",
+  "title": "Column space and row reduction.",
+  "body": " Column space and row reduction  The matrix row reduces to the matrix in row echelon form. By inspection we see that . It is clear algebraically from the two set descriptions that . Geometrically, the two spaces are two distinct lines in passing through the origin: is the line defined by the equation and is the -axis.  By contrast consider the matrix , which is row equivalent to . In this case we have , and thus . (See for a more general take on this example.)  "
+},
+{
+  "id": "proc_fund_spaces",
+  "level": "2",
+  "url": "s_rank_nullity.html#proc_fund_spaces",
+  "type": "Procedure",
+  "number": "4.5.10",
+  "title": "Fundamental spaces.",
+  "body": " Fundamental spaces   To compute bases for the fundamental spaces of an matrix , proceed as follows.   Row reduce to a matrix in row echelon form.    Let be the free parameters appearing in the parametric description of solutions to the linear system , and for all , let be the element of obtained by setting and for all . The set is a basis of .    The set of nonzero rows of is a basis for .    Let be the columns of and , respectively, and let be the columns of that contain a leading one. The set consisting of the corresponding columns of is a basis of .         Null space  We must show that the vectors described form a basis for . Let be the unknowns of the linear system corresponding to , and let be the free variables among these unknowns. Thus is the vector obtained from the parametric description of the solutions to obtained by setting and for all . Suppose we have . For each , since is the only vector with a nonzero entry in the -th term, we must have . This proves that the set is linearly independent.  We now show that . Assume , and let be the -th entry of for each . In other words, these are the entries of corresponding to the free variables of the system. We claim that , from which it follows that . To see why this is true, let be the right side of . Observe first that is an element of (since for all ), and thus a solution to . Furthermore, arguing as above, we see that the -th entry of is equal to for all . But according to , there is a unique solution corresponding to each choice of assignment of the free variables . Since and are both solutions to and have the same free variable entries, we conclude that , as desired.    Row space  Since by , it suffices to show that the that the nonzero rows of form a basis of . Clearly the nonzero rows span , since any linear combination of all the rows of can be expressed as a linear combination of the nonzero rows. Furthermore, since is in row echelon form, the staircase pattern of the leading ones appearing in the nonzero rows assures that these row vectors are linearly independent.    Column space  Let be the columns of with leading ones, and let be the columns without leading ones. To prove the form a basis for , we will show that given any there is a unique choice of scalars such that . (Recall that the uniqueness of this choice implies linear independence by .) Given , we can find such that ( ), which means the linear system with augmented matrix is consistent. Using our Gaussian elimination theory (specifically, ), we know that the solutions to this system are in 1-1 correspondence with choices for the free variables . (Remember that the columns without leading ones correspond to the free variables.) In particular, there is a unique solution to where we set all the free variables equal to 0. Using , we see that this gives rise to a unique linear combination the columns with leading ones equal to . This proves the claim, and shows that the columns with leading ones form a basis for . Lastly, by , the corresponding columns form a basis for .     "
+},
+{
+  "id": "eg_fund_spaces",
+  "level": "2",
+  "url": "s_rank_nullity.html#eg_fund_spaces",
+  "type": "Example",
+  "number": "4.5.11",
+  "title": "Fundamental spaces.",
+  "body": " Fundamental spaces   Compute bases and dimensions for the three fundamental spaces of .    The matrix row reduces as . To compute , we first give a parametric description of the solutions to the linear system represented by , following . We conclude . From this parametric description we extract by inspection the spanning set . Since is easily seen to be linearly independent, we conclude it is a basis. (Alternatively, is the basis one obtains using . That is, is the result of assigning in our parametric description, and is the result of assigning , .) Since , we have .  According to , the nonzero rows of form a basis of . Thus is a basis of , and .  Lastly, since the first, second and fifth columns of contain leading ones, the corresponding columns of form a basis of . Thus is a basis of , and .   "
+},
+{
+  "id": "d_rank_nullity_matrix",
+  "level": "2",
+  "url": "s_rank_nullity.html#d_rank_nullity_matrix",
+  "type": "Definition",
+  "number": "4.5.12",
+  "title": "Rank and nullity of matrix.",
+  "body": " Rank and nullity of matrix  rank of a matrix  nullity of a matrix    the rank of a matrix     the nullity of a matrix    Let be an matrix. The nullity of , denoted , is defined as the dimension of the null space of ; the rank of , denoted , is defined as the dimension of the column space of . In other words, we have .   "
+},
+{
+  "id": "th_rank_nullity_matrix",
+  "level": "2",
+  "url": "s_rank_nullity.html#th_rank_nullity_matrix",
+  "type": "Corollary",
+  "number": "4.5.13",
+  "title": "Rank-nullity for matrices.",
+  "body": " Rank-nullity for matrices   Let be an matrix.   Column and row space dimension   .    Rank-nullity   .      "
+},
+{
+  "id": "eg_rank_nullity_eg",
+  "level": "2",
+  "url": "s_rank_nullity.html#eg_rank_nullity_eg",
+  "type": "Example",
+  "number": "4.5.14",
+  "title": "Rank-nullity.",
+  "body": " Rank-nullity   Verify the rank-nullity theorem for matrices for the matrix of .    We saw that , and thus that that the row and columns spaces have equal dimension, as predicted by the rank-nullity theorem. Furthermore, we saw that . It follows that , the number of columns of , as predicted by the rank-nullity theorem for matrices.   "
+},
+{
+  "id": "eg_rank_nullity",
+  "level": "2",
+  "url": "s_rank_nullity.html#eg_rank_nullity",
+  "type": "Example",
+  "number": "4.5.15",
+  "title": "Using the rank-nullity theorem.",
+  "body": " Using the rank-nullity theorem   Suppose is a matrix, and that . Show that .    By the rank-nullity theorem we have . Since and , we conclude by that , as desired.   "
+},
+{
+  "id": "ss_vid_eg_fund_space",
+  "level": "2",
+  "url": "s_rank_nullity.html#ss_vid_eg_fund_space",
+  "type": "Example",
+  "number": "4.5.16",
+  "title": "Video example: fundamental spaces.",
+  "body": " Video example: fundamental spaces   Video: computing fundamental spaces    "
+},
+{
+  "id": "proc_contract_extend",
+  "level": "2",
+  "url": "s_rank_nullity.html#proc_contract_extend",
+  "type": "Procedure",
+  "number": "4.5.18",
+  "title": "Contracting and extending to bases of <span class=\"process-math\">\\(\\R^n\\)<\/span>.",
+  "body": " Contracting and extending to bases of   Let .    Contract to a basis  Let . To find a subset of that forms a basis of , proceed as follows.    Let be the matrix whose -th column is given by for all .    Use the column space procedure ( ) to compute a basis of consisting of columns of .    The subset is a basis for .      Extend to a basis  Assume is linearly independent. To extend to a basis of proceed as follows.    Let be the matrix whose first columns are the elements of , and whose remaining columns consist of , the standard basis elements of .    Use the column space procedure ( ) to compute a basis of , chosen from among the original columns of .    The set is a basis for containing .        Let's see why in both cases the procedure produces a basis of that is either a sub- or superset of .   Contracting to a basis  By putting the vectors in as the columns of , we assure that . The column space procedure produces a basis of consisting of columns of . Thus is a basis of and is a subset of the original spanning set .    Extending to a basis  Since contains for all , we have . Thus is a basis for . Since the first columns of are linearly independent (they are the elements of ), when we row reduce to a matrix in row echelon form, the first columns of will contain leading ones. (To see this, imagine row reducing the submatrix consisting of the first columns of to a row echelon matrix . Since these columns are linearly independent, they already form a basis for . Thus the corresponding colmns of must all have leading ones. ) It follows that the first columns of are selected to be in the basis , and hence that , as desired.    "
+},
+{
+  "id": "ss_vid_eg_contract_basis",
+  "level": "2",
+  "url": "s_rank_nullity.html#ss_vid_eg_contract_basis",
+  "type": "Example",
+  "number": "4.5.19",
+  "title": "Video example: contracting to a basis.",
+  "body": " Video example: contracting to a basis   Video: contracting to a basis    "
+},
+{
+  "id": "th_invertibility_supersized",
+  "level": "2",
+  "url": "s_rank_nullity.html#th_invertibility_supersized",
+  "type": "Theorem",
+  "number": "4.5.21",
+  "title": "Invertibility theorem.",
+  "body": " Invertibility theorem   Let be an matrix. The following statements are equivalent.    is invertible.    The matrix equation has a unique solution for any .    The matrix equation has a solution for any .    The matrix equation has a unique solution: namely, .     is row equivalent to , the identity matrix.     is a product of elementary matrices.     .                             Any of the following equivalent conditions about the set of columns of hold: is a basis of ; spans ; is linearly independent.    Any of the following equivalent conditions about the set of rows of hold: is a basis of ; spans ; is linearly independent.       See for a roadmap for adding these new propositions to our list of equivalent statments of invertibility.   "
+},
+{
+  "id": "s_rank_nullity_ex-1-2",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-1-2",
+  "type": "Exercise",
+  "number": "4.5.4.1",
+  "title": "",
+  "body": "    Suppose that is a matrix that has an echelon form with one zero row. Find the dimension of the row space of , the dimension of the column space of , and the dimension of the null space of .  The dimension of the row space of is .  The dimension of the column space of is .  The dimension of the null space of is .                  The dimension of the row space is the number of nonzero rows in the echelon form, or The dimension of the column space is the same as the dimension of the row space, and the dimension of the null space is       "
+},
+{
+  "id": "s_rank_nullity_ex-1-3",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-1-3",
+  "type": "Exercise",
+  "number": "4.5.4.2",
+  "title": "",
+  "body": "    Are the following statements true or false?    Let . Then { } in can form a basis for if the correct vectors are removed from .    The nullity of a matrix A is the same as the dimension of the subspace spanned be the columns of A.    If { } is a basis for , then span{ } is a plane.    If is of dimension 3 and is a subspace of , then there can not exist a subspace of such that with and .    has exactly one subspace of dimension for each of .         "
+},
+{
+  "id": "s_rank_nullity_ex-1-4",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-1-4",
+  "type": "Exercise",
+  "number": "4.5.4.3",
+  "title": "",
+  "body": "    Let be a finite dimensional vector space ( , for example), let be subspaces of and let be subsets of  Which of the following statements are true for every  and every possible choice of subspaces and subsets? Which are false for some  and some choice of subsets and subspaces?  A. If \\(\\ S_1 \\) and \\(\\ S_2 \\) are subspaces of \\( R^n\\) of the same dimension, then \\(S_1=S_2\\).  B. Three nonzero vectors that lie in a plane in \\(\\mathbf{R}^3\\) might form a basis for \\(\\mathbf{R}^3\\).  C. If a set of vectors \\(U\\) is linearly independent in a subspace \\( S\\) then zero or more vectors can be added to \\(U\\) to create a basis for \\(S\\) (i.e. there is a set of vectors \\(V\\) with \\(U\\subseteq V\\) which is a basis of \\(S\\)).  D. If a set of vectors \\(U\\) spans a subspace \\(S\\), then zero or more vectors can be added to \\(U\\) to create a basis for \\(S\\) (i.e. there is a set of vectors \\(V\\) with \\(U\\subseteq V\\) which i-s a basis of \\(S\\)).  E. If \\( \\ S = \\text{span}\\{u_1, u_2, u_3 \\}\\) then \\(\\text{dim}(S) = 3\\) .                              False. In the \\(x,y\\)-plane the coordinate axes are 1-dimensional subspaces, but they are not the same.    False. If three vectors lie in a plane they can't be linearly independent, so they can't be a basis for \\(\\mathbf{R}^3\\).    True. If \\(U\\) spans \\(S\\) then \\(U\\) is a basis for \\(S\\). Otherwise \\(S\\) contains a vector that is not in the span of \\(U\\). If you include that vector in \\(U\\) you'll get a larger set that is still linearly independent. Repeating this process you'll get larger and larger sets of linearly independent vectors until the number of vectors in the set equals the dimension of \\(S\\). When that happens the set of vectors will be a basis for \\(S\\). (That it's a basis isn't obvious but it's proved in linear algebra texts. The fact that \\(S\\) is finite-dimensional is crucial. It is finite dimensonal because \\(S\\subseteq X\\) and \\(X\\) is finite dimensional. Infinite dimensonal spaces are much trickier).    False. If the vectors in \\(U\\) are not linearly independent then \\(U\\) cannot be a subset of a basis.    False. The vectors (1,0), (0,1), and (1,1) span the \\(x,y\\)-plane, but the \\(x,y\\)-plane is 2-dimensional. These vectors are not linearly independent.         "
+},
+{
+  "id": "s_rank_nullity_ex-2",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-2",
+  "type": "Exercise",
+  "number": "4.5.4.4",
+  "title": "",
+  "body": "  For each matrix (i) row reduce to a matrix in row echelon form, (ii) compute bases for and , (iii) compute and ,and (iv) decide whether .                    "
+},
+{
+  "id": "s_rank_nullity_ex-3",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-3",
+  "type": "Exercise",
+  "number": "4.5.4.5",
+  "title": "",
+  "body": "  For each matrix below, (i) compute bases for each fundamental space, (ii) identify these spaces as familiar geometric objects in or , and (iii) provide sketches of each space. The sketches of and should be combined in the same coordinate system.                    "
+},
+{
+  "id": "s_rank_nullity_ex-4",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-4",
+  "type": "Exercise",
+  "number": "4.5.4.6",
+  "title": "",
+  "body": "  For each compute bases for each fundamental space. In each case, you can find bases for one of the fundamental spaces by inspection, and then use the rank-nullity theorem to reduce your workload for the other spaces. See first solution for a model example.                  Clearly, is a basis for , and is a basis for . It follows that and hence . Thus we need to find three linearly independent elements of to find a basis. We can do so by inspection with the help of the column method. Namely, observe that are all in (column method). The location of zeros in these vectors make it clear that are linearly independent. Since , and , we conclude that is a basis of ( ).     "
+},
+{
+  "id": "s_rank_nullity_ex-5",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-5",
+  "type": "Exercise",
+  "number": "4.5.4.7",
+  "title": "",
+  "body": "  For each use to compute bases for each fundamental space.                    "
+},
+{
+  "id": "s_rank_nullity_ex-6",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-6",
+  "type": "Exercise",
+  "number": "4.5.4.8",
+  "title": "",
+  "body": "  Find the rank and nullity of each matrix by reducing it to row echelon form.               "
+},
+{
+  "id": "s_rank_nullity_ex-7-3",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-7-3",
+  "type": "Exercise",
+  "number": "4.5.4.9",
+  "title": "",
+  "body": "  Suppose and , compute .   "
+},
+{
+  "id": "s_rank_nullity_ex-7-4",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-7-4",
+  "type": "Exercise",
+  "number": "4.5.4.10",
+  "title": "",
+  "body": "  Suppose and , compute .   "
+},
+{
+  "id": "s_rank_nullity_ex-7-5",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-7-5",
+  "type": "Exercise",
+  "number": "4.5.4.11",
+  "title": "",
+  "body": "  Suppose and , compute .   "
+},
+{
+  "id": "s_rank_nullity_ex-7-6",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-7-6",
+  "type": "Exercise",
+  "number": "4.5.4.12",
+  "title": "",
+  "body": "  Suppose and , compute .   "
+},
+{
+  "id": "s_rank_nullity_ex-8",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-8",
+  "type": "Exercise",
+  "number": "4.5.4.13",
+  "title": "",
+  "body": "  Let be with . Prove that there is a such that the system is inconsistent.    Use and .   "
+},
+{
+  "id": "ex_col_inv",
+  "level": "2",
+  "url": "s_rank_nullity.html#ex_col_inv",
+  "type": "Exercise",
+  "number": "4.5.4.14",
+  "title": "",
+  "body": "  We know that in general that row equivalent matrices do not have equal column spaces, but show that this is the case if the matrices are invertible. In other words, prove that if is invertible and is row equivalent to , then .   "
+},
+{
+  "id": "s_rank_nullity_ex-10",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-10",
+  "type": "Exercise",
+  "number": "4.5.4.15",
+  "title": "",
+  "body": "  Let be an matrix.    Prove: if and only if .   Construct a matrix with . Verify that your satisfies .    "
+},
+{
+  "id": "s_rank_nullity_ex-11",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-11",
+  "type": "Exercise",
+  "number": "4.5.4.16",
+  "title": "",
+  "body": "  Suppose is with .  Prove: either the rows of are linearly dependent or the columns of are linearly dependent.   "
+},
+{
+  "id": "s_rank_nullity_ex-12",
+  "level": "2",
+  "url": "s_rank_nullity.html#s_rank_nullity_ex-12",
+  "type": "Exercise",
+  "number": "4.5.4.17",
+  "title": "",
+  "body": "  Prove: if and only if is a square matrix.   "
+},
+{
+  "id": "ex_invertibility_supersized",
+  "level": "2",
+  "url": "s_rank_nullity.html#ex_invertibility_supersized",
+  "type": "Exercise",
+  "number": "4.5.4.18",
+  "title": "Invertibility theorem.",
+  "body": " Invertibility theorem   Prove as follows.    First show that all three statements of are equivalent, and that all three statements of are equivalent. (Use .)    Show that statements are equivalent with the help of .    Choose a statement from that can be easily shown to be equivalent to one of the statements from .     "
 },
 {
   "id": "appendix-notation",

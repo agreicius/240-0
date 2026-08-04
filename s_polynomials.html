@@ -20,23 +20,84 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 <link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
-<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
-startMathJax({
-hasWebworkReps: true,
-hasSage: true,
-isReact: false,
-htmlPresentation: false,
-});
-</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
-<meta name="twitter:title" content="Real vector spaces: A first course in linear algebra">
-<meta property="og:title" content="Real vector spaces: A first course in linear algebra">
-<meta property="book:title" content="Real vector spaces: A first course in linear algebra">
-<meta name="twitter:description" content="This is the course resource for Northwestern University's first course in in linear algebra (Math 240-0). Definitions of real vector spaces and linear transformations thereof are given in full generality, but examples focus on vector spaces of real-valued tuples indexed by an arbitrary set.">
-<meta property="og:description" content="This is the course resource for Northwestern University's first course in in linear algebra (Math 240-0). Definitions of real vector spaces and linear transformations thereof are given in full generality, but examples focus on vector spaces of real-valued tuples indexed by an arbitrary set.">
-<meta name="twitter:card" content="summary">
-<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.45"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<meta property="book:title" content="Real vector spaces">
+<meta property="book:author" content="Aaron Greicius">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
 <!--**     log level is 0, Runestone Services are disabled     **-->
@@ -59,59 +120,51 @@ eBookConfig.enableScratchAC = true;
 eBookConfig.acDefaultLanguage = 'python';
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '8.1.16';
+eBookConfig.runestone_version = '8.2.2';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.279b1f0077454c32.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.db8001875cb726c2.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.66fa8a682a32c0ac.css">
-<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/dist/pretext-webwork/2.20/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="_static/prefix-runtime.ed2cce180827a7ad.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.18fa7ea1d9f376c1.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8086b62682b271d1.css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/pretext-webwork/2.20/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body id="NUlinearalgfirstcourse" class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" target="_blank" href=""><img src="external/images/im_holycomm.svg" alt="Logo image"></a><div class="title-container">
-<div class="heading ptx-banner-heading"><a href="my-great-book.html"><span class="title">Real vector spaces</span> <span class="subtitle">A first course in linear algebra</span></a></div>
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Real vector spaces</span> <span class="subtitle">A first course in linear algebra</span></a></h1>
 <p class="byline">Aaron Greicius</p>
 </div>
 </div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
-<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
-<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
-<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
-<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
 </div>
-<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
-<h2 class="heading ptx-search-results-heading">Search Results: </h2>
-<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
-<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
 </div>
-<span class="nav-other-controls"><button type="button" id="ptx-calculator-toggle" class="ptx-calculator-toggle button" title="Calculator"><span class="icon material-symbols-outlined" aria-hidden="true">&#xea5f;</span><span class="name">Calculator</span></button><dialog id="ptx-calculator-container" class="ptx-dialog ptx-calculator-container" aria-label="Calculator"><div id="ptx-geogebra-calculator" class="ptx-geogebra-calculator"></div>
-<script id="ptx-geogebra-calculator-params">
-let ggbParams = {
-    "appName": "classic"
-};
-</script></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
-<h2 class="heading">Readability settings</h2>
-<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
 </div>
-<div class="ptx-readability-options-group">
-<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
-</div>
-<div class="ptx-readability-options-group">
-<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
-</div>
-<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
-<legend>Theme</legend>
-<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
-</fieldset>
-<fieldset class="ptx-readability-options-group">
-<legend>Assistive technologies</legend>
-<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
-</fieldset>
-<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="s_complex_numbers.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_foundations.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="c_lin_sys.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span><span class="nav-runestone-controls"><button onclick="runestoneComponents.popupScratchAC()" class="activecode-toggle button" title="Scratch ActiveCode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf097;</span><span class="name">Scratch ActiveCode</span></button></span>
+<span class="nav-other-controls"><button id="calculator-toggle" class="calculator-toggle button" title="Show calculator" aria-expanded="false" aria-controls="calculator-container"><span class="icon material-symbols-outlined" aria-hidden="true">&#xea5f;</span><span class="name">Calc</span></button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "classic",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="s_complex_numbers.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_foundations.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="c_tuples.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span><span class="nav-runestone-controls"><button onclick="runestoneComponents.popupScratchAC()" class="activecode-toggle button" title="Open Scratch ActiveCode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf097;</span><span class="name">Scratch ActiveCode</span></button></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
 \newcommand{\Q}{{\mathbb Q}}
 \newcommand{\R}{{\mathbb R}}
@@ -322,14 +375,14 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="c_foundations.html" class="internal"><span class="codenumber">0</span> <span class="title">Foundations</span></a></div>
-<ul class="structural toc-item-list contains-active" id="ptx-toc-group-c_foundations">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_sets_tuples.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Sets and tuples</span></a></div>
-<ul id="ptx-toc-group-s_sets_tuples" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_tuples.html#s_sets" class="internal"><span class="codenumber">0.1.1</span> <span class="title">Sets</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_tuples.html#ss_tuples" class="internal"><span class="codenumber">0.1.2</span> <span class="title">Tuples</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_tuples.html#ss_sets_functions_ww" class="internal"><span class="codenumber">0.1.3</span> <span class="title">WeBWork Exercises</span></a></div></li>
@@ -337,11 +390,11 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_functions.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Functions</span></a></div>
-<ul id="ptx-toc-group-s_functions" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_functions.html#ss_functions_ww" class="internal"><span class="codenumber">0.2.1</span> <span class="title">WeBWork Exercises</span></a></div></li></ul>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_functions.html#ss_functions_ww" class="internal"><span class="codenumber">0.2.1</span> <span class="title">WeBWork Exercises</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_logic.html" class="internal"><span class="codenumber">0.3</span> <span class="title">Logic</span></a></div>
-<ul id="ptx-toc-group-s_logic" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_propositional_calculus" class="internal"><span class="codenumber">0.3.1</span> <span class="title">Propositional logic</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_predicate_logic" class="internal"><span class="codenumber">0.3.2</span> <span class="title">Predicate logic</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_logic_ww" class="internal"><span class="codenumber">0.3.3</span> <span class="title">WeBWork Exercises</span></a></div></li>
@@ -349,10 +402,10 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_proof_technique.html" class="internal"><span class="codenumber">0.4</span> <span class="title">Proof techniques</span></a></div>
-<ul id="ptx-toc-group-s_proof_technique" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="s_proof_technique.html#ss_logical_structure" class="internal"><span class="codenumber">0.4.1</span> <span class="title">Logical structure</span></a></div>
-<ul id="ptx-toc-group-ss_logical_structure" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_implication" class="internal"><span class="title">Implication</span></a></div></li>
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_disjunction" class="internal"><span class="title">Disjunction</span></a></div></li>
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_equivalence" class="internal"><span class="title">Equivalence</span></a></div></li>
@@ -362,25 +415,25 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="s_proof_technique.html#ss_Equalities" class="internal"><span class="codenumber">0.4.2</span> <span class="title">Equalities</span></a></div>
-<ul id="ptx-toc-group-ss_Equalities" class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_chain_equalities" class="internal"><span class="title">Chain of equalities</span></a></div></li></ul>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_chain_equalities" class="internal"><span class="title">Chain of equalities</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="s_proof_technique.html#ss_set_properties" class="internal"><span class="codenumber">0.4.3</span> <span class="title">Basic set properties</span></a></div>
-<ul id="ptx-toc-group-ss_set_properties" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_inclusion" class="internal"><span class="title">Set inclusion</span></a></div></li>
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_equality" class="internal"><span class="title">Set equality</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="s_proof_technique.html#ss_function_properties" class="internal"><span class="codenumber">0.4.4</span> <span class="title">Basic function properties</span></a></div>
-<ul id="ptx-toc-group-ss_function_properties" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_function_equality" class="internal"><span class="title">Function equality</span></a></div></li>
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_injective_surjective_bijective" class="internal"><span class="title">Injective, surjective, bijective</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="s_proof_technique.html#ss_mathematical_induction" class="internal"><span class="codenumber">0.4.5</span> <span class="title">Mathematical induction</span></a></div>
-<ul id="ptx-toc-group-ss_mathematical_induction" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_weak_induction" class="internal"><span class="title">Proof by induction</span></a></div></li>
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_strong_induction" class="internal"><span class="title">Proof by strong induction</span></a></div></li>
 </ul>
@@ -389,7 +442,7 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_complex_numbers.html" class="internal"><span class="codenumber">0.5</span> <span class="title">Complex numbers</span></a></div>
-<ul id="ptx-toc-group-s_complex_numbers" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_complex_numbers.html#ss_complex_definition" class="internal"><span class="codenumber">0.5.1</span> <span class="title">Definition of <span class="process-math">\(\C\)</span></span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_complex_numbers.html#ss_complex_conjugation" class="internal"><span class="codenumber">0.5.2</span> <span class="title">Absolute value and complex conjugation</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_complex_numbers.html#ss_complex_numbers_ww" class="internal"><span class="codenumber">0.5.3</span> <span class="title">WeBWork Exercises</span></a></div></li>
@@ -397,7 +450,7 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="s_polynomials.html" class="internal"><span class="codenumber">0.6</span> <span class="title">Polynomials</span></a></div>
-<ul class="structural toc-item-list active" id="ptx-toc-group-s_polynomials">
+<ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_polynomials.html#ss_poly_def" class="internal"><span class="codenumber">0.6.1</span> <span class="title">Basic definitions</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_polynomials.html#ss_degree" class="internal"><span class="codenumber">0.6.2</span> <span class="title">Degree of a polynomial</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_polynomials.html#ss_poly_factoring" class="internal"><span class="codenumber">0.6.3</span> <span class="title">Factoring polynomials</span></a></div></li>
@@ -407,111 +460,161 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="c_lin_sys.html" class="internal"><span class="codenumber">1</span> <span class="title">Systems of linear equations</span></a></div>
-<ul id="ptx-toc-group-c_lin_sys" class="structural toc-item-list">
-<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="c_tuples.html" class="internal"><span class="codenumber">1</span> <span class="title">Introduction to vector spaces</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_Rn_and_friends.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Real-valued tuples</span></a></div>
-<ul id="ptx-toc-group-s_Rn_and_friends" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_Rn_and_friends.html#ss_R-valued_tuples" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Real-valued tuples</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_Rn_and_friends.html#ss_tuples_vector_ops" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Vector operations on <span class="process-math">\(\R^I\)</span></span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_Rn_and_friends.html#ss_Rn_visual" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Visualizing <span class="process-math">\(\R^n\)</span></span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_Rn_and_friends.html#s_R-valued_tuples_ex" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
+</li></ul>
 </li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="c_lin_sys.html" class="internal"><span class="codenumber">2</span> <span class="title">Systems of linear equations</span></a></div>
+<ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="s_systems.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Systems of linear equations</span></a></div>
-<ul id="ptx-toc-group-s_systems" class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_systems.html#ss_linear_equations" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Systems of linear equations</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_systems.html#ss_row_equivalence" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Row operations</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_systems.html#ss_systems_ww" class="internal"><span class="codenumber">1.2.3</span> <span class="title">WeBWork Exercises</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_systems.html#s_systems_ex" class="internal"><span class="codenumber">1.2.4</span> <span class="title">Exercises</span></a></div></li>
+<div class="toc-title-box"><a href="s_systems.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Systems of linear equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_systems.html#ss_linear_equations" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Systems of linear equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_systems.html#ss_row_equivalence" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Row operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_systems.html#ss_systems_ww" class="internal"><span class="codenumber">2.1.3</span> <span class="title">WeBWork Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_systems.html#s_systems_ex" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="s_ge.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Gaussian elimination</span></a></div>
-<ul id="ptx-toc-group-s_ge" class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ge.html#ss_ge_row_echelon" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Row echelon matrices</span></a></div></li>
+<div class="toc-title-box"><a href="s_ge.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Gaussian elimination</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ge.html#ss_ge_row_echelon" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Row echelon matrices</span></a></div></li>
 <li class="toc-item toc-subsection">
-<div class="toc-title-box"><a href="s_ge.html#ss_gaussian_elimination" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Gaussian elimination</span></a></div>
-<ul id="ptx-toc-group-ss_gaussian_elimination" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ge.html#ss_gaussian_elimination-8" class="internal"><span class="title">Model example</span></a></div></li></ul>
+<div class="toc-title-box"><a href="s_ge.html#ss_gaussian_elimination" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Gaussian elimination</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ge.html#ss_gaussian_elimination-8" class="internal"><span class="title">Model example</span></a></div></li></ul>
 </li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ge.html#ss_ge_ww" class="internal"><span class="codenumber">1.3.3</span> <span class="title">WeBWork Exercises</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_ge.html#s_ge_ex" class="internal"><span class="codenumber">1.3.4</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ge.html#ss_ge_ww" class="internal"><span class="codenumber">2.2.3</span> <span class="title">WeBWork Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_ge.html#s_ge_ex" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="s_solving.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Solving linear systems</span></a></div>
-<ul id="ptx-toc-group-s_solving" class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_solving.html#ss_workingExample" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Model example continued</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_solving.html#ss_solveSystem" class="internal"><span class="codenumber">1.4.2</span> <span class="title">General method for solving linear systems</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_solving.html#s_solving-5" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Vector parametrization description</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_solving.html#ss_solving_ww" class="internal"><span class="codenumber">1.4.4</span> <span class="title">WeBWork Exercises</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_solving.html#s_solving_ex" class="internal"><span class="codenumber">1.4.5</span> <span class="title">Exercises</span></a></div></li>
+<div class="toc-title-box"><a href="s_solving.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Solving linear systems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_solving.html#ss_workingExample" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Model example continued</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_solving.html#ss_solveSystem" class="internal"><span class="codenumber">2.3.2</span> <span class="title">General method for solving linear systems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_solving.html#s_solving-5" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Vector parametrization description</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_solving.html#ss_solving_ww" class="internal"><span class="codenumber">2.3.4</span> <span class="title">WeBWork Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_solving.html#s_solving_ex" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="c_matrices.html" class="internal"><span class="codenumber">2</span> <span class="title">Matrices</span></a></div>
-<ul id="ptx-toc-group-c_matrices" class="structural toc-item-list">
+<div class="toc-title-box"><a href="c_matrices.html" class="internal"><span class="codenumber">3</span> <span class="title">Matrices</span></a></div>
+<ul class="structural toc-item-list">
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="s_matrix.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Matrix arithmetic</span></a></div>
-<ul id="ptx-toc-group-s_matrix" class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#ss_matrix_attributes" class="internal"><span class="codenumber">2.1.1</span> <span class="title">The basics</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#ss_matrix_arithmetic" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Vector space structure of <span class="process-math">\(M_{mn}\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#ss_matrix_mult" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Matrix multiplication</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#s_column_row_method" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Alternative methods of multiplication</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#s_matrix-7" class="internal"><span class="codenumber">2.1.5</span> <span class="title">Transpose of a matrix</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#ss_matrix_ww" class="internal"><span class="codenumber">2.1.6</span> <span class="title">WeBWork Exercises</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_matrix.html#s_matrix_ex" class="internal"><span class="codenumber">2.1.7</span> <span class="title">Exercises</span></a></div></li>
+<div class="toc-title-box"><a href="s_matrix.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Matrix arithmetic</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#ss_matrix_attributes" class="internal"><span class="codenumber">3.1.1</span> <span class="title">The basics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#ss_matrix_arithmetic" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Vector space structure of <span class="process-math">\(M_{mn}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#ss_matrix_mult" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Matrix multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#s_column_row_method" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Alternative methods of multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#s_matrix-7" class="internal"><span class="codenumber">3.1.5</span> <span class="title">Transpose of a matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#ss_matrix_ww" class="internal"><span class="codenumber">3.1.6</span> <span class="title">WeBWork Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_matrix.html#s_matrix_ex" class="internal"><span class="codenumber">3.1.7</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="s_matrix_algebra.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Matrix algebra</span></a></div>
-<ul id="ptx-toc-group-s_matrix_algebra" class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix_algebra.html#ss_matrix_mult_props" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Matrix multiplication properties</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix_algebra.html#ss_cancellation" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Cancellation laws fulfilled and violated</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix_algebra.html#ss_transpose_props" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Transpostition properties</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix_algebra.html#ss_matrix_algebra_ww" class="internal"><span class="codenumber">2.2.4</span> <span class="title">WeBWork Exercises</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_matrix_algebra.html#s_matrix_algebra_ex" class="internal"><span class="codenumber">2.2.5</span> <span class="title">Exercises</span></a></div></li>
+<div class="toc-title-box"><a href="s_matrix_algebra.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Matrix algebra</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix_algebra.html#ss_matrix_mult_props" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Matrix multiplication properties</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix_algebra.html#ss_cancellation" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Cancellation laws fulfilled and violated</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix_algebra.html#ss_transpose_props" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Transpostition properties</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix_algebra.html#ss_matrix_algebra_ww" class="internal"><span class="codenumber">3.2.4</span> <span class="title">WeBWork Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_matrix_algebra.html#s_matrix_algebra_ex" class="internal"><span class="codenumber">3.2.5</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="s_invertible_matrices.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Invertible matrices</span></a></div>
-<ul id="ptx-toc-group-s_invertible_matrices" class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertible_matrices.html#subsec-" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Invertible matrices</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertible_matrices.html#s_invertible_matrices-4" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Powers of matrices, matrix polynomials</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertible_matrices.html#ss_invertible_matrices_ww" class="internal"><span class="codenumber">2.3.3</span> <span class="title">WeBWork Exercises</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_invertible_matrices.html#s_invertible_matrices_ex" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Exercises</span></a></div></li>
+<div class="toc-title-box"><a href="s_invertible_matrices.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Invertible matrices</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertible_matrices.html#subsec-" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Invertible matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertible_matrices.html#s_invertible_matrices-4" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Powers of matrices, matrix polynomials</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertible_matrices.html#ss_invertible_matrices_ww" class="internal"><span class="codenumber">3.3.3</span> <span class="title">WeBWork Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_invertible_matrices.html#s_invertible_matrices_ex" class="internal"><span class="codenumber">3.3.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="s_invertibility_theorem.html" class="internal"><span class="codenumber">2.4</span> <span class="title">The invertibility theorem</span></a></div>
-<ul id="ptx-toc-group-s_invertibility_theorem" class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_elementary_matrix" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Elementary matrices</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_systems_to_matrix_eqns" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Interlude on matrix equations</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_invertibility_th" class="internal"><span class="codenumber">2.4.3</span> <span class="title">The invertibility theorem</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_invertibility_alg" class="internal"><span class="codenumber">2.4.4</span> <span class="title">Invertibility algorithms</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_invertible_loose_ends" class="internal"><span class="codenumber">2.4.5</span> <span class="title">Some theoretical loose ends</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_invertibility_theorem_ww" class="internal"><span class="codenumber">2.4.6</span> <span class="title">WeBWork Exercises</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_invertibility_theorem.html#s_invertibility_theorem_ex" class="internal"><span class="codenumber">2.4.7</span> <span class="title">Exercises</span></a></div></li>
+<div class="toc-title-box"><a href="s_invertibility_theorem.html" class="internal"><span class="codenumber">3.4</span> <span class="title">The invertibility theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_elementary_matrix" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Elementary matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_systems_to_matrix_eqns" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Interlude on matrix equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_invertibility_th" class="internal"><span class="codenumber">3.4.3</span> <span class="title">The invertibility theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_invertibility_alg" class="internal"><span class="codenumber">3.4.4</span> <span class="title">Invertibility algorithms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_invertible_loose_ends" class="internal"><span class="codenumber">3.4.5</span> <span class="title">Some theoretical loose ends</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_invertibility_theorem_ww" class="internal"><span class="codenumber">3.4.6</span> <span class="title">WeBWork Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_invertibility_theorem.html#s_invertibility_theorem_ex" class="internal"><span class="codenumber">3.4.7</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="s_det.html" class="internal"><span class="codenumber">2.5</span> <span class="title">The determinant</span></a></div>
-<ul id="ptx-toc-group-s_det" class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_det.html#ss_det" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Definition of the determinant</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_det.html#ss_expansion_rows_columns" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Expansion along rows and columns</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_det.html#ss_det_row_ops" class="internal"><span class="codenumber">2.5.3</span> <span class="title">Row operations and determinant</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_det.html#ss_det_ww" class="internal"><span class="codenumber">2.5.4</span> <span class="title">WeBWork Exercises</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_det.html#s_det_ex" class="internal"><span class="codenumber">2.5.5</span> <span class="title">Exercises</span></a></div></li>
+<div class="toc-title-box"><a href="s_det.html" class="internal"><span class="codenumber">3.5</span> <span class="title">The determinant</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_det.html#ss_det" class="internal"><span class="codenumber">3.5.1</span> <span class="title">Definition of the determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_det.html#ss_expansion_rows_columns" class="internal"><span class="codenumber">3.5.2</span> <span class="title">Expansion along rows and columns</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_det.html#ss_det_row_ops" class="internal"><span class="codenumber">3.5.3</span> <span class="title">Row operations and determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_det.html#ss_det_ww" class="internal"><span class="codenumber">3.5.4</span> <span class="title">WeBWork Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_det.html#s_det_ex" class="internal"><span class="codenumber">3.5.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="c_vectorspace.html" class="internal"><span class="codenumber">4</span> <span class="title">Vector spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_subspace.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Subspaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace.html#ss_subspace" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Definition of subspace</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace.html#ss_subspaces_tuples" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Subspaces of <span class="process-math">\(\R^n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace.html#ss_subspace_matrices" class="internal"><span class="codenumber">4.1.3</span> <span class="title">Important subspaces of <span class="process-math">\(M_{nn}\)</span></span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_subspace.html#s_subspace_ex" class="internal"><span class="codenumber">4.1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_span_independence.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Span and linear independence</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_independence.html#s_span_independence-3" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Span</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_independence.html#ss_linear_independence" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Linear independence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_independence.html#subsec-invertibility-span-and-linear-independence" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Invertibility, span, and linear independence</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_span_independence.html#s_span_independence_ex" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_basis.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Bases</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_basis.html#ss_bases" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Bases of vector spaces</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_basis.html#s_basis_ex" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_dimension.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Dimension</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_dimension.html#ss_dimension" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Dimension of a vector space</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_dimension.html#ss_further_props" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Further properties of dimension</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_dimension.html#s_dimension_ex" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_rank_nullity.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Fundamental spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_rank_nullity.html#ss_fundamental_spaces" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Fundamental spaces of matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_rank_nullity.html#ss_expand_contract" class="internal"><span class="codenumber">4.5.2</span> <span class="title">Contracting and expanding to bases</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_rank_nullity.html#ss_fund_spaces_inv_th" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Fundamental spaces and invertibility</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_rank_nullity.html#s_rank_nullity_ex" class="internal"><span class="codenumber">4.5.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
-<div class="toc-title-box"><a href="my-great-book-7.html" class="internal"><span class="title">Backmatter</span></a></div>
-<ul id="ptx-toc-group-my-great-book-7" class="structural toc-item-list">
+<div class="toc-title-box"><a href="my-great-book-9.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
 <li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-notation.html" class="internal"><span class="codenumber">A</span> <span class="title">Notation</span></a></div></li>
 <li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-exercises.html" class="internal"><span class="codenumber">B</span> <span class="title">Exercises</span></a></div></li>
 <li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-defs.html" class="internal"><span class="codenumber">C</span> <span class="title">Definitions</span></a></div></li>
@@ -523,19 +626,15 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content">
-<section class="section" id="s_polynomials">
-<h1 class="heading hide-type">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_polynomials"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.6</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Polynomials</span>
-</h1>
-<section class="introduction" id="s_polynomials-2"><a href="s_complex_numbers.html" class="internal" title="Section 0.5: Complex numbers">Section 0.5</a></section>
-<section class="subsection" id="ss_poly_def">
-<h2 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.6.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Basic definitions</span>
 </h2>
-<article class="definition definition-like" id="d_polynomials"><h3 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.6.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Polynomials.</span>
+<section class="introduction" id="s_polynomials-2"><a href="s_complex_numbers.html" class="internal" title="Section 0.5: Complex numbers">Section 0.5</a></section><section class="subsection" id="ss_poly_def"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.6.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Basic definitions</span>
 </h3>
+<article class="definition definition-like" id="d_polynomials"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.6.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Polynomials.</span>
+</h4>
 <div class="para logical" id="d_polynomials-8-1">
 <div class="para">Assume <span class="process-math">\(X\subseteq \C\)</span> a <dfn class="terminology">polynomial</dfn> on <span class="process-math">\(X\)</span> is a function <span class="process-math">\(f\)</span> of the form</div>
 <div class="displaymath process-math" id="eq_poly_powerseries">
@@ -551,30 +650,25 @@ f(x)=\anpoly\text{,}\tag{0.6.2}
 </div>
 <div class="para">where <span class="process-math">\(a_i\in \C\)</span> for all <span class="process-math">\(1\leq i\leq n\text{.}\)</span>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#d_polynomials-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> 
-<div class="para" id="d_polynomials-8-2">We call <span class="process-math">\(a_ix^i\)</span> the <span class="process-math">\(i\)</span>-th <dfn class="terminology">term</dfn> of <span class="process-math">\(f\text{,}\)</span> and <span class="process-math">\(a_i\)</span> the <span class="process-math">\(i\)</span>-th <dfn class="terminology">coefficient</dfn>; <span class="process-math">\(a_0\)</span> is called the <dfn class="terminology">constant term</dfn> of <span class="process-math">\(f\text{.}\)</span> Furthermore, if in the expression <a href="s_polynomials.html#eq_poly" class="xref" data-knowl="./knowl/xref/eq_poly.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 0.6.2">(0.6.2)</a> we have <span class="process-math">\(a_n\ne 0\text{,}\)</span> then <span class="process-math">\(a_nx^{n}\)</span> is called the <dfn class="terminology">leading term</dfn> of <span class="process-math">\(f\text{,}\)</span> and <span class="process-math">\(a_{n}\)</span> its <dfn class="terminology">leading coefficient</dfn>. Lastly, a <dfn class="terminology">root</dfn> of <span class="process-math">\(f\)</span> is a an element <span class="process-math">\(c\in X\)</span> such that <span class="process-math">\(f(c)=0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#d_polynomials-8-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#d_polynomials-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="d_polynomials-8-2">We call <span class="process-math">\(a_ix^i\)</span> the <span class="process-math">\(i\)</span>-th <dfn class="terminology">term</dfn> of <span class="process-math">\(f\text{,}\)</span> and <span class="process-math">\(a_i\)</span> the <span class="process-math">\(i\)</span>-th <dfn class="terminology">coefficient</dfn>; <span class="process-math">\(a_0\)</span> is called the <dfn class="terminology">constant term</dfn> of <span class="process-math">\(f\text{.}\)</span> Furthermore, if in the expression <a href="s_polynomials.html#eq_poly" class="xref" data-knowl="./knowl/xref/eq_poly.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 0.6.2">(0.6.2)</a> we have <span class="process-math">\(a_n\ne 0\text{,}\)</span> then <span class="process-math">\(a_nx^{n}\)</span> is called the <dfn class="terminology">leading term</dfn> of <span class="process-math">\(f\text{,}\)</span> and <span class="process-math">\(a_{n}\)</span> its <dfn class="terminology">leading coefficient</dfn>. Lastly, a <dfn class="terminology">root</dfn> of <span class="process-math">\(f\)</span> is a an element <span class="process-math">\(c\in X\)</span> such that <span class="process-math">\(f(c)=0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#d_polynomials-8-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Definition 0.6.1: Polynomials"><a tabindex="-1" href="#d_polynomials" title="Copy heading and permalink for Definition 0.6.1: Polynomials" aria-label="Copy heading and permalink for Definition 0.6.1: Polynomials">🔗</a></div>
-</article>
-<article class="remark remark-like" id="rm_polynomials_powerseries"><h3 class="heading">
+<div class="autopermalink" data-description="Definition 0.6.1: Polynomials"><a href="#d_polynomials" title="Copy heading and permalink for Definition 0.6.1: Polynomials" aria-label="Copy heading and permalink for Definition 0.6.1: Polynomials">🔗</a></div></article><article class="remark remark-like" id="rm_polynomials_powerseries"><h4 class="heading">
 <span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.6.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Polynomials as finite power series.</span>
-</h3>
-<div class="para" id="rm_polynomials_powerseries-2">As we see in the expression <a href="s_polynomials.html#eq_poly_powerseries" class="xref" data-knowl="./knowl/xref/eq_poly_powerseries.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 0.6.1">(0.6.1)</a> we have essentially defined a polynomial to be a function with a finite power series representation. This may seem somewhat overkill in terms of the level of abstraction, but makes for simpler exposition in the discussion below. In any case you are always welcome to revert to the more familiar characterization in <a href="s_polynomials.html#eq_poly" class="xref" data-knowl="./knowl/xref/eq_poly.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 0.6.2">(0.6.2)</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rm_polynomials_powerseries-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h4>
+<div class="para" id="rm_polynomials_powerseries-2">As we see in the expression <a href="s_polynomials.html#eq_poly_powerseries" class="xref" data-knowl="./knowl/xref/eq_poly_powerseries.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 0.6.1">(0.6.1)</a> we have essentially defined a polynomial to be a function with a finite power series representation. This may seem somewhat overkill in terms of the level of abstraction, but makes for simpler exposition in the discussion below. In any case you are always welcome to revert to the more familiar characterization in <a href="s_polynomials.html#eq_poly" class="xref" data-knowl="./knowl/xref/eq_poly.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 0.6.2">(0.6.2)</a>.<div class="autopermalink" data-description="Paragraph"><a href="#rm_polynomials_powerseries-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Remark 0.6.2: Polynomials as finite power series"><a tabindex="-1" href="#rm_polynomials_powerseries" title="Copy heading and permalink for Remark 0.6.2: Polynomials as finite power series" aria-label="Copy heading and permalink for Remark 0.6.2: Polynomials as finite power series">🔗</a></div>
-</article>
-<article class="theorem theorem-like" id="th_poly_basic"><h3 class="heading">
+<div class="autopermalink" data-description="Remark 0.6.2: Polynomials as finite power series"><a href="#rm_polynomials_powerseries" title="Copy heading and permalink for Remark 0.6.2: Polynomials as finite power series" aria-label="Copy heading and permalink for Remark 0.6.2: Polynomials as finite power series">🔗</a></div></article><article class="theorem theorem-like" id="th_poly_basic"><h4 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.6.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Basic properties of polynomials.</span>
-</h3>
+</h4>
 <div class="para logical" id="th_poly_basic-2-1">
 <div class="para">Assume <span class="process-math">\(X\subseteq \C\text{.}\)</span>
 </div>
 <ol class="decimal" id="th_poly_basic-2-1-2">
 <li id="th_poly_basic-2-1-2-1">
-<div class="para" id="th_poly_basic-2-1-2-1-1">If <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are polynomials on <span class="process-math">\(X\text{,}\)</span> then so are <span class="process-math">\(f+g\text{,}\)</span> <span class="process-math">\(fg\text{,}\)</span> and <span class="process-math">\(cf\)</span> for any <span class="process-math">\(c\in \C\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_poly_basic-2-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="th_poly_basic-2-1-2-1-1">If <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are polynomials on <span class="process-math">\(X\text{,}\)</span> then so are <span class="process-math">\(f+g\text{,}\)</span> <span class="process-math">\(fg\text{,}\)</span> and <span class="process-math">\(cf\)</span> for any <span class="process-math">\(c\in \C\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#th_poly_basic-2-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#th_poly_basic-2-1-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+<div class="autopermalink" data-description="Item 1"><a href="#th_poly_basic-2-1-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
 </li>
 <li id="th_poly_basic-2-1-2-2">
 <div class="para logical" id="th_poly_basic-2-1-2-2-1">
@@ -584,25 +678,23 @@ f(x)=\anpoly\text{,}\tag{0.6.2}
 f(x)=(x-c)g(x)\text{.}\tag{0.6.3}
 \end{equation}
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_poly_basic-2-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#th_poly_basic-2-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#th_poly_basic-2-1-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+<div class="autopermalink" data-description="Item 2"><a href="#th_poly_basic-2-1-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
 <li id="th_at_most_n_roots">
-<div class="para" id="th_at_most_n_roots-1">If <span class="process-math">\(f(x)=\anpoly\)</span> is a nonzero polynomial on <span class="process-math">\(X\text{,}\)</span> then <span class="process-math">\(f\)</span> has at most <span class="process-math">\(n\)</span> distinct roots.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_at_most_n_roots-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="th_at_most_n_roots-1">If <span class="process-math">\(f(x)=\anpoly\)</span> is a nonzero polynomial on <span class="process-math">\(X\text{,}\)</span> then <span class="process-math">\(f\)</span> has at most <span class="process-math">\(n\)</span> distinct roots.<div class="autopermalink" data-description="Paragraph"><a href="#th_at_most_n_roots-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#th_at_most_n_roots" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+<div class="autopermalink" data-description="Item 3"><a href="#th_at_most_n_roots" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_poly_basic-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#th_poly_basic-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Theorem 0.6.3: Basic properties of polynomials"><a tabindex="-1" href="#th_poly_basic" title="Copy heading and permalink for Theorem 0.6.3: Basic properties of polynomials" aria-label="Copy heading and permalink for Theorem 0.6.3: Basic properties of polynomials">🔗</a></div>
-</article>
-<div class="para" id="ss_poly_def-5">An important consequence of statement (<a href="s_polynomials.html#th_at_most_n_roots" class="xref" data-knowl="./knowl/xref/th_at_most_n_roots.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 3">3</a>) of <a href="s_polynomials.html#th_poly_basic" class="xref" data-knowl="./knowl/xref/th_poly_basic.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 0.6.3: Basic properties of polynomials">Theorem 0.6.3</a> is that the coefficients <span class="process-math">\(a_i\)</span> of a polynomial <span class="process-math">\(f(x)=\sum_{i=1}^\infty a_ix^i\)</span> are uniquely determined by <span class="process-math">\(f\text{,}\)</span> as long as the domain <span class="process-math">\(X\)</span> is <em class="emphasis">infinite</em>. This furnishes us with a useful criterion for polynomial equality based on comparing coefficients.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_poly_def-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Theorem 0.6.3: Basic properties of polynomials"><a href="#th_poly_basic" title="Copy heading and permalink for Theorem 0.6.3: Basic properties of polynomials" aria-label="Copy heading and permalink for Theorem 0.6.3: Basic properties of polynomials">🔗</a></div></article><div class="para" id="ss_poly_def-5">An important consequence of statement (<a href="s_polynomials.html#th_at_most_n_roots" class="xref" data-knowl="./knowl/xref/th_at_most_n_roots.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 3">3</a>) of <a href="s_polynomials.html#th_poly_basic" class="xref" data-knowl="./knowl/xref/th_poly_basic.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 0.6.3: Basic properties of polynomials">Theorem 0.6.3</a> is that the coefficients <span class="process-math">\(a_i\)</span> of a polynomial <span class="process-math">\(f(x)=\sum_{i=1}^\infty a_ix^i\)</span> are uniquely determined by <span class="process-math">\(f\text{,}\)</span> as long as the domain <span class="process-math">\(X\)</span> is <em class="emphasis">infinite</em>. This furnishes us with a useful criterion for polynomial equality based on comparing coefficients.<div class="autopermalink" data-description="Paragraph"><a href="#ss_poly_def-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="corollary theorem-like" id="cor_poly_equality"><h3 class="heading">
+<article class="corollary theorem-like" id="cor_poly_equality"><h4 class="heading">
 <span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.6.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Polynomial equality via coefficients.</span>
-</h3>
+</h4>
 <div class="para logical" id="cor_poly_equality-2-1">
 <div class="para">Assume <span class="process-math">\(X\)</span> is an infinite subset of <span class="process-math">\(\C\text{.}\)</span> Let <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> be polynomials on <span class="process-math">\(X\)</span> of the form</div>
 <div class="displaymath process-math" id="cor_poly_equality-2-1-6">
@@ -613,71 +705,55 @@ g(x)\amp =\sum_{i=1}^\infty b_ix^i\text{.}
 </div>
 <ol class="decimal" id="cor_poly_equality-2-1-7">
 <li id="cor_f_is_g">
-<div class="para" id="cor_f_is_g-1">We have <span class="process-math">\(f=g\)</span> if and only if <span class="process-math">\(a_i=b_i\)</span> for all <span class="process-math">\(i\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#cor_f_is_g-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="cor_f_is_g-1">We have <span class="process-math">\(f=g\)</span> if and only if <span class="process-math">\(a_i=b_i\)</span> for all <span class="process-math">\(i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#cor_f_is_g-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#cor_f_is_g" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+<div class="autopermalink" data-description="Item 1"><a href="#cor_f_is_g" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
 </li>
 <li id="cor_f_is_0">
-<div class="para" id="cor_f_is_0-1">In particular, <span class="process-math">\(f\)</span> is the zero function on <span class="process-math">\(X\)</span> if and only if <span class="process-math">\(a_i=0\)</span> for all <span class="process-math">\(i\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#cor_f_is_0-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="cor_f_is_0-1">In particular, <span class="process-math">\(f\)</span> is the zero function on <span class="process-math">\(X\)</span> if and only if <span class="process-math">\(a_i=0\)</span> for all <span class="process-math">\(i\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#cor_f_is_0-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#cor_f_is_0" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+<div class="autopermalink" data-description="Item 2"><a href="#cor_f_is_0" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#cor_poly_equality-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#cor_poly_equality-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Corollary 0.6.4: Polynomial equality via coefficients"><a tabindex="-1" href="#cor_poly_equality" title="Copy heading and permalink for Corollary 0.6.4: Polynomial equality via coefficients" aria-label="Copy heading and permalink for Corollary 0.6.4: Polynomial equality via coefficients">🔗</a></div>
-</article><div class="autopermalink" aria-hidden="true" data-description="Subsection 0.6.1: Basic definitions"><a tabindex="-1" href="#ss_poly_def" title="Copy heading and permalink for Subsection 0.6.1: Basic definitions" aria-label="Copy heading and permalink for Subsection 0.6.1: Basic definitions">🔗</a></div>
-</section>
-<section class="subsection" id="ss_degree">
-<h2 class="heading hide-type">
+<div class="autopermalink" data-description="Corollary 0.6.4: Polynomial equality via coefficients"><a href="#cor_poly_equality" title="Copy heading and permalink for Corollary 0.6.4: Polynomial equality via coefficients" aria-label="Copy heading and permalink for Corollary 0.6.4: Polynomial equality via coefficients">🔗</a></div></article><div class="autopermalink" data-description="Subsection 0.6.1: Basic definitions"><a href="#ss_poly_def" title="Copy heading and permalink for Subsection 0.6.1: Basic definitions" aria-label="Copy heading and permalink for Subsection 0.6.1: Basic definitions">🔗</a></div></section><section class="subsection" id="ss_degree"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.6.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Degree of a polynomial</span>
-</h2>
-<section class="introduction" id="ss_degree-2">
-<div class="para" id="ss_degree-2-1">It follows from <a href="s_polynomials.html#cor_poly_equality" class="xref" data-knowl="./knowl/xref/cor_poly_equality.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 0.6.4: Polynomial equality via coefficients">Corollary 0.6.4</a> that if <span class="process-math">\(X\)</span> is an infinite subset of <span class="process-math">\(\C\)</span> and <span class="process-math">\(f\)</span> is a nonzero polynomial on <span class="process-math">\(X\text{,}\)</span> then <span class="process-math">\(f\)</span> has a unique expression of the form <span class="process-math">\(f(x)=\anpoly\text{,}\)</span> where <span class="process-math">\(a_n\ne 0\text{.}\)</span> The integer <span class="process-math">\(n\)</span> appearing in this expression is an important invariant of <span class="process-math">\(f\)</span> called its <em class="emphasis">degree</em>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_degree-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></section>
-<article class="definition definition-like" id="d_poly_degree"><h3 class="heading">
+</h3>
+<section class="introduction" id="ss_degree-2"><div class="para" id="ss_degree-2-1">It follows from <a href="s_polynomials.html#cor_poly_equality" class="xref" data-knowl="./knowl/xref/cor_poly_equality.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 0.6.4: Polynomial equality via coefficients">Corollary 0.6.4</a> that if <span class="process-math">\(X\)</span> is an infinite subset of <span class="process-math">\(\C\)</span> and <span class="process-math">\(f\)</span> is a nonzero polynomial on <span class="process-math">\(X\text{,}\)</span> then <span class="process-math">\(f\)</span> has a unique expression of the form <span class="process-math">\(f(x)=\anpoly\text{,}\)</span> where <span class="process-math">\(a_n\ne 0\text{.}\)</span> The integer <span class="process-math">\(n\)</span> appearing in this expression is an important invariant of <span class="process-math">\(f\)</span> called its <em class="emphasis">degree</em>.<div class="autopermalink" data-description="Paragraph"><a href="#ss_degree-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><article class="definition definition-like" id="d_poly_degree"><h4 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.6.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Degree of a polynomial.</span>
-</h3>
-<div class="para" id="d_poly_degree-4-1">Assume <span class="process-math">\(X\)</span> is an infinite subset of <span class="process-math">\(\C\)</span> and let <span class="process-math">\(f\)</span> be a nonzero polynomial on <span class="process-math">\(X\)</span> of the form <span class="process-math">\(f(x)=\anpoly\)</span> with <span class="process-math">\(a_n\ne 0\text{.}\)</span> The integer <span class="process-math">\(n\)</span> in this expression is called the <dfn class="terminology">degree</dfn> of <span class="process-math">\(f\text{,}\)</span> denoted <span class="process-math">\(\deg f\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#d_poly_degree-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> 
-<div class="para" id="d_poly_degree-4-2">We call the polynomial <span class="process-math">\(f\)</span> <dfn class="terminology">linear</dfn> if <span class="process-math">\(\deg f=1\text{,}\)</span> <dfn class="terminology">quadratic</dfn> if <span class="process-math">\(\deg f=2\text{,}\)</span> and <dfn class="terminology">cubic</dfn> if <span class="process-math">\(\deg f=3\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#d_poly_degree-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h4>
+<div class="para" id="d_poly_degree-4-1">Assume <span class="process-math">\(X\)</span> is an infinite subset of <span class="process-math">\(\C\)</span> and let <span class="process-math">\(f\)</span> be a nonzero polynomial on <span class="process-math">\(X\)</span> of the form <span class="process-math">\(f(x)=\anpoly\)</span> with <span class="process-math">\(a_n\ne 0\text{.}\)</span> The integer <span class="process-math">\(n\)</span> in this expression is called the <dfn class="terminology">degree</dfn> of <span class="process-math">\(f\text{,}\)</span> denoted <span class="process-math">\(\deg f\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#d_poly_degree-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="d_poly_degree-4-2">We call the polynomial <span class="process-math">\(f\)</span> <dfn class="terminology">linear</dfn> if <span class="process-math">\(\deg f=1\text{,}\)</span> <dfn class="terminology">quadratic</dfn> if <span class="process-math">\(\deg f=2\text{,}\)</span> and <dfn class="terminology">cubic</dfn> if <span class="process-math">\(\deg f=3\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#d_poly_degree-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Definition 0.6.5: Degree of a polynomial"><a tabindex="-1" href="#d_poly_degree" title="Copy heading and permalink for Definition 0.6.5: Degree of a polynomial" aria-label="Copy heading and permalink for Definition 0.6.5: Degree of a polynomial">🔗</a></div>
-</article>
-<div class="para" id="ss_degree-4">Defining the degree of the zero function to be <span class="process-math">\(-\infty\)</span> may seem a little peculiar. Do not be disturbed! You can think of this as a convention that allows for clean statements of theorems like the following.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_degree-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Definition 0.6.5: Degree of a polynomial"><a href="#d_poly_degree" title="Copy heading and permalink for Definition 0.6.5: Degree of a polynomial" aria-label="Copy heading and permalink for Definition 0.6.5: Degree of a polynomial">🔗</a></div></article><div class="para" id="ss_degree-4">Defining the degree of the zero function to be <span class="process-math">\(-\infty\)</span> may seem a little peculiar. Do not be disturbed! You can think of this as a convention that allows for clean statements of theorems like the following.<div class="autopermalink" data-description="Paragraph"><a href="#ss_degree-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="theorem theorem-like" id="th_poly_degree"><h3 class="heading">
+<article class="theorem theorem-like" id="th_poly_degree"><h4 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.6.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Basic properties of degree.</span>
-</h3>
-<div class="para" id="th_poly_degree-2-1">Assume <span class="process-math">\(X\)</span> is an infinite subset of <span class="process-math">\(\C\text{.}\)</span> Let <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> be polynomials on <span class="process-math">\(X\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_poly_degree-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> 
-<ol class="decimal" id="th_poly_degree-2-2">
+</h4>
+<div class="para" id="th_poly_degree-2-1">Assume <span class="process-math">\(X\)</span> is an infinite subset of <span class="process-math">\(\C\text{.}\)</span> Let <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> be polynomials on <span class="process-math">\(X\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#th_poly_degree-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <ol class="decimal" id="th_poly_degree-2-2">
 <li id="th_poly_degree-2-2-1">
 <div class="para" id="th_poly_degree-2-2-1-1">
-<span class="process-math">\(\deg fg=\deg f+\deg g\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_poly_degree-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\deg fg=\deg f+\deg g\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#th_poly_degree-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#th_poly_degree-2-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+<div class="autopermalink" data-description="Item 1"><a href="#th_poly_degree-2-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
 </li>
 <li id="th_poly_degree-2-2-2">
 <div class="para" id="th_poly_degree-2-2-2-1">
-<span class="process-math">\(\deg (f+g)\leq \max\{\deg f, \deg g\}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_poly_degree-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(\deg (f+g)\leq \max\{\deg f, \deg g\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#th_poly_degree-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#th_poly_degree-2-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+<div class="autopermalink" data-description="Item 2"><a href="#th_poly_degree-2-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" aria-hidden="true" data-description="Theorem 0.6.6: Basic properties of degree"><a tabindex="-1" href="#th_poly_degree" title="Copy heading and permalink for Theorem 0.6.6: Basic properties of degree" aria-label="Copy heading and permalink for Theorem 0.6.6: Basic properties of degree">🔗</a></div>
-</article><div class="autopermalink" aria-hidden="true" data-description="Subsection 0.6.2: Degree of a polynomial"><a tabindex="-1" href="#ss_degree" title="Copy heading and permalink for Subsection 0.6.2: Degree of a polynomial" aria-label="Copy heading and permalink for Subsection 0.6.2: Degree of a polynomial">🔗</a></div>
-</section>
-<section class="subsection" id="ss_poly_factoring">
-<h2 class="heading hide-type">
+<div class="autopermalink" data-description="Theorem 0.6.6: Basic properties of degree"><a href="#th_poly_degree" title="Copy heading and permalink for Theorem 0.6.6: Basic properties of degree" aria-label="Copy heading and permalink for Theorem 0.6.6: Basic properties of degree">🔗</a></div></article><div class="autopermalink" data-description="Subsection 0.6.2: Degree of a polynomial"><a href="#ss_degree" title="Copy heading and permalink for Subsection 0.6.2: Degree of a polynomial" aria-label="Copy heading and permalink for Subsection 0.6.2: Degree of a polynomial">🔗</a></div></section><section class="subsection" id="ss_poly_factoring"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.6.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Factoring polynomials</span>
-</h2>
-<section class="introduction" id="ss_poly_factoring-2">
-<div class="para" id="ss_poly_factoring-2-1">Statement (2) of <a href="s_polynomials.html#th_poly_basic" class="xref" data-knowl="./knowl/xref/th_poly_basic.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 0.6.3: Basic properties of polynomials">Theorem 0.6.3</a> makes a connection between roots of a polynomial and factorization; and the expression <a href="s_polynomials.html#eq_poly_factor" class="xref" data-knowl="./knowl/xref/eq_poly_factor.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 0.6.3">(0.6.3)</a> can be thought of as a first step in writing the polynomial <span class="process-math">\(f\)</span> as a product of linear polynomials. The existence of roots depends on the given domain of the function. Indeed,  there are plenty of polynomials <span class="process-math">\(f\colon \R\rightarrow \R\)</span> that have no roots whatsoever: for example, from the quadratic formula we know that any quadratic polynomial <span class="process-math">\(f(x)=ax^2+bx+c\)</span> satisfying <span class="process-math">\(b^2-4ac\lt 0\)</span> has no real roots. According to the <a href="s_polynomials.html#th_fund_alg" class="xref" data-knowl="./knowl/xref/th_fund_alg.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 0.6.7: Fundamental theorem of algebra">fundamental theorem of algebra</a>, the situation over <span class="process-math">\(\C\)</span> is vastly different: not only does every polymonial have a root in <span class="process-math">\(\C\text{,}\)</span> we can factor it completely as a product of linear polynomials. This is one of the main incentives for introducing the complex numbers as a number system.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_poly_factoring-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></section>
-<article class="theorem theorem-like" id="th_fund_alg"><h3 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.6.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Fundamental theorem of algebra.</span>
 </h3>
+<section class="introduction" id="ss_poly_factoring-2"><div class="para" id="ss_poly_factoring-2-1">Statement (2) of <a href="s_polynomials.html#th_poly_basic" class="xref" data-knowl="./knowl/xref/th_poly_basic.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 0.6.3: Basic properties of polynomials">Theorem 0.6.3</a> makes a connection between roots of a polynomial and factorization; and the expression <a href="s_polynomials.html#eq_poly_factor" class="xref" data-knowl="./knowl/xref/eq_poly_factor.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 0.6.3">(0.6.3)</a> can be thought of as a first step in writing the polynomial <span class="process-math">\(f\)</span> as a product of linear polynomials. The existence of roots depends on the given domain of the function. Indeed,  there are plenty of polynomials <span class="process-math">\(f\colon \R\rightarrow \R\)</span> that have no roots whatsoever: for example, from the quadratic formula we know that any quadratic polynomial <span class="process-math">\(f(x)=ax^2+bx+c\)</span> satisfying <span class="process-math">\(b^2-4ac\lt 0\)</span> has no real roots. According to the <a href="s_polynomials.html#th_fund_alg" class="xref" data-knowl="./knowl/xref/th_fund_alg.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 0.6.7: Fundamental theorem of algebra">fundamental theorem of algebra</a>, the situation over <span class="process-math">\(\C\)</span> is vastly different: not only does every polymonial have a root in <span class="process-math">\(\C\text{,}\)</span> we can factor it completely as a product of linear polynomials. This is one of the main incentives for introducing the complex numbers as a number system.<div class="autopermalink" data-description="Paragraph"><a href="#ss_poly_factoring-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><article class="theorem theorem-like" id="th_fund_alg"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.6.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Fundamental theorem of algebra.</span>
+</h4>
 <div class="para logical" id="th_fund_alg-2-1">
 <div class="para">Any polynomial <span class="process-math">\(f(x)=\anpoly\text{,}\)</span> thought of as a function from <span class="process-math">\(\C\)</span> to itself, can be factored into linear terms as</div>
 <div class="displaymath process-math" id="th_fund_alg-2-1-3">
@@ -686,74 +762,54 @@ f(x)=(x-z_1)(x-z_2)\cdots (x-z_n)\text{,}
 \end{equation*}
 </div>
 <div class="para">where the <span class="process-math">\(z_i\)</span> are (not necessarily distinct) complex numbers.</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_fund_alg-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#th_fund_alg-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Theorem 0.6.7: Fundamental theorem of algebra"><a tabindex="-1" href="#th_fund_alg" title="Copy heading and permalink for Theorem 0.6.7: Fundamental theorem of algebra" aria-label="Copy heading and permalink for Theorem 0.6.7: Fundamental theorem of algebra">🔗</a></div>
-</article><div class="autopermalink" aria-hidden="true" data-description="Subsection 0.6.3: Factoring polynomials"><a tabindex="-1" href="#ss_poly_factoring" title="Copy heading and permalink for Subsection 0.6.3: Factoring polynomials" aria-label="Copy heading and permalink for Subsection 0.6.3: Factoring polynomials">🔗</a></div>
-</section>
-<section class="subsection" id="ss_polynomials_ww">
-<h2 class="heading hide-type">
+<div class="autopermalink" data-description="Theorem 0.6.7: Fundamental theorem of algebra"><a href="#th_fund_alg" title="Copy heading and permalink for Theorem 0.6.7: Fundamental theorem of algebra" aria-label="Copy heading and permalink for Theorem 0.6.7: Fundamental theorem of algebra">🔗</a></div></article><div class="autopermalink" data-description="Subsection 0.6.3: Factoring polynomials"><a href="#ss_poly_factoring" title="Copy heading and permalink for Subsection 0.6.3: Factoring polynomials" aria-label="Copy heading and permalink for Subsection 0.6.3: Factoring polynomials">🔗</a></div></section><section class="subsection" id="ss_polynomials_ww"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.6.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">WeBWork Exercises</span>
-</h2>
-<details id="ss_polynomials_ww-2" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+</h3>
+<details id="ss_polynomials_ww-2" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">WeBWorK</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.6.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3></summary>
-<article class="exercise exercise-like knowl__content"><div id="ss_polynomials_ww-2-ww-inner" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="16" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-origin="webwork2" data-sourceFilePath="Library/ASU-topics/setPolynomials/srw3_5_31.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
-<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('ss_polynomials_ww-2-ww-inner')">Activate</button></div>
+</h4></summary><article class="exercise exercise-like knowl__content"><div id="webwork-16" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="16" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-origin="webwork2" data-sourceFilePath="Library/ASU-topics/setPolynomials/srw3_5_31.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-16')">Activate</button></div>
 <div class="problem-contents">
-<div class="para" id="extracted-ss_polynomials_ww-2-1-1-1">Find a degree 3 polynomial whose coefficient of <span class="process-math">\(x^3\)</span> equal to 1.  The zeros of this polynomial are <span class="process-math">\(3\text{,}\)</span> <span class="process-math">\(-4 i\text{,}\)</span> and <span class="process-math">\(4 i\text{.}\)</span> Simplify your answer so that it has only real numbers as coefficients.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#extracted-ss_polynomials_ww-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> 
-<div class="para" id="extracted-ss_polynomials_ww-2-1-1-2">Your answer is <span class="fillin underline" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#extracted-ss_polynomials_ww-2-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="extracted-webwork-16-1-1-1">Find a degree 3 polynomial whose coefficient of <span class="process-math">\(x^3\)</span> equal to 1.  The zeros of this polynomial are <span class="process-math">\(3\text{,}\)</span> <span class="process-math">\(-4 i\text{,}\)</span> and <span class="process-math">\(4 i\text{.}\)</span> Simplify your answer so that it has only real numbers as coefficients.<div class="autopermalink" data-description="Paragraph"><a href="#extracted-webwork-16-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="extracted-webwork-16-1-1-2">Your answer is <span class="fillin underline" role="img" aria-label="20-character blank" style="width: 9.090909090909092em;"></span>.<div class="autopermalink" data-description="Paragraph"><a href="#extracted-webwork-16-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions">
-<details id="extracted-ss_polynomials_ww-2-1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
-<div class="answer solution-like knowl__content">
-<div class="para" id="extracted-ss_polynomials_ww-2-1-2-1">
-<span class="process-math">\(\left(x-3\right)\mathopen{}\left(x^{2}+16\right)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#extracted-ss_polynomials_ww-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="solutions"><details id="extracted-webwork-16-1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="extracted-webwork-16-1-2-1">
+<span class="process-math">\(\left(x-3\right)\mathopen{}\left(x^{2}+16\right)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#extracted-webwork-16-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Answer 0.6.8.1"><a tabindex="-1" href="#extracted-ss_polynomials_ww-2-1-2" title="Copy heading and permalink for Answer 0.6.8.1" aria-label="Copy heading and permalink for Answer 0.6.8.1">🔗</a></div>
-</div></details>
+<div class="autopermalink" data-description="Answer 0.6.8.1"><a href="#extracted-webwork-16-1-2" title="Copy heading and permalink for Answer 0.6.8.1" aria-label="Copy heading and permalink for Answer 0.6.8.1">🔗</a></div>
+</div></details></div>
 </div>
 </div>
-</div>
-<div class="autopermalink" aria-hidden="true" data-description="WeBWorK 0.6.8"><a tabindex="-1" href="#ss_polynomials_ww-2" title="Copy heading and permalink for WeBWorK 0.6.8" aria-label="Copy heading and permalink for WeBWorK 0.6.8">🔗</a></div>
-</article></details>
-<details id="ss_polynomials_ww-3" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<div class="autopermalink" data-description="WeBWorK 0.6.8"><a href="#ss_polynomials_ww-2" title="Copy heading and permalink for WeBWorK 0.6.8" aria-label="Copy heading and permalink for WeBWorK 0.6.8">🔗</a></div></article></details><details id="ss_polynomials_ww-3" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">WeBWorK</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.6.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3></summary>
-<article class="exercise exercise-like knowl__content"><div id="ss_polynomials_ww-3-ww-inner" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="17" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-origin="webwork2" data-sourceFilePath="Library/ASU-topics/setPolynomials/jj1.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
-<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('ss_polynomials_ww-3-ww-inner')">Activate</button></div>
+</h4></summary><article class="exercise exercise-like knowl__content"><div id="webwork-17" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="17" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-origin="webwork2" data-sourceFilePath="Library/ASU-topics/setPolynomials/jj1.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-17')">Activate</button></div>
 <div class="problem-contents">
-<div class="para logical" id="extracted-ss_polynomials_ww-3-1-1-1">
+<div class="para logical" id="extracted-webwork-17-1-1-1">
 <div class="para">The polynomial</div>
-<div class="displaymath process-math" id="extracted-ss_polynomials_ww-3-1-1-1-1">
+<div class="displaymath process-math" id="extracted-webwork-17-1-1-1-1">
 \begin{equation*}
 f(x) = 7 x^3 - 2 x^2+ 567 x - 162
 \end{equation*}
 </div>
 <div class="para">has <span class="process-math">\(9 i\)</span> as a root.  Give <em class="emphasis">all</em> of the roots of <span class="process-math">\(f\)</span> in a comma-separated list, including the given one.</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#extracted-ss_polynomials_ww-3-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> 
-<div class="para" id="extracted-ss_polynomials_ww-3-1-1-2">Roots:  <span class="fillin underline" role="img" aria-label="40-character blank" style="width: 18.1818181818182em;"></span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#extracted-ss_polynomials_ww-3-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#extracted-webwork-17-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="extracted-webwork-17-1-1-2">Roots:  <span class="fillin underline" role="img" aria-label="40-character blank" style="width: 18.1818181818182em;"></span><div class="autopermalink" data-description="Paragraph"><a href="#extracted-webwork-17-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions">
-<details id="extracted-ss_polynomials_ww-3-1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
-<div class="answer solution-like knowl__content">
-<div class="para" id="extracted-ss_polynomials_ww-3-1-2-1">
-<span class="process-math">\(9i, -9i, 0.285714285714286\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#extracted-ss_polynomials_ww-3-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="solutions"><details id="extracted-webwork-17-1-2" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="extracted-webwork-17-1-2-1">
+<span class="process-math">\(9i, -9i, 0.285714285714286\)</span><div class="autopermalink" data-description="Paragraph"><a href="#extracted-webwork-17-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Answer 0.6.9.1"><a tabindex="-1" href="#extracted-ss_polynomials_ww-3-1-2" title="Copy heading and permalink for Answer 0.6.9.1" aria-label="Copy heading and permalink for Answer 0.6.9.1">🔗</a></div>
-</div></details>
+<div class="autopermalink" data-description="Answer 0.6.9.1"><a href="#extracted-webwork-17-1-2" title="Copy heading and permalink for Answer 0.6.9.1" aria-label="Copy heading and permalink for Answer 0.6.9.1">🔗</a></div>
+</div></details></div>
 </div>
 </div>
-</div>
-<div class="autopermalink" aria-hidden="true" data-description="WeBWorK 0.6.9"><a tabindex="-1" href="#ss_polynomials_ww-3" title="Copy heading and permalink for WeBWorK 0.6.9" aria-label="Copy heading and permalink for WeBWorK 0.6.9">🔗</a></div>
-</article></details><div class="autopermalink" aria-hidden="true" data-description="Subsection 0.6.4: WeBWork Exercises"><a tabindex="-1" href="#ss_polynomials_ww" title="Copy heading and permalink for Subsection 0.6.4: WeBWork Exercises" aria-label="Copy heading and permalink for Subsection 0.6.4: WeBWork Exercises">🔗</a></div>
-</section><div class="autopermalink" aria-hidden="true" data-description="Section 0.6: Polynomials"><a tabindex="-1" href="#s_polynomials" title="Copy heading and permalink for Section 0.6: Polynomials" aria-label="Copy heading and permalink for Section 0.6: Polynomials">🔗</a></div>
-</section>
-</div>
+<div class="autopermalink" data-description="WeBWorK 0.6.9"><a href="#ss_polynomials_ww-3" title="Copy heading and permalink for WeBWorK 0.6.9" aria-label="Copy heading and permalink for WeBWorK 0.6.9">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 0.6.4: WeBWork Exercises"><a href="#ss_polynomials_ww" title="Copy heading and permalink for Subsection 0.6.4: WeBWork Exercises" aria-label="Copy heading and permalink for Subsection 0.6.4: WeBWork Exercises">🔗</a></div></section><div class="autopermalink" data-description="Section 0.6: Polynomials"><a href="#s_polynomials" title="Copy heading and permalink for Section 0.6: Polynomials" aria-label="Copy heading and permalink for Section 0.6: Polynomials">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="s_complex_numbers.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="c_lin_sys.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="s_complex_numbers.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="c_tuples.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

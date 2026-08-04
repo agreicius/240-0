@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: blue-green                   *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.5.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Column space and row reduction.</span>
+</h4>
+<div class="para logical">
+<div class="para">The matrix</div>
+<div class="displaymath process-math">
+\begin{align*}
+A \amp = \begin{bmatrix}1\amp 1\\ 1\amp 1 \end{bmatrix}
+\end{align*}
+</div>
+<div class="para">row reduces to the matrix</div>
+<div class="displaymath process-math">
+\begin{align*}
+U \amp = \begin{bmatrix}1\amp 1\\ 0 \amp 0\end{bmatrix}
+\end{align*}
+</div>
+<div class="para">in row echelon form. By inspection we see that</div>
+<div class="displaymath process-math">
+\begin{align*}
+\CS A \amp =\Span\{(1,1)\}=\{(t,t)\colon t\in \R\}\\
+\CS U \amp =\Span\{(1,0)\}=\{(t,0)\colon t\in \R\}\text{.}
+\end{align*}
+</div>
+<div class="para">It is clear algebraically from the two set descriptions that <span class="process-math">\(\CS A\ne \CS U\text{.}\)</span> Geometrically, the two spaces are two distinct lines in <span class="process-math">\(\R^2\)</span> passing through the origin: <span class="process-math">\(\CS A\)</span> is the line defined by the equation <span class="process-math">\(y=x\)</span> and <span class="process-math">\(\CS U\)</span> is the <span class="process-math">\(x\)</span>-axis.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#eg_colspace_change-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">By contrast consider the matrix</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex_col_inv.html">
+\begin{equation*}
+A=\begin{bmatrix}1\amp 1\\ 0\amp 1 \end{bmatrix}\text{,}
+\end{equation*}
+</div>
+<div class="para">which is row equivalent to</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex_col_inv.html">
+\begin{equation*}
+U=\begin{bmatrix}
+1\amp 0 \\
+0\amp 1
+\end{bmatrix}      \text{.}
+\end{equation*}
+</div>
+<div class="para">In this case we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex_col_inv.html">
+\begin{align*}
+\CS A \amp =\Span\{(1,0),(1,1)\}=\R^2\\
+\CS U \amp =\Span\{(1,0),(0,1)\}=\R^2\text{,}
+\end{align*}
+</div>
+<div class="para">and thus <span class="process-math">\(\CS A=\CS U\text{.}\)</span> (See <a href="s_rank_nullity.html#ex_col_inv" class="xref" data-knowl="./knowl/xref/ex_col_inv.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 4.5.4.14">Exercise 4.5.4.14</a> for a more general take on this example.)</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#eg_colspace_change-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 4.5.9: Column space and row reduction"><a href="#eg_colspace_change" title="Copy heading and permalink for Example 4.5.9: Column space and row reduction" aria-label="Copy heading and permalink for Example 4.5.9: Column space and row reduction">🔗</a></div></article><span class="incontext"><a class="internal" href="s_rank_nullity.html#eg_colspace_change">in-context</a></span>
+</body>
+</html>
