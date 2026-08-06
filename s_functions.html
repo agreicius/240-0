@@ -390,7 +390,11 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="s_functions.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Functions</span></a></div>
-<ul class="structural toc-item-list active"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_functions.html#ss_functions_ww" class="internal"><span class="codenumber">0.2.1</span> <span class="title">WeBWork Exercises</span></a></div></li></ul>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_functions.html#ss_functions_definitions" class="internal"><span class="codenumber">0.2.1</span> <span class="title">Definition and notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_functions.html#ss_function_image_properties" class="internal"><span class="codenumber">0.2.2</span> <span class="title">Function image, injections, surjections, bijections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_functions.html#ss_functions_ww" class="internal"><span class="codenumber">0.2.3</span> <span class="title">WeBWork Exercises</span></a></div></li>
+</ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_logic.html" class="internal"><span class="codenumber">0.3</span> <span class="title">Logic</span></a></div>
@@ -629,9 +633,13 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_functions"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Functions</span>
 </h2>
-<article class="definition definition-like" id="d_function"><h3 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.2.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Functions.</span>
+<section class="introduction" id="s_functions-2"><div class="para" id="s_functions-2-1">Functions play an important role in our study of linear algebra. We remind you of this definition below and introduce some terminology and notation that may be new to you.<div class="autopermalink" data-description="Paragraph"><a href="#s_functions-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><section class="subsection" id="ss_functions_definitions"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.2.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Definition and notation</span>
 </h3>
+<article class="definition definition-like" id="d_function"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.2.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Functions.</span>
+</h4>
 <div class="para" id="d_function-4-1">Let <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> be two sets. A <dfn class="terminology">function from <span class="process-math">\(X\)</span> to <span class="process-math">\(Y\)</span></dfn>, denoted <span class="process-math">\(f\colon X\rightarrow Y\text{,}\)</span> is a rule which, given any <dfn class="terminology">input</dfn> <span class="process-math">\(x\in X\text{,}\)</span> returns an <dfn class="terminology">output</dfn> <span class="process-math">\(y\in Y\text{.}\)</span> In this case we write <span class="process-math">\(y=f(x)\)</span> and call <span class="process-math">\(y\)</span> the <dfn class="terminology">image of <span class="process-math">\(x\)</span> under <span class="process-math">\(f\)</span></dfn>, or the <dfn class="terminology">value of <span class="process-math">\(f\)</span> at <span class="process-math">\(x\)</span></dfn>. Similarly, we say <span class="process-math">\(f\)</span> <dfn class="terminology">maps</dfn> (or <dfn class="terminology">sends</dfn>) the input <span class="process-math">\(x\)</span> to the output <span class="process-math">\(y\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#d_function-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para" id="d_function-4-2">The set <span class="process-math">\(X\)</span> is called the <dfn class="terminology">domain</dfn> of <span class="process-math">\(f\text{;}\)</span> the set <span class="process-math">\(Y\)</span> is called the <dfn class="terminology">codomain</dfn> of <span class="process-math">\(f\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#d_function-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="d_function-4-3">
@@ -642,53 +650,54 @@ f\colon X \amp\rightarrow Y\\
 x \amp\mapsto f(x)\text{.}
 \end{align*}
 </div>
-<div class="para">This is read as “The function <span class="process-math">\(f\)</span> with domain <span class="process-math">\(X\)</span> and codomain <span class="process-math">\(Y\)</span> maps an input <span class="process-math">\(x\)</span> to the output <span class="process-math">\(f(x)\)</span>”.</div>
+<div class="para">This is read as “The function <span class="process-math">\(f\)</span> with domain <span class="process-math">\(X\)</span> and codomain <span class="process-math">\(Y\)</span> maps an input <span class="process-math">\(x\)</span> to the output <span class="process-math">\(f(x)\)</span>”. We will sometimes suppress the function name <span class="process-math">\(f\)</span> in this notation, writing simply <span class="process-math">\(X\rightarrow Y\)</span> to denote a function with domain <span class="process-math">\(X\)</span> and codomain <span class="process-math">\(Y\text{.}\)</span>
+</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#d_function-4-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 0.2.1: Functions"><a href="#d_function" title="Copy heading and permalink for Definition 0.2.1: Functions" aria-label="Copy heading and permalink for Definition 0.2.1: Functions">🔗</a></div></article><article class="example example-like" id="s_functions-3"><h3 class="heading">
+<div class="autopermalink" data-description="Definition 0.2.1: Functions"><a href="#d_function" title="Copy heading and permalink for Definition 0.2.1: Functions" aria-label="Copy heading and permalink for Definition 0.2.1: Functions">🔗</a></div></article><article class="example example-like" id="ss_functions_definitions-3"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.2.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3>
-<div class="para logical" id="s_functions-3-1-1">
+</h4>
+<div class="para logical" id="ss_functions_definitions-3-1-1">
 <div class="para">Consider the function</div>
-<div class="displaymath process-math" id="s_functions-3-1-1-1">
+<div class="displaymath process-math" id="ss_functions_definitions-3-1-1-1">
 \begin{align*}
 f\colon \mathbb{Z}\amp \rightarrow \mathbb{Z}\\
 x\amp\mapsto x^2 \text{.}
 \end{align*}
 </div>
 <div class="para">This function has domain and codomain equal to <span class="process-math">\(\mathbb{Z}\)</span> and maps an integer to its square.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#s_functions-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ss_functions_definitions-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 0.2.2"><a href="#s_functions-3" title="Copy heading and permalink for Example 0.2.2" aria-label="Copy heading and permalink for Example 0.2.2">🔗</a></div></article><article class="example example-like" id="s_functions-4"><h3 class="heading">
+<div class="autopermalink" data-description="Example 0.2.2"><a href="#ss_functions_definitions-3" title="Copy heading and permalink for Example 0.2.2" aria-label="Copy heading and permalink for Example 0.2.2">🔗</a></div></article><article class="example example-like" id="eg_addition_mult_as_functions"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.2.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Arithmetic operations as functions.</span>
-</h3>
-<div class="para logical" id="s_functions-4-2-1">
-<div class="para">Our familiar arithmetic operations can be expressed as functions whose inputs are pairs of numbers: addition is the function</div>
-<div class="displaymath process-math" id="s_functions-4-2-1-1">
+</h4>
+<div class="para logical" id="eg_addition_mult_as_functions-2-1">
+<div class="para">Our familiar arithmetic operations can be expressed as functions whose inputs are pairs of numbers. Using the notational conventions introduced in <a href="s_functions.html#d_function" class="xref" data-knowl="./knowl/xref/d_function.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.2.1: Functions">Definition 0.2.1</a> (with function names supressed), addition is the function</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_function.html" id="eg_addition_mult_as_functions-2-1-2">
 \begin{align*}
-a\colon \R\times \R \amp\rightarrow \R \\
-(x,y) \amp\mapsto x+y 
+\R\times \R \amp\rightarrow \R \\
+(x,y) \amp\mapsto x+y \text{,}
 \end{align*}
 </div>
 <div class="para">and multiplication is the function</div>
-<div class="displaymath process-math" id="s_functions-4-2-1-2">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_function.html" id="eg_addition_mult_as_functions-2-1-3">
 \begin{align*}
-m\colon\mathbb{R}\times \mathbb{R} \amp \rightarrow \mathbb{R}\\
-(x,y)\amp\mapsto  xy 
+\mathbb{R}\times \mathbb{R} \amp \rightarrow \mathbb{R}\\
+(x,y)\amp\mapsto  xy \text{.}
 \end{align*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#s_functions-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#eg_addition_mult_as_functions-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 0.2.3: Arithmetic operations as functions"><a href="#s_functions-4" title="Copy heading and permalink for Example 0.2.3: Arithmetic operations as functions" aria-label="Copy heading and permalink for Example 0.2.3: Arithmetic operations as functions">🔗</a></div></article><article class="remark remark-like" id="rm_function_as_relation"><h3 class="heading">
+<div class="autopermalink" data-description="Example 0.2.3: Arithmetic operations as functions"><a href="#eg_addition_mult_as_functions" title="Copy heading and permalink for Example 0.2.3: Arithmetic operations as functions" aria-label="Copy heading and permalink for Example 0.2.3: Arithmetic operations as functions">🔗</a></div></article><article class="remark remark-like" id="rm_function_as_relation"><h4 class="heading">
 <span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.2.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
-</h3>
-<div class="para" id="rm_function_as_relation-1-1">Invoking the notion of a rule in the definition of a function is admittedly somewhat vague. A more precise definition can be given using the Cartesian product. Namely, given sets <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\text{,}\)</span> we define a function <span class="process-math">\(f\colon X\rightarrow Y\)</span> to be a subset <span class="process-math">\(f\subseteq X\times Y\)</span> satisfying the following property: for all <span class="process-math">\(x\in X\)</span> there is a unique element <span class="process-math">\((x,y)\in f\text{.}\)</span> The uniqueness of the pair <span class="process-math">\((x,y)\)</span> then allows us to define the value <span class="process-math">\(f(x)\)</span> of <span class="process-math">\(f\)</span> at <span class="process-math">\(x\)</span> as <span class="process-math">\(y\text{,}\)</span> denoted <span class="process-math">\(f(x)=y\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#rm_function_as_relation-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</h4>
+<div class="para" id="rm_function_as_relation-1">Invoking the notion of a rule in the definition of a function is admittedly somewhat vague. A more precise definition can be given using the Cartesian product. Namely, given sets <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\text{,}\)</span> we define a function <span class="process-math">\(f\colon X\rightarrow Y\)</span> to be a subset <span class="process-math">\(f\subseteq X\times Y\)</span> satisfying the following property: for all <span class="process-math">\(x\in X\)</span> there is a unique element <span class="process-math">\((x,y)\in f\text{.}\)</span> The uniqueness of the pair <span class="process-math">\((x,y)\)</span> then allows us to define the value <span class="process-math">\(f(x)\)</span> of <span class="process-math">\(f\)</span> at <span class="process-math">\(x\)</span> as <span class="process-math">\(y\text{,}\)</span> denoted <span class="process-math">\(f(x)=y\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#rm_function_as_relation-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Remark 0.2.4"><a href="#rm_function_as_relation" title="Copy heading and permalink for Remark 0.2.4" aria-label="Copy heading and permalink for Remark 0.2.4">🔗</a></div></article><div class="para" id="s_functions-6">As with sets and tuples, we are obliged to specify what we mean for two functions to be equal. The definition below makes clear how the the domain and codomain, as well as the rule that takes inputs to outputs, are all essential ingredients of a function.<div class="autopermalink" data-description="Paragraph"><a href="#s_functions-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Remark 0.2.4"><a href="#rm_function_as_relation" title="Copy heading and permalink for Remark 0.2.4" aria-label="Copy heading and permalink for Remark 0.2.4">🔗</a></div></article><div class="para" id="ss_functions_definitions-6">As with sets and tuples, we are obliged to specify what we mean for two functions to be equal. The definition below makes clear how the the domain and codomain, as well as the rule that takes inputs to outputs, are all essential ingredients of a function.<div class="autopermalink" data-description="Paragraph"><a href="#ss_functions_definitions-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<article class="definition definition-like" id="d_function_equality"><h3 class="heading">
+<article class="definition definition-like" id="d_function_equality"><h4 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.2.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Function equality.</span>
-</h3>
+</h4>
 <div class="para logical" id="d_function_equality-3-1">
 <div class="para">Functions <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are <dfn class="terminology">equal</dfn> if</div>
 <ol class="lower-roman ol-marker-1" id="d_function_equality-3-1-4">
@@ -705,9 +714,12 @@ m\colon\mathbb{R}\times \mathbb{R} \amp \rightarrow \mathbb{R}\\
 </ol>
 <div class="autopermalink" data-description="Paragraph"><a href="#d_function_equality-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 0.2.5: Function equality"><a href="#d_function_equality" title="Copy heading and permalink for Definition 0.2.5: Function equality" aria-label="Copy heading and permalink for Definition 0.2.5: Function equality">🔗</a></div></article><article class="definition definition-like" id="d_image"><h3 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.2.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Image of a set.</span>
+<div class="autopermalink" data-description="Definition 0.2.5: Function equality"><a href="#d_function_equality" title="Copy heading and permalink for Definition 0.2.5: Function equality" aria-label="Copy heading and permalink for Definition 0.2.5: Function equality">🔗</a></div></article><div class="autopermalink" data-description="Subsection 0.2.1: Definition and notation"><a href="#ss_functions_definitions" title="Copy heading and permalink for Subsection 0.2.1: Definition and notation" aria-label="Copy heading and permalink for Subsection 0.2.1: Definition and notation">🔗</a></div></section><section class="subsection" id="ss_function_image_properties"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.2.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Function image, injections, surjections, bijections</span>
 </h3>
+<article class="definition definition-like" id="d_image"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.2.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Image of a set.</span>
+</h4>
 <div class="para logical" id="d_image-6-1">
 <div class="para">Given a function <span class="process-math">\(f\colon X\rightarrow Y\)</span> and a subset <span class="process-math">\(A \subseteq X\text{,}\)</span> the <dfn class="terminology">image of <span class="process-math">\(A\)</span> under <span class="process-math">\(f\)</span></dfn>, denoted <span class="process-math">\(f(A)\text{,}\)</span> is defined as</div>
 <div class="displaymath process-math" id="d_image-6-1-5">
@@ -727,9 +739,9 @@ f(A)=\left\{ y \in Y \colon f(a)=y \text{ for some } a \in A \right\}\text{.}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#d_image-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 0.2.6: Image of a set"><a href="#d_image" title="Copy heading and permalink for Definition 0.2.6: Image of a set" aria-label="Copy heading and permalink for Definition 0.2.6: Image of a set">🔗</a></div></article><article class="definition definition-like" id="d_injective_surjective_bijective"><h3 class="heading">
+<div class="autopermalink" data-description="Definition 0.2.6: Image of a set"><a href="#d_image" title="Copy heading and permalink for Definition 0.2.6: Image of a set" aria-label="Copy heading and permalink for Definition 0.2.6: Image of a set">🔗</a></div></article><article class="definition definition-like" id="d_injective_surjective_bijective"><h4 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.2.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Injective, surjective, bijective.</span>
-</h3>
+</h4>
 <div class="para logical" id="d_injective_surjective_bijective-9-1">
 <div class="para">Let <span class="process-math">\(f\colon X\rightarrow Y\)</span> be a function.</div>
 <ul class="disc" id="d_injective_surjective_bijective-9-1-2">
@@ -751,29 +763,29 @@ f(A)=\left\{ y \in Y \colon f(a)=y \text{ for some } a \in A \right\}\text{.}
 </ul>
 <div class="autopermalink" data-description="Paragraph"><a href="#d_injective_surjective_bijective-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 0.2.7: Injective, surjective, bijective"><a href="#d_injective_surjective_bijective" title="Copy heading and permalink for Definition 0.2.7: Injective, surjective, bijective" aria-label="Copy heading and permalink for Definition 0.2.7: Injective, surjective, bijective">🔗</a></div></article><article class="example example-like" id="s_functions-10"><h3 class="heading">
+<div class="autopermalink" data-description="Definition 0.2.7: Injective, surjective, bijective"><a href="#d_injective_surjective_bijective" title="Copy heading and permalink for Definition 0.2.7: Injective, surjective, bijective" aria-label="Copy heading and permalink for Definition 0.2.7: Injective, surjective, bijective">🔗</a></div></article><article class="example example-like" id="ss_function_image_properties-4"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.2.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Role of domain and codomain in injectivity and surjectivity.</span>
-</h3>
-<div class="para logical" id="s_functions-10-2-1">
+</h4>
+<div class="para logical" id="ss_function_image_properties-4-2-1">
 <div class="para">Consider the following three functions</div>
-<div class="displaymath process-math" id="s_functions-10-2-1-1">
+<div class="displaymath process-math" id="ss_function_image_properties-4-2-1-1">
 \begin{align*}
 f\colon \R \amp\rightarrow \R \amp g\colon [0,\infty)\amp\rightarrow \R \amp h\colon [0,\infty)\amp \rightarrow [0,\infty) \\
 x \amp\mapsto x^2 \amp x \amp\mapsto x^2 \amp x \amp\mapsto x^2 \amp \text{.}
 \end{align*}
 </div>
 <div class="para">Although all three functions are defined using the same rule (<span class="process-math">\(x\mapsto x^2\)</span>), they are not equal thanks to their differing domains and/or codomains. The choice of domain and codomain in these examples also plays a crucial role in determining whether the function is injective and/or surjective. The function <span class="process-math">\(f\)</span> is neither injective (<span class="process-math">\(f(-2)=f(2)=4\)</span>) nor surjective (<span class="process-math">\(f(X)=[0,\infty)\ne \R\)</span>); the function <span class="process-math">\(g\)</span> is injective but not surjective; the function <span class="process-math">\(h\)</span> is both injective and surjective, hence bijective.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#s_functions-10-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ss_function_image_properties-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Example 0.2.8: Role of domain and codomain in injectivity and surjectivity"><a href="#s_functions-10" title="Copy heading and permalink for Example 0.2.8: Role of domain and codomain in injectivity and surjectivity" aria-label="Copy heading and permalink for Example 0.2.8: Role of domain and codomain in injectivity and surjectivity">🔗</a></div></article><article class="definition definition-like" id="d_function_composition"><h3 class="heading">
+<div class="autopermalink" data-description="Example 0.2.8: Role of domain and codomain in injectivity and surjectivity"><a href="#ss_function_image_properties-4" title="Copy heading and permalink for Example 0.2.8: Role of domain and codomain in injectivity and surjectivity" aria-label="Copy heading and permalink for Example 0.2.8: Role of domain and codomain in injectivity and surjectivity">🔗</a></div></article><article class="definition definition-like" id="d_function_composition"><h4 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.2.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Function composition.</span>
-</h3>
+</h4>
 <div class="para" id="d_function_composition-4-1">Suppose <span class="process-math">\(f\colon Z\rightarrow W\)</span> and <span class="process-math">\(g\colon X\rightarrow Y\)</span> are functions satisfying <span class="process-math">\(Y\subseteq Z\text{.}\)</span>  The <dfn class="terminology">composition of <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span></dfn> is the function <span class="process-math">\(f\circ g\colon X\rightarrow W\)</span> defined as <span class="process-math">\(f\circ g\, (x)=f(g(x))
 \text{,}\)</span> for all <span class="process-math">\(x\in X\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#d_function_composition-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Definition 0.2.9: Function composition"><a href="#d_function_composition" title="Copy heading and permalink for Definition 0.2.9: Function composition" aria-label="Copy heading and permalink for Definition 0.2.9: Function composition">🔗</a></div></article><article class="definition definition-like" id="d_invertible_function"><h3 class="heading">
+<div class="autopermalink" data-description="Definition 0.2.9: Function composition"><a href="#d_function_composition" title="Copy heading and permalink for Definition 0.2.9: Function composition" aria-label="Copy heading and permalink for Definition 0.2.9: Function composition">🔗</a></div></article><article class="definition definition-like" id="d_invertible_function"><h4 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.2.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Identity and inverse functions.</span>
-</h3>
+</h4>
 <div class="para" id="d_invertible_function-5-1">For any set <span class="process-math">\(X\)</span> the <dfn class="terminology">identity function</dfn> on <span class="process-math">\(X\)</span> is the function <span class="process-math">\(\id_X\colon X\rightarrow X\)</span> defined as <span class="process-math">\(\id_X(x)=x\)</span> for all <span class="process-math">\(x\in X\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#d_invertible_function-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="d_invertible_function-5-2">
 <div class="para">A function <span class="process-math">\(f\colon X\rightarrow Y\)</span> is <dfn class="terminology">invertible</dfn> if there is a function <span class="process-math">\(g\colon Y\rightarrow X\)</span> satisfying <span class="process-math">\(g\circ f=\id_X\)</span> and <span class="process-math">\(f\circ g=\id_Y\text{:}\)</span> i.e.,</div>
@@ -783,16 +795,19 @@ g(f(x))\amp =x  \text{ for all } x\in X, \\
 f(g(y))\amp=y  \text{ for all } y\in Y \text{.}
 \end{align*}
 </div>
+<div class="para">The function <span class="process-math">\(g\)</span> in this case is called the <dfn class="terminology">inverse</dfn> of <span class="process-math">\(f\text{,}\)</span> denoted <span class="process-math">\(g=f^{-1}\text{.}\)</span>
+</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#d_invertible_function-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> The function <span class="process-math">\(g\)</span> in this case is called the <dfn class="terminology">inverse</dfn> of <span class="process-math">\(f\text{,}\)</span> denoted <span class="process-math">\(g=f^{-1}\text{.}\)</span><div class="autopermalink" data-description="Definition 0.2.10: Identity and inverse functions"><a href="#d_invertible_function" title="Copy heading and permalink for Definition 0.2.10: Identity and inverse functions" aria-label="Copy heading and permalink for Definition 0.2.10: Identity and inverse functions">🔗</a></div></article><article class="theorem theorem-like" id="th_invertible_bijective"><h3 class="heading">
+</div>
+<div class="autopermalink" data-description="Definition 0.2.10: Identity and inverse functions"><a href="#d_invertible_function" title="Copy heading and permalink for Definition 0.2.10: Identity and inverse functions" aria-label="Copy heading and permalink for Definition 0.2.10: Identity and inverse functions">🔗</a></div></article><article class="theorem theorem-like" id="th_invertible_bijective"><h4 class="heading">
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.2.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Invertible is equivalent to bijective.</span>
-</h3>
+</h4>
 <div class="para" id="th_invertible_bijective-2-1">A function <span class="process-math">\(f\colon X\rightarrow Y\)</span> is invertible if and only if it is bijective.<div class="autopermalink" data-description="Paragraph"><a href="#th_invertible_bijective-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Theorem 0.2.11: Invertible is equivalent to bijective"><a href="#th_invertible_bijective" title="Copy heading and permalink for Theorem 0.2.11: Invertible is equivalent to bijective" aria-label="Copy heading and permalink for Theorem 0.2.11: Invertible is equivalent to bijective">🔗</a></div></article><details id="s_functions-14" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="s_functions-14-1">The proof of this theorem is left as an example of proving “if and only if” statements. See <a href="s_proof_technique.html#ex_invertible_bijective" class="xref" data-knowl="./knowl/xref/ex_invertible_bijective.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 0.4.3: Proof: invertible is equivalent to bijective">Example 0.4.3</a>.<div class="autopermalink" data-description="Paragraph"><a href="#s_functions-14-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Theorem 0.2.11: Invertible is equivalent to bijective"><a href="#th_invertible_bijective" title="Copy heading and permalink for Theorem 0.2.11: Invertible is equivalent to bijective" aria-label="Copy heading and permalink for Theorem 0.2.11: Invertible is equivalent to bijective">🔗</a></div></article><details id="ss_function_image_properties-8" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="ss_function_image_properties-8-1">The proof of this theorem is left as an example of proving “if and only if” statements. See <a href="s_proof_technique.html#ex_invertible_bijective" class="xref" data-knowl="./knowl/xref/ex_invertible_bijective.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 0.4.3: Proof: invertible is equivalent to bijective">Example 0.4.3</a>.<div class="autopermalink" data-description="Paragraph"><a href="#ss_function_image_properties-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Proof 0.2.1"><a href="#s_functions-14" title="Copy heading and permalink for Proof 0.2.1" aria-label="Copy heading and permalink for Proof 0.2.1">🔗</a></div></article></details><section class="subsection" id="ss_functions_ww"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.2.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">WeBWork Exercises</span>
+<div class="autopermalink" data-description="Proof 0.2.2.1"><a href="#ss_function_image_properties-8" title="Copy heading and permalink for Proof 0.2.2.1" aria-label="Copy heading and permalink for Proof 0.2.2.1">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 0.2.2: Function image, injections, surjections, bijections"><a href="#ss_function_image_properties" title="Copy heading and permalink for Subsection 0.2.2: Function image, injections, surjections, bijections" aria-label="Copy heading and permalink for Subsection 0.2.2: Function image, injections, surjections, bijections">🔗</a></div></section><section class="subsection" id="ss_functions_ww"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.2.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">WeBWork Exercises</span>
 </h3>
 <details id="ss_functions_ww-2" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">WeBWorK</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.2.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
@@ -975,7 +990,7 @@ q\left(r(x)\right)
 </div></details></div>
 </div>
 </div>
-<div class="autopermalink" data-description="WeBWorK 0.2.14"><a href="#ss_functions_ww-4" title="Copy heading and permalink for WeBWorK 0.2.14" aria-label="Copy heading and permalink for WeBWorK 0.2.14">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 0.2.1: WeBWork Exercises"><a href="#ss_functions_ww" title="Copy heading and permalink for Subsection 0.2.1: WeBWork Exercises" aria-label="Copy heading and permalink for Subsection 0.2.1: WeBWork Exercises">🔗</a></div></section><div class="autopermalink" data-description="Section 0.2: Functions"><a href="#s_functions" title="Copy heading and permalink for Section 0.2: Functions" aria-label="Copy heading and permalink for Section 0.2: Functions">🔗</a></div></section></div>
+<div class="autopermalink" data-description="WeBWorK 0.2.14"><a href="#ss_functions_ww-4" title="Copy heading and permalink for WeBWorK 0.2.14" aria-label="Copy heading and permalink for WeBWorK 0.2.14">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 0.2.3: WeBWork Exercises"><a href="#ss_functions_ww" title="Copy heading and permalink for Subsection 0.2.3: WeBWork Exercises" aria-label="Copy heading and permalink for Subsection 0.2.3: WeBWork Exercises">🔗</a></div></section><div class="autopermalink" data-description="Section 0.2: Functions"><a href="#s_functions" title="Copy heading and permalink for Section 0.2: Functions" aria-label="Copy heading and permalink for Section 0.2: Functions">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="s_sets_tuples.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_logic.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
