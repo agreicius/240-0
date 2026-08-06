@@ -2,7 +2,7 @@
 
 <chapter xml:id="c_tuples" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Introduction to vector spaces</title>
-<xi:include href="s_R-valued_tuples.ptx" />
+<xi:include href="s_real_tuples.ptx" />
     
 
 </chapter>

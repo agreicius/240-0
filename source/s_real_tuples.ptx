@@ -26,7 +26,7 @@
             Our study of linear algebra begins on a somewhat formal note with the introduction of the set <m>\R^I</m> of real-valued tuples indexed by an arbitrary set <m>I</m>. Conceptually, this construction is a straightforward generalization of the sets <m>\R^2</m> and <m>\R^3</m> of real-valued pairs and triples. The payoff of this mild formalism is a vast generalization of those two familiar sets that gives us a unified framework for developing the mathematical theory of objects as disparate as <m>n</m>-tuples, matrices, and infinite sequences. In particular, we show how the so-called <em>vector operations</em> of <m>\R^2</m> and <m>\R^3</m> extend easily to these more general sets <m>\R^I</m>. As a result, we are lead naturally to introduce at this early stage the notion of a <em>real vector space</em>, thereby foregrounding the central object of study of linear algebra. 
         </p>
     </introduction>
-    <subsection xml:id="ss_R-valued_tuples">
+    <subsection xml:id="ss_real_tuples">
     <title>Real-valued tuples</title>
     <p>
         Most multivariable courses begin by introducing <m>\R^2</m>, the set of all pairs of real numbers, and <m>\R^3</m>, the set of all triples of real numbers. Using set notation: 
@@ -689,7 +689,7 @@ Recall that Sage captures the double-index nature of a matrix by nesting lists: 
     </p>
     </remark>
     <p>
-        Taking the three special types of index sets <m>I</m> discussed in <xref ref="ss_R-valued_tuples"/>, we see that <xref ref="d_tuples_vec_ops"/> gives rise to naturally defined operations on <m>n</m>-tuples, infinite sequences, and matrices. We summarize each in turn below. 
+        Taking the three special types of index sets <m>I</m> discussed in <xref ref="ss_real_tuples"/>, we see that <xref ref="d_tuples_vec_ops"/> gives rise to naturally defined operations on <m>n</m>-tuples, infinite sequences, and matrices. We summarize each in turn below. 
         <ul>
             <li>
                 <title><m>n</m>-tuples</title>
@@ -1511,7 +1511,7 @@ Recall that Sage captures the double-index nature of a matrix by nesting lists: 
         
     </figure>
    </subsection>
-   <xi:include href="./s_R-valued_tuples_ex.ptx"/>
+   <xi:include href="./s_real_tuples_ex.ptx"/>
 
 
 </section>
