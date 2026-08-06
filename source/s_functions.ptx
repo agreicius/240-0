@@ -1,6 +1,10 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_functions">
   <title>Functions</title>
-
+    <introduction><p>
+      Functions play an important role in our study of linear algebra. We remind you of this definition below and introduce some terminology and notation that may be new to you. 
+    </p></introduction>
+    <subsection xml:id="ss_functions_definitions">
+      <title>Definition and notation</title>
         <definition xml:id="d_function">
           <title>Functions</title>
           <idx><h>function</h></idx>
@@ -21,7 +25,7 @@
                 <mrow>f\colon X \amp\rightarrow Y</mrow>
                 <mrow> x \amp\mapsto f(x)</mrow>
               </md>.
-              This is read as <q>The function <m>f</m> with domain <m>X</m> and codomain <m>Y</m> maps an input <m>x</m> to the output <m>f(x)</m></q>.
+              This is read as <q>The function <m>f</m> with domain <m>X</m> and codomain <m>Y</m> maps an input <m>x</m> to the output <m>f(x)</m></q>. We will sometimes suppress the function name <m>f</m> in this notation, writing simply <m>X\rightarrow Y</m> to denote a function with domain <m>X</m> and codomain <m>Y</m>. 
             </p>
           </statement>
         </definition>
@@ -37,30 +41,28 @@
               </p>
             </statement>
           </example>
-          <example ref="eg_addition_mult_as_functions">
+          <example xml:id="eg_addition_mult_as_functions">
             <title>Arithmetic operations as functions</title>
             <statement>
               <p>
-                Our familiar arithmetic operations can be expressed as functions whose inputs are pairs of numbers: addition is the function
+                Our familiar arithmetic operations can be expressed as functions whose inputs are pairs of numbers. Using the notational conventions introduced in <xref ref="d_function"/> (with function names supressed), addition is the function
                 <md>
-                  <mrow>a\colon \R\times \R \amp\rightarrow \R </mrow>
+                  <mrow>\R\times \R \amp\rightarrow \R </mrow>
                   <mrow> (x,y) \amp\mapsto x+y </mrow>
-                </md>
+                </md>,
                 and multiplication is the function
                 <md>
-                  <mrow>m\colon\mathbb{R}\times \mathbb{R} \amp \rightarrow \mathbb{R}</mrow>
+                  <mrow>\mathbb{R}\times \mathbb{R} \amp \rightarrow \mathbb{R}</mrow>
                   <mrow> (x,y)\amp\mapsto  xy </mrow>
-                </md>
+                </md>.
               </p>
             </statement>
 
           </example>
             <remark xml:id="rm_function_as_relation">
-          <statement>
-            <p>
-              Invoking the notion of a rule in the definition of a function is admittedly somewhat vague. A more precise definition can be given using the Cartesian product. Namely, given sets <m>X</m> and <m>Y</m>, we define a function <m>f\colon X\rightarrow Y</m> to be a subset <m>f\subseteq X\times Y</m> satisfying the following property: for all <m>x\in X</m> there is a unique element <m>(x,y)\in f</m>. The uniqueness of the pair <m>(x,y)</m> then allows us to define the value <m>f(x)</m> of <m>f</m> at <m>x</m> as <m>y</m>, denoted <m>f(x)=y</m>.
-            </p>
-          </statement>
+          <p>
+            Invoking the notion of a rule in the definition of a function is admittedly somewhat vague. A more precise definition can be given using the Cartesian product. Namely, given sets <m>X</m> and <m>Y</m>, we define a function <m>f\colon X\rightarrow Y</m> to be a subset <m>f\subseteq X\times Y</m> satisfying the following property: for all <m>x\in X</m> there is a unique element <m>(x,y)\in f</m>. The uniqueness of the pair <m>(x,y)</m> then allows us to define the value <m>f(x)</m> of <m>f</m> at <m>x</m> as <m>y</m>, denoted <m>f(x)=y</m>.
+          </p>
         </remark>
         <p>
         As with sets and tuples, we are obliged to specify what we mean for two functions to be equal. The definition below makes clear how the the domain and codomain, as well as the rule that takes inputs to outputs, are all essential ingredients of a function.
@@ -86,7 +88,10 @@
               </p>
             </statement>
           </definition>
-          <definition xml:id="d_image">
+        </subsection>
+        <subsection xml:id="ss_function_image_properties">
+          <title>Function image, injections, surjections, bijections</title>
+        <definition xml:id="d_image">
       <title>Image of a set</title>
       <idx><h>function</h><h>image of a set</h></idx>
       <idx><h>function</h><h>image</h></idx>
@@ -101,16 +106,16 @@
       <statement>
         <p>
         Given a function <m>f\colon X\rightarrow Y</m> and a subset <m>A \subseteq X</m>, the <term>image of <m>A</m> under <m>f</m></term>, denoted <m>f(A)</m>, is defined as
-        <me>
+        <md>
           f(A)=\left\{ y \in Y \colon f(a)=y \text{ for some } a \in A \right\}
-        </me>.
+        </md>.
         In other words, <m>f(A)</m> is the set of all outputs <m>f(a)</m>,  where <m>a\in X</m>.
        </p>
         <p>
         The <term>image of <m>f</m></term>, denoted <m>\operatorname{im} f</m>, is the set of <em>all</em> outputs of <m>f</m>: <ie />,
-        <me>
+        <md>
           \operatorname{im} f=f(X)=\left\{ y \in Y \colon f(x)=y \text{ for some } x \in X \right\}
-        </me>.
+        </md>.
         </p>
 
       </statement>
@@ -180,10 +185,10 @@
     </statement>
   </definition>
   <definition xml:id="d_invertible_function">
+    <title>Identity and inverse functions</title>
     <idx><h>function</h><h>invertible</h></idx>
     <idx><h>function</h><h>inverse</h></idx>
     <idx><h>function</h><h>identity</h></idx>
-    <title>Identity and inverse functions</title>
     <statement>
       <p>
         For any set <m>X</m> the <term>identity function</term> on <m>X</m> is the function <m>\id_X\colon X\rightarrow X</m> defined as <m>\id_X(x)=x</m> for all <m>x\in X</m>.
@@ -194,8 +199,9 @@
           <mrow>g(f(x))\amp =x  \text{ for all } x\in X, </mrow>
           <mrow> f(g(y))\amp=y  \text{ for all } y\in Y </mrow>
         </md>.
-      </p>
+      
       The function <m>g</m> in this case is called the <term>inverse</term> of <m>f</m>, denoted <m>g=f^{-1}</m>.
+      </p>
     </statement>
   </definition>
     <theorem xml:id="th_invertible_bijective">
@@ -213,9 +219,7 @@
         The proof of this theorem is left as an example of proving <q>if and only if</q> statements. See <xref ref="ex_invertible_bijective"/>.
       </p>
     </proof>
-
-
-
+  </subsection>
 <subsection xml:id="ss_functions_ww">
   <title>WeBWork Exercises</title>
 
