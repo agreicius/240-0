@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: blue-green                   *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.2.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Rank-nullity application.</span>
+</h2>
+<div class="para logical">
+<div class="para">Show that the linear transformation</div>
+<div class="displaymath process-math">
+\begin{align*}
+T\colon \R^4 \amp\rightarrow \R^3 \\
+(x,y,z,w)\amp \mapsto (x+z,y+z+w,z+2w) 
+\end{align*}
+</div>
+<div class="para">is surjective: i.e., <span class="process-math">\(\im T=\R^3\text{.}\)</span> Do so by first computing <span class="process-math">\(\NS T\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_rank-nullity_computation-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical">
+<div class="para">We first examine <span class="process-math">\(\NS T\text{.}\)</span> We have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_rank-nullity.html ./knowl/xref/cor_dimension_subspace.html">
+\begin{equation*}
+T(x,y,z,w)=\boldzero \iff \begin{linsys}{4}
+x\amp \amp \amp+ \amp z \amp \amp \amp =\amp 0\\
+\amp \amp y\amp+ \amp z \amp + \amp w\amp =\amp 0\\
+\amp \amp \amp\amp z \amp + \amp 2w\amp =\amp 0
+\end{linsys}\text{.}
+\end{equation*}
+</div>
+<div class="para">The system above is already in row echelon form, and so we easily see that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_rank-nullity.html ./knowl/xref/cor_dimension_subspace.html">
+\begin{equation*}
+\NS T=\{(2t,t,-2t,t)\colon t\in \R\}=\Span\{(-1,1,-2,1)\}\text{.}
+\end{equation*}
+</div>
+<div class="para">Thus <span class="process-math">\(B=\{(2,1,-2,1)\}\)</span> is a basis of <span class="process-math">\(\NS T\text{,}\)</span> and we conclude that <span class="process-math">\(\dim \NS T=1\text{.}\)</span> The <a href="s_nullspace_image_isom.html#th_rank-nullity" class="xref" data-knowl="./knowl/xref/th_rank-nullity.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.2.9: Rank-nullity">rank-nullity theorem</a> now implies that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_rank-nullity.html ./knowl/xref/cor_dimension_subspace.html">
+\begin{equation*}
+\dim \im T=4-\dim \NS T=4-1=3\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\im T\subseteq \R^3\)</span> and <span class="process-math">\(\dim\im T=\dim \R^3=3\text{,}\)</span> we conclude by <a href="s_dimension.html#cor_dimension_subspace" class="xref" data-knowl="./knowl/xref/cor_dimension_subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 4.4.16: Dimension of subspaces">Corollary 4.4.16</a> that <span class="process-math">\(\im T=\R^3\text{.}\)</span> Thus <span class="process-math">\(T\)</span> is surjective.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_rank-nullity_computation-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 5.2.10.1"><a tabindex="-1" href="#eg_rank-nullity_computation-3" title="Copy heading and permalink for Solution 5.2.10.1" aria-label="Copy heading and permalink for Solution 5.2.10.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 5.2.10: Rank-nullity application"><a tabindex="-1" href="#eg_rank-nullity_computation" title="Copy heading and permalink for Example 5.2.10: Rank-nullity application" aria-label="Copy heading and permalink for Example 5.2.10: Rank-nullity application">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="s_nullspace_image_isom.html#eg_rank-nullity_computation">In Context</a></span>
+</body>
+</html>

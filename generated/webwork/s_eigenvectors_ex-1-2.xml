@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_eigenvectors_ex-1-2" assembly-id="s_eigenvectors_ex-1-2">
+  <static seed="100" source="Library/TCNJ/TCNJ_Eigenvalues/problem3.pg">
+    <statement><p>Find the eigenvalues of <m>A</m>, given that <m>A = \left[\begin{array}{ccc}
+9 \amp 4 \amp -18\cr
+10 \amp 3 \amp -18\cr
+5 \amp 4 \amp -14
+\end{array}\right]</m></p>
+<p>and its eigenvectors are <m>v_1 = \left[\begin{array}{c}
+-1\cr
+-1\cr
+-1
+\end{array}\right], v_2 = \left[\begin{array}{c}
+1\cr
+2\cr
+1
+\end{array}\right]</m> and <m>v_3 = \left[\begin{array}{c}
+-2\cr
+-2\cr
+-1
+\end{array}\right]</m>.</p>
+<p>The corresponding eigenvalues are <m>\lambda_1 =</m><fillin characters="10" name="AnSwEr0001"/>, 
+<m>\lambda_2 =</m><fillin characters="10" name="AnSwEr0002"/>, and <m>\lambda_2 =</m><fillin characters="10" name="AnSwEr0003"/>.</p>
+</statement>
+    <answer>
+      <p>
+        <m>-5</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>-1</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>4</m>
+      </p>
+    </answer>
+  </static>
+  <rendering-data sourceFilePath="Library/TCNJ/TCNJ_Eigenvalues/problem3.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/TCNJ/TCNJ_Eigenvalues/problem3.pg"/>
+</webwork-reps>

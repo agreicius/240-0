@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_nullspace_image_ex-1-5" assembly-id="s_nullspace_image_ex-1-5">
+  <static seed="73" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.1.35.pg">
+    <statement><p>Let
+<m>A=\left[\begin{matrix} 1 \amp  3 \cr -5 \amp  7 \cr 7 \amp  -5\cr \end{matrix}\right]</m>,
+<m>{\bf b}=\left[\begin{matrix} -7 \cr -7 \cr \end{matrix}\right]</m>, and
+<m>{\bf c}=\left[\begin{matrix} -4 \cr 2 \cr \end{matrix}\right]</m>.
+Define <m>T({\bf x})=A{\bf x}</m>.</p>
+<p>Select true or false for each statement.</p>
+<p><ol>
+<li>
+<p>The vector <m>{\bf c}</m> is in the range of <m>T</m></p>
+</li>
+<li>
+<p>The vector <m>{\bf b}</m> is in the kernel of <m>T</m></p>
+</li>
+</ol></p>
+</statement>
+    <solution><m>A{\bf b}=\left[\begin{matrix} 1 \amp  3 \cr -5 \amp  7 \cr 7 \amp  -5\cr \end{matrix}\right]
+\left[\begin{matrix} -7 \cr -7 \cr \end{matrix}\right]=
+\left[\begin{matrix} -28 \cr -14 \cr -14 \cr \end{matrix}\right] \ne {\bf 0}</m>, so <m>{\bf b}\not\in \ker(T)</m>.
+
+
+
+Since the range of <m>T</m> is a subset of <m>{\mathbb R}^3</m> and <m>{\bf c}\in{\mathbb R}^2</m>,
+ <m>{\bf c}\not\in</m>  range<m>(T)</m>.
+
+
+
+</solution>
+  </static>
+  <rendering-data sourceFilePath="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.1.35.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.1.35.pg"/>
+</webwork-reps>

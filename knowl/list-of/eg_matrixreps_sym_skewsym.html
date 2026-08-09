@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: blue-green                   *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5.4.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Computing with matrix representations.</span>
+</h2>
+<div class="para logical">
+<div class="para">The function</div>
+<div class="displaymath process-math">
+\begin{align*}
+F\colon M_{22} \amp \rightarrow M_{22}\\
+A \amp \mapsto A^T-A
+\end{align*}
+</div>
+<div class="para">is linear.</div>
+<ol class="decimal" id="eg_matrixreps_sym_skewsym-2-1-2">
+<li>
+<div class="para">Compute <span class="process-math">\(A=[T]_{B}\text{,}\)</span> where <span class="process-math">\(B=(E_{11},E_{12},E_{21},E_{22})\)</span> is the standard basis of <span class="process-math">\(M_{22}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_matrixreps_sym_skewsym-2-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#eg_matrixreps_sym_skewsym-2-1-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li>
+<div class="para">Compute bases of <span class="process-math">\(\NS A\)</span> and <span class="process-math">\(\CS A\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_matrixreps_sym_skewsym-2-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#eg_matrixreps_sym_skewsym-2-1-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li>
+<div class="para">“Lift” these bases to bases of <span class="process-math">\(\NS T\)</span> and <span class="process-math">\(\im T\text{,}\)</span> using the coordinate vector isomorphism <span class="process-math">\([\phantom{\boldv}]_B\text{.}\)</span> Use these bases to identify <span class="process-math">\(\NS T\)</span> and <span class="process-math">\(\im T\)</span> as familiar subspaces of <span class="process-math">\(2\times 2\)</span> matrices.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_matrixreps_sym_skewsym-2-1-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#eg_matrixreps_sym_skewsym-2-1-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_matrixreps_sym_skewsym-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical">
+<div class="para">First compute</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_fund_spaces.html ./knowl/xref/th_column_method.html">
+\begin{align*}
+F(E_{11}) \amp =E_{11}^T-E_{11}=\begin{amatrix}[rr]0\amp 0 \\ 0 \amp 0\end{amatrix}\\
+F(E_{12}) \amp =E_{12}^T-E_{12}=\begin{amatrix}[rr]0\amp -1 \\ 1 \amp 0\end{amatrix}\\
+F(E_{21}) \amp =E_{21}^T-E_{21}=\begin{amatrix}[rr]0\amp 1 \\ -1 \amp 0\end{amatrix}\\
+F(E_{22}) \amp =E_{22}^T-E_{22}=\begin{amatrix}[rr]0 \amp 0 \\ 0 \amp 0\end{amatrix}
+\end{align*}
+</div>
+<div class="para">Next, using the fact that for the standard basis <span class="process-math">\(B\)</span> of <span class="process-math">\(M_{22}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_fund_spaces.html ./knowl/xref/th_column_method.html">
+\begin{equation*}
+\left[ \begin{bmatrix}a\amp b\\ c\amp d\end{bmatrix}\right]_B=(a,b,c,d)\text{,}
+\end{equation*}
+</div>
+<div class="para">we see that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_fund_spaces.html ./knowl/xref/th_column_method.html">
+\begin{align*}
+A\amp =\begin{bmatrix}
+\vert\amp \vert \amp \vert \amp \vert \\
+[F(E_{11})]_{B}\amp [F(E_{12})]_{B} \amp [F(E_{21})]_{B} \amp [F(E_{22})]_{B} \\
+\vert\amp \vert \amp \vert \amp \vert
+\end{bmatrix}\\
+\amp = \begin{amatrix}[rrrr]
+0\amp 0\amp 0\amp 0 \\
+0\amp -1\amp 1\amp 0 \\
+0\amp 1\amp -1 \amp 0\\
+0\amp 0\amp 0\amp 0
+\end{amatrix}\text{.}
+\end{align*}
+</div>
+<div class="para">It is not difficult to compute bases for <span class="process-math">\(\NS A\)</span> and <span class="process-math">\(\CS A\)</span> using <a href="s_rank_nullity.html#proc_fund_spaces" class="xref" data-knowl="./knowl/xref/proc_fund_spaces.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 4.5.10: Fundamental spaces">Procedure 4.5.10</a>, but the matrix <span class="process-math">\(A\)</span> is simple enough that we will compute these by inspection.  For example, we see easily that <span class="process-math">\(\CS A=\Span\{(0,-1,1,0)\}\text{.}\)</span> From the rank-nullity theorem, it then follows that <span class="process-math">\(\dim \NS A=4-\dim \CS A=4-1=3\text{.}\)</span> Thus we need just three linearly independent elements of <span class="process-math">\(\NS A\)</span> to get a basis. Again, by inspection (using <a href="s_matrix.html#th_column_method" class="xref" data-knowl="./knowl/xref/th_column_method.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.1.26: Column method of matrix multiplication">3.1.26</a>) we see that <span class="process-math">\((1,0,0,0),(0,0,0,1),(0,1,1,0)\in \NS A\text{.}\)</span> It is fairly easy to see the three vectors are independent, and thus form a basis of <span class="process-math">\(\NS A\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_matrixreps_sym_skewsym-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">To “lift” the bases <span class="process-math">\(\{(1,0,0,0),(0,0,0,1),(0,1,1,0)\}\)</span> and <span class="process-math">\(\{(0,-1,1,0)\}\)</span> to bases of <span class="process-math">\(\NS F\)</span> and <span class="process-math">\(\im F\text{,}\)</span> we simply find the matrices in <span class="process-math">\(M_{22}\)</span> that correspond to these <span class="process-math">\(4\)</span>-vectors via the coordinate vector isomorphism <span class="process-math">\([\phantom{\boldv}]_B\text{:}\)</span> i.e., the matrices that have these <span class="process-math">\(4\)</span>-vectors as their coordinate vectors. This is easily done by inspection. We conclude that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B_1=\left\{A_1=\begin{bmatrix}1\amp 0\\ 0\amp 0\end{bmatrix}, A_2=\begin{amatrix}[cc]0\amp 0 \\ 0\amp 1\end{amatrix}, A_3=\begin{amatrix}[cc]0\amp 1 \\ 1\amp 0\end{amatrix}\right\}
+\end{equation*}
+</div>
+<div class="para">is a basis of <span class="process-math">\(\NS F\text{,}\)</span> and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B_2=\left\{\begin{amatrix}[rr]0\amp -1 \\ 1\amp 0\end{amatrix}\right\}
+\end{equation*}
+</div>
+<div class="para">is a basis of <span class="process-math">\(\im F\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_matrixreps_sym_skewsym-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical">
+<div class="para">Lastly, since <span class="process-math">\(A_1,A_2,A_3\)</span> are all symmetric, <span class="process-math">\(\NS F=\Span \{A_1,A_2,A_3\}\)</span> is a subspace of the space of symmetric matrices. Since both spaces have dimension three, we conclude that they are equal. A similar argument shows that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\im F=\Span\left\{\begin{amatrix}[rr]0\amp -1 \\ 1\amp 0\end{amatrix} \right\}
+\end{equation*}
+</div>
+<div class="para">is precisely the space of skew-symmetric matrices.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_matrixreps_sym_skewsym-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 5.4.10.1"><a tabindex="-1" href="#eg_matrixreps_sym_skewsym-3" title="Copy heading and permalink for Solution 5.4.10.1" aria-label="Copy heading and permalink for Solution 5.4.10.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 5.4.10: Computing with matrix representations"><a tabindex="-1" href="#eg_matrixreps_sym_skewsym" title="Copy heading and permalink for Example 5.4.10: Computing with matrix representations" aria-label="Copy heading and permalink for Example 5.4.10: Computing with matrix representations">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="s_matrixreps.html#eg_matrixreps_sym_skewsym">In Context</a></span>
+</body>
+</html>

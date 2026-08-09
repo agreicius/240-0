@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: blue-green                   *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.3.26</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Projection onto planes in <span class="process-math">\(\R^3\)</span>.</span>
+</h2>
+<div class="para logical">
+<div class="para">Any plane <span class="process-math">\(W\subseteq\R^3\)</span> passing through the origin can be described as <span class="process-math">\(W=\{(x,y,z)\in \R^3\colon ax+by+cz=0\}\text{.}\)</span> Equivalently, <span class="process-math">\(W\)</span> is the set of all <span class="process-math">\(\boldx\in \R^3\)</span> satisfying <span class="process-math">\(\boldx\cdot (a,b,c)=0\text{:}\)</span> i.e., <span class="process-math">\(W=\ell^\perp\text{,}\)</span> where <span class="process-math">\(\ell=\Span\{(a,b,c)\text{.}\)</span> Consider the orthogonal decomposition with respect to <span class="process-math">\(\ell\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_projection_line.html">
+\begin{equation*}
+\boldx=\proj{\boldx}{\ell}+(\boldx-\proj{\boldx}{\ell})\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\boldx-\proj{\boldx}{\ell}\in \ell^\perp=W\)</span> and <span class="process-math">\(\proj{\boldx}{\ell}\in \ell=W^\perp\text{,}\)</span> we see that this is also an orthogonal decomposition with respect to <span class="process-math">\(W\text{!}\)</span> Using the matrix formula for <span class="process-math">\(\operatorname{proj}_\ell\)</span> from <a href="s_orthogonal_projection.html#eg_projection_line" class="xref" data-knowl="./knowl/xref/eg_projection_line.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 7.3.24: Projection onto a line \ell\subseteq \R^3">Example 7.3.24</a>, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_projection_line.html">
+\begin{align*}
+\proj{\boldx}{W} \amp =\boldx-\proj{\boldx}{\ell} \\
+\amp = I\boldx -  A\boldx\amp \left(A=\frac{1}{a^2+b^2+c}\begin{bmatrix}
+a^2\amp ab\amp ac\\
+ab\amp b^2\amp bc\\
+ac\amp bc\amp c^2
+\end{bmatrix}\right)\\
+\amp = (I-A)\boldx\\
+\amp = \frac{1}{a^2+b^2+c^2}\begin{bmatrix}b^2+c^2\amp -ab\amp -ac\\ -ab\amp a^2+c^2\amp -bc\\ -ac\amp -bc\amp a^2+b^2 \end{bmatrix}\text{.}
+\end{align*}
+</div>
+<div class="para">We conclude that <span class="process-math">\(\operatorname{proj}_W=T_B\text{,}\)</span> where</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_projection_line.html">
+\begin{equation*}
+B=\frac{1}{a^2+b^2+c^2}\begin{bmatrix}b^2+c^2\amp -ab\amp -ac\\ -ab\amp a^2+c^2\amp -bc\\ -ac\amp -bc\amp a^2+b^2 \end{bmatrix}\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_projection_plane-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 7.3.26: Projection onto planes in \R^3"><a tabindex="-1" href="#eg_projection_plane" title="Copy heading and permalink for Example 7.3.26: Projection onto planes in \R^3" aria-label="Copy heading and permalink for Example 7.3.26: Projection onto planes in \R^3">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="s_orthogonal_projection.html#eg_projection_plane">In Context</a></span>
+</body>
+</html>

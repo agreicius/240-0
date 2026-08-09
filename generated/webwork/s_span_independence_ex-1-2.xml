@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_span_independence_ex-1-2" assembly-id="s_span_independence_ex-1-2">
+  <static seed="51" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/2.2.61.pg">
+    <statement><p>Let <m>\mathbf{u}_4</m> be a linear combination of <m>\lbrace\mathbf{u}_1,\mathbf{u}_2,\mathbf{u}_3\rbrace</m>.</p>
+<p>Select the best statement.</p>
+<p><var form="buttons">
+<li>
+<p>We only know that <m>\mathrm{span} \lbrace\mathbf{u}_1,\mathbf{u}_2,\mathbf{u}_3 \rbrace\subseteq \mathrm{span} \lbrace\mathbf{u}_1,\mathbf{u}_2,\mathbf{u}_3, \mathbf{u}_4\rbrace</m> .</p>
+</li>
+<li>
+<p>There is no obvious relationship between <m>\mathrm{span} \lbrace\mathbf{u}_1,\mathbf{u}_2,\mathbf{u}_3 \rbrace</m>  and <m>\mathrm{span}  \lbrace\mathbf{u}_1,\mathbf{u}_2,\mathbf{u}_3, \mathbf{u}_4 \rbrace</m> .</p>
+</li>
+<li>
+<p><m>\mathrm{span}\lbrace\mathbf{u}_1,\mathbf{u}_2,\mathbf{u}_3 \rbrace =
+ \mathrm{span}\lbrace\mathbf{u}_1,\mathbf{u}_2,\mathbf{u}_3, \mathbf{u}_4 \rbrace</m> .</p>
+</li>
+<li>
+<p><m>\mathrm{span} \lbrace\mathbf{u}_1,\mathbf{u}_2,\mathbf{u}_3 \rbrace= \mathrm{span}  \lbrace\mathbf{u}_1,\mathbf{u}_2,\mathbf{u}_3, \mathbf{u}_4\rbrace</m>  when <m>\mathbf{u}_4</m> is a scalar multiple of one of <m>\lbrace\mathbf{u}_1,\mathbf{u}_2,\mathbf{u}_3 \rbrace</m>.</p>
+</li>
+<li>
+<p>none of the above</p>
+</li>
+</var></p>
+</statement>
+    <solution><m>\left\lbrace{\bf u}_1,{\bf u}_2,{\bf u}_3\right\rbrace=</m> span<m>\left\lbrace{\bf u}_1,{\bf u}_2,{\bf u}_3,{\bf u}_4\right\rbrace</m>.
+
+
+</solution>
+  </static>
+  <rendering-data sourceFilePath="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/2.2.61.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/2.2.61.pg"/>
+</webwork-reps>

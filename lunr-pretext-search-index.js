@@ -646,7 +646,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "0.5",
   "title": "Complex numbers",
-  "body": " Complex numbers  In this section we begin with a brief treatment of the complex numbers . As mentioned below, you should think of the complex numbers as an additional link in our chain of number systems . One major advantage of working with is that any polynomial factors as a product of linear terms over ( ). This fact, along with a review of basic definitions and properties of polynomials, will be taken up in . This section is meant mainly as a reference, and as such all theorems will be stated without proof.   Definition of   The complex numbers constitute a number system built by taking the set of all pairs of real numbers and defining operations on these pairs that we call complex addition and complex multiplication .    complex numbers  complex numbers real part  complex numbers imaginary part    the complex numbers     real part of complex number     imaginary part of complex number   Complex numbers    complex numbers    The set of complex numbers is defined as the set of all pairs of real numbers: , . Given a complex number , its first entry is called the real part of , denoted , and its second entry is called the imaginary part of , denoted .     Henceforth we will primarily denote a complex number as . Since and , you can think of the notation as a decomposition of as a sum of its real and imaginary components. In what follows we give actual arithmetic meaning to the symbols and used in this notation, but first and foremost should simply be thought of as an alternative manner of denoting the pair .  Additionally we will adopt the following notational conventions: , , , , and .    Complex equality   When moving to the notation do not lose sight of the essential nature of complex numbers as pairs of real numbers. This is important, for example, for understanding what it means for complex numbers and to be equal. According to the general definition of equality for tuples ( ), we have .     complex numbers addition  complex numbers multiplication  Complex addition and multiplication   We define addition and multiplication operations on as follows. Let and , where .    Complex addition  The sum  is the complex number defined as .    Complex multiplication  The product  is the complex number defined as .        Let and . We have     Our first theorem indicates that complex addition and multiplication behave in much the same way as real addition and multiplication. A number system that satisfies the properties of is called a field . You should think of the field properties as guaranteeing that we can perform arithmetic in the complex numbers (or any fied) essentially as we do with real numbers.   Basic properties of complex arithmetic     Commutativity  For all we have .    Associativity  For all we have .    Distributivity  For all we have .    Additive identity  The complex number satisfies for all . We call the additive identity of .    Additive inverse  For all the element satisfies . We call the additive inverse of .    Multiplicative identity  The complex number satisfies for all . We call the multiplicative identity of .    Multiplicative inverse  For all nonzero complex numbers ( , of ), the complex number satisfies . The complex number , also denoted , is called the multiplicative inverse of .        Let . According to , the multiplicative inverse of is . Let's check that : .     Complex numbers as extension of the reals   From now on we identify the real numbers as the set of complex numbers of the form , where : equivalently, the set of complex numbers satisfying . Under this identification can be thought of as a subset of , and we may add one more link to the chain of subsets given in : . Furthermore, it is easy to verify that the various operations on agree with their real counterparts when restricting to : , . This allows us to think of the complex numbers as a larger number system containing the reals, whose arithmetic operations are extensions of real number operations.      Absolute value and complex conjugation   We end our introduction to the complex numbers with two further operations: the absolute value and complex conjugation . is an indication of their usefulness, and articulates how they interact with the other operations on .    complex numbers modulus  complex numbers absolute value  complex numbers conjugation  Absolute value and complex conjugation   Let be a complex number. The absolute value (or modulus ) of , denoted , is defined as . The complex conjugate of , denoted , is defined as .     Properties of conjugation and modulus   The following properties hold for all .    .    .     .     .     (if ).     .        Let . Observe that and , as claimed in .      WeBWork Exercises      Rewrite the following expression into the form of a+b :         By definition, , so we have .  To get rid of in the denominator, we use the difference of squares formula:   The full solution is:             Let . Calculate the following:  (a)     ,  (b)     ,  (c)     .                                          Evaluate the following expressions and write them in the form .   .   .   .   .   .                                     Calculate:  (a)  ,  (b)  ,  (c)  ,  (d)  .                             "
+  "body": " Complex numbers   In this section we begin with a brief treatment of the complex numbers . As mentioned below, you should think of the complex numbers as an additional link in our chain of number systems . One major advantage of working with is that any polynomial factors as a product of linear terms over ( ). This fact, along with a review of basic definitions and properties of polynomials, will be taken up in . This section is meant mainly as a reference, and as such all theorems will be stated without proof.    Definition of  The complex numbers constitute a number system built by taking the set of all pairs of real numbers and defining operations on these pairs that we call complex addition and complex multiplication .   Complex numbers  complex numbers  complex numbers real part  complex numbers imaginary part    the complex numbers     real part of complex number     imaginary part of complex number     complex numbers    The set of complex numbers is defined as the set of all pairs of real numbers: , . Given a complex number , its first entry is called the real part of , denoted , and its second entry is called the imaginary part of , denoted .     Henceforth we will primarily denote a complex number as . Since and , you can think of the notation as a decomposition of as a sum of its real and imaginary components. In what follows we give actual arithmetic meaning to the symbols and used in this notation, but first and foremost should simply be thought of as an alternative manner of denoting the pair .  Additionally we will adopt the following notational conventions: , , , , and .    Complex equality  When moving to the notation do not lose sight of the essential nature of complex numbers as pairs of real numbers. This is important, for example, for understanding what it means for complex numbers and to be equal. According to the general definition of equality for tuples ( ), we have .    Complex addition and multiplication  complex numbers addition  complex numbers multiplication   We define addition and multiplication operations on as follows. Let and , where .   Complex addition  The sum  is the complex number defined as .    Complex multiplication  The product  is the complex number defined as .         Let and . We have     Our first theorem indicates that complex addition and multiplication behave in much the same way as real addition and multiplication. A number system that satisfies the properties of is called a field . You should think of the field properties as guaranteeing that we can perform arithmetic in the complex numbers (or any fied) essentially as we do with real numbers.   Basic properties of complex arithmetic      Commutativity  For all we have .    Associativity  For all we have .    Distributivity  For all we have .    Additive identity  The complex number satisfies for all . We call the additive identity of .    Additive inverse  For all the element satisfies . We call the additive inverse of .    Multiplicative identity  The complex number satisfies for all . We call the multiplicative identity of .    Multiplicative inverse  For all nonzero complex numbers ( , of ), the complex number satisfies . The complex number , also denoted , is called the multiplicative inverse of .         Let . According to , the multiplicative inverse of is . Let's check that : .     Complex numbers as extension of the reals  From now on we identify the real numbers as the set of complex numbers of the form , where : equivalently, the set of complex numbers satisfying . Under this identification can be thought of as a subset of , and we may add one more link to the chain of subsets given in : . Furthermore, it is easy to verify that the various operations on agree with their real counterparts when restricting to : , . This allows us to think of the complex numbers as a larger number system containing the reals, whose arithmetic operations are extensions of real number operations.     Absolute value and complex conjugation  We end our introduction to the complex numbers with two further operations: the absolute value and complex conjugation . is an indication of their usefulness, and articulates how they interact with the other operations on .   Absolute value and complex conjugation  complex numbers modulus  complex numbers absolute value  complex numbers conjugation   Let be a complex number. The absolute value (or modulus ) of , denoted , is defined as . The complex conjugate of , denoted , is defined as .     Properties of conjugation and modulus   The following properties hold for all .   .    .     .     .     (if ).     .         Let . Observe that and , as claimed in .      WeBWork Exercises      Rewrite the following expression into the form of a+b :         By definition, , so we have .  To get rid of in the denominator, we use the difference of squares formula:   The full solution is:             Let . Calculate the following:  (a)     ,  (b)     ,  (c)     .                                          Evaluate the following expressions and write them in the form .   .   .   .   .   .                                     Calculate:  (a)  ,  (b)  ,  (c)  ,  (d)  .                             "
 },
 {
   "id": "d_complex_numbers",
@@ -655,7 +655,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "0.5.1",
   "title": "Complex numbers.",
-  "body": " complex numbers  complex numbers real part  complex numbers imaginary part    the complex numbers     real part of complex number     imaginary part of complex number   Complex numbers    complex numbers    The set of complex numbers is defined as the set of all pairs of real numbers: , . Given a complex number , its first entry is called the real part of , denoted , and its second entry is called the imaginary part of , denoted .   "
+  "body": " Complex numbers  complex numbers  complex numbers real part  complex numbers imaginary part    the complex numbers     real part of complex number     imaginary part of complex number     complex numbers    The set of complex numbers is defined as the set of all pairs of real numbers: , . Given a complex number , its first entry is called the real part of , denoted , and its second entry is called the imaginary part of , denoted .   "
 },
 {
   "id": "ss_complex_definition-4",
@@ -673,7 +673,7 @@ var ptx_lunr_docs = [
   "type": "Remark",
   "number": "0.5.3",
   "title": "Complex equality.",
-  "body": " Complex equality   When moving to the notation do not lose sight of the essential nature of complex numbers as pairs of real numbers. This is important, for example, for understanding what it means for complex numbers and to be equal. According to the general definition of equality for tuples ( ), we have .   "
+  "body": " Complex equality  When moving to the notation do not lose sight of the essential nature of complex numbers as pairs of real numbers. This is important, for example, for understanding what it means for complex numbers and to be equal. According to the general definition of equality for tuples ( ), we have .  "
 },
 {
   "id": "d_complex_arithmetic",
@@ -682,7 +682,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "0.5.4",
   "title": "Complex addition and multiplication.",
-  "body": " complex numbers addition  complex numbers multiplication  Complex addition and multiplication   We define addition and multiplication operations on as follows. Let and , where .    Complex addition  The sum  is the complex number defined as .    Complex multiplication  The product  is the complex number defined as .     "
+  "body": " Complex addition and multiplication  complex numbers addition  complex numbers multiplication   We define addition and multiplication operations on as follows. Let and , where .   Complex addition  The sum  is the complex number defined as .    Complex multiplication  The product  is the complex number defined as .      "
 },
 {
   "id": "eg_complex_add_mult",
@@ -700,7 +700,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "0.5.6",
   "title": "Basic properties of complex arithmetic.",
-  "body": " Basic properties of complex arithmetic     Commutativity  For all we have .    Associativity  For all we have .    Distributivity  For all we have .    Additive identity  The complex number satisfies for all . We call the additive identity of .    Additive inverse  For all the element satisfies . We call the additive inverse of .    Multiplicative identity  The complex number satisfies for all . We call the multiplicative identity of .    Multiplicative inverse  For all nonzero complex numbers ( , of ), the complex number satisfies . The complex number , also denoted , is called the multiplicative inverse of .     "
+  "body": " Basic properties of complex arithmetic      Commutativity  For all we have .    Associativity  For all we have .    Distributivity  For all we have .    Additive identity  The complex number satisfies for all . We call the additive identity of .    Additive inverse  For all the element satisfies . We call the additive inverse of .    Multiplicative identity  The complex number satisfies for all . We call the multiplicative identity of .    Multiplicative inverse  For all nonzero complex numbers ( , of ), the complex number satisfies . The complex number , also denoted , is called the multiplicative inverse of .      "
 },
 {
   "id": "ss_complex_definition-10",
@@ -718,7 +718,7 @@ var ptx_lunr_docs = [
   "type": "Remark",
   "number": "0.5.8",
   "title": "Complex numbers as extension of the reals.",
-  "body": " Complex numbers as extension of the reals   From now on we identify the real numbers as the set of complex numbers of the form , where : equivalently, the set of complex numbers satisfying . Under this identification can be thought of as a subset of , and we may add one more link to the chain of subsets given in : . Furthermore, it is easy to verify that the various operations on agree with their real counterparts when restricting to : , . This allows us to think of the complex numbers as a larger number system containing the reals, whose arithmetic operations are extensions of real number operations.   "
+  "body": " Complex numbers as extension of the reals  From now on we identify the real numbers as the set of complex numbers of the form , where : equivalently, the set of complex numbers satisfying . Under this identification can be thought of as a subset of , and we may add one more link to the chain of subsets given in : . Furthermore, it is easy to verify that the various operations on agree with their real counterparts when restricting to : , . This allows us to think of the complex numbers as a larger number system containing the reals, whose arithmetic operations are extensions of real number operations.  "
 },
 {
   "id": "d_complex_absolute_conjugation",
@@ -727,7 +727,7 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "0.5.9",
   "title": "Absolute value and complex conjugation.",
-  "body": " complex numbers modulus  complex numbers absolute value  complex numbers conjugation  Absolute value and complex conjugation   Let be a complex number. The absolute value (or modulus ) of , denoted , is defined as . The complex conjugate of , denoted , is defined as .   "
+  "body": " Absolute value and complex conjugation  complex numbers modulus  complex numbers absolute value  complex numbers conjugation   Let be a complex number. The absolute value (or modulus ) of , denoted , is defined as . The complex conjugate of , denoted , is defined as .   "
 },
 {
   "id": "th_complex_conjugation_modulus",
@@ -736,7 +736,7 @@ var ptx_lunr_docs = [
   "type": "Theorem",
   "number": "0.5.10",
   "title": "Properties of conjugation and modulus.",
-  "body": " Properties of conjugation and modulus   The following properties hold for all .    .    .     .     .     (if ).     .     "
+  "body": " Properties of conjugation and modulus   The following properties hold for all .   .    .     .     .     (if ).     .      "
 },
 {
   "id": "ss_complex_conjugation-5",
@@ -880,7 +880,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.1",
   "title": "Real-valued tuples",
-  "body": " Real-valued tuples    Our study of linear algebra begins on a somewhat formal note with the introduction of the set of real-valued tuples indexed by an arbitrary set . Conceptually, this construction is a straightforward generalization of the sets and of real-valued pairs and triples. The payoff of this mild formalism is a vast generalization of those two familiar sets that gives us a unified framework for developing the mathematical theory of objects as disparate as -tuples, matrices, and infinite sequences. In particular, we show how the so-called vector operations of and extend easily to these more general sets . As a result, we are lead naturally to introduce at this early stage the notion of a real vector space , thereby foregrounding the central object of study of linear algebra.    Real-valued tuples  Most multivariable courses begin by introducing , the set of all pairs of real numbers, and , the set of all triples of real numbers. Using set notation: . In that setting it is easy to motivate the discussion by interpreting pairs and triples as specifying locations or directions in 2- or 3-space. This both imbues the mathematical objects involved with some familiar concrete meaning and allows us to visualize related constructions as geometric objects in 2- or 3-space.  With the public's ever-growing familiarity with data science, however, there is no need to rely on spatial intuition for motivation. A marketing analyst studying the sales of a certain product might be interested in knowing the height, weight, age, and yearly income of the product's consumers. Thus for each consumer, the marketer collects a quadruple of real numbers, where is the height of the consumer, the weight, the age, and the yearly income. And the aggregate data the marketer collects is a subset of , the set of all quadruples of real numbers.  To give a slightly less simplistic example, consider an internet search engine that, given a search query, assigns to each of its different indexed webpages a real number score in the interval measuring the page's relevance to the given query. For each query entered, the search engine produces a -tuple , where is the score of the first webpage in its index, is the score of the second page in its index, . (Note: as defined more formally in , an -tuple is just a list or sequence of length .)  The point here is that for the modern student of mathematics there should be nothing too forbidding or abstract about -tuples of real numbers of arbitrary length , nor the set of all such tuples. In this course, we will take things one small step further by considering a generalization of a list or sequence of real numbers. This is the notion of a tuple indexed by a set . Let us dispense first with the formal definition, then make sense of it.   Real-valued tuple    set of real-valued -tuples    Let be a nonempty set. A real-valued tuple indexed by (or -tuple of real numbers) is a rule that assigns to each index  an element , and is denoted .  Given an -tuple , we call the index set , and for each index , we call the -th component (or coordinate , or entry , or term ) of . We call the set of values of the tuple .  The set of all real-valued -tuples is denoted : , .     All this talk of rules and assignments may remind you of the general definition of a function. This is no accident! In truth a tuple is simply a function that assigns to each index a real number . However, since the goal here is to have you understand tuples as a straightforward generalization of pairs and triples, we decided to conceal this function connection somewhat.    More general tuples  You find a more general discussion of tuples in . In this course, since we will primarily be focused on real-valued tuples, we will typically drop the real-valued , and just speak of -tuples.   Do not be intimidated by the formality of ! The basic underlying idea is that just as a triple of real numbers is determined by knowing each of its three components , , and , a tuple is determined by knowing each component for all indices in the index set .  As a first step to coming to grips with this new concept, let's see how can be understood as a particular example of our more general construction . For concreteness, we consider the case . To define a triple of , we need to specify the three coordinates , , and . This is equivalent to assigning to each of the indices  a real number . Thus a triple in is the same thing as a real-valued tuple indexed by the index set , and we have . This reasoning generalizes easily to lists of real numbers of arbitrary length : such a list is the same thing as a real-valued tuple indexed by the the set that assigns to each index a real number . This allows us to define for arbitrary as , where . We now make this official and take the opportunity to introduce some special notation and terminology for this particular type of tuple.   Real-valued -tuples    set of real-valued -tuples    Let be a positive integer, and let . A real-valued tuple indexed by is called an -tuple and we call the length of the tuple. We will favor bold lower case letters when naming -tuples ( , , , , ) and use any of the following notations for tuples indexed by : . Furthermore, the set of all -tuples is denoted : , .    It should be clear at least that the more general notion of tuples comes with a notational advantage: namely, it takes less time\/space to write or than . The more powerful, conceptual advantage of the notion of an -tuple lies in the fact that our index set can be taken to be anything we like, not just a set of the form . By choosing different, possibly more complicated index sets , we are able to model other common mathematical objects within the same unifying tuple framework.  For example consider the index set consisting of all positive integers: , . In this case, to specify a tuple in we must provide a list of real numbers . Sound familiar? This is just an infinite sequence of real numbers! Again, we make this observation official and introduce some special notation.   Infinite sequences of real numbers    set of all infinite sequences    Let . A real-valued tuple indexed by is called an infinite sequence . We will use any of the following notations for tuples indexed by : . Furthermore, the set of all infinite sequences is denoted : , .     Infinite sequences   For each defined sequence , expand in the form including at least the first four terms.                   , where            .     .     .     .       Comparing -tuples and infinite sequences, we see that these two types of tuples are not so very different in nature; and furthermore, this similarity can be understood as resulting from the underlying similarity of their index sets. Indeed the finite index set is what is called an initial segment of the the infinite index set . In both cases, the natural ordering of transfers to an ordering of the components of a tuple , allowing us to speak of the first entry, second entry, . This illustrates how any additional structure of the index set can be used to induce some structure on our tuples . As a result, when modelling different types of data as tuples, a careful choice of index set can capture particular features of the data we study.  For example, suppose we are interested in comparing the first and second half performances of football players and so record for each player and game the number of goals, assists, and tackles made in the first and second halves of the game. A typical datum collected for a given player and game might be displayed in a table as follows.   First and second half performance datum    Goals Assists Tackles    First half 1 0 9    Second half 0 2 4     We can model such a datum as a tuple where , and for : equivalently, is the entry in the -th row and -th column of the table version of our datum displayed as above. Note the big difference between the index set in this example, as contrasted with our previous two examples. Now our indices themselves consist of pairs which reflects the fact that the six components of our datum depend on two independent features: the type of action (goal, assist, or tackle), and the half in which it was made. This brings us to a third tuple type that will play an outsized role in this course: matrices . As defined below, a matrix is just an -tuple where the index set is of the special form . As with -tuples and infinite sequences, we will introduce special notational conventions for this particular type of tuple.   Real-valued matrices   Let and be positive integers, and let . A real-valued tuple indexed by is called a real matrix . We say the matrix has size  , and call and the dimensions of the matrix. We will write instead of , and call the -th entry of the matrix. Additionally, to distinguish matrices from -tuples, one the following bracket notations will be used: . We will favor capital letters ( , ) when naming matrices, and will often display a matrix as a rectangular array as , where the entry in the -th row and -th column of the array is . The set of all real matrices is denoted : , .     Matrices   Display the given matrix as a rectangular array.    , , where           , ,      , ,            is in this case (two rows, two columns), and we have .     is in this case (two rows, three columns), and we have .     is in this case (one row, three columns), and we have .     is in this case (three rows, one column), and we have .       The last two examples in reveal a subtlety about the notion of equality between tuples. Consider the tuples . The three are clearly quite similar, each consisting of three entries equal to , and yet visibly no two are quite the same: the third is enclosed in parentheses while the first two use brackets; the first is displayed as a single row while the second is displayed as a single column. Of course, that is not a very rigorous way of distinguishing between tuples. Unpacking our notational conventions allows us to more precisely locate the difference between the three tuples: namely, they have three very different index sets. Following the order of the tuples displayed above, the corresponding index sets are . This illustrates the fact that equality between two tuples and depends not just on the entry values and , but also on the index sets and . This detail is made explicit in the general definition of tuple equality given in . Below we repeat this definition for the special case of real-valued tuples.   Tuple equality   Two real-valued tuples and are equal , denoted if the following two conditions hold.    .     for all .   In plain English, two tuples are equal if they have the same index set and assign the same values to each element of the index set.    It is worth further unpacking this definition in the special cases of -tuples and matrices.   Equality of -tuples   The -tuple is equal to the -tuple if and only if and for all .    Unpacking the the notational conventions, we have , where and , where . By , the two tuples are equal if and only if and for all . The first condition is equivalent to , and the second condition is equivalent to for all .     Equality of matrices   The matrix is equal to the matrix if and only if    and ;     for all and .   In other words, two matrices are equal if and only if they have the same dimensions and the same entries in each position.    Unpacking the the notational conventions, we have , where and , where . By , the two matrices are equal if and only if and for all . The first condition is equivalent to and , and the second condition is equivalent to for all and .    In we introduce SageMath (or Sage , for short), an open-source computer algebra system that is built on top of the Python programming language. Our exploration of Sage will be a rather casual one, making use of interactive cells called Sage cells . These cells can be evaluated by clicking the Evaluate (Sage) button, or by typing shift+return . You can experiment by editing the code in these cells and then evaluating. Sage is built on top of the Python programming language, and so shares its syntax.   -tuples and matrices  To create an -tuple in Sage, use the vector() command. The input should be a sequence of numbers enclosed in brackets.   You can make use of sequence routines to create special types of -tuples.   If you prefer the two outputs above to not be listed as a pair, you can use the print() command in sequence. (This is a peculiarity of interactive SageCells, not Sage itself.) Alternatively, use show() for a nicely typeset display of the output.   Once a vector v is created in Sage, various properties of the vector can be computed using the v.foo() syntax. For example, the command v.length() returns the length of the vector v .   Matrices are created in Sage using the matrix() command, and are entered as a list of lists, where the -th list of this list represents the -th row of the matrix, considered as a rectangular array.   To retrieve entries from -tuples or matrices, Sage uses the usual Python list syntax: , v[i] and A[i,j] . As with all things Python, we always count from 0. Thus if A is assigned to a matrix in Sage, A[i,j] is its -th entry.   There are also built-in constructors for matrices consisting entirely of zeros, or entirely of ones.    In this class we will draw our examples almost exclusively from the sets , , and . However, note that once we've understood a matrix as a tuple indexed by pairs of integers , it is not much of a jump to consider tuples indexed by triples of integers , or quadruples of integers , . Such tuples are called multidimensional arrays These multidimensional arrays are sometimes called tensors by data scientists. We will avoid this, however, as that term is used in mathematics for a slightly more complicated type of object not discussed in this class. and appear frequently in data science settings. In full generality, a -dimensional array is real-valued tuple with index set of the form . Such a tuple has size  . In this more general context, a matrix is just a -dimensional array. The next example describes how a digital image can be thought of as a -dimensional array.   Digital image as -dimensional array   Consider a digital image consisting of a array of pixels, each of which displays a color specified by a triple of real numbers that lists the intensities of the red, blue, and green color channels at that pixel. The image can be stored as a tuple , where and is the intensity of the -th color channel (1=red, 2=green, 3=blue) at the pixel in the -th position. Our image is thus a -dimensional array of size . See for a Sage demonstration of this idea.  Similarly to matrices, we can envision our -dimensional array as a -d box array of data consisting of three flat sheets stacked vertically: the first sheet consists of the entries arranged as a grid, and similarly, the second and third sheets consist of the entries and , respectively. The mathematical usefulness of such a conception is up for debate. However, we can give some (somewhat dubious) physical intuition in this case as follows. Imagine the first sheet being a red-tinted translucent that colors the -th pixel red with intensity for all all pairs . Similarly, imagine the second and third sheets as green- and blue-tinted translucents that color the -th pixel green (or blue) with intensity (or ). Now take all three sheets, stack them on top of one another, shine a light through them, and voilà , our image appears!     Digital image as -dimensional array   The Sage cell below creates a -dimensional array representation of a pixel image. Make sure to evaluate that cell!   Recall that Sage captures the double-index nature of a matrix by nesting lists: a matrix is just a list of lists. Sage handles -dimensional arrays by taking this nesting one step further, as you can see from the definition of the object smiley , which is a list of lists of lists. In its current format, to access the -th entry of the array, which tells us the intensity of the -th color channel at -th pixel, we use an iterated indexing syntax: smiley[i][j][k] . Let's examine the color of the top-left pixel by determining the three color intensities there. Adopting the count from zero convention of Python, the top-left pixel is given by , and the three color channels are encoded as 0=red, 1=green, 2=blue.   It looks like this pixel is blue-green, with emphasis on the blue. What about the bottom-left pixel?   Interesting! It appears that this pixel is also blue-green, but considerably more green. Before confirming our results by viewing the image, let's convert smiley into the Python's standard multidimensional array format, a NumPy array (or ndarray). As a NumPy array, we can determine the size of the array using smiley.shape and we can access the -th entry more naturally as smiley[i,j,k] (although you will notice that we are given some additional information about the data-type of the entry).   And now it's time for the big reveal. We will view smiley using the data visualization library matplotlib .       Vector operations on  Returning for a moment to the hypothetical multivariable calculus class you took long ago, you may remember that after introducing the sets and , the next thing you did was to define the notions of vector addition and scalar multiplication . For these are defined as . Notice that the two operations are defined component-wise . In plain English, the sum of two triples in is the triple whose -th component is the sum of the two -th components; and to scale a triple by the scalar , we multiply (or scale) each component by . This component-wise nature of the two operations allows us to easily generalize them to the more general setting of for arbitrary index sets .   Vector operations of   Let be a nonempty set. We will call the operations below the standard vector operations on .   Vector addition on  Given elements -tuples and , we define their vector sum  as . The operation is called vector addition .    Scalar multiplication on  Given an -tuple and a real number , the -tuple defined as is called the scalar multiple of by . The operation is called scalar multiplication .        Anatomy lesson: vector operation notation  The displayed expressions and used in the definition of the vector operations on use a combination of function notation (see ) and Cartesian product notation (see ). In general, the expression denotes a function that takes as input a pair of elements , where and , and returns as output an element . Thus, the expression describes a function that takes as input a pair of -tuples, and returns as output another -tuple denoted . In contrast, the scalar multiplication operation described in is a sort of hybrid operation that takes as input a pair where is a real number and is an -tuple, and returns as output a new -tuple denoted .   Taking the three special types of index sets discussed in , we see that gives rise to naturally defined operations on -tuples, infinite sequences, and matrices. We summarize each in turn below.   -tuples  Let . In this case we have and the two vector operations are given by .    Infinite sequences  Let . In this case we have and the two vector operations are given by .    Matrices  Let . In this case we have and the two vector operations are given by .   The foregoing is another example of the advantage of working with the general notion of -tuples. Starting from our single definition of vector operations on ( ), by choosing different types of index sets , we immediately derive a notion of vector addition and scalar multiplication on three quite different sets of objects: the set of -tuples , the set of infinite sequences , and the set of matrices .  In we recall the basic spatial interpretation of the vector operations in the context of and . In the meantime, we consider a few explicit examples.   Tuple vector operations      Let and . Compute .    Consider the infinite sequences and . Compute and .    Let and .  Compute .          We have .    We have , and .    We have .        demonstrates how vector operations on and are implemented in Sage.   Vector operations: and   To create an -tuple in Sage, use the vector() command. The input should be a sequence of numbers enclosed in brackets.   You can make use of sequence routines to create special types of -tuples.   If you prefer the two outputs above to not be listed as a pair, you can use the print() command in sequence. (This is a peculiarity of interactive SageCells, not Sage itself.)   The standard vector operations of are implemented using an intuitive syntax in Sage.   Once a vector v is created in Sage, various properties of the vector can be computed using the v.foo() syntax. For example, the command v.length() returns the length of the vector v .   Matrices are created in Sage using the matrix() command, and are entered as a list of lists, where the -th list of this list represents the -th row of the matrix, considered as a rectangular array. Note that show() outputs a typeset display of the matrix, as contrasted with the text ouput of print() .   The Sage syntax for vector operations in is identical to that for . The command matrix(2,3,range(-4,2)) used below instructs Sage to create a matrix whose entries are the integers from to , arranged by wrapping along the two rows.   Lastly, to retrieve entries from -tuples or matrices, Sage uses the usual Python list syntax: , v[i] and A[i,j] . As with all things Python, we always count from 0. Thus if A is assigned to a matrix in Sage, A[i,j] is its -th entry.    So why do we call these operations vector operations? It turns out that a set together with these two vector operations is an example of an important type of mathematical object called a vector space ; and vector spaces in turn are the main object of study of linear algebra. The definition of a vector space we give below is what is known as an axiomatic definition : it lists a set of properties, called axioms , and defines a vector space to be anything that satisfies these axioms.   Vector space   A real vector space is a set together with two operations , called respectively vector addition and scalar multiplication , that satisfy the following vector space axioms .   Vector addition is commutative   for all .    Vector addition is associative   for all .    Zero vector  There is an element such that for all , we have . We call the zero vector of .    Vector inverses  For all , there is another element satisfying . We call the vector inverse of .    Distribution over vector addition   for all and .    Distribution over scalar addition   for all and .    Scalar multiplication is associative   for all and all .    Scalar multiplication identity   for all .   We call elements of a vector space vectors and the elements of  scalars .    Note that a vector space, as defined by is a very general object. In particular, the definition does not specify what the underlying set of the vector space is, or what the vector operations are. Rather, it allows for any set and any choice of two operations to be called a vector space, as long as our choices satisfy the vector space axioms. We will deal with vector spaces in this full generality later in the course. For now, let's show that for any index set the set of all -tuples together with the two vector operations defined in satisfies the vector space axioms, and hence is a vector space.  Before getting to that proof, we point out that among the eight vector space axioms, there are two (Axiom iii and Axiom iv) that posit the existence of certain special elements: namely a zero vector and vector inverses. Accordingly, we will often refer to these axioms as the existential axioms . In contrast, the remaining axioms are all algebraic in nature; they stipulate that the two vector operations are well behaved and play nicely with one another. The next definition, and trailing example, introduce some special elements of that will serve the role of the zero vector and vector inverses as described by the existential vector space axioms. We also take the opportunity to define the indicator vectors of , which will be useful throughout the course.   Special elements of    zero vectors of , and     indicator vector of    Let be a nonempty set.   Zero vector  The zero vector of , denoted (or for short), is the -tuple, all of whose entries are equal to : , .  In the special cases and , we denote the corresponding zero vectors as and , respectively.    Vector inverse  Given an -tuple , the vector inverse of , denoted , is the element of defined as .    Indicator vectors  Given , the -th indicator element of , denoted , is the -tuple whose -th entry is equal to and whose -th entry is equal to for all .  In the case , we call the -th standard basis vector of .  In the case , we write for , and call this the -th standard basis matrix of .        Zero, inverse, and indicator vectors   For the given index set , provide (a) the zero vector of , (b) a general element of and its vector inverse, and (c) the indicator vectors for all .  Make use of the notational conventions that apply to each particular type of index set.    .               In this case we have . The zero vector of is .  A general element of can be described as , , and its vector inverse is .  The four indicator vectors of are called standard basis vectors, and are given as .    In this case we have . The zero vector of is .  A general element of can be described as , and its vector inverse is . The six indicator vectors of are called standard basis vectors, and are given as .       We now verify that the two operations on defined in satisfy the vector space axioms. As you will see, since the vector operations are defined componen-wise in terms of real number addition and multiplication, the fact that the vector space axioms are satisfied usually follows directly from corresponding properties of these two real number operations.   is a vector space   Let be a nonempty set.   The set together with the vector addition and scalar multiplication operations defined in is a vector space.    The zero vector of the vector space , as described by Axiom , is the -tuple : , we have .    Given a vector , its vector inverse , as described by Axiom , is .  Additionally, we have ; that is, the vector inverse of is equal to the scalar multiple .       The statement itself of the theorem has already taken care of some of the steps required to verify that something is a vector space. Namely, it has identified the underlying set and proposed vector operations, and it has identified the elements of that serve as the zero vector and inverse vectors. It remains to show that the eight axioms of are satisfied. We will verify the existential axioms (Axiom iii-iv), as well as one of the algebraic axioms (Axioms ii and vi), and leave the rest as an exercise.   Axiom iii  We claim that satisfies the identity of Axiom . Indeed, for all we have , as desired.    Axiom iv  We claim that given any , the vector satisfies the identity of Axiom , and thus that . Indeed, we have , as desired.   As for the remaining axioms, we will verify Axioms ii and vi, and leave the rest as an exercise. As you see below, the desired identities here all boil down to a familiar property of real number arithmetic: , commutativity of real number addition, real number distributivity, etc. In what follows, will denote arbitrary elements of , and will denote arbitrary elements of .   Axiom ii  We have .    Axiom vi  For all and , we have .     Thanks to , we now have at our disposal a rich collection of examples of vector spaces: namely, the spaces , where is an arbitrary index set. As usual, the particular choice of index set gives rise to a vector space of a particular flavor. Let's quickly run through our three familiar examples.   For , our vector space consists of -tuples. When emphasizing the vector space structure of , we will call its elements -vectors .    Choosing , we obtain the vector space of all infinite sequences of real numbers.    Finally, for , we obtain the vector space of all matrices.   We hasten to add, that although the spaces furnish us with many interesting examples of vector spaces, not all vector spaces are of this form! Indeed, the zero space defined below is such an example.   Zero space   Let be a singleton: , is a set containing exactly one element. There is a unique choice of operations making into a vector space.    Let . Since , to define a vector addition operation , we only need to define what is. Furthermore, since by definition we must have , we have no choice here: we must define !  Similarly, it is easy to see that there is only one possible scalar multiplication operation, defined as for all . These two operations being so simple, it is now easy to verify that they satisfy all of the algebriac axioms. Furthermore, we have no choice for the zero vector and inverse vectors: we must choose , and . This seems somewhat odd, since is its own vector inverse, but it is easy to verify that these choices satisfy Axioms iii and iv: . The remaining axioms can be verified in a similar elementary fashion. We leave their verification as an exercise.     Zero space   A singleton , together with its uniquely defined vector operations, is called a zero space . Since with respect to this vector space structure, we will write for a zero space.    For now, we will mainly focus on vector spaces of the form or , leaving a more thorough investigation of vector spaces in all of their abstract glory until . However, as we introduce new concepts connected to vector spaces, we will always state them in full generality for a general vector space . This is done mainly out of convenience, so that we do not have to repeat the same definition later on. Since our emphasis is on vector spaces of the form , we will take care to follow up any new definition with some examples taken from some familiar vector spaces of the form , , . We put this into practice with our next definition.   Linear combination   Let be a vector space, and let be a nonempty subset of . A linear combination of is a vector of the form , where and for all . The scalars appearing in are called the coefficients of the linear combination. The linear combination is trivial if for all , and nontrivial if for some .  In the special case where is described enumeratively as or , we will call a linear combination of a linear combination of the for short.  We will sometimes use sigma notation for linear combinations, writing for the linear combination of the vectors whose -th coefficient is .     Linear combination: -vectors   Show that every vector in is a linear combination of the standard basis vectors , , and .    Given any vector , we have .     Linear combination: matrices   Express as a nontrivial linear combination of and .    It is easy to see that , and hence . More explicitly, we have . This is not the only nontrivial linear combination yielding . In fact we have for any scalar (including ).    It is natural to want to rewrite a linear combination of the form as , but technically this expression doesn't quite make sense as of yet. What we are missing is the vector difference operation.   Vector difference   Let be a vector space. Given vectors , we define their difference  as .      Visualizing  We will only explicitly visualize (or graph) elements of for and . However, these special cases bring to light an important point-vector duality in how we conceive of -tuples that carries over into higher values of . Fix for now. We will sometimes conceive of a triple as a point , in which case we will use capital letters to denote the triple ( , ), and will represent the point visually with respect to a coordinate system as the point in -space reached by starting at the origin and moving a directed distance units in the -direction, units in the -direction and units in the -direction.   Point visualization of triple. Made with GeoGebra .    Alternatively, when conceiving of a triple as a vector , we will use lowercase bold letters to denote it ( , or ), and represent it visually as a directed line segment ( , an arrow). In more detail, given the 3-vector , we choose an initial point  and represent as the directed line segment that starts at and ends at the point , the terminal point of . Note that in this manner we get infinitely-many different graphical representations of : one for each choice of starting point . Although these are technically different arrows (they have different starting points), we consider them to be equal as vectors . You can think of each particular choice of arrow-representation as an instance or incarnation of the vector . When the initial point of our arrow representation is chosen to be the origin , we have , where . We call the position vector of the point .   Vector visualization of triple . Drag to change the vector . Drag to change the initial point of . Made with GeoGebra .    The representation of vectors as arrows gives rise to the so-called tip-to-tail interpretation of vector addition. Let and . Starting with an initial point , we can represent as , where , and , where . But then we have , or alternatively, . In other words, if we choose our arrow representations so that the terminal point (the tip) of is placed at the initial point (the tail) of , then is represented by the arrow whose initial point is , and whose terminal point is reached by first traveling along , and then traveling along .   Tip-to-tail visualization of vector addition. Made with GeoGebra .    The tip-to-tail visualization of vector addition gives rise to a similar conceptualization of vector difference. Performing a little vector algebra on the definition , we see that . Using tip-to-tail terminology, this means if we represent and , then is the arrow that starts at the tip of and ends at the tip of . We thus have a tip-to-tip description of vector difference.   Tip-to-tip visualization of vector difference. Made with GeoGebra .    Next consider scalar multiplication. Given a vector and a scalar , the scalar multiple can be represented as an arrow that starts at and points along the line containing . As we will see in the next section, the length of the resulting arrow is multiplied by the factor , resulting in a stretched arrow if and a shrunk arrow if . Furthermore, if , then the arrow representing points in the same direction as ; if , it points in the opposite direction.   Visualization of scalar multiplication. Drag point labeled to change scalar. Made with GeoGebra .       Tuple building   For the given index set and tuple indexed by , display the tuple using the appropriate notational conventions introduced in .      ,        ,        ,        ,        , , where       Tuple equality   Explain why the given tuples are not equal. Your justification must refer to a specific condition of , , or .      ,        ,        ,        ,        ,       Vector operations of   Compute the given expressions using the vector operations of the relevant vector space .     Let .                       Let .                       Let , where . Express your answers below as expanded infinite sequences with enough terms provided to see a pattern.                        Show that every element of can be written as a linear combination of . In other words, every element of is a linear combination of the standard basis vectors of .      Show that every element of can be written as a linear combination of . In other words, every element of is a linear combination of the standard basis matrices of .      Show that it is not the case that every element of can be written as a linear combination of the set of indicator vectors of . In more detail, provide an explicit infinite sequence that is not a linear combination of .    Show that any linear combination of is of the form for some positive integer and scalars (some of which could be zero). Expand out this linear combination as an infinite sequence and provide an infinite sequence that doesn't look like this!    The underlying issue here is that by definition a linear combination of any set of vectors is a finite sum of scalar multiples of vectors from that set. In the present case, that means an arbitrary linear combination of is of the form for some positive integers and scalars . Letting and setting , we have . This shows that any linear combination of can be expressed in the form , as claimed in the hint. Now since by definition is the infinite sequence we have . This shows that any linear combination of the is a sequence with only finitely many nonzero terms! In particular the infinite sequence is not a linear combination of the .      Finish the proof of . That is, show that the vector operations of satisfy Axioms i, v, vii, and viii of .      Finish the proof of . That is, show that the unique operations defined satisfy Axioms i-ii, and v-viii of .     True or false   True or false: if true, provide a proof; if false, provide an explicit counterexample.   If -tuples and have the same set of values (see ), then .    Every element of can be written as a linear combination of the vectors and .    Every element of can be written as a linear combination of the matrices .    If is finite, then every element of can be written as a linear combination of the indicator vectors , .    If is a vector space, then is infinite.        "
+  "body": " Real-valued tuples    Our study of linear algebra begins on a somewhat formal note with the introduction of the set of real-valued tuples indexed by an arbitrary set . Conceptually, this construction is a straightforward generalization of the sets and of real-valued pairs and triples. The payoff of this mild formalism is a vast generalization of those two familiar sets that gives us a unified framework for developing the mathematical theory of objects as disparate as -tuples, matrices, and infinite sequences. In particular, we show how the so-called vector operations of and extend easily to these more general sets . As a result, we are lead naturally to introduce at this early stage the notion of a real vector space , thereby foregrounding the central object of study of linear algebra.    Real-valued tuples  Most multivariable courses begin by introducing , the set of all pairs of real numbers, and , the set of all triples of real numbers. Using set notation: . In that setting it is easy to motivate the discussion by interpreting pairs and triples as specifying locations or directions in 2- or 3-space. This both imbues the mathematical objects involved with some familiar concrete meaning and allows us to visualize related constructions as geometric objects in 2- or 3-space.  With the public's ever-growing familiarity with data science, however, there is no need to rely on spatial intuition for motivation. A marketing analyst studying the sales of a certain product might be interested in knowing the height, weight, age, and yearly income of the product's consumers. Thus for each consumer, the marketer collects a quadruple of real numbers, where is the height of the consumer, the weight, the age, and the yearly income. And the aggregate data the marketer collects is a subset of , the set of all quadruples of real numbers.  To give a slightly less simplistic example, consider an internet search engine that, given a search query, assigns to each of its different indexed webpages a real number score in the interval measuring the page's relevance to the given query. For each query entered, the search engine produces a -tuple , where is the score of the first webpage in its index, is the score of the second page in its index, . (Note: as defined more formally in , an -tuple is just a list or sequence of length .)  The point here is that for the modern student of mathematics there should be nothing too forbidding or abstract about -tuples of real numbers of arbitrary length , nor the set of all such tuples. In this course, we will take things one small step further by considering a generalization of a list or sequence of real numbers. This is the notion of a tuple indexed by a set . Let us dispense first with the formal definition, then make sense of it.   Real-valued tuple    set of real-valued -tuples    Let be a nonempty set. A real-valued tuple indexed by (or -tuple of real numbers) is a rule that assigns to each index  an element , and is denoted .  Given an -tuple , we call the index set , and for each index , we call the -th component (or coordinate , or entry , or term ) of . We call the set of values of the tuple .  The set of all real-valued -tuples is denoted : , .     All this talk of rules and assignments may remind you of the general definition of a function. This is no accident! In truth a tuple is simply a function that assigns to each index a real number . However, since the goal here is to have you understand tuples as a straightforward generalization of pairs and triples, we decided to conceal this function connection somewhat.    More general tuples  You find a more general discussion of tuples in . In this course, since we will primarily be focused on real-valued tuples, we will typically drop the real-valued , and just speak of -tuples.   Do not be intimidated by the formality of ! The basic underlying idea is that just as a triple of real numbers is determined by knowing each of its three components , , and , a tuple is determined by knowing each component for all indices in the index set .  As a first step to coming to grips with this new concept, let's see how can be understood as a particular example of our more general construction . For concreteness, we consider the case . To define a triple of , we need to specify the three coordinates , , and . This is equivalent to assigning to each of the indices  a real number . Thus a triple in is the same thing as a real-valued tuple indexed by the index set , and we have . This reasoning generalizes easily to lists of real numbers of arbitrary length : such a list is the same thing as a real-valued tuple indexed by the the set that assigns to each index a real number . This allows us to define for arbitrary as , where . We now make this official and take the opportunity to introduce some special notation and terminology for this particular type of tuple.   Real-valued -tuples    set of real-valued -tuples    Let be a positive integer, and let . A real-valued tuple indexed by is called an -tuple and we call the length of the tuple. We will favor bold lower case letters when naming -tuples ( , , , , ) and use any of the following notations for tuples indexed by : . Furthermore, the set of all -tuples is denoted : , .    It should be clear at least that the more general notion of tuples comes with a notational advantage: namely, it takes less time\/space to write or than . The more powerful, conceptual advantage of the notion of an -tuple lies in the fact that our index set can be taken to be anything we like, not just a set of the form . By choosing different, possibly more complicated index sets , we are able to model other common mathematical objects within the same unifying tuple framework.  For example consider the index set consisting of all positive integers: , . In this case, to specify a tuple in we must provide a list of real numbers . Sound familiar? This is just an infinite sequence of real numbers! Again, we make this observation official and introduce some special notation.   Infinite sequences of real numbers    set of all infinite sequences    Let . A real-valued tuple indexed by is called an infinite sequence . We will use any of the following notations for tuples indexed by : . Furthermore, the set of all infinite sequences is denoted : , .     Infinite sequences   For each defined sequence , expand in the form including at least the first four terms.                   , where            .     .     .     .       Comparing -tuples and infinite sequences, we see that these two types of tuples are not so very different in nature; and furthermore, this similarity can be understood as resulting from the underlying similarity of their index sets. Indeed the finite index set is what is called an initial segment of the the infinite index set . In both cases, the natural ordering of transfers to an ordering of the components of a tuple , allowing us to speak of the first entry, second entry, . This illustrates how any additional structure of the index set can be used to induce some structure on our tuples . As a result, when modelling different types of data as tuples, a careful choice of index set can capture particular features of the data we study.  For example, suppose we are interested in comparing the first and second half performances of football players and so record for each player and game the number of goals, assists, and tackles made in the first and second halves of the game. A typical datum collected for a given player and game might be displayed in a table as follows.   First and second half performance datum    Goals Assists Tackles    First half 1 0 9    Second half 0 2 4     We can model such a datum as a tuple where , and for : equivalently, is the entry in the -th row and -th column of the table version of our datum displayed as above. Note the big difference between the index set in this example, as contrasted with our previous two examples. Now our indices themselves consist of pairs which reflects the fact that the six components of our datum depend on two independent features: the type of action (goal, assist, or tackle), and the half in which it was made. This brings us to a third tuple type that will play an outsized role in this course: matrices . As defined below, a matrix is just an -tuple where the index set is of the special form . As with -tuples and infinite sequences, we will introduce special notational conventions for this particular type of tuple.   Real-valued matrices   Let and be positive integers, and let . A real-valued tuple indexed by is called a real matrix . We say the matrix has size  , and call and the dimensions of the matrix. We will write instead of , and call the -th entry of the matrix. Additionally, to distinguish matrices from -tuples, one the following bracket notations will be used: . We will favor capital letters ( , ) when naming matrices, and will often display a matrix as a rectangular array as , where the entry in the -th row and -th column of the array is . The set of all real matrices is denoted : , .     Matrices   Display the given matrix as a rectangular array.    , , where           , ,      , ,            is in this case (two rows, two columns), and we have .     is in this case (two rows, three columns), and we have .     is in this case (one row, three columns), and we have .     is in this case (three rows, one column), and we have .       The last two examples in reveal a subtlety about the notion of equality between tuples. Consider the tuples . The three are clearly quite similar, each consisting of three entries equal to , and yet visibly no two are quite the same: the third is enclosed in parentheses while the first two use brackets; the first is displayed as a single row while the second is displayed as a single column. Of course, that is not a very rigorous way of distinguishing between tuples. Unpacking our notational conventions allows us to more precisely locate the difference between the three tuples: namely, they have three very different index sets. Following the order of the tuples displayed above, the corresponding index sets are . This illustrates the fact that equality between two tuples and depends not just on the entry values and , but also on the index sets and . This detail is made explicit in the general definition of tuple equality given in . Below we repeat this definition for the special case of real-valued tuples.   Tuple equality   Two real-valued tuples and are equal , denoted if the following two conditions hold.    .     for all .   In plain English, two tuples are equal if they have the same index set and assign the same values to each element of the index set.    It is worth further unpacking this definition in the special cases of -tuples and matrices.   Equality of -tuples   The -tuple is equal to the -tuple if and only if and for all .    Unpacking the the notational conventions, we have , where and , where . By , the two tuples are equal if and only if and for all . The first condition is equivalent to , and the second condition is equivalent to for all .     Equality of matrices   The matrix is equal to the matrix if and only if    and ;     for all and .   In other words, two matrices are equal if and only if they have the same dimensions and the same entries in each position.    Unpacking the the notational conventions, we have , where and , where . By , the two matrices are equal if and only if and for all . The first condition is equivalent to and , and the second condition is equivalent to for all and .    In we introduce SageMath (or Sage , for short), an open-source computer algebra system that is built on top of the Python programming language. Our exploration of Sage will be a rather casual one, making use of interactive cells called Sage cells . These cells can be evaluated by clicking the Evaluate (Sage) button, or by typing shift+return . You can experiment by editing the code in these cells and then evaluating. Sage is built on top of the Python programming language, and so shares its syntax.   -tuples and matrices  To create an -tuple in Sage, use the vector() command. The input should be a sequence of numbers enclosed in brackets.   You can make use of sequence routines to create special types of -tuples.   If you prefer the two outputs above to not be listed as a pair, you can use the print() command in sequence. (This is a peculiarity of interactive SageCells, not Sage itself.) Alternatively, use show() for a nicely typeset display of the output.   Once a vector v is created in Sage, various properties of the vector can be computed using the v.foo() syntax. For example, the command v.length() returns the length of the vector v .   Matrices are created in Sage using the matrix() command, and are entered as a list of lists, where the -th list of this list represents the -th row of the matrix, considered as a rectangular array.   To retrieve entries from -tuples or matrices, Sage uses the usual Python list syntax: , v[i] and A[i,j] . As with all things Python, we always count from 0. Thus if A is assigned to a matrix in Sage, A[i,j] is its -th entry.   There are also built-in constructors for matrices consisting entirely of zeros, or entirely of ones.    In this class we will draw our examples almost exclusively from the sets , , and . However, note that once we've understood a matrix as a tuple indexed by pairs of integers , it is not much of a jump to consider tuples indexed by triples of integers , or quadruples of integers , . Such tuples are called multidimensional arrays These multidimensional arrays are sometimes called tensors by data scientists. We will avoid this, however, as that term is used in mathematics for a slightly more complicated type of object not discussed in this class. and appear frequently in data science settings. In full generality, a -dimensional array is real-valued tuple with index set of the form . Such a tuple has size  . In this more general context, a matrix is just a -dimensional array. The next example describes how a digital image can be thought of as a -dimensional array.   Digital image as -dimensional array   Consider a digital image consisting of a array of pixels, each of which displays a color specified by a triple of real numbers that lists the intensities of the red, blue, and green color channels at that pixel. The image can be stored as a tuple , where and is the intensity of the -th color channel (1=red, 2=green, 3=blue) at the pixel in the -th position. Our image is thus a -dimensional array of size . See for a Sage demonstration of this idea.  Similarly to matrices, we can envision our -dimensional array as a -d box array of data consisting of three flat sheets stacked vertically: the first sheet consists of the entries arranged as a grid, and similarly, the second and third sheets consist of the entries and , respectively. The mathematical usefulness of such a conception is up for debate. However, we can give some (somewhat dubious) physical intuition in this case as follows. Imagine the first sheet being a red-tinted translucent that colors the -th pixel red with intensity for all all pairs . Similarly, imagine the second and third sheets as green- and blue-tinted translucents that color the -th pixel green (or blue) with intensity (or ). Now take all three sheets, stack them on top of one another, shine a light through them, and voilà , our image appears!     Digital image as -dimensional array   The Sage cell below creates a -dimensional array representation of a pixel image. Make sure to evaluate that cell!   Recall that Sage captures the double-index nature of a matrix by nesting lists: a matrix is just a list of lists. Sage handles -dimensional arrays by taking this nesting one step further, as you can see from the definition of the object smiley , which is a list of lists of lists. In its current format, to access the -th entry of the array, which tells us the intensity of the -th color channel at -th pixel, we use an iterated indexing syntax: smiley[i][j][k] . Let's examine the color of the top-left pixel by determining the three color intensities there. Adopting the count from zero convention of Python, the top-left pixel is given by , and the three color channels are encoded as 0=red, 1=green, 2=blue.   It looks like this pixel is blue-green, with emphasis on the blue. What about the bottom-left pixel?   Interesting! It appears that this pixel is also blue-green, but considerably more green. Before confirming our results by viewing the image, let's convert smiley into the Python's standard multidimensional array format, a NumPy array (or ndarray). As a NumPy array, we can determine the size of the array using smiley.shape and we can access the -th entry more naturally as smiley[i,j,k] (although you will notice that we are given some additional information about the data-type of the entry).   And now it's time for the big reveal. We will view smiley using the data visualization library matplotlib .       Vector operations on  Returning for a moment to the hypothetical multivariable calculus class you took long ago, you may remember that after introducing the sets and , the next thing you did was to define the notions of vector addition and scalar multiplication . For these are defined as . Notice that the two operations are defined component-wise . In plain English, the sum of two triples in is the triple whose -th component is the sum of the two -th components; and to scale a triple by the scalar , we multiply (or scale) each component by . This component-wise nature of the two operations allows us to easily generalize them to the more general setting of for arbitrary index sets .   Vector operations of   Let be a nonempty set. We will call the operations below the standard vector operations on .   Vector addition on  Given elements -tuples and , we define their vector sum  as . The operation is called vector addition .    Scalar multiplication on  Given an -tuple and a real number , the -tuple defined as is called the scalar multiple of by . The operation is called scalar multiplication .        Anatomy lesson: vector operation notation  The displayed expressions and used in the definition of the vector operations on use a combination of function notation (see ) and Cartesian product notation (see ). In general, the expression denotes a function that takes as input a pair of elements , where and , and returns as output an element . Thus, the expression describes a function that takes as input a pair of -tuples, and returns as output another -tuple denoted . In contrast, the scalar multiplication operation described in is a sort of hybrid operation that takes as input a pair where is a real number and is an -tuple, and returns as output a new -tuple denoted .   Taking the three special types of index sets discussed in , we see that gives rise to naturally defined operations on -tuples, infinite sequences, and matrices. We summarize each in turn below.   -tuples  Let . In this case we have and the two vector operations are given by .    Infinite sequences  Let . In this case we have and the two vector operations are given by .    Matrices  Let . In this case we have and the two vector operations are given by .   The foregoing is another example of the advantage of working with the general notion of -tuples. Starting from our single definition of vector operations on ( ), by choosing different types of index sets , we immediately derive a notion of vector addition and scalar multiplication on three quite different sets of objects: the set of -tuples , the set of infinite sequences , and the set of matrices .  In we recall the basic spatial interpretation of the vector operations in the context of and . In the meantime, we consider a few explicit examples.   Tuple vector operations      Let and . Compute .    Consider the infinite sequences and . Compute and .    Let and .  Compute .          We have .    We have , and .    We have .        demonstrates how vector operations on and are implemented in Sage.   Vector operations: and   To create an -tuple in Sage, use the vector() command. The input should be a sequence of numbers enclosed in brackets.   You can make use of sequence routines to create special types of -tuples.   If you prefer the two outputs above to not be listed as a pair, you can use the print() command in sequence. (This is a peculiarity of interactive SageCells, not Sage itself.)   The standard vector operations of are implemented using an intuitive syntax in Sage.   Once a vector v is created in Sage, various properties of the vector can be computed using the v.foo() syntax. For example, the command v.length() returns the length of the vector v .   Matrices are created in Sage using the matrix() command, and are entered as a list of lists, where the -th list of this list represents the -th row of the matrix, considered as a rectangular array. Note that show() outputs a typeset display of the matrix, as contrasted with the text ouput of print() .   The Sage syntax for vector operations in is identical to that for . The command matrix(2,3,range(-4,2)) used below instructs Sage to create a matrix whose entries are the integers from to , arranged by wrapping along the two rows.   Lastly, to retrieve entries from -tuples or matrices, Sage uses the usual Python list syntax: , v[i] and A[i,j] . As with all things Python, we always count from 0. Thus if A is assigned to a matrix in Sage, A[i,j] is its -th entry.    So why do we call these operations vector operations? It turns out that a set together with these two vector operations is an example of an important type of mathematical object called a vector space ; and vector spaces in turn are the main object of study of linear algebra. The definition of a vector space we give below is what is known as an axiomatic definition : it lists a set of properties, called axioms , and defines a vector space to be anything that satisfies these axioms.   Vector space   A real vector space is a set together with two operations , called respectively vector addition and scalar multiplication , that satisfy the following vector space axioms .   Vector addition is commutative   for all .    Vector addition is associative   for all .    Zero vector  There is an element such that for all , we have . We call the zero vector of .    Vector inverses  For all , there is another element satisfying . We call the vector inverse of .    Distribution over vector addition   for all and .    Distribution over scalar addition   for all and .    Scalar multiplication is associative   for all and all .    Scalar multiplication identity   for all .   We call elements of a vector space vectors and the elements of  scalars .    Note that a vector space, as defined by is a very general object. In particular, the definition does not specify what the underlying set of the vector space is, or what the vector operations are. Rather, it allows for any set and any choice of two operations to be called a vector space, as long as our choices satisfy the vector space axioms. We will deal with vector spaces in this full generality later in the course. For now, let's show that for any index set the set of all -tuples together with the two vector operations defined in satisfies the vector space axioms, and hence is a vector space.  Before getting to that proof, we point out that among the eight vector space axioms, there are two (Axiom iii and Axiom iv) that posit the existence of certain special elements: namely a zero vector and vector inverses. Accordingly, we will often refer to these axioms as the existential axioms . In contrast, the remaining axioms are all algebraic in nature; they stipulate that the two vector operations are well behaved and play nicely with one another. The next definition, and trailing example, introduce some special elements of that will serve the role of the zero vector and vector inverses as described by the existential vector space axioms. We also take the opportunity to define the indicator vectors of , which will be useful throughout the course.   Special elements of    zero vectors of , and     indicator vector of    Let be a nonempty set.   Zero vector  The zero vector of , denoted (or for short), is the -tuple, all of whose entries are equal to : , .  In the special cases and , we denote the corresponding zero vectors as and , respectively.    Vector inverse  Given an -tuple , the vector inverse of , denoted , is the element of defined as .    Indicator vectors  Given , the -th indicator element of , denoted , is the -tuple whose -th entry is equal to and whose -th entry is equal to for all .  In the case , we call the -th standard basis vector of .  In the case , we write for , and call this the -th standard basis matrix of .        Zero, inverse, and indicator vectors   For the given index set , provide (a) the zero vector of , (b) a general element of and its vector inverse, and (c) the indicator vectors for all .  Make use of the notational conventions that apply to each particular type of index set.    .               In this case we have . The zero vector of is .  A general element of can be described as , , and its vector inverse is .  The four indicator vectors of are called standard basis vectors, and are given as .    In this case we have . The zero vector of is .  A general element of can be described as , and its vector inverse is . The six indicator vectors of are called standard basis vectors, and are given as .       We now verify that the two operations on defined in satisfy the vector space axioms. As you will see, since the vector operations are defined componen-wise in terms of real number addition and multiplication, the fact that the vector space axioms are satisfied usually follows directly from corresponding properties of these two real number operations.   is a vector space   Let be a nonempty set.   The set together with the vector addition and scalar multiplication operations defined in is a vector space.    The zero vector of the vector space , as described by Axiom , is the -tuple : , we have .    Given a vector , its vector inverse , as described by Axiom , is .  Additionally, we have ; that is, the vector inverse of is equal to the scalar multiple .       The statement itself of the theorem has already taken care of some of the steps required to verify that something is a vector space. Namely, it has identified the underlying set and proposed vector operations, and it has identified the elements of that serve as the zero vector and inverse vectors. It remains to show that the eight axioms of are satisfied. We will verify the existential axioms (Axiom iii-iv), as well as one of the algebraic axioms (Axioms ii and vi), and leave the rest as an exercise.   Axiom iii  We claim that satisfies the identity of Axiom . Indeed, for all we have , as desired.    Axiom iv  We claim that given any , the vector satisfies the identity of Axiom , and thus that . Indeed, we have , as desired.   As for the remaining axioms, we will verify Axioms ii and vi, and leave the rest as an exercise. As you see below, the desired identities here all boil down to a familiar property of real number arithmetic: , commutativity of real number addition, real number distributivity, etc. In what follows, will denote arbitrary elements of , and will denote arbitrary elements of .   Axiom ii  We have .    Axiom vi  For all and , we have .     Thanks to , we now have at our disposal a rich collection of examples of vector spaces: namely, the spaces , where is an arbitrary index set. As usual, the particular choice of index set gives rise to a vector space of a particular flavor. Let's quickly run through our three familiar examples.   For , our vector space consists of -tuples. When emphasizing the vector space structure of , we will call its elements -vectors .    Choosing , we obtain the vector space of all infinite sequences of real numbers.    Finally, for , we obtain the vector space of all matrices.   We hasten to add, that although the spaces furnish us with many interesting examples of vector spaces, not all vector spaces are of this form! Indeed, the zero space defined below is such an example.   Zero space   Let be a singleton: , is a set containing exactly one element. There is a unique choice of operations making into a vector space.    Let . Since , to define a vector addition operation , we only need to define what is. Furthermore, since by definition we must have , we have no choice here: we must define !  Similarly, it is easy to see that there is only one possible scalar multiplication operation, defined as for all . These two operations being so simple, it is now easy to verify that they satisfy all of the algebriac axioms. Furthermore, we have no choice for the zero vector and inverse vectors: we must choose , and . This seems somewhat odd, since is its own vector inverse, but it is easy to verify that these choices satisfy Axioms iii and iv: . The remaining axioms can be verified in a similar elementary fashion. We leave their verification as an exercise.     Zero space   A singleton , together with its uniquely defined vector operations, is called a zero space . Since with respect to this vector space structure, we will write for a zero space.    For now, we will mainly focus on vector spaces of the form or , leaving a more thorough investigation of vector spaces in all of their abstract glory until . However, as we introduce new concepts connected to vector spaces, we will always state them in full generality for a general vector space . This is done mainly out of convenience, so that we do not have to repeat the same definition later on. Since our emphasis is on vector spaces of the form , we will take care to follow up any new definition with some examples taken from some familiar vector spaces of the form , , . We put this into practice with our next definition.   Linear combination   Let be a vector space, and let be a nonempty subset of . A linear combination of is a vector of the form , where and for all . The scalars appearing in are called the coefficients of the linear combination. The linear combination is trivial if for all , and nontrivial if for some .  In the special case where is described enumeratively as or , we will call a linear combination of a linear combination of the for short.  We will sometimes use sigma notation for linear combinations, writing for the linear combination of the vectors whose -th coefficient is .     Linear combination: -vectors   Show that every vector in is a linear combination of the standard basis vectors , , and .    Given any vector , we have .     Linear combination: matrices   Express as a nontrivial linear combination of and .    It is easy to see that , and hence . More explicitly, we have . This is not the only nontrivial linear combination yielding . In fact we have for any scalar (including ).    It is natural to want to rewrite a linear combination of the form as , but technically this expression doesn't quite make sense as of yet. What we are missing is the vector difference operation.   Vector difference   Let be a vector space. Given vectors , we define their difference  as .      Visualizing  We will only explicitly visualize (or graph) elements of for and . However, these special cases bring to light an important point-vector duality in how we conceive of -tuples that carries over into higher values of . Fix for now. We will sometimes conceive of a triple as a point , in which case we will use capital letters to denote the triple ( , ), and will represent the point visually with respect to a coordinate system as the point in -space reached by starting at the origin and moving a directed distance units in the -direction, units in the -direction and units in the -direction.   Point visualization of triple. Made with GeoGebra .    Alternatively, when conceiving of a triple as a vector , we will use lowercase bold letters to denote it ( , or ), and represent it visually as a directed line segment ( , an arrow). In more detail, given the 3-vector , we choose an initial point  and represent as the directed line segment that starts at and ends at the point , the terminal point of . Note that in this manner we get infinitely-many different graphical representations of : one for each choice of starting point . Although these are technically different arrows (they have different starting points), we consider them to be equal as vectors . You can think of each particular choice of arrow-representation as an instance or incarnation of the vector . When the initial point of our arrow representation is chosen to be the origin , we have , where . We call the position vector of the point .   Vector visualization of triple . Drag to change the vector . Drag to change the initial point of . Made with GeoGebra .    The representation of vectors as arrows gives rise to the so-called tip-to-tail interpretation of vector addition. Let and . Starting with an initial point , we can represent as , where , and , where . But then we have , or alternatively, . In other words, if we choose our arrow representations so that the terminal point (the tip) of is placed at the initial point (the tail) of , then is represented by the arrow whose initial point is , and whose terminal point is reached by first traveling along , and then traveling along .   Tip-to-tail visualization of vector addition. Made with GeoGebra .    The tip-to-tail visualization of vector addition gives rise to a similar conceptualization of vector difference. Performing a little vector algebra on the definition , we see that . Using tip-to-tail terminology, this means if we represent and , then is the arrow that starts at the tip of and ends at the tip of . We thus have a tip-to-tip description of vector difference.   Tip-to-tip visualization of vector difference. Made with GeoGebra .    Next consider scalar multiplication. Given a vector and a scalar , the scalar multiple can be represented as an arrow that starts at and points along the line containing . As we will see in the next section, the length of the resulting arrow is multiplied by the factor , resulting in a stretched arrow if and a shrunk arrow if . Furthermore, if , then the arrow representing points in the same direction as ; if , it points in the opposite direction.   Visualization of scalar multiplication. Drag point labeled to change scalar. Made with GeoGebra .       Tuple building   For the given index set and tuple indexed by , display the tuple using the appropriate notational conventions introduced in .      ,        ,        ,        ,        , , where       Tuple equality   Explain why the given tuples are not equal. Your justification must refer to a specific condition of , , or .      ,        ,        ,        ,        ,       Vector operations of   Compute the given expressions using the vector operations of the relevant vector space .     Let .                       Let .                       Let , where . Express your answers below as expanded infinite sequences with enough terms provided to see a pattern.                        Show that every element of can be written as a linear combination of . In other words, every element of is a linear combination of the standard basis vectors of .      Show that every element of can be written as a linear combination of . In other words, every element of is a linear combination of the standard basis matrices of .      Show that it is not the case that every element of can be written as a linear combination of the set of indicator vectors of . In more detail, provide an explicit infinite sequence that is not a linear combination of .    Show that any linear combination of is of the form for some positive integer and scalars (some of which could be zero). Expand out this linear combination as an infinite sequence and provide an infinite sequence that doesn't look like this!    The underlying issue here is that by definition a linear combination of any set of vectors is a finite sum of scalar multiples of vectors from that set. In the present case, that means an arbitrary linear combination of is of the form for some positive integers and scalars . Letting and setting , we have . This shows that any linear combination of can be expressed in the form , as claimed in the hint. Now since by definition is the infinite sequence we have . This shows that any linear combination of the is a sequence with only finitely many nonzero terms! In particular the infinite sequence is not a linear combination of the .      Finish the proof of . That is, show that the vector operations of satisfy Axioms i, v, vii, and viii of .      Finish the proof of . That is, show that the unique operations defined satisfy Axioms i-ii, and v-viii of .     True or false   If true, provide a proof; if false, provide an explicit counterexample.   If -tuples and have the same set of values (see ), then .    Every element of can be written as a linear combination of the vectors and .    Every element of can be written as a linear combination of the matrices .    If is finite, then every element of can be written as a linear combination of the indicator vectors , .    If is a vector space, then is infinite.        "
 },
 {
   "id": "ss_real_tuples-5",
@@ -1375,7 +1375,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "1.1.4.19",
   "title": "True or false.",
-  "body": " True or false   True or false: if true, provide a proof; if false, provide an explicit counterexample.   If -tuples and have the same set of values (see ), then .    Every element of can be written as a linear combination of the vectors and .    Every element of can be written as a linear combination of the matrices .    If is finite, then every element of can be written as a linear combination of the indicator vectors , .    If is a vector space, then is infinite.      "
+  "body": " True or false   If true, provide a proof; if false, provide an explicit counterexample.   If -tuples and have the same set of values (see ), then .    Every element of can be written as a linear combination of the vectors and .    Every element of can be written as a linear combination of the matrices .    If is finite, then every element of can be written as a linear combination of the indicator vectors , .    If is a vector space, then is infinite.      "
 },
 {
   "id": "s_systems",
@@ -1384,7 +1384,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.1",
   "title": "Systems of linear equations",
-  "body": " Systems of linear equations   Computing and studying solutions to equations, and systems of equations , unquestionably plays an important role in mathematics; though we hasten to add that this is not all that mathematicians do! In this chapter we will develop an essentially complete theory of a particularly simple family of mathematical equations: namely, linear equations . This will serve as a somewhat indirect introduction to our study of linear algebra, as lurking below our parametric descriptions of solutions to linear systems lie vector space notions like subspace, span, and linear independence. Furthermore, we will introduce one of the most important computational tools of linear algebra: Gaussian elimination .    Systems of linear equations   Linear equations  linear equation   A linear expression in the unknowns (or variables) is an expression of the form , where are fixed real numbers.  A linear equation in the unknowns is an equation that can be simplified, using only addition and subtraction, to an equation of the form which we call its standard form . An equation in the unknowns is nonlinear if it cannot be simplified to the form using only addition and subtraction.  Given a linear equation with standard form , the equation is called homogeneous if , and nonhomogeneous if .     Linear and nonlinear equations      Consider . This is a linear equation in the unknowns . Its standard form is . Since the right-hand side is nonzero, we see that the equation is nonhomogeneous.    The equation is a nonlinear equation in the unknowns and .    The equation is nonlinear. Interestingly, however, the set of solutions to this equation is equal to the set of solutions to the linear equation . This illustrates that is concerned strictly with the form of an equation, and not with the solutions to that equation.       We next provide a precise definition of a solution of a linear equation. This definition will involve -tuples of real numbers.   Solutions to linear equations   A solution to a linear equation  is an -tuple of real numbers for which the variable assignment makes the equation true: , the tuple satisfies . We say  solves the equation in this case.    Given a linear equation , we will be interested in finding and describing the set of all of its solutions. As you may recall, a (nontrivial) linear equation in two unknowns defines a line in , and a (nontrivial) equation in three unknowns defines a plane in . These types of subsets (of and , respectively) have distinctive geometric properties that we will elucidate in coming sections. Generalizing this notion to an arbitrary number of unknowns leads to the notion of a hyperplane .   Hyperplane   A linear equation is nontrivial if for some . Given a nontrivial equation , the set of solutions is called a hyperplane in . We have the two following special cases, corresponding to and :   A hyperplane in is the set of solutions to a nontrivial equation , and is called a line .    A hyperplane in is the set of solutions to a nontrivial equation , and is called a plane .        Visualizing lines in  Let be a line: , is the solution to some nontrivial linear equation . Since the equation is nontrivial, we have or . If , we may put the equation in the form , in which case we recognize as the slope of and as the -intercept. If , then , and the equation can be solved as , which we recognize as the vertical line passing through the point .  It is easy to see that the equation defining is homogenous if and only if is a point on : , is defined by a homogeneous equation if and only if it passes through the origin.   Lines in   Lines in R2       Visualizing planes in  Let be a plane defined by the nontrivial equation . Later we will describe an approach to visualizing in terms of its normal vector  . For now we recall a more elementary approach. Namely, simply find by inspection three non-colinear points satisfying , sketch the triangle in they define, and then envision as the plane in containing this triangle. In practice we can find three such points by picking arbitrary values for two of the three variables, and solving for the third variable using .  For example, if is the plane with equation , we see easily that lie on , allowing us to produce the graph in .  As with lines, it is easy to see that the equation defining is homogeneous if and only if passes through the origin .   Using Sage to visualize via normal vector  Visualizing        Next we introduce linear systems , which are just collections of linear equations.   Systems of linear equations  linear system   A system of linear equations (or linear system ) is a set of linear equations. The linear system is homogeneous if each of its equations is homogeneous: , if for all .  A solution to the system is an -tuple that is a solution to each of the system's equations. We say  solves the system in this case.  A linear system is consistent if a solution to the system exists, and inconsistent otherwise.    When displaying a system of equations in the unknowns , we typically write each equation in standard form and align the corresponding terms of each equation into columns: A homogeneous system is thus typically written as:    Displaying linear systems  As indicated in , when displaying a system of equations in the unknowns , we typically write each individual equation in standard form and align the corresponding terms of each equation into columns. The presence of multiple equations and multiple unknowns necessitates the use of double-indexing for the coefficients appearing in the system. The following breakdown will hopefully help you orient yourself with respect to the double-indexing:   The appearing in and indicates the -th row in our displayed system, or equivalently, the -th equation.    The appearing in indicates the -th column in our displayed system, which is associated to the -th variable, for .       Solutions to elementary systems   For each system, compute the set of solutions.                 The first equation implies . Substituting for in the second equation, we would then have , a contradiction. Thus there are no solutions: i.e., is the empty set, denoted or .    The first equation implies . Making this substitution in the second equation yields , or . Thus is the unique solution, and .    The second equation is just twice the first. It follows that both equations have the exact same set of solutions, and so we need only find all solutions to . Note that we can set for any real number . Solving for in terms of we get for any , and thus , an infinite set!       The solutions to the the three linear systems of can be described qualitatively as follows: nonexistent, unique, and infinite. This turns out to be characteristic more generally of all linear systems. In other words, given a linear system , the set of solutions will take one of three qualitative forms:    : , there are no solutions and the system is inconsistent.     contains exactly one element: , there is a unique solution.     is infinite: , there are infinitely many solutions.   We will prove this in full rigor in . However, we get an inkling of why this should be true in the case of two or three unknowns, where we can put our geometric understanding to work. For example, consider a general system of equations in just two unknowns and : Assume for simplicity that each equation in the system is nontrivial, and thus that for each , the -th equation of this system defines a line . A solution of the system, being a solution of each equation , must lie on each of the lines . In other words, the set of solutions to the system is precisely the set of points lying in the common intersection of all of these lines. Thus our qualitative description of the set of solutions to this system amounts to the geometric fact that the intersection of any collection of lines in is either empty, contains a unique point, or is infinite. has you prove this geometric fact, as well as the analogous statement for systems of equations in three unknowns. For now we illustrate this by reexamining from a geometric point of view.   Solutions to elementary systems (again)   For each system in , use a geometric argument to determine how many solutions there are.    We proceed geometrically by observing that each equation in a given system defines a line, that a pair is a solution to the given equation if and only if it is a point on the corresponding line, and thus that a pair is a solution to both equations if and only if it is a point lying on both lines. Thus, geometrically speaking, the set of solutions to a given system is equal to the intersection of the two corresponding lines.   In this case the two lines and are parallel (and not equal to one another). It follows that their intersection is empty. We conclude that there are no solutions to the system.    In this case the two lines and are nonparallel. It follows that they intersect in a single point. We conclude that the system has a unique solution.    In this case the two equations and define the same line , and thus that their intersection is also equal to . The set of solutions to the system is then equal to the set of points of , which is infinite.         Row operations  In we were able to combine some simple logic and arithmetic to solve each system completely. Of course, things get more complicated as the number of equations and\/or unknowns in the system increases.  For example, consider the system Observe first that the triple is not a solution to the system; one easily checks that is satisfies the first and second equations, but not the third. Similarly, it is easy to verify that and are both solutions to the system. The question remains: How do we find all solutions to the linear system in a systematic way?   Notice the somewhat funny spacing in . This is in force in order to align the unknowns in separate columns. In general, when handed a linear system in the wild, your first step should be to write each equation in standard form, and make sure the unknowns are aligned vertically in this manner.    Some systems are easier to solve than others  Below you find two systems of three equations in three unknowns. The staircase pattern of allows us to solve easily by backwards substitution . In more detail:   Equation 3 in tells us that .    Now substitute into Equation 2 of and solve for to get .    Finally, substitute and into Equation 1 of and solve for to get . We conclude that is a solution to .    Furthermore, since at each step we had no choice in the matter ( must be equal to 2, then must be equal to 4, etc.), we see that in fact is the only solution to .   Our method for solving a more complicated system, like above, will be to transform it to a simpler system like .   Key point . In order for this method to work, we need to make sure that the transformed system has exactly the same solutions as the original system! To this end we will restrict our permissible transformations to the elementary operations define below.   Elementary operations on linear systems  elementary operations linear systems  elementary operations linear systems scalar multiplication  elementary operations linear systems equation swap  elementary operations linear systems equation addition  row reduction of systems   An elementary operation (or elementary row operation ) is one of the three types of operations on linear systems described below.   Scalar multiplication  Multiply an equation by a nonzero number : i.e., replace the -th equation of the system with for . Note: is the result of multiplying the left and right sides of equation by .    Equation swap  Swap the -th and -th equations of the system, : i.e., replace equation of the system with , and replace equation with .    Equation addition  Add a multiple of one equation to another: i.e., replace with for some , , and .   The act of transforming a system of equations using elementary operations is called reduction (or row reduction ).    After reducing a linear system using elementary operations, we are left with a new system . The systems and will generally look very different from one another. Note, however, that the two systems will have the same number of equations, and the same number of variables. More importantly, the two systems will have identical sets of solutions; that is, the set of solutions of the new system is identical to the set of solutions to !  To convince ourselves of this last assertion, it suffices to show that the application of any one of these elementary row operations produces a new system with exactly the same set of solutions as ; if this is so, then performing any finite sequence of elementary row operations must also preserve the set of solutions in this sense. makes this argument official. First we introduce the notion of equivalent linear systems , mainly to spare ourselves from the mouthful that is obtained by applying a finite sequence of elementary row operations .   Row equivalent linear systems   We say two systems of linear equations are row equivalent if the one can be obtained from the other by a finite sequence of elementary operations.     Row equivalence theorem   Row equivalent systems of linear equations have identical sets of solutions.    We prove by induction that if system is the result of applying elementary operations to system , , then and have the same set of solutions.   Base case:  In this case (we have applied no operations) and the statement is obvious.    Induction step  Assume that applying a sequence of elementary operations to a linear system preserves the set of solutions.  Suppose is the result of applying elementary operations to the system . Let be the result of applying the first of these operations. By the induction hypothesis, systems and have the same set of solutions.  Since the system is obtained from by applying exactly one elementary operation, it now suffices to show that applying a single row operation does not change the set of solutions to a linear system. This is the result of . (Note that a solution is provided to that exercise.)  We conclude that and have the same set of solutions, as desired.       Complete example  Consider again the linear system   We transform the system as as follows:   Now put the logic together. Our original linear system was transformed by a sequence of elementary row operations to a new system :   We saw already that the second system has exactly one solution, namely the triple .  Since transforming a system by row operations preserves solutions, the first and second systems have exactly the same solutions .  Thus is the only solution to the original system!    Notation  As we will see later, keeping track of the exact sequence of row operations is important in some situations. The notation used in the last example is useful for this bookkeeping. Let's explicate the notation somewhat.  The notation indicates that system is obtained from by replacing equation with .  The notation indicates that system is obtained from by swapping rows and .  The notation indicates that system is obtained from by replacing equation with .    Mandate  You may be tempted to do multiple operations in a single step during this procedure. Resist this temptation for now until we have a better understanding of things.  Furthermore, if later on you do give in to this temptation, make sure that the two (or more row operations) you perform are independent of one another. For example, do not swap with and replace with in the same step.     WeBWork Exercises      Determine whether the following system has no solution, an infinite number of solutions or a unique solution.                       Suppose that the following   is a consistent system. Then                  Find the set of solutions for the linear system  Use s1 , s2 , etc. for the free variables if necessary.   , ,                   SOLUTION: Equation 3 . Substitute into equation 2, . Substitute into equation 1, .            Give a geometric description of the following systems of equations                       Give a geometric description of the following system of equations                      Written exercises   Geometry of linear systems   In this exercise we will use the geometry of lines in and planes in to help analyze solutions to systems of equations in two and three unknowns, respectively.   Fix and consider a system of linear equations in the two unknowns and . What does a solution to this system of linear equations correspond to geometrically?    Use your interpretation in (a) to give a geometric argument that a system of equations in two unknowns will have either (i) zero solutions, (ii) exactly one solution, or (iii) infinitely many solutions.    Use your geometric interpretation to help produce explicit examples of systems in two variables satisfying these three different cases (i)-(iii).    Now repeat (a)-(b) for a system of linear equations in three variables .       (a) Geometrically, each equation in the system represents a line . A solution to the -th equation corresponds to a point on . Thus a solution to the system corresponds to a point lying on all of the lines: i.e., a point of intersection of the lines.  (b) First of all to prove the desired or statement it suffices to prove that if the number of solutions is greater than 1, then there are infinitely many solutions.  Now suppose there is more than one solution. Then there are at least two different solutions: and . Take any of the two lines . By above the intersection of and contains and . But two distinct lines intersect in at most one point. It follows that and must be equal. Since and were arbitrary, it follows all of the lines are in fact the same line . But this means the common intersection of the lines is , which has infinitely many points. It follows that the system has infinitely many solutions.  (c) We will get 0 solutions if the system includes two different parallel lines: e.g., and .  We will get exactly one solution when the slopes of each line in the system are distinct.  We will get infinitely many solutions when all equations in the system represent the same line . This happens when all equations are multiples of one another.  (d) Now each equation in our system defines a plane . A solution to the system corresponds to a point of intersection of the planes. We recall two facts from Euclidean geometry:   Fact 1  Given two distinct points, there is a unique line containing both of them.    Fact 2  Given any number of distinct planes, they either do not intersect, or intersect in a line.     We proceed as in part (b) above: that is show that if there are two distinct solutions to the system, then there are infinitely many solutions. First, for simplicity, we may assume that the equations define distinct planes; if we have two equations defining the same plane, we can delete one of them and not change the set of solutions to the system.  Now suppose and are two distinct solutions to the system. Let be the unique line containing and (Fact 1). I claim that is precisely the set of solutions to the system. To see this, take any two equations in the system and . Since the two corresponding planes are distinct, and intersect in at least the points and , they must intersect in a line (Fact 2); since this line contains and , it must be the line (Fact 1). Thus any two planes in the system intersect in the line . From this it follows that: (a) a point satisfying the system must lie in ; and (b) all points on satisfy the system (since we have shown that lies in all the planes). It follows that is precisely the set of solutions, and hence that there are infinitely many solutions.     Row operations preserve solutions   We made the claim that each of our three row operations   scalar multiplication ( for ),    swap ( ),    addition ( for some )   do not change the set of solutions of a linear system. To prove this claim, let be a general linear system . Now consider each type of row operation separately, write down the new system you get by applying this row operation, and prove that an -tuple is a solution to the original system if and only if it is a solution to the new system .    Let be the original system with equations . For each specified row operation, we will call the resulting new system and its equations .   Row swap  In this case systems and have exactly the same equations, just written in a different order. Thus the -tuple satisfies if and only if it satisfies each of the equations , if and only if it satisfies each of the equations , since these are the same equations! It follows that is a solution of if and only if it is a solution to .    Scalar multiplication  In this case for all , and for some . Since only the -th equation has changed, it suffices to show that is a solution to if and only if is a solution to . Let's prove each direction of this if and only if separately.  If satisfies , then . Multiplying both sides by we see that and hence that is also a solution of .  For the other direction, if satisfies , then Now, since , we can multiply both sides of this equation by to see that and hence that is a solution to .    Row addition  The only equation of that differs from is . Writing this equation out in terms of coefficients gives us . Now if satisfies , then it satisfies and , in which case evaluating the RHS of the above at yields showing that satisfies . Now suppose satisfies . Since satisfies , we have Since satisfies , we have Substituting into the equation above we get , and hence . This shows that satisfies . It follows that satisfies .      Nonlinear systems  A nonlinear system of equations is a collection of equations, at least one of which is nonlinear. Our definition of a solution to a linear system generalizes easily to any system of equations.   Consider the following nonlinear system in the unknowns : .   Sketch the graphs of each of the two equations in the system on a common coordinate system.    Describe geometrically what a solution to the system is in terms of your sketch. Explain your reasoning. How many solutions to the system are there, according to your sketch?    Compute the set of all solutions to the system algebraically.       Now consider a more general system where are fixed constants and at least one of or is nonzero.    Explain geometrically what a solution to the system corresponds to in terms of the graphs of its two equations.    Use your geometric interpretation in (i) to argue that the system has either 0, 1, or 2 solutions. Give explicit examples of such systems corresponding to each of these three cases.         Not all arithmetic operations preserve solutions   In this exercise we investigate how the operation of squaring both sides of an equation changes the set of solutions. Let represent a general equation (linear or nonlinear) in the unknowns , let be the equation obtained by squaring both sides of the , let be the set of solutions to , and let be the set of solutions to .    Show that .    Given an explicit example of an equation of the form in two variables for which .        "
+  "body": " Systems of linear equations   Computing and studying solutions to equations, and systems of equations , unquestionably plays an important role in mathematics; though we hasten to add that this is not all that mathematicians do! In this chapter we will develop an essentially complete theory of a particularly simple family of mathematical equations: namely, linear equations . This will serve as a somewhat indirect introduction to our study of linear algebra, as lurking below our parametric descriptions of solutions to linear systems lie vector space notions like subspace, span, and linear independence. Furthermore, we will introduce one of the most important computational tools of linear algebra: Gaussian elimination .    Systems of linear equations   Linear equations  linear equation   A linear expression in the unknowns (or variables) is an expression of the form , where are fixed real numbers.  A linear equation in the unknowns is an equation that can be simplified, using only addition and subtraction, to an equation of the form which we call its standard form . An equation in the unknowns is nonlinear if it cannot be simplified to the form using only addition and subtraction.  Given a linear equation with standard form , the equation is called homogeneous if , and nonhomogeneous if .     Linear and nonlinear equations      Consider . This is a linear equation in the unknowns . Its standard form is . Since the right-hand side is nonzero, we see that the equation is nonhomogeneous.    The equation is a nonlinear equation in the unknowns and .    The equation is nonlinear. Interestingly, however, the set of solutions to this equation is equal to the set of solutions to the linear equation . This illustrates that is concerned strictly with the form of an equation, and not with the solutions to that equation.       We next provide a precise definition of a solution of a linear equation. This definition will involve -tuples of real numbers.   Solutions to linear equations   A solution to a linear equation  is an -tuple of real numbers for which the variable assignment makes the equation true: , the tuple satisfies . We say  solves the equation in this case.    Given a linear equation , we will be interested in finding and describing the set of all of its solutions. As you may recall, a (nontrivial) linear equation in two unknowns defines a line in , and a (nontrivial) equation in three unknowns defines a plane in . These types of subsets (of and , respectively) have distinctive geometric properties that we will elucidate in coming sections. Generalizing this notion to an arbitrary number of unknowns leads to the notion of a hyperplane .   Hyperplane   A linear equation is nontrivial if for some . Given a nontrivial equation , the set of solutions is called a hyperplane in . We have the two following special cases, corresponding to and :   A hyperplane in is the set of solutions to a nontrivial equation , and is called a line .    A hyperplane in is the set of solutions to a nontrivial equation , and is called a plane .        Visualizing lines in  Let be a line: , is the solution to some nontrivial linear equation . Since the equation is nontrivial, we have or . If , we may put the equation in the form , in which case we recognize as the slope of and as the -intercept.  If , then , and the equation can be solved as , which we recognize as the vertical line passing through the point .   Lines in   Lines in R2       Visualizing planes in  Let be a plane defined by the nontrivial equation . We will describe two methods of visualizing . The first, more elementary approach might be described as the triangle method . This entails first finding by inspection three non-colinear points satisfying equation . The plane is then visualized by sketching the triangle in they define, and envisioning as the plane in containing this triangle. In practice we can find three such points by picking arbitrary values for two of the three variables, and solving for the third variable using .  For example, if is the plane with equation , we see easily that lie on , allowing us to produce the graph in .   Using Sage to visualize via normal vector  Visualizing      Leaning on your multivariable calculus background, we also recall a method of visualization using normal vectors. Since the equation is nontrivial, the vector is nonzero and is called a normal vector to the plane . The normal vector method for visualizing proceeds as follows: pick any point , and visualize as the set of all points such that the vector is orthogonal to . This allows us to identify as the plane passing through and orthogonal to .   Using Sage to visualize via normal vector  Visualizing via normal vector   A plane and its normal vector     Note: by invoking orthogonality, we might be accused of having gotten ahead of ourselves somewhat. Although we will take up the notion of orthogonality in full generality in , we are justified in using it in the context of , since this is treated in standard multivariable calculus courses.   Next we introduce linear systems , which are just collections of linear equations.   Systems of linear equations  linear system   A system of linear equations (or linear system ) is a set of linear equations. The linear system is homogeneous if each of its equations is homogeneous: , if for all .  A solution to the system is an -tuple that is a solution to each of the system's equations. We say  solves the system in this case.  A linear system is consistent if a solution to the system exists, and inconsistent otherwise.    When displaying a system of equations in the unknowns , we typically write each equation in standard form and align the corresponding terms of each equation into columns: A homogeneous system is thus typically written as:    Displaying linear systems  As indicated in , when displaying a system of equations in the unknowns , we typically write each individual equation in standard form and align the corresponding terms of each equation into columns. The presence of multiple equations and multiple unknowns necessitates the use of double-indexing for the coefficients appearing in the system. The following breakdown will hopefully help you orient yourself with respect to the double-indexing:   The appearing in and indicates the -th row in our displayed system, or equivalently, the -th equation.    The appearing in indicates the -th column in our displayed system, which is associated to the -th variable, for .       Solutions to elementary systems   For each system, compute the set of solutions.                 The first equation implies . Substituting for in the second equation, we would then have , a contradiction. Thus there are no solutions: i.e., is the empty set, denoted or .    The first equation implies . Making this substitution in the second equation yields , or . Thus is the unique solution, and .    The second equation is just twice the first. It follows that both equations have the exact same set of solutions, and so we need only find all solutions to . Note that we can set for any real number . Solving for in terms of we get for any , and thus , an infinite set!       The solutions to the the three linear systems of can be described qualitatively as follows: nonexistent, unique, and infinite. This turns out to be characteristic more generally of all linear systems. In other words, given a linear system , the set of solutions will take one of three qualitative forms:    : , there are no solutions and the system is inconsistent.     contains exactly one element: , there is a unique solution.     is infinite: , there are infinitely many solutions.   We will prove this in full rigor in . However, we get an inkling of why this should be true in the case of two or three unknowns, where we can put our geometric understanding to work. For example, consider a general system of equations in just two unknowns and : Assume for simplicity that each equation in the system is nontrivial, and thus that for each , the -th equation of this system defines a line . A solution of the system, being a solution of each equation , must lie on each of the lines . In other words, the set of solutions to the system is precisely the set of points lying in the common intersection of all of these lines. Thus our qualitative description of the set of solutions to this system amounts to the geometric fact that the intersection of any collection of lines in is either empty, contains a unique point, or is infinite. has you prove this geometric fact, as well as the analogous statement for systems of equations in three unknowns. For now we illustrate this by reexamining from a geometric point of view.   Solutions to elementary systems (again)   For each system in , use a geometric argument to determine how many solutions there are.    We proceed geometrically by observing that each equation in a given system defines a line, that a pair is a solution to the given equation if and only if it is a point on the corresponding line, and thus that a pair is a solution to both equations if and only if it is a point lying on both lines. Thus, geometrically speaking, the set of solutions to a given system is equal to the intersection of the two corresponding lines.   In this case the two lines and are parallel (and not equal to one another). It follows that their intersection is empty. We conclude that there are no solutions to the system.    In this case the two lines and are nonparallel. It follows that they intersect in a single point. We conclude that the system has a unique solution.    In this case the two equations and define the same line , and thus that their intersection is also equal to . The set of solutions to the system is then equal to the set of points of , which is infinite.         Row operations  In we were able to combine some simple logic and arithmetic to solve each system completely. Of course, things get more complicated as the number of equations and\/or unknowns in the system increases.  For example, consider the system Observe first that the triple is not a solution to the system; one easily checks that is satisfies the first and second equations, but not the third. Similarly, it is easy to verify that and are both solutions to the system. The question remains: How do we find all solutions to the linear system in a systematic way?   Notice the somewhat funny spacing in . This is in force in order to align the unknowns in separate columns. In general, when handed a linear system in the wild, your first step should be to write each equation in standard form, and make sure the unknowns are aligned vertically in this manner.    Some systems are easier to solve than others  Below you find two systems of three equations in three unknowns. The staircase pattern of allows us to solve easily by backwards substitution . In more detail:   Equation 3 in tells us that .    Now substitute into Equation 2 of and solve for to get .    Finally, substitute and into Equation 1 of and solve for to get . We conclude that is a solution to .    Furthermore, since at each step we had no choice in the matter ( must be equal to 2, then must be equal to 4, etc.), we see that in fact is the only solution to .   Our method for solving a more complicated system, like above, will be to transform it to a simpler system like .   Key point . In order for this method to work, we need to make sure that the transformed system has exactly the same solutions as the original system! To this end we will restrict our permissible transformations to the elementary operations define below.   Elementary operations on linear systems  elementary operations linear systems  elementary operations linear systems scalar multiplication  elementary operations linear systems equation swap  elementary operations linear systems equation addition  row reduction of systems   An elementary operation (or elementary row operation ) is one of the three types of operations on linear systems described below.   Scalar multiplication  Multiply an equation by a nonzero number : i.e., replace the -th equation of the system with for . Note: is the result of multiplying the left and right sides of equation by .    Equation swap  Swap the -th and -th equations of the system, : i.e., replace equation of the system with , and replace equation with .    Equation addition  Add a multiple of one equation to another: i.e., replace with for some , , and .   The act of transforming a system of equations using elementary operations is called reduction (or row reduction ).    After reducing a linear system using elementary operations, we are left with a new system . The systems and will generally look very different from one another. Note, however, that the two systems will have the same number of equations, and the same number of variables. More importantly, the two systems will have identical sets of solutions; that is, the set of solutions of the new system is identical to the set of solutions to !  To convince ourselves of this last assertion, it suffices to show that the application of any one of these elementary row operations produces a new system with exactly the same set of solutions as ; if this is so, then performing any finite sequence of elementary row operations must also preserve the set of solutions in this sense. makes this argument official. First we introduce the notion of equivalent linear systems , mainly to spare ourselves from the mouthful that is obtained by applying a finite sequence of elementary row operations .   Row equivalent linear systems   We say two systems of linear equations are row equivalent if the one can be obtained from the other by a finite sequence of elementary operations.     Row equivalence theorem   Row equivalent systems of linear equations have identical sets of solutions.    We prove by induction that if system is the result of applying elementary operations to system , , then and have the same set of solutions.   Base case:  In this case (we have applied no operations) and the statement is obvious.    Induction step  Assume that applying a sequence of elementary operations to a linear system preserves the set of solutions.  Suppose is the result of applying elementary operations to the system . Let be the result of applying the first of these operations. By the induction hypothesis, systems and have the same set of solutions.  Since the system is obtained from by applying exactly one elementary operation, it now suffices to show that applying a single row operation does not change the set of solutions to a linear system. This is the result of . (Note that a solution is provided to that exercise.)  We conclude that and have the same set of solutions, as desired.       Complete example  Consider again the linear system   We transform the system as as follows:   Now put the logic together. Our original linear system was transformed by a sequence of elementary row operations to a new system :   We saw already that the second system has exactly one solution, namely the triple .  Since transforming a system by row operations preserves solutions, the first and second systems have exactly the same solutions .  Thus is the only solution to the original system!    Notation  As we will see later, keeping track of the exact sequence of row operations is important in some situations. The notation used in the last example is useful for this bookkeeping. Let's explicate the notation somewhat.  The notation indicates that system is obtained from by replacing equation with .  The notation indicates that system is obtained from by swapping rows and .  The notation indicates that system is obtained from by replacing equation with .    Mandate  You may be tempted to do multiple operations in a single step during this procedure. Resist this temptation for now until we have a better understanding of things.  Furthermore, if later on you do give in to this temptation, make sure that the two (or more row operations) you perform are independent of one another. For example, do not swap with and replace with in the same step.     WeBWork Exercises      Determine whether the following system has no solution, an infinite number of solutions or a unique solution.                       Suppose that the following   is a consistent system. Then                  Find the set of solutions for the linear system  Use s1 , s2 , etc. for the free variables if necessary.   , ,                   SOLUTION: Equation 3 . Substitute into equation 2, . Substitute into equation 1, .            Give a geometric description of the following systems of equations                       Give a geometric description of the following system of equations                       Geometry of linear systems   In this exercise we will use the geometry of lines in and planes in to help analyze solutions to systems of equations in two and three unknowns, respectively.   Fix and consider a system of linear equations in the two unknowns and . What does a solution to this system of linear equations correspond to geometrically?    Use your interpretation in (a) to give a geometric argument that a system of equations in two unknowns will have either (i) zero solutions, (ii) exactly one solution, or (iii) infinitely many solutions.    Use your geometric interpretation to help produce explicit examples of systems in two variables satisfying these three different cases (i)-(iii).    Now repeat (a)-(b) for a system of linear equations in three variables .       (a) Geometrically, each equation in the system represents a line . A solution to the -th equation corresponds to a point on . Thus a solution to the system corresponds to a point lying on all of the lines: i.e., a point of intersection of the lines.  (b) First of all to prove the desired or statement it suffices to prove that if the number of solutions is greater than 1, then there are infinitely many solutions.  Now suppose there is more than one solution. Then there are at least two different solutions: and . Take any of the two lines . By above the intersection of and contains and . But two distinct lines intersect in at most one point. It follows that and must be equal. Since and were arbitrary, it follows all of the lines are in fact the same line . But this means the common intersection of the lines is , which has infinitely many points. It follows that the system has infinitely many solutions.  (c) We will get 0 solutions if the system includes two different parallel lines: e.g., and .  We will get exactly one solution when the slopes of each line in the system are distinct.  We will get infinitely many solutions when all equations in the system represent the same line . This happens when all equations are multiples of one another.  (d) Now each equation in our system defines a plane . A solution to the system corresponds to a point of intersection of the planes. We recall two facts from Euclidean geometry:   Fact 1  Given two distinct points, there is a unique line containing both of them.    Fact 2  Given any number of distinct planes, they either do not intersect, or intersect in a line.     We proceed as in part (b) above: that is show that if there are two distinct solutions to the system, then there are infinitely many solutions. First, for simplicity, we may assume that the equations define distinct planes; if we have two equations defining the same plane, we can delete one of them and not change the set of solutions to the system.  Now suppose and are two distinct solutions to the system. Let be the unique line containing and (Fact 1). I claim that is precisely the set of solutions to the system. To see this, take any two equations in the system and . Since the two corresponding planes are distinct, and intersect in at least the points and , they must intersect in a line (Fact 2); since this line contains and , it must be the line (Fact 1). Thus any two planes in the system intersect in the line . From this it follows that: (a) a point satisfying the system must lie in ; and (b) all points on satisfy the system (since we have shown that lies in all the planes). It follows that is precisely the set of solutions, and hence that there are infinitely many solutions.     Row operations preserve solutions   We made the claim that each of our three row operations   scalar multiplication ( for ),    swap ( ),    addition ( for some )   do not change the set of solutions of a linear system. To prove this claim, let be a general linear system . Now consider each type of row operation separately, write down the new system you get by applying this row operation, and prove that an -tuple is a solution to the original system if and only if it is a solution to the new system .    Let be the original system with equations . For each specified row operation, we will call the resulting new system and its equations .   Row swap  In this case systems and have exactly the same equations, just written in a different order. Thus the -tuple satisfies if and only if it satisfies each of the equations , if and only if it satisfies each of the equations , since these are the same equations! It follows that is a solution of if and only if it is a solution to .    Scalar multiplication  In this case for all , and for some . Since only the -th equation has changed, it suffices to show that is a solution to if and only if is a solution to . Let's prove each direction of this if and only if separately.  If satisfies , then . Multiplying both sides by we see that and hence that is also a solution of .  For the other direction, if satisfies , then Now, since , we can multiply both sides of this equation by to see that and hence that is a solution to .    Row addition  The only equation of that differs from is . Writing this equation out in terms of coefficients gives us . Now if satisfies , then it satisfies and , in which case evaluating the RHS of the above at yields showing that satisfies . Now suppose satisfies . Since satisfies , we have Since satisfies , we have Substituting into the equation above we get , and hence . This shows that satisfies . It follows that satisfies .      Nonlinear systems  A nonlinear system of equations is a collection of equations, at least one of which is nonlinear. Our definition of a solution to a linear system generalizes easily to any system of equations.   Consider the following nonlinear system in the unknowns : .   Sketch the graphs of each of the two equations in the system on a common coordinate system.    Describe geometrically what a solution to the system is in terms of your sketch. Explain your reasoning. How many solutions to the system are there, according to your sketch?    Compute the set of all solutions to the system algebraically.       Now consider a more general system where are fixed constants and at least one of or is nonzero.    Explain geometrically what a solution to the system corresponds to in terms of the graphs of its two equations.    Use your geometric interpretation in (i) to argue that the system has either 0, 1, or 2 solutions. Give explicit examples of such systems corresponding to each of these three cases.         Not all arithmetic operations preserve solutions   In this exercise we investigate how the operation of squaring both sides of an equation changes the set of solutions. Let represent a general equation (linear or nonlinear) in the unknowns , let be the equation obtained by squaring both sides of the , let be the set of solutions to , and let be the set of solutions to .    Show that .    Given an explicit example of an equation of the form in two variables for which .        "
 },
 {
   "id": "d_lin-equation",
@@ -1429,7 +1429,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "2.1.5",
   "title": "Visualizing lines in <span class=\"process-math\">\\(\\R^2\\)<\/span>.",
-  "body": " Visualizing lines in  Let be a line: , is the solution to some nontrivial linear equation . Since the equation is nontrivial, we have or . If , we may put the equation in the form , in which case we recognize as the slope of and as the -intercept. If , then , and the equation can be solved as , which we recognize as the vertical line passing through the point .  It is easy to see that the equation defining is homogenous if and only if is a point on : , is defined by a homogeneous equation if and only if it passes through the origin.   Lines in   Lines in R2     "
+  "body": " Visualizing lines in  Let be a line: , is the solution to some nontrivial linear equation . Since the equation is nontrivial, we have or . If , we may put the equation in the form , in which case we recognize as the slope of and as the -intercept.  If , then , and the equation can be solved as , which we recognize as the vertical line passing through the point .   Lines in   Lines in R2     "
 },
 {
   "id": "eg_vis_plane",
@@ -1438,14 +1438,14 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "2.1.7",
   "title": "Visualizing planes in <span class=\"process-math\">\\(\\R^3\\)<\/span>.",
-  "body": " Visualizing planes in  Let be a plane defined by the nontrivial equation . Later we will describe an approach to visualizing in terms of its normal vector  . For now we recall a more elementary approach. Namely, simply find by inspection three non-colinear points satisfying , sketch the triangle in they define, and then envision as the plane in containing this triangle. In practice we can find three such points by picking arbitrary values for two of the three variables, and solving for the third variable using .  For example, if is the plane with equation , we see easily that lie on , allowing us to produce the graph in .  As with lines, it is easy to see that the equation defining is homogeneous if and only if passes through the origin .   Using Sage to visualize via normal vector  Visualizing       "
+  "body": " Visualizing planes in  Let be a plane defined by the nontrivial equation . We will describe two methods of visualizing . The first, more elementary approach might be described as the triangle method . This entails first finding by inspection three non-colinear points satisfying equation . The plane is then visualized by sketching the triangle in they define, and envisioning as the plane in containing this triangle. In practice we can find three such points by picking arbitrary values for two of the three variables, and solving for the third variable using .  For example, if is the plane with equation , we see easily that lie on , allowing us to produce the graph in .   Using Sage to visualize via normal vector  Visualizing      Leaning on your multivariable calculus background, we also recall a method of visualization using normal vectors. Since the equation is nontrivial, the vector is nonzero and is called a normal vector to the plane . The normal vector method for visualizing proceeds as follows: pick any point , and visualize as the set of all points such that the vector is orthogonal to . This allows us to identify as the plane passing through and orthogonal to .   Using Sage to visualize via normal vector  Visualizing via normal vector   A plane and its normal vector     Note: by invoking orthogonality, we might be accused of having gotten ahead of ourselves somewhat. Although we will take up the notion of orthogonality in full generality in , we are justified in using it in the context of , since this is treated in standard multivariable calculus courses.  "
 },
 {
   "id": "d_lin-sys",
   "level": "2",
   "url": "s_systems.html#d_lin-sys",
   "type": "Definition",
-  "number": "2.1.9",
+  "number": "2.1.10",
   "title": "Systems of linear equations.",
   "body": " Systems of linear equations  linear system   A system of linear equations (or linear system ) is a set of linear equations. The linear system is homogeneous if each of its equations is homogeneous: , if for all .  A solution to the system is an -tuple that is a solution to each of the system's equations. We say  solves the system in this case.  A linear system is consistent if a solution to the system exists, and inconsistent otherwise.   "
 },
@@ -1454,7 +1454,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#ss_linear_equations-13",
   "type": "Remark",
-  "number": "2.1.10",
+  "number": "2.1.11",
   "title": "Displaying linear systems.",
   "body": " Displaying linear systems  As indicated in , when displaying a system of equations in the unknowns , we typically write each individual equation in standard form and align the corresponding terms of each equation into columns. The presence of multiple equations and multiple unknowns necessitates the use of double-indexing for the coefficients appearing in the system. The following breakdown will hopefully help you orient yourself with respect to the double-indexing:   The appearing in and indicates the -th row in our displayed system, or equivalently, the -th equation.    The appearing in indicates the -th column in our displayed system, which is associated to the -th variable, for .     "
 },
@@ -1463,7 +1463,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#s_systems_eg_2eqns2varss",
   "type": "Example",
-  "number": "2.1.11",
+  "number": "2.1.12",
   "title": "Solutions to elementary systems.",
   "body": " Solutions to elementary systems   For each system, compute the set of solutions.                 The first equation implies . Substituting for in the second equation, we would then have , a contradiction. Thus there are no solutions: i.e., is the empty set, denoted or .    The first equation implies . Making this substitution in the second equation yields , or . Thus is the unique solution, and .    The second equation is just twice the first. It follows that both equations have the exact same set of solutions, and so we need only find all solutions to . Note that we can set for any real number . Solving for in terms of we get for any , and thus , an infinite set!      "
 },
@@ -1472,7 +1472,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#eg_system_of_lines",
   "type": "Example",
-  "number": "2.1.12",
+  "number": "2.1.13",
   "title": "Solutions to elementary systems (again).",
   "body": " Solutions to elementary systems (again)   For each system in , use a geometric argument to determine how many solutions there are.    We proceed geometrically by observing that each equation in a given system defines a line, that a pair is a solution to the given equation if and only if it is a point on the corresponding line, and thus that a pair is a solution to both equations if and only if it is a point lying on both lines. Thus, geometrically speaking, the set of solutions to a given system is equal to the intersection of the two corresponding lines.   In this case the two lines and are parallel (and not equal to one another). It follows that their intersection is empty. We conclude that there are no solutions to the system.    In this case the two lines and are nonparallel. It follows that they intersect in a single point. We conclude that the system has a unique solution.    In this case the two equations and define the same line , and thus that their intersection is also equal to . The set of solutions to the system is then equal to the set of points of , which is infinite.      "
 },
@@ -1481,7 +1481,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#ss_row_equivalence-4",
   "type": "Remark",
-  "number": "2.1.13",
+  "number": "2.1.14",
   "title": "",
   "body": " Notice the somewhat funny spacing in . This is in force in order to align the unknowns in separate columns. In general, when handed a linear system in the wild, your first step should be to write each equation in standard form, and make sure the unknowns are aligned vertically in this manner.  "
 },
@@ -1490,7 +1490,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#d_eqops",
   "type": "Definition",
-  "number": "2.1.14",
+  "number": "2.1.15",
   "title": "Elementary operations on linear systems.",
   "body": " Elementary operations on linear systems  elementary operations linear systems  elementary operations linear systems scalar multiplication  elementary operations linear systems equation swap  elementary operations linear systems equation addition  row reduction of systems   An elementary operation (or elementary row operation ) is one of the three types of operations on linear systems described below.   Scalar multiplication  Multiply an equation by a nonzero number : i.e., replace the -th equation of the system with for . Note: is the result of multiplying the left and right sides of equation by .    Equation swap  Swap the -th and -th equations of the system, : i.e., replace equation of the system with , and replace equation with .    Equation addition  Add a multiple of one equation to another: i.e., replace with for some , , and .   The act of transforming a system of equations using elementary operations is called reduction (or row reduction ).   "
 },
@@ -1499,7 +1499,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#d_rowequivalent",
   "type": "Definition",
-  "number": "2.1.15",
+  "number": "2.1.16",
   "title": "Row equivalent linear systems.",
   "body": " Row equivalent linear systems   We say two systems of linear equations are row equivalent if the one can be obtained from the other by a finite sequence of elementary operations.   "
 },
@@ -1508,7 +1508,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#s_systems_th_rowops",
   "type": "Theorem",
-  "number": "2.1.16",
+  "number": "2.1.17",
   "title": "Row equivalence theorem.",
   "body": " Row equivalence theorem   Row equivalent systems of linear equations have identical sets of solutions.    We prove by induction that if system is the result of applying elementary operations to system , , then and have the same set of solutions.   Base case:  In this case (we have applied no operations) and the statement is obvious.    Induction step  Assume that applying a sequence of elementary operations to a linear system preserves the set of solutions.  Suppose is the result of applying elementary operations to the system . Let be the result of applying the first of these operations. By the induction hypothesis, systems and have the same set of solutions.  Since the system is obtained from by applying exactly one elementary operation, it now suffices to show that applying a single row operation does not change the set of solutions to a linear system. This is the result of . (Note that a solution is provided to that exercise.)  We conclude that and have the same set of solutions, as desired.    "
 },
@@ -1517,7 +1517,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#eg_systems_eg_long",
   "type": "Example",
-  "number": "2.1.17",
+  "number": "2.1.18",
   "title": "Complete example.",
   "body": " Complete example  Consider again the linear system   We transform the system as as follows:   Now put the logic together. Our original linear system was transformed by a sequence of elementary row operations to a new system :   We saw already that the second system has exactly one solution, namely the triple .  Since transforming a system by row operations preserves solutions, the first and second systems have exactly the same solutions .  Thus is the only solution to the original system!  "
 },
@@ -1526,7 +1526,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#s_systems_notation_rowops",
   "type": "Remark",
-  "number": "2.1.18",
+  "number": "2.1.19",
   "title": "Notation.",
   "body": " Notation  As we will see later, keeping track of the exact sequence of row operations is important in some situations. The notation used in the last example is useful for this bookkeeping. Let's explicate the notation somewhat.  The notation indicates that system is obtained from by replacing equation with .  The notation indicates that system is obtained from by swapping rows and .  The notation indicates that system is obtained from by replacing equation with .  "
 },
@@ -1535,7 +1535,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#s_systems_rm_oneoperation",
   "type": "Remark",
-  "number": "2.1.19",
+  "number": "2.1.20",
   "title": "Mandate.",
   "body": " Mandate  You may be tempted to do multiple operations in a single step during this procedure. Resist this temptation for now until we have a better understanding of things.  Furthermore, if later on you do give in to this temptation, make sure that the two (or more row operations) you perform are independent of one another. For example, do not swap with and replace with in the same step.  "
 },
@@ -1544,7 +1544,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#ss_systems_ww-2",
   "type": "WeBWorK",
-  "number": "2.1.20",
+  "number": "2.1.21",
   "title": "",
   "body": "    Determine whether the following system has no solution, an infinite number of solutions or a unique solution.                  "
 },
@@ -1553,7 +1553,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#ss_systems_ww-3",
   "type": "WeBWorK",
-  "number": "2.1.21",
+  "number": "2.1.22",
   "title": "",
   "body": "    Suppose that the following   is a consistent system. Then             "
 },
@@ -1562,7 +1562,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#ss_systems_ww-4",
   "type": "WeBWorK",
-  "number": "2.1.22",
+  "number": "2.1.23",
   "title": "",
   "body": "    Find the set of solutions for the linear system  Use s1 , s2 , etc. for the free variables if necessary.   , ,                   SOLUTION: Equation 3 . Substitute into equation 2, . Substitute into equation 1, .       "
 },
@@ -1571,7 +1571,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#ss_systems_ww-5",
   "type": "WeBWorK",
-  "number": "2.1.23",
+  "number": "2.1.24",
   "title": "",
   "body": "    Give a geometric description of the following systems of equations                  "
 },
@@ -1580,7 +1580,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_systems.html#ss_systems_ww-6",
   "type": "WeBWorK",
-  "number": "2.1.24",
+  "number": "2.1.25",
   "title": "",
   "body": "    Give a geometric description of the following system of equations                  "
 },
@@ -1612,9 +1612,9 @@ var ptx_lunr_docs = [
   "body": " Nonlinear systems  A nonlinear system of equations is a collection of equations, at least one of which is nonlinear. Our definition of a solution to a linear system generalizes easily to any system of equations.   Consider the following nonlinear system in the unknowns : .   Sketch the graphs of each of the two equations in the system on a common coordinate system.    Describe geometrically what a solution to the system is in terms of your sketch. Explain your reasoning. How many solutions to the system are there, according to your sketch?    Compute the set of all solutions to the system algebraically.       Now consider a more general system where are fixed constants and at least one of or is nonzero.    Explain geometrically what a solution to the system corresponds to in terms of the graphs of its two equations.    Use your geometric interpretation in (i) to argue that the system has either 0, 1, or 2 solutions. Give explicit examples of such systems corresponding to each of these three cases.       "
 },
 {
-  "id": "s_systems_ex-1-5",
+  "id": "s_systems_ex-1-4",
   "level": "2",
-  "url": "s_systems.html#s_systems_ex-1-5",
+  "url": "s_systems.html#s_systems_ex-1-4",
   "type": "Exercise",
   "number": "2.1.4.4",
   "title": "Not all arithmetic operations preserve solutions.",
@@ -1627,7 +1627,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.2",
   "title": "Gaussian elimination",
-  "body": " Gaussian elimination   In we sketched a procedure for solving a linear system . That procedure involved applying a sequence of row operations to to obtain a simpler system .  We will fill out this sketch in the next two sections. Specifically, we will   describe precisely what we mean by a simpler system,    provide an algorithm (or recipe) that decides exactly what sequence of row operations to apply to obtain this simpler system,    explain how to find all solutions of the resulting simpler system.       Row echelon matrices  Our first step in this direction will be to introduce a notational convenience. As you may have noticed, when performing row operations on a system of equations, we essentially treat the unknowns, as well as the plus and equals symbols, as placeholders; the only things that actually change in a given step are the coefficients in the equations. The augmented matrix associated to a linear system is a formal way of extracting just the information of the coefficients from a linear system.   Augmented matrix  augmented matrix    augmented matrix    Let be the linear system . The augmented matrix associated to  is the matrix .     As defined more thoroughly in , a matrix is just a rectangular array of numbers.    Note that a system of equations in unknowns gives rise to an augmented matrix that has rows (one row for each equation) and columns (one column for each unknown and an additional column for the right-hand side constants ). The vertical line in the augmented matrix helps distinguish between the columns corresponding to unknowns (to the left of the vertical line) and the column of constants (to the right of the vertical line). When we wish to further emphasize this distinction among the columns, we will label the first columns with their corresponding variable name as in .   Augmented matrix with labeled columns   Augmented matrix with labeled columns      Here is our precise formulation of a simple linear system; it is a system whose associated augmented matrix is in row echelon form , as described below.   Row echelon form   A zero row of a matrix, is a row whose entries are all equal to zero; a nonzero row is a row that contains at least one nonzero entry.  A matrix is in row echelon form if the following conditions hold.  (i)  In any nonzero row the first (i.e., leftmost) nonzero entry is equal to one. A leading one of a matrix is such an entry: i.e., an entry of a row that is equal to one, and that is also the first nonzero entry of that row.   (ii)  All zero rows are grouped together at the bottom of the matrix.   (iii)  Given any two nonzero rows in the matrix, the leading one of the lower row occurs strictly to the right of the leading one of the row above it.     A matrix is in reduced row echelon form if in addition to conditions (i)-(iii) it also satisfies the following condition.   (iv) Any column of the matrix that contains a leading one has zeros elsewhere. In other words, if a column contains a leading one, then that is the only nonzero entry of that column.    A linear system is in row echelon form (resp. reduced row echelon form ) if its augmented matrix is in row echelon form (resp. reduced row echelon form).    A matrix in row echelon form displays a staircase pattern of ones as illustrated in .  Staircase pattern of row echelon form   Staircase pattern of row echelon form    In practice to decide whether a matrix is in in (reduced) row echelon form, follow these steps:   First verify whether all zero rows are at the bottom.    For each nonzero row, determine whether the first nonzero entry is a 1, and put a box around it.    Make sure your boxes make a staircase pattern.    (For reduced row echelon form only.) Decide whether each column with a box has 0's everywhere else.      Row echelon versus reduced row echelon form   For each matrix decide (a) whether it is in row echelon form, and (b) whether it is in reduced row echelon form.                  Below you find the matrix with leading ones boxed. This matrix fails to be in row echelon form (and hence also reduced row echelon form) for a variety of reasons: the zero rows are not all grouped at the bottom; the first row is nonzero, but does not have a leading one; the leading one of the fourth row is to the left of the leading one of the leading one in the row above it.     Below you find the matrix with leading ones boxed. This matrix is in row echelon form: the zero rows (rows 4 and 5) are grouped at the bottom; each nonzero row has a leading one (boxed in the matrix below); the leading ones step strictly to the right as we move down the rows. The matrix is not in reduced row echelon form, as the last column contains a leading one in its third row, and a nonzero entry in its first row.        Gaussian elimination  We will now describe a systematic procedure, called Gaussian elimination , that allows us to reduce a given linear system to a system in row echelon form. In keeping with the foregoing discussion, we will identify a system with its augmented matrix . Furthermore, reducing a linear system using elementary operations on equations is now cast as performing elementary row operations on matrices. At the risk of redundancy we now officially translate a number of our former notions regarding reduction of linear systems to the setting of matrices.   Elementary row operations on matrices  elementary row operations  elementary row operations scalar multiplication  elementary row operations row swap  elementary row operations row addition  row reduction of matrices  row equivalence of matrices   An elementary row operation is one of the three following types of matrix operations. Let be a given matrix, and denote by the -th row of .    Scalar multplication  Multiply a row by a nonzero number : i.e., replace with , the result of multiplying all entries of the row by .    Row swap  Swap two rows of .    Row addition  Add a multiple of one row to another: i.e., replace with for some , , and .    The act of transforming a matrix using elementary row operations is called row reduction .  Two matrices are row equivalent if the one can be obtained from the other by performing a finite sequence of elementary row operations.     Notation    scalar multiplication     row swap     replace with  Our former elementary operation notation easily transfers to row operations on matrices. The expressions denote the operations that replace row in with , swap rows and in , and replace in with , respectively.  At last we are ready to define Gaussian elimination. In its essence this is simply a procedure, or algorithm , that takes an input matrix and row reduces it to a matrix in row echelon form. It is important to note that although we employ Gaussian elimination in this chapter primarily to the end of simplifying and solving linear systems, this is not its only application. Indeed, we will come back to the procedure again and again, in a great variety of contexts and to greatly diverse ends. Gaussian elimination is one of linear algebra's most important tools. We memorialize this here as an official principle.   Gaussian elimination mantra   Gaussian elimination is the workhorse of linear algebra.     Gaussian elimination  Gaussian elimination    Gaussian elimination is the algorithm described below. It takes as an input a matrix and returns as an output a row equivalent matrix in row echelon form.    Step 1  Find the leftmost nonzero column and perform a row swap to move the row with this nonzero entry to the top of the matrix.    Step 2  Scale the new top row to produce a leading one in the row. Call this new row .    Step 3  For each row below perform a row operation of the form to replace all entries below the leading one of with zeros.    Step 4  Begin again with Step 1 applied to the matrix consisting of all rows below . Continue until the matrix is in row echelon form.       Model example  Use the following example as a model of how to both perform and annotate the steps in Gaussian elimination. When first learning this procedure, make sure to follow it to the letter . In particular, in the spirit of the mandate issued in , you should only perform one row operation at a time, and only in the sequence prescribed in Steps 1-4 of .   Row echelon form  We use Gaussian elimination to reduce the linear system to a system in row echelon form.  First we apply Gaussian elimination to the augmented matrix associated to our system. . We conclude that our original system is equivalent to the system , which is in row echelon form.   The matrix outputted by Gaussian elimination is guaranteed to be in row echelon form, but it may not be in reduced row echelon form. Gauss-Jordan elimination describes a systematic way to continue reducing to this even simpler state.    Gauss-Jordan elimination    Gauss-Jordan elimination is the algorithm described below. It takes as an input a matrix and returns a row equivalent matrix in reduced row echelon form.    Steps 1-4  Apply Gaussian elimination to transform to a matrix in row echelon form.    Step 5  Find the rightmost column of the matrix containing a leading one. Let be the row containing this leading one. For each row above perform a row operation of the form to replace all entries above the leading one with zeros.    Step 6  Begin again with Step 5 applied to the next column to the left that contains a leading one. Continue until the matrix is in reduced row echelon form.       Reduced row echelon form  We continue our work in to reach a matrix in reduced row echelon form. . Notice that the resulting system is slightly simpler than the system in row echelon form of : .    and are really theorems in disguise, and we make this official in .   Row equivalent matrix forms     Row echelon forms exist  Any matrix is row equivalent to a matrix in row echelon form. Indeed, Gaussian elimination row reduces any matrix to a matrix in row echelon form.    Reduced row echelon forms exist  Any matrix is row equivalent to a matrix in reduced row echelon form. Indeed, Gauss-Jordan elimination row reduces any matrix to a matrix in reduced row echelon form.    Reduced row echelon forms are unique  Any matrix is row equivalent to a unique matrix in reduced row echelon form.      We will make heavy use of the first two results of . The proofs of these statements are not difficult, but not especially illuminating. Accordingly we omit them here, and point the interested reader to Robert Beezer's A First Course in Linear Algebra . (See Theorem REMEF .)  The third statement of , that every matrix is row equivalent to a unique matrix in reduced row echelon form, does in fact have an enlightening proof. We will postpone this proof, however, until we have a little more theory at our disposal. (See .) Until then we will conscientiously not make use of this fact when developing any of our further theory.   Row echelon form is not unique   Show that a matrix may be row equivalent to two or more matrices in row echelon form.    Take . This row reduces to using Gaussian elimination; and it row reduces further to using Gauss-Jordan elimination. Thus we see that is row equivalent to two different matrices in row echelon form. (According to , the matrix is the only matrix in reduced row echelon that is row equivalent to .)     Gaussian elimination  In the first Sage cell below you find a recursive implementation of Gaussian elimination in Sage that includes explanatory comments. Evaluate this cell in order to load the row_echelon_form function. The second cell allows you to apply the Gaussian elimination algorithm to a matrix of your choosing. As you can see, the show function provides a nice latex version of the output.    Sage has its own row reduction method, rref , which transforms a matrix to reduced row echelon form. Let's compare the outputs of these two algorithms.   The following activities could be useful for implementing Gaussian elimination in a manner that shows all intervening steps. Use the empty Sage cell below to experiment.   Modify the row_echelon_form code to make a non-recursive algorithm.    Add show commands to your non-recursive version of row_echelon_form to show steps in the row reduction.         WeBWork Exercises      Determine if the matrix   is in echelon form, reduced row echelon form, or neither. Choose the most appropriate answer.  Answer:  select   echelon form   reduced row echelon form   not in echelon form  .        SOLUTION: Reduced row echelon form.                On the augmented matrix below , perform all three row operations in the order given, ((a) followed by (b) followed by (c)) and then write the resulting augmented matrix.                                                                                               Written Exercises    Explain why each of the following matrices fails to be in row echelon form.          The first nonzero term in the second row is not a one.                       For each of the given linear systems, find an equivalent system in row echelon form. Use augmented matrices and follow the Gaussian elimination algorithm to the letter.          First bring the system into standard form: . Then perform Gaussian elimination on the associated augmented matrix: . The corresponding equivalent system is .                                   "
+  "body": " Gaussian elimination   In we sketched a procedure for solving a linear system . That procedure involved applying a sequence of row operations to to obtain a simpler system .  We will fill out this sketch in the next two sections. Specifically, we will   describe precisely what we mean by a simpler system,    provide an algorithm (or recipe) that decides exactly what sequence of row operations to apply to obtain this simpler system,    explain how to find all solutions of the resulting simpler system.       Row echelon matrices  Our first step in this direction will be to introduce a notational convenience. As you may have noticed, when performing row operations on a system of equations, we essentially treat the unknowns, as well as the plus and equals symbols, as placeholders; the only things that actually change in a given step are the coefficients in the equations. The augmented matrix associated to a linear system is a formal way of extracting just the information of the coefficients from a linear system.   Augmented matrix  augmented matrix    augmented matrix    Let be the linear system . The augmented matrix associated to  is the matrix .     Note that a system of equations in unknowns gives rise to an augmented matrix that has rows (one row for each equation) and columns (one column for each unknown and an additional column for the right-hand side constants ). The vertical line in the augmented matrix helps distinguish between the columns corresponding to unknowns (to the left of the vertical line) and the column of constants (to the right of the vertical line). When we wish to further emphasize this distinction among the columns, we will label the first columns with their corresponding variable name as in .   Augmented matrix with labeled columns   Augmented matrix with labeled columns      Here is our precise formulation of a simple linear system; it is a system whose associated augmented matrix is in row echelon form , as described below.   Row echelon form   A zero row of a matrix, is a row whose entries are all equal to zero; a nonzero row is a row that contains at least one nonzero entry.  A matrix is in row echelon form if the following conditions hold.  (i)  In any nonzero row the first (i.e., leftmost) nonzero entry is equal to one. A leading one of a matrix is such an entry: i.e., an entry of a row that is equal to one, and that is also the first nonzero entry of that row.   (ii)  All zero rows are grouped together at the bottom of the matrix.   (iii)  Given any two nonzero rows in the matrix, the leading one of the lower row occurs strictly to the right of the leading one of the row above it.     A matrix is in reduced row echelon form if in addition to conditions (i)-(iii) it also satisfies the following condition.   (iv) Any column of the matrix that contains a leading one has zeros elsewhere. In other words, if a column contains a leading one, then that is the only nonzero entry of that column.    A linear system is in row echelon form (resp. reduced row echelon form ) if its augmented matrix is in row echelon form (resp. reduced row echelon form).    A matrix in row echelon form displays a staircase pattern of ones as illustrated in .  Staircase pattern of row echelon form   Staircase pattern of row echelon form    In practice to decide whether a matrix is in in (reduced) row echelon form, follow these steps:   First verify whether all zero rows are at the bottom.    For each nonzero row, determine whether the first nonzero entry is a 1, and put a box around it.    Make sure your boxes make a staircase pattern.    (For reduced row echelon form only.) Decide whether each column with a box has 0's everywhere else.      Row echelon versus reduced row echelon form   For each matrix decide (a) whether it is in row echelon form, and (b) whether it is in reduced row echelon form.                  Below you find the matrix with leading ones boxed. This matrix fails to be in row echelon form (and hence also reduced row echelon form) for a variety of reasons: the zero rows are not all grouped at the bottom; the first row is nonzero, but does not have a leading one; the leading one of the fourth row is to the left of the leading one of the leading one in the row above it.     Below you find the matrix with leading ones boxed. This matrix is in row echelon form: the zero rows (rows 4 and 5) are grouped at the bottom; each nonzero row has a leading one (boxed in the matrix below); the leading ones step strictly to the right as we move down the rows. The matrix is not in reduced row echelon form, as the last column contains a leading one in its third row, and a nonzero entry in its first row.        Gaussian elimination  We will now describe a systematic procedure, called Gaussian elimination , that allows us to reduce a given linear system to a system in row echelon form. In keeping with the foregoing discussion, we will identify a system with its augmented matrix . Furthermore, reducing a linear system using elementary operations on equations is now cast as performing elementary row operations on matrices. At the risk of redundancy we now officially translate a number of our former notions regarding reduction of linear systems to the setting of matrices.   Elementary row operations on matrices  elementary row operations  elementary row operations scalar multiplication  elementary row operations row swap  elementary row operations row addition  row reduction of matrices  row equivalence of matrices   An elementary row operation is one of the three following types of matrix operations. Let be a given matrix, and denote by the -th row of .    Scalar multplication  Multiply a row by a nonzero number : i.e., replace with , the result of multiplying all entries of the row by .    Row swap  Swap two rows of .    Row addition  Add a multiple of one row to another: i.e., replace with for some , , and .    The act of transforming a matrix using elementary row operations is called row reduction .  Two matrices are row equivalent if the one can be obtained from the other by performing a finite sequence of elementary row operations.     Notation    scalar multiplication     row swap     replace with  Our former elementary operation notation easily transfers to row operations on matrices. The expressions denote the operations that replace row in with , swap rows and in , and replace in with , respectively.  At last we are ready to define Gaussian elimination. In its essence this is simply a procedure, or algorithm , that takes an input matrix and row reduces it to a matrix in row echelon form. It is important to note that although we employ Gaussian elimination in this chapter primarily to the end of simplifying and solving linear systems, this is not its only application. Indeed, we will come back to the procedure again and again, in a great variety of contexts and to greatly diverse ends. Gaussian elimination is one of linear algebra's most important tools. We memorialize this here as an official principle.   Gaussian elimination mantra   Gaussian elimination is the workhorse of linear algebra.     Gaussian elimination  Gaussian elimination    Gaussian elimination is the algorithm described below. It takes as an input a matrix and returns as an output a row equivalent matrix in row echelon form.    Step 1  Find the leftmost nonzero column and perform a row swap to move the row with this nonzero entry to the top of the matrix.    Step 2  Scale the new top row to produce a leading one in the row. Call this new row .    Step 3  For each row below perform a row operation of the form to replace all entries below the leading one of with zeros.    Step 4  Begin again with Step 1 applied to the matrix consisting of all rows below . Continue until the matrix is in row echelon form.       Model example  Use the following example as a model of how to both perform and annotate the steps in Gaussian elimination. When first learning this procedure, make sure to follow it to the letter . In particular, in the spirit of the mandate issued in , you should only perform one row operation at a time, and only in the sequence prescribed in Steps 1-4 of .   Row echelon form  We use Gaussian elimination to reduce the linear system to a system in row echelon form.  First we apply Gaussian elimination to the augmented matrix associated to our system. . We conclude that our original system is equivalent to the system , which is in row echelon form.   The matrix outputted by Gaussian elimination is guaranteed to be in row echelon form, but it may not be in reduced row echelon form. Gauss-Jordan elimination describes a systematic way to continue reducing to this even simpler state.    Gauss-Jordan elimination    Gauss-Jordan elimination is the algorithm described below. It takes as an input a matrix and returns a row equivalent matrix in reduced row echelon form.    Steps 1-4  Apply Gaussian elimination to transform to a matrix in row echelon form.    Step 5  Find the rightmost column of the matrix containing a leading one. Let be the row containing this leading one. For each row above perform a row operation of the form to replace all entries above the leading one with zeros.    Step 6  Begin again with Step 5 applied to the next column to the left that contains a leading one. Continue until the matrix is in reduced row echelon form.       Reduced row echelon form  We continue our work in to reach a matrix in reduced row echelon form. . Notice that the resulting system is slightly simpler than the system in row echelon form of : .    and are really theorems in disguise, and we make this official in .   Row equivalent matrix forms     Row echelon forms exist  Any matrix is row equivalent to a matrix in row echelon form. Indeed, Gaussian elimination row reduces any matrix to a matrix in row echelon form.    Reduced row echelon forms exist  Any matrix is row equivalent to a matrix in reduced row echelon form. Indeed, Gauss-Jordan elimination row reduces any matrix to a matrix in reduced row echelon form.    Reduced row echelon forms are unique  Any matrix is row equivalent to a unique matrix in reduced row echelon form.      We will make heavy use of the first two results of . The proofs of these statements are not difficult, but not especially illuminating. Accordingly we omit them here, and point the interested reader to Robert Beezer's A First Course in Linear Algebra . (See Theorem REMEF .)  The third statement of , that every matrix is row equivalent to a unique matrix in reduced row echelon form, does in fact have an enlightening proof. We will postpone this proof, however, until we have a little more theory at our disposal. (See .) Until then we will conscientiously not make use of this fact when developing any of our further theory.   Row echelon form is not unique   Show that a matrix may be row equivalent to two or more matrices in row echelon form.    Take . This row reduces to using Gaussian elimination; and it row reduces further to using Gauss-Jordan elimination. Thus we see that is row equivalent to two different matrices in row echelon form. (According to , the matrix is the only matrix in reduced row echelon that is row equivalent to .)     Gaussian elimination  In the first Sage cell below you find a recursive implementation of Gaussian elimination in Sage that includes explanatory comments. Evaluate this cell in order to load the row_echelon_form function. The second cell allows you to apply the Gaussian elimination algorithm to a matrix of your choosing. As you can see, the show function provides a nice latex version of the output.    Sage has its own row reduction method, rref , which transforms a matrix to reduced row echelon form. Let's compare the outputs of these two algorithms.   The following activities could be useful for implementing Gaussian elimination in a manner that shows all intervening steps. Use the empty Sage cell below to experiment.   Modify the row_echelon_form code to make a non-recursive algorithm.    Add show commands to your non-recursive version of row_echelon_form to show steps in the row reduction.         WeBWork Exercises      Determine if the matrix   is in echelon form, reduced row echelon form, or neither. Choose the most appropriate answer.  Answer:  select   echelon form   reduced row echelon form   not in echelon form  .        SOLUTION: Reduced row echelon form.                On the augmented matrix below , perform all three row operations in the order given, ((a) followed by (b) followed by (c)) and then write the resulting augmented matrix.                                                                                                 Explain why each of the following matrices fails to be in row echelon form.          The first nonzero term in the second row is not a one.                       For each of the given linear systems, find an equivalent system in row echelon form. Use augmented matrices and follow the Gaussian elimination algorithm to the letter.          First bring the system into standard form: . Then perform Gaussian elimination on the associated augmented matrix: . The corresponding equivalent system is .                                   "
 },
 {
   "id": "d_augmented_matrix",
@@ -1639,20 +1639,11 @@ var ptx_lunr_docs = [
   "body": " Augmented matrix  augmented matrix    augmented matrix    Let be the linear system . The augmented matrix associated to  is the matrix .   "
 },
 {
-  "id": "s_ge_rm_see_def",
+  "id": "ss_ge_row_echelon-4",
   "level": "2",
-  "url": "s_ge.html#s_ge_rm_see_def",
+  "url": "s_ge.html#ss_ge_row_echelon-4",
   "type": "Remark",
   "number": "2.2.2",
-  "title": "",
-  "body": " As defined more thoroughly in , a matrix is just a rectangular array of numbers.  "
-},
-{
-  "id": "ss_ge_row_echelon-5",
-  "level": "2",
-  "url": "s_ge.html#ss_ge_row_echelon-5",
-  "type": "Remark",
-  "number": "2.2.3",
   "title": "",
   "body": " Note that a system of equations in unknowns gives rise to an augmented matrix that has rows (one row for each equation) and columns (one column for each unknown and an additional column for the right-hand side constants ). The vertical line in the augmented matrix helps distinguish between the columns corresponding to unknowns (to the left of the vertical line) and the column of constants (to the right of the vertical line). When we wish to further emphasize this distinction among the columns, we will label the first columns with their corresponding variable name as in .   Augmented matrix with labeled columns   Augmented matrix with labeled columns     "
 },
@@ -1661,7 +1652,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#d_row_echelon",
   "type": "Definition",
-  "number": "2.2.5",
+  "number": "2.2.4",
   "title": "Row echelon form.",
   "body": " Row echelon form   A zero row of a matrix, is a row whose entries are all equal to zero; a nonzero row is a row that contains at least one nonzero entry.  A matrix is in row echelon form if the following conditions hold.  (i)  In any nonzero row the first (i.e., leftmost) nonzero entry is equal to one. A leading one of a matrix is such an entry: i.e., an entry of a row that is equal to one, and that is also the first nonzero entry of that row.   (ii)  All zero rows are grouped together at the bottom of the matrix.   (iii)  Given any two nonzero rows in the matrix, the leading one of the lower row occurs strictly to the right of the leading one of the row above it.     A matrix is in reduced row echelon form if in addition to conditions (i)-(iii) it also satisfies the following condition.   (iv) Any column of the matrix that contains a leading one has zeros elsewhere. In other words, if a column contains a leading one, then that is the only nonzero entry of that column.    A linear system is in row echelon form (resp. reduced row echelon form ) if its augmented matrix is in row echelon form (resp. reduced row echelon form).   "
 },
@@ -1670,16 +1661,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#fig_echelon",
   "type": "Figure",
-  "number": "2.2.6",
+  "number": "2.2.5",
   "title": "",
   "body": " Staircase pattern of row echelon form   Staircase pattern of row echelon form    "
 },
 {
-  "id": "ss_ge_row_echelon-9",
+  "id": "ss_ge_row_echelon-8",
   "level": "2",
-  "url": "s_ge.html#ss_ge_row_echelon-9",
+  "url": "s_ge.html#ss_ge_row_echelon-8",
   "type": "Example",
-  "number": "2.2.7",
+  "number": "2.2.6",
   "title": "Row echelon versus reduced row echelon form.",
   "body": " Row echelon versus reduced row echelon form   For each matrix decide (a) whether it is in row echelon form, and (b) whether it is in reduced row echelon form.                  Below you find the matrix with leading ones boxed. This matrix fails to be in row echelon form (and hence also reduced row echelon form) for a variety of reasons: the zero rows are not all grouped at the bottom; the first row is nonzero, but does not have a leading one; the leading one of the fourth row is to the left of the leading one of the leading one in the row above it.     Below you find the matrix with leading ones boxed. This matrix is in row echelon form: the zero rows (rows 4 and 5) are grouped at the bottom; each nonzero row has a leading one (boxed in the matrix below); the leading ones step strictly to the right as we move down the rows. The matrix is not in reduced row echelon form, as the last column contains a leading one in its third row, and a nonzero entry in its first row.     "
 },
@@ -1688,7 +1679,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#d_rowops",
   "type": "Definition",
-  "number": "2.2.8",
+  "number": "2.2.7",
   "title": "Elementary row operations on matrices.",
   "body": " Elementary row operations on matrices  elementary row operations  elementary row operations scalar multiplication  elementary row operations row swap  elementary row operations row addition  row reduction of matrices  row equivalence of matrices   An elementary row operation is one of the three following types of matrix operations. Let be a given matrix, and denote by the -th row of .    Scalar multplication  Multiply a row by a nonzero number : i.e., replace with , the result of multiplying all entries of the row by .    Row swap  Swap two rows of .    Row addition  Add a multiple of one row to another: i.e., replace with for some , , and .    The act of transforming a matrix using elementary row operations is called row reduction .  Two matrices are row equivalent if the one can be obtained from the other by performing a finite sequence of elementary row operations.   "
 },
@@ -1697,7 +1688,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#s_ge_notation",
   "type": "Remark",
-  "number": "2.2.9",
+  "number": "2.2.8",
   "title": "Notation.",
   "body": " Notation    scalar multiplication     row swap     replace with  Our former elementary operation notation easily transfers to row operations on matrices. The expressions denote the operations that replace row in with , swap rows and in , and replace in with , respectively. "
 },
@@ -1706,7 +1697,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#princ_GE",
   "type": "Mantra",
-  "number": "2.2.10",
+  "number": "2.2.9",
   "title": "Gaussian elimination mantra.",
   "body": " Gaussian elimination mantra   Gaussian elimination is the workhorse of linear algebra.   "
 },
@@ -1715,7 +1706,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#d_GE",
   "type": "Procedure",
-  "number": "2.2.11",
+  "number": "2.2.10",
   "title": "Gaussian elimination.",
   "body": " Gaussian elimination  Gaussian elimination    Gaussian elimination is the algorithm described below. It takes as an input a matrix and returns as an output a row equivalent matrix in row echelon form.    Step 1  Find the leftmost nonzero column and perform a row swap to move the row with this nonzero entry to the top of the matrix.    Step 2  Scale the new top row to produce a leading one in the row. Call this new row .    Step 3  For each row below perform a row operation of the form to replace all entries below the leading one of with zeros.    Step 4  Begin again with Step 1 applied to the matrix consisting of all rows below . Continue until the matrix is in row echelon form.     "
 },
@@ -1724,7 +1715,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#eg_model_example",
   "type": "Example",
-  "number": "2.2.12",
+  "number": "2.2.11",
   "title": "Row echelon form.",
   "body": " Row echelon form  We use Gaussian elimination to reduce the linear system to a system in row echelon form.  First we apply Gaussian elimination to the augmented matrix associated to our system. . We conclude that our original system is equivalent to the system , which is in row echelon form.  "
 },
@@ -1733,7 +1724,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#d_GaussJordan",
   "type": "Procedure",
-  "number": "2.2.13",
+  "number": "2.2.12",
   "title": "Gauss-Jordan elimination.",
   "body": " Gauss-Jordan elimination    Gauss-Jordan elimination is the algorithm described below. It takes as an input a matrix and returns a row equivalent matrix in reduced row echelon form.    Steps 1-4  Apply Gaussian elimination to transform to a matrix in row echelon form.    Step 5  Find the rightmost column of the matrix containing a leading one. Let be the row containing this leading one. For each row above perform a row operation of the form to replace all entries above the leading one with zeros.    Step 6  Begin again with Step 5 applied to the next column to the left that contains a leading one. Continue until the matrix is in reduced row echelon form.     "
 },
@@ -1742,7 +1733,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#eg_model_rref",
   "type": "Example",
-  "number": "2.2.14",
+  "number": "2.2.13",
   "title": "Reduced row echelon form.",
   "body": " Reduced row echelon form  We continue our work in to reach a matrix in reduced row echelon form. . Notice that the resulting system is slightly simpler than the system in row echelon form of : .  "
 },
@@ -1751,7 +1742,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#th_matrixforms",
   "type": "Theorem",
-  "number": "2.2.15",
+  "number": "2.2.14",
   "title": "Row equivalent matrix forms.",
   "body": " Row equivalent matrix forms     Row echelon forms exist  Any matrix is row equivalent to a matrix in row echelon form. Indeed, Gaussian elimination row reduces any matrix to a matrix in row echelon form.    Reduced row echelon forms exist  Any matrix is row equivalent to a matrix in reduced row echelon form. Indeed, Gauss-Jordan elimination row reduces any matrix to a matrix in reduced row echelon form.    Reduced row echelon forms are unique  Any matrix is row equivalent to a unique matrix in reduced row echelon form.     "
 },
@@ -1760,7 +1751,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#s_ge_ex_REFnotunique",
   "type": "Example",
-  "number": "2.2.16",
+  "number": "2.2.15",
   "title": "Row echelon form is not unique.",
   "body": " Row echelon form is not unique   Show that a matrix may be row equivalent to two or more matrices in row echelon form.    Take . This row reduces to using Gaussian elimination; and it row reduces further to using Gauss-Jordan elimination. Thus we see that is row equivalent to two different matrices in row echelon form. (According to , the matrix is the only matrix in reduced row echelon that is row equivalent to .)   "
 },
@@ -1778,7 +1769,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#ss_ge_ww-2",
   "type": "WeBWorK",
-  "number": "2.2.17",
+  "number": "2.2.16",
   "title": "",
   "body": "   Determine if the matrix   is in echelon form, reduced row echelon form, or neither. Choose the most appropriate answer.  Answer:  select   echelon form   reduced row echelon form   not in echelon form  .        SOLUTION: Reduced row echelon form.       "
 },
@@ -1787,32 +1778,32 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#ss_ge_ww-3",
   "type": "WeBWorK",
-  "number": "2.2.18",
+  "number": "2.2.17",
   "title": "",
   "body": "    On the augmented matrix below , perform all three row operations in the order given, ((a) followed by (b) followed by (c)) and then write the resulting augmented matrix.                                                                                           "
 },
 {
-  "id": "s_ge_ex-1-2-2",
+  "id": "s_ge_ex-1-1-2",
   "level": "2",
-  "url": "s_ge.html#s_ge_ex-1-2-2",
+  "url": "s_ge.html#s_ge_ex-1-1-2",
   "type": "Exercise",
   "number": "2.2.4.1",
   "title": "",
   "body": "       The first nonzero term in the second row is not a one.   "
 },
 {
-  "id": "s_ge_ex-1-2-3",
+  "id": "s_ge_ex-1-1-3",
   "level": "2",
-  "url": "s_ge.html#s_ge_ex-1-2-3",
+  "url": "s_ge.html#s_ge_ex-1-1-3",
   "type": "Exercise",
   "number": "2.2.4.2",
   "title": "",
   "body": "       "
 },
 {
-  "id": "s_ge_ex-1-2-4",
+  "id": "s_ge_ex-1-1-4",
   "level": "2",
-  "url": "s_ge.html#s_ge_ex-1-2-4",
+  "url": "s_ge.html#s_ge_ex-1-1-4",
   "type": "Exercise",
   "number": "2.2.4.3",
   "title": "",
@@ -1828,36 +1819,36 @@ var ptx_lunr_docs = [
   "body": "       First bring the system into standard form: . Then perform Gaussian elimination on the associated augmented matrix: . The corresponding equivalent system is .   "
 },
 {
-  "id": "s_ge_ex-1-3-3",
+  "id": "s_ge_ex-1-2-3",
   "level": "2",
-  "url": "s_ge.html#s_ge_ex-1-3-3",
+  "url": "s_ge.html#s_ge_ex-1-2-3",
   "type": "Exercise",
   "number": "2.2.4.5",
   "title": "",
   "body": "      "
 },
 {
-  "id": "s_ge_ex-1-3-4",
+  "id": "s_ge_ex-1-2-4",
   "level": "2",
-  "url": "s_ge.html#s_ge_ex-1-3-4",
+  "url": "s_ge.html#s_ge_ex-1-2-4",
   "type": "Exercise",
   "number": "2.2.4.6",
   "title": "",
   "body": "      "
 },
 {
-  "id": "s_ge_ex-1-3-5",
+  "id": "s_ge_ex-1-2-5",
   "level": "2",
-  "url": "s_ge.html#s_ge_ex-1-3-5",
+  "url": "s_ge.html#s_ge_ex-1-2-5",
   "type": "Exercise",
   "number": "2.2.4.7",
   "title": "",
   "body": "      "
 },
 {
-  "id": "s_ge_ex-1-3-6",
+  "id": "s_ge_ex-1-2-6",
   "level": "2",
-  "url": "s_ge.html#s_ge_ex-1-3-6",
+  "url": "s_ge.html#s_ge_ex-1-2-6",
   "type": "Exercise",
   "number": "2.2.4.8",
   "title": "",
@@ -1870,7 +1861,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.3",
   "title": "Solving linear systems",
-  "body": " Solving linear systems   Let's continue with our model example . Summarizing the various steps, we have . The new system in row echelon form is undoubtedly simpler, but describing all of its solutions still requires some subtle analysis.    Model example continued  We begin by illustrating the general method for solving a linear system, continuing with our model example . A careful description of the procedure, along with a proof of its validity, is found in .  A key first step involves separating the variables of the system into free and leading variables.   Free and leading variables   variables  leading    variables  free    Let be a linear system in the unknowns , and let be its associated augmented matrix. Assume (and hence ) is in row echelon form.  The unknown is a leading variable if the corresponding column in (i.e., the -th column) contains a leading one; it is a free variable if the corresponding column in does not contain a leading one.     Free and leading variables   Let be the linear system in the unknowns with augmented matrix . Then are leading variables, since the first, second, and fourth columns of have leading ones, as indicated by the boxes. The variable is free since the third column of has no leading one.     Solving linear systems  In our model example we transformed the original system to the equivalent system below: . The free variables of are and ; the leading variables are , and . Observe that if we assign and , where and are any real numbers, then we are left with a system in three unknowns ( ) of the form . Using back-substitution, we see that the unknowns are then uniquely expressed in terms of and as Thus for any choice of real numbers and we get a unique solution of the form . We conclude the set of solutions to is given as Alternatively, we can describe the solutions to with the parametric equations  .    Mandate  parametric equations  Get used to describing solutions to linear systems using either the set notation format of or the parametric equation format of .  Note also the distinct roles played by free and leading variables in the description of solutions. We assign each free variable freely to any choice of real parameters ( and in our example), and then solve for the leading variables in terms of these parameters in a unique manner. In particular, the leading variables are completely determined by our assignment of free variables.     General method for solving linear systems  Before describing a precise algorithm for computing the set of solutions to a linear system, we must address the possibility that there are no solutions to the system whatsoever. Such a system is called inconsistent .   Consistent and inconsistent systems  consistent  inconsistent   A linear system is consistent if it has at least one solution; it is inconsistent if it has no solutions.    We are now in a position to describe an algorithm for computing the set of solutions of a linear system.   Solving linear systems   Let be a linear system in the unknowns , and let be the set of all solutions of . We compute as follows.    Step 1  Apply Gaussian elimination to reduce to an equivalent system in row echelon form.    Step 2  Let be the augmented matrix associated to . If the last column of has a leading one, then is inconsistent: , is the empty set. Otherwise, proceed to the next step.    Step 3  Determine which if any of the unknowns are free variables of .    Step 4  If there are no free variables, solve for each unknown using back-substitution. In this case, there is a unique solution to : , contains exactly one element.  Otherwise, let be the leading variables of , and let be the free variables. Back-substitution allows us to express each leading variable in terms of the free variables. In other words, we can write , where each is a linear expression in the free variables. Each solution of thus corresponds to a unique variable assignment of the form , where are any real numbers.       First recall that and have the same set of solutions ( ). So it suffices to show that the algorithm returns the correct set of solutions to .  Regarding consistency: if the last column of the augmented matrix associated to has a leading one in the -th row, then the corresponding equation in is Clearly this equation has no solutions, and hence the set of solutions to is empty.  Suppose now that the last column of does not have a leading one.   Case 1: no free variables   Suppose in Step 3 you determine that there are no free variables. Then each of the first columns of has a leading one in it. If follows that for each the -th equation of is of the form Since does not have a leading one in the last column, it follows that all equations beyond the -th equation are of the form , and as such may be disregarded since they are satisfied by any choice of the . The remaining system of equations in unknowns can be solved by back-substitution, yielding a unique solution of the form Do not concern yourself overly with the exact formulas. The important point here is that once we know there is a unique assignment of the variables that satisfies the system, allows us to solve for in terms of the the , . As such working our way up from the last equation, we find there is a unique solution to the system.     Case 2: free variables  Suppose now that are the leading variables of , and are the free variables. Again, since does not have a leading one in the last column, there are exactly nonzero equations in : one for each leading variable. After bringing any terms involving free variables to the right, the -th such equation takes the form . As in the previous case, back-substitution now allows us to solve for each leading variable as a function of the free variables: This new system of equations clearly has the same set of solutions as (and ), since it was obtained from by deleting zero rows of and using only addition and subtraction operations. Furthermore, it is clear that any assignment of the free variables extends uniquely to the solution of that further assigns . The idea behind uniqueness here, is that once you assign values to the free variables, the values of the leading variables are completely determined by the equations .  Lastly, we show that every solution of (and ) is obtained in this way. Suppose is a solution. According to the discussion above must be the unique solution to corresponding to the free variable assignment and corresponding leading variable assignment .     Video: solving linear systems    Video: solving linear systems  Video: solving linear systems       Video: solving linear systems    Video: solving linear systems 2  Video: solving linear systems 2       Solving linear systems  Sage has a number of means of solving systems of equations, both linear and nonlinear. In the cell below we compute the set of solutions to this section's working example. Note that the three equations are entered as a list.   Notice that the algorithm used here does not seem to follow the method we describe: the unknowns and are set as free parameters r1 and r2 , and the rest of the unknowns are expressed in terms of these. The solve routine in Sage allows for an additional option that selects a specific algorithm for solving the system. In the next cell, we specify the sympy algorithm and get an answer more in line with our example.   Now all unknowns are expressed in terms of the second and fourth unknowns and , which are treated as free variables, just as in our computed example.  Lastly, we can take a matrix approach with Sage to solve the system. Below we create the augmented matrix associated to our starting system and then reduce the system to reduced row echelon form using the rref method. From there it is a simple matter of assigning parameter names and using back-substitution, as described in . We will elaborate this method further in     In addition to providing a recipe for describing the full set of solutions to a linear system, also tells us that qualitatively this set must take one of three forms: the set is empty (inconsistent, no solutions); there is a unique solution (consistent, no free variables); there are infinitely many solutions (consistent, free variables). We record this fact, useful in its own right, as a corollary.   , , or -many solutions   Let be a linear system of equations, let be an equivalent system in row reduced form, and let be the augmented matrix associated to .  The system has either no solutions, exactly one solution, or infinitely many solutions. In more detail:    If has a leading one in its last column, then has no solutions.    If does not have a leading one in its last column and has no free variables, then has a unique solution.    If does not have a leading one in its last column and has a free variable, then has infinitely many solutions.      The decision tree in concisely summarizes the different cases articulated in .   Decision tree for number of solutions to a system  Decision tree for the number of solutions to a linear system with augmented matrix in row echelon form.       Consider the special case of a homogeneous system Such a system is always consistent. Why? Observe that is guaranteed to be a solution. Alternatively, it is easy to see that row reducing the system results in an augmented matrix whose last column is a zero column: a zero column certainly contains no leading ones. Thus, in the special case of a homogeneous system, boils down to the following result.   Solutions to homogeneous equations   Fix a homogeneous linear system in variables. There are two possibilities:   if all the variables are leading variables, then the system has a unique solution (i.e., solution);    if there is a free variable, then the system has infinitely many solutions.         Vector parametrization description  Consider again the solution set to the linear system in , which we described using parametric equations as , and using set building notation as . Using the vector space structure of , we can give yet another description of the general solution: . We will call this the vector parametrization description of the solution set. This description is obtained in steps by first breaking up the expression into a constant vector plus a vector involving the parameters and , and then rewriting the latter as a linear combination of two vectors with and as the coefficients: . The solution set of any consistent linear system can be described in this manner. In general, given a consistent system in unknowns with free variables, the general solution of the system is given by a vector parametrization of the form . The vector parametrization leads to a useful geometric understanding of the set of solutions to a linear system. The point can be thought of as a particular solution to the equation: the solution you obtain by choosing in . The general solution is then obtained by adding to the point any linear combination of the vectors .   Vector parametrization  Consider the linear equation . The corresponding augmented matrix of this equation is , which is already in row echelon form. Using , we see that the general solution is . This vector parametrization description allows us to visualize the plane with equation as the set of all points obtained by translating the point by various linear combinations of and . In this manner, the two vectors and determine a (non-rectangular) grid on .  Vector parametrization of plane    Vector parametrization of plane         WeBWork Exercises      Solve the following system using augmented matrix methods:  (a) The initial matrix is:              (b) First, perform the Row Operation . The resulting matrix is:              (c) Next, perform the operation . The resulting matrix is:              (d) Finish simplifying the augmented matrix to reduced row echelon form. The reduced matrix is:              (e) How many solutions does the system have? If infinitely many, enter \"Infinity\".  (f) What are the solutions to the system?  If there are no solutions, write \"No Solution\" or \"None\" for each answer. If there are infinitely many solutions let and solve for in terms of .                                                                                                                                                       Solve the following system using augmented matrix methods:  (a) The initial matrix is:                      (b) First, perform the Row Operation . The resulting matrix is:                      (c) Next, perform the operations   .  The resulting matrix is:                      (d) Finish simplifying the augmented matrix down to reduced row echelon form. The reduced matrix is:                      Remember: This matrix must be simplified all the way to reduced form.  (e) How many solutions does the system have? If infinitely many, enter \"Infinity\". If none, enter 0.  (f) What are the solutions of the system?        Note: In part (f), if there are no solutions, write \"No Solution\" or \"None\" in the answer blank after each equal sign. If there are infinitely many solutions, and the solution set describes a line (that is, if there is only one free variable), set and solve for the remaining variables in terms of . If there are infinitely many solutions, and the solution set describes a plane (that is, if the solution set has two free variables), set the variables and , and then solve for in terms of and .                                                                                                                                                                                                                                                                                Solve  = , = , = , = .                                Determine whether the following system has no solution, an infinite number of solutions or a unique solution.                         Written Exercises   Solving linear systems   Solve the following systems of equations.   When row reducing follow Gaussian elimination to the letter.    Make sure to indicate how variables are sorted into free and leading variables.    Express your answer in both the parametric equation format and set notation format.             We saw in that the system is equivalent to a system with augmented matrix . The row echelon matrix tells us that is the only free variable of . Back substitution then yields the parametric equation description: . Thus the set of solutions is .                                   For each system below determine all values of for which the system below has (a) no solutions, (b) a unique solution, and (c) infinitely many solutions.                Show that a linear system with more unknowns than equations has either 0 solutions or infinitely many solutions.       True or false. If true, provide a proof; if false, provide an explicit counterexample.    Every matrix has a unique row echelon form.    Any homogeneous linear system with more unknowns than equations has infinitely many solutions.    If a homogeneous linear system of equations in unknowns has a corresponding augmented matrix with a reduced row echelon form containing leading ones, then the linear system has the unique solution .    All leading ones in of a matrix in row echelon form must occur in distinct columns.    If the reduced row echelon form of the augmented matrix for a linear system has a zero row, then the system must have infinitely many solutions.    If a linear system has more unknowns than equations, then it must have infinitely many solutions.        Interpret each matrix below as an augmented matrix of a linear system. Asterisks represent an unspecified real number. For each matrix, determine whether the corresponding system is consistent or inconsistent. If the system is consistent, decide further whether the solution is unique or not. If there is not enough information answer inconclusive and back up your claim by giving an explicit example where the system is consistent, and an explicit example where the system is inconsistent.                            What condition must and satisfy in order for the system below to be consistent? Express your answer as an equation involving and .       Solve the system of equations below for , , and .     First replace the given nonlinear system with a linear one using a change of variable substitution.      If is a matrix with three rows and five columns, then what is the maximum possible number of leading ones in its reduced row echelon form? Justify your answer.  Provide an explicit example of a matrix that attains this maximum number of leading ones.      If is a matrix with three rows and six columns, then what is the maximum possible number of free variables in the general solution of the linear system with augmented matrix ? Justify your answer.  Provide an explicit example of a matrix that attains this maximal number of free variables.      If is a matrix with five rows and three columns, then what is the minimum possible number of zero rows in any row echelon form of ?  Provide an explicit example of a matrix that attains this minimal number of zero rows.      "
+  "body": " Solving linear systems   Let's continue with our model example . Summarizing the various steps, we have . The new system in row echelon form is undoubtedly simpler, but describing all of its solutions still requires some subtle analysis.    Model example continued  We begin by illustrating the general method for solving a linear system, continuing with our model example . A careful description of the procedure, along with a proof of its validity, is found in .  A key first step involves separating the variables of the system into free and leading variables.   Free and leading variables   variables  leading    variables  free    Let be a linear system in the unknowns , and let be its associated augmented matrix. Assume (and hence ) is in row echelon form.  The unknown is a leading variable if the corresponding column in (i.e., the -th column) contains a leading one; it is a free variable if the corresponding column in does not contain a leading one.     Free and leading variables   Let be the linear system in the unknowns with augmented matrix . Then are leading variables, since the first, second, and fourth columns of have leading ones, as indicated by the boxes. The variable is free since the third column of has no leading one.     Solving linear systems  In our model example we transformed the original system to the equivalent system below: . The free variables of are and ; the leading variables are , and . Observe that if we assign and , where and are any real numbers, then we are left with a system in three unknowns ( ) of the form . Using back-substitution, we see that the unknowns are then uniquely expressed in terms of and as Thus for any choice of real numbers and we get a unique solution of the form . We conclude the set of solutions to is given as Alternatively, we can describe the solutions to with the parametric equations  .    Mandate  parametric equations  Get used to describing solutions to linear systems using either the set notation format of or the parametric equation format of .  Note also the distinct roles played by free and leading variables in the description of solutions. We assign each free variable freely to any choice of real parameters ( and in our example), and then solve for the leading variables in terms of these parameters in a unique manner. In particular, the leading variables are completely determined by our assignment of free variables.     General method for solving linear systems  Before describing a precise algorithm for computing the set of solutions to a linear system, we must address the possibility that there are no solutions to the system whatsoever. Such a system is called inconsistent .   Consistent and inconsistent systems  consistent  inconsistent   A linear system is consistent if it has at least one solution; it is inconsistent if it has no solutions.    We are now in a position to describe an algorithm for computing the set of solutions of a linear system.   Solving linear systems   Let be a linear system in the unknowns , and let be the set of all solutions of . We compute as follows.    Step 1  Apply Gaussian elimination to reduce to an equivalent system in row echelon form.    Step 2  Let be the augmented matrix associated to . If the last column of has a leading one, then is inconsistent: , is the empty set. Otherwise, proceed to the next step.    Step 3  Determine which if any of the unknowns are free variables of .    Step 4  If there are no free variables, solve for each unknown using back-substitution. In this case, there is a unique solution to : , contains exactly one element.  Otherwise, let be the leading variables of , and let be the free variables. Back-substitution allows us to express each leading variable in terms of the free variables. In other words, we can write , where each is a linear expression in the free variables. Each solution of thus corresponds to a unique variable assignment of the form , where are any real numbers.       First recall that and have the same set of solutions ( ). So it suffices to show that the algorithm returns the correct set of solutions to .  Regarding consistency: if the last column of the augmented matrix associated to has a leading one in the -th row, then the corresponding equation in is Clearly this equation has no solutions, and hence the set of solutions to is empty.  Suppose now that the last column of does not have a leading one.   Case 1: no free variables   Suppose in Step 3 you determine that there are no free variables. Then each of the first columns of has a leading one in it. If follows that for each the -th equation of is of the form Since does not have a leading one in the last column, it follows that all equations beyond the -th equation are of the form , and as such may be disregarded since they are satisfied by any choice of the . The remaining system of equations in unknowns can be solved by back-substitution, yielding a unique solution of the form Do not concern yourself overly with the exact formulas. The important point here is that once we know there is a unique assignment of the variables that satisfies the system, allows us to solve for in terms of the the , . As such working our way up from the last equation, we find there is a unique solution to the system.     Case 2: free variables  Suppose now that are the leading variables of , and are the free variables. Again, since does not have a leading one in the last column, there are exactly nonzero equations in : one for each leading variable. After bringing any terms involving free variables to the right, the -th such equation takes the form . As in the previous case, back-substitution now allows us to solve for each leading variable as a function of the free variables: This new system of equations clearly has the same set of solutions as (and ), since it was obtained from by deleting zero rows of and using only addition and subtraction operations. Furthermore, it is clear that any assignment of the free variables extends uniquely to the solution of that further assigns . The idea behind uniqueness here, is that once you assign values to the free variables, the values of the leading variables are completely determined by the equations .  Lastly, we show that every solution of (and ) is obtained in this way. Suppose is a solution. According to the discussion above must be the unique solution to corresponding to the free variable assignment and corresponding leading variable assignment .     Video: solving linear systems    Video: solving linear systems  Video: solving linear systems       Video: solving linear systems    Video: solving linear systems 2  Video: solving linear systems 2       Solving linear systems  Sage has a number of means of solving systems of equations, both linear and nonlinear. In the cell below we compute the set of solutions to this section's working example. Note that the three equations are entered as a list.   Notice that the algorithm used here does not seem to follow the method we describe: the unknowns and are set as free parameters r1 and r2 , and the rest of the unknowns are expressed in terms of these. The solve routine in Sage allows for an additional option that selects a specific algorithm for solving the system. In the next cell, we specify the sympy algorithm and get an answer more in line with our example.   Now all unknowns are expressed in terms of the second and fourth unknowns and , which are treated as free variables, just as in our computed example.  Lastly, we can take a matrix approach with Sage to solve the system. Below we create the augmented matrix associated to our starting system and then reduce the system to reduced row echelon form using the rref method. From there it is a simple matter of assigning parameter names and using back-substitution, as described in . We will elaborate this method further in     In addition to providing a recipe for describing the full set of solutions to a linear system, also tells us that qualitatively this set must take one of three forms: the set is empty (inconsistent, no solutions); there is a unique solution (consistent, no free variables); there are infinitely many solutions (consistent, free variables). We record this fact, useful in its own right, as a corollary.   , , or -many solutions   Let be a linear system of equations, let be an equivalent system in row reduced form, and let be the augmented matrix associated to .  The system has either no solutions, exactly one solution, or infinitely many solutions. In more detail:    If has a leading one in its last column, then has no solutions.    If does not have a leading one in its last column and has no free variables, then has a unique solution.    If does not have a leading one in its last column and has a free variable, then has infinitely many solutions.      The decision tree in concisely summarizes the different cases articulated in .   Decision tree for number of solutions to a system  Decision tree for the number of solutions to a linear system with augmented matrix in row echelon form.       Consider the special case of a homogeneous system Such a system is always consistent. Why? Observe that is guaranteed to be a solution. Alternatively, it is easy to see that row reducing the system results in an augmented matrix whose last column is a zero column: a zero column certainly contains no leading ones. Thus, in the special case of a homogeneous system, boils down to the following result.   Solutions to homogeneous equations   Fix a homogeneous linear system in variables. There are two possibilities:   if all the variables are leading variables, then the system has a unique solution (i.e., solution);    if there is a free variable, then the system has infinitely many solutions.         Vector parametrization description  Consider again the solution set to the linear system in , which we described using parametric equations as , and using set building notation as . Using the vector space structure of , we can give yet another description of the general solution: . We will call this the vector parametrization description of the solution set. This description is obtained in steps by first breaking up the expression into a constant vector plus a vector involving the parameters and , and then rewriting the latter as a linear combination of two vectors with and as the coefficients: . The solution set of any consistent linear system can be described in this manner. In general, given a consistent system in unknowns with free variables, the general solution of the system is given by a vector parametrization of the form . The vector parametrization leads to a useful geometric understanding of the set of solutions to a linear system. The point can be thought of as a particular solution to the equation: the solution you obtain by choosing in . The general solution is then obtained by adding to the point any linear combination of the vectors .   Vector parametrization  Consider the linear equation . The corresponding augmented matrix of this equation is , which is already in row echelon form. Using , we see that the general solution is . This vector parametrization description allows us to visualize the plane with equation as the set of all points obtained by translating the point by various linear combinations of and . In this manner, the two vectors and determine a (non-rectangular) grid on .  Vector parametrization of plane    Vector parametrization of plane         WeBWork Exercises      Solve the following system using augmented matrix methods:  (a) The initial matrix is:              (b) First, perform the Row Operation . The resulting matrix is:              (c) Next, perform the operation . The resulting matrix is:              (d) Finish simplifying the augmented matrix to reduced row echelon form. The reduced matrix is:              (e) How many solutions does the system have? If infinitely many, enter \"Infinity\".  (f) What are the solutions to the system?  If there are no solutions, write \"No Solution\" or \"None\" for each answer. If there are infinitely many solutions let and solve for in terms of .                                                                                                                                                       Solve the following system using augmented matrix methods:  (a) The initial matrix is:                      (b) First, perform the Row Operation . The resulting matrix is:                      (c) Next, perform the operations   .  The resulting matrix is:                      (d) Finish simplifying the augmented matrix down to reduced row echelon form. The reduced matrix is:                      Remember: This matrix must be simplified all the way to reduced form.  (e) How many solutions does the system have? If infinitely many, enter \"Infinity\". If none, enter 0.  (f) What are the solutions of the system?        Note: In part (f), if there are no solutions, write \"No Solution\" or \"None\" in the answer blank after each equal sign. If there are infinitely many solutions, and the solution set describes a line (that is, if there is only one free variable), set and solve for the remaining variables in terms of . If there are infinitely many solutions, and the solution set describes a plane (that is, if the solution set has two free variables), set the variables and , and then solve for in terms of and .                                                                                                                                                                                                                                                                                Solve  = , = , = , = .                                Determine whether the following system has no solution, an infinite number of solutions or a unique solution.                          Solving linear systems   Solve the following systems of equations.   When row reducing follow Gaussian elimination to the letter.    Make sure to indicate how variables are sorted into free and leading variables.    Express your answer in both the parametric equation format and set notation format.             We saw in that the system is equivalent to a system with augmented matrix . The row echelon matrix tells us that is the only free variable of . Back substitution then yields the parametric equation description: . Thus the set of solutions is .                                   For each system below determine all values of for which the system below has (a) no solutions, (b) a unique solution, and (c) infinitely many solutions.                Show that a linear system with more unknowns than equations has either 0 solutions or infinitely many solutions.       True or false. If true, provide a proof; if false, provide an explicit counterexample.    Every matrix has a unique row echelon form.    Any homogeneous linear system with more unknowns than equations has infinitely many solutions.    If a homogeneous linear system of equations in unknowns has a corresponding augmented matrix with a reduced row echelon form containing leading ones, then the linear system has the unique solution .    All leading ones in of a matrix in row echelon form must occur in distinct columns.    If the reduced row echelon form of the augmented matrix for a linear system has a zero row, then the system must have infinitely many solutions.    If a linear system has more unknowns than equations, then it must have infinitely many solutions.        Interpret each matrix below as an augmented matrix of a linear system. Asterisks represent an unspecified real number. For each matrix, determine whether the corresponding system is consistent or inconsistent. If the system is consistent, decide further whether the solution is unique or not. If there is not enough information answer inconclusive and back up your claim by giving an explicit example where the system is consistent, and an explicit example where the system is inconsistent.                            What condition must and satisfy in order for the system below to be consistent? Express your answer as an equation involving and .       Solve the system of equations below for , , and .     First replace the given nonlinear system with a linear one using a change of variable substitution.      If is a matrix with three rows and five columns, then what is the maximum possible number of leading ones in its reduced row echelon form? Justify your answer.  Provide an explicit example of a matrix that attains this maximum number of leading ones.      If is a matrix with three rows and six columns, then what is the maximum possible number of free variables in the general solution of the linear system with augmented matrix ? Justify your answer.  Provide an explicit example of a matrix that attains this maximal number of free variables.      If is a matrix with five rows and three columns, then what is the minimum possible number of zero rows in any row echelon form of ?  Provide an explicit example of a matrix that attains this minimal number of zero rows.      "
 },
 {
   "id": "d_free-leading",
@@ -2035,126 +2026,126 @@ var ptx_lunr_docs = [
   "body": "    Determine whether the following system has no solution, an infinite number of solutions or a unique solution.                     "
 },
 {
-  "id": "s_solving_ex-1-2-3",
+  "id": "s_solving_ex-1-1-3",
   "level": "2",
-  "url": "s_solving.html#s_solving_ex-1-2-3",
+  "url": "s_solving.html#s_solving_ex-1-1-3",
   "type": "Exercise",
   "number": "2.3.5.1",
   "title": "",
   "body": "       We saw in that the system is equivalent to a system with augmented matrix . The row echelon matrix tells us that is the only free variable of . Back substitution then yields the parametric equation description: . Thus the set of solutions is .   "
 },
 {
-  "id": "s_solving_ex-1-2-4",
+  "id": "s_solving_ex-1-1-4",
   "level": "2",
-  "url": "s_solving.html#s_solving_ex-1-2-4",
+  "url": "s_solving.html#s_solving_ex-1-1-4",
   "type": "Exercise",
   "number": "2.3.5.2",
   "title": "",
   "body": "      "
 },
 {
-  "id": "s_solving_ex-1-2-5",
+  "id": "s_solving_ex-1-1-5",
   "level": "2",
-  "url": "s_solving.html#s_solving_ex-1-2-5",
+  "url": "s_solving.html#s_solving_ex-1-1-5",
   "type": "Exercise",
   "number": "2.3.5.3",
   "title": "",
   "body": "      "
 },
 {
-  "id": "s_solving_ex-1-2-6",
+  "id": "s_solving_ex-1-1-6",
   "level": "2",
-  "url": "s_solving.html#s_solving_ex-1-2-6",
+  "url": "s_solving.html#s_solving_ex-1-1-6",
   "type": "Exercise",
   "number": "2.3.5.4",
   "title": "",
   "body": "      "
 },
 {
-  "id": "s_solving_ex-1-2-7",
+  "id": "s_solving_ex-1-1-7",
   "level": "2",
-  "url": "s_solving.html#s_solving_ex-1-2-7",
+  "url": "s_solving.html#s_solving_ex-1-1-7",
   "type": "Exercise",
   "number": "2.3.5.5",
   "title": "",
   "body": "      "
 },
 {
-  "id": "s_solving_ex-1-3",
+  "id": "s_solving_ex-1-2",
   "level": "2",
-  "url": "s_solving.html#s_solving_ex-1-3",
+  "url": "s_solving.html#s_solving_ex-1-2",
   "type": "Exercise",
   "number": "2.3.5.6",
   "title": "",
   "body": "  For each system below determine all values of for which the system below has (a) no solutions, (b) a unique solution, and (c) infinitely many solutions.             "
 },
 {
-  "id": "s_solving_ex-1-4",
+  "id": "s_solving_ex-1-3",
   "level": "2",
-  "url": "s_solving.html#s_solving_ex-1-4",
+  "url": "s_solving.html#s_solving_ex-1-3",
   "type": "Exercise",
   "number": "2.3.5.7",
   "title": "",
   "body": "  Show that a linear system with more unknowns than equations has either 0 solutions or infinitely many solutions.    "
 },
 {
-  "id": "s_solving_ex-1-5",
+  "id": "s_solving_ex-1-4",
   "level": "2",
-  "url": "s_solving.html#s_solving_ex-1-5",
+  "url": "s_solving.html#s_solving_ex-1-4",
   "type": "Exercise",
   "number": "2.3.5.8",
   "title": "",
   "body": "  True or false. If true, provide a proof; if false, provide an explicit counterexample.    Every matrix has a unique row echelon form.    Any homogeneous linear system with more unknowns than equations has infinitely many solutions.    If a homogeneous linear system of equations in unknowns has a corresponding augmented matrix with a reduced row echelon form containing leading ones, then the linear system has the unique solution .    All leading ones in of a matrix in row echelon form must occur in distinct columns.    If the reduced row echelon form of the augmented matrix for a linear system has a zero row, then the system must have infinitely many solutions.    If a linear system has more unknowns than equations, then it must have infinitely many solutions.     "
 },
 {
-  "id": "s_solving_ex-1-6",
+  "id": "s_solving_ex-1-5",
   "level": "2",
-  "url": "s_solving.html#s_solving_ex-1-6",
+  "url": "s_solving.html#s_solving_ex-1-5",
   "type": "Exercise",
   "number": "2.3.5.9",
   "title": "",
   "body": "  Interpret each matrix below as an augmented matrix of a linear system. Asterisks represent an unspecified real number. For each matrix, determine whether the corresponding system is consistent or inconsistent. If the system is consistent, decide further whether the solution is unique or not. If there is not enough information answer inconclusive and back up your claim by giving an explicit example where the system is consistent, and an explicit example where the system is inconsistent.                         "
 },
 {
-  "id": "s_solving_ex-1-7",
+  "id": "s_solving_ex-1-6",
   "level": "2",
-  "url": "s_solving.html#s_solving_ex-1-7",
+  "url": "s_solving.html#s_solving_ex-1-6",
   "type": "Exercise",
   "number": "2.3.5.10",
   "title": "",
   "body": "  What condition must and satisfy in order for the system below to be consistent? Express your answer as an equation involving and .    "
 },
 {
-  "id": "s_solving_ex-1-8",
+  "id": "s_solving_ex-1-7",
   "level": "2",
-  "url": "s_solving.html#s_solving_ex-1-8",
+  "url": "s_solving.html#s_solving_ex-1-7",
   "type": "Exercise",
   "number": "2.3.5.11",
   "title": "",
   "body": "  Solve the system of equations below for , , and .     First replace the given nonlinear system with a linear one using a change of variable substitution.   "
 },
 {
-  "id": "s_solving_ex-1-9",
+  "id": "s_solving_ex-1-8",
   "level": "2",
-  "url": "s_solving.html#s_solving_ex-1-9",
+  "url": "s_solving.html#s_solving_ex-1-8",
   "type": "Exercise",
   "number": "2.3.5.12",
   "title": "",
   "body": "  If is a matrix with three rows and five columns, then what is the maximum possible number of leading ones in its reduced row echelon form? Justify your answer.  Provide an explicit example of a matrix that attains this maximum number of leading ones.   "
 },
 {
-  "id": "s_solving_ex-1-10",
+  "id": "s_solving_ex-1-9",
   "level": "2",
-  "url": "s_solving.html#s_solving_ex-1-10",
+  "url": "s_solving.html#s_solving_ex-1-9",
   "type": "Exercise",
   "number": "2.3.5.13",
   "title": "",
   "body": "  If is a matrix with three rows and six columns, then what is the maximum possible number of free variables in the general solution of the linear system with augmented matrix ? Justify your answer.  Provide an explicit example of a matrix that attains this maximal number of free variables.   "
 },
 {
-  "id": "s_solving_ex-1-11",
+  "id": "s_solving_ex-1-10",
   "level": "2",
-  "url": "s_solving.html#s_solving_ex-1-11",
+  "url": "s_solving.html#s_solving_ex-1-10",
   "type": "Exercise",
   "number": "2.3.5.14",
   "title": "",
@@ -2167,7 +2158,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.1",
   "title": "Matrix arithmetic",
-  "body": " Matrix arithmetic   Matrices played a small supporting role in our discussion of linear systems in . In this chapter we bring them to center stage and give them a full-blown treatment as independent mathematical objects in their own right.  Like any mathematical entity worth its salt, matrices can be employed in a vast multitude of ways. As such it is important to allow matrices to transcend their humble beginnings in this course as boiled down systems of linear equations. We record this observation as another principle.  Matrix mantra   A matrix is a matrix is a matrix.  Not every matrix should be thought of as an augmented matrix associated to a linear system.       The basics We begin with some elementary definitions about matrices, matrix equality, and special types of matrices. As the next definition makes clear, a matrix is just an ordered sequence of numbers arranged in a very particular manner.  Matrix  matrix    set of all matrices    A (real) matrix is a rectangular array of real numbers . The number located in the -th row and -th column of is called the -entry (or -th entry ) of .  A matrix with rows and columns is said to have size (or dimension ) . The set of all matrices is denoted .    The displayed matrix in is costly both in the space it takes up in show, and the time it takes to write down or typeset. Accordingly we introduce two somewhat complementary forms of notation to help describe matrices.   Matrix notation    Matrix whose -th entry is     -th entry of the matrix       Matrix-building notation  matrix matrix-building notation  The notation denotes the matrix whose -th entry ( -th row, -th column) is . When there is no danger of confusion, this notation is often shortened to .    Matrix entry notation  matrix matrix entry notation  Given a matrix , the notation denotes the -th entry of .   Thus if , then for all and .     The matrix-building notation is often used simply to give names to the entries of an arbitrary matrix. However, it can also be used to describe a matrix whose -th entry is given by specified rule or formula.  For example, let , where . This is the matrix whose -th entry is . Thus . In this example we have and for .   Using matrix notation we can now precisely define what the rows and columns of a matrix are.   Rows and columns of a matrix   Let be an matrix. For each , -th row of is the -tuple . Similarly, for each , the -th column of is the -tuple . Given -tuples , we denote by the matrix whose -th row is .  Similarly, given -tuples , we denote by the matrix whose -th column is .    In everyday language the notion of equality is taken as self-evident. Two things are equal if they are the same. What more is there to say? In mathematics, each time we introduce a new type of mathematical object (e.g., sets, functions, -tuples, etc.) we need to spell out exactly what we mean for two objects to be considered equal. We do so now with matrices.   Matrix equality   Let and be matrices of dimension and , respectively. The two matrices are equal if    and ;     for all and .     In other words, we have if and only if and have the same shape, and each entry of is equal to the corresponding entry of .     Matrix equality   The matrices are not equal to one another, despite their having the same entries that appear roughly in the same order. In this case equality does not hold as and have different shapes: is , and is .  The matrices and have the same dimension, but are not equal since .     Matrices of particular shape  matrix square   matrix row vector   matrix column vector   matrix diagonal of square matrix  matrix zero matrix   A matrix is square if its dimension is : , if . The diagonal of a square matrix consists of the entries of of the form for .  A matrix is called a row vector . The -th entry of a row vector is denoted   An matrix , is called a column vector . The -th entry of a column vector is denoted .     Tuples, row vectors, and column vectors  You are perhaps wondering why we make a distinction between -tuples, row vectors, and column vectors. One answer is that a matrix is not simply an ordered sequence: it is an ordered sequence arranged in a very particular way. This subtlety is baked into the very definition of matrix equality, and allows us to say that . There are situations, however, where we don't need this extra layer of structure, where we want to treat an ordered sequence simply as an ordered sequence. In such situations tuples are preferred to row or column vectors.  Of course there will be times where we wish to treat an ordered sequence now as a tuple and now as a row or column vector. In these situations we will clarify what is meant by using the phrase treated as a tuple , treated as a row vector , or treated as a column vector . For example, the tuple , treated as a row vector, is the matrix .  That said, the close connection between linear systems and matrix equations makes it very convenient to be able to treat an -tuple as if it were the column vector , and vice versa. This conflation is so convenient, in fact, that we will simply declare it to be true by fiat! This means that going forward we are permitted to treat tuples as column vectors and vice versa without further comment.    Tuples shall be column vectors, and vice versa   We hereby declare that for all we have . In other words, tuples are henceforth the same as column vectors.     Matrix entries, rows, and columns  Sage syntax for accessing specific entries of a matrix is similar in spirit to our matrix entry notation. However, as with all things Python, we always count from 0. Thus if A is assigned to a matrix in Sage, A[i,j] is its -th entry.   Prescribed subsets of matrix entries are obtained via slicing methods: for example, A[a:b, c:d] returns the collection of entries with and , arranged as a matrix.   Leaving the left or right side of : blank in this notation removes the corresponding restriction bound (left or right) from the index in question. Thus A[2, :] returns the third row of , and A[1:, 3] returns the portion of the fourth column of beginning with its second entry.   Alternatively, we can obtain a list of all rows or columns of using the the methods rows() and columns() .   Use the empty cell below to try out some of these commands.      Vector space structure of  We now lay out the various algebraic operations we will use to combine and transform matrices; we refer to the use of these operations loosely as matrix arithmetic . Some of these operations resemble familiar operations from real arithmetic in terms of their notation and definition. Do not be lulled into complacency! These are new operations defined for a new class of mathematical objects, and must be treated carefully. In particular, pay close attention to (a) exactly what type of mathematical objects serve as inputs for each operation (the ingredients of the operation), and (b) what type of mathematical object is outputted.   Matrix addition and scalar multiplication  matrix addition  matrix scalar multiplication   Let and be positive integers.   Matrix addition  Given matrices , we define their matrix sum  to be the matrix satisfying for all and . Equivalently, if and , then . The operation is called matrix addition .    Given an matrix and scalar , the scalar multiple of by is the matrix satisfying for all and . Equivalently, if , then . The operation is called matrix scalar multiplication .        Observe that matrix addition is not defined for any pair of matrices. The ingredients of matrix addition are two matrices of the same dimension ; and the output is a third matrix of this common dimension.   Not surprisingly, as the names of our matrix operations suggest, the set of all matrices constitutes a vector space with respect to matrix addition and scalar multiplication. Before proving this fact, we introduce what will be the zero vectors and vector inverses of these vector spaces.   Zero matrices    the zero matrix    The  zero matrix , denoted , is the matrix, all of whose entries are equal to zero: i.e., for all and .  When there is no confusion about which dimension zero matrix is intended, we will often write simply instead of .     Additive inverse matrix   The additive inverse of an matrix is the matrix defined as .     Additive inverse matrix   Additive inverse matrix is admittedly a bit clunky. We are taking pains here not to call simply the inverse of , as this term is reserved for multiplicative inverses of matrices. (See .)    Vector space structure of   Let and be positive integers.   The set , together with the matrix addition and scalar multiplication, is a vector space.    The zero vector of is the zero matrix .    Given a matrix its vector inverse is the additive inverse matrix .       Having identified the relevant operations, as well as the proposed zero vector and vector inverses, we must verify that the vector axioms hold. We do so for Axioms i, iii, and iv, leaving the rest as an exercise.   Axiom i      Axiom iii      Axiom iv        Matrix difference and matrix linear combination  Having established that is a vector space under matrix addition and scalar multiplication, this set of matrices automatically inherits the various features and properties enjoyed by general vector spaces. For example, the vector difference operation (defined for any vector space) gives rise in the case of to a matrix difference operation. Namely, for any we have . Similarly, the general notion of a linear combination of vectors, gives rise to the notion of matrix linear combinations . Namely, given , and scalars , we have the matrix linear combination .    Matrix linear combinations   Let and . Compute .     .     Expressing matrix as a linear combination   Show that can be expressed as a linear combination of the matrices .    We must solve the matrix (or row vector) equation for the scalars . Computing the linear combination on the left yields the matrix equation . Using the definition of matrix equality ( ), we get the system of equations . Using Gaussian elimination we find that there is a unique solution to this system: namely, . We conclude that .     Let be matrices. An easy induction argument on shows that for any scalars we have for all , . (See . )     Matrix multiplication  So how do we define the product of two matrices? Looking at the previous operations, you might have guessed that we should define the product of two matrices by taking the product of their corresponding entries. Not so!   Matrix multiplication  matrix multiplication   Let be positive integers. Given an matrix and an matrix , we define their product to be the matrix satisfying for all and . Equivalently, if and , then , where . The operation is called matrix multiplication .     Visualizing matrix multiplication  In , the -th entry is computed by moving across the -th row of and down the -th column of .       Size and matrix multiplication  Observe how, like addition, matrix multiplication is not defined for any pair of matrices: there must be a certain agreement in their dimensions.  In more detail, for the product of and to be defined, we need . In other words we need the inner dimensions of and to be equal: . If this condition is met, the dimension of the resulting matrix is determined by the outer dimensions of and . Schematically, you can think of the inner dimensions as being canceled out :     Matrix multiplication  Consider the matrices . Since the inner dimensions of and agree, we can form the product matrix , which has dimension . Let for all . Using , we compute . We conclude that .   Formula for the -th entry of a matrix product is easily identified as the dot product of the -th row of with the -th column of . This gives us a succinct way of describing the entries of the product in terms of the dot product.   Dot product and matrix multiplication   Let be positive integers. Given matrices and , let be the -th row of for all , and let be -th column of for all , so that . For all , we have . In other words, the -th entry of is the dot product of the -th row of and the -th column of .    Let and , so that for all and . Given any pair with and , we have , as claimed.     Matrix multiplication via dot product  Consider the matrices . The two rows of are . The two columns of are . Using the dot product description of matrix multiplication, we compute .   The definition of a matrix product is undoubtedly more complicated than you expected, and seems to come completely out of the blue. All of this will make more sense once we begin thinking of matrices as defining certain functions . Our formula for the entries of is chosen precisely so that this new matrix corresponds to the composition of the functions and : so that . (See .) Under this interpretation, the ponderous restriction on the dimensions of the ingredient matrices ensures that the two functions and can be composed.   Matrix arithmetic  We use + and * for matrix addition and multiplication.   As evidence of Sage's flexibility, the same symbol * is also used for scalar multiplication.   Edit the cell below to practice these operations.      Alternative methods of multiplication  In addition to the given definition of matrix multiplication, we will make heavy use of two further ways of computing matrix products, called the column and row methods of matrix multiplication.   Column method of matrix multiplication  matrix multiplication column method   Let and . The column method of matrix multiplication computes using the two steps below.   Step 1  Let be the -th column of , considered as a column vector. Then .    Step 2  Let be the -th column of , considered as a column vector. Given any column vector we have .       We prove the equalities in both steps separately.   Proof of Step 1  We must show , where . First we show and have the same size. By definition of matrix multiplication, is . By construction has columns and its -th column is . Since and have size and , respectively, has size . Thus each of the columns of is an column vector. It follows that is , as desired.  Next we show that for all , . Since the -th entry of is the -th entry of the -th column of , we have .    Proof of Step 2  We must show that , where . The usual argument shows that both and are column vectors. It remains only to show that the -th entry of the column is equal to the -th entry of for all . For any such we have .       amounts to a two-step process for computing an arbitrary matrix product .  The first statement (Step 1) tells us that the -th column of the matrix can be obtained by computing the product of with the -th column of .  The second statement (Step 2) tells us that each product can itself be computed as a certain linear combination of the columns of with coefficients drawn from .  A similar remark applies to computing matrix products using the row method, as described below in .    Row method of matrix multiplication  matrix multiplication row method   Let and . The row method of matrix multiplication computes using the two steps below.   Step 1  Let be the -th row of . Then .    Step 2  Let be the -th row of . Given any row vector we have .       The proof is very similar to that of and is left to the reader.     Column and row methods   Let and   Compute using (a) the definition of matrix multiplication, (b) the column method, (c) the row method.       Using the definition, we see easily that     Let be the columns of , and let be the columns of . We have     Now let be the rows of , and let be the rows of . We have         Column and row methods  Let's verify the validity of the column and row methods using Sage in some specific examples. Below we generate random integer matrices and of dimension and , respectively, and compute their product .   Let's check that the -th column of is equal to the product of with the -th column of .   Alternatively, we can visually confirm these equalities using the display of in the first cell above. Observe that the result of A*colsB[i] is displayed by Sage as a tuple, though technically for us this is a column vector.   Next, let's verify that the result of multiplying and the -th column of is the corresponding linear combination of the columns of given by the coefficients of this column.   Now use the Sage cells below to demonstrate the validity of the row method for the product . Simply modify the code in the two cells above to reflect the row method, as opposed to the column method.      Video example of matrix multiplication   Video: three methods of matrix multiplication       Transpose of a matrix  We end this section with one last operation, matrix transposition . We will not make much use of this operation until later, but this is as good a place as any to introduce it.   Matrix transposition  matrix transposition  transpose   Given an matrix its transpose is the matrix whose -entry is the -th entry of . In other words, is the matrix satisfying for all and .     Given a matrix we can give a column- or row-based description of as follows:    is the matrix whose -th row is the -th column of .     is the matrix whose -th column is the -th row of .       Transpose   Let ; then .  Let , then .     Matrix transposition  Matrix transposition is implemented in Sage as the transpose() method. In the cell below we (a) choose random integers , (b) choose a random matrix with integer entries, and (c) compute the transpose of .   As usual, experiment with the Sage cell below.      WeBWork Exercises      Enter T or F depending on whether the statement is true or false. (You must enter T or F -- True and False will not work.)    If A is a square matrix such that AA equals the 0 matrix, then A must equal the 0 matrix.    If A has dimensions and B has dimensions , then AB has dimensions .              Matrix Products: Consider the matrices   Of the possible matrix products ,  which make sense?    C            If A is B is and C is then:  a) BA has dimension    b) CB has dimension    c) AC has dimension                                            Determine and such that                           Determine the value(s) of such that   =  Note: If there is more than one value separate them by commas.                Written Exercises    For each part below write down the most general matrix satisfying the given condition (use letter names ,etc. for entries).     for all .     for all      for .        Let  . Compute the following matrices, or else explain why the given expression is not well defined.                       Let . Compute the following using either the row or column method of matrix multiplication. Make sure to show how you are using the relevant method.   the first column of ;    the second row of ;    the third column of .          Using expansion by columns, the first column of is given by times the first column of . We compute          Use the row or column method to quickly compute the following product:     I'll just describe the row method here.  Note that the rows of are all identical, and equal to . From the row method it follows that each row of is given by .  Thus the rows of are all identical, and the row method computes the product above by taking the corresponding alternating sum of the rows of : .  Thus is the the matrix, all of whose rows are .      Each of the matrices below performs a specific row operation when multiplying a matrix on the left; i.e., the matrix is the result of performing a certain row operation on the matrix . Use the row method of matrix multiplication to decide what row operation each performs. .       Let be an integer. Prove, by induction on , that for any matrices and scalars , we have for all , .      "
+  "body": " Matrix arithmetic   Matrices played a small supporting role in our discussion of linear systems in . In this chapter we bring them to center stage and give them a full-blown treatment as independent mathematical objects in their own right.  Like any mathematical entity worth its salt, matrices can be employed in a vast multitude of ways. As such it is important to allow matrices to transcend their humble beginnings in this course as boiled down systems of linear equations. We record this observation as another principle.  Matrix mantra   A matrix is a matrix is a matrix.  Not every matrix should be thought of as an augmented matrix associated to a linear system.       The basics   Matrix notation    Matrix whose -th entry is     -th entry of the matrix       Matrix-building notation  matrix matrix-building notation  The notation denotes the matrix whose -th entry ( -th row, -th column) is . When there is no danger of confusion, this notation is often shortened to .    Matrix entry notation  matrix matrix entry notation  Given a matrix , the notation denotes the -th entry of .   Thus if , then for all and .     The matrix-building notation is often used simply to give names to the entries of an arbitrary matrix. However, it can also be used to describe a matrix whose -th entry is given by specified rule or formula.  For example, let , where . This is the matrix whose -th entry is . Thus . In this example we have and for .   Using matrix notation we can now precisely define what the rows and columns of a matrix are.   Rows and columns of a matrix   Let be an matrix. For each , -th row of is the -tuple . Similarly, for each , the -th column of is the -tuple . Given -tuples , we denote by the matrix whose -th row is .  Similarly, given -tuples , we denote by the matrix whose -th column is .    In everyday language the notion of equality is taken as self-evident. Two things are equal if they are the same. What more is there to say? In mathematics, each time we introduce a new type of mathematical object (e.g., sets, functions, -tuples, etc.) we need to spell out exactly what we mean for two objects to be considered equal. We do so now with matrices.   Matrix equality   Let and be matrices of dimension and , respectively. The two matrices are equal if    and ;     for all and .     In other words, we have if and only if and have the same shape, and each entry of is equal to the corresponding entry of .     Matrix equality   The matrices are not equal to one another, despite their having the same entries that appear roughly in the same order. In this case equality does not hold as and have different shapes: is , and is .  The matrices and have the same dimension, but are not equal since .     Matrices of particular shape  matrix square   matrix row vector   matrix column vector   matrix diagonal of square matrix  matrix zero matrix   A matrix is square if its dimension is : , if . The diagonal of a square matrix consists of the entries of of the form for .  A matrix is called a row vector . The -th entry of a row vector is denoted   An matrix , is called a column vector . The -th entry of a column vector is denoted .     Tuples, row vectors, and column vectors  You are perhaps wondering why we make a distinction between -tuples, row vectors, and column vectors. One answer is that a matrix is not simply an ordered sequence: it is an ordered sequence arranged in a very particular way. This subtlety is baked into the very definition of matrix equality, and allows us to say that . There are situations, however, where we don't need this extra layer of structure, where we want to treat an ordered sequence simply as an ordered sequence. In such situations tuples are preferred to row or column vectors.  Of course there will be times where we wish to treat an ordered sequence now as a tuple and now as a row or column vector. In these situations we will clarify what is meant by using the phrase treated as a tuple , treated as a row vector , or treated as a column vector . For example, the tuple , treated as a row vector, is the matrix .  That said, the close connection between linear systems and matrix equations makes it very convenient to be able to treat an -tuple as if it were the column vector , and vice versa. This conflation is so convenient, in fact, that we will simply declare it to be true by fiat! This means that going forward we are permitted to treat tuples as column vectors and vice versa without further comment.    Tuples shall be column vectors, and vice versa   We hereby declare that for all we have . In other words, tuples are henceforth the same as column vectors.     Matrix entries, rows, and columns  Sage syntax for accessing specific entries of a matrix is similar in spirit to our matrix entry notation. However, as with all things Python, we always count from 0. Thus if A is assigned to a matrix in Sage, A[i,j] is its -th entry.   Prescribed subsets of matrix entries are obtained via slicing methods: for example, A[a:b, c:d] returns the collection of entries with and , arranged as a matrix.   Leaving the left or right side of : blank in this notation removes the corresponding restriction bound (left or right) from the index in question. Thus A[2, :] returns the third row of , and A[1:, 3] returns the portion of the fourth column of beginning with its second entry.   Alternatively, we can obtain a list of all rows or columns of using the the methods rows() and columns() .   Use the empty cell below to try out some of these commands.      Vector space structure of  We now lay out the various algebraic operations we will use to combine and transform matrices; we refer to the use of these operations loosely as matrix arithmetic . Some of these operations resemble familiar operations from real arithmetic in terms of their notation and definition. Do not be lulled into complacency! These are new operations defined for a new class of mathematical objects, and must be treated carefully. In particular, pay close attention to (a) exactly what type of mathematical objects serve as inputs for each operation (the ingredients of the operation), and (b) what type of mathematical object is outputted.   Matrix addition and scalar multiplication  matrix addition  matrix scalar multiplication   Let and be positive integers.   Matrix addition  Given matrices , we define their matrix sum  to be the matrix satisfying for all and . Equivalently, if and , then . The operation is called matrix addition .    Given an matrix and scalar , the scalar multiple of by is the matrix satisfying for all and . Equivalently, if , then . The operation is called matrix scalar multiplication .        Observe that matrix addition is not defined for any pair of matrices. The ingredients of matrix addition are two matrices of the same dimension ; and the output is a third matrix of this common dimension.   Not surprisingly, as the names of our matrix operations suggest, the set of all matrices constitutes a vector space with respect to matrix addition and scalar multiplication. Before proving this fact, we introduce what will be the zero vectors and vector inverses of these vector spaces.   Zero matrices    the zero matrix    The  zero matrix , denoted , is the matrix, all of whose entries are equal to zero: i.e., for all and .  When there is no confusion about which dimension zero matrix is intended, we will often write simply instead of .     Additive inverse matrix   The additive inverse of an matrix is the matrix defined as .     Additive inverse matrix   Additive inverse matrix is admittedly a bit clunky. We are taking pains here not to call simply the inverse of , as this term is reserved for multiplicative inverses of matrices. (See .)    Vector space structure of   Let and be positive integers.   The set , together with the matrix addition and scalar multiplication, is a vector space.    The zero vector of is the zero matrix .    Given a matrix its vector inverse is the additive inverse matrix .       Having identified the relevant operations, as well as the proposed zero vector and vector inverses, we must verify that the vector axioms hold. We do so for Axioms i, iii, and iv, leaving the rest as an exercise.   Axiom i      Axiom iii      Axiom iv        Matrix difference and matrix linear combination  Having established that is a vector space under matrix addition and scalar multiplication, this set of matrices automatically inherits the various features and properties enjoyed by general vector spaces. For example, the vector difference operation (defined for any vector space) gives rise in the case of to a matrix difference operation. Namely, for any we have . Similarly, the general notion of a linear combination of vectors, gives rise to the notion of matrix linear combinations . Namely, given , and scalars , we have the matrix linear combination .    Matrix linear combinations   Let and . Compute .     .     Expressing matrix as a linear combination   Show that can be expressed as a linear combination of the matrices .    We must solve the matrix (or row vector) equation for the scalars . Computing the linear combination on the left yields the matrix equation . Using the definition of matrix equality ( ), we get the system of equations . Using Gaussian elimination we find that there is a unique solution to this system: namely, . We conclude that .     Let be matrices. An easy induction argument on shows that for any scalars we have for all , . (See . )     Matrix multiplication  So how do we define the product of two matrices? Looking at the previous operations, you might have guessed that we should define the product of two matrices by taking the product of their corresponding entries. Not so!   Matrix multiplication  matrix multiplication   Let be positive integers. Given an matrix and an matrix , we define their product to be the matrix satisfying for all and . Equivalently, if and , then , where . The operation is called matrix multiplication .     Visualizing matrix multiplication  In , the -th entry is computed by moving across the -th row of and down the -th column of .       Size and matrix multiplication  Observe how, like addition, matrix multiplication is not defined for any pair of matrices: there must be a certain agreement in their dimensions.  In more detail, for the product of and to be defined, we need . In other words we need the inner dimensions of and to be equal: . If this condition is met, the dimension of the resulting matrix is determined by the outer dimensions of and . Schematically, you can think of the inner dimensions as being canceled out :     Matrix multiplication  Consider the matrices . Since the inner dimensions of and agree, we can form the product matrix , which has dimension . Let for all . Using , we compute . We conclude that .   Formula for the -th entry of a matrix product is easily identified as the dot product of the -th row of with the -th column of . This gives us a succinct way of describing the entries of the product in terms of the dot product.   Dot product and matrix multiplication   Let be positive integers. Given matrices and , let be the -th row of for all , and let be -th column of for all , so that . For all , we have . In other words, the -th entry of is the dot product of the -th row of and the -th column of .    Let and , so that for all and . Given any pair with and , we have , as claimed.     Matrix multiplication via dot product  Consider the matrices . The two rows of are . The two columns of are . Using the dot product description of matrix multiplication, we compute .   The definition of a matrix product is undoubtedly more complicated than you expected, and seems to come completely out of the blue. All of this will make more sense once we begin thinking of matrices as defining certain functions . Our formula for the entries of is chosen precisely so that this new matrix corresponds to the composition of the functions and : so that . (See .) Under this interpretation, the ponderous restriction on the dimensions of the ingredient matrices ensures that the two functions and can be composed.   Matrix arithmetic  We use + and * for matrix addition and multiplication.   As evidence of Sage's flexibility, the same symbol * is also used for scalar multiplication.   Edit the cell below to practice these operations.      Alternative methods of multiplication  In addition to the given definition of matrix multiplication, we will make heavy use of two further ways of computing matrix products, called the column and row methods of matrix multiplication.   Column method of matrix multiplication  matrix multiplication column method   Let and . The column method of matrix multiplication computes using the two steps below.   Step 1  Let be the -th column of , considered as a column vector. Then .    Step 2  Let be the -th column of , considered as a column vector. Given any column vector we have .       We prove the equalities in both steps separately.   Proof of Step 1  We must show , where . First we show and have the same size. By definition of matrix multiplication, is . By construction has columns and its -th column is . Since and have size and , respectively, has size . Thus each of the columns of is an column vector. It follows that is , as desired.  Next we show that for all , . Since the -th entry of is the -th entry of the -th column of , we have .    Proof of Step 2  We must show that , where . The usual argument shows that both and are column vectors. It remains only to show that the -th entry of the column is equal to the -th entry of for all . For any such we have .       amounts to a two-step process for computing an arbitrary matrix product .  The first statement (Step 1) tells us that the -th column of the matrix can be obtained by computing the product of with the -th column of .  The second statement (Step 2) tells us that each product can itself be computed as a certain linear combination of the columns of with coefficients drawn from .  A similar remark applies to computing matrix products using the row method, as described below in .    Row method of matrix multiplication  matrix multiplication row method   Let and . The row method of matrix multiplication computes using the two steps below.   Step 1  Let be the -th row of . Then .    Step 2  Let be the -th row of . Given any row vector we have .       The proof is very similar to that of and is left to the reader.     Column and row methods   Let and   Compute using (a) the definition of matrix multiplication, (b) the column method, (c) the row method.       Using the definition, we see easily that     Let be the columns of , and let be the columns of . We have     Now let be the rows of , and let be the rows of . We have         Column and row methods  Let's verify the validity of the column and row methods using Sage in some specific examples. Below we generate random integer matrices and of dimension and , respectively, and compute their product .   Let's check that the -th column of is equal to the product of with the -th column of .   Alternatively, we can visually confirm these equalities using the display of in the first cell above. Observe that the result of A*colsB[i] is displayed by Sage as a tuple, though technically for us this is a column vector.   Next, let's verify that the result of multiplying and the -th column of is the corresponding linear combination of the columns of given by the coefficients of this column.   Now use the Sage cells below to demonstrate the validity of the row method for the product . Simply modify the code in the two cells above to reflect the row method, as opposed to the column method.      Video example of matrix multiplication   Video: three methods of matrix multiplication       Transpose of a matrix  We end this section with one last operation, matrix transposition . We will not make much use of this operation until later, but this is as good a place as any to introduce it.   Matrix transposition  matrix transposition  transpose   Given an matrix its transpose is the matrix whose -entry is the -th entry of . In other words, is the matrix satisfying for all and .     Given a matrix we can give a column- or row-based description of as follows:    is the matrix whose -th row is the -th column of .     is the matrix whose -th column is the -th row of .       Transpose   Let ; then .  Let , then .     Matrix transposition  Matrix transposition is implemented in Sage as the transpose() method. In the cell below we (a) choose random integers , (b) choose a random matrix with integer entries, and (c) compute the transpose of .   As usual, experiment with the Sage cell below.      WeBWork Exercises      Enter T or F depending on whether the statement is true or false. (You must enter T or F -- True and False will not work.)    If A is a square matrix such that AA equals the 0 matrix, then A must equal the 0 matrix.    If A has dimensions and B has dimensions , then AB has dimensions .              Matrix Products: Consider the matrices   Of the possible matrix products ,  which make sense?    C            If A is B is and C is then:  a) BA has dimension    b) CB has dimension    c) AC has dimension                                            Determine and such that                           Determine the value(s) of such that   =  Note: If there is more than one value separate them by commas.                  For each part below write down the most general matrix satisfying the given condition (use letter names ,etc. for entries).     for all .     for all      for .        Let  . Compute the following matrices, or else explain why the given expression is not well defined.                       Let . Compute the following using either the row or column method of matrix multiplication. Make sure to show how you are using the relevant method.   the first column of ;    the second row of ;    the third column of .          Using expansion by columns, the first column of is given by times the first column of . We compute          Use the row or column method to quickly compute the following product:     I'll just describe the row method here.  Note that the rows of are all identical, and equal to . From the row method it follows that each row of is given by .  Thus the rows of are all identical, and the row method computes the product above by taking the corresponding alternating sum of the rows of : .  Thus is the the matrix, all of whose rows are .      Each of the matrices below performs a specific row operation when multiplying a matrix on the left; i.e., the matrix is the result of performing a certain row operation on the matrix . Use the row method of matrix multiplication to decide what row operation each performs. .       Let be an integer. Prove, by induction on , that for any matrices and scalars , we have for all , .      "
 },
 {
   "id": "princ_matrix_mantra",
@@ -2179,29 +2170,20 @@ var ptx_lunr_docs = [
   "body": " Matrix mantra   A matrix is a matrix is a matrix.  Not every matrix should be thought of as an augmented matrix associated to a linear system.   "
 },
 {
-  "id": "d_matrix",
-  "level": "2",
-  "url": "s_matrix.html#d_matrix",
-  "type": "Definition",
-  "number": "3.1.2",
-  "title": "Matrix.",
-  "body": " Matrix  matrix    set of all matrices    A (real) matrix is a rectangular array of real numbers . The number located in the -th row and -th column of is called the -entry (or -th entry ) of .  A matrix with rows and columns is said to have size (or dimension ) . The set of all matrices is denoted .   "
-},
-{
   "id": "d_matrix_notation",
   "level": "2",
   "url": "s_matrix.html#d_matrix_notation",
   "type": "Definition",
-  "number": "3.1.3",
+  "number": "3.1.2",
   "title": "Matrix notation.",
   "body": " Matrix notation    Matrix whose -th entry is     -th entry of the matrix       Matrix-building notation  matrix matrix-building notation  The notation denotes the matrix whose -th entry ( -th row, -th column) is . When there is no danger of confusion, this notation is often shortened to .    Matrix entry notation  matrix matrix entry notation  Given a matrix , the notation denotes the -th entry of .   Thus if , then for all and .   "
 },
 {
-  "id": "ss_matrix_attributes-5",
+  "id": "ss_matrix_attributes-3",
   "level": "2",
-  "url": "s_matrix.html#ss_matrix_attributes-5",
+  "url": "s_matrix.html#ss_matrix_attributes-3",
   "type": "Remark",
-  "number": "3.1.4",
+  "number": "3.1.3",
   "title": "",
   "body": " The matrix-building notation is often used simply to give names to the entries of an arbitrary matrix. However, it can also be used to describe a matrix whose -th entry is given by specified rule or formula.  For example, let , where . This is the matrix whose -th entry is . Thus . In this example we have and for .  "
 },
@@ -2210,7 +2192,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#d_rows_columns",
   "type": "Definition",
-  "number": "3.1.5",
+  "number": "3.1.4",
   "title": "Rows and columns of a matrix.",
   "body": " Rows and columns of a matrix   Let be an matrix. For each , -th row of is the -tuple . Similarly, for each , the -th column of is the -tuple . Given -tuples , we denote by the matrix whose -th row is .  Similarly, given -tuples , we denote by the matrix whose -th column is .   "
 },
@@ -2219,7 +2201,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#d_matrix_equality",
   "type": "Definition",
-  "number": "3.1.6",
+  "number": "3.1.5",
   "title": "Matrix equality.",
   "body": " Matrix equality   Let and be matrices of dimension and , respectively. The two matrices are equal if    and ;     for all and .     In other words, we have if and only if and have the same shape, and each entry of is equal to the corresponding entry of .   "
 },
@@ -2228,7 +2210,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#eg_inequality",
   "type": "Example",
-  "number": "3.1.7",
+  "number": "3.1.6",
   "title": "Matrix equality.",
   "body": " Matrix equality   The matrices are not equal to one another, despite their having the same entries that appear roughly in the same order. In this case equality does not hold as and have different shapes: is , and is .  The matrices and have the same dimension, but are not equal since .   "
 },
@@ -2237,7 +2219,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#d_square_matrices",
   "type": "Definition",
-  "number": "3.1.8",
+  "number": "3.1.7",
   "title": "Matrices of particular shape.",
   "body": " Matrices of particular shape  matrix square   matrix row vector   matrix column vector   matrix diagonal of square matrix  matrix zero matrix   A matrix is square if its dimension is : , if . The diagonal of a square matrix consists of the entries of of the form for .  A matrix is called a row vector . The -th entry of a row vector is denoted   An matrix , is called a column vector . The -th entry of a column vector is denoted .   "
 },
@@ -2246,7 +2228,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#rm_tuples_rows_columns",
   "type": "Remark",
-  "number": "3.1.9",
+  "number": "3.1.8",
   "title": "Tuples, row vectors, and column vectors.",
   "body": " Tuples, row vectors, and column vectors  You are perhaps wondering why we make a distinction between -tuples, row vectors, and column vectors. One answer is that a matrix is not simply an ordered sequence: it is an ordered sequence arranged in a very particular way. This subtlety is baked into the very definition of matrix equality, and allows us to say that . There are situations, however, where we don't need this extra layer of structure, where we want to treat an ordered sequence simply as an ordered sequence. In such situations tuples are preferred to row or column vectors.  Of course there will be times where we wish to treat an ordered sequence now as a tuple and now as a row or column vector. In these situations we will clarify what is meant by using the phrase treated as a tuple , treated as a row vector , or treated as a column vector . For example, the tuple , treated as a row vector, is the matrix .  That said, the close connection between linear systems and matrix equations makes it very convenient to be able to treat an -tuple as if it were the column vector , and vice versa. This conflation is so convenient, in fact, that we will simply declare it to be true by fiat! This means that going forward we are permitted to treat tuples as column vectors and vice versa without further comment.  "
 },
@@ -2255,7 +2237,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#declaration_tuples_columns",
   "type": "Fiat",
-  "number": "3.1.10",
+  "number": "3.1.9",
   "title": "Tuples shall be column vectors, and vice versa.",
   "body": " Tuples shall be column vectors, and vice versa   We hereby declare that for all we have . In other words, tuples are henceforth the same as column vectors.   "
 },
@@ -2273,7 +2255,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#d_matrix_add_subtract",
   "type": "Definition",
-  "number": "3.1.11",
+  "number": "3.1.10",
   "title": "Matrix addition and scalar multiplication.",
   "body": " Matrix addition and scalar multiplication  matrix addition  matrix scalar multiplication   Let and be positive integers.   Matrix addition  Given matrices , we define their matrix sum  to be the matrix satisfying for all and . Equivalently, if and , then . The operation is called matrix addition .    Given an matrix and scalar , the scalar multiple of by is the matrix satisfying for all and . Equivalently, if , then . The operation is called matrix scalar multiplication .      "
 },
@@ -2282,7 +2264,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#ss_matrix_arithmetic-4",
   "type": "Remark",
-  "number": "3.1.12",
+  "number": "3.1.11",
   "title": "",
   "body": " Observe that matrix addition is not defined for any pair of matrices. The ingredients of matrix addition are two matrices of the same dimension ; and the output is a third matrix of this common dimension.  "
 },
@@ -2291,7 +2273,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#d_zero_matrix",
   "type": "Definition",
-  "number": "3.1.13",
+  "number": "3.1.12",
   "title": "Zero matrices.",
   "body": " Zero matrices    the zero matrix    The  zero matrix , denoted , is the matrix, all of whose entries are equal to zero: i.e., for all and .  When there is no confusion about which dimension zero matrix is intended, we will often write simply instead of .   "
 },
@@ -2300,7 +2282,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#d_additive_inverse",
   "type": "Definition",
-  "number": "3.1.14",
+  "number": "3.1.13",
   "title": "Additive inverse matrix.",
   "body": " Additive inverse matrix   The additive inverse of an matrix is the matrix defined as .   "
 },
@@ -2309,7 +2291,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#ss_matrix_arithmetic-8",
   "type": "Remark",
-  "number": "3.1.15",
+  "number": "3.1.14",
   "title": "Additive inverse matrix.",
   "body": " Additive inverse matrix   Additive inverse matrix is admittedly a bit clunky. We are taking pains here not to call simply the inverse of , as this term is reserved for multiplicative inverses of matrices. (See .)  "
 },
@@ -2318,7 +2300,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#th_matrix_vector_space",
   "type": "Theorem",
-  "number": "3.1.16",
+  "number": "3.1.15",
   "title": "Vector space structure of <span class=\"process-math\">\\(M_{mn}\\)<\/span>.",
   "body": " Vector space structure of   Let and be positive integers.   The set , together with the matrix addition and scalar multiplication, is a vector space.    The zero vector of is the zero matrix .    Given a matrix its vector inverse is the additive inverse matrix .       Having identified the relevant operations, as well as the proposed zero vector and vector inverses, we must verify that the vector axioms hold. We do so for Axioms i, iii, and iv, leaving the rest as an exercise.   Axiom i      Axiom iii      Axiom iv      "
 },
@@ -2327,7 +2309,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#rm_matrix_diff",
   "type": "Remark",
-  "number": "3.1.17",
+  "number": "3.1.16",
   "title": "Matrix difference and matrix linear combination.",
   "body": " Matrix difference and matrix linear combination  Having established that is a vector space under matrix addition and scalar multiplication, this set of matrices automatically inherits the various features and properties enjoyed by general vector spaces. For example, the vector difference operation (defined for any vector space) gives rise in the case of to a matrix difference operation. Namely, for any we have . Similarly, the general notion of a linear combination of vectors, gives rise to the notion of matrix linear combinations . Namely, given , and scalars , we have the matrix linear combination .  "
 },
@@ -2336,7 +2318,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#eg_matrix_lin_comb",
   "type": "Example",
-  "number": "3.1.18",
+  "number": "3.1.17",
   "title": "Matrix linear combinations.",
   "body": " Matrix linear combinations   Let and . Compute .     .   "
 },
@@ -2345,7 +2327,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#eg_matrix_lin_comb_solve",
   "type": "Example",
-  "number": "3.1.19",
+  "number": "3.1.18",
   "title": "Expressing matrix as a linear combination.",
   "body": " Expressing matrix as a linear combination   Show that can be expressed as a linear combination of the matrices .    We must solve the matrix (or row vector) equation for the scalars . Computing the linear combination on the left yields the matrix equation . Using the definition of matrix equality ( ), we get the system of equations . Using Gaussian elimination we find that there is a unique solution to this system: namely, . We conclude that .   "
 },
@@ -2354,7 +2336,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#rm_entry_lin_comb",
   "type": "Remark",
-  "number": "3.1.20",
+  "number": "3.1.19",
   "title": "",
   "body": " Let be matrices. An easy induction argument on shows that for any scalars we have for all , . (See . )  "
 },
@@ -2363,7 +2345,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#d_matrix_mult",
   "type": "Definition",
-  "number": "3.1.21",
+  "number": "3.1.20",
   "title": "Matrix multiplication.",
   "body": " Matrix multiplication  matrix multiplication   Let be positive integers. Given an matrix and an matrix , we define their product to be the matrix satisfying for all and . Equivalently, if and , then , where . The operation is called matrix multiplication .   "
 },
@@ -2372,7 +2354,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#fig_matrix_mult",
   "type": "Figure",
-  "number": "3.1.22",
+  "number": "3.1.21",
   "title": "Visualizing matrix multiplication",
   "body": " Visualizing matrix multiplication  In , the -th entry is computed by moving across the -th row of and down the -th column of .     "
 },
@@ -2381,7 +2363,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#ss_matrix_mult-5",
   "type": "Remark",
-  "number": "3.1.23",
+  "number": "3.1.22",
   "title": "Size and matrix multiplication.",
   "body": " Size and matrix multiplication  Observe how, like addition, matrix multiplication is not defined for any pair of matrices: there must be a certain agreement in their dimensions.  In more detail, for the product of and to be defined, we need . In other words we need the inner dimensions of and to be equal: . If this condition is met, the dimension of the resulting matrix is determined by the outer dimensions of and . Schematically, you can think of the inner dimensions as being canceled out :   "
 },
@@ -2390,7 +2372,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#eg_matrix_mult",
   "type": "Example",
-  "number": "3.1.24",
+  "number": "3.1.23",
   "title": "Matrix multiplication.",
   "body": " Matrix multiplication  Consider the matrices . Since the inner dimensions of and agree, we can form the product matrix , which has dimension . Let for all . Using , we compute . We conclude that .  "
 },
@@ -2399,7 +2381,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#th_matrix_mult_dot_product",
   "type": "Theorem",
-  "number": "3.1.25",
+  "number": "3.1.24",
   "title": "Dot product and matrix multiplication.",
   "body": " Dot product and matrix multiplication   Let be positive integers. Given matrices and , let be the -th row of for all , and let be -th column of for all , so that . For all , we have . In other words, the -th entry of is the dot product of the -th row of and the -th column of .    Let and , so that for all and . Given any pair with and , we have , as claimed.   "
 },
@@ -2408,7 +2390,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#eg_matrix_mult_dot_prod",
   "type": "Example",
-  "number": "3.1.26",
+  "number": "3.1.25",
   "title": "Matrix multiplication via dot product.",
   "body": " Matrix multiplication via dot product  Consider the matrices . The two rows of are . The two columns of are . Using the dot product description of matrix multiplication, we compute .  "
 },
@@ -2426,7 +2408,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#th_column_method",
   "type": "Theorem",
-  "number": "3.1.27",
+  "number": "3.1.26",
   "title": "Column method of matrix multiplication.",
   "body": " Column method of matrix multiplication  matrix multiplication column method   Let and . The column method of matrix multiplication computes using the two steps below.   Step 1  Let be the -th column of , considered as a column vector. Then .    Step 2  Let be the -th column of , considered as a column vector. Given any column vector we have .       We prove the equalities in both steps separately.   Proof of Step 1  We must show , where . First we show and have the same size. By definition of matrix multiplication, is . By construction has columns and its -th column is . Since and have size and , respectively, has size . Thus each of the columns of is an column vector. It follows that is , as desired.  Next we show that for all , . Since the -th entry of is the -th entry of the -th column of , we have .    Proof of Step 2  We must show that , where . The usual argument shows that both and are column vectors. It remains only to show that the -th entry of the column is equal to the -th entry of for all . For any such we have .    "
 },
@@ -2435,7 +2417,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#s_column_row_method-4",
   "type": "Remark",
-  "number": "3.1.28",
+  "number": "3.1.27",
   "title": "",
   "body": "  amounts to a two-step process for computing an arbitrary matrix product .  The first statement (Step 1) tells us that the -th column of the matrix can be obtained by computing the product of with the -th column of .  The second statement (Step 2) tells us that each product can itself be computed as a certain linear combination of the columns of with coefficients drawn from .  A similar remark applies to computing matrix products using the row method, as described below in .  "
 },
@@ -2444,7 +2426,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#th_row_method",
   "type": "Theorem",
-  "number": "3.1.29",
+  "number": "3.1.28",
   "title": "Row method of matrix multiplication.",
   "body": " Row method of matrix multiplication  matrix multiplication row method   Let and . The row method of matrix multiplication computes using the two steps below.   Step 1  Let be the -th row of . Then .    Step 2  Let be the -th row of . Given any row vector we have .       The proof is very similar to that of and is left to the reader.   "
 },
@@ -2453,7 +2435,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#s_matrix_ex_product",
   "type": "Example",
-  "number": "3.1.30",
+  "number": "3.1.29",
   "title": "Column and row methods.",
   "body": " Column and row methods   Let and   Compute using (a) the definition of matrix multiplication, (b) the column method, (c) the row method.       Using the definition, we see easily that     Let be the columns of , and let be the columns of . We have     Now let be the rows of , and let be the rows of . We have       "
 },
@@ -2471,7 +2453,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#video_eg_matrix_mult_vid",
   "type": "Example",
-  "number": "3.1.31",
+  "number": "3.1.30",
   "title": "Video example of matrix multiplication.",
   "body": " Video example of matrix multiplication   Video: three methods of matrix multiplication    "
 },
@@ -2480,7 +2462,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#d_transpose",
   "type": "Definition",
-  "number": "3.1.33",
+  "number": "3.1.32",
   "title": "Matrix transposition.",
   "body": " Matrix transposition  matrix transposition  transpose   Given an matrix its transpose is the matrix whose -entry is the -th entry of . In other words, is the matrix satisfying for all and .   "
 },
@@ -2489,7 +2471,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#s_matrix-7-4",
   "type": "Remark",
-  "number": "3.1.34",
+  "number": "3.1.33",
   "title": "",
   "body": " Given a matrix we can give a column- or row-based description of as follows:    is the matrix whose -th row is the -th column of .     is the matrix whose -th column is the -th row of .     "
 },
@@ -2498,7 +2480,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#eg_transpose",
   "type": "Example",
-  "number": "3.1.35",
+  "number": "3.1.34",
   "title": "Transpose.",
   "body": " Transpose   Let ; then .  Let , then .   "
 },
@@ -2516,7 +2498,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#ss_matrix_ww-2",
   "type": "WeBWorK",
-  "number": "3.1.36",
+  "number": "3.1.35",
   "title": "",
   "body": "    Enter T or F depending on whether the statement is true or false. (You must enter T or F -- True and False will not work.)    If A is a square matrix such that AA equals the 0 matrix, then A must equal the 0 matrix.    If A has dimensions and B has dimensions , then AB has dimensions .         "
 },
@@ -2525,7 +2507,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#ss_matrix_ww-3",
   "type": "WeBWorK",
-  "number": "3.1.37",
+  "number": "3.1.36",
   "title": "",
   "body": "    Matrix Products: Consider the matrices   Of the possible matrix products ,  which make sense?    C       "
 },
@@ -2534,7 +2516,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#ss_matrix_ww-4",
   "type": "WeBWorK",
-  "number": "3.1.38",
+  "number": "3.1.37",
   "title": "",
   "body": "    If A is B is and C is then:  a) BA has dimension    b) CB has dimension    c) AC has dimension                                       "
 },
@@ -2543,7 +2525,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#ss_matrix_ww-5",
   "type": "WeBWorK",
-  "number": "3.1.39",
+  "number": "3.1.38",
   "title": "",
   "body": "    Determine and such that                      "
 },
@@ -2552,50 +2534,50 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#ss_matrix_ww-6",
   "type": "WeBWorK",
-  "number": "3.1.40",
+  "number": "3.1.39",
   "title": "",
   "body": "    Determine the value(s) of such that   =  Note: If there is more than one value separate them by commas.            "
 },
 {
-  "id": "s_matrix_ex-1-2",
+  "id": "s_matrix_ex-1-1",
   "level": "2",
-  "url": "s_matrix.html#s_matrix_ex-1-2",
+  "url": "s_matrix.html#s_matrix_ex-1-1",
   "type": "Exercise",
   "number": "3.1.7.1",
   "title": "",
   "body": "  For each part below write down the most general matrix satisfying the given condition (use letter names ,etc. for entries).     for all .     for all      for .     "
 },
 {
-  "id": "s_matrix_ex-1-3",
+  "id": "s_matrix_ex-1-2",
   "level": "2",
-  "url": "s_matrix.html#s_matrix_ex-1-3",
+  "url": "s_matrix.html#s_matrix_ex-1-2",
   "type": "Exercise",
   "number": "3.1.7.2",
   "title": "",
   "body": "  Let  . Compute the following matrices, or else explain why the given expression is not well defined.                    "
 },
 {
-  "id": "s_matrix_ex-1-4",
+  "id": "s_matrix_ex-1-3",
   "level": "2",
-  "url": "s_matrix.html#s_matrix_ex-1-4",
+  "url": "s_matrix.html#s_matrix_ex-1-3",
   "type": "Exercise",
   "number": "3.1.7.3",
   "title": "",
   "body": "  Let . Compute the following using either the row or column method of matrix multiplication. Make sure to show how you are using the relevant method.   the first column of ;    the second row of ;    the third column of .          Using expansion by columns, the first column of is given by times the first column of . We compute       "
 },
 {
-  "id": "s_matrix_ex-1-5",
+  "id": "s_matrix_ex-1-4",
   "level": "2",
-  "url": "s_matrix.html#s_matrix_ex-1-5",
+  "url": "s_matrix.html#s_matrix_ex-1-4",
   "type": "Exercise",
   "number": "3.1.7.4",
   "title": "",
   "body": "  Use the row or column method to quickly compute the following product:     I'll just describe the row method here.  Note that the rows of are all identical, and equal to . From the row method it follows that each row of is given by .  Thus the rows of are all identical, and the row method computes the product above by taking the corresponding alternating sum of the rows of : .  Thus is the the matrix, all of whose rows are .   "
 },
 {
-  "id": "s_matrix_ex-1-6",
+  "id": "s_matrix_ex-1-5",
   "level": "2",
-  "url": "s_matrix.html#s_matrix_ex-1-6",
+  "url": "s_matrix.html#s_matrix_ex-1-5",
   "type": "Exercise",
   "number": "3.1.7.5",
   "title": "",
@@ -2617,7 +2599,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.2",
   "title": "Matrix algebra",
-  "body": " Matrix algebra   The last section was devoted to what might be called the arithmetic of matrices. We learned the basic operations of adding, multiplying, scaling, and transposing matrices. In this section we tackle the algebra of matrices. We will investigate the properties enjoyed (and not enjoyed) by our matrix operations, and will show how to use these operations to solve matrix equations.  As you learn about matrix algebra, always keep in mind your old friend, real number algebra. For the most part these two algebraic systems closely resemble one another, as below makes clear. However, there are two crucial points where they differ (see ): two important properties of real number algebra that do not hold for matrices. The consequences of these two simple aberrations are far-reaching and imbue matrix algebra with a fascinating richness in comparison to real number algebra.  \\  Matrix multiplication properties  We begin with a few results that establish a close connection between matrix multiplication and real number multiplication.   Properties of matrix multiplication   In what follows will denote positive integers.   Associative law   for all     Left-distributive law   for all and .    Right-distributive law   for all and .    Scaling commutative law   for all , , .       How does one actually prove one of these properties? These are all matrix equalities of the form , so according to the matrix equality definition we must show (1) that the matrices and have the same size, and (2) that for all . The proof below illustrates this technique for the multiplication associative law of .   Proof of (1)  We prove only the associative law . Let , , . To show , we must show (1) that and have the same dimension, and (2) that for all possible .  The usual observation about inner and outer dimensions shows that both and have dimension .  Next, given any with and , we have:   This proves that all entries of the two matrices are equal, and hence .    Video example: proving matrix equalities   Video: matrix multiplication is associative     Like real number algebra, there are certain matrices that satisfy special properties with regard to the operations of addition and multiplication. We have seen examples of this already thanks to the natural vector space structure of . For example, the zero matrix acts as an additive indentity ( , for all ) and vector inverses act as additive inverses ( , for all ). We now introduce the identity matrices , which satisfy a multiplicative identity property with respect to matrix multiplication, and thus play a role analogous to the number among real numbers.   Identity matrix  identity matrix  matrix identity matrix    inverse matrix    The identity matrix , denoted , is the square matrix with ones along the diagonal and zeros everywhere else. In other words, for all and , we have . When there is no confusion about which dimension indentity matrix is intended, we will often write simply instead of .     Multiplicative identities   Let be a positive integer. The identity matrix acts as a multiplicative identity among matrices in the following sense: for all we have .     Left as an exercise.     Cancellation laws fulfilled and violated  When performing real number algebra, we frequently make use of cancellation laws, and these laws come in a variety of flavors. For example, the additive cancellation law asserts that for all . Similarly, the multiplicative cancellation law asserts that for any nonzero  , we have for all . We now investigate the extent to which these laws apply in matrix algebra. The results, as you will see, are mixed!   Additive cancellation of matrices   Given matrices , and , we have if and only if . Using logical notation:     As simple as this claim might seem, remember that we are dealing with a completely new algebraic system here. We will prove both implications of if and only if statement separately.   Proof:  We prove this via a chain of implications: .    Proof:  This direction is obvious: if and are equal matrices, then they remain equal when we add to each of them.      The algebraic importance of is that we can perform additive cancellation in matrix equations just as we do in real number algebra. For example, we can solve the matrix equation for as follows:  .   Though we can perform additive cancellation in matrix algebra, we can not always perform multiplicative cancellation . For example, consider the matrices . Check for yourself that , and yet . In other words, we cannot always cancel  from the matrix equation .   The example in our warning above is but one instance of the general failure of the principle of multiplicative cancellation in matrix algebra. This in turn is a consequence of the following theorem, which identifies the two crucial places where matrix algebra differs significantly from real number algebra.   Matrix algebra abnormalities      Matrix multiplication is not commutative  Given matrices and , we do not necessarily have .    Products of nonzero matrices may be equal to zero  If the product of two matrices is the zero matrix, we cannot conclude that one of matrices is the zero matrix. In logical notation: .       This is a good place to point out that to prove an identity does not hold, it suffices to provide a single counterexample to that effect. We do so for each failed identity of in turn. There is no significance to the particular counterexamples chosen here, and indeed there are infinitely many counterexamples to choose from in both cases.   We have and thus .    Observe that . This is an example of two nonzero matrices whose product is the zero matrix.     An important consequence of the abnormality is that matrix algebra does not enjoy the property of multiplicative cancellation.   Failure of multiplicative cancellation     Suppose matrices satisfy and . We cannot conclude that . In logical notation:     Suppose matrices satisfy and . We cannot conclude that . In logical notation:        Again, we need only provide explicit counterexamples for each statement.    Let , , . Verify for yourself that . Thus , but clearly .    Let , , . We have . Thus , but .      Mark well this important abnormality of matrix algebra. Confronted with a real number equation of the form , we have a deeply ingrained impulse to declare that either or . (If we're sloppy we may forget about that first possibility.) The corresponding maneuver for the matrix equation is simply not available to us, unless we know something more about .     Transpostition properties  We end our foray into matrix algebra with some properties articulating how matrix transposition interacts with matrix addition, multiplication and scalar multiplication.   Properties of matrix transposition   In what follows will denote positive integers.    for all .     for all and .     for all .     for all .       We prove only the first statement. First observe that if is , then so is and . Then is by . Similarly, we see that is .  Next, given any with , , we have . Since the -entries of both matrices are equal for each , it follows that .     Video example: proving matrix equalities   Video: transpose property       WeBWork Exercises      Determine which of the following statements are true and which are false.    If and are square matrices of the same size then .    If and are matrices such that and , then .    If and are square matrices of the same size, then .    The matrices and are always defined, regardless of the size of .    If is a square matrix for which , then either or .               Let be a 5 by 9 matrix. Then is a by matrix, and is a by matrix.                                Let   Then   where  ,  ,  ,  ,  and   where  ,  ,  ,  .                                                   Written Exercises    In this exercise you will complete the proof of .    Prove the .    Prove the .    Prove the .        Prove .      In this exercise you will complete the proof of .    Prove Statement .    Prove Statement .    Prove Statement .        Let an matrix. We define its square  as .    In real number algebra we know that . By contrast, show that there are infinitely many matrices satisfying .  Optional: can you describe in a parametric manner the set of all matrices satisfying ?    In real number algebra we know that . By contrast, show that there are infinitely many matrices satisfying .    In real number algebra we have the identity . Show that two matrices , satisfy if and only if .      For (a) set , compute , set this matrix equal to , and try and find some solutions to the corresponding (nonlinear) system of four equations in the unknowns .  Similar hint for (b), only now set .      Consider the matrix equation .     The following chain of implications is invalid. . For each implication in the chain, explain why it is valid or invalid.      Find all satisfying .    Write and set up a system of linear equations in the unknowns .       "
+  "body": " Matrix algebra   The last section was devoted to what might be called the arithmetic of matrices. We learned the basic operations of adding, multiplying, scaling, and transposing matrices. In this section we tackle the algebra of matrices. We will investigate the properties enjoyed (and not enjoyed) by our matrix operations, and will show how to use these operations to solve matrix equations.  As you learn about matrix algebra, always keep in mind your old friend, real number algebra. For the most part these two algebraic systems closely resemble one another, as below makes clear. However, there are two crucial points where they differ (see ): two important properties of real number algebra that do not hold for matrices. The consequences of these two simple aberrations are far-reaching and imbue matrix algebra with a fascinating richness in comparison to real number algebra.  \\  Matrix multiplication properties  We begin with a few results that establish a close connection between matrix multiplication and real number multiplication.   Properties of matrix multiplication   In what follows will denote positive integers.   Associative law   for all     Left-distributive law   for all and .    Right-distributive law   for all and .    Scaling commutative law   for all , , .       How does one actually prove one of these properties? These are all matrix equalities of the form , so according to the matrix equality definition we must show (1) that the matrices and have the same size, and (2) that for all . The proof below illustrates this technique for the multiplication associative law of .   Proof of (1)  We prove only the associative law . Let , , . To show , we must show (1) that and have the same dimension, and (2) that for all possible .  The usual observation about inner and outer dimensions shows that both and have dimension .  Next, given any with and , we have:   This proves that all entries of the two matrices are equal, and hence .    Video example: proving matrix equalities   Video: matrix multiplication is associative     Like real number algebra, there are certain matrices that satisfy special properties with regard to the operations of addition and multiplication. We have seen examples of this already thanks to the natural vector space structure of . For example, the zero matrix acts as an additive indentity ( , for all ) and vector inverses act as additive inverses ( , for all ). We now introduce the identity matrices , which satisfy a multiplicative identity property with respect to matrix multiplication, and thus play a role analogous to the number among real numbers.   Identity matrix  identity matrix  matrix identity matrix    inverse matrix    The identity matrix , denoted , is the square matrix with ones along the diagonal and zeros everywhere else. In other words, for all and , we have . When there is no confusion about which dimension indentity matrix is intended, we will often write simply instead of .     Multiplicative identities   Let be a positive integer. The identity matrix acts as a multiplicative identity among matrices in the following sense: for all we have .     Left as an exercise.     Cancellation laws fulfilled and violated  When performing real number algebra, we frequently make use of cancellation laws, and these laws come in a variety of flavors. For example, the additive cancellation law asserts that for all . Similarly, the multiplicative cancellation law asserts that for any nonzero  , we have for all . We now investigate the extent to which these laws apply in matrix algebra. The results, as you will see, are mixed!   Additive cancellation of matrices   Given matrices , and , we have if and only if . Using logical notation:     As simple as this claim might seem, remember that we are dealing with a completely new algebraic system here. We will prove both implications of if and only if statement separately.   Proof:  We prove this via a chain of implications: .    Proof:  This direction is obvious: if and are equal matrices, then they remain equal when we add to each of them.      The algebraic importance of is that we can perform additive cancellation in matrix equations just as we do in real number algebra. For example, we can solve the matrix equation for as follows:  .   Though we can perform additive cancellation in matrix algebra, we can not always perform multiplicative cancellation . For example, consider the matrices . Check for yourself that , and yet . In other words, we cannot always cancel  from the matrix equation .   The example in our warning above is but one instance of the general failure of the principle of multiplicative cancellation in matrix algebra. This in turn is a consequence of the following theorem, which identifies the two crucial places where matrix algebra differs significantly from real number algebra.   Matrix algebra abnormalities      Matrix multiplication is not commutative  Given matrices and , we do not necessarily have .    Products of nonzero matrices may be equal to zero  If the product of two matrices is the zero matrix, we cannot conclude that one of matrices is the zero matrix. In logical notation: .       This is a good place to point out that to prove an identity does not hold, it suffices to provide a single counterexample to that effect. We do so for each failed identity of in turn. There is no significance to the particular counterexamples chosen here, and indeed there are infinitely many counterexamples to choose from in both cases.   We have and thus .    Observe that . This is an example of two nonzero matrices whose product is the zero matrix.     An important consequence of the abnormality is that matrix algebra does not enjoy the property of multiplicative cancellation.   Failure of multiplicative cancellation     Suppose matrices satisfy and . We cannot conclude that . In logical notation:     Suppose matrices satisfy and . We cannot conclude that . In logical notation:        Again, we need only provide explicit counterexamples for each statement.    Let , , . Verify for yourself that . Thus , but clearly .    Let , , . We have . Thus , but .      Mark well this important abnormality of matrix algebra. Confronted with a real number equation of the form , we have a deeply ingrained impulse to declare that either or . (If we're sloppy we may forget about that first possibility.) The corresponding maneuver for the matrix equation is simply not available to us, unless we know something more about .     Transpostition properties  We end our foray into matrix algebra with some properties articulating how matrix transposition interacts with matrix addition, multiplication and scalar multiplication.   Properties of matrix transposition   In what follows will denote positive integers.    for all .     for all and .     for all .     for all .       We prove only the first statement. First observe that if is , then so is and . Then is by . Similarly, we see that is .  Next, given any with , , we have . Since the -entries of both matrices are equal for each , it follows that .     Video example: proving matrix equalities   Video: transpose property       WeBWork Exercises      Determine which of the following statements are true and which are false.    If and are square matrices of the same size then .    If and are matrices such that and , then .    If and are square matrices of the same size, then .    The matrices and are always defined, regardless of the size of .    If is a square matrix for which , then either or .               Let be a 5 by 9 matrix. Then is a by matrix, and is a by matrix.                                Let   Then   where  ,  ,  ,  ,  and   where  ,  ,  ,  .                                                     In this exercise you will complete the proof of .    Prove the .    Prove the .    Prove the .        Prove .      In this exercise you will complete the proof of .    Prove Statement .    Prove Statement .    Prove Statement .        Let an matrix. We define its square  as .    In real number algebra we know that . By contrast, show that there are infinitely many matrices satisfying .  Optional: can you describe in a parametric manner the set of all matrices satisfying ?    In real number algebra we know that . By contrast, show that there are infinitely many matrices satisfying .    In real number algebra we have the identity . Show that two matrices , satisfy if and only if .      For (a) set , compute , set this matrix equal to , and try and find some solutions to the corresponding (nonlinear) system of four equations in the unknowns .  Similar hint for (b), only now set .      Consider the matrix equation .     The following chain of implications is invalid. . For each implication in the chain, explain why it is valid or invalid.      Find all satisfying .    Write and set up a system of linear equations in the unknowns .       "
 },
 {
   "id": "th_matrix_alg_props",
@@ -2782,45 +2764,45 @@ var ptx_lunr_docs = [
   "body": "    Let   Then   where  ,  ,  ,  ,  and   where  ,  ,  ,  .                                               "
 },
 {
-  "id": "s_matrix_algebra_ex-1-2",
+  "id": "s_matrix_algebra_ex-1-1",
   "level": "2",
-  "url": "s_matrix_algebra.html#s_matrix_algebra_ex-1-2",
+  "url": "s_matrix_algebra.html#s_matrix_algebra_ex-1-1",
   "type": "Exercise",
   "number": "3.2.5.1",
   "title": "",
   "body": "  In this exercise you will complete the proof of .    Prove the .    Prove the .    Prove the .     "
 },
 {
-  "id": "s_matrix_algebra_ex-1-3",
+  "id": "s_matrix_algebra_ex-1-2",
   "level": "2",
-  "url": "s_matrix_algebra.html#s_matrix_algebra_ex-1-3",
+  "url": "s_matrix_algebra.html#s_matrix_algebra_ex-1-2",
   "type": "Exercise",
   "number": "3.2.5.2",
   "title": "",
   "body": "  Prove .   "
 },
 {
-  "id": "s_matrix_algebra_ex-1-4",
+  "id": "s_matrix_algebra_ex-1-3",
   "level": "2",
-  "url": "s_matrix_algebra.html#s_matrix_algebra_ex-1-4",
+  "url": "s_matrix_algebra.html#s_matrix_algebra_ex-1-3",
   "type": "Exercise",
   "number": "3.2.5.3",
   "title": "",
   "body": "  In this exercise you will complete the proof of .    Prove Statement .    Prove Statement .    Prove Statement .     "
 },
 {
-  "id": "s_matrix_algebra_ex-1-5",
+  "id": "s_matrix_algebra_ex-1-4",
   "level": "2",
-  "url": "s_matrix_algebra.html#s_matrix_algebra_ex-1-5",
+  "url": "s_matrix_algebra.html#s_matrix_algebra_ex-1-4",
   "type": "Exercise",
   "number": "3.2.5.4",
   "title": "",
   "body": "  Let an matrix. We define its square  as .    In real number algebra we know that . By contrast, show that there are infinitely many matrices satisfying .  Optional: can you describe in a parametric manner the set of all matrices satisfying ?    In real number algebra we know that . By contrast, show that there are infinitely many matrices satisfying .    In real number algebra we have the identity . Show that two matrices , satisfy if and only if .      For (a) set , compute , set this matrix equal to , and try and find some solutions to the corresponding (nonlinear) system of four equations in the unknowns .  Similar hint for (b), only now set .   "
 },
 {
-  "id": "s_matrix_algebra_ex-1-6",
+  "id": "s_matrix_algebra_ex-1-5",
   "level": "2",
-  "url": "s_matrix_algebra.html#s_matrix_algebra_ex-1-6",
+  "url": "s_matrix_algebra.html#s_matrix_algebra_ex-1-5",
   "type": "Exercise",
   "number": "3.2.5.5",
   "title": "",
@@ -2833,7 +2815,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.3",
   "title": "Invertible matrices",
-  "body": " Invertible matrices   Picking up the thread of , we observe that the cancellation property enjoyed in real number algebra is a consequence of the fact that every nonzero real number has a multiplicative inverse , denoted or , that satisfies . Indeed, canceling the in the equation (assuming ) is really the act of multiplying both sides of this equation by the multiplicative inverse .  Ever on the lookout for connections between real number and matrix algebra, we ask whether there is a sensible analogue of multiplicative inverses for matrices. We have seen already that identity matrices play the role of multiplicative identities for matrices, just as the number does for real numbers. This suggests we should restrict our attention to matrices. The following definition is then the desired analogue of the multiplicative inverse of a nonzero real number.    Invertible matrices   Invertible matrix  invertible matrix  matrix inverse    inverse of    An matrix is invertible (or nonsingular ) if there is a matrix satisfying . When this is the case we call an inverse of , and we say that and are inverses of one another.  A matrix satisfying is called an inverse of , denoted .  A square matrix that is not invertible is called singular .    The phrase an inverse in is somewhat jarring. Shouldn't we speak of the inverse of a matrix? Not surprisingly, if a matrix is invertible, then it has one and only one inverse. As intuitive as this fact may seem, however, it still requires proof.   Inverses are unique   If is an invertible matrix, then its inverse is unique: that is, there is only one matrix satisfying .     Suppose matrices and both satisfy the properties of the multiplicative inverse: i.e., . Then . Thus we see that , showing that the inverse of , if it exists, is unique.   The next theorem tells us that we can multiplicatively cancel a matrix if it is invertible .   Cancellation with invertible matrices   Suppose is an invertible matrix.   Left-cancellation  Given matrices and , we have .    Right-cancellation  Given matrices and , we have .          We prove both implications of separately. The reverse implication ( ) is obvious: . For the forward implication ( ), we have .    The argument for right cancellation is exactly similar.       The next corollary shows how we can solve some matrix equations uniquely using invertible matrices.   Solving with invertible matrices   Suppose is an invertible matrix.   If and are matrices, then .    If and are matrices, then .          We have .    We have .       Without any additional theory at our disposal, to show a matrix is invertible we must exhibit an inverse. The onus is on us to find a matrix satisfying both and . (Remember: since we cannot assume , we really need to show both equations hold.)  By the same token, to show is not invertible we must show that an inverse does not exist: that is, we must prove that there is no satisfying . The next example illustrates this technique for a variety of matrices.   Invertible matrices      Identity matrices are invertible, and in fact we have , as witnessed by the fact that .    Square zero matrices are never invertible, since for any square matrix of the same dimension we have . Thus there is no matrix satisfying the inverse property with respect to .    The inverse of the matrix is . Indeed, we have , as you can easily verify.    The matrix is not invertible. Indeed, using the row method of matrix multiplication , we see that given any matrix , each row of is given by . It follows that all the rows of are identical, and hence that we cannot have , since the rows of are not identical.       As the preceding example illustrates, deciding whether a matrix is invertible is not so straightforward, especially if the matrix is large. For the case, however, we have a relatively simple test for invertibility. (We will generalize this to the case in .)   Inverses of matrices   A matrix is invertible if and only if .  When this is the case, we have .     If , the proposed matrix is indeed an inverse of , as one readily verifies.  Assume . If , then is not invertible, as we saw in the example above. Thus we can assume is nonzero, in which case is also nonzero. An easy computation shows This implies is not invertible. Indeed if it were, then the inverse would exist, and we'd have , which is a contradiction. We have proved that if , then is not invertible.    Invertible matrices  Sage has a number of useful tools related to invertibility. The boolean function is_invertible() tests for invertibility, and the method inverse() computes the inverse of an invertible matrix. Below we generate a random matrix with rational coefficients, test whether it is invertible, and compute its inverse if it is invertible. The density=0.5 ensures that roughly half of the matrix entries are zero; and this in turn increases the likelihood that the matrix is singular, for reasons that will become somewhat clearer later.   Evaluate the Sage cell below multiple times.    When the matrix is invertible, verify that . If you like, use the blank Sage cell to compute and .    Try increasing the density setting in random_element() ( , density=0.75 , density=.875 ) and see if the matrix is more or less likely to be invertible.        The next theorem tells us that invertibility is preserved by matrix multiplication: that is, if and are invertible matrices, then so is .   Products of invertible matrices   Let be matrices. If and are both invertible, then so is their product . Using logical notation: . In fact when this is the case we have .     Assume and are invertible. The statement of the theorem proposes a candidate for the inverse of : namely, . We need only show that satisfies . Here goes: .    Products of invertible matrices   More generally, if are invertible matrices, then their product is invertible. Furthermore, we have in this case .     We prove by induction on the number of matrices, , that if the are invertible, then the proposed inverse formula is valid.  Base step:  For , the inverse formula reads , which is clearly true.    Induction step  For the induction step we assume that the inverse formula is valid for any collection of invertible matrices, and then show it is valid for any collection of invertible matrices. Let be invertible matrices. Define . Then .      Whenever confronted with a logical implication of the form , where and denote arbitrary propositions, you should always ask whether the implication goes the other way . In other words, does the converse implication also hold?  The answer with regard to the implication is yes, though the proof of this is more difficult then you think. (See .)  The following argument is a common invalid proof of the reverse implication:   Assume is invertible.    Then has an inverse matrix.    Then the inverse of is .    Then and exist. Hence and are invertible.   Where is the flaw in our logic here? The second statement only allows us to conclude that there is some mystery matrix satisfying . We cannot yet say that , as this formula from only applies when we already know that and are both invertible. But this is exactly what we are trying to prove! As such we are guilty here of begging the question , or petitio principii in Latin.     Powers of matrices, matrix polynomials  We end this section by exploring how the matrix inverse operation fits into our matrix algebra. First, we can now use the inverse operation to define matrix powers of the form , where is a square matrix and is an arbitrary integer.   Matrix powers  matrix powers    matrix power    Let be an matrix, and let be an integer. We define the power matrix as follows: .    Equipped with a notion of matrix powers, we can further define matrix polynomials for square matrices.   Matrix polynomials  matrix polynomials    matrix polynomial   Let be a polynomial with real coefficients. For any square matrix of size , we define the matrix as . We call the result of evaluating the polynomial at the matrix .     It is both easy and perilous to forget the identity matrix in the term appearing in . Take caution not to make this mistake; without an identity matrix of appropriate size, the expression simply does not make sense.    Matrix polynomials   Let . Evaluate at the matrices and .    We have and .     Matrix polynomials  An integer matrix power is computed in Sage as A^n .   Of course the matrix needs to be invertible for a negative of power to be computed. Sage will throw an error in this case if the matrix is singular.   Polynomial expressions can then be easily computed manually in Sage. The next cell computes and for .   We took care to heed the warning in , making sure to include for ( identity_matrix(3) ) and for ( identity_matrix(2) ). Interestingly, Sage is smart enough to figure out what we mean even if we are sloppy in this regard.     Properties of matrix powers   The following properties hold for all matrices , all scalars , and all integers for which the given expression makes sense.                        .       The proofs of the first three statements are elementary, and closely resemble proofs of similar results in real number algebra. We leave these as an (unassigned) exercise.  For the fourth statement to make sense, we must assume that is invertible. The claim here is that is invertible, and that its inverse is itself. To prove this we need only show , which follows from the definition of the inverse.  The fifth statement also tacitly assumes is invertible. To prove it, we consider the three cases , and .  If , then by definition .  If , then by definition .  Suppose . Then .     Inverse and transpose   Let be invertible. We have , in which case .    We prove both implications of the if and only if statement separately.  Suppose is invertible with inverse . To see that is invertible, with inverse as specified in , we need only show that . We verify the two equalities separately:  . In both chains of equality we make use of the obvious claim .  For the other direction, assume is invertible. Setting , we see that . By the first implication, we know that if is invertible, then so is .      WeBWork Exercises      If and are invertible matrices, then the inverse of is .   True   False         SOLUTION: False. For example, let , and , then , which is not invertible.            Solve for the matrix if . Assume that all matrices are and invertible as needed.         SOLUTION: Note that            Are the following matrices invertible?                          For what values of will be invertible?  For all such that  and  .             SOLUTION: The matrix is invertible provided the columns of are linearly independent, which will be the case if . Thus, we require that and .            Let   Then   where  ,  ,  ,  ,   where  ,  ,  ,  ,  and   where  ,  ,  ,  .                                                                       Written Exercises    For each matrix either provide an inverse or show the matrix is not invertible. Justify your answer.               , where .        Each below is invertible. Find by guess and check. You may want to use the row or column method of matrix multiplication to justify your answer.                       Suppose is an invertible matrix. Prove: for any nonzero  the matrix is invertible.      Assume is a square matrix with .    Prove: if has two identical columns, then is not invertible.    Prove: if has a row that is a scalar multiple of another row, then is not invertible.      Use the column and\/or row method of matrix multiplication to show directly that cannot have an inverse matrix.      Find all invertible matrices satisfying the given equation, or show there is no such . Justify your answer.     .     .                  Let . Find a formula for , where is an integer. Justify your answer using a proof by induction.      Let , the matrix consisting of all ones. Find a formula for , where is an integer. Justify your answer using a proof by induction.      Let , where is some fixed scalar. Suppose is an matrix satisfying .    Prove: if , then is invertible.    Suppose further that is not a scalar multiple of .  Prove: if , then is singular.       Expanding matrix products  Fix a positive integer . Given linear combinations of matrices , prove by induction on that . Note that each step (base and induction) of your induction on will require an argument that uses induction on ! This is sometimes called double induction . For example, in the base step you must show that for any ; this should be proved by induction on .    Polynomial expressions of commute   Let and be polynomials with real coefficients. For any square matrix , show that the matrices and commute: i.e., . You may use the result of .       Suppose is an matrix satisfying for some .  Show that is invertible, and that in fact . You may use the results of and\/or . .      "
+  "body": " Invertible matrices   Picking up the thread of , we observe that the cancellation property enjoyed in real number algebra is a consequence of the fact that every nonzero real number has a multiplicative inverse , denoted or , that satisfies . Indeed, canceling the in the equation (assuming ) is really the act of multiplying both sides of this equation by the multiplicative inverse .  Ever on the lookout for connections between real number and matrix algebra, we ask whether there is a sensible analogue of multiplicative inverses for matrices. We have seen already that identity matrices play the role of multiplicative identities for matrices, just as the number does for real numbers. This suggests we should restrict our attention to matrices. The following definition is then the desired analogue of the multiplicative inverse of a nonzero real number.    Invertible matrices   Invertible matrix  invertible matrix  matrix inverse    inverse of    An matrix is invertible (or nonsingular ) if there is a matrix satisfying . When this is the case we call an inverse of , and we say that and are inverses of one another.  A matrix satisfying is called an inverse of , denoted .  A square matrix that is not invertible is called singular .    The phrase an inverse in is somewhat jarring. Shouldn't we speak of the inverse of a matrix? Not surprisingly, if a matrix is invertible, then it has one and only one inverse. As intuitive as this fact may seem, however, it still requires proof.   Inverses are unique   If is an invertible matrix, then its inverse is unique: that is, there is only one matrix satisfying .     Suppose matrices and both satisfy the properties of the multiplicative inverse: i.e., . Then . Thus we see that , showing that the inverse of , if it exists, is unique.   The next theorem tells us that we can multiplicatively cancel a matrix if it is invertible .   Cancellation with invertible matrices   Suppose is an invertible matrix.   Left-cancellation  Given matrices and , we have .    Right-cancellation  Given matrices and , we have .          We prove both implications of separately. The reverse implication ( ) is obvious: . For the forward implication ( ), we have .    The argument for right cancellation is exactly similar.       The next corollary shows how we can solve some matrix equations uniquely using invertible matrices.   Solving with invertible matrices   Suppose is an invertible matrix.   If and are matrices, then .    If and are matrices, then .          We have .    We have .       Without any additional theory at our disposal, to show a matrix is invertible we must exhibit an inverse. The onus is on us to find a matrix satisfying both and . (Remember: since we cannot assume , we really need to show both equations hold.)  By the same token, to show is not invertible we must show that an inverse does not exist: that is, we must prove that there is no satisfying . The next example illustrates this technique for a variety of matrices.   Invertible matrices      Identity matrices are invertible, and in fact we have , as witnessed by the fact that .    Square zero matrices are never invertible, since for any square matrix of the same dimension we have . Thus there is no matrix satisfying the inverse property with respect to .    The inverse of the matrix is . Indeed, we have , as you can easily verify.    The matrix is not invertible. Indeed, using the row method of matrix multiplication , we see that given any matrix , each row of is given by . It follows that all the rows of are identical, and hence that we cannot have , since the rows of are not identical.       As the preceding example illustrates, deciding whether a matrix is invertible is not so straightforward, especially if the matrix is large. For the case, however, we have a relatively simple test for invertibility. (We will generalize this to the case in .)   Inverses of matrices   A matrix is invertible if and only if .  When this is the case, we have .     If , the proposed matrix is indeed an inverse of , as one readily verifies.  Assume . If , then is not invertible, as we saw in the example above. Thus we can assume is nonzero, in which case is also nonzero. An easy computation shows This implies is not invertible. Indeed if it were, then the inverse would exist, and we'd have , which is a contradiction. We have proved that if , then is not invertible.    Invertible matrices  Sage has a number of useful tools related to invertibility. The boolean function is_invertible() tests for invertibility, and the method inverse() computes the inverse of an invertible matrix. Below we generate a random matrix with rational coefficients, test whether it is invertible, and compute its inverse if it is invertible. The density=0.5 ensures that roughly half of the matrix entries are zero; and this in turn increases the likelihood that the matrix is singular, for reasons that will become somewhat clearer later.   Evaluate the Sage cell below multiple times.    When the matrix is invertible, verify that . If you like, use the blank Sage cell to compute and .    Try increasing the density setting in random_element() ( , density=0.75 , density=.875 ) and see if the matrix is more or less likely to be invertible.        The next theorem tells us that invertibility is preserved by matrix multiplication: that is, if and are invertible matrices, then so is .   Products of invertible matrices   Let be matrices. If and are both invertible, then so is their product . Using logical notation: . In fact when this is the case we have .     Assume and are invertible. The statement of the theorem proposes a candidate for the inverse of : namely, . We need only show that satisfies . Here goes: .    Products of invertible matrices   More generally, if are invertible matrices, then their product is invertible. Furthermore, we have in this case .     We prove by induction on the number of matrices, , that if the are invertible, then the proposed inverse formula is valid.  Base step:  For , the inverse formula reads , which is clearly true.    Induction step  For the induction step we assume that the inverse formula is valid for any collection of invertible matrices, and then show it is valid for any collection of invertible matrices. Let be invertible matrices. Define . Then .      Whenever confronted with a logical implication of the form , where and denote arbitrary propositions, you should always ask whether the implication goes the other way . In other words, does the converse implication also hold?  The answer with regard to the implication is yes, though the proof of this is more difficult then you think. (See .)  The following argument is a common invalid proof of the reverse implication:   Assume is invertible.    Then has an inverse matrix.    Then the inverse of is .    Then and exist. Hence and are invertible.   Where is the flaw in our logic here? The second statement only allows us to conclude that there is some mystery matrix satisfying . We cannot yet say that , as this formula from only applies when we already know that and are both invertible. But this is exactly what we are trying to prove! As such we are guilty here of begging the question , or petitio principii in Latin.     Powers of matrices, matrix polynomials  We end this section by exploring how the matrix inverse operation fits into our matrix algebra. First, we can now use the inverse operation to define matrix powers of the form , where is a square matrix and is an arbitrary integer.   Matrix powers  matrix powers    matrix power    Let be an matrix, and let be an integer. We define the power matrix as follows: .    Equipped with a notion of matrix powers, we can further define matrix polynomials for square matrices.   Matrix polynomials  matrix polynomials    matrix polynomial   Let be a polynomial with real coefficients. For any square matrix of size , we define the matrix as . We call the result of evaluating the polynomial at the matrix .     It is both easy and perilous to forget the identity matrix in the term appearing in . Take caution not to make this mistake; without an identity matrix of appropriate size, the expression simply does not make sense.    Matrix polynomials   Let . Evaluate at the matrices and .    We have and .     Matrix polynomials  An integer matrix power is computed in Sage as A^n .   Of course the matrix needs to be invertible for a negative of power to be computed. Sage will throw an error in this case if the matrix is singular.   Polynomial expressions can then be easily computed manually in Sage. The next cell computes and for .   We took care to heed the warning in , making sure to include for ( identity_matrix(3) ) and for ( identity_matrix(2) ). Interestingly, Sage is smart enough to figure out what we mean even if we are sloppy in this regard.     Properties of matrix powers   The following properties hold for all matrices , all scalars , and all integers for which the given expression makes sense.                        .       The proofs of the first three statements are elementary, and closely resemble proofs of similar results in real number algebra. We leave these as an (unassigned) exercise.  For the fourth statement to make sense, we must assume that is invertible. The claim here is that is invertible, and that its inverse is itself. To prove this we need only show , which follows from the definition of the inverse.  The fifth statement also tacitly assumes is invertible. To prove it, we consider the three cases , and .  If , then by definition .  If , then by definition .  Suppose . Then .     Inverse and transpose   Let be invertible. We have , in which case .    We prove both implications of the if and only if statement separately.  Suppose is invertible with inverse . To see that is invertible, with inverse as specified in , we need only show that . We verify the two equalities separately:  . In both chains of equality we make use of the obvious claim .  For the other direction, assume is invertible. Setting , we see that . By the first implication, we know that if is invertible, then so is .      WeBWork Exercises      If and are invertible matrices, then the inverse of is .   True   False         SOLUTION: False. For example, let , and , then , which is not invertible.            Solve for the matrix if . Assume that all matrices are and invertible as needed.         SOLUTION: Note that            Are the following matrices invertible?                          For what values of will be invertible?  For all such that  and  .             SOLUTION: The matrix is invertible provided the columns of are linearly independent, which will be the case if . Thus, we require that and .            Let   Then   where  ,  ,  ,  ,   where  ,  ,  ,  ,  and   where  ,  ,  ,  .                                                                         For each matrix either provide an inverse or show the matrix is not invertible. Justify your answer.               , where .        Each below is invertible. Find by guess and check. You may want to use the row or column method of matrix multiplication to justify your answer.                       Suppose is an invertible matrix. Prove: for any nonzero  the matrix is invertible.      Assume is a square matrix with .    Prove: if has two identical columns, then is not invertible.    Prove: if has a row that is a scalar multiple of another row, then is not invertible.      Use the column and\/or row method of matrix multiplication to show directly that cannot have an inverse matrix.      Find all invertible matrices satisfying the given equation, or show there is no such . Justify your answer.     .     .                  Let . Find a formula for , where is an integer. Justify your answer using a proof by induction.      Let , the matrix consisting of all ones. Find a formula for , where is an integer. Justify your answer using a proof by induction.      Let , where is some fixed scalar. Suppose is an matrix satisfying .    Prove: if , then is invertible.    Suppose further that is not a scalar multiple of .  Prove: if , then is singular.       Expanding matrix products  Fix a positive integer . Given linear combinations of matrices , prove by induction on that . Note that each step (base and induction) of your induction on will require an argument that uses induction on ! This is sometimes called double induction . For example, in the base step you must show that for any ; this should be proved by induction on .    Polynomial expressions of commute   Let and be polynomials with real coefficients. For any square matrix , show that the matrices and commute: i.e., . You may use the result of .       Suppose is an matrix satisfying for some .  Show that is invertible, and that in fact . You may use the results of and\/or . .      "
 },
 {
   "id": "d_invertible_matrix",
@@ -3070,72 +3052,72 @@ var ptx_lunr_docs = [
   "body": "    Let   Then   where  ,  ,  ,  ,   where  ,  ,  ,  ,  and   where  ,  ,  ,  .                                                                   "
 },
 {
-  "id": "s_invertible_matrices_ex-1-2",
+  "id": "s_invertible_matrices_ex-1-1",
   "level": "2",
-  "url": "s_invertible_matrices.html#s_invertible_matrices_ex-1-2",
+  "url": "s_invertible_matrices.html#s_invertible_matrices_ex-1-1",
   "type": "Exercise",
   "number": "3.3.4.1",
   "title": "",
   "body": "  For each matrix either provide an inverse or show the matrix is not invertible. Justify your answer.               , where .     "
 },
 {
-  "id": "s_invertible_matrices_ex-1-3",
+  "id": "s_invertible_matrices_ex-1-2",
   "level": "2",
-  "url": "s_invertible_matrices.html#s_invertible_matrices_ex-1-3",
+  "url": "s_invertible_matrices.html#s_invertible_matrices_ex-1-2",
   "type": "Exercise",
   "number": "3.3.4.2",
   "title": "",
   "body": "  Each below is invertible. Find by guess and check. You may want to use the row or column method of matrix multiplication to justify your answer.                    "
 },
 {
-  "id": "s_invertible_matrices_ex-1-4",
+  "id": "s_invertible_matrices_ex-1-3",
   "level": "2",
-  "url": "s_invertible_matrices.html#s_invertible_matrices_ex-1-4",
+  "url": "s_invertible_matrices.html#s_invertible_matrices_ex-1-3",
   "type": "Exercise",
   "number": "3.3.4.3",
   "title": "",
   "body": "  Suppose is an invertible matrix. Prove: for any nonzero  the matrix is invertible.   "
 },
 {
-  "id": "s_invertible_matrices_ex-1-5",
+  "id": "s_invertible_matrices_ex-1-4",
   "level": "2",
-  "url": "s_invertible_matrices.html#s_invertible_matrices_ex-1-5",
+  "url": "s_invertible_matrices.html#s_invertible_matrices_ex-1-4",
   "type": "Exercise",
   "number": "3.3.4.4",
   "title": "",
   "body": "  Assume is a square matrix with .    Prove: if has two identical columns, then is not invertible.    Prove: if has a row that is a scalar multiple of another row, then is not invertible.      Use the column and\/or row method of matrix multiplication to show directly that cannot have an inverse matrix.   "
 },
 {
-  "id": "s_invertible_matrices_ex-1-6",
+  "id": "s_invertible_matrices_ex-1-5",
   "level": "2",
-  "url": "s_invertible_matrices.html#s_invertible_matrices_ex-1-6",
+  "url": "s_invertible_matrices.html#s_invertible_matrices_ex-1-5",
   "type": "Exercise",
   "number": "3.3.4.5",
   "title": "",
   "body": "  Find all invertible matrices satisfying the given equation, or show there is no such . Justify your answer.     .     .               "
 },
 {
-  "id": "s_invertible_matrices_ex-1-7",
+  "id": "s_invertible_matrices_ex-1-6",
   "level": "2",
-  "url": "s_invertible_matrices.html#s_invertible_matrices_ex-1-7",
+  "url": "s_invertible_matrices.html#s_invertible_matrices_ex-1-6",
   "type": "Exercise",
   "number": "3.3.4.6",
   "title": "",
   "body": "  Let . Find a formula for , where is an integer. Justify your answer using a proof by induction.   "
 },
 {
-  "id": "s_invertible_matrices_ex-1-8",
+  "id": "s_invertible_matrices_ex-1-7",
   "level": "2",
-  "url": "s_invertible_matrices.html#s_invertible_matrices_ex-1-8",
+  "url": "s_invertible_matrices.html#s_invertible_matrices_ex-1-7",
   "type": "Exercise",
   "number": "3.3.4.7",
   "title": "",
   "body": "  Let , the matrix consisting of all ones. Find a formula for , where is an integer. Justify your answer using a proof by induction.   "
 },
 {
-  "id": "s_invertible_matrices_ex-1-9",
+  "id": "s_invertible_matrices_ex-1-8",
   "level": "2",
-  "url": "s_invertible_matrices.html#s_invertible_matrices_ex-1-9",
+  "url": "s_invertible_matrices.html#s_invertible_matrices_ex-1-8",
   "type": "Exercise",
   "number": "3.3.4.8",
   "title": "",
@@ -3160,9 +3142,9 @@ var ptx_lunr_docs = [
   "body": " Polynomial expressions of commute   Let and be polynomials with real coefficients. For any square matrix , show that the matrices and commute: i.e., . You may use the result of .    "
 },
 {
-  "id": "s_invertible_matrices_ex-1-12",
+  "id": "s_invertible_matrices_ex-1-11",
   "level": "2",
-  "url": "s_invertible_matrices.html#s_invertible_matrices_ex-1-12",
+  "url": "s_invertible_matrices.html#s_invertible_matrices_ex-1-11",
   "type": "Exercise",
   "number": "3.3.4.11",
   "title": "",
@@ -3175,7 +3157,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.4",
   "title": "The invertibility theorem",
-  "body": " The invertibility theorem   We saw in that verifying directly whether a matrix is invertible, using only , can be quite an involved task. The goal of this section is to make this less onerous by developing some equivalent methods of testing invertibility. Our work culminates in and , which draw connections between invertibility, solutions to linear systems, and row echelon forms of a square matrix. Not surprisingly, our old friend Gaussian elimination emerges as the fundamental computational tool.    Elementary matrices  We begin with a treatment of elementary matrices , which serve as the basic building blocks for invertible matrices, and provide a crucial link between row reduction and matrix multiplication.   elementary matrix  matrix elementary    Scaling elementary matrix     Row swap elementary matrix     Row addition elementary matrix   Elementary matrices   An matrix is elementary if multiplying any matrix on the left by performs one of our row operations on .  We have different types of elementary matrices depending on the type of row operation they perform, and we denote these with an elaboration of our earlier row operation notation:   A scaling elementary matrix is a matrix such that multiplying a matrix on the left by scales the -th row of by .    A row swap elementary matrix is a matrix such that multiplying a matrix on the left by swaps the -th and -th rows of .    A row addition elementary matrix is a matrix such that multiplying a matrix on the left by replaces the -th row of with .       Naturally, the row method of multiplication is the key to connecting a given row operation with a particular elementary matrix. shows that once you fix the dimension, an elementary matrix is uniquely defined by the row operation it performs.   Elementary matrix formulas   Fix an integer . The three types of elementary matrices can be described as follows:    The scaling matrix is the result of scaling the -th row of by .        The row swap matrix is the result of swapping the -th and -th rows of .        The row addition matrix is the result of replacing the -th row of with the sum of its -th row and times its -th row.          First we show that if is one of the elementary matrices, then it must assume one of the forms described above. Indeed, since multiplying on the left by performs a certain row operation, and since , we see that itself is the result of performing this particular row operation on the identity matrix. Thus is one of the three types of matrices described above, obtained by performing an elementary row operation on .  Next, we must show that any of the matrices described above is indeed elementary in the sense of : that is, we must show that multiplying any matrix on the left by performs the relevant row operation on . This is now a direct consequence of .  For example, take . For , the -th row of is given by the -th row of times . Since the -th row of in this case has a one in the -th entry and zeros elsewhere, the product of this row and is just the -th row of . Similarly, the -th row of in this case is times the -th row of . Thus leaves all the rows of except for the -th one, which is scaled by .    Elementary matrices provide us a way of understanding row reduction as a series of matrix multiplications (on the left). Recall that row operations on linear systems are useful in so far as they preserve the set of solutions, and that this is the result of each operation being in some sense reversible . (See .) In terms of matrix multiplication, this reversible attribute is reflected in the fact that elementary matrices are invertible .   Inverses of elementary matrices   Fix . All elementary matrices are invertible, and their inverses are elementary matrices. In fact, we have the following formulas:     These formulas all follow easily from , and the fact that the proposed inverse elementary matrix performs the reverse , or inverse, of the row operation corresponding to the given elementary matrix.     Inverses of elementary matrices   Fix . Verify that the following pairs of elementary matrices are indeed inverses of one another.                       We have and . You can verify for yourself that .    We have . You can verify for yourself that .    We have and . You can verify for yourself that .        Interlude on matrix equations  We take a moment to make the following simple, somewhat overdue observation. Namely, we can represent a system of linear equations  as a single matrix equation  , or , where , , .  Indeed if you expand out the left-hand side of into an column vector, using the definition of matrix multiplication, and then invoke the definition of matrix equality, then you obtain the linear system .  By the same token, an -tuple is a solution to the system of equations  if and only if its corresponding column vector is a solution to the matrix equation  .  We have thus recast the problem of solving linear systems to the problem of solving a certain matrix equation of the form for the unknown column vector . In particular, a homogeneous linear system can be represented as a matrix equation of the form .  Lastly, the use of Gaussian elimination to solve a linear system can now be understood in an algebraic way using matrix multiplication.  In more detail, suppose our given linear system has augmented matrix that row reduces to the row echelon matrix after performing a sequence of row operations. Denote the -th row operation , and denote by the result of applying to a matrix .  Our sequence of operations translates to the following sequence of matrix equations: .  Let correspond to the elementary matrix . Then we represent this same sequence using matrix multiplication: . This depiction of row reduction in terms of successive left-multiplication by elementary matrices will be useful to us in many ways. In particular, it follows from this discussion that two matrices and are row equivalent if and only if we have for some collection of elementary matrices .    The invertibility theorem  We are now in position to prove our first big theorem.   Invertibility theorem   Let be an matrix. The following statements are equivalent.    is invertible.    The matrix equation has a unique solution for any .    The matrix equation has a solution for any .    The matrix equation has a unique solution: namely, .     is row equivalent to , the identity matrix.     is a product of elementary matrices.       Recall that to show two statements and are equivalent, we must show two implications: , and . Instead of doing this for each possible pair of sentences above, we ease our work load by instead showing the following cycle of implications: . Since implication is transitive, starting at any point in our cycle and making our way around the chain of implications, we see that any one of the propositions implies any other proposition.    Suppose exists. Given any column vector , we have , which shows that is the unique solution to .     Clearly, if has a unique solution for any choice of , then it has a unique solution for the particular choice . Since is clearly a solution to the equation, it must be the only solution.     Row reduce to a matrix in reduced row echelon form using Gauss-Jordan elimination. (See .) Since the set of solutions to is identical to the set of solutions to (apply to their corresponding linear systems), we see that is the only solution to . now implies has a leading one in each column. Since is and in reduced row echelon form, it follows that must be the identity matrix. (Convince yourself of this.) Thus is row equivalent to , the identity matrix.     If is row equivalent to , then according to our discussion after , we have for some collection of elementary matrices . Since elementary matrices are invertible we can multiply both sides of this equation by to conclude . Since inverses of elementary matrices are elementary ( ), we conclude that is a product of elementary matrices.     If is a product of elementary matrices, then it is a product of invertible matrices. Since products of invertible matrices are invertible, we conclude that is invertible.       The invertibility theorem has an immediate application to linear systems where the number of equations is equal to the number of unknowns. In this special situation, the system is equivalent to a matrix equation of the form , where is a square matrix . According to the theorem, if we know is invertible, then the matrix equation, and hence the linear system, has a unique solution: namely, .  What if is not invertible? Then the theorem only tells us that there is some column vector , not necessarily the given , such that the equation does not have a unique solution. In other words, the theorem alone doesn't allow us to conclude whether the given has a solution, and we must resort to our usual Gaussian elimination procedure to answer this question.    The family of triangular matrices (upper, lower, and diagonal) defined below provides an easy testing ground for our new invertibility theorem.   matrices diagonal  matrices triangular  matrices upper triangular  matrices lower triangular  Diagonal and triangular matrices   Let be .   For each the entry is called the -th diagonal entry of , and subarray of consisting of is called the diagonal . An off-diagonal entry of is any entry not among the diagonal entries.    The matrix is diagonal if all off-diagonal entries are zero: , if for all with .    The matrix is upper triangular if all entries below the diagonal are zero: , if for all .    The matrix is lower triangular if all entries above the diagonal are zero: , if for all .    The matrix is triangular if is upper triangular or lower triangular.        Triangular matrices   The set of all diagonal matrices can be described as . The set of all upper triangular matrices can be described as . The set of all lower triangular matrices can be described as .     Invertibility of triangular matrices   Let be a triangular matrix. Then is invertible if and only if for all .  In other words, is invertible if and only if the diagonal entries of are all nonzero.    In this proof we will make use of the fact that a square matrix is invertible if and only if is invertible. ( )   Case: is upper triangular  If for all , then it is easy to see that we can row reduce first to a row echelon matrix with leading ones in every diagonal entry, and then further to the identity matrix. Thus is row equivalent to in this case, and we conclude from statement (4) of that is invertible.  For the other implication, we show that if it is not the case that for all , then there is a nonzero solution to the matrix equation . If this is the case, then since we have two distinct solutions to , is not invertible by Statement (3) of .  To this end, assume it is not the case that for all . Then we can find a smallest index such that and for any . It is easy to see that is row equivalent to a matrix , satisfying for and for all : i.e., is diagonal up until the -th column .  We now provide a nonzero solution to : namely, set , for all , and for all . (Verify this for yourself, using the description above of for .) Since is row equivalent to , the linear systems corresponding to and have the same solutions. Hence is also a nonzero solution to . We conclude that is not invertible by Statement (3) of . This concludes the proof of this implication.    Case: is lower triangular  Set . Then is upper triangular, and for all . Then .       Invertibility algorithms  The proof of the implication of can be expanded into an algorithm that (1) decides whether a given matrix is invertible, and (2) computes if is invertible.   Inverse algorithm   Let be an matrix. To test for invertibility of proceed as follows.   Build the augmented matrix and use Gaussian elimination to row reduce to the form , where is in row echelon form.  The matrix is invertible if and only if has leading ones.    If has leading ones, row reduce further to a matrix of the form . Then .       From the proof of we know is invertible if and only if has leading ones. The question remains as to why reducing the augmented matrix to tells us that . Let be the elementary matrices representing the row operations involved in this process. Then we have . After a little algebra, we see that . Since is the result of applying same row operations to we have , as claimed.    From the proof of we also derive an algorithm for writing an invertible matrix as a product of elementary matrices. You should think of this as a first example of the great versatility of Gaussian elimination, as conveyed by our .   Product of elementary matrices algorithm   Let be an matrix. To (potentially) write as a product of elementary matrices, proceed as follows.   Attempt to row reduce to the identity, keeping track of your sequence of row operations in the form of elementary matrices.    If you are able to row reduce to with a sequence of row operatons corresponding to the elementary matrices , then Since the inverse of an elementary matrix is elementary, we have written as a product of elementary matrices.       See the proof of the implication in .     Inverse algorithms  Let . Combining both algorithms we can decide whether is invertible, and if so, compute and write as a product of elementary matrices. According to , the computation shows that is invertible and . Next, representing our row operations as elementary matrices, we see that , where . We conclude that .    Video example: inverse algorithm   Video: inverse algorithm       Some theoretical loose ends  The two inveribility algorithms above are nice examples of how a theoretical result like our invertibility theorem can pay some serious computational dividends. Namely, thanks to the theory we have discovered a method of computing the inverse of a matrix that essentially boils down to row reduction.  We finish this section with a number of theoretical implications that tie up some loose ends. The results below are all consequences in some way of . The fist shows that in fact one one of the defining equalities or suffices to define the inverse of a matrix.   Left-inverse if and only if right-inverse   Let and be . Then    .     .   In plain English: a matrix is a left-inverse of if and only if it is a right-inverse of .    It is enough to prove the first implication: the second then follows by exchanging the roles of and .  Suppose . We first show that is invertible. We have . By Statement (3) of , we conclude that is invertible.  Now that we know exists we have .    As a further consequence of , we can at last strengthen the implication to an equivalence.   Invertibility of product equivalence   Let and be . Then is invertible if and only if and are both invertible: ,      Implication:  We know from that if and are invertible, then so is .    Implication: invertible  and invertible  Assume is invertible and let be its inverse. Thus . We first prove is invertible. We have . The last implication uses Statement (3) of and the fact that is invertible. We have shown that , and hence that is invertible, using once again Statement (3) of .  Next we prove directly that is invertible. Namely, we claim that . Indeed, since is the inverse of , we have . Thus is a right-inverse of . now implies , and hence that , as claimed.  This completes the proof that if is invertible, then and are invertible.     We conclude with two results related to row reduction. The first provides an equivalent formulation of row equivalence in terms of matrix arithmetic: an elaboration of our discussion in .   Row equivalence and invertible matrices   Let and be matrices. The following statements are equivalent.   The matrices and are row equivalent.    There are elementary matrices such that .    There is an invertible matrix such that .       The equivalence of (1) and (2) was shown in the course of our discussion in . The equivalence of (2) and (3) is a direct consequence of (5) of since a matrix is invertible if and only if it can be written as for some elementary matrices .     Properties of row equivalence  With the help of , we can easily show that the row equivalence relation is reflexive , symmetric , and transitive . In other words, letting denote that is row equivalent to , the following properties hold.   Reflexivity  For any matrix , we have : , every matrix is row equivalent to itself.    Symmetry  For all matrices and , if , then .    Transitivity  For all matrices , if and , then .   The proof of these facts is left as an exercise ( ).   Lastly, we provide at last the proof of the third statement of promised back in . This proof is due to Thomas Yuster Thomas Yuster. The reduced row echelon form of a matrix is unique: a simple proof , Mathematics Magazine 57 (1984), no. 2, 93-94. .   Uniqueness of reduced row echelon form   Any matrix is row equivalent to a unique matrix in reduced row echelon form.    Let be an matrix. Using Gauss-Jordan elimination, we can row reduce to matrix in reduced row echelon form. Suppose is also row equivalent to the matrix in reduced row echelon form. Then and are row equivalent, since the row equivalence relation is symmetric and transitive ( ). Thus it suffices to show that if and are row equivalent matrices in reduced row echelon form, then . We do so by induction on . The base step is trivial, since there is only one matrix in reduced row echelon form.  For the induction step we assume that any two row equivalent matrices in reduced row echelon form are equal. Suppose by contradiction that and are row equivalent matrices in reduced row echelon form, and that . By there is an invertible matrix such that . The first columns of and form matrices and , respectively, that are in reduced row echelon form, as one easily checks. Furthermore, and are row equivalent: indeed, using we see that implies . By the induction hypothesis we must have , and thus and can only differ in their last column.  We claim that and must both have a leading one in the last column. To see why, consider the matrix equation , where is a column vector. Since , we have , and thus . Because and differ in at most their last column, the first columns of are zero columns, and thus we have . Since , there is some such that . Since by , we must have . We have shown that for any satisfying , we must have . It follows from that must have a leading in its last column, since otherwise the variable in the system would be free, and could assume any value. To see that also has a leading one in the last column, we use the same argument, starting with the equation .  To summarize, starting with row equivalent matrices and in reduced row echelon form, and assuming by contradiction that , we conclude that (a) the first columns of and are equal and form matrices in reduced row echelon form, and (b) the last columns of and have leading ones. Since and are in reduced row echelon form, and since the first columns of and are equal, we see that the leading ones in the last columns of and must occur in the same row: namely, the first zero row of . It follows that , a contradiction.      WeBWork Exercises      True or false: Suppose that and are two elementary matrices. Then  .   True   False         SOLUTION: False. If then but            Let  Then   where  ,  ,  ,  ,  ,  ,  ,  ,  .                                                         Let   Find and use it to solve where    where  and  .                      Solve the system of equations by converting to a matrix equation and using the inverse of the coefficient matrix.                          Solve the system of equations by converting to a matrix equation and using the inverse of the coefficient matrix.                                Written Exercises   Linear systems and matrix equations   Find a matrix and column vectors and such that the given linear system is equivalent to the matrix equation .                   Solving linear systems with matrix inverses   Find an invertible matrix and column vectors and such that the given linear system is equivalent to the matrix equation . Compute and use this to find the unique solution to the linear system. (See .)                   Inverse algorithm   Use the inverse algorithm to determine whether each matrix is invertible, and to compute its inverse if possible.  You are not required to follow Gaussian elimination to the letter, and you may perform multiple operations at the same time, as long as they are independent of one another. For example, do not do and in the same step.          We use the inverse algorithm: . We conclude that .                            ,        ,       Product of elementary matrices algorithm   Each matrix below is invertible. Use the product of elementary matrices algorithm to write as a product of elementary matrices.  Here you should perform Gaussian elimination to the letter, one row operation at a time.          Row reduce to the identity matrix:   The corresponding elementary matrices are . It follows that , and hence that .       .              .       According to Statement (2) of the invertibility theorem, a matrix is invertible if and only if for all column vectors the matrix equation has a unique solution. Show that we can add the following, weaker-looking version of (2) to our list of equivalent statements:   (2') The matrix equation has a solution for any column vector .     Try to logically weave Statement (2') into our original list of equivalent statements by (a) finding a statement from our original list that implies (2'), and (b) find a statement in our original list that is implied by (2').  You may make use of in your argument.     Properties of row equivalence   Let denote that matrix is row equivalent to . Use to show that the relation is reflexive, symmetric, and transitive, as described in .      Let be an matrix, and let be an invertible matrix.  Show that the two matrix equations have the same set of solutions. In other words show that .      Suppose and are row equivalent square matrices. Prove: is invertible if and only if is invertible.      Use the provided information to determine whether the given square matrix is invertible. Justify your answer using the inveribility theorem or one of its corollaries.    There are column vectors such that .     is invertible.     for some .    The sum of the columns of is equal to the zero column vector.      Answer true or false. If true, provide a proof; if false, exhibit an explicit counterexample.    The product of two elementary matrices is elementary.    The product of two elementary matrices is invertible.    The sum of two invertible matrices is invertible.    If is a singular matrix, then the linear system has infinitely many solutions.    If is obtained from the invertible matrix by replacing its second row with the sum of its first and second rows, then is invertible.    If is square matrix, and is a column vector such that the matrix equation has a unique solution, then is invertible.    If and are row equivalent, then the matrix equations and have the same solution set.    If or is singular, then is singular.      "
+  "body": " The invertibility theorem   We saw in that verifying directly whether a matrix is invertible, using only , can be quite an involved task. The goal of this section is to make this less onerous by developing some equivalent methods of testing invertibility. Our work culminates in and , which draw connections between invertibility, solutions to linear systems, and row echelon forms of a square matrix. Not surprisingly, our old friend Gaussian elimination emerges as the fundamental computational tool.    Elementary matrices  We begin with a treatment of elementary matrices , which serve as the basic building blocks for invertible matrices, and provide a crucial link between row reduction and matrix multiplication.   elementary matrix  matrix elementary    Scaling elementary matrix     Row swap elementary matrix     Row addition elementary matrix   Elementary matrices   An matrix is elementary if multiplying any matrix on the left by performs one of our row operations on .  We have different types of elementary matrices depending on the type of row operation they perform, and we denote these with an elaboration of our earlier row operation notation:   A scaling elementary matrix is a matrix such that multiplying a matrix on the left by scales the -th row of by .    A row swap elementary matrix is a matrix such that multiplying a matrix on the left by swaps the -th and -th rows of .    A row addition elementary matrix is a matrix such that multiplying a matrix on the left by replaces the -th row of with .       Naturally, the row method of multiplication is the key to connecting a given row operation with a particular elementary matrix. shows that once you fix the dimension, an elementary matrix is uniquely defined by the row operation it performs.   Elementary matrix formulas   Fix an integer . The three types of elementary matrices can be described as follows:    The scaling matrix is the result of scaling the -th row of by .        The row swap matrix is the result of swapping the -th and -th rows of .        The row addition matrix is the result of replacing the -th row of with the sum of its -th row and times its -th row.          First we show that if is one of the elementary matrices, then it must assume one of the forms described above. Indeed, since multiplying on the left by performs a certain row operation, and since , we see that itself is the result of performing this particular row operation on the identity matrix. Thus is one of the three types of matrices described above, obtained by performing an elementary row operation on .  Next, we must show that any of the matrices described above is indeed elementary in the sense of : that is, we must show that multiplying any matrix on the left by performs the relevant row operation on . This is now a direct consequence of .  For example, take . For , the -th row of is given by the -th row of times . Since the -th row of in this case has a one in the -th entry and zeros elsewhere, the product of this row and is just the -th row of . Similarly, the -th row of in this case is times the -th row of . Thus leaves all the rows of except for the -th one, which is scaled by .    Elementary matrices provide us a way of understanding row reduction as a series of matrix multiplications (on the left). Recall that row operations on linear systems are useful in so far as they preserve the set of solutions, and that this is the result of each operation being in some sense reversible . (See .) In terms of matrix multiplication, this reversible attribute is reflected in the fact that elementary matrices are invertible .   Inverses of elementary matrices   Fix . All elementary matrices are invertible, and their inverses are elementary matrices. In fact, we have the following formulas:     These formulas all follow easily from , and the fact that the proposed inverse elementary matrix performs the reverse , or inverse, of the row operation corresponding to the given elementary matrix.     Inverses of elementary matrices   Fix . Verify that the following pairs of elementary matrices are indeed inverses of one another.                       We have and . You can verify for yourself that .    We have . You can verify for yourself that .    We have and . You can verify for yourself that .        Interlude on matrix equations  We take a moment to make the following simple, somewhat overdue observation. Namely, we can represent a system of linear equations  as a single matrix equation  , or , where , , .  Indeed if you expand out the left-hand side of into an column vector, using the definition of matrix multiplication, and then invoke the definition of matrix equality, then you obtain the linear system .  By the same token, an -tuple is a solution to the system of equations  if and only if its corresponding column vector is a solution to the matrix equation  .  We have thus recast the problem of solving linear systems to the problem of solving a certain matrix equation of the form for the unknown column vector . In particular, a homogeneous linear system can be represented as a matrix equation of the form .  Lastly, the use of Gaussian elimination to solve a linear system can now be understood in an algebraic way using matrix multiplication.  In more detail, suppose our given linear system has augmented matrix that row reduces to the row echelon matrix after performing a sequence of row operations. Denote the -th row operation , and denote by the result of applying to a matrix .  Our sequence of operations translates to the following sequence of matrix equations: .  Let correspond to the elementary matrix . Then we represent this same sequence using matrix multiplication: . This depiction of row reduction in terms of successive left-multiplication by elementary matrices will be useful to us in many ways. In particular, it follows from this discussion that two matrices and are row equivalent if and only if we have for some collection of elementary matrices .    The invertibility theorem  We are now in position to prove our first big theorem.   Invertibility theorem   Let be an matrix. The following statements are equivalent.    is invertible.    The matrix equation has a unique solution for any .    The matrix equation has a solution for any .    The matrix equation has a unique solution: namely, .     is row equivalent to , the identity matrix.     is a product of elementary matrices.       Recall that to show two statements and are equivalent, we must show two implications: , and . Instead of doing this for each possible pair of sentences above, we ease our work load by instead showing the following cycle of implications: . Since implication is transitive, starting at any point in our cycle and making our way around the chain of implications, we see that any one of the propositions implies any other proposition.    Suppose exists. Given any column vector , we have , which shows that is the unique solution to .     Clearly, if has a unique solution for any choice of , then it has a unique solution for the particular choice . Since is clearly a solution to the equation, it must be the only solution.     Row reduce to a matrix in reduced row echelon form using Gauss-Jordan elimination. (See .) Since the set of solutions to is identical to the set of solutions to (apply to their corresponding linear systems), we see that is the only solution to . now implies has a leading one in each column. Since is and in reduced row echelon form, it follows that must be the identity matrix. (Convince yourself of this.) Thus is row equivalent to , the identity matrix.     If is row equivalent to , then according to our discussion after , we have for some collection of elementary matrices . Since elementary matrices are invertible we can multiply both sides of this equation by to conclude . Since inverses of elementary matrices are elementary ( ), we conclude that is a product of elementary matrices.     If is a product of elementary matrices, then it is a product of invertible matrices. Since products of invertible matrices are invertible, we conclude that is invertible.       The invertibility theorem has an immediate application to linear systems where the number of equations is equal to the number of unknowns. In this special situation, the system is equivalent to a matrix equation of the form , where is a square matrix . According to the theorem, if we know is invertible, then the matrix equation, and hence the linear system, has a unique solution: namely, .  What if is not invertible? Then the theorem only tells us that there is some column vector , not necessarily the given , such that the equation does not have a unique solution. In other words, the theorem alone doesn't allow us to conclude whether the given has a solution, and we must resort to our usual Gaussian elimination procedure to answer this question.    The family of triangular matrices (upper, lower, and diagonal) defined below provides an easy testing ground for our new invertibility theorem.   matrices diagonal  matrices triangular  matrices upper triangular  matrices lower triangular  Diagonal and triangular matrices   Let be .   For each the entry is called the -th diagonal entry of , and subarray of consisting of is called the diagonal . An off-diagonal entry of is any entry not among the diagonal entries.    The matrix is diagonal if all off-diagonal entries are zero: , if for all with .    The matrix is upper triangular if all entries below the diagonal are zero: , if for all .    The matrix is lower triangular if all entries above the diagonal are zero: , if for all .    The matrix is triangular if is upper triangular or lower triangular.        Triangular matrices   The set of all diagonal matrices can be described as . The set of all upper triangular matrices can be described as . The set of all lower triangular matrices can be described as .     Invertibility of triangular matrices   Let be a triangular matrix. Then is invertible if and only if for all .  In other words, is invertible if and only if the diagonal entries of are all nonzero.    In this proof we will make use of the fact that a square matrix is invertible if and only if is invertible. ( )   Case: is upper triangular  If for all , then it is easy to see that we can row reduce first to a row echelon matrix with leading ones in every diagonal entry, and then further to the identity matrix. Thus is row equivalent to in this case, and we conclude from statement (4) of that is invertible.  For the other implication, we show that if it is not the case that for all , then there is a nonzero solution to the matrix equation . If this is the case, then since we have two distinct solutions to , is not invertible by Statement (3) of .  To this end, assume it is not the case that for all . Then we can find a smallest index such that and for any . It is easy to see that is row equivalent to a matrix , satisfying for and for all : i.e., is diagonal up until the -th column .  We now provide a nonzero solution to : namely, set , for all , and for all . (Verify this for yourself, using the description above of for .) Since is row equivalent to , the linear systems corresponding to and have the same solutions. Hence is also a nonzero solution to . We conclude that is not invertible by Statement (3) of . This concludes the proof of this implication.    Case: is lower triangular  Set . Then is upper triangular, and for all . Then .       Invertibility algorithms  The proof of the implication of can be expanded into an algorithm that (1) decides whether a given matrix is invertible, and (2) computes if is invertible.   Inverse algorithm   Let be an matrix. To test for invertibility of proceed as follows.   Build the augmented matrix and use Gaussian elimination to row reduce to the form , where is in row echelon form.  The matrix is invertible if and only if has leading ones.    If has leading ones, row reduce further to a matrix of the form . Then .       From the proof of we know is invertible if and only if has leading ones. The question remains as to why reducing the augmented matrix to tells us that . Let be the elementary matrices representing the row operations involved in this process. Then we have . After a little algebra, we see that . Since is the result of applying same row operations to we have , as claimed.    From the proof of we also derive an algorithm for writing an invertible matrix as a product of elementary matrices. You should think of this as a first example of the great versatility of Gaussian elimination, as conveyed by our .   Product of elementary matrices algorithm   Let be an matrix. To (potentially) write as a product of elementary matrices, proceed as follows.   Attempt to row reduce to the identity, keeping track of your sequence of row operations in the form of elementary matrices.    If you are able to row reduce to with a sequence of row operatons corresponding to the elementary matrices , then Since the inverse of an elementary matrix is elementary, we have written as a product of elementary matrices.       See the proof of the implication in .     Inverse algorithms  Let . Combining both algorithms we can decide whether is invertible, and if so, compute and write as a product of elementary matrices. According to , the computation shows that is invertible and . Next, representing our row operations as elementary matrices, we see that , where . We conclude that .    Video example: inverse algorithm   Video: inverse algorithm       Some theoretical loose ends  The two inveribility algorithms above are nice examples of how a theoretical result like our invertibility theorem can pay some serious computational dividends. Namely, thanks to the theory we have discovered a method of computing the inverse of a matrix that essentially boils down to row reduction.  We finish this section with a number of theoretical implications that tie up some loose ends. The results below are all consequences in some way of . The fist shows that in fact one one of the defining equalities or suffices to define the inverse of a matrix.   Left-inverse if and only if right-inverse   Let and be . Then    .     .   In plain English: a matrix is a left-inverse of if and only if it is a right-inverse of .    It is enough to prove the first implication: the second then follows by exchanging the roles of and .  Suppose . We first show that is invertible. We have . By Statement (3) of , we conclude that is invertible.  Now that we know exists we have .    As a further consequence of , we can at last strengthen the implication to an equivalence.   Invertibility of product equivalence   Let and be . Then is invertible if and only if and are both invertible: ,      Implication:  We know from that if and are invertible, then so is .    Implication: invertible  and invertible  Assume is invertible and let be its inverse. Thus . We first prove is invertible. We have . The last implication uses Statement (3) of and the fact that is invertible. We have shown that , and hence that is invertible, using once again Statement (3) of .  Next we prove directly that is invertible. Namely, we claim that . Indeed, since is the inverse of , we have . Thus is a right-inverse of . now implies , and hence that , as claimed.  This completes the proof that if is invertible, then and are invertible.     We conclude with two results related to row reduction. The first provides an equivalent formulation of row equivalence in terms of matrix arithmetic: an elaboration of our discussion in .   Row equivalence and invertible matrices   Let and be matrices. The following statements are equivalent.   The matrices and are row equivalent.    There are elementary matrices such that .    There is an invertible matrix such that .       The equivalence of (1) and (2) was shown in the course of our discussion in . The equivalence of (2) and (3) is a direct consequence of (5) of since a matrix is invertible if and only if it can be written as for some elementary matrices .     Properties of row equivalence  With the help of , we can easily show that the row equivalence relation is reflexive , symmetric , and transitive . In other words, letting denote that is row equivalent to , the following properties hold.   Reflexivity  For any matrix , we have : , every matrix is row equivalent to itself.    Symmetry  For all matrices and , if , then .    Transitivity  For all matrices , if and , then .   The proof of these facts is left as an exercise ( ).   Lastly, we provide at last the proof of the third statement of promised back in . This proof is due to Thomas Yuster Thomas Yuster. The reduced row echelon form of a matrix is unique: a simple proof , Mathematics Magazine 57 (1984), no. 2, 93-94. .   Uniqueness of reduced row echelon form   Any matrix is row equivalent to a unique matrix in reduced row echelon form.    Let be an matrix. Using Gauss-Jordan elimination, we can row reduce to matrix in reduced row echelon form. Suppose is also row equivalent to the matrix in reduced row echelon form. Then and are row equivalent, since the row equivalence relation is symmetric and transitive ( ). Thus it suffices to show that if and are row equivalent matrices in reduced row echelon form, then . We do so by induction on . The base step is trivial, since there is only one matrix in reduced row echelon form.  For the induction step we assume that any two row equivalent matrices in reduced row echelon form are equal. Suppose by contradiction that and are row equivalent matrices in reduced row echelon form, and that . By there is an invertible matrix such that . The first columns of and form matrices and , respectively, that are in reduced row echelon form, as one easily checks. Furthermore, and are row equivalent: indeed, using we see that implies . By the induction hypothesis we must have , and thus and can only differ in their last column.  We claim that and must both have a leading one in the last column. To see why, consider the matrix equation , where is a column vector. Since , we have , and thus . Because and differ in at most their last column, the first columns of are zero columns, and thus we have . Since , there is some such that . Since by , we must have . We have shown that for any satisfying , we must have . It follows from that must have a leading in its last column, since otherwise the variable in the system would be free, and could assume any value. To see that also has a leading one in the last column, we use the same argument, starting with the equation .  To summarize, starting with row equivalent matrices and in reduced row echelon form, and assuming by contradiction that , we conclude that (a) the first columns of and are equal and form matrices in reduced row echelon form, and (b) the last columns of and have leading ones. Since and are in reduced row echelon form, and since the first columns of and are equal, we see that the leading ones in the last columns of and must occur in the same row: namely, the first zero row of . It follows that , a contradiction.      WeBWork Exercises      True or false: Suppose that and are two elementary matrices. Then  .   True   False         SOLUTION: False. If then but            Let  Then   where  ,  ,  ,  ,  ,  ,  ,  ,  .                                                         Let   Find and use it to solve where    where  and  .                      Solve the system of equations by converting to a matrix equation and using the inverse of the coefficient matrix.                          Solve the system of equations by converting to a matrix equation and using the inverse of the coefficient matrix.                                 Linear systems and matrix equations   Find a matrix and column vectors and such that the given linear system is equivalent to the matrix equation .                   Solving linear systems with matrix inverses   Find an invertible matrix and column vectors and such that the given linear system is equivalent to the matrix equation . Compute and use this to find the unique solution to the linear system. (See .)                   Inverse algorithm   Use the inverse algorithm to determine whether each matrix is invertible, and to compute its inverse if possible.  You are not required to follow Gaussian elimination to the letter, and you may perform multiple operations at the same time, as long as they are independent of one another. For example, do not do and in the same step.          We use the inverse algorithm: . We conclude that .                            ,        ,       Product of elementary matrices algorithm   Each matrix below is invertible. Use the product of elementary matrices algorithm to write as a product of elementary matrices.  Here you should perform Gaussian elimination to the letter, one row operation at a time.          Row reduce to the identity matrix:   The corresponding elementary matrices are . It follows that , and hence that .       .              .       According to Statement (2) of the invertibility theorem, a matrix is invertible if and only if for all column vectors the matrix equation has a unique solution. Show that we can add the following, weaker-looking version of (2) to our list of equivalent statements:   (2') The matrix equation has a solution for any column vector .     Try to logically weave Statement (2') into our original list of equivalent statements by (a) finding a statement from our original list that implies (2'), and (b) find a statement in our original list that is implied by (2').  You may make use of in your argument.     Properties of row equivalence   Let denote that matrix is row equivalent to . Use to show that the relation is reflexive, symmetric, and transitive, as described in .      Let be an matrix, and let be an invertible matrix.  Show that the two matrix equations have the same set of solutions. In other words show that .      Suppose and are row equivalent square matrices. Prove: is invertible if and only if is invertible.      Use the provided information to determine whether the given square matrix is invertible. Justify your answer using the inveribility theorem or one of its corollaries.    There are column vectors such that .     is invertible.     for some .    The sum of the columns of is equal to the zero column vector.      Answer true or false. If true, provide a proof; if false, exhibit an explicit counterexample.    The product of two elementary matrices is elementary.    The product of two elementary matrices is invertible.    The sum of two invertible matrices is invertible.    If is a singular matrix, then the linear system has infinitely many solutions.    If is obtained from the invertible matrix by replacing its second row with the sum of its first and second rows, then is invertible.    If is square matrix, and is a column vector such that the matrix equation has a unique solution, then is invertible.    If and are row equivalent, then the matrix equations and have the same solution set.    If or is singular, then is singular.      "
 },
 {
   "id": "d_elementary_matrix",
@@ -3394,11 +3376,29 @@ var ptx_lunr_docs = [
   "body": "    Solve the system of equations by converting to a matrix equation and using the inverse of the coefficient matrix.                            "
 },
 {
+  "id": "s_invertibility_theorem_ex-1-1-3",
+  "level": "2",
+  "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-1-3",
+  "type": "Exercise",
+  "number": "3.4.7.1",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_invertibility_theorem_ex-1-1-4",
+  "level": "2",
+  "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-1-4",
+  "type": "Exercise",
+  "number": "3.4.7.2",
+  "title": "",
+  "body": "      "
+},
+{
   "id": "s_invertibility_theorem_ex-1-2-3",
   "level": "2",
   "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-2-3",
   "type": "Exercise",
-  "number": "3.4.7.1",
+  "number": "3.4.7.3",
   "title": "",
   "body": "      "
 },
@@ -3407,7 +3407,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-2-4",
   "type": "Exercise",
-  "number": "3.4.7.2",
+  "number": "3.4.7.4",
   "title": "",
   "body": "      "
 },
@@ -3416,43 +3416,79 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-3-3",
   "type": "Exercise",
-  "number": "3.4.7.3",
+  "number": "3.4.7.5",
   "title": "",
-  "body": "      "
+  "body": "       We use the inverse algorithm: . We conclude that .   "
 },
 {
   "id": "s_invertibility_theorem_ex-1-3-4",
   "level": "2",
   "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-3-4",
   "type": "Exercise",
-  "number": "3.4.7.4",
+  "number": "3.4.7.6",
   "title": "",
   "body": "      "
+},
+{
+  "id": "s_invertibility_theorem_ex-1-3-5",
+  "level": "2",
+  "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-3-5",
+  "type": "Exercise",
+  "number": "3.4.7.7",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_invertibility_theorem_ex-1-3-6",
+  "level": "2",
+  "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-3-6",
+  "type": "Exercise",
+  "number": "3.4.7.8",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_invertibility_theorem_ex-1-3-7",
+  "level": "2",
+  "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-3-7",
+  "type": "Exercise",
+  "number": "3.4.7.9",
+  "title": "",
+  "body": "   ,    "
+},
+{
+  "id": "s_invertibility_theorem_ex-1-3-8",
+  "level": "2",
+  "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-3-8",
+  "type": "Exercise",
+  "number": "3.4.7.10",
+  "title": "",
+  "body": "   ,    "
 },
 {
   "id": "s_invertibility_theorem_ex-1-4-3",
   "level": "2",
   "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-4-3",
   "type": "Exercise",
-  "number": "3.4.7.5",
+  "number": "3.4.7.11",
   "title": "",
-  "body": "       We use the inverse algorithm: . We conclude that .   "
+  "body": "       Row reduce to the identity matrix:   The corresponding elementary matrices are . It follows that , and hence that .   "
 },
 {
   "id": "s_invertibility_theorem_ex-1-4-4",
   "level": "2",
   "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-4-4",
   "type": "Exercise",
-  "number": "3.4.7.6",
+  "number": "3.4.7.12",
   "title": "",
-  "body": "      "
+  "body": "   .   "
 },
 {
   "id": "s_invertibility_theorem_ex-1-4-5",
   "level": "2",
   "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-4-5",
   "type": "Exercise",
-  "number": "3.4.7.7",
+  "number": "3.4.7.13",
   "title": "",
   "body": "      "
 },
@@ -3460,60 +3496,6 @@ var ptx_lunr_docs = [
   "id": "s_invertibility_theorem_ex-1-4-6",
   "level": "2",
   "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-4-6",
-  "type": "Exercise",
-  "number": "3.4.7.8",
-  "title": "",
-  "body": "      "
-},
-{
-  "id": "s_invertibility_theorem_ex-1-4-7",
-  "level": "2",
-  "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-4-7",
-  "type": "Exercise",
-  "number": "3.4.7.9",
-  "title": "",
-  "body": "   ,    "
-},
-{
-  "id": "s_invertibility_theorem_ex-1-4-8",
-  "level": "2",
-  "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-4-8",
-  "type": "Exercise",
-  "number": "3.4.7.10",
-  "title": "",
-  "body": "   ,    "
-},
-{
-  "id": "s_invertibility_theorem_ex-1-5-3",
-  "level": "2",
-  "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-5-3",
-  "type": "Exercise",
-  "number": "3.4.7.11",
-  "title": "",
-  "body": "       Row reduce to the identity matrix:   The corresponding elementary matrices are . It follows that , and hence that .   "
-},
-{
-  "id": "s_invertibility_theorem_ex-1-5-4",
-  "level": "2",
-  "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-5-4",
-  "type": "Exercise",
-  "number": "3.4.7.12",
-  "title": "",
-  "body": "   .   "
-},
-{
-  "id": "s_invertibility_theorem_ex-1-5-5",
-  "level": "2",
-  "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-5-5",
-  "type": "Exercise",
-  "number": "3.4.7.13",
-  "title": "",
-  "body": "      "
-},
-{
-  "id": "s_invertibility_theorem_ex-1-5-6",
-  "level": "2",
-  "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-5-6",
   "type": "Exercise",
   "number": "3.4.7.14",
   "title": "",
@@ -3538,36 +3520,36 @@ var ptx_lunr_docs = [
   "body": " Properties of row equivalence   Let denote that matrix is row equivalent to . Use to show that the relation is reflexive, symmetric, and transitive, as described in .   "
 },
 {
-  "id": "s_invertibility_theorem_ex-1-8",
+  "id": "s_invertibility_theorem_ex-1-7",
   "level": "2",
-  "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-8",
+  "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-7",
   "type": "Exercise",
   "number": "3.4.7.17",
   "title": "",
   "body": "  Let be an matrix, and let be an invertible matrix.  Show that the two matrix equations have the same set of solutions. In other words show that .   "
 },
 {
-  "id": "s_invertibility_theorem_ex-1-9",
+  "id": "s_invertibility_theorem_ex-1-8",
   "level": "2",
-  "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-9",
+  "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-8",
   "type": "Exercise",
   "number": "3.4.7.18",
   "title": "",
   "body": "  Suppose and are row equivalent square matrices. Prove: is invertible if and only if is invertible.   "
 },
 {
-  "id": "s_invertibility_theorem_ex-1-10",
+  "id": "s_invertibility_theorem_ex-1-9",
   "level": "2",
-  "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-10",
+  "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-9",
   "type": "Exercise",
   "number": "3.4.7.19",
   "title": "",
   "body": "  Use the provided information to determine whether the given square matrix is invertible. Justify your answer using the inveribility theorem or one of its corollaries.    There are column vectors such that .     is invertible.     for some .    The sum of the columns of is equal to the zero column vector.   "
 },
 {
-  "id": "s_invertibility_theorem_ex-1-11",
+  "id": "s_invertibility_theorem_ex-1-10",
   "level": "2",
-  "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-11",
+  "url": "s_invertibility_theorem.html#s_invertibility_theorem_ex-1-10",
   "type": "Exercise",
   "number": "3.4.7.20",
   "title": "",
@@ -3580,7 +3562,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.5",
   "title": "The determinant",
-  "body": " The determinant   The determinant is a map that assigns to a square matrix a scalar . The definition given below of the determinant is far from intuitive, and we will do little to motivate it up front. Instead, we allow its various properties to speak for themselves by way of retroactive motivation. In particular, we will see that , making the determinant an important tool for investigating invertibility.    Definition of the determinant  Our definition of the determinant is a recursive one; given an matrix its determinant is defined in terms of the determinant of certain submatrices of dimension . This necessitates some notation to help our discussion along.   Submatrix notation  submatrix    submatrix of    Let be an matrix with . Given , the submatrix of obtained by removing the -th row and -th column of is denoted .      Do not conflate the submatrix notation with matrix entry notation : the former returns the submatrix of obtained by deleting the -th row and -th column; the latter returns the -th entry of .     The determinant  determinant    determinant of    Let . The determinant is defined as follows:   Base case:  When we have and we define .    Recursive case:  When we define .        Small cases   Let's look at determinant formulas for the cases. You may remember the formula for matrices from ; we will make the connection more explicit in .  Given , we have . The formula for the case is simple enough to serve as a second base case , allowing us to end the recursive process of computing a general matrix once we get to expressions involving matrices.  Given , we have .    The recursive nature of the determinant definition makes induction arguments particularly useful when proving properties of the determinant, as illustrated by the next theorem.   Determinant of triangular matrices   Let be triangular (upper, lower, or diagonal). Then . In other words, the determinant of a triangular matrix is the product of its diagonal entries.    We only give the proof for lower triangular matrices; the proof in the upper triangular case is nearly identical.  For any let denote the proposition: The determinant of any lower triangular matrix is the product of its diagonal entries . We prove by induction that is true for all .   Base step: show is true  In this case , and is indeed the product of the diagonal entries of .    Induction step: show for all  Let be a lower triangular matrix. Then for all , and hence the determinant of is given by . Claim: is lower triangular. Indeed, first observe that we have for all ; by deleting the first row and first column we effectively bump each index up by one. Since is lower triangular we have for all , and hence also for all , proving the claim.  Lastly, assuming is true (the induction hypothesis) we have , as desired.      Determinant of identity matrices   Let be the identity matrix. Then .    This follows directly from since the diagonal entries of are all ones.      Expansion along rows and columns   Morally speaking, we should give some examples of higher-dimensional determinants, but we first introduce some theory that affords us more leeway in our computations.    Minors and expansions along rows\/columns  minor of matrix  expansion along row\/column    the -th minor of a matrix    Given an matrix , for any pair the -th minor of is defined as .  For any the expression is called the expansion along the -th row of .  For any , the expression is called the expansion along the -th column of .     Expansion along rows   Let . For any we have . In other words, we can compute by expanding along any row of .    The proof is by induction on the size of the matrix.   Base step:  For there is nothing to prove. Given expanding along either row yields , as one easily verifies.    Induction step  Assume the claim is true of any matrix. Given we have . Expanding along the -th row of for any , on the other hand, we get . To show these two expressions are equal we use the induction hypothesis to compute each by expanding along its -th row: . The matrix is the result of first deleting row 1 and column from , and then deleting row and column of the resulting matrix. To deal with such iterated submatrices, we make some simple observations relating the rows and columns of and with those of .   The -th row of corresponds to the -th row of , and the first row of corresponds to the first row of .    If , then the -th column of corresponds to the -th column of ; if , then the -th column of corresponds to the -th column of .    If , then the -th column of corresponds to the -th column of ; if , then the -th column of corresponds to the -th column of .   From these observations we derive the following table of formulas: . We now begin to unpack : . This completes the induction step, and thus the proof is finished.     Surprisingly, it turns out that we can compute the determinant of a matrix by expanding along any column ( ). This is a consequence of the following theorem, which is useful in its own right. The proof below is taken from Robert Beezer's A First Course in Linear Algebra . (See Theorem DT .) It uses induction and a wonderful trick starting from the observation that for any .   Determinant and transposition   Let be an matrix. Then .    The proof is by induction on . The base case ( ) is trivial since for any matrix .  For induction we assume that for all we have for any matrix. Suppose is an matrix. We have . This completes the proof by induction. (Note how in the second equality in the chain above we compute in the -th term of by expanding along the -th row of . A similar observation applies to the penultimate equality.)     Expansion along columns   Let . For any we have . In other words, we can compute by expanding along any column of .    For any , we have .      Compute for .    First we compute by expanding along the second row. The only nonzero term of this expansion is the last one, yielding . We have . To compute its determinant we expand along its third column: We conclude that .     Matrix of signs   When expanding along a row or column, it is easy to get tripped up by the sign in front of the -th coefficient. A matrix of signs is a sort of mnemonic device to help you in this regard. It is easily generated by observing that the sign in front of the -th entry is always a (since ), and that any horizontal or vertical step within the matrix is accompanied by a change of sign. As an example, for we have the following matrix of signs: .     Video example: determinant   Video: determinant     The freedom to compute the determinant by expanding along any row or column gives rise to the following intuitive property.   Zero rows\/columns, swapping rows\/columns, identical rows\/columns   Let be an matrix.   If has a zero row or zero column, then     Assume . Let be the matrix obtained by swapping two rows (or two columns) of . Then .    Assume . If has two identical rows or two identical columns, then .       The first statement is obvious since according to and we may compute the determinant by expanding along the zero row or zero column in question.  The third statement follows from the second. Indeed, if has two identical rows or columns, then the matrix obtained from by swapping the rows (or columns) in question is itself. Thus by the second statement, and we conclude that .  It remains only to show the second statement. We prove only the statement regarding swapping rows; the corresponding statement about columns follows from . The proof is by induction.   Base step:  Let . Then , and .    Induction step  We assume by induction that the result holds for any matrices, , and show the same is true for any matrix.  Let be an matrix, and suppose is the result of swapping the -th and -th rows of . We compute the determinants of and by expanding along the -th row, where and . This is possible since .  Moving along the -th row, notice that each submatrix is the result of swapping the two rows of that originally corresponded to the -th and -th rows of . Since these submatrices are of dimension , we have by induction. Lastly, since the -th rows of and are the same we have .     As a further consequence of and , we can derive the adjoint matrix formula .   Adjoint matrix  adjoint matrix    adjoint of a square matrix    Let be an matrix. The adjoint matrix of , denoted , is the matrix whose -th entry is defined as follows: .      Be careful of the order reversal in this definition. The -th entry of is equal to plus or minus the -th minor of . Let's see this in action for some small matrices.  For we have .  For we have .     Adjoint matrix formula   Given an matrix , we have . As a consequence, if , then is invertible and .    First observe that the second statement regarding invertibility follows directly from , since in this case setting we have .  Thus it suffices to prove . To do so, we must show that .   Case:  In this case we have . A similar argument shows that , though in this case we use expansion along a column.    Case:  When we have , where is the matrix obtained by replacing the -th row of with a copy of its -th row. Since has two identical rows implies , as desired. Once again, a similar argument using expansion along a column shows that .       Use the adjoint matrix formula to compute , where .    First compute by expanding along the third row: . Next, compute . Then we have .      Before you get too excited about the adjoint matrix formula, you should know that as grows, this procedure becomes much more costly in terms of number of arithmetic operations involved than our inverse algorithm based on Gauss-Jordan elimination. You get a sense of this already from the previous example. In general, the Gauss-Jordan inverse algorithm is the way to go.      Row operations and determinant  Suppose the square matrix can be row reduced to via sequence of row operations. In general we do not have , but we can compute from by keeping track of which operations are used.   Row operations and determinant   Let be an matrix. Using the notation from we have:              .   In particular, taking , we have .    The first statement follows easily by computing by expanding along the -th row. The second statement is in fact a rephrasing of the second statement of . It remains to prove the third statement.  Let , and set . Then is identical to with the exception of the -th row, whose -th entry is . It follows that , where is the matrix obtained by replacing the -th row of with a row identical with its -th row. By we conclude , and thus , as desired.      In the language of row operations, translates as follows:   Scaling a row of a matrix by has the effect of scaling the determinant by .    Swapping two rows of a matrix changes the sign of the determinant.    Performing a row addition operation on a matrix has no effect on the determinant.        Column operations and the determinant   As shown in the determinant behaves in a similar manner with respect to elementary column operations : , scaling a column by a nonzero constant scales the determinant by , swapping columns multiplies the determinant by , adding a multiple of one column to another leaves the determinant unchanged.     Determinant and products of elementary matrices   Let be an matrix, and suppose we have for some collection of elementary matrices . Then .    This is an easy proof by induction on the number of elementary matrices involved, the base case ( ) of which is covered by .     has both computational and theoretical applications.  On the computational side, it suggests an alternative method of computing : first row reduce to a simpler matrix , making sure to keep track of the operations you use; set up an equation as in representing the row reduction; then solve the corresponding equation for in terms of and the .   Determinant via row reduction   Suppose the matrix can be row reduced to by perfomring the following sequence of row operations:   First swap the second and third rows.    Then scale the first row by     Then replace the second row with the second row plus the first row.   Compute .    In terms of elementary matrices we have and hence We conclude that .    On the theoretical side, implies both and .   Determinant and invertibility   Let be an matrix. Then is invertible if and only if .    The implication was proved in .  For the other direction, assume is invertible. Then implies is a product of elementary matrices: . Then implies . Since for all ( ), we conclude .     Determinant is multiplicative   Let and be matrices. Then .    We consider two cases based on the invertibility of and\/or .   or is not invertible  In this case is not invertible ( ), and hence by . By the same reasoning we must have or . It follows that in this case.    and both invertible  In this case we can write for some elementary matrices and ( ). Then .     We end this section and chapter with a slight expansion of our invertibility theorem. The equivalence of statement is a direct consequence of . The equivalence of the equivalence of statement was given earlier as an exercise. (See .)   Invertibility theorem   Let be an matrix. The following statements are equivalent.    is invertible.    The matrix equation has a unique solution for any .    The matrix equation has a solution for any .    The matrix equation has a unique solution: namely, .     is row equivalent to , the identity matrix.     is a product of elementary matrices.     .         WeBWork Exercises      Use the appropriate property of determinants to find  Do not evaluate the determinants. Answer:                  Consider the following Gauss elimination:   What is the determinant of ?                   Find such that the following matrix is singular.                   If and are matrices, , , then   ,   ,   ,   ,   .                                    Written Exercises    Let    Compute by expanding along the second row.    Compute by expanding along the third column.        Row\/column expansion   Compute the determinant of the given matrix. Indicate which row or column you expand along.                          Determinant and invertibility   For each matrix, find all values of (if any) making the matrix invertible. Use the determinant.                                 Adjoint matrix formula  Use the adjoint matrix formula to compute the inverse of each matrix.                   Let . Show without computing the determinant directly. In other words, use a row reduction technique or .      Let be an matrix, and let be a scalar. State and prove a formula relating with .        Assume is a matrix satisfying . Compute the determinant of the given matrix.                            Let and be matrices, and suppose is invertible. Prove the following:     .     .         Assume the square matrix satisfies . Show that .      Prove that a square matrix is invertible if and only if is invertible.     Adjoint matrix   The following exercises explore the relationship between a square matrix and its adjoint .     Give an explicit example of a square matrix satisfying and .  In other words, show that it is possible for a nonzero matrix to have a zero adjoint matrix.      Let be an matrix. Prove: .      Prove: is invertible if and only if is invertible.      Assume is invertible. Prove: .       In our proof of statement (2) of we only showed that if is a square matrix with two identical rows, then . Assuming this, show that the same is true if has two identical columns.      State and prove an analogue to that describes how the corresponding column operations (i.e., scale a column by , swap two columns, column addition) affect the determinant of a matrix. (See ).    Express each of these types of column operations as multiplication on the right by an elementary matrix.      Let be the matrix with along the diagonal and 's elsewhere: i.e., . State and prove a formula for . (Your formula will involve , , and .)  Look at the and cases first. To prove the formula in the general case you may want to make use of row reduction and .      Given scalars the Vandermonde matrix is defined as . In other words, we have Prove: .      "
+  "body": " The determinant   The determinant is a map that assigns to a square matrix a scalar . The definition given below of the determinant is far from intuitive, and we will do little to motivate it up front. Instead, we allow its various properties to speak for themselves by way of retroactive motivation. In particular, we will see that , making the determinant an important tool for investigating invertibility.    Definition of the determinant  Our definition of the determinant is a recursive one; given an matrix its determinant is defined in terms of the determinant of certain submatrices of dimension . This necessitates some notation to help our discussion along.   Submatrix notation  submatrix    submatrix of    Let be an matrix with . Given , the submatrix of obtained by removing the -th row and -th column of is denoted .      Do not conflate the submatrix notation with matrix entry notation : the former returns the submatrix of obtained by deleting the -th row and -th column; the latter returns the -th entry of .     The determinant  determinant    determinant of    Let . The determinant is defined as follows:   Base case:  When we have and we define .    Recursive case:  When we define .        Small cases   Let's look at determinant formulas for the cases. You may remember the formula for matrices from ; we will make the connection more explicit in .  Given , we have . The formula for the case is simple enough to serve as a second base case , allowing us to end the recursive process of computing a general matrix once we get to expressions involving matrices.  Given , we have .    The recursive nature of the determinant definition makes induction arguments particularly useful when proving properties of the determinant, as illustrated by the next theorem.   Determinant of triangular matrices   Let be triangular (upper, lower, or diagonal). Then . In other words, the determinant of a triangular matrix is the product of its diagonal entries.    We only give the proof for lower triangular matrices; the proof in the upper triangular case is nearly identical.  For any let denote the proposition: The determinant of any lower triangular matrix is the product of its diagonal entries . We prove by induction that is true for all .   Base step: show is true  In this case , and is indeed the product of the diagonal entries of .    Induction step: show for all  Let be a lower triangular matrix. Then for all , and hence the determinant of is given by . Claim: is lower triangular. Indeed, first observe that we have for all ; by deleting the first row and first column we effectively bump each index up by one. Since is lower triangular we have for all , and hence also for all , proving the claim.  Lastly, assuming is true (the induction hypothesis) we have , as desired.      Determinant of identity matrices   Let be the identity matrix. Then .    This follows directly from since the diagonal entries of are all ones.      Expansion along rows and columns   Morally speaking, we should give some examples of higher-dimensional determinants, but we first introduce some theory that affords us more leeway in our computations.    Minors and expansions along rows\/columns  minor of matrix  expansion along row\/column    the -th minor of a matrix    Given an matrix , for any pair the -th minor of is defined as .  For any the expression is called the expansion along the -th row of .  For any , the expression is called the expansion along the -th column of .     Expansion along rows   Let . For any we have . In other words, we can compute by expanding along any row of .    The proof is by induction on the size of the matrix.   Base step:  For there is nothing to prove. Given expanding along either row yields , as one easily verifies.    Induction step  Assume the claim is true of any matrix. Given we have . Expanding along the -th row of for any , on the other hand, we get . To show these two expressions are equal we use the induction hypothesis to compute each by expanding along its -th row: . The matrix is the result of first deleting row 1 and column from , and then deleting row and column of the resulting matrix. To deal with such iterated submatrices, we make some simple observations relating the rows and columns of and with those of .   The -th row of corresponds to the -th row of , and the first row of corresponds to the first row of .    If , then the -th column of corresponds to the -th column of ; if , then the -th column of corresponds to the -th column of .    If , then the -th column of corresponds to the -th column of ; if , then the -th column of corresponds to the -th column of .   From these observations we derive the following table of formulas: . We now begin to unpack : . This completes the induction step, and thus the proof is finished.     Surprisingly, it turns out that we can compute the determinant of a matrix by expanding along any column ( ). This is a consequence of the following theorem, which is useful in its own right. The proof below is taken from Robert Beezer's A First Course in Linear Algebra . (See Theorem DT .) It uses induction and a wonderful trick starting from the observation that for any .   Determinant and transposition   Let be an matrix. Then .    The proof is by induction on . The base case ( ) is trivial since for any matrix .  For induction we assume that for all we have for any matrix. Suppose is an matrix. We have . This completes the proof by induction. (Note how in the second equality in the chain above we compute in the -th term of by expanding along the -th row of . A similar observation applies to the penultimate equality.)     Expansion along columns   Let . For any we have . In other words, we can compute by expanding along any column of .    For any , we have .      Compute for .    First we compute by expanding along the second row. The only nonzero term of this expansion is the last one, yielding . We have . To compute its determinant we expand along its third column: We conclude that .     Matrix of signs   When expanding along a row or column, it is easy to get tripped up by the sign in front of the -th coefficient. A matrix of signs is a sort of mnemonic device to help you in this regard. It is easily generated by observing that the sign in front of the -th entry is always a (since ), and that any horizontal or vertical step within the matrix is accompanied by a change of sign. As an example, for we have the following matrix of signs: .     Video example: determinant   Video: determinant     The freedom to compute the determinant by expanding along any row or column gives rise to the following intuitive property.   Zero rows\/columns, swapping rows\/columns, identical rows\/columns   Let be an matrix.   If has a zero row or zero column, then     Assume . Let be the matrix obtained by swapping two rows (or two columns) of . Then .    Assume . If has two identical rows or two identical columns, then .       The first statement is obvious since according to and we may compute the determinant by expanding along the zero row or zero column in question.  The third statement follows from the second. Indeed, if has two identical rows or columns, then the matrix obtained from by swapping the rows (or columns) in question is itself. Thus by the second statement, and we conclude that .  It remains only to show the second statement. We prove only the statement regarding swapping rows; the corresponding statement about columns follows from . The proof is by induction.   Base step:  Let . Then , and .    Induction step  We assume by induction that the result holds for any matrices, , and show the same is true for any matrix.  Let be an matrix, and suppose is the result of swapping the -th and -th rows of . We compute the determinants of and by expanding along the -th row, where and . This is possible since .  Moving along the -th row, notice that each submatrix is the result of swapping the two rows of that originally corresponded to the -th and -th rows of . Since these submatrices are of dimension , we have by induction. Lastly, since the -th rows of and are the same we have .     As a further consequence of and , we can derive the adjoint matrix formula .   Adjoint matrix  adjoint matrix    adjoint of a square matrix    Let be an matrix. The adjoint matrix of , denoted , is the matrix whose -th entry is defined as follows: .      Be careful of the order reversal in this definition. The -th entry of is equal to plus or minus the -th minor of . Let's see this in action for some small matrices.  For we have .  For we have .     Adjoint matrix formula   Given an matrix , we have . As a consequence, if , then is invertible and .    First observe that the second statement regarding invertibility follows directly from , since in this case setting we have .  Thus it suffices to prove . To do so, we must show that .   Case:  In this case we have . A similar argument shows that , though in this case we use expansion along a column.    Case:  When we have , where is the matrix obtained by replacing the -th row of with a copy of its -th row. Since has two identical rows implies , as desired. Once again, a similar argument using expansion along a column shows that .       Use the adjoint matrix formula to compute , where .    First compute by expanding along the third row: . Next, compute . Then we have .      Before you get too excited about the adjoint matrix formula, you should know that as grows, this procedure becomes much more costly in terms of number of arithmetic operations involved than our inverse algorithm based on Gauss-Jordan elimination. You get a sense of this already from the previous example. In general, the Gauss-Jordan inverse algorithm is the way to go.      Row operations and determinant  Suppose the square matrix can be row reduced to via sequence of row operations. In general we do not have , but we can compute from by keeping track of which operations are used.   Row operations and determinant   Let be an matrix. Using the notation from we have:              .   In particular, taking , we have .    The first statement follows easily by computing by expanding along the -th row. The second statement is in fact a rephrasing of the second statement of . It remains to prove the third statement.  Let , and set . Then is identical to with the exception of the -th row, whose -th entry is . It follows that , where is the matrix obtained by replacing the -th row of with a row identical with its -th row. By we conclude , and thus , as desired.      In the language of row operations, translates as follows:   Scaling a row of a matrix by has the effect of scaling the determinant by .    Swapping two rows of a matrix changes the sign of the determinant.    Performing a row addition operation on a matrix has no effect on the determinant.        Column operations and the determinant   As shown in the determinant behaves in a similar manner with respect to elementary column operations : , scaling a column by a nonzero constant scales the determinant by , swapping columns multiplies the determinant by , adding a multiple of one column to another leaves the determinant unchanged.     Determinant and products of elementary matrices   Let be an matrix, and suppose we have for some collection of elementary matrices . Then .    This is an easy proof by induction on the number of elementary matrices involved, the base case ( ) of which is covered by .     has both computational and theoretical applications.  On the computational side, it suggests an alternative method of computing : first row reduce to a simpler matrix , making sure to keep track of the operations you use; set up an equation as in representing the row reduction; then solve the corresponding equation for in terms of and the .   Determinant via row reduction   Suppose the matrix can be row reduced to by perfomring the following sequence of row operations:   First swap the second and third rows.    Then scale the first row by     Then replace the second row with the second row plus the first row.   Compute .    In terms of elementary matrices we have and hence We conclude that .    On the theoretical side, implies both and .   Determinant and invertibility   Let be an matrix. Then is invertible if and only if .    The implication was proved in .  For the other direction, assume is invertible. Then implies is a product of elementary matrices: . Then implies . Since for all ( ), we conclude .     Determinant is multiplicative   Let and be matrices. Then .    We consider two cases based on the invertibility of and\/or .   or is not invertible  In this case is not invertible ( ), and hence by . By the same reasoning we must have or . It follows that in this case.    and both invertible  In this case we can write for some elementary matrices and ( ). Then .     We end this section and chapter with a slight expansion of our invertibility theorem. The equivalence of statement is a direct consequence of . The equivalence of the equivalence of statement was given earlier as an exercise. (See .)   Invertibility theorem   Let be an matrix. The following statements are equivalent.    is invertible.    The matrix equation has a unique solution for any .    The matrix equation has a solution for any .    The matrix equation has a unique solution: namely, .     is row equivalent to , the identity matrix.     is a product of elementary matrices.     .         WeBWork Exercises      Use the appropriate property of determinants to find  Do not evaluate the determinants. Answer:                  Consider the following Gauss elimination:   What is the determinant of ?                   Find such that the following matrix is singular.                   If and are matrices, , , then   ,   ,   ,   ,   .                                      Let    Compute by expanding along the second row.    Compute by expanding along the third column.        Row\/column expansion   Compute the determinant of the given matrix. Indicate which row or column you expand along.                          Determinant and invertibility   For each matrix, find all values of (if any) making the matrix invertible. Use the determinant.                                 Adjoint matrix formula  Use the adjoint matrix formula to compute the inverse of each matrix.                   Let . Show without computing the determinant directly. In other words, use a row reduction technique or .      Let be an matrix, and let be a scalar. State and prove a formula relating with .        Assume is a matrix satisfying . Compute the determinant of the given matrix.                            Let and be matrices, and suppose is invertible. Prove the following:     .     .         Assume the square matrix satisfies . Show that .      Prove that a square matrix is invertible if and only if is invertible.     Adjoint matrix   The following exercises explore the relationship between a square matrix and its adjoint .     Give an explicit example of a square matrix satisfying and .  In other words, show that it is possible for a nonzero matrix to have a zero adjoint matrix.      Let be an matrix. Prove: .      Prove: is invertible if and only if is invertible.      Assume is invertible. Prove: .       In our proof of statement (2) of we only showed that if is a square matrix with two identical rows, then . Assuming this, show that the same is true if has two identical columns.      State and prove an analogue to that describes how the corresponding column operations (i.e., scale a column by , swap two columns, column addition) affect the determinant of a matrix. (See ).    Express each of these types of column operations as multiplication on the right by an elementary matrix.      Let be the matrix with along the diagonal and 's elsewhere: i.e., . State and prove a formula for . (Your formula will involve , , and .)  Look at the and cases first. To prove the formula in the general case you may want to make use of row reduction and .      Given scalars the Vandermonde matrix is defined as . In other words, we have Prove: .      "
 },
 {
   "id": "d_minors",
@@ -3862,20 +3844,47 @@ var ptx_lunr_docs = [
   "body": "    If and are matrices, , , then   ,   ,   ,   ,   .                                "
 },
 {
-  "id": "s_det_ex-1-2",
+  "id": "s_det_ex-1-1",
   "level": "2",
-  "url": "s_det.html#s_det_ex-1-2",
+  "url": "s_det.html#s_det_ex-1-1",
   "type": "Exercise",
   "number": "3.5.5.1",
   "title": "",
   "body": "  Let    Compute by expanding along the second row.    Compute by expanding along the third column.      "
 },
 {
+  "id": "s_det_ex-1-2-3",
+  "level": "2",
+  "url": "s_det.html#s_det_ex-1-2-3",
+  "type": "Exercise",
+  "number": "3.5.5.2",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_det_ex-1-2-4",
+  "level": "2",
+  "url": "s_det.html#s_det_ex-1-2-4",
+  "type": "Exercise",
+  "number": "3.5.5.3",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_det_ex-1-2-5",
+  "level": "2",
+  "url": "s_det.html#s_det_ex-1-2-5",
+  "type": "Exercise",
+  "number": "3.5.5.4",
+  "title": "",
+  "body": "      "
+},
+{
   "id": "s_det_ex-1-3-3",
   "level": "2",
   "url": "s_det.html#s_det_ex-1-3-3",
   "type": "Exercise",
-  "number": "3.5.5.2",
+  "number": "3.5.5.5",
   "title": "",
   "body": "      "
 },
@@ -3884,7 +3893,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#s_det_ex-1-3-4",
   "type": "Exercise",
-  "number": "3.5.5.3",
+  "number": "3.5.5.6",
   "title": "",
   "body": "      "
 },
@@ -3893,7 +3902,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#s_det_ex-1-3-5",
   "type": "Exercise",
-  "number": "3.5.5.4",
+  "number": "3.5.5.7",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_det_ex-1-3-6",
+  "level": "2",
+  "url": "s_det.html#s_det_ex-1-3-6",
+  "type": "Exercise",
+  "number": "3.5.5.8",
   "title": "",
   "body": "      "
 },
@@ -3902,7 +3920,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#s_det_ex-1-4-3",
   "type": "Exercise",
-  "number": "3.5.5.5",
+  "number": "3.5.5.9",
   "title": "",
   "body": "      "
 },
@@ -3911,140 +3929,104 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_det.html#s_det_ex-1-4-4",
   "type": "Exercise",
-  "number": "3.5.5.6",
-  "title": "",
-  "body": "      "
-},
-{
-  "id": "s_det_ex-1-4-5",
-  "level": "2",
-  "url": "s_det.html#s_det_ex-1-4-5",
-  "type": "Exercise",
-  "number": "3.5.5.7",
-  "title": "",
-  "body": "      "
-},
-{
-  "id": "s_det_ex-1-4-6",
-  "level": "2",
-  "url": "s_det.html#s_det_ex-1-4-6",
-  "type": "Exercise",
-  "number": "3.5.5.8",
-  "title": "",
-  "body": "      "
-},
-{
-  "id": "s_det_ex-1-5-3",
-  "level": "2",
-  "url": "s_det.html#s_det_ex-1-5-3",
-  "type": "Exercise",
-  "number": "3.5.5.9",
-  "title": "",
-  "body": "      "
-},
-{
-  "id": "s_det_ex-1-5-4",
-  "level": "2",
-  "url": "s_det.html#s_det_ex-1-5-4",
-  "type": "Exercise",
   "number": "3.5.5.10",
   "title": "",
   "body": "      "
 },
 {
-  "id": "s_det_ex-1-6",
+  "id": "s_det_ex-1-5",
   "level": "2",
-  "url": "s_det.html#s_det_ex-1-6",
+  "url": "s_det.html#s_det_ex-1-5",
   "type": "Exercise",
   "number": "3.5.5.11",
   "title": "",
   "body": "  Let . Show without computing the determinant directly. In other words, use a row reduction technique or .   "
 },
 {
-  "id": "s_det_ex-1-7",
+  "id": "s_det_ex-1-6",
   "level": "2",
-  "url": "s_det.html#s_det_ex-1-7",
+  "url": "s_det.html#s_det_ex-1-6",
   "type": "Exercise",
   "number": "3.5.5.12",
   "title": "",
   "body": "  Let be an matrix, and let be a scalar. State and prove a formula relating with .     "
 },
 {
-  "id": "s_det_ex-1-8",
+  "id": "s_det_ex-1-7",
   "level": "2",
-  "url": "s_det.html#s_det_ex-1-8",
+  "url": "s_det.html#s_det_ex-1-7",
   "type": "Exercise",
   "number": "3.5.5.13",
   "title": "",
   "body": "  Assume is a matrix satisfying . Compute the determinant of the given matrix.                         "
 },
 {
-  "id": "s_det_ex-1-9",
+  "id": "s_det_ex-1-8",
   "level": "2",
-  "url": "s_det.html#s_det_ex-1-9",
+  "url": "s_det.html#s_det_ex-1-8",
   "type": "Exercise",
   "number": "3.5.5.14",
   "title": "",
   "body": "  Let and be matrices, and suppose is invertible. Prove the following:     .     .      "
 },
 {
-  "id": "s_det_ex-1-10",
+  "id": "s_det_ex-1-9",
   "level": "2",
-  "url": "s_det.html#s_det_ex-1-10",
+  "url": "s_det.html#s_det_ex-1-9",
   "type": "Exercise",
   "number": "3.5.5.15",
   "title": "",
   "body": "  Assume the square matrix satisfies . Show that .   "
 },
 {
-  "id": "s_det_ex-1-11",
+  "id": "s_det_ex-1-10",
   "level": "2",
-  "url": "s_det.html#s_det_ex-1-11",
+  "url": "s_det.html#s_det_ex-1-10",
   "type": "Exercise",
   "number": "3.5.5.16",
   "title": "",
   "body": "  Prove that a square matrix is invertible if and only if is invertible.   "
 },
 {
-  "id": "s_det_ex-1-12-3",
+  "id": "s_det_ex-1-11-3",
   "level": "2",
-  "url": "s_det.html#s_det_ex-1-12-3",
+  "url": "s_det.html#s_det_ex-1-11-3",
   "type": "Exercise",
   "number": "3.5.5.17",
   "title": "",
   "body": "  Give an explicit example of a square matrix satisfying and .  In other words, show that it is possible for a nonzero matrix to have a zero adjoint matrix.   "
 },
 {
-  "id": "s_det_ex-1-12-4",
+  "id": "s_det_ex-1-11-4",
   "level": "2",
-  "url": "s_det.html#s_det_ex-1-12-4",
+  "url": "s_det.html#s_det_ex-1-11-4",
   "type": "Exercise",
   "number": "3.5.5.18",
   "title": "",
   "body": "  Let be an matrix. Prove: .   "
 },
 {
-  "id": "s_det_ex-1-12-5",
+  "id": "s_det_ex-1-11-5",
   "level": "2",
-  "url": "s_det.html#s_det_ex-1-12-5",
+  "url": "s_det.html#s_det_ex-1-11-5",
   "type": "Exercise",
   "number": "3.5.5.19",
   "title": "",
   "body": "  Prove: is invertible if and only if is invertible.   "
 },
 {
-  "id": "s_det_ex-1-12-6",
+  "id": "s_det_ex-1-11-6",
   "level": "2",
-  "url": "s_det.html#s_det_ex-1-12-6",
+  "url": "s_det.html#s_det_ex-1-11-6",
   "type": "Exercise",
   "number": "3.5.5.20",
   "title": "",
   "body": "  Assume is invertible. Prove: .   "
 },
 {
-  "id": "s_det_ex-1-13",
+  "id": "s_det_ex-1-12",
   "level": "2",
-  "url": "s_det.html#s_det_ex-1-13",
+  "url": "s_det.html#s_det_ex-1-12",
   "type": "Exercise",
   "number": "3.5.5.21",
   "title": "",
@@ -4060,18 +4042,18 @@ var ptx_lunr_docs = [
   "body": "  State and prove an analogue to that describes how the corresponding column operations (i.e., scale a column by , swap two columns, column addition) affect the determinant of a matrix. (See ).    Express each of these types of column operations as multiplication on the right by an elementary matrix.   "
 },
 {
-  "id": "s_det_ex-1-15",
+  "id": "s_det_ex-1-14",
   "level": "2",
-  "url": "s_det.html#s_det_ex-1-15",
+  "url": "s_det.html#s_det_ex-1-14",
   "type": "Exercise",
   "number": "3.5.5.23",
   "title": "",
   "body": "  Let be the matrix with along the diagonal and 's elsewhere: i.e., . State and prove a formula for . (Your formula will involve , , and .)  Look at the and cases first. To prove the formula in the general case you may want to make use of row reduction and .   "
 },
 {
-  "id": "s_det_ex-1-16",
+  "id": "s_det_ex-1-15",
   "level": "2",
-  "url": "s_det.html#s_det_ex-1-16",
+  "url": "s_det.html#s_det_ex-1-15",
   "type": "Exercise",
   "number": "3.5.5.24",
   "title": "",
@@ -4885,23 +4867,14 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "4.4",
   "title": "Dimension",
-  "body": " Dimension   Intuitively, we think of as a two-dimensional space, and as three-dimensional one. Why? Loosely speaking this notion of dimension has something to do with the number of degrees of freedom involved in specifying a particular element of the given space: to specify an element of we need to give its two coordinates; to specify an element of we need to give its three coordinates. Clearly, this conception is too imprecise to serve as a mathematical definition. What exactly does degrees of freedom mean? And how do you quantify the number of degrees of freedom needed for a given space? For example, we also think of a plane passing through the origin as a two-dimensional object; it is not immediately clear how to square this intuition with our vague degrees of freedom formulation. In this section we introduce the definition of the dimension of a vector space, which will be a rigorous articulation of these notions. Our definition, which relies on the concept of bases, seems simple enough: the dimension of a vector space is defined as the number of elements contained in any basis of . However, as we will see there is considerable work involved (a) in proving that this definition is well-defined, and (b) in showing that it captures the intuition of dimension described above.    Dimension of a vector space  Before getting to the definition of dimension, we introduce the notion of the cardinality of a set, which essentially is just the number of distinct elements the set contains.   Cardinality of a set  cardinality of a set    the cardinality of the set    Let be a set. The cardinality of , denoted is defined as follows:   If is finite, then its cardinality is the number of distinct elements it contains, written .    If is infinite, then we say it has infinite cardinality , and write .       We are now ready to define the dimension of a vector space.   Dimension of a vector space  dimension of a vector space    dimension of    Let be a vector space. The dimension of , denoted , is defined as follows:   If has a finite basis , then the dimension of is the number of elements of : , .    If does not have a finite basis, then we say is infinite dimensional , and write .       There are two subtleties in our definition that we address in .   Infinite dimension  Wouldn't it have been more natural to simply say is infinite dimensional if it has an infinite basis? That way we could dispense with the cases of and simply define as the cardinality of any basis of . As it turns out, our defined notion of having infinite dimension is indeed equivalent to not having a finite basis, but to prove this we need to establish the general fact that every vector space has a basis. As intuitive as that claim may sound ( , that bases always exist), its proof requires some set theory methods that are not covered in this text. As such we will not include it in our treatment of dimension, and so will have to make do with our slightly awkward definition of infinite-dimensional vector spaces.    Dimension is well-defined  Another issue with our definition is the question of whether or not our notion of dimension is well-defined. Recall that a nonzero vector space has infinitely many different bases. For the notion of dimension defined in to make sense, each one of these different bases must have the same cardinality. Who's to say that a vector space cannot have one basis of cardinality two and another of cardinality 5: or worse, one basis that is finite and another that is infinite? It turns out that in fact all bases of a vector space must have the same cardinality, but this is a nontrivial fact that requires proof. (See .)   Before getting to the theory required to show our definition of dimension is well-defined, we illustrate its application to some familiar finite-dimensional vector spaces. Note that by definition, to show a vector space has dimension , we simply must exhibit a basis with . This is especially easy to do for a vector space when we have a basis at the ready, as is the case for our list of familiar vector spaces.   Dimensions of familiar spaces  For each below we provide its standard basis and compute .    Zero space   , ,     Tuples   , ,     Matrices   , ,      Even when we do not have a standard basis at our disposal, there are many situations when we can produce a basis of a space by inspection, allowing us to then easily compute the dimension.   Dimension of subspace   Use to compute the dimension of the subspace defined as .    We saw in that is a basis of . Thus .     Dimension of symmetric matrices   Let be the space of symmetric matrices. Compute using . You may take for granted that is a subspace.    We saw in that is a basis of , where . We conclude that .     Video example: computing dimension   Video: computing dimension     The following theorem about spanning sets is the crucial result needed to show that any two finite bases of a vector space have the same cardinality.   Spanning set bound   Suppose is a finite spanning set for the vector space and let . If is a finite set with , then is linearly dependent.    Let , and let . Since spans , each element of is a linear combination of elements of : , we have for all . Now consider the following chain of equivalences: . From the last vector equation, we see that if we can find a nonzero sequence satisfying for all , then there is a nontrivial combination of the equal to the zero vector, and hence that is linearly dependent. Such a sequence corresponds to a solution to the homogeneous linear with augmented matrix , where . Since this is a homogeneous system of equations in unknowns, and since , there are in fact infinitely many solutions. (The system has at most leading ones, and so there must be a free variable since one of the columns in the equivalent row echelon matrix must fail to contain a leading one.) In particular there is a nonzero solution , and we conclude that is linearly dependent.    The next theorem not only ensures that our definition of dimension ( ) is well-defined, it also characterizes dimension as the minimal cardinality of a spanning set, and the maximal cardinality of a linearly independent set.   Basis bounds   Let be a basis of the vector space , and suppose     If spans , then .    If is linearly independent, then .    If is a basis for , then .         Suppose by contradiction that and . Then would imply is linearly dependent. Since this is a contradiction, we conclude that .    This also follows from : since is a spanning set of any set containing more than elements must be linearly dependent.    This follows from (1) and (2): if is a basis, then since spans, we have (1); and since is linearly independent we have (2). We conclude that .       The following corollary of provides a useful means for showing that a space is infinite dimensional.   Infinite dimensional spaces   Let be a vector space. If for all integers we can find a linearly independent subset with , then is infinite dimensional. In other words, if contains linearly independent subsets of arbitrarily large cardinality, then .    We give a proof by contradiction. Let be a vector space satisfying the stated condition: , contains linearly independent sets of arbitrarily large cardinality. Suppose by contradiction that is finite dimensional. By this means there is a finite basis with . But then by any linearly independent set must satisfy . This contradictions the assumption that contains linearly independent sets of arbitrarily large cardinality. Since we have reached a contradiction, we conclude that must be infinite dimensional.     Infinite dimensional space   Let be the vector space of infinite sequences of real numbers. (See .) Prove that .    For each positive integer , define to the infinite sequence whose -th term is equal to one, and whose other terms are all equal to zero: , . We will show that for all positive integers the set is linearly independent. It will then follow from that is infinite dimensional, since it contains linearly independent sets of arbitrarily large cardinality.  To show is linearly independent, assume we have for some scalars . Since , we conclude that , proving that is linearly independent.    We can now describe a complete procedure for computing the dimension of a vector space : either find a finite basis for and compute its cardinality, or else show that is infinite dimensional, perhaps by using .   Computing dimension   To compute the dimension of a vector space proceed as follows.   Basis  Attempt to produce a basis of , possibly with the help of the by-inspection basis technique .    Dimension     If you found a finite basis in Step 1, then determine the cardinality by counting the number of distinct elements of . We have in this case.      If you found an infinite basis in Step 1, or were able to show that no finite basis exists (perhaps by using ), then .            Further properties of dimension  The contracting and expanding theorem below is a very useful theoretical consequence of . It allows us to construct a customized basis from a given set .   Contracting and expanding to bases   Let be a vector space of dimension , and let be a finite subset.    Contract to basis  If spans , then there is a subset of that is a basis of : , we can contract a spanning set to a basis.    Extend to basis  If is linearly independent, then is contained in a basis of : , we can extend a linearly independent set to a basis.      Let .   Assume . Let be a subset of of minimal cardinality such that is still equal to . Such a set is guaranteed to exist: since is finite, it has a finite number of subsets; of these subsets some will span, others will not; of the subsets that do span, there will be one (or more) that has the least number of elements.  We claim that such a spanning subset of minimal cardinality is linearly independent, and hence is a basis for , as desired. We give a proof by contradiction. Suppose, by contradiction, that is linearly dependent. It follows that some element of , call it , can be expressed as a linear combination of the other elements ( ). This means that the element is redundant with respect to span. In other words, if we let , the set obtained by throwing out  , then we have . Since , this contradicts our choice of as a spanning set of minimal cardinality. We conclude that is linearly independent, completing the proof.    Assume is linearly independent. The procedure below constructs a finite chain of sets that ends with a basis .   Initialization  Let     Expansion loop  If , return . Otherwise set , where is any element of that is not contained in and repeat.   Some observations:   Each is linearly independent. This can be shown by induction, the crucial point being that if is linearly independent, and if , then is linearly independent. The proof is left as an exercise.    The procedure must halt. Why? Since , and since each is linearly independent, we must have for all by . Since and , the procedure must halt in at most steps.   From (ii) we may assume the procedure halts at for some . From (i) we know that is linearly independent. Furthermore, since the procedure halts at , we know that . It follows that is a basis containing , as desired.       The following corollary follows from and . We call it a street smarts result as the first two statements give us a quick and dirty way of dashing a set's hopes of being a basis. The third statement asserts that when a finite set's cardinality matches the dimension of a space, then to prove it is a basis it suffices to prove either one of the two defining properties of .   Street smarts   Let be a vector space of dimension , and let be a subset.    If , then does not span .    If , then is linearly dependent.    If , then the following are equivalent:   The set is a basis.    The set spans .    The set is linearly independent.         Statements (1) and (2) follow directly from . Statement (3) is an easy consequence of . For example, if spans , then there is a subset of that is a basis of ; since all bases of have elements, and since , we must have ; thus is a basis. The proof for a linear independent set is similar, and is left to the reader.    We are often in a situation where we wish to show a given subspace of a vector space is in fact the entire space. For example, when deciding whether a set spans a vector space , we are asking whether is all of . As another example, given a linear transformation , one of the first things we wish to determine is whether the subspace is in fact all of . As the next result illustrates, dimension is a very useful tool in this regard.   Dimension of subspaces   Let be a vector space.    If is a subspace, then .    If is a subspace, then if and only if .         Firstly, if , then clearly for any subspace .  Now assume . Apply the extending to a basis procedure described in the proof of to the emptyset , which is lienarly independent, considered as a subset of : , at each stage, if the current set is not a basis of , add any element . Since , and since , the linearly independent sets cannot have more than elements; thus the procedure must halt with a basis of satisfying . We conclude that .    Clearly, if , then . For the other direction, assume . Let be a basis for . Since is lienarly independent, it can be extended to a basis of ( ). Since , and since all bases of have cardinality , we must have . It follows that is also a basis of , and hence that .        Dimension of subspace   Let , where . Let be the space of symmetric matrices. Use and the fact that to prove that .       Since each is symmetric, and since the set of symmetric matrices is a subspace, we have by statement (2) of .    The set is linearly independent: . Thus is a basis of , and we conclude that .    We saw in that : , the space of symmetric is -dimensional. Since is a subspace of and , we conclude that by .        is also of use in situations where we wish to characterize all subspaces of a given -dimensional vector space . By the corollary, any such subspace must have dimension for some ; and this in turn means that must have a basis of cardinality . We thus have the beginnings of a systematic description of all subspaces , organized by dimension , for .   Subspaces of  We describe all subspaces of ordered by dimension.    If , then must have the empty set as a basis (by definition of dimension), and hence , the zero subspace.     If , then has a basis consisting of a single nonzero vector . In this case we have , which is a line passing through the origin with direction vector . Thus -dimensional subspaces of are lines passing through the origin.     If , then has a basis containing two non-parallel vectors in . You learn in multivariable calculus that is the plane in passing through the origin with direction vectors  . In fact, you can show that the cross product  is a normal vector for the plane in this case. Thus the -dimensional subspaces of are planes passing through the origin.     Assume . Since is a subspace of , and since , we must have according to . It is as simple as that! Thus is the only -dimensional subspace of .      That was quite a dose of theory! For your convenience, we collect the various results on dimension, together with their nicknames, in one omnibus theorem.   Dimension theory compendium   Let be a vector space of dimension .   Contract  If spans , then can be contracted to a basis of .    Expand  If is linearly independent, then can be extended to a basis of .    Street smarts  If and , then does not span .    Street smarts  If and , then is linearly dependent.    Street smarts  If and , then is a basis if and only if spans if and only if is linearly independent.    Dimension of subspaces  If is a subspace, then    , and     if and only if .             WeBWork Exercises      Are the following statements true or false?    Let . Then { } in can form a basis for if the correct vectors are added to .    If is of dimension 3 and is a subspace of , then there can not exist a subspace of such that with and .    The set {0} forms a basis for the zero subspace.    Let . Then { } in can form a basis for if the correct vectors are removed from .    has exactly one subspace of dimension for each of .              Suppose that and are nonzero subspaces, with contained inside , and suppose that .  (a) What are the possible dimensions of ?  1   2   3   1 or 2   1,2, or 3   (b) If then what are the possible dimensions of ?  1   2   3   1 or 2   1,2, or 3              (a) The dimension of cannot exceed the dimension of since is contained in . is non-zero, and thus its dimension cannot be 0. Hence 1, 2, or 3 are the possible dimensions of . (b) If , then is properly contained in , and the dimension of is strictly less than the dimension of . Thus only 1 or 2 are possible dimensions of .           Suppose that and are nonzero subspaces, with contained inside , and suppose that    What are the possible dimensions of ?    If , then what are the possible dimensions of ?     cannot exceed the dimension of , since is contained in . us non-zero, and thus the its dimension cannot be zero. Hence the possible dimensions of are 1, 2, 3, and 4. b) If , then is properly contained in , and the dimension of is strictly less than the dimension of . So the possible dimensions of are 1, 2, and 3.           By deleting linearly dependent vectors, find a basis of each subspace and give the dimension of the subspace.  A. The dimension of is .  B. The dimension of is .  C. The dimension of is .  D. The dimension of is .  E. The dimension of is .                                   Street smarts   For each vector space and subset use an appropriate statement from to help decide whether is a basis for . Justify your answer.      ,        ,       , , where .      Let be the set of solutions to the following homogeneous system: .    Compute a basis of . Justify your answer.    Compute .       By-inspection basis technique   For each given and subspace , compute using .      ,        ,        ,        ,        , is set of all matrices whose rows and columns all sum to zero       Suppoe be a basis for the vector space . Let , where . Prove that is a basis.    First explain why it is enough to show that is linearly independent.     Two-dimensional subspaces of   Prove that the 2-dimensional subspaces of are precisely the planes that pass through the origin. In other words, show (a) that any plane passing through the origin is a 2-dimensional subspace, and conversely, (b) that any 2-dimensional subspace is a plane passing through the origin.    For (b), begin with a basis of of , and use the cross product to find a normal vector that defines as a plane.      Let , , and , where Show that as follows:  Show that .   Compute the dimensions of and and use .         Let and define . Find a basis for by inspection and compute its dimension.     Dimensions of important matrix subspaces   Let . Compute for each subspace .    Upper triangular matrices       Symmetric matrices       Skew-symmetric matrices         Use your results from . The identity will be helpful.      Let . Show that there is a nonzero polynomial such that .    Consider the set and use a relevant statement from . Treat two cases separately: (a) the powers of are all distinct; (b) for some .     "
-},
-{
-  "id": "d_cardinality",
-  "level": "2",
-  "url": "s_dimension.html#d_cardinality",
-  "type": "Definition",
-  "number": "4.4.1",
-  "title": "Cardinality of a set.",
-  "body": " Cardinality of a set  cardinality of a set    the cardinality of the set    Let be a set. The cardinality of , denoted is defined as follows:   If is finite, then its cardinality is the number of distinct elements it contains, written .    If is infinite, then we say it has infinite cardinality , and write .      "
+  "body": " Dimension   Intuitively, we think of as a two-dimensional space, and as three-dimensional one. Why? Loosely speaking this notion of dimension has something to do with the number of degrees of freedom involved in specifying a particular element of the given space: to specify an element of we need to give its two coordinates; to specify an element of we need to give its three coordinates. Clearly, this conception is too imprecise to serve as a mathematical definition. What exactly does degrees of freedom mean? And how do you quantify the number of degrees of freedom needed for a given space? For example, we also think of a plane passing through the origin as a two-dimensional object; it is not immediately clear how to square this intuition with our vague degrees of freedom formulation. In this section we introduce the definition of the dimension of a vector space, which will be a rigorous articulation of these notions. Our definition, which relies on the concept of bases, seems simple enough: the dimension of a vector space is defined as the number of elements contained in any basis of . However, as we will see there is considerable work involved (a) in proving that this definition is well-defined, and (b) in showing that it captures the intuition of dimension described above.    Dimension of a vector space  [CAUTION! Make sure to edit this sections!!]   Dimension of a vector space  dimension of a vector space    dimension of    Let be a vector space. The dimension of , denoted , is defined as follows:   If has a finite basis , then the dimension of is the number of elements of : , .    If does not have a finite basis, then we say is infinite dimensional , and write .       There are two subtleties in our definition that we address in .   Infinite dimension  Wouldn't it have been more natural to simply say is infinite dimensional if it has an infinite basis? That way we could dispense with the cases of and simply define as the cardinality of any basis of . As it turns out, our defined notion of having infinite dimension is indeed equivalent to not having a finite basis, but to prove this we need to establish the general fact that every vector space has a basis. As intuitive as that claim may sound ( , that bases always exist), its proof requires some set theory methods that are not covered in this text. As such we will not include it in our treatment of dimension, and so will have to make do with our slightly awkward definition of infinite-dimensional vector spaces.    Dimension is well-defined  Another issue with our definition is the question of whether or not our notion of dimension is well-defined. Recall that a nonzero vector space has infinitely many different bases. For the notion of dimension defined in to make sense, each one of these different bases must have the same cardinality. Who's to say that a vector space cannot have one basis of cardinality two and another of cardinality 5: or worse, one basis that is finite and another that is infinite? It turns out that in fact all bases of a vector space must have the same cardinality, but this is a nontrivial fact that requires proof. (See .)   Before getting to the theory required to show our definition of dimension is well-defined, we illustrate its application to some familiar finite-dimensional vector spaces. Note that by definition, to show a vector space has dimension , we simply must exhibit a basis with . This is especially easy to do for a vector space when we have a basis at the ready, as is the case for our list of familiar vector spaces.   Dimensions of familiar spaces  For each below we provide its standard basis and compute .    Zero space   , ,     Tuples   , ,     Matrices   , ,      Even when we do not have a standard basis at our disposal, there are many situations when we can produce a basis of a space by inspection, allowing us to then easily compute the dimension.   Dimension of subspace   Use to compute the dimension of the subspace defined as .    We saw in that is a basis of . Thus .     Dimension of symmetric matrices   Let be the space of symmetric matrices. Compute using . You may take for granted that is a subspace.    We saw in that is a basis of , where . We conclude that .     Video example: computing dimension   Video: computing dimension     The following theorem about spanning sets is the crucial result needed to show that any two finite bases of a vector space have the same cardinality.   Spanning set bound   Suppose is a finite spanning set for the vector space and let . If is a finite set with , then is linearly dependent.    Let , and let . Since spans , each element of is a linear combination of elements of : , we have for all . Now consider the following chain of equivalences: . From the last vector equation, we see that if we can find a nonzero sequence satisfying for all , then there is a nontrivial combination of the equal to the zero vector, and hence that is linearly dependent. Such a sequence corresponds to a solution to the homogeneous linear with augmented matrix , where . Since this is a homogeneous system of equations in unknowns, and since , there are in fact infinitely many solutions. (The system has at most leading ones, and so there must be a free variable since one of the columns in the equivalent row echelon matrix must fail to contain a leading one.) In particular there is a nonzero solution , and we conclude that is linearly dependent.    The next theorem not only ensures that our definition of dimension ( ) is well-defined, it also characterizes dimension as the minimal cardinality of a spanning set, and the maximal cardinality of a linearly independent set.   Basis bounds   Let be a basis of the vector space , and suppose     If spans , then .    If is linearly independent, then .    If is a basis for , then .         Suppose by contradiction that and . Then would imply is linearly dependent. Since this is a contradiction, we conclude that .    This also follows from : since is a spanning set of any set containing more than elements must be linearly dependent.    This follows from (1) and (2): if is a basis, then since spans, we have (1); and since is linearly independent we have (2). We conclude that .       The following corollary of provides a useful means for showing that a space is infinite dimensional.   Infinite dimensional spaces   Let be a vector space. If for all integers we can find a linearly independent subset with , then is infinite dimensional. In other words, if contains linearly independent subsets of arbitrarily large cardinality, then .    We give a proof by contradiction. Let be a vector space satisfying the stated condition: , contains linearly independent sets of arbitrarily large cardinality. Suppose by contradiction that is finite dimensional. By this means there is a finite basis with . But then by any linearly independent set must satisfy . This contradictions the assumption that contains linearly independent sets of arbitrarily large cardinality. Since we have reached a contradiction, we conclude that must be infinite dimensional.     Infinite dimensional space   Let be the vector space of infinite sequences of real numbers. (See .) Prove that .    For each positive integer , define to the infinite sequence whose -th term is equal to one, and whose other terms are all equal to zero: , . We will show that for all positive integers the set is linearly independent. It will then follow from that is infinite dimensional, since it contains linearly independent sets of arbitrarily large cardinality.  To show is linearly independent, assume we have for some scalars . Since , we conclude that , proving that is linearly independent.    We can now describe a complete procedure for computing the dimension of a vector space : either find a finite basis for and compute its cardinality, or else show that is infinite dimensional, perhaps by using .   Computing dimension   To compute the dimension of a vector space proceed as follows.   Basis  Attempt to produce a basis of , possibly with the help of the by-inspection basis technique .    Dimension     If you found a finite basis in Step 1, then determine the cardinality by counting the number of distinct elements of . We have in this case.      If you found an infinite basis in Step 1, or were able to show that no finite basis exists (perhaps by using ), then .            Further properties of dimension  The contracting and expanding theorem below is a very useful theoretical consequence of . It allows us to construct a customized basis from a given set .   Contracting and expanding to bases   Let be a vector space of dimension , and let be a finite subset.    Contract to basis  If spans , then there is a subset of that is a basis of : , we can contract a spanning set to a basis.    Extend to basis  If is linearly independent, then is contained in a basis of : , we can extend a linearly independent set to a basis.      Let .   Assume . Let be a subset of of minimal cardinality such that is still equal to . Such a set is guaranteed to exist: since is finite, it has a finite number of subsets; of these subsets some will span, others will not; of the subsets that do span, there will be one (or more) that has the least number of elements.  We claim that such a spanning subset of minimal cardinality is linearly independent, and hence is a basis for , as desired. We give a proof by contradiction. Suppose, by contradiction, that is linearly dependent. It follows that some element of , call it , can be expressed as a linear combination of the other elements ( ). This means that the element is redundant with respect to span. In other words, if we let , the set obtained by throwing out  , then we have . Since , this contradicts our choice of as a spanning set of minimal cardinality. We conclude that is linearly independent, completing the proof.    Assume is linearly independent. The procedure below constructs a finite chain of sets that ends with a basis .   Initialization  Let     Expansion loop  If , return . Otherwise set , where is any element of that is not contained in and repeat.   Some observations:   Each is linearly independent. This can be shown by induction, the crucial point being that if is linearly independent, and if , then is linearly independent. The proof is left as an exercise.    The procedure must halt. Why? Since , and since each is linearly independent, we must have for all by . Since and , the procedure must halt in at most steps.   From (ii) we may assume the procedure halts at for some . From (i) we know that is linearly independent. Furthermore, since the procedure halts at , we know that . It follows that is a basis containing , as desired.       The following corollary follows from and . We call it a street smarts result as the first two statements give us a quick and dirty way of dashing a set's hopes of being a basis. The third statement asserts that when a finite set's cardinality matches the dimension of a space, then to prove it is a basis it suffices to prove either one of the two defining properties of .   Street smarts   Let be a vector space of dimension , and let be a subset.    If , then does not span .    If , then is linearly dependent.    If , then the following are equivalent:   The set is a basis.    The set spans .    The set is linearly independent.         Statements (1) and (2) follow directly from . Statement (3) is an easy consequence of . For example, if spans , then there is a subset of that is a basis of ; since all bases of have elements, and since , we must have ; thus is a basis. The proof for a linear independent set is similar, and is left to the reader.    We are often in a situation where we wish to show a given subspace of a vector space is in fact the entire space. For example, when deciding whether a set spans a vector space , we are asking whether is all of . As another example, given a linear transformation , one of the first things we wish to determine is whether the subspace is in fact all of . As the next result illustrates, dimension is a very useful tool in this regard.   Dimension of subspaces   Let be a vector space.    If is a subspace, then .    If is a subspace, then if and only if .         Firstly, if , then clearly for any subspace .  Now assume . Apply the extending to a basis procedure described in the proof of to the emptyset , which is lienarly independent, considered as a subset of : , at each stage, if the current set is not a basis of , add any element . Since , and since , the linearly independent sets cannot have more than elements; thus the procedure must halt with a basis of satisfying . We conclude that .    Clearly, if , then . For the other direction, assume . Let be a basis for . Since is lienarly independent, it can be extended to a basis of ( ). Since , and since all bases of have cardinality , we must have . It follows that is also a basis of , and hence that .        Dimension of subspace   Let , where . Let be the space of symmetric matrices. Use and the fact that to prove that .       Since each is symmetric, and since the set of symmetric matrices is a subspace, we have by statement (2) of .    The set is linearly independent: . Thus is a basis of , and we conclude that .    We saw in that : , the space of symmetric is -dimensional. Since is a subspace of and , we conclude that by .        is also of use in situations where we wish to characterize all subspaces of a given -dimensional vector space . By the corollary, any such subspace must have dimension for some ; and this in turn means that must have a basis of cardinality . We thus have the beginnings of a systematic description of all subspaces , organized by dimension , for .   Subspaces of  We describe all subspaces of ordered by dimension.    If , then must have the empty set as a basis (by definition of dimension), and hence , the zero subspace.     If , then has a basis consisting of a single nonzero vector . In this case we have , which is a line passing through the origin with direction vector . Thus -dimensional subspaces of are lines passing through the origin.     If , then has a basis containing two non-parallel vectors in . You learn in multivariable calculus that is the plane in passing through the origin with direction vectors  . In fact, you can show that the cross product  is a normal vector for the plane in this case. Thus the -dimensional subspaces of are planes passing through the origin.     Assume . Since is a subspace of , and since , we must have according to . It is as simple as that! Thus is the only -dimensional subspace of .      That was quite a dose of theory! For your convenience, we collect the various results on dimension, together with their nicknames, in one omnibus theorem.   Dimension theory compendium   Let be a vector space of dimension .   Contract  If spans , then can be contracted to a basis of .    Expand  If is linearly independent, then can be extended to a basis of .    Street smarts  If and , then does not span .    Street smarts  If and , then is linearly dependent.    Street smarts  If and , then is a basis if and only if spans if and only if is linearly independent.    Dimension of subspaces  If is a subspace, then    , and     if and only if .             WeBWork Exercises      Are the following statements true or false?    Let . Then { } in can form a basis for if the correct vectors are added to .    If is of dimension 3 and is a subspace of , then there can not exist a subspace of such that with and .    The set {0} forms a basis for the zero subspace.    Let . Then { } in can form a basis for if the correct vectors are removed from .    has exactly one subspace of dimension for each of .              Suppose that and are nonzero subspaces, with contained inside , and suppose that .  (a) What are the possible dimensions of ?  1   2   3   1 or 2   1,2, or 3   (b) If then what are the possible dimensions of ?  1   2   3   1 or 2   1,2, or 3              (a) The dimension of cannot exceed the dimension of since is contained in . is non-zero, and thus its dimension cannot be 0. Hence 1, 2, or 3 are the possible dimensions of . (b) If , then is properly contained in , and the dimension of is strictly less than the dimension of . Thus only 1 or 2 are possible dimensions of .           Suppose that and are nonzero subspaces, with contained inside , and suppose that    What are the possible dimensions of ?    If , then what are the possible dimensions of ?     cannot exceed the dimension of , since is contained in . us non-zero, and thus the its dimension cannot be zero. Hence the possible dimensions of are 1, 2, 3, and 4. b) If , then is properly contained in , and the dimension of is strictly less than the dimension of . So the possible dimensions of are 1, 2, and 3.           By deleting linearly dependent vectors, find a basis of each subspace and give the dimension of the subspace.  A. The dimension of is .  B. The dimension of is .  C. The dimension of is .  D. The dimension of is .  E. The dimension of is .                                   Street smarts   For each vector space and subset use an appropriate statement from to help decide whether is a basis for . Justify your answer.      ,        ,       , , where .      Let be the set of solutions to the following homogeneous system: .    Compute a basis of . Justify your answer.    Compute .       By-inspection basis technique   For each given and subspace , compute using .      ,        ,        ,        ,        , is set of all matrices whose rows and columns all sum to zero       Suppoe be a basis for the vector space . Let , where . Prove that is a basis.    First explain why it is enough to show that is linearly independent.     Two-dimensional subspaces of   Prove that the 2-dimensional subspaces of are precisely the planes that pass through the origin. In other words, show (a) that any plane passing through the origin is a 2-dimensional subspace, and conversely, (b) that any 2-dimensional subspace is a plane passing through the origin.    For (b), begin with a basis of of , and use the cross product to find a normal vector that defines as a plane.      Let , , and , where Show that as follows:  Show that .   Compute the dimensions of and and use .         Let and define . Find a basis for by inspection and compute its dimension.     Dimensions of important matrix subspaces   Let . Compute for each subspace .    Upper triangular matrices       Symmetric matrices       Skew-symmetric matrices         Use your results from . The identity will be helpful.      Let . Show that there is a nonzero polynomial such that .    Consider the set and use a relevant statement from . Treat two cases separately: (a) the powers of are all distinct; (b) for some .     "
 },
 {
   "id": "d_dimension",
   "level": "2",
   "url": "s_dimension.html#d_dimension",
   "type": "Definition",
-  "number": "4.4.2",
+  "number": "4.4.1",
   "title": "Dimension of a vector space.",
   "body": " Dimension of a vector space  dimension of a vector space    dimension of    Let be a vector space. The dimension of , denoted , is defined as follows:   If has a finite basis , then the dimension of is the number of elements of : , .    If does not have a finite basis, then we say is infinite dimensional , and write .      "
 },
@@ -4910,7 +4883,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_dimension.html#rm_basis_existence",
   "type": "Remark",
-  "number": "4.4.3",
+  "number": "4.4.2",
   "title": "Infinite dimension.",
   "body": " Infinite dimension  Wouldn't it have been more natural to simply say is infinite dimensional if it has an infinite basis? That way we could dispense with the cases of and simply define as the cardinality of any basis of . As it turns out, our defined notion of having infinite dimension is indeed equivalent to not having a finite basis, but to prove this we need to establish the general fact that every vector space has a basis. As intuitive as that claim may sound ( , that bases always exist), its proof requires some set theory methods that are not covered in this text. As such we will not include it in our treatment of dimension, and so will have to make do with our slightly awkward definition of infinite-dimensional vector spaces.  "
 },
@@ -4919,7 +4892,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_dimension.html#rm_dim_defined",
   "type": "Remark",
-  "number": "4.4.4",
+  "number": "4.4.3",
   "title": "Dimension is well-defined.",
   "body": " Dimension is well-defined  Another issue with our definition is the question of whether or not our notion of dimension is well-defined. Recall that a nonzero vector space has infinitely many different bases. For the notion of dimension defined in to make sense, each one of these different bases must have the same cardinality. Who's to say that a vector space cannot have one basis of cardinality two and another of cardinality 5: or worse, one basis that is finite and another that is infinite? It turns out that in fact all bases of a vector space must have the same cardinality, but this is a nontrivial fact that requires proof. (See .)  "
 },
@@ -4928,7 +4901,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_dimension.html#eg_dimension_familiar",
   "type": "Example",
-  "number": "4.4.5",
+  "number": "4.4.4",
   "title": "Dimensions of familiar spaces.",
   "body": " Dimensions of familiar spaces  For each below we provide its standard basis and compute .    Zero space   , ,     Tuples   , ,     Matrices   , ,     "
 },
@@ -4937,7 +4910,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_dimension.html#eg_dim_R5",
   "type": "Example",
-  "number": "4.4.6",
+  "number": "4.4.5",
   "title": "Dimension of subspace.",
   "body": " Dimension of subspace   Use to compute the dimension of the subspace defined as .    We saw in that is a basis of . Thus .   "
 },
@@ -4946,7 +4919,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_dimension.html#eg_dim_symm",
   "type": "Example",
-  "number": "4.4.7",
+  "number": "4.4.6",
   "title": "Dimension of symmetric matrices.",
   "body": " Dimension of symmetric matrices   Let be the space of symmetric matrices. Compute using . You may take for granted that is a subspace.    We saw in that is a basis of , where . We conclude that .   "
 },
@@ -4955,7 +4928,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_dimension.html#vid_eg_computing_dim",
   "type": "Example",
-  "number": "4.4.8",
+  "number": "4.4.7",
   "title": "Video example: computing dimension.",
   "body": " Video example: computing dimension   Video: computing dimension    "
 },
@@ -4964,7 +4937,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_dimension.html#th_basis_span_bounds",
   "type": "Theorem",
-  "number": "4.4.10",
+  "number": "4.4.9",
   "title": "Spanning set bound.",
   "body": " Spanning set bound   Suppose is a finite spanning set for the vector space and let . If is a finite set with , then is linearly dependent.    Let , and let . Since spans , each element of is a linear combination of elements of : , we have for all . Now consider the following chain of equivalences: . From the last vector equation, we see that if we can find a nonzero sequence satisfying for all , then there is a nontrivial combination of the equal to the zero vector, and hence that is linearly dependent. Such a sequence corresponds to a solution to the homogeneous linear with augmented matrix , where . Since this is a homogeneous system of equations in unknowns, and since , there are in fact infinitely many solutions. (The system has at most leading ones, and so there must be a free variable since one of the columns in the equivalent row echelon matrix must fail to contain a leading one.) In particular there is a nonzero solution , and we conclude that is linearly dependent.   "
 },
@@ -4973,7 +4946,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_dimension.html#th_basis_dimension",
   "type": "Theorem",
-  "number": "4.4.11",
+  "number": "4.4.10",
   "title": "Basis bounds.",
   "body": " Basis bounds   Let be a basis of the vector space , and suppose     If spans , then .    If is linearly independent, then .    If is a basis for , then .         Suppose by contradiction that and . Then would imply is linearly dependent. Since this is a contradiction, we conclude that .    This also follows from : since is a spanning set of any set containing more than elements must be linearly dependent.    This follows from (1) and (2): if is a basis, then since spans, we have (1); and since is linearly independent we have (2). We conclude that .      "
 },
@@ -4982,7 +4955,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_dimension.html#cor_dim_infinite",
   "type": "Corollary",
-  "number": "4.4.12",
+  "number": "4.4.11",
   "title": "Infinite dimensional spaces.",
   "body": " Infinite dimensional spaces   Let be a vector space. If for all integers we can find a linearly independent subset with , then is infinite dimensional. In other words, if contains linearly independent subsets of arbitrarily large cardinality, then .    We give a proof by contradiction. Let be a vector space satisfying the stated condition: , contains linearly independent sets of arbitrarily large cardinality. Suppose by contradiction that is finite dimensional. By this means there is a finite basis with . But then by any linearly independent set must satisfy . This contradictions the assumption that contains linearly independent sets of arbitrarily large cardinality. Since we have reached a contradiction, we conclude that must be infinite dimensional.   "
 },
@@ -4991,7 +4964,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_dimension.html#eg_infinite_dim",
   "type": "Example",
-  "number": "4.4.13",
+  "number": "4.4.12",
   "title": "Infinite dimensional space.",
   "body": " Infinite dimensional space   Let be the vector space of infinite sequences of real numbers. (See .) Prove that .    For each positive integer , define to the infinite sequence whose -th term is equal to one, and whose other terms are all equal to zero: , . We will show that for all positive integers the set is linearly independent. It will then follow from that is infinite dimensional, since it contains linearly independent sets of arbitrarily large cardinality.  To show is linearly independent, assume we have for some scalars . Since , we conclude that , proving that is linearly independent.   "
 },
@@ -5000,7 +4973,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_dimension.html#proc_dimension",
   "type": "Procedure",
-  "number": "4.4.14",
+  "number": "4.4.13",
   "title": "Computing dimension.",
   "body": " Computing dimension   To compute the dimension of a vector space proceed as follows.   Basis  Attempt to produce a basis of , possibly with the help of the by-inspection basis technique .    Dimension     If you found a finite basis in Step 1, then determine the cardinality by counting the number of distinct elements of . We have in this case.      If you found an infinite basis in Step 1, or were able to show that no finite basis exists (perhaps by using ), then .         "
 },
@@ -5009,7 +4982,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_dimension.html#th_basis_contract_expand",
   "type": "Theorem",
-  "number": "4.4.15",
+  "number": "4.4.14",
   "title": "Contracting and expanding to bases.",
   "body": " Contracting and expanding to bases   Let be a vector space of dimension , and let be a finite subset.    Contract to basis  If spans , then there is a subset of that is a basis of : , we can contract a spanning set to a basis.    Extend to basis  If is linearly independent, then is contained in a basis of : , we can extend a linearly independent set to a basis.      Let .   Assume . Let be a subset of of minimal cardinality such that is still equal to . Such a set is guaranteed to exist: since is finite, it has a finite number of subsets; of these subsets some will span, others will not; of the subsets that do span, there will be one (or more) that has the least number of elements.  We claim that such a spanning subset of minimal cardinality is linearly independent, and hence is a basis for , as desired. We give a proof by contradiction. Suppose, by contradiction, that is linearly dependent. It follows that some element of , call it , can be expressed as a linear combination of the other elements ( ). This means that the element is redundant with respect to span. In other words, if we let , the set obtained by throwing out  , then we have . Since , this contradicts our choice of as a spanning set of minimal cardinality. We conclude that is linearly independent, completing the proof.    Assume is linearly independent. The procedure below constructs a finite chain of sets that ends with a basis .   Initialization  Let     Expansion loop  If , return . Otherwise set , where is any element of that is not contained in and repeat.   Some observations:   Each is linearly independent. This can be shown by induction, the crucial point being that if is linearly independent, and if , then is linearly independent. The proof is left as an exercise.    The procedure must halt. Why? Since , and since each is linearly independent, we must have for all by . Since and , the procedure must halt in at most steps.   From (ii) we may assume the procedure halts at for some . From (i) we know that is linearly independent. Furthermore, since the procedure halts at , we know that . It follows that is a basis containing , as desired.      "
 },
@@ -5018,7 +4991,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_dimension.html#cor_street_smarts",
   "type": "Corollary",
-  "number": "4.4.16",
+  "number": "4.4.15",
   "title": "Street smarts.",
   "body": " Street smarts   Let be a vector space of dimension , and let be a subset.    If , then does not span .    If , then is linearly dependent.    If , then the following are equivalent:   The set is a basis.    The set spans .    The set is linearly independent.         Statements (1) and (2) follow directly from . Statement (3) is an easy consequence of . For example, if spans , then there is a subset of that is a basis of ; since all bases of have elements, and since , we must have ; thus is a basis. The proof for a linear independent set is similar, and is left to the reader.   "
 },
@@ -5027,7 +5000,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_dimension.html#cor_dimension_subspace",
   "type": "Corollary",
-  "number": "4.4.17",
+  "number": "4.4.16",
   "title": "Dimension of subspaces.",
   "body": " Dimension of subspaces   Let be a vector space.    If is a subspace, then .    If is a subspace, then if and only if .         Firstly, if , then clearly for any subspace .  Now assume . Apply the extending to a basis procedure described in the proof of to the emptyset , which is lienarly independent, considered as a subset of : , at each stage, if the current set is not a basis of , add any element . Since , and since , the linearly independent sets cannot have more than elements; thus the procedure must halt with a basis of satisfying . We conclude that .    Clearly, if , then . For the other direction, assume . Let be a basis for . Since is lienarly independent, it can be extended to a basis of ( ). Since , and since all bases of have cardinality , we must have . It follows that is also a basis of , and hence that .      "
 },
@@ -5036,7 +5009,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_dimension.html#eg_subspace_dimension",
   "type": "Example",
-  "number": "4.4.18",
+  "number": "4.4.17",
   "title": "Dimension of subspace.",
   "body": " Dimension of subspace   Let , where . Let be the space of symmetric matrices. Use and the fact that to prove that .       Since each is symmetric, and since the set of symmetric matrices is a subspace, we have by statement (2) of .    The set is linearly independent: . Thus is a basis of , and we conclude that .    We saw in that : , the space of symmetric is -dimensional. Since is a subspace of and , we conclude that by .      "
 },
@@ -5045,7 +5018,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_dimension.html#eg_subspaces_R3",
   "type": "Example",
-  "number": "4.4.19",
+  "number": "4.4.18",
   "title": "Subspaces of <span class=\"process-math\">\\(\\R^3\\)<\/span>.",
   "body": " Subspaces of  We describe all subspaces of ordered by dimension.    If , then must have the empty set as a basis (by definition of dimension), and hence , the zero subspace.     If , then has a basis consisting of a single nonzero vector . In this case we have , which is a line passing through the origin with direction vector . Thus -dimensional subspaces of are lines passing through the origin.     If , then has a basis containing two non-parallel vectors in . You learn in multivariable calculus that is the plane in passing through the origin with direction vectors  . In fact, you can show that the cross product  is a normal vector for the plane in this case. Thus the -dimensional subspaces of are planes passing through the origin.     Assume . Since is a subspace of , and since , we must have according to . It is as simple as that! Thus is the only -dimensional subspace of .     "
 },
@@ -5054,7 +5027,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_dimension.html#th_dimension_compendium",
   "type": "Theorem",
-  "number": "4.4.20",
+  "number": "4.4.19",
   "title": "Dimension theory compendium.",
   "body": " Dimension theory compendium   Let be a vector space of dimension .   Contract  If spans , then can be contracted to a basis of .    Expand  If is linearly independent, then can be extended to a basis of .    Street smarts  If and , then does not span .    Street smarts  If and , then is linearly dependent.    Street smarts  If and , then is a basis if and only if spans if and only if is linearly independent.    Dimension of subspaces  If is a subspace, then    , and     if and only if .         "
 },
@@ -5570,6 +5543,4371 @@ var ptx_lunr_docs = [
   "number": "4.5.4.18",
   "title": "Invertibility theorem.",
   "body": " Invertibility theorem   Prove as follows.    First show that all three statements of are equivalent, and that all three statements of are equivalent. (Use .)    Show that statements are equivalent with the help of .    Choose a statement from that can be easily shown to be equivalent to one of the statements from .     "
+},
+{
+  "id": "s_transformation",
+  "level": "1",
+  "url": "s_transformation.html",
+  "type": "Section",
+  "number": "5.1",
+  "title": "Linear transformations",
+  "body": " Linear transformations   As detailed in a linear transformation is a special type of function between two vector spaces: one that respects in some sense the vector operations of both spaces.  This manner of theorizing is typical in mathematics: first we introduce a special class of objects defined axiomatically, then we introduce special functions or maps between these objects. Since the original objects of study (e.g. vector spaces) come equipped with special structural properties (e.g. vector operations), the functions we wish to study are the ones that somehow acknowledge this structure.  You have already seen this principle at work in your study of calculus. First we give some structure by defining a notion of proximity (i.e., is close to if is small), then we introduce a special family of functions that somehow respects this structure: these are precisely the continuous functions!  As you will see, linear transformations are not just interesting objects of study in their own right, they also serve as invaluable tools in our continued exploration of the intrinsic properties of vector spaces.  In the meantime rejoice in the fact that we can now give a succinct definition of linear algebra: it is the theory of vector spaces and the linear transformations between them. Go shout it from the rooftops!    Linear transformations  First and foremost, a linear transformation is a function. Before continuing on in this section, you may want to reacquaint yourself with the basic function concepts and notation outlined in Section .   Linear transformations   Let and be vector spaces. A function is a linear transformation (or linear ) if it satisfies the following properties:   Respects vector addition  For all , we have .    Respects scalar multiplication  For all and we have .     A function between vector spaces is nonlinear if it is not a linear transformation.     Linear transformations  How precisely does a linear transformation respect vector space structure? In plain English, the two axioms defining a linear transformation read as follows: the image of a sum is the sum of the images, and the image of a scalar multiple is the scalar multiple of the image. Alternatively, we could say that the application of a linear transformation to vectors distributes over vector addition and scalar multiplication.    Linear transformations  A common pitfall is to conflate the definition of a linear transformation with the definition of a subspace . The language and notation of the two definitions share many commonalities, but they are completely different notions. In particular, the linear transformation axioms describe properties of a function between two vector spaces, whereas the subspace axioms describe properties of a subset of a single vector space.   Before getting to examples of linear transformations, it will perhaps be enlightening to consider how a function between two vector spaces could fail to be a linear transformation. is an attempt at visualizing what it means for a function could fail one of the two linear transformation axioms. We will often fall back on these types of conceptual visualizations as a means of organizing our thinking about linear transformations. The diagrams deliberately mirror our general function notation , placing the domain and codomain on the left and right, respectively, and using mapsto notation to indicate where domain elements get mapped to by in the codomain .   Visualizing the failure of linear transformation axioms     fails Axiom : .         fails Axiom : .   T fails axiom ii         Nonlinear function   Let be defined as .   Does satisfy Axiom ? If so, prove it. Otherwise, give an explicit counterexample.    Does satisfy Axiom ? If so, prove it. Otherwise, give an explicit counterexample.           does not satisfy Axiom . Let and . We have . We thus see that .     does not satisfy Axiom . Let and . We have . We thus see that .        Notational quirk   brings to light a notational quirk when dealing with functions of the form . Technically speaking, given an input we should write . And yet our inner aesthete cries out at the unnecessary nested parentheses, and pleads that the notational laws be relaxed in this specific setting. We shall make it so.    Parentheses shall be dropped   In the special case where the domain of function is a subset of , then given input we may write for .    We now turn to functions that do satisfy the linear transformation axioms. As our first examples of linear transformations, we define zero transformations and identity transformations .   Zero, identity, and scaling transformations  linear transformation zero transformation  linear transformation identity transformation  linear transformation scaling transformation   Let and be vector spaces.   Zero transormation  The zero transformation from to , denoted , is defined as follows: , where is the zero vector of . In other words, is the function that maps all elements of to the zero vector of .    Identity transformation  The identity transformation of , denoted , is defined as follows: . In other words, for all . When the underlying vector space is clear from the context, we will drop the subscript and write for .    Scaling transformation  Let be a fixed scalar. The function is called a scaling transformation with scale factor  .        Elementary linear transformation proofs  Zero, identity, and scaling transformations   Let and be vector spaces.   The zero transformation is a linear transformation.    Let be a fixed scalar. The scaling transformation , defined as for all , is a linear transformation.  Since the identity transformation is a scaling transformation with scaling value ( ), it follows that is a linear transformation.          Let be the zero function: , for all . We verify each defining property separately.   Given , we have .    Given and , we have .   This proves that is a linear transformation.    Fix a scalar and let be the scaling transformation defined as for all .   Given , we have .    Given and , we have .   This proves that is a linear transformation.        Basic properties of linear transformations   Let be a linear transformation. Let and be the zero vectors of and , respectively.   We have .    For all , we have .    For any linear combination we have .          We employ some similar trickery to what was done in the proof of . Assuming is linear: . Thus, whatever may be, it satisfies . Canceling on both sides using , we conclude .    The argument is similar: . Since , adding to both sides of the equation yields .    This is an easy proof by induction using the two defining properties of a linear transformation in tandem.        Transformations distribute over combinations   Statement of combines and extends our distributive interpretations of . It says that the application of a linear transformation distributes over linear combinations of vectors.   As a sort of converse to statement of , observe that if satisfies for all and , then is linear. Indeed, taking the special case yields Axiom of ; and choosing yields Axiom of . As a consequence, we have the following one-step procedure for proving whether a function between vector spaces is a linear transformation.   One-step technique for transformations   Let be a function between vector spaces. To prove is a linear transformation, show that for all scalars and all vectors .     Linear transformation: one-step technique   Define as . Use to show is a linear transformation.    Given scalars and vectors , we have . Thus is a linear transformation.    We continue with some examples of linear transformations involving vector spaces other than . Some of the operations we have already defined on matrices can be viewed as transformations.   Linear matrix operations   Let and be positive integers.   Trace operation is linear  The trace function is a linear transformation.    Transposition is linear  The matrix transpose operation is a linear transformation.       We leave the proof of (1) to the reader, and prove that the function is a linear transformation from to . We use the one-step technique. Given scalars and matrices , we have .    Later, when discussing changes of bases and diagonalizable linear transformations, our computational techniques will rely heavily on the notion of conjugation, defined below. As we show in , conjugation is also a linear operation. This ends up being very valuable to us, as it means computing conjugates of matrices interacts nicely with matrix addition and scalar multiplication.   Matrix conjugation   Let be a positive integer, and let be a fixed invertible matrix. Given , the matrix is called the conjugate of by . The operation is called conjugation by .     Conjugation is linear   Let be a positive integer, and let be a fixed invertible matrix. The conjugation by function is a linear transformation.    The proof is left as an exercise.     Left-shift transformation on   Define the left-shift operation , as follows: . In other words, we have . Show that is a linear transformation.    Let and be two infinite sequences in . For any we have . This proves is a linear transformation.     Video examples: deciding if is linear    Video: deciding if is linear  Video: deciding if is linear     Video: deciding if is linear  Video: deciding if is linear        Bases and linear transformations  In we saw that a vector space is completely and concisely determined by a basis in the sense that all elements of can be expressed in a unique was as a linear combination of elements of . A similar principle applies to linear transformations. Roughly speaking, a linear transformation defined on a vector space is completely determined by where its sends elements of a basis for . This is spelled out in more detail in and the remark that follows.   Bases and linear transformations   Let and be vector spaces, and let be basis of , where for all .   Uniqueness of transformations  Given linear transformations and from to , if for all , then .    Existence of transformations  Given any choice of vectors , there is a unique linear transformation satisfying for all . In more detail, is defined as follows: if is written in terms of as for scalars , then .        Proof of (1)  Assume and are linear transformations from to satisfying for all . Given any we can write . It follows that . Since for all , we have .    Proof of (2)  Since any has a unique expression of the form , the formula in defines a function in a well-defined manner.  We now show that is linear. To minimize the unwieldiness of our expressions, we will use sigma notation. We use the 1-step technique. Given andy scalars and vectors , we first write , where . By definition we thus have, using sigma notation, . It follows that , as desired.      Transformations determined by behavior on basis   Let's paraphrase the two results of .   Once we have a basis on hand, it is easy to construct linear transformations : simply choose images for all in any manner you like, and then define for any element using .    A linear transformation is completely determined by its behavior on a basis of . Once we know the images for all , the image for any other is then completely determined. Put another way, if two linear transformations from to agree on the elements of a basis , then they agree for all elements of .       Our remarks are worthy of another mantra.   Bases and transformations   We know a linear transformation by its action on a basis.      Bases and transformations   Assume satisfies and .   Use the fact that to compute .    Use to prove that for all .       Let and .   Since , we have .    Let be defined as . We wish to show that . First, it is not difficult to show, using the 1-step technique, that is a linear transformation. Next, since is clearly linearly independent, and since has dimension two, we see that is a basis of . Thus, according to , to show it suffices to show that and . This is easy: . Since and are both linear and agree on the basis , we conclude that .        Matrix transformations  We now describe what turns out to be an entire family of examples of linear transformations: so-called matrix transformations of the form , where is a given matrix. This is a good place to recall the matrix mantra . Not only can a matrix represent a system of linear equations, it can represent a linear transformation. These are two very different concepts, and the matrix mantra helps us to not confuse the two. In the end a matrix is just a matrix: a mathematical tool that can be employed to diverse ends. Observe that the definition of matrix multiplication marks the first point where comes into play.   Matrix transformations  matrix transformation    the matrix transformation associated to     Let be an matrix. The matrix transformation associated to is the function defined as follows: . In other words, given input , the output is defined as .     Matrix transformations   Let and be positive integers.   Matrix transformations are linear  Given any , the function is a linear transformation.    Transformations from to  If , there is a unique matrix such that . In other words, every linear transformation from to is a matrix transformation.         We use the one-step technique. For any and , we have . This proves is a linear transformation.    Let be the standard basis of . Let and let denote the -th column of for all . We have , where the last equality follows from the column method of matrix multiplication: . It follows that if and only if is the matrix whose -th column is for all . In other words, is the unique matrix satisfying .      Although is very powerful, mark well its restriction: it only applies in the setting of linear transformations from to . It says nothing about linear transformations whose domain or codomain is a vector space like or .  Besides giving a complete description of linear transformations from to (they all come from matrices), , or rather its proof, provides a recipe for computing a matrix formula for a linear transformation . In other words, it tells us how to build the unique matrix satisfying for all . We call this matrix the standard matrix of .   Standard matrix of linear   Let be a linear transformation. The standard matrix of is the unique matrix satisfying . Equivalently, is the unique matrix satisfying for all .     Standard matrix   Let be a linear transformation and let be the standard basis of . The standard matrix of is the matrix whose -th column is the result of applying to : , .     Standard matrix computation   The function defined as is linear.    Use to compute the standard matrix of .    Use to compute .      We have . Let . Since provides a matrix formula for we have . Thus , as you can confirm.     It should also be noted that gives rise to an alternative technique for showing a function is a linear transformation: namely, show that for some matrix . For example, to show that the function defined as is linear, it suffices to remark that where .   Although and are powerful results, mark well the restriction on their application: these results can only be used for linear transformations from to . In particular, they say nothing about linear transformations whose domain or codomain is a vector space like or .    Reflections and rotations in the plane   provides a convenient means of showing that certain familiar geometric transformations of the plane are in fact linear transformations. In this subsection we consider rotations about the origin and reflections through a line.   Rotation in the plane  rotation as linear transformation    rotation by in the plane    Fix an angle and define to be the function that takes an input vector , considered as the position vector of the point , and returns the output obtained by rotating the vector by an angle of about the origin. The function is called rotation about the origin by the angle .  We can extract a formula from the rule defining by using polar coordinates: if has polar coordinates , then has polar coordinates .     Rotation is a linear transformation   Fix an angle . The rotation function is a linear transformation. In fact, we have , where .    By , we need only show that for the matrix indicated.  If the vector has polar coordinates (so that and ), then its image under our rotation has polar coordinates . Translating back to rectangular coordinates, we see that . It follows that , where , as claimed.     Observe that it is not at all obvious geometrically that the rotation operation is linear : , that it preserves addition and scalar multiplication of vectors in . Indeed, our proof does not even show this directly, but instead first gives a matrix formula for rotation and then uses statement (2) of .  Since matrices of the form can be understood as defining rotations of the plane, we call them rotation matrices .    Rotation matrices   Find formulas for and , expressing your answer in terms of pairs (as opposed to column vectors).    The rotation matrix corresponding to is . Thus has formula . Note: this is as expected! Rotating by 180 degrees produces the vector inverse.  The rotation matrix corresponding to is . Thus has formula . Let's check our formula for for the vectors and : . Confirm for yourself geometrically that these are the vectors you get by rotating the vectors and by an angle of about the origin.    A second example of a geometric linear transformation is furnished by reflection through a line in .   Reflection through a line  reflection through a line   Fix an angle with , and let be the line through the origin that makes an angle of with the positive -axis.  Define to be the function that takes an input , considered as a point , and returns the coordinates of the point obtained by reflecting through the line . In more detail: if lies on , then ; otherwise, is obtained by drawing the perpendicular through that passes through and taking the point on the other side of this line whose distance to is equal to the distance from to .  The function is called reflection through the line  .     Reflection is a linear transformation   Fix an angle . The reflection is a linear transformation. In fact we have , where .    See .     Visualizing reflection and rotation   The GeoGebra interactive below helps visualize rotations and reflections in (thought of as operations on points) by showing how they act on the triangle .   Move or alter the triangle as you see fit.    Check the box of the desired operation, rotation or reflection.    If rotation is selected, the slider adjusts the angle of rotation.    If reflection is selected, the slider adjusts the angle determining the line of reflection. Click the Draw perps box to see the the perpendicular lines used to define the reflections of vertices .      Visualizing reflection and rotation   Visualizing reflection and rotation. Made with GeoGebra .       Composition of linear transformations and matrix multiplication  We end by making good on a promise we made long ago to retroactively make sense of the definition of matrix multiplication. The key connecting concept, as it turns out, is composition of functions. We first need a result showing that composition preserves linearity.   Composition of linear transformations   Let be vector spaces, and suppose and are linear transformations. Then the composition is a linear transformation.    Exercise.    Turning now to matrix multiplication, suppose is and is . Let be their product. These matrices give rise to linear transformations . According to the composition is a linear transformation from (the domain of ) to (the codomain of ). We claim that . Indeed, identifying elements of with column vectors, for all we have . Thus, we can now understand the definition of matrix multiplication as being chosen precisely to encode how to compute the composition of two matrix transformations. The restriction on the dimension of the ingredient matrices is now understood as guaranteeing that the corresponding matrix transformations can be composed!   Composition of reflections   Let be reflection across the -axis, and let be reflection across the -axis. (See .) Use an argument in the spirit of statement (i) from to show that . (Note: this equality can also be shown using our matrix formulas for rotations and reflections. See . )    Since and are both linear transformations ( ), so is the composition . We wish to show . Since is also a linear transformation, it suffices by to show that and agree on a basis of . Take the standard basis . Compute: . Since and agree on the basis , we have .       WeBWork Exercises     Let be a linear transformation that sends the vector into and maps into .  Use properties of a linear transformation to calculate the following. (Enter your answers as ordered pairs, such as , including the parentheses.)   ,   ,   .                              Let be a vector space, and a linear transformation such that and . Then      ,      ,      .                                          Let Let be the linear transformation satisfying Find the image of an arbitrary vector                    Let Define the linear transformation by . Find the images of and under .               Let be a vector space, , and let and be linear transformations such that  Find the images of and under the composite of and .   ,   .                     Show that the function defined is nonlinear by providing an explicit counterexample to one of the defining axioms or a consequence thereof.      ,        ,        ,        ,       Scalar multiplication   Let be a vector space. Fix and define as : , is scalar multiplication by . Show that is a linear transformation.     Trace   Prove statement of .     Left\/right matrix multiplication   Let be an matrix, and let be an matrix. Define the functions and as follows: . In other words, is the multiply on the left by operation, and is the multiply on the right by C operation Show that and are linear transformations.     Conjugation   Prove .     Sequence shift operators   Let , the space of all infinite sequences. Define the shift left function , , and shift right function , , as follows: Prove that and are linear transformations.     Adding and scaling linear transformations   Suppose that and are linear transformations.    Define the function as . Show that is a linear transformation.    Define the function as . Show that is a linear transformation.       Composition of transformations   Prove .     Linear transformations, span, and independence   Suppose is a linear transformation. Let be a subset of , and let be the image of under : , . Assume and for all .  Answer true or false: if true, provide a proof; if false, provide an explicit counterexample. Note: for a complete counterexample you need to specify , and .    If is linearly independent, then is linearly independent.    If is linearly independent, then is linearly independent.    If is a spanning set for , then is a spanning set for .       Reflection through a line   Fix an angle with , let be the line through the origin that makes an angle of with the positive -axis, and let be the reflection operation as described in . Prove that is a linear transformation following the steps below.   In a manner similar to , describe in terms of the polar coordinates of . Additionally, it helps to write , where is the angle the line segment from the origin to makes with the line . Include a drawing to support your explanation.    Use your description in (a), along with some trigonometric identities, to show where .        Compositions of rotations and reflections   In this exercise we will show that if we compose a rotation or reflection with another rotation or reflection, as defined in and , the result is yet another rotation or reflection. For each part, express the given composition either as a rotation or reflection , where is expressed in terms of and .                          Use and , along with some trigonometric identities.      The set is a basis of . Suppose the linear transformation satisfies . Find a formula for , where is a general element of .      Suppose is a linear transformation, and is a basis of for which for all . Show that : , is the zero transformation from to .    Use (1) of .      Suppose is a linear transformation, and is a basis of for which for all . Show that : , is the identity transformation of .    Use (1) of .      Let be a linear transformation. Assume there is a basis of and a constant such that for all . Prove: , where .    Use (1) of .     Matrix transformations   For each linear transformation and : (a) compute the standard matrix of using ; (b) compute using . You may take for granted that the given is linear.                   "
+},
+{
+  "id": "d_linear_transform",
+  "level": "2",
+  "url": "s_transformation.html#d_linear_transform",
+  "type": "Definition",
+  "number": "5.1.1",
+  "title": "Linear transformations.",
+  "body": " Linear transformations   Let and be vector spaces. A function is a linear transformation (or linear ) if it satisfies the following properties:   Respects vector addition  For all , we have .    Respects scalar multiplication  For all and we have .     A function between vector spaces is nonlinear if it is not a linear transformation.   "
+},
+{
+  "id": "rm_lin_trans",
+  "level": "2",
+  "url": "s_transformation.html#rm_lin_trans",
+  "type": "Remark",
+  "number": "5.1.2",
+  "title": "Linear transformations.",
+  "body": " Linear transformations  How precisely does a linear transformation respect vector space structure? In plain English, the two axioms defining a linear transformation read as follows: the image of a sum is the sum of the images, and the image of a scalar multiple is the scalar multiple of the image. Alternatively, we could say that the application of a linear transformation to vectors distributes over vector addition and scalar multiplication.  "
+},
+{
+  "id": "ss_linear_transform-5",
+  "level": "2",
+  "url": "s_transformation.html#ss_linear_transform-5",
+  "type": "Warning",
+  "number": "5.1.3",
+  "title": "Linear transformations.",
+  "body": " Linear transformations  A common pitfall is to conflate the definition of a linear transformation with the definition of a subspace . The language and notation of the two definitions share many commonalities, but they are completely different notions. In particular, the linear transformation axioms describe properties of a function between two vector spaces, whereas the subspace axioms describe properties of a subset of a single vector space.  "
+},
+{
+  "id": "fig_nonlinear",
+  "level": "2",
+  "url": "s_transformation.html#fig_nonlinear",
+  "type": "Figure",
+  "number": "5.1.4",
+  "title": "",
+  "body": " Visualizing the failure of linear transformation axioms     fails Axiom : .         fails Axiom : .   T fails axiom ii       "
+},
+{
+  "id": "eg_nonlinear",
+  "level": "2",
+  "url": "s_transformation.html#eg_nonlinear",
+  "type": "Example",
+  "number": "5.1.5",
+  "title": "Nonlinear function.",
+  "body": " Nonlinear function   Let be defined as .   Does satisfy Axiom ? If so, prove it. Otherwise, give an explicit counterexample.    Does satisfy Axiom ? If so, prove it. Otherwise, give an explicit counterexample.           does not satisfy Axiom . Let and . We have . We thus see that .     does not satisfy Axiom . Let and . We have . We thus see that .      "
+},
+{
+  "id": "ss_linear_transform-9",
+  "level": "2",
+  "url": "s_transformation.html#ss_linear_transform-9",
+  "type": "Remark",
+  "number": "5.1.6",
+  "title": "Notational quirk.",
+  "body": " Notational quirk   brings to light a notational quirk when dealing with functions of the form . Technically speaking, given an input we should write . And yet our inner aesthete cries out at the unnecessary nested parentheses, and pleads that the notational laws be relaxed in this specific setting. We shall make it so.  "
+},
+{
+  "id": "fiat_paren_drop",
+  "level": "2",
+  "url": "s_transformation.html#fiat_paren_drop",
+  "type": "Fiat",
+  "number": "5.1.7",
+  "title": "Parentheses shall be dropped.",
+  "body": " Parentheses shall be dropped   In the special case where the domain of function is a subset of , then given input we may write for .   "
+},
+{
+  "id": "d_transform_zero_identity",
+  "level": "2",
+  "url": "s_transformation.html#d_transform_zero_identity",
+  "type": "Definition",
+  "number": "5.1.8",
+  "title": "Zero, identity, and scaling transformations.",
+  "body": " Zero, identity, and scaling transformations  linear transformation zero transformation  linear transformation identity transformation  linear transformation scaling transformation   Let and be vector spaces.   Zero transormation  The zero transformation from to , denoted , is defined as follows: , where is the zero vector of . In other words, is the function that maps all elements of to the zero vector of .    Identity transformation  The identity transformation of , denoted , is defined as follows: . In other words, for all . When the underlying vector space is clear from the context, we will drop the subscript and write for .    Scaling transformation  Let be a fixed scalar. The function is called a scaling transformation with scale factor  .      "
+},
+{
+  "id": "th_transform_zero_identity_scaling",
+  "level": "2",
+  "url": "s_transformation.html#th_transform_zero_identity_scaling",
+  "type": "Theorem",
+  "number": "5.1.9",
+  "title": "Elementary linear transformation proofsZero, identity, and scaling transformations",
+  "body": " Elementary linear transformation proofs  Zero, identity, and scaling transformations   Let and be vector spaces.   The zero transformation is a linear transformation.    Let be a fixed scalar. The scaling transformation , defined as for all , is a linear transformation.  Since the identity transformation is a scaling transformation with scaling value ( ), it follows that is a linear transformation.          Let be the zero function: , for all . We verify each defining property separately.   Given , we have .    Given and , we have .   This proves that is a linear transformation.    Fix a scalar and let be the scaling transformation defined as for all .   Given , we have .    Given and , we have .   This proves that is a linear transformation.      "
+},
+{
+  "id": "th_transform_basic_props",
+  "level": "2",
+  "url": "s_transformation.html#th_transform_basic_props",
+  "type": "Theorem",
+  "number": "5.1.10",
+  "title": "Basic properties of linear transformations.",
+  "body": " Basic properties of linear transformations   Let be a linear transformation. Let and be the zero vectors of and , respectively.   We have .    For all , we have .    For any linear combination we have .          We employ some similar trickery to what was done in the proof of . Assuming is linear: . Thus, whatever may be, it satisfies . Canceling on both sides using , we conclude .    The argument is similar: . Since , adding to both sides of the equation yields .    This is an easy proof by induction using the two defining properties of a linear transformation in tandem.      "
+},
+{
+  "id": "rm_transform_dist",
+  "level": "2",
+  "url": "s_transformation.html#rm_transform_dist",
+  "type": "Remark",
+  "number": "5.1.11",
+  "title": "Transformations distribute over combinations.",
+  "body": " Transformations distribute over combinations   Statement of combines and extends our distributive interpretations of . It says that the application of a linear transformation distributes over linear combinations of vectors.  "
+},
+{
+  "id": "proc_transform_onestep",
+  "level": "2",
+  "url": "s_transformation.html#proc_transform_onestep",
+  "type": "Procedure",
+  "number": "5.1.12",
+  "title": "One-step technique for transformations.",
+  "body": " One-step technique for transformations   Let be a function between vector spaces. To prove is a linear transformation, show that for all scalars and all vectors .   "
+},
+{
+  "id": "eg_lin_trans_1step",
+  "level": "2",
+  "url": "s_transformation.html#eg_lin_trans_1step",
+  "type": "Example",
+  "number": "5.1.13",
+  "title": "Linear transformation: one-step technique.",
+  "body": " Linear transformation: one-step technique   Define as . Use to show is a linear transformation.    Given scalars and vectors , we have . Thus is a linear transformation.   "
+},
+{
+  "id": "th_lin_matrix_operations",
+  "level": "2",
+  "url": "s_transformation.html#th_lin_matrix_operations",
+  "type": "Theorem",
+  "number": "5.1.14",
+  "title": "Linear matrix operations.",
+  "body": " Linear matrix operations   Let and be positive integers.   Trace operation is linear  The trace function is a linear transformation.    Transposition is linear  The matrix transpose operation is a linear transformation.       We leave the proof of (1) to the reader, and prove that the function is a linear transformation from to . We use the one-step technique. Given scalars and matrices , we have .   "
+},
+{
+  "id": "d_conjugation",
+  "level": "2",
+  "url": "s_transformation.html#d_conjugation",
+  "type": "Definition",
+  "number": "5.1.15",
+  "title": "Matrix conjugation.",
+  "body": " Matrix conjugation   Let be a positive integer, and let be a fixed invertible matrix. Given , the matrix is called the conjugate of by . The operation is called conjugation by .   "
+},
+{
+  "id": "th_conj_lin",
+  "level": "2",
+  "url": "s_transformation.html#th_conj_lin",
+  "type": "Theorem",
+  "number": "5.1.16",
+  "title": "Conjugation is linear.",
+  "body": " Conjugation is linear   Let be a positive integer, and let be a fixed invertible matrix. The conjugation by function is a linear transformation.    The proof is left as an exercise.   "
+},
+{
+  "id": "ss_linear_transform-24",
+  "level": "2",
+  "url": "s_transformation.html#ss_linear_transform-24",
+  "type": "Example",
+  "number": "5.1.17",
+  "title": "Left-shift transformation on <span class=\"process-math\">\\(\\R^\\infty\\)<\/span>.",
+  "body": " Left-shift transformation on   Define the left-shift operation , as follows: . In other words, we have . Show that is a linear transformation.    Let and be two infinite sequences in . For any we have . This proves is a linear transformation.   "
+},
+{
+  "id": "vid_eg_transormation",
+  "level": "2",
+  "url": "s_transformation.html#vid_eg_transormation",
+  "type": "Example",
+  "number": "5.1.18",
+  "title": "Video examples: deciding if <span class=\"process-math\">\\(T\\)<\/span> is linear.",
+  "body": " Video examples: deciding if is linear    Video: deciding if is linear  Video: deciding if is linear     Video: deciding if is linear  Video: deciding if is linear     "
+},
+{
+  "id": "th_bases_transformations",
+  "level": "2",
+  "url": "s_transformation.html#th_bases_transformations",
+  "type": "Theorem",
+  "number": "5.1.21",
+  "title": "Bases and linear transformations.",
+  "body": " Bases and linear transformations   Let and be vector spaces, and let be basis of , where for all .   Uniqueness of transformations  Given linear transformations and from to , if for all , then .    Existence of transformations  Given any choice of vectors , there is a unique linear transformation satisfying for all . In more detail, is defined as follows: if is written in terms of as for scalars , then .        Proof of (1)  Assume and are linear transformations from to satisfying for all . Given any we can write . It follows that . Since for all , we have .    Proof of (2)  Since any has a unique expression of the form , the formula in defines a function in a well-defined manner.  We now show that is linear. To minimize the unwieldiness of our expressions, we will use sigma notation. We use the 1-step technique. Given andy scalars and vectors , we first write , where . By definition we thus have, using sigma notation, . It follows that , as desired.    "
+},
+{
+  "id": "rm_bases_transformations",
+  "level": "2",
+  "url": "s_transformation.html#rm_bases_transformations",
+  "type": "Remark",
+  "number": "5.1.22",
+  "title": "Transformations determined by behavior on basis.",
+  "body": " Transformations determined by behavior on basis   Let's paraphrase the two results of .   Once we have a basis on hand, it is easy to construct linear transformations : simply choose images for all in any manner you like, and then define for any element using .    A linear transformation is completely determined by its behavior on a basis of . Once we know the images for all , the image for any other is then completely determined. Put another way, if two linear transformations from to agree on the elements of a basis , then they agree for all elements of .      "
+},
+{
+  "id": "mantra_bases_transformation",
+  "level": "2",
+  "url": "s_transformation.html#mantra_bases_transformation",
+  "type": "Mantra",
+  "number": "5.1.23",
+  "title": "Bases and transformations.",
+  "body": " Bases and transformations   We know a linear transformation by its action on a basis.   "
+},
+{
+  "id": "eg_bases_transformations",
+  "level": "2",
+  "url": "s_transformation.html#eg_bases_transformations",
+  "type": "Example",
+  "number": "5.1.24",
+  "title": "Bases and transformations.",
+  "body": " Bases and transformations   Assume satisfies and .   Use the fact that to compute .    Use to prove that for all .       Let and .   Since , we have .    Let be defined as . We wish to show that . First, it is not difficult to show, using the 1-step technique, that is a linear transformation. Next, since is clearly linearly independent, and since has dimension two, we see that is a basis of . Thus, according to , to show it suffices to show that and . This is easy: . Since and are both linear and agree on the basis , we conclude that .      "
+},
+{
+  "id": "d_matrix_transform",
+  "level": "2",
+  "url": "s_transformation.html#d_matrix_transform",
+  "type": "Definition",
+  "number": "5.1.25",
+  "title": "Matrix transformations.",
+  "body": " Matrix transformations  matrix transformation    the matrix transformation associated to     Let be an matrix. The matrix transformation associated to is the function defined as follows: . In other words, given input , the output is defined as .   "
+},
+{
+  "id": "th_matrix_transform",
+  "level": "2",
+  "url": "s_transformation.html#th_matrix_transform",
+  "type": "Theorem",
+  "number": "5.1.26",
+  "title": "Matrix transformations.",
+  "body": " Matrix transformations   Let and be positive integers.   Matrix transformations are linear  Given any , the function is a linear transformation.    Transformations from to  If , there is a unique matrix such that . In other words, every linear transformation from to is a matrix transformation.         We use the one-step technique. For any and , we have . This proves is a linear transformation.    Let be the standard basis of . Let and let denote the -th column of for all . We have , where the last equality follows from the column method of matrix multiplication: . It follows that if and only if is the matrix whose -th column is for all . In other words, is the unique matrix satisfying .     "
+},
+{
+  "id": "ss_matrix_transforms-5",
+  "level": "2",
+  "url": "s_transformation.html#ss_matrix_transforms-5",
+  "type": "Warning",
+  "number": "5.1.27",
+  "title": "",
+  "body": "Although is very powerful, mark well its restriction: it only applies in the setting of linear transformations from to . It says nothing about linear transformations whose domain or codomain is a vector space like or . "
+},
+{
+  "id": "d_transformation_standard_matrix",
+  "level": "2",
+  "url": "s_transformation.html#d_transformation_standard_matrix",
+  "type": "Definition",
+  "number": "5.1.28",
+  "title": "Standard matrix of linear <span class=\"process-math\">\\(T\\colon \\R^n\\rightarrow \\R^m\\)<\/span>.",
+  "body": " Standard matrix of linear   Let be a linear transformation. The standard matrix of is the unique matrix satisfying . Equivalently, is the unique matrix satisfying for all .   "
+},
+{
+  "id": "proc_standard_matrix",
+  "level": "2",
+  "url": "s_transformation.html#proc_standard_matrix",
+  "type": "Procedure",
+  "number": "5.1.29",
+  "title": "Standard matrix.",
+  "body": " Standard matrix   Let be a linear transformation and let be the standard basis of . The standard matrix of is the matrix whose -th column is the result of applying to : , .   "
+},
+{
+  "id": "eg_standard_matrix",
+  "level": "2",
+  "url": "s_transformation.html#eg_standard_matrix",
+  "type": "Example",
+  "number": "5.1.30",
+  "title": "Standard matrix computation.",
+  "body": " Standard matrix computation   The function defined as is linear.    Use to compute the standard matrix of .    Use to compute .      We have . Let . Since provides a matrix formula for we have . Thus , as you can confirm.   "
+},
+{
+  "id": "rm_matrix_transform_example",
+  "level": "2",
+  "url": "s_transformation.html#rm_matrix_transform_example",
+  "type": "Remark",
+  "number": "5.1.31",
+  "title": "",
+  "body": " It should also be noted that gives rise to an alternative technique for showing a function is a linear transformation: namely, show that for some matrix . For example, to show that the function defined as is linear, it suffices to remark that where .  "
+},
+{
+  "id": "ss_matrix_transforms-11",
+  "level": "2",
+  "url": "s_transformation.html#ss_matrix_transforms-11",
+  "type": "Warning",
+  "number": "5.1.32",
+  "title": "",
+  "body": "Although and are powerful results, mark well the restriction on their application: these results can only be used for linear transformations from to . In particular, they say nothing about linear transformations whose domain or codomain is a vector space like or . "
+},
+{
+  "id": "d_rotation",
+  "level": "2",
+  "url": "s_transformation.html#d_rotation",
+  "type": "Definition",
+  "number": "5.1.33",
+  "title": "Rotation in the plane.",
+  "body": " Rotation in the plane  rotation as linear transformation    rotation by in the plane    Fix an angle and define to be the function that takes an input vector , considered as the position vector of the point , and returns the output obtained by rotating the vector by an angle of about the origin. The function is called rotation about the origin by the angle .  We can extract a formula from the rule defining by using polar coordinates: if has polar coordinates , then has polar coordinates .   "
+},
+{
+  "id": "th_transform_rotation",
+  "level": "2",
+  "url": "s_transformation.html#th_transform_rotation",
+  "type": "Theorem",
+  "number": "5.1.34",
+  "title": "Rotation is a linear transformation.",
+  "body": " Rotation is a linear transformation   Fix an angle . The rotation function is a linear transformation. In fact, we have , where .    By , we need only show that for the matrix indicated.  If the vector has polar coordinates (so that and ), then its image under our rotation has polar coordinates . Translating back to rectangular coordinates, we see that . It follows that , where , as claimed.   "
+},
+{
+  "id": "rm_rotation_matrix",
+  "level": "2",
+  "url": "s_transformation.html#rm_rotation_matrix",
+  "type": "Remark",
+  "number": "5.1.35",
+  "title": "",
+  "body": " Observe that it is not at all obvious geometrically that the rotation operation is linear : , that it preserves addition and scalar multiplication of vectors in . Indeed, our proof does not even show this directly, but instead first gives a matrix formula for rotation and then uses statement (2) of .  Since matrices of the form can be understood as defining rotations of the plane, we call them rotation matrices .  "
+},
+{
+  "id": "ss_refl_rot-6",
+  "level": "2",
+  "url": "s_transformation.html#ss_refl_rot-6",
+  "type": "Example",
+  "number": "5.1.36",
+  "title": "Rotation matrices.",
+  "body": " Rotation matrices   Find formulas for and , expressing your answer in terms of pairs (as opposed to column vectors).    The rotation matrix corresponding to is . Thus has formula . Note: this is as expected! Rotating by 180 degrees produces the vector inverse.  The rotation matrix corresponding to is . Thus has formula . Let's check our formula for for the vectors and : . Confirm for yourself geometrically that these are the vectors you get by rotating the vectors and by an angle of about the origin.   "
+},
+{
+  "id": "d_reflection",
+  "level": "2",
+  "url": "s_transformation.html#d_reflection",
+  "type": "Definition",
+  "number": "5.1.37",
+  "title": "Reflection through a line.",
+  "body": " Reflection through a line  reflection through a line   Fix an angle with , and let be the line through the origin that makes an angle of with the positive -axis.  Define to be the function that takes an input , considered as a point , and returns the coordinates of the point obtained by reflecting through the line . In more detail: if lies on , then ; otherwise, is obtained by drawing the perpendicular through that passes through and taking the point on the other side of this line whose distance to is equal to the distance from to .  The function is called reflection through the line  .   "
+},
+{
+  "id": "th_transform_reflection",
+  "level": "2",
+  "url": "s_transformation.html#th_transform_reflection",
+  "type": "Theorem",
+  "number": "5.1.38",
+  "title": "Reflection is a linear transformation.",
+  "body": " Reflection is a linear transformation   Fix an angle . The reflection is a linear transformation. In fact we have , where .    See .   "
+},
+{
+  "id": "eg_rot_refl",
+  "level": "2",
+  "url": "s_transformation.html#eg_rot_refl",
+  "type": "Example",
+  "number": "5.1.39",
+  "title": "Visualizing reflection and rotation.",
+  "body": " Visualizing reflection and rotation   The GeoGebra interactive below helps visualize rotations and reflections in (thought of as operations on points) by showing how they act on the triangle .   Move or alter the triangle as you see fit.    Check the box of the desired operation, rotation or reflection.    If rotation is selected, the slider adjusts the angle of rotation.    If reflection is selected, the slider adjusts the angle determining the line of reflection. Click the Draw perps box to see the the perpendicular lines used to define the reflections of vertices .      Visualizing reflection and rotation   Visualizing reflection and rotation. Made with GeoGebra .    "
+},
+{
+  "id": "th_transform_composition",
+  "level": "2",
+  "url": "s_transformation.html#th_transform_composition",
+  "type": "Theorem",
+  "number": "5.1.41",
+  "title": "Composition of linear transformations.",
+  "body": " Composition of linear transformations   Let be vector spaces, and suppose and are linear transformations. Then the composition is a linear transformation.    Exercise.   "
+},
+{
+  "id": "ss_transform_composition-5",
+  "level": "2",
+  "url": "s_transformation.html#ss_transform_composition-5",
+  "type": "Example",
+  "number": "5.1.42",
+  "title": "Composition of reflections.",
+  "body": " Composition of reflections   Let be reflection across the -axis, and let be reflection across the -axis. (See .) Use an argument in the spirit of statement (i) from to show that . (Note: this equality can also be shown using our matrix formulas for rotations and reflections. See . )    Since and are both linear transformations ( ), so is the composition . We wish to show . Since is also a linear transformation, it suffices by to show that and agree on a basis of . Take the standard basis . Compute: . Since and agree on the basis , we have .   "
+},
+{
+  "id": "s_transformation_ex-1-2",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-1-2",
+  "type": "Exercise",
+  "number": "5.1.6.1",
+  "title": "",
+  "body": "   Let be a linear transformation that sends the vector into and maps into .  Use properties of a linear transformation to calculate the following. (Enter your answers as ordered pairs, such as , including the parentheses.)   ,   ,   .                          "
+},
+{
+  "id": "s_transformation_ex-1-3",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-1-3",
+  "type": "Exercise",
+  "number": "5.1.6.2",
+  "title": "",
+  "body": "   Let be a vector space, and a linear transformation such that and . Then      ,      ,      .                                     "
+},
+{
+  "id": "s_transformation_ex-1-4",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-1-4",
+  "type": "Exercise",
+  "number": "5.1.6.3",
+  "title": "",
+  "body": "    Let Let be the linear transformation satisfying Find the image of an arbitrary vector         "
+},
+{
+  "id": "s_transformation_ex-1-5",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-1-5",
+  "type": "Exercise",
+  "number": "5.1.6.4",
+  "title": "",
+  "body": "          Let Define the linear transformation by . Find the images of and under .           "
+},
+{
+  "id": "s_transformation_ex-1-6",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-1-6",
+  "type": "Exercise",
+  "number": "5.1.6.5",
+  "title": "",
+  "body": "   Let be a vector space, , and let and be linear transformations such that  Find the images of and under the composite of and .   ,   .                 "
+},
+{
+  "id": "s_transformation_ex-2-2",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-2-2",
+  "type": "Exercise",
+  "number": "5.1.6.6",
+  "title": "",
+  "body": "   ,    "
+},
+{
+  "id": "s_transformation_ex-2-3",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-2-3",
+  "type": "Exercise",
+  "number": "5.1.6.7",
+  "title": "",
+  "body": "   ,    "
+},
+{
+  "id": "s_transformation_ex-2-4",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-2-4",
+  "type": "Exercise",
+  "number": "5.1.6.8",
+  "title": "",
+  "body": "   ,    "
+},
+{
+  "id": "s_transformation_ex-2-5",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-2-5",
+  "type": "Exercise",
+  "number": "5.1.6.9",
+  "title": "",
+  "body": "   ,    "
+},
+{
+  "id": "ex_transformation_vector_scale",
+  "level": "2",
+  "url": "s_transformation.html#ex_transformation_vector_scale",
+  "type": "Exercise",
+  "number": "5.1.6.10",
+  "title": "Scalar multiplication.",
+  "body": " Scalar multiplication   Let be a vector space. Fix and define as : , is scalar multiplication by . Show that is a linear transformation.   "
+},
+{
+  "id": "ex_transformation_trace",
+  "level": "2",
+  "url": "s_transformation.html#ex_transformation_trace",
+  "type": "Exercise",
+  "number": "5.1.6.11",
+  "title": "Trace.",
+  "body": " Trace   Prove statement of .   "
+},
+{
+  "id": "ex_transformation_matrix_mult",
+  "level": "2",
+  "url": "s_transformation.html#ex_transformation_matrix_mult",
+  "type": "Exercise",
+  "number": "5.1.6.12",
+  "title": "Left\/right matrix multiplication.",
+  "body": " Left\/right matrix multiplication   Let be an matrix, and let be an matrix. Define the functions and as follows: . In other words, is the multiply on the left by operation, and is the multiply on the right by C operation Show that and are linear transformations.   "
+},
+{
+  "id": "ex_transformation_conjugation",
+  "level": "2",
+  "url": "s_transformation.html#ex_transformation_conjugation",
+  "type": "Exercise",
+  "number": "5.1.6.13",
+  "title": "Conjugation.",
+  "body": " Conjugation   Prove .   "
+},
+{
+  "id": "ex_transformation_sequence_shift",
+  "level": "2",
+  "url": "s_transformation.html#ex_transformation_sequence_shift",
+  "type": "Exercise",
+  "number": "5.1.6.14",
+  "title": "Sequence shift operators.",
+  "body": " Sequence shift operators   Let , the space of all infinite sequences. Define the shift left function , , and shift right function , , as follows: Prove that and are linear transformations.   "
+},
+{
+  "id": "ex_transformation_add_scale",
+  "level": "2",
+  "url": "s_transformation.html#ex_transformation_add_scale",
+  "type": "Exercise",
+  "number": "5.1.6.15",
+  "title": "Adding and scaling linear transformations.",
+  "body": " Adding and scaling linear transformations   Suppose that and are linear transformations.    Define the function as . Show that is a linear transformation.    Define the function as . Show that is a linear transformation.     "
+},
+{
+  "id": "s_transformation_ex-9",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-9",
+  "type": "Exercise",
+  "number": "5.1.6.16",
+  "title": "Composition of transformations.",
+  "body": " Composition of transformations   Prove .   "
+},
+{
+  "id": "ex_span_independence_transform",
+  "level": "2",
+  "url": "s_transformation.html#ex_span_independence_transform",
+  "type": "Exercise",
+  "number": "5.1.6.17",
+  "title": "Linear transformations, span, and independence.",
+  "body": " Linear transformations, span, and independence   Suppose is a linear transformation. Let be a subset of , and let be the image of under : , . Assume and for all .  Answer true or false: if true, provide a proof; if false, provide an explicit counterexample. Note: for a complete counterexample you need to specify , and .    If is linearly independent, then is linearly independent.    If is linearly independent, then is linearly independent.    If is a spanning set for , then is a spanning set for .     "
+},
+{
+  "id": "ex_transformation_reflection",
+  "level": "2",
+  "url": "s_transformation.html#ex_transformation_reflection",
+  "type": "Exercise",
+  "number": "5.1.6.18",
+  "title": "Reflection through a line.",
+  "body": " Reflection through a line   Fix an angle with , let be the line through the origin that makes an angle of with the positive -axis, and let be the reflection operation as described in . Prove that is a linear transformation following the steps below.   In a manner similar to , describe in terms of the polar coordinates of . Additionally, it helps to write , where is the angle the line segment from the origin to makes with the line . Include a drawing to support your explanation.    Use your description in (a), along with some trigonometric identities, to show where .      "
+},
+{
+  "id": "ex_transformation_composition_rotations_reflections",
+  "level": "2",
+  "url": "s_transformation.html#ex_transformation_composition_rotations_reflections",
+  "type": "Exercise",
+  "number": "5.1.6.19",
+  "title": "Compositions of rotations and reflections.",
+  "body": " Compositions of rotations and reflections   In this exercise we will show that if we compose a rotation or reflection with another rotation or reflection, as defined in and , the result is yet another rotation or reflection. For each part, express the given composition either as a rotation or reflection , where is expressed in terms of and .                          Use and , along with some trigonometric identities.   "
+},
+{
+  "id": "s_transformation_ex-13",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-13",
+  "type": "Exercise",
+  "number": "5.1.6.20",
+  "title": "",
+  "body": "  The set is a basis of . Suppose the linear transformation satisfies . Find a formula for , where is a general element of .   "
+},
+{
+  "id": "s_transformation_ex-14",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-14",
+  "type": "Exercise",
+  "number": "5.1.6.21",
+  "title": "",
+  "body": "  Suppose is a linear transformation, and is a basis of for which for all . Show that : , is the zero transformation from to .    Use (1) of .   "
+},
+{
+  "id": "s_transformation_ex-15",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-15",
+  "type": "Exercise",
+  "number": "5.1.6.22",
+  "title": "",
+  "body": "  Suppose is a linear transformation, and is a basis of for which for all . Show that : , is the identity transformation of .    Use (1) of .   "
+},
+{
+  "id": "s_transformation_ex-16",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-16",
+  "type": "Exercise",
+  "number": "5.1.6.23",
+  "title": "",
+  "body": "  Let be a linear transformation. Assume there is a basis of and a constant such that for all . Prove: , where .    Use (1) of .   "
+},
+{
+  "id": "s_transformation_ex-17-3",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-17-3",
+  "type": "Exercise",
+  "number": "5.1.6.24",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_transformation_ex-17-4",
+  "level": "2",
+  "url": "s_transformation.html#s_transformation_ex-17-4",
+  "type": "Exercise",
+  "number": "5.1.6.25",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_nullspace_image_isom",
+  "level": "1",
+  "url": "s_nullspace_image_isom.html",
+  "type": "Section",
+  "number": "5.2",
+  "title": "Null space, image, and isomophisms",
+  "body": " Null space, image, and isomophisms   Having introduced linear transformations, we now treat them as proper objects of study. Forget for a moment the linear algebraic nature of a linear transformation , and think of it just as a function. Purely along function-theoretic lines, we want to know whether is injective , surjective , and invertible . As we will learn, there are two subspaces associated to a linear transformation , its null space and image , that provide an easy way for answering these questions. We will also see that in the case of a matrix transformation , these associated spaces coincide with two of the fundamental spaces of the matrix . (You can probably guess one of these.)    Null space and image   Null space and image  linear transformation null space  linear transformation image  null space of a linear transformation  image   Let be a linear transformation.   Null space  The null space of , denoted , is defined as .    Image  The image (or range ) of , denoted , is defined as .       As with the fundamental spaces of a matrix, given a linear transformation it is helpful to keep straight the different ambient spaces where and live. As illustrated by , we have and : that is, the null space is a subset of the domain of , and the image is a subset of the codomain. Figures and go on to convey that is the set of elements of that are mapped to , and that is the set of outputs of .   Null space and image  Null space and image     Null space lives in the domain; image lives in the codomain.         The entire null space gets mapped to .         The entire domain is mapped to .         As mentioned at the top, the null space and image of a linear transformation are subspaces, as we now show.   Null space and image   If is a linear transformation, then is a subspace of , and is a subspace of .     Null space of  We use the two-step technique to prove is a subspace.    Since ( ), we see that .    Suppose . Given any , we have . This shows that , completing our proof.      Image of  The proof proceeds in a similar manner, using the two-step technique.    Since ( ), we see that is hit by , and hence is a member of .    Assume vectors are elements of . By definition, this means there are vectors such that for . Now given any linear combination , we have . This shows that for any linear combination , there is an element such that . We conclude that if , then for any , as desired.         Define as .    Prove that is linear.    Identify as a familiar matrix subspace.    Identify as a familiar matrix subspace.         Linearity is an easy consequence of transpose properties. For any and , we have .    We have . Thus is the subspace of symmetric matrices!    Let , subspace of skew-symmetric matrices. We claim . As this is a set equality, we prove it by showing the two set inclusions and . (See )  The inclusion is the easier of the two. If , then for some . Using various properties of transposition, we have , showing that is skew-symmetric, and thus , as desired.  The inclusion is trickier: we must show that if is skew-symmetric, then there is an such that . Assume we have a with . Letting we have . Thus we have found a matrix satisfying . It follows that .        Subspace as null space  As illustrated by , provides an alternative technique for proving that a subset of is in fact a subspace: namely, find a linear transformation such that .   Not surprisingly, there is a connection between the null space of a matrix, as defined in , and our new notion of null space. Indeed, given an matrix , for all we have , and thus . Furthermore, as we show next, we have .   Null space and image of matrix transformation   Let be an matrix, and let be its associated matrix transformation. We have .    The first equality was discussed above. As for the second, we have . Thus .     Matrix transformation   Let , and let be its associated matrix transformation. Provide bases for and and compute the dimensions of these spaces.    We have and . Following , we first row reduce to , and conclude that and .      The rank-nullity theorem  The rank-nullity theorem relates the the dimensions of the null space and image of a linear transformation , assuming is finite dimensional. Roughly speaking, it says that the bigger the null space, the smaller the image. More precisely, it tells us that . As we will see, this elegant result can be used to significantly simplify computations with linear transformations. For example, in a situation where we wish to compute explicitly both the null space and image of a given linear transformation, we can often get away with just computing one of the two spaces and using the rank-nullity theorem (and a dimension argument) to easily determine the other. Additionally, the rank-nullity theorem will directly imply some intuitively obvious properties of linear transformations. For example, suppose is a finite-dimensional vector space. It seems obvious that if , then there is no linear transformation mapping surjectively onto : , you should not be able to map a smaller vector space onto a bigger one. Similarly, if , then we expect that there is no injective linear transformation mapping injectively into . Both these results are easy consequences of the rank-nullity theorem .  Before proving the theorem we give names to and .   Rank and nullity  rank of a linear transformation  nullity of a linear transformation    the rank of     the nullity of    Let be a linear transformation.   The rank of , denoted , is the dimension of : , .    The nullity of , denoted , is the dimension of : , .        Rank-nullity  rank-nullity theorem   Let be a vector space of dimension , and let be a linear transformation. Then , or alternatively, .    Choose a basis of and extend to a basis , using . Observe that and .  We claim that is a basis of .   Proof of claim   is linearly independent  Suppose . Then the vector satisfies (using linearity of ), and hence . Then, using the fact that is a basis of , we have and hence Since the set is linearly independent, we conclude that for all and . In particular, , as desired.    spans  It is clear that since for all and is closed under linear combinations.  For the other direction, suppose . Then there is a such that . Since is a basis of we may write , in which case . This shows that , as desired.   Having shown is a basis for , we conclude that , and thus that .    Rank-nullity application   Show that the linear transformation is surjective: , . Do so by first computing .    We first examine . We have . The system above is already in row echelon form, and so we easily see that . Thus is a basis of , and we conclude that . The rank-nullity theorem now implies that . Since and , we conclude by that . Thus is surjective.     Rank-nullity application   Let be defined as as in . Prove that is the subspace of all skew-symmetric matrices following the steps below.   Compute .    Show that .    Use the rank-nullity theorem and a dimension argument.       We compute . Thus is the subspace of all symmetric matrices. It can be shown that this space has dimension . To see why this is true intuitively, note that a symmetric matrix is completely determined by the entries on and above the diagonal: there are of these. Next, the rank-nullity theorem implies that . As we showed in , any matrix satisfies : , , where is the subspace of all skew-symmetric matrices. Similarly to the space of symmetric matrices, we can show that : intuitively, a skew-symmetric matrix is determined by the entries strictly above the diagonal (the diagonal entries must be equal to zero). Since and , we conclude that , by . This proves that is the space of all skew-symmetric matrices.      Injective and surjective linear transformations  Recall the notions of injectivity and surjectivity from : a function is injective (or one-to-one) if for all we have implies ; it is surjective (or onto) if for all there is an with . As with all functions, we will be interested to know whether a given linear transformation is injective or surjective; as it turns out, the concepts of null space and image give us a convenient manner of answering these questions. As remarked in , there is in general a direct connection between the surjectivity and the image of a function: namely, is surjective if and only if . It follows immediately that a linear transformation is surjective if and only if . As for injectivity, it is easy to see that if a linear transformation is injective, then its null space must consist of just the zero vector of . What is somewhat surprising is that the converse is also true, as we now show.   Injectivity and surjectivity   Let be a linear transformation.    Injectivity and null space   is injective if and only if .    Surjectivity and image   is surjective if and only if .      Statement (2) is true of any function, whether it is a linear transformation or not; it follows directly from the definitions of surjectivity and image. Thus it remains to prove statement (1). We prove both implications separately.   Implication  Assume is injective. Since , we see that for any we have . It follows that is the only element of : equivalently, we have , as desired.    Implication  Assume . Given any vectors we have . This proves is injective, as desired.      To determine whether a function of sets is injective, we normally have to show that for each output in the image of there is exactly one input satisfying . Think of this as checking injectivity at every output. tells us that in the special case of a linear transformation it is enough to check injectivity at exactly one ouput : namely, .    Dimension, injectivity, surjectivity   Let be a linear transformation, and suppose is finite dimensional.   If , then is not injective.    If , then is not surjective.       See .     Isomorphism  isomorphism  invertible linear transformation  Let and be vector spaces. A linear transformation is an isomorphism if it is invertible as a function: , if there is an inverse function satisfying . The vector spaces and are isomorphic if there is an isomorphism from to .     leaves open the question of whether the inverse function of an isomorphism is a linear transformation. The next theorem resolves that issue.   Inverse of isomorphism is linear   Let be an isomorphism. The inverse function is a linear transformation.    Let be an isomorphism, and let be its inverse function. We use the 1-step technique to show is linear, but with a slight twist: given any and vectors we will show that ; since is injective, it will then follow that . To this end, we compute . Thus we have , as desired.     Proving is an isomorphism  According to , to prove a function is an isomorphism, we must show both that is linear and that it is invertible. We know already how to decide whether a function is linear, but how do we decide whether it is invertible? Recall that a function is invertible if and only if it is bijective . (See .) This fact gives rise to two distinct methods for proving that a given linear transformation is invertible:   we can show directly that is invertible by providing an inverse ;    we can show that is bijective (i.e., injective and surjective).      One of the two methods described in for determining whether a linear transformation is invertible may be more convenient than the other, depending on the linear transformation in question. Thanks to , we can decide whether a linear transformation is bijective by looking at its two associated subspaces and .   Isomorphism equivalence   Let be a linear transformation. The following are equivalent.    is an isomorphism;     and .       The result follows directly from and the fact that a function is invertible if and only if it is bijective: .     Transposition is an isomorphism   Let be defined as . Prove that is an isomorphism.    We know already that is a linear transformation. It remains to show that it is invertible. In the spirit of , we give two proofs, corresponding to methods (1) and (2).   First proof  Define as . We claim that , and hence that is an isomorphism. To do show we must show . For any , we have . Thus . Similarly, for any , we have .    Second proof  We will show that is bijective, and hence invertible. To do so it suffices to show and . We have . Thus , showing is injective. Next given any , let ; then . This proves that for any there is a matrix such that . Thus .     Why is it useful to know whether two vector spaces are isomorphic? The short answer is that if and are isomorphic, then although they may be very different objects when considered as sets, from the linear-algebraic perspective there is essentially no difference between the two: , they satisfy the exact same linear-algebraic properties. Furthermore, an isomorphism witnessing the fact that and are isomorphic gives us a perfect bijective dictionary between the two spaces, allowing us to answer questions about the one space by translating it to a question about the other, using or . gives a first glimpse into this dictionary-like nature of isomorphisms. Later in we will introduce a particular isomorphism called the coordinate vector , which illustrates the computational value of being able to translate questions about abstract vector spaces to questions about our beloved and familiar spaces.   Properties preserved by isomorphisms   Let be an isomorphism. The following properties hold:    is linearly independent if and only if is linearly independent;     spans if and only if spans ;     is a basis of if and only if is a basis of      .       We prove and leave the remaining statements as an exercise. Let be an isomorphism, and let be a linearly independent set. Define . Suppose are distinct elements of , and suppose we have . Let be the inverse function of , and recall that is linear by . Now applying to both sides of the equation above and simplify . Since is assumed to be linearly independent, we conclude that , as desired.     makes use of image of a set notation from general function theory. In general, if is a function, given a subset , the image of under is defined as .  We now state a powerful theorem that applies specifically to finite-dimensional spaces.    Let be a vector space of finite dimension .   A vector space is isomorphic to if and only if .    Assume is a vector space satisfying , and let be a linear transformation. The following are equivalent.    is an isomorphism.     ( , is injective).     ( , is surjective).             We prove both implications separately.  If and are isomorphic, then there is an isomorphism . It follows from that .  Now assume . By definition there are bases and of and , respectively, satisfying . Using there is a linear transformation satisfying for all , and a linear transformation satisfying for all . We now use to prove that , and hence that . To do so we observe that for all we have . Since and agree on the basis ( for all ), we conclude that . A very similar argument shows . Having shown that , we conclude that is an isomorphism, and hence that and are isomorphic.    Assume that and that . We will establish the cycle of implications (a) (b) (c) (a).   (a) (b)  By , if is an isomorphism, then .    (b) (c)  Using the rank-nullity theorem, if , then . Since and , we conclude using that .    (c) (a)  Assume . Again, using the rank-nullity theorem, we see that . It follows that , and hence, by , that is an isomorphism.        A shocking consequence of , is that any two vector spaces of the same dimension are isomorphic: in particular, any -dimensional vector space is isomorphic to !   Isomorphic to   If is a finite-dimensional vector space, then is isomorphic to , where .    The corollary follows immediately from (1) of and the fact that .    We have finally delivered on a promise made way back in : namely, we now see how any finite-dimensional vector space is isomorphic (and thus structurally equivalent) to one of our Euclidean spaces . There is something almost anticlimactic about . Having devoted much time and energy to introducing and studying various exotic finite-dimensional vector spaces, we now learn that they are essentially no different than our familiar spaces . Be not disappointed! By establishing an isomorphism between an exotic vector space and a Euclidean space , we are able to transport to all the wonderful computational techniques we have at our disposal in the context. Furthermore, it is still up to us to choose our isomorphism , and as we will see, there is a subtle art to choosing the isomorphism to suit our particular needs.    Invertibility and isomorphisms  We end this section by making a connection between invertible matrices and isomorphisms. It follows easily from that a matrix is invertible if and only if its corresponding matrix transformation is an isomorphism. Indeed, is an isomorphism if and only if , if and only if , if and only if is invertible. Furthermore, we see in this case that the inverse function of is the matrix transformation : , . We add this statement to our ever-growing list of equivalent formulations of invertibility.   Invertibility theorem   Let be an matrix. The following statements are equivalent.    is invertible.    The matrix equation has a unique solution for any .    The matrix equation has a solution for any .    The matrix equation has a unique solution: namely, .     is row equivalent to , the identity matrix.     is a product of elementary matrices.     .                             Any of the following equivalent conditions about the set of columns of hold: is a basis of ; spans ; is linearly independent.    Any of the following equivalent conditions about the set of rows of hold: is a basis of ; spans ; is linearly independent.    The matrix transformationn is an isomorphism.          WeBWork Exercises      Let , , and . Define .  Select true or false for each statement.    The vector is in the range of    The vector is in the kernel of     , so . We row-reduce to determine a solution of . Thus , so range .           Let for the matrix and  , , and .  Select true or false for each statement.  The vector is in the range of .  ???   True   False   The vector is in the kernel of .  ???   True   False              , so . Row-reduce to determine a solution of . . or simply notice that is the second column of . Row reduction shows that the equation has infinitely many solutions: for arbitrary , and both approaches lead to the conclusion that . Thus range .           If is a linear transformation, then consider whether the set ker ( ) is a subspace of .  Select true or false for each statement. first problem looking at subspaces   This set contains the zero vector and is closed under vector addition and scalar multiplication.    This set is a subspace of    This set is a subset of the codomain    This set is a subset of the domain.     , that contains the zero vector, and is closed under vector addition and scalar multiplication.           Let , , and . Define .  Select true or false for each statement.    The vector is in the range of    The vector is in the kernel of     , so . Since the range of is a subset of and , range .           If is a linear transformation, then select true or false for each statement about the set .    This set is a subset of the codomain.    This set contains the zero vector and is closed under vector addition and scalar multiplication.    This set is a subset of the domain.    This set is a subspace of .     , not the codomain .           Let be a one-to-one linear transformation from to .    What can one say about the relationship between and .                  There is not enough information to tell              Let be an onto linear transformation from to .    What can one say about the relationship between and .                  There is not enough information to tell              Let be an linear transformation from to . Let be the matrix associated to .  Fill in the correct answer for each of the following situations.    Two columns in the row-echelon form of are not pivot columns.    The row-echelon form of has no column corresponding to a free variable.    Every column in the row-echelon form of is a pivot column.    The row-echelon form of has a column corresponding to a free variable.      T is one-to-one    T is not one-to-one    There is not enough information to tell.              Let be a linear transformation from to .  Determine whether or not is onto in each of the following situations:    Suppose , , , where are vectors in .    Suppose is a one-to-one function    Suppose , , .      T is not onto.    T is onto.    There is not enough information to tell              Match the following concepts with the correct definitions:    is a one-to-one function from to    is an onto function from to    is a function from to      For every , there is a such that .    For every , there is a such that .    For every , there is a unique such that .    For every , there is at most one such that .              Let be an linear transformation from to . Let be the matrix associated to .  Fill in the correct answer for each of the following situations.    The row-echelon form of has a pivot in every column.    Two rows in the row-echelon form of do not have pivots.    Every row in the row-echelon form of has a pivot.    The row-echelon form of has a row of zeros.      T is onto    T is not onto    There is not enough information to tell.              Let be the linear transformation defined by Find a vector that is NOT in the image of .   and find a different, nonzero vector that IS in the image of .  .   is in the image of if and only if , that is, if and only if The matrix represents this system of equations. Row reducing, one obtains Thus the system has a solution if and only if , that is, is in the image of if and only if .            Let Define the linear transformation by . Find a vector whose image under is .   .  Is the vector unique?  choose   unique   not unique                  Computing and parametrically   For each linear transformation give parametric descriptions of and . To do so you will want to relate each computation to a system of linear equations.                          Identifying   For the given linear transformation prove the claim about .      . Claim:        . Claim: is the set of all continuous symmetric functions. In other words,       Identifying as a null space   For each subset show is a subspace by identifying it with the null space of a linear transformation . You may use any of the examples from , and any of the results from the exercises in .                          Dimension, injectivity, surjectivity   Prove statement (1) of . Use and .      Prove statement (2) of . Use and .      Prove . Use the defining identities of the inverse function: namely, we have .      "
+},
+{
+  "id": "d_nullspace_image",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#d_nullspace_image",
+  "type": "Definition",
+  "number": "5.2.1",
+  "title": "Null space and image.",
+  "body": " Null space and image  linear transformation null space  linear transformation image  null space of a linear transformation  image   Let be a linear transformation.   Null space  The null space of , denoted , is defined as .    Image  The image (or range ) of , denoted , is defined as .      "
+},
+{
+  "id": "fig_null_image",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#fig_null_image",
+  "type": "Figure",
+  "number": "5.2.2",
+  "title": "Null space and image",
+  "body": " Null space and image  Null space and image     Null space lives in the domain; image lives in the codomain.         The entire null space gets mapped to .         The entire domain is mapped to .        "
+},
+{
+  "id": "th_nullspace_image",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#th_nullspace_image",
+  "type": "Theorem",
+  "number": "5.2.3",
+  "title": "Null space and image.",
+  "body": " Null space and image   If is a linear transformation, then is a subspace of , and is a subspace of .     Null space of  We use the two-step technique to prove is a subspace.    Since ( ), we see that .    Suppose . Given any , we have . This shows that , completing our proof.      Image of  The proof proceeds in a similar manner, using the two-step technique.    Since ( ), we see that is hit by , and hence is a member of .    Assume vectors are elements of . By definition, this means there are vectors such that for . Now given any linear combination , we have . This shows that for any linear combination , there is an element such that . We conclude that if , then for any , as desired.      "
+},
+{
+  "id": "eg_nullspace_image_transposition",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#eg_nullspace_image_transposition",
+  "type": "Example",
+  "number": "5.2.4",
+  "title": "",
+  "body": "  Define as .    Prove that is linear.    Identify as a familiar matrix subspace.    Identify as a familiar matrix subspace.         Linearity is an easy consequence of transpose properties. For any and , we have .    We have . Thus is the subspace of symmetric matrices!    Let , subspace of skew-symmetric matrices. We claim . As this is a set equality, we prove it by showing the two set inclusions and . (See )  The inclusion is the easier of the two. If , then for some . Using various properties of transposition, we have , showing that is skew-symmetric, and thus , as desired.  The inclusion is trickier: we must show that if is skew-symmetric, then there is an such that . Assume we have a with . Letting we have . Thus we have found a matrix satisfying . It follows that .      "
+},
+{
+  "id": "rm_subspace_as_nullspace",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#rm_subspace_as_nullspace",
+  "type": "Remark",
+  "number": "5.2.5",
+  "title": "Subspace as null space.",
+  "body": " Subspace as null space  As illustrated by , provides an alternative technique for proving that a subset of is in fact a subspace: namely, find a linear transformation such that .  "
+},
+{
+  "id": "th_null_im_matrix_trans",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#th_null_im_matrix_trans",
+  "type": "Theorem",
+  "number": "5.2.6",
+  "title": "Null space and image of matrix transformation.",
+  "body": " Null space and image of matrix transformation   Let be an matrix, and let be its associated matrix transformation. We have .    The first equality was discussed above. As for the second, we have . Thus .   "
+},
+{
+  "id": "eg_nullspace_image_matrix",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#eg_nullspace_image_matrix",
+  "type": "Example",
+  "number": "5.2.7",
+  "title": "Matrix transformation.",
+  "body": " Matrix transformation   Let , and let be its associated matrix transformation. Provide bases for and and compute the dimensions of these spaces.    We have and . Following , we first row reduce to , and conclude that and .   "
+},
+{
+  "id": "d_rank_nullity",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#d_rank_nullity",
+  "type": "Definition",
+  "number": "5.2.8",
+  "title": "Rank and nullity.",
+  "body": " Rank and nullity  rank of a linear transformation  nullity of a linear transformation    the rank of     the nullity of    Let be a linear transformation.   The rank of , denoted , is the dimension of : , .    The nullity of , denoted , is the dimension of : , .      "
+},
+{
+  "id": "th_rank-nullity",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#th_rank-nullity",
+  "type": "Theorem",
+  "number": "5.2.9",
+  "title": "Rank-nullity.",
+  "body": " Rank-nullity  rank-nullity theorem   Let be a vector space of dimension , and let be a linear transformation. Then , or alternatively, .    Choose a basis of and extend to a basis , using . Observe that and .  We claim that is a basis of .   Proof of claim   is linearly independent  Suppose . Then the vector satisfies (using linearity of ), and hence . Then, using the fact that is a basis of , we have and hence Since the set is linearly independent, we conclude that for all and . In particular, , as desired.    spans  It is clear that since for all and is closed under linear combinations.  For the other direction, suppose . Then there is a such that . Since is a basis of we may write , in which case . This shows that , as desired.   Having shown is a basis for , we conclude that , and thus that .  "
+},
+{
+  "id": "eg_rank-nullity_computation",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#eg_rank-nullity_computation",
+  "type": "Example",
+  "number": "5.2.10",
+  "title": "Rank-nullity application.",
+  "body": " Rank-nullity application   Show that the linear transformation is surjective: , . Do so by first computing .    We first examine . We have . The system above is already in row echelon form, and so we easily see that . Thus is a basis of , and we conclude that . The rank-nullity theorem now implies that . Since and , we conclude by that . Thus is surjective.   "
+},
+{
+  "id": "eg_rank_nullity_skew_sym",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#eg_rank_nullity_skew_sym",
+  "type": "Example",
+  "number": "5.2.11",
+  "title": "Rank-nullity application.",
+  "body": " Rank-nullity application   Let be defined as as in . Prove that is the subspace of all skew-symmetric matrices following the steps below.   Compute .    Show that .    Use the rank-nullity theorem and a dimension argument.       We compute . Thus is the subspace of all symmetric matrices. It can be shown that this space has dimension . To see why this is true intuitively, note that a symmetric matrix is completely determined by the entries on and above the diagonal: there are of these. Next, the rank-nullity theorem implies that . As we showed in , any matrix satisfies : , , where is the subspace of all skew-symmetric matrices. Similarly to the space of symmetric matrices, we can show that : intuitively, a skew-symmetric matrix is determined by the entries strictly above the diagonal (the diagonal entries must be equal to zero). Since and , we conclude that , by . This proves that is the space of all skew-symmetric matrices.   "
+},
+{
+  "id": "th_injective_surjective",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#th_injective_surjective",
+  "type": "Theorem",
+  "number": "5.2.12",
+  "title": "Injectivity and surjectivity.",
+  "body": " Injectivity and surjectivity   Let be a linear transformation.    Injectivity and null space   is injective if and only if .    Surjectivity and image   is surjective if and only if .      Statement (2) is true of any function, whether it is a linear transformation or not; it follows directly from the definitions of surjectivity and image. Thus it remains to prove statement (1). We prove both implications separately.   Implication  Assume is injective. Since , we see that for any we have . It follows that is the only element of : equivalently, we have , as desired.    Implication  Assume . Given any vectors we have . This proves is injective, as desired.    "
+},
+{
+  "id": "ss_injective_surjective_transforms-4",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#ss_injective_surjective_transforms-4",
+  "type": "Remark",
+  "number": "5.2.13",
+  "title": "",
+  "body": " To determine whether a function of sets is injective, we normally have to show that for each output in the image of there is exactly one input satisfying . Think of this as checking injectivity at every output. tells us that in the special case of a linear transformation it is enough to check injectivity at exactly one ouput : namely, .  "
+},
+{
+  "id": "cor_injective_surjective",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#cor_injective_surjective",
+  "type": "Corollary",
+  "number": "5.2.14",
+  "title": "Dimension, injectivity, surjectivity.",
+  "body": " Dimension, injectivity, surjectivity   Let be a linear transformation, and suppose is finite dimensional.   If , then is not injective.    If , then is not surjective.       See .   "
+},
+{
+  "id": "d_isomorphism",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#d_isomorphism",
+  "type": "Definition",
+  "number": "5.2.15",
+  "title": "Isomorphism.",
+  "body": " Isomorphism  isomorphism  invertible linear transformation  Let and be vector spaces. A linear transformation is an isomorphism if it is invertible as a function: , if there is an inverse function satisfying . The vector spaces and are isomorphic if there is an isomorphism from to .   "
+},
+{
+  "id": "th_isom_inverse_linear",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#th_isom_inverse_linear",
+  "type": "Theorem",
+  "number": "5.2.16",
+  "title": "Inverse of isomorphism is linear.",
+  "body": " Inverse of isomorphism is linear   Let be an isomorphism. The inverse function is a linear transformation.    Let be an isomorphism, and let be its inverse function. We use the 1-step technique to show is linear, but with a slight twist: given any and vectors we will show that ; since is injective, it will then follow that . To this end, we compute . Thus we have , as desired.   "
+},
+{
+  "id": "rm_isom",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#rm_isom",
+  "type": "Remark",
+  "number": "5.2.17",
+  "title": "Proving <span class=\"process-math\">\\(T\\)<\/span> is an isomorphism.",
+  "body": " Proving is an isomorphism  According to , to prove a function is an isomorphism, we must show both that is linear and that it is invertible. We know already how to decide whether a function is linear, but how do we decide whether it is invertible? Recall that a function is invertible if and only if it is bijective . (See .) This fact gives rise to two distinct methods for proving that a given linear transformation is invertible:   we can show directly that is invertible by providing an inverse ;    we can show that is bijective (i.e., injective and surjective).     "
+},
+{
+  "id": "th_isom_null_im",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#th_isom_null_im",
+  "type": "Theorem",
+  "number": "5.2.18",
+  "title": "Isomorphism equivalence.",
+  "body": " Isomorphism equivalence   Let be a linear transformation. The following are equivalent.    is an isomorphism;     and .       The result follows directly from and the fact that a function is invertible if and only if it is bijective: .   "
+},
+{
+  "id": "eg_transpose_isom",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#eg_transpose_isom",
+  "type": "Example",
+  "number": "5.2.19",
+  "title": "Transposition is an isomorphism.",
+  "body": " Transposition is an isomorphism   Let be defined as . Prove that is an isomorphism.    We know already that is a linear transformation. It remains to show that it is invertible. In the spirit of , we give two proofs, corresponding to methods (1) and (2).   First proof  Define as . We claim that , and hence that is an isomorphism. To do show we must show . For any , we have . Thus . Similarly, for any , we have .    Second proof  We will show that is bijective, and hence invertible. To do so it suffices to show and . We have . Thus , showing is injective. Next given any , let ; then . This proves that for any there is a matrix such that . Thus .    "
+},
+{
+  "id": "th_isomorphism_preserves",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#th_isomorphism_preserves",
+  "type": "Theorem",
+  "number": "5.2.20",
+  "title": "Properties preserved by isomorphisms.",
+  "body": " Properties preserved by isomorphisms   Let be an isomorphism. The following properties hold:    is linearly independent if and only if is linearly independent;     spans if and only if spans ;     is a basis of if and only if is a basis of      .       We prove and leave the remaining statements as an exercise. Let be an isomorphism, and let be a linearly independent set. Define . Suppose are distinct elements of , and suppose we have . Let be the inverse function of , and recall that is linear by . Now applying to both sides of the equation above and simplify . Since is assumed to be linearly independent, we conclude that , as desired.   "
+},
+{
+  "id": "ss_injective_surjective_transforms-15",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#ss_injective_surjective_transforms-15",
+  "type": "Remark",
+  "number": "5.2.21",
+  "title": "",
+  "body": " makes use of image of a set notation from general function theory. In general, if is a function, given a subset , the image of under is defined as . "
+},
+{
+  "id": "th_isomorphisms_finite_dim",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#th_isomorphisms_finite_dim",
+  "type": "Theorem",
+  "number": "5.2.22",
+  "title": "",
+  "body": "  Let be a vector space of finite dimension .   A vector space is isomorphic to if and only if .    Assume is a vector space satisfying , and let be a linear transformation. The following are equivalent.    is an isomorphism.     ( , is injective).     ( , is surjective).             We prove both implications separately.  If and are isomorphic, then there is an isomorphism . It follows from that .  Now assume . By definition there are bases and of and , respectively, satisfying . Using there is a linear transformation satisfying for all , and a linear transformation satisfying for all . We now use to prove that , and hence that . To do so we observe that for all we have . Since and agree on the basis ( for all ), we conclude that . A very similar argument shows . Having shown that , we conclude that is an isomorphism, and hence that and are isomorphic.    Assume that and that . We will establish the cycle of implications (a) (b) (c) (a).   (a) (b)  By , if is an isomorphism, then .    (b) (c)  Using the rank-nullity theorem, if , then . Since and , we conclude using that .    (c) (a)  Assume . Again, using the rank-nullity theorem, we see that . It follows that , and hence, by , that is an isomorphism.       "
+},
+{
+  "id": "cor_isom_Rn",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#cor_isom_Rn",
+  "type": "Corollary",
+  "number": "5.2.23",
+  "title": "Isomorphic to <span class=\"process-math\">\\(\\R^n\\)<\/span>.",
+  "body": " Isomorphic to   If is a finite-dimensional vector space, then is isomorphic to , where .    The corollary follows immediately from (1) of and the fact that .   "
+},
+{
+  "id": "th_invertibility_with_isom",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#th_invertibility_with_isom",
+  "type": "Theorem",
+  "number": "5.2.24",
+  "title": "Invertibility theorem.",
+  "body": " Invertibility theorem   Let be an matrix. The following statements are equivalent.    is invertible.    The matrix equation has a unique solution for any .    The matrix equation has a solution for any .    The matrix equation has a unique solution: namely, .     is row equivalent to , the identity matrix.     is a product of elementary matrices.     .                             Any of the following equivalent conditions about the set of columns of hold: is a basis of ; spans ; is linearly independent.    Any of the following equivalent conditions about the set of rows of hold: is a basis of ; spans ; is linearly independent.    The matrix transformationn is an isomorphism.      "
+},
+{
+  "id": "s_nullspace_image_ex-1-2",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#s_nullspace_image_ex-1-2",
+  "type": "Exercise",
+  "number": "5.2.5.1",
+  "title": "",
+  "body": "    Let , , and . Define .  Select true or false for each statement.    The vector is in the range of    The vector is in the kernel of     , so . We row-reduce to determine a solution of . Thus , so range .      "
+},
+{
+  "id": "s_nullspace_image_ex-1-3",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#s_nullspace_image_ex-1-3",
+  "type": "Exercise",
+  "number": "5.2.5.2",
+  "title": "",
+  "body": "    Let for the matrix and  , , and .  Select true or false for each statement.  The vector is in the range of .  ???   True   False   The vector is in the kernel of .  ???   True   False              , so . Row-reduce to determine a solution of . . or simply notice that is the second column of . Row reduction shows that the equation has infinitely many solutions: for arbitrary , and both approaches lead to the conclusion that . Thus range .      "
+},
+{
+  "id": "s_nullspace_image_ex-1-4",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#s_nullspace_image_ex-1-4",
+  "type": "Exercise",
+  "number": "5.2.5.3",
+  "title": "",
+  "body": "    If is a linear transformation, then consider whether the set ker ( ) is a subspace of .  Select true or false for each statement. first problem looking at subspaces   This set contains the zero vector and is closed under vector addition and scalar multiplication.    This set is a subspace of    This set is a subset of the codomain    This set is a subset of the domain.     , that contains the zero vector, and is closed under vector addition and scalar multiplication.      "
+},
+{
+  "id": "s_nullspace_image_ex-1-5",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#s_nullspace_image_ex-1-5",
+  "type": "Exercise",
+  "number": "5.2.5.4",
+  "title": "",
+  "body": "    Let , , and . Define .  Select true or false for each statement.    The vector is in the range of    The vector is in the kernel of     , so . Since the range of is a subset of and , range .      "
+},
+{
+  "id": "s_nullspace_image_ex-1-6",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#s_nullspace_image_ex-1-6",
+  "type": "Exercise",
+  "number": "5.2.5.5",
+  "title": "",
+  "body": "    If is a linear transformation, then select true or false for each statement about the set .    This set is a subset of the codomain.    This set contains the zero vector and is closed under vector addition and scalar multiplication.    This set is a subset of the domain.    This set is a subspace of .     , not the codomain .      "
+},
+{
+  "id": "s_nullspace_image_ex-1-7",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#s_nullspace_image_ex-1-7",
+  "type": "Exercise",
+  "number": "5.2.5.6",
+  "title": "",
+  "body": "    Let be a one-to-one linear transformation from to .    What can one say about the relationship between and .                  There is not enough information to tell         "
+},
+{
+  "id": "s_nullspace_image_ex-1-8",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#s_nullspace_image_ex-1-8",
+  "type": "Exercise",
+  "number": "5.2.5.7",
+  "title": "",
+  "body": "    Let be an onto linear transformation from to .    What can one say about the relationship between and .                  There is not enough information to tell         "
+},
+{
+  "id": "s_nullspace_image_ex-1-9",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#s_nullspace_image_ex-1-9",
+  "type": "Exercise",
+  "number": "5.2.5.8",
+  "title": "",
+  "body": "    Let be an linear transformation from to . Let be the matrix associated to .  Fill in the correct answer for each of the following situations.    Two columns in the row-echelon form of are not pivot columns.    The row-echelon form of has no column corresponding to a free variable.    Every column in the row-echelon form of is a pivot column.    The row-echelon form of has a column corresponding to a free variable.      T is one-to-one    T is not one-to-one    There is not enough information to tell.         "
+},
+{
+  "id": "s_nullspace_image_ex-1-10",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#s_nullspace_image_ex-1-10",
+  "type": "Exercise",
+  "number": "5.2.5.9",
+  "title": "",
+  "body": "    Let be a linear transformation from to .  Determine whether or not is onto in each of the following situations:    Suppose , , , where are vectors in .    Suppose is a one-to-one function    Suppose , , .      T is not onto.    T is onto.    There is not enough information to tell         "
+},
+{
+  "id": "s_nullspace_image_ex-1-11",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#s_nullspace_image_ex-1-11",
+  "type": "Exercise",
+  "number": "5.2.5.10",
+  "title": "",
+  "body": "    Match the following concepts with the correct definitions:    is a one-to-one function from to    is an onto function from to    is a function from to      For every , there is a such that .    For every , there is a such that .    For every , there is a unique such that .    For every , there is at most one such that .         "
+},
+{
+  "id": "s_nullspace_image_ex-1-12",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#s_nullspace_image_ex-1-12",
+  "type": "Exercise",
+  "number": "5.2.5.11",
+  "title": "",
+  "body": "    Let be an linear transformation from to . Let be the matrix associated to .  Fill in the correct answer for each of the following situations.    The row-echelon form of has a pivot in every column.    Two rows in the row-echelon form of do not have pivots.    Every row in the row-echelon form of has a pivot.    The row-echelon form of has a row of zeros.      T is onto    T is not onto    There is not enough information to tell.         "
+},
+{
+  "id": "s_nullspace_image_ex-1-13",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#s_nullspace_image_ex-1-13",
+  "type": "Exercise",
+  "number": "5.2.5.12",
+  "title": "",
+  "body": "    Let be the linear transformation defined by Find a vector that is NOT in the image of .   and find a different, nonzero vector that IS in the image of .  .   is in the image of if and only if , that is, if and only if The matrix represents this system of equations. Row reducing, one obtains Thus the system has a solution if and only if , that is, is in the image of if and only if .       "
+},
+{
+  "id": "s_nullspace_image_ex-1-14",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#s_nullspace_image_ex-1-14",
+  "type": "Exercise",
+  "number": "5.2.5.13",
+  "title": "",
+  "body": "    Let Define the linear transformation by . Find a vector whose image under is .   .  Is the vector unique?  choose   unique   not unique             "
+},
+{
+  "id": "s_nullspace_image_ex-2-1-3",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#s_nullspace_image_ex-2-1-3",
+  "type": "Exercise",
+  "number": "5.2.5.14",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_nullspace_image_ex-2-1-4",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#s_nullspace_image_ex-2-1-4",
+  "type": "Exercise",
+  "number": "5.2.5.15",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_nullspace_image_ex-2-1-5",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#s_nullspace_image_ex-2-1-5",
+  "type": "Exercise",
+  "number": "5.2.5.16",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_nullspace_image_ex-2-2-3",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#s_nullspace_image_ex-2-2-3",
+  "type": "Exercise",
+  "number": "5.2.5.17",
+  "title": "",
+  "body": "   . Claim:    "
+},
+{
+  "id": "s_nullspace_image_ex-2-2-4",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#s_nullspace_image_ex-2-2-4",
+  "type": "Exercise",
+  "number": "5.2.5.18",
+  "title": "",
+  "body": "   . Claim: is the set of all continuous symmetric functions. In other words,    "
+},
+{
+  "id": "s_nullspace_image_ex-2-3-3",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#s_nullspace_image_ex-2-3-3",
+  "type": "Exercise",
+  "number": "5.2.5.19",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_nullspace_image_ex-2-3-4",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#s_nullspace_image_ex-2-3-4",
+  "type": "Exercise",
+  "number": "5.2.5.20",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_nullspace_image_ex-2-3-5",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#s_nullspace_image_ex-2-3-5",
+  "type": "Exercise",
+  "number": "5.2.5.21",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "ex_cor_injective_surjective_1",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#ex_cor_injective_surjective_1",
+  "type": "Exercise",
+  "number": "5.2.5.22",
+  "title": "Dimension, injectivity, surjectivity.",
+  "body": " Dimension, injectivity, surjectivity   Prove statement (1) of . Use and .   "
+},
+{
+  "id": "ex_cor_injective_surjective_2",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#ex_cor_injective_surjective_2",
+  "type": "Exercise",
+  "number": "5.2.5.23",
+  "title": "",
+  "body": "  Prove statement (2) of . Use and .   "
+},
+{
+  "id": "ex_isom_inverse_linear",
+  "level": "2",
+  "url": "s_nullspace_image_isom.html#ex_isom_inverse_linear",
+  "type": "Exercise",
+  "number": "5.2.5.24",
+  "title": "",
+  "body": "  Prove . Use the defining identities of the inverse function: namely, we have .   "
+},
+{
+  "id": "s_coordinatevectors",
+  "level": "1",
+  "url": "s_coordinatevectors.html",
+  "type": "Section",
+  "number": "5.3",
+  "title": "Coordinate vectors",
+  "body": " Coordinate vectors   Suppose is an -dimensional vector space. Once we choose a basis of , we know from that any can be expressed in a unique way as . Coordinate vectors turn this observation into a computational tool by exploiting the resulting one-to-one correspondence . We will use the correspondence in two distinct ways, as described below.   Given an -dimensional vector space and basis , the correspondence allow us to treat elements of the abstract space as if they were elements of , and to then make use of our wealth of computational procedures related to -tuples.    The correspondence is also useful when working in itself. Namely, there will be situations where it is convenient to represent vectors with a particular nonstandard basis , as opposed to the standard basis . In this setting the correspondence will be used as a change of coordinates technique.       Coordinate vectors  Before we can define coordinate vectors we need to define an ordered basis . As the name suggests this is nothing more than a basis along with a particular choice of ordering of its elements: first element, second element, . In other words, an ordered basis will be a sequence of vectors, as opposed to a set of vectors.   Ordered bases  ordered basis   Let be a finite-dimensional vector space. An ordered basis of is a sequence of distinct vectors whose underlying set is a basis of .      A single (unordered) basis of an -dimensional vector space gives rise to different ordered bases: you have choices for the first element of the ordered basis, choices for the second element, .  For example the standard basis of gives rise to different ordered bases of : .  By a slight abuse of language we will use standard basis to describe both one of our standard unordered bases and the corresponding ordered basis obtained by choosing the implicit ordering of the set descriptions in . For example, and will both be called the standard basis of .     Coordinate vectors   Let be an ordered basis for the vector space . According to , for any there is a unique choice of scalars satisfying . We call the corresponding -tuple the coordinate vector of relative to the basis , and denote it : , .    Observe that computing a coordinate vector with respect to a basis involves setting up a vector equation of the form and then solving for the unknown coefficients . This is a familiar situation for us by now, and carrying out the computation involves reducing the given vector equation to a system of linear equations that we solve with our old work horse Gaussian elimination.   Computing coordinate vectors   Let be an ordered basis of the vector space . Given , compute the coordinate vector by following these steps.   Set up the vector equation in the unknowns .    Solve for the unknowns in some manner. A surefire technique is to reduce the vector equation to a linear system and use Gaussian elimination. However, there are some situations when you can simply produce the scalars by inspection.    Conclude that .       As illustrated by the next example, one setting for which we can compute by inspection (see (2) of ) is when is one of our standard ordered bases.   Standard bases   Computing coordinate vectors relative to one of our standard ordered bases for , , or amounts to just listing the coefficients or entries used to specify the given vector. The examples below serve to illustrate the general method in this setting.    Consider the standard basis of . For any we have , since .    Consider the standard basis of . For any we have since .       Reorderings of standard bases   If we choose an alternate ordering of one of the standard ordered bases, the entries of the coordinate vector are reordered accordingly, as illustrated by the examples below.    Consider the reordered basis of . Given we have , since .    Consider the reordered basis of . Given , we have , since .       Nonstandard bases   For a nonstandard ordered basis, we compute coordinate vectors by solving a relevant system of linear equations, as the examples below illustrate.    Let , , and . Compute . More generally, compute for an arbitrary .    Let , , and . Compute . More generally, compute for an arbitrary element .        Using , we compute by finding the unique pair satisfying . By inspection, we see that . We conclude that . More generally, to compute for an arbitrary , we must find the pair satisfying , or equivalently . The usual Gaussian elimination technique yields the unique solution , and thus for .    To compute we must find the unique triple satisfying . The equivalent linear system once we combine like terms and equate coefficients is . The unique solution to this system is . We conclude . The same reasoning shows that more generally, given , we have .       Video example: coordinate vectors   Video: coordinate vectors       Coordinate vector transformation  The next theorem is the key to understanding the tremendous computational value of coordinate vectors. Here we treat the coordinate vector operation as a function . Not surprisingly, this turns out to be a linear transformation, which we call a coordinate vector transformation . Furthermore, the correspondence is a one-to-one correspondence between and , allowing us to identify the vectors with -tuples in . In the language of , these two facts taken together mean that the coordinate vector transformation is an isomorphism between and . Practically speaking, this means any question regarding the vector space structure of can be translated to an equivalent question about the vector space . As a result, given any exotic vector space of finite dimension, once we choose an ordered basis of , questions about can be answered by taking coordinate vectors with respect to and answering the corresponding question in the more familiar setting of , where we have a wealth of computational procedures at our disposal. We memorialize this principle as a mantra.   Coordinate vector mantra   Coordinate vectors allow us to treat any -dimensional vector space as if it were .     Coordinate vector transformation   Let be an ordered basis for the vector space . The function is an isomorphism: , is an invertible linear transformation.     We first prove is linear using the 1-step technique. Given any scalars and vectors , we write for scalars , in which case . It follows that , and hence . Next, since , using , to prove is an isomorphism, it suffices to show , or equivalently, that is surjective. But this is easy: given any , the vector satisfies . This shows is surjective, and hence an isomorphism.   Knowing the that the coordinate vector transformation is an isomorphism, allows us to translate any linear-algebraic question about a finite-dimensional vector space into a corresponding question about for some . As an illustration of this principle, we describe a general method of contracting and extending subsets of a general finite-dimensional vector space to bases. The method translates the problem into using the coordinate transformation, applies the relevant algorithm available to us for subsets of , and then lifts the results back to using the coordinate transformation again.   Contracting and extending to bases in general spaces   Let be a vector space of dimension , and let .    Contracting to a basis  Let . To contract to a basis , proceed as follows.    Pick any ordered basis of and let .    Use the relevant procedure of to contract to a basis of .    The set is a basis for .      Extending to a basis  Assume is linearly independent. To extend to a basis of proceed as follows.    Pick any ordered basis of and let .    Use the relevant procedure of to extend to a basis of .    By (3) of , for all there are vectors satisfying . The set is a basis of containing .          The set is a subset of the space . Let . Contract to a basis of and determine whether .    Let be the standard basis of . Apply to the elements of the given to get a corresponding set : . Apply the column space procedure of to contract to a basis of . This produces the subset Translating back to , we conclude that the corresponding set is a basis for . We conclude that .  Lastly the space of all trace-zero matrices is easily seen to have basis , and hence . Since , we conclude that .       WeBWork Exercises      Consider the basis of consisting of vectors Find in whose coordinate vector relative to the basis is  .              The set is a basis of the space of upper-triangular matrices.  Find the coordinates of with respect to this basis.              A square matrix is called half-magic if the sum of the numbers in each row and column is the same. The common sum in each row and column is denoted by and is called the magic sum of the matrix . Let be the vector space of half-magic squares.  (a) Find an ordered basis for .   ,  .  (b) Find the coordinate vector of in your chosen ordered basis .   .            The set is a basis for . Find the coordinates of relative to this basis:            Coordinate vectors in   In each exercise an ordered basis is given for . Compute for the given .      ,        ,       Coordinate vectors in    In each exercise an ordered basis is given for . Compute for the given polynomial .      ,        ,        Let where . You may take for granted that is an ordered basis of .    Compute .    Compute for an arbitrary matrix .        Let .    Use one of the techniques described in to contract to a basis of . To begin, choose your favorite ordered basis of .    Use your result in (a) to describe is as simple a manner as possible.        Let .    Use one of the techniques described in to contract to a basis of . To begin, choose your favorite ordered basis of .    Using your result in (a) to decide whether .        Let . Use one of the techniques described in to extend to a basis of .      Let .   Use one of the techniques described in to contract to a basis of .    Show that Use a dimension argument to make your life easier.        "
+},
+{
+  "id": "d_ordered_basis",
+  "level": "2",
+  "url": "s_coordinatevectors.html#d_ordered_basis",
+  "type": "Definition",
+  "number": "5.3.1",
+  "title": "Ordered bases.",
+  "body": " Ordered bases  ordered basis   Let be a finite-dimensional vector space. An ordered basis of is a sequence of distinct vectors whose underlying set is a basis of .   "
+},
+{
+  "id": "ss_coordinate_vectors-4",
+  "level": "2",
+  "url": "s_coordinatevectors.html#ss_coordinate_vectors-4",
+  "type": "Remark",
+  "number": "5.3.2",
+  "title": "",
+  "body": "  A single (unordered) basis of an -dimensional vector space gives rise to different ordered bases: you have choices for the first element of the ordered basis, choices for the second element, .  For example the standard basis of gives rise to different ordered bases of : .  By a slight abuse of language we will use standard basis to describe both one of our standard unordered bases and the corresponding ordered basis obtained by choosing the implicit ordering of the set descriptions in . For example, and will both be called the standard basis of .   "
+},
+{
+  "id": "d_coordinatevector",
+  "level": "2",
+  "url": "s_coordinatevectors.html#d_coordinatevector",
+  "type": "Definition",
+  "number": "5.3.3",
+  "title": "Coordinate vectors.",
+  "body": " Coordinate vectors   Let be an ordered basis for the vector space . According to , for any there is a unique choice of scalars satisfying . We call the corresponding -tuple the coordinate vector of relative to the basis , and denote it : , .   "
+},
+{
+  "id": "proc_coor_vec",
+  "level": "2",
+  "url": "s_coordinatevectors.html#proc_coor_vec",
+  "type": "Procedure",
+  "number": "5.3.4",
+  "title": "Computing coordinate vectors.",
+  "body": " Computing coordinate vectors   Let be an ordered basis of the vector space . Given , compute the coordinate vector by following these steps.   Set up the vector equation in the unknowns .    Solve for the unknowns in some manner. A surefire technique is to reduce the vector equation to a linear system and use Gaussian elimination. However, there are some situations when you can simply produce the scalars by inspection.    Conclude that .      "
+},
+{
+  "id": "eg_coordinatevector_standard",
+  "level": "2",
+  "url": "s_coordinatevectors.html#eg_coordinatevector_standard",
+  "type": "Example",
+  "number": "5.3.5",
+  "title": "Standard bases.",
+  "body": " Standard bases   Computing coordinate vectors relative to one of our standard ordered bases for , , or amounts to just listing the coefficients or entries used to specify the given vector. The examples below serve to illustrate the general method in this setting.    Consider the standard basis of . For any we have , since .    Consider the standard basis of . For any we have since .     "
+},
+{
+  "id": "ss_coordinate_vectors-10",
+  "level": "2",
+  "url": "s_coordinatevectors.html#ss_coordinate_vectors-10",
+  "type": "Example",
+  "number": "5.3.6",
+  "title": "Reorderings of standard bases.",
+  "body": " Reorderings of standard bases   If we choose an alternate ordering of one of the standard ordered bases, the entries of the coordinate vector are reordered accordingly, as illustrated by the examples below.    Consider the reordered basis of . Given we have , since .    Consider the reordered basis of . Given , we have , since .     "
+},
+{
+  "id": "ss_coordinate_vectors-11",
+  "level": "2",
+  "url": "s_coordinatevectors.html#ss_coordinate_vectors-11",
+  "type": "Example",
+  "number": "5.3.7",
+  "title": "Nonstandard bases.",
+  "body": " Nonstandard bases   For a nonstandard ordered basis, we compute coordinate vectors by solving a relevant system of linear equations, as the examples below illustrate.    Let , , and . Compute . More generally, compute for an arbitrary .    Let , , and . Compute . More generally, compute for an arbitrary element .        Using , we compute by finding the unique pair satisfying . By inspection, we see that . We conclude that . More generally, to compute for an arbitrary , we must find the pair satisfying , or equivalently . The usual Gaussian elimination technique yields the unique solution , and thus for .    To compute we must find the unique triple satisfying . The equivalent linear system once we combine like terms and equate coefficients is . The unique solution to this system is . We conclude . The same reasoning shows that more generally, given , we have .     "
+},
+{
+  "id": "ss_vid_eg_coordinatevec",
+  "level": "2",
+  "url": "s_coordinatevectors.html#ss_vid_eg_coordinatevec",
+  "type": "Example",
+  "number": "5.3.8",
+  "title": "Video example: coordinate vectors.",
+  "body": " Video example: coordinate vectors   Video: coordinate vectors    "
+},
+{
+  "id": "mantra_coordinate_vectors",
+  "level": "2",
+  "url": "s_coordinatevectors.html#mantra_coordinate_vectors",
+  "type": "Mantra",
+  "number": "5.3.10",
+  "title": "Coordinate vector mantra.",
+  "body": " Coordinate vector mantra   Coordinate vectors allow us to treat any -dimensional vector space as if it were .   "
+},
+{
+  "id": "th_coordinates",
+  "level": "2",
+  "url": "s_coordinatevectors.html#th_coordinates",
+  "type": "Theorem",
+  "number": "5.3.11",
+  "title": "Coordinate vector transformation.",
+  "body": " Coordinate vector transformation   Let be an ordered basis for the vector space . The function is an isomorphism: , is an invertible linear transformation.   "
+},
+{
+  "id": "ss_coordinate_transformation-5",
+  "level": "2",
+  "url": "s_coordinatevectors.html#ss_coordinate_transformation-5",
+  "type": "Proof",
+  "number": "5.3.2.1",
+  "title": "",
+  "body": " We first prove is linear using the 1-step technique. Given any scalars and vectors , we write for scalars , in which case . It follows that , and hence . Next, since , using , to prove is an isomorphism, it suffices to show , or equivalently, that is surjective. But this is easy: given any , the vector satisfies . This shows is surjective, and hence an isomorphism.  "
+},
+{
+  "id": "proc_contract_extend_general",
+  "level": "2",
+  "url": "s_coordinatevectors.html#proc_contract_extend_general",
+  "type": "Procedure",
+  "number": "5.3.12",
+  "title": "Contracting and extending to bases in general spaces.",
+  "body": " Contracting and extending to bases in general spaces   Let be a vector space of dimension , and let .    Contracting to a basis  Let . To contract to a basis , proceed as follows.    Pick any ordered basis of and let .    Use the relevant procedure of to contract to a basis of .    The set is a basis for .      Extending to a basis  Assume is linearly independent. To extend to a basis of proceed as follows.    Pick any ordered basis of and let .    Use the relevant procedure of to extend to a basis of .    By (3) of , for all there are vectors satisfying . The set is a basis of containing .       "
+},
+{
+  "id": "ss_coordinate_transformation-8",
+  "level": "2",
+  "url": "s_coordinatevectors.html#ss_coordinate_transformation-8",
+  "type": "Example",
+  "number": "5.3.13",
+  "title": "",
+  "body": "  The set is a subset of the space . Let . Contract to a basis of and determine whether .    Let be the standard basis of . Apply to the elements of the given to get a corresponding set : . Apply the column space procedure of to contract to a basis of . This produces the subset Translating back to , we conclude that the corresponding set is a basis for . We conclude that .  Lastly the space of all trace-zero matrices is easily seen to have basis , and hence . Since , we conclude that .   "
+},
+{
+  "id": "s_coordinatevectors_ex-1-2",
+  "level": "2",
+  "url": "s_coordinatevectors.html#s_coordinatevectors_ex-1-2",
+  "type": "Exercise",
+  "number": "5.3.3.1",
+  "title": "",
+  "body": "    Consider the basis of consisting of vectors Find in whose coordinate vector relative to the basis is  .         "
+},
+{
+  "id": "s_coordinatevectors_ex-1-3",
+  "level": "2",
+  "url": "s_coordinatevectors.html#s_coordinatevectors_ex-1-3",
+  "type": "Exercise",
+  "number": "5.3.3.2",
+  "title": "",
+  "body": "    The set is a basis of the space of upper-triangular matrices.  Find the coordinates of with respect to this basis.         "
+},
+{
+  "id": "s_coordinatevectors_ex-1-4",
+  "level": "2",
+  "url": "s_coordinatevectors.html#s_coordinatevectors_ex-1-4",
+  "type": "Exercise",
+  "number": "5.3.3.3",
+  "title": "",
+  "body": "    A square matrix is called half-magic if the sum of the numbers in each row and column is the same. The common sum in each row and column is denoted by and is called the magic sum of the matrix . Let be the vector space of half-magic squares.  (a) Find an ordered basis for .   ,  .  (b) Find the coordinate vector of in your chosen ordered basis .   .       "
+},
+{
+  "id": "s_coordinatevectors_ex-1-5",
+  "level": "2",
+  "url": "s_coordinatevectors.html#s_coordinatevectors_ex-1-5",
+  "type": "Exercise",
+  "number": "5.3.3.4",
+  "title": "",
+  "body": "    The set is a basis for . Find the coordinates of relative to this basis:         "
+},
+{
+  "id": "s_coordinatevectors_ex-2-3",
+  "level": "2",
+  "url": "s_coordinatevectors.html#s_coordinatevectors_ex-2-3",
+  "type": "Exercise",
+  "number": "5.3.3.5",
+  "title": "",
+  "body": "   ,    "
+},
+{
+  "id": "s_coordinatevectors_ex-2-4",
+  "level": "2",
+  "url": "s_coordinatevectors.html#s_coordinatevectors_ex-2-4",
+  "type": "Exercise",
+  "number": "5.3.3.6",
+  "title": "",
+  "body": "   ,    "
+},
+{
+  "id": "s_coordinatevectors_ex-3-3",
+  "level": "2",
+  "url": "s_coordinatevectors.html#s_coordinatevectors_ex-3-3",
+  "type": "Exercise",
+  "number": "5.3.3.7",
+  "title": "",
+  "body": "   ,    "
+},
+{
+  "id": "s_coordinatevectors_ex-3-4",
+  "level": "2",
+  "url": "s_coordinatevectors.html#s_coordinatevectors_ex-3-4",
+  "type": "Exercise",
+  "number": "5.3.3.8",
+  "title": "",
+  "body": "   ,    "
+},
+{
+  "id": "s_coordinatevectors_ex-4",
+  "level": "2",
+  "url": "s_coordinatevectors.html#s_coordinatevectors_ex-4",
+  "type": "Exercise",
+  "number": "5.3.3.9",
+  "title": "",
+  "body": "  Let where . You may take for granted that is an ordered basis of .    Compute .    Compute for an arbitrary matrix .     "
+},
+{
+  "id": "s_coordinatevectors_ex-5",
+  "level": "2",
+  "url": "s_coordinatevectors.html#s_coordinatevectors_ex-5",
+  "type": "Exercise",
+  "number": "5.3.3.10",
+  "title": "",
+  "body": "  Let .    Use one of the techniques described in to contract to a basis of . To begin, choose your favorite ordered basis of .    Use your result in (a) to describe is as simple a manner as possible.     "
+},
+{
+  "id": "s_coordinatevectors_ex-6",
+  "level": "2",
+  "url": "s_coordinatevectors.html#s_coordinatevectors_ex-6",
+  "type": "Exercise",
+  "number": "5.3.3.11",
+  "title": "",
+  "body": "  Let .    Use one of the techniques described in to contract to a basis of . To begin, choose your favorite ordered basis of .    Using your result in (a) to decide whether .     "
+},
+{
+  "id": "s_coordinatevectors_ex-7",
+  "level": "2",
+  "url": "s_coordinatevectors.html#s_coordinatevectors_ex-7",
+  "type": "Exercise",
+  "number": "5.3.3.12",
+  "title": "",
+  "body": "  Let . Use one of the techniques described in to extend to a basis of .   "
+},
+{
+  "id": "s_coordinatevectors_ex-8",
+  "level": "2",
+  "url": "s_coordinatevectors.html#s_coordinatevectors_ex-8",
+  "type": "Exercise",
+  "number": "5.3.3.13",
+  "title": "",
+  "body": "  Let .   Use one of the techniques described in to contract to a basis of .    Show that Use a dimension argument to make your life easier.      "
+},
+{
+  "id": "s_matrixreps",
+  "level": "1",
+  "url": "s_matrixreps.html",
+  "type": "Section",
+  "number": "5.4",
+  "title": "Matrix representations of linear transformations",
+  "body": " Matrix representations of linear transformations   We have seen how the coordinate vector map can be used to translate a linear algebraic question posed about a finite-dimensional vector space into a question about , where we have many computational algorithms at our disposal. We would like to extend this technique to linear transformations , where both and are finite-dimensional . The basic idea, to be fleshed out below, can be described as follows:   Pick a basis for , and a basis for .     Identify  with and with using the coordinate vector isomorphisms and , respectively.     Model the linear transformation with a certain linear transformation .   The matrix defining will be called the matrix representing with respect to our choice of basis for and for .  In what sense does  model  ? All the properties of we are interested in ( , , , , etc.) are perfectly mirrored by the matrix . As a result, this technique allows us to answer questions about the original essentially by applying a relevant matrix algorithm to .    Matrix representations of linear transformations  Given a linear transformation and choice of ordered bases and of and , respectively, we define the matrix representing column by column, using a familiar looking formula.   Matrix representations of linear transformations   Let and be vector spaces with ordered bases and , respectively. Given a linear transformation , the matrix representing with respect to and , is the matrix whose -th column is , considered as a column vector: , . In the special case where and we pick we write simply .     Matrix representation   The function is linear. Compute , where and are the standard bases for and , respectively.    We have and . By definition, we have . We first compute for each : . To finish our computation, we must compute for each . Since is the standard basis of , this is not difficult: in general we have . Thus and .    The formula for should remind you of the formula from used for computing the standard matrix for a linear transformation : , the matrix such that for all . explicates this resemblance.   Standard matrix as a matrix representation   Let be a linear transformation, and let be its standard matrix: , satisfies for all . We have where and are the standard bases of and , respectively. In other words, the matrix representing with respect to the standard bases of and is none other than the standard matrix of .    According to the recipe in we have . Let and be the standard ordered bases of and , respectively. To see why , observe that for all the -th column of is and the -th column of is . That these are equal is a result of the fact that for all vectors we have : that is, the coordinate vector of a vector with respect to the standard basis is just itself. (See ).      Let be a linear transformation, and let be its standard matrix: , is the matrix satisfying for all . According to , the standard matrix is just one way of representing : namely, the representation with respect to the standard bases of and . This begs the question of whether a different choice of bases might give rise to a more convenient matrix representation of . The answer is yes, as we will see over the course of this chapter.     Different choice of bases   Define as .    Compute , where is the standard basis of .    Compute , where .        According to , since is the standard basis is the matrix such that : .    We have , where the last equality uses the fact that and , as you can verify yourself.    So we have and . Moral: different choices of bases yield different matrix representations.      Matrix representations as models  Before moving to more examples, we describe in what precise sense the matrix models the original linear transformation , and how we can use to answer questions about . The next theorem is key to understanding this.   Defining property of matrix representation   Let be a linear transformation, where and , and let be ordered bases for and , respectively.   For all we have . As usual is treated here as an column vector.    Property defines : , if is an matrix satisfying for all , then .       Let .    By definition we have . Given any , we can write for some . Then , as desired.    Assume satisfies for all . Then in particular we have for all . Since is the -th element of , we have , the -th standard basis element of . Using the column method ( ), we see that where is the -th column of . Thus implies that the -th column of is equal to , the -th column of , for all . Since and have identical columns, we conclude that , as desired.       Uniqueness of   The uniqueness property described in (2) of provides an alternative way of computing that can be useful in certain situations: namely, simply provide an matrix that satisfies the defining property for all . Since there is only one such matrix, we must have in this case.    Let , , and be as in . The defining property of can be summarized by saying that the following diagram is commutative .   Commutative diagram for  Commutative diagram for       The diagram being commutative here means that starting with an element in the top left of the diagram, whether we travel to the bottom right of the diagram either by first applying and then applying ( go right, then down ), or else by first applying and then applying ( go down, then right ), we get the same result! (The bottom map should technically be labeled , where , but this would detract from the elegance of the diagram.)  Besides commutativity, the other import feature of is that the two vertical coordinate transformations identify the domain and codomain of with the familiar spaces and in a one-to-one manner. (Using the language of , these maps are isomorphisms.) These properties together allow us to translate any linear algebraic question about to an equivalent question about the matrix , as the following theorem indicates.   Computing with matrix representations   Let be linear, let and be ordered bases of and , respectively, and let .     if and only if .     if and only if .     is a basis of if and only if is a basis of .     is a basis of if and only if is a basis of .     and .       Proof of (1)  We have .    Proof of (2)  We have . The last equivalence follows from the fact that .    Proof (3)-(4)  These now follow from (1)-(2) and statement (4) of .     As an illustration of , we treat again the linear transformation , treated in and . Recall that we concluded in these examples that is the space of all symmetric matrices, and that is the space of all skew-symmetric matrices. In we derive this result yet again in a slightly more computational manner, in the case where .   Computing with matrix representations   The function is linear.   Compute , where is the standard basis of .    Compute bases of and .     Lift these bases to bases of and , using the coordinate vector isomorphism . Use these bases to identify and as familiar subspaces of matrices.       First compute Next, using the fact that for the standard basis of we have , we see that . It is not difficult to compute bases for and using , but the matrix is simple enough that we will compute these by inspection. For example, we see easily that . From the rank-nullity theorem, it then follows that . Thus we need just three linearly independent elements of to get a basis. Again, by inspection (using ) we see that . It is fairly easy to see the three vectors are independent, and thus form a basis of .  To lift the bases and to bases of and , we simply find the matrices in that correspond to these -vectors via the coordinate vector isomorphism : , the matrices that have these -vectors as their coordinate vectors. This is easily done by inspection. We conclude that is a basis of , and is a basis of .  Lastly, since are all symmetric, is a subspace of the space of symmetric matrices. Since both spaces have dimension three, we conclude that they are equal. A similar argument shows that is precisely the space of skew-symmetric matrices.     Video example: matrix representations   Video: matrix representations          WeBWork Exercises      To every linear transformation from to , there is an associated matrix. Match the following linear transformations with their associated matrix.    Reflection about the y-axis    Counter-clockwise rotation by radians    Reflection about the line y=x    The projection onto the x-axis given by T(x,y)=(x,0)    Reflection about the -axis    Clockwise rotation by radians                        None of the above              Find the matrix of the linear transformation from to with respect to the standard basis for , .              The matrices  form a basis for the linear space Write the matrix of the linear transformation such that relative to this basis.            Find the matrix of the linear transformation from to (upper triangular matrices) with respect to the standard basis for given by              Find the matrix of the linear transformation from to (upper triangular matrices) with respect to the basis              Let be the space spanned by the two functions and . Find the matrix of the linear transformation from into itself with respect to the basis .              Let be the plane with equation in . The linear transformation maps into so, by restricting it to , we may regard it as a linear transformation .  Find the matrix of the restricted map with respect to the basis              Consider the multiplication operator defined by where . Find an ordered basis for such that . Hint: where is the standard basis.   ,            Compute for each provided and choice of bases and of and . You may assume that the given is a linear transformation.      , ; ;        , ; ;        , where ;        Suppose is a linear transformation with matrix representation , where and . Use the defining property of to determine the formula for for an arbitrary polynomial .      Suppose is a linear transformation with matrix representation , where     Use the defining property of to compute and . (You will first need to compute and . )    Use (a) and the fact that is linear to give a general formula for in terms of and .        The function defined as is a linear transformation.    Compute , where is the standard basis of .    Use to lift bases of and back to bases for and .    Identify and as familiar subspaces of matrices.        The function defined by is a linear transformation.    Compute , where and are the standard bases of and .    Use to lift bases of and back to bases for and .        Let be the linear transformation defined as , and let , ,     Compute .    Compute .        Let be the linear transformation defined as , and let , , (the standard basis of ).    Compute .    Compute .        Let and be linear transformations, and suppose are ordered bases for , , and , respectively. Prove: .    Let and . Show that the matrix satisfies the defining property of : , for all .     "
+},
+{
+  "id": "d_matrix_representation",
+  "level": "2",
+  "url": "s_matrixreps.html#d_matrix_representation",
+  "type": "Definition",
+  "number": "5.4.1",
+  "title": "Matrix representations of linear transformations.",
+  "body": " Matrix representations of linear transformations   Let and be vector spaces with ordered bases and , respectively. Given a linear transformation , the matrix representing with respect to and , is the matrix whose -th column is , considered as a column vector: , . In the special case where and we pick we write simply .   "
+},
+{
+  "id": "eg_matrixreps_std_basis",
+  "level": "2",
+  "url": "s_matrixreps.html#eg_matrixreps_std_basis",
+  "type": "Example",
+  "number": "5.4.2",
+  "title": "Matrix representation.",
+  "body": " Matrix representation   The function is linear. Compute , where and are the standard bases for and , respectively.    We have and . By definition, we have . We first compute for each : . To finish our computation, we must compute for each . Since is the standard basis of , this is not difficult: in general we have . Thus and .   "
+},
+{
+  "id": "th_matrixreps_matrixtransforms",
+  "level": "2",
+  "url": "s_matrixreps.html#th_matrixreps_matrixtransforms",
+  "type": "Theorem",
+  "number": "5.4.3",
+  "title": "Standard matrix as a matrix representation.",
+  "body": " Standard matrix as a matrix representation   Let be a linear transformation, and let be its standard matrix: , satisfies for all . We have where and are the standard bases of and , respectively. In other words, the matrix representing with respect to the standard bases of and is none other than the standard matrix of .    According to the recipe in we have . Let and be the standard ordered bases of and , respectively. To see why , observe that for all the -th column of is and the -th column of is . That these are equal is a result of the fact that for all vectors we have : that is, the coordinate vector of a vector with respect to the standard basis is just itself. (See ).   "
+},
+{
+  "id": "rm_better_basis",
+  "level": "2",
+  "url": "s_matrixreps.html#rm_better_basis",
+  "type": "Remark",
+  "number": "5.4.4",
+  "title": "",
+  "body": "  Let be a linear transformation, and let be its standard matrix: , is the matrix satisfying for all . According to , the standard matrix is just one way of representing : namely, the representation with respect to the standard bases of and . This begs the question of whether a different choice of bases might give rise to a more convenient matrix representation of . The answer is yes, as we will see over the course of this chapter.   "
+},
+{
+  "id": "eg_matrixreps_different_bases",
+  "level": "2",
+  "url": "s_matrixreps.html#eg_matrixreps_different_bases",
+  "type": "Example",
+  "number": "5.4.5",
+  "title": "Different choice of bases.",
+  "body": " Different choice of bases   Define as .    Compute , where is the standard basis of .    Compute , where .        According to , since is the standard basis is the matrix such that : .    We have , where the last equality uses the fact that and , as you can verify yourself.    So we have and . Moral: different choices of bases yield different matrix representations.   "
+},
+{
+  "id": "th_matrixrep",
+  "level": "2",
+  "url": "s_matrixreps.html#th_matrixrep",
+  "type": "Theorem",
+  "number": "5.4.6",
+  "title": "Defining property of matrix representation.",
+  "body": " Defining property of matrix representation   Let be a linear transformation, where and , and let be ordered bases for and , respectively.   For all we have . As usual is treated here as an column vector.    Property defines : , if is an matrix satisfying for all , then .       Let .    By definition we have . Given any , we can write for some . Then , as desired.    Assume satisfies for all . Then in particular we have for all . Since is the -th element of , we have , the -th standard basis element of . Using the column method ( ), we see that where is the -th column of . Thus implies that the -th column of is equal to , the -th column of , for all . Since and have identical columns, we conclude that , as desired.     "
+},
+{
+  "id": "rm_matrixreps_uniqueness",
+  "level": "2",
+  "url": "s_matrixreps.html#rm_matrixreps_uniqueness",
+  "type": "Remark",
+  "number": "5.4.7",
+  "title": "Uniqueness of <span class=\"process-math\">\\([T]_B^{B'}\\)<\/span>.",
+  "body": " Uniqueness of   The uniqueness property described in (2) of provides an alternative way of computing that can be useful in certain situations: namely, simply provide an matrix that satisfies the defining property for all . Since there is only one such matrix, we must have in this case.   "
+},
+{
+  "id": "fig_comm_diag",
+  "level": "2",
+  "url": "s_matrixreps.html#fig_comm_diag",
+  "type": "Figure",
+  "number": "5.4.8",
+  "title": "Commutative diagram for <span class=\"process-math\">\\([T]_B^{B'}\\)<\/span>",
+  "body": " Commutative diagram for  Commutative diagram for     "
+},
+{
+  "id": "th_matrixreps_model",
+  "level": "2",
+  "url": "s_matrixreps.html#th_matrixreps_model",
+  "type": "Theorem",
+  "number": "5.4.9",
+  "title": "Computing with matrix representations.",
+  "body": " Computing with matrix representations   Let be linear, let and be ordered bases of and , respectively, and let .     if and only if .     if and only if .     is a basis of if and only if is a basis of .     is a basis of if and only if is a basis of .     and .       Proof of (1)  We have .    Proof of (2)  We have . The last equivalence follows from the fact that .    Proof (3)-(4)  These now follow from (1)-(2) and statement (4) of .    "
+},
+{
+  "id": "eg_matrixreps_sym_skewsym",
+  "level": "2",
+  "url": "s_matrixreps.html#eg_matrixreps_sym_skewsym",
+  "type": "Example",
+  "number": "5.4.10",
+  "title": "Computing with matrix representations.",
+  "body": " Computing with matrix representations   The function is linear.   Compute , where is the standard basis of .    Compute bases of and .     Lift these bases to bases of and , using the coordinate vector isomorphism . Use these bases to identify and as familiar subspaces of matrices.       First compute Next, using the fact that for the standard basis of we have , we see that . It is not difficult to compute bases for and using , but the matrix is simple enough that we will compute these by inspection. For example, we see easily that . From the rank-nullity theorem, it then follows that . Thus we need just three linearly independent elements of to get a basis. Again, by inspection (using ) we see that . It is fairly easy to see the three vectors are independent, and thus form a basis of .  To lift the bases and to bases of and , we simply find the matrices in that correspond to these -vectors via the coordinate vector isomorphism : , the matrices that have these -vectors as their coordinate vectors. This is easily done by inspection. We conclude that is a basis of , and is a basis of .  Lastly, since are all symmetric, is a subspace of the space of symmetric matrices. Since both spaces have dimension three, we conclude that they are equal. A similar argument shows that is precisely the space of skew-symmetric matrices.   "
+},
+{
+  "id": "ss_vid_eg_coordinatemaps",
+  "level": "2",
+  "url": "s_matrixreps.html#ss_vid_eg_coordinatemaps",
+  "type": "Example",
+  "number": "5.4.11",
+  "title": "Video example: matrix representations.",
+  "body": " Video example: matrix representations   Video: matrix representations    "
+},
+{
+  "id": "s_matrixreps_ex-1-2",
+  "level": "2",
+  "url": "s_matrixreps.html#s_matrixreps_ex-1-2",
+  "type": "Exercise",
+  "number": "5.4.3.1",
+  "title": "",
+  "body": "    To every linear transformation from to , there is an associated matrix. Match the following linear transformations with their associated matrix.    Reflection about the y-axis    Counter-clockwise rotation by radians    Reflection about the line y=x    The projection onto the x-axis given by T(x,y)=(x,0)    Reflection about the -axis    Clockwise rotation by radians                        None of the above         "
+},
+{
+  "id": "s_matrixreps_ex-1-3",
+  "level": "2",
+  "url": "s_matrixreps.html#s_matrixreps_ex-1-3",
+  "type": "Exercise",
+  "number": "5.4.3.2",
+  "title": "",
+  "body": "    Find the matrix of the linear transformation from to with respect to the standard basis for , .         "
+},
+{
+  "id": "s_matrixreps_ex-1-4",
+  "level": "2",
+  "url": "s_matrixreps.html#s_matrixreps_ex-1-4",
+  "type": "Exercise",
+  "number": "5.4.3.3",
+  "title": "",
+  "body": "    The matrices  form a basis for the linear space Write the matrix of the linear transformation such that relative to this basis.       "
+},
+{
+  "id": "s_matrixreps_ex-1-5",
+  "level": "2",
+  "url": "s_matrixreps.html#s_matrixreps_ex-1-5",
+  "type": "Exercise",
+  "number": "5.4.3.4",
+  "title": "",
+  "body": "    Find the matrix of the linear transformation from to (upper triangular matrices) with respect to the standard basis for given by         "
+},
+{
+  "id": "s_matrixreps_ex-1-6",
+  "level": "2",
+  "url": "s_matrixreps.html#s_matrixreps_ex-1-6",
+  "type": "Exercise",
+  "number": "5.4.3.5",
+  "title": "",
+  "body": "    Find the matrix of the linear transformation from to (upper triangular matrices) with respect to the basis         "
+},
+{
+  "id": "s_matrixreps_ex-1-7",
+  "level": "2",
+  "url": "s_matrixreps.html#s_matrixreps_ex-1-7",
+  "type": "Exercise",
+  "number": "5.4.3.6",
+  "title": "",
+  "body": "    Let be the space spanned by the two functions and . Find the matrix of the linear transformation from into itself with respect to the basis .         "
+},
+{
+  "id": "s_matrixreps_ex-1-8",
+  "level": "2",
+  "url": "s_matrixreps.html#s_matrixreps_ex-1-8",
+  "type": "Exercise",
+  "number": "5.4.3.7",
+  "title": "",
+  "body": "    Let be the plane with equation in . The linear transformation maps into so, by restricting it to , we may regard it as a linear transformation .  Find the matrix of the restricted map with respect to the basis         "
+},
+{
+  "id": "s_matrixreps_ex-1-9",
+  "level": "2",
+  "url": "s_matrixreps.html#s_matrixreps_ex-1-9",
+  "type": "Exercise",
+  "number": "5.4.3.8",
+  "title": "",
+  "body": "    Consider the multiplication operator defined by where . Find an ordered basis for such that . Hint: where is the standard basis.   ,        "
+},
+{
+  "id": "s_matrixreps_ex-2-2",
+  "level": "2",
+  "url": "s_matrixreps.html#s_matrixreps_ex-2-2",
+  "type": "Exercise",
+  "number": "5.4.3.9",
+  "title": "",
+  "body": "   , ; ;    "
+},
+{
+  "id": "s_matrixreps_ex-2-3",
+  "level": "2",
+  "url": "s_matrixreps.html#s_matrixreps_ex-2-3",
+  "type": "Exercise",
+  "number": "5.4.3.10",
+  "title": "",
+  "body": "   , ; ;    "
+},
+{
+  "id": "s_matrixreps_ex-2-4",
+  "level": "2",
+  "url": "s_matrixreps.html#s_matrixreps_ex-2-4",
+  "type": "Exercise",
+  "number": "5.4.3.11",
+  "title": "",
+  "body": "   , where ;    "
+},
+{
+  "id": "s_matrixreps_ex-3",
+  "level": "2",
+  "url": "s_matrixreps.html#s_matrixreps_ex-3",
+  "type": "Exercise",
+  "number": "5.4.3.12",
+  "title": "",
+  "body": "  Suppose is a linear transformation with matrix representation , where and . Use the defining property of to determine the formula for for an arbitrary polynomial .   "
+},
+{
+  "id": "s_matrixreps_ex-4",
+  "level": "2",
+  "url": "s_matrixreps.html#s_matrixreps_ex-4",
+  "type": "Exercise",
+  "number": "5.4.3.13",
+  "title": "",
+  "body": "  Suppose is a linear transformation with matrix representation , where     Use the defining property of to compute and . (You will first need to compute and . )    Use (a) and the fact that is linear to give a general formula for in terms of and .     "
+},
+{
+  "id": "s_matrixreps_ex-5",
+  "level": "2",
+  "url": "s_matrixreps.html#s_matrixreps_ex-5",
+  "type": "Exercise",
+  "number": "5.4.3.14",
+  "title": "",
+  "body": "  The function defined as is a linear transformation.    Compute , where is the standard basis of .    Use to lift bases of and back to bases for and .    Identify and as familiar subspaces of matrices.     "
+},
+{
+  "id": "s_matrixreps_ex-6",
+  "level": "2",
+  "url": "s_matrixreps.html#s_matrixreps_ex-6",
+  "type": "Exercise",
+  "number": "5.4.3.15",
+  "title": "",
+  "body": "  The function defined by is a linear transformation.    Compute , where and are the standard bases of and .    Use to lift bases of and back to bases for and .     "
+},
+{
+  "id": "s_matrixreps_ex-7",
+  "level": "2",
+  "url": "s_matrixreps.html#s_matrixreps_ex-7",
+  "type": "Exercise",
+  "number": "5.4.3.16",
+  "title": "",
+  "body": "  Let be the linear transformation defined as , and let , ,     Compute .    Compute .     "
+},
+{
+  "id": "s_matrixreps_ex-8",
+  "level": "2",
+  "url": "s_matrixreps.html#s_matrixreps_ex-8",
+  "type": "Exercise",
+  "number": "5.4.3.17",
+  "title": "",
+  "body": "  Let be the linear transformation defined as , and let , , (the standard basis of ).    Compute .    Compute .     "
+},
+{
+  "id": "s_matrixreps_ex-9",
+  "level": "2",
+  "url": "s_matrixreps.html#s_matrixreps_ex-9",
+  "type": "Exercise",
+  "number": "5.4.3.18",
+  "title": "",
+  "body": "  Let and be linear transformations, and suppose are ordered bases for , , and , respectively. Prove: .    Let and . Show that the matrix satisfies the defining property of : , for all .   "
+},
+{
+  "id": "s_changeofbasis",
+  "level": "1",
+  "url": "s_changeofbasis.html",
+  "type": "Section",
+  "number": "5.5",
+  "title": "Change of basis",
+  "body": " Change of basis   Coordinate vectors and matrix representations work in tandem to model vectors in an abstract vector space as column vectors in , and linear transformations as matrices. In both cases the model depends on our choice of basis. In this section we investigate how different basis choices affect these various models. Specifically, we consider the two questions below.   Given and two ordered bases and , what is the algebraic relation between and ?    Given and two ordered bases and , what is the relation between and ?     We will tackle each question in turn. Both answers rely on something called a change of basis matrix  .    Change of basis matrix  We define change of basis matrices via a column-by-column formula and motivate the definition retroactively with .   Change of basis matrix  change of basis matrix    change of basis matrix    Let and be two ordered bases for the vector space . The change of basis from to is the matrix defined as . In other words, the -th column of is obtained by computing the coordinate vector of the -th element of the original basis with respect to the new basis .     Change of basis for coordinate vectors   Let and be two ordered bases of the -dimensional vector space .   Recall that is the identity transformation ( ), defined as for all . We have .    For all we have . In other words, to convert the -coordinates of a vector to -coordinates, simply multiply on the left by the matrix .    Property defines uniquely: , if satisfies for all , then .         Let . From formula applied to , we see that the -th column of is for all . Using formula from this is precisely the -th column of for all . We conclude that .    This follows from (1) and : .    By (2) of (the uniqueness claim), if satisfies for all , then . Since , we conclude .       Change of basis   Let , , .   Compute .    Let . Compute using the change of basis formula .          Using , we have . The two coordinate vector computations and were done as usual using : that is, by setting up in turn the vector equations and solving for using Gaussian elimination.    The usual application of produces the coordinate vector . We leave the details to you. To compute , we use the change of basis formula : . This should come as now surprise since .        Change of basis   Let be the standard basis of and consider the nonstandard basis .   Compute .    Compute using .          We have . The first two coordinate vector computations are nontrivial, but can be computed as usual using ; you can verify for yourself that . The third coordinate vector computation, is easier: since , we have , and thus .    Since is the standard basis, we see easily that . Using we have . Verify for yourself that we do indeed have .        The following properties are often useful when computing various change of basis matrices.   Change of basis matrix properties   Let be ordered bases for the -dimensional vector space .   We have . As a consequence, .    The matrix is invertible. In fact, we have     We have .         Let . From formula applied to , we see that the -th column of is for all . Using formula from this is precisely the -th column of for all . We conclude that . Choosing , we see that . The last equality above follows since the -th column of is , since is the standard basis.    This follows from (1) and : .    By (2) of (the uniqueness claim), if satisfies for all , then . Since , we conclude .       , standard basis   Consider the special situation where , is the standard basis, and is some nonstandard basis. In this case we have . In other words, is the matrix whose -th column is just the -th element of . Thus, in this situation we can compute by placing the elements of as columns of a matrix, and then use (2) of to compute .     Change of basis, standard   Let , , . Compute and .    According to we have . We then compute .     standard basis of  The observation from applies more generally when is the standard basis of the given vector space and is nonstandard. In this case computing will be easy as the coordinate vectors can be produced by inspection. See .    Change of basis, standard   Let , (standard basis) and , where . Compute .    We have . Here the coordinate vectors are easily computed by inspection since is the standard basis.  It turns out that is not so difficult to compute in this case since the columns of satisfy . From this observation and it is easy to see that .     Video example: change of basis matrix   Video: change of basis matrix     Before connecting change of basis matrices with matrix representations of linear transformations, it is worth gathering some of the different techniques for computing change of basis matrices we have discussed so far.   Change of basis computational tips   Let and be ordered bases of the vector space . Below you find a variety of techniques for computing and .    To compute directly, we must compute for each . This typically involves setting up and solving a linear system.    We have . This observation is useful in situations where (a) one change of basis matrix is easier to compute than the other and (b) computing inverse matrices is not too onerous.    If is the standard basis of , then is easy to compute. (See .)        Change of basis for transformations  We now investigate how our choice of basis affects matrix representations of linear transformations. We will only consider the special case where and we are comparing matrix representations and for two different ordered bases of .   Change of basis for transformations   Let be finite-dimensional, let be linear, and let and be two ordered bases for . We have , or equivalently .    First observe that follows from and (2) of . Next, to prove , it suffices by (2) of to show that the matrix satisfies for all . To this end, given any , we have .     Getting change of basis formulas correct   It is easy to get the various details of the change of basis formula wrong. Here is a potential way to keep things organized in your mind.   We wish to relate and with an equation of the form , where the asterisks are to be replaced with change of basis matrices or their inverses. Think of the three matrices on the right-hand side of this equation as a sequence of three things done to coordinate vectors, reading from right to left.     takes as inputs -coordinates of vectors, and outputs -coordinates. Thus the same should be true for .    Since takes as inputs -coordinates, we must first convert from -coordinates to -coordinates. So we should have .    Since outputs -coordinates, we need to then convert back to -coordinates. Thus .    If desired you may replace with .        Matrix representations and change of basis   The function is linear.   Compute , where is the the standard basis of .    Consider the nonstandard basis of . Compute directly using .    Now compute using and the change of basis formula .         According to , since is the standard basis of , is just the standard matrix of . Thus we can use to compute .    We compute directly using : . The coordinate vector computations in the last equality were all done by inspection: .    To use the change of basis formula , we need to compute and . Since is the standard basis of , using we see that we can build simply by placing the elements of in as its columns: . We then compute the inverse . Lastly, we compute , as we expected.      Consider the special case where : that is, when is a space of -tuples. We know from that for a unique matrix : the standard matrix of . The standard matrix of is useful, as it provides a convenient matrix formula for . To compute  directly using the recipe in , we must compute for each of the standard basis elements . For many naturally occurring transformations , this is often not so easy to do. provides an indirect method in such cases, as we now explain.  According to we have : , the standard matrix of is none other than the matrix representing with respect to the standard basis. This connection allows us to compute by first computing for some more convenient basis , and then using the change of basis formula.   Computing the standard matrix using change of basis   Let be a linear transformation, and let be its standard matrix. To compute using the change of basis formula , proceed as follows.    Find a convenient basis for which the action of is easily understood.    Compute .    Let be the standard basis of . Recall that . Now compute using the change of basis formula as .       is a powerful technique for computing matrix formulas for many interesting geometric linear transformations of : , rotations, reflections, and orthogonal projections. Often the very definition of such transformations will suggest a more convenient nonstandard basis : one that reflects the geometry involved. The next example illustrates this nicely.   Reflection in   Let be reflection through the line with equation . We showed in that such a reflection is a linear transformation.   Using the geometric definition of reflection (see ), come up with a basis such that and : the reflection  fixes  and flips  . You might use the interactive in to see how you should choose .    Show that .    Use the change of basis formula to compute , the standard matrix of .    Explain how your expression for is consistent with the matrix formula given in .          Geometrically, reflection through the line defined by fixes any vector that points along and flips any vector that points perpendicularly to . The vector points along ; and the vector points perpendicularly to (and hence ). It follows that is a basis satisfying and .    We compute . The coordinate vectors in the last equality were computed by inspection: .    Using , we have , and thus . We conclude that .    According to , we should have , where is the angle that makes with the positive -axis. Since lies along , it follows by drawing the relevant right triangle that , and hence that . This shows in this case, as expected.         Video example: change of basis for transformations   Video: change of basis for transformations      Video example: change of basis and reflection   Video: computing reflection via change of basis       Similarity and the holy commutative tent of linear algebra   supplies an algebraic answer to the question: What is the relation between two matrix representations and ? Letting , equation becomes . Matrices satisfying such a relation are said to be similar .   Similar matrices  similar matrices  Matrices are similar if there is an invertible matrix such that .    So any two matrix representations of a linear transformation are similar in the technical sense of . In fact, a converse of sorts is also true, as articulated in the theorem below.   Similarity and matrix representations   Two matrices and are similar if and only if there is a linear transformation and bases of satisfying and .    The discussion above shows that if and , then , where ; thus and are similar in this case.  Now assume that and are similar. By definition this means there is an invertible matrix such that . Define as the matrix transformation . According to we have where is the standard basis of . Next, letting be the ordered basis whose -th element is the -th column of , we have ( ), and hence , as desired.    We will see in that similar matrices are indeed similar algebraically speaking: , they share many of the same properties. provides the theoretical foundation to understand why this should be so: if and are similar, then they are two matrix representations of a common linear transformation ; their many shared properties are simply inherited from the single overlying linear transformation that they both represent! This circle of ideas is neatly encompassed by .   The holy commutative tent of linear algebra  The holy commutative tent of linear algebra. Here we have and .       Perhaps a little exegesis is in order here. Think of the map as a linear transformation up in abstract heaven; and think of the two matrices and as two earthly shadows of . OK, this gets at the holy bit somewhat, but why commutative? Each face of the tent is a commutative diagram, as we now explain.   Slanted sides of the tent  The commutativity of the two slanted sides of the tent is a consequence of : .    Triangular ends of the tent  Let , so that . The commutativity of the two triangular ends of the tent are consequences of : .    Base of tent  Lastly the commutativity of the base of the tent is a consequence of : or equivalently, .   In summary, the holy commutative tent conveys a close connection between the three maps . Since the base of the tent is commutative, and since the maps given by and are invertible, we can translate back and forth between the matrices and . Furthermore, since the two slanted sides of the tent are commutative, and since the coordinate vector transformations are invertible, we can translate up and down between our two matrix representations and and the overlying linear transformation . There is one true !   Similar matrices mantra   Similar matrices are but two shadows of a single overlying linear transformation.       WeBWork Exercises      Consider the ordered bases and for the vector space .  a. Find the transition matrix from to the standard ordered basis .    b. Find the transition matrix from to .    c. Find the transition matrix from to .    d. Find the transition matrix from to .    e. Find the coordinates of in the ordered basis . Note that .    f. Find the coordinates of in the ordered basis if the coordinate vector of in is .              Consider the ordered bases and for the vector space of lower triangular matrices with zero trace.  a. Find the transition matrix from to .    b. Find the coordinates of in the ordered basis if the coordinate vector of in is .    c. Find .              Let be the linear transformation defined by Let be bases for and , respectively. Find the matrix for relative to the basis in the domain and in the codomain.              Let be the vector space of all polynomials of degree or less in the variable . Let be the linear transformation defined by . That is, is the derivative operator. Let be ordered bases for and , respectively. Find the matrix for relative to the basis in the domain and in the codomain.              Let be the vector space of all polynomials of degree or less in the variable . Let be the linear transformation defined by . That is, is the derivative operator. Let be ordered bases for and , respectively. Find the matrix for relative to the basis in the domain and in the codomain.            Change of basis matrix   In each exercise a vector space is given along with two ordered bases and . Compute and .      , ,        , ,        , ,        , ,        Let , , , as in .    Compute directly using .    Compute using the change of basis matrix and .        Let , , , as in .    Compute directly using .    Compute using the change of basis matrix and the change of basis formula .        Let be the standard basis of . Find the ordered basis for which the change of basis matrix is given by .      Let be the standard basis of . Find the ordered basis for which the change of basis matrix is given by .      Suppose and are two bases for the space related by the change of basis matrix .   Let . Compute and .    Let . Compute and .         Let , , and be three ordered bases of the vector space .    Show that . To do so, set and and show that the matrix satisfies the defining property of : , for all .    Using (a), show that .       Change of basis methods   In each exercise a vector space is given along with two ordered bases and .    Compute directly using     Let be the standard basis for . Compute using formula from .        , ,        , ,        Let be the linear transformation defined as . Let be the standard basis of , and let .    Compute .    Compute using .        Let be the linear transformation defined as . Let be the standard basis of , and let .    Compute .    Compute using .       Reflection in   Let be nonzero and define , the line passing through the origin with direction vector . Let be reflection through . (See .) In this exercise we will use a change of basis argument to find a formula for the standard matrix of : , the matrix satisfying for all . Our answer will be expressed in terms of and .    Pick a basis where points along and is orthogonal to . (Both vectors will be expressed in terms of and .) Compute .    Let be the standard basis of . Use to compute .    How do we know that is the standard matrix of ?    Explain why your matrix , expressed in terms of and for agrees with the matrix formula provided in , which is expressed in terms of the angle that makes with the -axis.       "
+},
+{
+  "id": "d_change_of_basis",
+  "level": "2",
+  "url": "s_changeofbasis.html#d_change_of_basis",
+  "type": "Definition",
+  "number": "5.5.1",
+  "title": "Change of basis matrix.",
+  "body": " Change of basis matrix  change of basis matrix    change of basis matrix    Let and be two ordered bases for the vector space . The change of basis from to is the matrix defined as . In other words, the -th column of is obtained by computing the coordinate vector of the -th element of the original basis with respect to the new basis .   "
+},
+{
+  "id": "th_change_of_basis_coordinates",
+  "level": "2",
+  "url": "s_changeofbasis.html#th_change_of_basis_coordinates",
+  "type": "Theorem",
+  "number": "5.5.2",
+  "title": "Change of basis for coordinate vectors.",
+  "body": " Change of basis for coordinate vectors   Let and be two ordered bases of the -dimensional vector space .   Recall that is the identity transformation ( ), defined as for all . We have .    For all we have . In other words, to convert the -coordinates of a vector to -coordinates, simply multiply on the left by the matrix .    Property defines uniquely: , if satisfies for all , then .         Let . From formula applied to , we see that the -th column of is for all . Using formula from this is precisely the -th column of for all . We conclude that .    This follows from (1) and : .    By (2) of (the uniqueness claim), if satisfies for all , then . Since , we conclude .     "
+},
+{
+  "id": "ss_change_of_basis-5",
+  "level": "2",
+  "url": "s_changeofbasis.html#ss_change_of_basis-5",
+  "type": "Example",
+  "number": "5.5.3",
+  "title": "Change of basis.",
+  "body": " Change of basis   Let , , .   Compute .    Let . Compute using the change of basis formula .          Using , we have . The two coordinate vector computations and were done as usual using : that is, by setting up in turn the vector equations and solving for using Gaussian elimination.    The usual application of produces the coordinate vector . We leave the details to you. To compute , we use the change of basis formula : . This should come as now surprise since .      "
+},
+{
+  "id": "ss_change_of_basis-6",
+  "level": "2",
+  "url": "s_changeofbasis.html#ss_change_of_basis-6",
+  "type": "Example",
+  "number": "5.5.4",
+  "title": "Change of basis.",
+  "body": " Change of basis   Let be the standard basis of and consider the nonstandard basis .   Compute .    Compute using .          We have . The first two coordinate vector computations are nontrivial, but can be computed as usual using ; you can verify for yourself that . The third coordinate vector computation, is easier: since , we have , and thus .    Since is the standard basis, we see easily that . Using we have . Verify for yourself that we do indeed have .      "
+},
+{
+  "id": "th_change_of_basis_properties",
+  "level": "2",
+  "url": "s_changeofbasis.html#th_change_of_basis_properties",
+  "type": "Theorem",
+  "number": "5.5.5",
+  "title": "Change of basis matrix properties.",
+  "body": " Change of basis matrix properties   Let be ordered bases for the -dimensional vector space .   We have . As a consequence, .    The matrix is invertible. In fact, we have     We have .         Let . From formula applied to , we see that the -th column of is for all . Using formula from this is precisely the -th column of for all . We conclude that . Choosing , we see that . The last equality above follows since the -th column of is , since is the standard basis.    This follows from (1) and : .    By (2) of (the uniqueness claim), if satisfies for all , then . Since , we conclude .     "
+},
+{
+  "id": "eg_changebasis_standard",
+  "level": "2",
+  "url": "s_changeofbasis.html#eg_changebasis_standard",
+  "type": "Example",
+  "number": "5.5.6",
+  "title": "<span class=\"process-math\">\\(V=\\R^n\\text{,}\\)<\/span> <span class=\"process-math\">\\(B\\)<\/span> standard basis.",
+  "body": " , standard basis   Consider the special situation where , is the standard basis, and is some nonstandard basis. In this case we have . In other words, is the matrix whose -th column is just the -th element of . Thus, in this situation we can compute by placing the elements of as columns of a matrix, and then use (2) of to compute .   "
+},
+{
+  "id": "ss_change_of_basis-10",
+  "level": "2",
+  "url": "s_changeofbasis.html#ss_change_of_basis-10",
+  "type": "Example",
+  "number": "5.5.7",
+  "title": "Change of basis, <span class=\"process-math\">\\(B\\)<\/span> standard.",
+  "body": " Change of basis, standard   Let , , . Compute and .    According to we have . We then compute .   "
+},
+{
+  "id": "rm_changebasis_standard",
+  "level": "2",
+  "url": "s_changeofbasis.html#rm_changebasis_standard",
+  "type": "Remark",
+  "number": "5.5.8",
+  "title": "<span class=\"process-math\">\\(B\\)<\/span> standard basis of <span class=\"process-math\">\\(V\\)<\/span>.",
+  "body": " standard basis of  The observation from applies more generally when is the standard basis of the given vector space and is nonstandard. In this case computing will be easy as the coordinate vectors can be produced by inspection. See .  "
+},
+{
+  "id": "eg_changebasis_standard_mat",
+  "level": "2",
+  "url": "s_changeofbasis.html#eg_changebasis_standard_mat",
+  "type": "Example",
+  "number": "5.5.9",
+  "title": "Change of basis, <span class=\"process-math\">\\(B\\)<\/span> standard.",
+  "body": " Change of basis, standard   Let , (standard basis) and , where . Compute .    We have . Here the coordinate vectors are easily computed by inspection since is the standard basis.  It turns out that is not so difficult to compute in this case since the columns of satisfy . From this observation and it is easy to see that .   "
+},
+{
+  "id": "ss_vid_eg_changeofbasis",
+  "level": "2",
+  "url": "s_changeofbasis.html#ss_vid_eg_changeofbasis",
+  "type": "Example",
+  "number": "5.5.10",
+  "title": "Video example: change of basis matrix.",
+  "body": " Video example: change of basis matrix   Video: change of basis matrix    "
+},
+{
+  "id": "proc_changebasis_tips",
+  "level": "2",
+  "url": "s_changeofbasis.html#proc_changebasis_tips",
+  "type": "Procedure",
+  "number": "5.5.12",
+  "title": "Change of basis computational tips.",
+  "body": " Change of basis computational tips   Let and be ordered bases of the vector space . Below you find a variety of techniques for computing and .    To compute directly, we must compute for each . This typically involves setting up and solving a linear system.    We have . This observation is useful in situations where (a) one change of basis matrix is easier to compute than the other and (b) computing inverse matrices is not too onerous.    If is the standard basis of , then is easy to compute. (See .)     "
+},
+{
+  "id": "th_change_of_basis_transformations",
+  "level": "2",
+  "url": "s_changeofbasis.html#th_change_of_basis_transformations",
+  "type": "Theorem",
+  "number": "5.5.13",
+  "title": "Change of basis for transformations.",
+  "body": " Change of basis for transformations   Let be finite-dimensional, let be linear, and let and be two ordered bases for . We have , or equivalently .    First observe that follows from and (2) of . Next, to prove , it suffices by (2) of to show that the matrix satisfies for all . To this end, given any , we have .   "
+},
+{
+  "id": "rm_change_of_basis_transformations",
+  "level": "2",
+  "url": "s_changeofbasis.html#rm_change_of_basis_transformations",
+  "type": "Remark",
+  "number": "5.5.14",
+  "title": "Getting change of basis formulas correct.",
+  "body": " Getting change of basis formulas correct   It is easy to get the various details of the change of basis formula wrong. Here is a potential way to keep things organized in your mind.   We wish to relate and with an equation of the form , where the asterisks are to be replaced with change of basis matrices or their inverses. Think of the three matrices on the right-hand side of this equation as a sequence of three things done to coordinate vectors, reading from right to left.     takes as inputs -coordinates of vectors, and outputs -coordinates. Thus the same should be true for .    Since takes as inputs -coordinates, we must first convert from -coordinates to -coordinates. So we should have .    Since outputs -coordinates, we need to then convert back to -coordinates. Thus .    If desired you may replace with .      "
+},
+{
+  "id": "s_changeofbasis-4-5",
+  "level": "2",
+  "url": "s_changeofbasis.html#s_changeofbasis-4-5",
+  "type": "Example",
+  "number": "5.5.15",
+  "title": "Matrix representations and change of basis.",
+  "body": " Matrix representations and change of basis   The function is linear.   Compute , where is the the standard basis of .    Consider the nonstandard basis of . Compute directly using .    Now compute using and the change of basis formula .         According to , since is the standard basis of , is just the standard matrix of . Thus we can use to compute .    We compute directly using : . The coordinate vector computations in the last equality were all done by inspection: .    To use the change of basis formula , we need to compute and . Since is the standard basis of , using we see that we can build simply by placing the elements of in as its columns: . We then compute the inverse . Lastly, we compute , as we expected.     "
+},
+{
+  "id": "proc_standard_matrix_via_change_of_basis",
+  "level": "2",
+  "url": "s_changeofbasis.html#proc_standard_matrix_via_change_of_basis",
+  "type": "Procedure",
+  "number": "5.5.16",
+  "title": "Computing the standard matrix using change of basis.",
+  "body": " Computing the standard matrix using change of basis   Let be a linear transformation, and let be its standard matrix. To compute using the change of basis formula , proceed as follows.    Find a convenient basis for which the action of is easily understood.    Compute .    Let be the standard basis of . Recall that . Now compute using the change of basis formula as .     "
+},
+{
+  "id": "eg_changebasis_reflection",
+  "level": "2",
+  "url": "s_changeofbasis.html#eg_changebasis_reflection",
+  "type": "Example",
+  "number": "5.5.17",
+  "title": "Reflection in <span class=\"process-math\">\\(\\R^2\\)<\/span>.",
+  "body": " Reflection in   Let be reflection through the line with equation . We showed in that such a reflection is a linear transformation.   Using the geometric definition of reflection (see ), come up with a basis such that and : the reflection  fixes  and flips  . You might use the interactive in to see how you should choose .    Show that .    Use the change of basis formula to compute , the standard matrix of .    Explain how your expression for is consistent with the matrix formula given in .          Geometrically, reflection through the line defined by fixes any vector that points along and flips any vector that points perpendicularly to . The vector points along ; and the vector points perpendicularly to (and hence ). It follows that is a basis satisfying and .    We compute . The coordinate vectors in the last equality were computed by inspection: .    Using , we have , and thus . We conclude that .    According to , we should have , where is the angle that makes with the positive -axis. Since lies along , it follows by drawing the relevant right triangle that , and hence that . This shows in this case, as expected.      "
+},
+{
+  "id": "ss_vid_eg_changebasis_transform",
+  "level": "2",
+  "url": "s_changeofbasis.html#ss_vid_eg_changebasis_transform",
+  "type": "Example",
+  "number": "5.5.18",
+  "title": "Video example: change of basis for transformations.",
+  "body": " Video example: change of basis for transformations   Video: change of basis for transformations    "
+},
+{
+  "id": "ss_vid_eg_changebasis_reflection",
+  "level": "2",
+  "url": "s_changeofbasis.html#ss_vid_eg_changebasis_reflection",
+  "type": "Example",
+  "number": "5.5.20",
+  "title": "Video example: change of basis and reflection.",
+  "body": " Video example: change of basis and reflection   Video: computing reflection via change of basis    "
+},
+{
+  "id": "d_similar",
+  "level": "2",
+  "url": "s_changeofbasis.html#d_similar",
+  "type": "Definition",
+  "number": "5.5.22",
+  "title": "Similar matrices.",
+  "body": " Similar matrices  similar matrices  Matrices are similar if there is an invertible matrix such that .   "
+},
+{
+  "id": "th_similarity_matrixreps",
+  "level": "2",
+  "url": "s_changeofbasis.html#th_similarity_matrixreps",
+  "type": "Theorem",
+  "number": "5.5.23",
+  "title": "Similarity and matrix representations.",
+  "body": " Similarity and matrix representations   Two matrices and are similar if and only if there is a linear transformation and bases of satisfying and .    The discussion above shows that if and , then , where ; thus and are similar in this case.  Now assume that and are similar. By definition this means there is an invertible matrix such that . Define as the matrix transformation . According to we have where is the standard basis of . Next, letting be the ordered basis whose -th element is the -th column of , we have ( ), and hence , as desired.   "
+},
+{
+  "id": "fig_comm_tent",
+  "level": "2",
+  "url": "s_changeofbasis.html#fig_comm_tent",
+  "type": "Figure",
+  "number": "5.5.24",
+  "title": "The holy commutative tent of linear algebra",
+  "body": " The holy commutative tent of linear algebra  The holy commutative tent of linear algebra. Here we have and .      "
+},
+{
+  "id": "princ_similar_matrices",
+  "level": "2",
+  "url": "s_changeofbasis.html#princ_similar_matrices",
+  "type": "Mantra",
+  "number": "5.5.25",
+  "title": "Similar matrices mantra.",
+  "body": " Similar matrices mantra   Similar matrices are but two shadows of a single overlying linear transformation.   "
+},
+{
+  "id": "s_changeofbasis_ex-1-2",
+  "level": "2",
+  "url": "s_changeofbasis.html#s_changeofbasis_ex-1-2",
+  "type": "Exercise",
+  "number": "5.5.4.1",
+  "title": "",
+  "body": "    Consider the ordered bases and for the vector space .  a. Find the transition matrix from to the standard ordered basis .    b. Find the transition matrix from to .    c. Find the transition matrix from to .    d. Find the transition matrix from to .    e. Find the coordinates of in the ordered basis . Note that .    f. Find the coordinates of in the ordered basis if the coordinate vector of in is .         "
+},
+{
+  "id": "s_changeofbasis_ex-1-3",
+  "level": "2",
+  "url": "s_changeofbasis.html#s_changeofbasis_ex-1-3",
+  "type": "Exercise",
+  "number": "5.5.4.2",
+  "title": "",
+  "body": "    Consider the ordered bases and for the vector space of lower triangular matrices with zero trace.  a. Find the transition matrix from to .    b. Find the coordinates of in the ordered basis if the coordinate vector of in is .    c. Find .         "
+},
+{
+  "id": "s_changeofbasis_ex-1-4",
+  "level": "2",
+  "url": "s_changeofbasis.html#s_changeofbasis_ex-1-4",
+  "type": "Exercise",
+  "number": "5.5.4.3",
+  "title": "",
+  "body": "    Let be the linear transformation defined by Let be bases for and , respectively. Find the matrix for relative to the basis in the domain and in the codomain.         "
+},
+{
+  "id": "s_changeofbasis_ex-1-5",
+  "level": "2",
+  "url": "s_changeofbasis.html#s_changeofbasis_ex-1-5",
+  "type": "Exercise",
+  "number": "5.5.4.4",
+  "title": "",
+  "body": "    Let be the vector space of all polynomials of degree or less in the variable . Let be the linear transformation defined by . That is, is the derivative operator. Let be ordered bases for and , respectively. Find the matrix for relative to the basis in the domain and in the codomain.         "
+},
+{
+  "id": "s_changeofbasis_ex-1-6",
+  "level": "2",
+  "url": "s_changeofbasis.html#s_changeofbasis_ex-1-6",
+  "type": "Exercise",
+  "number": "5.5.4.5",
+  "title": "",
+  "body": "    Let be the vector space of all polynomials of degree or less in the variable . Let be the linear transformation defined by . That is, is the derivative operator. Let be ordered bases for and , respectively. Find the matrix for relative to the basis in the domain and in the codomain.         "
+},
+{
+  "id": "ex_changebasis_twospace",
+  "level": "2",
+  "url": "s_changeofbasis.html#ex_changebasis_twospace",
+  "type": "Exercise",
+  "number": "5.5.4.6",
+  "title": "",
+  "body": "   , ,    "
+},
+{
+  "id": "s_changeofbasis_ex-2-4",
+  "level": "2",
+  "url": "s_changeofbasis.html#s_changeofbasis_ex-2-4",
+  "type": "Exercise",
+  "number": "5.5.4.7",
+  "title": "",
+  "body": "   , ,    "
+},
+{
+  "id": "ex_changebasis_threespace",
+  "level": "2",
+  "url": "s_changeofbasis.html#ex_changebasis_threespace",
+  "type": "Exercise",
+  "number": "5.5.4.8",
+  "title": "",
+  "body": "   , ,    "
+},
+{
+  "id": "ex_changebasis_polynomials",
+  "level": "2",
+  "url": "s_changeofbasis.html#ex_changebasis_polynomials",
+  "type": "Exercise",
+  "number": "5.5.4.9",
+  "title": "",
+  "body": "   , ,    "
+},
+{
+  "id": "s_changeofbasis_ex-3",
+  "level": "2",
+  "url": "s_changeofbasis.html#s_changeofbasis_ex-3",
+  "type": "Exercise",
+  "number": "5.5.4.10",
+  "title": "",
+  "body": "  Let , , , as in .    Compute directly using .    Compute using the change of basis matrix and .     "
+},
+{
+  "id": "s_changeofbasis_ex-4",
+  "level": "2",
+  "url": "s_changeofbasis.html#s_changeofbasis_ex-4",
+  "type": "Exercise",
+  "number": "5.5.4.11",
+  "title": "",
+  "body": "  Let , , , as in .    Compute directly using .    Compute using the change of basis matrix and the change of basis formula .     "
+},
+{
+  "id": "s_changeofbasis_ex-5",
+  "level": "2",
+  "url": "s_changeofbasis.html#s_changeofbasis_ex-5",
+  "type": "Exercise",
+  "number": "5.5.4.12",
+  "title": "",
+  "body": "  Let be the standard basis of . Find the ordered basis for which the change of basis matrix is given by .   "
+},
+{
+  "id": "s_changeofbasis_ex-6",
+  "level": "2",
+  "url": "s_changeofbasis.html#s_changeofbasis_ex-6",
+  "type": "Exercise",
+  "number": "5.5.4.13",
+  "title": "",
+  "body": "  Let be the standard basis of . Find the ordered basis for which the change of basis matrix is given by .   "
+},
+{
+  "id": "s_changeofbasis_ex-7",
+  "level": "2",
+  "url": "s_changeofbasis.html#s_changeofbasis_ex-7",
+  "type": "Exercise",
+  "number": "5.5.4.14",
+  "title": "",
+  "body": "  Suppose and are two bases for the space related by the change of basis matrix .   Let . Compute and .    Let . Compute and .      "
+},
+{
+  "id": "ex_changebasis_three_bases",
+  "level": "2",
+  "url": "s_changeofbasis.html#ex_changebasis_three_bases",
+  "type": "Exercise",
+  "number": "5.5.4.15",
+  "title": "",
+  "body": "  Let , , and be three ordered bases of the vector space .    Show that . To do so, set and and show that the matrix satisfies the defining property of : , for all .    Using (a), show that .     "
+},
+{
+  "id": "s_changeofbasis_ex-9-3",
+  "level": "2",
+  "url": "s_changeofbasis.html#s_changeofbasis_ex-9-3",
+  "type": "Exercise",
+  "number": "5.5.4.16",
+  "title": "",
+  "body": "   , ,    "
+},
+{
+  "id": "s_changeofbasis_ex-9-4",
+  "level": "2",
+  "url": "s_changeofbasis.html#s_changeofbasis_ex-9-4",
+  "type": "Exercise",
+  "number": "5.5.4.17",
+  "title": "",
+  "body": "   , ,    "
+},
+{
+  "id": "s_changeofbasis_ex-10",
+  "level": "2",
+  "url": "s_changeofbasis.html#s_changeofbasis_ex-10",
+  "type": "Exercise",
+  "number": "5.5.4.18",
+  "title": "",
+  "body": "  Let be the linear transformation defined as . Let be the standard basis of , and let .    Compute .    Compute using .     "
+},
+{
+  "id": "s_changeofbasis_ex-11",
+  "level": "2",
+  "url": "s_changeofbasis.html#s_changeofbasis_ex-11",
+  "type": "Exercise",
+  "number": "5.5.4.19",
+  "title": "",
+  "body": "  Let be the linear transformation defined as . Let be the standard basis of , and let .    Compute .    Compute using .     "
+},
+{
+  "id": "s_changeofbasis_ex-12",
+  "level": "2",
+  "url": "s_changeofbasis.html#s_changeofbasis_ex-12",
+  "type": "Exercise",
+  "number": "5.5.4.20",
+  "title": "Reflection in <span class=\"process-math\">\\(\\R^2\\)<\/span>.",
+  "body": " Reflection in   Let be nonzero and define , the line passing through the origin with direction vector . Let be reflection through . (See .) In this exercise we will use a change of basis argument to find a formula for the standard matrix of : , the matrix satisfying for all . Our answer will be expressed in terms of and .    Pick a basis where points along and is orthogonal to . (Both vectors will be expressed in terms of and .) Compute .    Let be the standard basis of . Use to compute .    How do we know that is the standard matrix of ?    Explain why your matrix , expressed in terms of and for agrees with the matrix formula provided in , which is expressed in terms of the angle that makes with the -axis.     "
+},
+{
+  "id": "s_eigenvectors",
+  "level": "1",
+  "url": "s_eigenvectors.html",
+  "type": "Section",
+  "number": "6.1",
+  "title": "Eigenvectors and eigenvalues",
+  "body": " Eigenvectors and eigenvalues   For the remaining sections of this chapter we will focus our investigation on linear transformations of the form : that is, transformations from a space into itself. When is finite-dimensional we can get a computational grip on by choosing an ordered basis and considering the matrix representation . As was illustrated in , different matrix representations and provide different insights into the nature of . Furthermore, we see from this example that if the action of on a chosen basis is simple to describe, then so too is the matrix representation of with respect to that basis.  A particularly agreeable situation arises when the basis satisfies for all . Using recipe we in this case that the corresponding matrix representation is diagonal! Diagonal matrices are about as simple as they come: they wear all of their properties (rank, nullity, invertibility, ) on their sleeve. If we hope to find a diagonal matrix representation of , then we should seek nonzero vectors satisfying for some : these are called eigenvectors of .    Eigenvectors  We further motivate the notion of an eigenvector with an illustrative example.    Consider where . It turns out that has a simple geometric description, though you would not have guessed this from the standard matrix . To reveal the geometry at play, we represent with respect to the nonstandard basis . We compute . It follows, using the formula , that . The alternative representation given by nicely summarizes the action of : it fixes the vector and maps the vector , which is orthogonal to , to . We claim this implies that is none other than reflection through the line ! This follows from . In more detail, from the geometry of the setup, it is easy to see that we have (reflection fixes the line ) and (reflection ``flips\" vectors perpendicular to ). Since and agree on the basis , we must have .  In even more detail, since is a basis, for any vector we can write for some . It follows that . Together, formulas give us a satisfying geometric understanding of our reflection operator . Let : this is the line perpendicular to passing through the origin. Formula gives a decomposition of the vector in terms of its components along and . Formula tells us what does to this decomposition: namely, it leaves the component along unchanged and ``flips\" the component along .  Reflection through   Reflection ,      The success of our analysis in depended on finding the vectors and satisfying and , as they provided a basis on which the action of is particularly simple. As we make official in the vectors are called eigenvectors of .   eigenvector  eigenvalue  Eigenvectors and eigenvalues   Let be a linear transformation. A nonzero vector satisfying for some is called an eigenvector of with eigenvalue  .  Similarly, given a square matrix , a nonzero satisfying for some is called an eigenvector of with eigenvalue  . In other words, an eigenvector (resp., eigenvalue) of is just an eigenvector (resp., eigenvalue) of the matrix transformation .  In both cases (linear transformation or matrix) we call an eigenvector with eigenvalue a -eigenvector .      You ask: Why use instead of or ? My answer: tradition!      Note well the important condition that an eigenvector must be nonzero. This means the zero vector by definition is not an eigenvector. If we allowed as an eigenvector, then the notion of the eigenvalue of an eigenvector would no longer be well-defined. This is because for any linear transformation we have which implies that for all .     Visualizing eigenvectors   Suppose is an eigenvector of the linear transformation . Letting , this means that : , maps an eigenvector to some other element of the one-dimensional subspace it defines. The special case where is easy to visualize and can help guide your intuition in the general case. (See ) Here the space is a line passing through origin. If is an eigenvector of a given linear transformation, then it must be mapped to some other vector pointing along : , or . It it is not an eigenvector, it gets mapped to a vector that does not point along .     Visualizing eigenvectors  Visualizing eigenvectors     Given a linear transformation we wish to (a) determine which values are eigenvalues of , and (b) find all the eigenvectors corresponding to a given eigenvalue . In the next examples we carry out such an investigation in an ad hoc manner.   Zero and identity transformations   Assume is nonzero. Recall that the zero transformation and identity transformation are defined as and for all . Find all eigenvalues and eigenvectors of and .    Since for all , we see that is the only eigenvalue of , and that all nonzero vectors of are -eigenvectors.  Similarly, since for all , we see that is the only eigenvalue of , and that all nonzero vectors of are -eigenvectors.     Scaling transformations  Let be a vector space, let be a fixed scalar, and let be the scaling transformation defined as for all . Find all eigenvectors and eigenvalues of .   Since for all , we see that all nonzero vectors of are eigenvectors with eigenvalue . It follows that is the only eigenvalue of .     Reflection   Let be a line in passing through the origin, and define to be reflection through . (See .) Find all eigenvectors and eigenvalues of . Use a geometric argument.    Since the reflection operator fixes all elements of the line , we have for any . This shows that any nonzero element of is an eigenvectors of with eigenvalue .  Similarly, since is orthogonal to , reflection through takes any element and maps it to . Thus any nonzero element is an eigenvector of with eigenvalue .  We claim that these two cases exhaust all eigenvectors of . Indeed, in general a nonzero vector lies in the line , and its reflection lies in the line , which itself is the result of reflecting the line through . Now assume . We must have , since if ; but if it follows that the line and its reflection are equal. Clearly the only lines that are mapped to themselves by reflection through are and . Thus if is an eigenvector of it must lie in or .     Rotation   Fix and define to be rotation by . (See ) Find all eigenvectors and eigenvalues of . Use a geometric argument. Your answer will depend on the choice of .      Case:  Rotation by sends every vector to : , . It follows that is the only eigenvalue of and all nonzero elements of are eigenvectors with eigenvalue .    Case:  A similar argument to the one in shows that has no eigenvalues in this case. In more detail, a nonzero vector lies in the line , and its rotation lies in the line , which is the result of rotating by the angle . Since , it is clear that , and thus we cannot have for some .       Transposition   Consider the linear transformation . Determine all eigenvectors and eigenvalues of .    To be an eigenvector of a nonzero matrix must satisfy for some . Using the definition of , this means . We ask for which scalars does there exist a nonzero matrix satisfying . Let's consider some specific choices of .   Case:  In this case reads . Thus the eigenvectors of with eigenvalue are precisely the nonzero symmetric matrices: , .    Case:  For this choice of we seek nonzero matrices satisfying . These are precisely the nonzero skew-symmetric matrices: , .    Case:  Suppose satisfies . Equating the entries of these two matrices yields the system . The first two equations imply , using the fact that . The second two equations imply further that and . Since , . It follows that . We conclude that for , if , then . It follows that is not an eigenvalue of in this case.  In summation, our analysis shows that the transposition operator has exactly two eigenvalues, and , that the eigenvectors of with eigenvalue 1 are the nonzero symmetric matrices, and that the eigenvalues of with eigenvalue are the nonzero skew-symmetric matrices.      Finding eigenvalues and eigenvectors systematically  You can imagine that our ad hoc approach to finding eigenvalues and eigenvectors will break down once the linear transformation under consideration becomes complicated enough. As such it is vital to have a systematic method of finding all eigenvalues and eigenvectors of a linear transformation . The rest of this section is devoted to describing just such a method in the special case where . The first key observation is that we can answer the eigenvalues\/eigenvectors of by answering the same question about , where is an ordered basis of .   Eigenvectors of a linear transformation   Let be a linear transformation, let be an ordered basis of , and let .    A vector is an eigenvector of with eigenvalue if and only if is an eigenvector of with eigenvalue .    A real number is an eigenvalue of if and only if it is an eigenvalue of . Thus and have the same set of eigenvalues.      We prove statement (1) as a chain of equivalences: . From (1) it follows directly that if is an an eigenvalue of , then it is an eigenvalue of . Conversely, if is an eigenvalue of , then there is a nonzero such that . Since is surjective ( , (3)), there is a vector such that . It follows from (1) that is a -eigenvector of , and thus that is an eigenvalue of .    Thanks to , we can boil down the eigenvector\/eigenvalue question for linear transformations of finite vector spaces to the analogous question about square matrices. The next theorem is the key result.   Eigenvectors of matrices   Let be an matrix. Fix .   The eigenvectors of with eigenvalue are the nonzero elements of the subspace .    As a consequence, is an eigenvalue of if and only if the matrix is singular ( , not invertible).       First observe that . From this equivalence it follows that . Since an eigenvector must be nonzero, we conclude that the -eigenvectors of are precisely the nonzero elements of . This proves statement (1). As a consequence, we see that has as an eigenvalue if and only if contains nonzero element elements: , if and only if . By the invertibility theorem this is true if and only if is not invertible.    According to , the eigenvectors of live in null spaces of matrices of the form . Accordingly, we call these spaces eigenspaces .   Eigenspaces   Let be an matrix. Given the -eigenspace of is the subspace defined as . Similarly, given a linear transformation and , the -eigenspace of is the subspace defined as . In both cases the nonzero elements of are precisely the -eigenvectors.    We nearly have a complete method for computing the eigenvalues and eigenvectors of a square matrix . The last step is to identify the values of for which is not invertible. By the invertibility theorem , the matrix is not invertible if and only if . Thus the eigenvalues of are precisely the zeros of the function . We have proved the following corollary.   Eigenvalues of a matrix   Let be an matrix, let , and let . The following are equivalent:     is an eigenvalue of ;     is singular;     ;     .       Rotation (again)   Fix and let be rotation by . Recall that we have where . Now compute . We can use the quadratic formula to find the roots of : . When , this reduces to , confirming our conclusion in that is the only eigenvalue of the rotation by operator.  When and , then and we see that has no real roots. This confirms our conclusion in that such rotations have no eigenvalues.    Clearly the function deserves a name; we call it the characteristic polynomial of .   characteristic polynomial of a matrix  Characteristic polynomial of a matrix   Let be . The characteristic polynomial of is the function .    We will show below that is indeed a polynomial ( ). We postpone that discussion for now in order to present some examples of systematically computing eigenvalues and eigenvectors of matrices. Below you find the the complete description of this procedure.   Computing eigenspaces of a matrix   Let be an matrix. To find all eigenvalues of and compute a basis for the corresponding eigenspace , proceed as follows.    Compute . Let be the distinct real roots of . These are the eigenvalues of .    For each , the corresponding eigenspace is . Use the null space algorithm ( ) to compute a basis for .       Compute eigenspaces   Let .   Find all eigenvalue of .    Compute a basis for the eigenspace for each eigenvalue .       We compute . Thus the eigenvalues of are and .   Basis for  We have . Thus is a basis for .    Basis for  We have . Thus is a basis for .      Compute eigenspaces   Let .    Find all eigenvalues of .    Compute a basis for the eigenspace for each eigenvalue .      First compute . We see that the eigenvalues of are and . Now compute bases for their corresponding eigenspaces.   Basis of  We have . Thus is a basis for .    Basis of  We have . Thus is a basis for .      Eigenspaces as packets of eigenvectors  It is important to realize that if is an eigenvalue of , then there is not just one -eigenvector, but rather an entire subspace of eigenvectors: that is, each of the infinitely many nonzero elements of is an eigenvector with eigenvalue . Thus every matrix has associated to it various packets of eigenvectors of varying size, as measured by .  For example the matrix of has two packets of eigenvectors associated to it: the 0-eigenvectors form the 1-dimensional packet , and the 3-eigenvectors form the 2-dimensional packet .   Our next example illustrates that the characteristic polynomial of a matrix may not factor completely into linear terms.   Compute eigenspaces   The characteristic polynomial of is .   Find all eigenvalues of .    For each eigenvalue compute a basis for the eigenspace .          To find the eigenvalues of we must factor the polynomial . We first look for integer roots that divide the constant term . We see that , and thus that is a factor of . Using polynomial long division, we see that . Continuing this process with the cubic polynomial, we factor . Since is irreducible over , we have our factorization , and we see that the eigenvalues of are and .     Basis of  We have . We conclude that is a basis of .    Basis of  We have . We conclude that is a basis of .         bring to light a connection between eigenvalues and invertibility that is worth highlighting.   Null space as eigenspace   Let be an matrix.   The -eigenspace of is equal to the null space of : , .    Zero is an eigenvalue of if and only if is not invertible.         We have Since if and only if , we conclude that , and hence .    Zero is an eigenvalue of if and only if is nontrivial, if and only if is nontrivial (by (1)), if and only if is not invertible.      Of course statement (2) of gives rise to yet another equivalent formulation of invertibility, and we include this in our ever-expanding invertibility theorem at the end of the section. We end our current discussion with an example illustrating how to compute the eigenvalues and eigenvectors of an arbitrary linear transformation of a finite-dimensional space. The idea is to first represent as a matrix with respect to some basis , apply to this matrix, and then lift the results back to .   Computing eigenspaces of a linear transformation   Let be a linear transformation of a finite-dimensional vector space . To compute the eigenvalues and eigenspaces of , proceed as follows.    Pick any ordered basis of and compute .    Apply to to compute bases of for each eigenvalue of .    For each eigenvalue , lift the basis of back up to using the coordinate transformation . The result is the basis for the -eigenspace of .       Transposition (again)   Let be defined as .    Find all eigenvalues of .    For each eigenvalue of compute a basis for .      Let , the standard ordered basis of . Compute : . Now apply to . From we conclude that and are the only eigenvalues of (and hence also ). Bases for the corresponding eigenspaces of are easily computed as . Now lift these up to bases of the eigenspaces and of : . It is easy to see that and are the subspaces of symmetric and skew-symmetric matrices, respectively. This is consistent with our analysis in .      Properties of the characteristic polynomial  We turn now to some very useful properties of the characteristic polynomial of a square matrix .   Characteristic polynomial   Let be an matrix.    The function is a monic polynomial of degree with real coefficients: , .    Over the complex numbers we can factor completely as where the are the (not necessarily distinct) roots of .    The eigenvalues of are precisely the real roots of : , the for which .    The coefficient in satisfies .    The coefficient in satisfies .    We conclude that .       Proof of (1)  We show the claim by induction on . The claim is easily seen to be true for all and matrices.  Fix and assume the claim is true for all matrices. Let . Expanding along the first row yields . (Recall that for any matrix the notation denotes the submatrix obtained by removing the -th row and -th column of .) First observe that , and thus is the characteristic polynomial of the matrix . By induction this is a monic polynomial of degree , and hence the first term of , is a monic polynomial of degree . Unfortunately, the remaining terms in the expansion do not lend themselves to a direct application of the induction hypothesis. However, we observe that the submatrices for all satisfy the following property: their first columns contains only scalars; the remaining columns contain exactly one entry of the form , while the rest of the entries are scalars. An easy (additional) induction argument shows that the determinant of such a matrix is polynomial of degree at most . (We leave this to you!) Since the first term of is a monic polynomial of degree and the rest of the terms are polynomials of degree at most , we conclude that itself is a monic polynomial of degree , as desired.    Proof of (2)-(3)  Statement (2) is the fundamental theorem of algebra: every polynomial with real coeofficients factors completely over the complex numbers. Statement (3) follows from .    Proof of (4)-(6)  Statement (6) clearly follows from statements (4) and (5). From (1) and (2) we conclude . Expanding out the right-hand side of this polynomial equality yields a polynomial of the form . Going back and equating coefficients between the left- and right-hand sides of yields . This proves half of statements (4) and (5). The fact that can be proved by induction using a modified version of the argument from the proof of (1) above. It remains to show that . We have .      Characteristic polynomial for matrices   Let be a matrix, and let . Using we have . This is a useful trick if you want to produce a matrix with a prescribed characteristic polynomial. For example, a matrix with characteristic polynomial has trace equal to 0 and determinant equal to . Such matrices are easy to construct: , .    An important consequence of is that an matrix can have at most distinct eigenvalues. Indeed, the eigenvalues of are the real roots appearing among the in the factorization . This proves the following corollary.   Number of eigenvalues   An matrix has at most distinct eigenvalues.    Lastly, as promised we end by incorporating statement (2) of into our invertibility theorem.   Invertibility theorem   Let be an matrix. The following statements are equivalent.    is invertible.    The matrix equation has a unique solution for any .    The matrix equation has a solution for any .    The matrix equation has a unique solution: namely, .     is row equivalent to , the identity matrix.     is a product of elementary matrices.     .                             Any of the following equivalent conditions about the set of columns of hold: is a basis of ; spans ; is linearly independent.    Any of the following equivalent conditions about the set of rows of hold: is a basis of ; spans ; is linearly independent.    The matrix transformationn is an isomorphism.     is not an eigenvalue of .          WeBWork Exercises      Find the eigenvalues of , given that  and its eigenvectors are and .  The corresponding eigenvalues are , , and .                           Find the eigenvalues and corresponding eigenvectors of the matrix  The eigenvalue corresponds to the eigenvector .  The eigenvalue corresponds to the eigenvector .  The eigenvalue corresponds to the eigenvector .                           Find the eigenvalues of the matrix .  The eigenvalues are , where   has an eigenvector ,  has an eigenvector ,   has an eigenvector ,  has an eigenvector .  Note: you may want to use a graphing calculator to estimate the roots of the polynomial which defines the eigenvalues.                                Suppose a matrix has only two distinct eigenvalues. Suppose that and . Find the eigenvalues of with their algebraic multiplicities.  The smaller eigenvalue = has multiplicity , and  the larger eigenvalue = has multiplicity .                                If and are eigenvectors of a matrix corresponding to the eigenvalues and , respectively,  then   and             Let be eigenvectors of the matrix which correspond to the eigenvalues , , and , respectively, and let  Express as a linear combination of , , and , and find .        .                            For each matrix below (a) compute the characteristic polynomial , (b) find all eigenvalues of the matrix, and (c) compute bases for eigenspaces of each eigenvalue.                          A=                                        The characteristic polynomial of is .      Matrices and below both have characteristic polynomial . For each matrix compute a basis of for each eigenvalue .                  Let be an invertible matrix. Prove: is an eigenvalue of if and only if is an eigenvalue of .      Let be a square matrix.     Prove: and have the same characteristic polynomial.    First show that , then use a relevant property of the determinant.      Prove: and have the same eigenvalues.      Fix and let be the -eigenspaces of and , respectively. Prove: .    First show that , then use the rank-nullity theorem.       Let be an eigenvalue of the matrix .   Prove by induction: is an eigenvalue of for any positive integer .    Assume that is invertible. Prove: is an eigenvalue of for any integer .         Assume is a square matrix satisfying for some positive integer . Show that is the only eigenvalue of . Your argument must make clear that is in fact an eigenvalue of .      Assume is a square matrix satisfying    Prove: if is an eigenvalue of , then or .    Prove: if does not have as an eigenvalue, then .         "
+},
+{
+  "id": "eg_reflection_eigenvectors",
+  "level": "2",
+  "url": "s_eigenvectors.html#eg_reflection_eigenvectors",
+  "type": "Example",
+  "number": "6.1.1",
+  "title": "",
+  "body": "  Consider where . It turns out that has a simple geometric description, though you would not have guessed this from the standard matrix . To reveal the geometry at play, we represent with respect to the nonstandard basis . We compute . It follows, using the formula , that . The alternative representation given by nicely summarizes the action of : it fixes the vector and maps the vector , which is orthogonal to , to . We claim this implies that is none other than reflection through the line ! This follows from . In more detail, from the geometry of the setup, it is easy to see that we have (reflection fixes the line ) and (reflection ``flips\" vectors perpendicular to ). Since and agree on the basis , we must have .  In even more detail, since is a basis, for any vector we can write for some . It follows that . Together, formulas give us a satisfying geometric understanding of our reflection operator . Let : this is the line perpendicular to passing through the origin. Formula gives a decomposition of the vector in terms of its components along and . Formula tells us what does to this decomposition: namely, it leaves the component along unchanged and ``flips\" the component along .  Reflection through   Reflection ,     "
+},
+{
+  "id": "d_eigenvectors",
+  "level": "2",
+  "url": "s_eigenvectors.html#d_eigenvectors",
+  "type": "Definition",
+  "number": "6.1.3",
+  "title": "Eigenvectors and eigenvalues.",
+  "body": " eigenvector  eigenvalue  Eigenvectors and eigenvalues   Let be a linear transformation. A nonzero vector satisfying for some is called an eigenvector of with eigenvalue  .  Similarly, given a square matrix , a nonzero satisfying for some is called an eigenvector of with eigenvalue  . In other words, an eigenvector (resp., eigenvalue) of is just an eigenvector (resp., eigenvalue) of the matrix transformation .  In both cases (linear transformation or matrix) we call an eigenvector with eigenvalue a -eigenvector .   "
+},
+{
+  "id": "rm_eigenvector_lambda",
+  "level": "2",
+  "url": "s_eigenvectors.html#rm_eigenvector_lambda",
+  "type": "Remark",
+  "number": "6.1.4",
+  "title": "",
+  "body": "  You ask: Why use instead of or ? My answer: tradition!   "
+},
+{
+  "id": "rm_eigenvector_nonzero",
+  "level": "2",
+  "url": "s_eigenvectors.html#rm_eigenvector_nonzero",
+  "type": "Remark",
+  "number": "6.1.5",
+  "title": "",
+  "body": "  Note well the important condition that an eigenvector must be nonzero. This means the zero vector by definition is not an eigenvector. If we allowed as an eigenvector, then the notion of the eigenvalue of an eigenvector would no longer be well-defined. This is because for any linear transformation we have which implies that for all .   "
+},
+{
+  "id": "rm_eigenvectors_visual",
+  "level": "2",
+  "url": "s_eigenvectors.html#rm_eigenvectors_visual",
+  "type": "Remark",
+  "number": "6.1.6",
+  "title": "Visualizing eigenvectors.",
+  "body": " Visualizing eigenvectors   Suppose is an eigenvector of the linear transformation . Letting , this means that : , maps an eigenvector to some other element of the one-dimensional subspace it defines. The special case where is easy to visualize and can help guide your intuition in the general case. (See ) Here the space is a line passing through origin. If is an eigenvector of a given linear transformation, then it must be mapped to some other vector pointing along : , or . It it is not an eigenvector, it gets mapped to a vector that does not point along .   "
+},
+{
+  "id": "fig_eigenvector_visual",
+  "level": "2",
+  "url": "s_eigenvectors.html#fig_eigenvector_visual",
+  "type": "Figure",
+  "number": "6.1.7",
+  "title": "Visualizing eigenvectors",
+  "body": " Visualizing eigenvectors  Visualizing eigenvectors    "
+},
+{
+  "id": "eg_eigenvectors_zerotransform",
+  "level": "2",
+  "url": "s_eigenvectors.html#eg_eigenvectors_zerotransform",
+  "type": "Example",
+  "number": "6.1.8",
+  "title": "Zero and identity transformations.",
+  "body": " Zero and identity transformations   Assume is nonzero. Recall that the zero transformation and identity transformation are defined as and for all . Find all eigenvalues and eigenvectors of and .    Since for all , we see that is the only eigenvalue of , and that all nonzero vectors of are -eigenvectors.  Similarly, since for all , we see that is the only eigenvalue of , and that all nonzero vectors of are -eigenvectors.   "
+},
+{
+  "id": "eg_eigenvectors_scaling",
+  "level": "2",
+  "url": "s_eigenvectors.html#eg_eigenvectors_scaling",
+  "type": "Example",
+  "number": "6.1.9",
+  "title": "Scaling transformations.",
+  "body": " Scaling transformations  Let be a vector space, let be a fixed scalar, and let be the scaling transformation defined as for all . Find all eigenvectors and eigenvalues of .   Since for all , we see that all nonzero vectors of are eigenvectors with eigenvalue . It follows that is the only eigenvalue of .   "
+},
+{
+  "id": "eg_eigenvector_adhoc_reflection",
+  "level": "2",
+  "url": "s_eigenvectors.html#eg_eigenvector_adhoc_reflection",
+  "type": "Example",
+  "number": "6.1.10",
+  "title": "Reflection.",
+  "body": " Reflection   Let be a line in passing through the origin, and define to be reflection through . (See .) Find all eigenvectors and eigenvalues of . Use a geometric argument.    Since the reflection operator fixes all elements of the line , we have for any . This shows that any nonzero element of is an eigenvectors of with eigenvalue .  Similarly, since is orthogonal to , reflection through takes any element and maps it to . Thus any nonzero element is an eigenvector of with eigenvalue .  We claim that these two cases exhaust all eigenvectors of . Indeed, in general a nonzero vector lies in the line , and its reflection lies in the line , which itself is the result of reflecting the line through . Now assume . We must have , since if ; but if it follows that the line and its reflection are equal. Clearly the only lines that are mapped to themselves by reflection through are and . Thus if is an eigenvector of it must lie in or .   "
+},
+{
+  "id": "eg_eigenvector_adhoc_rotation",
+  "level": "2",
+  "url": "s_eigenvectors.html#eg_eigenvector_adhoc_rotation",
+  "type": "Example",
+  "number": "6.1.11",
+  "title": "Rotation.",
+  "body": " Rotation   Fix and define to be rotation by . (See ) Find all eigenvectors and eigenvalues of . Use a geometric argument. Your answer will depend on the choice of .      Case:  Rotation by sends every vector to : , . It follows that is the only eigenvalue of and all nonzero elements of are eigenvectors with eigenvalue .    Case:  A similar argument to the one in shows that has no eigenvalues in this case. In more detail, a nonzero vector lies in the line , and its rotation lies in the line , which is the result of rotating by the angle . Since , it is clear that , and thus we cannot have for some .     "
+},
+{
+  "id": "eg_eigenvector_adhoc_transposition",
+  "level": "2",
+  "url": "s_eigenvectors.html#eg_eigenvector_adhoc_transposition",
+  "type": "Example",
+  "number": "6.1.12",
+  "title": "Transposition.",
+  "body": " Transposition   Consider the linear transformation . Determine all eigenvectors and eigenvalues of .    To be an eigenvector of a nonzero matrix must satisfy for some . Using the definition of , this means . We ask for which scalars does there exist a nonzero matrix satisfying . Let's consider some specific choices of .   Case:  In this case reads . Thus the eigenvectors of with eigenvalue are precisely the nonzero symmetric matrices: , .    Case:  For this choice of we seek nonzero matrices satisfying . These are precisely the nonzero skew-symmetric matrices: , .    Case:  Suppose satisfies . Equating the entries of these two matrices yields the system . The first two equations imply , using the fact that . The second two equations imply further that and . Since , . It follows that . We conclude that for , if , then . It follows that is not an eigenvalue of in this case.  In summation, our analysis shows that the transposition operator has exactly two eigenvalues, and , that the eigenvectors of with eigenvalue 1 are the nonzero symmetric matrices, and that the eigenvalues of with eigenvalue are the nonzero skew-symmetric matrices.  "
+},
+{
+  "id": "th_eigenvectors_transformation_matrixrep",
+  "level": "2",
+  "url": "s_eigenvectors.html#th_eigenvectors_transformation_matrixrep",
+  "type": "Theorem",
+  "number": "6.1.13",
+  "title": "Eigenvectors of a linear transformation.",
+  "body": " Eigenvectors of a linear transformation   Let be a linear transformation, let be an ordered basis of , and let .    A vector is an eigenvector of with eigenvalue if and only if is an eigenvector of with eigenvalue .    A real number is an eigenvalue of if and only if it is an eigenvalue of . Thus and have the same set of eigenvalues.      We prove statement (1) as a chain of equivalences: . From (1) it follows directly that if is an an eigenvalue of , then it is an eigenvalue of . Conversely, if is an eigenvalue of , then there is a nonzero such that . Since is surjective ( , (3)), there is a vector such that . It follows from (1) that is a -eigenvector of , and thus that is an eigenvalue of .   "
+},
+{
+  "id": "th_eigenvectors_matrices",
+  "level": "2",
+  "url": "s_eigenvectors.html#th_eigenvectors_matrices",
+  "type": "Theorem",
+  "number": "6.1.14",
+  "title": "Eigenvectors of matrices.",
+  "body": " Eigenvectors of matrices   Let be an matrix. Fix .   The eigenvectors of with eigenvalue are the nonzero elements of the subspace .    As a consequence, is an eigenvalue of if and only if the matrix is singular ( , not invertible).       First observe that . From this equivalence it follows that . Since an eigenvector must be nonzero, we conclude that the -eigenvectors of are precisely the nonzero elements of . This proves statement (1). As a consequence, we see that has as an eigenvalue if and only if contains nonzero element elements: , if and only if . By the invertibility theorem this is true if and only if is not invertible.   "
+},
+{
+  "id": "d_eigenspace",
+  "level": "2",
+  "url": "s_eigenvectors.html#d_eigenspace",
+  "type": "Definition",
+  "number": "6.1.15",
+  "title": "Eigenspaces.",
+  "body": " Eigenspaces   Let be an matrix. Given the -eigenspace of is the subspace defined as . Similarly, given a linear transformation and , the -eigenspace of is the subspace defined as . In both cases the nonzero elements of are precisely the -eigenvectors.   "
+},
+{
+  "id": "cor_eigenvalues",
+  "level": "2",
+  "url": "s_eigenvectors.html#cor_eigenvalues",
+  "type": "Corollary",
+  "number": "6.1.16",
+  "title": "Eigenvalues of a matrix.",
+  "body": " Eigenvalues of a matrix   Let be an matrix, let , and let . The following are equivalent:     is an eigenvalue of ;     is singular;     ;     .     "
+},
+{
+  "id": "eg_eigenvalues_rotation",
+  "level": "2",
+  "url": "s_eigenvectors.html#eg_eigenvalues_rotation",
+  "type": "Example",
+  "number": "6.1.17",
+  "title": "Rotation (again).",
+  "body": " Rotation (again)   Fix and let be rotation by . Recall that we have where . Now compute . We can use the quadratic formula to find the roots of : . When , this reduces to , confirming our conclusion in that is the only eigenvalue of the rotation by operator.  When and , then and we see that has no real roots. This confirms our conclusion in that such rotations have no eigenvalues.   "
+},
+{
+  "id": "s_eigenvectors-4-12",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors-4-12",
+  "type": "Definition",
+  "number": "6.1.18",
+  "title": "Characteristic polynomial of a matrix.",
+  "body": " characteristic polynomial of a matrix  Characteristic polynomial of a matrix   Let be . The characteristic polynomial of is the function .   "
+},
+{
+  "id": "proc_eigenspaces_matrix",
+  "level": "2",
+  "url": "s_eigenvectors.html#proc_eigenspaces_matrix",
+  "type": "Procedure",
+  "number": "6.1.19",
+  "title": "Computing eigenspaces of a matrix.",
+  "body": " Computing eigenspaces of a matrix   Let be an matrix. To find all eigenvalues of and compute a basis for the corresponding eigenspace , proceed as follows.    Compute . Let be the distinct real roots of . These are the eigenvalues of .    For each , the corresponding eigenspace is . Use the null space algorithm ( ) to compute a basis for .     "
+},
+{
+  "id": "eg_eigenspaces_A",
+  "level": "2",
+  "url": "s_eigenvectors.html#eg_eigenspaces_A",
+  "type": "Example",
+  "number": "6.1.20",
+  "title": "Compute eigenspaces.",
+  "body": " Compute eigenspaces   Let .   Find all eigenvalue of .    Compute a basis for the eigenspace for each eigenvalue .       We compute . Thus the eigenvalues of are and .   Basis for  We have . Thus is a basis for .    Basis for  We have . Thus is a basis for .    "
+},
+{
+  "id": "eg_eigenspaces_B",
+  "level": "2",
+  "url": "s_eigenvectors.html#eg_eigenspaces_B",
+  "type": "Example",
+  "number": "6.1.21",
+  "title": "Compute eigenspaces.",
+  "body": " Compute eigenspaces   Let .    Find all eigenvalues of .    Compute a basis for the eigenspace for each eigenvalue .      First compute . We see that the eigenvalues of are and . Now compute bases for their corresponding eigenspaces.   Basis of  We have . Thus is a basis for .    Basis of  We have . Thus is a basis for .    "
+},
+{
+  "id": "rm_eigenspaces",
+  "level": "2",
+  "url": "s_eigenvectors.html#rm_eigenspaces",
+  "type": "Remark",
+  "number": "6.1.22",
+  "title": "Eigenspaces as packets of eigenvectors.",
+  "body": " Eigenspaces as packets of eigenvectors  It is important to realize that if is an eigenvalue of , then there is not just one -eigenvector, but rather an entire subspace of eigenvectors: that is, each of the infinitely many nonzero elements of is an eigenvector with eigenvalue . Thus every matrix has associated to it various packets of eigenvectors of varying size, as measured by .  For example the matrix of has two packets of eigenvectors associated to it: the 0-eigenvectors form the 1-dimensional packet , and the 3-eigenvectors form the 2-dimensional packet .  "
+},
+{
+  "id": "s_eigenvectors-4-19",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors-4-19",
+  "type": "Example",
+  "number": "6.1.23",
+  "title": "Compute eigenspaces.",
+  "body": " Compute eigenspaces   The characteristic polynomial of is .   Find all eigenvalues of .    For each eigenvalue compute a basis for the eigenspace .          To find the eigenvalues of we must factor the polynomial . We first look for integer roots that divide the constant term . We see that , and thus that is a factor of . Using polynomial long division, we see that . Continuing this process with the cubic polynomial, we factor . Since is irreducible over , we have our factorization , and we see that the eigenvalues of are and .     Basis of  We have . We conclude that is a basis of .    Basis of  We have . We conclude that is a basis of .       "
+},
+{
+  "id": "cor_eigenvalue_invertible",
+  "level": "2",
+  "url": "s_eigenvectors.html#cor_eigenvalue_invertible",
+  "type": "Corollary",
+  "number": "6.1.24",
+  "title": "Null space as eigenspace.",
+  "body": " Null space as eigenspace   Let be an matrix.   The -eigenspace of is equal to the null space of : , .    Zero is an eigenvalue of if and only if is not invertible.         We have Since if and only if , we conclude that , and hence .    Zero is an eigenvalue of if and only if is nontrivial, if and only if is nontrivial (by (1)), if and only if is not invertible.     "
+},
+{
+  "id": "proc_eigenspaces_transformation",
+  "level": "2",
+  "url": "s_eigenvectors.html#proc_eigenspaces_transformation",
+  "type": "Procedure",
+  "number": "6.1.25",
+  "title": "Computing eigenspaces of a linear transformation.",
+  "body": " Computing eigenspaces of a linear transformation   Let be a linear transformation of a finite-dimensional vector space . To compute the eigenvalues and eigenspaces of , proceed as follows.    Pick any ordered basis of and compute .    Apply to to compute bases of for each eigenvalue of .    For each eigenvalue , lift the basis of back up to using the coordinate transformation . The result is the basis for the -eigenspace of .     "
+},
+{
+  "id": "eg_eigenvector_systematic_transposition",
+  "level": "2",
+  "url": "s_eigenvectors.html#eg_eigenvector_systematic_transposition",
+  "type": "Example",
+  "number": "6.1.26",
+  "title": "Transposition (again).",
+  "body": " Transposition (again)   Let be defined as .    Find all eigenvalues of .    For each eigenvalue of compute a basis for .      Let , the standard ordered basis of . Compute : . Now apply to . From we conclude that and are the only eigenvalues of (and hence also ). Bases for the corresponding eigenspaces of are easily computed as . Now lift these up to bases of the eigenspaces and of : . It is easy to see that and are the subspaces of symmetric and skew-symmetric matrices, respectively. This is consistent with our analysis in .   "
+},
+{
+  "id": "th_characteristic_polynomial",
+  "level": "2",
+  "url": "s_eigenvectors.html#th_characteristic_polynomial",
+  "type": "Theorem",
+  "number": "6.1.27",
+  "title": "Characteristic polynomial.",
+  "body": " Characteristic polynomial   Let be an matrix.    The function is a monic polynomial of degree with real coefficients: , .    Over the complex numbers we can factor completely as where the are the (not necessarily distinct) roots of .    The eigenvalues of are precisely the real roots of : , the for which .    The coefficient in satisfies .    The coefficient in satisfies .    We conclude that .       Proof of (1)  We show the claim by induction on . The claim is easily seen to be true for all and matrices.  Fix and assume the claim is true for all matrices. Let . Expanding along the first row yields . (Recall that for any matrix the notation denotes the submatrix obtained by removing the -th row and -th column of .) First observe that , and thus is the characteristic polynomial of the matrix . By induction this is a monic polynomial of degree , and hence the first term of , is a monic polynomial of degree . Unfortunately, the remaining terms in the expansion do not lend themselves to a direct application of the induction hypothesis. However, we observe that the submatrices for all satisfy the following property: their first columns contains only scalars; the remaining columns contain exactly one entry of the form , while the rest of the entries are scalars. An easy (additional) induction argument shows that the determinant of such a matrix is polynomial of degree at most . (We leave this to you!) Since the first term of is a monic polynomial of degree and the rest of the terms are polynomials of degree at most , we conclude that itself is a monic polynomial of degree , as desired.    Proof of (2)-(3)  Statement (2) is the fundamental theorem of algebra: every polynomial with real coeofficients factors completely over the complex numbers. Statement (3) follows from .    Proof of (4)-(6)  Statement (6) clearly follows from statements (4) and (5). From (1) and (2) we conclude . Expanding out the right-hand side of this polynomial equality yields a polynomial of the form . Going back and equating coefficients between the left- and right-hand sides of yields . This proves half of statements (4) and (5). The fact that can be proved by induction using a modified version of the argument from the proof of (1) above. It remains to show that . We have .    "
+},
+{
+  "id": "rm_char_poly_trick",
+  "level": "2",
+  "url": "s_eigenvectors.html#rm_char_poly_trick",
+  "type": "Remark",
+  "number": "6.1.28",
+  "title": "Characteristic polynomial for <span class=\"process-math\">\\(2\\times 2\\)<\/span> matrices.",
+  "body": " Characteristic polynomial for matrices   Let be a matrix, and let . Using we have . This is a useful trick if you want to produce a matrix with a prescribed characteristic polynomial. For example, a matrix with characteristic polynomial has trace equal to 0 and determinant equal to . Such matrices are easy to construct: , .   "
+},
+{
+  "id": "cor_eigenvalues_atmost_n",
+  "level": "2",
+  "url": "s_eigenvectors.html#cor_eigenvalues_atmost_n",
+  "type": "Corollary",
+  "number": "6.1.29",
+  "title": "Number of eigenvalues.",
+  "body": " Number of eigenvalues   An matrix has at most distinct eigenvalues.   "
+},
+{
+  "id": "th_invertibility_with_eigenvalue",
+  "level": "2",
+  "url": "s_eigenvectors.html#th_invertibility_with_eigenvalue",
+  "type": "Theorem",
+  "number": "6.1.30",
+  "title": "Invertibility theorem.",
+  "body": " Invertibility theorem   Let be an matrix. The following statements are equivalent.    is invertible.    The matrix equation has a unique solution for any .    The matrix equation has a solution for any .    The matrix equation has a unique solution: namely, .     is row equivalent to , the identity matrix.     is a product of elementary matrices.     .                             Any of the following equivalent conditions about the set of columns of hold: is a basis of ; spans ; is linearly independent.    Any of the following equivalent conditions about the set of rows of hold: is a basis of ; spans ; is linearly independent.    The matrix transformationn is an isomorphism.     is not an eigenvalue of .      "
+},
+{
+  "id": "s_eigenvectors_ex-1-2",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-1-2",
+  "type": "Exercise",
+  "number": "6.1.4.1",
+  "title": "",
+  "body": "    Find the eigenvalues of , given that  and its eigenvectors are and .  The corresponding eigenvalues are , , and .                      "
+},
+{
+  "id": "s_eigenvectors_ex-1-3",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-1-3",
+  "type": "Exercise",
+  "number": "6.1.4.2",
+  "title": "",
+  "body": "    Find the eigenvalues and corresponding eigenvectors of the matrix  The eigenvalue corresponds to the eigenvector .  The eigenvalue corresponds to the eigenvector .  The eigenvalue corresponds to the eigenvector .                      "
+},
+{
+  "id": "s_eigenvectors_ex-1-4",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-1-4",
+  "type": "Exercise",
+  "number": "6.1.4.3",
+  "title": "",
+  "body": "    Find the eigenvalues of the matrix .  The eigenvalues are , where   has an eigenvector ,  has an eigenvector ,   has an eigenvector ,  has an eigenvector .  Note: you may want to use a graphing calculator to estimate the roots of the polynomial which defines the eigenvalues.                           "
+},
+{
+  "id": "s_eigenvectors_ex-1-5",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-1-5",
+  "type": "Exercise",
+  "number": "6.1.4.4",
+  "title": "",
+  "body": "    Suppose a matrix has only two distinct eigenvalues. Suppose that and . Find the eigenvalues of with their algebraic multiplicities.  The smaller eigenvalue = has multiplicity , and  the larger eigenvalue = has multiplicity .                           "
+},
+{
+  "id": "s_eigenvectors_ex-1-6",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-1-6",
+  "type": "Exercise",
+  "number": "6.1.4.5",
+  "title": "",
+  "body": "    If and are eigenvectors of a matrix corresponding to the eigenvalues and , respectively,  then   and        "
+},
+{
+  "id": "s_eigenvectors_ex-1-7",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-1-7",
+  "type": "Exercise",
+  "number": "6.1.4.6",
+  "title": "",
+  "body": "    Let be eigenvectors of the matrix which correspond to the eigenvalues , , and , respectively, and let  Express as a linear combination of , , and , and find .        .                        "
+},
+{
+  "id": "s_eigenvectors_ex-2-2",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-2-2",
+  "type": "Exercise",
+  "number": "6.1.4.7",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_eigenvectors_ex-2-3",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-2-3",
+  "type": "Exercise",
+  "number": "6.1.4.8",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_eigenvectors_ex-2-4",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-2-4",
+  "type": "Exercise",
+  "number": "6.1.4.9",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_eigenvectors_ex-2-5",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-2-5",
+  "type": "Exercise",
+  "number": "6.1.4.10",
+  "title": "",
+  "body": "  A=    "
+},
+{
+  "id": "s_eigenvectors_ex-2-6",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-2-6",
+  "type": "Exercise",
+  "number": "6.1.4.11",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_eigenvectors_ex-2-7",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-2-7",
+  "type": "Exercise",
+  "number": "6.1.4.12",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_eigenvectors_ex-2-8",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-2-8",
+  "type": "Exercise",
+  "number": "6.1.4.13",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_eigenvectors_ex-2-9",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-2-9",
+  "type": "Exercise",
+  "number": "6.1.4.14",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_eigenvectors_ex-2-10",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-2-10",
+  "type": "Exercise",
+  "number": "6.1.4.15",
+  "title": "",
+  "body": "       The characteristic polynomial of is .   "
+},
+{
+  "id": "s_eigenvectors_ex-2-11",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-2-11",
+  "type": "Exercise",
+  "number": "6.1.4.16",
+  "title": "",
+  "body": "  Matrices and below both have characteristic polynomial . For each matrix compute a basis of for each eigenvalue .               "
+},
+{
+  "id": "s_eigenvectors_ex-2-12",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-2-12",
+  "type": "Exercise",
+  "number": "6.1.4.17",
+  "title": "",
+  "body": "  Let be an invertible matrix. Prove: is an eigenvalue of if and only if is an eigenvalue of .   "
+},
+{
+  "id": "s_eigenvectors_ex-2-13",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-2-13",
+  "type": "Exercise",
+  "number": "6.1.4.18",
+  "title": "",
+  "body": "  Let be a square matrix.     Prove: and have the same characteristic polynomial.    First show that , then use a relevant property of the determinant.      Prove: and have the same eigenvalues.      Fix and let be the -eigenspaces of and , respectively. Prove: .    First show that , then use the rank-nullity theorem.    "
+},
+{
+  "id": "s_eigenvectors_ex-2-14",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-2-14",
+  "type": "Exercise",
+  "number": "6.1.4.19",
+  "title": "",
+  "body": "  Let be an eigenvalue of the matrix .   Prove by induction: is an eigenvalue of for any positive integer .    Assume that is invertible. Prove: is an eigenvalue of for any integer .      "
+},
+{
+  "id": "s_eigenvectors_ex-2-15",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-2-15",
+  "type": "Exercise",
+  "number": "6.1.4.20",
+  "title": "",
+  "body": "  Assume is a square matrix satisfying for some positive integer . Show that is the only eigenvalue of . Your argument must make clear that is in fact an eigenvalue of .   "
+},
+{
+  "id": "s_eigenvectors_ex-2-16",
+  "level": "2",
+  "url": "s_eigenvectors.html#s_eigenvectors_ex-2-16",
+  "type": "Exercise",
+  "number": "6.1.4.21",
+  "title": "",
+  "body": "  Assume is a square matrix satisfying    Prove: if is an eigenvalue of , then or .    Prove: if does not have as an eigenvalue, then .      "
+},
+{
+  "id": "s_diagonalization",
+  "level": "1",
+  "url": "s_diagonalization.html",
+  "type": "Section",
+  "number": "6.2",
+  "title": "Diagonalization",
+  "body": " Diagonalization   Our treatment of eigenvectors in was motivated in part by the objective of finding particularly simple matrix representations of a linear transformation . The simplest situation we could hope for is that there is a choice of basis for which is diagonal. We say that the basis  diagonalizes the transformation in this case, and that is diagonalizable . In this section we develop theoretical and computational tools for determining whether a linear transformation is diagonalizable, and for finding a diagonalizing basis when is in fact diagonalizable.    Diagonalizable transformations   diagonalizable  diagonalizing basis  Diagonalizable   Let be a finite-dimensional vector space. A linear transformation is diagonalizable if there exists an ordered basis of for which is a diagonal matrix. In this case, we say the basis  diagonalizes  .  An matrix is diagonalizable if the matrix transformation is diagonalizable.    As was already laid out in a matrix representation is diagonal if the elements of are eigenvectors of . According to , the converse is also true.   Diagonalizabilty: basis of eigenvectors   Let be a linear transformation, and let be an ordered basis of .    The matrix is diagonal if and only if consists of eigenvectors of .    If is diagonal, then the -th diagonal entry of is the eigenvalue associated to the eigenvector .    The transformation is diagonalizable if and only if there is an ordered basis of consisting of eigenvectors of .      Let be an ordered basis of . The matrix will be diagonal if and only if for each the -th column of is of the form for some . By the -th column of is the coordinate vector . Thus is diagonal if and only if for all we have for some . Next, by definition of , we have . We conclude that is diagonal if and only if is an eigenvector of for all . Furthermore, when this is the case, we see that the -th diagonal entry of is the corresponding eigenvalue . This proves statements (1) and (2). Statement (3) follows from (1) and .    The phrase an ordered basis consisting of eigenvectors of is a bit of a mouthful. The definition below allows us to shorten this to simply an eigenbasis of .   eigenbasis  Eigenbasis   Let be a linear transformation. An ordered basis is an eigenbasis of if is an eigenvector of for all .      Let , where . We saw in that and are eigenvectors of with eigenvalues , respectively. It is clear that the two eigenvectors are linearly independent, and hence that is an eigenbasis of . It follows from that is diagonalizable, and that in fact , as one easily verifies.      Let be rotation by : , , where . As discussed in , has no eigenvectors whatsoever. It follows that there is no eigenbasis of , and hence that is not diagonalizable.      Let , where . As is easily computed, is the only eigenvalue of , and . It follows that any two eigenvectors and lie in the one-dimensional space , and hence are scalar multiples of one another. Thus we cannot find two linearly independent eigenvectors of . We conclude that does not have an eigenbasis, and hence is not diagonalizable.      Linear independence of eigenvectors  Roughly put, tells us that is diagonalizable if it has enough eigenvectors: more precisely, if we can find a large enough collection of linearly independent eigenvectors. So when exactly can we do this? Our first examples were deceptively simple in this regard due to their low-dimensional setting. For transformations of higher-dimensional spaces we need more theory, which we now develop. will serve as one of the key results for our purposes. It tells us that eigenvectors chosen from different eigenspaces are linearly independent.   Linear independence of eigenvectors   Let be a linear transformation, and let be a set of eigenvectors of satisfying . If the eigenvalues are distinct ( , for ), then is linearly independent.    We prove the result by contradiction. Suppose we can find a finite set of eigenvectors with distinct eigenvalues that is linearly dependent. It follows that we can find such a set of minimum cardinality . In other words, there is positive integer satisfying the following properties: (i) we can find a linearly dependent set of eigenvectors of with distinct eigenvalues; (ii) for all , any set of eigenvectors of with distinct eigenvalues is linearly independent That we can find a minimal in this sense is plausible enough, but we are secretly using the well-ordering principle of the integers here. .  Now assume is a set of minimal cardinality satisfying for all and for all . First observe that we must have : eigenvectors are nonzero by definition, and thus any set consisting of a single eigenvector is linearly independent. Next, since is linearly dependent we have , where for some . After reordering, we may assume without loss of generality that . Next we apply to both sides of : . From equation and the equation in we have , and hence . Since and , we have . Thus equation implies that the set is a linearly dependent set of eigenvectors of with distinct eigenvalues, contradicting the minimality of . This completes our proof by contradiction.     Diagonalizable if distinct eigenvalues   Let be a linear transformation, and suppose . If has distinct eigenvalues, then is diagonalizable.    Let be a set eigenvectors of with distinct eigenvalues. According to the set is linearly independent. Since it follows that is an eigenbasis for and hence is diagonalizable.      Let , where . The characteristic polynomial of is . Since has three distinct eigenvalues the linear transformation is diagonalizable. Indeed, any choice of eigenvectors with is guaranteed to be linearly independent, and hence gives rise to an eigenbasis of . For example the usual procedure allows us to easily find eigenvectors from the three eigenspaces. You can verify for yourself that these three vectors are indeed linearly independent.      Let be a linear transformation, . It cannot be stressed enough that having distinct eigenvalues is a sufficient , but not necessary condition for to be diagonalizable. In other words we have but . A good counterexample to keep in mind is , where is the identity matrix. The transformation is clearly diagonalizable since , where is the standard basis; and yet is the only eigenvalue of .     makes no assumption about the dimension of and can thus can be applied to linear transformations of infinite-dimensional spaces. The differential operator provides an interesting example.   The next corollary is a useful strengthening of , and will be used to prove . Roughly speaking, it says that eigenspaces associated to distinct eigenvalues are linearly independent . Be careful: the phrase in quotes currently has no real meaning for us. We know what it means for vectors to be linearly independent, but not subspaces . However, it is a decent shorthand for the precise statement of .   Independence of eigenspaces   Let be a linear transformation, where . Let be distinct eigenvalues of , and for each let be the -eigenspace. If , where , then for all .    Before proving the result, we point out one subtlety here: although the for all , we cannot assume that each is an eigenvector. Indeed, is an eigenvector in this case if and only if . This observation guides the proof that follows.  To pick out the terms of that are nonzero (if any), we define . Assume by contradiction that is nonempty: , . In this case we would have , since for all . But then would be a nontrivial linear combination of the eigenvectors equal to . Since the eigenvectors have distinct eigenvalues, this contradicts . Thus . Equivalently, for all , as desired.    At last we are ready to state and prove what will be our main tool for determining whether a linear transformation is diagonalizable.   Diagonalizability: dimension of eigenspaces   Let be a linear transformation, where . Let be the distinct eigenvalues of , and for each , let be the -eigenspace. We have .   We prove the two implications separately. In each we use the equivalence , proved in .  Proof: diagonalizable  Assume is diagonalizable. From , there is an eigenbasis of . After reordering we may assume that , where for each and each , the element is an eigenvector with eigenvalue : , . Observer that since is a list of vectors, we have . We claim that for all the set is a basis of . The desired result follows in this case since . Proceeding then to the claim, observe that each set is linearly independent, since the underlying set of is linearly independent. Thus it suffices to show that for all . To this end, fix an with and take any . Since is a basis we can write , where for each we have . Bringing to the right-hand side of the equation above yields . Recall that , and thus . Since for all , it follows from that . Thus , showing that , as desired.    Proof: is diagonalizable  Let for all . We assume that . For each , let be a basis of the eigenspace . We claim is an eigenbasis of . Since for all and , we see that consists of eigenvectors of . Since , to show that is a basis it suffices to show that it is linearly independent. To this end, assume we have , where for each we have . By we must have for all . Finally, since the set is linearly independent for each , we must have for all and . This proves that is linearly independent, hence a basis.     We now collect our various results about diagonalizability into one procedure that (a) decides whether a linear transformation is diagonalizable, and (b) if it is, computes an eigenbasis for . The procedure applies to any linear transformation of a finite-dimensional vector space, not just matrix transformations. As usual, the first step is to choose a matrix representation for .   Deciding whether a linear transformation is diagonalizable   Let be a linear transformation, where . To decide whether is diagonalizable proceed as follows.    Pick any ordered basis of and compute . We have diagonalizable if and only if diagonalizable.    Let be the distinct eigenvalues of . Compute for each . We have .    Assume is diagonalizable according to Step (2). For each compute a basis of . The ordered list , is an eigenbasis of .     Lifting the basis back to via the coordinate transformation yields an eigenbasis of . The matrix is diagonal, of the form .      For the most part the validity of this procedure is a direct consequence of and . However, there are two details that need to be pointed out.   That is diagonalizable if and only if is diagonalizable follows from the fact that a basis of the -eigenspace of to a basis of the -eigenspace of using the coordinate vector transformation .    That the ordered list described in Step 3 is in fact a basis is shown in the proof of .         Let , where . Decide whether is diagonalizable. If yes, find an eigenbasis of and compute the corresponding matrix representing .    Note first that where is the standard basis of . (See .) Since is upper triangular, we easily see that its characteristic polynomial is . Next we investigate the eigenspaces: . By inspection we see that both and have rank 2, and hence nullity by the rank-nullity theorem. Thus both eigenspaces have dimension one, and we have . We conclude that , and hence , is not diagonalizable.    The diagonalizability examples in this text will focus largely on the special case of matrix transformations . However, our conscience demands that we give at least one full example of a more abstract linear transformation.   Transposition   Let be the linear transformation defined as . Decide whether is diagonalizable. If yes, find an eigenbasis for and compute the corresponding matrix representing .    We saw in that , where is the standard ordered basis of . Furthermore, we saw that and are the distinct eigenvalues of , and that are bases of and , respectively. It follows that , that is diagonalizable, and that is an eigenbasis of . We conclude that is diagonalizable, and we lift via to the eigenbasis of . Lastly, we have .     Video example: deciding if diagonalizable   Video: deciding if diagonalizable  Video: deciding if diagonalizable       Diagonalizable matrices  In this subsection we will focus on matrix transformations . Recall ( ) that in this situation we have where is the standard basis of . As such boils down to steps (2)-(3), and the eigenbasis of found in (3) is itself an eigenbasis for . Letting the change of basis formula ( ) yields , where . Lastly, since is the standard basis of , the change of basis matrix is obtained by placing the -th element of as the -th column for all . We record these observations as a separate procedure specifically for matrix transformations.   Deciding whether a matrix is diagonalizable   Let be an matrix, and let be its corresponding matrix transformation. To decide whether is diagonalizable, proceed as follows.    Let be the nonzero eigenspaces of . We have .    Assume is diagonalizable and let be an eigenbasis of satisfying for all . (We do not assume the are distinct here.) Letting , we have .      The process of finding and satisfying is called diagonalizing the matrix ; and we say that the matrix  diagonalizes  in this case. (Of course this is possible if and only if is diagonalizable.)    The matrix has characteristic polynomial . Decide whether is diagonalizable. If yes, find an invertible matrix and diagonal matrix such that .    To factor , we first look for integer roots dividing the constant term : , we test whether any of are roots. Luckily, we see that is a root of . Doing polynomial division of by yields . Repeating this factoring technique on , we see that , and thus can continue to factor: . We conclude that the eigenvalues of are , , and . We now compute bases for the corresponding eigenspaces. The bases below were obtained using . We omit the details of the Gaussian elimination performed in each case. (Check for yourself!) . Since , we conclude that is diagonalizable. Furthermore, we have , where .    Recall that two square matrices and are similar if for some invertible matrix ( ). From the foregoing discussion it follows that a matrix is diagonalizable if and only if it is similar to a diagonal matrix.   Diagonalizabilty and similarity   An matrix is diagonalizable if and only if it is similar to a diagonal matrix: , if and only if there is an invertible matrix and a diagonal matrix such that .    According to the matrix is similar to a diagonal matrix if and only if there is a linear transformation and ordered bases of such that and . By definition such a would be diagonalizable, since is diagonal. Since is diagonalizable if and only if is diagonalizable, we conclude that is similar to a diagonal matrix if and only if is diagonalizable.    We know from that similar matrices can be thought of as two matrix representations of the same overlying linear transformation . As such similar matrices share many of the same algebraic properties, as details.   Properties of similarity   Suppose is similar to : , there is an invertible matrix such that . The following hold:    is similar to : , there is an invertible matrix such that .     and have the same characteristic polynomial.     and have the same eigenvalues.     and have the same trace and determinant.     and have the same rank.    For any we have , where are the -eigenspaces of and , respectively.       Statement (1) follows by taking .  Let and be the characteristic polynomials of and , repsectively. We have . This proves statement (2).  Statement (3) follows from (2) since the eigenvalues of a matrix are the real roots of its characteristic polynomial. Furthermore, by the trace and determinant of a matrix are equal to the sum and product of the roots of its characteristic polynomial. Thus (4) also follows from (2).  The proofs of statements (5)-(6) are left as exercises.    A diagonalizable matrix is similar to a diagonal matrix ( ) and similar matrices share many essential properties ( , ) In this spirit, a good way of thinking about a diagonalizable matrix is that it is as good as diagonal .   Diagonalizable mantra   A diagonalizable matrix is as good as diagonal.    In practical terms, if is diagonalizable, then we have where is diagonal. This allows us to answer questions about by first answering the question for and then use the equations in to translate the results back to . What makes this method effective is that algebraic questions involving diagonal matrices are easy to answer! Before getting to some illustrative examples, we need a few results about the operation , which is called conjugation by .   Properties of conjugation   Let be an invertible matrix.   Conjugation is linear  For all and , we have .    Conjugation commutes with powers  For all and integers , we have . If is invertible, this equality holds for all integers .    Conjugation commutes with polynomials  Given any polynomial with real coefficients, we have .       The proof is left as an exercise.     Diagonalizable: matrix powers   Assume , where is diagonal. The normally difficult computation can be accomplished by first computing (easy) and then observing that . For example, the matrix is diagonalizable and satisfies , where . It follows that for any we have .     Diagonalizable: matrix polynomials   Assume , where is a diagonal matrix. Let . Given any polynomial , we have . Furthermore, since is diagonal, it follows that is also diagonal, and in fact its diagonal entries are given by . This gives us an easy method of computing arbitrary polynomials of the matrix .  Consider again the matrix (and and ) from . Let . Since , it follows that . We conclude that , as you can check directly.      A square-root of an matrix is a matrix such that . If and are similar matrices, satisfying , then has a square-root if and only if has a square-root. Indeed, if satisfies , then satisfies . Similarly, if satisfies , then satisfies . As an example, the matrix satisfies , where . Since is a square-root of , is a square-root of .  So when exactly does a diagonal matrix have a square-root? Clearly, it is sufficient that the diagonal entries satisfy for all , as in the example above. Interestingly, this is not a necessary condition! Indeed, consider the following example: .      Algebraic and geometric multiplicity  We end this section with a deeper look at what the characteristic polynomial reveals about eigenspaces. To begin with, we first define the characteristic polynomial of a general linear transformation , where is a finite-dimensional vector space.   Characteristic polynomial of a transformation   Let be a linear transformation, where is finite-dimensional. Let be an ordered basis of , and let . We define the characteristic polynomial of to be the characteristic polynomial of : , the characteristic polynomial of is .      For the characteristic polynomial of a linear transformation to be well-defined, it should not depend on the choice of basis. This is true thanks to and . Indeed, given two choice of ordered bases of , the matrices and are similar ( ), and thus their characteristic polynomials are equal ( ,(2)).    Let be a linear transformation, where is finite-dimensional. If is an eigenvalue of , then we can factor the chacteristic polynomial of as , where is not a root of . As we will see, the exponent is an upper bound for the dimension of . We call the algebraic multiplicity of the eigenvalue .   multiplicity of an eigenvalue algebraic  multiplicity of an eigenvalue geometric  Algebraic\/geometric multiplicity   Let be a linear transformation, where is finite-dimensional, and let be the characteristic polynomial of . Given an eigenvalue of , we can factor as , where is not a root of the polynomial : , . We call the geometric multiplicity of the eigenvalue , and we call its geometric multiplicity . If , we say is a repeated eigenvalue of .     Algebraic and geometric multiplicity   Let be a linear transformation, where , let be the characteristic polynomial of , and suppose is an eigenvalue of of algebraic multiplicity : , and . We have . In other words, the geometric multiplicity of an eigenvalue is bounded above by its algebraic multiplicity.    Since is an eigenvalue, we have , and thus . Assume by contradiction that . Let , and let be a basis for . We can extend to an ordered basis of . By definition, the characteristic polynomial of is given my , where w. Since are -eigenvectors of , the matrix is of the form   An easy proof by induction on shows that for such a matrix we have for some polynomial . On the other hand, since has algebraic multiplicity we have for some polynomial with . Setting these two expressions equal to one another we see that , or equivalently, . Since it follows that . Contradiction! We conclude that , as desired.     Algebraic and geometric multiplicity   Let be a linear transformation, where , and suppose the characteristic polynomial of factors over as , where for all . The following are equivalent:    is diagonalizable.    For all we have and .   In other words, is diagonalizable if and only if all roots of are real, and the geometric multiplicity of each eigenvalue is equal to its algebraic multiplicity.     Implication:  If (2) is true, then each is an eigenvalue of and we have , by counting degrees in . It follows from that is diagonalizable.    Implication:  If is diagonalizable, then there is an ordered basis of for which is diagonal. Letting be the -th diagonal element of , we have . This expression tells us that are the roots of , and hence that all roots are real since since for all . On the other hand each is a root of , and thus for all . It follows that are the distinct eigenvalues of . By , since is diagonalizable we must have . Since for all ( ), and since (counting degrees in ), for the equality to hold we must have for all , as desired.     From and we can deduce a much finer picture of the eigenspaces of a linear transformation from its factored characteristic polynomial. This often reduces our workload when treating questions of diagonalizability, as the next examples illustrate.    The matrix has characteristic polynomial . Decide whether is diagonalizable.    The eigenvalues of are . Since the eigenvalues and both have algebraic multiplicity , we have by  , and hence . It follows that is diagonalizable if and only if . We have , where . This matrix clearly has rank 2 (the first two columns form a basis for its column space), and hence nullity . We conclude that is diagonalizable.      The matrix has characterisic polynomial . Decide whether is diagonalizable.    The eigenvalues of are and , and each has algebraic multiplicity . Thus , and is diagonalizable if and only if . By inspection we see that and are -eigenvectors, and thus we must have . Next we have where . It is not difficult to see (either using Gaussian elimination or inspection) that this matrix has rank 3, and hence nullity 1. We conclude that , and hence is not diagonalizable.       WeBWork Exercises      Let =  Find a matrix , a diagonal matrix and such that .   ,  ,             Let . Find an invertible matrix and a diagonal matrix such that .   ,             Show that and are similar matrices by finding an invertible matrix satisfying .   ,             Suppose Find an invertible matrix and a diagonal matrix so that . Use your answer to find an expression for in terms of , a power of , and in that order.     .           For each matrix use to determine whether it is diagonalizable. If yes, then produce an invertible matrix and diagonal matrix satisfying . For the last matrix the characteristic polynomial is provided for convenience.                                  ;        Let . Show that is diagonalizable if and only if either or ( , and ).      Prove .    Show that for any we have .      For each exercise construct a matrix satisfying the given conditions. Begin by showing that the given must be diagonalizable.      has eigenspaces and .       for all , for .       Assume is a matrix with eigenvalues , , and .    Show that is diagonalizable. Provide an explicit diagonal matrix that is similar to.    Prove that for all odd integers .        Prove statement (5) of .    Use and .      Prove statement (6) of .    Use and .      According to if and are similar, then they have the same rank. Show that the converse is false by showing that the matrices have the same rank, but are not similar.      According to if and are similar, then they have the same characteristic polynomial. Show that the converse is false by showing that the matrices have the same characteristic polynomial, but are not similar.      Prove all statements of .      In each case information about a matrix is given. Decide whether is diagonalizable.      , ,        ,        , ,     See .       Each matrix below has characteristic polynomial . Use to decide whether is diagonalizable. If yes, provide an invertible and diagonal satisfying .                  Let . Use your work from to find a matrix satisfying .     "
+},
+{
+  "id": "d_diagonalizable",
+  "level": "2",
+  "url": "s_diagonalization.html#d_diagonalizable",
+  "type": "Definition",
+  "number": "6.2.1",
+  "title": "Diagonalizable.",
+  "body": " diagonalizable  diagonalizing basis  Diagonalizable   Let be a finite-dimensional vector space. A linear transformation is diagonalizable if there exists an ordered basis of for which is a diagonal matrix. In this case, we say the basis  diagonalizes  .  An matrix is diagonalizable if the matrix transformation is diagonalizable.   "
+},
+{
+  "id": "th_diagonalizability_eigenbasis",
+  "level": "2",
+  "url": "s_diagonalization.html#th_diagonalizability_eigenbasis",
+  "type": "Theorem",
+  "number": "6.2.2",
+  "title": "Diagonalizabilty: basis of eigenvectors.",
+  "body": " Diagonalizabilty: basis of eigenvectors   Let be a linear transformation, and let be an ordered basis of .    The matrix is diagonal if and only if consists of eigenvectors of .    If is diagonal, then the -th diagonal entry of is the eigenvalue associated to the eigenvector .    The transformation is diagonalizable if and only if there is an ordered basis of consisting of eigenvectors of .      Let be an ordered basis of . The matrix will be diagonal if and only if for each the -th column of is of the form for some . By the -th column of is the coordinate vector . Thus is diagonal if and only if for all we have for some . Next, by definition of , we have . We conclude that is diagonal if and only if is an eigenvector of for all . Furthermore, when this is the case, we see that the -th diagonal entry of is the corresponding eigenvalue . This proves statements (1) and (2). Statement (3) follows from (1) and .   "
+},
+{
+  "id": "d_eigenbasis",
+  "level": "2",
+  "url": "s_diagonalization.html#d_eigenbasis",
+  "type": "Definition",
+  "number": "6.2.3",
+  "title": "Eigenbasis.",
+  "body": " eigenbasis  Eigenbasis   Let be a linear transformation. An ordered basis is an eigenbasis of if is an eigenvector of for all .   "
+},
+{
+  "id": "eg_diagonalizable_matrix",
+  "level": "2",
+  "url": "s_diagonalization.html#eg_diagonalizable_matrix",
+  "type": "Example",
+  "number": "6.2.4",
+  "title": "",
+  "body": "  Let , where . We saw in that and are eigenvectors of with eigenvalues , respectively. It is clear that the two eigenvectors are linearly independent, and hence that is an eigenbasis of . It follows from that is diagonalizable, and that in fact , as one easily verifies.   "
+},
+{
+  "id": "ss_diagonalizable-8",
+  "level": "2",
+  "url": "s_diagonalization.html#ss_diagonalizable-8",
+  "type": "Example",
+  "number": "6.2.5",
+  "title": "",
+  "body": "  Let be rotation by : , , where . As discussed in , has no eigenvectors whatsoever. It follows that there is no eigenbasis of , and hence that is not diagonalizable.   "
+},
+{
+  "id": "ss_diagonalizable-9",
+  "level": "2",
+  "url": "s_diagonalization.html#ss_diagonalizable-9",
+  "type": "Example",
+  "number": "6.2.6",
+  "title": "",
+  "body": "  Let , where . As is easily computed, is the only eigenvalue of , and . It follows that any two eigenvectors and lie in the one-dimensional space , and hence are scalar multiples of one another. Thus we cannot find two linearly independent eigenvectors of . We conclude that does not have an eigenbasis, and hence is not diagonalizable.   "
+},
+{
+  "id": "th_independent_eigenvectors",
+  "level": "2",
+  "url": "s_diagonalization.html#th_independent_eigenvectors",
+  "type": "Theorem",
+  "number": "6.2.7",
+  "title": "Linear independence of eigenvectors.",
+  "body": " Linear independence of eigenvectors   Let be a linear transformation, and let be a set of eigenvectors of satisfying . If the eigenvalues are distinct ( , for ), then is linearly independent.    We prove the result by contradiction. Suppose we can find a finite set of eigenvectors with distinct eigenvalues that is linearly dependent. It follows that we can find such a set of minimum cardinality . In other words, there is positive integer satisfying the following properties: (i) we can find a linearly dependent set of eigenvectors of with distinct eigenvalues; (ii) for all , any set of eigenvectors of with distinct eigenvalues is linearly independent That we can find a minimal in this sense is plausible enough, but we are secretly using the well-ordering principle of the integers here. .  Now assume is a set of minimal cardinality satisfying for all and for all . First observe that we must have : eigenvectors are nonzero by definition, and thus any set consisting of a single eigenvector is linearly independent. Next, since is linearly dependent we have , where for some . After reordering, we may assume without loss of generality that . Next we apply to both sides of : . From equation and the equation in we have , and hence . Since and , we have . Thus equation implies that the set is a linearly dependent set of eigenvectors of with distinct eigenvalues, contradicting the minimality of . This completes our proof by contradiction.   "
+},
+{
+  "id": "cor_independent_eigenvectors",
+  "level": "2",
+  "url": "s_diagonalization.html#cor_independent_eigenvectors",
+  "type": "Corollary",
+  "number": "6.2.8",
+  "title": "Diagonalizable if distinct eigenvalues.",
+  "body": " Diagonalizable if distinct eigenvalues   Let be a linear transformation, and suppose . If has distinct eigenvalues, then is diagonalizable.    Let be a set eigenvectors of with distinct eigenvalues. According to the set is linearly independent. Since it follows that is an eigenbasis for and hence is diagonalizable.   "
+},
+{
+  "id": "ss_diagonalizable_independent_eigenvectors-5",
+  "level": "2",
+  "url": "s_diagonalization.html#ss_diagonalizable_independent_eigenvectors-5",
+  "type": "Example",
+  "number": "6.2.9",
+  "title": "",
+  "body": "  Let , where . The characteristic polynomial of is . Since has three distinct eigenvalues the linear transformation is diagonalizable. Indeed, any choice of eigenvectors with is guaranteed to be linearly independent, and hence gives rise to an eigenbasis of . For example the usual procedure allows us to easily find eigenvectors from the three eigenspaces. You can verify for yourself that these three vectors are indeed linearly independent.   "
+},
+{
+  "id": "rm_independent_eigenvectors",
+  "level": "2",
+  "url": "s_diagonalization.html#rm_independent_eigenvectors",
+  "type": "Remark",
+  "number": "6.2.10",
+  "title": "",
+  "body": "  Let be a linear transformation, . It cannot be stressed enough that having distinct eigenvalues is a sufficient , but not necessary condition for to be diagonalizable. In other words we have but . A good counterexample to keep in mind is , where is the identity matrix. The transformation is clearly diagonalizable since , where is the standard basis; and yet is the only eigenvalue of .   "
+},
+{
+  "id": "cor_independent_eigenspaces",
+  "level": "2",
+  "url": "s_diagonalization.html#cor_independent_eigenspaces",
+  "type": "Corollary",
+  "number": "6.2.11",
+  "title": "Independence of eigenspaces.",
+  "body": " Independence of eigenspaces   Let be a linear transformation, where . Let be distinct eigenvalues of , and for each let be the -eigenspace. If , where , then for all .    Before proving the result, we point out one subtlety here: although the for all , we cannot assume that each is an eigenvector. Indeed, is an eigenvector in this case if and only if . This observation guides the proof that follows.  To pick out the terms of that are nonzero (if any), we define . Assume by contradiction that is nonempty: , . In this case we would have , since for all . But then would be a nontrivial linear combination of the eigenvectors equal to . Since the eigenvectors have distinct eigenvalues, this contradicts . Thus . Equivalently, for all , as desired.   "
+},
+{
+  "id": "th_diagonalizability_eigenspaces",
+  "level": "2",
+  "url": "s_diagonalization.html#th_diagonalizability_eigenspaces",
+  "type": "Theorem",
+  "number": "6.2.12",
+  "title": "Diagonalizability: dimension of eigenspaces.",
+  "body": " Diagonalizability: dimension of eigenspaces   Let be a linear transformation, where . Let be the distinct eigenvalues of , and for each , let be the -eigenspace. We have .   We prove the two implications separately. In each we use the equivalence , proved in .  Proof: diagonalizable  Assume is diagonalizable. From , there is an eigenbasis of . After reordering we may assume that , where for each and each , the element is an eigenvector with eigenvalue : , . Observer that since is a list of vectors, we have . We claim that for all the set is a basis of . The desired result follows in this case since . Proceeding then to the claim, observe that each set is linearly independent, since the underlying set of is linearly independent. Thus it suffices to show that for all . To this end, fix an with and take any . Since is a basis we can write , where for each we have . Bringing to the right-hand side of the equation above yields . Recall that , and thus . Since for all , it follows from that . Thus , showing that , as desired.    Proof: is diagonalizable  Let for all . We assume that . For each , let be a basis of the eigenspace . We claim is an eigenbasis of . Since for all and , we see that consists of eigenvectors of . Since , to show that is a basis it suffices to show that it is linearly independent. To this end, assume we have , where for each we have . By we must have for all . Finally, since the set is linearly independent for each , we must have for all and . This proves that is linearly independent, hence a basis.    "
+},
+{
+  "id": "proc_diagonalize",
+  "level": "2",
+  "url": "s_diagonalization.html#proc_diagonalize",
+  "type": "Procedure",
+  "number": "6.2.13",
+  "title": "Deciding whether a linear transformation is diagonalizable.",
+  "body": " Deciding whether a linear transformation is diagonalizable   Let be a linear transformation, where . To decide whether is diagonalizable proceed as follows.    Pick any ordered basis of and compute . We have diagonalizable if and only if diagonalizable.    Let be the distinct eigenvalues of . Compute for each . We have .    Assume is diagonalizable according to Step (2). For each compute a basis of . The ordered list , is an eigenbasis of .     Lifting the basis back to via the coordinate transformation yields an eigenbasis of . The matrix is diagonal, of the form .      For the most part the validity of this procedure is a direct consequence of and . However, there are two details that need to be pointed out.   That is diagonalizable if and only if is diagonalizable follows from the fact that a basis of the -eigenspace of to a basis of the -eigenspace of using the coordinate vector transformation .    That the ordered list described in Step 3 is in fact a basis is shown in the proof of .      "
+},
+{
+  "id": "eg_diagonalizable_uppertriang",
+  "level": "2",
+  "url": "s_diagonalization.html#eg_diagonalizable_uppertriang",
+  "type": "Example",
+  "number": "6.2.14",
+  "title": "",
+  "body": "  Let , where . Decide whether is diagonalizable. If yes, find an eigenbasis of and compute the corresponding matrix representing .    Note first that where is the standard basis of . (See .) Since is upper triangular, we easily see that its characteristic polynomial is . Next we investigate the eigenspaces: . By inspection we see that both and have rank 2, and hence nullity by the rank-nullity theorem. Thus both eigenspaces have dimension one, and we have . We conclude that , and hence , is not diagonalizable.   "
+},
+{
+  "id": "eg_diagonalizable_transposition",
+  "level": "2",
+  "url": "s_diagonalization.html#eg_diagonalizable_transposition",
+  "type": "Example",
+  "number": "6.2.15",
+  "title": "Transposition.",
+  "body": " Transposition   Let be the linear transformation defined as . Decide whether is diagonalizable. If yes, find an eigenbasis for and compute the corresponding matrix representing .    We saw in that , where is the standard ordered basis of . Furthermore, we saw that and are the distinct eigenvalues of , and that are bases of and , respectively. It follows that , that is diagonalizable, and that is an eigenbasis of . We conclude that is diagonalizable, and we lift via to the eigenbasis of . Lastly, we have .   "
+},
+{
+  "id": "fig_vid_diag",
+  "level": "2",
+  "url": "s_diagonalization.html#fig_vid_diag",
+  "type": "Figure",
+  "number": "6.2.16",
+  "title": "Video: deciding if diagonalizable",
+  "body": " Video: deciding if diagonalizable  Video: deciding if diagonalizable   "
+},
+{
+  "id": "proc_diagonalize_matrixtransform",
+  "level": "2",
+  "url": "s_diagonalization.html#proc_diagonalize_matrixtransform",
+  "type": "Procedure",
+  "number": "6.2.17",
+  "title": "Deciding whether a matrix is diagonalizable.",
+  "body": " Deciding whether a matrix is diagonalizable   Let be an matrix, and let be its corresponding matrix transformation. To decide whether is diagonalizable, proceed as follows.    Let be the nonzero eigenspaces of . We have .    Assume is diagonalizable and let be an eigenbasis of satisfying for all . (We do not assume the are distinct here.) Letting , we have .     "
+},
+{
+  "id": "eg_diagonalizable_big",
+  "level": "2",
+  "url": "s_diagonalization.html#eg_diagonalizable_big",
+  "type": "Example",
+  "number": "6.2.18",
+  "title": "",
+  "body": "  The matrix has characteristic polynomial . Decide whether is diagonalizable. If yes, find an invertible matrix and diagonal matrix such that .    To factor , we first look for integer roots dividing the constant term : , we test whether any of are roots. Luckily, we see that is a root of . Doing polynomial division of by yields . Repeating this factoring technique on , we see that , and thus can continue to factor: . We conclude that the eigenvalues of are , , and . We now compute bases for the corresponding eigenspaces. The bases below were obtained using . We omit the details of the Gaussian elimination performed in each case. (Check for yourself!) . Since , we conclude that is diagonalizable. Furthermore, we have , where .   "
+},
+{
+  "id": "cor_diagonalizable_matrix",
+  "level": "2",
+  "url": "s_diagonalization.html#cor_diagonalizable_matrix",
+  "type": "Corollary",
+  "number": "6.2.19",
+  "title": "Diagonalizabilty and similarity.",
+  "body": " Diagonalizabilty and similarity   An matrix is diagonalizable if and only if it is similar to a diagonal matrix: , if and only if there is an invertible matrix and a diagonal matrix such that .    According to the matrix is similar to a diagonal matrix if and only if there is a linear transformation and ordered bases of such that and . By definition such a would be diagonalizable, since is diagonal. Since is diagonalizable if and only if is diagonalizable, we conclude that is similar to a diagonal matrix if and only if is diagonalizable.   "
+},
+{
+  "id": "th_similarity",
+  "level": "2",
+  "url": "s_diagonalization.html#th_similarity",
+  "type": "Theorem",
+  "number": "6.2.20",
+  "title": "Properties of similarity.",
+  "body": " Properties of similarity   Suppose is similar to : , there is an invertible matrix such that . The following hold:    is similar to : , there is an invertible matrix such that .     and have the same characteristic polynomial.     and have the same eigenvalues.     and have the same trace and determinant.     and have the same rank.    For any we have , where are the -eigenspaces of and , respectively.       Statement (1) follows by taking .  Let and be the characteristic polynomials of and , repsectively. We have . This proves statement (2).  Statement (3) follows from (2) since the eigenvalues of a matrix are the real roots of its characteristic polynomial. Furthermore, by the trace and determinant of a matrix are equal to the sum and product of the roots of its characteristic polynomial. Thus (4) also follows from (2).  The proofs of statements (5)-(6) are left as exercises.   "
+},
+{
+  "id": "mantra_diagonalizable",
+  "level": "2",
+  "url": "s_diagonalization.html#mantra_diagonalizable",
+  "type": "Mantra",
+  "number": "6.2.21",
+  "title": "Diagonalizable mantra.",
+  "body": " Diagonalizable mantra   A diagonalizable matrix is as good as diagonal.   "
+},
+{
+  "id": "th_conjugation",
+  "level": "2",
+  "url": "s_diagonalization.html#th_conjugation",
+  "type": "Theorem",
+  "number": "6.2.22",
+  "title": "Properties of conjugation.",
+  "body": " Properties of conjugation   Let be an invertible matrix.   Conjugation is linear  For all and , we have .    Conjugation commutes with powers  For all and integers , we have . If is invertible, this equality holds for all integers .    Conjugation commutes with polynomials  Given any polynomial with real coefficients, we have .       The proof is left as an exercise.   "
+},
+{
+  "id": "eg_diagonalizable_matrix_powers",
+  "level": "2",
+  "url": "s_diagonalization.html#eg_diagonalizable_matrix_powers",
+  "type": "Example",
+  "number": "6.2.23",
+  "title": "Diagonalizable: matrix powers.",
+  "body": " Diagonalizable: matrix powers   Assume , where is diagonal. The normally difficult computation can be accomplished by first computing (easy) and then observing that . For example, the matrix is diagonalizable and satisfies , where . It follows that for any we have .   "
+},
+{
+  "id": "eg_diagonalizable_matrix_polynomials",
+  "level": "2",
+  "url": "s_diagonalization.html#eg_diagonalizable_matrix_polynomials",
+  "type": "Example",
+  "number": "6.2.24",
+  "title": "Diagonalizable: matrix polynomials.",
+  "body": " Diagonalizable: matrix polynomials   Assume , where is a diagonal matrix. Let . Given any polynomial , we have . Furthermore, since is diagonal, it follows that is also diagonal, and in fact its diagonal entries are given by . This gives us an easy method of computing arbitrary polynomials of the matrix .  Consider again the matrix (and and ) from . Let . Since , it follows that . We conclude that , as you can check directly.   "
+},
+{
+  "id": "ss_diagonalizable_matrices-16",
+  "level": "2",
+  "url": "s_diagonalization.html#ss_diagonalizable_matrices-16",
+  "type": "Example",
+  "number": "6.2.25",
+  "title": "",
+  "body": "  A square-root of an matrix is a matrix such that . If and are similar matrices, satisfying , then has a square-root if and only if has a square-root. Indeed, if satisfies , then satisfies . Similarly, if satisfies , then satisfies . As an example, the matrix satisfies , where . Since is a square-root of , is a square-root of .  So when exactly does a diagonal matrix have a square-root? Clearly, it is sufficient that the diagonal entries satisfy for all , as in the example above. Interestingly, this is not a necessary condition! Indeed, consider the following example: .   "
+},
+{
+  "id": "d_char_poly_transform",
+  "level": "2",
+  "url": "s_diagonalization.html#d_char_poly_transform",
+  "type": "Definition",
+  "number": "6.2.26",
+  "title": "Characteristic polynomial of a transformation.",
+  "body": " Characteristic polynomial of a transformation   Let be a linear transformation, where is finite-dimensional. Let be an ordered basis of , and let . We define the characteristic polynomial of to be the characteristic polynomial of : , the characteristic polynomial of is .   "
+},
+{
+  "id": "rm_char_poly_transform",
+  "level": "2",
+  "url": "s_diagonalization.html#rm_char_poly_transform",
+  "type": "Remark",
+  "number": "6.2.27",
+  "title": "",
+  "body": "  For the characteristic polynomial of a linear transformation to be well-defined, it should not depend on the choice of basis. This is true thanks to and . Indeed, given two choice of ordered bases of , the matrices and are similar ( ), and thus their characteristic polynomials are equal ( ,(2)).   "
+},
+{
+  "id": "d_alg_geom_mult",
+  "level": "2",
+  "url": "s_diagonalization.html#d_alg_geom_mult",
+  "type": "Definition",
+  "number": "6.2.28",
+  "title": "Algebraic\/geometric multiplicity.",
+  "body": " multiplicity of an eigenvalue algebraic  multiplicity of an eigenvalue geometric  Algebraic\/geometric multiplicity   Let be a linear transformation, where is finite-dimensional, and let be the characteristic polynomial of . Given an eigenvalue of , we can factor as , where is not a root of the polynomial : , . We call the geometric multiplicity of the eigenvalue , and we call its geometric multiplicity . If , we say is a repeated eigenvalue of .   "
+},
+{
+  "id": "th_alg_geom_mult",
+  "level": "2",
+  "url": "s_diagonalization.html#th_alg_geom_mult",
+  "type": "Theorem",
+  "number": "6.2.29",
+  "title": "Algebraic and geometric multiplicity.",
+  "body": " Algebraic and geometric multiplicity   Let be a linear transformation, where , let be the characteristic polynomial of , and suppose is an eigenvalue of of algebraic multiplicity : , and . We have . In other words, the geometric multiplicity of an eigenvalue is bounded above by its algebraic multiplicity.    Since is an eigenvalue, we have , and thus . Assume by contradiction that . Let , and let be a basis for . We can extend to an ordered basis of . By definition, the characteristic polynomial of is given my , where w. Since are -eigenvectors of , the matrix is of the form   An easy proof by induction on shows that for such a matrix we have for some polynomial . On the other hand, since has algebraic multiplicity we have for some polynomial with . Setting these two expressions equal to one another we see that , or equivalently, . Since it follows that . Contradiction! We conclude that , as desired.   "
+},
+{
+  "id": "cor_alg_geom_mult",
+  "level": "2",
+  "url": "s_diagonalization.html#cor_alg_geom_mult",
+  "type": "Corollary",
+  "number": "6.2.30",
+  "title": "Algebraic and geometric multiplicity.",
+  "body": " Algebraic and geometric multiplicity   Let be a linear transformation, where , and suppose the characteristic polynomial of factors over as , where for all . The following are equivalent:    is diagonalizable.    For all we have and .   In other words, is diagonalizable if and only if all roots of are real, and the geometric multiplicity of each eigenvalue is equal to its algebraic multiplicity.     Implication:  If (2) is true, then each is an eigenvalue of and we have , by counting degrees in . It follows from that is diagonalizable.    Implication:  If is diagonalizable, then there is an ordered basis of for which is diagonal. Letting be the -th diagonal element of , we have . This expression tells us that are the roots of , and hence that all roots are real since since for all . On the other hand each is a root of , and thus for all . It follows that are the distinct eigenvalues of . By , since is diagonalizable we must have . Since for all ( ), and since (counting degrees in ), for the equality to hold we must have for all , as desired.    "
+},
+{
+  "id": "eg_alg_geom_1",
+  "level": "2",
+  "url": "s_diagonalization.html#eg_alg_geom_1",
+  "type": "Example",
+  "number": "6.2.31",
+  "title": "",
+  "body": "  The matrix has characteristic polynomial . Decide whether is diagonalizable.    The eigenvalues of are . Since the eigenvalues and both have algebraic multiplicity , we have by  , and hence . It follows that is diagonalizable if and only if . We have , where . This matrix clearly has rank 2 (the first two columns form a basis for its column space), and hence nullity . We conclude that is diagonalizable.   "
+},
+{
+  "id": "eg_alg_geom_2",
+  "level": "2",
+  "url": "s_diagonalization.html#eg_alg_geom_2",
+  "type": "Example",
+  "number": "6.2.32",
+  "title": "",
+  "body": "  The matrix has characterisic polynomial . Decide whether is diagonalizable.    The eigenvalues of are and , and each has algebraic multiplicity . Thus , and is diagonalizable if and only if . By inspection we see that and are -eigenvectors, and thus we must have . Next we have where . It is not difficult to see (either using Gaussian elimination or inspection) that this matrix has rank 3, and hence nullity 1. We conclude that , and hence is not diagonalizable.   "
+},
+{
+  "id": "s_diagonalization_ex-1-2",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-1-2",
+  "type": "Exercise",
+  "number": "6.2.5.1",
+  "title": "",
+  "body": "    Let =  Find a matrix , a diagonal matrix and such that .   ,  ,        "
+},
+{
+  "id": "s_diagonalization_ex-1-3",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-1-3",
+  "type": "Exercise",
+  "number": "6.2.5.2",
+  "title": "",
+  "body": "    Let . Find an invertible matrix and a diagonal matrix such that .   ,        "
+},
+{
+  "id": "s_diagonalization_ex-1-4",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-1-4",
+  "type": "Exercise",
+  "number": "6.2.5.3",
+  "title": "",
+  "body": "    Show that and are similar matrices by finding an invertible matrix satisfying .   ,        "
+},
+{
+  "id": "s_diagonalization_ex-1-5",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-1-5",
+  "type": "Exercise",
+  "number": "6.2.5.4",
+  "title": "",
+  "body": "    Suppose Find an invertible matrix and a diagonal matrix so that . Use your answer to find an expression for in terms of , a power of , and in that order.     .       "
+},
+{
+  "id": "s_diagonalization_ex-2-2",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-2-2",
+  "type": "Exercise",
+  "number": "6.2.5.5",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_diagonalization_ex-2-3",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-2-3",
+  "type": "Exercise",
+  "number": "6.2.5.6",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_diagonalization_ex-2-4",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-2-4",
+  "type": "Exercise",
+  "number": "6.2.5.7",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_diagonalization_ex-2-5",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-2-5",
+  "type": "Exercise",
+  "number": "6.2.5.8",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_diagonalization_ex-2-6",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-2-6",
+  "type": "Exercise",
+  "number": "6.2.5.9",
+  "title": "",
+  "body": "   ;    "
+},
+{
+  "id": "s_diagonalization_ex-3",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-3",
+  "type": "Exercise",
+  "number": "6.2.5.10",
+  "title": "",
+  "body": "  Let . Show that is diagonalizable if and only if either or ( , and ).   "
+},
+{
+  "id": "s_diagonalization_ex-4",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-4",
+  "type": "Exercise",
+  "number": "6.2.5.11",
+  "title": "",
+  "body": "  Prove .    Show that for any we have .   "
+},
+{
+  "id": "s_diagonalization_ex-5-2",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-5-2",
+  "type": "Exercise",
+  "number": "6.2.5.12",
+  "title": "",
+  "body": "   has eigenspaces and .   "
+},
+{
+  "id": "s_diagonalization_ex-5-3",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-5-3",
+  "type": "Exercise",
+  "number": "6.2.5.13",
+  "title": "",
+  "body": "   for all , for .   "
+},
+{
+  "id": "s_diagonalization_ex-6",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-6",
+  "type": "Exercise",
+  "number": "6.2.5.14",
+  "title": "",
+  "body": "  Assume is a matrix with eigenvalues , , and .    Show that is diagonalizable. Provide an explicit diagonal matrix that is similar to.    Prove that for all odd integers .     "
+},
+{
+  "id": "s_diagonalization_ex-7",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-7",
+  "type": "Exercise",
+  "number": "6.2.5.15",
+  "title": "",
+  "body": "  Prove statement (5) of .    Use and .   "
+},
+{
+  "id": "s_diagonalization_ex-8",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-8",
+  "type": "Exercise",
+  "number": "6.2.5.16",
+  "title": "",
+  "body": "  Prove statement (6) of .    Use and .   "
+},
+{
+  "id": "s_diagonalization_ex-9",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-9",
+  "type": "Exercise",
+  "number": "6.2.5.17",
+  "title": "",
+  "body": "  According to if and are similar, then they have the same rank. Show that the converse is false by showing that the matrices have the same rank, but are not similar.   "
+},
+{
+  "id": "s_diagonalization_ex-10",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-10",
+  "type": "Exercise",
+  "number": "6.2.5.18",
+  "title": "",
+  "body": "  According to if and are similar, then they have the same characteristic polynomial. Show that the converse is false by showing that the matrices have the same characteristic polynomial, but are not similar.   "
+},
+{
+  "id": "s_diagonalization_ex-11",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-11",
+  "type": "Exercise",
+  "number": "6.2.5.19",
+  "title": "",
+  "body": "  Prove all statements of .   "
+},
+{
+  "id": "s_diagonalization_ex-12",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-12",
+  "type": "Exercise",
+  "number": "6.2.5.20",
+  "title": "",
+  "body": "  In each case information about a matrix is given. Decide whether is diagonalizable.      , ,        ,        , ,     See .    "
+},
+{
+  "id": "ex_diagonalization",
+  "level": "2",
+  "url": "s_diagonalization.html#ex_diagonalization",
+  "type": "Exercise",
+  "number": "6.2.5.21",
+  "title": "",
+  "body": "  Each matrix below has characteristic polynomial . Use to decide whether is diagonalizable. If yes, provide an invertible and diagonal satisfying .               "
+},
+{
+  "id": "s_diagonalization_ex-14",
+  "level": "2",
+  "url": "s_diagonalization.html#s_diagonalization_ex-14",
+  "type": "Exercise",
+  "number": "6.2.5.22",
+  "title": "",
+  "body": "  Let . Use your work from to find a matrix satisfying .   "
+},
+{
+  "id": "s_innerproducts",
+  "level": "1",
+  "url": "s_innerproducts.html",
+  "type": "Section",
+  "number": "7.1",
+  "title": "Inner product spaces",
+  "body": " Inner product spaces   At last we return to that additional layer that can added atop a vector space structure: the inner product .    Norm and distance  As mentioned above, once an inner product is established, we can define further notions like norm (or length), distance, and angle in terms of the given inner product. When the inner product in question is the standard dot product on or , then these are precisely the familiar notions you may have met in multivariable calculus. Things get really interesting when we treat a more exotic inner product space. For example, consider . The integral inner product  gives rise to useful notions of the length of a function , as well as the distance or angle between two functions .   Norm (or length) of a vector  norm of a vector    norm of    Let be an inner product space. Given we define its norm (or length ), denoted as . A unit vector is a vector of length one: , a vector satisfying .     Norm with respect to dot product   Consider with the standard dot product. Compute .    We have .     Norm with respect to weighted dot product   Consider equipped with the dot product with weights . Compute .    We have .      Unit vectors   Given any , the vector is a unit vector. To verify this, let and compute .     Unit vectors   For each inner product space and compute the associated unit vector     with dot product,      with dot product with weights ,         The norms of the vectors in each case were computed in earlier examples. We simply scale to compute the corresponding unit vectors.             Next, we define the distance between two vectors in an inner product space as the length of their vector difference.   distance between two vectors    the distance between and   Distance between vectors   Let be an inner product space. The distance between , denoted , is defined as .      For each inner product space , compute the distance between the given vectors.     with the dot product, ,          We have .        Basic properties of norm and distance   Let be an inner product space.    For all we have , and equality holds if and only if .    For all and we have .    For all we have , and equality holds if and only if .      We prove (2) and leave the rest as an exercise ( ).  Given and we have .      Cauchy-Schwarz inequality, triangle inequalities, and angles between vectors  The famous Cauchy-Schwarz inequality has a knack of cropping up all over the world of science: from properties of covariance in statistics, to the Heisenberg uncertainty principle of quantum mechanics. More directly pertinent to our discussion, the Cauchy-Schwarz inequality implies the triangle inequalities ( ) and ensures that our notion of the angle between two nonzero vectors ( ) is well-defined.   Cauchy-Schwarz inequality   Let be an inner product space. For all we have , and equality holds if and only if for some .     Fix vectors and . For any we have by positivity , where . Since for all the quadratic polynomial has at most one root. Using the quadratic formula we conclude that we must have , since otherwise would have two distinct roots. It follows that , or equivalently . Taking square-roots yields the desired inequality.  The same reasoning shows that the Cauchy-Schwarz inequality is an actual equality if and only if for some if and only if if and only if for some (by positivity).   The following triangle inequalities are more or less direct consequences of the Cauchy-Schwarz inequality.   Triangle Inequalities   Let be an inner product space.   For all we have .    For all we have        This is an elementary exercise of unpacking the definitions of norm and distance in terms of the inner product, and then applying the Cauchy-Schwarz inequality appropriately. The proof is left as an exercise.    Let be an inner product space. For any nonzero vectors , the Cauchy-Schwarz inequality tells us that , or equivalently, . It follows that there is a unique real number satisfying . We call the angle between and .   Angle between vectors  angle between vectors   Let be an inner product space. Given nonzero vectors , the angle between and is defined to be the unique satisfying . Equivalently, we have .      Our definition of the angle between two vectors may remind you of the dot product angle formula for vectors in : . Interestingly, whereas is typically treated as a theorem , derived from properties of the dot product and the law of cosines, in a general inner product space the equation is understood as the definition of the angle between two vectors.      Consider along with the dot product. Verify that our definition of the angle between and is consistent with our planar geometry notion of angle.    According to , is the unique element of satisfying . We recognize as the familiar angle , as expected.      Consider with the weighted dot product Compute the angle between and with respect to this inner product    First compute By definition is the unique value in satisfying . We see that is not one of our familiar angles from the unit circle ( , , ) and so express in terms of the function: .       Choosing your inner product  Why, given a fixed vector space , would we prefer one inner product definition to another? One way of understanding a particular choice of inner product is to ask what its corresponding notion of distance measures.   Weighted dot product distance   Consider with a choice of weighted dot product where are fixed positive constants. With respect to this inner product the distance between two vectors and is . Thus is an aggregate measure of the difference between the corresponding entries of and , as weighted by our choice of the constants .  Imagine that each element of is a data point collected by measuring different properties of a sample : , is the measured value of property on for all . Given samples and with corresponding measurement vectors and , the weighted distance is then a quantitative way of saying how close the two samples are to one another. The choice of weights allows us to adjust the relative influence of a given property in determining this closeness. For example, the standard dot product ( for all ) yields a notion of distance that gives each property equal standing.        WeBWork Exercises      Find the norm of and the unit vector in the direction of if   ,                   Find the angle between the vectors   .                 If and are arbitrary polynomials of degree at most 2, then the mapping defines an inner product in . Use this inner product to find , , , and the angle between and for   ,   ,   ,   .                                If and are arbitrary real matrices, then the mapping defines an inner product in . Use this inner product to find , the norms and , and the angle between and for   ,   ,   ,   .                                Use the inner product in the vector space of continuous functions on the domain to find , , , and the angle between and for   ,   ,   ,   .                               For each of the following operations on , determine whether it defines an inner product on . If it fails to be an inner product, identify which of the three inner product axioms (if any) it does satisfy, and provide explicit counterexamples for any axiom that fails.     .     .     .      The operation in (b) is an inner product. Use that fact that , where we treat as column vectors. This helps to prove axioms (i)-(ii). For axiom (iii), use either a complete the square or quadratic formula argument on the expression .      We work within the inner product space given by together with the evaluation at 0, 1, 2 inner product.  Let . Give a parametric description of the set .      We work in the inner product space given by together with the integral inner product.   Let . Compute and .    Show that if is an odd function (i.e., for all ) and is an even function ( for all ), then . Hint : use the area interpretation of the integral and properties of even\/odd functions.         Compute the angle between the given vectors with respect to the given inner product. The exercises are designed to be done by hand: , do not express your answer in terms of .     with the standard dot product;        with the dot product with weights ;        with the integral inner product;        with evaluation at inner product;        Let be an inner product space. Prove that for all .      Let and be nonzero vectors of the inner product space , and let be the angle between them. Prove the following equivalence: . Your proof should be a chain of equivalences with each step justified.    The equality is true if and only if it is true after squaring both sides. (Why?) Use the definition and expand the inner product.       Let be an inner product space. Suppose vectors satisfy and . Using the Cauchy-Schwarz inequality ( ) find the maximum and minimum possible values of , and give explicit examples where those values occur.      Prove statements (1) and (3) of .      Prove each inequality below using the Cauchy-Schwarz inequality ( ) applied to a judicious choice of inner product space, and possibly a judicious choice of vector in said inner product space.   For all  .    For all , .    For all  .        Isometries of inner product spaces   Let be an inner product space. An isometry of is a function that preserves distance: i.e., . In this exercise we will show that any isometry that maps to is a linear transformation. This is a very useful fact. For example, it implies the linearity of many geometric transformations we have considered: rotation about the origin in , reflection through a line in , .  In what follows assume that is an isometry of satisfying .    Prove that : i.e., preserves norms.    Prove : i.e., preserves inner products. Hint: first prove that .    To prove is linear it is enough to show for all , . To do so, use the above parts to show that .       "
+},
+{
+  "id": "d_norm",
+  "level": "2",
+  "url": "s_innerproducts.html#d_norm",
+  "type": "Definition",
+  "number": "7.1.1",
+  "title": "Norm (or length) of a vector.",
+  "body": " Norm (or length) of a vector  norm of a vector    norm of    Let be an inner product space. Given we define its norm (or length ), denoted as . A unit vector is a vector of length one: , a vector satisfying .   "
+},
+{
+  "id": "eg_norm_dot",
+  "level": "2",
+  "url": "s_innerproducts.html#eg_norm_dot",
+  "type": "Example",
+  "number": "7.1.2",
+  "title": "Norm with respect to dot product.",
+  "body": " Norm with respect to dot product   Consider with the standard dot product. Compute .    We have .   "
+},
+{
+  "id": "eg_norm_weighteddot",
+  "level": "2",
+  "url": "s_innerproducts.html#eg_norm_weighteddot",
+  "type": "Example",
+  "number": "7.1.3",
+  "title": "Norm with respect to weighted dot product.",
+  "body": " Norm with respect to weighted dot product   Consider equipped with the dot product with weights . Compute .    We have .   "
+},
+{
+  "id": "rm_unit_vectors",
+  "level": "2",
+  "url": "s_innerproducts.html#rm_unit_vectors",
+  "type": "Remark",
+  "number": "7.1.4",
+  "title": "Unit vectors.",
+  "body": " Unit vectors   Given any , the vector is a unit vector. To verify this, let and compute .   "
+},
+{
+  "id": "eg_unit_vectors",
+  "level": "2",
+  "url": "s_innerproducts.html#eg_unit_vectors",
+  "type": "Example",
+  "number": "7.1.5",
+  "title": "Unit vectors.",
+  "body": " Unit vectors   For each inner product space and compute the associated unit vector     with dot product,      with dot product with weights ,         The norms of the vectors in each case were computed in earlier examples. We simply scale to compute the corresponding unit vectors.            "
+},
+{
+  "id": "d_distance",
+  "level": "2",
+  "url": "s_innerproducts.html#d_distance",
+  "type": "Definition",
+  "number": "7.1.6",
+  "title": "Distance between vectors.",
+  "body": " distance between two vectors    the distance between and   Distance between vectors   Let be an inner product space. The distance between , denoted , is defined as .   "
+},
+{
+  "id": "eg_distance",
+  "level": "2",
+  "url": "s_innerproducts.html#eg_distance",
+  "type": "Example",
+  "number": "7.1.7",
+  "title": "",
+  "body": "  For each inner product space , compute the distance between the given vectors.     with the dot product, ,          We have .      "
+},
+{
+  "id": "th_norm_basic_props",
+  "level": "2",
+  "url": "s_innerproducts.html#th_norm_basic_props",
+  "type": "Theorem",
+  "number": "7.1.8",
+  "title": "Basic properties of norm and distance.",
+  "body": " Basic properties of norm and distance   Let be an inner product space.    For all we have , and equality holds if and only if .    For all and we have .    For all we have , and equality holds if and only if .      We prove (2) and leave the rest as an exercise ( ).  Given and we have .   "
+},
+{
+  "id": "th_Cauchy-Schwarz",
+  "level": "2",
+  "url": "s_innerproducts.html#th_Cauchy-Schwarz",
+  "type": "Theorem",
+  "number": "7.1.9",
+  "title": "Cauchy-Schwarz inequality.",
+  "body": " Cauchy-Schwarz inequality   Let be an inner product space. For all we have , and equality holds if and only if for some .   "
+},
+{
+  "id": "s_innerproducts-4-4",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts-4-4",
+  "type": "Proof",
+  "number": "7.1.2.1",
+  "title": "",
+  "body": " Fix vectors and . For any we have by positivity , where . Since for all the quadratic polynomial has at most one root. Using the quadratic formula we conclude that we must have , since otherwise would have two distinct roots. It follows that , or equivalently . Taking square-roots yields the desired inequality.  The same reasoning shows that the Cauchy-Schwarz inequality is an actual equality if and only if for some if and only if if and only if for some (by positivity).  "
+},
+{
+  "id": "th_triangle_inequalities",
+  "level": "2",
+  "url": "s_innerproducts.html#th_triangle_inequalities",
+  "type": "Theorem",
+  "number": "7.1.10",
+  "title": "Triangle Inequalities.",
+  "body": " Triangle Inequalities   Let be an inner product space.   For all we have .    For all we have        This is an elementary exercise of unpacking the definitions of norm and distance in terms of the inner product, and then applying the Cauchy-Schwarz inequality appropriately. The proof is left as an exercise.   "
+},
+{
+  "id": "d_angle",
+  "level": "2",
+  "url": "s_innerproducts.html#d_angle",
+  "type": "Definition",
+  "number": "7.1.11",
+  "title": "Angle between vectors.",
+  "body": " Angle between vectors  angle between vectors   Let be an inner product space. Given nonzero vectors , the angle between and is defined to be the unique satisfying . Equivalently, we have .   "
+},
+{
+  "id": "rm_general_angles",
+  "level": "2",
+  "url": "s_innerproducts.html#rm_general_angles",
+  "type": "Remark",
+  "number": "7.1.12",
+  "title": "",
+  "body": "  Our definition of the angle between two vectors may remind you of the dot product angle formula for vectors in : . Interestingly, whereas is typically treated as a theorem , derived from properties of the dot product and the law of cosines, in a general inner product space the equation is understood as the definition of the angle between two vectors.   "
+},
+{
+  "id": "eg_angle_dotproduct",
+  "level": "2",
+  "url": "s_innerproducts.html#eg_angle_dotproduct",
+  "type": "Example",
+  "number": "7.1.13",
+  "title": "",
+  "body": "  Consider along with the dot product. Verify that our definition of the angle between and is consistent with our planar geometry notion of angle.    According to , is the unique element of satisfying . We recognize as the familiar angle , as expected.   "
+},
+{
+  "id": "eg_angle_weighted",
+  "level": "2",
+  "url": "s_innerproducts.html#eg_angle_weighted",
+  "type": "Example",
+  "number": "7.1.14",
+  "title": "",
+  "body": "  Consider with the weighted dot product Compute the angle between and with respect to this inner product    First compute By definition is the unique value in satisfying . We see that is not one of our familiar angles from the unit circle ( , , ) and so express in terms of the function: .   "
+},
+{
+  "id": "eg_why_weightedproduct",
+  "level": "2",
+  "url": "s_innerproducts.html#eg_why_weightedproduct",
+  "type": "Example",
+  "number": "7.1.15",
+  "title": "Weighted dot product distance.",
+  "body": " Weighted dot product distance   Consider with a choice of weighted dot product where are fixed positive constants. With respect to this inner product the distance between two vectors and is . Thus is an aggregate measure of the difference between the corresponding entries of and , as weighted by our choice of the constants .  Imagine that each element of is a data point collected by measuring different properties of a sample : , is the measured value of property on for all . Given samples and with corresponding measurement vectors and , the weighted distance is then a quantitative way of saying how close the two samples are to one another. The choice of weights allows us to adjust the relative influence of a given property in determining this closeness. For example, the standard dot product ( for all ) yields a notion of distance that gives each property equal standing.   "
+},
+{
+  "id": "s_innerproducts_ex-1-2",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts_ex-1-2",
+  "type": "Exercise",
+  "number": "7.1.4.1",
+  "title": "",
+  "body": "    Find the norm of and the unit vector in the direction of if   ,              "
+},
+{
+  "id": "s_innerproducts_ex-1-3",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts_ex-1-3",
+  "type": "Exercise",
+  "number": "7.1.4.2",
+  "title": "",
+  "body": "    Find the angle between the vectors   .            "
+},
+{
+  "id": "s_innerproducts_ex-1-4",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts_ex-1-4",
+  "type": "Exercise",
+  "number": "7.1.4.3",
+  "title": "",
+  "body": "    If and are arbitrary polynomials of degree at most 2, then the mapping defines an inner product in . Use this inner product to find , , , and the angle between and for   ,   ,   ,   .                           "
+},
+{
+  "id": "s_innerproducts_ex-1-5",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts_ex-1-5",
+  "type": "Exercise",
+  "number": "7.1.4.4",
+  "title": "",
+  "body": "    If and are arbitrary real matrices, then the mapping defines an inner product in . Use this inner product to find , the norms and , and the angle between and for   ,   ,   ,   .                           "
+},
+{
+  "id": "s_innerproducts_ex-1-6",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts_ex-1-6",
+  "type": "Exercise",
+  "number": "7.1.4.5",
+  "title": "",
+  "body": "    Use the inner product in the vector space of continuous functions on the domain to find , , , and the angle between and for   ,   ,   ,   .                           "
+},
+{
+  "id": "s_innerproducts_ex-2",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts_ex-2",
+  "type": "Exercise",
+  "number": "7.1.4.6",
+  "title": "",
+  "body": "  For each of the following operations on , determine whether it defines an inner product on . If it fails to be an inner product, identify which of the three inner product axioms (if any) it does satisfy, and provide explicit counterexamples for any axiom that fails.     .     .     .      The operation in (b) is an inner product. Use that fact that , where we treat as column vectors. This helps to prove axioms (i)-(ii). For axiom (iii), use either a complete the square or quadratic formula argument on the expression .   "
+},
+{
+  "id": "s_innerproducts_ex-3",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts_ex-3",
+  "type": "Exercise",
+  "number": "7.1.4.7",
+  "title": "",
+  "body": "  We work within the inner product space given by together with the evaluation at 0, 1, 2 inner product.  Let . Give a parametric description of the set .   "
+},
+{
+  "id": "s_innerproducts_ex-4",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts_ex-4",
+  "type": "Exercise",
+  "number": "7.1.4.8",
+  "title": "",
+  "body": "  We work in the inner product space given by together with the integral inner product.   Let . Compute and .    Show that if is an odd function (i.e., for all ) and is an even function ( for all ), then . Hint : use the area interpretation of the integral and properties of even\/odd functions.      "
+},
+{
+  "id": "s_innerproducts_ex-5-3",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts_ex-5-3",
+  "type": "Exercise",
+  "number": "7.1.4.9",
+  "title": "",
+  "body": "   with the standard dot product;    "
+},
+{
+  "id": "s_innerproducts_ex-5-4",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts_ex-5-4",
+  "type": "Exercise",
+  "number": "7.1.4.10",
+  "title": "",
+  "body": "   with the dot product with weights ;    "
+},
+{
+  "id": "s_innerproducts_ex-5-5",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts_ex-5-5",
+  "type": "Exercise",
+  "number": "7.1.4.11",
+  "title": "",
+  "body": "   with the integral inner product;    "
+},
+{
+  "id": "s_innerproducts_ex-5-6",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts_ex-5-6",
+  "type": "Exercise",
+  "number": "7.1.4.12",
+  "title": "",
+  "body": "   with evaluation at inner product;    "
+},
+{
+  "id": "s_innerproducts_ex-6",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts_ex-6",
+  "type": "Exercise",
+  "number": "7.1.4.13",
+  "title": "",
+  "body": "  Let be an inner product space. Prove that for all .   "
+},
+{
+  "id": "s_innerproducts_ex-7",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts_ex-7",
+  "type": "Exercise",
+  "number": "7.1.4.14",
+  "title": "",
+  "body": "  Let and be nonzero vectors of the inner product space , and let be the angle between them. Prove the following equivalence: . Your proof should be a chain of equivalences with each step justified.    The equality is true if and only if it is true after squaring both sides. (Why?) Use the definition and expand the inner product.    "
+},
+{
+  "id": "s_innerproducts_ex-8",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts_ex-8",
+  "type": "Exercise",
+  "number": "7.1.4.15",
+  "title": "",
+  "body": "  Let be an inner product space. Suppose vectors satisfy and . Using the Cauchy-Schwarz inequality ( ) find the maximum and minimum possible values of , and give explicit examples where those values occur.   "
+},
+{
+  "id": "ex_norm_props",
+  "level": "2",
+  "url": "s_innerproducts.html#ex_norm_props",
+  "type": "Exercise",
+  "number": "7.1.4.16",
+  "title": "",
+  "body": "  Prove statements (1) and (3) of .   "
+},
+{
+  "id": "s_innerproducts_ex-10",
+  "level": "2",
+  "url": "s_innerproducts.html#s_innerproducts_ex-10",
+  "type": "Exercise",
+  "number": "7.1.4.17",
+  "title": "",
+  "body": "  Prove each inequality below using the Cauchy-Schwarz inequality ( ) applied to a judicious choice of inner product space, and possibly a judicious choice of vector in said inner product space.   For all  .    For all , .    For all  .      "
+},
+{
+  "id": "ex_isometries",
+  "level": "2",
+  "url": "s_innerproducts.html#ex_isometries",
+  "type": "Exercise",
+  "number": "7.1.4.18",
+  "title": "Isometries of inner product spaces.",
+  "body": " Isometries of inner product spaces   Let be an inner product space. An isometry of is a function that preserves distance: i.e., . In this exercise we will show that any isometry that maps to is a linear transformation. This is a very useful fact. For example, it implies the linearity of many geometric transformations we have considered: rotation about the origin in , reflection through a line in , .  In what follows assume that is an isometry of satisfying .    Prove that : i.e., preserves norms.    Prove : i.e., preserves inner products. Hint: first prove that .    To prove is linear it is enough to show for all , . To do so, use the above parts to show that .     "
+},
+{
+  "id": "s_orthogonality",
+  "level": "1",
+  "url": "s_orthogonality.html",
+  "type": "Section",
+  "number": "7.2",
+  "title": "Orthogonal bases",
+  "body": " Orthogonal bases   Orthogonal vectors and sets   Orthogonality  orthogonal vectors  orthogonal sets  orthonormal basis   Let be an inner product space. Vectors are orthogonal if .  Let be a set of nonzero vectors.   The set is orthogonal if for all . We say that the elements of are pairwise orthogonal in this case.    The set is orthonormal if it is both orthogonal and satisfies for all : , consists of pairwise orthogonal unit vectors.        Orthogonal implies linearly independent   Let be an inner product space. If is orthogonal, then is linearly independent.    Given any distinct elements , we have . This proves that is linearly independent.      Show that the set is orthogonal with respect to the dot product. Explain why it follows that is a basis of .    A simple computation shows for all , showing that is orthogonal. implies is linearly independent. Since , it follows from that is a basis.      Let with integral inner product , and let , where the element is understood as the constant function for all . Show that is orthogonal and hence linearly independent.    First observe that for all . (Note: since , the set is not orthonormal. ) Next, using the trigonometric identities it follows that .      Orthogonal bases  Given an inner product space we will see that working with orthogonal sets of vectors is extremely convenient computationally speaking. In particular, when picking basis of , we will look for one consisting of orthogonal vectors. Not surprisingly, this is called an orthogonal basis .   Orthogonal and orthonormal bases  orthogonal basis  orthonormal basis   Let be an inner product space. An orthogonal basis (resp., orthonormal basis ) of is a basis that is orthogonal (resp., orthonormal) as a set.    We will see in precisely why working with orthogonal or orthonormal bases is so convenient. Before we do so, however, we would like some guarantee that we can actually find an orthogonal basis. The Gram-Schmidt procedure comes to our rescue in this regard, at least in the finite-dimensional case, as it provides a method of converting an arbitrary basis into an orthogonal one.   Gram-Schmidt procedure  Gram-Schmidt procedure   Let be an inner product space of dimension , and let be a basis for . We can convert into an orthogonal basis , and further to an orthonormal basis , as follows:   Set .    Orthogonalize  Proceeding in succession for each , replace with the vector defined as . The resulting set is an orthogonal basis of .    Normalize  For each let . The set is an orthonormal basis of .        Existence of orthonormal bases   Let be an inner product space of dimension .    There is an orthonormal basis for . In fact, any basis of can be converted to an orthonormal basis using the Gram-Schmidt procedure .    If is an orthogonal set, then there is an orthogonal basis containing : , any orthogonal set can be extended to an orthogonal basis.        See and its proof.    The orthogonal set is linearly independent by . Let be the distinct elements of . (We must have since is linearly independent.) By we can extend to a basis . It is easy to see that when we apply the Gram-Schmidt procedure to , the first vectors are left unchanged, as they are already pairwise orthogonal. Thus Gram-Schmidt returns an orthogonal basis of the form , as desired.      Now let's see the computational virtue of working with orthogonal bases.   Calculating with orthogonal bases   Let be an inner product space of dimension and let    Let be an orthogonal basis of . For any we have , where for all .  If is orthonormal , so that for all , then the inner product formula reduces to the simpler .    Generalized Pythagorean theorem  Let be an orthonormal basis of . Given , we have .        Consider the inner product space with the dot product.   Verify that is an orthonormal basis of .    Let . Find the scalars such that .    Verify that .         Easily verified.    Using we compute .    Computing directly yields . Using the generalized Pythagorean theorem we have , as desired.      As the previous example and begin to make clear, orthogonal bases, and especially orthonormal bases make our life easier computationally speaking. This observation is worthy of a mantra.   Orthogonal basis mantra   Working with an orthogonal basis is nice; working with an orthonormal basis is even nicer.      Coordinate vectors and matrix representations  Let be an inner product space. By an orthogonal (resp., orthonormal ) ordered basis of , we mean an ordered basis for which the underlying set is orthogonal (resp., orthonormal). It should come as little surprise that as a consequence of , computing coordinate vectors and matrix representations with respect to orthogonal bases is especially easy.  For example, if is an orthogonal basis with respect to some inner product , then by we have , and thus, using definition , we have . We have thus proved the following theorem.   Coordinate vectors for orthogonal bases   Let be an inner product space and let be an ordered basis.   Orthogonal basis  If is orthogonal, then for all we have .    Orthonormal basis  If is orthonormal, then for all we have .        Orthogonal bases   Let and . Find a general formula for . Note: is orthogonal with respect to the weighted dot product .    Applying the inner product formula to and the dot product with weights , for any we compute . Let's check our formula with . The formula yields , and indeed we see that .    Similarly, the computations involved in change of basis matrices are significantly easier when at least one of the bases involved is orthogonal. This is a direct consequence of the fact that the change of basis matrix formula involves computing coordinate vectors; and this is easy to do when the basis in question is orthogonal, thanks to the inner product formula .  Things get even easier if both bases and involved are in fact orthonormal . As we show below, it turns out in this case that the inverse of the change of basis matrix is just its transpose: . It follows from that when both bases are orthonormal, we can obtain one change of basis matrix from the other simply by computing the transpose. An invertible matrix whose inverse is equal to its transpose is called an elementary matrix . We develop some general theory about this special family of matrices (interesting in its own right) before treating change of basis matrices.   Orthogonal matrices   An invertible matrix is orthogonal if .     Since for an invertible matrix we have it follows immediately from that .     Let . Check for yourself that . Thus is an orthogonal matrix.  Now observe that the columns of are orthonormal with respect to the dot product: . This is not a coincidence!     Orthogonal matrices   Let be an matrix. The following statements are equivalent.    The matrix is orthogonal.    The columns of form an orthonormal basis of with respect to the dot product.    The rows of form an orthonormal basis of with respect to the dot product.      Let and be the -th row and column of , respectively, for each . From we see that . We use here that rows of are the columns of , and the columns of are the rows of . From it follows easily that , and . This proves and . The result follows.     It is somewhat unfortunate that the property of being an orthogonal matrix is equivalent to your rows or columns forming an orthonormal basis. You ask: Why not simply call such matrices orthonormal matrices? My answer: tradition!    Orthonormal change of basis   Let be a finite dimensional inner product space, and suppose and are orthonormal bases of .    The matrices and are orthogonal.    We have .        Let . By definition, the columns of are the coordinate vectors , . By , these coordinate vectors form an orthonormal subset of ; since there are of them, they form an orthonormal basis. From it follows that is orthogonal. Lastly, from it follows that is also orthogonal.    Since is orthogonal, we have .       Orthonormal change of basis:   Let be the standard ordered basis of . The ordered basis is orthonormal with respect to the dot product. Compute the change of basis matrix .    Since is the standard ordered basis, we can easily compute . Since and are both orthonormal bases (with respect to the dot product), we have . .    Orthonormal change of basis: polynomials   Consider the vector space with inner product . The ordered bases are both orthonormal with respect to this inner product. Compute and .    Since is orthonormal, we use to compute . Thus and by  .       WeBWork Exercises      Let be an orthonormal basis for an inner product space . If   is so that , is orthogonal to , and , find the possible values for , , and .   ,  ,                   Solution: One checks by direct computation that  , ,  must hold.            Let Use the Gram-Schmidt process to determine an orthonormal basis for the subspace of spanned by and .   ,             Let Use the Gram-Schmidt process to determine an orthonormal basis for the subspace of spanned by , , and .   , ,             Let Find an orthonormal basis of the image of .   ,             Let Find an orthonormal basis of the kernel of .   ,            The vectors are pairwise orthogonal with respect to the dot product, as is easily verified. For each below, find the scalars such that .               (Your answer will be expressed in terms of , and . )       Coordinate vectors: orthogonal basis   In each exercise an inner product space and orthogonal ordered basis is given. Use to compute the requested coordinate vector.      with dot product; . Compute .       with dot product with weights ; . Compute .       with integral inner product ; . Compute . (Yes, can indeed be written as a linear combination of . In this exercise you will discover what the corresponding identity is using inner products!)      Orthonormal change of basis   In each exercise an inner product space is given along with two orthonormal ordered bases and . Compute and using .      with the dot product, ,        with the dot product, ,       Gram-Schmidt procedure   Use the Gram-Schmidt procedure to convert the given basis to a basis that is orthogonal with respect to the given inner product.      with the weighted dot product . .       with the integral inner product . .       with the evaluation inner product . .       Consider the inner product space together with the dot product. .    Show that is a subspace of by finding a matrix for which .    Use (a) and an appropriate fundamental space algorithm to find a basis for .    Use Gram-Schmidt to convert your basis in (b) to an orthgonal basis of .       Extending orthogonal bases   Consider the inner product space given by together with the dot product. Construct an orthogonal basis of containing following the steps below.    Produce a vector orthogonal to by inspection.    Produce a vector orthogonal to and by setting up an appropriate matrix equation of the form and finding a nontrivial solution.    Produce a vector orthogonal to by setting up an appropriate matrix equation of the form and finding a nontrivial solution.       Extending orthogonal bases   Consider the inner product space given by together with the dot product. Let be the plane with defining equation . Compute an orthogonal basis of , and then extend this to an orthogonal basis of .   You do not have to use Gram-Schmidt here, but can proceed using a combination of inspection, your geometric understanding of , and\/or along similar lines of .     Let be an inner produce space. Prove: if , then . This result can be thought of as the Pythagorean theorem for general inner product spaces .      Let be an inner product space, and suppose is an orthonormal basis of . Suppose satisfy .    Prove: .    Prove: .       Orthonormal coordinate vectors   Let be an inner product space, and suppose is an orthonormal ordered basis of .    Prove that for all . In other words we can compute the inner product of vectors by computing the dot product of their coordinate vectors with respect to the orthonormal basis .    Prove that a set is orthogonal (resp. orthonormal) with respect to if and only if is orthogonal (resp. orthonormal) with respect to the dot product.       Determinant of orthogonal matrices   Prove: if is an orthogonal matrix, then .     Orthogonal matrices   In this exercise we will prove that a matrix is orthogonal if and only it is a rotation matrix or a reflection matrix.  Let be a matrix.    Prove that if is orthogonal and , then is a rotation matrix: , there is a such that . See .    Prove that if is orthogonal and , then is a reflection matrix: , there is a such that . See .    Prove that is an orthogonal matrix if and only if is a rotation matrix or is a reflection matrix. You may use the result of .       "
+},
+{
+  "id": "ss_orthogonal-2",
+  "level": "2",
+  "url": "s_orthogonality.html#ss_orthogonal-2",
+  "type": "Definition",
+  "number": "7.2.1",
+  "title": "Orthogonality.",
+  "body": " Orthogonality  orthogonal vectors  orthogonal sets  orthonormal basis   Let be an inner product space. Vectors are orthogonal if .  Let be a set of nonzero vectors.   The set is orthogonal if for all . We say that the elements of are pairwise orthogonal in this case.    The set is orthonormal if it is both orthogonal and satisfies for all : , consists of pairwise orthogonal unit vectors.      "
+},
+{
+  "id": "th_orthogonal",
+  "level": "2",
+  "url": "s_orthogonality.html#th_orthogonal",
+  "type": "Theorem",
+  "number": "7.2.2",
+  "title": "Orthogonal implies linearly independent.",
+  "body": " Orthogonal implies linearly independent   Let be an inner product space. If is orthogonal, then is linearly independent.    Given any distinct elements , we have . This proves that is linearly independent.   "
+},
+{
+  "id": "ss_orthogonal-4",
+  "level": "2",
+  "url": "s_orthogonality.html#ss_orthogonal-4",
+  "type": "Example",
+  "number": "7.2.3",
+  "title": "",
+  "body": "  Show that the set is orthogonal with respect to the dot product. Explain why it follows that is a basis of .    A simple computation shows for all , showing that is orthogonal. implies is linearly independent. Since , it follows from that is a basis.   "
+},
+{
+  "id": "eg_orthogonal_functions",
+  "level": "2",
+  "url": "s_orthogonality.html#eg_orthogonal_functions",
+  "type": "Example",
+  "number": "7.2.4",
+  "title": "",
+  "body": "  Let with integral inner product , and let , where the element is understood as the constant function for all . Show that is orthogonal and hence linearly independent.    First observe that for all . (Note: since , the set is not orthonormal. ) Next, using the trigonometric identities it follows that .   "
+},
+{
+  "id": "d_orthogonal_basis",
+  "level": "2",
+  "url": "s_orthogonality.html#d_orthogonal_basis",
+  "type": "Definition",
+  "number": "7.2.5",
+  "title": "Orthogonal and orthonormal bases.",
+  "body": " Orthogonal and orthonormal bases  orthogonal basis  orthonormal basis   Let be an inner product space. An orthogonal basis (resp., orthonormal basis ) of is a basis that is orthogonal (resp., orthonormal) as a set.   "
+},
+{
+  "id": "proc_gram-schmidt",
+  "level": "2",
+  "url": "s_orthogonality.html#proc_gram-schmidt",
+  "type": "Procedure",
+  "number": "7.2.6",
+  "title": "Gram-Schmidt procedure.",
+  "body": " Gram-Schmidt procedure  Gram-Schmidt procedure   Let be an inner product space of dimension , and let be a basis for . We can convert into an orthogonal basis , and further to an orthonormal basis , as follows:   Set .    Orthogonalize  Proceeding in succession for each , replace with the vector defined as . The resulting set is an orthogonal basis of .    Normalize  For each let . The set is an orthonormal basis of .      "
+},
+{
+  "id": "cor_orthonormal_existence",
+  "level": "2",
+  "url": "s_orthogonality.html#cor_orthonormal_existence",
+  "type": "Corollary",
+  "number": "7.2.7",
+  "title": "Existence of orthonormal bases.",
+  "body": " Existence of orthonormal bases   Let be an inner product space of dimension .    There is an orthonormal basis for . In fact, any basis of can be converted to an orthonormal basis using the Gram-Schmidt procedure .    If is an orthogonal set, then there is an orthogonal basis containing : , any orthogonal set can be extended to an orthogonal basis.        See and its proof.    The orthogonal set is linearly independent by . Let be the distinct elements of . (We must have since is linearly independent.) By we can extend to a basis . It is easy to see that when we apply the Gram-Schmidt procedure to , the first vectors are left unchanged, as they are already pairwise orthogonal. Thus Gram-Schmidt returns an orthogonal basis of the form , as desired.     "
+},
+{
+  "id": "th_orthogonal_basis_formula",
+  "level": "2",
+  "url": "s_orthogonality.html#th_orthogonal_basis_formula",
+  "type": "Theorem",
+  "number": "7.2.8",
+  "title": "Calculating with orthogonal bases.",
+  "body": " Calculating with orthogonal bases   Let be an inner product space of dimension and let    Let be an orthogonal basis of . For any we have , where for all .  If is orthonormal , so that for all , then the inner product formula reduces to the simpler .    Generalized Pythagorean theorem  Let be an orthonormal basis of . Given , we have .     "
+},
+{
+  "id": "s_orthogonality-3-9",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonality-3-9",
+  "type": "Example",
+  "number": "7.2.9",
+  "title": "",
+  "body": "  Consider the inner product space with the dot product.   Verify that is an orthonormal basis of .    Let . Find the scalars such that .    Verify that .         Easily verified.    Using we compute .    Computing directly yields . Using the generalized Pythagorean theorem we have , as desired.     "
+},
+{
+  "id": "mantra_orthogonal_bases",
+  "level": "2",
+  "url": "s_orthogonality.html#mantra_orthogonal_bases",
+  "type": "Mantra",
+  "number": "7.2.10",
+  "title": "Orthogonal basis mantra.",
+  "body": " Orthogonal basis mantra   Working with an orthogonal basis is nice; working with an orthonormal basis is even nicer.   "
+},
+{
+  "id": "th_coordinates_orthogonal",
+  "level": "2",
+  "url": "s_orthogonality.html#th_coordinates_orthogonal",
+  "type": "Theorem",
+  "number": "7.2.11",
+  "title": "Coordinate vectors for orthogonal bases.",
+  "body": " Coordinate vectors for orthogonal bases   Let be an inner product space and let be an ordered basis.   Orthogonal basis  If is orthogonal, then for all we have .    Orthonormal basis  If is orthonormal, then for all we have .      "
+},
+{
+  "id": "ss_orthogonal_change_of_basis-5",
+  "level": "2",
+  "url": "s_orthogonality.html#ss_orthogonal_change_of_basis-5",
+  "type": "Example",
+  "number": "7.2.12",
+  "title": "Orthogonal bases.",
+  "body": " Orthogonal bases   Let and . Find a general formula for . Note: is orthogonal with respect to the weighted dot product .    Applying the inner product formula to and the dot product with weights , for any we compute . Let's check our formula with . The formula yields , and indeed we see that .   "
+},
+{
+  "id": "d_orthogonal_matrix",
+  "level": "2",
+  "url": "s_orthogonality.html#d_orthogonal_matrix",
+  "type": "Definition",
+  "number": "7.2.13",
+  "title": "Orthogonal matrices.",
+  "body": " Orthogonal matrices   An invertible matrix is orthogonal if .   "
+},
+{
+  "id": "rm_orthogonal_matrices",
+  "level": "2",
+  "url": "s_orthogonality.html#rm_orthogonal_matrices",
+  "type": "Remark",
+  "number": "7.2.14",
+  "title": "",
+  "body": " Since for an invertible matrix we have it follows immediately from that .  "
+},
+{
+  "id": "ss_orthogonal_change_of_basis-10",
+  "level": "2",
+  "url": "s_orthogonality.html#ss_orthogonal_change_of_basis-10",
+  "type": "Example",
+  "number": "7.2.15",
+  "title": "",
+  "body": "  Let . Check for yourself that . Thus is an orthogonal matrix.  Now observe that the columns of are orthonormal with respect to the dot product: . This is not a coincidence!   "
+},
+{
+  "id": "th_orthogonal_matrices",
+  "level": "2",
+  "url": "s_orthogonality.html#th_orthogonal_matrices",
+  "type": "Theorem",
+  "number": "7.2.16",
+  "title": "Orthogonal matrices.",
+  "body": " Orthogonal matrices   Let be an matrix. The following statements are equivalent.    The matrix is orthogonal.    The columns of form an orthonormal basis of with respect to the dot product.    The rows of form an orthonormal basis of with respect to the dot product.      Let and be the -th row and column of , respectively, for each . From we see that . We use here that rows of are the columns of , and the columns of are the rows of . From it follows easily that , and . This proves and . The result follows.   "
+},
+{
+  "id": "rm_orthogonal_matrices_misnomer",
+  "level": "2",
+  "url": "s_orthogonality.html#rm_orthogonal_matrices_misnomer",
+  "type": "Remark",
+  "number": "7.2.17",
+  "title": "",
+  "body": " It is somewhat unfortunate that the property of being an orthogonal matrix is equivalent to your rows or columns forming an orthonormal basis. You ask: Why not simply call such matrices orthonormal matrices? My answer: tradition!  "
+},
+{
+  "id": "th_changebasis_orthonormal",
+  "level": "2",
+  "url": "s_orthogonality.html#th_changebasis_orthonormal",
+  "type": "Theorem",
+  "number": "7.2.18",
+  "title": "Orthonormal change of basis.",
+  "body": " Orthonormal change of basis   Let be a finite dimensional inner product space, and suppose and are orthonormal bases of .    The matrices and are orthogonal.    We have .        Let . By definition, the columns of are the coordinate vectors , . By , these coordinate vectors form an orthonormal subset of ; since there are of them, they form an orthonormal basis. From it follows that is orthogonal. Lastly, from it follows that is also orthogonal.    Since is orthogonal, we have .     "
+},
+{
+  "id": "eg_change_basis_matrix_ortho",
+  "level": "2",
+  "url": "s_orthogonality.html#eg_change_basis_matrix_ortho",
+  "type": "Example",
+  "number": "7.2.19",
+  "title": "Orthonormal change of basis: <span class=\"process-math\">\\(\\R^n\\)<\/span>.",
+  "body": " Orthonormal change of basis:   Let be the standard ordered basis of . The ordered basis is orthonormal with respect to the dot product. Compute the change of basis matrix .    Since is the standard ordered basis, we can easily compute . Since and are both orthonormal bases (with respect to the dot product), we have . .  "
+},
+{
+  "id": "eg_change_basis_orthogonal_poly",
+  "level": "2",
+  "url": "s_orthogonality.html#eg_change_basis_orthogonal_poly",
+  "type": "Example",
+  "number": "7.2.20",
+  "title": "Orthonormal change of basis: polynomials.",
+  "body": " Orthonormal change of basis: polynomials   Consider the vector space with inner product . The ordered bases are both orthonormal with respect to this inner product. Compute and .    Since is orthonormal, we use to compute . Thus and by  .   "
+},
+{
+  "id": "s_orthogonal_bases_ex-1-2",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-1-2",
+  "type": "Exercise",
+  "number": "7.2.4.1",
+  "title": "",
+  "body": "    Let be an orthonormal basis for an inner product space . If   is so that , is orthogonal to , and , find the possible values for , , and .   ,  ,                   Solution: One checks by direct computation that  , ,  must hold.       "
+},
+{
+  "id": "s_orthogonal_bases_ex-1-3",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-1-3",
+  "type": "Exercise",
+  "number": "7.2.4.2",
+  "title": "",
+  "body": "    Let Use the Gram-Schmidt process to determine an orthonormal basis for the subspace of spanned by and .   ,        "
+},
+{
+  "id": "s_orthogonal_bases_ex-1-4",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-1-4",
+  "type": "Exercise",
+  "number": "7.2.4.3",
+  "title": "",
+  "body": "    Let Use the Gram-Schmidt process to determine an orthonormal basis for the subspace of spanned by , , and .   , ,        "
+},
+{
+  "id": "s_orthogonal_bases_ex-1-5",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-1-5",
+  "type": "Exercise",
+  "number": "7.2.4.4",
+  "title": "",
+  "body": "    Let Find an orthonormal basis of the image of .   ,        "
+},
+{
+  "id": "s_orthogonal_bases_ex-1-6",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-1-6",
+  "type": "Exercise",
+  "number": "7.2.4.5",
+  "title": "",
+  "body": "    Let Find an orthonormal basis of the kernel of .   ,        "
+},
+{
+  "id": "s_orthogonal_bases_ex-2",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-2",
+  "type": "Exercise",
+  "number": "7.2.4.6",
+  "title": "",
+  "body": "  The vectors are pairwise orthogonal with respect to the dot product, as is easily verified. For each below, find the scalars such that .               (Your answer will be expressed in terms of , and . )     "
+},
+{
+  "id": "s_orthogonal_bases_ex-3-3",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-3-3",
+  "type": "Exercise",
+  "number": "7.2.4.7",
+  "title": "",
+  "body": "   with dot product; . Compute .   "
+},
+{
+  "id": "s_orthogonal_bases_ex-3-4",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-3-4",
+  "type": "Exercise",
+  "number": "7.2.4.8",
+  "title": "",
+  "body": "   with dot product with weights ; . Compute .   "
+},
+{
+  "id": "s_orthogonal_bases_ex-3-5",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-3-5",
+  "type": "Exercise",
+  "number": "7.2.4.9",
+  "title": "",
+  "body": "   with integral inner product ; . Compute . (Yes, can indeed be written as a linear combination of . In this exercise you will discover what the corresponding identity is using inner products!)   "
+},
+{
+  "id": "s_orthogonal_bases_ex-4-3",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-4-3",
+  "type": "Exercise",
+  "number": "7.2.4.10",
+  "title": "",
+  "body": "   with the dot product, ,    "
+},
+{
+  "id": "s_orthogonal_bases_ex-4-4",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-4-4",
+  "type": "Exercise",
+  "number": "7.2.4.11",
+  "title": "",
+  "body": "   with the dot product, ,    "
+},
+{
+  "id": "s_orthogonal_bases_ex-5-3",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-5-3",
+  "type": "Exercise",
+  "number": "7.2.4.12",
+  "title": "",
+  "body": "   with the weighted dot product . .   "
+},
+{
+  "id": "s_orthogonal_bases_ex-5-4",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-5-4",
+  "type": "Exercise",
+  "number": "7.2.4.13",
+  "title": "",
+  "body": "   with the integral inner product . .   "
+},
+{
+  "id": "s_orthogonal_bases_ex-5-5",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-5-5",
+  "type": "Exercise",
+  "number": "7.2.4.14",
+  "title": "",
+  "body": "   with the evaluation inner product . .   "
+},
+{
+  "id": "s_orthogonal_bases_ex-6",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-6",
+  "type": "Exercise",
+  "number": "7.2.4.15",
+  "title": "",
+  "body": "  Consider the inner product space together with the dot product. .    Show that is a subspace of by finding a matrix for which .    Use (a) and an appropriate fundamental space algorithm to find a basis for .    Use Gram-Schmidt to convert your basis in (b) to an orthgonal basis of .     "
+},
+{
+  "id": "ex_extend_orthogonal",
+  "level": "2",
+  "url": "s_orthogonality.html#ex_extend_orthogonal",
+  "type": "Exercise",
+  "number": "7.2.4.16",
+  "title": "Extending orthogonal bases.",
+  "body": " Extending orthogonal bases   Consider the inner product space given by together with the dot product. Construct an orthogonal basis of containing following the steps below.    Produce a vector orthogonal to by inspection.    Produce a vector orthogonal to and by setting up an appropriate matrix equation of the form and finding a nontrivial solution.    Produce a vector orthogonal to by setting up an appropriate matrix equation of the form and finding a nontrivial solution.     "
+},
+{
+  "id": "s_orthogonal_bases_ex-8",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-8",
+  "type": "Exercise",
+  "number": "7.2.4.17",
+  "title": "Extending orthogonal bases.",
+  "body": " Extending orthogonal bases   Consider the inner product space given by together with the dot product. Let be the plane with defining equation . Compute an orthogonal basis of , and then extend this to an orthogonal basis of .   You do not have to use Gram-Schmidt here, but can proceed using a combination of inspection, your geometric understanding of , and\/or along similar lines of .  "
+},
+{
+  "id": "ex_ortho_pythag",
+  "level": "2",
+  "url": "s_orthogonality.html#ex_ortho_pythag",
+  "type": "Exercise",
+  "number": "7.2.4.18",
+  "title": "",
+  "body": "  Let be an inner produce space. Prove: if , then . This result can be thought of as the Pythagorean theorem for general inner product spaces .   "
+},
+{
+  "id": "s_orthogonal_bases_ex-10",
+  "level": "2",
+  "url": "s_orthogonality.html#s_orthogonal_bases_ex-10",
+  "type": "Exercise",
+  "number": "7.2.4.19",
+  "title": "",
+  "body": "  Let be an inner product space, and suppose is an orthonormal basis of . Suppose satisfy .    Prove: .    Prove: .     "
+},
+{
+  "id": "ex_coordinates_orthonormal",
+  "level": "2",
+  "url": "s_orthogonality.html#ex_coordinates_orthonormal",
+  "type": "Exercise",
+  "number": "7.2.4.20",
+  "title": "Orthonormal coordinate vectors.",
+  "body": " Orthonormal coordinate vectors   Let be an inner product space, and suppose is an orthonormal ordered basis of .    Prove that for all . In other words we can compute the inner product of vectors by computing the dot product of their coordinate vectors with respect to the orthonormal basis .    Prove that a set is orthogonal (resp. orthonormal) with respect to if and only if is orthogonal (resp. orthonormal) with respect to the dot product.     "
+},
+{
+  "id": "ex_ortho_matrix_det",
+  "level": "2",
+  "url": "s_orthogonality.html#ex_ortho_matrix_det",
+  "type": "Exercise",
+  "number": "7.2.4.21",
+  "title": "Determinant of orthogonal matrices.",
+  "body": " Determinant of orthogonal matrices   Prove: if is an orthogonal matrix, then .   "
+},
+{
+  "id": "ex_ortho_matrix_rotation_reflection",
+  "level": "2",
+  "url": "s_orthogonality.html#ex_ortho_matrix_rotation_reflection",
+  "type": "Exercise",
+  "number": "7.2.4.22",
+  "title": "Orthogonal <span class=\"process-math\">\\(2\\times 2\\)<\/span> matrices.",
+  "body": " Orthogonal matrices   In this exercise we will prove that a matrix is orthogonal if and only it is a rotation matrix or a reflection matrix.  Let be a matrix.    Prove that if is orthogonal and , then is a rotation matrix: , there is a such that . See .    Prove that if is orthogonal and , then is a reflection matrix: , there is a such that . See .    Prove that is an orthogonal matrix if and only if is a rotation matrix or is a reflection matrix. You may use the result of .     "
+},
+{
+  "id": "s_orthogonal_projection",
+  "level": "1",
+  "url": "s_orthogonal_projection.html",
+  "type": "Section",
+  "number": "7.3",
+  "title": "Orthogonal projection",
+  "body": " Orthogonal projection   A trick we learn early on in physics-- specifically, in dynamics problems in -- is to pick a convenient axis and then decompose any relevant vectors (force, acceleration, velocity, position, ) into a sum of two components: one that points along the chosen axis, and one that points perpendicularly to it. As we will see in this section, this technique can be vastly generalized. Namely, instead of we can take any inner product space ; and instead of a chosen axis in , we can choose any finite-dimensional subspace ; then any can be decomposed in the form where and is a vector orthogonal to , in a sense we will make precise below. Just as in our toy physics example, this manner of decomposing vectors helps simplify computations in problems where the subspace chosen is of central importance.    Orthogonal complement   We begin by making sense of what it means for a vector to be orthogonal to a subspace.    Orthogonal complement  orthogonal complement (of a subspace)    the orthogonal complement of    . Let be an inner product vector space, and let be a subspace.  A vector is orthogonal to if it is orthogonal to every element of : , if for all .  The orthogonal complement of , denoted , is the set of all elements of orthogonal to : , .     Computing  According to , to verify that a vector lies in , we must show that for all . The for all quantifier here can potentially make this an onerous task: there are in principle infinitely many to check! In the special case where has a finite spanning set, so that for some vectors , deciding whether reduces to checking whether for all . In other words, we have . The forward implication of this equivalence is clear: if is orthogonal to all elements of , then clearly it is orthogonal to each . The reverse implication is left as an exercise. (See .)  We illustrate this computational technique in the next examples.     Consider the inner product space together with the dot product. Let : the line with equation . Compute and identify it as a familiar geometric object in .    According to , since , we have . Letting , we see that if and only if , if and only if . Thus is the line with equation . Observe that the lines and are indeed perpendicular to one another. (Graph them!)      Consider the inner product space together with the dot product. Let be the plane with equation . Compute and identify this as a familiar geometric object in .    First, solving for , we see that . Next, according to we have . It follows that is the set of vectors satisfying the linear system Solving this system using Gaussian elimination we conclude that , which we recognize as the line passing through the origin with direction vector . This is none other than the normal line to the plane passing through the origin.     Orthogonal complement   Let be an inner product vector space, and let be a subspace.   The orthogonal complement is a subspace of .    We have .    If then .       The proof is left as an exercise. (See .)      Consider the inner product space with the dot product. Let , the line passing through the origin with direction vector . The orthogonal complement is the set of vectors orthogonal to . Using the definition of dot product, this is the set of solutions to the equation , which we recognize as the plane passing through the origin with normal vector . Note that we have as predicted in .    The notion of orthogonal complement gives us a more conceptual way of understanding the relationship between the various fundamental spaces of a matrix.   Fundamental spaces and orthogonal complements   Let be , and consider and as inner product spaces with respect to the dot product. Then:    , and thus .     , and thus .         Using the dot product method of matrix multiplication, we see that a vector if and only if for each row of , if and only if for all (see ), if and only if . This shows .  We can use to conclude . Alternatively, and more directly, the argument above shows that , proving . Next, by the rank-nullity theorem we have ; and by we have . It follows that . Since and , we conclude by that .    This follows from (1) and the fact that .        Understanding the orthogonal relationship between and allows us in many cases to quickly determine\/visualize the one from the other. As an example, consider . Looking at the columns, we see easily that , which implies that . Since is an element of and , we must have , a line. By orthogonality, we conclude that , which is the plane with normal vector passing through the origin.      Orthogonal Projection   Orthogonal projection theorem   Let be an inner product space, and let be a finite-dimensional subspace.   Orthogonal decomposition  For all there are vectors and satisfying . Furthermore, the pair is unique in the following sense: if we have for some and , then and . Accordingly, the vector equation is called the orthogonal decomposition of with respect to ; and the vector is called the orthogonal projection of onto , denoted .    Orthogonal projection formula  Choose any orthogonal basis of . We have .    Distance to  The orthogonal projection is the element of that is closest to in the following sense: for all we have , or equivalently, . Accordingly, we define the distance  between and to be .       Let . We first show that the vectors and satisfy the conditions in . It is clear that the defined in is an element of , since it is a linear combination of the . Furthermore, we see easily that our choice satisfies . It remains only to show that . Since is a basis of , it suffices to show that for all . We compute: , as desired.  Having shown that a decomposition of of the form exists, we now show it is unique in the sense specified. Suppose we have , where and . Rearranging, we see that . We now claim that , in which case and , as desired. To see why the claim is true, consider the vector . Since , and , we have . On the other hand, since , and , we have . Thus . Since ( ), we conclude , as claimed.  At this point we have proved both (1) and (2), and it remains only to show that holds for all . To this end we compute: . This shows . Taking square-roots now proves the desired inequality.     Orthogonal projection formula  The formula is very convenient for computing an orthogonal projection , but mark well this important detail: to apply the formula we must first provide an orthogonal basis of . Thus unless one is provided, our first step in an orthogonal projection computation is to produce an orthogonal basis of . In some simple cases ( , when is 1- or 2-dimensional) this can be done by inspection. Otherwise, we use the Gram-Schmidt procedure.   Next we consider the operation of orthogonally projecting a vector onto a line (in or ) or a plane in .   Projection onto a line   Let be a fixed nonzero vector in , where or . The set of all scalar multiples of defines a line in passing through the origin: we call the direction vector of this line. Given a point there is a unique point such that the vector is orthogonal to : , there is a unique such that . The point is called the orthogonal projection of onto the line . We define orthogonal projection onto to be the function that maps a point to its orthogonal projection onto .     Orthogonal projection onto a line   Fix a nonzero vector , where or , and let be the line obtained by taking all scalar multiples of . The orthogonal projection function is a linear transformation. In fact, we have where is the matrix described below for each case ( and ).   Case:  Assume . We have , where .    Case:  Assume . We have , where .       We prove the matrix formula in the case . (The case is exactly similar.) Let . In multivariable calculus we learn that given a point with position vector , its orthogonal projection onto is the point whose position vector is . This proves that , where , as desired.     Orthogonal projection onto line   Let be orthogonal projection onto the line passing through the origin with direction vector . Find the matrix such that . Use to compute the orthogonal projection of onto .    Using the formula for in , where , we see that and hence for any we have . In particular, we have . Let's check that this truly is the orthogonal projection of onto . Letting , we have , which is indeed orthogonal to : . The formula really works! In case you need more convincing, here is a Sage Cell that computes the projections and produces a diagram.   Orthogonal projection onto a line  Orthogonal projection onto the line passing through the origin with direction vector   Orthogonal projection onto a line        Orthogonal projection onto a plane   Let be a nonzero vector in , and let be the plane passing through the origin with normal vector : , is the plane with equation . Given a point , there is a unique point such that is orthogonal to . We call the orthogonal projection of onto . We define orthogonal projection onto to be the function that maps a point to its orthogonal projection in .     Orthogonal projection onto a plane   Let be a nonzero vector of , and let be the plane passing through the origin with normal vector . The orthogonal projection map is a linear transformation. In fact, we have where .    Let be the line passing through the origin with direction vector . Given any , let be the point with coordinates . The orthogonal projection of onto satisfies . Let be the point of with position vector satisfying so that . Since , the point lies in the plane . Furthermore, we have . Since is the orthogonal projection of onto , we have by definition, which means is a scalar multiple of . Since is a normal vector to , we conclude that is orthogonal to . We have shown that lies in and that is orthogonal to . We conclude that is the orthogonal projection of onto . Thus, using we have . Since , where by , we have . We conclude that where , as desired.     Visualizing orthogonal projection  In the course of the proof of we discovered an illuminating relationship between orthogonal projection onto a line and orthogonal projection onto the plane orthogonal to this line. In more detail, let be a nonzero vector, the line passing through the origin with as a direction vector, and the plane passing through the origin with normal vector . From our argument in the proof of we see that , or . Equation indicates how we can derive the orthogonal projection onto from the orthogonal projection onto (and conversely). Equation shows how every vector can be decomposed as a sum of two orthogonal vectors: one pointing parallel to and the other pointing parallel to .  The GeoGebra interactive below helps visualize these two orthogonal projections, understood as operations on .   Drag the point to change the normal vector , and hence also the plane .    Drag the point to change the input of the transformations and .    In keeping with our dual interpretation of vectors in , all the relevant vectors ( , , ) are rendered here both as points and the corresponding position vectors of these points.      Orthogonal projection onto plane and normal line   Orthogonal projection onto plane and normal line. Made with GeoGebra .      Consider the inner product space with the dot product. Let be the plane with equation . Compute for each below.                     According to our first step is to produce an orthogonal basis of . We do so by inspection. Since , we simply need to find two solutions to that are orthogonal to one another: , and . Thus we choose as our orthogonal basis, and our computations become a matter of applying , which in this case becomes . Now compute: . The last two computations might give you pause. Why do we have and ? The answer is that is already an element of , so it stands to reason that its projection is itself; and is already orthogonal to (it is a scalar multiple of ), so it stands to reason that its projection is equal to . See for a rigorous proof of these claims.     Video example: orthogonal projection in function space   Video: orthogonal projection in function space      Complement of a complement   Let be an inner product space, and let be a finite-dimensional subspace. Then .     Clearly . For the other direction, take . Using the orthogonal projection theorem , we can write with and . We will show .  Since we have . Then we have   Thus . It follows that , and hence .    Orthgonal projection is linear   Let be an inner product space, and let be a finite-dimensional subspace.    The function is a linear transformation.    We have and .          We must show that for all and . We pick an orthogonal basis of and compute, using formula : .    By definition we have for all , and thus . For the other direction, if , then ( ), and thus . This proves .  The fact that follows from the equivalence stated in (b) of .        Orthogonal projection in and   For this subsection we will always work within Euclidean space: , with the dot product. In applications we often want to compute the projection of a point onto a line (in or ) or plane (in ). According to the operation of projecting onto any subspace is in fact a linear transformation . By we have , where . Lastly, gives us an easy formula for computing for all , once we have selected an orthogonal basis for . As a result we can easily derive matrix formulas for projection onto any subspace of any Euclidean space . We illustrate this with some examples in and below.    Projection onto a line   Any line in passing through the origin can be described as , for some . The set is trivially an orthogonal basis of . Using , we have . It follows that , where .      Consider the line .    Find the matrix such that .    Use your matrix formula from (a) to compute , , and .    Compute and .        Using the general formula described in , we have .    Now compute . The last two computations, and , should come as no surprise, since and . (See .)    We have . Again, the second computation should come as no surprise. Since is itself an element of , it stands to reason that its distance to is equal to zero.       Projection onto planes in   Any plane passing through the origin can be described as . Equivalently, is the set of all satisfying : , , where . Consider the orthogonal decomposition with respect to : . Since and , we see that this is also an orthogonal decomposition with respect to ! Using the matrix formula for from , we have . We conclude that , where .      Consider the plane .    Find the matrix such that .    Use your matrix formula from (a) to compute and .    Compute and .        Using the general formula described in , we have .    Now compute .    We have .         Trigonometric polynomial approximation  Consider the inner product space consisting of along with the integral inner product . In we saw that the set is orthogonal with respect to this inner product. Thus is an orthogonal basis of . We call the space of trigonometric polynomials of degree at most .  Since is an orthogonal basis of , given an arbitrary function , its orthogonal projection is given by , where . Here we are using , as well as the inner product formulas and from .  What is the relationship between and ? tells us that is the best trigonometric polynomial approximation of of degree at most in the following sense: given any any other trigonometric polynomial , we have . Unpacking the definition of norm in this inner product space, we conclude that for all .  Thus, given a continuous function on , linear algebra shows us how to find its best trigonometric polynomial approximation of the form . However, linear algebra does not tell us just how good this approximation is. This question, among others, is tackled by another mathematical theory: Fourier analysis . There we learn that the trigonometric polynomial approximations get arbitrarily close to as we let increase. More precisely, letting be the orthogonal projection of onto the space of trigonometric polynomials of degree at most , we have .    Least-squares solution to linear systems  In statistics we often wish to approximate a scatter plot of points , , with a line that best fits the data. Finding this line amounts to finding the appropriate slope and -intercept : , in this setup, the points are given, and and are the unknowns we wish to find. For the line to perfectly fit the data, we would want . In other words would be a solution to the matrix equation , where . Of course in most situations the provided points do not lie on a line, and thus there is no solution to the given matrix equation . When this is the case we can use the theory of orthogonal projection to find what is called a least-squares solution, which we now describe in detail.  The least-squares method applies to any matrix equation , where and are given, and is treated as an unknown vector. Recall that . When , and hence does not have a solution, the least-squares method proceeds by replacing with the element of closest to it: that is, with its orthogonal projection onto . Let , where orthogonal projection is taken with respect to the dot product on , and consider the adjusted matrix equation . By definition of , we have , and thus there is a solution to . We call a least-squares solution to . Observe that does not necessarily satisfy ; rather, it satisfies . What makes this a least-squares solution is that is the element of closest to . With respect to the dot product, this means that a least-squares solution minimizes the quantity , among all .   Best fitting line   Suppose we wish to find a line that best fits (in the least-square sense) the following data points: . Following the discussion above, we seek a solution to the matrix equation , where . Using Gaussian elimination, we see easily that this equation has no solution: equivalently, . Accordingly, we compute and find a solution to . Conveniently, the set is already an orthogonal basis of , allowing us to use : . Lastly, solving yields , and we conclude the line is the one that best fits the data in the least-squares sense.     Visualizing least-squares    helps us give a graphical interpretation of how the line best approximates the points .  Least-squares visualization  Least-squares visualization   Let be the given -values of the points, and let be the orthogonal projection of onto . In the graph the values denote the vertical difference between the data points, and our fitting line. The projection makes the error as small as possible. This means if I draw any other line and compute the corresponding differences at the -values -3, 1 and 2, then     To compute a least-squares solution to we must first compute the orthogonal projection of onto ; and this in turn requires first producing an orthogonal basis of , which may require using the Gram-Schmidt procedure. The following result bypasses these potentially onerous steps by characterizing a least-squares solution to as a solution to the matrix equation .   Least-squares matrix formula   Given an matrix and column vector , a vector is a least-squares solution to if and only if . In other words, we can find a least-squares solution by solving the matrix equation directly.    Let , and let . The key observation is that a vector satisfies if and only if is an orthogonal decomposition of with respect to ; and this is true if and only if . Thus we have .      Consider again the matrix equation from . According to the least-squares solution can be found by solving the equation for . We compute and solve just as before.       WeBWork Exercises      Compute the orthogonal projection of onto the line through and the origin.   .            Let and . Write as the sum of two orthogonal vectors, in and orthogonal to .   ,  .            (a) Find the distance from the point to the plane . Use sqrt() to enter square roots.  Distance:  (b) Find the equation of the plane that passes through the points , , and . Write your answer in terms of the variables , , .  Answer:             Solution: (a) The idea is to find a convenient point lying in the given plane. For example, let us pick , and let be the vector from to . Then the distance from to the plane is the absolute value of the scalar projection of onto the normal vector   So, we get that the distance is .  (b) To find an equation of the plane in question, we can work with the point and the normal vector given by the cross product of the vector from to , and the vector from to . It turns out that   So, an equation of the plane is .            Find bases of the kernel and image of the orthogonal projection onto the plane in .  A basis for the kernel is    A basis for the image is  ,             Let Use the Gram-Schmidt process to determine an orthonormal basis for the subspace of spanned by , , and .   , ,             Find the least-squares solution of the system              By using the method of least squares, find the best line through the points:  , , .  Step 1. The general equation of a line is . Plugging the data points into this formula gives a matrix equation .      Step 2. The matrix equation has no solution, so instead we use the normal equation       Step 3. Solving the normal equation gives the answer    which corresponds to the formula    Analysis. Compute the predicted values: .    Compute the error vector: .    Compute the total error: .                        By using the method of least squares, find the best parabola through the points:  , , ,  Step 1. The general equation of a parabola is . Plugging the data points into this formula gives a matrix equation .      Step 2. The matrix equation has no solution, so instead we use the normal equation       Step 3. Solving the normal equation gives the answer    which corresponds to the formula                  In each exercise below you are given an inner product space , a subspace where is orthogonal, and a vector . Compute .     with the dot product; ;        with dot product with weights ; ;        with the integral inner product; ; for all        Let be the plane passing through the origin with normal vector . Find the orthogonal projection of onto with respect to the dot product.      Recall that the trace of a square matrix is the sum of its diagonal entries. Let with inner product . (You may take for granted that this operation is indeed an inner product on .) Define .    Compute an orthogonal basis for . You can do this either by inspection (the space is manageable), or by starting with any basis of and applying the Gram-Schmidt procedure.    Compute , where .        Let with the integral inner product, and let . Find the function of the form that best approximates  in terms of this inner product: find the the of this form that minimizes .    The set is orthogonal with respect to the given inner product.      Let be an inner product space, let , and let . Prove: . In other words, to check whether an element is in , it suffices to check that it is orthogonal to each element of its spanning set .      Consider the inner product space together with the dot product. Let Provide orthogonal bases for and .      Prove statements (1) and (2) of .     Dimension of   Prove statement (3) of : if is an inner product space of dimension , and is a subspace of , then .    By there is an orthogonal basis of , and furthermore, we can extend to an orthogonal basis of all of . Show the form a basis for .      Prove following the suggestion in the text.      Let an inner product space, and let be a finite-dimensional subspace. Prove the following statements:     if and only if ;     if and only if .        We consider the problem of fitting a collection of data points with a quadratic curve of the form . Thus we are given some collection of points , and we seek parameters for which the graph of  best fits the points in some way.    Show, using linear algebra, that if we are given any three points , where the -coordinates are all distinct, then there is a unique choice of such that the corresponding quadratic function agrees precisely with the data. In other words, given just about any three points in the plane, there is a unique quadratic curve connecting them.    Now suppose we are given the four data points .    Use the least-squares method described in the lecture notes to come up with a quadratic function that best fits the data.    Graph the function you found, along with the points . (You may want to use technology.) Use your graph to explain precisely in what sense  best fits the data.         "
+},
+{
+  "id": "d_orthogonal_complement",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#d_orthogonal_complement",
+  "type": "Definition",
+  "number": "7.3.1",
+  "title": "Orthogonal complement.",
+  "body": " Orthogonal complement  orthogonal complement (of a subspace)    the orthogonal complement of    . Let be an inner product vector space, and let be a subspace.  A vector is orthogonal to if it is orthogonal to every element of : , if for all .  The orthogonal complement of , denoted , is the set of all elements of orthogonal to : , .   "
+},
+{
+  "id": "rm_computing_ortho_comp",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#rm_computing_ortho_comp",
+  "type": "Remark",
+  "number": "7.3.2",
+  "title": "Computing <span class=\"process-math\">\\(W^\\perp\\)<\/span>.",
+  "body": " Computing  According to , to verify that a vector lies in , we must show that for all . The for all quantifier here can potentially make this an onerous task: there are in principle infinitely many to check! In the special case where has a finite spanning set, so that for some vectors , deciding whether reduces to checking whether for all . In other words, we have . The forward implication of this equivalence is clear: if is orthogonal to all elements of , then clearly it is orthogonal to each . The reverse implication is left as an exercise. (See .)  We illustrate this computational technique in the next examples.  "
+},
+{
+  "id": "eg_ortho_comp_line",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#eg_ortho_comp_line",
+  "type": "Example",
+  "number": "7.3.3",
+  "title": "",
+  "body": "  Consider the inner product space together with the dot product. Let : the line with equation . Compute and identify it as a familiar geometric object in .    According to , since , we have . Letting , we see that if and only if , if and only if . Thus is the line with equation . Observe that the lines and are indeed perpendicular to one another. (Graph them!)   "
+},
+{
+  "id": "eg_ortho_comp_plane",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#eg_ortho_comp_plane",
+  "type": "Example",
+  "number": "7.3.4",
+  "title": "",
+  "body": "  Consider the inner product space together with the dot product. Let be the plane with equation . Compute and identify this as a familiar geometric object in .    First, solving for , we see that . Next, according to we have . It follows that is the set of vectors satisfying the linear system Solving this system using Gaussian elimination we conclude that , which we recognize as the line passing through the origin with direction vector . This is none other than the normal line to the plane passing through the origin.   "
+},
+{
+  "id": "th_orthogonal_complement",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#th_orthogonal_complement",
+  "type": "Theorem",
+  "number": "7.3.5",
+  "title": "Orthogonal complement.",
+  "body": " Orthogonal complement   Let be an inner product vector space, and let be a subspace.   The orthogonal complement is a subspace of .    We have .    If then .       The proof is left as an exercise. (See .)   "
+},
+{
+  "id": "ss_ortho_complement-8",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#ss_ortho_complement-8",
+  "type": "Example",
+  "number": "7.3.6",
+  "title": "",
+  "body": "  Consider the inner product space with the dot product. Let , the line passing through the origin with direction vector . The orthogonal complement is the set of vectors orthogonal to . Using the definition of dot product, this is the set of solutions to the equation , which we recognize as the plane passing through the origin with normal vector . Note that we have as predicted in .   "
+},
+{
+  "id": "th_row_null_comp",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#th_row_null_comp",
+  "type": "Theorem",
+  "number": "7.3.7",
+  "title": "Fundamental spaces and orthogonal complements.",
+  "body": " Fundamental spaces and orthogonal complements   Let be , and consider and as inner product spaces with respect to the dot product. Then:    , and thus .     , and thus .         Using the dot product method of matrix multiplication, we see that a vector if and only if for each row of , if and only if for all (see ), if and only if . This shows .  We can use to conclude . Alternatively, and more directly, the argument above shows that , proving . Next, by the rank-nullity theorem we have ; and by we have . It follows that . Since and , we conclude by that .    This follows from (1) and the fact that .     "
+},
+{
+  "id": "ss_ortho_complement-11",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#ss_ortho_complement-11",
+  "type": "Example",
+  "number": "7.3.8",
+  "title": "",
+  "body": "  Understanding the orthogonal relationship between and allows us in many cases to quickly determine\/visualize the one from the other. As an example, consider . Looking at the columns, we see easily that , which implies that . Since is an element of and , we must have , a line. By orthogonality, we conclude that , which is the plane with normal vector passing through the origin.   "
+},
+{
+  "id": "th_orthogonal_projection",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#th_orthogonal_projection",
+  "type": "Theorem",
+  "number": "7.3.9",
+  "title": "Orthogonal projection theorem.",
+  "body": " Orthogonal projection theorem   Let be an inner product space, and let be a finite-dimensional subspace.   Orthogonal decomposition  For all there are vectors and satisfying . Furthermore, the pair is unique in the following sense: if we have for some and , then and . Accordingly, the vector equation is called the orthogonal decomposition of with respect to ; and the vector is called the orthogonal projection of onto , denoted .    Orthogonal projection formula  Choose any orthogonal basis of . We have .    Distance to  The orthogonal projection is the element of that is closest to in the following sense: for all we have , or equivalently, . Accordingly, we define the distance  between and to be .       Let . We first show that the vectors and satisfy the conditions in . It is clear that the defined in is an element of , since it is a linear combination of the . Furthermore, we see easily that our choice satisfies . It remains only to show that . Since is a basis of , it suffices to show that for all . We compute: , as desired.  Having shown that a decomposition of of the form exists, we now show it is unique in the sense specified. Suppose we have , where and . Rearranging, we see that . We now claim that , in which case and , as desired. To see why the claim is true, consider the vector . Since , and , we have . On the other hand, since , and , we have . Thus . Since ( ), we conclude , as claimed.  At this point we have proved both (1) and (2), and it remains only to show that holds for all . To this end we compute: . This shows . Taking square-roots now proves the desired inequality.   "
+},
+{
+  "id": "rm_ortho_proj_formula",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#rm_ortho_proj_formula",
+  "type": "Remark",
+  "number": "7.3.10",
+  "title": "Orthogonal projection formula.",
+  "body": " Orthogonal projection formula  The formula is very convenient for computing an orthogonal projection , but mark well this important detail: to apply the formula we must first provide an orthogonal basis of . Thus unless one is provided, our first step in an orthogonal projection computation is to produce an orthogonal basis of . In some simple cases ( , when is 1- or 2-dimensional) this can be done by inspection. Otherwise, we use the Gram-Schmidt procedure.  "
+},
+{
+  "id": "d_projection_onto_line",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#d_projection_onto_line",
+  "type": "Definition",
+  "number": "7.3.11",
+  "title": "Projection onto a line.",
+  "body": " Projection onto a line   Let be a fixed nonzero vector in , where or . The set of all scalar multiples of defines a line in passing through the origin: we call the direction vector of this line. Given a point there is a unique point such that the vector is orthogonal to : , there is a unique such that . The point is called the orthogonal projection of onto the line . We define orthogonal projection onto to be the function that maps a point to its orthogonal projection onto .   "
+},
+{
+  "id": "th_proj_line_linear",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#th_proj_line_linear",
+  "type": "Theorem",
+  "number": "7.3.12",
+  "title": "Orthogonal projection onto a line.",
+  "body": " Orthogonal projection onto a line   Fix a nonzero vector , where or , and let be the line obtained by taking all scalar multiples of . The orthogonal projection function is a linear transformation. In fact, we have where is the matrix described below for each case ( and ).   Case:  Assume . We have , where .    Case:  Assume . We have , where .       We prove the matrix formula in the case . (The case is exactly similar.) Let . In multivariable calculus we learn that given a point with position vector , its orthogonal projection onto is the point whose position vector is . This proves that , where , as desired.   "
+},
+{
+  "id": "eg_projection_line_specific",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#eg_projection_line_specific",
+  "type": "Example",
+  "number": "7.3.13",
+  "title": "Orthogonal projection onto line.",
+  "body": " Orthogonal projection onto line   Let be orthogonal projection onto the line passing through the origin with direction vector . Find the matrix such that . Use to compute the orthogonal projection of onto .    Using the formula for in , where , we see that and hence for any we have . In particular, we have . Let's check that this truly is the orthogonal projection of onto . Letting , we have , which is indeed orthogonal to : . The formula really works! In case you need more convincing, here is a Sage Cell that computes the projections and produces a diagram.   Orthogonal projection onto a line  Orthogonal projection onto the line passing through the origin with direction vector   Orthogonal projection onto a line      "
+},
+{
+  "id": "d_ortho_proj_plane",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#d_ortho_proj_plane",
+  "type": "Definition",
+  "number": "7.3.15",
+  "title": "Orthogonal projection onto a plane.",
+  "body": " Orthogonal projection onto a plane   Let be a nonzero vector in , and let be the plane passing through the origin with normal vector : , is the plane with equation . Given a point , there is a unique point such that is orthogonal to . We call the orthogonal projection of onto . We define orthogonal projection onto to be the function that maps a point to its orthogonal projection in .   "
+},
+{
+  "id": "th_ortho_proj_plane_linear",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#th_ortho_proj_plane_linear",
+  "type": "Theorem",
+  "number": "7.3.16",
+  "title": "Orthogonal projection onto a plane.",
+  "body": " Orthogonal projection onto a plane   Let be a nonzero vector of , and let be the plane passing through the origin with normal vector . The orthogonal projection map is a linear transformation. In fact, we have where .    Let be the line passing through the origin with direction vector . Given any , let be the point with coordinates . The orthogonal projection of onto satisfies . Let be the point of with position vector satisfying so that . Since , the point lies in the plane . Furthermore, we have . Since is the orthogonal projection of onto , we have by definition, which means is a scalar multiple of . Since is a normal vector to , we conclude that is orthogonal to . We have shown that lies in and that is orthogonal to . We conclude that is the orthogonal projection of onto . Thus, using we have . Since , where by , we have . We conclude that where , as desired.   "
+},
+{
+  "id": "eg_visualizing_ortho_projs",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#eg_visualizing_ortho_projs",
+  "type": "Example",
+  "number": "7.3.17",
+  "title": "Visualizing orthogonal projection.",
+  "body": " Visualizing orthogonal projection  In the course of the proof of we discovered an illuminating relationship between orthogonal projection onto a line and orthogonal projection onto the plane orthogonal to this line. In more detail, let be a nonzero vector, the line passing through the origin with as a direction vector, and the plane passing through the origin with normal vector . From our argument in the proof of we see that , or . Equation indicates how we can derive the orthogonal projection onto from the orthogonal projection onto (and conversely). Equation shows how every vector can be decomposed as a sum of two orthogonal vectors: one pointing parallel to and the other pointing parallel to .  The GeoGebra interactive below helps visualize these two orthogonal projections, understood as operations on .   Drag the point to change the normal vector , and hence also the plane .    Drag the point to change the input of the transformations and .    In keeping with our dual interpretation of vectors in , all the relevant vectors ( , , ) are rendered here both as points and the corresponding position vectors of these points.      Orthogonal projection onto plane and normal line   Orthogonal projection onto plane and normal line. Made with GeoGebra .   "
+},
+{
+  "id": "s_orthogonal_projection-4-11",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection-4-11",
+  "type": "Example",
+  "number": "7.3.19",
+  "title": "",
+  "body": "  Consider the inner product space with the dot product. Let be the plane with equation . Compute for each below.                     According to our first step is to produce an orthogonal basis of . We do so by inspection. Since , we simply need to find two solutions to that are orthogonal to one another: , and . Thus we choose as our orthogonal basis, and our computations become a matter of applying , which in this case becomes . Now compute: . The last two computations might give you pause. Why do we have and ? The answer is that is already an element of , so it stands to reason that its projection is itself; and is already orthogonal to (it is a scalar multiple of ), so it stands to reason that its projection is equal to . See for a rigorous proof of these claims.   "
+},
+{
+  "id": "ss_vid_eg_orthoproj_functions",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#ss_vid_eg_orthoproj_functions",
+  "type": "Example",
+  "number": "7.3.20",
+  "title": "Video example: orthogonal projection in function space.",
+  "body": " Video example: orthogonal projection in function space   Video: orthogonal projection in function space    "
+},
+{
+  "id": "cor_orthocomp_selfdual",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#cor_orthocomp_selfdual",
+  "type": "Corollary",
+  "number": "7.3.22",
+  "title": "Complement of a complement.",
+  "body": " Complement of a complement   Let be an inner product space, and let be a finite-dimensional subspace. Then .   "
+},
+{
+  "id": "s_orthogonal_projection-4-14",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection-4-14",
+  "type": "Proof",
+  "number": "7.3.2.1",
+  "title": "",
+  "body": " Clearly . For the other direction, take . Using the orthogonal projection theorem , we can write with and . We will show .  Since we have . Then we have   Thus . It follows that , and hence .  "
+},
+{
+  "id": "cor_orthoproj_linear",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#cor_orthoproj_linear",
+  "type": "Corollary",
+  "number": "7.3.23",
+  "title": "Orthgonal projection is linear.",
+  "body": " Orthgonal projection is linear   Let be an inner product space, and let be a finite-dimensional subspace.    The function is a linear transformation.    We have and .     "
+},
+{
+  "id": "s_orthogonal_projection-4-16",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection-4-16",
+  "type": "Proof",
+  "number": "7.3.2.2",
+  "title": "",
+  "body": "    We must show that for all and . We pick an orthogonal basis of and compute, using formula : .    By definition we have for all , and thus . For the other direction, if , then ( ), and thus . This proves .  The fact that follows from the equivalence stated in (b) of .     "
+},
+{
+  "id": "eg_projection_line",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#eg_projection_line",
+  "type": "Example",
+  "number": "7.3.24",
+  "title": "Projection onto a line <span class=\"process-math\">\\(\\ell\\subseteq \\R^3\\)<\/span>.",
+  "body": " Projection onto a line   Any line in passing through the origin can be described as , for some . The set is trivially an orthogonal basis of . Using , we have . It follows that , where .   "
+},
+{
+  "id": "s_orthogonal_projection-5-4",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection-5-4",
+  "type": "Example",
+  "number": "7.3.25",
+  "title": "",
+  "body": "  Consider the line .    Find the matrix such that .    Use your matrix formula from (a) to compute , , and .    Compute and .        Using the general formula described in , we have .    Now compute . The last two computations, and , should come as no surprise, since and . (See .)    We have . Again, the second computation should come as no surprise. Since is itself an element of , it stands to reason that its distance to is equal to zero.     "
+},
+{
+  "id": "eg_projection_plane",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#eg_projection_plane",
+  "type": "Example",
+  "number": "7.3.26",
+  "title": "Projection onto planes in <span class=\"process-math\">\\(\\R^3\\)<\/span>.",
+  "body": " Projection onto planes in   Any plane passing through the origin can be described as . Equivalently, is the set of all satisfying : , , where . Consider the orthogonal decomposition with respect to : . Since and , we see that this is also an orthogonal decomposition with respect to ! Using the matrix formula for from , we have . We conclude that , where .   "
+},
+{
+  "id": "s_orthogonal_projection-5-6",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection-5-6",
+  "type": "Example",
+  "number": "7.3.27",
+  "title": "",
+  "body": "  Consider the plane .    Find the matrix such that .    Use your matrix formula from (a) to compute and .    Compute and .        Using the general formula described in , we have .    Now compute .    We have .     "
+},
+{
+  "id": "s_orthogonal_projection-6-2",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection-6-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "trigonometric polynomials of degree at most "
+},
+{
+  "id": "s_orthogonal_projection-7-3",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection-7-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "least-squares "
+},
+{
+  "id": "eg_least-squares",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#eg_least-squares",
+  "type": "Example",
+  "number": "7.3.28",
+  "title": "Best fitting line.",
+  "body": " Best fitting line   Suppose we wish to find a line that best fits (in the least-square sense) the following data points: . Following the discussion above, we seek a solution to the matrix equation , where . Using Gaussian elimination, we see easily that this equation has no solution: equivalently, . Accordingly, we compute and find a solution to . Conveniently, the set is already an orthogonal basis of , allowing us to use : . Lastly, solving yields , and we conclude the line is the one that best fits the data in the least-squares sense.   "
+},
+{
+  "id": "rm_least-squares",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#rm_least-squares",
+  "type": "Remark",
+  "number": "7.3.29",
+  "title": "Visualizing least-squares.",
+  "body": " Visualizing least-squares    helps us give a graphical interpretation of how the line best approximates the points .  Least-squares visualization  Least-squares visualization   Let be the given -values of the points, and let be the orthogonal projection of onto . In the graph the values denote the vertical difference between the data points, and our fitting line. The projection makes the error as small as possible. This means if I draw any other line and compute the corresponding differences at the -values -3, 1 and 2, then    "
+},
+{
+  "id": "th_leastsquares",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#th_leastsquares",
+  "type": "Theorem",
+  "number": "7.3.31",
+  "title": "Least-squares matrix formula.",
+  "body": " Least-squares matrix formula   Given an matrix and column vector , a vector is a least-squares solution to if and only if . In other words, we can find a least-squares solution by solving the matrix equation directly.    Let , and let . The key observation is that a vector satisfies if and only if is an orthogonal decomposition of with respect to ; and this is true if and only if . Thus we have .   "
+},
+{
+  "id": "s_orthogonal_projection-7-8",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection-7-8",
+  "type": "Example",
+  "number": "7.3.32",
+  "title": "",
+  "body": "  Consider again the matrix equation from . According to the least-squares solution can be found by solving the equation for . We compute and solve just as before.   "
+},
+{
+  "id": "s_orthogonal_projection_ex-1-2",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-1-2",
+  "type": "Exercise",
+  "number": "7.3.6.1",
+  "title": "",
+  "body": "    Compute the orthogonal projection of onto the line through and the origin.   .       "
+},
+{
+  "id": "s_orthogonal_projection_ex-1-3",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-1-3",
+  "type": "Exercise",
+  "number": "7.3.6.2",
+  "title": "",
+  "body": "    Let and . Write as the sum of two orthogonal vectors, in and orthogonal to .   ,  .       "
+},
+{
+  "id": "s_orthogonal_projection_ex-1-4",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-1-4",
+  "type": "Exercise",
+  "number": "7.3.6.3",
+  "title": "",
+  "body": "    (a) Find the distance from the point to the plane . Use sqrt() to enter square roots.  Distance:  (b) Find the equation of the plane that passes through the points , , and . Write your answer in terms of the variables , , .  Answer:             Solution: (a) The idea is to find a convenient point lying in the given plane. For example, let us pick , and let be the vector from to . Then the distance from to the plane is the absolute value of the scalar projection of onto the normal vector   So, we get that the distance is .  (b) To find an equation of the plane in question, we can work with the point and the normal vector given by the cross product of the vector from to , and the vector from to . It turns out that   So, an equation of the plane is .       "
+},
+{
+  "id": "s_orthogonal_projection_ex-1-5",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-1-5",
+  "type": "Exercise",
+  "number": "7.3.6.4",
+  "title": "",
+  "body": "    Find bases of the kernel and image of the orthogonal projection onto the plane in .  A basis for the kernel is    A basis for the image is  ,        "
+},
+{
+  "id": "s_orthogonal_projection_ex-1-6",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-1-6",
+  "type": "Exercise",
+  "number": "7.3.6.5",
+  "title": "",
+  "body": "    Let Use the Gram-Schmidt process to determine an orthonormal basis for the subspace of spanned by , , and .   , ,        "
+},
+{
+  "id": "s_orthogonal_projection_ex-1-7",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-1-7",
+  "type": "Exercise",
+  "number": "7.3.6.6",
+  "title": "",
+  "body": "    Find the least-squares solution of the system         "
+},
+{
+  "id": "s_orthogonal_projection_ex-1-8",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-1-8",
+  "type": "Exercise",
+  "number": "7.3.6.7",
+  "title": "",
+  "body": "    By using the method of least squares, find the best line through the points:  , , .  Step 1. The general equation of a line is . Plugging the data points into this formula gives a matrix equation .      Step 2. The matrix equation has no solution, so instead we use the normal equation       Step 3. Solving the normal equation gives the answer    which corresponds to the formula    Analysis. Compute the predicted values: .    Compute the error vector: .    Compute the total error: .                   "
+},
+{
+  "id": "s_orthogonal_projection_ex-1-9",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-1-9",
+  "type": "Exercise",
+  "number": "7.3.6.8",
+  "title": "",
+  "body": "    By using the method of least squares, find the best parabola through the points:  , , ,  Step 1. The general equation of a parabola is . Plugging the data points into this formula gives a matrix equation .      Step 2. The matrix equation has no solution, so instead we use the normal equation       Step 3. Solving the normal equation gives the answer    which corresponds to the formula              "
+},
+{
+  "id": "s_orthogonal_projection_ex-2-3",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-2-3",
+  "type": "Exercise",
+  "number": "7.3.6.9",
+  "title": "",
+  "body": "   with the dot product; ;    "
+},
+{
+  "id": "s_orthogonal_projection_ex-2-4",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-2-4",
+  "type": "Exercise",
+  "number": "7.3.6.10",
+  "title": "",
+  "body": "   with dot product with weights ; ;    "
+},
+{
+  "id": "s_orthogonal_projection_ex-2-5",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-2-5",
+  "type": "Exercise",
+  "number": "7.3.6.11",
+  "title": "",
+  "body": "   with the integral inner product; ; for all    "
+},
+{
+  "id": "s_orthogonal_projection_ex-3",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-3",
+  "type": "Exercise",
+  "number": "7.3.6.12",
+  "title": "",
+  "body": "  Let be the plane passing through the origin with normal vector . Find the orthogonal projection of onto with respect to the dot product.   "
+},
+{
+  "id": "s_orthogonal_projection_ex-4",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-4",
+  "type": "Exercise",
+  "number": "7.3.6.13",
+  "title": "",
+  "body": "  Recall that the trace of a square matrix is the sum of its diagonal entries. Let with inner product . (You may take for granted that this operation is indeed an inner product on .) Define .    Compute an orthogonal basis for . You can do this either by inspection (the space is manageable), or by starting with any basis of and applying the Gram-Schmidt procedure.    Compute , where .     "
+},
+{
+  "id": "s_orthogonal_projection_ex-5",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-5",
+  "type": "Exercise",
+  "number": "7.3.6.14",
+  "title": "",
+  "body": "  Let with the integral inner product, and let . Find the function of the form that best approximates  in terms of this inner product: find the the of this form that minimizes .    The set is orthogonal with respect to the given inner product.   "
+},
+{
+  "id": "ex_ortho_comp",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#ex_ortho_comp",
+  "type": "Exercise",
+  "number": "7.3.6.15",
+  "title": "",
+  "body": "  Let be an inner product space, let , and let . Prove: . In other words, to check whether an element is in , it suffices to check that it is orthogonal to each element of its spanning set .   "
+},
+{
+  "id": "s_orthogonal_projection_ex-7",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-7",
+  "type": "Exercise",
+  "number": "7.3.6.16",
+  "title": "",
+  "body": "  Consider the inner product space together with the dot product. Let Provide orthogonal bases for and .   "
+},
+{
+  "id": "ex_orthocomp_subspace",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#ex_orthocomp_subspace",
+  "type": "Exercise",
+  "number": "7.3.6.17",
+  "title": "",
+  "body": "  Prove statements (1) and (2) of .   "
+},
+{
+  "id": "ex_orthocomp_dim",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#ex_orthocomp_dim",
+  "type": "Exercise",
+  "number": "7.3.6.18",
+  "title": "Dimension of <span class=\"process-math\">\\(W^\\perp\\)<\/span>.",
+  "body": " Dimension of   Prove statement (3) of : if is an inner product space of dimension , and is a subspace of , then .    By there is an orthogonal basis of , and furthermore, we can extend to an orthogonal basis of all of . Show the form a basis for .   "
+},
+{
+  "id": "s_orthogonal_projection_ex-10",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-10",
+  "type": "Exercise",
+  "number": "7.3.6.19",
+  "title": "",
+  "body": "  Prove following the suggestion in the text.   "
+},
+{
+  "id": "ex_orthoproj_props",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#ex_orthoproj_props",
+  "type": "Exercise",
+  "number": "7.3.6.20",
+  "title": "",
+  "body": "  Let an inner product space, and let be a finite-dimensional subspace. Prove the following statements:     if and only if ;     if and only if .     "
+},
+{
+  "id": "s_orthogonal_projection_ex-12",
+  "level": "2",
+  "url": "s_orthogonal_projection.html#s_orthogonal_projection_ex-12",
+  "type": "Exercise",
+  "number": "7.3.6.21",
+  "title": "",
+  "body": "  We consider the problem of fitting a collection of data points with a quadratic curve of the form . Thus we are given some collection of points , and we seek parameters for which the graph of  best fits the points in some way.    Show, using linear algebra, that if we are given any three points , where the -coordinates are all distinct, then there is a unique choice of such that the corresponding quadratic function agrees precisely with the data. In other words, given just about any three points in the plane, there is a unique quadratic curve connecting them.    Now suppose we are given the four data points .    Use the least-squares method described in the lecture notes to come up with a quadratic function that best fits the data.    Graph the function you found, along with the points . (You may want to use technology.) Use your graph to explain precisely in what sense  best fits the data.       "
+},
+{
+  "id": "s_spectral_theorem",
+  "level": "1",
+  "url": "s_spectral_theorem.html",
+  "type": "Section",
+  "number": "7.4",
+  "title": "The spectral theorem",
+  "body": " The spectral theorem   Among the many takeaways from is the simple fact that not all matrices are diagonalizable. In principle gives a complete answer to the question of diagonalizability in terms of eigenspaces. However, you should not be mislead by the artificially simple examples treated in . In practice even the determination (or approximation) of the distinct eigenvalues of an matrix poses a very challenging computational problem as gets large. As such the general question of whether a matrix is diagonalizable remains an intractable one. This makes all the more welcoming the main result of this section: all symmetric matrices are diagonalizable! This surprising fact is a consequence of the spectral theorem for self-adjoint operators : a result which itself fits into a larger suite of spectral theorems that treat the diagonalizability of various families of linear transformations of inner product spaces (both finite and infinite dimensional).    Self-adjoint operators  Though we are mainly interested in the diagonalizability of symmetric matrices, our arguments are made more elegant by abstracting somewhat to the realm of linear transformations of inner product spaces. In this setting the appropriate analogue of a symmetric matrix is a self-adjoint linear transformation.   Self-adjoint operators   Let be a finite-dimensional inner product space. A linear transformation is called a self-adjoint operator if for all .    The next theorem makes explicit the connection between self-adjoint operators and symmetric matrices.   Self-adjoint operators and symmetry   Let be a finite-dimensional inner product space, let be a linear transformation, and let be an orthonormal ordered basis of . The following statements are equivalent.     is self-adjoint.     is symmetric.      Let . We have . Furthermore, since is orthonormal, the -th entry of is computed as ( ). Thus , where It follows that . The last equality in this chain of equivalences states that satisfies property for all elements of . Not surprisingly, this is equivalent to satisfying the property for all elements in . (See .) We conclude that is symmetric if and only if is self-adjoint.     Self-adjoint operators and symmetry   Let . The following statements are equivalent.     is symmetric.     is self-adjoint with respect to the dot product.     for all .      Since , where is the standard ordered basis of , and since is orthonormal with respect to the dot product, it follows from that statements (1) and (2) are equivalent. Statements (2) and (3) are equivalent since by definition for all .    The next result, impressive in its own right, is also key to the induction argument we will use to prove . A proper proof would require a careful treatment of complex vector spaces: a topic which lies just outside the scope of this text. The proof sketch we provide can easily be upgraded to a complete argument simply by justifying a few statements about and its standard inner product.   Eigenvalues of self-adjoint operators   Let be a finite-dimensional inner product space. If is self adjoint, then all roots of its characteristic polynomial are real: i.e., we have , where for all .    Proof sketch of  Pick an orthonormal ordered basis of , and let . By , is symmetric. To prove that all roots of the characteristic polynomial are real, we make a slight detour into complex vector spaces. The set of all complex -tuples, together with the operations and where , forms what is called a vector space over . This means that satisfies the strengthened axioms of obtained by replacing every mention of a scalar with a scalar . Additionally, the vector space has the structure of a complex inner product defined as , where denotes the complex conjugate of for each . Essentially all of our theory of real vector spaces can be transported to complex vector spaces, including definitions and results about eigenvectors and inner products. The rest of this argument makes use of this principle by citing without proof some of these properties, and this is why it has been downgraded to a proof sketch .  We now return to and its characteristic polynomial . Recall that we want to show that all roots of are real. Let be a root of . The complex theory of eigenvectors implies that there is a nonzero vector satisfying . On the one hand, we have using properties of our complex inner product. On the other hand, since it is easy to see that extends to our complex inner product: , for all . Thus . (In the last equality we use the fact that our complex inner product satisfies for any and vectors .) It follows that . Since , we have (another property of our complex inner product), and thus . Since a complex number satisfies if and only if if and only if is real, we conclude that is a real number, as claimed.     Eigenvalues of self-adjoint operators   If is a self-adjoint operator on a finite-dimensional inner product space , then has an eigenvalue: , there is a and nonzero such that .    The corollary follows from and the fact that the eigenvalues of are the real roots of its characteristic polynomial ( ).    From and it follows that the characterisitic polynomial of any symmetric matrix must factor as a product of linear terms over , as illustrated by the next two examples.   Symmetric matrices   Verify that the characteristic polynomial of any symmetric matrix factors into linear terms over .    Given a symmetric matrix , we have . Using the quadratic formula and some algebra, we see that the roots of are given by where (using the quadratic formula) . Since , we see that both these roots are real. Thus , where .     Symmetric matrix   Verify that the characteristic polynomial of the symmetric matrix factors into linear terms over .    The characteristic polynomial of is . We can use the quadratic equation to solve for , yielding . We conclude that or , and thus or . It follows that .      The spectral theorem for self-adjoint operators   Our version of the spectral theorem concerns self-adjoint linear transformations on a finite-dimensional inner product space. It tells us two remarkable things: (a) every such linear transformation has an eigenbasis (and hence is diagonalizable); and furthermore, (b) the eigenbasis can be chosen to be orthogonal, or even orthonormal.    Spectral theorem for self-adjoint operators   Let be a finite-dimensional vector space, and let be a linear transformation. The following statements are equivalent.     is self-adjoint.     is diagonalizable and eigenvectors with distinct eigenvalues are orthogonal.     has an orthogonal eigenbasis.     has an orthonormal eigenbasis.      We will prove the cycle of implications .   Implication:  Assume is self adjoint. First we show that eigenvectors with distinct eigenvalues are orthogonal. To this end, suppose we have and , where . Using the definition of self-adjoint, we have . We now prove by induction on that if is self-adjoint, then is diagonalizable. The base case is trivial. Assume the result is true of any -dimensional inner product space, and suppose . By there is a nonzero with . Let . Since , we have . The following two facts are crucial for the rest of the argument and are left as an exercise ( ).   For all we have , and thus by restricting to we get a linear transformation .    The restriction is self-adjoint, considered as a linear transformation of the inner product space . Here the inner product on the subspace is inherited from by restriction.   Now since and is self-adjoint, we may assume by induction that has an eigenbasis . We claim that is an eigenbasis of . Since by definition for all , we see that the vectors are also eigenvectors of , and thus that consists of eigenvectors. To show is a basis it is enought to prove linear independence, since . Suppose we have for scalars . Taking the inner product with , we have : . It follows that we have , and thus for all , since is linearly independent. Having proved that is an eigenbasis, we conclude that is diagonalizable.    Implication:  Let be the distinct eigenvalues of . Since is assumed to be diagonalizable, following we can create an eigenbasis by picking bases of each eigenspace and combining them. We can always choose these bases so that each is orthogonal. When we do so, the assembled will be orthogonal as a whole. Indeed given any two elements of , if both vectors are elements of for some , then they are orthogonal by design ; furthermore, if is an element of basis and is an element of basis with , then they are eigenvectors with distinct eigenvalues, and hence orthogonal by assumption !    Implication:  This is easy to see since an orthonormal eigenbasis can be obtained from an orthogonal eigenbasis by scaling each element by the reciprocal of its norm.    Implication:  Assume is an orthonormal eigenbasis of . Since is an eigenbasis, is a diagonal matrix, and hence symmetric. Since is orthonormal with respect to the dot product, we conclude from that is self-adjoint.     An operator that admits an orthogonal (and hence an orthonormal) eigenbasis is called orthogonally diagonalizable .   diagonalizable orthogonally  orthogonally diagonalizable  Orthogonally diagonalizable   Let be a finite-dimensional inner product space. A linear transformation is orthogonally diagonalizable if there exists an orthogonal (equivalently, an orthonormal) eigenbasis of .    This new language affords us a more succinct articulation of : to be self-adjoint is to be orthogonally diagonalizable. Think of this as a sort of diagonalizable+ condition.   Self-adjoint mantra   To be self-adjoint on a finite-dimensional inner product space is to be diagonalizable+ . In more detail: .    As an immediate consequence of , we have the following result about symmetric matrices.   Spectral theorem for symmetric matrices   Let be an matrix. The following statements are equivalent.     is symmetric.     is diagonalizable and eigenvectors with distinct eigenvalues are orthogonal with respect to the dot product.     is orthogonally diagonalizable.    There exists an orthogonal matrix  and diagonal matrix such that .      By we have symmetric if and only if is self-adjoint with respect to the dot product. Statements (1)-(3) are seen to be equivalent by applying to (with respect to the dot product). Let be the standard basis of . We see that (4) is equivalent to (3) by observing that is an orthonormal eigenbasis of if and only if the matrix obtained by placing the elements of as columns is orthogonal and diagonalizes .    The process of finding matrices and satisfying is called orthogonal diagonalization . A close look at the proof of gives rise to the following orthogonal diagonalization method for matrices.   Orthogonal diagonalization   Let be a symmetric matrix. To orthogonally diagonalize proceed as follows.    Let be the distinct eigenvalues of . For each , compute an orthonormal ordered basis of .    Let be the ordered basis obtained by concatenating the orthonormal bases computed in (1). This is an orthonormal basis of eigenvectors. It follows that the matrix is orthogonal ( , ), and the matrix is diagonal.       Orthogonal diagonalization   The symmetric matrix has characteristic polynomial . Find an orthogonal matrix and diagonal matrix such that .    First we factor . Looking at the constant term we see that the only possible integer roots of are . It is easily verified that , and polynomial division yields the factorization . Further factorization of gives us .  Next we compute orthonormal bases of the eigenspaces and , yielding . Assembling these bases elements into the orthogonal matrix , we conclude that , where .    Observe that the two eigenspaces and of the matrix in are orthogonal to one another, as predicted by the spectral theorem. Indeed, is the line passing through the origin with direction vector , and is its orthogonal complement, the plane passing through the origin with normal vector . depicts the orthogonal configuration of the eigenspaces of this example. This is an excellent illustration of what makes the diagonalizability of symmetric matrices (and self-adjoint operators) special. Keep it in mind!   Eigenspaces of a symmetric matrix are orthogonal   Eigenspaces of a symmetric matrix are orthogonal   Do not overlook the reverse implication of equivalence . As the next example illustrates, we can show an operator is self-adjoint by examining the geometry of its eigenspaces.   Orthogonal projections are self-adjoint   Let be a finite-dimensional inner product space, let be a subpsace of , and let be orthogonal projection onto . Prove that is self-adjoint.    By it suffices to show that is orthogonally diagonalizable. According to we have . Equivalently, and are the 1- and 0-eigenspaces of , respectively. Since we conclude that is diagonalizable. Since clearly and are orthogonal, we conclude that is in fact othogonally diagonalizable, hence self-adjoint.       WeBWork Exercises      Let . Find an orthogonal matrix with rational entries and a diagonal matrix such that .   ,            Orthogonally diagonalize the given symmetric matrix following : find a diagonal matrix and orthogonal matrix satisfying .                                                             Let be a finite-dimensional inner product space, let be a linear transformation, and let be an ordered basis of . Prove: is self-adjoint if and only if for all . In other words, to prove is self-adjoint it suffices to show property holds for all elements of a basis of .      Let be a finite-dimensional inner product space, let be a self-adjoint operator, and let be a subspace of .    Prove: if , then .    By (a), restricting to defines a linear transformation . Prove that is self-adjoint. Here the inner product on the subspace is inherited from by restriction.        Assume is symmetric and orthogonal. Prove that the characteristic polynomial of factors as for some nonnegative integers . In particular, the eigenvalues of are among and .      Let be a conic curve defined by a quadratic equation of the form where are fixed constants. You may have learned that can be rotated to a conic with a standard equation of the form . In the following exercises we will see why this is true.     Find a symmetric matrix satisfying the following property: satisfies if and only if . (Here we conflate the matrix with the scalar .)      Show that there is a rotation matrix satisfying , where for some .    See .      Show that satisfies if and only if satisfies .      Explain why we can conclude that there is a rotation that maps the conic with equation to the conic with standard equation  .      Let be the conic curve with equation .    Find an angle and constants such that the rotation maps to a conic with defining equation .    First graph , and then graph using the result of (a). What type of conics (parabolas, ellipses, hyperbolas) are and ?        "
+},
+{
+  "id": "d_self-adjoint",
+  "level": "2",
+  "url": "s_spectral_theorem.html#d_self-adjoint",
+  "type": "Definition",
+  "number": "7.4.1",
+  "title": "Self-adjoint operators.",
+  "body": " Self-adjoint operators   Let be a finite-dimensional inner product space. A linear transformation is called a self-adjoint operator if for all .   "
+},
+{
+  "id": "th_self-adjoint_symmetric",
+  "level": "2",
+  "url": "s_spectral_theorem.html#th_self-adjoint_symmetric",
+  "type": "Theorem",
+  "number": "7.4.2",
+  "title": "Self-adjoint operators and symmetry.",
+  "body": " Self-adjoint operators and symmetry   Let be a finite-dimensional inner product space, let be a linear transformation, and let be an orthonormal ordered basis of . The following statements are equivalent.     is self-adjoint.     is symmetric.      Let . We have . Furthermore, since is orthonormal, the -th entry of is computed as ( ). Thus , where It follows that . The last equality in this chain of equivalences states that satisfies property for all elements of . Not surprisingly, this is equivalent to satisfying the property for all elements in . (See .) We conclude that is symmetric if and only if is self-adjoint.   "
+},
+{
+  "id": "cor_self-adjoint_symmetric",
+  "level": "2",
+  "url": "s_spectral_theorem.html#cor_self-adjoint_symmetric",
+  "type": "Corollary",
+  "number": "7.4.3",
+  "title": "Self-adjoint operators and symmetry.",
+  "body": " Self-adjoint operators and symmetry   Let . The following statements are equivalent.     is symmetric.     is self-adjoint with respect to the dot product.     for all .      Since , where is the standard ordered basis of , and since is orthonormal with respect to the dot product, it follows from that statements (1) and (2) are equivalent. Statements (2) and (3) are equivalent since by definition for all .   "
+},
+{
+  "id": "th_self-adjoint_eigenvalue",
+  "level": "2",
+  "url": "s_spectral_theorem.html#th_self-adjoint_eigenvalue",
+  "type": "Theorem",
+  "number": "7.4.4",
+  "title": "Eigenvalues of self-adjoint operators.",
+  "body": " Eigenvalues of self-adjoint operators   Let be a finite-dimensional inner product space. If is self adjoint, then all roots of its characteristic polynomial are real: i.e., we have , where for all .    Proof sketch of  Pick an orthonormal ordered basis of , and let . By , is symmetric. To prove that all roots of the characteristic polynomial are real, we make a slight detour into complex vector spaces. The set of all complex -tuples, together with the operations and where , forms what is called a vector space over . This means that satisfies the strengthened axioms of obtained by replacing every mention of a scalar with a scalar . Additionally, the vector space has the structure of a complex inner product defined as , where denotes the complex conjugate of for each . Essentially all of our theory of real vector spaces can be transported to complex vector spaces, including definitions and results about eigenvectors and inner products. The rest of this argument makes use of this principle by citing without proof some of these properties, and this is why it has been downgraded to a proof sketch .  We now return to and its characteristic polynomial . Recall that we want to show that all roots of are real. Let be a root of . The complex theory of eigenvectors implies that there is a nonzero vector satisfying . On the one hand, we have using properties of our complex inner product. On the other hand, since it is easy to see that extends to our complex inner product: , for all . Thus . (In the last equality we use the fact that our complex inner product satisfies for any and vectors .) It follows that . Since , we have (another property of our complex inner product), and thus . Since a complex number satisfies if and only if if and only if is real, we conclude that is a real number, as claimed.   "
+},
+{
+  "id": "cor_self-adjoint_eigenvalue",
+  "level": "2",
+  "url": "s_spectral_theorem.html#cor_self-adjoint_eigenvalue",
+  "type": "Corollary",
+  "number": "7.4.5",
+  "title": "Eigenvalues of self-adjoint operators.",
+  "body": " Eigenvalues of self-adjoint operators   If is a self-adjoint operator on a finite-dimensional inner product space , then has an eigenvalue: , there is a and nonzero such that .    The corollary follows from and the fact that the eigenvalues of are the real roots of its characteristic polynomial ( ).   "
+},
+{
+  "id": "eg_symmetric_matrix",
+  "level": "2",
+  "url": "s_spectral_theorem.html#eg_symmetric_matrix",
+  "type": "Example",
+  "number": "7.4.6",
+  "title": "Symmetric <span class=\"process-math\">\\(2\\times 2\\)<\/span> matrices.",
+  "body": " Symmetric matrices   Verify that the characteristic polynomial of any symmetric matrix factors into linear terms over .    Given a symmetric matrix , we have . Using the quadratic formula and some algebra, we see that the roots of are given by where (using the quadratic formula) . Since , we see that both these roots are real. Thus , where .   "
+},
+{
+  "id": "ss_self-adjoint-12",
+  "level": "2",
+  "url": "s_spectral_theorem.html#ss_self-adjoint-12",
+  "type": "Example",
+  "number": "7.4.7",
+  "title": "Symmetric <span class=\"process-math\">\\(4\\times 4\\)<\/span> matrix.",
+  "body": " Symmetric matrix   Verify that the characteristic polynomial of the symmetric matrix factors into linear terms over .    The characteristic polynomial of is . We can use the quadratic equation to solve for , yielding . We conclude that or , and thus or . It follows that .   "
+},
+{
+  "id": "th_spectral",
+  "level": "2",
+  "url": "s_spectral_theorem.html#th_spectral",
+  "type": "Theorem",
+  "number": "7.4.8",
+  "title": "Spectral theorem for self-adjoint operators.",
+  "body": " Spectral theorem for self-adjoint operators   Let be a finite-dimensional vector space, and let be a linear transformation. The following statements are equivalent.     is self-adjoint.     is diagonalizable and eigenvectors with distinct eigenvalues are orthogonal.     has an orthogonal eigenbasis.     has an orthonormal eigenbasis.      We will prove the cycle of implications .   Implication:  Assume is self adjoint. First we show that eigenvectors with distinct eigenvalues are orthogonal. To this end, suppose we have and , where . Using the definition of self-adjoint, we have . We now prove by induction on that if is self-adjoint, then is diagonalizable. The base case is trivial. Assume the result is true of any -dimensional inner product space, and suppose . By there is a nonzero with . Let . Since , we have . The following two facts are crucial for the rest of the argument and are left as an exercise ( ).   For all we have , and thus by restricting to we get a linear transformation .    The restriction is self-adjoint, considered as a linear transformation of the inner product space . Here the inner product on the subspace is inherited from by restriction.   Now since and is self-adjoint, we may assume by induction that has an eigenbasis . We claim that is an eigenbasis of . Since by definition for all , we see that the vectors are also eigenvectors of , and thus that consists of eigenvectors. To show is a basis it is enought to prove linear independence, since . Suppose we have for scalars . Taking the inner product with , we have : . It follows that we have , and thus for all , since is linearly independent. Having proved that is an eigenbasis, we conclude that is diagonalizable.    Implication:  Let be the distinct eigenvalues of . Since is assumed to be diagonalizable, following we can create an eigenbasis by picking bases of each eigenspace and combining them. We can always choose these bases so that each is orthogonal. When we do so, the assembled will be orthogonal as a whole. Indeed given any two elements of , if both vectors are elements of for some , then they are orthogonal by design ; furthermore, if is an element of basis and is an element of basis with , then they are eigenvectors with distinct eigenvalues, and hence orthogonal by assumption !    Implication:  This is easy to see since an orthonormal eigenbasis can be obtained from an orthogonal eigenbasis by scaling each element by the reciprocal of its norm.    Implication:  Assume is an orthonormal eigenbasis of . Since is an eigenbasis, is a diagonal matrix, and hence symmetric. Since is orthonormal with respect to the dot product, we conclude from that is self-adjoint.    "
+},
+{
+  "id": "d_orthogonally_diagable",
+  "level": "2",
+  "url": "s_spectral_theorem.html#d_orthogonally_diagable",
+  "type": "Definition",
+  "number": "7.4.9",
+  "title": "Orthogonally diagonalizable.",
+  "body": " diagonalizable orthogonally  orthogonally diagonalizable  Orthogonally diagonalizable   Let be a finite-dimensional inner product space. A linear transformation is orthogonally diagonalizable if there exists an orthogonal (equivalently, an orthonormal) eigenbasis of .   "
+},
+{
+  "id": "mantra_self-adjoint",
+  "level": "2",
+  "url": "s_spectral_theorem.html#mantra_self-adjoint",
+  "type": "Mantra",
+  "number": "7.4.10",
+  "title": "Self-adjoint mantra.",
+  "body": " Self-adjoint mantra   To be self-adjoint on a finite-dimensional inner product space is to be diagonalizable+ . In more detail: .   "
+},
+{
+  "id": "cor_spectral",
+  "level": "2",
+  "url": "s_spectral_theorem.html#cor_spectral",
+  "type": "Corollary",
+  "number": "7.4.11",
+  "title": "Spectral theorem for symmetric matrices.",
+  "body": " Spectral theorem for symmetric matrices   Let be an matrix. The following statements are equivalent.     is symmetric.     is diagonalizable and eigenvectors with distinct eigenvalues are orthogonal with respect to the dot product.     is orthogonally diagonalizable.    There exists an orthogonal matrix  and diagonal matrix such that .      By we have symmetric if and only if is self-adjoint with respect to the dot product. Statements (1)-(3) are seen to be equivalent by applying to (with respect to the dot product). Let be the standard basis of . We see that (4) is equivalent to (3) by observing that is an orthonormal eigenbasis of if and only if the matrix obtained by placing the elements of as columns is orthogonal and diagonalizes .   "
+},
+{
+  "id": "proc_ortho_diag",
+  "level": "2",
+  "url": "s_spectral_theorem.html#proc_ortho_diag",
+  "type": "Procedure",
+  "number": "7.4.12",
+  "title": "Orthogonal diagonalization.",
+  "body": " Orthogonal diagonalization   Let be a symmetric matrix. To orthogonally diagonalize proceed as follows.    Let be the distinct eigenvalues of . For each , compute an orthonormal ordered basis of .    Let be the ordered basis obtained by concatenating the orthonormal bases computed in (1). This is an orthonormal basis of eigenvectors. It follows that the matrix is orthogonal ( , ), and the matrix is diagonal.     "
+},
+{
+  "id": "eg_ortho_diag",
+  "level": "2",
+  "url": "s_spectral_theorem.html#eg_ortho_diag",
+  "type": "Example",
+  "number": "7.4.13",
+  "title": "Orthogonal diagonalization.",
+  "body": " Orthogonal diagonalization   The symmetric matrix has characteristic polynomial . Find an orthogonal matrix and diagonal matrix such that .    First we factor . Looking at the constant term we see that the only possible integer roots of are . It is easily verified that , and polynomial division yields the factorization . Further factorization of gives us .  Next we compute orthonormal bases of the eigenspaces and , yielding . Assembling these bases elements into the orthogonal matrix , we conclude that , where .   "
+},
+{
+  "id": "fig_ortho_diag",
+  "level": "2",
+  "url": "s_spectral_theorem.html#fig_ortho_diag",
+  "type": "Figure",
+  "number": "7.4.14",
+  "title": "Eigenspaces of a symmetric matrix are orthogonal",
+  "body": " Eigenspaces of a symmetric matrix are orthogonal   Eigenspaces of a symmetric matrix are orthogonal  "
+},
+{
+  "id": "eg_ortho_proj_selfadjoint",
+  "level": "2",
+  "url": "s_spectral_theorem.html#eg_ortho_proj_selfadjoint",
+  "type": "Example",
+  "number": "7.4.15",
+  "title": "Orthogonal projections are self-adjoint.",
+  "body": " Orthogonal projections are self-adjoint   Let be a finite-dimensional inner product space, let be a subpsace of , and let be orthogonal projection onto . Prove that is self-adjoint.    By it suffices to show that is orthogonally diagonalizable. According to we have . Equivalently, and are the 1- and 0-eigenspaces of , respectively. Since we conclude that is diagonalizable. Since clearly and are orthogonal, we conclude that is in fact othogonally diagonalizable, hence self-adjoint.   "
+},
+{
+  "id": "s_spectral_theorem_ex-1-2",
+  "level": "2",
+  "url": "s_spectral_theorem.html#s_spectral_theorem_ex-1-2",
+  "type": "Exercise",
+  "number": "7.4.3.1",
+  "title": "",
+  "body": "    Let . Find an orthogonal matrix with rational entries and a diagonal matrix such that .   ,        "
+},
+{
+  "id": "s_spectral_theorem_ex-2-2",
+  "level": "2",
+  "url": "s_spectral_theorem.html#s_spectral_theorem_ex-2-2",
+  "type": "Exercise",
+  "number": "7.4.3.2",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_spectral_theorem_ex-2-3",
+  "level": "2",
+  "url": "s_spectral_theorem.html#s_spectral_theorem_ex-2-3",
+  "type": "Exercise",
+  "number": "7.4.3.3",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_spectral_theorem_ex-2-4",
+  "level": "2",
+  "url": "s_spectral_theorem.html#s_spectral_theorem_ex-2-4",
+  "type": "Exercise",
+  "number": "7.4.3.4",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_spectral_theorem_ex-2-5",
+  "level": "2",
+  "url": "s_spectral_theorem.html#s_spectral_theorem_ex-2-5",
+  "type": "Exercise",
+  "number": "7.4.3.5",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_spectral_theorem_ex-2-6",
+  "level": "2",
+  "url": "s_spectral_theorem.html#s_spectral_theorem_ex-2-6",
+  "type": "Exercise",
+  "number": "7.4.3.6",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_spectral_theorem_ex-2-7",
+  "level": "2",
+  "url": "s_spectral_theorem.html#s_spectral_theorem_ex-2-7",
+  "type": "Exercise",
+  "number": "7.4.3.7",
+  "title": "",
+  "body": "     "
+},
+{
+  "id": "s_spectral_theorem_ex-2-8",
+  "level": "2",
+  "url": "s_spectral_theorem.html#s_spectral_theorem_ex-2-8",
+  "type": "Exercise",
+  "number": "7.4.3.8",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "s_spectral_theorem_ex-2-9",
+  "level": "2",
+  "url": "s_spectral_theorem.html#s_spectral_theorem_ex-2-9",
+  "type": "Exercise",
+  "number": "7.4.3.9",
+  "title": "",
+  "body": "      "
+},
+{
+  "id": "ex_self-adjoint_symmetric",
+  "level": "2",
+  "url": "s_spectral_theorem.html#ex_self-adjoint_symmetric",
+  "type": "Exercise",
+  "number": "7.4.3.10",
+  "title": "",
+  "body": "  Let be a finite-dimensional inner product space, let be a linear transformation, and let be an ordered basis of . Prove: is self-adjoint if and only if for all . In other words, to prove is self-adjoint it suffices to show property holds for all elements of a basis of .   "
+},
+{
+  "id": "ex_selfadjoint_complement",
+  "level": "2",
+  "url": "s_spectral_theorem.html#ex_selfadjoint_complement",
+  "type": "Exercise",
+  "number": "7.4.3.11",
+  "title": "",
+  "body": "  Let be a finite-dimensional inner product space, let be a self-adjoint operator, and let be a subspace of .    Prove: if , then .    By (a), restricting to defines a linear transformation . Prove that is self-adjoint. Here the inner product on the subspace is inherited from by restriction.     "
+},
+{
+  "id": "s_spectral_theorem_ex-5",
+  "level": "2",
+  "url": "s_spectral_theorem.html#s_spectral_theorem_ex-5",
+  "type": "Exercise",
+  "number": "7.4.3.12",
+  "title": "",
+  "body": "  Assume is symmetric and orthogonal. Prove that the characteristic polynomial of factors as for some nonnegative integers . In particular, the eigenvalues of are among and .   "
+},
+{
+  "id": "s_spectral_theorem_ex-6-2",
+  "level": "2",
+  "url": "s_spectral_theorem.html#s_spectral_theorem_ex-6-2",
+  "type": "Exercise",
+  "number": "7.4.3.13",
+  "title": "",
+  "body": "  Find a symmetric matrix satisfying the following property: satisfies if and only if . (Here we conflate the matrix with the scalar .)   "
+},
+{
+  "id": "s_spectral_theorem_ex-6-3",
+  "level": "2",
+  "url": "s_spectral_theorem.html#s_spectral_theorem_ex-6-3",
+  "type": "Exercise",
+  "number": "7.4.3.14",
+  "title": "",
+  "body": "  Show that there is a rotation matrix satisfying , where for some .    See .   "
+},
+{
+  "id": "s_spectral_theorem_ex-6-4",
+  "level": "2",
+  "url": "s_spectral_theorem.html#s_spectral_theorem_ex-6-4",
+  "type": "Exercise",
+  "number": "7.4.3.15",
+  "title": "",
+  "body": "  Show that satisfies if and only if satisfies .   "
+},
+{
+  "id": "s_spectral_theorem_ex-6-5",
+  "level": "2",
+  "url": "s_spectral_theorem.html#s_spectral_theorem_ex-6-5",
+  "type": "Exercise",
+  "number": "7.4.3.16",
+  "title": "",
+  "body": "  Explain why we can conclude that there is a rotation that maps the conic with equation to the conic with standard equation  .   "
+},
+{
+  "id": "s_spectral_theorem_ex-6-6",
+  "level": "2",
+  "url": "s_spectral_theorem.html#s_spectral_theorem_ex-6-6",
+  "type": "Exercise",
+  "number": "7.4.3.17",
+  "title": "",
+  "body": "  Let be the conic curve with equation .    Find an angle and constants such that the rotation maps to a conic with defining equation .    First graph , and then graph using the result of (a). What type of conics (parabolas, ellipses, hyperbolas) are and ?     "
 },
 {
   "id": "appendix-notation",

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: blue-green                   *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.26</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Transposition (again).</span>
+</h2>
+<div class="para">Let <span class="process-math">\(S\colon M_{22}\rightarrow M_{22}\)</span> be defined as <span class="process-math">\(S(A)=A^T\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_eigenvector_systematic_transposition-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<ol class="decimal" id="eg_eigenvector_systematic_transposition-2-2">
+<li>
+<div class="para">Find all eigenvalues of <span class="process-math">\(S\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_eigenvector_systematic_transposition-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#eg_eigenvector_systematic_transposition-2-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li>
+<div class="para">For each eigenvalue <span class="process-math">\(\lambda\)</span> of <span class="process-math">\(S\)</span> compute a basis for <span class="process-math">\(W_\lambda\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_eigenvector_systematic_transposition-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#eg_eigenvector_systematic_transposition-2-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="solutions">
+<details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(B=(E_{11}, E_{12}, E_{21}, E_{22})\text{,}\)</span> the standard ordered basis of <span class="process-math">\(M_{22}\text{.}\)</span> Compute <span class="process-math">\(A=[S]_B\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_eigenspaces_matrix.html ./knowl/xref/eg_eigenvector_adhoc_transposition.html">
+\begin{align*}
+A=[S]_B \amp =\begin{bmatrix}
+\vert \amp \vert\amp \vert\amp \vert \\
+[S(E_{11})]_B\amp [S(E_{12})]_B \amp [S(E_{21})]_B \amp [S(E_{22})]_B\\
+\vert \amp \vert \amp \vert\amp \vert
+\end{bmatrix} \\
+\amp = =\begin{bmatrix}
+\vert \amp \vert\amp \vert\amp \vert \\
+[E_{11}]_B\amp [E_{21}]_B \amp [E_{12}]_B \amp [E_{22}]_B \\
+\vert \amp \vert \amp \vert\amp \vert
+\end{bmatrix}
+\amp (E_{11}^T=E_{11}, E_{12}^T=E_{21}, \text{etc.})\\
+\amp =\begin{bmatrix}
+1\amp 0\amp 0\amp 0\\
+0\amp 0\amp 1\amp 0\\
+0\amp 1\amp 0\amp 0\\
+0\amp 0\amp 0\amp 1
+\end{bmatrix} \text{.}
+\end{align*}
+</div>
+<div class="para">Now apply <a href="s_eigenvectors.html#proc_eigenspaces_matrix" class="xref" data-knowl="./knowl/xref/proc_eigenspaces_matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 6.1.19: Computing eigenspaces of a matrix">Procedure 6.1.19</a> to <span class="process-math">\(A\text{.}\)</span> From <span class="process-math">\(p(t)=\det(tI-A)=(t-1)^2(t^2-1)=(t-1)^3(t+1)\)</span> we conclude that <span class="process-math">\(\lambda=1\)</span> and <span class="process-math">\(\lambda=-1\)</span> are the only eigenvalues of <span class="process-math">\(A\)</span> (and hence also <span class="process-math">\(S\)</span>). Bases for the corresponding eigenspaces of <span class="process-math">\(A\)</span> are easily computed as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_eigenspaces_matrix.html ./knowl/xref/eg_eigenvector_adhoc_transposition.html">
+\begin{align*}
+\NS(I-A) \amp= \Span\{(1,0,0,0), (0,1,1,0), (0,0,0,1)\} \\
+\NS(-I-A) \amp =\Span\{(0,1,-1,0)\} \text{.}
+\end{align*}
+</div>
+<div class="para">Now lift these up to bases of the eigenspaces <span class="process-math">\(W_1\)</span> and <span class="process-math">\(W_{-1}\)</span> of <span class="process-math">\(S\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_eigenspaces_matrix.html ./knowl/xref/eg_eigenvector_adhoc_transposition.html">
+\begin{align*}
+W_1 \amp=\Span\left\{ A_1=\begin{bmatrix}
+1\amp 0\\ 0 \amp 0
+\end{bmatrix},
+A_2=\begin{bmatrix}
+0\amp 1\\ 1 \amp 0
+\end{bmatrix},
+A_3=\begin{bmatrix}
+0\amp 0\\ 0 \amp 1
+\end{bmatrix} \right\} \\
+W_{-1} \amp= \Span\left\{A_4=
+\begin{amatrix}[rr]
+0\amp 1\\ -1 \amp 0
+\end{amatrix} \right\} \text{.}
+\end{align*}
+</div>
+<div class="para">It is easy to see that <span class="process-math">\(W_1\)</span> and <span class="process-math">\(W_2\)</span> are the subspaces of symmetric and skew-symmetric matrices, respectively. This is consistent with our analysis in <a href="s_eigenvectors.html#eg_eigenvector_adhoc_transposition" class="xref" data-knowl="./knowl/xref/eg_eigenvector_adhoc_transposition.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 6.1.12: Transposition">Example 6.1.12</a>.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_eigenvector_systematic_transposition-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 6.1.26.1"><a tabindex="-1" href="#eg_eigenvector_systematic_transposition-3" title="Copy heading and permalink for Solution 6.1.26.1" aria-label="Copy heading and permalink for Solution 6.1.26.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 6.1.26: Transposition (again)"><a tabindex="-1" href="#eg_eigenvector_systematic_transposition" title="Copy heading and permalink for Example 6.1.26: Transposition (again)" aria-label="Copy heading and permalink for Example 6.1.26: Transposition (again)">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="s_eigenvectors.html#eg_eigenvector_systematic_transposition">In Context</a></span>
+</body>
+</html>

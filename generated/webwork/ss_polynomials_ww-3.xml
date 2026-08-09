@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-ss_polynomials_ww-3" assembly-id="ss_polynomials_ww-3">
+  <static seed="17" source="Library/ASU-topics/setPolynomials/jj1.pg">
+    <statement><p>The polynomial
+<me>f(x) = 7 x^3 - 2 x^2+ 567 x - 162</me>
+has <m>9 i</m> as a root.  Give <em> all</em> of the roots of <m>f</m> in a
+comma-separated list, including the given one.</p>
+<p>Roots:  <fillin characters="40" name="AnSwEr0001"/></p>
+</statement>
+    <answer>
+      <p>
+        <m>9i, -9i, 0.285714285714286</m>
+      </p>
+    </answer>
+  </static>
+  <rendering-data sourceFilePath="Library/ASU-topics/setPolynomials/jj1.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/ASU-topics/setPolynomials/jj1.pg"/>
+</webwork-reps>

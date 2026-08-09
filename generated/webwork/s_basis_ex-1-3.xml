@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_basis_ex-1-3" assembly-id="s_basis_ex-1-3">
+  <static seed="57" source="Library/NAU/setLinearAlgebra/basisHalfMagic.pg">
+    <statement><p>A square matrix is half-magic if the sum of the numbers in each row and column is the same. 
+Find a basis <m>B</m> for the vector space of <m>2\times 2</m> half-magic squares.</p>
+<p><m>B = \lbrace</m>
+<fillin cols="2" rows="2"/>,
+<fillin cols="2" rows="2"/> 
+<m>\rbrace</m>.</p>
+</statement>
+  </static>
+  <rendering-data sourceFilePath="Library/NAU/setLinearAlgebra/basisHalfMagic.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/NAU/setLinearAlgebra/basisHalfMagic.pg"/>
+</webwork-reps>

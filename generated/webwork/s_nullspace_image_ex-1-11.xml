@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_nullspace_image_ex-1-11" assembly-id="s_nullspace_image_ex-1-11">
+  <static seed="79" source="Library/TCNJ/TCNJ_MatrixLinearTransformation/problem22.pg">
+    <statement><p>Match the following concepts with the correct definitions:</p>
+<p><ol>
+<li>
+<p><m>f</m> is a one-to-one function from <m>{\mathbb  R}^3</m>
+ to <m>{\mathbb  R}^3</m></p>
+</li>
+<li>
+<p><m>f</m> is an onto function from <m>{\mathbb  R}^3</m>
+ to <m>{\mathbb  R}^3</m></p>
+</li>
+<li>
+<p><m>f</m> is a function from <m>{\mathbb  R}^3</m>
+ to <m>{\mathbb  R}^3</m></p>
+</li>
+</ol>
+<ol label="A.">
+<li>
+<p>For every <m>y\in {\mathbb R}^3</m>, there is a 
+<m>x\in {\mathbb R}^3</m> such that <m>f(x)=y</m>.</p>
+</li>
+<li>
+<p>For every <m>x\in {\mathbb R}^3</m>, there is a 
+<m>y\in {\mathbb R}^3</m> such that <m>f(x)=y</m>.</p>
+</li>
+<li>
+<p>For every <m>y\in {\mathbb R}^3</m>, there is a 
+unique <m>x\in {\mathbb R}^3</m> such that <m>f(x)=y</m>.</p>
+</li>
+<li>
+<p>For every <m>y \in {\mathbb R}^3</m>, there is at most one
+<m>x\in {\mathbb R}^3</m> such that <m>f(x)=y</m>.</p>
+</li>
+</ol></p>
+</statement>
+  </static>
+  <rendering-data sourceFilePath="Library/TCNJ/TCNJ_MatrixLinearTransformation/problem22.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/TCNJ/TCNJ_MatrixLinearTransformation/problem22.pg"/>
+</webwork-reps>

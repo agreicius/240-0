@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-ss_matrix_algebra_ww-4" assembly-id="ss_matrix_algebra_ww-4">
+  <static seed="36" source="Library/Utah/Business_Algebra/set10_Matrices/p21.pg">
+    <statement><p>Let</p>
+<p><me>A=\left(\begin{array}{cc} 
+            9 \amp  6 \cr
+	    8 \amp  3
+	   \end{array}\right)
+	   , 
+B=\left(\begin{array}{cc} 
+         -9 \amp  6 \cr
+	 -8 \amp  3
+	   \end{array}\right)
+	   , 
+C=\left(\begin{array}{cc} 
+            5 \amp  8 \cr
+	    6 \amp  2
+	   \end{array}\right).</me></p>
+<p>Then</p>
+<p><me>A + B^T=\left(\begin{array}{cc} 
+            a_{11} \amp  a_{12} \cr
+	    a_{21} \amp  a_{22} 
+	   \end{array}\right)</me></p>
+<p>where 
+<m>a_{11}=</m> <fillin characters="3" name="AnSwEr0001"/>,
+<m>a_{12}=</m> <fillin characters="3" name="AnSwEr0002"/>,
+<m>a_{21}=</m> <fillin characters="3" name="AnSwEr0003"/>,
+<m>a_{22}=</m> <fillin characters="3" name="AnSwEr0004"/>,</p>
+<p>and</p>
+<p><me>A - B + C^T=\left(\begin{array}{cc} 
+            c_{11} \amp  c_{12} \cr
+	    c_{21} \amp  c_{22}
+	   \end{array}\right)</me></p>
+<p>where
+<m>c_{11}=</m> <fillin characters="3" name="AnSwEr0005"/>,
+<m>c_{12}=</m> <fillin characters="3" name="AnSwEr0006"/>,
+<m>c_{21}=</m> <fillin characters="3" name="AnSwEr0007"/>,
+<m>c_{22}=</m> <fillin characters="3" name="AnSwEr0008"/>.</p>
+</statement>
+    <answer>
+      <p>
+        <m>0</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>-2</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>14</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>6</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>23</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>6</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>24</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>2</m>
+      </p>
+    </answer>
+  </static>
+  <rendering-data sourceFilePath="Library/Utah/Business_Algebra/set10_Matrices/p21.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/Utah/Business_Algebra/set10_Matrices/p21.pg"/>
+</webwork-reps>

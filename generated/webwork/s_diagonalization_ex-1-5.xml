@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_diagonalization_ex-1-5" assembly-id="s_diagonalization_ex-1-5">
+  <static seed="109" source="Library/Hope/Multi1/05-04-Diagonalization/DiagR_05.pg">
+    <statement><p>Suppose <me>A = \left[\begin{array}{cc}
+10 \amp 8\cr
+-12 \amp -10
+\end{array}\right].</me>
+Find an invertible matrix <m>P</m> and a diagonal matrix <m>D</m> so that <m>A = P D P^{-1}</m>.
+Use your answer to find an expression for <m>A^{5}</m> in terms of <m>P</m>, a power of <m>D</m>, and <m>P^{-1}</m> in that order.</p>
+<p><m>A^{5} =</m> 
+<fillin cols="2" rows="2"/>
+<fillin cols="2" rows="2"/>
+<fillin cols="2" rows="2"/>.</p>
+</statement>
+  </static>
+  <rendering-data sourceFilePath="Library/Hope/Multi1/05-04-Diagonalization/DiagR_05.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/Hope/Multi1/05-04-Diagonalization/DiagR_05.pg"/>
+</webwork-reps>

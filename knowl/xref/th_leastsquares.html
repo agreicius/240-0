@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: blue-green                   *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.3.31</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Least-squares matrix formula.</span>
+</h2>
+<div class="para logical">
+<div class="para">Given an <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\)</span> and <span class="process-math">\(m\times 1\)</span> column vector <span class="process-math">\(\boldy\text{,}\)</span> a vector <span class="process-math">\(\hat{\boldx}\)</span> is a least-squares solution to <span class="process-math">\(A\boldx=\boldy\)</span> if and only if</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_leastsquares_matrix_equation.html">
+\begin{equation}
+A^TA\boldx=A^T\boldy\text{.}\tag{7.3.16}
+\end{equation}
+</div>
+<div class="para">In other words, we can find a least-squares solution by solving the matrix equation <a href="s_orthogonal_projection.html#eq_leastsquares_matrix_equation" class="xref" data-knowl="./knowl/xref/eq_leastsquares_matrix_equation.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.3.16">(7.3.16)</a> directly.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_leastsquares-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 7.3.31: Least-squares matrix formula"><a tabindex="-1" href="#th_leastsquares" title="Copy heading and permalink for Theorem 7.3.31: Least-squares matrix formula" aria-label="Copy heading and permalink for Theorem 7.3.31: Least-squares matrix formula">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(W=\CS A\text{,}\)</span> and let <span class="process-math">\(\hat{\boldy}=\proj{\boldy}{W}\text{.}\)</span> The key observation is that a vector <span class="process-math">\(\hat{\boldx}\)</span> satisfies <span class="process-math">\(A\hat{\boldx}=\hat{\boldy}\)</span> if and only if</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_row_null_comp.html">
+\begin{equation*}
+\boldy=A\hat{\boldx}+(\boldy-A\hat{\boldx})
+\end{equation*}
+</div>
+<div class="para">is an orthogonal decomposition of <span class="process-math">\(\boldy\)</span> with respect to <span class="process-math">\(W=\CS A\text{;}\)</span> and this is true if and only if <span class="process-math">\(\boldy-A\hat{\boldx}\in (\CS A)^\perp\text{.}\)</span> Thus we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_row_null_comp.html">
+\begin{align*}
+A\hat{\boldx}=\hat{\boldy} \amp\iff \boldy-A\hat{\boldx}\in (\CS A)^\perp \\
+\amp\iff \boldy-A\hat{\boldx}\in \NS A^T \amp ((\CS A)^\perp=\NS A^T, \knowl{./knowl/xref/th_row_null_comp.html}{\text{Theorem 7.3.7}}) \\
+\amp\iff A^T(\boldy-A\hat{\boldx})=\boldzero \\
+\amp \iff A^T\boldy-A^TA\hat{\boldx}=\boldzero\\
+\amp \iff A^TA\hat{\boldx}=A^T\boldy\text{.}
+\end{align*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_leastsquares-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 7.3.31.1"><a tabindex="-1" href="#th_leastsquares-3" title="Copy heading and permalink for Proof 7.3.31.1" aria-label="Copy heading and permalink for Proof 7.3.31.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="s_orthogonal_projection.html#th_leastsquares">In Context</a></span>
+</body>
+</html>

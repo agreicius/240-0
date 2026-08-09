@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_changeofbasis_ex-1-2" assembly-id="s_changeofbasis_ex-1-2">
+  <static seed="95" source="Library/NAU/setLinearAlgebra/R2BasisTrans.pg">
+    <statement><p>Consider the ordered bases <m>B=((-1,5),(1,-6))</m> and <m>C=((-3,-2),(-1,-1))</m> 
+for the vector space <m>{\mathbb R}^2</m>.</p>
+<p>a. Find the transition matrix from <m>C</m> to the standard ordered basis <m>E=((1,0),(0,1))</m>.</p>
+<p><m>T_C^E =</m> <fillin cols="2" rows="2"/></p>
+<p>b. Find the transition matrix from <m>B</m> to <m>E</m>.</p>
+<p><m>T_B^E =</m> <fillin cols="2" rows="2"/></p>
+<p>c. Find the transition matrix from <m>E</m> to <m>B</m>.</p>
+<p><m>T_E^B =</m> <fillin cols="2" rows="2"/></p>
+<p>d. Find the transition matrix from <m>C</m> to <m>B</m>.</p>
+<p><m>T_C^B =</m> <fillin cols="2" rows="2"/></p>
+<p>e. Find the coordinates of <m>u= (-1,-3)</m> in the ordered basis <m>B</m>. Note that <m>[u]_B = T_E^B [u]_E</m>.</p>
+<p><m>[u]_B =</m> <fillin rows="2"/></p>
+<p>f. Find the coordinates of <m>v</m> in the ordered basis <m>B</m>
+if the coordinate vector of <m>v</m> in <m>C</m> is <m>[v]_C = (-1,2)</m>.</p>
+<p><m>[v]_B =</m> <fillin rows="2"/></p>
+</statement>
+  </static>
+  <rendering-data sourceFilePath="Library/NAU/setLinearAlgebra/R2BasisTrans.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/NAU/setLinearAlgebra/R2BasisTrans.pg"/>
+</webwork-reps>

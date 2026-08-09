@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_ge_ex-1-2" assembly-id="s_ge_ex-1-2">
+  <static seed="21" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/holt_01_02_010.pg">
+    <statement><p>Determine if the matrix</p>
+<p><me>\left[\begin{array}{rrrrr} 1 \amp   -3 \amp   0 \amp   6 \amp   0 \\ 0 \amp   0 \amp   1 \amp   -3 \amp   0 \\ 0 \amp   0 \amp   0 \amp   0 \amp   1\end{array}\right]</me></p>
+<p>is in echelon form, reduced row echelon form, or neither. Choose the <em>most appropriate</em> answer.</p>
+<p>Answer: <ul form="popup" name="AnSwEr0001"><li>
+<p>select</p>
+</li><li>
+<p>echelon form</p>
+</li><li>
+<p>reduced row echelon form</p>
+</li><li>
+<p>not in echelon form</p>
+</li></ul>.</p>
+</statement>
+    <answer>
+      <p>
+        <m>\text{reduced row echelon form}</m>
+      </p>
+    </answer>
+    <solution><p><alert>SOLUTION:</alert>
+Reduced row echelon form.</p>
+</solution>
+  </static>
+  <rendering-data sourceFilePath="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/holt_01_02_010.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/holt_01_02_010.pg"/>
+</webwork-reps>

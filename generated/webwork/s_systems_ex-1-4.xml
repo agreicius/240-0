@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_systems_ex-1-4" assembly-id="s_systems_ex-1-4">
+  <static seed="18" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/holt_01_01_024.pg">
+    <statement><p>Find the set of solutions for the linear system</p>
+<p><me>\begin{array}{rcrcrcr} x_1  \amp  - \amp  3 x_{2} \amp  - \amp  6 x_{3} \amp  = \amp  -7 \\ \amp  - \amp  x_{2} \amp  - \amp  3 x_{3} \amp  = \amp  -13 \\ \amp  \amp   \amp  - \amp  2 x_{3} \amp  = \amp  -6\end{array}</me> Use <alert>s1</alert>, <alert>s2</alert>, etc. for the free variables if necessary.</p>
+<p><m>(x_1, x_2, x_3) = \bigg(</m> <fillin characters="10" name="AnSwEr0001"/>, <fillin characters="10" name="AnSwEr0002"/>, <fillin characters="10" name="AnSwEr0003"/> <m>\bigg)</m></p>
+</statement>
+    <answer>
+      <p>
+        <m>23</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>4</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>3</m>
+      </p>
+    </answer>
+    <solution><p><alert>SOLUTION:</alert>
+Equation 3 <m>\Rightarrow x_3 = 3</m>. Substitute into equation 2, <m>-x_2  - 3(3) = -13 \Rightarrow x_2 = 4</m>. Substitute into equation 1, <m>x_1  - 3(4)  - 6(3) = -7 \Rightarrow x_1 = 23</m>.</p>
+</solution>
+  </static>
+  <rendering-data sourceFilePath="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/holt_01_01_024.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/holt_01_01_024.pg"/>
+</webwork-reps>

@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: blue-green                   *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The spectral theorem</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: true,
+hasSage: true,
+isReact: false,
+htmlPresentation: false,
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="Real vector spaces: A first course in linear algebra">
+<meta property="og:title" content="Real vector spaces: A first course in linear algebra">
+<meta property="book:title" content="Real vector spaces: A first course in linear algebra">
+<meta name="twitter:description" content="This is the course resource for Northwestern University's first course in in linear algebra (Math 240-0). Definitions of real vector spaces and linear transformations thereof are given in full generality, but examples focus on vector spaces of real-valued tuples indexed by an arbitrary set.">
+<meta property="og:description" content="This is the course resource for Northwestern University's first course in in linear algebra (Math 240-0). Definitions of real vector spaces and linear transformations thereof are given in full generality, but examples focus on vector spaces of real-valued tuples indexed by an arbitrary set.">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.45"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = true;
+eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.3';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.40bd1420d3277749.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.f00d2d175c91fc71.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8086b62682b271d1.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/dist/pretext-webwork/2.20/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="NUlinearalgfirstcourse" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""><img src="external/images/im_holycomm.svg" alt="Logo image"></a><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="my-great-book.html"><span class="title">Real vector spaces</span> <span class="subtitle">A first course in linear algebra</span></a></div>
+<p class="byline">Aaron Greicius</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button type="button" id="ptx-calculator-toggle" class="ptx-calculator-toggle button" title="Calculator"><span class="icon material-symbols-outlined" aria-hidden="true">&#xea5f;</span><span class="name">Calculator</span></button><dialog id="ptx-calculator-container" class="ptx-dialog ptx-calculator-container" aria-label="Calculator"><div id="ptx-geogebra-calculator" class="ptx-geogebra-calculator"></div>
+<script id="ptx-geogebra-calculator-params">
+let ggbParams = {
+    "appName": "classic"
+};
+</script></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="s_orthogonal_projection.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_innerproductspaces.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="my-great-book-12.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span><span class="nav-runestone-controls"><button onclick="runestoneComponents.popupScratchAC()" class="activecode-toggle button" title="Scratch ActiveCode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf097;</span><span class="name">Scratch ActiveCode</span></button></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\T}{{\mathbb T}}
+\newcommand{\F}{{\mathbb F}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\compose}{\circ}
+\newcommand{\bolda}{{\mathbf a}}
+\newcommand{\boldb}{{\mathbf b}}
+\newcommand{\boldc}{{\mathbf c}}
+\newcommand{\boldd}{{\mathbf d}}
+\newcommand{\bolde}{{\mathbf e}}
+\newcommand{\boldi}{{\mathbf i}}
+\newcommand{\boldj}{{\mathbf j}}
+\newcommand{\boldk}{{\mathbf k}}
+\newcommand{\boldn}{{\mathbf n}}
+\newcommand{\boldp}{{\mathbf p}}
+\newcommand{\boldq}{{\mathbf q}}
+\newcommand{\boldr}{{\mathbf r}}
+\newcommand{\bolds}{{\mathbf s}}
+\newcommand{\boldt}{{\mathbf t}}
+\newcommand{\boldu}{{\mathbf u}}
+\newcommand{\boldv}{{\mathbf v}}
+\newcommand{\boldw}{{\mathbf w}}
+\newcommand{\boldx}{{\mathbf x}}
+\newcommand{\boldy}{{\mathbf y}}
+\newcommand{\boldz}{{\mathbf z}}
+\newcommand{\boldzero}{{\mathbf 0}}
+\newcommand{\boldmod}{\boldsymbol{ \bmod }}
+\newcommand{\boldT}{{\mathbf T}}
+\newcommand{\boldN}{{\mathbf N}}
+\newcommand{\boldB}{{\mathbf B}}
+\newcommand{\boldF}{{\mathbf F}}
+\newcommand{\boldS}{{\mathbf S}}
+\newcommand{\boldG}{{\mathbf G}}
+\newcommand{\boldK}{{\mathbf K}}
+\newcommand{\boldL}{{\mathbf L}}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\NS}{null}
+\DeclareMathOperator{\RS}{row}
+\DeclareMathOperator{\CS}{col}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\range}{range}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\nullity}{nullity}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\Aff}{Aff}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\mdeg}{mdeg}
+\DeclareMathOperator{\Lt}{Lt}
+\DeclareMathOperator{\Lc}{Lc}
+\DeclareMathOperator{\disc}{disc}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\curl}{curl}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\diver}{div}
+\DeclareMathOperator{\flux}{flux}
+\def\Gal{\operatorname{Gal}}
+\def\ord{\operatorname{ord}}
+\def\ML{\operatorname{M}}
+\def\GL{\operatorname{GL}}
+\def\PGL{\operatorname{PGL}}
+\def\SL{\operatorname{SL}}
+\def\PSL{\operatorname{PSL}}
+\def\GSp{\operatorname{GSp}}
+\def\PGSp{\operatorname{PGSp}}
+\def\Sp{\operatorname{Sp}}
+\def\PSp{\operatorname{PSp}}
+\def\Aut{\operatorname{Aut}}
+\def\Inn{\operatorname{Inn}}
+\def\Hom{\operatorname{Hom}}
+\def\End{\operatorname{End}}
+\def\ch{\operatorname{char}}
+\def\Zp{\Z/p\Z}
+\def\Zm{\Z/m\Z}
+\def\Zn{\Z/n\Z}
+\def\Fp{\F_p}
+\newcommand{\surjects}{\twoheadrightarrow}
+\newcommand{\injects}{\hookrightarrow}
+\newcommand{\bijects}{\leftrightarrow}
+\newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+\newcommand{\floor}[1]{\lfloor#1\rfloor}
+\newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+\newcommand{\mclass}[2][m]{[#2]_{#1}}
+\newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\abs}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+\newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+\newcommand{\bnpoly}{b_nx^n+b_{n-1}x^{n-1}\cdots +b_1x+b_0}
+\newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\normalin}{\trianglelefteq}
+\newcommand{\angvec}[1]{\langle #1\rangle}
+\newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+\newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+\newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+\def\ntoinfty{\lim_{n\rightarrow\infty}}
+\def\xtoinfty{\lim_{x\rightarrow\infty}}
+\def\ii{\item}
+\def\bb{\begin{enumerate}}
+\def\ee{\end{enumerate}}
+\def\ds{\displaystyle}
+\def\p{\partial}
+\newcommand{\abcdmatrix}[4]{\begin{bmatrix}#1\amp #2\\ #3\amp #4 \end{bmatrix}
+}
+\newenvironment{amatrix}[1][ccc|c]{\left[\begin{array}{#1}}{\end{array}\right]}
+\newenvironment{linsys}[2][m]{
+\begin{array}[#1]{*{#2}{rc}c}
+}{
+\end{array}}
+\newcommand{\eqsys}{\begin{array}{rcrcrcr}
+a_{1,1}\,x_{1}\amp +\amp a_{1,2}\,x_{2}\amp +\,\cdots\,+\amp  a_{1,n}\,x_{n}\amp =\amp b_1\\
+a_{2,1}\,x_{1}\amp +\amp a_{2,2}\,x_{2}\amp +\,\cdots\,+\amp a_{2,n}\,x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \\
+a_{m,1}x_{1}\amp +\amp a_{m,2}x_{2}\amp +\,\cdots\,+\amp a_{m,n}x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\numeqsys}{\begin{array}{rrcrcrcr}
+e_1:\amp  a_{1,1}\,x_{1}\amp +\amp a_{1,2}\,x_{2}\amp +\,\cdots\,+\amp  a_{1,n}\,x_{n}\amp =\amp b_1\\
+e_2: \amp a_{2,1}\,x_{1}\amp +\amp a_{2,2}\,x_{2}\amp +\,\cdots\,+\amp a_{2,n}\,x_{n}\amp =\amp b_2\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp  \\
+e_m: \amp a_{m,1}\,x_{1}\amp +\amp a_{m,2}\,x_{2}\amp +\,\cdots\,+\amp a_{m,n}\,x_{n}\amp =\amp b_m
+\end{array}
+}
+\newcommand{\homsys}{\begin{array}{rcrcrcr}
+a_{1,1}\,x_{1}\amp +\amp a_{1,2}\,x_{2}\amp +\,\cdots\,+\amp  a_{1,n}\,x_{n}\amp =\amp 0\\
+a_{2,1}\,x_{1}\amp +\amp a_{2,2}\,x_{2}\amp +\,\cdots\,+\amp a_{2,n}\,x_{n}\amp =\amp 0\\
+\amp \vdots\amp   \amp \vdots \amp  \amp \vdots \amp \\
+a_{m,1}\,x_{1}\amp +\amp a_{m,2}\,x_{2}\amp +\,\cdots\,+\amp a_{m,n}\,x_{n}\amp =\amp 0
+\end{array}
+}
+\newcommand{\vareqsys}[4]{
+\begin{array}{ccccccc}
+#3_{1,1}\,x_{1}\amp +\amp #3_{1,2}\,x_{2}\amp +\,\cdots\,+\amp  #3_{1,#2}\,x_{#2}\amp =\amp #4_1\\
+#3_{2,1}\,x_{1}\amp +\amp #3_{2,2}\,x_{2}\amp +\,\cdots\,+\amp #3_{2,#2}\,x_{#2}\amp =\amp #4_2\\
+\vdots \amp \amp \vdots \amp  \amp \vdots \ amp =\amp  \\
+#3_{#1, 1}\,x_{1}\amp +\amp #3_{#1, 2}\,x_{2}\amp +\,\cdots\,+\amp #3_{#1, #2}\,x_{#2}\amp =\amp #4_{#1}
+\end{array}
+}
+\newcommand{\genmatrix}[1][a]{
+\begin{bmatrix}
+#1_{1,1} \amp  #1_{1,2} \amp  \cdots \amp  #1_{1,n} \\
+#1_{2,1} \amp  #1_{2,2} \amp  \cdots \amp  #1_{2,n} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#1_{m,1} \amp  #1_{m,2} \amp  \cdots \amp  #1_{m,n}
+\end{bmatrix}
+}
+\newcommand{\varmatrix}[3]{
+\begin{bmatrix}
+#3_{1,1} \amp  #3_{1,2} \amp  \cdots \amp  #3_{1,#2} \\
+#3_{2,1} \amp  #3_{2,2} \amp  \cdots \amp  #3_{2,#2} \\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \\
+#3_{#1,1} \amp  #3_{#1,2} \amp  \cdots \amp  #3_{#1,#2}
+\end{bmatrix}
+}
+\newcommand{\augmatrix}{
+\begin{amatrix}[cccc|c]
+a_{1,1} \amp  a_{1,2} \amp  \cdots \amp  a_{1,n} \amp b_{1}\\
+a_{2,1} \amp  a_{2,2} \amp  \cdots \amp  a_{2,n} \amp b_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
+\end{amatrix}
+}
+\newcommand{\varaugmatrix}[4]{
+\begin{amatrix}[cccc|c]
+#3_{1,1} \amp  #3_{1,2} \amp  \cdots \amp  #3_{1,#2} \amp #4_{1}\\
+#3_{2,1} \amp  #3_{2,2} \amp  \cdots \amp  #3_{2,#2} \amp #4_{2}\\
+\vdots  \amp  \vdots  \amp  \ddots \amp  \vdots  \amp \vdots\\
+#3_{#1,1} \amp  #3_{#1,2} \amp  \cdots \amp  #3_{#1,#2}\amp #4_{#1}
+\end{amatrix}
+}
+\newcommand{\spaceforemptycolumn}{\makebox[\wd\boxofmathplus]{\ }}
+
+\newcommand{\generalmatrix}[3]{
+\left(
+\begin{array}{cccc}
+#1_{1,1}  \amp #1_{1,2}  \amp \ldots  \amp #1_{1,#2}  \\
+#1_{2,1}  \amp #1_{2,2}  \amp \ldots  \amp #1_{2,#2}  \\
+\amp \vdots                         \\
+#1_{#3,1} \amp #1_{#3,2} \amp \ldots  \amp #1_{#3,#2}
+\end{array}
+\right)  }
+\newcommand{\colvec}[2][c]{\begin{amatrix}[#1] #2 \end{amatrix}}
+\newcommand{\rowvec}[1]{\begin{bmatrix} #1 \end{bmatrix}}
+\DeclareMathOperator{\size}{size}
+\DeclareMathOperator{\adjoint}{adj}
+\DeclareMathOperator{\sgn}{sgn}
+\newcommand{\restrictionmap}[2]{{#1}\mathpunct\upharpoonright\hbox{}_{#2}}
+\renewcommand{\emptyset}{\varnothing}
+
+\newcommand{\proj}[2]{\mbox{proj}_{#2}({#1}) }
+\renewcommand{\Re}{\operatorname{Re}}
+ \renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="c_foundations.html" class="internal"><span class="codenumber">0</span> <span class="title">Foundations</span></a></div>
+<ul id="ptx-toc-group-c_foundations" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_sets_tuples.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Sets and tuples</span></a></div>
+<ul id="ptx-toc-group-s_sets_tuples" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_tuples.html#s_sets" class="internal"><span class="codenumber">0.1.1</span> <span class="title">Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_tuples.html#ss_tuples" class="internal"><span class="codenumber">0.1.2</span> <span class="title">Tuples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_tuples.html#ss_sets_functions_ww" class="internal"><span class="codenumber">0.1.3</span> <span class="title">WeBWork Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_functions.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Functions</span></a></div>
+<ul id="ptx-toc-group-s_functions" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_functions.html#ss_functions_definitions" class="internal"><span class="codenumber">0.2.1</span> <span class="title">Definition and notation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_functions.html#ss_function_image_properties" class="internal"><span class="codenumber">0.2.2</span> <span class="title">Function image, injections, surjections, bijections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_functions.html#ss_functions_ww" class="internal"><span class="codenumber">0.2.3</span> <span class="title">WeBWork Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_logic.html" class="internal"><span class="codenumber">0.3</span> <span class="title">Logic</span></a></div>
+<ul id="ptx-toc-group-s_logic" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_propositional_calculus" class="internal"><span class="codenumber">0.3.1</span> <span class="title">Propositional logic</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_predicate_logic" class="internal"><span class="codenumber">0.3.2</span> <span class="title">Predicate logic</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_logic_ww" class="internal"><span class="codenumber">0.3.3</span> <span class="title">WeBWork Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_proof_technique.html" class="internal"><span class="codenumber">0.4</span> <span class="title">Proof techniques</span></a></div>
+<ul id="ptx-toc-group-s_proof_technique" class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_logical_structure" class="internal"><span class="codenumber">0.4.1</span> <span class="title">Logical structure</span></a></div>
+<ul id="ptx-toc-group-ss_logical_structure" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_implication" class="internal"><span class="title">Implication</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_disjunction" class="internal"><span class="title">Disjunction</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_equivalence" class="internal"><span class="title">Equivalence</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_logical_chains" class="internal"><span class="title">Chains of implications/equivalences</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_proof_by_contradiction" class="internal"><span class="title">Proof by contradiction</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_Equalities" class="internal"><span class="codenumber">0.4.2</span> <span class="title">Equalities</span></a></div>
+<ul id="ptx-toc-group-ss_Equalities" class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_chain_equalities" class="internal"><span class="title">Chain of equalities</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_set_properties" class="internal"><span class="codenumber">0.4.3</span> <span class="title">Basic set properties</span></a></div>
+<ul id="ptx-toc-group-ss_set_properties" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_inclusion" class="internal"><span class="title">Set inclusion</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_equality" class="internal"><span class="title">Set equality</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_function_properties" class="internal"><span class="codenumber">0.4.4</span> <span class="title">Basic function properties</span></a></div>
+<ul id="ptx-toc-group-ss_function_properties" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_function_equality" class="internal"><span class="title">Function equality</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_injective_surjective_bijective" class="internal"><span class="title">Injective, surjective, bijective</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_mathematical_induction" class="internal"><span class="codenumber">0.4.5</span> <span class="title">Mathematical induction</span></a></div>
+<ul id="ptx-toc-group-ss_mathematical_induction" class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_weak_induction" class="internal"><span class="title">Proof by induction</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_strong_induction" class="internal"><span class="title">Proof by strong induction</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_complex_numbers.html" class="internal"><span class="codenumber">0.5</span> <span class="title">Complex numbers</span></a></div>
+<ul id="ptx-toc-group-s_complex_numbers" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_complex_numbers.html#ss_complex_definition" class="internal"><span class="codenumber">0.5.1</span> <span class="title">Definition of <span class="process-math">\(\C\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_complex_numbers.html#ss_complex_conjugation" class="internal"><span class="codenumber">0.5.2</span> <span class="title">Absolute value and complex conjugation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_complex_numbers.html#ss_complex_numbers_ww" class="internal"><span class="codenumber">0.5.3</span> <span class="title">WeBWork Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_polynomials.html" class="internal"><span class="codenumber">0.6</span> <span class="title">Polynomials</span></a></div>
+<ul id="ptx-toc-group-s_polynomials" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_polynomials.html#ss_poly_def" class="internal"><span class="codenumber">0.6.1</span> <span class="title">Basic definitions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_polynomials.html#ss_degree" class="internal"><span class="codenumber">0.6.2</span> <span class="title">Degree of a polynomial</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_polynomials.html#ss_poly_factoring" class="internal"><span class="codenumber">0.6.3</span> <span class="title">Factoring polynomials</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_polynomials.html#ss_polynomials_ww" class="internal"><span class="codenumber">0.6.4</span> <span class="title">WeBWork Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="c_tuples.html" class="internal"><span class="codenumber">1</span> <span class="title">Introduction to vector spaces</span></a></div>
+<ul id="ptx-toc-group-c_tuples" class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_real_tuples.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Real-valued tuples</span></a></div>
+<ul id="ptx-toc-group-s_real_tuples" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_real_tuples.html#ss_real_tuples" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Real-valued tuples</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_real_tuples.html#ss_tuples_vector_ops" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Vector operations on <span class="process-math">\(\R^I\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_real_tuples.html#ss_Rn_visual" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Visualizing <span class="process-math">\(\R^n\)</span></span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_real_tuples.html#s_real_tuples_ex" class="internal"><span class="codenumber">1.1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="c_lin_sys.html" class="internal"><span class="codenumber">2</span> <span class="title">Systems of linear equations</span></a></div>
+<ul id="ptx-toc-group-c_lin_sys" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_systems.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Systems of linear equations</span></a></div>
+<ul id="ptx-toc-group-s_systems" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_systems.html#ss_linear_equations" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Systems of linear equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_systems.html#ss_row_equivalence" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Row operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_systems.html#ss_systems_ww" class="internal"><span class="codenumber">2.1.3</span> <span class="title">WeBWork Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_systems.html#s_systems_ex" class="internal"><span class="codenumber">2.1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_ge.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Gaussian elimination</span></a></div>
+<ul id="ptx-toc-group-s_ge" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ge.html#ss_ge_row_echelon" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Row echelon matrices</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_ge.html#ss_gaussian_elimination" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Gaussian elimination</span></a></div>
+<ul id="ptx-toc-group-ss_gaussian_elimination" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ge.html#ss_gaussian_elimination-8" class="internal"><span class="title">Model example</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ge.html#ss_ge_ww" class="internal"><span class="codenumber">2.2.3</span> <span class="title">WeBWork Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_ge.html#s_ge_ex" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_solving.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Solving linear systems</span></a></div>
+<ul id="ptx-toc-group-s_solving" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_solving.html#ss_workingExample" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Model example continued</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_solving.html#ss_solveSystem" class="internal"><span class="codenumber">2.3.2</span> <span class="title">General method for solving linear systems</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_solving.html#s_solving-5" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Vector parametrization description</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_solving.html#ss_solving_ww" class="internal"><span class="codenumber">2.3.4</span> <span class="title">WeBWork Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_solving.html#s_solving_ex" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="c_matrices.html" class="internal"><span class="codenumber">3</span> <span class="title">Matrices</span></a></div>
+<ul id="ptx-toc-group-c_matrices" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_matrix.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Matrix arithmetic</span></a></div>
+<ul id="ptx-toc-group-s_matrix" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#ss_matrix_attributes" class="internal"><span class="codenumber">3.1.1</span> <span class="title">The basics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#ss_matrix_arithmetic" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Vector space structure of <span class="process-math">\(M_{mn}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#ss_matrix_mult" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Matrix multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#s_column_row_method" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Alternative methods of multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#s_matrix-7" class="internal"><span class="codenumber">3.1.5</span> <span class="title">Transpose of a matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#ss_matrix_ww" class="internal"><span class="codenumber">3.1.6</span> <span class="title">WeBWork Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_matrix.html#s_matrix_ex" class="internal"><span class="codenumber">3.1.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_matrix_algebra.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Matrix algebra</span></a></div>
+<ul id="ptx-toc-group-s_matrix_algebra" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix_algebra.html#ss_matrix_mult_props" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Matrix multiplication properties</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix_algebra.html#ss_cancellation" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Cancellation laws fulfilled and violated</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix_algebra.html#ss_transpose_props" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Transpostition properties</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix_algebra.html#ss_matrix_algebra_ww" class="internal"><span class="codenumber">3.2.4</span> <span class="title">WeBWork Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_matrix_algebra.html#s_matrix_algebra_ex" class="internal"><span class="codenumber">3.2.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_invertible_matrices.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Invertible matrices</span></a></div>
+<ul id="ptx-toc-group-s_invertible_matrices" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertible_matrices.html#subsec-" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Invertible matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertible_matrices.html#s_invertible_matrices-4" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Powers of matrices, matrix polynomials</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertible_matrices.html#ss_invertible_matrices_ww" class="internal"><span class="codenumber">3.3.3</span> <span class="title">WeBWork Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_invertible_matrices.html#s_invertible_matrices_ex" class="internal"><span class="codenumber">3.3.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_invertibility_theorem.html" class="internal"><span class="codenumber">3.4</span> <span class="title">The invertibility theorem</span></a></div>
+<ul id="ptx-toc-group-s_invertibility_theorem" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_elementary_matrix" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Elementary matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_systems_to_matrix_eqns" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Interlude on matrix equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_invertibility_th" class="internal"><span class="codenumber">3.4.3</span> <span class="title">The invertibility theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_invertibility_alg" class="internal"><span class="codenumber">3.4.4</span> <span class="title">Invertibility algorithms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_invertible_loose_ends" class="internal"><span class="codenumber">3.4.5</span> <span class="title">Some theoretical loose ends</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_invertibility_theorem_ww" class="internal"><span class="codenumber">3.4.6</span> <span class="title">WeBWork Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_invertibility_theorem.html#s_invertibility_theorem_ex" class="internal"><span class="codenumber">3.4.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_det.html" class="internal"><span class="codenumber">3.5</span> <span class="title">The determinant</span></a></div>
+<ul id="ptx-toc-group-s_det" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_det.html#ss_det" class="internal"><span class="codenumber">3.5.1</span> <span class="title">Definition of the determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_det.html#ss_expansion_rows_columns" class="internal"><span class="codenumber">3.5.2</span> <span class="title">Expansion along rows and columns</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_det.html#ss_det_row_ops" class="internal"><span class="codenumber">3.5.3</span> <span class="title">Row operations and determinant</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_det.html#ss_det_ww" class="internal"><span class="codenumber">3.5.4</span> <span class="title">WeBWork Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_det.html#s_det_ex" class="internal"><span class="codenumber">3.5.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="c_vectorspace.html" class="internal"><span class="codenumber">4</span> <span class="title">Vector spaces</span></a></div>
+<ul id="ptx-toc-group-c_vectorspace" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_subspace.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Subspaces</span></a></div>
+<ul id="ptx-toc-group-s_subspace" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace.html#ss_subspace" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Definition of subspace</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace.html#ss_subspaces_tuples" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Subspaces of <span class="process-math">\(\R^n\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace.html#ss_subspace_matrices" class="internal"><span class="codenumber">4.1.3</span> <span class="title">Important subspaces of <span class="process-math">\(M_{nn}\)</span></span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_subspace.html#s_subspace_ex" class="internal"><span class="codenumber">4.1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_span_independence.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Span and linear independence</span></a></div>
+<ul id="ptx-toc-group-s_span_independence" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_independence.html#s_span_independence-3" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Span</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_independence.html#ss_linear_independence" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Linear independence</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_independence.html#subsec-invertibility-span-and-linear-independence" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Invertibility, span, and linear independence</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_span_independence.html#s_span_independence_ex" class="internal"><span class="codenumber">4.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_basis.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Bases</span></a></div>
+<ul id="ptx-toc-group-s_basis" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_basis.html#ss_bases" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Bases of vector spaces</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_basis.html#s_basis_ex" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_dimension.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Dimension</span></a></div>
+<ul id="ptx-toc-group-s_dimension" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_dimension.html#ss_dimension" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Dimension of a vector space</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_dimension.html#ss_further_props" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Further properties of dimension</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_dimension.html#s_dimension_ex" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_rank_nullity.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Fundamental spaces</span></a></div>
+<ul id="ptx-toc-group-s_rank_nullity" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_rank_nullity.html#ss_fundamental_spaces" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Fundamental spaces of matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_rank_nullity.html#ss_expand_contract" class="internal"><span class="codenumber">4.5.2</span> <span class="title">Contracting and expanding to bases</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_rank_nullity.html#ss_fund_spaces_inv_th" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Fundamental spaces and invertibility</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_rank_nullity.html#s_rank_nullity_ex" class="internal"><span class="codenumber">4.5.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="c_lin_trans.html" class="internal"><span class="codenumber">5</span> <span class="title">Linear transformations</span></a></div>
+<ul id="ptx-toc-group-c_lin_trans" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_transformation.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Linear transformations</span></a></div>
+<ul id="ptx-toc-group-s_transformation" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#ss_linear_transform" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Linear transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#ss_trans_bases" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Bases and linear transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#ss_matrix_transforms" class="internal"><span class="codenumber">5.1.3</span> <span class="title">Matrix transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#ss_refl_rot" class="internal"><span class="codenumber">5.1.4</span> <span class="title">Reflections and rotations in the plane</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#ss_transform_composition" class="internal"><span class="codenumber">5.1.5</span> <span class="title">Composition of linear transformations and matrix multiplication</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_transformation.html#s_transformation_ex" class="internal"><span class="codenumber">5.1.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_nullspace_image_isom.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Null space, image, and isomophisms</span></a></div>
+<ul id="ptx-toc-group-s_nullspace_image_isom" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_nullspace_image_isom.html#ss_nullspace_image" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Null space and image</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_nullspace_image_isom.html#ss_rank-nullity" class="internal"><span class="codenumber">5.2.2</span> <span class="title">The rank-nullity theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_nullspace_image_isom.html#ss_injective_surjective_transforms" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Injective and surjective linear transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_nullspace_image_isom.html#ss_invert_isom" class="internal"><span class="codenumber">5.2.4</span> <span class="title">Invertibility and isomorphisms</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_nullspace_image_isom.html#s_nullspace_image_ex" class="internal"><span class="codenumber">5.2.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_coordinatevectors.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Coordinate vectors</span></a></div>
+<ul id="ptx-toc-group-s_coordinatevectors" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_coordinatevectors.html#ss_coordinate_vectors" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Coordinate vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_coordinatevectors.html#ss_coordinate_transformation" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Coordinate vector transformation</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_coordinatevectors.html#s_coordinatevectors_ex" class="internal"><span class="codenumber">5.3.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_matrixreps.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Matrix representations of linear transformations</span></a></div>
+<ul id="ptx-toc-group-s_matrixreps" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrixreps.html#ss_matrix_reps" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Matrix representations of linear transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrixreps.html#ss_matrixreps_models" class="internal"><span class="codenumber">5.4.2</span> <span class="title">Matrix representations as models</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_matrixreps.html#s_matrixreps_ex" class="internal"><span class="codenumber">5.4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_changeofbasis.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Change of basis</span></a></div>
+<ul id="ptx-toc-group-s_changeofbasis" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_changeofbasis.html#ss_change_of_basis" class="internal"><span class="codenumber">5.5.1</span> <span class="title">Change of basis matrix</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_changeofbasis.html#s_changeofbasis-4" class="internal"><span class="codenumber">5.5.2</span> <span class="title">Change of basis for transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_changeofbasis.html#ss_changebasis_similarity" class="internal"><span class="codenumber">5.5.3</span> <span class="title">Similarity and the holy commutative tent of linear algebra</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_changeofbasis.html#s_changeofbasis_ex" class="internal"><span class="codenumber">5.5.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="c_eigenvectors.html" class="internal"><span class="codenumber">6</span> <span class="title">Eigenvectors and diagonalization</span></a></div>
+<ul id="ptx-toc-group-c_eigenvectors" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_eigenvectors.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Eigenvectors and eigenvalues</span></a></div>
+<ul id="ptx-toc-group-s_eigenvectors" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_eigenvectors.html#s_eigenvectors-3" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Eigenvectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_eigenvectors.html#s_eigenvectors-4" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Finding eigenvalues and eigenvectors systematically</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_eigenvectors.html#ss_eigenvectors_characteristic_polynomial" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Properties of the characteristic polynomial</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_eigenvectors.html#s_eigenvectors_ex" class="internal"><span class="codenumber">6.1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_diagonalization.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Diagonalization</span></a></div>
+<ul id="ptx-toc-group-s_diagonalization" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_diagonalization.html#ss_diagonalizable" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Diagonalizable transformations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_diagonalization.html#ss_diagonalizable_independent_eigenvectors" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Linear independence of eigenvectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_diagonalization.html#ss_diagonalizable_matrices" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Diagonalizable matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_diagonalization.html#s_diagonalization-6" class="internal"><span class="codenumber">6.2.4</span> <span class="title">Algebraic and geometric multiplicity</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_diagonalization.html#s_diagonalization_ex" class="internal"><span class="codenumber">6.2.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="c_innerproductspaces.html" class="internal"><span class="codenumber">7</span> <span class="title">Inner product spaces</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-c_innerproductspaces">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_innerproducts.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Inner product spaces</span></a></div>
+<ul id="ptx-toc-group-s_innerproducts" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_innerproducts.html#ss_norm_distance" class="internal"><span class="codenumber">7.1.1</span> <span class="title">Norm and distance</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_innerproducts.html#s_innerproducts-4" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Cauchy-Schwarz inequality, triangle inequalities, and angles between vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_innerproducts.html#s_innerproducts-5" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Choosing your inner product</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_innerproducts.html#s_innerproducts_ex" class="internal"><span class="codenumber">7.1.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_orthogonality.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Orthogonal bases</span></a></div>
+<ul id="ptx-toc-group-s_orthogonality" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_orthogonality.html#ss_orthogonal" class="internal"><span class="codenumber">7.2.1</span> <span class="title">Orthogonal vectors and sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_orthogonality.html#s_orthogonality-3" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Orthogonal bases</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_orthogonality.html#ss_orthogonal_change_of_basis" class="internal"><span class="codenumber">7.2.3</span> <span class="title">Coordinate vectors and matrix representations</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_orthogonality.html#s_orthogonal_bases_ex" class="internal"><span class="codenumber">7.2.4</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_orthogonal_projection.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Orthogonal projection</span></a></div>
+<ul id="ptx-toc-group-s_orthogonal_projection" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_orthogonal_projection.html#ss_ortho_complement" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Orthogonal complement</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_orthogonal_projection.html#s_orthogonal_projection-4" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Orthogonal Projection</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_orthogonal_projection.html#s_orthogonal_projection-5" class="internal"><span class="codenumber">7.3.3</span> <span class="title">Orthogonal projection in <span class="process-math">\(\R^2\)</span> and <span class="process-math">\(\R^3\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_orthogonal_projection.html#s_orthogonal_projection-6" class="internal"><span class="codenumber">7.3.4</span> <span class="title">Trigonometric polynomial approximation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_orthogonal_projection.html#s_orthogonal_projection-7" class="internal"><span class="codenumber">7.3.5</span> <span class="title">Least-squares solution to linear systems</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_orthogonal_projection.html#s_orthogonal_projection_ex" class="internal"><span class="codenumber">7.3.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="s_spectral_theorem.html" class="internal"><span class="codenumber">7.4</span> <span class="title">The spectral theorem</span></a></div>
+<ul class="structural toc-item-list active" id="ptx-toc-group-s_spectral_theorem">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_spectral_theorem.html#ss_self-adjoint" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Self-adjoint operators</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_spectral_theorem.html#ss_spectal_theorem_operators" class="internal"><span class="codenumber">7.4.2</span> <span class="title">The spectral theorem for self-adjoint operators</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_spectral_theorem.html#s_spectral_theorem_ex" class="internal"><span class="codenumber">7.4.3</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="my-great-book-12.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul id="ptx-toc-group-my-great-book-12" class="structural toc-item-list">
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-notation.html" class="internal"><span class="codenumber">A</span> <span class="title">Notation</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-exercises.html" class="internal"><span class="codenumber">B</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-defs.html" class="internal"><span class="codenumber">C</span> <span class="title">Definitions</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-thms.html" class="internal"><span class="codenumber">D</span> <span class="title">Theory and procedures</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-egs.html" class="internal"><span class="codenumber">E</span> <span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-sage.html" class="internal"><span class="codenumber">F</span> <span class="title">Sage examples</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-figures.html" class="internal"><span class="codenumber">G</span> <span class="title">Figures and video examples</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-matnras.html" class="internal"><span class="codenumber">H</span> <span class="title">Mantras and fiats</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="s_spectral_theorem">
+<h1 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The spectral theorem</span>
+</h1>
+<section class="introduction" id="s_spectral_theorem-2">
+<div class="para" id="s_spectral_theorem-2-1">Among the many takeaways from <a href="s_diagonalization.html" class="internal" title="Section 6.2: Diagonalization">Section 6.2</a> is the simple fact that not all matrices are diagonalizable. In principle <a href="s_diagonalization.html#th_diagonalizability_eigenspaces" class="xref" data-knowl="./knowl/xref/th_diagonalizability_eigenspaces.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.2.12: Diagonalizability: dimension of eigenspaces">Theorem 6.2.12</a> gives a complete answer to the question of diagonalizability in terms of eigenspaces. However, you should not be mislead by the artificially simple examples treated in  <a href="s_diagonalization.html" class="internal" title="Section 6.2: Diagonalization">Section 6.2</a>. In practice even the determination (or approximation) of the distinct eigenvalues of an <span class="process-math">\(n\times n\)</span> matrix poses a very challenging computational problem as <span class="process-math">\(n\)</span> gets large. As such the general question of whether a matrix is diagonalizable remains an intractable one. This makes all the more welcoming the main result of this section: <em class="emphasis">all</em> symmetric matrices are diagonalizable! This surprising fact is a consequence of the <a href="s_spectral_theorem.html#th_spectral" class="xref" data-knowl="./knowl/xref/th_spectral.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.4.8: Spectral theorem for self-adjoint operators">spectral theorem for self-adjoint operators</a>: a result which itself fits into a larger suite of spectral theorems that treat the diagonalizability of various families of linear transformations of inner product spaces (both finite and infinite dimensional).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_spectral_theorem-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<section class="subsection" id="ss_self-adjoint">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Self-adjoint operators</span>
+</h2>
+<div class="para" id="ss_self-adjoint-2">Though we are mainly interested in the diagonalizability of symmetric matrices, our arguments are made more elegant by abstracting somewhat to the realm of linear transformations of inner product spaces. In this setting the appropriate analogue of a symmetric matrix is a <em class="emphasis">self-adjoint</em> linear transformation.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_self-adjoint-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="d_self-adjoint"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Self-adjoint operators.</span>
+</h3>
+<div class="para logical" id="d_self-adjoint-2-1">
+<div class="para">Let <span class="process-math">\((V, \langle\, , \rangle)\)</span> be a finite-dimensional inner product space. A linear transformation <span class="process-math">\(T\colon V\rightarrow V\)</span> is called a <dfn class="terminology">self-adjoint operator</dfn> if</div>
+<div class="displaymath process-math" id="eq_self-adjoint">
+\begin{equation}
+\langle T(\boldv), \boldw\rangle=\langle \boldv, T(\boldw)\rangle\tag{7.4.1}
+\end{equation}
+</div>
+<div class="para">for all <span class="process-math">\(\boldv, \boldw\in V\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#d_self-adjoint-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 7.4.1: Self-adjoint operators"><a tabindex="-1" href="#d_self-adjoint" title="Copy heading and permalink for Definition 7.4.1: Self-adjoint operators" aria-label="Copy heading and permalink for Definition 7.4.1: Self-adjoint operators">🔗</a></div>
+</article>
+<div class="para" id="ss_self-adjoint-4">The next theorem makes explicit the connection between self-adjoint operators and symmetric matrices.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_self-adjoint-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="th_self-adjoint_symmetric"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Self-adjoint operators and symmetry.</span>
+</h3>
+<div class="para" id="th_self-adjoint_symmetric-2-1">Let <span class="process-math">\((V, \langle\, , \rangle)\)</span> be a finite-dimensional inner product space, let <span class="process-math">\(T\colon V\rightarrow V\)</span> be a linear transformation, and let <span class="process-math">\(B\)</span> be an orthonormal ordered basis of <span class="process-math">\(V\text{.}\)</span> The following statements are equivalent.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_self-adjoint_symmetric-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<ol class="decimal" id="th_self-adjoint_symmetric-2-2">
+<li id="th_self-adjoint_symmetric-2-2-1">
+<div class="para" id="th_self-adjoint_symmetric-2-2-1-1">
+<span class="process-math">\(T\)</span> is self-adjoint.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_self-adjoint_symmetric-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#th_self-adjoint_symmetric-2-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="th_self-adjoint_symmetric-2-2-2">
+<div class="para" id="th_self-adjoint_symmetric-2-2-2-1">
+<span class="process-math">\(A=[T]_B\)</span> is symmetric.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_self-adjoint_symmetric-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#th_self-adjoint_symmetric-2-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 7.4.2: Self-adjoint operators and symmetry"><a tabindex="-1" href="#th_self-adjoint_symmetric" title="Copy heading and permalink for Theorem 7.4.2: Self-adjoint operators and symmetry" aria-label="Copy heading and permalink for Theorem 7.4.2: Self-adjoint operators and symmetry">🔗</a></div>
+</article>
+<details id="th_self-adjoint_symmetric-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="th_self-adjoint_symmetric-3-1">
+<div class="para">Let <span class="process-math">\(B=(\boldv_1, \boldv_2, \dots, \boldv_n)\text{.}\)</span> We have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_orthogonal_basis_formula.html  ./knowl/xref/eq_self-adjoint.html ./knowl/xref/ex_self-adjoint_symmetric.html" id="th_self-adjoint_symmetric-3-1-2">
+\begin{equation*}
+A=\begin{amatrix}[cccc]\vert \amp \vert \amp \amp\vert \\
+\left[T(\boldv_1)\right]_B\amp [T(\boldv_2)]_B\amp \cdots \amp [T(\boldv_n)]_B\\
+\vert \amp \vert \amp \amp\vert
+\end{amatrix}\text{.}
+\end{equation*}
+</div>
+<div class="para">Furthermore, since <span class="process-math">\(B\)</span> is orthonormal, the <span class="process-math">\(i\)</span>-th entry of <span class="process-math">\([T(\boldv_j)]_B\)</span> is computed as <span class="process-math">\(\langle T(\boldv_j), \boldv_i\rangle\)</span> (<a href="s_orthogonality.html#th_orthogonal_basis_formula" class="xref" data-knowl="./knowl/xref/th_orthogonal_basis_formula.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.2.8: Calculating with orthogonal bases">7.2.8</a>). Thus <span class="process-math">\(A=[a_{ij}]\text{,}\)</span> where</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_orthogonal_basis_formula.html  ./knowl/xref/eq_self-adjoint.html ./knowl/xref/ex_self-adjoint_symmetric.html" id="th_self-adjoint_symmetric-3-1-9">
+\begin{equation*}
+a_{ij}=\langle T(\boldv_j), \boldv_i\rangle.
+\end{equation*}
+</div>
+<div class="para">It follows that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_orthogonal_basis_formula.html  ./knowl/xref/eq_self-adjoint.html ./knowl/xref/ex_self-adjoint_symmetric.html" id="th_self-adjoint_symmetric-3-1-10">
+\begin{align*}
+A \text{ symmetric} \amp\iff a_{ij}=a_{ji} \text{ for all } 1\leq i,j\leq n  \\
+\amp\iff \langle T(\boldv_j), \boldv_i\rangle=\langle T(\boldv_i), \boldv_j\rangle \text{ for all } 1\leq i,j\leq n \\
+\amp \iff \langle T(\boldv_j), \boldv_i\rangle=\langle \boldv_j, T(\boldv_i)\rangle \text{ for all } 1\leq i,j\leq n \amp ([cross-reference to target(s) "d_innerproduct" missing or not unique], ii)\text{.}
+\end{align*}
+</div>
+<div class="para">The last equality in this chain of equivalences states that <span class="process-math">\(T\)</span> satisfies property <a href="s_spectral_theorem.html#eq_self-adjoint" class="xref" data-knowl="./knowl/xref/eq_self-adjoint.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.4.1">(7.4.1)</a> for all elements of <span class="process-math">\(B\text{.}\)</span> Not surprisingly, this is equivalent to <span class="process-math">\(T\)</span> satisfying the property for <em class="emphasis">all</em> elements in <span class="process-math">\(V\text{.}\)</span> (See <a href="s_spectral_theorem.html#ex_self-adjoint_symmetric" class="xref" data-knowl="./knowl/xref/ex_self-adjoint_symmetric.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 7.4.3.10">Exercise 7.4.3.10</a>.) We conclude that <span class="process-math">\(A\)</span> is symmetric if and only if <span class="process-math">\(T\)</span> is self-adjoint.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_self-adjoint_symmetric-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 7.4.2.1"><a tabindex="-1" href="#th_self-adjoint_symmetric-3" title="Copy heading and permalink for Proof 7.4.2.1" aria-label="Copy heading and permalink for Proof 7.4.2.1">🔗</a></div>
+</article></details>
+<article class="corollary theorem-like" id="cor_self-adjoint_symmetric"><h3 class="heading">
+<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Self-adjoint operators and symmetry.</span>
+</h3>
+<div class="para" id="cor_self-adjoint_symmetric-2-1">Let <span class="process-math">\(A\in M_{nn}\text{.}\)</span> The following statements are equivalent.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#cor_self-adjoint_symmetric-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<ol class="decimal" id="cor_self-adjoint_symmetric-2-2">
+<li id="cor_self-adjoint_symmetric-2-2-1">
+<div class="para" id="cor_self-adjoint_symmetric-2-2-1-1">
+<span class="process-math">\(A\)</span> is symmetric.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#cor_self-adjoint_symmetric-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#cor_self-adjoint_symmetric-2-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="cor_self-adjoint_symmetric-2-2-2">
+<div class="para" id="cor_self-adjoint_symmetric-2-2-2-1">
+<span class="process-math">\(T_A\)</span> is self-adjoint with respect to the dot product.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#cor_self-adjoint_symmetric-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#cor_self-adjoint_symmetric-2-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="cor_self-adjoint_symmetric-2-2-3">
+<div class="para" id="cor_self-adjoint_symmetric-2-2-3-1">
+<span class="process-math">\(A\boldx\, \cdot \boldy=\boldx\cdot A\boldy\)</span> for all <span class="process-math">\(\boldx, \boldy\in\R^n\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#cor_self-adjoint_symmetric-2-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#cor_self-adjoint_symmetric-2-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Corollary 7.4.3: Self-adjoint operators and symmetry"><a tabindex="-1" href="#cor_self-adjoint_symmetric" title="Copy heading and permalink for Corollary 7.4.3: Self-adjoint operators and symmetry" aria-label="Copy heading and permalink for Corollary 7.4.3: Self-adjoint operators and symmetry">🔗</a></div>
+</article>
+<details id="cor_self-adjoint_symmetric-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="cor_self-adjoint_symmetric-3-1">Since <span class="process-math">\(A=[T_A]_B\text{,}\)</span> where <span class="process-math">\(B\)</span> is the standard ordered basis of <span class="process-math">\(\R^n\text{,}\)</span> and since <span class="process-math">\(B\)</span> is orthonormal with respect to the dot product, it follows from <a href="s_spectral_theorem.html#th_self-adjoint_symmetric" class="xref" data-knowl="./knowl/xref/th_self-adjoint_symmetric.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.4.2: Self-adjoint operators and symmetry">Theorem 7.4.2</a> that statements (1) and (2) are equivalent. Statements (2) and (3) are equivalent since by definition <span class="process-math">\(T_A(\boldx)=A\boldx\)</span> for all <span class="process-math">\(\boldx\in \R^n\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#cor_self-adjoint_symmetric-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 7.4.3.1"><a tabindex="-1" href="#cor_self-adjoint_symmetric-3" title="Copy heading and permalink for Proof 7.4.3.1" aria-label="Copy heading and permalink for Proof 7.4.3.1">🔗</a></div>
+</article></details>
+<div class="para" id="ss_self-adjoint-7">The next result, impressive in its own right, is also key to the induction argument we will use to prove <a href="s_spectral_theorem.html#th_spectral" class="xref" data-knowl="./knowl/xref/th_spectral.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.4.8: Spectral theorem for self-adjoint operators">Theorem 7.4.8</a>. A proper proof would require a careful treatment of complex vector spaces: a topic which lies just outside the scope of this text. The “proof sketch” we provide can easily be upgraded to a complete argument simply by justifying a few statements about <span class="process-math">\(\C^n\)</span> and its standard inner product.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_self-adjoint-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="th_self-adjoint_eigenvalue"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Eigenvalues of self-adjoint operators.</span>
+</h3>
+<div class="para logical" id="th_self-adjoint_eigenvalue-2-1">
+<div class="para">Let <span class="process-math">\((V, \langle\, , \rangle)\)</span> be a finite-dimensional inner product space. If <span class="process-math">\(T\colon V\rightarrow V\)</span> is self adjoint, then all roots of its characteristic polynomial <span class="process-math">\(p(x)\)</span> are real: i.e., we have</div>
+<div class="displaymath process-math" id="th_self-adjoint_eigenvalue-2-1-4">
+\begin{equation*}
+p(x)=(x-\lambda_1)(x-\lambda_2)\cdots (x-\lambda_n)\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\lambda_i\in \R\)</span> for all <span class="process-math">\(1\leq i\leq n\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_self-adjoint_eigenvalue-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 7.4.4: Eigenvalues of self-adjoint operators"><a tabindex="-1" href="#th_self-adjoint_eigenvalue" title="Copy heading and permalink for Theorem 7.4.4: Eigenvalues of self-adjoint operators" aria-label="Copy heading and permalink for Theorem 7.4.4: Eigenvalues of self-adjoint operators">🔗</a></div>
+</article>
+<details id="proof_sketch" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="title">Proof sketch of Theorem 7.4.2.</span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="proof_sketch-2">
+<div class="para">Pick an orthonormal ordered basis <span class="process-math">\(B\)</span> of <span class="process-math">\(V\text{,}\)</span> and let <span class="process-math">\(A=[T]_B\text{.}\)</span> By <a href="s_spectral_theorem.html#th_self-adjoint_symmetric" class="xref" data-knowl="./knowl/xref/th_self-adjoint_symmetric.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.4.2: Self-adjoint operators and symmetry">Theorem 7.4.2</a>, <span class="process-math">\(A\)</span> is symmetric. To prove that all roots of the characteristic polynomial <span class="process-math">\(p(t)=\det(tI-A)\)</span> are real, we make a slight detour into complex vector spaces. The set</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_self-adjoint_symmetric.html ./knowl/xref/d_vector_space.html" id="proof_sketch-2-7">
+\begin{equation*}
+\C^n=\{(z_1,z_2,\dots, z_n)\colon z_i\in \C \text{ for all } 1\leq i\leq n\}
+\end{equation*}
+</div>
+<div class="para">of all complex <span class="process-math">\(n\)</span>-tuples, together with the operations</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_self-adjoint_symmetric.html ./knowl/xref/d_vector_space.html" id="proof_sketch-2-9">
+\begin{equation*}
+(z_1,z_2,\dots, z_n)+(w_1, w_2,\dots, w_n)=(z_1+w_1, z_2+w_2, \dots, z_n+w_n)
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_self-adjoint_symmetric.html ./knowl/xref/d_vector_space.html" id="proof_sketch-2-10">
+\begin{equation*}
+\alpha (z_1, z_2, \dots, z_n)=(\alpha z_1, \alpha z_2, \dots, \alpha z_n),
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\alpha\in \C\text{,}\)</span> forms what is called a <em class="emphasis">vector space over <span class="process-math">\(\C\)</span></em>. This means that <span class="process-math">\(V=\C^n\)</span> satisfies the strengthened axioms of <a href="s_real_tuples.html#d_vector_space" class="xref" data-knowl="./knowl/xref/d_vector_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.1.16: Vector space">Definition 1.1.16</a> obtained by replacing every mention of a scalar <span class="process-math">\(c\in \R\)</span> with a scalar <span class="process-math">\(\alpha\in \C\text{.}\)</span> Additionally, the vector space <span class="process-math">\(\C^n\)</span> has the structure of a complex inner product defined as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_self-adjoint_symmetric.html ./knowl/xref/d_vector_space.html" id="proof_sketch-2-18">
+\begin{equation*}
+\langle (z_1,z_2,\dots, z_n), (w_1,w_2,\dots, w_n)\rangle=z_1\overline{w_1}+z_2\overline{w_2}+\cdots +z_n\overline{w_n}\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\overline{w_i}\)</span> denotes the complex conjugate of <span class="process-math">\(w_i\)</span> for each <span class="process-math">\(i\text{.}\)</span> Essentially all of our theory of real vector spaces can be “transported” to complex vector spaces, including definitions and results about eigenvectors and inner products. The rest of this argument makes use of this principle by citing without proof some of these properties, and this is why it has been downgraded to a “proof sketch”.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#proof_sketch-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="proof_sketch-3">
+<div class="para">We now return to <span class="process-math">\(A\)</span> and its characteristic polynomial <span class="process-math">\(p(x)\text{.}\)</span> Recall that we want to show that all roots of <span class="process-math">\(p(x)\)</span> are real.  Let <span class="process-math">\(\lambda\in \C\)</span> be a root of <span class="process-math">\(p(x)\text{.}\)</span> The complex theory of eigenvectors implies that there is a nonzero vector <span class="process-math">\(\boldz\in \C^n\)</span> satisfying <span class="process-math">\(A\boldz=\lambda \boldz\text{.}\)</span> On the one hand, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_self-adjoint_symmetric.html" id="proof_sketch-3-8">
+\begin{equation*}
+\langle A\boldz, \boldz\rangle =\langle \lambda\boldz, \boldz\rangle=\lambda\langle \boldz, \boldz\rangle
+\end{equation*}
+</div>
+<div class="para">using properties of our complex inner product. On the other hand, since <span class="process-math">\(A^T=A\)</span> it is easy to see that <a href="s_spectral_theorem.html#cor_self-adjoint_symmetric" class="xref" data-knowl="./knowl/xref/cor_self-adjoint_symmetric.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 7.4.3: Self-adjoint operators and symmetry">Corollary 7.4.3</a> extends to our complex inner product: i.e.,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_self-adjoint_symmetric.html" id="proof_sketch-3-12">
+\begin{equation*}
+\langle A\boldz, \boldw\rangle=\langle \boldz, A\boldw\rangle
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(\boldz, \boldw\in \C^n\text{.}\)</span> Thus</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_self-adjoint_symmetric.html" id="proof_sketch-3-14">
+\begin{align*}
+\langle A\boldz, \boldz\rangle  \amp=  \\
+\amp= \langle \boldz, A\boldz\rangle \\
+\amp = \langle \boldz, \lambda\boldz\rangle\\
+\amp =\overline{\lambda}\langle \boldz, \boldz\rangle \text{.}
+\end{align*}
+</div>
+<div class="para">(In the last equality we use the fact that our complex inner product satisfies <span class="process-math">\(\langle \boldz, \alpha\boldw\rangle=\overline{\alpha} \langle \boldz, \boldw\rangle\)</span> for any <span class="process-math">\(\alpha\in \C\)</span> and vectors <span class="process-math">\(\boldz, \boldw\in \C^n\text{.}\)</span>) It follows that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_self-adjoint_symmetric.html" id="proof_sketch-3-18">
+\begin{equation*}
+\lambda\langle \boldz, \boldz\rangle=\overline{\lambda}\langle \boldz, \boldz\rangle\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\boldz\ne \boldzero\text{,}\)</span> we have <span class="process-math">\(\langle \boldz, \boldz\rangle\ne 0\)</span> (another property of our complex inner product), and thus <span class="process-math">\(\lambda=\overline{\lambda}\text{.}\)</span> Since a complex number <span class="process-math">\(z=a+bi\)</span> satisfies <span class="process-math">\(\overline{z}=z\)</span> if and only if <span class="process-math">\(b=0\)</span> if and only if <span class="process-math">\(z\)</span> is real, we conclude that <span class="process-math">\(\lambda\)</span> is a real number, as claimed.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#proof_sketch-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 7.4.4.1: Proof sketch of Theorem 7.4.2"><a tabindex="-1" href="#proof_sketch" title="Copy heading and permalink for Proof 7.4.4.1: Proof sketch of Theorem 7.4.2" aria-label="Copy heading and permalink for Proof 7.4.4.1: Proof sketch of Theorem 7.4.2">🔗</a></div>
+</article></details>
+<article class="corollary theorem-like" id="cor_self-adjoint_eigenvalue"><h3 class="heading">
+<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Eigenvalues of self-adjoint operators.</span>
+</h3>
+<div class="para" id="cor_self-adjoint_eigenvalue-2-1">If <span class="process-math">\(T\)</span> is a self-adjoint operator on a finite-dimensional inner product space <span class="process-math">\(V\text{,}\)</span> then <span class="process-math">\(T\)</span> has an eigenvalue: i.e., there is a <span class="process-math">\(\lambda\in \R\)</span> and nonzero <span class="process-math">\(\boldv\in V\)</span> such that <span class="process-math">\(T(\boldv)=\lambda\boldv\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#cor_self-adjoint_eigenvalue-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Corollary 7.4.5: Eigenvalues of self-adjoint operators"><a tabindex="-1" href="#cor_self-adjoint_eigenvalue" title="Copy heading and permalink for Corollary 7.4.5: Eigenvalues of self-adjoint operators" aria-label="Copy heading and permalink for Corollary 7.4.5: Eigenvalues of self-adjoint operators">🔗</a></div>
+</article>
+<details id="cor_self-adjoint_eigenvalue-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="cor_self-adjoint_eigenvalue-3-1">The corollary follows from <a href="s_spectral_theorem.html#th_self-adjoint_eigenvalue" class="xref" data-knowl="./knowl/xref/th_self-adjoint_eigenvalue.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.4.4: Eigenvalues of self-adjoint operators">Theorem 7.4.4</a> and the fact that the eigenvalues of <span class="process-math">\(T\)</span> are the real roots of its characteristic polynomial (<a href="s_eigenvectors.html#th_characteristic_polynomial" class="xref" data-knowl="./knowl/xref/th_characteristic_polynomial.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.1.27: Characteristic polynomial">6.1.27</a>).<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#cor_self-adjoint_eigenvalue-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 7.4.5.1"><a tabindex="-1" href="#cor_self-adjoint_eigenvalue-3" title="Copy heading and permalink for Proof 7.4.5.1" aria-label="Copy heading and permalink for Proof 7.4.5.1">🔗</a></div>
+</article></details>
+<div class="para" id="ss_self-adjoint-10">From <a href="s_spectral_theorem.html#th_self-adjoint_eigenvalue" class="xref" data-knowl="./knowl/xref/th_self-adjoint_eigenvalue.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.4.4: Eigenvalues of self-adjoint operators">Theorem 7.4.4</a> and <a href="s_spectral_theorem.html#cor_self-adjoint_symmetric" class="xref" data-knowl="./knowl/xref/cor_self-adjoint_symmetric.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 7.4.3: Self-adjoint operators and symmetry">Corollary 7.4.3</a> it follows that the characterisitic polynomial of any symmetric matrix must factor as a product of linear terms over <span class="process-math">\(\R\text{,}\)</span> as illustrated by the next two examples.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_self-adjoint-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="eg_symmetric_matrix"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Symmetric <span class="process-math">\(2\times 2\)</span> matrices.</span>
+</h3>
+<div class="para" id="eg_symmetric_matrix-2-1">Verify that the characteristic polynomial of any symmetric <span class="process-math">\(2\times 2\)</span> matrix factors into linear terms over <span class="process-math">\(\R\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_symmetric_matrix-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="eg_symmetric_matrix-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="eg_symmetric_matrix-3-1">
+<div class="para">Given a symmetric <span class="process-math">\(2\times 2\)</span> matrix</div>
+<div class="displaymath process-math" id="eg_symmetric_matrix-3-1-2">
+\begin{equation*}
+A=\begin{bmatrix}
+a\amp b\\
+b\amp c
+\end{bmatrix}\text{,}
+\end{equation*}
+</div>
+<div class="para">we have</div>
+<div class="displaymath process-math" id="eg_symmetric_matrix-3-1-3">
+\begin{equation*}
+p(x)=\det(xI-A)=x^2-(a+c)x+(ac-b^2).\text{.}
+\end{equation*}
+</div>
+<div class="para">Using the quadratic formula and some algebra, we see that the roots of <span class="process-math">\(p(x)\)</span> are given by where (using the quadratic formula)</div>
+<div class="displaymath process-math" id="eg_symmetric_matrix-3-1-5">
+\begin{equation*}
+\frac{(a+c)\pm \sqrt{(a+c)^2-4ac+4b^2}}{2}=\frac{(a+c)\pm \sqrt{(a-c)^2+4b^2}}{2}\text{.}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\((a-c)^2+4b^2\geq 0\text{,}\)</span> we see that both these roots are real. Thus <span class="process-math">\(p(x)=(x-\lambda_1)(x-\lambda_2)\text{,}\)</span> where <span class="process-math">\(\lambda_1, \lambda_2\in \R\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_symmetric_matrix-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 7.4.6.1"><a tabindex="-1" href="#eg_symmetric_matrix-3" title="Copy heading and permalink for Solution 7.4.6.1" aria-label="Copy heading and permalink for Solution 7.4.6.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 7.4.6: Symmetric 2\times 2 matrices"><a tabindex="-1" href="#eg_symmetric_matrix" title="Copy heading and permalink for Example 7.4.6: Symmetric 2\times 2 matrices" aria-label="Copy heading and permalink for Example 7.4.6: Symmetric 2\times 2 matrices">🔗</a></div>
+</article>
+<article class="example example-like" id="ss_self-adjoint-12"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Symmetric <span class="process-math">\(4\times 4\)</span> matrix.</span>
+</h3>
+<div class="para logical" id="ss_self-adjoint-12-2-1">
+<div class="para">Verify that the characteristic polynomial of the symmetric matrix</div>
+<div class="displaymath process-math" id="ss_self-adjoint-12-2-1-1">
+\begin{equation*}
+A=\begin{amatrix}[rrrr]
+6 \amp 2\amp 4\amp 0\\
+2\amp 6\amp 0\amp 4\\
+4\amp 0\amp -6\amp -2\\
+0\amp 4\amp -2\amp -6
+\end{amatrix}
+\end{equation*}
+</div>
+<div class="para">factors into linear terms over <span class="process-math">\(\R\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_self-adjoint-12-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="ss_self-adjoint-12-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="ss_self-adjoint-12-3-1">
+<div class="para">The characteristic polynomial of <span class="process-math">\(A\)</span> is <span class="process-math">\(p(x)=x^4-112x^2+2560\text{.}\)</span> We can use the quadratic equation to solve <span class="process-math">\(p(x)=0\)</span> for <span class="process-math">\(u=x^2\text{,}\)</span> yielding</div>
+<div class="displaymath process-math" id="ss_self-adjoint-12-3-1-5">
+\begin{equation*}
+u=\frac{112\pm\sqrt{(112)^2-4(2560)}}{2}=56\pm 24\text{.}
+\end{equation*}
+</div>
+<div class="para">We conclude that <span class="process-math">\(x^2=32\)</span> or <span class="process-math">\(x^2=80\text{,}\)</span> and thus <span class="process-math">\(x=\pm 4\sqrt{2}\)</span> or <span class="process-math">\(x=\pm 4\sqrt{5}\text{.}\)</span> It follows that</div>
+<div class="displaymath process-math" id="ss_self-adjoint-12-3-1-10">
+\begin{equation*}
+p(x)=(x-4\sqrt{2})(x+4\sqrt{2})(x-4\sqrt{5})(x+4\sqrt{5})\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_self-adjoint-12-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 7.4.7.1"><a tabindex="-1" href="#ss_self-adjoint-12-3" title="Copy heading and permalink for Solution 7.4.7.1" aria-label="Copy heading and permalink for Solution 7.4.7.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 7.4.7: Symmetric 4\times 4 matrix"><a tabindex="-1" href="#ss_self-adjoint-12" title="Copy heading and permalink for Example 7.4.7: Symmetric 4\times 4 matrix" aria-label="Copy heading and permalink for Example 7.4.7: Symmetric 4\times 4 matrix">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Subsection 7.4.1: Self-adjoint operators"><a tabindex="-1" href="#ss_self-adjoint" title="Copy heading and permalink for Subsection 7.4.1: Self-adjoint operators" aria-label="Copy heading and permalink for Subsection 7.4.1: Self-adjoint operators">🔗</a></div>
+</section>
+<section class="subsection" id="ss_spectal_theorem_operators">
+<h2 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The spectral theorem for self-adjoint operators</span>
+</h2>
+<section class="introduction" id="ss_spectal_theorem_operators-2">
+<div class="para" id="ss_spectal_theorem_operators-2-1">Our version of the spectral theorem concerns self-adjoint linear transformations on a finite-dimensional inner product space. It tells us two remarkable things: (a) every such linear transformation has an eigenbasis (and hence is diagonalizable); and furthermore, (b) the eigenbasis can be chosen to be orthogonal, or even orthonormal.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_spectal_theorem_operators-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<article class="theorem theorem-like" id="th_spectral"><h3 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Spectral theorem for self-adjoint operators.</span>
+</h3>
+<div class="para" id="th_spectral-2-1">Let <span class="process-math">\((V, \angvec{\, , \,})\)</span> be a finite-dimensional vector space, and let <span class="process-math">\(T\colon V\rightarrow V\)</span> be a linear transformation. The following statements are equivalent.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_spectral-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<ol class="decimal" id="th_spectral-2-2">
+<li id="th_spectral-2-2-1">
+<div class="para" id="th_spectral-2-2-1-1">
+<span class="process-math">\(T\)</span> is self-adjoint.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_spectral-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#th_spectral-2-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="th_spectral-2-2-2">
+<div class="para" id="th_spectral-2-2-2-1">
+<span class="process-math">\(T\)</span> is diagonalizable and eigenvectors with distinct eigenvalues are orthogonal.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_spectral-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#th_spectral-2-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="th_spectral-2-2-3">
+<div class="para" id="th_spectral-2-2-3-1">
+<span class="process-math">\(T\)</span> has an orthogonal eigenbasis.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_spectral-2-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#th_spectral-2-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="th_spectral-2-2-4">
+<div class="para" id="th_spectral-2-2-4-1">
+<span class="process-math">\(T\)</span> has an orthonormal eigenbasis.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_spectral-2-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4"><a tabindex="-1" href="#th_spectral-2-2-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 7.4.8: Spectral theorem for self-adjoint operators"><a tabindex="-1" href="#th_spectral" title="Copy heading and permalink for Theorem 7.4.8: Spectral theorem for self-adjoint operators" aria-label="Copy heading and permalink for Theorem 7.4.8: Spectral theorem for self-adjoint operators">🔗</a></div>
+</article>
+<details id="th_spectral-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="th_spectral-3-1">We will prove the cycle of implications <span class="process-math">\((1)\implies (2)\implies (3)\implies (4)\implies (1)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_spectral-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="th_spectral-3-2" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="title">Implication: <span class="process-math">\((1)\implies (2)\)</span>.</span></h4></summary>
+<article class="hiddenproof knowl__content">
+<div class="para logical" id="th_spectral-3-2-2">
+<div class="para">Assume <span class="process-math">\(T\)</span> is self adjoint. First we show that eigenvectors with distinct eigenvalues are orthogonal. To this end, suppose we have <span class="process-math">\(T(\boldv)=\lambda\boldv\)</span> and <span class="process-math">\(T(\boldv')=\lambda'\boldv'\text{,}\)</span> where <span class="process-math">\(\lambda\ne \lambda'\text{.}\)</span> Using the definition of self-adjoint, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_self-adjoint_eigenvalue.html ./knowl/xref/ex_selfadjoint_complement.html" id="th_spectral-3-2-2-5">
+\begin{align*}
+\angvec{T(\boldv), \boldv'}=\angvec{\boldv, T(\boldv')} \amp\implies \angvec{\lambda\boldv, \boldv'}=\angvec{\boldv, \lambda'\boldv'} \\
+\amp\implies \lambda\angvec{\boldv, \boldv'}=\lambda'\angvec{\boldv, \boldv'} \\
+\amp \implies \angvec{\boldv, \boldv'}=0 \amp (\lambda\ne \lambda')\text{.}
+\end{align*}
+</div>
+<div class="para">We now prove by induction on <span class="process-math">\(\dim V\)</span> that if <span class="process-math">\(T\)</span> is self-adjoint, then <span class="process-math">\(T\)</span> is diagonalizable. The base case <span class="process-math">\(\dim V=1\)</span> is trivial. Assume the result is true of any <span class="process-math">\(n\)</span>-dimensional inner product space, and suppose <span class="process-math">\(\dim V=n+1\text{.}\)</span> By <a href="s_spectral_theorem.html#cor_self-adjoint_eigenvalue" class="xref" data-knowl="./knowl/xref/cor_self-adjoint_eigenvalue.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 7.4.5: Eigenvalues of self-adjoint operators">Corollary 7.4.5</a> there is a nonzero <span class="process-math">\(\boldv\in V\)</span> with <span class="process-math">\(T(\boldv)=\lambda\boldv\text{.}\)</span> Let <span class="process-math">\(W=\Span\{\boldv\}\text{.}\)</span> Since <span class="process-math">\(\dim W=1\text{,}\)</span> we have <span class="process-math">\(\dim W^\perp=\dim V-1=n\text{.}\)</span> The following two facts are crucial for the rest of the argument and are left as an exercise (<a href="s_spectral_theorem.html#ex_selfadjoint_complement" class="xref" data-knowl="./knowl/xref/ex_selfadjoint_complement.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 7.4.3.11">7.4.3.11</a>).</div>
+<ol class="decimal" id="th_spectral-3-2-2-19">
+<li id="th_spectral-3-2-2-19-1">
+<div class="para" id="th_spectral-3-2-2-19-1-1">For all <span class="process-math">\(\boldv\in W^\perp\)</span> we have <span class="process-math">\(T(\boldv)\in W^\perp\text{,}\)</span> and thus by restricting <span class="process-math">\(T\)</span> to <span class="process-math">\(W^\perp\)</span> we get a linear transformation <span class="process-math">\(T\vert_{W^{\perp}}\colon W^\perp\rightarrow W^\perp\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_spectral-3-2-2-19-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#th_spectral-3-2-2-19-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="th_spectral-3-2-2-19-2">
+<div class="para" id="th_spectral-3-2-2-19-2-1">The restriction <span class="process-math">\(T\vert_{W^\perp}\)</span> is self-adjoint, considered as a linear transformation of the inner product space <span class="process-math">\(W^\perp\text{.}\)</span>  Here the inner product on the subspace <span class="process-math">\(W^\perp\)</span> is inherited from <span class="process-math">\((V, \angvec{\, , \,})\)</span> by restriction.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_spectral-3-2-2-19-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#th_spectral-3-2-2-19-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="para">Now since <span class="process-math">\(\dim W^\perp=n-1\)</span> and <span class="process-math">\(T\vert_{W^\perp}\)</span> is self-adjoint, we may assume by induction that <span class="process-math">\(T\vert_{W^\perp}\)</span> has an eigenbasis <span class="process-math">\(B'=(\boldv_1, \boldv_2,\dots, \boldv_n)\text{.}\)</span> We claim that <span class="process-math">\(B=(\boldv, \boldv_2, \dots, \boldv_n)\)</span> is an eigenbasis of <span class="process-math">\(V\text{.}\)</span> Since by definition <span class="process-math">\(T\vert_{W^\perp}(\boldw')=T(\boldw')\)</span> for all <span class="process-math">\(\boldw'\in W^\perp\text{,}\)</span> we see that the vectors <span class="process-math">\(\boldv_i\)</span> are also eigenvectors of <span class="process-math">\(T\text{,}\)</span> and thus that <span class="process-math">\(B\)</span> consists of eigenvectors. To show <span class="process-math">\(B\)</span> is a basis it is enought to prove linear independence, since  <span class="process-math">\(\dim V=n+1\text{.}\)</span> Suppose we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_self-adjoint_eigenvalue.html ./knowl/xref/ex_selfadjoint_complement.html" id="th_spectral-3-2-2-33">
+\begin{equation*}
+c\boldv+c_1\boldv_1+\cdots +c_n\boldv_n=\boldzero
+\end{equation*}
+</div>
+<div class="para">for scalars <span class="process-math">\(c, c_i\in \R\text{.}\)</span> Taking the inner product with <span class="process-math">\(\boldv\text{,}\)</span> we have :</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_self-adjoint_eigenvalue.html ./knowl/xref/ex_selfadjoint_complement.html" id="th_spectral-3-2-2-36">
+\begin{align*}
+c\boldv+c_1\boldv_1+\cdots +c_n\boldv_n=\boldzero\amp\implies\\
+\langle\boldv, c\boldv+c_1\boldv_1+\cdots +c_n\boldv_n\rangle=\langle\boldv, \boldzero\rangle
+\amp\implies c\angvec{\boldv, \boldv}+\sum_{i=1}^nc_i\angvec{\boldv, \boldv_i}=0 \\
+\amp \implies
+c\angvec{\boldv, \boldv}=0 \amp (\angvec{\boldv, \boldv_i}=0)\\
+\amp \implies c=0 \amp (\angvec{\boldv, \boldv}\ne 0)\text{.}
+\end{align*}
+</div>
+<div class="para">It follows that we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_self-adjoint_eigenvalue.html ./knowl/xref/ex_selfadjoint_complement.html" id="th_spectral-3-2-2-37">
+\begin{equation*}
+c_1\boldv_1+\cdots +c_n\boldv_n=\boldzero\text{,}
+\end{equation*}
+</div>
+<div class="para">and thus <span class="process-math">\(c_i=0\)</span> for all <span class="process-math">\(1\leq i\leq n\text{,}\)</span> since <span class="process-math">\(B'\)</span> is linearly independent. Having proved that <span class="process-math">\(B\)</span> is an eigenbasis, we conclude that <span class="process-math">\(T\)</span> is diagonalizable.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_spectral-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 7.4.8.1.1: Implication: (1)\implies (2)"><a tabindex="-1" href="#th_spectral-3-2" title="Copy heading and permalink for Proof 7.4.8.1.1: Implication: (1)\implies (2)" aria-label="Copy heading and permalink for Proof 7.4.8.1.1: Implication: (1)\implies (2)">🔗</a></div>
+</article></details>
+<details id="th_spectral-3-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="title">Implication: <span class="process-math">\((2)\implies (3)\)</span>.</span></h4></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="th_spectral-3-3-2">Let <span class="process-math">\(\lambda_1, \lambda_2, \dots, \lambda_r\)</span> be the distinct eigenvalues of <span class="process-math">\(T\text{.}\)</span> Since <span class="process-math">\(T\)</span> is assumed to be diagonalizable, following <a href="s_diagonalization.html#proc_diagonalize" class="xref" data-knowl="./knowl/xref/proc_diagonalize.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 6.2.13: Deciding whether a linear transformation is diagonalizable">Procedure 6.2.13</a> we can create an eigenbasis <span class="process-math">\(B\)</span> by picking bases <span class="process-math">\(B_i\)</span> of each eigenspace <span class="process-math">\(W_{\lambda_i}\)</span> and combining them. We can always choose these bases so that each <span class="process-math">\(B_i\)</span> is orthogonal. When we do so, the assembled <span class="process-math">\(B\)</span> will be orthogonal as a whole. Indeed given any two elements <span class="process-math">\(\boldv, \boldv'\)</span> of <span class="process-math">\(B\text{,}\)</span> if both vectors are elements of <span class="process-math">\(B_i\)</span> for some <span class="process-math">\(i\text{,}\)</span> then they are orthogonal <em class="emphasis">by design</em>; furthermore, if <span class="process-math">\(\boldv\)</span> is an element of basis <span class="process-math">\(B_i\)</span> and <span class="process-math">\(\boldv'\)</span> is an element of basis <span class="process-math">\(B_j\)</span> with <span class="process-math">\(i\ne j\text{,}\)</span> then they are eigenvectors with distinct eigenvalues, and hence orthogonal <em class="emphasis">by assumption</em>!<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_spectral-3-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 7.4.8.1.2: Implication: (2)\implies (3)"><a tabindex="-1" href="#th_spectral-3-3" title="Copy heading and permalink for Proof 7.4.8.1.2: Implication: (2)\implies (3)" aria-label="Copy heading and permalink for Proof 7.4.8.1.2: Implication: (2)\implies (3)">🔗</a></div>
+</article></details>
+<details id="th_spectral-3-4" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="title">Implication: <span class="process-math">\((3)\implies (4)\)</span>.</span></h4></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="th_spectral-3-4-2">This is easy to see since an orthonormal eigenbasis can be obtained from an orthogonal eigenbasis by scaling each element by the reciprocal of its norm.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_spectral-3-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 7.4.8.1.3: Implication: (3)\implies (4)"><a tabindex="-1" href="#th_spectral-3-4" title="Copy heading and permalink for Proof 7.4.8.1.3: Implication: (3)\implies (4)" aria-label="Copy heading and permalink for Proof 7.4.8.1.3: Implication: (3)\implies (4)">🔗</a></div>
+</article></details>
+<details id="th_spectral-3-5" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="title">Implication: <span class="process-math">\((4)\implies (1)\)</span>.</span></h4></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="th_spectral-3-5-2">Assume <span class="process-math">\(B\)</span> is an orthonormal eigenbasis of <span class="process-math">\(T\text{.}\)</span> Since <span class="process-math">\(B\)</span> is an eigenbasis, <span class="process-math">\([T]_B\)</span> is a diagonal matrix, and hence symmetric. Since <span class="process-math">\(B\)</span> is orthonormal with respect to the dot product, we conclude from <a href="s_spectral_theorem.html#th_self-adjoint_symmetric" class="xref" data-knowl="./knowl/xref/th_self-adjoint_symmetric.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.4.2: Self-adjoint operators and symmetry">Theorem 7.4.2</a> that <span class="process-math">\(T\)</span> is self-adjoint.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_spectral-3-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 7.4.8.1.4: Implication: (4)\implies (1)"><a tabindex="-1" href="#th_spectral-3-5" title="Copy heading and permalink for Proof 7.4.8.1.4: Implication: (4)\implies (1)" aria-label="Copy heading and permalink for Proof 7.4.8.1.4: Implication: (4)\implies (1)">🔗</a></div>
+</article></details><div class="autopermalink" aria-hidden="true" data-description="Proof 7.4.8.1"><a tabindex="-1" href="#th_spectral-3" title="Copy heading and permalink for Proof 7.4.8.1" aria-label="Copy heading and permalink for Proof 7.4.8.1">🔗</a></div>
+</article></details>
+<div class="para" id="ss_spectal_theorem_operators-4">An operator that admits an orthogonal (and hence an orthonormal) eigenbasis is called  <em class="emphasis">orthogonally diagonalizable</em>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_spectal_theorem_operators-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="d_orthogonally_diagable"><h3 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Orthogonally diagonalizable.</span>
+</h3>
+<div class="para" id="d_orthogonally_diagable-4-1">Let <span class="process-math">\(V\)</span> be a finite-dimensional inner product space. A linear transformation <span class="process-math">\(T\colon V\rightarrow V\)</span> is <dfn class="terminology">orthogonally diagonalizable</dfn> if there exists an orthogonal (equivalently, an orthonormal) eigenbasis of <span class="process-math">\(T\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#d_orthogonally_diagable-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 7.4.9: Orthogonally diagonalizable"><a tabindex="-1" href="#d_orthogonally_diagable" title="Copy heading and permalink for Definition 7.4.9: Orthogonally diagonalizable" aria-label="Copy heading and permalink for Definition 7.4.9: Orthogonally diagonalizable">🔗</a></div>
+</article>
+<div class="para" id="ss_spectal_theorem_operators-6">This new language affords us a more succinct articulation of <a href="s_spectral_theorem.html#th_spectral" class="xref" data-knowl="./knowl/xref/th_spectral.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.4.8: Spectral theorem for self-adjoint operators">Theorem 7.4.8</a>: to be self-adjoint is to be orthogonally diagonalizable. Think of this as a sort of “diagonalizable+” condition.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_spectal_theorem_operators-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="principle theorem-like" id="mantra_self-adjoint"><h3 class="heading">
+<span class="type">Mantra</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Self-adjoint mantra.</span>
+</h3>
+<div class="para logical" id="mantra_self-adjoint-2-1">
+<div class="para">To be self-adjoint on a finite-dimensional inner product space is to be “diagonalizable+”. In more detail:</div>
+<div class="displaymath process-math" id="eq_self_adjoint">
+\begin{equation}
+T \text{ is self-adjoint} \iff T \text{ is orthogonally diagonalizable}\text{.}\tag{7.4.2}
+\end{equation}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#mantra_self-adjoint-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Mantra 7.4.10: Self-adjoint mantra"><a tabindex="-1" href="#mantra_self-adjoint" title="Copy heading and permalink for Mantra 7.4.10: Self-adjoint mantra" aria-label="Copy heading and permalink for Mantra 7.4.10: Self-adjoint mantra">🔗</a></div>
+</article>
+<div class="para" id="ss_spectal_theorem_operators-8">As an immediate consequence of <a href="s_spectral_theorem.html#th_spectral" class="xref" data-knowl="./knowl/xref/th_spectral.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.4.8: Spectral theorem for self-adjoint operators">Theorem 7.4.8</a>, we have the following result about symmetric matrices.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_spectal_theorem_operators-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="corollary theorem-like" id="cor_spectral"><h3 class="heading">
+<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Spectral theorem for symmetric matrices.</span>
+</h3>
+<div class="para" id="cor_spectral-2-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> matrix. The following statements are equivalent.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#cor_spectral-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<ol class="decimal" id="cor_spectral-2-2">
+<li id="cor_spectral-2-2-1">
+<div class="para" id="cor_spectral-2-2-1-1">
+<span class="process-math">\(A\)</span> is symmetric.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#cor_spectral-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#cor_spectral-2-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="cor_spectral-2-2-2">
+<div class="para" id="cor_spectral-2-2-2-1">
+<span class="process-math">\(A\)</span> is diagonalizable and eigenvectors with distinct eigenvalues are orthogonal with respect to the dot product.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#cor_spectral-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#cor_spectral-2-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="cor_spectral-2-2-3">
+<div class="para" id="cor_spectral-2-2-3-1">
+<span class="process-math">\(A\)</span> is orthogonally diagonalizable.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#cor_spectral-2-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3"><a tabindex="-1" href="#cor_spectral-2-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="cor_spectral-2-2-4">
+<div class="para logical" id="cor_spectral-2-2-4-1">
+<div class="para">There exists an <a href="s_orthogonality.html#d_orthogonal_matrix" class="xref" data-knowl="./knowl/xref/d_orthogonal_matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 7.2.13: Orthogonal matrices">orthogonal matrix</a> <span class="process-math">\(Q\)</span> and diagonal matrix <span class="process-math">\(D\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_orthogonal_matrix.html" id="eq_ortho_diag">
+\begin{equation}
+D=Q^{-1}AQ=Q^TAQ\text{.}\tag{7.4.3}
+\end{equation}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#cor_spectral-2-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4"><a tabindex="-1" href="#cor_spectral-2-2-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Corollary 7.4.11: Spectral theorem for symmetric matrices"><a tabindex="-1" href="#cor_spectral" title="Copy heading and permalink for Corollary 7.4.11: Spectral theorem for symmetric matrices" aria-label="Copy heading and permalink for Corollary 7.4.11: Spectral theorem for symmetric matrices">🔗</a></div>
+</article>
+<details id="cor_spectral-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<article class="hiddenproof knowl__content">
+<div class="para" id="cor_spectral-3-1">By <a href="s_spectral_theorem.html#cor_self-adjoint_symmetric" class="xref" data-knowl="./knowl/xref/cor_self-adjoint_symmetric.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 7.4.3: Self-adjoint operators and symmetry">Corollary 7.4.3</a> we have <span class="process-math">\(A\)</span> symmetric if and only if <span class="process-math">\(T_A\)</span> is self-adjoint with respect to the dot product. Statements (1)-(3) are seen to be equivalent by applying <a href="s_spectral_theorem.html#th_spectral" class="xref" data-knowl="./knowl/xref/th_spectral.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.4.8: Spectral theorem for self-adjoint operators">Theorem 7.4.8</a> to <span class="process-math">\(T_A\)</span> (with respect to the dot product). Let <span class="process-math">\(B\)</span> be the standard basis of <span class="process-math">\(\R^n\text{.}\)</span> We see that (4) is equivalent to (3) by observing that <span class="process-math">\(B'\)</span> is an orthonormal eigenbasis of <span class="process-math">\(T_A\)</span> if and only if the matrix <span class="process-math">\(Q=\underset{B'\rightarrow B}{P}\)</span> obtained by placing the elements of <span class="process-math">\(B'\)</span> as columns is orthogonal and diagonalizes <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#cor_spectral-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 7.4.11.1"><a tabindex="-1" href="#cor_spectral-3" title="Copy heading and permalink for Proof 7.4.11.1" aria-label="Copy heading and permalink for Proof 7.4.11.1">🔗</a></div>
+</article></details>
+<div class="para" id="ss_spectal_theorem_operators-10">The process of finding matrices <span class="process-math">\(Q\)</span> and <span class="process-math">\(D\)</span> satisfying <a href="s_spectral_theorem.html#eq_ortho_diag" class="xref" data-knowl="./knowl/xref/eq_ortho_diag.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.4.3">(7.4.3)</a> is called <em class="emphasis">orthogonal diagonalization</em>. A close look at the proof of <a href="s_spectral_theorem.html#th_spectral" class="xref" data-knowl="./knowl/xref/th_spectral.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.4.8: Spectral theorem for self-adjoint operators">Theorem 7.4.8</a> gives rise to the following orthogonal diagonalization method for matrices.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_spectal_theorem_operators-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="algorithm theorem-like" id="proc_ortho_diag"><h3 class="heading">
+<span class="type">Procedure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Orthogonal diagonalization.</span>
+</h3>
+<div class="para" id="proc_ortho_diag-2-1">Let <span class="process-math">\(A\)</span> be a symmetric matrix. To orthogonally diagonalize <span class="process-math">\(A\)</span> proceed as follows.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#proc_ortho_diag-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<ol class="decimal" id="proc_ortho_diag-2-2">
+<li id="proc_ortho_diag-2-2-1">
+<div class="para" id="proc_ortho_diag-2-2-1-1">Let <span class="process-math">\(\lambda_1, \lambda_2, \dots, \lambda_r\)</span> be the distinct eigenvalues of <span class="process-math">\(A\text{.}\)</span> For each <span class="process-math">\(1\leq i\leq r\text{,}\)</span> compute an <em class="emphasis">orthonormal</em> ordered basis of <span class="process-math">\(W_{\lambda_i}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#proc_ortho_diag-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#proc_ortho_diag-2-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="proc_ortho_diag-2-2-2">
+<div class="para logical" id="proc_ortho_diag-2-2-2-1">
+<div class="para">Let <span class="process-math">\(B'=(\boldv_1, \boldv_2, \dots, \boldv_n)\)</span> be the ordered basis obtained by concatenating the orthonormal bases computed in (1). This is an orthonormal basis of eigenvectors. It follows that the matrix</div>
+<div class="displaymath process-math" id="proc_ortho_diag-2-2-2-1-2">
+\begin{equation*}
+Q=\begin{bmatrix}
+\vert\amp \vert\amp \amp \vert\\
+\boldv_1\amp \boldv_2\amp\cdots \amp \boldv_n\\
+\vert\amp \vert\amp \amp \vert
+\end{bmatrix}
+\end{equation*}
+</div>
+<div class="para">is orthogonal (i.e., <span class="process-math">\(Q^{-1}=Q^T\)</span>), and the matrix <span class="process-math">\(D=Q^{-1}AQ=Q^TAQ\)</span> is diagonal.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#proc_ortho_diag-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#proc_ortho_diag-2-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Procedure 7.4.12: Orthogonal diagonalization"><a tabindex="-1" href="#proc_ortho_diag" title="Copy heading and permalink for Procedure 7.4.12: Orthogonal diagonalization" aria-label="Copy heading and permalink for Procedure 7.4.12: Orthogonal diagonalization">🔗</a></div>
+</article>
+<article class="example example-like" id="eg_ortho_diag"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Orthogonal diagonalization.</span>
+</h3>
+<div class="para logical" id="eg_ortho_diag-2-1">
+<div class="para">The symmetric matrix</div>
+<div class="displaymath process-math" id="eg_ortho_diag-2-1-1">
+\begin{equation*}
+A=\frac{1}{3}\begin{amatrix}[rrr]
+-1\amp 2\amp 2\\
+2 \amp -1 \amp 2 \\
+2\amp 2 \amp -1  \end{amatrix}
+\end{equation*}
+</div>
+<div class="para">has characteristic polynomial <span class="process-math">\(p(x)=x^3+x^2-x-1\text{.}\)</span> Find an orthogonal matrix <span class="process-math">\(Q\)</span> and diagonal matrix <span class="process-math">\(D\)</span> such that <span class="process-math">\(D=Q^TAQ\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_ortho_diag-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="eg_ortho_diag-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="eg_ortho_diag-3-1">First we factor <span class="process-math">\(p(x)\text{.}\)</span> Looking at the constant term we see that the only possible integer roots of <span class="process-math">\(p(x)\)</span> are <span class="process-math">\(\pm 1\text{.}\)</span> It is easily verified that <span class="process-math">\(p(1)=0\text{,}\)</span> and  polynomial division yields the factorization <span class="process-math">\(p(x)=(x-1)(x^2+2x+1)\text{.}\)</span>  Further factorization of <span class="process-math">\(x^2+2x+1\)</span> gives us  <span class="process-math">\(p(x)=(x-1)(x+1)^2\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_ortho_diag-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="eg_ortho_diag-3-2">
+<div class="para">Next we compute <em class="emphasis">orthonormal</em> bases of the eigenspaces <span class="process-math">\(W_1\)</span> and <span class="process-math">\(W_{-1}\text{,}\)</span> yielding</div>
+<div class="displaymath process-math" id="eg_ortho_diag-3-2-4">
+\begin{align*}
+B_1\amp=\left(\frac{1}{\sqrt{3}}(1,1,1)\right) \amp B_{2}\amp =\left(\frac{1}{\sqrt{2}}(1,-1,0), \frac{1}{\sqrt{6}}(1,1,-2)\right)\text{.}
+\end{align*}
+</div>
+<div class="para">Assembling these bases elements into the orthogonal matrix</div>
+<div class="displaymath process-math" id="eg_ortho_diag-3-2-5">
+\begin{equation*}
+Q=\begin{amatrix}[rrr]1/\sqrt{3}\amp 1/\sqrt{2}\amp 1/\sqrt{6}\\
+1/\sqrt{3}\amp -1/\sqrt{2}\amp 1/\sqrt{6}\\
+1/\sqrt{3}\amp 0\amp -2/\sqrt{6}\end{amatrix}\text{,}
+\end{equation*}
+</div>
+<div class="para">we conclude that <span class="process-math">\(D=Q^{-1}AQ=Q^TAQ\text{,}\)</span> where</div>
+<div class="displaymath process-math" id="eg_ortho_diag-3-2-7">
+\begin{equation*}
+D=\begin{amatrix}[rrr]1\amp 0\amp 0\\ 0\amp -1\amp 0\\ 0\amp 0\amp -1  \end{amatrix}\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_ortho_diag-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 7.4.13.1"><a tabindex="-1" href="#eg_ortho_diag-3" title="Copy heading and permalink for Solution 7.4.13.1" aria-label="Copy heading and permalink for Solution 7.4.13.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 7.4.13: Orthogonal diagonalization"><a tabindex="-1" href="#eg_ortho_diag" title="Copy heading and permalink for Example 7.4.13: Orthogonal diagonalization" aria-label="Copy heading and permalink for Example 7.4.13: Orthogonal diagonalization">🔗</a></div>
+</article>
+<div class="para" id="ss_spectal_theorem_operators-13">Observe that the two eigenspaces <span class="process-math">\(W_1\)</span> and <span class="process-math">\(W_{-1}\)</span> of the matrix <span class="process-math">\(A\)</span> in <a href="s_spectral_theorem.html#eg_ortho_diag" class="xref" data-knowl="./knowl/xref/eg_ortho_diag.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 7.4.13: Orthogonal diagonalization">Example 7.4.13</a> are orthogonal to one another, as predicted by the spectral theorem. Indeed, <span class="process-math">\(W_1\)</span> is the line passing through the origin with direction vector <span class="process-math">\(\boldn=(1,1,1)\text{,}\)</span> and <span class="process-math">\(W_{-1}\)</span> is its orthogonal complement, the plane passing through the origin with normal vector <span class="process-math">\(\boldn\text{.}\)</span> <a href="s_spectral_theorem.html#fig_ortho_diag" class="xref" data-knowl="./knowl/xref/fig_ortho_diag.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 7.4.14: Eigenspaces of a symmetric matrix are orthogonal">Figure 7.4.14</a> depicts the orthogonal configuration of the eigenspaces of this example. This is an excellent illustration of what makes the diagonalizability of symmetric matrices (and self-adjoint operators) special. Keep it in mind!<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_spectal_theorem_operators-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="fig_ortho_diag"><div class="interactive-iframe-container"><iframe id="geogebra_ortho_diag" style="width:600px; height:450px; display: block; " src="geogebra_ortho_diag-if.html"></iframe></div>
+<div class="interactive-iframe-container__opener"><a href="geogebra_ortho_diag.html" title="Open in new tab" aria-label="Open in new tab" target="_blank"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe89e;</span></a></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Eigenspaces of a symmetric matrix are orthogonal<div class="autopermalink" aria-hidden="true" data-description="Figure 7.4.14: Eigenspaces of a symmetric matrix are orthogonal"><a tabindex="-1" href="#fig_ortho_diag" title="Copy heading and permalink for Figure 7.4.14: Eigenspaces of a symmetric matrix are orthogonal" aria-label="Copy heading and permalink for Figure 7.4.14: Eigenspaces of a symmetric matrix are orthogonal">🔗</a></div></figcaption>
+</figure>
+<div class="para" id="ss_spectal_theorem_operators-15">Do not overlook the reverse implication of equivalence <a href="s_spectral_theorem.html#eq_self_adjoint" class="xref" data-knowl="./knowl/xref/eq_self_adjoint.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.4.2">(7.4.2)</a>. As the next example illustrates, we can show an operator is self-adjoint by examining the geometry of its eigenspaces.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_spectal_theorem_operators-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="eg_ortho_proj_selfadjoint"><h3 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Orthogonal projections are self-adjoint.</span>
+</h3>
+<div class="para" id="eg_ortho_proj_selfadjoint-2-1">Let <span class="process-math">\((V,\angvec{\, , \,})\)</span> be a finite-dimensional inner product space, let <span class="process-math">\(W\)</span> be a subpsace of <span class="process-math">\(V\text{,}\)</span> and let <span class="process-math">\(T=\operatorname{proj}_W\)</span> be orthogonal projection onto <span class="process-math">\(W\text{.}\)</span> Prove that <span class="process-math">\(T\)</span> is self-adjoint.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_ortho_proj_selfadjoint-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="eg_ortho_proj_selfadjoint-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="eg_ortho_proj_selfadjoint-3-1">
+<div class="para">By <a href="s_spectral_theorem.html#th_spectral" class="xref" data-knowl="./knowl/xref/th_spectral.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.4.8: Spectral theorem for self-adjoint operators">Theorem 7.4.8</a> it suffices to show that <span class="process-math">\(T\)</span> is orthogonally diagonalizable. According to <a href="s_orthogonal_projection.html#ex_orthoproj_props" class="xref" data-knowl="./knowl/xref/ex_orthoproj_props.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 7.3.6.20">Exercise 7.3.6.20</a> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_spectral.html ./knowl/xref/ex_orthoproj_props.html" id="eg_ortho_proj_selfadjoint-3-1-4">
+\begin{align*}
+\boldv\in W \amp \iff T(\boldv)=\boldv\\
+\boldv\in W^\perp \amp \iff T(\boldv)=\boldzero\text{.}
+\end{align*}
+</div>
+<div class="para">Equivalently, <span class="process-math">\(W=W_1\)</span> and <span class="process-math">\(W^\perp=W_0\)</span> are the 1- and 0-eigenspaces of <span class="process-math">\(T\text{,}\)</span> respectively. Since <span class="process-math">\(\dim W+\dim W^\perp=\dim V\)</span> we conclude that <span class="process-math">\(T\)</span> is diagonalizable. Since clearly <span class="process-math">\(W\)</span> and <span class="process-math">\(W^\perp\)</span> are orthogonal, we conclude that <span class="process-math">\(T\)</span> is in fact othogonally diagonalizable, hence self-adjoint.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_ortho_proj_selfadjoint-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Solution 7.4.15.1"><a tabindex="-1" href="#eg_ortho_proj_selfadjoint-3" title="Copy heading and permalink for Solution 7.4.15.1" aria-label="Copy heading and permalink for Solution 7.4.15.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 7.4.15: Orthogonal projections are self-adjoint"><a tabindex="-1" href="#eg_ortho_proj_selfadjoint" title="Copy heading and permalink for Example 7.4.15: Orthogonal projections are self-adjoint" aria-label="Copy heading and permalink for Example 7.4.15: Orthogonal projections are self-adjoint">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Subsection 7.4.2: The spectral theorem for self-adjoint operators"><a tabindex="-1" href="#ss_spectal_theorem_operators" title="Copy heading and permalink for Subsection 7.4.2: The spectral theorem for self-adjoint operators" aria-label="Copy heading and permalink for Subsection 7.4.2: The spectral theorem for self-adjoint operators">🔗</a></div>
+</section>
+<section class="exercises" id="s_spectral_theorem_ex">
+<h2 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.4.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
+</h2>
+<article class="subexercises" id="s_spectral_theorem_ex-1"><h3 class="heading"><span class="title">WeBWork Exercises</span></h3>
+<article class="exercise exercise-like" id="s_spectral_theorem_ex-1-2"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div id="s_spectral_theorem_ex-1-2-ww-inner" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="128" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-origin="webwork2" data-sourceFilePath="Library/NAU/setLinearAlgebra/diag3x3ortho.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('s_spectral_theorem_ex-1-2-ww-inner')">Activate</button></div>
+<div class="problem-contents">
+<div class="para" id="extracted-s_spectral_theorem_ex-1-2-1-1-1">Let <span class="process-math">\(A = \left[\begin{array}{ccc}
+-3 \amp 12 \amp -6\cr
+12 \amp -3 \amp 6\cr
+-6 \amp 6 \amp 6
+\end{array}\right]\text{.}\)</span> Find an orthogonal matrix <span class="process-math">\(P\)</span> with rational entries and a diagonal matrix <span class="process-math">\(D\)</span> such that <span class="process-math">\(D = P^TAP\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#extracted-s_spectral_theorem_ex-1-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="extracted-s_spectral_theorem_ex-1-2-1-1-2">
+<span class="process-math">\(P=\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> (3 <span class="times-sign">×</span> 3 array), <span class="process-math">\(D=\)</span> <span class="fillin underline" role="img" aria-label="10-character blank" style="width: 4.545454545454546em;"></span> (3 <span class="times-sign">×</span> 3 array)<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#extracted-s_spectral_theorem_ex-1-2-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.4.3.1"><a tabindex="-1" href="#s_spectral_theorem_ex-1-2" title="Copy heading and permalink for Exercise 7.4.3.1" aria-label="Copy heading and permalink for Exercise 7.4.3.1">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Subexercises: WeBWork Exercises"><a tabindex="-1" href="#s_spectral_theorem_ex-1" title="Copy heading and permalink for Subexercises: WeBWork Exercises" aria-label="Copy heading and permalink for Subexercises: WeBWork Exercises">🔗</a></div>
+</article>
+<div class="exercisegroup" id="s_spectral_theorem_ex-2">
+<h3 class="heading"><span class="title">Exercise Group.</span></h3>
+<div class="introduction" id="s_spectral_theorem_ex-2-1">
+<div class="para" id="s_spectral_theorem_ex-2-1-1">Orthogonally diagonalize the given symmetric matrix <span class="process-math">\(A\)</span> following <a href="s_spectral_theorem.html#proc_ortho_diag" class="xref" data-knowl="./knowl/xref/proc_ortho_diag.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 7.4.12: Orthogonal diagonalization">Procedure 7.4.12</a>: i.e. find a diagonal matrix <span class="process-math">\(D\)</span> and orthogonal matrix <span class="process-math">\(Q\)</span> satisfying <span class="process-math">\(D=Q^{T}AQ\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_spectral_theorem_ex-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="s_spectral_theorem_ex-2-2"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="s_spectral_theorem_ex-2-2-1-1">
+<span class="process-math">\(A=\begin{amatrix}[rr]
+2\amp 1\\ 1\amp 2
+\end{amatrix}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_spectral_theorem_ex-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.4.3.2"><a tabindex="-1" href="#s_spectral_theorem_ex-2-2" title="Copy heading and permalink for Exercise 7.4.3.2" aria-label="Copy heading and permalink for Exercise 7.4.3.2">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="s_spectral_theorem_ex-2-3"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="s_spectral_theorem_ex-2-3-1-1">
+<span class="process-math">\(A=\begin{amatrix}[rr]-1\amp 1\\ 1\amp 2  \end{amatrix}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_spectral_theorem_ex-2-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.4.3.3"><a tabindex="-1" href="#s_spectral_theorem_ex-2-3" title="Copy heading and permalink for Exercise 7.4.3.3" aria-label="Copy heading and permalink for Exercise 7.4.3.3">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="s_spectral_theorem_ex-2-4"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="s_spectral_theorem_ex-2-4-1-1">
+<span class="process-math">\(A=\begin{amatrix}[rrr]-1 \amp 1 \amp -2 \\
+1 \amp -1 \amp -2 \\
+-2 \amp -2 \amp 2  \end{amatrix}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_spectral_theorem_ex-2-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.4.3.4"><a tabindex="-1" href="#s_spectral_theorem_ex-2-4" title="Copy heading and permalink for Exercise 7.4.3.4" aria-label="Copy heading and permalink for Exercise 7.4.3.4">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="s_spectral_theorem_ex-2-5"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="s_spectral_theorem_ex-2-5-1-1">
+<span class="process-math">\(A=\frac{1}{6}\begin{amatrix}[rrr]
+1\amp 7\amp -2\\
+7\amp 1\amp -2\\
+-2\amp -2\amp 10
+\end{amatrix}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_spectral_theorem_ex-2-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.4.3.5"><a tabindex="-1" href="#s_spectral_theorem_ex-2-5" title="Copy heading and permalink for Exercise 7.4.3.5" aria-label="Copy heading and permalink for Exercise 7.4.3.5">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="s_spectral_theorem_ex-2-6"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="s_spectral_theorem_ex-2-6-1-1">
+<span class="process-math">\(A=\begin{amatrix}[rrr]
+1\amp 2\amp 1\\
+2\amp 0\amp 0\\
+1\amp 0\amp 3  \end{amatrix}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_spectral_theorem_ex-2-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.4.3.6"><a tabindex="-1" href="#s_spectral_theorem_ex-2-6" title="Copy heading and permalink for Exercise 7.4.3.6" aria-label="Copy heading and permalink for Exercise 7.4.3.6">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="s_spectral_theorem_ex-2-7"><h4 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="s_spectral_theorem_ex-2-7-1-1">
+<span class="process-math">\(A=\begin{amatrix}[rrrr]
+0 \amp 0 \amp 1 \amp 0 \\
+0 \amp 0 \amp 0 \amp 1 \\
+1 \amp 0 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \amp 0  \end{amatrix}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_spectral_theorem_ex-2-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.4.3.7"><a tabindex="-1" href="#s_spectral_theorem_ex-2-7" title="Copy heading and permalink for Exercise 7.4.3.7" aria-label="Copy heading and permalink for Exercise 7.4.3.7">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="s_spectral_theorem_ex-2-8"><h4 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="s_spectral_theorem_ex-2-8-1-1">
+<span class="process-math">\(A=\begin{amatrix}[rrrr]0 \amp 0 \amp 1 \amp 0 \\
+0 \amp 1 \amp 0 \amp 0 \\
+1 \amp 0 \amp 0 \amp 0 \\
+0 \amp 0 \amp 0 \amp 1  \end{amatrix}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_spectral_theorem_ex-2-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.4.3.8"><a tabindex="-1" href="#s_spectral_theorem_ex-2-8" title="Copy heading and permalink for Exercise 7.4.3.8" aria-label="Copy heading and permalink for Exercise 7.4.3.8">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="s_spectral_theorem_ex-2-9"><h4 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="s_spectral_theorem_ex-2-9-1-1">
+<span class="process-math">\(A=\begin{amatrix}[rrrr]
+1\amp 1\amp 1\amp 1\\
+1\amp 1\amp 1\amp 1 \\
+1\amp 1\amp 1\amp 1 \\
+1\amp 1\amp 1\amp 1
+\end{amatrix}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_spectral_theorem_ex-2-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.4.3.9"><a tabindex="-1" href="#s_spectral_theorem_ex-2-9" title="Copy heading and permalink for Exercise 7.4.3.9" aria-label="Copy heading and permalink for Exercise 7.4.3.9">🔗</a></div>
+</article>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise Group 7.4.3.2–9"><a tabindex="-1" href="#s_spectral_theorem_ex-2" title="Copy heading and permalink for Exercise Group 7.4.3.2–9" aria-label="Copy heading and permalink for Exercise Group 7.4.3.2–9">🔗</a></div>
+</div>
+<article class="exercise exercise-like" id="ex_self-adjoint_symmetric"><h3 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para logical" id="ex_self-adjoint_symmetric-1-1">
+<div class="para">Let <span class="process-math">\((V, \langle\, , \rangle)\)</span> be a finite-dimensional inner product space, let <span class="process-math">\(T\colon V\rightarrow V\)</span> be a linear transformation, and let <span class="process-math">\(B=(\boldv_1, \boldv_2, \dots, \boldv_n)\)</span> be an ordered basis of <span class="process-math">\(V\text{.}\)</span> Prove: <span class="process-math">\(T\)</span> is self-adjoint if and only if</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_self-adjoint.html" id="ex_self-adjoint_symmetric-1-1-6">
+\begin{equation*}
+\langle T(\boldv_i),\boldv_j\rangle=\langle \boldv_i, T(\boldv_j)\rangle
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(1\leq i,j\leq n\text{.}\)</span> In other words, to prove <span class="process-math">\(T\)</span> is self-adjoint it suffices to show property <a href="s_spectral_theorem.html#eq_self-adjoint" class="xref" data-knowl="./knowl/xref/eq_self-adjoint.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.4.1">(7.4.1)</a> holds for all elements of a basis of <span class="process-math">\(V\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_self-adjoint_symmetric-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.4.3.10"><a tabindex="-1" href="#ex_self-adjoint_symmetric" title="Copy heading and permalink for Exercise 7.4.3.10" aria-label="Copy heading and permalink for Exercise 7.4.3.10">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ex_selfadjoint_complement"><h3 class="heading"><span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="ex_selfadjoint_complement-1-1">Let <span class="process-math">\((V, \langle\, , \rangle)\)</span> be a finite-dimensional inner product space, let <span class="process-math">\(T\colon V\rightarrow V\)</span> be a self-adjoint operator, and let <span class="process-math">\(W\)</span> be a subspace of <span class="process-math">\(V\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_selfadjoint_complement-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<ol class="lower-alpha lower-alpha-level-1" id="ex_selfadjoint_complement-1-2">
+<li id="ex_selfadjoint_complement-1-2-1">
+<div class="para" id="ex_selfadjoint_complement-1-2-1-1">Prove: if <span class="process-math">\(\boldv\in W^\perp\text{,}\)</span> then <span class="process-math">\(T(\boldv)\in W^\perp\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_selfadjoint_complement-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 7.4.3.11.a"><a tabindex="-1" href="#ex_selfadjoint_complement-1-2-1" title="Copy heading and permalink for Item 7.4.3.11.a" aria-label="Copy heading and permalink for Item 7.4.3.11.a">🔗</a></div>
+</li>
+<li id="ex_selfadjoint_complement-1-2-2">
+<div class="para logical" id="ex_selfadjoint_complement-1-2-2-1">
+<div class="para">By (a), restricting <span class="process-math">\(T\)</span> to <span class="process-math">\(W^\perp\)</span> defines a linear transformation</div>
+<div class="displaymath process-math" id="ex_selfadjoint_complement-1-2-2-1-3">
+\begin{align*}
+T\vert_{W^\perp}\colon W^\perp\amp\rightarrow W^\perp \\
+\boldv \amp \mapsto T(\boldv)\text{.}
+\end{align*}
+</div>
+<div class="para">Prove that <span class="process-math">\(T\vert_{W^\perp}\)</span> is self-adjoint. Here the inner product on the subspace <span class="process-math">\(W^\perp\)</span> is inherited from <span class="process-math">\((V, \angvec{\, , \,})\)</span> by restriction.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_selfadjoint_complement-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 7.4.3.11.b"><a tabindex="-1" href="#ex_selfadjoint_complement-1-2-2" title="Copy heading and permalink for Item 7.4.3.11.b" aria-label="Copy heading and permalink for Item 7.4.3.11.b">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.4.3.11"><a tabindex="-1" href="#ex_selfadjoint_complement" title="Copy heading and permalink for Exercise 7.4.3.11" aria-label="Copy heading and permalink for Exercise 7.4.3.11">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="s_spectral_theorem_ex-5"><h3 class="heading"><span class="codenumber">12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3>
+<div class="para" id="s_spectral_theorem_ex-5-1-1">Assume <span class="process-math">\(A\in M_{nn}\)</span> is symmetric and orthogonal. Prove that the characteristic polynomial of <span class="process-math">\(A\)</span> factors as <span class="process-math">\(p(x)=(x-1)^r(x+1)^s\)</span> for some nonnegative integers <span class="process-math">\(r,s\text{.}\)</span> In particular, the eigenvalues of <span class="process-math">\(A\)</span> are among <span class="process-math">\(1\)</span> and <span class="process-math">\(-1\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_spectral_theorem_ex-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.4.3.12"><a tabindex="-1" href="#s_spectral_theorem_ex-5" title="Copy heading and permalink for Exercise 7.4.3.12" aria-label="Copy heading and permalink for Exercise 7.4.3.12">🔗</a></div>
+</article>
+<div class="exercisegroup" id="s_spectral_theorem_ex-6">
+<h3 class="heading"><span class="title">Exercise Group.</span></h3>
+<div class="introduction" id="s_spectral_theorem_ex-6-1">
+<div class="para logical" id="s_spectral_theorem_ex-6-1-1">
+<div class="para">Let <span class="process-math">\(\mathcal{C}\subseteq \R^2\)</span> be a conic curve defined by a quadratic equation of the form</div>
+<div class="displaymath process-math" id="eq_conic_eqn">
+\begin{equation}
+\mathcal{C}\colon ax^2+bxy+cy^2=d\tag{7.4.4}
+\end{equation}
+</div>
+<div class="para">where <span class="process-math">\(a,b,c\in \R\)</span> are fixed constants. You may have learned that <span class="process-math">\(\mathcal{C}\)</span> can be rotated to a conic <span class="process-math">\(\mathcal{C}'\)</span> with a “standard equation” of the form <span class="process-math">\(ex^2+fy^2=d\text{.}\)</span> In the following exercises we will see why this is true.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_spectral_theorem_ex-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="s_spectral_theorem_ex-6-2"><h4 class="heading"><span class="codenumber">13<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="s_spectral_theorem_ex-6-2-1-1">
+<div class="para">Find a symmetric matrix <span class="process-math">\(A\in M_{22}\)</span> satisfying the following property: <span class="process-math">\(\boldx=(x,y)\)</span> satisfies <a href="s_spectral_theorem.html#eq_conic_eqn" class="xref" data-knowl="./knowl/xref/eq_conic_eqn.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.4.4">(7.4.4)</a> if and only if</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_conic_eqn.html" id="eq_conic_eqn_matrix">
+\begin{equation}
+\boldx \cdot (A\boldx)=\boldx^TA\boldx=d\text{.}\tag{7.4.5}
+\end{equation}
+</div>
+<div class="para">(Here we conflate the <span class="process-math">\(1\times 1\)</span> matrix <span class="process-math">\(\begin{bmatrix}d
+\end{bmatrix}\)</span> with the scalar <span class="process-math">\(d\in \R\text{.}\)</span>)</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_spectral_theorem_ex-6-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.4.3.13"><a tabindex="-1" href="#s_spectral_theorem_ex-6-2" title="Copy heading and permalink for Exercise 7.4.3.13" aria-label="Copy heading and permalink for Exercise 7.4.3.13">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="s_spectral_theorem_ex-6-3"><h4 class="heading"><span class="codenumber">14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="s_spectral_theorem_ex-6-3-1-1">
+<div class="para">Show that there is a rotation matrix <span class="process-math">\(Q\in M_{22}\)</span> satisfying <span class="process-math">\(D=Q^TAQ\text{,}\)</span> where</div>
+<div class="displaymath process-math" id="s_spectral_theorem_ex-6-3-1-1-3">
+\begin{equation*}
+D=\begin{amatrix}[rr] e\amp 0\\ 0\amp f \end{amatrix}
+\end{equation*}
+</div>
+<div class="para">for some <span class="process-math">\(e,f\in \R\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_spectral_theorem_ex-6-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="s_spectral_theorem_ex-6-3-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para" id="s_spectral_theorem_ex-6-3-2-1">See <a href="s_orthogonality.html#ex_ortho_matrix_rotation_reflection" class="xref" data-knowl="./knowl/xref/ex_ortho_matrix_rotation_reflection.html" data-reveal-label="Reveal" data-close-label="Close" title="Exercise 7.2.4.22: Orthogonal 2\times 2 matrices">Exercise 7.2.4.22</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_spectral_theorem_ex-6-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Hint 7.4.3.14.1"><a tabindex="-1" href="#s_spectral_theorem_ex-6-3-2" title="Copy heading and permalink for Hint 7.4.3.14.1" aria-label="Copy heading and permalink for Hint 7.4.3.14.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.4.3.14"><a tabindex="-1" href="#s_spectral_theorem_ex-6-3" title="Copy heading and permalink for Exercise 7.4.3.14" aria-label="Copy heading and permalink for Exercise 7.4.3.14">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="s_spectral_theorem_ex-6-4"><h4 class="heading"><span class="codenumber">15<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="s_spectral_theorem_ex-6-4-1-1">
+<div class="para">Show that <span class="process-math">\(\boldx\)</span> satisfies <a href="s_spectral_theorem.html#eq_conic_eqn_matrix" class="xref" data-knowl="./knowl/xref/eq_conic_eqn_matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.4.5">(7.4.5)</a> if and only if <span class="process-math">\(\boldx'=Q^{-1}\boldx=Q^T\boldx\)</span> satisfies</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_conic_eqn_matrix.html" id="eq_conic_std">
+\begin{equation}
+ex+fy=d\text{.}\tag{7.4.6}
+\end{equation}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_spectral_theorem_ex-6-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.4.3.15"><a tabindex="-1" href="#s_spectral_theorem_ex-6-4" title="Copy heading and permalink for Exercise 7.4.3.15" aria-label="Copy heading and permalink for Exercise 7.4.3.15">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="s_spectral_theorem_ex-6-5"><h4 class="heading"><span class="codenumber">16<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="s_spectral_theorem_ex-6-5-1-1">Explain why we can conclude that there is a rotation that maps the conic <span class="process-math">\(\mathcal{C}\)</span> with equation <a href="s_spectral_theorem.html#eq_conic_eqn" class="xref" data-knowl="./knowl/xref/eq_conic_eqn.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.4.4">(7.4.4)</a> to the conic <span class="process-math">\(\mathcal{C}'\)</span> with “standard equation” <a href="s_spectral_theorem.html#eq_conic_std" class="xref" data-knowl="./knowl/xref/eq_conic_std.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 7.4.6">(7.4.6)</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_spectral_theorem_ex-6-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.4.3.16"><a tabindex="-1" href="#s_spectral_theorem_ex-6-5" title="Copy heading and permalink for Exercise 7.4.3.16" aria-label="Copy heading and permalink for Exercise 7.4.3.16">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="s_spectral_theorem_ex-6-6"><h4 class="heading"><span class="codenumber">17<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para logical" id="s_spectral_theorem_ex-6-6-1-1">
+<div class="para">Let <span class="process-math">\(\mathcal{C}\subseteq\R^2\)</span> be the conic curve with equation</div>
+<div class="displaymath process-math" id="s_spectral_theorem_ex-6-6-1-1-2">
+\begin{equation*}
+x^2+4xy+y^2=1\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_spectral_theorem_ex-6-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<ol class="lower-alpha lower-alpha-level-1" id="s_spectral_theorem_ex-6-6-1-2">
+<li id="s_spectral_theorem_ex-6-6-1-2-1">
+<div class="para logical" id="s_spectral_theorem_ex-6-6-1-2-1-1">
+<div class="para">Find an angle <span class="process-math">\(\theta\)</span> and constants <span class="process-math">\(a,b\in \R\)</span> such that the rotation <span class="process-math">\(\rho_\theta\)</span> maps <span class="process-math">\(\mathcal{C}\)</span> to a conic <span class="process-math">\(\mathcal{C}'\)</span> with defining equation</div>
+<div class="displaymath process-math" id="s_spectral_theorem_ex-6-6-1-2-1-1-6">
+\begin{equation*}
+ax^2+by^2=1\text{.}
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_spectral_theorem_ex-6-6-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 7.4.3.17.a"><a tabindex="-1" href="#s_spectral_theorem_ex-6-6-1-2-1" title="Copy heading and permalink for Item 7.4.3.17.a" aria-label="Copy heading and permalink for Item 7.4.3.17.a">🔗</a></div>
+</li>
+<li id="s_spectral_theorem_ex-6-6-1-2-2">
+<div class="para" id="s_spectral_theorem_ex-6-6-1-2-2-1">First graph <span class="process-math">\(\mathcal{C}'\text{,}\)</span> and then graph <span class="process-math">\(\mathcal{C}\)</span> using the result of (a). What type of conics (parabolas, ellipses, hyperbolas) are <span class="process-math">\(\mathcal{C}\)</span> and <span class="process-math">\(\mathcal{C'}\)</span> ?<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_spectral_theorem_ex-6-6-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 7.4.3.17.b"><a tabindex="-1" href="#s_spectral_theorem_ex-6-6-1-2-2" title="Copy heading and permalink for Item 7.4.3.17.b" aria-label="Copy heading and permalink for Item 7.4.3.17.b">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise 7.4.3.17"><a tabindex="-1" href="#s_spectral_theorem_ex-6-6" title="Copy heading and permalink for Exercise 7.4.3.17" aria-label="Copy heading and permalink for Exercise 7.4.3.17">🔗</a></div>
+</article>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercise Group 7.4.3.13–17"><a tabindex="-1" href="#s_spectral_theorem_ex-6" title="Copy heading and permalink for Exercise Group 7.4.3.13–17" aria-label="Copy heading and permalink for Exercise Group 7.4.3.13–17">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Exercises 7.4.3"><a tabindex="-1" href="#s_spectral_theorem_ex" title="Copy heading and permalink for Exercises 7.4.3" aria-label="Copy heading and permalink for Exercises 7.4.3">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Section 7.4: The spectral theorem"><a tabindex="-1" href="#s_spectral_theorem" title="Copy heading and permalink for Section 7.4: The spectral theorem" aria-label="Copy heading and permalink for Section 7.4: The spectral theorem">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="s_orthogonal_projection.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="my-great-book-12.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

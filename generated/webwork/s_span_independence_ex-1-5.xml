@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_span_independence_ex-1-5" assembly-id="s_span_independence_ex-1-5">
+  <static seed="54" source="Library/Rochester/setLinearAlgebra9Dependence/ur_la_9_1b.pg">
+    <statement><p>Are the vectors <m>\left[\begin{array}{c}
+-4\cr
+-3\cr
+-3
+\end{array}\right]</m>, <m>\left[\begin{array}{c}
+3\cr
+-1\cr
+-4
+\end{array}\right]</m> and <m>\left[\begin{array}{c}
+-7\cr
+-15\cr
+-24
+\end{array}\right]</m> linearly independent?</p>
+<p><ul form="popup" name="AnSwEr0001"><li>
+<p>Choose</p>
+</li><li>
+<p>linearly dependent</p>
+</li><li>
+<p>linearly independent</p>
+</li></ul></p>
+<p>If they are linearly dependent, find scalars that are not all zero such that the equation below is true.
+If they are linearly independent, find the only scalars that will make the equation below true.</p>
+<p><fillin characters="5" name="AnSwEr0002"/> <m>\left[\begin{array}{c}
+-4\cr
+-3\cr
+-3
+\end{array}\right] +</m>
+<fillin characters="5" name="MuLtIaNsWeR_AnSwEr0002_1"/> <m>\left[\begin{array}{c}
+3\cr
+-1\cr
+-4
+\end{array}\right] +</m>
+<fillin characters="5" name="MuLtIaNsWeR_AnSwEr0002_2"/> <m>\left[\begin{array}{c}
+-7\cr
+-15\cr
+-24
+\end{array}\right] =</m>
+<m>\left[\begin{array}{c}
+0\cr
+0\cr
+0
+\end{array}\right]</m>.</p>
+</statement>
+    <answer>
+      <p>
+        <m>\text{linearly dependent}</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>-4;\,-3;\,1</m>
+      </p>
+    </answer>
+  </static>
+  <rendering-data sourceFilePath="Library/Rochester/setLinearAlgebra9Dependence/ur_la_9_1b.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/Rochester/setLinearAlgebra9Dependence/ur_la_9_1b.pg"/>
+</webwork-reps>

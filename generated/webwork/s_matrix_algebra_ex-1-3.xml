@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_matrix_algebra_ex-1-3" assembly-id="s_matrix_algebra_ex-1-3">
+  <static seed="33" source="Library/Utah/Business_Algebra/set10_Matrices/p17.pg">
+    <statement><p>Let <m>A</m> be a  4 by 8 matrix. Then <m>-A</m> is a <fillin characters="5" name="AnSwEr0001"/> by
+<fillin characters="5" name="AnSwEr0002"/> matrix, and <m>A^T</m> is a <fillin characters="5" name="AnSwEr0003"/> by <fillin characters="5" name="AnSwEr0004"/>
+matrix.</p>
+</statement>
+    <answer>
+      <p>
+        <m>4</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>8</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>8</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>4</m>
+      </p>
+    </answer>
+  </static>
+  <rendering-data sourceFilePath="Library/Utah/Business_Algebra/set10_Matrices/p17.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/Utah/Business_Algebra/set10_Matrices/p17.pg"/>
+</webwork-reps>

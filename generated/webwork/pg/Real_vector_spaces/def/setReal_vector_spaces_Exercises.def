@@ -1,6 +1,6 @@
-openDate          = 08/04/2026 at 12:00am
-dueDate           = 02/04/2027 at 10:00pm
-answerDate        = 02/04/2027 at 10:00pm
+openDate          = 01/01/2027 at 12:00am
+dueDate           = 12/31/2027 at 10:00pm
+answerDate        = 12/31/2027 at 10:00pm
 paperHeaderFile   = Real_vector_spaces/header/Real_vector_spaces_Exercises.pg
 screenHeaderFile  = Real_vector_spaces/header/Real_vector_spaces_Exercises.pg
 description       = Real vector spaces
@@ -60,4 +60,260 @@ problem_end
 problem_start
 source_file = Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.41_47a.pg
 problem_id = 3
+problem_end
+problem_start
+source_file = Library/TCNJ/TCNJ_IntroLinearTransformations/problem17.pg
+problem_id = 1
+problem_end
+problem_start
+source_file = Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_18.pg
+problem_id = 2
+problem_end
+problem_start
+source_file = Library/Rochester/setLinearAlgebra14TransfOfRn/ur_la_14_30.pg
+problem_id = 3
+problem_end
+problem_start
+source_file = Library/TCNJ/TCNJ_IntroLinearTransformations/problem15.pg
+problem_id = 4
+problem_end
+problem_start
+source_file = Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_20.pg
+problem_id = 5
+problem_end
+problem_start
+source_file = Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.1.34.pg
+problem_id = 1
+problem_end
+problem_start
+source_file = Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.1.36.pg
+problem_id = 2
+problem_end
+problem_start
+source_file = Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.1.48.pg
+problem_id = 3
+problem_end
+problem_start
+source_file = Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.1.35.pg
+problem_id = 4
+problem_end
+problem_start
+source_file = Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.1.49.pg
+problem_id = 5
+problem_end
+problem_start
+source_file = Library/TCNJ/TCNJ_MatrixLinearTransformation/problem16.pg
+problem_id = 6
+problem_end
+problem_start
+source_file = Library/TCNJ/TCNJ_MatrixLinearTransformation/problem25.pg
+problem_id = 7
+problem_end
+problem_start
+source_file = Library/TCNJ/TCNJ_MatrixLinearTransformation/problem17.pg
+problem_id = 8
+problem_end
+problem_start
+source_file = Library/TCNJ/TCNJ_MatrixLinearTransformation/problem23.pg
+problem_id = 9
+problem_end
+problem_start
+source_file = Library/TCNJ/TCNJ_MatrixLinearTransformation/problem22.pg
+problem_id = 10
+problem_end
+problem_start
+source_file = Library/TCNJ/TCNJ_MatrixLinearTransformation/problem26.pg
+problem_id = 11
+problem_end
+problem_start
+source_file = Library/TCNJ/TCNJ_IntroLinearTransformations/problem23.pg
+problem_id = 12
+problem_end
+problem_start
+source_file = Library/TCNJ/TCNJ_IntroLinearTransformations/problem11.pg
+problem_id = 13
+problem_end
+problem_start
+source_file = Library/Rochester/setLinearAlgebra10Bases/ur_la_10_2.pg
+problem_id = 1
+problem_end
+problem_start
+source_file = Library/Rochester/setLinearAlgebra10Bases/ur_la_10_34.pg
+problem_id = 2
+problem_end
+problem_start
+source_file = Library/NAU/setLinearAlgebra/coordinatesHalfMagix.pg
+problem_id = 3
+problem_end
+problem_start
+source_file = Library/Rochester/setLinearAlgebra10Bases/ur_la_10_6.pg
+problem_id = 4
+problem_end
+problem_start
+source_file = Library/TCNJ/TCNJ_MatrixLinearTransformation/problem10.pg
+problem_id = 1
+problem_end
+problem_start
+source_file = Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_9.pg
+problem_id = 2
+problem_end
+problem_start
+source_file = Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_4.pg
+problem_id = 3
+problem_end
+problem_start
+source_file = Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_6.pg
+problem_id = 4
+problem_end
+problem_start
+source_file = Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_5.pg
+problem_id = 5
+problem_end
+problem_start
+source_file = Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_13.pg
+problem_id = 6
+problem_end
+problem_start
+source_file = Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_15.pg
+problem_id = 7
+problem_end
+problem_start
+source_file = Library/NAU/setLinearAlgebra/similar2.pg
+problem_id = 8
+problem_end
+problem_start
+source_file = Library/NAU/setLinearAlgebra/R2BasisTrans.pg
+problem_id = 1
+problem_end
+problem_start
+source_file = Library/NAU/setLinearAlgebra/Trace0BasisTrans.pg
+problem_id = 2
+problem_end
+problem_start
+source_file = Library/Hope/Multi1/04-04-Basis-and-functions/Matrix_rep_04.pg
+problem_id = 3
+problem_end
+problem_start
+source_file = Library/Hope/Multi1/04-04-Basis-and-functions/Matrix_rep_06.pg
+problem_id = 4
+problem_end
+problem_start
+source_file = Library/Hope/Multi1/04-04-Basis-and-functions/Matrix_rep_07.pg
+problem_id = 5
+problem_end
+problem_start
+source_file = Library/TCNJ/TCNJ_Eigenvalues/problem3.pg
+problem_id = 1
+problem_end
+problem_start
+source_file = Library/TCNJ/TCNJ_Eigenvalues/problem13.pg
+problem_id = 2
+problem_end
+problem_start
+source_file = Library/TCNJ/TCNJ_CharacteristicPolynomial/problem4.pg
+problem_id = 3
+problem_end
+problem_start
+source_file = Library/Rochester/setLinearAlgebra11Eigenvalues/ur_la_11_13.pg
+problem_id = 4
+problem_end
+problem_start
+source_file = Library/Rochester/setLinearAlgebra11Eigenvalues/ur_la_11_26.pg
+problem_id = 5
+problem_end
+problem_start
+source_file = Library/Rochester/setLinearAlgebra11Eigenvalues/ur_la_11_27.pg
+problem_id = 6
+problem_end
+problem_start
+source_file = Library/TCNJ/TCNJ_Diagonalization/problem4.pg
+problem_id = 1
+problem_end
+problem_start
+source_file = Library/NAU/setLinearAlgebra/diag3x3.pg
+problem_id = 2
+problem_end
+problem_start
+source_file = Library/NAU/setLinearAlgebra/similarB.pg
+problem_id = 3
+problem_end
+problem_start
+source_file = Library/Hope/Multi1/05-04-Diagonalization/DiagR_05.pg
+problem_id = 4
+problem_end
+problem_start
+source_file = Library/Rochester/setLinearAlgebra17DotProductRn/ur_la_17_2.pg
+problem_id = 1
+problem_end
+problem_start
+source_file = Library/Rochester/setLinearAlgebra17DotProductRn/ur_la_17_3.pg
+problem_id = 2
+problem_end
+problem_start
+source_file = Library/Rochester/setLinearAlgebra21InnerProductSpaces/ur_la_21_4.pg
+problem_id = 3
+problem_end
+problem_start
+source_file = Library/Rochester/setLinearAlgebra21InnerProductSpaces/ur_la_21_3.pg
+problem_id = 4
+problem_end
+problem_start
+source_file = Library/Rochester/setLinearAlgebra21InnerProductSpaces/ur_la_21_5.pg
+problem_id = 5
+problem_end
+problem_start
+source_file = Library/Mizzou/Matrix_Theory/HW_6/prob_1.pg
+problem_id = 1
+problem_end
+problem_start
+source_file = Library/Rochester/setLinearAlgebra18OrthogonalBases/ur_la_18_2.pg
+problem_id = 2
+problem_end
+problem_start
+source_file = Library/Rochester/setLinearAlgebra18OrthogonalBases/ur_la_18_5.pg
+problem_id = 3
+problem_end
+problem_start
+source_file = Library/Rochester/setLinearAlgebra18OrthogonalBases/ur_la_18_8.pg
+problem_id = 4
+problem_end
+problem_start
+source_file = Library/Rochester/setLinearAlgebra18OrthogonalBases/ur_la_18_7.pg
+problem_id = 5
+problem_end
+problem_start
+source_file = Library/TCNJ/TCNJ_OrthogonalSets/problem2.pg
+problem_id = 1
+problem_end
+problem_start
+source_file = Library/TCNJ/TCNJ_OrthogonalSets/problem4.pg
+problem_id = 2
+problem_end
+problem_start
+source_file = Library/Mizzou/Matrix_Theory/HW_5/prob_3.pg
+problem_id = 3
+problem_end
+problem_start
+source_file = Library/Rochester/setLinearAlgebra10Bases/ur_la_10_18.pg
+problem_id = 4
+problem_end
+problem_start
+source_file = Library/Rochester/setLinearAlgebra18OrthogonalBases/ur_la_18_5.pg
+problem_id = 5
+problem_end
+problem_start
+source_file = Library/Rochester/setLinearAlgebra20LeastSquares/ur_la_20_1.pg
+problem_id = 6
+problem_end
+problem_start
+source_file = Library/METU-NCC/Applied_Math/least-squares/line.pg
+problem_id = 7
+problem_end
+problem_start
+source_file = Library/METU-NCC/Applied_Math/least-squares/parabola.pg
+problem_id = 8
+problem_end
+problem_start
+source_file = Library/NAU/setLinearAlgebra/diag3x3ortho.pg
+problem_id = 1
 problem_end

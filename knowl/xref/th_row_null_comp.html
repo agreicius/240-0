@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: blue-green                   *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h2 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.3.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Fundamental spaces and orthogonal complements.</span>
+</h2>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(A\)</span> be <span class="process-math">\(m\times n\text{,}\)</span> and consider <span class="process-math">\(\R^n\)</span> and <span class="process-math">\(\R^m\)</span> as inner product spaces with respect to the dot product. Then:</div>
+<ol class="decimal" id="th_row_null_comp-2-1-5">
+<li>
+<div class="para">
+<span class="process-math">\(\NS(A)=\left(\RS(A)\right)^\perp\text{,}\)</span> and thus <span class="process-math">\(\RS(A)=\left(\NS(A)\right)^\perp\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_row_null_comp-2-1-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#th_row_null_comp-2-1-5-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li>
+<div class="para">
+<span class="process-math">\(\NS(A^T)=\left(\CS(A)\right)^\perp\text{,}\)</span> and thus <span class="process-math">\(\CS(A)=\left(\NS(A^T)\right)^\perp\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_row_null_comp-2-1-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#th_row_null_comp-2-1-5-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_row_null_comp-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 7.3.7: Fundamental spaces and orthogonal complements"><a tabindex="-1" href="#th_row_null_comp" title="Copy heading and permalink for Theorem 7.3.7: Fundamental spaces and orthogonal complements" aria-label="Copy heading and permalink for Theorem 7.3.7: Fundamental spaces and orthogonal complements">🔗</a></div>
+</article>
+<details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h2 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2></summary>
+<article class="hiddenproof knowl__content">
+<ol class="decimal" id="th_row_null_comp-3-1">
+<li>
+<div class="para">Using the dot product method of matrix multiplication, we see that a vector <span class="process-math">\(\boldx\in\NS(A)\)</span> if and only if <span class="process-math">\(\boldx\cdot\boldr_i=0\)</span> for each row <span class="process-math">\(\boldr_i\)</span> of <span class="process-math">\(A\text{,}\)</span> if and only if <span class="process-math">\(\boldx\cdot \boldw=0\)</span> for all <span class="process-math">\(\boldw\in \Span \{\boldr_1, \boldr_2, \dots, \boldr_m\}=\RS A\)</span> (see <a href="s_orthogonal_projection.html#rm_computing_ortho_comp" class="xref" data-knowl="./knowl/xref/rm_computing_ortho_comp.html" data-reveal-label="Reveal" data-close-label="Close" title="Remark 7.3.2: Computing W^\perp">Remark 7.3.2</a>), if and only if <span class="process-math">\(\boldx\in (\RS A)^\perp\text{.}\)</span> This shows <span class="process-math">\(\NS A=(\RS A)^\perp\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_row_null_comp-3-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para">We can use <a href="s_orthogonal_projection.html#cor_orthocomp_selfdual" class="xref" data-knowl="./knowl/xref/cor_orthocomp_selfdual.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 7.3.22: Complement of a complement">Corollary 7.3.22</a> to conclude <span class="process-math">\(\RS A=(\NS A)^\perp\text{.}\)</span> Alternatively, and more directly, the argument above shows that <span class="process-math">\(\boldw\in \RS A\implies \boldw\in (\NS A)^\perp\text{,}\)</span> proving <span class="process-math">\(\RS A\subseteq (\NS A)^\perp\text{.}\)</span> Next, by the rank-nullity theorem we have <span class="process-math">\(\dim \RS A=n-\dim\NS A\text{;}\)</span> and by <a href="s_orthogonal_projection.html#th_orthogonal_complement" class="xref" data-knowl="./knowl/xref/th_orthogonal_complement.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.3.5: Orthogonal complement">Theorem 7.3.5</a> we have <span class="process-math">\(\dim (\NS A)^\perp=n-\dim\NS A\text{.}\)</span> It follows that <span class="process-math">\(\dim\RS A=\dim (\NS A)^\perp\text{.}\)</span> Since <span class="process-math">\(\RS A\subseteq (\NS A)^\perp\)</span> and <span class="process-math">\(\dim \RS A=\dim (\NS A)^\perp\text{,}\)</span> we conclude by <a href="s_dimension.html#cor_dimension_subspace" class="xref" data-knowl="./knowl/xref/cor_dimension_subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 4.4.16: Dimension of subspaces">Corollary 4.4.16</a> that <span class="process-math">\(\RS A=(\NS A)^\perp\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_row_null_comp-3-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1"><a tabindex="-1" href="#th_row_null_comp-3-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li>
+<div class="para">This follows from (1) and the fact that <span class="process-math">\(\CS(A)=\RS(A^T)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_row_null_comp-3-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#th_row_null_comp-3-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 7.3.7.1"><a tabindex="-1" href="#th_row_null_comp-3" title="Copy heading and permalink for Proof 7.3.7.1" aria-label="Copy heading and permalink for Proof 7.3.7.1">🔗</a></div>
+</article></details><span class="incontext"><a class="internal" href="s_orthogonal_projection.html#th_row_null_comp">In Context</a></span>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette: blue-green                   *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7.1.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Weighted dot product distance.</span>
+</h2>
+<div class="para logical">
+<div class="para">Consider <span class="process-math">\(\R^n\)</span> with a choice of weighted dot product</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\langle (x_1,x_2,\dots, x_n), (y_1,y_2,\dots, y_n)\rangle=k_1x_1y_1+k_2x_2y_2+\cdots +k_nx_ny_n,
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(k_1,k_2,\dots, k_n\)</span> are fixed positive constants. With respect to this inner product the distance between two vectors <span class="process-math">\(\boldx=(x_1,x_2,\dots, x_n)\)</span> and <span class="process-math">\(\boldy=(y_1,y_2,\dots, y_n)\)</span> is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+d(\boldx,\boldy)=\norm{\boldx-\boldy}=\sqrt{k_1(x_1-y_1)^2+k_2(x_2-y_2)^2+\cdots +k_n(x_n-y_n)^2}\text{.}
+\end{equation*}
+</div>
+<div class="para">Thus <span class="process-math">\(d(\boldx, \boldy)\)</span> is an aggregate measure of the difference between the corresponding entries of <span class="process-math">\(\boldx\)</span> and <span class="process-math">\(\boldy\text{,}\)</span> as weighted by our choice of the constants <span class="process-math">\(k_i\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_why_weightedproduct-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para">Imagine that each element of <span class="process-math">\(\boldx\in \R^n\)</span> is a data point collected by measuring <span class="process-math">\(n\)</span> different properties of a sample <span class="process-math">\(s\)</span> : i.e., <span class="process-math">\(x_i\)</span> is the measured value of property <span class="process-math">\(P_i\)</span> on <span class="process-math">\(s\)</span> for all <span class="process-math">\(1\leq i\leq n\text{.}\)</span>  Given samples <span class="process-math">\(s\)</span> and <span class="process-math">\(s'\)</span> with corresponding measurement vectors <span class="process-math">\(\boldx\)</span> and <span class="process-math">\(\boldy\text{,}\)</span> the weighted distance <span class="process-math">\(d(\boldx,\boldy)\)</span> is then a quantitative way of saying how “close” the two samples are to one another. The choice of weights <span class="process-math">\(k_i\)</span> allows us to adjust the relative influence of a given property <span class="process-math">\(P_i\)</span> in determining this closeness. For example, the standard dot product (<span class="process-math">\(k_i=1\)</span> for all <span class="process-math">\(i\)</span>) yields a notion of distance that gives each property equal standing.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#eg_why_weightedproduct-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 7.1.15: Weighted dot product distance"><a tabindex="-1" href="#eg_why_weightedproduct" title="Copy heading and permalink for Example 7.1.15: Weighted dot product distance" aria-label="Copy heading and permalink for Example 7.1.15: Weighted dot product distance">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="s_innerproducts.html#eg_why_weightedproduct">In Context</a></span>
+</body>
+</html>

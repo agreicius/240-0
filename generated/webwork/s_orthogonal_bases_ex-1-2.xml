@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_orthogonal_bases_ex-1-2" assembly-id="s_orthogonal_bases_ex-1-2">
+  <static seed="115" source="Library/Mizzou/Matrix_Theory/HW_6/prob_1.pg">
+    <statement><p>Let <m>{ \mathbf{u}_1, \mathbf{u}_2, \mathbf{u}_3 }</m> be an orthonormal basis for an inner product space <m>V</m>. If</p>
+<p><me>\mathbf{v} = a \mathbf{u}_1 + b \mathbf{u}_2 + c \mathbf{u}_3</me></p>
+<p>is so that <m>\|\mathbf{v}\| = 91</m>, <m>\mathbf{v}</m> is orthogonal to <m>\mathbf{u}_3</m>, and <m>\langle \mathbf{v},\mathbf{u}_2 \rangle = -91</m>, find the possible values for <m>a</m>, <m>b</m>, and <m>c</m>.</p>
+<p><m>a =</m> <fillin characters="10" name="AnSwEr0001"/>, <m>b =</m> <fillin characters="10" name="AnSwEr0002"/>, <m>c =</m> <fillin characters="10" name="AnSwEr0003"/></p>
+</statement>
+    <answer>
+      <p>
+        <m>0</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>-91</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>0</m>
+      </p>
+    </answer>
+    <solution><p><alert>Solution:</alert> One checks by direct computation that</p>
+<p><m>a = 0</m>, <m>b = -91</m>, <m>c = 0</m></p>
+<p>must hold.</p>
+</solution>
+  </static>
+  <rendering-data sourceFilePath="Library/Mizzou/Matrix_Theory/HW_6/prob_1.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/Mizzou/Matrix_Theory/HW_6/prob_1.pg"/>
+</webwork-reps>

@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_eigenvectors_ex-1-5" assembly-id="s_eigenvectors_ex-1-5">
+  <static seed="103" source="Library/Rochester/setLinearAlgebra11Eigenvalues/ur_la_11_13.pg">
+    <statement><p>Suppose a <m>3\times 3</m> matrix <m>A</m> has only two distinct eigenvalues. Suppose that <m>{\rm tr}(A)=-1</m> and 
+<m>{\rm det}(A)=112</m>. Find the eigenvalues of <m>A</m> with their algebraic multiplicities.</p>
+<p>The smaller eigenvalue = <fillin characters="5" name="AnSwEr0001"/> has multiplicity <fillin characters="5" name="AnSwEr0002"/>, and</p>
+<p>the larger eigenvalue = <fillin characters="5" name="AnSwEr0003"/> has multiplicity <fillin characters="5" name="AnSwEr0004"/>.</p>
+</statement>
+    <answer>
+      <p>
+        <m>-4</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>2</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>7</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>1</m>
+      </p>
+    </answer>
+  </static>
+  <rendering-data sourceFilePath="Library/Rochester/setLinearAlgebra11Eigenvalues/ur_la_11_13.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/Rochester/setLinearAlgebra11Eigenvalues/ur_la_11_13.pg"/>
+</webwork-reps>

@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_orthogonal_projection_ex-1-9" assembly-id="s_orthogonal_projection_ex-1-9">
+  <static seed="127" source="Library/METU-NCC/Applied_Math/least-squares/parabola.pg">
+    <statement><p>By using the method of least squares, find the best parabola through the 
+points:</p>
+<p><m>(2, -3)</m>,   
+<m>(1, 1)</m>,   
+<m>(0, -3)</m>,   
+<m>(-1, 0)</m></p>
+<p><alert> Step 1.</alert>  The general equation of a parabola is 
+ <m>c_0 + c_1x + c_2x^2 = y</m>.  Plugging the data points into this formula 
+gives a matrix equation <m>\mathrm{A}\mathbf{c} = \mathbf{y}</m>.</p>
+<p><fillin cols="3" rows="4"/> <m>\left[\begin{matrix}c_0\\c_1\\c_2\end{matrix}\right]</m>
+   <m>=</m>  <fillin rows="4"/></p>
+<p><alert> Step 2.</alert> The matrix equation 
+<m>\mathrm{A}\mathbf{c} = \mathbf{y}</m> has 
+no solution, so instead we use the <alert>normal equation</alert>
+<m>\mathrm{A^T} \mathrm{A}\, \hat{\mathbf{c}} = \mathrm{A^T} \mathbf{y}</m></p>
+<p><m>\mathrm{A^T} \mathrm{A} =</m> <fillin cols="3" rows="3"/></p>
+<p><m>\mathrm{A^T} \mathbf{y} =</m> <fillin rows="3"/></p>
+<p><alert> Step 3.</alert> Solving the normal equation gives the answer</p>
+<p><m>\hat{\mathbf{c}} =</m> <fillin rows="3"/></p>
+<p>which corresponds to the formula</p>
+<p><m>y =</m> <fillin characters="50" name="AnSwEr0006"/></p>
+</statement>
+    <answer>
+      <p>
+        <m>-0.75+\left(-0.25\right)x+\left(-0.25\right)x^{2}</m>
+      </p>
+    </answer>
+  </static>
+  <rendering-data sourceFilePath="Library/METU-NCC/Applied_Math/least-squares/parabola.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/METU-NCC/Applied_Math/least-squares/parabola.pg"/>
+</webwork-reps>

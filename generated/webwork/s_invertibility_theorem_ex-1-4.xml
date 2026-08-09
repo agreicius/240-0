@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_invertibility_theorem_ex-1-4" assembly-id="s_invertibility_theorem_ex-1-4">
+  <static seed="42" source="Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p09.pg">
+    <statement><p>Let</p>
+<p><me>A=\left(\begin{array}{cc} 
+            4 \amp  -4 \cr
+	    3 \amp  4
+	   \end{array}\right)</me></p>
+<p>Find <m>A^{-1}</m> and use it to solve <me>AX=B</me> where</p>
+<p><me>B=\left(\begin{array}{c} 
+            3 \cr
+	    5
+	   \end{array}\right)</me></p>
+<p><me>X=\left(\begin{array}{c} 
+            x_{1} \cr
+	    x_{2} 
+	    \end{array}\right)</me></p>
+<p>where <m>x_{1}=</m> <fillin characters="5" name="AnSwEr0001"/> and <m>x_{2}=</m> <fillin characters="5" name="AnSwEr0002"/>.</p>
+</statement>
+    <answer>
+      <p>
+        <m>1.14285714285714</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>0.392857142857143</m>
+      </p>
+    </answer>
+  </static>
+  <rendering-data sourceFilePath="Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p09.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p09.pg"/>
+</webwork-reps>

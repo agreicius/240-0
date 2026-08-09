@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_eigenvectors_ex-1-3" assembly-id="s_eigenvectors_ex-1-3">
+  <static seed="101" source="Library/TCNJ/TCNJ_Eigenvalues/problem13.pg">
+    <statement><p>Find the eigenvalues <m>\lambda_1 \lt  \lambda_2 \lt  \lambda_3</m> and corresponding eigenvectors of the matrix
+<me>A = \left[\begin{array}{ccc}
+-4 \amp 20 \amp 44\cr
+0 \amp 0 \amp -4\cr
+0 \amp 0 \amp 4
+\end{array}\right].</me></p>
+<p>The eigenvalue
+<m>\lambda_1 =</m><fillin characters="5" name="AnSwEr0001"/> corresponds to the eigenvector <fillin rows="3"/>.</p>
+<p>The eigenvalue
+<m>\lambda_2 =</m><fillin characters="5" name="AnSwEr0003"/> corresponds to the eigenvector <fillin rows="3"/>.</p>
+<p>The eigenvalue
+<m>\lambda_3 =</m><fillin characters="5" name="AnSwEr0005"/> corresponds to the eigenvector <fillin rows="3"/>.</p>
+</statement>
+    <answer>
+      <p>
+        <m>-4</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>0</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>4</m>
+      </p>
+    </answer>
+  </static>
+  <rendering-data sourceFilePath="Library/TCNJ/TCNJ_Eigenvalues/problem13.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/TCNJ/TCNJ_Eigenvalues/problem13.pg"/>
+</webwork-reps>
