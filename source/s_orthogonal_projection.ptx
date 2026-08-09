@@ -1,0 +1,1170 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_orthogonal_projection">
+  <title>Orthogonal projection</title>
+  <introduction>
+    <p>
+      A trick we learn early on in physics-- specifically, in dynamics problems in <m>\R^2</m>-- is to pick a convenient axis and then decompose any relevant vectors (force, acceleration, velocity, position, <etc />) into a sum of two components: one that points along the chosen axis, and one that points perpendicularly to it. As we will see in this section, this technique can be vastly generalized. Namely, instead of <m>\R^2</m> we  can take any inner product space <m>(V, \langle\, , \rangle)</m>; and instead of a chosen axis in <m>\R^2</m>, we can choose any finite-dimensional subspace <m>W\subseteq V</m>; then any <m>\boldv\in V</m> can be decomposed in the form
+    <md>
+      \boldv=\boldw+\boldw^\perp,
+    </md>
+    where <m>\boldw\in W</m> and <m>\boldw^\perp</m> is a vector <em>orthogonal</em> to <m>W</m>, in a sense we will make precise below. Just as in our toy physics example, this manner of decomposing vectors helps simplify computations in problems where the subspace <m>W</m> chosen is of central importance.
+  </p>
+  </introduction>
+  <subsection xml:id="ss_ortho_complement">
+  <title>Orthogonal complement</title>
+  <introduction>
+    <p>
+      We begin by making sense of what it means for a vector to be orthogonal to a subspace.
+    </p>
+  </introduction>
+  <definition xml:id="d_orthogonal_complement">
+    <title>Orthogonal complement</title>
+    <idx><h>orthogonal</h><h>complement (of a subspace)</h></idx>
+    <notation>
+      <usage><m>W^\perp</m></usage>
+      <description>the orthogonal complement of <m>W</m></description>
+    </notation>
+    <statement>
+      <p>.
+        Let <m>(V,\langle \ , \rangle)</m> be an inner product vector space,
+        and let <m>W\subseteq V</m> be a subspace.
+      </p>
+      <p>
+        A vector <m>\boldv</m> is <term>orthogonal</term> to <m>W</m> if it is orthogonal to every element of <m>W</m>:<ie />, if <m>\langle \boldv, \boldw\rangle=0</m> for all <m>\boldw\in W</m>.
+      </p>
+      <p>
+        The <term>orthogonal complement</term> of <m>W</m>, denoted <m>W^\perp</m>, is the set of all elements of <m>V</m> orthogonal to <m>W</m>: <ie />,
+        <md>
+          W^\perp=\{\boldv\in V\colon \langle \boldv, \boldw\rangle=0 \text{ for all } \boldw\in W\}
+        </md>.
+      </p>
+    </statement>
+  </definition>
+      <remark xml:id="rm_computing_ortho_comp">
+        <title>Computing <m>W^\perp</m></title>
+    <p>
+      According to <xref ref="d_orthogonal_complement"/>, to verify that a vector <m>\boldv</m> lies in <m>W^\perp</m>, we must show that <m>\langle \boldv, \boldw\rangle=0</m> for all <m>\boldw\in W</m>. The <q>for all</q> quantifier here can potentially make this an onerous task: there are in principle infinitely many <m>\boldw</m> to check! In the special case where <m>W</m> has a finite spanning set, so that <m> W=\Span \{\boldw_1, \boldw_2,\dots, \boldw_r\}</m> for some vectors <m>\boldw_i</m>, deciding whether <m>\boldv\in W^\perp</m> reduces to checking whether <m>\langle \boldv, \boldw_i\rangle=0</m> for all <m>1\leq i\leq r</m>. In other words, we have
+      <md>
+        \boldv\in W^\perp\iff \langle \boldv, \boldw_i\rangle=0 \text{ for all } 1\leq i\leq r
+      </md>.
+      The forward implication of this equivalence is clear: if <m>\boldv</m> is orthogonal to all elements of <m>W</m>, then clearly it is orthogonal to each <m>\boldw_i</m>. The reverse implication is left as an exercise. (See <xref ref="ex_ortho_comp"/>.)
+    </p>
+    <p>
+      We illustrate this computational technique in the next examples.
+    </p>
+  </remark>
+
+  <example xml:id="eg_ortho_comp_line">
+    <statement>
+      <p>
+        Consider the inner product space <m>\R^2</m> together with the dot product. Let <m>W=\Span\{(1,1)\}=\{(t,t)\colon t\in \R\}</m>: the line <m>\ell\subseteq \R^2</m> with equation <m>y=x</m>. Compute <m>W^\perp</m> and identify it as a familiar geometric object in <m>\R^2</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        According to <xref ref="rm_computing_ortho_comp"/>, since <m>W=\Span\{(1,1)\}</m>, we have
+        <md>
+          \boldx\in W^\perp \iff \boldx\cdot (1,1)=0
+        </md>.
+        Letting <m>\boldx=(x,y)</m>, we see that <m>\boldx\cdot (1,1)=0</m> if and only if <m>x+y=0</m>, if and only if <m>y=-x</m>. Thus <m>W^\perp=\{(x,y)\colon y=-x\}</m> is the line <m>\ell'\subseteq \R^2</m> with equation <m>y=-x</m>. Observe that the lines <m>\ell</m> and <m>\ell'</m> are indeed perpendicular to one another. (Graph them!)
+      </p>
+    </solution>
+  </example>
+  <example xml:id="eg_ortho_comp_plane">
+    <statement>
+      <p>
+        Consider the inner product space <m>\R^3</m> together with the dot product. Let <m>W\subseteq \R^3</m> be the plane with equation <m>x-2y-z=0</m>.  Compute <m>W^\perp</m> and identify this as a familiar geometric object in <m>\R^3</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        First, solving <m>x-2y-z=0</m> for <m>(x,y,z)</m>, we see that
+        <md>
+          W=\{(2s+t,s,t)\colon s,t\in \R\}=\Span\{(2,1,0),(1,0,1)\}
+        </md>.
+        Next, according to <xref ref="rm_computing_ortho_comp"/> we have
+        <md>
+          \boldx\in W^\perp\iff \boldx\cdot (2,1,0)=0 \text{ and } \boldx\cdot (1,0,1)=0
+        </md>.
+       It follows that <m>W^\perp</m> is the set of vectors <m>\boldx=(x,y,z)</m> satisfying the linear system
+       <md>
+         \begin{linsys}{3}
+         2x\amp +\amp y \amp \amp  \amp = \amp 0\\
+         x\amp \amp  \amp +\amp z \amp = \amp 0
+       \end{linsys}.
+       </md>
+       Solving this system using Gaussian elimination we conclude that
+       <md>
+       W^\perp=\{(t,-2t,-t)\colon t\in \R\}=\Span\{(1,-2,-1)\}
+       </md>,
+       which we recognize as the line <m>\ell\subseteq \R^3</m> passing through the origin with direction vector <m>(1,-2,-1)</m>. This is none other than the normal line to the plane <m>W</m> passing through the origin.
+      </p>
+    </solution>
+  </example>
+  <theorem xml:id="th_orthogonal_complement">
+    <title>Orthogonal complement</title>
+    <statement>
+      <p>
+        Let <m>(V,\langle \ , \rangle)</m> be an inner product vector space,
+        and let <m>W\subseteq V</m> be a subspace.
+        <ol>
+          <li>
+            <p>
+              The orthogonal complement <m>W^\perp</m> is a subspace of <m>V</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              We have <m>W\cap W^\perp=\{\boldzero\}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>\dim V=n\lt \infty</m> then
+              <md>
+                \dim W+\dim W^\perp=n
+              </md>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <proof>
+      <p>
+        The proof is left as an exercise. (See <xref first="ex_orthocomp_subspace" last="ex_orthocomp_dim"/>.)
+      </p>
+    </proof>
+  </theorem>
+  <example>
+    <statement>
+      <p>
+        Consider the inner product space <m>\R^3</m> with the dot product. Let <m>W=\Span\{(1,1,1)\}\subset \R^3</m>, the line
+        passing through the origin with direction vector <m>(1,1,1)</m>.
+        The orthogonal complement <m>W^\perp</m> is the set of vectors orthogonal to <m>(1,1,1)</m>. Using the definition of dot product, this is the set of solutions <m>(x,y,z)</m> to the equation
+        <md>
+          x+y+z=0
+        </md>,
+          which we recognize as the plane passing through the origin with normal vector <m>(1,1,1)</m>. Note that we have
+          <md>
+            \dim W+\dim W^\perp=1+2=3,
+          </md>
+          as predicted in <xref ref="th_orthogonal_complement"/>.
+
+      </p>
+    </statement>
+  </example>
+    <p>
+      The notion of orthogonal complement gives us a more conceptual way of understanding the relationship between the various fundamental spaces of a matrix.
+    </p>
+    <theorem xml:id="th_row_null_comp">
+      <title>Fundamental spaces and orthogonal complements</title>
+      <statement>
+        <p>
+          Let <m>A</m> be <m>m\times n</m>,
+          and consider <m>\R^n</m> and <m>\R^m</m> as inner product spaces with respect to the dot product.
+          Then:
+          <ol>
+            <li>
+              <p>
+                <m>\NS(A)=\left(\RS(A)\right)^\perp</m>,
+                and thus <m>\RS(A)=\left(\NS(A)\right)^\perp</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\NS(A^T)=\left(\CS(A)\right)^\perp</m>,
+                and thus <m>\CS(A)=\left(\NS(A^T)\right)^\perp</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <proof>
+        <ol>
+          <li>
+            <p>
+              Using the dot product method of matrix multiplication,
+              we see that a vector <m>\boldx\in\NS(A)</m> if and only if
+              <m>\boldx\cdot\boldr_i=0</m> for each row <m>\boldr_i</m> of <m>A</m>, if and only if <m>\boldx\cdot \boldw=0</m> for all <m>\boldw\in \Span \{\boldr_1, \boldr_2, \dots, \boldr_m\}=\RS A</m> (see <xref ref="rm_computing_ortho_comp"/>), if and only if <m>\boldx\in (\RS A)^\perp</m>. This shows <m>\NS A=(\RS A)^\perp</m>.
+            </p>
+            <p>
+              We can use <xref ref="cor_orthocomp_selfdual"/> to conclude <m>\RS A=(\NS A)^\perp</m>. Alternatively, and more directly, the argument above shows that <m>\boldw\in \RS A\implies \boldw\in (\NS A)^\perp</m>, proving <m>\RS A\subseteq (\NS A)^\perp</m>. Next, by the rank-nullity theorem we have <m>\dim \RS A=n-\dim\NS A</m>; and by <xref ref="th_orthogonal_complement"/> we have <m>\dim (\NS A)^\perp=n-\dim\NS A</m>. It follows that <m>\dim\RS A=\dim (\NS A)^\perp</m>. Since <m>\RS A\subseteq (\NS A)^\perp</m> and <m>\dim \RS A=\dim (\NS A)^\perp</m>, we conclude by <xref ref="cor_dimension_subspace"/> that <m>\RS A=(\NS A)^\perp</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              This follows from (1) and the fact that <m>\CS(A)=\RS(A^T)</m>.
+            </p>
+          </li>
+        </ol>
+      </proof>
+    </theorem>
+
+    <example>
+      <statement>
+        <p>
+          Understanding the orthogonal relationship between <m>\NS A </m> and <m>\RS A</m> allows us in many cases to quickly determine/visualize the one from the other. As an example, consider <m>A=\begin{bmatrix}1\amp -1\amp 1\\ 1\amp -1\amp -1 \end{bmatrix}</m>. Looking at the columns, we see easily that <m>\rank A =2</m>,
+          which implies that <m>\nullity A=3-2=1</m>.
+          Since <m>(1,-1,0)</m> is an element of <m>\NS(A)</m> and <m>\dim\NS A=1</m>,
+          we must have <m>\NS A=\Span\{(1,-1,0)\}</m>, a line. By orthogonality, we conclude that
+          <md>
+            \RS A=(\NS A)^\perp
+          </md>,
+          which is the plane with normal vector <m>(1,-1,0)</m> passing through the origin.
+        </p>
+      </statement>
+    </example>
+  </subsection>
+  <subsection>
+    <title>Orthogonal Projection</title>
+    <theorem xml:id="th_orthogonal_projection">
+      <title>Orthogonal projection theorem</title>
+      <statement>
+        <p>
+          Let <m>(V,\langle \ , \rangle)</m> be an inner product space,
+          and let <m>W\subseteq V</m> be a
+          finite-dimensional subspace.
+        
+          <ol>
+            <li>
+              <title>Orthogonal decomposition</title>
+              <p>
+                For all <m>\boldv\in V</m> there are vectors <m>\boldw</m> and <m>\boldw^\perp</m> satisfying
+                <md number="yes" xml:id="eq_ortho_decomp">
+                  \boldv=\boldw+\boldw^\perp, \boldw\in W, \boldw^\perp\in W^\perp
+                </md>.
+                Furthermore, the pair <m>\boldw, \boldw^\perp</m> is unique in the following sense: if we have <m>\boldv=\boldu+\boldu^\perp</m> for some <m>\boldu\in W</m> and <m>\boldu^\perp\in W^\perp</m>, then <m>\boldu=\boldw</m> and <m>\boldu^\perp=\boldw^\perp</m>. Accordingly, the vector equation <xref ref="eq_ortho_decomp"/> is called the <term>orthogonal decomposition</term> of <m>\boldv</m> with respect to <m>W</m>; and the vector <m>\boldw</m> is called the <term>orthogonal projection</term> of <m>\boldv</m> onto <m>W</m>, denoted <m>\boldw=\proj{\boldv}{W}</m>.
+              </p>
+            </li>
+            <li>
+              <title>Orthogonal projection formula</title>
+              <p>
+                Choose any orthogonal basis <m>B=\{\boldw_1, \boldw_2, \dots, \boldw_r\}</m> of <m>W</m>. We have
+                <md number="yes" xml:id="eq_ortho_proj_formula"> \proj{\boldv}{W}=\sum_{i=1}^r\frac{\angvec{\boldv,\boldw_i}}{\angvec{\boldw_i, \boldw_i}}\boldw_i
+                </md>.
+              </p>
+            </li>
+            <li>
+              <title>Distance to <m>W</m></title>
+              <p>
+                The orthogonal projection <m>\boldw=\proj{\boldv}{W}</m> is the element of <m>W</m> that is closest to <m>\boldv</m> in the following sense: for all <m>\boldw'\in W</m> we have
+                <md>
+                  d(\boldv, \proj{\boldv}{W})\leq d(\boldv, \boldw')
+                </md>,
+                or equivalently,
+                <md number="yes" xml:id="eq_ortho_proj_distance">
+                \norm{\boldv-\proj{\boldv}{W}}\leq\norm{\boldv-\boldw'}
+              </md>.
+                Accordingly, we define the <term>distance</term> <m>d(\boldv, W)</m> between <m>\boldv</m> and <m>W</m> to be
+                <md>
+                  d(\boldv, W)=d(\boldv, \proj{\boldv}{W})=\norm{\boldv-\proj{\boldv}{W}}
+                </md>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Let <m>B=\{\boldw_1, \boldw_2, \dots, \boldw_r\}</m>. We first show that the vectors
+          <md number="yes" xml:id="eq_ortho_proj_formula_proof">
+            \boldw=\sum_{i=1}^r\frac{\angvec{\boldv,\boldw_i}}{\angvec{\boldw_i, \boldw_i}}\boldw_i
+          </md>
+          and <m>\boldw^\perp=\boldv-\boldw</m> satisfy the conditions in <xref ref="eq_ortho_decomp"/>. It is clear that the <m>\boldw</m> defined in <xref ref="eq_ortho_proj_formula_proof"/> is an element of <m>W</m>, since it is a linear combination of the <m>\boldw_i</m>. Furthermore, we see easily that our choice <m>\boldw^\perp=\boldv-\boldw</m> satisfies
+          <md>
+            \boldw+\boldw^\perp=\boldw+(\boldv-\boldw)=\boldv
+          </md>.
+          It remains only to show that <m>\boldw^\perp=\boldv-\boldw\in W^\perp</m>. Since <m>B</m> is a basis of <m>W</m>, it suffices to show that <m>\langle \boldw^\perp,\boldw_j\rangle=0</m> for all <m>1\leq i\leq r</m>. We compute:
+          <md>
+            <mrow>\langle \boldw^\perp, \boldw_j \rangle\amp = \langle \boldv-\proj{\boldv}{W}, \boldw_i \rangle</mrow>
+            <mrow> \amp =
+            \left\langle \boldv-\sum_{i=1}^r\frac{\angvec{\boldv,\boldw_i}}{\angvec{\boldw_i, \boldw_i}}\boldw_i, \boldw_j\right\rangle </mrow>
+            <mrow>  \amp =
+            \langle \boldv, \boldw_j\rangle -\sum_{i=1}^r\frac{\angvec{\boldv,\boldw_i}}{\angvec{\boldw_i, \boldw_i}}\langle \boldw_i, \boldw_j\rangle </mrow>
+            <mrow>  \amp =
+            \langle \boldv, \boldw_j\rangle -\frac{\langle \boldv, \boldw_j\rangle}{\cancel{\langle \boldw_j, \boldw_j\rangle}}\cancel{\langle \boldw_j, \boldw_j\rangle}</mrow>
+            <mrow>  \amp = 0 </mrow>
+          </md>,
+          as desired.
+        </p>
+        <p>
+          Having shown that a decomposition of <m>\boldv</m> of the form <xref ref="eq_ortho_decomp"/> exists, we now show it is unique in the sense specified. Suppose we have
+          <md>
+            \boldv=\boldw+\boldw^\perp=\boldu+\boldu^\perp
+          </md>,
+          where <m>\boldw, \boldu\in W</m> and <m>\boldw^\perp, \boldu^\perp\in W^\perp</m>. Rearranging, we see that
+          <md>
+            \boldw-\boldu=\boldu^\perp-\boldw^\perp
+          </md>.
+          We now claim that <m>\boldw-\boldu=\boldu^\perp-\boldw^\perp=\boldzero</m>, in which case <m>\boldw=\boldu</m> and <m>\boldw^\perp=\boldu^\perp</m>, as desired. To see why the claim is true, consider the vector <m>\boldv'=\boldw-\boldu=\boldu^\perp-\boldw^\perp</m>. Since <m>\boldv'=\boldw-\boldu</m>, and <m>\boldw, \boldu\in W</m>, we have <m>\boldv'\in W</m>.
+          On the other hand, since <m>\boldv'=\boldu^\perp-\boldw^\perp</m>, and <m>\boldu^\perp, \boldw^\perp\in W^\perp</m>, we have <m>\boldv'\in W^\perp</m>. Thus <m>\boldv'\in W\cap W^\perp</m>. Since <m>W\cap W^\perp=\{\boldzero\}</m> (<xref ref="th_orthogonal_complement"/>), we conclude <m>\boldv'=\boldw-\boldu=\boldu^\perp-\boldw^\perp=\boldzero</m>, as claimed.
+        </p>
+        <p>
+          At this point we have proved both (1) and (2), and it remains only to show that <xref ref="eq_ortho_proj_distance"/> holds for all <m>\boldw'\in W</m>. To this end we compute:
+          <md>
+            <mrow>\norm{\boldv-\boldw'}^2\amp = \norm{\boldw^\perp+(\boldw-\boldw')}^2</mrow>
+            <mrow> \amp =\norm{\boldw^\perp}^2+\norm{\boldw-\boldw'}^2 \amp (<xref ref="ex_ortho_pythag"/>)</mrow>
+            <mrow>\amp \geq \norm{\boldw^\perp}^2</mrow>
+            <mrow> \amp =\norm{\boldv-\boldw}^2</mrow>
+          </md>.
+            This shows <m>\norm{\boldv-\boldw'}^2\geq \norm{\boldv-\boldw}^2</m>. Taking square-roots now proves the desired inequality.
+        </p>
+      </proof>
+
+    </theorem>
+      <remark xml:id="rm_ortho_proj_formula">
+        <title>Orthogonal projection formula</title>
+    <p>
+      The formula <xref ref="eq_ortho_proj_formula"/> is very convenient for computing an orthogonal projection <m>\proj{\boldv}{W}</m>, but mark well this important detail: to apply the formula we must first provide an <em>orthogonal</em> basis of <m>W</m>. Thus unless one is provided, our first step in an orthogonal projection computation is to produce an orthogonal basis of <m>W</m>. In some simple cases (<eg />, when <m>W</m> is 1- or 2-dimensional) this can be done by inspection. Otherwise, we use the Gram-Schmidt procedure.
+    </p>
+  </remark>
+  <p>
+    Next we consider the operation of orthogonally projecting a vector onto a line (in <m>\R^2</m> or <m>\R^3</m>) or a plane in <m>\R^3</m>. 
+         </p>
+   
+         <definition xml:id="d_projection_onto_line">
+           <title>Projection onto a line</title>
+   
+           <statement>
+             <p>
+    Let <m>\boldv=(a_1,a_2,\dots, a_n)</m> be a fixed nonzero vector in <m>\R^n</m>, where <m>n=2</m> or <m>n=3</m>. The set of all scalar multiples of <m>\boldv</m> defines a line <m>\ell</m> in <m>\R^n</m> passing through the origin: we call <m>\boldv</m> the <term>direction vector</term> of this line. Given a point <m>P=(x_1,x_2,\dots, x_n)\in \R^n</m> there is a unique point <m>Q\in \ell</m> such that the vector 
+               <md>
+   \overrightarrow{QP}=(x_1-y_1,x_2-y_2,\dots, x_n-y_n) 
+               </md>
+   is orthogonal to <m>\boldv</m>: <ie/>, there is a unique <m>Q\in \ell</m> such that 
+               <md>
+   \overrightarrow{QP}\cdot \boldv=0 
+               </md>.
+    The point <m>Q</m> is called the <term>orthogonal projection</term> of <m>P</m> onto the line <m>\ell</m>. We define <term>orthogonal projection onto <m>\ell</m></term> to be the function <m>\operatorname{proj}_{\ell}\colon \R^n\rightarrow \R^n</m> that maps a point <m>P</m> to its orthogonal projection <m>Q=\proj{P}{\ell}</m> onto <m>\ell</m>. 
+             </p>
+           </statement>
+         </definition>
+   
+         <theorem xml:id="th_proj_line_linear">
+           <title>Orthogonal projection onto a line</title>
+   
+           <statement>
+             <p>
+    Fix a nonzero vector <m>\boldv\in \R^n</m>, where <m>n=2</m> or <m>n=3</m>, and let <m>\ell</m> be the line obtained by taking all scalar multiples of <m>\boldv</m>. The orthogonal projection function <m>\operatorname{proj}_\ell\colon \R^n\rightarrow \R^n</m> is a linear transformation. In fact, we have <m>\operatorname{proj}_\ell=T_A</m> where <m>A</m> is the <m>n\times n</m> matrix described below for each case (<m>n=2</m> and <m>n=3</m>). 
+               <ul>
+                 <li>
+                   <title>Case: <m>n=2</m></title>
+   
+                   <p>
+    Assume <m>\boldv=(a,b)\ne (0,0)</m>. We have <m>\operatorname{proj}_\ell=T_A</m>, where 
+                     <md number="yes" xml:id="eq_ortho_proj_line_matrix_2">
+    A=\frac{1}{a^2+b^2}\begin{bmatrix}a^2\amp ab \\ ab \amp b^2 \end{bmatrix} 
+                     </md>.
+                   </p>
+                 </li>
+   
+                 <li>
+                   <title>Case: <m>n=3</m></title>
+   
+                   <p>
+    Assume <m>\boldv=(a,b,c)\ne (0,0,0)</m>. We have <m>\operatorname{proj}_\ell=T_A</m>, where 
+                     <md number="yes" xml:id="eq_ortho_proj_line_matrix_3">
+    A=\frac{1}{a^2+b^2+c^2}\begin{bmatrix}a^2\amp ab\amp ac\\ ab \amp b^2 \amp bc \\ ac\amp bc\amp c^2 \end{bmatrix} 
+                     </md>.
+                   </p>
+                 </li>
+               </ul>
+             </p>
+           </statement>
+   
+   
+           <proof>
+             <p>
+    We prove the matrix formula in the case <m>n=3</m>. (The case <m>n=2</m> is exactly similar.) Let <m>\boldv=(a,b,c)</m>. In multivariable calculus we learn that given a point with position vector <m>\boldx=(x,y,z)</m>, its orthogonal projection onto <m>\ell</m> is the point <m>Q</m> whose position vector is 
+               <md>
+                 <mrow> \overrightarrow{OQ}\amp=\left(\frac{\boldx\cdot \boldv}{\boldv\cdot \boldv}\right)\boldv </mrow>
+                 <mrow> \amp = \frac{ax+by+cz}{a^2+b^2+c^2}(a,b,c)</mrow>
+                 <mrow> \amp = \frac{1}{a^2+b^2+c^2}(a^2x+aby+acz, abx+b^2y+bcz, acx+bcy+c^2z)</mrow>
+                 <mrow> \amp = \frac{1}{a^2+b^2+c^2}\begin{bmatrix}a^2\amp ab\amp ac\\ ab \amp b^2 \amp bc \\ ac\amp bc\amp c^2 \end{bmatrix}\colvec{x\\ y\\ z}</mrow>
+               </md>.
+    This proves that 
+               <md>
+    \proj{\boldx}{\ell}=A\boldx 
+               </md>,
+    where 
+               <md>
+    A=\frac{1}{a^2+b^2+c^2}\begin{bmatrix}a^2\amp ab\amp ac\\ ab \amp b^2 \amp bc \\ ac\amp bc\amp c^2 \end{bmatrix} 
+               </md>,
+    as desired. 
+             </p>
+           </proof>
+         </theorem>
+   
+         <example xml:id="eg_projection_line_specific">
+           <title>Orthogonal projection onto line</title>
+   
+           <statement>
+             <p>
+    Let <m>T\colon \R^2\rightarrow \R^2</m> be orthogonal projection onto the line <m>\ell</m> passing through the origin with direction vector <m>\boldv=(1,1,1)</m>.  Find the matrix <m>A</m> such that <m>T=T_A</m>. Use <m>A</m> to compute the orthogonal projection of  <m>(-1,3,2)</m> onto <m>\ell</m>. 
+             </p>
+           </statement>
+   
+           <solution>
+             <p>
+    Using the formula for <m>A</m> in <xref ref="th_proj_line_linear"/>, where <m>(a,b,c)=(1,1,1)</m>, we see that 
+               <md>
+    A=\frac{1}{3}\begin{bmatrix}1\amp 1 \amp 1 \\ 1\amp 1\amp 1\\ 1\amp 1\amp 1\end{bmatrix} 
+               </md>
+   and hence for any <m>\boldx=(x,y,z)</m> we have 
+               <md>
+    \proj{\boldx}{\ell}=A\boldx=\frac{1}{3}(x+y+z,x+y+z, x+y+z) 
+               </md>.
+    In particular, we have <m>\proj{(-1,3,2)}{\ell}=(4/3, 4/3, 4/3)</m>. Let's check that this truly is the orthogonal projection of <m>P=(-1,3,2)</m> onto <m>\ell</m>. Letting <m>Q=(4/3,4/3,4/3)</m>, we have <m>\overrightarrow{QP}=(-7/3,5/3, 2/3)</m>, which is indeed orthogonal to <m>\boldv=(1,1,1)</m>: 
+               <md>
+    \boldv\cdot \overrightarrow{QP}=\frac{1}{3}(-7+5+2)=0 
+               </md>.
+    The formula really works! In case you need more convincing, here is a Sage Cell that computes the projections and produces a diagram. 
+             </p>
+   
+             <figure xml:id="fig_proj_onto_line">
+               <title>Orthogonal projection onto a line</title>
+   
+               <caption>Orthogonal projection onto the line passing through the origin with direction vector <m>\boldv=(1,1,1)</m></caption>
+               <image width="75%" xml:id="im_ortho_proj_line">
+                 <description>
+   Orthogonal projection onto a line
+                 </description>
+                 <sageplot variant="3d" aspect="1.0">
+   v=vector((1,1,1))
+   w=vector((-1,3,2))
+   u=vector((4/3,4/3,4/3))
+   O=vector((0,0,0))
+   P=point(w,color="blue", size="10")
+   l=line3d([[0,0,0],[2,2,2]], color="red", radius=.015)
+   A1=arrow(O,w, color="blue")
+   A2=arrow(O,v, color="red")
+   A3=arrow(u,w, color="green")
+   T1=text3d("P=(-1,3,2)", (1.1)*w, color="black", fontsize="20")
+   T2=text3d("Q=(4/3,4/3,4/3)", (1.1)*u+vector((.1,0,.1)), color="black", fontsize="20")
+   T3=text3d("v=(1,1,1)", .5*v+vector((.2,.1,-.4)), color="black", fontsize="20")
+   P=point(w, size="10", color="blue")
+   Q=point(u, size="10", color="blue")
+   A1+A2+A3+l+P+Q+T1+T2+T3
+                 </sageplot>
+               </image>
+             </figure>
+           </solution>
+         </example>
+   
+         <definition xml:id="d_ortho_proj_plane">
+           <title>Orthogonal projection onto a plane</title>
+   
+           <statement>
+             <p>
+               Let <m>\boldn=(a,b,c)</m> be a nonzero vector in <m>\R^3</m>, and let <m>W</m> be the plane passing through the origin with normal vector <m>\boldn</m>: <ie/>, <m>W</m> is the plane with equation
+               <md>
+                 ax+by+cz=0
+               </md>.
+               Given a point <m>P=(x,y,z)\in \R^3</m>, there is a unique point <m>Q\in W</m> such that <m>\overrightarrow{QP}</m> is orthogonal to <m>W</m>.
+               We call <m>Q</m> the <term>orthogonal projection</term> of <m>P</m> onto <m>W</m>.
+               We define <term>orthogonal projection onto <m>W</m></term> to be the function <m>\operatorname{proj}_W\colon \R^3\rightarrow \R^3</m> that maps a point <m>P\in \R^3</m> to its orthogonal projection <m>Q=\proj{P}{W}</m> in <m>W</m>.
+             </p>
+           </statement>
+         </definition>
+   
+         <theorem xml:id="th_ortho_proj_plane_linear">
+           <title>Orthogonal projection onto a plane</title>
+   
+           <statement>
+             <p>
+               Let <m>\boldn=(a,b,c)</m> be a nonzero vector of <m>\R^3</m>, and let <m>W</m> be the plane passing through the origin with normal vector <m>\boldn</m>.
+               The orthogonal projection map <m>\operatorname{proj}_W\colon \R^3\rightarrow \R^3</m> is a linear transformation.
+               In fact, we have <m>\operatorname{proj}_W=T_A</m> where
+               <md number="yes" xml:id="eq_ortho_proj_plane_matrix">
+                 A=\frac{1}{a^2+b^2+c^2}\begin{amatrix}[rrr] b^2+c^2\amp -ab \amp -ac \\ -ab \amp a^2+c^2 \amp -bc \\ -ac \amp -bc \amp a^2+b^2 \end{amatrix}
+               </md>.
+             </p>
+           </statement>
+   
+   
+           <proof>
+             <p>
+               Let <m>\ell</m> be the line passing through the origin with direction vector <m>\boldn</m>.
+               Given any <m>\boldx=(x,y,z)\in \R^3</m>, let <m>P</m> be the point with coordinates <m>(x,y,z)</m>.
+               The orthogonal projection <m>R=\proj{P}{\ell}</m> of <m>P</m> onto <m>\ell</m> satisfies
+               <md>
+                 \overrightarrow{RP}\cdot \boldn=0
+               </md>.
+               Let <m>Q</m> be the point of <m>\R^3</m> with position vector <m>\overrightarrow{OQ}</m> satisfying
+               <mdn>
+                 <mrow> \overrightarrow{OQ}\amp = \overrightarrow{RP} </mrow>
+                 <mrow xml:id="eq_vec_diff"> \amp=\overrightarrow{OP}-\overrightarrow{OR}</mrow>
+                 <mrow xml:id="eq_vec_formula"> \amp=(x,y,z)-\proj{P}{\ell} </mrow>
+               </mdn>
+               so that
+               <md number="yes" xml:id="eq_ortho_decomp_P">
+                 \overrightarrow{OP}=\overrightarrow{OQ}+\overrightarrow{OR}
+               </md>.
+               Since
+               <md>
+                 <mrow>\overrightarrow{OQ}\cdot \boldn\amp = \overrightarrow{RP}\cdot \boldn \amp <xref ref="eq_vec_formula"/>
+                 </mrow>
+                 <mrow> \amp = 0 \amp (\text{def. of } R=\proj{P}{\ell})</mrow>
+               </md>,
+               the point <m>Q</m> lies in the plane <m>W</m>.
+                Furthermore, we have
+               <md>
+                 <mrow>\overrightarrow{QP} \amp =\overrightarrow{OP}-\overrightarrow{OQ}</mrow>
+                 <mrow> \amp = \overrightarrow{OR} \amp <xref ref="eq_vec_diff"/>
+                 </mrow>
+               </md>.
+               Since <m>R</m> is the orthogonal projection of <m>P</m> onto <m>\ell</m>, we have <m>R\in \ell</m> by definition, which means <m>\overrightarrow{OR}</m> is a scalar multiple of <m>\boldn</m>.
+               Since <m>\boldn</m> is a normal vector to <m>W</m>, we conclude that <m>\overrightarrow{QP}=\overrightarrow{OR}</m> is orthogonal to <m>W</m>.
+               We have shown that <m>Q</m>  lies in <m>W</m> and that <m>\overrightarrow{QP}</m> is orthogonal to <m>W</m>.
+               We conclude that <m>Q</m> is the orthogonal projection of <m>P</m> onto <m>W</m>.
+               Thus, using <xref ref="eq_vec_formula"/> we have
+               <md>
+                 \proj{\boldx}{W}=\boldx-\proj{\boldx}{\ell}
+               </md>.
+               Since <m>\proj{\boldx}{\ell}=B\boldx</m>, where
+               <md>
+                 B=\frac{1}{a^2+b^2+c^2}\begin{bmatrix} a^2\amp ab\amp ac \\ ab\amp b^2\amp bc \\ ac\amp bc\amp c^2\end{bmatrix}
+               </md>
+               by <xref ref="th_proj_line_linear"/>, we have
+               <md>
+                 <mrow>\proj{\boldx}{W} \amp = \boldx-B\boldx</mrow>
+                 <mrow> \amp = I\boldx-B\boldx</mrow>
+                 <mrow> \amp = (I-B)\boldx</mrow>
+                 <mrow> \amp = \frac{1}{a^2+b^2+c^2}\begin{amatrix}[rrr] b^2+c^2\amp -ab \amp -ac \\ -ab \amp a^2+c^2 \amp -bc \\ -ac \amp -bc \amp a^2+b^2 \end{amatrix}\boldx </mrow>
+               </md>.
+               We conclude that <m>\operatorname{proj}_W=T_A</m> where
+               <md>
+                 A=\frac{1}{a^2+b^2+c^2}\begin{amatrix}[rrr] b^2+c^2\amp -ab \amp -ac \\ -ab \amp a^2+c^2 \amp -bc \\ -ac \amp -bc \amp a^2+b^2 \end{amatrix}
+               </md>,
+               as desired.
+             </p>
+           </proof>
+         </theorem>
+   
+         <example xml:id="eg_visualizing_ortho_projs">
+           <title>Visualizing orthogonal projection</title>
+   
+           <p>
+             In the course of the proof of <xref ref="th_ortho_proj_plane_linear"/> we discovered an illuminating relationship between orthogonal projection onto a line and orthogonal projection onto the plane orthogonal to this line.
+             In more detail, let <m>\boldn=(a,b,c)</m> be a nonzero vector, <m>\ell</m> the line passing through the origin with <m>\boldn</m> as a direction vector, and <m>W</m> the plane passing through the origin with normal vector <m>\boldn</m>.
+             From our argument in the proof of <xref ref="th_ortho_proj_plane_linear"/> we see that
+             <md number="yes" xml:id="eq_proj_plane_line">
+               \proj{\boldx}{W}=\boldx-\proj{\boldx}{\ell}
+             </md>,
+             or
+             <md number="yes" xml:id="eq_ortho_decomp_x">
+               \boldx=\proj{\boldx}{\ell}+\proj{\boldx}{W}
+             </md>.
+             Equation <xref ref="eq_proj_plane_line"/> indicates how we can derive the orthogonal projection onto <m>W</m> from the orthogonal projection onto <m>\ell</m> (and conversely).
+             Equation <xref ref="eq_ortho_decomp_x"/> shows how every vector <m>\boldx</m> can be <q>decomposed</q> as a sum of two orthogonal vectors: one pointing parallel to <m>\ell</m> and the other pointing parallel to <m>W</m>.
+           </p>
+   
+           <p>
+             The <url href="https://www.geogebra.org" visual="geogebra.org">GeoGebra</url> interactive below helps visualize these two orthogonal projections, understood as operations on <m>\R^3</m>.
+             <ul>
+               <li>
+                 <p>
+                   Drag the point <m>Q</m> to change the normal vector <m>\boldn</m>, and hence also the plane <m>W</m>.
+                 </p>
+               </li>
+   
+               <li>
+                 <p>
+                   Drag the point <m>P</m> to change the input of the transformations <m>\operatorname{proj}_\ell</m> and <m>\operatorname{proj}_W</m>.
+                 </p>
+               </li>
+   
+               <li>
+                 <p>
+                   In keeping with our dual interpretation of vectors in <m>\R^3</m>, all the relevant vectors (<m>P</m>, <m>\proj{P}{\ell}</m>, <m>\proj{P}{W}</m>) are rendered here both as points and the corresponding position vectors of these points.
+                 </p>
+               </li>
+             </ul>
+           </p>
+   
+           <figure xml:id="fig_ortho_proj_line_plane">
+             <title>Orthogonal projection onto plane and normal line</title>
+   
+             <interactive xml:id="geogebra_ortho_proj_line_plane" platform="geogebra" width="100%" aspect="4:3">
+             <slate surface="geogebra" material="f3v85wmx" aspect="4:3" marker="train-distance">
+       enableLabelDrags(true);
+             </slate> </interactive>
+             <caption>Orthogonal projection onto plane and normal line. Made with <url href="https://www.geogebra.org" visual="geogebra.org">GeoGebra</url>. </caption>
+           </figure>
+         </example>
+       
+  <example>
+    <statement>
+      <p>
+        Consider the inner product space <m>\R^3</m> with the dot product. Let <m>W\subseteq\R^3</m> be the plane with equation <m>x+y+z=0</m>. Compute <m>\proj{\boldv}{W}</m> for each <m>\boldv</m> below.
+        <ol>
+          <li>
+            <p>
+              <m>\boldv=(3,-2,2)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\boldv=(2,1,-3)</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\boldv=(-7,-7,-7)</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        According to <xref ref="rm_ortho_proj_formula"/> our first step is to produce an orthogonal basis of <m>W</m>. We do so by inspection. Since <m>\dim W=2</m>, we simply need to find two solutions to <m>x+y+z=0</m> that are orthogonal to one another: <eg />, <m>\boldw_1=(1,-1,0)</m> and <m>\boldw_2=(1,1,-2)</m>. Thus we choose <m>B=\{ (1,-1,0), (1,1,-2)\}</m> as our orthogonal basis, and our computations become a matter of applying <xref ref="eq_ortho_proj_formula"/>, which in this case becomes
+        <md>
+          \proj{\boldv}{W}=\frac{\boldv\cdot\boldw_1}{\boldw_1\cdot \boldw_1}\boldw_1+\frac{\boldv\cdot\boldw_2}{\boldw_2\cdot \boldw_2}\boldw_2=
+          \frac{\boldv\cdot\boldw_1}{2}\boldw_1+\frac{\boldv\cdot\boldw_2}{6}\boldw_2
+        </md>.
+        Now compute:
+        <md>
+          <mrow>\proj{(3,-2,2)}{W} \amp =\frac{5}{2}(1,-1,0)+\frac{-3}{6}(1,1,-2)=(2,-3,1)</mrow>
+          <mrow>\proj{(2,1,-3)}{W} \amp =\frac{1}{2}(1,-1,0)+\frac{9}{6}(1,1,-2)=(2,1,-3)</mrow>
+          <mrow>\proj{(-7,-7,-7)}{W} \amp =\frac{0}{2}(1,-1,0)+\frac{0}{6}(1,1,-2)=(0,0,0)</mrow>
+        </md>.
+        The last two computations might give you pause. Why do we have <m>\proj{(2,1,-3)}{W}=(2,1,-3)</m> and <m>\proj{(-7,7-7,-7)}{W}=(0,0,0)</m>? The answer is that <m>(2,1,-3)</m> is already an element of <m>W</m>, so it stands to reason that its projection is itself; and <m>(-7,-7,-7)</m> is already orthogonal to <m>W</m> (it is a scalar multiple of <m>(1,1,1)</m>), so it stands to reason that its projection is equal to <m>\boldzero</m>. See <xref ref="ex_orthoproj_props"/> for a rigorous proof of these claims.
+      </p>
+    </solution>
+  </example>
+
+<example xml:id="ss_vid_eg_orthoproj_functions">
+  <title>Video example: orthogonal projection in function space</title>
+  <figure xml:id="fig_vid_orthoproj_functions">
+  <caption>Video: orthogonal projection in function space</caption>
+  <video xml:id="vid_orthoproj_functions" youtube="xWuzNdExSEk" />
+  </figure>
+</example>
+  <corollary xml:id="cor_orthocomp_selfdual">
+  <title>Complement of a complement</title>
+    <statement>
+      <p>
+        Let <m>(V,\angvec{\ , \ })</m> be an inner product space,
+        and let <m>W\subseteq V</m> be a finite-dimensional subspace.
+        Then <m>(W^\perp)^\perp=W</m>.
+      </p>
+    </statement>
+  </corollary>
+  <proof>
+    <p>
+      Clearly <m>W\subseteq (W^\perp)^\perp</m>.
+      For the other direction, take <m>\boldv\in (W^\perp)^\perp</m>.
+      Using the <em>orthogonal projection theorem</em>,
+      we can write <m>\boldv=\boldw+\boldw^\perp</m> with
+      <m>\boldw\in W</m> and <m>\boldw^\perp\in W^\perp</m>.
+      We will show <m>\boldw^\perp=\boldzero</m>.
+    </p>
+    <p>
+      Since <m>\boldv\in (W^\perp)^\perp</m> we have <m>\angvec{\boldv,\boldw^\perp}=0</m>.
+      Then we have
+      <md>
+        <mrow>0\amp =\angvec{\boldv,\boldw^\perp}</mrow>
+        <mrow>\amp =\angvec{\boldw+\boldw^\perp,\boldw^\perp}</mrow>
+        <mrow>\amp =\angvec{\boldw,\boldw^\perp}+\angvec{\boldw^\perp,\boldw^\perp} \amp \text{ (since \(W\perp W^\perp\)) }</mrow>
+        <mrow>\amp =0+\angvec{\boldw^\perp,\boldw^\perp}</mrow>
+      </md>
+    </p>
+    <p>
+      Thus <m>\angvec{\boldw^\perp,\boldw^\perp}=0</m>.
+      It follows that <m>\boldw^\perp=\boldzero</m>,
+      and hence <m>\boldv=\boldw+\boldzero=\boldw\in W</m>.
+    </p>
+  </proof>
+  <corollary xml:id="cor_orthoproj_linear">
+    <title>Orthgonal projection is linear</title>
+
+
+    <statement>
+      <p>
+        Let <m>(V,\angvec{\ , \ })</m> be an inner product space,
+        and let <m>W\subseteq V</m> be a finite-dimensional subspace.
+      </p>
+      <ol>
+        <li>
+          <p>
+            The function
+            <md>
+              <mrow>\operatorname{proj}_W\colon V \amp\rightarrow V</mrow>
+              <mrow> \boldv \amp\mapsto \proj{\boldv}{W} </mrow>
+            </md>
+            is a linear transformation.
+          </p>
+        </li>
+        <li>
+          <p>
+            We have <m>\im \operatorname{proj}_W=W</m> and <m>\NS \operatorname{proj}_W=W^\perp</m>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </corollary>
+  <proof>
+     <p>
+       <ol>
+        <li>
+          <p>
+            We must show that <m>\proj{c\boldv+d\boldw}{W}=c\,\proj{\boldv}{W}+d\,\proj{\boldw}{W}</m> for all
+            <m>c,d\in\R</m> and <m>\boldv,\boldw\in V</m>.
+            We pick an orthogonal basis
+            <m>B=\{\boldv_1,\boldv_2, \dots, \boldv_r\}</m> of <m>W</m> and compute, using formula <xref ref="eq_ortho_proj_formula"/>:
+            <md>
+              <mrow>\proj{c\boldv+d\boldw}{W} \amp=\sum_{i=1}^{r}\frac{\langle c\boldv+d\boldw, \boldv_i\rangle}{\langle\boldv_i, \boldv_i\rangle }\boldv_i </mrow>
+              <mrow> \amp=\sum_{i=1}^r\frac{c\langle \boldv,\boldv_i\rangle+d\langle \boldw, \boldv_i\rangle}{\langle \boldv_i, \boldv_i\rangle}\boldv_i </mrow>
+              <mrow>  \amp =c\sum_{i=1}^r\frac{\angvec{\boldv, \boldv_i}}{\angvec{\boldv_i, \boldv_i}}\boldv_i+d\sum_{i=1}^r\frac{\angvec{\boldw, \boldv_i}}{\angvec{\boldv_i, \boldv_i}}\boldv_i</mrow>
+              <mrow>  \amp = c\,\proj{\boldv}{W}+d\,\proj{\boldw}{W}</mrow>
+            </md>.
+          </p>
+        </li>
+        <li>
+          <p>
+           By definition we have <m>\proj{\boldv}{W}\in W</m> for all <m>\boldv\in W</m>, and thus <m>\im \operatorname{proj}_W \subseteq W</m>. For the other direction, if <m>\boldw\in W</m>, then <m>\boldw=\proj{\boldw}{W}</m> (<xref ref="ex_orthoproj_props"/>), and thus <m>\boldw\in \im\operatorname{proj}</m>. This proves <m>\im\operatorname{proj}=W</m>.
+          </p>
+          <p>
+            The fact that <m>\NS\operatorname{proj}=W^\perp</m> follows from the equivalence stated in (b) of <xref ref="ex_orthoproj_props"/>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </proof>
+</subsection>
+
+<subsection>
+    <title>Orthogonal projection in <m>\R^2</m> and <m>\R^3</m></title>
+    <introduction>
+      <p>
+        For this subsection we will always work within Euclidean space: <ie />, <m>V=\R^n</m> with the dot product. In applications we often want to compute the projection of a point onto a line (in <m>\R^2</m> or <m>\R^3</m>) or plane (in <m>\R^3</m>). According to <xref ref="cor_orthoproj_linear"/> the operation of projecting onto any subspace <m>W\subseteq \R^n</m> is in fact a linear transformation <m>\operatorname{proj}_W\colon \R^n\rightarrow \R^n</m>. By <xref ref="th_matrix_transform"/> we have <m>\operatorname{proj}_W=T_A</m>, where
+      <md>
+        A=\begin{bmatrix}
+        \vert \amp \vert \amp \amp \vert \\
+        \proj{\bolde_1}{W}\amp \proj{\bolde_2}{W}\amp \cdots \amp \proj{\bolde_n}{W} \\
+        \vert \amp \vert \amp \amp \vert
+      \end{bmatrix}
+      </md>.
+      Lastly, <xref ref="eq_ortho_proj_formula"/> gives us an easy formula for computing <m>\proj{\bolde_j}{W}</m> for all <m>j</m>, once we have selected an orthogonal basis for <m>W</m>. As a result we can easily derive matrix formulas for projection onto any subspace <m>W</m> of any Euclidean space <m>\R^n</m>. We illustrate this with some examples in <m>\R^2</m> and <m>\R^3</m> below.
+    </p>
+    </introduction>
+    <example xml:id="eg_projection_line">
+      <title>Projection onto a line <m>\ell\subseteq \R^3</m></title>
+      <statement>
+        <p>
+          Any line in <m>\R^3</m> passing through the origin can be described as <m>\ell=\Span\{\boldv\}</m>,
+          for some <m>\boldv=(a,b,c)\ne 0</m>.
+          The set <m>\{(a,b,c)\}</m> is trivially an orthogonal basis of <m>\ell</m>. Using <xref ref="eq_ortho_proj_formula"/>, we have
+          <md>
+            \proj{\boldx}{\ell}=\frac{\boldx\cdot \boldv}{\boldv\cdot\boldv}\boldv=\frac{ax+by+cz}{a^2+b^2+c^2}(a,b,c)
+          </md>.
+          It follows that <m>\operatorname{proj}_\ell=T_A</m>, where
+          <md>
+            A=\begin{bmatrix}
+            \vert \amp \vert \amp \vert \\
+            \proj{(1,0,0)}{\ell}\amp \proj{(0,1,0)}{\ell}\amp \proj{(0,0,1)}{\ell} \\
+            \vert \amp \vert \amp \vert
+          \end{bmatrix}=\frac{1}{a^2+b^2+c}\begin{bmatrix}
+          a^2\amp ab\amp ac\\
+          ab\amp b^2\amp bc\\
+          ac\amp bc\amp c^2
+        \end{bmatrix}
+          </md>.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Consider the line <m>\ell=\Span\{(1,2,1)\}\subseteq \R^3</m>.
+        </p>
+        <ol>
+          <li>
+            <p>
+              Find the matrix <m>A</m> such that <m>\operatorname{proj}_\ell=T_A</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Use your matrix formula from (a) to compute <m>\proj{(-2,3,1)}{\ell}</m>, <m>\proj{(-2,-4,-2)}{\ell}</m>, and  <m>\proj{(1,-1,1)}{\ell}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Compute <m>d((-2,3,1), \ell)</m> and <m>d((-2,-4,-2), \ell)</m>.
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+    <ol>
+      <li>
+<p>  Using the general formula described in <xref ref="eg_projection_line"/>, we have
+      <md>
+        A=\frac{1}{6}\begin{bmatrix}
+        1\amp 2\amp 1\\ 2\amp 4\amp 2\\ 1\amp 2\amp 1
+      \end{bmatrix}
+      </md>.
+    </p>
+  </li>
+    <li>
+      <p>
+        Now compute
+    <md>
+      <mrow> \proj{(-2,3,1)}{\ell}\amp=  \frac{1}{6}\begin{bmatrix}
+      1\amp 2\amp 1\\ 2\amp 4\amp 2\\ 1\amp 2\amp 1
+    \end{bmatrix}
+    \begin{amatrix}[r]
+        -2 \\ 3\\ 1
+    \end{amatrix}=
+    \frac{1}{6}\begin{amatrix}[r]
+        5\\ 10\\ 5
+    \end{amatrix}
+    </mrow>
+    <mrow> \proj{(-2,-4,-2)}{\ell}\amp=  \frac{1}{6}\begin{bmatrix}
+    1\amp 2\amp 1\\ 2\amp 4\amp 2\\ 1\amp 2\amp 1
+  \end{bmatrix}
+  \begin{amatrix}[r]
+      -2 \\ -4\\ -2
+  \end{amatrix}=
+  \frac{1}{6}\begin{amatrix}[r]
+      -2\\ -4\\ -2
+  \end{amatrix}
+  </mrow>
+  <mrow> \proj{(1,-1,1)}{\ell}\amp=  \frac{1}{6}\begin{bmatrix}
+  1\amp 2\amp 1\\ 2\amp 4\amp 2\\ 1\amp 2\amp 1
+\end{bmatrix}
+\begin{amatrix}[r]
+    1\\ -1\\ 1
+\end{amatrix}=
+\frac{1}{6}\begin{amatrix}[r]
+    0\\ 0\\ 0
+\end{amatrix}
+</mrow>
+    </md>.
+The last two computations, <m>\proj{(-2,-4,-2)}{\ell}=(-2,-4,-2)</m> and <m>\proj{(1,-1,1)}{\ell}=(0,0,0)</m>, should come as no surprise, since <m>(-2,-4,-2)\in \ell</m> and <m>(1,-1,1)\in \ell^\perp</m>. (See <xref ref="ex_orthoproj_props"/>.)
+</p>
+</li>
+<li>
+  <p>
+    We have
+    <md>
+      <mrow>d((-2,3,1), \ell) \amp=\norm{(-2,3,1)-\proj{(-2,3,1)}{\ell}} </mrow>
+      <mrow> \amp = \norm{\frac{1}{6}(-17,8,1)}=\frac{\sqrt{354}}{6} </mrow>
+      <mrow>d((-2,-4,-2), \ell) \amp=\norm{(-2,-4,-2)-\proj{(-2,-4,-2)}{\ell}} </mrow>
+      <mrow> \amp = \norm{(0,0,0)}=0 </mrow>
+    </md>.
+    Again, the second computation should come as no surprise.  Since <m>(-2,-4,-2)</m> is itself an element of <m>\ell</m>, it stands to reason that its distance to <m>\ell</m> is equal to zero.
+  </p>
+</li>
+</ol>
+      </solution>
+    </example>
+
+
+    <example xml:id="eg_projection_plane">
+      <title>Projection onto planes in <m>\R^3</m></title>
+      <statement>
+        <p>
+          Any plane <m>W\subseteq\R^3</m> passing through the origin can be described as <m>W=\{(x,y,z)\in \R^3\colon ax+by+cz=0\}</m>. Equivalently, <m>W</m> is the set of all <m>\boldx\in \R^3</m> satisfying <m>\boldx\cdot (a,b,c)=0</m>: <ie />, <m>W=\ell^\perp</m>, where <m>\ell=\Span\{(a,b,c)</m>.
+          Consider the orthogonal decomposition with respect to <m>\ell</m>:
+          <md>
+            \boldx=\proj{\boldx}{\ell}+(\boldx-\proj{\boldx}{\ell})
+          </md>.
+          Since <m>\boldx-\proj{\boldx}{\ell}\in \ell^\perp=W</m> and <m>\proj{\boldx}{\ell}\in \ell=W^\perp</m>, we see that this is also an orthogonal decomposition with respect to <m>W</m>! Using the matrix formula for <m>\operatorname{proj}_\ell</m> from <xref ref="eg_projection_line"/>, we have
+          <md>
+            <mrow> \proj{\boldx}{W} \amp =\boldx-\proj{\boldx}{\ell} </mrow>
+            <mrow> \amp = I\boldx -  A\boldx\amp \left(A=\frac{1}{a^2+b^2+c}\begin{bmatrix}
+            a^2\amp ab\amp ac\\
+            ab\amp b^2\amp bc\\
+            ac\amp bc\amp c^2
+          \end{bmatrix}\right)</mrow>
+          <mrow>  \amp = (I-A)\boldx</mrow>
+          <mrow>  \amp = \frac{1}{a^2+b^2+c^2}\begin{bmatrix}b^2+c^2\amp -ab\amp -ac\\ -ab\amp a^2+c^2\amp -bc\\ -ac\amp -bc\amp a^2+b^2 \end{bmatrix}</mrow>
+          </md>.
+          We conclude that <m>\operatorname{proj}_W=T_B</m>, where
+          <md>
+            B=\frac{1}{a^2+b^2+c^2}\begin{bmatrix}b^2+c^2\amp -ab\amp -ac\\ -ab\amp a^2+c^2\amp -bc\\ -ac\amp -bc\amp a^2+b^2 \end{bmatrix}
+          </md>.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          Consider the plane <m>W=\{(x,y,z)\in\R^3\colon x-2y+z=0-\}</m>.
+        </p>
+        <ol>
+          <li>
+            <p>
+              Find the matrix <m>A</m> such that <m>\operatorname{proj}_W=T_A</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Use your matrix formula from (a) to compute <m>\proj{(2,1,1)}{W}</m> and <m>\proj{(1,1,1)}{W}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Compute <m>d((2,1,1),W)</m> and <m>d((1,1,1), W)</m>.
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <solution>
+        <ol>
+        <li>
+        <p>
+        Using the general formula described in <xref ref="eg_projection_plane"/>, we have
+        <md>
+          A=\frac{1}{6}\begin{amatrix}[rrr]
+          5\amp 2\amp -1\\ 2\amp 2\amp 2\\ -1\amp 2\amp 5
+        \end{amatrix}
+        </md>.
+      </p>
+    </li>
+    <li>
+      <p>
+      Now compute
+      <md>
+        <mrow> \proj{(2,1,1)}{\ell}\amp= \frac{1}{6}\begin{amatrix}[rrr]
+        5\amp 2\amp -1\\ 2\amp 2\amp 2\\ -1\amp 2\amp 5
+      \end{amatrix}
+      \begin{amatrix}[r]
+          2 \\ 1\\ 1
+      \end{amatrix}=
+      \frac{1}{6}\begin{amatrix}[r]
+          11\\ 8\\ 5
+      \end{amatrix}
+      </mrow>
+      <mrow> \proj{(1,1,1)}{\ell}\amp= \frac{1}{6}\begin{amatrix}[rrr]
+      5\amp 2\amp -1\\ 2\amp 2\amp 2\\ -1\amp 2\amp 5
+    \end{amatrix}
+    \begin{amatrix}[r]
+        1 \\ 1\\ 1
+    \end{amatrix}=
+    \frac{1}{6}\begin{amatrix}[r]
+        0\\ 0\\ 0
+    \end{amatrix}
+    </mrow>
+      </md>.
+    </p>
+  </li>
+  <li>
+    <p>
+      We have
+      <md>
+        <mrow>d((2,1,1), W) \amp = \norm{(2,1,1)-\proj{(2,1,1)}{W}}</mrow>
+        <mrow> \amp =\norm{\frac{1}{6}(1,-2,-1)}=\frac{6}{6} </mrow>
+        <mrow>d((1,1,1), W) \amp = \norm{(1,1,1)-\proj{(1,1,1)}{W}}</mrow>
+        <mrow> \amp =\norm{(0,0,0)}=0 </mrow>
+      </md>.
+    </p>
+</li>
+</ol>
+      </solution>
+    </example>
+</subsection>
+  <!-- <subsection>
+    <title>Projection onto a plane</title>
+
+  </subsection>
+  <p>
+    We can express this in terms of matrix multiplication as
+  </p>
+  <p>
+    \item Translate the whole picture by <m>-Q=(-q_1,-q_2, -q_3)</m>,
+    which means we replace <m>P=(x,y,z)</m> with
+    <m>P-Q=(x-q_1,y-q_2,z-q_3)</m>. \item Apply our formulas from before,
+    replacing <m>(x,y,z)</m> with
+    <m>(x-q_1,y-q_2,z-q_3)</m> \item Translate back by adding <m>Q</m> to your answer.
+  </p> -->
+
+  <subsection>
+    <title>Trigonometric polynomial approximation</title>
+    <p>
+      Consider the inner product space consisting of  <m>C([0,2\pi])</m> along with the integral inner product <m>\langle f, g\rangle=\int_0^{2\pi}f(x)g(x) \, dx</m>.
+      In <xref ref="eg_orthogonal_functions"/> we saw that the set
+      <md>
+        B=\{1, \cos(x),\sin(x),\cos(2x),\sin(2x), \dots , \cos(nx),\sin(nx)\}
+      </md>
+      is orthogonal with respect to this inner product.
+      Thus <m>B</m> is an orthogonal basis of
+      <md>
+        \Span B=\{g\in C([0,2\pi])\colon g(x)=a_0+\sum_{k=1}^na_k\cos kx +b_k\sin kx \text{ for some } a_i, b_i\in \R\}
+      </md>.
+      We call <m>W=\Span B</m> the space of
+      <term>trigonometric polynomials of degree at most <m>n</m></term>.
+    </p>
+    <p>
+      Since <m>B</m> is an orthogonal basis of <m>W</m>, given an arbitrary function <m>f(x)\in C[0,2\pi]</m>, its orthogonal projection <m>\hat{f}=\proj{f}{W}</m> is given by
+      <md>
+        \hat{f}(x)=a_0+a_1\cos(x)+b_1\sin(x)+a_2\cos(2x)+b_2\sin(2x)+\cdots +a_n\cos(nx)+b_n\sin(nx)
+      </md>,
+      where
+      <md>
+        a_0=\frac{1}{2\pi}\int_0^{2\pi} f(x) \ dx, \ a_j=\frac{1}{\pi}\int_0^{2\pi}f(x)\cos(jx)\, dx, \ b_k=\frac{1}{\pi}\int_0^{2\pi}f(x)\sin(kx)\, dx
+      </md>.
+      Here we are using <xref ref="eq_ortho_proj_formula"/>, as well as the inner product formulas <m>\angvec{1,1}=2\pi</m> and <m>\angvec{\cos n x, \cos n x}=\angvec{\sin n x, \sin n x}=\pi</m> from <xref ref="eg_orthogonal_functions"/>.
+    </p>
+    <p>
+      What is the relationship between <m>f</m> and <m>\hat{f}</m>?
+      <xref ref="th_orthogonal_projection"/> tells us that <m>\hat{f}</m> is the
+      <q>best</q>
+      trigonometric polynomial approximation of <m>f(x)</m>
+      of degree at most <m>n</m> in the following sense:
+      given any any other trigonometric polynomial <m>g\in W</m>, we have
+      <md>\left\vert\left\vert f-\hat{f}\right\vert\right\vert\leq \norm{f-g}</md>.
+      Unpacking the definition of norm in this inner product space, we conclude that
+      <md>
+        \int_0^{2\pi} (f-\hat{f})^2\, dx\leq \int_0^{2\pi} (f-g)^2 \, dx
+      </md>
+      for all <m>g\in W</m>.
+    </p>
+    <p>
+      Thus, given a continuous function <m>f</m> on <m>[0,2\pi]</m>, linear algebra shows us how to find its best trigonometric polynomial approximation of the form
+      <md>
+        g(x)=a_0+\sum_{k=1}^na_k\cos kx +b_k\sin kx
+      </md>.
+      However, linear algebra does not tell us just how good this approximation is. This question, among others, is tackled by another mathematical theory: <em>Fourier analysis</em>. There we learn that the trigonometric polynomial approximations get arbitrarily close to <m>f</m> as we let <m>n</m> increase. More precisely, letting <m>\hat{f}_n</m> be the orthogonal projection of <m>f</m> onto the space of trigonometric polynomials of degree at most <m>n</m>, we have
+      <md>
+        \lim_{n\to\infty}\norm{f-\hat{f}_n}=0
+      </md>.
+    </p>
+  </subsection>
+  <subsection>
+    <title>Least-squares solution to linear systems</title>
+    <p>
+      In statistics we often wish to approximate a scatter plot of points <m>P_i=(X_i, Y_i)</m>, <m>1\leq i\leq m</m>, with a line <m>\ell\colon y=mx+b</m> that <q>best fits</q> the data. <q>Finding</q> this line amounts to finding the appropriate slope <m>m</m> and <m>y</m>-intercept <m>b</m>: <ie />, in this setup, the points <m>P_i=(X_i, Y_i)</m> are given, and <m>m</m> and <m>b</m> are the unknowns we wish to find. For the line to perfectly fit the data, we would want
+      <md>
+      Y_i=mX_i+b \text{ for all } 1\leq i\leq m
+      </md>.
+      In other words <m>(m,b)</m> would be a solution to the matrix equation <m>A\boldx=\boldy</m>, where
+      <md>
+        \boldx=\begin{bmatrix}m \\ b\end{bmatrix},A=\begin{bmatrix} X_1\amp 1\\ X_2\amp 1\\ \vdots \amp \vdots \\ X_m\amp 1  \end{bmatrix},  \boldy=\begin{bmatrix} Y_1\\ Y_2\\ \vdots \\ Y_m\end{bmatrix}
+      </md>.
+      Of course in most situations the provided points do not lie on a line, and thus there is no solution <m>\boldx</m> to the given matrix equation <m>A\boldx=\boldy</m>. When this is the case we can use the theory of orthogonal projection to find what is called a <em>least-squares</em> solution, which we now describe in detail.
+    </p>
+    <p>
+      The least-squares method applies to any matrix equation
+      <md number="yes" xml:id="eq_least-squares_orig">\underset{m\times n}{A}\, \underset{n\times 1}{\boldx}=\underset{m\times 1}{\boldy}</md>,
+      where <m>A</m> and <m>\boldy</m> are given, and <m>\boldx</m> is treated as an unknown vector. Recall that
+      <md>
+        <mrow>A\boldx=\boldy \text{ has a solution } \amp\iff \boldy\in \CS A \amp (<xref ref="th_col_space"/>) </mrow>
+      </md>.
+      When <m>\boldy\notin \CS A</m>, and hence <xref ref="eq_least-squares_orig"/> does not have a solution, the least-squares method proceeds by replacing <m>\boldy</m> with the element of <m>W=\CS A</m> closest to it: that is, with its <em>orthogonal projection</em> onto <m>W</m>.  Let <m>\hat{\boldy}=\proj{\boldy}{W}</m>, where orthogonal projection is taken with respect to the dot product on <m>\R^m</m>, and consider the adjusted matrix equation
+      <md number="yes" xml:id="eq_least-squares_new">
+        A\boldx=\hat{\boldy}
+      </md>.
+      By definition of <m>\operatorname{proj}_W</m>,  we have <m>\hat{\boldy}\in W=\CS A</m>, and thus there is a solution <m>\hat{\boldx}</m> to <xref ref="eq_least-squares_new"/>.
+      We call <m>\hat{\boldx}</m> a <term>least-squares</term> solution to <xref ref="eq_least-squares_orig"/>. Observe that <m>\hat{\boldx}</m> does <em>not</em> necessarily satisfy <m>A\hat{\boldx}=\boldy</m>; rather, it satisfies <m>A\hat{\boldx}=\hat{\boldy}</m>. What makes this a <q>least-squares</q> solution is that <m>A\hat{\boldx}=\hat{\boldy}</m> is the element of <m>W=\CS A</m> closest to <m>\boldy</m>. With respect to the dot product, this means that a least-squares solution <m>\hat{\boldx}</m> minimizes the quantity
+      <md>
+        \norm{\boldy-A\boldx}=\sqrt{(y_1-y_1')^2+(y_2-y_2')^2+\cdots +(y_n-y_n')^2}
+      </md>,
+      among all <m>\boldx\in \R^n</m>.
+    </p>
+<example xml:id="eg_least-squares">
+  <title>Best fitting line</title>
+  <statement>
+    <p>
+      Suppose we wish to find a line <m>\ell\colon y=mx+b</m> that best fits
+      (in the least-square sense)
+      the following data points:
+      <m>P_1=(-3,1), P_2=(1,2), P_3=(2,3)</m>. Following the discussion above, we seek a solution <m>\boldx=(m,b)</m> to the matrix equation <m>A\boldx=\boldy</m>, where
+      <md>
+        \boldx=\begin{bmatrix}m \\ b \end{bmatrix}, A=\begin{amatrix}[rr]-3\amp 1\\ 1\amp 1\\ 2\amp 1 \end{amatrix}  , \boldy=\begin{bmatrix}1\\ 2\\ 3 \end{bmatrix}
+      </md>.
+      Using Gaussian elimination, we see easily that this equation has no solution: equivalently, <m>\boldy\notin W=\CS A</m>. Accordingly, we compute <m>\hat{\boldy}=\proj{\boldy}{W}</m> and find a solution to <m>A\hat{\boldx}=\hat{\boldy}</m>. Conveniently, the set <m>B=\{(-3,2,1), (1,1,1)\}</m> is already an <em>orthogonal</em> basis of <m>W=\CS A</m>, allowing us to use <xref ref="eq_ortho_proj_formula"/>:
+      <md>
+        \hat{\boldy}=\frac{\boldy\cdot (-3,1,2)}{(-3,2,1)\cdot (-3,1,2)}(-3,1,2)+\frac{\boldy\cdot(1,1,1)}{(1,1,1)\cdot (1,1,1)}(1,1,1)=\frac{1}{14}(13, 33, 38)
+      </md>.
+      Lastly, solving <m>A\hat{\boldx}=\hat{\boldy}</m> yields <m>(m,b)=\hat{\boldx}=(5/14, 2)</m>, and we conclude the line <m>\ell\colon y=(5/14)x+2</m> is the one that best fits the data in the least-squares sense.
+</p>
+  </statement>
+
+</example>
+    <remark xml:id="rm_least-squares">
+      <title>Visualizing least-squares</title>
+    <statement>
+      <p>
+       <xref ref="fig_leastsquares"/> helps us give a graphical interpretation of how the line <m>\ell\colon y=(5/14)x+2</m> best approximates the points <m>P_1=(-3,1), P_2=(1,2), P_3=(2,3)</m>.
+       <figure xml:id="fig_leastsquares">
+         <title>Least-squares visualization</title>
+          <caption>Least-squares visualization</caption>
+           <image xml:id="im_leastsquares" width="100%" source="images/im_leastsquares.png" />
+       </figure>
+        Let <m>\boldy=(1,2,3)=(y_1,y_2,y_3)</m> be the given <m>y</m>-values of the points,
+        and let <m>\hat{\boldy}=(y_1',y_2',y_3')</m> be the orthogonal projection of <m>\boldy</m> onto <m>\CS A</m>.
+        In the graph the values <m>\epsilon_i</m> denote the vertical difference
+        <m>\epsilon_i=y_i-y_i'</m> between the data points, and our fitting line.
+        The projection <m>\hat{\boldy}</m> makes the error
+        <m>\norm{\boldy-\hat{\boldy}}=\sqrt{ \epsilon_1^2+\epsilon_2^2+\epsilon_3^2}</m> as small as possible.
+        This means if I draw <em>any other line</em>
+        and compute the corresponding differences
+        <m>\epsilon_i'</m> at the <m>x</m>-values  -3, 1 and 2, then
+        <md>
+          \epsilon_1^2+\epsilon_2^2+\epsilon_3^2\leq (\epsilon_1')^2+(\epsilon_2')^2+(\epsilon_3')^2
+        </md>
+      </p>
+    </statement>
+  </remark>
+  <p>
+    To compute a least-squares solution to <m>A\boldx=\boldy</m> we must first compute the orthogonal projection of <m>\boldy</m> onto <m>W=\CS A</m>; and this in turn requires first producing an orthogonal basis of <m>\CS A</m>, which may require using the Gram-Schmidt procedure. The following result bypasses these potentially onerous steps by  characterizing a least-squares solution to <m>A\boldx=\boldy</m> as a solution to the matrix equation
+    <md>
+      A^TA\boldx=A^T\boldy
+    </md>.
+  </p>
+  <theorem xml:id="th_leastsquares">
+    <title>Least-squares matrix formula</title>
+    <statement>
+      <p>
+        Given an <m>m\times n</m> matrix <m>A</m> and <m>m\times 1</m> column vector <m>\boldy</m>, a vector <m>\hat{\boldx}</m> is a least-squares solution to <m>A\boldx=\boldy</m> if and only if
+        <md number="yes" xml:id="eq_leastsquares_matrix_equation">
+          A^TA\boldx=A^T\boldy
+        </md>.
+          In other words, we can find a least-squares solution by solving the matrix equation <xref ref="eq_leastsquares_matrix_equation"/> directly.
+      </p>
+    </statement>
+    <proof>
+      <p>
+        Let <m>W=\CS A</m>, and let <m>\hat{\boldy}=\proj{\boldy}{W}</m>. The key observation is that a vector <m>\hat{\boldx}</m> satisfies <m>A\hat{\boldx}=\hat{\boldy}</m> if and only if
+        <md>
+          \boldy=A\hat{\boldx}+(\boldy-A\hat{\boldx})
+        </md>
+        is an orthogonal decomposition of <m>\boldy</m> with respect to <m>W=\CS A</m>; and this is true if and only if <m>\boldy-A\hat{\boldx}\in (\CS A)^\perp</m>. Thus we have
+        <md>
+          <mrow> A\hat{\boldx}=\hat{\boldy} \amp\iff \boldy-A\hat{\boldx}\in (\CS A)^\perp </mrow>
+          <mrow> \amp\iff \boldy-A\hat{\boldx}\in \NS A^T \amp ((\CS A)^\perp=\NS A^T, <xref ref="th_row_null_comp"/>) </mrow>
+          <mrow>  \amp\iff A^T(\boldy-A\hat{\boldx})=\boldzero </mrow>
+          <mrow>  \amp \iff A^T\boldy-A^TA\hat{\boldx}=\boldzero</mrow>
+          <mrow>  \amp \iff A^TA\hat{\boldx}=A^T\boldy</mrow>
+        </md>.
+      </p>
+    </proof>
+
+  </theorem>
+  <example>
+    <statement>
+      <p>
+        Consider again the matrix equation <m>A\boldx=\boldy</m> from <xref ref="eg_least-squares"/>. According to <xref ref="th_leastsquares"/> the least-squares solution can be found by solving the equation <m>A^TA\boldx=A^T\boldy</m> for <m>\boldx</m>. We compute
+        <md>
+          <mrow>A^TA\amp=\begin{amatrix}[rr]14\amp 0\\ 0\amp 3  \end{amatrix} \amp A^T\boldy\amp =\begin{amatrix}[r] 5\\ 6 \end{amatrix}</mrow>
+        </md>
+        and solve
+        <md>
+          \begin{amatrix}[rr]14\amp 0\\ 0\amp 3  \end{amatrix}\boldx=\begin{amatrix}[r] 5\\ 6 \end{amatrix}\iff
+            \boldx=(5/14, 2),
+        </md>
+        just as before.
+
+      </p>
+    </statement>
+
+  </example>
+
+
+</subsection>
+
+<xi:include href="./s_orthogonal_projection_ex.ptx"/>
+</section>

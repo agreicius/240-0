@@ -1,0 +1,520 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_spectral_theorem">
+  <title>The spectral theorem</title>
+<introduction>
+  <p>
+  Among the many takeaways from <xref ref="s_diagonalization"/> is the simple fact that not all matrices are diagonalizable. In principle <xref ref="th_diagonalizability_eigenspaces"/> gives a complete answer to the question of diagonalizability in terms of eigenspaces. However, you should not be mislead by the artificially simple examples treated in  <xref ref="s_diagonalization"/>. In practice even the determination (or approximation) of the distinct eigenvalues of an <m>n\times n</m> matrix poses a very challenging computational problem as <m>n</m> gets large. As such the general question of whether a matrix is diagonalizable remains an intractable one. This makes all the more welcoming the main result of this section: <em>all</em> symmetric matrices are diagonalizable! This surprising fact is a consequence of the <xref ref="th_spectral" text="custom">spectral theorem for self-adjoint operators</xref>: a result which itself fits into a larger suite of spectral theorems that treat the diagonalizability of various families of linear transformations of inner product spaces (both finite and infinite dimensional).
+  </p>
+</introduction>
+<subsection xml:id="ss_self-adjoint">
+  <title>Self-adjoint operators</title>
+  <p>
+    Though we are mainly interested in the diagonalizability of symmetric matrices, our arguments are made more elegant by abstracting somewhat to the realm of linear transformations of inner product spaces. In this setting the appropriate analogue of a symmetric matrix is a <em>self-adjoint</em> linear transformation.
+  </p>
+  <definition xml:id="d_self-adjoint">
+    <title>Self-adjoint operators</title>
+    <statement>
+      <p>
+        Let <m>(V, \langle\, , \rangle)</m> be a finite-dimensional inner product space. A linear transformation <m>T\colon V\rightarrow V</m> is called a <term>self-adjoint operator</term> if
+        <md number="yes" xml:id="eq_self-adjoint">
+          \langle T(\boldv), \boldw\rangle=\langle \boldv, T(\boldw)\rangle
+        </md>
+        for all <m>\boldv, \boldw\in V</m>.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    The next theorem makes explicit the connection between self-adjoint operators and symmetric matrices.
+  </p>
+  <theorem xml:id="th_self-adjoint_symmetric">
+    <title>Self-adjoint operators and symmetry</title>
+    <statement>
+      <p>
+        Let <m>(V, \langle\, , \rangle)</m> be a finite-dimensional inner product space, let <m>T\colon V\rightarrow V</m> be a linear transformation, and let <m>B</m> be an orthonormal ordered basis of <m>V</m>. The following statements are equivalent.
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>T</m> is self-adjoint.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A=[T]_B</m> is symmetric.
+          </p>
+        </li>
+      </ol>
+    </statement>
+    <proof>
+      <p>
+        Let <m>B=(\boldv_1, \boldv_2, \dots, \boldv_n)</m>. We have
+        <md>
+          A=\begin{amatrix}[cccc]\vert \amp \vert \amp \amp\vert \\
+        \left[T(\boldv_1)\right]_B\amp [T(\boldv_2)]_B\amp \cdots \amp [T(\boldv_n)]_B\\
+        \vert \amp \vert \amp \amp\vert
+         \end{amatrix}
+        </md>.
+        Furthermore, since <m>B</m> is orthonormal, the <m>i</m>-th entry of <m>[T(\boldv_j)]_B</m> is computed as <m>\langle T(\boldv_j), \boldv_i\rangle</m> (<xref ref="th_orthogonal_basis_formula" text="global"/>). Thus <m>A=[a_{ij}]</m>, where
+        <md>
+        a_{ij}=\langle T(\boldv_j), \boldv_i\rangle.
+        </md>
+        It follows that
+        <md>
+          <mrow>A \text{ symmetric} \amp\iff a_{ij}=a_{ji} \text{ for all } 1\leq i,j\leq n  </mrow>
+          <mrow> \amp\iff \langle T(\boldv_j), \boldv_i\rangle=\langle T(\boldv_i), \boldv_j\rangle \text{ for all } 1\leq i,j\leq n </mrow>
+          <mrow>  \amp \iff \langle T(\boldv_j), \boldv_i\rangle=\langle \boldv_j, T(\boldv_i)\rangle \text{ for all } 1\leq i,j\leq n \amp (<xref ref="d_innerproduct" text="global"/>, ii)</mrow>
+        </md>.
+        The last equality in this chain of equivalences states that <m>T</m> satisfies property <xref ref="eq_self-adjoint"/> for all elements of <m>B</m>. Not surprisingly, this is equivalent to <m>T</m> satisfying the property for <em>all</em> elements in <m>V</m>. (See <xref ref="ex_self-adjoint_symmetric"/>.) We conclude that <m>A</m> is symmetric if and only if <m>T</m> is self-adjoint.
+      </p>
+
+    </proof>
+
+  </theorem>
+<corollary xml:id="cor_self-adjoint_symmetric">
+  <title>Self-adjoint operators and symmetry</title>
+  <statement>
+    <p>
+      Let <m>A\in M_{nn}</m>. The following statements are equivalent.
+    </p>
+      <ol>
+        <li>
+          <p>
+            <m>A</m> is symmetric.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>T_A</m> is self-adjoint with respect to the dot product.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A\boldx\, \cdot \boldy=\boldx\cdot A\boldy</m> for all <m>\boldx, \boldy\in\R^n</m>.
+          </p>
+        </li>
+      </ol>
+  </statement>
+  <proof>
+    <p>
+      Since <m>A=[T_A]_B</m>, where <m>B</m> is the standard ordered basis of <m>\R^n</m>, and since <m>B</m> is orthonormal with respect to the dot product, it follows from <xref ref="th_self-adjoint_symmetric"/> that statements (1) and (2) are equivalent. Statements (2) and (3) are equivalent since by definition <m>T_A(\boldx)=A\boldx</m> for all <m>\boldx\in \R^n</m>.
+    </p>
+  </proof>
+
+</corollary>
+<p>
+  The next result, impressive in its own right, is also key to the induction argument we will use to prove <xref ref="th_spectral"/>. A proper proof would require a careful treatment of complex vector spaces: a topic which lies just outside the scope of this text. The <q>proof sketch</q> we provide can easily be upgraded to a complete argument simply by justifying a few statements about <m>\C^n</m> and its standard inner product.
+</p>
+<theorem xml:id="th_self-adjoint_eigenvalue">
+  <title>Eigenvalues of self-adjoint operators</title>
+  <statement>
+    <p>
+      Let <m>(V, \langle\, , \rangle)</m> be a finite-dimensional inner product space. If <m>T\colon V\rightarrow V</m> is self adjoint, then all roots of its characteristic polynomial <m>p(x)</m> are real: i.e., we have
+      <md>
+        p(x)=(x-\lambda_1)(x-\lambda_2)\cdots (x-\lambda_n)
+      </md>,
+      where <m>\lambda_i\in \R</m> for all <m>1\leq i\leq n</m>.
+    </p>
+  </statement>
+  <proof xml:id="proof_sketch">
+    <title>Proof sketch of <xref ref="th_self-adjoint_symmetric"/></title>
+    <p>
+      Pick an orthonormal ordered basis <m>B</m> of <m>V</m>, and let <m>A=[T]_B</m>. By <xref ref="th_self-adjoint_symmetric"/>, <m>A</m> is symmetric. To prove that all roots of the characteristic polynomial <m>p(t)=\det(tI-A)</m> are real, we make a slight detour into complex vector spaces. The set
+      <md>
+        \C^n=\{(z_1,z_2,\dots, z_n)\colon z_i\in \C \text{ for all } 1\leq i\leq n\}
+      </md>
+      of all complex <m>n</m>-tuples, together with the operations
+      <md>
+        (z_1,z_2,\dots, z_n)+(w_1, w_2,\dots, w_n)=(z_1+w_1, z_2+w_2, \dots, z_n+w_n)
+      </md>
+      and
+      <md>
+        \alpha (z_1, z_2, \dots, z_n)=(\alpha z_1, \alpha z_2, \dots, \alpha z_n),
+      </md>
+      where <m>\alpha\in \C</m>, forms what is called a
+      <em>vector space over <m>\C</m></em>. This means that <m>V=\C^n</m> satisfies the strengthened axioms of <xref ref="d_vector_space"/> obtained by replacing every mention of a scalar <m>c\in \R</m> with a scalar <m>\alpha\in \C</m>. Additionally, the vector space <m>\C^n</m> has the structure of a complex inner product defined as
+      <md>
+        \langle (z_1,z_2,\dots, z_n), (w_1,w_2,\dots, w_n)\rangle=z_1\overline{w_1}+z_2\overline{w_2}+\cdots +z_n\overline{w_n}
+      </md>,
+      where <m>\overline{w_i}</m> denotes the complex conjugate of <m>w_i</m> for each <m>i</m>.
+      Essentially all of our theory of real vector spaces can be <q>transported</q> to complex vector spaces, including definitions and results about eigenvectors and inner products. The rest of this argument makes use of this principle by citing without proof some of these properties, and this is why it has been downgraded to a <q>proof sketch</q>.
+    </p>
+    <p>
+      We now return to <m>A</m> and its characteristic polynomial <m>p(x)</m>. Recall that we want to show that all roots of <m>p(x)</m> are real.  Let <m>\lambda\in \C</m> be a root of <m>p(x)</m>. The complex theory of eigenvectors implies that there is a nonzero vector <m>\boldz\in \C^n</m> satisfying <m>A\boldz=\lambda \boldz</m>. On the one hand, we have
+      <md>
+        \langle A\boldz, \boldz\rangle =\langle \lambda\boldz, \boldz\rangle=\lambda\langle \boldz, \boldz\rangle
+      </md>
+      using properties of our complex inner product. On the other hand, since <m>A^T=A</m> it is easy to see that <xref ref="cor_self-adjoint_symmetric"/> extends to our complex inner product: <ie />,
+      <md>
+        \langle A\boldz, \boldw\rangle=\langle \boldz, A\boldw\rangle
+      </md>
+      for all <m>\boldz, \boldw\in \C^n</m>. Thus
+      <md>
+        <mrow> \langle A\boldz, \boldz\rangle  \amp=  </mrow>
+        <mrow> \amp= \langle \boldz, A\boldz\rangle </mrow>
+        <mrow>  \amp = \langle \boldz, \lambda\boldz\rangle</mrow>
+        <mrow>  \amp =\overline{\lambda}\langle \boldz, \boldz\rangle </mrow>
+      </md>.
+      (In the last equality we use the fact that our complex inner product satisfies
+      <m>\langle \boldz, \alpha\boldw\rangle=\overline{\alpha} \langle \boldz, \boldw\rangle</m> for any <m>\alpha\in \C</m> and vectors <m>\boldz, \boldw\in \C^n</m>.) It follows that
+      <md>
+        \lambda\langle \boldz, \boldz\rangle=\overline{\lambda}\langle \boldz, \boldz\rangle
+      </md>.
+      Since <m>\boldz\ne \boldzero</m>, we have <m>\langle \boldz, \boldz\rangle\ne 0</m> (another property of our complex inner product), and thus <m>\lambda=\overline{\lambda}</m>. Since a complex number <m>z=a+bi</m> satisfies <m>\overline{z}=z</m> if and only if <m>b=0</m> if and only if <m>z</m> is real, we conclude that <m>\lambda</m> is a real number, as claimed.
+    </p>
+  </proof>
+
+</theorem>
+<corollary xml:id="cor_self-adjoint_eigenvalue">
+  <title>Eigenvalues of self-adjoint operators</title>
+  <statement>
+    <p>
+      If <m>T</m> is a self-adjoint operator on a finite-dimensional inner product space <m>V</m>, then <m>T</m> has an eigenvalue: <ie />, there is a <m>\lambda\in \R</m> and nonzero <m>\boldv\in V</m> such that <m>T(\boldv)=\lambda\boldv</m>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      The corollary follows from <xref ref="th_self-adjoint_eigenvalue"/> and the fact that the eigenvalues of <m>T</m> are the real roots of its characteristic polynomial (<xref ref="th_characteristic_polynomial" text="global"/>).
+    </p>
+  </proof>
+
+</corollary>
+<p>
+  From <xref ref="th_self-adjoint_eigenvalue"/> and <xref ref="cor_self-adjoint_symmetric"/> it follows that the characterisitic polynomial of any symmetric matrix must factor as a product of linear terms over <m>\R</m>, as illustrated by the next two examples.
+</p>
+<example xml:id="eg_symmetric_matrix">
+  <title>Symmetric <m>2\times 2</m> matrices</title>
+  <statement>
+    <p>
+      Verify that the characteristic polynomial of any symmetric <m>2\times 2</m> matrix factors into linear terms over <m>\R</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+     Given a symmetric <m>2\times 2</m> matrix
+      <md>
+        A=\begin{bmatrix}
+          a\amp b\\
+          b\amp c
+      \end{bmatrix}
+      </md>,
+      we have
+      <md>
+        p(x)=\det(xI-A)=x^2-(a+c)x+(ac-b^2).
+      </md>.
+      Using the quadratic formula and some algebra, we see that the roots of <m>p(x)</m> are given by where (using the quadratic formula)
+      <md>
+        \frac{(a+c)\pm \sqrt{(a+c)^2-4ac+4b^2}}{2}=\frac{(a+c)\pm \sqrt{(a-c)^2+4b^2}}{2}
+      </md>.
+      Since <m>(a-c)^2+4b^2\geq 0</m>, we see that both these roots are real. Thus <m>p(x)=(x-\lambda_1)(x-\lambda_2)</m>, where <m>\lambda_1, \lambda_2\in \R</m>.
+    </p>
+  </solution>
+</example>
+<example>
+  <title>Symmetric <m>4\times 4</m> matrix</title>
+  <statement>
+    <p>
+      Verify that the characteristic polynomial of the symmetric matrix
+      <md>
+        A=\begin{amatrix}[rrrr]
+        6 \amp 2\amp 4\amp 0\\
+        2\amp 6\amp 0\amp 4\\
+        4\amp 0\amp -6\amp -2\\
+        0\amp 4\amp -2\amp -6
+      \end{amatrix}
+      </md>
+      factors into linear terms over <m>\R</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      The characteristic polynomial of <m>A</m> is <m>p(x)=x^4-112x^2+2560</m>. We can use the quadratic equation to solve <m>p(x)=0</m> for <m>u=x^2</m>, yielding
+      <md>
+        u=\frac{112\pm\sqrt{(112)^2-4(2560)}}{2}=56\pm 24
+      </md>.
+      We conclude that <m>x^2=32</m> or <m>x^2=80</m>, and thus <m>x=\pm 4\sqrt{2}</m> or <m>x=\pm 4\sqrt{5}</m>. It follows that
+      <md>
+        p(x)=(x-4\sqrt{2})(x+4\sqrt{2})(x-4\sqrt{5})(x+4\sqrt{5})
+      </md>.
+    </p>
+  </solution>
+</example>
+
+</subsection>
+<subsection xml:id="ss_spectal_theorem_operators">
+  <title>The spectral theorem for self-adjoint operators</title>
+  <introduction>
+    <p>
+      Our version of the spectral theorem concerns self-adjoint linear transformations on a finite-dimensional inner product space. It tells us two remarkable things: (a) every such linear transformation has an eigenbasis (and hence is diagonalizable); and furthermore, (b) the eigenbasis can be chosen to be orthogonal, or even orthonormal.
+    </p>
+  </introduction>
+<theorem xml:id="th_spectral">
+  <title>Spectral theorem for self-adjoint operators</title>
+  <statement>
+    <p>
+      Let <m>(V, \angvec{\, , \,})</m> be a finite-dimensional vector space, and let <m>T\colon V\rightarrow V</m> be a linear transformation. The following statements are equivalent.
+    </p>
+    <ol>
+      <li>
+        <p>
+          <m>T</m> is self-adjoint.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>T</m> is diagonalizable and eigenvectors with distinct eigenvalues are orthogonal.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>T</m> has an orthogonal eigenbasis.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>T</m> has an orthonormal eigenbasis.
+        </p>
+      </li>
+    </ol>
+  </statement>
+  <proof>
+    <p>
+      We will prove the cycle of implications <m>(1)\implies (2)\implies (3)\implies (4)\implies (1)</m>.
+    </p>
+    <proof>
+      <title>Implication: <m>(1)\implies (2)</m></title>
+      <p>
+        Assume <m>T</m> is self adjoint. First we show that eigenvectors with distinct eigenvalues are orthogonal. To this end, suppose we have <m>T(\boldv)=\lambda\boldv</m> and <m>T(\boldv')=\lambda'\boldv'</m>, where <m>\lambda\ne \lambda'</m>. Using the definition of self-adjoint, we have
+        <md>
+          <mrow>\angvec{T(\boldv), \boldv'}=\angvec{\boldv, T(\boldv')} \amp\implies \angvec{\lambda\boldv, \boldv'}=\angvec{\boldv, \lambda'\boldv'} </mrow>
+          <mrow> \amp\implies \lambda\angvec{\boldv, \boldv'}=\lambda'\angvec{\boldv, \boldv'} </mrow>
+          <mrow>  \amp \implies \angvec{\boldv, \boldv'}=0 \amp (\lambda\ne \lambda')</mrow>
+        </md>.
+        We now prove by induction on <m>\dim V</m> that if <m>T</m> is self-adjoint, then <m>T</m> is diagonalizable. The base case <m>\dim V=1</m> is trivial. Assume the result is true of any <m>n</m>-dimensional inner product space, and suppose <m>\dim V=n+1</m>. By <xref ref="cor_self-adjoint_eigenvalue"/> there is a nonzero <m>\boldv\in V</m> with <m>T(\boldv)=\lambda\boldv</m>. Let <m>W=\Span\{\boldv\}</m>. Since <m>\dim W=1</m>, we have <m>\dim W^\perp=\dim V-1=n</m>. The following two facts are crucial for the rest of the argument and are left as an exercise (<xref ref="ex_selfadjoint_complement" text="global"/>).
+        <ol class="a">
+          <li>
+            <p>
+              For all <m>\boldv\in W^\perp</m> we have <m>T(\boldv)\in W^\perp</m>, and thus by restricting <m>T</m> to <m>W^\perp</m> we get a linear transformation <m>T\vert_{W^{\perp}}\colon W^\perp\rightarrow W^\perp</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The restriction <m>T\vert_{W^\perp}</m> is self-adjoint, considered as a linear transformation of the inner product space <m>W^\perp</m>.  Here the inner product on the subspace <m>W^\perp</m> is inherited from <m>(V, \angvec{\, , \,})</m> by restriction.
+            </p>
+          </li>
+        </ol>
+        Now since <m>\dim W^\perp=n-1</m> and <m>T\vert_{W^\perp}</m> is self-adjoint, we may assume by induction that <m>T\vert_{W^\perp}</m> has an eigenbasis <m>B'=(\boldv_1, \boldv_2,\dots, \boldv_n)</m>. We claim that <m>B=(\boldv, \boldv_2, \dots, \boldv_n)</m>
+        is an eigenbasis of <m>V</m>. Since by definition <m>T\vert_{W^\perp}(\boldw')=T(\boldw')</m> for all <m>\boldw'\in W^\perp</m>, we see that the vectors <m>\boldv_i</m> are also eigenvectors of <m>T</m>, and thus that <m>B</m> consists of eigenvectors. To show <m>B</m> is a basis it is enought to prove linear independence, since  <m>\dim V=n+1</m>. Suppose we have
+        <md>
+          c\boldv+c_1\boldv_1+\cdots +c_n\boldv_n=\boldzero
+        </md>
+        for scalars <m>c, c_i\in \R</m>. Taking the inner product with <m>\boldv</m>, we have :
+        <md>
+          <mrow> c\boldv+c_1\boldv_1+\cdots +c_n\boldv_n=\boldzero\amp\implies
+          </mrow>
+          <mrow> \langle\boldv, c\boldv+c_1\boldv_1+\cdots +c_n\boldv_n\rangle=\langle\boldv, \boldzero\rangle
+          \amp\implies c\angvec{\boldv, \boldv}+\sum_{i=1}^nc_i\angvec{\boldv, \boldv_i}=0 </mrow>
+          <mrow>  \amp \implies
+          c\angvec{\boldv, \boldv}=0 \amp (\angvec{\boldv, \boldv_i}=0)</mrow>
+          <mrow>  \amp \implies c=0 \amp (\angvec{\boldv, \boldv}\ne 0)</mrow>
+        </md>.
+         It follows that we have
+        <md>
+          c_1\boldv_1+\cdots +c_n\boldv_n=\boldzero
+        </md>,
+        and thus <m>c_i=0</m> for all <m>1\leq i\leq n</m>, since <m>B'</m> is linearly independent. Having proved that <m>B</m> is an eigenbasis, we conclude that <m>T</m> is diagonalizable.
+      </p>
+    </proof>
+    <proof>
+      <title>Implication: <m>(2)\implies (3)</m></title>
+      <p>
+        Let <m>\lambda_1, \lambda_2, \dots, \lambda_r</m> be the distinct eigenvalues of <m>T</m>. Since <m>T</m> is assumed to be diagonalizable, following <xref ref="proc_diagonalize"/> we can create an eigenbasis <m>B</m> by picking bases <m>B_i</m> of each eigenspace <m>W_{\lambda_i}</m> and combining them. We can always choose these bases so that each <m>B_i</m> is orthogonal. When we do so, the assembled <m>B</m> will be orthogonal as a whole. Indeed given any two elements <m>\boldv, \boldv'</m> of <m>B</m>, if both vectors are elements of <m>B_i</m> for some <m>i</m>, then they are orthogonal <em>by design</em>; furthermore, if <m>\boldv</m> is an element of basis <m>B_i</m> and <m>\boldv'</m> is an element of basis <m>B_j</m> with <m>i\ne j</m>, then they are eigenvectors with distinct eigenvalues, and hence orthogonal <em>by assumption</em>!
+      </p>
+    </proof>
+    <proof>
+      <title>Implication: <m>(3)\implies (4)</m></title>
+      <p>
+        This is easy to see since an orthonormal eigenbasis can be obtained from an orthogonal eigenbasis by scaling each element by the reciprocal of its norm.
+      </p>
+    </proof>
+    <proof>
+      <title>Implication: <m>(4)\implies (1)</m></title>
+      <p>
+        Assume <m>B</m> is an orthonormal eigenbasis of <m>T</m>. Since <m>B</m> is an eigenbasis, <m>[T]_B</m> is a diagonal matrix, and hence symmetric. Since <m>B</m> is orthonormal with respect to the dot product, we conclude from <xref ref="th_self-adjoint_symmetric"/> that <m>T</m> is self-adjoint.
+      </p>
+    </proof>
+  </proof>
+
+</theorem>
+<p>
+An operator that admits an orthogonal (and hence an orthonormal) eigenbasis is called  <em>orthogonally diagonalizable</em>.
+</p>
+<definition xml:id="d_orthogonally_diagable">
+ <idx><h>diagonalizable</h><h>orthogonally</h></idx>
+ <idx><h>orthogonally diagonalizable</h></idx>
+ <title>Orthogonally diagonalizable</title>
+ <statement>
+   <p>
+     Let <m>V</m> be a finite-dimensional inner product space. A linear transformation <m>T\colon V\rightarrow V</m> is <term>orthogonally diagonalizable</term> if there exists an orthogonal (equivalently, an orthonormal) eigenbasis of <m>T</m>.
+   </p>
+ </statement>
+</definition>
+<p>
+  This new language affords us a more succinct articulation of <xref ref="th_spectral"/>: to be self-adjoint is to be orthogonally diagonalizable. Think of this as a sort of <q>diagonalizable+</q> condition.
+</p>
+<principle xml:id="mantra_self-adjoint">
+ <title>Self-adjoint mantra</title>
+ <statement>
+   <p>
+     To be self-adjoint on a finite-dimensional inner product space is to be <q>diagonalizable+</q>. In more detail:
+     <md number="yes" xml:id="eq_self_adjoint">
+       T \text{ is self-adjoint} \iff T \text{ is orthogonally diagonalizable}
+     </md>.
+   </p>
+ </statement>
+</principle>
+<p>
+  As an immediate consequence of <xref ref="th_spectral"/>, we have the following result about symmetric matrices.
+</p>
+<corollary xml:id="cor_spectral">
+  <title>Spectral theorem for symmetric matrices</title>
+  <statement>
+    <p>
+      Let <m>A</m> be an <m>n\times n</m> matrix. The following statements are equivalent.
+    </p>
+    <ol>
+      <li>
+        <p>
+          <m>A</m> is symmetric.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>A</m> is diagonalizable and eigenvectors with distinct eigenvalues are orthogonal with respect to the dot product.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>A</m> is orthogonally diagonalizable.
+        </p>
+      </li>
+      <li>
+        <p>
+          There exists an <xref ref="d_orthogonal_matrix" text="custom">orthogonal matrix</xref> <m>Q</m> and diagonal matrix <m>D</m> such that
+          <md number="yes" xml:id="eq_ortho_diag">
+            D=Q^{-1}AQ=Q^TAQ
+          </md>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+  <proof>
+    <p>
+      By <xref ref="cor_self-adjoint_symmetric"/> we have <m>A</m> symmetric if and only if <m>T_A</m> is self-adjoint with respect to the dot product. Statements (1)-(3) are seen to be equivalent by applying <xref ref="th_spectral"/> to <m>T_A</m> (with respect to the dot product). Let <m>B</m> be the standard basis of <m>\R^n</m>. We see that (4) is equivalent to (3) by observing that <m>B'</m> is an orthonormal eigenbasis of <m>T_A</m> if and only if the matrix <m>Q=\underset{B'\rightarrow B}{P}</m> obtained by placing the elements of <m>B'</m> as columns is orthogonal and diagonalizes <m>A</m>.
+    </p>
+  </proof>
+</corollary>
+<p>
+  The process of finding matrices <m>Q</m> and <m>D</m> satisfying <xref ref="eq_ortho_diag"/> is called <em>orthogonal diagonalization</em>. A close look at the proof of <xref ref="th_spectral"/> gives rise to the following orthogonal diagonalization method for matrices.
+</p>
+<algorithm xml:id="proc_ortho_diag">
+  <title>Orthogonal diagonalization</title>
+  <statement>
+    <p>
+      Let <m>A</m> be a symmetric matrix. To orthogonally diagonalize <m>A</m> proceed as follows.
+    </p>
+    <ol>
+      <li>
+        <p>
+          Let <m>\lambda_1, \lambda_2, \dots, \lambda_r</m> be the distinct eigenvalues of <m>A</m>. For each <m>1\leq i\leq r</m>, compute an <em>orthonormal</em> ordered basis of <m>W_{\lambda_i}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Let <m>B'=(\boldv_1, \boldv_2, \dots, \boldv_n)</m> be the ordered basis obtained by concatenating the orthonormal bases computed in (1). This is an orthonormal basis of eigenvectors. It follows that the matrix
+          <md>
+            Q=\begin{bmatrix}
+              \vert\amp \vert\amp \amp \vert\\
+              \boldv_1\amp \boldv_2\amp\cdots \amp \boldv_n\\
+              \vert\amp \vert\amp \amp \vert
+          \end{bmatrix}
+          </md>
+          is orthogonal (<ie />, <m>Q^{-1}=Q^T</m>), and the matrix <m>D=Q^{-1}AQ=Q^TAQ</m> is diagonal.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</algorithm>
+<example xml:id="eg_ortho_diag">
+  <title>Orthogonal diagonalization</title>
+  <statement>
+    <p>
+      The symmetric matrix
+      <md>
+        A=\frac{1}{3}\begin{amatrix}[rrr]
+        -1\amp 2\amp 2\\
+  2 \amp -1 \amp 2 \\
+  2\amp 2 \amp -1  \end{amatrix}
+      </md>
+      has characteristic polynomial <m>p(x)=x^3+x^2-x-1</m>.
+      Find an orthogonal matrix <m>Q</m> and diagonal matrix <m>D</m> such that <m>D=Q^TAQ</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      First we factor <m>p(x)</m>. Looking at the constant term we see that the only possible integer roots of <m>p(x)</m> are <m>\pm 1</m>. It is easily verified that <m>p(1)=0</m>, and  polynomial division yields the factorization <m>p(x)=(x-1)(x^2+2x+1)</m>.  Further factorization of <m>x^2+2x+1</m> gives us  <m>p(x)=(x-1)(x+1)^2</m>.
+    </p>
+    <p>
+      Next we compute <em>orthonormal</em> bases of the eigenspaces <m>W_1</m> and <m>W_{-1}</m>, yielding
+      <md>
+          <mrow>B_1\amp=\left(\frac{1}{\sqrt{3}}(1,1,1)\right) \amp B_{2}\amp =\left(\frac{1}{\sqrt{2}}(1,-1,0), \frac{1}{\sqrt{6}}(1,1,-2)\right)
+          </mrow>
+      </md>.
+    Assembling these bases elements into the orthogonal matrix
+    <md>
+      Q=\begin{amatrix}[rrr]1/\sqrt{3}\amp 1/\sqrt{2}\amp 1/\sqrt{6}\\
+      1/\sqrt{3}\amp -1/\sqrt{2}\amp 1/\sqrt{6}\\
+      1/\sqrt{3}\amp 0\amp -2/\sqrt{6}\end{amatrix}
+    </md>,
+    we conclude that <m>D=Q^{-1}AQ=Q^TAQ</m>, where
+    <md>
+      D=\begin{amatrix}[rrr]1\amp 0\amp 0\\ 0\amp -1\amp 0\\ 0\amp 0\amp -1  \end{amatrix}
+    </md>.
+    </p>
+  </solution>
+</example>
+<p>
+  Observe that the two eigenspaces <m>W_1</m> and <m>W_{-1}</m> of the matrix <m>A</m> in <xref ref="eg_ortho_diag"/> are orthogonal to one another, as predicted by the spectral theorem. Indeed, <m>W_1</m> is the line passing through the origin with direction vector <m>\boldn=(1,1,1)</m>, and <m>W_{-1}</m> is its orthogonal complement, the plane passing through the origin with normal vector <m>\boldn</m>. <xref ref="fig_ortho_diag"/> depicts the orthogonal configuration of the eigenspaces of this example. This is an excellent illustration of what makes the diagonalizability of symmetric matrices (and self-adjoint operators) special. Keep it in mind!
+</p>
+<figure xml:id="fig_ortho_diag">
+  <title>Eigenspaces of a symmetric matrix are orthogonal</title>
+  <interactive xml:id="geogebra_ortho_diag" platform="geogebra" width="100%" aspect="4:3">
+    <slate surface="geogebra" material="zkqwe4mq" aspect="4:3" marker="train-distance">
+    enableLabelDrags(false);
+    </slate>
+  </interactive>
+  <caption>Eigenspaces of a symmetric matrix are orthogonal</caption>
+</figure>
+<p>
+ Do not overlook the reverse implication of equivalence <xref ref="eq_self_adjoint"/>. As the next example illustrates, we can show an operator is self-adjoint by examining the geometry of its eigenspaces.
+</p>
+<example xml:id="eg_ortho_proj_selfadjoint">
+  <title>Orthogonal projections are self-adjoint</title>
+  <statement>
+    <p>
+      Let <m>(V,\angvec{\, , \,})</m> be a finite-dimensional inner product space, let <m>W</m> be a subpsace of <m>V</m>, and let <m>T=\operatorname{proj}_W</m> be orthogonal projection onto <m>W</m>. Prove that <m>T</m> is self-adjoint.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      By <xref ref="th_spectral"/> it suffices to show that <m>T</m> is orthogonally diagonalizable. According to <xref ref="ex_orthoproj_props"/> we have
+      <md>
+        <mrow>\boldv\in W \amp \iff T(\boldv)=\boldv</mrow>
+        <mrow>\boldv\in W^\perp \amp \iff T(\boldv)=\boldzero</mrow>
+      </md>.
+      Equivalently, <m>W=W_1</m> and <m>W^\perp=W_0</m> are the 1- and 0-eigenspaces of <m>T</m>, respectively. Since <m>\dim W+\dim W^\perp=\dim V</m> we conclude that <m>T</m> is diagonalizable. Since clearly <m>W</m> and <m>W^\perp</m> are orthogonal, we conclude that <m>T</m> is in fact othogonally diagonalizable, hence self-adjoint.
+    </p>
+  </solution>
+</example>
+</subsection>
+
+<xi:include href="./s_spectral_theorem_ex.ptx"/>
+</section>

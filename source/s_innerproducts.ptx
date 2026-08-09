@@ -1,0 +1,538 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_innerproducts">
+  <title>Inner product spaces</title>
+  <introduction>
+    <p>
+     At last we return to that additional layer that can added atop a vector space structure: the <xref ref="d_innerproduct" text="custom">inner product</xref>. 
+    </p>
+  </introduction>
+    
+  <subsection xml:id="ss_norm_distance">
+    <title>Norm and distance</title>
+    <p>
+      As mentioned above, once an inner product is established, we can define further notions like norm (or length), distance, and angle in terms of the given inner product.  When the inner product in question is the standard dot product on <m>\R^2</m> or <m>\R^3</m>, then these are precisely the familiar notions you may have met in multivariable calculus. Things get really interesting when we treat a more exotic inner product space. For example, consider <m>C([a,b])</m>. The <em>integral inner product</em> <md>\angvec{f,g}=\int_a^b f(x)g(x)\, dx</md> gives rise to useful notions of the length of a function <m>f\in C([a,b])</m>, as well as the distance or angle between two functions <m>f,g\in C([a,b])</m>.
+    </p>
+    <definition xml:id="d_norm">
+      <title>Norm (or length) of a vector</title>
+      <idx><h>norm</h><h>of a vector</h></idx>
+      <notation>
+        <usage><m>\norm{\boldv}</m></usage>
+        <description>norm of <m>\boldv</m></description>
+      </notation>
+      <statement>
+        <p>
+          Let <m>(V, \langle ,  \rangle )</m> be an inner product space. Given <m>\boldv\in V</m> we define its <term>norm</term> (or <term>length</term>), denoted <m>\norm{\boldv}, </m> as
+          <md>
+            \norm{\boldv}=\sqrt{\langle \boldv, \boldv  \rangle }
+          </md>.
+          A <term>unit vector</term> is a vector <m>\boldv</m> of length one: <ie />, a vector  <m>\boldv</m> satisfying <m>\norm{\boldv}=1</m>.
+        </p>
+      </statement>
+    </definition>
+    <example xml:id="eg_norm_dot">
+      <title>Norm with respect to dot product</title>
+      <statement>
+        <p>
+          Consider <m>V=\R^4</m> with the standard dot product. Compute <m>\norm{(1,-1,-2,1)}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We have
+          <md>
+            <mrow> \norm{(1,-1,-2,1)}\amp =\sqrt{(1,-1,-2,1)\cdot (1,-1,-2,1)} </mrow>
+            <mrow> \amp=\sqrt{1+1+4+1} </mrow>
+            <mrow>  \amp = \sqrt{7}</mrow>
+          </md>.
+        </p>
+      </solution>
+    </example>
+    <example xml:id="eg_norm_weighteddot">
+        <title>Norm with respect to weighted dot product</title>
+        <statement>
+        <p>
+          Consider <m>V=\R^3</m> equipped with the dot product with weights <m>1,2,3</m>. Compute <m>\norm{(3,1,-2)}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We have
+          <md>
+            <mrow> \norm{(3,1,-2)}\amp =\sqrt{\left\langle (3,1,-2), (3,1,-2)\right\rangle} </mrow>
+            <mrow> \amp=\sqrt{1(3^2)+2(1^2)+3((-2)^2)} </mrow>
+            <mrow>  \amp = \sqrt{23}</mrow>
+          </md>.
+        </p>
+      </solution>
+    </example>
+    <!-- <example xml:id="eg_norm_integral">
+      <title>Norm with respect to integral inner product</title>
+      <statement>
+        <p>
+          Consider <m>V=C([0,1])</m> equipped with the integral inner product. Compute <m>\norm{f}</m>, where <m>f(x)=e^x</m>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We have
+          <md>
+            <mrow> \norm{f}\amp =\sqrt{\langle f,f\rangle} </mrow>
+            <mrow> \amp=\sqrt{\int_0^1(e^x)^2\, dx} </mrow>
+            <mrow>  \amp = \sqrt{\int_0^1e^{2x}\, dx}</mrow>
+            <mrow>  \amp =\sqrt{(e^2-1)/2} </mrow>
+          </md>.
+        </p>
+      </solution>
+    </example> -->
+
+      <remark xml:id="rm_unit_vectors">
+      <title>Unit vectors</title>
+
+      <statement>
+        <p>
+          Given any <m>\boldv\ne \boldzero\in V</m>, the vector <m>\boldu=\frac{1}{\norm{\boldv}}\boldv</m> is a unit vector. To verify this, let <m>c=\norm{\boldv}</m> and compute
+          <md>
+            <mrow>\norm{\boldu} \amp =\sqrt{\left\langle \frac{1}{c}\boldv,\frac{1}{c}\boldv   \right\rangle }</mrow>
+            <mrow> \amp =\sqrt{\frac{1}{c^2}\langle \boldv,\boldv  \rangle} \amp (<xref ref="d_innerproduct"/>, \text{(ii)})  </mrow>
+            <mrow>  \amp =\frac{1}{\val{c}}\sqrt{\langle \boldv,\boldv  \rangle } </mrow>
+            <mrow>  \amp =\frac{1}{c}\sqrt{\langle \boldv,\boldv  \rangle } \amp (c=\norm{\boldv}\geq 0)</mrow>
+            <mrow>  \amp =\frac{\norm{\boldv}}{\norm{\boldv}}=1</mrow>
+          </md>.
+        </p>
+      </statement>
+    </remark>
+    <example xml:id="eg_unit_vectors">
+      <title>Unit vectors</title>
+      <statement>
+        <p>
+          For each inner product space <m>(V, \langle\,, \rangle)</m> and <m>\boldv\in V</m> compute the associated unit vector <m>\boldu=\frac{1}{\norm{v}}\boldv</m>
+          <ol>
+            <li>
+              <p>
+                <m>V=\R^4</m> with dot product, <m>\boldv=(1,-1,2,1)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>V=\R^3</m> with dot product with weights <m>1,2,3</m>, <m>\boldv=(3,1,-2)</m>
+              </p>
+            </li>
+            <!-- <li>
+              <p>
+                <m>V=C([0,1])</m> with integral inner product, <m>\boldv=e^x</m>
+              </p>
+            </li> -->
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The norms of the vectors in each case were computed in earlier examples. We simply scale to compute the corresponding unit vectors.
+        </p>
+        <ol>
+          <li>
+            <p>
+              <m>\boldu=\frac{1}{\sqrt{7}}(1,-1,2,1)=(\sqrt{7}/7,-\sqrt{7}/7,2\sqrt{7}/7,\sqrt{7}/7)</m>
+            </p>
+          </li>
+          <!-- <li>
+            <p>
+              <m>\boldu=\frac{1}{\sqrt{23}}(3,1,-2)=(3\sqrt{23}/23,\sqrt{23}/23,-2\sqrt{23}/23)</m>
+            </p>
+          </li> -->
+          <!-- <li>
+            <p>
+              <m>\boldu=\frac{1}{\sqrt{(e^2-1)/2}}e^x=\frac{\sqrt{2(e^2-1)}}{e^2-1}e^x</m>
+            </p>
+          </li> -->
+        </ol>
+      </solution>
+    </example>
+    <p>
+    Next, we define the distance between two vectors in an inner product space as the length of their vector difference.
+    </p>
+    <definition xml:id="d_distance">
+      <idx><h>distance</h><h>between two vectors</h></idx>
+      <notation>
+        <usage><m>d(\boldv, \boldw)</m></usage>
+        <description>the distance between <m>\boldv</m> and <m>\boldw</m></description>
+      </notation>
+      <title>Distance between vectors</title>
+      <statement>
+        <p>
+        Let <m>(V,\langle ,  \rangle )</m> be an inner product space. The <term>distance between <m>\boldv, \boldw\in V</m></term>, denoted <m>d(\boldv, \boldw)</m>, is defined as
+        <md>
+          d(\boldv, \boldw)=\norm{\boldv-\boldw}=\sqrt{\langle \boldv-\boldw,\boldv-\boldw  \rangle }
+        </md>.
+        </p>
+      </statement>
+    </definition>
+    <example xml:id="eg_distance">
+      <statement>
+        <p>
+         For each inner product space <m>V</m>, compute the distance between the given vectors.
+        </p>
+        <ol>
+          <li>
+            <p>
+              <m>V=\R^3</m> with the dot product, <m>\boldx=(x_1,x_2,x_3)</m>, <m>\boldy=(y_1,y_2,y_3)</m>
+            </p>
+          </li>
+          <!-- <li>
+            <p>
+              <m>V=P_2</m> with the evaluation at <m>1,-1,0</m> inner product, <m>p_1(x)=x^2+1</m>, <m>p_2(x)=x+2</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>V=C([-\pi,\pi])</m> with the integral inner product, <m>f(x)=\sin x+x</m>, <m>g(x)=x</m>
+            </p>
+          </li> -->
+        </ol>
+      </statement>
+      <solution>
+        <ol>
+          <li>
+            <p>
+              We have
+              <md>
+                <mrow>d(\boldx,\boldy) \amp = \norm{\boldx-\boldy} </mrow>
+                <mrow>  \amp = \sqrt{\langle \boldx-\boldy,\boldx-\boldy\rangle} </mrow>
+                <mrow> \amp =\sqrt{(x_1-y_1,x_2-y_2,x_3-y_3)\cdot(x_1-y_1,x_2-y_2,x_3-y_3)} </mrow>
+                <mrow>  \amp = \sqrt{(x_1-y_1)^2+(x_2-y_2)^2+(x_3-y_3)^2}</mrow>
+              </md>.
+            </p>
+          </li>
+          <!-- <li>
+            <p>
+              We have
+              <md>
+                <mrow>d(p_1,p_2) \amp = \norm{p_1-p_2} </mrow>
+                <mrow>  \amp = \sqrt{\langle p_1-p_2, p_1-p_2\rangle}</mrow>
+                <mrow>  \amp = \sqrt{(p_1(1)-p_2(1))^2+(p_1(-1)-p_2(-1))^2+(p_1(0)-p_2(0))^2}</mrow>
+                <mrow>  \amp = \sqrt{(-1)^2+(1)^2+(-1)^2}=\sqrt{3} </mrow>
+              </md>
+            </p>
+          </li>
+          <li>
+            <p>
+              We have
+              <md>
+                <mrow>d(f,g) \amp = \norm{f-g} </mrow>
+                <mrow> \amp =\sqrt{\langle f-g, f-g \rangle} </mrow>
+                <mrow>  \amp = \sqrt{\langle \sin x, \sin x\rangle }</mrow>
+                <mrow>  \amp = \sqrt{\int_{-pi}^{pi}\sin^2 x\, dx}</mrow>
+                <mrow>  \amp = \sqrt{\pi} </mrow>
+              </md>
+            </p>
+          </li> -->
+        </ol>
+      </solution>
+    </example>
+    <theorem xml:id="th_norm_basic_props">
+      <title>Basic properties of norm and distance</title>
+      <statement>
+        <p>
+        Let <m>(V,\langle ,  \rangle)</m> be an inner product space.
+        </p>
+        <ol>
+          <li>
+            <p>
+              For all <m>\boldv\in V</m> we have
+              <md>
+                \norm{\boldv}\geq 0
+              </md>,
+              and equality holds if and only if <m>\boldv=0</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              For all <m>c\in \R</m> and <m>\boldv\in V</m> we have
+              <md>
+                \norm{c\boldv}=\val{c}\norm{\boldv}
+              </md>.
+            </p>
+          </li>
+          <li>
+            <p>
+              For all <m>\boldv, \boldw\in V</m> we have
+              <md>
+                d(\boldv,\boldw)=d(\boldw,\boldv)\geq 0
+              </md>,
+              and equality holds if and only if <m>\boldv=\boldw</m>.
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <proof>
+        <p>
+          We prove (2) and leave the rest as an exercise (<xref ref="ex_norm_props"/>).
+        </p>
+        <p>
+          Given <m>c\in \R</m> and <m>\boldv\in V</m> we have
+          <md>
+            <mrow>\norm{c\boldv} \amp =\sqrt{\langle c\boldv, c\boldv\rangle}</mrow>
+            <mrow> \amp=\sqrt{c^2\langle \boldv, \boldv\rangle} \amp (<xref ref="d_innerproduct"/>)</mrow>
+            <mrow>  \amp =\val{c}\sqrt{\langle \boldv, \boldv\rangle} \amp (\sqrt{c^2}=\val{c})</mrow>
+          </md>.
+        </p>
+      </proof>
+
+    </theorem>
+</subsection>
+  <subsection>
+    <title>Cauchy-Schwarz inequality, triangle inequalities, and angles between vectors</title>
+    <p>
+      The famous <em>Cauchy-Schwarz inequality</em> has a knack of cropping up all over the world of science: from properties of covariance in statistics, to the Heisenberg uncertainty principle of quantum mechanics. More directly pertinent to our discussion, the Cauchy-Schwarz inequality implies the triangle inequalities (<xref ref="th_triangle_inequalities" text="global"/>) and ensures that our notion of the angle between two nonzero vectors (<xref ref="d_angle"/>) is well-defined.
+    </p>
+    <theorem xml:id="th_Cauchy-Schwarz">
+      <title>Cauchy-Schwarz inequality</title>
+      <statement>
+        <p>
+          Let <m>(V,\langle \ , \rangle)</m> be an inner product space.
+          For all <m>\boldv,\boldw\in V</m> we have
+          <md>
+          \val{\langle\boldv,\boldw\rangle}\leq\norm{\boldv}\norm{\boldw}
+          </md>,
+          and equality holds if and only if <m>\boldv=c\boldw</m> for some <m>c\in\R</m>.
+        </p>
+      </statement>
+    </theorem>
+    <proof>
+      <p>
+        Fix vectors <m>\boldv</m> and <m>\boldw</m>.
+        For any <m>t\in\R</m> we have by positivity
+        <md>
+        0\leq \langle t\boldv-\boldw,t\boldv-\boldw\rangle=\langle\boldv,\boldv\rangle t^2-2\langle\boldv,\boldw\rangle t+\langle\boldw,\boldw\rangle=at^2-2bt+c
+        </md>,
+        where
+        <md number="yes" xml:id="eq_cauchy_schwarz">
+         a=\langle\boldv,\boldv\rangle, \ b=\langle\boldv,\boldw\rangle, \   c=\langle\boldw,\boldw\rangle=\norm{w}^2
+       </md>.
+
+        Since <m>at^2-2b\,t+c\geq 0</m> for all <m>t\in \R</m> the quadratic polynomial <m>p(t)=at^2-2b\,t+c</m> has
+        <em>at most</em> one root. Using the quadratic formula we conclude that we must have <m>4b^2-4ac\leq 0</m>,
+        since otherwise <m>p(t)</m> would have two distinct roots.
+        It follows that
+        <md>
+          4\langle \boldv, \boldw\rangle^2-4\norm{\boldv}^2\norm{\boldw}^2\leq 0
+        </md>,
+        or equivalently
+        <md>
+        \langle\boldv,\boldw\rangle^2\leq \norm{\boldv}^2\norm{\boldw}^2
+        </md>.
+        Taking square-roots yields the desired inequality.
+      </p>
+      <p>
+        The same reasoning shows that the Cauchy-Schwarz inequality is an actual equality if and only if  <m>p(t)=0</m> for some <m>t</m> if and only if
+        <m>0=\langle t\boldv-\boldw,t\boldv-\boldw\rangle</m> if and only if  <m>\boldv=t\boldw</m> for some <m>t</m>
+        (by positivity).
+      </p>
+    </proof>
+    <p>
+      The following triangle inequalities are more or less direct consequences of the Cauchy-Schwarz inequality.
+    </p>
+    <theorem xml:id="th_triangle_inequalities">
+      <title>Triangle Inequalities</title>
+      <statement>
+        <p>
+          Let <m>(V, \langle \ , \rangle)</m> be an inner product space.
+          <ol>
+            <li>
+              <p>
+                For all <m>\boldv, \boldw\in V</m> we have <md>\norm{\boldv+\boldw}\leq \norm{\boldv}+\norm{\boldw}</md>.
+              </p>
+            </li>
+            <li>
+              <p>
+                For all <m>\boldv, \boldw, \boldu\in V</m> we have
+                <md>d(\boldv,\boldw)\leq d(\boldv,\boldu)+d(\boldu,\boldw)</md>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          This is an elementary exercise of unpacking the definitions of norm and distance in terms of the inner product, and then applying the Cauchy-Schwarz inequality appropriately. The proof is left as an exercise.
+        </p>
+      </proof>
+    </theorem>
+    <p>
+      Let <m>(V, \langle ,  \rangle )</m> be an inner product space. For any <em>nonzero</em> vectors <m>\boldv, \boldw</m>, the Cauchy-Schwarz inequality tells us that
+      <md>
+        \val{\langle \boldv, \boldw \rangle }\leq \norm{\boldv}\, \norm{\boldw}
+      </md>,
+      or equivalently,
+      <md>
+        -1\leq \frac{\langle \boldv, \boldw \rangle}{\norm{\boldv}\, \norm{\boldw}} \leq 1
+      </md>.
+      It follows that there is a unique real number <m>\theta\in [0,\pi]</m> satisfying
+      <md>
+        \cos\theta=\frac{\langle \boldv, \boldw \rangle}{\norm{\boldv}\, \norm{\boldw}}
+      </md>.
+      We call <m>\theta</m> the <em>angle between <m>\boldv</m> and <m>\boldw</m></em>.
+    </p>
+    <definition xml:id="d_angle">
+      <title>Angle between vectors</title>
+      <idx><h>angle</h><h>between vectors</h></idx>
+      <statement>
+        <p>
+          Let <m>(V,\langle ,  \rangle )</m> be an inner product space. Given nonzero vectors <m>\boldv, \boldw\in V</m>, the <term>angle between <m>\boldv</m> and <m>\boldw</m></term> is defined to be the unique <m>\theta\in [0,\pi]</m> satisfying
+          <md>
+            \cos\theta=\frac{\langle \boldv, \boldw \rangle}{\norm{\boldv}\, \norm{\boldw}}
+          </md>.
+          Equivalently, we have
+          <md>
+            \theta=\arccos\left(
+              \frac{\langle \boldv, \boldw \rangle}{\norm{\boldv}\, \norm{\boldw}}
+            \right)
+          </md>.
+        </p>
+      </statement>
+    </definition>
+        <remark xml:id="rm_general_angles">
+      <statement>
+        <p>
+          Our definition of the angle between two vectors may remind you of the dot product angle formula for vectors in <m>\R^3</m>:
+          <md number="yes" xml:id="eq_dotproductangle">
+            \cos\theta=\frac{\boldx\cdot\boldy}{\norm{\boldx}\norm{\boldy}}
+          </md>.
+          Interestingly, whereas <xref ref="eq_dotproductangle"/> is typically treated as a <em>theorem</em>, derived from properties of the dot product and the law of cosines, in a general inner product space the equation
+          <md>
+            \cos\theta =\frac{\langle \boldv, \boldw\rangle}{\norm{\boldv}\norm{\boldw}}
+          </md>
+          is understood as the <em>definition</em> of the angle between two vectors.
+        </p>
+      </statement>
+    </remark>
+    <example xml:id="eg_angle_dotproduct">
+      <statement>
+        <p>
+          Consider <m>\R^2</m> along with the dot product. Verify that our definition of the angle <m>\theta</m> between <m>(1,1)</m> and <m>(1,0)</m> is consistent with our planar geometry notion of angle.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          According to <xref ref="d_angle"/>, <m>\theta</m> is the unique element of <m>[0,\pi]</m> satisfying
+          <md>
+            \cos \theta=\frac{(1,1)\cdot (1,0)}{\norm{(1,1)}\norm{(1,0)}}=\frac{1}{\sqrt{2}}=\frac{\sqrt{2}}{2}
+          </md>.
+          We recognize <m>\theta</m> as the familiar angle <m>\pi/4</m>, as expected.
+
+        </p>
+      </solution>
+    </example>
+    <example xml:id="eg_angle_weighted">
+      <statement>
+        <p>
+          Consider <m>\R^2</m> with the weighted dot product
+          <md>
+            \langle (x_1,x_2), (y_1,y_2)\rangle=2x_1x_2+y_1y_2
+          </md>
+          Compute the angle <m>\theta</m> between <m>(1,1)</m> and <m>(0,0)</m> with respect to this inner product
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First compute
+          <md>
+            <mrow>\langle (1,1), (1,0)\rangle \amp= 2(1)+1(0)=2 </mrow>
+            <mrow> \norm{(1,1)}\amp =\sqrt{\langle (1,1),(1,1)\rangle} </mrow>
+            <mrow>  \amp =\sqrt{2+1}=\sqrt{3} </mrow>
+            <mrow> \norm{(1,0)}\amp =\sqrt{\langle (1,0),(1,0)\rangle} </mrow>
+            <mrow>  \amp =\sqrt{2} </mrow>
+          </md>
+          By definition <m>\theta</m> is the unique value in <m>[0,\pi]</m> satisfying
+          <md>
+            \cos\theta=\frac{\langle (1,1), (1,0)\rangle}{\norm{(1,1)}\norm{(1,0)}}=\frac{2}{\sqrt{3}\sqrt{2}}=\frac{\sqrt{6}}{3}
+          </md>.
+          We see that <m>\theta</m> is not one of our familiar angles from the unit circle (<eg />, <m>\pi/6, \pi/4</m>, <etc />) and so express <m>\theta</m> in terms of the <m>\arccos</m> function:
+          <md>
+            \theta=\arccos(\sqrt{6}/3)\approx 35.3^\circ
+          </md>.
+        </p>
+      </solution>
+    </example>
+    <!-- <example xml:id="eg_angle_function">
+      <statement>
+        <p>
+          Consider <m>V=C([-\pi, \pi])</m> with the integral inner product. Compute the angle <m>\theta</m> between <m>f(x)=\sin x</m> and <m>g(x)=\sin 2x</m> with respect to this inner product.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First compute
+          <md>
+            <mrow>\langle f, g\rangle \amp=\int_{-\pi}^\pi \sin x\sin 2x\, dx </mrow>
+            <mrow> \amp=\frac{1}{2}\int_{-\pi}^\pi\cos(x-2x)-\cos(x+2x)\, dx \amp (\text{trig. identity})</mrow>
+            <mrow>  \amp =\frac{1}{2}\int_{-\pi}^\pi \cos(-x)-\cos 3x\, dx</mrow>
+            <mrow>  \amp = 0</mrow>.
+          </md>
+          It follows that
+          <md>
+            \cos \theta=\frac{\langle f, g\rangle}{\norm{f}\norm{g}}=0
+          </md>,
+          and hence that <m>\theta=\pi/2</m>.
+
+        </p>
+      </solution>
+    </example> -->
+  </subsection>
+  <subsection>
+    <title>Choosing your inner product</title>
+    <p>
+      Why, given a fixed vector space <m>V</m>,
+      would we prefer one inner product definition to another?
+      One way of understanding a particular choice of inner product is to ask what its corresponding notion of distance measures.
+    </p>
+    <example xml:id="eg_why_weightedproduct">
+      <title>Weighted dot product distance</title>
+      <statement>
+        <p>
+         Consider <m>\R^n</m> with a choice of weighted dot product
+         <md>
+           \langle (x_1,x_2,\dots, x_n), (y_1,y_2,\dots, y_n)\rangle=k_1x_1y_1+k_2x_2y_2+\cdots +k_nx_ny_n,
+         </md>
+         where <m>k_1,k_2,\dots, k_n</m> are fixed positive constants. With respect to this inner product the distance between two vectors <m>\boldx=(x_1,x_2,\dots, x_n)</m> and <m>\boldy=(y_1,y_2,\dots, y_n)</m> is
+         <md>
+           d(\boldx,\boldy)=\norm{\boldx-\boldy}=\sqrt{k_1(x_1-y_1)^2+k_2(x_2-y_2)^2+\cdots +k_n(x_n-y_n)^2}
+         </md>.
+         Thus <m>d(\boldx, \boldy)</m> is an aggregate measure of the difference between the corresponding entries of <m>\boldx</m> and <m>\boldy</m>, as weighted by our choice of the constants <m>k_i</m>.
+       </p>
+       <p>
+         Imagine that each element of <m>\boldx\in \R^n</m> is a data point collected by measuring <m>n</m> different properties of a sample <m>s</m> : <ie />, <m>x_i</m> is the measured value of property <m>P_i</m> on <m>s</m> for all <m>1\leq i\leq n</m>.  Given samples <m>s</m> and <m>s'</m> with corresponding measurement vectors <m>\boldx</m> and <m>\boldy</m>, the weighted distance <m>d(\boldx,\boldy)</m> is then a quantitative way of saying how <q>close</q> the two samples are to one another. The choice of weights <m>k_i</m> allows us to adjust the relative influence of a given property <m>P_i</m> in determining this closeness. For example, the standard dot product (<m>k_i=1</m> for all <m>i</m>) yields a notion of distance that gives each property equal standing.
+        </p>
+      </statement>
+    </example>
+    <!-- <example xml:id="eg_why_evaluationinner">
+      <title>Evaluation inner product distance</title>
+      <statement>
+        <p>
+          Consider <m>P_n</m> with the evaluation inner product at a fixed choice of inputs <m>x=c_0, c_1,\dots, c_n</m>.
+          Given two polynomials <m>p(x), q(x)</m>,
+          the distance between them with respect to this inner product is
+          <md>
+          \norm{p(x)-q(x)}=\sqrt{(p(c_0)-q(c_0))^2+(p(c_1)-q(c_1))^2+\cdots +(p(c_n)-q(c_n))^2}
+          </md>.
+            We see that with respect to this inner product, the
+            distance
+            between two polynomials is a measure of how much their values at the inputs <m>x=c_0,c_1,\dots ,c_n</m> differ.
+            This inner product may be useful if you are interested in how a polynomial behaves at this finite list of inputs.
+      </p>
+      </statement>
+    </example>
+      <example xml:id="eg_why_integralinner">
+        <title>Integral inner product and distance</title>
+        <statement>
+          <p>
+            Take <m>C[a,b]</m> with the standard inner product <m>\langle f, g \rangle=\int_a^b f(x)g(x) \ dx</m>.
+            Here the distance between two functions is defined as
+            <md>\norm{f-g}=\sqrt{\int_a^b (f(x)-g(x))^2 \ dx}
+            </md>,
+            which we can think of as an aggregate measure of the difference of values <m>f(x)-g(x)</m> for all <m>x\in [a,b]</m>. Thus <m>d(f,g)</m> is a global measure of the similarity between <m>f</m> and <m>g</m> that takes into account their values over the entire interval <m>[a,b]</m>.
+          </p>
+        </statement>
+      </example> -->
+  </subsection>
+  <xi:include href="./s_innerproducts_ex.ptx"/>
+</section>

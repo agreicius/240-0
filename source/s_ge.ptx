@@ -42,13 +42,13 @@
   <statement>
     <p>
       Let <m>L</m> be the linear system
-      <me>
+      <md>
      \eqsys
-      </me>.
+      </md>.
       The <term>augmented matrix associated to</term> <m>L</m> is the matrix
-      <me>
+      <md>
         \augmatrix
-      </me>.
+      </md>.
 
     </p>
   </statement>
@@ -56,13 +56,6 @@
 
 </definition>
 
-<remark xml:id="s_ge_rm_see_def">
-
-<p>
-As defined more thoroughly in <xref ref="d_matrix"/>, a matrix is just a rectangular array of numbers.
-</p>
-
-</remark>
 <remark>
   <p>
     Note that a system of <m>m</m> equations in <m>n</m> unknowns gives rise to an augmented matrix that has <m>m</m> rows (one row for each equation) and <m>n+1</m> columns (one column for each unknown and an additional column for the right-hand side constants <m>b_1,b_2,\dots, b_m</m>). The vertical line in the augmented matrix helps distinguish between the columns corresponding to unknowns (to the left of the vertical line) and the column of constants (to the right of the vertical line). When we wish to further emphasize this distinction among the columns, we will label the first <m>n</m> columns with their corresponding variable name as in <xref ref="fig_aug_mat"/>.  
@@ -221,26 +214,26 @@ delimiter={]}]
     <ol>
       <li>
         <p>
-          <me>
+          <md>
             \begin{bmatrix}0\amp 2\amp 1\amp 0\amp 0\\
             0\amp 0\amp 0\amp 0\amp 0\\
             0\amp 1\amp 0\amp 0\amp 1\\
             1\amp 0\amp 0\amp 0\amp 0\\
             0\amp 0\amp 0\amp 0\amp 0
             \end{bmatrix}
-          </me>
+          </md>
         </p>
       </li>
       <li>
         <p>
-          <me>
+          <md>
             \begin{bmatrix}1\amp 0\amp 0\amp -3\amp -7\\
             0\amp 0\amp 1\amp 2\amp 0\\
             0\amp 0\amp 0\amp 0\amp 1\\
             0\amp 0\amp 0\amp 0\amp 0\\
             0\amp 0\amp 0\amp 0\amp 0
             \end{bmatrix}
-          </me>
+          </md>
         </p>
       </li>
     </ol>
@@ -250,27 +243,27 @@ delimiter={]}]
         <li>
           <p>
             Below you find the matrix with leading ones boxed. This matrix fails to be in row echelon form (and hence also reduced row echelon form) for a variety of reasons: the zero rows are not all grouped at the bottom; the first row is nonzero, but does not have a leading one; the leading one of the fourth row is to the left of the leading one of the leading one in the row above it.
-            <me>
+            <md>
               \begin{bmatrix}0\amp 2\amp 1\amp 0\amp 0\\
               0\amp 0\amp 0\amp 0\amp 0\\
               0\amp \boxed{1}\amp 0\amp 0\amp 1\\
               \boxed{1}\amp 0\amp 0\amp 0\amp 0\\
               0\amp 0\amp 0\amp 0\amp 0
               \end{bmatrix}
-            </me>
+            </md>
 
           </p>
         </li>
         <li>
           <p> Below you find the matrix with leading ones boxed. This matrix is in row echelon form: the zero rows (rows 4 and 5) are grouped at the bottom; each nonzero row has a leading one (boxed in the matrix below); the leading ones step strictly to the right as we move down the rows.
-            <me>
+            <md>
               \begin{bmatrix}\boxed{1}\amp 0\amp 0\amp -3\amp -7\\
               0\amp 0\amp \boxed{1}\amp 2\amp 0\\
               0\amp 0\amp 0\amp 0\amp \boxed{1}\\
               0\amp 0\amp 0\amp 0\amp 0\\
               0\amp 0\amp 0\amp 0\amp 0
               \end{bmatrix}
-            </me>
+            </md>
           The matrix is <em>not</em> in reduced row echelon form, as the last column contains a leading one in its third row, and a nonzero entry in its first row.
           </p>
         </li>
@@ -405,13 +398,13 @@ delimiter={]}]
       <title>Row echelon form</title>
       <p>
         We use Gaussian elimination to reduce the linear system 
-        <me>
+        <md>
           \begin{array}{rcc}
       -2x_3+7x_5\amp =\amp 12 \\
       2x_1+4x_2-10x_3+6x_4+12x_5\amp = \amp 28 \\
       2x_1+4x_2-5x_3+6x_4-5x_5\amp =\amp -1
     \end{array}
-        </me>
+        </md>
         to a system in row echelon form. 
       </p>
       <p>
@@ -456,11 +449,11 @@ delimiter={]}]
       \end{bmatrix}</mrow>
     </md>.
     We conclude that our original system is equivalent to the system 
-  <me>
+  <md>
     \begin{array}{rcc} x_1+2x_2-5x_3+3x_4+6x_5\amp =\amp 14\\
     x_3-\frac{7}{2}x_5\amp =\amp -6\\
     x_5\amp =\amp 2 \end{array}
-  </me>,
+  </md>,
   which is in row echelon form.   
   </p>
     </example>
@@ -508,11 +501,11 @@ delimiter={]}]
         <mrow>\amp \xrightarrow[\hspace{35pt}]{r_1+5r_2}\amp \begin{bmatrix}\boxed{1}\amp 2\amp 0\amp 3\amp 0\amp 7\\ 0\amp 0\amp \boxed{1}\amp 0\amp 0\amp 1\\ 0\amp 0\amp 0\amp 0\amp \boxed{1}\amp 2 \end{bmatrix} </mrow>
       </md>.
       Notice that the resulting system is slightly simpler than the system in row echelon form of <xref ref="eg_model_example"/>: 
-      <me>
+      <md>
          \begin{linsys}{5} x_1\amp+\amp 2x_2\amp \amp \amp+\amp 3x_4\amp +\amp 6x_5\amp =\amp 7\\
     \amp \amp \amp \amp x_3\amp \amp \amp \amp \amp =\amp 1\\
     \amp \amp \amp \amp \amp \amp \amp \amp x_5\amp =\amp 2 \end{linsys}
-      </me>.      
+      </md>.      
     </p>
     </example>
   <p>

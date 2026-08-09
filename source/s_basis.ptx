@@ -27,9 +27,9 @@
 			</ol>
 			The first result allows us to define the <em>dimension</em> of a vector space as the number of elements in any given basis.
 			The second result allows us to take any <m>n</m>-dimensional vector space <m>V</m> with chosen basis <m>B=\{\boldv_1, \boldv_2, \dots, \boldv_n\}</m> and effectively identify vectors <m>\boldv\in V</m> with the sequence <m>(c_1,c_2,\dots, c_n)\in \R^n</m>, where
-			<me>
+			<md>
 				\boldv=c_1\boldv_1+c_2\boldv_2+\cdots c_n\boldv_n
-			</me>.
+			</md>.
 			This observation has the following consequence: given any <m>n</m>-dimensional vector space <m>V</m>, no matter how exotic, once we choose a basis <m>B</m> of <m>V</m>, we can reduce any and all linear algebraic questions or computations about <m>V</m> to a corresponding question in <m>\R^n</m>.
 			We will elaborate this idea further in <xref ref="s_coordinatevectors"/>.
 		</p>
@@ -114,9 +114,9 @@
 						<li>
 							<p>
 								<m>V=M_{22}</m>,
-								<me>
+								<md>
 									B=\left\{ A_1=\begin{bmatrix}0\amp 1\\ 1\amp 1 \end{bmatrix} , A_2=\begin{bmatrix}1\amp 0\\ 1\amp 1 \end{bmatrix} , A_3=\begin{bmatrix}1\amp 1\\ 0\amp 1 \end{bmatrix} , A_4=\begin{bmatrix}1\amp 1\\ 1\amp 0 \end{bmatrix} \right\}
-								</me>.
+								</md>.
 							</p>
 						</li>
 					</ol>
@@ -133,9 +133,9 @@
 						<p>
 							Since neither element of <m>B=\{(1,1), (1,-1)\}</m> is a scalar multiple of the other, the set is linearly independent.
 							To see that <m>B</m> spans <m>\R^2</m> we show that for any <m>(c,d)\in \R^2</m> we have
-							<me>
+							<md>
 								a(1,1)+b(1,-1)=(c,d)
-							</me>
+							</md>
 							for some <m>a,b\in \R</m>.
 							Indeed we may take <m>a=\frac{1}{2}(c+d)</m> and <m>b=\frac{1}{2}(c-d)</m>.
 							(These formulas were obtained by solving the corresponding system of two equations in the unknowns <m>a</m> and <m>b</m>.)
@@ -146,15 +146,15 @@
 						<p>
 							First we show that <m>B=\{A_1,A_2,A_3,A_4\}</m> spans <m>M_{22}</m>.
 							Given an arbitrary element
-							<me>
+							<md>
 								A=\begin{bmatrix}a\amp b\\ c\amp d\end{bmatrix}
-							</me>,
+							</md>,
 							we must show that there exist scalars <m>c_1,c_2,c_3,c_4\in \R</m> satisfying
-							<me>
+							<md>
 								c_1A_1+c_2A_2+c_3A_3+c_4A_4=A
-							</me>.
+							</md>.
 							Expanding out the left side of the above equality, we would have
-							<me>
+							<md>
 								\begin{bmatrix}
 								c_2+c_3+c_4 \amp c_1+c_3+c_4\\
 								c_1+c_2+c_4\amp c_1+c_2+c_3
@@ -162,60 +162,60 @@
 								\begin{bmatrix}
 								a\amp b\\ c\amp d
 								\end{bmatrix}
-							</me>.
+							</md>.
 							Thus we have <m>A\in \Span B</m> if and only if the linear system with augmented matrix
-							<me>
+							<md>
 								\begin{amatrix}[rrrr|r]
 								0\amp 1\amp 1\amp 1 \amp a\\
 								1\amp 0\amp 1\amp 1 \amp b \\
 								1\amp 1\amp 0 \amp 1 \amp c\\
 								1\amp 1\amp 1\amp 0\amp d
 								\end{amatrix}
-							</me>
+							</md>
 							is consistent.
 							This augmented matrix row reduces to
-							<me>
+							<md>
 								\begin{amatrix}[rrrr|r]
 								\boxed{1}\amp 0\amp 1\amp 1 \amp b\\
 								0\amp \boxed{1}\amp 1\amp 1 \amp a \\
 								0\amp 0\amp \boxed{1} \amp 1/2 \amp \frac{1}{2}(a+b-c)\\
 								0\amp 0\amp 0\amp \boxed{1}\amp \frac{1}{3}(a+b+c-2d)
 								\end{amatrix}
-							</me>.
+							</md>.
 							Since there is no leading one in the last column, we see that the corresponding system is consistent, and thus <m>A\in \Span B</m>, as desired.
 						</p>
 
 						<p>
 							Turning to linear independence of <m>B</m>, we now endeavor to show that the only solution to
-							<me>
+							<md>
 								c_1A_1+c_2A_2+c_3A_3+c_4A_4=\begin{bmatrix}
 								0\amp 0\\ 0\amp 0
 								\end{bmatrix}
-							</me>
+							</md>
 							is the trivial one <m>c_1=c_2=c_3=c_4=0</m>.
 							Just as above, such a solution corresponds to a solution to the linear system with augmented matrix
-							<me>
+							<md>
 								\begin{amatrix}[rrrr|r]
 								0\amp 1\amp 1\amp 1 \amp 0\\
 								1\amp 0\amp 1\amp 1 \amp 0 \\
 								1\amp 1\amp 0 \amp 1 \amp 0\\
 								1\amp 1\amp 1\amp 0\amp 0
 								\end{amatrix}
-							</me>,
+							</md>,
 							which row reduces to
-							<me>
+							<md>
 								\begin{amatrix}[rrrr|r]
 								\boxed{1}\amp 0\amp 1\amp 1 \amp 0\\
 								0\amp \boxed{1}\amp 1\amp 1 \amp 0 \\
 								0\amp 0\amp \boxed{1} \amp 1/2 \amp 0\\
 								0\amp 0\amp 0\amp \boxed{1}\amp 0
 								\end{amatrix}
-							</me>.
+							</md>.
 							Since the first four columns of this matrix contain leading ones, none of the unknowns <m>c_i</m> is free, which means that <m>(c_1,c_2,c_3,c_4)=(0,0,0,0)</m> is the unique solution to the system.
 							This proves that
-							<me>
+							<md>
 								c_1A_1+c_2A_2+c_3A_3+c_4A_4=\boldzero\implies c_1=c_2=c_3=c_4=0
-							</me>,
+							</md>,
 							as desired.
 						</p>
 					</li>
@@ -243,9 +243,9 @@
 					<li>
 						<p>
 							Every element <m>\boldv\in V</m> can be written as a linear combination of elements of <m>B</m> in a unique way: <ie />, for all <m>\boldv\in V</m> there is a unique <m>n</m>-tuple <m>(c_1,c_2,\dots, c_n)</m> such that 
-							<me>
+							<md>
 								\boldv=c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n
-							</me>.
+							</md>.
 						</p>
 					</li>
 				</ol>
@@ -261,13 +261,13 @@
 						It remains to show that this linear combination is unique in the sense described.
 						This follows from the fact that <m>B</m> is linearly independent.
 						Indeed, if
-						<me>
+						<md>
 							c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_r=d_1\boldv_1+d_2\boldv_2+\cdots +d_r\boldv_n
-						</me>,
+						</md>,
 						then after some algebra we have
-						<me>
+						<md>
 							(c_1-d_1)\boldv_1+(c_2-d_2)\boldv_2+\cdots +(c_n-d_n)\boldv_n=\boldzero
-						</me>.
+						</md>.
 						Since <m>B</m> is linearly independent and since the <m>\boldv_i</m> are distinct, we must have <m>c_i-d_j=0</m>, and hence <m>c_i=d_i</m> for all <m>1\leq i\leq n</m>.
 					</p>
 				</case>
@@ -301,9 +301,9 @@
 						<li>
 							<p>
 								Write out the vector equation 
-								<men xml:id="eq_onestep_basis">
+								<md number="yes" xml:id="eq_onestep_basis">
 									c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n=\boldv
-								</men>,
+								</md>,
 								where <m>\boldv</m> is an arbitrary element of the vector space <m>V</m>. (Typically you will give some parametric description of <m>\boldv</m> in terms of a finite list of unknowns.)
 							</p>
 						</li>
@@ -327,9 +327,9 @@
 			<statement>
 				<p>
 					Use the one step technique to decide whether the set
-					<me>
+					<md>
 						S=\{\boldv_1=(1,1,-3), \boldv_2=(1,0,-1), \boldv_3=(-1,1,-1), \boldv_4=(1,2,1)\}
-					</me>
+					</md>
 					is a basis of <m>\R^3</m>.
 				</p>
 			</statement>
@@ -337,21 +337,21 @@
 			<solution>
 				<p>
 					We ask whether for all elements <m>\boldy=(a,b,c)\in \R^3</m> we can write
-					<men xml:id="eq_basis_onestep_R3">
+					<md number="yes" xml:id="eq_basis_onestep_R3">
 						\boldy=c_1\boldv_1+c_2\boldv_2+c_3\boldv_3+c_4\boldv_4
-					</men>
+					</md>
 					for a unique choice of <m>c_1,c_2,c_3, c_4</m>.
 					This is equivalent to asking whether the matrix equation
-					<me>
+					<md>
 						\underset{A}{\begin{amatrix}[rrrr]
 						1\amp 1\amp -1\amp 1\\
 						1\amp 0\amp 1\amp 2\\
 						-3\amp -1\amp -1 \amp 1
 						\end{amatrix}}\, \underset{\boldx}{\colvec{c_1\\ c_2\\ c_3\\ c_4}}=\underset{\boldy}{\colvec{a\\ b\\ c}}
-					</me>.
+					</md>.
 					has a unique solution <m>\boldx=(c_1,c_2,c_3,c_4)</m> for any choice of <m>\boldy=(a,b,c)</m>.
 					Performing Gaussian elimination on the corresponding augmented matrix yields
-					<me>
+					<md>
 						\begin{amatrix}[rrrr|r]
 						1\amp 1\amp -1\amp 1\amp a \\
 						1\amp 0\amp 1\amp 2\amp b\\
@@ -362,7 +362,7 @@
 						0\amp \boxed{1}\amp -2\amp -1\amp a-b\\
 						0\amp 0\amp 0\amp \boxed{1} \amp (a+2b+c)/6
 						\end{amatrix}
-					</me>.
+					</md>.
 					Since the third column of <m>U</m> does not have a leading one, we conclude that the corresponding system has a free variable, and hence that for any given <m>(a,b,c)\in \R^3</m> the equation <xref ref="eq_basis_onestep_R3"/> has <em>either</em> no solutions (inconsistent) <em>or</em> infinitely many solutions.
 					In particular, it is not true that there is always a <em>unique</em> solution.
 					Thus <m>S</m> is not a basis according to the one-step technique.
@@ -373,9 +373,9 @@
 					Since the last column of <m>U</m> does not have a leading one, the corresponding system is always consistent: <ie />, there is always at least one solution <m>\boldx=(c_1,c_2,c_3,c_4)</m> to <xref ref="eq_basis_onestep_R3"/> for each <m>(a,b,c)\in \R^3</m>.
 					This tells us that <m>S</m> is a spanning set of <m>\R^3</m>.
 					On the other hand, the existence of the free variable tells us that for <m>(a,b,c)=(0,0,0)=\boldzero</m>, we will have infinitely many choices <m>c_1,c_2,c_3,c_4</m> satisfying
-					<me>
+					<md>
 						c_1\boldv_1+c_2\boldv_2+c_3\boldv_3+c_4\boldv_4=\boldzero
-					</me>.
+					</md>.
 					This shows that <m>S</m> is <em>not</em> linearly independent.
 				</p>
 			</solution>
@@ -439,9 +439,9 @@
 			<statement>
 				<p>
 					Use <xref ref="proc_provide_basis"/> to compute a basis of the subspace <m>W\subseteq \R^5</m> defined as
-					<me>
+					<md>
 						W=\{(x_1,x_2,x_3,x_4,x_5)\in \R^5\colon x_1+x_2=x_4-x_5=0\}
-					</me>.
+					</md>.
 				</p>
 			</statement>
 
@@ -453,9 +453,9 @@
 					</md>
 					give two independent conditions on <m>x_1,x_2</m> and <m>x_4,x_5</m>, and no condition on <m>x_3</m>.
 					We see that the general element of <m>W</m> can be described as
-					<men xml:id="eq_basis_R5">
+					<md number="yes" xml:id="eq_basis_R5">
 						(r,-r,s,t,t)=r\underset{\boldx_1}{\underbrace{(1,-1,0,0,0)}}+s\underset{\boldx_2}{\underbrace{(0,0,1,0,0)}}+t\underset{\boldx_3}{\underbrace{(0,0,0,1,1)}}
-					</men>
+					</md>
 					for arbitrary scalars <m>r,s,t</m>.
 					It follows immediately that <m>B=\{\boldx_1,\boldx_2,\boldx_3\}</m> spans <m>W</m>.
 					Furthermore, using <xref ref="eq_basis_R5"/>, we have
@@ -486,18 +486,18 @@
 						<li>
 							<p>
 								A general <m>2\times 2</m> symmetric matrix can be described parametrically as
-								<me>
+								<md>
 									A=\begin{bmatrix}
 									a\amp b\\ b\amp c
 									\end{bmatrix}
-								</me>.
+								</md>.
 							</p>
 						</li>
 
 						<li>
 							<p>
 								We have
-								<men xml:id="eq_provide_basis">
+								<md number="yes" xml:id="eq_provide_basis">
 									\begin{bmatrix}
 									a\amp b\\ b\amp c
 									\end{bmatrix}=
@@ -515,9 +515,9 @@
 									\begin{bmatrix}
 									0\amp 0\\ 0\amp 1
 									\end{bmatrix}
-								</men>.
+								</md>.
 								It follows immediately that the set <m>B=\{A_1, A_2, A_3\}</m> is a spanning set, where
-								<me>
+								<md>
 									A_1=
 									\begin{bmatrix}
 									1\amp 0\\ 0\amp 0
@@ -527,7 +527,7 @@
 									, A_3=\begin{bmatrix}
 									0\amp 0\\ 0\amp 1
 									\end{bmatrix}
-								</me>.
+								</md>.
 							</p>
 						</li>
 

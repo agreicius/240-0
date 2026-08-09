@@ -1,0 +1,1038 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_nullspace_image_isom">
+  <title>Null space, image, and isomophisms</title>
+  <introduction>
+    <p>
+      Having introduced linear transformations, we now treat them as proper objects of study. Forget for a moment the linear algebraic nature of a linear transformation <m>T\colon V\rightarrow W</m>, and think of it just as a function. Purely along function-theoretic lines, we want to know whether <m>T</m> is <xref ref="d_injective" text="custom">injective</xref>, <xref ref="d_surjective" text="custom">surjective</xref>, and <xref ref="d_invertible_function" text="custom">invertible</xref>. As we will learn, there are two subspaces associated to a linear transformation <m>T</m>, its <em>null space</em> and <em>image</em>, that provide an easy way for answering these questions. We will also see that in the case of a matrix transformation <m>T_A</m>, these associated spaces coincide with two of the fundamental spaces of the matrix <m>A</m>. (You can probably guess one of these.)
+    </p>
+  </introduction>
+  <subsection xml:id="ss_nullspace_image">
+    <title>Null space and image</title>
+    <definition xml:id="d_nullspace_image">
+      <title>Null space and image</title>
+      <idx><h>linear transformation</h><h>null space</h></idx>
+      <idx><h>linear transformation</h><h>image</h></idx>
+      <idx><h>null space</h><h>of a linear transformation</h></idx>
+      <idx><h>image</h></idx>
+      <statement>
+        <p>
+          Let <m>T\colon V\rightarrow W</m> be a linear transformation.
+        <ol>
+          <li>
+            <title>Null space</title>
+            <p>
+              The <term>null space</term> of <m>T</m>, denoted <m>\NS T</m>, is defined as
+              <md>
+                \NS T=\{\boldv\in V\colon T(\boldv)=\boldzero_W\}
+              </md>.
+            </p>
+          </li>
+          <li>
+            <title>Image</title>
+            <p>
+              The <term>image</term> (or <term>range</term>) of <m>T</m>, denoted <m>\im T</m>, is defined as
+              <md>
+                \im T=\{\boldw\in W\colon \boldw=T(\boldv) \text{ for some }  \boldv\in V \}
+              </md>.
+            </p>
+          </li>
+        </ol>
+      </p>
+      </statement>
+    </definition>
+    <p>
+      As with the fundamental spaces of a matrix, given a linear transformation <m>T\colon V\rightarrow W</m> it is helpful to keep straight the different ambient spaces where <m>\NS T</m> and <m>\im T</m> live. As illustrated by <xref ref="fig_null_image_ambient"/>, we have <m>\NS T\subseteq V</m> and <m>\im T\subseteq W</m>: that is, the null space is a subset of the domain of <m>T</m>, and the image is a subset of the codomain.  Figures <xref ref="fig_nullspace_to_zero" text="global"/>and <xref ref="fig_domain_to_image" text="global"/> go on to convey that <m>\NS T</m> is the set of elements of <m>V</m> that are mapped to <m>\boldzero_W</m>, and that <m>\im T</m> is the set of outputs of <m>T</m>. 
+    </p>
+  <figure xml:id="fig_null_image">
+    <title>Null space and image</title>
+    <caption>Null space and image</caption>
+    <sbsgroup>
+    <sidebyside>
+        <figure xml:id="fig_null_image_ambient">
+        <caption>Null space lives in the domain; image lives in the codomain.</caption>
+        <image xml:id="im_null_image">
+        <latex-image>
+  \begin{tikzpicture}
+    \node[name=V,shape=ellipse,draw, thick,minimum width=1.75in, minimum height=2.5in, label={135:$V$}] at (0,0) {};
+    \node[name=W,shape=ellipse,draw, thick,minimum width=1.75in, minimum height=2.5in, label={45:$W$}] at (8,0) {};
+    \draw (0,0)  node[diamond,draw, minimum width=1.5in,minimum height=1.5in, rotate=0,fill=red!25, label={115:$\operatorname{null} T$}] (null) {};
+    \draw (8,0)  node[minimum width=1.5in, minimum height=1.5in,diamond,draw,label={45:$\text{im} T$},fill=blue!25] (im) {};
+    \path[->] (1.2,3.2) edge[bend left] node[above]{$T$}  (6.8,3.2);
+  \end{tikzpicture}
+
+        </latex-image>
+      </image>
+      </figure>
+    </sidebyside>
+
+      <sidebyside>
+        <figure xml:id="fig_nullspace_to_zero">
+          <caption>The entire null space gets mapped to <m>\boldzero_W</m>.</caption>
+          <image xml:id="im_nullspace_to_zero">
+            <latex-image>
+          \begin{tikzpicture}
+          \filldraw [black] (8,0) circle (3pt);
+          \node[name=V,shape=ellipse,draw, thick,minimum width=1.75in, minimum height=2.5in, label={135:$V$}] at (0,0) {};
+          \draw (0,0)  node[diamond,draw, minimum width=1.5in,minimum height=1.5in, rotate=0,fill=red!25, label={115:$\operatorname{null} T$}] (null) {};
+          \node[name=W,shape=ellipse,draw, thick,minimum width=1.75in, minimum height=2.5in, label={45:$W$}] at (8,0) {};
+          \draw node[above right] at (8,0) {$\mathbf{0}_W$};
+          \filldraw [black] (10,0) circle (2pt);
+          \path (null.east) edge[-{Latex[length=4mm, width=1.2mm]}] node[below] {$T$} (7.8,0){};
+          \path (null.north) edge[-{Latex[length=4mm, width=1.2mm]}] node[above] {$T$} (7.8,0){};
+          \path (null.south) edge[-{Latex[length=4mm, width=1.2mm]}]  node[below] {$T$} (7.8,0){};
+          \end{tikzpicture}
+          
+            </latex-image>
+          </image>
+        </figure>
+      </sidebyside>
+      <sidebyside>
+        <figure xml:id="fig_domain_to_image">
+          <caption>The entire domain is mapped to <m>\im T</m>.</caption>
+          <image xml:id="im_domain_to_image">
+            <latex-image>
+              \begin{tikzpicture}
+              \node[name=V,shape=ellipse,draw, thick,minimum width=1.75in, minimum height=2.5in, fill=green!25,label={135:$V$}] at (0,0) {};
+              \node[name=W,shape=ellipse,draw, thick,minimum width=1.75in, minimum height=2.5in, label={45:$W$}] at (8,0) {};
+              \begin{scope}[on background layer]%
+              \draw (8,0)  node[minimum width=1.5in, minimum height=1.5in,diamond,draw,label={45:$\text{im} T$},fill=blue!25] (im) {};
+              \end{scope}
+              \path (V.north) edge[-{Latex[length=3mm, width=2mm]}] node[below] {$T$} (im.north)[left]{};
+              \path (V.east) edge[-{Latex[length=3mm, width=2mm]}] node[below] {$T$} (im.west)[left]{};
+              \path (V.south) edge[-{Latex[length=3mm, width=2mm]}] node[below] {$T$} (im.south){};
+              \end{tikzpicture}              
+            </latex-image>
+          </image>
+        </figure>
+      </sidebyside>
+    </sbsgroup>
+  </figure>
+  <p>
+    As mentioned at the top, the null space and image of a linear transformation are subspaces, as we now show. 
+  </p>
+  <theorem xml:id="th_nullspace_image">
+    <title>Null space and image</title>
+    <statement>
+      <p>
+      If <m>T\colon V\rightarrow W</m> is a linear transformation, then <m>\NS T</m> is a subspace of <m>V</m>, and <m>\im T</m> is a subspace of <m>W</m>.
+      </p>
+    </statement>
+    <proof>
+        <case>
+         <title>Null space of <m>T</m></title>
+        <p>
+        We use the two-step technique to prove <m>\NS T</m> is a subspace.
+        </p>
+        <ol>
+          <li>
+            <p>
+              Since <m>T(\boldzero_V)=\boldzero_W</m> (<xref ref="th_trans_props"/>), we see that <m>\boldzero_V\in \NS T</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Suppose <m>\boldv_1, \boldv_2\in \NS T</m>. Given any <m>c,d\in \R</m>, we have
+              <md>
+                <mrow>T(c\boldv_1+d\boldv_2) \amp=cT(\boldv_1)+dT(\boldv_2) \amp (T \text{ is linear, } <xref ref="th_trans_props"/>)</mrow>
+                <mrow> \amp=c\boldzero_W+d\boldzero_W \amp (\boldv_1, \boldv_2\in \NS T) </mrow>
+                <mrow>  \amp = \boldzero_W</mrow>
+              </md>.
+              This shows that <m>c\boldv_1+d\boldv_2\in \NS T</m>, completing our proof.
+            </p>
+          </li>
+        </ol>
+        </case>
+        <case>
+         <title>Image of <m>T</m></title>
+        <p>
+          The proof proceeds in a similar manner, using the two-step technique. 
+        </p>
+        <ol>
+          <li>
+            <p>
+              Since <m>T(\boldzero_V)=\boldzero_W</m> (<xref ref="th_trans_props"/>), we see that <m>\boldzero_W</m> is <q>hit</q> by <m>T</m>, and hence is a member of <m>\im T</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Assume vectors <m>\boldw_1, \boldw_2\in W</m> are elements of <m>\im T</m>. By definition, this means there are vectors <m>\boldv_1, \boldv_2\in V</m> such that <m>T(\boldv_i)=\boldw_i</m> for <m>1\leq i\leq 2</m>. Now given any linear combination <m>\boldw=c\boldw_1+d\boldw_2</m>, we have 
+              <md>
+                <mrow>T(c\boldv_1+d\boldv_2) \amp = cT(\boldv_1)+dT(\boldv_2)</mrow>
+                <mrow> \amp =c\boldw_1+d\boldw_2</mrow>
+                <mrow> \amp =\boldw</mrow>
+              </md>.
+              This shows that for any linear combination <m>\boldw=c\boldw_1+d\boldw_2</m>, there is an element <m>\boldv=c\boldv_1+d\boldv_2</m> such that <m>T(\boldv)=\boldw</m>. We conclude that if  <m>\boldw_1, \boldw_2\in \im T</m>, then <m>\boldw=c\boldw_1+d\boldw_2\in \im T</m> for any <m>c,d\in \R</m>, as desired. 
+            </p>
+          </li>
+        </ol>
+        </case>
+    </proof>
+  </theorem>
+  <example xml:id="eg_nullspace_image_transposition">
+    <statement>
+      <p>
+        Define <m>F\colon M_{nn}\rightarrow M_{nn}</m> as <m>F(A)=A^T-A</m>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Prove that <m>F</m> is linear.
+          </p>
+        </li>
+        <li>
+          <p>
+            Identify <m>\NS F</m> as a familiar matrix subspace.
+          </p>
+        </li>
+        <li>
+          <p>
+            Identify <m>\im F</m> as a familiar matrix subspace.
+          </p>
+        </li>
+      </ol>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Linearity is an easy consequence of transpose properties. For any <m>A_1, A_2\in M_{nn}</m> and <m>c_1,c_2\in \R</m>, we have
+              <md>
+                <mrow>F(c_1A_1+c_2A_2)  \amp= (c_1A_1+c_2A_2)^T-(c_1A_1+c_2A_2)  </mrow>
+                <mrow> \amp = c_1A_1^T+c_2A_2^T-c_1A_1-c_2A_2\amp (<xref ref="th_transp_linear" text="global"/>) </mrow>
+                <mrow>  \amp =c_1(A_1^T-A_1)+c_2(A_2^T-A_2)</mrow>
+                <mrow>  \amp =c_1F(A_1)+c_2F(A_2)</mrow>
+              </md>.
+            </p>
+          </li>
+          <li>
+            <p>
+              We have
+              <md>
+                <mrow>\NS F \amp= \{A\in M_{nn}\colon F(A)=\boldzero\} </mrow>
+                <mrow> \amp=\{A\in M_{22}\colon A^T-A=\boldzero\} </mrow>
+                <mrow>  \amp=\{A\in M_{22}\colon A^T=A\} </mrow>
+              </md>.
+              Thus <m>\NS F</m> is the subspace of symmetric <m>n\times n</m> matrices!
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <m>W=\{B\in M_{nn}\colon B^T=-B\}</m>, subspace of skew-symmetric <m>n\times n</m> matrices. We claim <m>\im F=W</m>. As this is a set equality, we prove it by showing the two set inclusions <m>\im F\subseteq W</m> and <m>W\subseteq \im F</m>. (See <xref ref="ss_set_properties" text="title"/>)
+            </p>
+            <p>
+              The inclusion <m>\im F\subseteq W</m> is the easier of the two. If <m>B\in \im F</m>, then <m>B=F(A)=A^T-A</m> for some <m>A\in M_{nn}</m>. Using various properties of transposition, we have
+              <md>
+                B^T=(A^T-A)^T=(A^T)^T-A^T=-(A^T-A)=-B
+              </md>,
+              showing that <m>B</m> is skew-symmetric, and thus <m>B\in W</m>, as desired.
+            </p>
+            <p>
+              The inclusion <m>W\subseteq \im F</m> is trickier: we must show that if <m>B</m> is skew-symmetric, then there is an <m>A</m> such that <m>B=F(A)=A^T-A</m>. Assume we have a <m>B</m> with <m>B^T=-B</m>. Letting <m>A=-\frac{1}{2}B</m> we have
+              <md>
+                A^T-A=(-\frac{1}{2}B)^T+\frac{1}{2}B=\frac{1}{2}(-B^T+B)=\frac{1}{2}(B+B)=B
+              </md>.
+              Thus we have found a matrix <m>A</m> satisfying <m>F(A)=B</m>. It follows that <m>B\in\im T</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </example>
+  <remark xml:id="rm_subspace_as_nullspace">
+    <title>Subspace as null space</title>
+    <p>
+      As illustrated by <xref ref="eg_nullspace_image_transposition"/>, <xref ref="th_nullspace_image"/> provides an alternative technique for proving that a subset of <m>W\subseteq V</m> is in fact a subspace: namely, find a linear transformation <m>T\colon V\rightarrow Z</m> such that <m>W=\NS T</m>.   
+    </p>
+  </remark>
+    <p>
+      Not surprisingly, there is a connection between the null space of a matrix, as defined in <xref ref="d_nullspace_matrix"/>, and our new notion of null space. Indeed, given an <m>m\times n</m>  matrix <m>A</m>, for all <m>\boldx\in \R^n</m> we have 
+      <md>
+        <mrow>\boldx\in \NS A \amp \iff A\boldx=\boldzero </mrow>
+        <mrow> \amp \iff T_A(\boldx)=\boldzero \amp (\text{def. of } T_A)</mrow>
+        <mrow> \amp \iff \boldx\in \NS T_A</mrow>
+      </md>,
+      and thus <m>\NS A=\NS T_A</m>. Furthermore, as we show next, we have <m>\CS A=\im T_A</m>. 
+    </p>
+  <theorem xml:id="th_null_im_matrix_trans">
+    <title>Null space and image of matrix transformation</title>
+    <statement>
+      <p>
+        Let <m>A</m> be an <m>m\times n</m> matrix, and let <m>T_A\colon \R^n\rightarrow \R^m</m> be its associated matrix transformation. We have 
+        <mdn>
+          <mrow xml:id="eq_null_matrix_trans">\NS A \amp = \NS T_A</mrow>
+          <mrow xml:id="eq_im_matrix_trans">\CS A \amp = \im T_A</mrow>
+        </mdn>.
+      </p>
+    </statement>
+    <proof>
+      <p>
+        The first equality was discussed above. As for the second, we have 
+        <md>
+          <mrow>\boldy\in \CS A \amp \iff \boldy=A\boldx \text{ for some } \boldx\in \R^n \amp (<xref ref="th_col_space" text="global"/>) </mrow>
+          <mrow> \amp \iff \boldy=T_A(\boldx) \text{ for some } \boldx\in \R^n \amp (\text{def. of } T_A)</mrow>
+          <mrow> \amp \iff \boldy\in \im T_A \amp (\text{def. of } \im T_A)</mrow>
+        </md>.
+        Thus <m>\CS A=\im T_A</m>. 
+      </p>
+    </proof>
+  </theorem>
+  <example xml:id="eg_nullspace_image_matrix">
+    <title>Matrix transformation</title>
+    <statement>
+      <p>
+        Let
+        <md>
+          A=\begin{amatrix}[rrrr] 1\amp 2\amp 3\amp 4\\ 2\amp 4\amp 6\amp 8  \end{amatrix}
+        </md>,
+        and let <m>T_A\colon \R^4\rightarrow \R^2</m> be its associated matrix transformation.
+        Provide bases for <m>\NS T_A</m> and <m>\im T_A</m> and compute the dimensions of these spaces.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We have <m>\NS T_A=\NS A</m> and <m>\im T_A=\CS A</m>. Following <xref ref="proc_fund_spaces"/>, 
+        we first row reduce <m>A</m> to
+        <md>
+            \begin{amatrix}[rrrr] \boxed{1}\amp 2\amp 3\amp 4\\ 0\amp 0\amp 0\amp 0 \end{amatrix}
+        </md>, 
+        and conclude that 
+        <md>
+          \NS T_A=\NS A=\{(-2r-3s-4t,r,s,t)\colon r,s,t\in \R\}=\Span\{(-2,1,0,0),(-3,0,1,0),(-4,0,0,1)\}
+        </md>
+        and
+        <md>
+          \im T_A=\CS A=\Span\{(1,2)}
+        </md>.
+      </p>
+    </solution>
+  </example>
+  </subsection>
+  <subsection xml:id="ss_rank-nullity">
+    <title>The rank-nullity theorem</title>
+  <p> The <xref ref="th_rank-nullity" text="custom"> rank-nullity theorem </xref> relates the the dimensions of the null space and image of a linear transformation <m>T\colon V\rightarrow W</m>, assuming <m>V</m> is finite dimensional. Roughly speaking, it says that the bigger the null space, the smaller the image. More precisely, it tells us that
+  <md>
+    \dim V=\dim\NS T+\dim\im T
+  </md>.
+As we will see, this elegant result can be used to significantly simplify computations with linear transformations. For example, in a situation where we wish to compute explicitly both the null space and image of a given linear transformation, we can often get away with just computing one of the two spaces and using the rank-nullity theorem (and a dimension argument) to easily determine the other. Additionally, the rank-nullity theorem will directly imply some intuitively obvious properties of linear transformations. For example, suppose <m>V</m> is a finite-dimensional vector space. It seems obvious that if <m>\dim W> \dim V</m>, then there is no linear transformation mapping <m>V</m> surjectively onto <m>W</m>: <ie />, you should not be able to map a <q>smaller</q> vector space onto a <q>bigger</q> one. Similarly, if <m>\dim W \lt \dim V</m>, then we expect that there is no injective linear transformation mapping <m>V</m> injectively into <m>W</m>. Both these results are easy consequences of the <xref ref="th_rank-nullity" text="custom"> rank-nullity theorem </xref>.
+</p>
+<p>
+  Before proving the theorem we give names to <m>\dim \NS T</m> and <m>\dim\im T</m>.
+</p>
+    <definition xml:id="d_rank_nullity">
+      <title>Rank and nullity</title>
+      <idx><h>rank</h><h>of a linear transformation</h></idx>
+      <idx><h>nullity</h><h>of a linear transformation</h></idx>
+      <notation>
+        <usage><m>\rank T</m></usage>
+        <description>the rank of <m>T</m></description>
+      </notation>
+      <notation>
+        <usage><m>\nullity T</m></usage>
+        <description>the nullity of <m>T</m></description>
+      </notation>
+      <statement>
+        <p>
+          Let <m>T\colon V\rightarrow W</m> be a linear transformation.
+          <ul>
+            <li>
+              <p>
+                The <term>rank</term> of <m>T</m>, denoted <m>\rank T</m>, is the dimension of <m>\im T</m>: <ie />,
+                <md>
+                \rank T=\dim\im T
+                </md>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The <term>nullity</term> of <m>T</m>, denoted <m>\nullity T</m>, is the dimension of <m>\NS T</m>: <ie />,
+                <md>
+                \nullity T=\dim\NS T
+                </md>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <theorem xml:id="th_rank-nullity">
+      <title>Rank-nullity</title>
+      <idx><h>rank-nullity theorem</h></idx>
+      <statement>
+        <p>
+          Let <m>V</m> be a vector space of dimension <m>n</m>, and let <m>T\colon V\rightarrow W</m> be a linear transformation. Then
+          <md>
+          n=\dim\NS T+\dim\im T
+          </md>,
+          or alternatively,
+          <md>
+          n=\nullity T+\rank T
+          </md>.
+
+        </p>
+      </statement>
+
+    <proof>
+      <p>
+        Choose a basis <m>B'=\{\boldv_1, \boldv_2, \dots, \boldv_k\}</m> of <m>\NS T</m> and extend <m>B'</m> to a basis <m>B=\{\boldv_1, \boldv_2,\dots, \boldv_k,\boldv_{k+1},\dots, \boldv_n\}</m>, using <xref ref="th_basis_contract_expand"/>. Observe that <m>\dim\NS T=\nullity T=k</m> and <m>\dim V=n</m>.
+      </p>
+      <p>
+        We claim that <m>B''=\{T(\boldv_{k+1}),T(\boldv_{k+2}),\dots, T(\boldv_{n})\}</m> is a basis of <m>\im T</m>.
+      </p>
+      <proof>
+        <title>Proof of claim</title>
+        <case>
+         <title><m>B''</m> is linearly independent</title>
+        <p>
+          Suppose <m>a_kT(\boldv_k)+a_{k+1}T(\boldv_{k+1})+\cdots +a_nT(\boldv_n)=\boldzero</m>. Then the vector
+          <m>\boldv=a_k\boldv_k+a_{k+1}\boldv_{k+1}+\cdots +a_n\boldv_n</m> satisfies <m>T(\boldv)=\boldzero</m> (using linearity of <m>T</m>), and hence <m>\boldv\in \NS T</m>. Then, using the fact that <m>B'</m> is a basis of <m>\NS T</m>, we have
+          <md>
+            b_1\boldv_1+b_2\boldv_2+\cdots +\boldv_k=\boldv=a_k\boldv_k+a_{k+1}\boldv_{k+1}+\cdots +a_n\boldv_n,
+          </md>
+          and hence
+          <md>
+            b_1\boldv_1+b_2\boldv_2+\cdots +\boldv_k-a_k\boldv_k-a_{k+1}\boldv_{k+1}-\cdots -a_n\boldv_n=\boldzero.
+          </md>
+          Since the set <m>B</m> is linearly independent, we conclude that <m>b_i=a_j=0</m> for all <m>1\leq i\leq k</m> and <m>k+1\leq j\leq n</m>. In particular, <m>a_{k+1}=a_{k+2}=\cdots=a_n=0</m>, as desired.
+        </p>
+        </case>
+        <case>
+         <title><m>B''</m> spans <m>\im T</m></title>
+        <p>
+        It is clear that <m>\Span B''\subseteq \im T</m> since <m>T(\boldv_i)\in \im T</m> for all <m>k+1\leq i\leq n</m> and <m>\im T</m> is closed under linear combinations.
+        </p>
+        <p>
+          For the other direction, suppose <m>\boldw\in \im T</m>. Then there is a <m>\boldv\in V</m> such that <m>\boldw=T(\boldv)</m>. Since <m>B</m> is a basis of <m>V</m> we may write
+          <md>
+            \boldv=a_1\boldv_1+a_2\boldv_2+\cdots a_k\boldv_k+a_{k+1}\boldv_{k+1}+\cdots +a_n\boldv_n
+          </md>,
+          in which case
+          <md>
+            <mrow>\boldw=T(\boldv)\amp= T(a_1\boldv_1+a_2\boldv_2+\cdots a_k\boldv_k+a_{k+1}\boldv_{k+1}+\cdots +a_n\boldv_n)
+            </mrow>
+            <mrow> \amp=a_1T(\boldv_1)+a_2T(\boldv_2)+\cdots a_kT(\boldv_k)+a_{k+1}T(\boldv_{k+1})+\cdots +a_nT(\boldv_n)
+            \amp (T \text{ is linear })
+            </mrow>
+            <mrow>  \amp=\boldzero +a_kT(\boldv_k)+a_{k+1}T(\boldv_{k+1})+\cdots +a_nT(\boldv_n) \amp (\boldv_i\in\NS T \text{ for } 1\leq i\leq k) </mrow>
+          </md>.
+          This shows that <m>\boldw=a_kT(\boldv_k)+a_{k+1}T(\boldv_{k+1})+\cdots +a_nT(\boldv_n)\in \Span B''</m>, as desired.
+        </p>
+        </case>
+      </proof>
+    Having shown <m>B''</m> is a basis for <m>\im T</m>, we conclude that <m>\dim \im T=\val{B''}=n-(k+1)+1=n-k</m>, and thus that
+    <md>
+      <mrow>\dim V \amp=k+(n-k) </mrow>
+      <mrow> \amp=\dim\NS T+\dim \im T </mrow>
+      <mrow>  \amp = \nullity T+\rank T</mrow>
+    </md>.
+    </proof>
+</theorem>
+
+<example xml:id="eg_rank-nullity_computation">
+  <title>Rank-nullity application</title>
+  <statement>
+    <p>
+      Show that the linear transformation
+      <md>
+        <mrow>T\colon \R^4 \amp\rightarrow \R^3 </mrow>
+        <mrow> (x,y,z,w)\amp \mapsto (x+z,y+z+w,z+2w) </mrow>
+      </md>
+      is surjective: <ie />, <m>\im T=\R^3</m>. Do so by first computing <m>\NS T</m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      We first examine <m>\NS T</m>. We have
+      <md>
+        T(x,y,z,w)=\boldzero \iff \begin{linsys}{4}
+          x\amp \amp \amp+ \amp z \amp \amp \amp =\amp 0\\
+          \amp \amp y\amp+ \amp z \amp + \amp w\amp =\amp 0\\
+          \amp \amp \amp\amp z \amp + \amp 2w\amp =\amp 0
+      \end{linsys}
+      </md>.
+      The system above is already in row echelon form, and so we easily see that
+      <md>
+       \NS T=\{(2t,t,-2t,t)\colon t\in \R\}=\Span\{(-1,1,-2,1)\}
+      </md>.
+      Thus <m>B=\{(2,1,-2,1)\}</m> is a basis of <m>\NS T</m>, and we conclude that <m>\dim \NS T=1</m>.
+    The <xref ref="th_rank-nullity" text="custom">rank-nullity theorem</xref> now implies that <md>\dim \im T=4-\dim \NS T=4-1=3</md>. Since <m>\im T\subseteq \R^3</m> and <m>\dim\im T=\dim \R^3=3</m>, we conclude by <xref ref="cor_dimension_subspace"/> that <m>\im T=\R^3</m>. Thus <m>T</m> is surjective.
+    </p>
+  </solution>
+</example>
+<example xml:id="eg_rank_nullity_skew_sym">
+  <title>Rank-nullity application</title>
+  <statement>
+    <p>
+      Let <m>F\colon M_{nn}\rightarrow M_{nn}</m> be defined as <m>F(A)=A^T-A</m> as in <xref ref="eg_nullspace_image_transposition"/>. Prove that <m>\im F</m> is the subspace <m>W</m> of all skew-symmetric matrices following the steps below. 
+    <ul>
+      <li>
+        <p>
+          Compute <m>\NS F</m>. 
+        </p>
+      </li>
+      <li>
+        <p>
+          Show that <m>\im F\subseteq W </m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Use the rank-nullity theorem and a dimension argument. 
+        </p>
+      </li>
+    </ul>
+    </p>
+  </statement>
+  <solution>
+    <p>
+      We compute 
+      <md>
+        <mrow>\NS F \amp =\{A\in M_{nn}\colon F(A)=\boldzero\}</mrow>
+        <mrow> \amp =\{A\in M_{nn}\colon A^T-A=\boldzero\}</mrow>
+        <mrow> \amp =\{A\in M_{nn}\colon A^T=A\}</mrow>
+      </md>.
+      Thus <m>\NS F</m> is the subspace of all symmetric matrices. It can be shown that this space has dimension <m>\frac{n(n+1)}{2}</m>. To see why this is true intuitively, note that a symmetric matrix is completely determined by the entries on and above the diagonal: there are  
+      <md>
+        1+2+\cdots n=\frac{n(n+1)}{2}
+      </md>
+      of these. Next, the rank-nullity theorem implies that 
+      <md>
+        <mrow>\dim \im F \amp =\dim M_{nn}-\dim \NS F</mrow>
+        <mrow> \amp =n^2-\frac{n(n+1)}{2}</mrow>
+        <mrow> \amp =\frac{n(n-1)}{2}</mrow>
+      </md>.
+      As we showed in <xref ref="eg_nullspace_image_transposition"/>, any matrix <m>B=F(A)\in \im F</m> satisfies <m>B^T=-B</m>: <ie/>, <m>\im F\subseteq W</m>, where <m>W</m> is the subspace of all skew-symmetric <m>n\times n</m> matrices. Similarly to the space of symmetric matrices, we can show that <m>\dim W=\frac{n(n-1)}{2}</m>: intuitively, a skew-symmetric matrix is determined by the <m>n(n-1)/2</m> entries strictly above the diagonal (the diagonal entries must be equal to zero). Since <m>\im F\subseteq W</m> and <m>\dim \im F=\dim W=\frac{n(n-1)}{2}</m>, we conclude that <m>\im F=W</m>, by <xref ref="cor_dimension_subspace"/>. This proves that <m>\im F</m> is the space of all skew-symmetric matrices.
+    </p>
+  </solution>
+</example>
+  </subsection>
+  
+  <subsection xml:id="ss_injective_surjective_transforms">
+    <title>Injective and surjective linear transformations</title>
+    <p>
+       Recall the notions of injectivity and surjectivity from <xref ref="d_injective_surjective_bijective"/>: a function <m>f\colon X\rightarrow Y</m> is injective (or one-to-one) if for all <m>x,x'\in X</m> we have <m>f(x)=f(x')</m> implies <m>x=x'</m>; it is surjective (or onto) if for all <m>y\in Y</m> there is an <m>x\in X</m> with <m>f(x)=y</m>. As with all functions, we will be interested to know whether a given linear transformation is injective or surjective; as it turns out, the concepts of null space and image give us a convenient manner of answering these questions.
+       As remarked in <xref ref="d_injective_surjective_bijective"/>, there is in general a direct connection between the surjectivity and the image of a function: namely, <m>f\colon X\rightarrow Y</m> is surjective if and only if <m>\im f=Y</m>. It follows immediately that a linear transformation <m>T\colon V\rightarrow W</m> is surjective if and only if <m>\im T=W</m>. As for injectivity, it is easy to see that <em>if</em> a linear transformation <m>T</m> is injective, <em>then</em> its null space must consist of just the zero vector of <m>V</m>. What is somewhat surprising is that the converse is also true, as we now show.
+    </p>
+    <theorem xml:id="th_injective_surjective">
+      <title>Injectivity and surjectivity</title>
+      <statement>
+        <p>
+          Let <m>T\colon V\rightarrow W</m> be a linear transformation.
+        </p>
+        <ol>
+            <li xml:id="th_inj_null">
+              <title>Injectivity and null space</title>
+              <p>
+                <m>T</m> is injective if and only if <m>\NS T=\{\boldzero_V\}</m>.
+              </p>
+            </li>
+            <li xml:id="th_sur_im">
+              <title>Surjectivity and image</title>
+              <p>
+                <m>T</m> is surjective if and only if <m>\im T=W</m>. 
+              </p>
+            </li>
+        </ol>
+      </statement>
+      <proof>
+        <p>
+          Statement (2) is true of any function, whether it is a linear transformation or not; it follows directly from the definitions of surjectivity and image. Thus it remains to prove statement (1). We prove both implications separately. 
+        </p>
+        <case>
+        <title>Implication <m>\implies</m></title>
+        <p>
+          Assume <m>T</m> is injective. Since <m>T(\boldzero_V)=\boldzero_W</m>, we see that for any <m>\boldv\in V</m> we have 
+          <md>
+            <mrow>T(\boldv)=\boldzero_W \amp \implies T(\boldv)=T(\boldzero_V)</mrow>
+            <mrow> \amp \implies \boldv=\boldzero_V \amp (T \text{ is injective})</mrow>
+          </md>.
+          It follows that <m>\boldzero_V</m> is the only element of <m>\NS T</m>: equivalently, we have <m>\NS T=\{\boldzero_V\}</m>, as desired. 
+        </p>
+        </case>
+        <case>
+          <title>Implication <m>\impliedby</m></title>
+          <p>
+            Assume <m>\NS T=\{\boldzero_V\}</m>. Given any vectors <m>\boldv,\boldv'\in V</m> we have 
+            <md>
+              <mrow>T(\boldv)=T(\boldv') \amp \implies T(\boldv)-T(\boldv')=\boldzero_W</mrow>
+              <mrow> \amp \implies T(\boldv-\boldv')=\boldzero_W</mrow>
+              <mrow> \amp \implies \boldv-\boldv'\in \NS T</mrow>
+              <mrow> \amp \implies \boldv-\boldv'=\boldzero_V\amp (\NS T=\boldzero_V)</mrow>
+              <mrow> \amp \implies \boldv=\boldv'</mrow>
+            </md>.
+            This proves <m>T</m> is injective, as desired. 
+      </p>
+    </case>
+      </proof>
+    </theorem>
+    <remark>
+      <p>To determine whether a function of sets <m>f\colon X\rightarrow Y</m> is injective, we normally have to show that <em>for each</em> output <m>y</m> in the image of <m>f</m> there is exactly one input <m>x</m> satisfying <m>f(x)=y</m>. Think of this as checking injectivity at every output. <xref ref="th_injective_surjective"/> tells us that in the special case of a linear transformation <m>T\colon V\rightarrow W</m> it is enough to check injectivity at <em>exactly one ouput</em>: namely, <m>\boldzero\in W</m>.
+      </p>
+    </remark>
+    <corollary xml:id="cor_injective_surjective">
+      <title>Dimension, injectivity, surjectivity</title>
+      <statement>
+        <p>
+          Let <m>T\colon V\rightarrow W</m> be a linear transformation, and suppose <m>V</m> is finite dimensional. 
+          <ol>
+            <li>
+              <p>
+                If <m>\dim V &gt; \dim W</m>, then <m>T</m> is not injective. 
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>\dim V &lt; \dim W</m>, then <m>T</m> is not surjective. 
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          See <xref first="ex_cor_injective_surjective_1" last="ex_cor_injective_surjective_2"/>. 
+        </p>
+      </proof>
+    </corollary>
+    <definition xml:id="d_isomorphism">
+      <title>Isomorphism</title>
+      <idx><h>isomorphism</h></idx>
+      <idx><h>invertible</h><h>linear transformation</h></idx><statement>
+        <p>
+          Let <m>V</m> and <m>W</m> be vector spaces. A linear transformation <m>T\colon V\rightarrow W</m> is an <term>isomorphism</term> if it is invertible as a function: <ie/>, if there is an inverse function <m>T^{-1}\colon W\rightarrow V</m> satisfying
+          <md>
+            <mrow>T^{-1}\circ T \amp = \id_V</mrow>
+            <mrow>T\circ T^{-1} \amp =\id_W</mrow>
+          </md>.
+          The vector spaces <m>V</m> and <m>W</m> are <term>isomorphic</term> if there is an isomorphism from <m>V</m> to <m>W</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      <xref ref="d_isomorphism"/> leaves open the question of whether the inverse function <m>T^{-1}\colon W\rightarrow V</m> of an isomorphism <m>T\colon V\rightarrow W</m> is a linear transformation. The next theorem resolves that issue.  
+    </p>
+    <theorem xml:id="th_isom_inverse_linear">
+      <title>Inverse of isomorphism is linear</title>
+      <statement>
+        <p>
+          Let <m>T\colon V\rightarrow W</m> be an isomorphism. The inverse function <m>T^{-1}\colon W\rightarrow V</m> is a linear transformation. 
+        </p>
+      </statement>
+      <proof>
+        <p>
+         Let <m>T\colon V\rightarrow W</m> be an isomorphism, and let <m>T^{-1}\colon W\rightarrow V</m> be its inverse function. We use the 1-step technique to show <m>T^{-1}</m> is linear, but with a slight twist:
+         given any <m>c,d\in \R</m> and vectors <m>\boldw_1,\boldw_2\in W</m> we will show that 
+         <md>
+          T\left(T^{-1}(c\boldw_1+d\boldw_2)\right)=T\left(cT^{-1}(\boldw_1)+dT^{-1}(\boldw_2)\right)
+         </md>;
+         since <m>T</m> is injective, it will then follow that 
+         <md>
+          T^{-1}(c\boldw_1+d\boldw_2)=cT^{-1}(\boldw_1)+dT^{-1}(\boldw_2)
+         </md>.
+         To this end, we compute 
+         <md>
+          <mrow>  T\left(T^{-1}(c\boldw_1+d\boldw_2)\right)\amp = c\boldw_1+d\boldw_2 \amp (T\circ T^{-1}=\id_W) </mrow>
+          <mrow>T\left(cT^{-1}(\boldw_1)+dT^{-1}(\boldw_2)\right) \amp =cT(T^{-1}(\boldw_1))+dT(T^{-1}(\boldw_2)) \amp (T \text{ is linear}) </mrow>
+          <mrow> \amp =c\boldw_1+d\boldw_2 \amp (T\circ T^{-1}=\id_W)</mrow>
+         </md>.
+         Thus we have 
+         <md>
+          T\left(T^{-1}(c\boldw_1+d\boldw_2)\right)=T\left(cT^{-1}(\boldw_1)+dT^{-1}(\boldw_2)\right)=c\boldw_1+d\boldw_2
+         </md>,
+         as desired. 
+        </p>
+      </proof>
+    </theorem>
+    
+    
+  
+  <remark xml:id="rm_isom">
+    <title>Proving <m>T</m> is an isomorphism</title>
+    <p>
+      According to <xref ref="d_isomorphism"/>, to prove a function <m>T\colon V\rightarrow W</m> is an isomorphism, we must show both that <m>T</m> is linear and that it is invertible. 
+      We know already how to decide whether a function is linear, but how do we decide whether it is invertible? Recall that a function is invertible if and only if it is <xref ref="d_bijective" text="custom">bijective</xref>. (See <xref ref="th_invertible_bijective"/>.) This fact gives rise to two distinct methods for proving that a given linear transformation is invertible:
+      <ol>
+        <li>
+          <p>
+            we can show directly that <m>T</m> is invertible by providing an inverse <m>T^{-1}\colon W\rightarrow V</m>;
+          </p>
+        </li>
+        <li>
+          <p>
+            we can show that <m>T</m> is bijective (i.e., injective and surjective).
+          </p>
+        </li>
+      </ol>
+    </p>
+     </remark>
+     <p>
+      One of the two methods described in <xref ref="rm_isom"/> for determining whether a linear transformation is invertible may be more convenient than the other, depending on the linear transformation in question. Thanks to <xref ref="th_injective_surjective"/>, we can decide whether a linear transformation is bijective by looking at its two associated subspaces <m>\NS T</m> and <m>\im T</m>. 
+     </p>
+  <theorem xml:id="th_isom_null_im">
+    <title>Isomorphism equivalence</title>
+    <statement>
+      <p>
+        Let <m>T\colon V\rightarrow W</m> be a linear transformation. The following are equivalent.
+        <ol>
+          <li>
+            <p>
+              <m>T</m> is an isomorphism;
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\NS T=\{\boldzero_V\}</m> and <m>\im T=W</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <proof>
+      <p>
+        The result follows directly from <xref ref="th_injective_surjective"/> and the fact that a function is invertible if and only if it is bijective: 
+        <md>
+          <mrow>T \text{ is an isomorphism} \amp \iff T \text{ is bijective}</mrow>
+          <mrow> \amp \iff T \text{ is injective and surjective}</mrow>
+          <mrow> \amp \iff \NS T=\{\boldzero_V\} \text{ and } \im T=W</mrow>
+        </md>. 
+      </p>
+    </proof>
+  </theorem>
+  <example xml:id="eg_transpose_isom">
+    <title>Transposition is an isomorphism</title>
+    <statement>
+      <p>
+        Let <m>F\colon M_{mn}\rightarrow M_{nm}</m> be defined as <m>F(A)=A^T</m>. Prove that <m>F</m> is an isomorphism. 
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We know already that <m>F</m> is a linear transformation. It remains to show that it is invertible.  In the spirit of <xref ref="rm_isom"/>, we give two proofs, corresponding to methods (1) and (2). 
+      </p>
+      <case>
+      <title>First proof</title>
+      <p>
+      Define <m>G\colon M_{nm}\rightarrow M_{mn}</m> as <m>G(B)=B^T</m>. We claim that <m>G=F^{-1}</m>, and hence that <m>F</m> is an isomorphism. To do show we must show 
+      <md>
+        <mrow>G\circ F \amp = \id_{M_{mn}} \amp F\circ G\amp =\id_{M_{nm}}</mrow>
+      </md>.
+      For any <m>A\in M_{mn}</m>, we have 
+      <md>
+        <mrow>G(F(A)) \amp =G(A^T)</mrow>
+        <mrow> \amp(A^T)^T </mrow>
+        <mrow> \amp = A</mrow>
+      </md>.
+      Thus <m>G\circ F=\id_{M_{mn}}</m>. Similarly, for any <m>B\in M_{nm}</m>, we have 
+      <md>
+        <mrow>F(G(B)) \amp = F(B^T)</mrow>
+        <mrow> \amp = (B^T)^T</mrow>
+        <mrow> \amp = B</mrow>
+      </md>.
+      </p>
+      </case>
+      <case>
+      <title>Second proof</title>
+      <p>
+      We will show that <m>F</m> is bijective, and hence invertible. To do so it suffices to show <m>\NS F=\{\boldzero\}</m> and <m>\im F=M_{nm}</m>. We have 
+      <md>
+        <mrow>F(A) = \boldzero \amp \iff A^T=\boldzero</mrow>
+        <mrow> \amp \iff A=\boldzero</mrow>
+      </md>.
+      Thus <m>\NS F=\{\boldzero\}</m>, showing <m>F</m> is injective. Next given any <m>B\in M_{nm}</m>, let <m>A=B^T</m>; then 
+      <md>
+        F(A)=F(B^T)=(B^T)^T=B
+      </md>.
+      This proves that for any <m>B\in M_{nm}</m> there is a matrix  <m>A\in M_{mn}</m> such that <m>F(A)=B</m>. Thus <m>\im F=M_{nm}</m>. 
+      </p>
+
+      </case>
+      
+    </solution>
+    
+  </example>
+  <p>
+    Why is it useful to know whether two vector spaces are isomorphic? The short answer is that if <m>V</m> and <m>W</m> are isomorphic, then although they may be very different objects when considered as sets, from the linear-algebraic perspective there is essentially no difference between the two: <ie/>, they satisfy the exact same linear-algebraic properties. Furthermore, an isomorphism <m>T\colon V\rightarrow W</m> witnessing the fact that <m>V</m> and <m>W</m> are isomorphic gives us a perfect bijective dictionary between the two spaces, allowing us to answer questions about the one space by <q>translating</q> it to a question about the other, using <m>T</m> or <m>T^{-1}</m>. <xref ref="th_isomorphism_preserves"/> gives a first glimpse into this dictionary-like nature of isomorphisms. Later in <xref ref="s_coordinatevectors"/> we will introduce a particular isomorphism called the <em>coordinate vector</em>, which illustrates the computational value of being able to translate questions about abstract vector spaces <m>V</m> to questions about our beloved and familiar <m>\R^n</m> spaces. 
+  </p>
+  <theorem xml:id="th_isomorphism_preserves">
+    <title>Properties preserved by isomorphisms</title>
+    <statement>
+      <p>
+        Let <m>T\colon V\rightarrow W</m> be an isomorphism. The following properties hold:
+        <ol>
+          <li>
+            <p>
+              <m>S\subseteq V</m> is linearly independent if and only if <m>T(S)\subseteq W</m> is linearly independent;
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>S\subseteq V</m> spans <m>V</m> if and only if <m>T(S)\subseteq W</m> spans <m>W</m>;
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>S\subseteq V</m> is a basis of <m>V</m> if and only if <m>T(S)\subseteq W</m> is a basis of <m>W</m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\dim V=\dim W</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <proof>
+      <p>
+        We prove <m>(1)</m> and leave the remaining statements as an exercise. Let <m>T\colon V\rightarrow W</m> be an isomorphism, and let <m>S\subseteq V </m> be a linearly independent set. Define 
+        <md>
+          S'=T(S)=\{T(\boldv)\colon \boldv\in S\}
+        </md>.
+        Suppose 
+        <md>\boldw_1=T(\boldv_1), \boldw_2=T(\boldv_2),\dots, \boldw_n=T(\boldv_n)\</md>
+        are distinct elements of <m>S'</m>, and suppose we have 
+        <md>
+          c_1T(\boldv_1)+c_2T(\boldv_2)+\cdots +c_nT(\boldv_n)=\boldzero
+        </md>.
+        Let <m>T^{-1}\colon W\rightarrow V</m> be the inverse function of <m>T</m>, and recall that <m>T^{-1}</m> is linear by <xref ref="th_isom_inverse_linear"/>. Now applying <m>T^{-1}</m> to both sides of the equation above and simplify
+        <md>
+          <mrow> T^{-1}(c_1T(\boldv_1)+c_2T(\boldv_2)+\cdots +c_nT(\boldv_n))\amp =T^{-1}(\boldzero) </mrow>
+          <mrow>c_1T^{-1}T(\boldv_1)+c_2T^{-1}(T(\boldv_2))+\cdots c_nT^{-1}T(\boldv_n) \amp = \boldzero \amp (T^{-1} \text{ is linear})</mrow>
+          <mrow>c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n \amp =\boldzero \amp (T^{-1}\circ T=\id_V) </mrow>
+        </md>.
+        Since <m>S</m> is assumed to be linearly independent, we conclude that <m>c_1=c_2=\cdots =c_n=0</m>, as desired. 
+      </p>
+    </proof>
+  </theorem>
+  <remark>
+    <xref ref="th_isomorphism_preserves"/> makes use of <xref ref="d_image" text="custom">image of a set</xref> notation from general function theory. In general, if <m>f\colon X\rightarrow Y</m> is a function, given a subset <m>A\subseteq X </m>, the image of <m>A</m> under <m>f</m> is defined as 
+    <md>
+      f(A)=\{y\in Y\colon y=f(x) \text{ for some } x\in X\}=\{f(a)\colon a\in A\}
+    </md>.
+  </remark>
+  <p>
+    We now state a powerful theorem that applies specifically to finite-dimensional spaces. 
+  </p>
+  <theorem xml:id="th_isomorphisms_finite_dim">
+    <statement>
+      <p>
+        Let <m>V</m> be a vector space of finite dimension <m>n</m>. 
+        <ol>
+          <li>
+            <p>
+              A vector space <m>W</m> is isomorphic to <m>V</m> if and only if <m>\dim V=\dim W</m>. 
+            </p>
+          </li>
+          <li>
+            <p>
+              Assume <m>W</m> is a vector space satisfying <m>\dim V=\dim W=n</m>, and let <m>T\colon V\rightarrow W</m> be a linear transformation. The following are equivalent.  
+              <ol>
+                <li>
+                  <p>
+                    <m>T\colon V\rightarrow W</m> is an isomorphism. 
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\NS T=\{\boldzero_V\}</m> (<ie/>, <m>T</m> is injective). 
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <m>\im T=W</m> (<ie/>, <m>T</m> is surjective). 
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <proof>
+      <p>
+        <ol>
+          <li>
+            <p>
+              We prove both implications separately. 
+            </p>
+            <p>
+              If <m>V</m> and <m>W</m> are isomorphic, then there is an isomorphism <m>T\colon V\rightarrow W</m>. It follows from <xref ref="th_isomorphism_preserves"/> that <m>\dim V=\dim W</m>. 
+            </p>
+            <p>
+              Now assume <m>\dim V=\dim W=n</m>. By definition there are bases <m>B=\{\boldv_1,\boldv_2,\dots, \boldv_n\}</m> and <m>B'=\{\boldw_1,\boldw_2,\dots, \boldw_n\}</m> of <m>V</m> and <m>W</m>, respectively, satisfying <m>\abs{B}=\abs{B'}=n</m>. Using <xref ref="th_exist_transf" text="title"/> there is a linear transformation 
+              <md>
+                <mrow>T\colon V \amp \rightarrow W</mrow>
+              </md>
+              satisfying <m>T(\boldv_i)=\boldw_i</m> for all <m>1\leq i\leq n</m>, and a linear transformation 
+              <md>
+                <mrow>T'\colon W\rightarrow  \amp V</mrow>
+              </md>
+              satisfying <m>T'(\boldw_i)=\boldv_i</m> for all <m>1\leq i\leq n</m>. We now use <xref ref="th_transf_unique" text="title"/> to prove that 
+              <md>
+                <mrow>T'\circ T \amp =\id_V \amp T\circ T'\amp =\id_W</mrow>
+              </md>,
+              and hence that <m>T'=T^{-1}</m>. To do so we observe that for all <m>1\leq i\leq n</m> we have 
+              <md>
+                <mrow>T'\circ T(\boldv_i) \amp = T'(\boldw_i) \amp (\text{def. of } T)</mrow>
+                <mrow> \amp = \boldv_i \amp (\text{def. of } T') </mrow>
+                <mrow> \amp = \id_V(\boldv_i) \amp (\text{def. of } \id_V</mrow>
+              </md>.
+              Since <m>T'\circ T</m> and <m>\id_V</m> agree on the basis <m>B</m> (<m>T'\circ T(\boldv_i)=\id_V(\boldv_i)</m> for all <m>1\leq i\leq n</m>), we conclude that <m>T'\circ T=\id V</m>. A very similar argument shows <m>T\circ T'=\id_W</m>. Having shown that <m>T'=T^{-1}</m>, we conclude that <m>T</m> is an isomorphism, and hence that <m>V</m> and <m>W</m> are isomorphic. 
+            </p>
+          </li>
+          <li>
+            <p>
+              Assume that <m>T\colon V\rightarrow W</m> and that <m>\dim V=\dim W=n</m>. We will establish the cycle of implications (a)<m>\implies</m>(b)<m>\implies</m>(c)<m>\implies</m>(a).
+            </p>
+            <case>
+            <title>(a)<m>\implies </m>(b)</title>
+            <p>
+            By <xref ref="th_isom_null_im"/>, if <m>T</m> is an isomorphism, then <m>\NS T=\{\boldzero\}</m>. 
+            </p>
+            </case>
+            <case>
+            <title>(b)<m>\implies</m>(c)</title>
+            <p>
+            Using the rank-nullity theorem, if <m>\NS T=\{\boldzero\}</m>, then 
+            <md>
+              <mrow>\dim \im T \amp =\dim V-\dim \NS T</mrow>
+              <mrow> \amp = n-0 \amp (\NS T=\{\boldzero\})</mrow>
+              <mrow> \amp =n </mrow>
+            </md>.
+            Since <m>\im T\subseteq W</m> and <m>\dim \im T=\dim W=n</m>, we conclude using <xref ref="cor_dimension_subspace"/> that <m>\im T=W</m>.
+            </p>
+            </case>
+            <case>
+            <title>(c)<m>\implies</m>(a)</title>
+            <p>
+            Assume <m>\im T=W</m>. Again, using the rank-nullity theorem, we see that 
+            <md>
+              <mrow>\dim \NS T \amp =\dim V-\dim \im T</mrow>
+              <mrow> \amp = n-n \amp (\im T=W)</mrow>
+              <mrow> \amp = 0</mrow>
+            </md>.
+            It follows that <m>\NS T=\{\boldzero\}</m>, and hence, by <xref ref="th_isom_null_im"/>, that <m>T</m> is an isomorphism. 
+            </p>
+            </case>
+          </li>
+        </ol>
+      </p>
+    </proof>
+  </theorem>
+  <p>
+    A shocking consequence of <xref ref="th_isomorphisms_finite_dim"/>, is that any two vector spaces of the same dimension are isomorphic: in particular, any <m>n</m>-dimensional vector space is isomorphic to <m>\R^n</m>! 
+  </p>
+  <corollary xml:id="cor_isom_Rn">
+    <title>Isomorphic to <m>\R^n</m></title>
+    <statement>
+      <p>
+        If <m>V</m> is a finite-dimensional vector space, then <m>V</m> is isomorphic to <m>\R^n</m>, where <m>n=\dim V</m>. 
+      </p>
+    </statement>
+    <proof>
+      <p>
+        The corollary follows immediately from (1) of <xref ref="th_isomorphisms_finite_dim"/> and the fact that <m>\dim \R^n=n</m>. 
+      </p>
+    </proof>
+  </corollary>
+  <p>
+    We have finally delivered on a promise made way back in <xref ref="c_Rn"/>: namely, we now see how any finite-dimensional vector space is isomorphic (and thus structurally equivalent) to one of our Euclidean spaces <m>\R^n</m>. There is something almost anticlimactic about <xref ref="cor_isom_Rn"/>. Having devoted much time and energy to introducing and studying various <q>exotic</q> finite-dimensional vector spaces, we now learn that they are essentially no different than our familiar spaces <m>\R^n</m>. Be not disappointed! By establishing an isomorphism between an exotic vector space <m>V</m> and a Euclidean space <m>\R^n</m>, we are able to transport to <m>V</m> all the wonderful computational techniques we have at our disposal in the <m>\R^n</m> context. Furthermore, it is still up to us to <em>choose</em> our isomorphism <m>T\colon V\rightarrow \R^n</m>, and as we will see, there is a subtle art to choosing the isomorphism <m>T</m> to suit our particular needs. 
+  </p>
+    </subsection>
+    <subsection xml:id="ss_invert_isom">
+      <title>Invertibility and isomorphisms</title>
+      <p>
+        We end this section by making a connection between invertible matrices and isomorphisms. It follows easily from <xref ref="th_isomorphisms_finite_dim"/> that a matrix <m>A\in M_{nn}</m> is invertible if and only if its corresponding matrix transformation <m>T_A\colon \R^n\rightarrow \R^n</m> is an isomorphism. Indeed, <m>T_A</m> is an isomorphism if and only if <m>\NS T_A=\{\boldzero\}</m>, if and only if <m>\NS A=\{\boldzero\}</m>, if and only if <m>A</m> is invertible. Furthermore, we see in this case that the inverse function of <m>T_A</m> is the matrix transformation <m>T_{A^{-1}}</m>: <ie/>, <m>(T_A)^{-1}=T_{A^{-1}}</m>. We add this statement to our ever-growing list of equivalent formulations of invertibility.  
+      </p>
+      <theorem xml:id="th_invertibility_with_isom">
+        <title>Invertibility theorem</title>
+        <statement>
+          <p>
+            Let <m>A</m> be an <m>n\times n</m> matrix.
+            The following statements are equivalent.
+          <ol cols="2">
+            <li xml:id="inv5_statement_def">
+              <p>
+                <m>A</m> is invertible.
+              </p>
+            </li>
+  
+            <li xml:id="inv5_statement_unique_sol">
+              <p>
+                The matrix equation <md>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</md> has a <em>unique solution</em> for any <m>\boldb\in \R^n</m>.
+              </p>
+            </li>
+            <li xml:id="inv5_statement_exists_sol">
+              <p>
+                The matrix equation <md>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</md> has a solution for any <m>\boldb\in \R^n</m>.
+              </p>
+            </li>
+            <li xml:id="inv5_statement_trivial_sol">
+              <p>
+                The matrix equation <md>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldzero}</md> has a unique solution: namely, <m>\boldx=\boldzero_{n\times 1}</m>.
+              </p>
+            </li>
+            <li xml:id="inv5_statement_row_equiv">
+              <p>
+                <m>A</m> is row equivalent to <m>I_n</m>,
+                the <m>n\times n</m> identity matrix.
+              </p>
+            </li>
+            <li xml:id="inv5_statement_prod_elems">
+              <p>
+                <m>A</m> is a product of elementary matrices.
+              </p>
+            </li>
+            <li xml:id="inv5_statement_det">
+              <p>
+                <m>\det A\ne 0</m>.
+              </p>
+            </li>
+            <li xml:id="inv5_statement_nullspace">
+              <p>
+                <m>\NS A=\{\boldzero\}</m>
+              </p>
+            </li>
+            <li xml:id="inv5_statement_nullity">
+              <p>
+                <m>\nullity A=0</m>
+              </p>
+            </li>
+            <li xml:id="inv5_statement_rank">
+              <p>
+                <m>\rank A=n</m>
+              </p>
+            </li>
+            <li xml:id="inv5_statement_rowspace">
+              <p>
+                <m>\RS A=\R^n</m>
+              </p>
+            </li>
+            <li xml:id="inv5_statement_colspace">
+              <p>
+                <m>\CS A=\R^n</m>
+              </p>
+            </li>
+            <li xml:id="inv5_statement_cols">
+              <p>
+                Any of the following equivalent conditions about the set <m>S</m> of columns of <m>A</m> hold: <m>S</m> is a basis of <m>\R^n</m>; <m>S</m> spans <m>\R^n</m>; <m>S</m> is linearly independent.
+              </p>
+            </li>
+            <li xml:id="inv5_statement_rows">
+              <p>
+                Any of the following equivalent conditions about the set <m>S</m> of rows of <m>A</m> hold: <m>S</m> is a basis of <m>\R^n</m>; <m>S</m> spans <m>\R^n</m>; <m>S</m> is linearly independent.
+              </p>
+            </li>
+            <li xml:id="inv5_isom">
+              <p>
+                The matrix transformationn <m>T_A\colon \R^n\rightarrow \R^n</m> is an isomorphism. 
+              </p>
+            </li>
+          </ol>
+        </p>
+        </statement>
+      </theorem>
+ 
+    </subsection>
+<xi:include href="./s_nullspace_image_isom_ex.ptx"/>
+
+</section>

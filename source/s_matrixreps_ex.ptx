@@ -1,0 +1,231 @@
+<exercises xml:id="s_matrixreps_ex">
+  <subexercises>
+    <title>WeBWork Exercises</title>
+    <exercise>
+      <!-- match -->
+      <webwork source="Library/TCNJ/TCNJ_MatrixLinearTransformation/problem10.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- polynomials -->
+      <webwork source="Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_9.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- matrix transform -->
+      <webwork source="Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_4.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- matrix transforms -->
+      <webwork source="Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_6.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- matrix tranforms -->
+      <webwork source="Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_5.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- trig -->
+      <webwork source="Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_13.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- transformation of a subspace -->
+      <webwork source="Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_15.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- similar matrices -->
+      <webwork source="Library/NAU/setLinearAlgebra/similar2.pg" />
+    </exercise>
+  </subexercises>
+  <exercisegroup>
+    <introduction>
+    <p>
+    Compute <m>[T]_B^{B'}</m> for each provided <m>T\colon V\rightarrow W</m> and choice of bases <m>B</m> and <m>B'</m> of <m>V</m> and <m>W</m>. You may assume that the given <m>T</m> is a linear transformation.
+  </p>
+</introduction>
+    <exercise>
+      <statement>
+        <p>
+          <m>T\colon P_3\rightarrow P_4</m>, <m>T(p(x))=p'(x)-x\, p(x)</m>; <m>B=(x^3, x^2, x, 1)</m>; <m>B'=(x^4, x^3, x^2, x,1)</m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>T\colon P_2\rightarrow M_{22}</m>, <m>T(p(x))=\begin{bmatrix}
+            p(-1)\amp p(0)\\
+            p(1)\amp p(2)
+          \end{bmatrix}</m>; <m>B=(x^2,x,1)</m>; <m>B'=(E_{11}, E_{12}, E_{21}, E_{22})</m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>T\colon \R^2\rightarrow \R^2</m>, <m>T=T_A</m> where <m>A=\begin{bmatrix}
+            1\amp 2\\ 2\amp 4
+          \end{bmatrix}</m>; <m>B=B'=\left((1,2),(2,-1)\right)</m>
+        </p>
+      </statement>
+    </exercise>
+  </exercisegroup>
+
+  <exercise>
+    <statement>
+      <p>
+        Suppose <m>T\colon P^3\rightarrow P^2</m> is a linear transformation with matrix representation
+        <md>
+          [T]_B^{B'}=\begin{bmatrix}
+            2\amp 0\amp 0\amp -1\\
+            0\amp 1\amp -1\amp 0\\
+            1\amp 1\amp 1\amp 1
+        \end{bmatrix}
+        </md>,
+        where <m>B=(x^3, x^2, x, 1)</m> and <m>B'=(x^2, x, 1)</m>. Use the defining property <xref ref="eq_matrixrep_prop"/> of <m>[T]_B^{B'}</m> to determine the formula for <m>T(ax^3+bx^2+cx+d)</m> for an arbitrary polynomial <m>ax^3+bx^2+cx+d\in P_3</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Suppose <m>T\colon \R^2\rightarrow \R^2</m> is a linear transformation with matrix representation
+        <md>
+          [T]_{B}=\begin{bmatrix}
+          1\amp 1\\ 1\amp 2
+        \end{bmatrix}
+        </md>,
+        where <m>B=\left( (1,2), (-1,1)\right)</m>
+      </p>
+      <ol>
+        <li>
+          <p>
+            Use the defining property <xref ref="eq_matrixrep_prop"/> of <m>[T]_B</m> to compute <m>T((1,0))</m> and <m>T((0,1))</m>. (You will first need to compute <m>[(1,0)]_B</m> and <m>[(0,1)]_B</m>. )
+          </p>
+        </li>
+        <li>
+          <p>
+            Use (a) and the fact that <m>T</m> is linear to give a general formula for <m>T(x,y)</m> in terms of <m>x</m> and <m>y</m>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+    </exercise>
+  <exercise>
+    <statement>
+      <p>
+        The function <m>S\colon M_{22}\rightarrow M_{22}</m> defined as <m>S(A)=A^T-A</m> is a linear transformation.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Compute <m>C=[S]_B</m>, where <m>B</m> is the standard basis of <m>M_{22}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Use <xref ref="th_matrixreps_model"/> to lift bases of <m>\NS C</m> and <m>\CS C</m> back to bases for <m>\NS S</m> and <m>\im S</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Identify <m>\NS S</m> and <m>\im S</m> as familiar subspaces of matrices.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        The function <m>T\colon P_2\rightarrow P_3</m> defined by <m>T(p(x))=xp(x-3)</m> is a linear transformation.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Compute <m>A=[T]_B^{B'}</m>, where <m>B</m> and <m>B'</m> are the standard bases of <m>P_2</m> and <m>P_3</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Use <xref ref="th_matrixreps_model"/> to lift bases of <m>\NS A</m> and <m>\CS A</m> back to bases for <m>\NS T</m> and <m>\im T</m>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+
+</exercise>
+
+<exercise>
+  <statement>
+    <p>
+      Let <m>T\colon \R^2\rightarrow \R^3</m> be the linear transformation defined as <m>T(x,y)=(x-y, x+2y, y)</m>, and let <m>B=\left((1,0), (0,1)\right)</m>, <m>B'=\left((1,1),(1,-1)\right)</m>, <m>B''=\left((1,0,0),(0,1,0),(0,0,1)\right)</m>
+    </p>
+    <ol>
+      <li>
+        <p>
+          Compute <m>[T]_B^{B''}</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Compute <m>[T]_{B'}^{B''}</m>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+
+</exercise>
+
+
+  <exercise>
+    <statement>
+      <p>
+        Let <m>T\colon P_2\rightarrow M_{22}</m> be the linear transformation defined as
+        <md>
+          T(p(x))=\begin{bmatrix} p(0)\amp p(1)\\ p(-1)\amp p(0) \end{bmatrix}
+        </md>,
+        and let  <m>B=(1,x,x^2)</m>, <m>B'=(1, 1+x, 1+x^2)</m>, <m>B''=(E_{11}, E_{12}, E_{21}, E_{22})</m> (the standard basis of <m>M_{22}</m>).
+      </p>
+      <ol>
+        <li>
+          <p>
+            Compute <m>[T]_B^{B''}</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Compute <m>[T]_{B'}^{B''}</m>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>T_1\colon V\rightarrow W</m> and <m>T_2\colon W\rightarrow U</m> be linear transformations, and suppose <m>B, B', B''</m> are ordered bases for <m>V</m>, <m>W</m>, and <m>U</m>, respectively. Prove:
+        <md>
+          [T_2\circ T_1]_B^{B''}=[T_2]_{B'}^{B''}[T_1]_B^{B'}
+        </md>.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Let <m>A_1=[T_1]_B^{B'}</m> and <m>A_2=[T_2]_{B'}^{B''}</m>. Show that the matrix <m>A_2A_1</m> satisfies the defining property of <m>[T_2\circ T_1]_{B}^{B''}</m>: <ie />,
+        <md>
+          A_2A_1[\boldv]_B=[T_2\circ T_1(\boldv)]_{B''}
+        </md>
+        for all <m>\boldv\in V</m>.
+
+      </p>
+    </hint>
+  </exercise>
+
+
+</exercises>

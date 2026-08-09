@@ -32,15 +32,15 @@
           <li xml:id="d_subspace_add" >
             <title><m>W</m> is closed under addition</title>
             <p> For all <m>\boldv_1,\boldv_2\in V</m>, if <m>\boldv_1,\boldv_2\in W</m>, then <m>\boldv_1+\boldv_2\in W</m>. Using logical notation:
-            <me>
+            <md>
             \boldv_1,\boldv_2\in W\implies \boldv_1+\boldv_2\in W
-            </me>.
+            </md>.
           </p>
         </li>
         <li xml:id="d_subspace_mult">
           <title><m>W</m> is closed under scalar multiplication</title>
           <p> For all <m>c\in \R</m> and <m>\boldv\in V</m>, if <m>\boldv\in W</m>, then <m>c\boldv\in W</m>. In logical notation:
-          <me>\boldv\in W\Rightarrow c\boldv\in W</me>.
+          <md>\boldv\in W\Rightarrow c\boldv\in W</md>.
         </p>
       </li>
     </ol>
@@ -51,8 +51,8 @@
   <statement>
     <p>
       Let <m>V=\R^2</m> and let
-      <me>W=\{(t,t)\in\R^2 \colon t\in\R\}
-      </me>.
+      <md>W=\{(t,t)\in\R^2 \colon t\in\R\}
+      </md>.
       Prove that <m>W</m> is a subspace.
     </p>
   </statement>
@@ -95,9 +95,9 @@
   <statement>
     <p>
       Let <m>V=\R^n</m> and let
-      <me>
+      <md>
       W=\{(x,y)\in \R^2\colon x, y\geq 0\}
-      </me>.
+      </md>.
       Is <m>W</m> a vector space? Decide which of the of properties (i)-(iii) in <xref ref="d_subspace"/> (if any) are satisfied by <m>W</m>.
     </p>
   </statement>
@@ -139,9 +139,9 @@
       <li xml:id="proc_subspace_ops">
         <p>
           Show that
-          <me>
+          <md>
           \boldv_1, \boldv_2\in W\implies c\boldv_1+d\boldv_2\in W
-          </me>,
+          </md>,
           for all <m>c,d\in\R</m>.
         </p>
       </li>
@@ -219,7 +219,7 @@
   <statement>
     <p>
       Let <m>V</m> be a vector space. Given a collection <m>W_1, W_2,\dots, W_r</m>, where each <m>W_i</m> is a subspace of <m>V</m>, the intersection
-      <me> W=W_1\cap W_2\cdots \cap W_r</me>
+      <md> W=W_1\cap W_2\cdots \cap W_r</md>
       is a subspace.
     </p>
   </statement>
@@ -250,9 +250,9 @@
   <title>Subspaces of <m>\R^n</m></title>
   <p>
     <xref ref="th_subspace_matrix_solutions"/> gives a convenient method of producing a subspace <m>W</m> of <m>\R^n</m>: namely, given any <m>m\times n</m> matrix <m>A</m>, the set 
-    <me>
+    <md>
     W=\{\boldx\in \R^n\colon A\boldx=\boldzero\}
-    </me>
+    </md>
     of all solutions to the homogeneous linear system <m>A\boldx=\boldzero</m> 
     is guaranteed to be a subspace of <m>\R^n</m>. We call this set the <em>null space</em> of the matrix <m>A</m>. 
   </p>
@@ -261,13 +261,13 @@
     <statement>
       <p>
         Let <m>A\in M_{mn}</m>. The <term>null space</term> of <m>A</m>, denoted <m>\NS A</m>, is the set of all solutions to the matrix equation 
-        <men xml:id="eq_nullspace_matrix">
+        <md number="yes" xml:id="eq_nullspace_matrix">
           A\boldx=\underset{m\times 1}{\boldzero}
-        </men>.
+        </md>.
         In other words, 
-        <me>
+        <md>
           \NS A=\{\boldx\in \R^n\colon A\boldx=\boldzero\}
-        </me>.
+        </md>.
         Equivalently, thinking in terms of linear systems, <m>\NS A</m> is the set of solutions to the homogeneous linear system represented by <xref ref="eq_nullspace_matrix"/>. 
       </p>
     </statement>
@@ -277,9 +277,9 @@
     <statement>
       <p>
         Given any <m>A\in M_{mn}</m>, its null space 
-        <me>
+        <md>
           \NS A=\{\boldx\in \R^n\colon A\boldx=\boldzero\}
-        </me>
+        </md>
         is a subspace of <m>\R^n</m>. 
       </p>
     </statement>
@@ -287,15 +287,15 @@
       <p>
         Following the two-step technique, we first show that the zero vector <m>\boldzero=(0,0,\dots, 0)</m> of <m>\R^n</m> lies in <m>\NS A</m>. 
          This is clear, since 
-         <me>
+         <md>
           A\underset{n\times 1}{\boldzero}=\underset{m\times 1}{\boldzero}
-        </me>. 
+        </md>. 
       </p>
       <p>
         Next, we show that for any <m>\boldx_1, \boldx_2\in \R^n</m> and any <m>c_1, c_2\in \R</m> we have
-        <me>
+        <md>
         \boldx_1, \boldx_2\in \NS A\implies c_1\boldw_1+c_2\boldw_2\in \NS A
-        </me>.
+        </md>.
         If <m>\boldx_1, \boldx_2\in \NS A</m>, then we have <m>A\boldx_1=A\boldx_2=\boldzero</m>, by definition. It then follows that the vector <m>c_1\boldx_1+c_2\boldx_2</m> satisfies
         <md>
         <mrow> A(c_1\boldx_1+c_2\boldx_2)  \amp= c_1A\boldx_1+c_2A\boldx_2 \amp (<xref ref="th_matrix_alg_props" text="global"/>) </mrow>
@@ -325,9 +325,9 @@
     <statement>
       <p>
         Define the subset <m>W</m> of <m>\R^3</m> as
-        <me>
+        <md>
         W=\{(x,y,z)\in \R^3\colon x+2y+3z=x-y-z=0\}
-        </me>.
+        </md>.
         <ol>
           <li>
             <p>
@@ -349,26 +349,26 @@
         <li>
           <p>
             It is easy to see that
-            <me>
+            <md>
               W=\{\boldx\in \R^n\colon A\boldx=\boldzero\}
-            </me>
+            </md>
             where
-            <me>
+            <md>
               A=\begin{amatrix}[rrr]1\amp 2\amp 3\\ 1\amp -1\amp -1  \end{amatrix}
-            </me>.
+            </md>.
             We conclude <m>W</m> is a subspace.
           </p>
         </li>
         <li>
           <p>
 The augmented matrix <m>\begin{amatrix}[c|c]A\amp\boldzero \end{amatrix}</m> row reduces to
-<me>
+<md>
   U=\begin{amatrix}[rrr|r]\boxed{1}\amp 2\amp 3\amp 0\\ 0 \amp \boxed{1}\amp 1\amp 0  \end{amatrix}
-</me>.
+</md>.
 Following <xref ref="proc_solveSystem"/> we conclude that
-<me>
+<md>
   W=\{(-t,-2t,t)\colon t\in \R\}
-</me>.
+</md>.
 Geometrically this is the line in <m>\R^3</m> passing through <m>(0,0,0)</m> with direction vector <m>(1,2,-1)</m>.
           </p>
         </li>
@@ -384,17 +384,17 @@ Geometrically this is the line in <m>\R^3</m> passing through <m>(0,0,0)</m> wit
   </p>
 </warning>
   <p>
-  Let <m>A</m> be an <m>m\times n</m> matrix. If <m>\boldb\in \R^m</m> is <em>nonzero</em>, then the set of solutions <m>S</m> to <m>A\boldx=\boldb</m> is <em>not</em> a subspace of <m>\R^n</m>, and for a very simple reason: since <me>A\underset{n\times 1}{\boldzero}=\underset{m\times 1}{\boldzero}\ne \boldb
-  </me>, we see that <m>\underset{n\times 1}{\boldzero}\notin S</m>, and thus <m>S</m> is not a subspace. Thus, thinking in terms of linear systems, we see that while the set of solutions to a <em>homogenous</em> linear system constitutes a subspace, the set of solutions to a <em>nonhomogeneous</em> system does not. On the other hand, as articulated by <xref ref="th_nullspace_linsys"/>, the set of solutions to a nonhomogeneous linear system can be thought of as a <em>translate</em> of a vector space. 
+  Let <m>A</m> be an <m>m\times n</m> matrix. If <m>\boldb\in \R^m</m> is <em>nonzero</em>, then the set of solutions <m>S</m> to <m>A\boldx=\boldb</m> is <em>not</em> a subspace of <m>\R^n</m>, and for a very simple reason: since <md>A\underset{n\times 1}{\boldzero}=\underset{m\times 1}{\boldzero}\ne \boldb
+  </md>, we see that <m>\underset{n\times 1}{\boldzero}\notin S</m>, and thus <m>S</m> is not a subspace. Thus, thinking in terms of linear systems, we see that while the set of solutions to a <em>homogenous</em> linear system constitutes a subspace, the set of solutions to a <em>nonhomogeneous</em> system does not. On the other hand, as articulated by <xref ref="th_nullspace_linsys"/>, the set of solutions to a nonhomogeneous linear system can be thought of as a <em>translate</em> of a vector space. 
 </p>
   <theorem xml:id="th_nullspace_linsys">
     <title>Null space and linear systems</title>
     <statement>
       <p>
         Let <m>A\in M_{mn}</m> and <m>\boldb\in \R^m</m>, and let <m>S</m> be the set of all solutions to the linear system 
-        <men xml:id="eq_nullspace_linsys">
+        <md number="yes" xml:id="eq_nullspace_linsys">
           A\boldx=\boldb
-        </men>.
+        </md>.
         <ol>
           <li>
             <p>
@@ -404,17 +404,17 @@ Geometrically this is the line in <m>\R^3</m> passing through <m>(0,0,0)</m> wit
           <li>
             <p>
               If <m>\boldx_p</m> is a solution to <xref ref="eq_nullspace_linsys"/>, then we have 
-              <me>
+              <md>
                 S=\boldx_p+\NS A=\{\boldx_p+\boldw\colon \boldw\in \NS A\}
-              </me>.
+              </md>.
               In other words, given a particular solution <m>\boldx_p</m> to <xref ref="eq_nullspace_linsys"/>, the general solution is given by 
-              <me>
+              <md>
                 \boldx_p+\boldx_h
-              </me>
+              </md>
               where <m>\boldx_h\in \NS A</m> is a solution to the homogeneous linear system 
-              <men xml:id="eq_nullspace_homog">
+              <md number="yes" xml:id="eq_nullspace_homog">
                 A\boldx=\boldzero
-              </men>.
+              </md>.
             </p>
           </li>
         </ol> 
@@ -431,9 +431,9 @@ Geometrically this is the line in <m>\R^3</m> passing through <m>(0,0,0)</m> wit
     <li>
       <p>
         Let <m>\boldx_p</m> satisfy <xref ref="eq_nullspace_linsys"/>. We show that 
-        <me>
+        <md>
           S=\boldx_p+\NS A
-        </me>
+        </md>
         by showing the two inclusions 
         <md>
           <mrow>\boldx_p+\NS A\amp \subseteq S  \amp  S\amp \boldx_p+\NS A</mrow>
@@ -452,9 +452,9 @@ Geometrically this is the line in <m>\R^3</m> passing through <m>(0,0,0)</m> wit
           <mrow> \amp = \boldzero</mrow>    
         </md>, 
         showing that <m>(\boldx_p-\boldv)\in \NS A</m>. But then we have 
-        <me>
+        <md>
           \boldv=\boldx_p+\underset{\boldw}{(\boldx_p-\boldv)}
-        </me>,
+        </md>,
         where <m>\boldw=(\boldx_p-\boldv)\in \NS A</m>. Thus <m>\boldv\in \boldx_p+\NS A</m>, showing that <m>S\subseteq \boldx_p+\NS A</m>. 
       </p>
     </li>
@@ -486,7 +486,7 @@ Geometrically this is the line in <m>\R^3</m> passing through <m>(0,0,0)</m> wit
     <title>Solving matrix equations</title>
     <p>
       Let's use Sage and  <xref ref="cor_matrix_equations"/> to find the set of solutions <m>S\subseteq \R^5</m> to the matrix equation
-      <men xml:id="eq_sage_matrix_eqn">
+      <md number="yes" xml:id="eq_sage_matrix_eqn">
         \begin{amatrix}[rrrrr]
           0\amp 0\amp -2\amp 0\amp 7\\
           2\amp 4\amp -10\amp 6\amp 12\\
@@ -494,7 +494,7 @@ Geometrically this is the line in <m>\R^3</m> passing through <m>(0,0,0)</m> wit
         \end{amatrix}
         \begin{amatrix}[c] x_1\\ x_2\\ x_3\\ x_4\\ x_5   \end{amatrix}=
         \begin{amatrix}[r] 12\\ 28\\ -1  \end{amatrix}
-      </men>.
+      </md>.
       This is the matrix equation form of the linear system we investigated in <xref ref="sage_solve_system"/>.
       The method <c>solve_right</c> can be used to find a <em>particular solution</em> <m>\boldx_p</m> to <xref ref="eq_sage_matrix_eqn"/>.
     </p>
@@ -512,9 +512,9 @@ Geometrically this is the line in <m>\R^3</m> passing through <m>(0,0,0)</m> wit
     </sage>
     <p>
       We get the entire set of solutions <m>S</m> by translating <m>\NS A</m> by the particular solution <m>\boldx_p</m>:
-      <me>
+      <md>
         S=\{\boldx_p+\boldu\colon \boldu\in \NS A\}=\boldx_p+\NS A
-      </me>.
+      </md>.
       We can illustrate this in Sage by taking random elements of <m>\NS A</m> (computed using <c>right_kernel</c>), adding them to <c>xp</c>, and verifying that the result is a solution to <xref ref="eq_sage_matrix_eqn"/>. Each time you evaluate the cell below, a randomly generated element of <m>S</m> will be outputted.
     </p>
     <sage>
@@ -573,9 +573,9 @@ Geometrically this is the line in <m>\R^3</m> passing through <m>(0,0,0)</m> wit
     <title>Hyperplanes and subspaces</title>
     <p>
       Recall that a <xref ref="d_hyperplane" text="custom">hyperplane</xref> is the set of solutions <m>H\subseteq \R^n</m> to a linear system of the form 
-      <men xml:id="eq_rm_hyperplane">
+      <md number="yes" xml:id="eq_rm_hyperplane">
         a_1x_1+a_2x_2+\cdots +a_nx_n=b
-      </men>,
+      </md>,
       where <m>a_i\ne 0</m> for some <m>i</m>. In terms of <xref ref="th_nullspace_linsys"/>, <m>H</m> is just the set of solutions to the matrix equation <m>A\boldx=\boldb</m>, where 
       <md>
         <mrow>A \amp =\begin{bmatrix}
@@ -586,13 +586,13 @@ Geometrically this is the line in <m>\R^3</m> passing through <m>(0,0,0)</m> wit
           \end{bmatrix} </mrow>
       </md>. 
       It follows from <xref ref="th_nullspace_linsys"/> that <m>H</m> is a subspace if and only if <m>b=0</m>: <ie/>, if and only if <m>H</m> passes through the origin. Furthermore, if <m>b\ne 0</m>, we have 
-      <me>
+      <md>
         H=\boldx_p+H_0
-      </me>,
+      </md>,
       where <m>\boldx_p</m> is any solution to <xref ref="eq_rm_hyperplane"/>, and <m>H_0</m> is the set of solutions to the corresponding homogeneous equation 
-      <men xml:id="eq_rm_hyperplane_homog">
+      <md number="yes" xml:id="eq_rm_hyperplane_homog">
         a_1x_1+a_2x_2+\cdots +a_nx_n=0
-      </men>.
+      </md>.
       In other words, although it is not true in general that every hyperplane <m>H\subseteq \R^n</m> is a subspace (since it may not pass through the origin), it is true that <m>H=\boldx_p+H_0</m> is a <em>translate</em> of a hyperplane <m>H_0</m> that is a subspace (since <m>H_0</m> passes through the origin).
     </p>
   </remark>
@@ -616,9 +616,9 @@ Geometrically this is the line in <m>\R^3</m> passing through <m>(0,0,0)</m> wit
     <statement>
       <p>
         Let <m>A=[a_{ij}]</m> be an <m>n\times n</m> matrix. The <term>trace</term> of <m>A</m>, denoted <m>\tr A</m> is defined as the sum of the diagonal entries of <m>A</m>: <ie />,
-        <me>
+        <md>
           \tr A=a_{11}+a_{22}+\cdots +a_{nn}
-        </me>.
+        </md>.
       </p>
     </statement>
   </definition>
@@ -656,17 +656,17 @@ Geometrically this is the line in <m>\R^3</m> passing through <m>(0,0,0)</m> wit
     <statement>
       <p>
         The set <m>W_1</m> of all trace-zero <m>2\times 2</m> matrices can be described as
-        <me>
+        <md>
           W_1=\left\{ \begin{amatrix}[rr]a\amp b\\ c\amp -a  \end{amatrix}\colon a,b,c\in \R\right\}
-        </me>.
+        </md>.
         The set <m>W_2</m> of all symmetric <m>2\times 2</m> matrices can be described as
-        <me>
+        <md>
           W_2=\left\{ \begin{amatrix}[rr]a\amp b\\ b\amp c  \end{amatrix}\colon a,b,c\in \R\right\}
-        </me>.
+        </md>.
         The set <m>W_3</m> of all skew-symmetric <m>2\times 2</m> matrices can be described as
-        <me>
+        <md>
           W_3=\left\{ \begin{amatrix}[rr]0\amp a\\ -a\amp 0  \end{amatrix}\colon a,b\in \R\right\}
-        </me>.
+        </md>.
       </p>
     </statement>
   </example>

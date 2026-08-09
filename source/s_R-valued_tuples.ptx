@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="s_real_tuples" xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id="s_Rn_and_friends" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Real-valued tuples</title>
     <!-- <objectives>
         <ol>
@@ -26,7 +26,7 @@
             Our study of linear algebra begins on a somewhat formal note with the introduction of the set <m>\R^I</m> of real-valued tuples indexed by an arbitrary set <m>I</m>. Conceptually, this construction is a straightforward generalization of the sets <m>\R^2</m> and <m>\R^3</m> of real-valued pairs and triples. The payoff of this mild formalism is a vast generalization of those two familiar sets that gives us a unified framework for developing the mathematical theory of objects as disparate as <m>n</m>-tuples, matrices, and infinite sequences. In particular, we show how the so-called <em>vector operations</em> of <m>\R^2</m> and <m>\R^3</m> extend easily to these more general sets <m>\R^I</m>. As a result, we are lead naturally to introduce at this early stage the notion of a <em>real vector space</em>, thereby foregrounding the central object of study of linear algebra. 
         </p>
     </introduction>
-    <subsection xml:id="ss_real_tuples">
+    <subsection xml:id="ss_R-valued_tuples">
     <title>Real-valued tuples</title>
     <p>
         Most multivariable courses begin by introducing <m>\R^2</m>, the set of all pairs of real numbers, and <m>\R^3</m>, the set of all triples of real numbers. Using set notation: 
@@ -360,7 +360,7 @@ Display the given matrix <m>A</m> as a rectangular array.
    <md>
     <mrow>\rowvec{1\amp 1\amp 1} \amp\amp \colvec{1\\ 1\\ 1} \amp\amp (1,1,1) </mrow>
    </md>.
-   The three are clearly quite similar, each consisting of three entries equal to <m>1</m>, and yet visibly no two are quite the same: the third is enclosed in parentheses while the first two use brackets; the first is displayed as a single row while the second is displayed as a single column. Of course, that is not a very rigorous way of distinguishing between tuples. Unpacking our notational conventions allows us to more precisely locate the difference between the three tuples: namely, they have three very different index sets. Following the order of the tuples displayed above, the corresponding index sets are 
+   The three are clearly quite similar, each consisting of three entries equal to <m>1</m>, and yet visibly no two are quite the same: the third is enclosed in parentheses while the first two use brackets; the first is displayed as a single row while the second is displayed as a single column. Of course, that is not a very rigorous way of distinguishing between tuples. Unpacking our notational conventions allows to more precisely locate the difference between the three tuples: namely, they have three very different index sets. Following the order of the tuples displayed above, the corresponding index sets are 
    <md>
     <mrow>I_1  \amp= \{(1,1),(1,2),(1,3)\} \amp I_2\amp =\{(1,1),(2,1),(3,1)\} \amp I_3=\{1,2,3\} </mrow>
    </md>.
@@ -568,7 +568,7 @@ and <m>a_{i,j,k}</m> is the intensity of the <m>k</m>-th color channel (1=red, 2
     </output>
 </sage>
 <p>
-Recall that Sage captures the double-index nature of a matrix by nesting lists: a matrix is just a list of lists. Sage handles <m>3</m>-dimensional arrays by taking this nesting one step further, as you can see from the definition of the object <c>smiley</c>, which is a list of lists of lists. In its current format, to access the <m>(i,j,k)</m>-th entry of the array, which tells us the intensity of the <m>k</m>-th color channel at <m>(i,j)</m>-th pixel, we use an iterated indexing syntax: <c>smiley[i][j][k]</c>. Let's examine the color of the top-left pixel by determining the three color intensities there. Adopting the <q>count from zero</q> convention of Python, the top-left pixel is given by <m>(i,j)=(0,0)</m>, and the three color channels are encoded as 0=red, 1=green, 2=blue. 
+Recall that Sage captures the double-index nature of a matrix by nesting lists: a matrix is just a list of lists. A <m>3</m>-dimensional array by taking this nesting one step further, as you can see from the definition of the object <c>smiley</c>, which is a list of lists of lists. In its current format, to access the <m>(i,j,k)</m>-th entry of the array, which tells us the intensity of the <m>k</m>-th color channel at <m>(i,j)</m>-th pixel, we use an iterated indexing syntax: <c>smiley[i][j][k]</c>. Let's examine the color of the top-left pixel by determining the three color intensities there. Adopting the <q>count from zero</q> convention of Python, the top-left pixel is given by <m>(i,j)=(0,0)</m>, and the three color channels are encoded as 0=red, 1=green, 2=blue. 
 </p>
     <sage>
         <input>
@@ -651,8 +651,8 @@ Recall that Sage captures the double-index nature of a matrix by nesting lists: 
                                 \boldx+\boldy=(x_i)_{i\in I}
                             </md>.
                             The operation 
-                            <md number="yes">
-                            <mrow xml:id="eq_tuple_add">\R^I\times \R^I \amp \rightarrow \R^I</mrow>
+                            <md>
+                                <mrow>\R^I\times \R^I \amp \rightarrow \R^I</mrow>
                                 <mrow>(\boldx, \boldy) \amp \mapsto \boldx+\boldy</mrow>
                             </md>
                             is called <term>vector addition</term>. 
@@ -666,8 +666,8 @@ Recall that Sage captures the double-index nature of a matrix by nesting lists: 
                                 c\boldx=(cx_i)_{i\in I}
                             </md>
                             is called the <term>scalar multiple</term> of <m>\boldx</m> by <m>c</m>. The operation 
-                            <md number="yes">
-                                <mrow xml:id="eq_tuple_scalar_mult">\R\times \R^I \amp \rightarrow \R^I</mrow>
+                            <md>
+                                <mrow>\R\times \R^I \amp \rightarrow \R^I</mrow>
                                 <mrow>(c,\boldx) \amp \mapsto c\boldx</mrow>
                             </md>
                             is called <term>scalar multiplication</term>. 
@@ -678,18 +678,13 @@ Recall that Sage captures the double-index nature of a matrix by nesting lists: 
         </statement>
     </definition>
     <remark>
-    <title>Anatomy lesson: vector operation notation</title>
+    <title>Vector operations input/output</title>
     <p>
-    The displayed expressions <xref ref="eq_tuple_add"/> and <xref ref="eq_tuple_scalar_mult"/> used in the definition of the vector operations on <m>\R^I</m> use a combination of function notation (see <xref ref="d_function"/>) and Cartesian product notation (see <xref ref="d_cartesian_product"/>). In general, the expression
-    <md>
-        <mrow> A\times B\amp \rightarrow C\amp </mrow>
-        <mrow>(a,b) \amp \mapsto c</mrow>
-    </md>
-    denotes a function that takes as input a pair of elements <m>(a,b)</m>, where <m>a\in A</m> and <m>b\in B</m>, and returns as output an element <m>c\in C</m>. Thus, the expression <xref ref="eq_tuple_add"/> describes a function that takes as input a pair <m>(\boldx, \boldy)</m> of <m>I</m>-tuples, and returns as output another <m>I</m>-tuple denoted <m>\boldx+\boldy</m>. In contrast, the scalar multiplication operation described in <xref ref="eq_tuple_scalar_mult"/> is a sort of <em>hybrid</em> operation that takes as input a pair <m>(c,\boldx)</m> where  <m>c\in \R</m> is a real number and <m>\boldx</m> is an <m>I</m>-tuple, and returns as output a new <m>I</m>-tuple denoted <m>c\boldx</m>. 
+    It is a good habit, when dealing with a variety of types of mathematical operations, to give a qualitative summary of what their inputs and outputs are. For example, vector addition in <m>\R^I</m> takes as input a pair of <m>I</m>-tuples, <m>\boldx</m> and <m>\boldy</m>, and returns as output the <m>I</m>-tuple <m>\boldx+\boldy</m>. By contrast, scalar multiplication in <m>\R^I</m> is a sort of <em>hybrid</em> operation that takes as input a real number <m>c</m> and <m>I</m>-tuple <m>\boldx</m> and returns as output a new <m>I</m>-tuple <m>c\boldx</m>. 
     </p>
     </remark>
     <p>
-        Taking the three special types of index sets <m>I</m> discussed in <xref ref="ss_real_tuples"/>, we see that <xref ref="d_tuples_vec_ops"/> gives rise to naturally defined operations on <m>n</m>-tuples, infinite sequences, and matrices. We summarize each in turn below. 
+        Taking the three special types of index sets <m>I</m> discussed in <xref ref="ss_R-valued_tuples"/>, we see that <xref ref="d_tuples_vec_ops"/> gives rise to naturally defined operations on <m>n</m>-tuples, infinite sequences, and matrices. We summarize each in turn below. 
         <ul>
             <li>
                 <title><m>n</m>-tuples</title>
@@ -827,7 +822,7 @@ Recall that Sage captures the double-index nature of a matrix by nesting lists: 
     </solution>
     </example>
     <p>
-        <xref ref="sage_vec_ops"/> demonstrates how vector operations on <m>\R^n</m> and <m>\ML_{m,n}(\R)</m> are implemented in Sage. 
+        In <xref ref="sage_vec_ops"/> we introduce <url href="https://www.sagemath.org/">SageMath</url> (or <em>Sage</em>, for short), an open-source computer algebra system. Our exploration of Sage will be a rather casual one, making use of interactive cells called <url href="https://sagecell.sagemath.org/">Sage cells</url>. These cells <xref ref="sage_vec_ops"/> can be evaluated by clicking the <c>Evaluate (Sage)</c> button, or by typing <c>shift+return</c>. You can experiment by editing the code in these cells and then evaluating. Sage is built on top of the Python programming language, and so shares its syntax. 
      </p>
     <project xml:id="sage_vec_ops">
         <title>Vector operations: <m>\R^n</m> and <m>\ML_{m\times n}(\R)</m> </title>
@@ -941,7 +936,7 @@ Recall that Sage captures the double-index nature of a matrix by nesting lists: 
     </sage>      
     </project>
     <p>
-    So why do we call these operations <em>vector</em> operations? It turns out that a set <m>\R^I</m> together with these two vector operations is an example of an important type of mathematical object called a <em>vector space</em>; and vector spaces in turn are the main object of study of linear algebra. The definition of a vector space we give below is what is known as an <em>axiomatic definition</em>: it lists a set of properties, called <em>axioms</em>, and defines a vector space to be anything that satisfies these axioms. 
+    So why do we call these operations <em>vector</em> operations? It turns out that a set <m>\R^I</m> together with these two vector operations is an example of an important type of mathematical object called a <em>vector space</em>, which in turn are the main object of study of linear algebra. The definition of a vector space we give below is what is known as an <em>axiomatic definition</em>: it lists a set of properties, called <em>axioms</em>, and defines a vector space to be anything that satisfies these axioms. 
     </p>
     <definition xml:id="d_vector_space">
         <title>Vector space</title>
@@ -1511,7 +1506,7 @@ Recall that Sage captures the double-index nature of a matrix by nesting lists: 
         
     </figure>
    </subsection>
-   <xi:include href="./s_real_tuples_ex.ptx"/>
+   <xi:include href="./s_R-valued_tuples_ex.ptx"/>
 
 
 </section>

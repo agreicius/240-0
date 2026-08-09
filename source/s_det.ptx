@@ -4,9 +4,9 @@
     <p>
       The <em>determinant</em> is a map that assigns to a square matrix <m>A</m> a scalar <m>\det A\in\R </m>.
       The definition given below of the determinant is far from intuitive, and we will do little to motivate it up front. Instead, we allow its various properties to speak for themselves by way of retroactive motivation. In particular, we will see that
-      <me>
+      <md>
         A \text{ is invertible } \iff \det A \ne 0
-      </me>,
+      </md>,
       making the determinant an important tool for investigating invertibility.
     </p>
     </introduction>
@@ -84,9 +84,9 @@
         </p>
         <p>
           Given
-          <me>
+          <md>
             A=\begin{amatrix}[ccc]a\amp b\amp c\\ d\amp e\amp f\\ g\amp h\amp i  \end{amatrix}
-          </me>,
+          </md>,
           we have
           <md>
             <mrow>\det A \amp =a\det A_{11}-b\det A _{12}+c\det A_{13} \amp \text{(recursive case)}</mrow>
@@ -104,9 +104,9 @@
   <statement>
     <p>
     Let <m>A=[a_{ij}]_{n\times n}</m> be triangular (upper, lower, or diagonal). Then
-    <me>
+    <md>
       \det A=a_{11}a_{22}\cdots a_{nn}
-    </me>.
+    </md>.
     In other words, the determinant of a triangular matrix is the product of its diagonal entries.
     </p>
   </statement>
@@ -127,15 +127,15 @@
      <title>Induction step: show <m>P(n)\implies P(n+1)</m> for all <m>n\geq 1</m></title>
     <p>
       Let <m>A=[a_{ij}]_{(n+1)\times (n+1)}</m> be a lower triangular matrix. Then <m>a_{1j}=0</m> for all <m>j\geq 2</m>, and hence the determinant of <m>A</m> is given by
-      <me>
+      <md>
         \det A=a_{11}\det  A_{11}
-      </me>.
+      </md>.
       Claim: <m>A_{i  k}</m> is lower triangular. Indeed, first observe that we have
-      <me>( A_{11})_{ij}=a_{i+1,j+1}</me>
+      <md>( A_{11})_{ij}=a_{i+1,j+1}</md>
       for all <m>1\leq i,j\leq n</m>; by deleting the first row and first column we effectively bump each index up by one. Since <m>A</m> is lower triangular we have  <m>a_{ij}=0</m> for all <m>1\leq i \lt; j\leq n+1</m>, and hence also
-      <me>
+      <md>
         ( A_{11})_{ij}=a_{i+1,j+1}=0
-      </me>
+      </md>
       for all <m>1\leq i &lt; j\leq n </m>, proving the claim.
     </p>
     <p>
@@ -185,22 +185,22 @@
   <statement>
     <p>
       Given an <m>n\times n</m> matrix <m>A</m>, for any pair <m>1\leq i,j\leq n</m> the <term><m>ij</m>-th minor of <m>A</m></term> is defined as
-      <me>
+      <md>
         M_{ij}=\det A_{i  k}
-      </me>.
+      </md>.
     </p>
     <p>
       For any <m>1\leq i\leq n</m> the expression
-      <me>
+      <md>
         \sum_{k=1}^n(-1)^{i+k}a_{ik}M_{ik}
-      </me>
+      </md>
       is called the <term>expansion along the <m>i</m>-th row of <m>A</m></term>.
     </p>
     <p>
       For any <m>1\leq j\leq n</m>, the expression
-      <me>
+      <md>
         \sum_{k=1}^n(-1)^{k+j}a_{kj}M_{kj}
-      </me>
+      </md>
       is called the <term>expansion along the <m>j</m>-th column of <m>A</m></term>.
     </p>
   </statement>
@@ -210,9 +210,9 @@
   <statement>
     <p>
       Let <m>A=[a_{ij}]_{n\times n}</m>. For any <m>1\leq i\leq n</m> we have
-      <me>
+      <md>
         \det A=  \sum_{k=1}^n(-1)^{i+k}a_{ik}M_{ik}
-      </me>.
+      </md>.
       In other words, we can compute <m>\det A</m> by expanding along any row of <m>A</m>.
     </p>
   </statement>
@@ -224,9 +224,9 @@
      <title>Base step: <m>n=1, 2</m></title>
     <p>
     For <m>n=1</m> there is nothing to prove. Given
-    <me>
+    <md>
       A=\begin{bmatrix}a\amp b\\ c\amp d\end{bmatrix}
-    </me>
+    </md>
     expanding along either row yields <m>ad-bc</m>, as one easily verifies.
     </p>
     </case>
@@ -234,17 +234,17 @@
      <title>Induction step</title>
     <p>
     Assume the claim is true of any <m>(n-1)\times (n-1)</m> matrix.  Given <m>A=[a_{ij}]_{n\times n}</m> we have
-    <men xml:id="eq_det_def">
+    <md number="yes" xml:id="eq_det_def">
       \det A=\sum_{j=1}^n (-1)^{1+j}a_{1 j}\det  A_{1j}
-    </men>.
+    </md>.
     Expanding along the <m>i</m>-th row of <m>A</m> for any <m>2\leq i\leq n</m>, on the other hand, we get
-    <men xml:id="eq_det_expansion">
+    <md number="yes" xml:id="eq_det_expansion">
       \sum_{k=1}^n (-1)^{i+k}a_{ik}\det A_{i  k}
-    </men>.
+    </md>.
     To show these two expressions are equal we use the induction hypothesis to compute each <m>\det  A_{1  j}</m> by expanding along its <m>(i-1)</m>-th row:
-    <men xml:id="eq_det_submatrix">
+    <md number="yes" xml:id="eq_det_submatrix">
       \det  A_{1j}=\sum_{k=1}^{n-1}(-1)^{i-1+k}[ A_{1j}]_{(i-1) k}\det {( A_{1j})}_{(i-1) k}
-    </men>.
+    </md>.
     The matrix <m>(A_{1j})_{(i-1) k}</m> is the result of first deleting row 1 and column <m>j</m> from <m>A</m>, and then deleting row <m>(i-1)</m> and column <m>k</m> of the resulting matrix.  To deal with such iterated submatrices, we make some simple observations relating the rows and columns of <m>A_{1 j}</m> and <m>A_{i  k}</m> with those of <m>A</m>.
     <ul>
       <li>
@@ -313,9 +313,9 @@
   <statement>
     <p>
       Let <m>A</m> be an <m>n\times n</m> matrix. Then
-      <me>
+      <md>
         \det A^T=\det A
-      </me>.
+      </md>.
     </p>
   </statement>
   <proof>
@@ -343,9 +343,9 @@
   <statement>
     <p>
       Let <m>A=[a_{ij}]_{n\times n}</m>. For any <m>1\leq j\leq n</m> we have
-      <me>
+      <md>
         \det A=  \sum_{k=1}^n(-1)^{k+j}a_{kj}M_{kj}
-      </me>.
+      </md>.
       In other words, we can compute <m>\det A</m> by expanding along any column of <m>A</m>.
     </p>
   </statement>
@@ -367,33 +367,33 @@
   <statement>
     <p>
       Compute <m>\det A</m> for
-      <me>
+      <md>
         A=\begin{bmatrix}2\amp 1\amp 0\amp 3\\ 0\amp 0\amp 0\amp 2\\ 0\amp 2\amp 0\amp 0\\ 4\amp 2\amp 1\amp 0 \end{bmatrix}
-      </me>.
+      </md>.
     </p>
   </statement>
   <solution>
     <p>
       First we compute <m>A</m> by expanding along the second row. The only nonzero term of this expansion is the last one, yielding
-      <me>
+      <md>
         \det A=(-1)^{2+4}[A]_{24}M_{24}=2\det A_{24}
-      </me>.
+      </md>.
       We have
-      <me>
+      <md>
          A_{24}=\begin{bmatrix}
           2\amp 1\amp 0\\ 0\amp 2\amp 0\\ 4\amp 2\amp 1
       \end{bmatrix}
-      </me>.
+      </md>.
       To compute its determinant we expand along its third column:
-      <me>
+      <md>
         \det A_{24}=(-1)^{3+3}1\det \begin{bmatrix}
             2\amp 1\\ 0\amp 2
       \end{bmatrix}=4.
-      </me>
+      </md>
       We conclude that
-      <me>
+      <md>
         \det A=2\det A_{24}=2(4)=8
-      </me>.
+      </md>.
     </p>
   </solution>
 </example>
@@ -402,14 +402,14 @@
   <statement>
     <p>
     When expanding along a row or column, it is easy to get tripped up by the sign <m>(-1)^{i+j}</m> in front of the <m>ij</m>-th coefficient. A <q>matrix of signs</q> is a sort of mnemonic device to help you in this regard. It is easily generated by observing that the sign in front of the <m>(1,1)</m>-th entry is always a <m>+</m> (since <m>1=(-1)^{1+1}</m>), and that any horizontal or vertical step within the matrix is accompanied by a change of sign. As an example, for <m>n=4</m> we have the following matrix of signs:
-    <me>
+    <md>
       \begin{bmatrix}
         +\amp -\amp +\amp -\\
         -\amp +\amp -\amp +\\
         +\amp -\amp +\amp -\\
         -\amp +\amp -\amp +
       \end{bmatrix}
-    </me>.
+    </md>.
     </p>
   </statement>
 </remark>
@@ -437,7 +437,7 @@
         <li>
           <p>
             Assume <m>n\geq 2</m>. Let <m>A'</m> be the matrix obtained by swapping two rows (or two columns) of <m>A</m>. Then
-            <me>\det A'=-\det A</me>.
+            <md>\det A'=-\det A</md>.
           </p>
         </li>
         <li>
@@ -501,9 +501,9 @@ As a further consequence of <xref ref="th_expansion_row"/> and <xref ref="cor_ex
   <statement>
     <p>
     Let <m>A</m> be an <m>n\times n</m> matrix. The <term>adjoint matrix</term> of <m>A</m>, denoted <m>\adj A</m>, is the <m>n\times n</m> matrix whose <m>ij</m>-th entry is defined as follows:
-    <me>
+    <md>
       (\adj A)_{ij}=(-1)^{i+j}M_{ji}
-    </me>.
+    </md>.
     </p>
   </statement>
 </definition>
@@ -513,21 +513,21 @@ As a further consequence of <xref ref="th_expansion_row"/> and <xref ref="cor_ex
       Be careful of the order reversal in this definition. The <m>ij</m>-th entry of <m>\adj A</m> is equal to plus or minus the <m>ji</m>-th minor of <m>A</m>. Let's see this in action for some small matrices.
     </p>
     <p>
-      For <me>A=\abcdmatrix{a}{b}{c}{d}</me> we have
-      <me>
+      For <md>A=\abcdmatrix{a}{b}{c}{d}</md> we have
+      <md>
         \adj A=\begin{amatrix}[rr] M_{11}\amp -M_{21}\\ -M_{12}\amp M_{22}\end{amatrix}=
         \begin{amatrix}[rr]d\amp -b\\ -c\amp a  \end{amatrix}
-      </me>.
+      </md>.
     </p>
     <p>
       For
-      <me>
+      <md>
         A=\begin{bmatrix}
           a\amp b\amp c\\ d\amp e\amp f\\ g\amp h\amp i
       \end{bmatrix}
-      </me>
+      </md>
       we have
-      <me>
+      <md>
         \adj A=\begin{amatrix}[rrr]
           M_{11}\amp -M_{21}\amp M_{31}\\
           -M_{12}\amp M_{22}\amp -M_{32}\\
@@ -538,7 +538,7 @@ As a further consequence of <xref ref="th_expansion_row"/> and <xref ref="cor_ex
         -(di-fg)\amp (ai-cg)\amp -(af-cd)\\
         (dh-eg)\amp -(ah-bg)\amp (ae-bd)
     \end{amatrix}
-      </me>.
+      </md>.
     </p>
   </statement>
 </remark>
@@ -547,30 +547,30 @@ As a further consequence of <xref ref="th_expansion_row"/> and <xref ref="cor_ex
   <statement>
     <p>
       Given an <m>n\times n</m> matrix <m>A</m>, we have
-    <men xml:id="eq_adj_form">
+    <md number="yes" xml:id="eq_adj_form">
       A\,(\adj A)=(\adj A)\, A=(\det A)I
-    </men>.
+    </md>.
       As a consequence, if <m>\det A\ne 0</m>, then <m>A</m> is invertible and
-      <men xml:id="eq_adj_inv_form">
+      <md number="yes" xml:id="eq_adj_inv_form">
         A^{-1}=\frac{1}{\det A}\, \adj A
-      </men>.
+      </md>.
     </p>
   </statement>
   <proof>
     <p>
       First observe that the second statement regarding invertibility follows directly from <xref ref="eq_adj_form"/>, since in this case setting <m>B=\frac{1}{\det A}\, \adj A</m> we have
-      <me>
+      <md>
         AB=BA=\frac{1}{\det A}(A\adj A)=\frac{1}{\det A}((\det A)\, I)=I
-      </me>.
+      </md>.
     </p>
     <p>
       Thus it suffices to prove <xref ref="eq_adj_form"/>. To do so, we must show that
-      <me>
+      <md>
       [A\, \adj A]_{ij}=[\adj A\, A]_{ij}=
         \begin{cases} \det A\amp \text{if } i=j\\
                   0 \amp \text{if } i\ne j
           \end{cases}
-      </me>.
+      </md>.
     </p>
       <case>
        <title>Case: <m>i=j</m></title>
@@ -595,9 +595,9 @@ As a further consequence of <xref ref="th_expansion_row"/> and <xref ref="cor_ex
         <mrow>  \amp =\det C </mrow>
         </md>,
         where <m>C</m> is the matrix obtained by replacing the <m>j</m>-th row of <m>A</m> with a copy of its <m>i</m>-th row. Since <m>C</m> has two identical rows <xref ref="th_det_zero_repeated_row"/> implies
-        <me>
+        <md>
           [A\, \adj A]_{ij}=\det C=0
-        </me>,
+        </md>,
         as desired. Once again, a similar argument using expansion along a column shows that <m>[\adj A\, A]_{ij}=0</m>.
       </p>
       </case>
@@ -609,25 +609,25 @@ As a further consequence of <xref ref="th_expansion_row"/> and <xref ref="cor_ex
   <statement>
     <p>
       Use the adjoint matrix formula to compute <m>A^{-1}</m>, where
-      <me>
+      <md>
         A=\begin{amatrix}[rrr]1\amp 2\amp 1 \\ -1\amp 1\amp -1\\ 0\amp 2\amp 2  \end{amatrix}
-      </me>.
+      </md>.
     </p>
   </statement>
   <solution>
     <p>
       First compute <m>\det A=</m> by expanding along the third row:
-      <me>
+      <md>
         \det A=-2(-1+1)+2(2+1)=6
-      </me>.
+      </md>.
       Next, compute
-      <me>
+      <md>
         \adj A=\begin{amatrix}[rrr] 4\amp -2 \amp -3\\ 2\amp 2\amp 0\\ -2\amp -2\amp 3  \end{amatrix}
-      </me>.
+      </md>.
       Then we have
-      <me>
+      <md>
         A^{-1}=\frac{1}{6}\,\adj A=\frac{1}{6}\, \begin{amatrix}[rrr] 4\amp -2 \amp -3\\ 2\amp 2\amp 0\\ -2\amp -2\amp 3  \end{amatrix}
-      </me>.
+      </md>.
     </p>
   </solution>
 </example>
@@ -679,9 +679,9 @@ As a further consequence of <xref ref="th_expansion_row"/> and <xref ref="cor_ex
       </p>
       <p>
         Let <m>A=[a_{ij}]_{n\times n}</m>, and set <m>B=\underset{r_i+cr_j}{E}\cdot A</m>. Then <m>B</m> is identical to <m>A</m> with the exception of the <m>i</m>-th row, whose <m>k</m>-th entry is
-        <me>
+        <md>
           (B)_{ik}=a_{ik}+ca_{jk}
-        </me>.
+        </md>.
          It follows that
          <md>
            <mrow>\det B \amp=\sum_{k=1}^n(-1)^{i+k}(a_{ik}+ca_{jk})M_{ik} </mrow>
@@ -689,9 +689,9 @@ As a further consequence of <xref ref="th_expansion_row"/> and <xref ref="cor_ex
            <mrow> \amp =\det A+\det C </mrow>
          </md>,
          where <m>C</m> is the matrix obtained by replacing the <m>i</m>-th row of <m>A</m> with a row identical with its <m>j</m>-th row. By <xref ref="th_det_zero_repeated_row"/> we conclude <m>\det C=0</m>, and thus
-         <me>
+         <md>
            \det(\underset{r_i+cr_j}{E}\cdot A)=\det B=\det A+\det C=\det A
-         </me>,
+         </md>,
           as desired.
       </p>
     </proof>
@@ -735,13 +735,13 @@ As a further consequence of <xref ref="th_expansion_row"/> and <xref ref="cor_ex
   <statement>
     <p>
       Let <m>A</m> be an <m>n\times n</m> matrix, and suppose we have
-      <men xml:id="eq_row_reduce_elem">
+      <md number="yes" xml:id="eq_row_reduce_elem">
         B=E_rE_{r-1}\cdots E_1\, A
-      </men>
+      </md>
       for some collection of elementary matrices <m>E_i</m>.  Then
-      <men xml:id="eq_det_row_reduce">
+      <md number="yes" xml:id="eq_det_row_reduce">
         \det B=\det E_r\, \det E_{r-1}\cdots \det E_1\, \det A
-      </men>.
+      </md>.
     </p>
   </statement>
   <proof>
@@ -760,7 +760,7 @@ As a further consequence of <xref ref="th_expansion_row"/> and <xref ref="cor_ex
   <statement>
     <p>
       Suppose the matrix <m>A</m> can be row reduced to
-      <me> B=\begin{amatrix}[rrr]2\amp -7\amp -8\\ 0\amp -3\amp 4\\ 0\amp 0\amp 2  \end{amatrix}</me>
+      <md> B=\begin{amatrix}[rrr]2\amp -7\amp -8\\ 0\amp -3\amp 4\\ 0\amp 0\amp 2  \end{amatrix}</md>
       by perfomring the following sequence of row operations:
       <ol>
         <li>
@@ -785,17 +785,17 @@ As a further consequence of <xref ref="th_expansion_row"/> and <xref ref="cor_ex
   <solution>
     <p>
       In terms of elementary matrices we have
-      <me>
+      <md>
         B=\underset{r_2+r_1}{E}\underset{3r_1}{E}\underset{r_2\leftrightarrow r_3}{E}A,
-      </me>
+      </md>
       and hence
-      <me>
+      <md>
         \det B=\det \underset{r_2+r_1}{E}\, \det \underset{3r_1}{E}\, \det \underset{r_2\leftrightarrow r_3}{E}\, \det A=(1)(3)(-1)\det A=(-3)\det A.
-      </me>
+      </md>
       We conclude that
-      <me>
+      <md>
         \det A=-\frac{1}{3}\det B=-(1/3)(-12)=4
-      </me>.
+      </md>.
     </p>
   </solution>
 </example>
@@ -816,13 +816,13 @@ As a further consequence of <xref ref="th_expansion_row"/> and <xref ref="cor_ex
     </p>
     <p>
       For the other direction, assume <m>A</m> is invertible. Then <xref ref="th_invertibility"/> implies <m>A</m> is a product of elementary matrices:
-      <me>
+      <md>
         A=E_1E_2\cdots E_r
-      </me>.
+      </md>.
       Then <xref ref="cor_det_prod_elem"/> implies
-      <me>
+      <md>
         \det A=\det E_1\, \det E_2\cdots \det E_1
-      </me>.
+      </md>.
       Since <m>\det E_i\ne 0</m> for all <m>i</m> (<xref ref="th_det_row_ops"/>), we conclude <m>\det A\ne 0</m>.
     </p>
   </proof>
@@ -832,9 +832,9 @@ As a further consequence of <xref ref="th_expansion_row"/> and <xref ref="cor_ex
   <statement>
     <p>
       Let <m>A</m> and <m>B</m> be <m>n\times n</m> matrices. Then
-      <me>
+      <md>
         \det AB=\det A\, \det B
-      </me>.
+      </md>.
     </p>
   </statement>
   <proof>
@@ -844,9 +844,9 @@ As a further consequence of <xref ref="th_expansion_row"/> and <xref ref="cor_ex
     <case>
      <title><m>A</m> or <m>B</m> is not invertible</title>
      <p>In this case <m>AB</m> is not invertible (<xref ref="cor_inv_prod_eq"/>), and hence <m>\det AB=0</m> by <xref ref="th_inv_iff_det"/>. By the same reasoning we must have <m>\det A=0</m> or <m>\det B=0</m>. It follows that
-     <me>
+     <md>
        \det AB=\det A\, \det B=0
-     </me>
+     </md>
      in this case.
     </p>
     </case>
@@ -885,17 +885,17 @@ As a further consequence of <xref ref="th_expansion_row"/> and <xref ref="cor_ex
 
         <li xml:id="inv2_statement_unique_sol">
           <p>
-            The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</me> has a unique solution for any <m>\boldb\in \R^n</m>.
+            The matrix equation <md>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</md> has a unique solution for any <m>\boldb\in \R^n</m>.
           </p>
         </li>
         <li xml:id="inv2_statement_exists_sol">
           <p>
-            The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</me> has a solution for any <m>\boldb\in \R^n</m>.
+            The matrix equation <md>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</md> has a solution for any <m>\boldb\in \R^n</m>.
           </p>
         </li>
         <li xml:id="inv2_statement_trivial_sol">
           <p>
-            The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldzero}</me> has a unique solution: namely, <m>\boldx=\boldzero_{n\times 1}</m>.
+            The matrix equation <md>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldzero}</md> has a unique solution: namely, <m>\boldx=\boldzero_{n\times 1}</m>.
           </p>
         </li>
         <li xml:id="inv2_statement_row_equiv">

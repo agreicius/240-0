@@ -1,0 +1,427 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_coordinatevectors" >
+  <title>Coordinate vectors</title>
+  <introduction>
+    <p>
+    Suppose <m>V</m> is an <m>n</m>-dimensional vector space. Once we choose a basis <m>B=\{\boldv_1, \boldv_2, \dots, \boldv_n\}</m> of <m>V</m>, we know from <xref ref="th_basis_equivalence"/> that any <m>\boldv\in V</m> can be expressed <em>in a unique way</em> as
+     <md>
+       \boldv=c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n, c_i\in \R
+     </md>.
+     <em>Coordinate vectors</em> turn this observation into a computational tool by exploiting the resulting one-to-one correspondence
+     <md number="yes" xml:id="eq_coordinate_correspondence">
+       \boldv\in V \longleftrightarrow (c_1,c_2,\dots, c_n)\in \R^n
+     </md>.
+      We will use the correspondence <xref ref="eq_coordinate_correspondence"/> in two distinct ways, as described below.
+      <ol>
+        <li>
+          <p>
+            Given an <m>n</m>-dimensional vector space <m>V</m> and basis <m>B</m>, the correspondence <xref ref="eq_coordinate_correspondence"/> allow us to treat elements of the abstract space <m>V</m> as if they were elements of <m>\R^n</m>, and to then make use of our wealth of computational procedures related to <m>n</m>-tuples.
+          </p>
+        </li>
+        <li>
+          <p>
+            The correspondence <xref ref="eq_coordinate_correspondence"/> is also useful when working in <m>\R^n</m> itself. Namely, there will be situations where it is convenient to represent vectors with a particular nonstandard basis <m>B</m>, as opposed to the standard basis <m>\{\bolde_1, \bolde_2, \dots, \bolde_n\}</m>. In this setting the correspondence <xref ref="eq_coordinate_correspondence"/> will be used as a <q>change of coordinates</q> technique.
+          </p>
+        </li>
+      </ol>
+</p>
+
+  </introduction>
+  <subsection xml:id="ss_coordinate_vectors">
+    <title>Coordinate vectors</title>
+    <p>
+      Before we can define coordinate vectors we need to define an <em>ordered basis</em>. As the name suggests this is nothing more than a basis along with a particular choice of ordering of its elements: <ie /> first element, second element, <etc />. In other words, an ordered basis will be a <em>sequence</em> of vectors, as opposed to a  <em>set</em> of vectors.
+    </p>
+    <definition xml:id="d_ordered_basis">
+      <title>Ordered bases</title>
+      <idx><h>ordered basis</h></idx>
+      <statement>
+        <p>
+        Let <m>V</m> be a finite-dimensional vector space. An <term>ordered basis</term> of <m>V</m> is a sequence of distinct vectors <m>B=(\boldv_1, \boldv_2, \dots, \boldv_n)</m> whose underlying set <m>\{\boldv_1, \boldv_2, \dots, \boldv_n\}</m> is a basis of <m>V</m>.
+        </p>
+      </statement>
+    </definition>
+
+        <remark >
+      <statement>
+        <p>
+        A single (unordered) basis <m>B=\{\boldv_1, \boldv_2, \dots, \boldv_n\}</m> of an <m>n</m>-dimensional vector space gives rise to <m>n!</m> different ordered bases: you have <m>n</m> choices for the first element of the ordered basis, <m>(n-1)</m> choices for the second element, <etc />.
+        </p>
+        <p>
+          For example the standard basis <m>B=\{\bolde_1, \bolde_2, \bolde_3\}</m> of <m>\R^3</m> gives rise to <m>3!=6</m> different ordered bases of <m>\R^3</m>:
+          <md>
+            <mrow>B_1\amp =(\bolde_1, \bolde_2, \bolde_3) \amp B_2\amp =(\bolde_1, \bolde_3, \bolde_2) </mrow>
+            <mrow> B_3\amp=(\bolde_2, \bolde_1, \bolde_3) \amp B_4\amp =(\bolde_2, \bolde_3, \bolde_1) </mrow>
+            <mrow> B_5 \amp =(\bolde_3, \bolde_1, \bolde_2) \amp B_6\amp =(\bolde_3, \bolde_2, \bolde_1)</mrow>
+          </md>.
+        </p>
+        <p>
+        By a slight abuse of language we will use <q>standard basis</q> to describe both one of our standard unordered bases and the corresponding ordered basis obtained by choosing the implicit ordering of the set descriptions in <xref ref="rm_standard_bases"/>. For example, <m>\{x^2, x, 1\}</m> and <m>(x^2, x, 1)</m> will both be called the standard basis of <m>P_2</m>.
+        </p>
+      </statement>
+    </remark>
+
+    <definition xml:id="d_coordinatevector">
+      <title>Coordinate vectors</title>
+      <statement>
+        <p>
+          Let <m>B=(\boldv_1, \boldv_2,\dots , \boldv_n)</m> be an ordered basis for the vector space <m>V</m>. According to <xref ref="th_basis_equivalence"/>, for any <m>\boldv\in V</m> there is a <em>unique</em> choice of scalars <m>c_i\in \R</m> satisfying
+          <md number="yes" xml:id="eq_coor_vec">
+            \boldv=c_1\boldv_1+c_2\boldv_2\cdots +c_n\boldv_n
+          </md>.
+          We call the corresponding <m>n</m>-tuple <m>(c_1,c_2,\dots, c_n)</m> the <term>coordinate vector of <m>\boldv</m> relative to the basis <m>B</m></term>, and denote it <m>[\boldv]_B</m>: <ie />,
+          <md>
+            [\boldv]_B=(c_1,c_2,\dots, c_n)
+          </md>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Observe that computing a coordinate vector with respect to a basis involves setting up a vector equation of the form <xref ref="eq_coor_vec"/> and then solving for the unknown coefficients <m>c_i</m>. This is a familiar situation for us by now, and carrying out the computation involves reducing the given vector equation to a system of linear equations that we solve with our <xref ref="princ_GE" text="custom">old work horse</xref> Gaussian elimination.  
+    </p>
+    <algorithm xml:id="proc_coor_vec">
+      <title>Computing coordinate vectors</title>
+      <statement>
+        <p>
+          Let <m>B=(\boldv_1,\boldv_2,\dots, \boldv_n)</m> be an ordered basis of the vector space <m>V</m>. Given <m>\boldv\in V</m>, compute the coordinate vector <m>[\boldv]_B\in \R^n</m> by following these steps. 
+          <ol>
+            <li>
+              <p>
+                Set up the vector equation 
+                <md number="yes" xml:id="eq_coor_vec_proc">
+                  \boldv=c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n
+                </md>
+                in the unknowns <m>c_1, c_2,\dots, c_n\in \R</m>. 
+              </p>
+            </li>
+            <li>
+              <p>
+                Solve for the unknowns <m>c_i</m> in some manner. A surefire technique is to reduce the vector equation <xref ref="eq_coor_vec_proc"/> to a linear system and use Gaussian elimination. However, there are some situations when you can simply produce the scalars <m>c_i</m> by inspection.  
+              </p>
+            </li>
+            <li>
+              <p>
+                Conclude that <m>[\boldv]_B=(c_1,c_2,\dots, c_n)</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </algorithm>
+          <p>
+            As illustrated by the next example, one setting for which we can compute <m>[\boldv]_B</m> by inspection (see (2) of <xref ref="proc_coor_vec"/>) is when <m>B</m> is one of our standard ordered bases. 
+          </p>
+  <example xml:id="eg_coordinatevector_standard">
+    <title>Standard bases</title>
+    <statement>
+      <p>
+        Computing coordinate vectors relative to one of our standard ordered bases for <m>\R^n</m>, <m>M_{mn}</m>, or <m>P_{n}</m> amounts to just listing the coefficients or entries used to specify the given vector. The examples below serve to illustrate the general method in this setting.
+      </p>
+      <ol>
+        <li>
+          <p>
+          Consider the standard basis <m>B=(\bolde_1, \bolde_2, \bolde_3)</m> of <m>\R^3</m>. For any <m>\boldv=(a,b,c)\in \R^3</m> we have <m>[\boldv]_{B}=(a,b,c)</m>, since <m>(a,b,c)=a\bolde_1+b\bolde_2+c\bolde_3</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Consider the standard basis <m>B=(E_{11}, E_{12}, E_{21}, E_{22})</m> of <m>M_{22}</m>. For any <m>A=\begin{bmatrix}a\amp b\\ c\amp d \end{bmatrix}</m> we have <m>[A]_B=(a,b,c,d)</m> since
+            <md>
+              \underset{A}{\begin{bmatrix}a\amp b\\ c\amp d \end{bmatrix}}=a\underset{E_{11}}{\begin{bmatrix}1\amp 0 \\ 0\amp 0\end{bmatrix}}+b\underset{E_{12}}{\begin{bmatrix}0\amp 1 \\ 0\amp 0\end{bmatrix}}+c\underset{E_{21}}{\begin{bmatrix}0\amp 0 \\ 1\amp 0\end{bmatrix}}+d\underset{E_{22}}{\begin{bmatrix}0\amp 0 \\ 0\amp 1\end{bmatrix}}
+            </md>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+
+  </example>
+  <example>
+    <title>Reorderings of standard bases</title>
+    <statement>
+      <p>
+      If we choose an alternate ordering of one of the standard ordered bases, the entries of the coordinate vector are reordered accordingly, as illustrated by the examples below.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Consider the reordered basis <m>B=(\bolde_2, \bolde_1, \bolde_3)</m> of <m>\R^3</m>. Given <m>\boldv=(a,b,c)\in \R^3</m> we have <m>[\boldv]_B=(b,a,c)</m>, since
+            <md>
+            \boldv=b\bolde_2+a\bolde_1+c\bolde_3
+            </md>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Consider the reordered basis <m>B=(E_{22},E_{21},E_{12},E_{11})</m> of <m>M_{22}</m>. Given <m>A=\begin{bmatrix}a\amp b\\ c\amp d\end{bmatrix}</m>, we have <m>[A]_B=(d,c,b,a)</m>, since 
+            <md>
+              \underset{A}{\begin{bmatrix}a\amp b\\ c\amp d \end{bmatrix}}=d\underset{E_{22}}{\begin{bmatrix}0\amp 0 \\ 0\amp 1\end{bmatrix}}+
+              c\underset{E_{21}}{\begin{bmatrix}0\amp 0 \\ 1\amp 0\end{bmatrix}}+
+              b\underset{E_{12}}{\begin{bmatrix}0\amp 1 \\ 0\amp 0\end{bmatrix}}+
+              a\underset{E_{22}}{\begin{bmatrix}1\amp 0 \\ 0\amp 0\end{bmatrix}}
+            </md>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </example>
+  <example>
+    <title>Nonstandard bases</title>
+
+    <statement>
+      <p>
+        For a nonstandard ordered basis, we compute coordinate vectors by solving a relevant system of linear equations, as the examples below illustrate.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Let <m>V=\R^2</m>, <m>B=(\boldx_1=(1,2),\boldx_2=(1,1))</m>, and <m>\boldx=(3,3)</m>. Compute <m>[\boldx]_B</m>. More generally, compute <m>[(a,b)]_B</m> for an arbitrary <m>(a,b)\in \R^2</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+          Let <m>V=\R^3</m>, <m>B=(\boldx_1=(1,1,1), \boldx_2=(1,-1,0), \boldx_3=(1,0,-1))</m>, and <m>\boldx=(1,0,0)</m>. Compute <m>[\boldx]_B</m>. More generally, compute <m>[(a,b,c)]_B</m> for an arbitrary element <m>(a,b,c)\in \R^3</m>. 
+          </p>
+        </li>
+      </ol>
+    </statement>
+    <solution>
+      <ol>
+        <li>
+          <p>
+           Using <xref ref="proc_coor_vec"/>, we compute <m>[(3,3)]_B</m> by finding the unique pair <m>(c_1, c_2)</m> satisfying
+            <md>
+              (3,3)=c_1(1,2)+c_2(1,1)
+            </md>.
+            By inspection, we see that
+            <md>
+              (3,3)=3(1,1)=0(1,2)+3(1,1)
+            </md>.
+            We conclude that
+            <md>
+              [\boldx]_{B}=(0,3)
+            </md>.
+            More generally, to compute <m>[\boldx]_B</m> for an arbitrary <m>\boldx=(a,b)\in \R^2</m>, we must find the pair <m>(c_1,c_2)</m> satisfying <m>(a,b)=c_1(1,2)+c_2(1,1)</m>, or equivalently
+            <md>
+              \begin{linsys}{2}
+                c_1\amp +\amp c_2 \amp =\amp a\\
+                2c_1\amp +\amp c_2\amp =\amp b
+              \end{linsys}
+            </md>.
+             The usual Gaussian elimination technique yields the unique solution <m>(c_1,c_2)=(-a+b,2a-b)</m>, and thus
+             <md>
+               [\boldx]_B=(-a+b, 2a-b)
+             </md>
+             for <m>\boldx=(a,b)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+           To compute <m>[\boldx]_B</m> we must find the unique triple <m>(c_1,c_2,c_3)</m> satisfying
+          <md>
+            (1,0,0)=c_1(1,1,1)+c_2(1,-1,0)+c_3(1,0,-1)
+          </md>.
+          The equivalent linear system once we combine like terms and equate coefficients is
+          <md>
+            \begin{linsys}{3}
+              c_1\amp +\amp c_2\amp +\amp c_3\amp =\amp 1\\
+              c_1\amp -\amp c_2\amp \amp \amp =\amp 0\\
+              c_1\amp \amp \amp -\amp c_3\amp =\amp 0\\
+            \end{linsys}
+          </md>.
+          The unique solution to this system is <m>(c_1,c_2,c_3)=(1/3, 1/3, 1/3)</m>. We conclude
+          <md>
+            [\boldx]_B=\frac{1}{3}(1, 1, 1)
+          </md>.
+          The same reasoning shows that more generally, given <m>\boldx=(a,b,c)</m>, we have
+          <md>
+            [\boldx]_B=\frac{1}{3}(a+b+c, a-2b+c, a+b-2)
+          </md>.
+          </p>
+        </li>
+      </ol>
+    </solution>
+  </example>
+  <example xml:id="ss_vid_eg_coordinatevec">
+    <title>Video example: coordinate vectors</title>
+    <figure xml:id="fig_vid_coordvecs">
+    <caption>Video: coordinate vectors</caption>
+    <video xml:id="vid_coordvecs" youtube="QOIogczPF0c" />
+    </figure>
+  </example>
+   
+</subsection>
+<subsection xml:id="ss_coordinate_transformation">
+  <title>Coordinate vector transformation</title>
+  <p>
+    The next theorem is the key to understanding the tremendous computational value of coordinate vectors. Here we treat the coordinate vector operation as a function
+    <md>
+      <mrow>[\phantom{v}]_B\colon V\amp \rightarrow \R^n
+      </mrow>
+      <mrow> \boldv\amp\mapsto [\boldv]_B\in \R^n </mrow>
+    </md>.
+    Not surprisingly, this turns out to be a linear transformation, which we call a <em>coordinate vector transformation</em>. Furthermore, the correspondence
+    <md>
+      \boldv\in V \longmapsto [\boldv]_B\in \R^n
+    </md>
+    is a one-to-one correspondence between <m>V</m> and <m>\R^n</m>, allowing us to identify the vectors <m>\boldv\in V</m> with <m>n</m>-tuples in <m>\R^n</m>. In the language of <xref ref="s_nullspace_image_isom"/>, these two facts taken together mean that the coordinate vector transformation is an <xref ref="d_isomorphism" text="custom">isomorphism</xref> between <m>V</m> and <m>\R^n</m>. Practically speaking, this means any question regarding the vector space structure of <m>V</m> can be translated to an equivalent question about the vector space <m>\R^n</m>. As a result, given any <q>exotic</q> vector space <m>V</m> of finite dimension, once we choose an ordered basis <m>B</m> of <m>V</m>, questions about <m>V</m> can be answered by taking coordinate vectors with respect to <m>B</m>
+    and answering the corresponding question in the more familiar setting of <m>\R^n</m>, where we have a wealth of computational procedures at our disposal. We memorialize this principle as a mantra.
+  </p>
+  <principle xml:id="mantra_coordinate_vectors">
+    <title>Coordinate vector mantra</title>
+    <statement>
+      <p>
+        Coordinate vectors allow us to treat any <m>n</m>-dimensional vector space as if it were <m>\R^n</m>.
+      </p>
+    </statement>
+  </principle>
+    <theorem xml:id="th_coordinates">
+      <title>Coordinate vector transformation</title>
+      <statement>
+        <p>
+          Let <m>B=(\boldv_1,\boldv_2,\dots, \boldv_n)</m> be an ordered basis for the vector space <m>V</m>. The function 
+          <md>
+            <mrow>T\colon V \amp \rightarrow \R^n</mrow>
+            <mrow>\boldv \amp \mapsto [\boldv]_B</mrow>
+          </md>
+          is an isomorphism: <ie/>, <m>T</m> is an invertible linear transformation. 
+        </p>
+      </statement>
+    </theorem>
+    <proof>
+            <p>
+              We first prove <m>T</m> is linear using the 1-step technique. Given any scalars <m>c,d\in \R</m> and vectors <m>\boldv,\boldw\in V</m>, we write 
+              <md>
+                <mrow>\boldv \amp =\sum_{i=1}^na_i\boldv_i,  \amp \boldw\amp =\sum_{i=1}^nb_i\boldv_i</mrow>
+              </md>
+              for scalars <m>c_i,d_i\in \R</m>, in which case 
+              <md>
+                <mrow>[\boldv]_B \amp = (c_1,c_2,\dots, c_n) \amp [\boldw]_B\amp =(d_1,d_2,\dots, d_n)</mrow>
+              </md>.
+              It follows that
+              <md>
+                c\boldv+d\boldw=\sum_{i=1}^n(ca_i+db_i)\boldv_i
+              </md>,
+              and hence
+              <md>
+                <mrow>T(c\boldv+d\boldw)\amp =[c\boldv+d\boldw]_B  \amp (\text{def. of } T) </mrow>
+                <mrow> \amp =(ca_1+db_1,ca_2+db_2,\dots, ca_n+db_n) \amp (\text{def. of } [\phantom{\boldv}]_B) </mrow>
+                <mrow>  \amp =c(a_1,a_2,\dots, a_n)+d(b_1,b_2,\dots, b_n)</mrow>
+                <mrow>  \amp =c[\boldv]_B+d[\boldw]_B</mrow>
+                <mrow>  \amp =cT(\boldv)+dT(\boldw) </mrow>
+              </md>.
+            Next, since <m>\dim V=\dim \R^n</m>, using <xref ref="th_isomorphisms_finite_dim"/>, to prove <m>T</m> is an isomorphism, it suffices to show <m>\im T=\R^n</m>, or equivalently, that <m>T</m> is surjective. But this is easy: given any <m>\boldy=(c_1,c_2,\dots, c_n)\in \R^n</m>, the vector 
+            <md>
+              \boldv=c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n
+            </md>
+            satisfies 
+            <md>T(\boldv)=[\boldv]_{B}=(c_1,c_2,\dots, c_n)</md>.
+            This shows <m>T</m> is surjective, and hence an isomorphism. 
+            </p>
+    </proof>
+  <p>
+    Knowing the that the coordinate vector transformation is an isomorphism, <xref ref="th_isomorphism_preserves"/> allows us to translate any linear-algebraic question about a finite-dimensional vector space <m>V</m> into a corresponding question about <m>\R^n</m> for some <m>n</m>. As an illustration of this principle, we describe a general method of contracting and extending subsets of a general finite-dimensional vector space <m>V</m> to bases. The method translates the problem into <m>\R^n</m> using the coordinate transformation, applies the relevant algorithm available to us for subsets of <m>\R^n</m>, and then <q>lifts</q> the results back to <m>V</m> using the coordinate transformation again.
+  </p>
+  <algorithm xml:id="proc_contract_extend_general">
+    <title>Contracting and extending to bases in general spaces</title>
+    <statement>
+      <p>
+        Let <m>V</m> be a vector space of dimension <m>n</m>, and let
+        <m>S=\{\boldv_1, \boldv_2,\dots, \boldv_r\}\subseteq V</m>.
+      </p>
+      <dl>
+        <li>
+          <title>Contracting to a basis</title>
+          <p>
+            Let <m>W=\Span S</m>. To contract <m>S</m> to a basis <m>W</m>, proceed as follows.
+          </p>
+          <ol>
+            <li>
+              <p>
+                Pick any ordered basis <m>B</m> of <m>V</m> and let <m>S'=\{[\boldv_1]_B, [\boldv_2]_B, \dots, [\boldv_r]_B\}\subseteq \R^n</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Use the relevant procedure of <xref ref="proc_contract_extend"/> to contract <m>S'</m> to a basis <m>T'=\{[\boldv_{i_1}]_B, [\boldv_{i_2}]_B, \dots, [\boldv_{i_k}]_B\}</m> of <m>\Span S'</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                The set <m>T=\{\boldv_{i_1}, \boldv_{i_2}, \dots, \boldv_{i_k}\}\subseteq S</m> is a basis for <m>W=\Span S</m>.
+              </p>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <title>Extending to a basis</title>
+          <p>
+            Assume <m>S</m> is linearly independent. To extend <m>S</m> to a basis of <m>V</m> proceed as follows.
+          </p>
+          <ol>
+            <li>
+              <p>
+                Pick any ordered basis <m>B</m> of <m>V</m> and let <m>S'=\{[\boldv_1]_B, [\boldv_2]_B, \dots, [\boldv_r]_B\}\subseteq \R^n</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Use the relevant procedure of <xref ref="proc_contract_extend"/> to extend <m>S'</m> to a basis <m>T'=\{[\boldv_1]_B, [\boldv_2]_B, \dots, [\boldv_r]_B, \boldx_{r+1}, \dots, \boldx_n \}</m> of <m>\R^n</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                By (3) of <xref ref="th_coordinates"/>, for all <m>r+1\leq i\leq n</m> there are vectors <m>\boldv_{i}\in V</m> satisfying <m>[\boldv_i]_B=\boldx_i</m>. The set <m>T=\{\boldv_1,\dots, \boldv_r,\boldv_{r+1},\dots,\boldv_n\}</m> is a basis of <m>V</m> containing <m>S</m>.
+              </p>
+            </li>
+          </ol>
+        </li>
+      </dl>
+    </statement>
+  </algorithm>
+  <example>
+    <statement>
+      <p>
+        The set
+        <md>
+          S=\left \{ A_1=\begin{bmatrix}2\amp 1\\ 0\amp -2 \end{bmatrix} , A_2=\begin{bmatrix}1\amp 1\\ 1\amp -1 \end{bmatrix} , A_3=\begin{bmatrix}0\amp 1\\ 2\amp 0 \end{bmatrix} , A_4=\begin{bmatrix}-1\amp 0\\ 1\amp 1 \end{bmatrix} \right\}
+        </md>
+        is a subset of the space <m>W=\{ A\in M_{22}\colon \tr A=0\}</m>.
+        Let <m>W'=\Span S</m>. Contract <m>S</m> to a basis of <m>W'</m>
+        and determine whether <m>W'=W</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Let <m>B=(E_{11}, E_{12}, E_{21}, E_{22})</m> be the standard basis of <m>M_{22}</m>.
+        Apply <m>[\phantom{\boldv}]_B</m> to the elements of the given <m>S</m> to get a corresponding set <m>S'\subseteq\R^4</m>:
+        <md>
+          S'=\left\{ [A_1]_B=(2,1,0,-2), [A_2]_B=(1,1,1,-1), [A_3]_B=(0,1,2,0), [A_4]_B=(-1,0,1,1) \right\}
+        </md>.
+        Apply the column space procedure of <xref ref="proc_contract_extend"/> to contract <m>S'</m> to a basis <m>T'</m> of <m>\Span S'</m>. This produces the subset
+        <md>
+          T'=\{[A_1]_B=(2,1,0,-2), [A_2]_B=(1,1,1,-1)\}
+        </md>
+        Translating back to <m>V=M_{22}</m>, we conclude that the corresponding set
+        <md>
+          B=\{A_1, A_2\}
+        </md>
+        is a basis for <m>W'=\Span S</m>. We conclude that <m>\dim W'=2 </m>.
+      </p>
+      <p>
+        Lastly the space <m>W</m> of all trace-zero matrices is easily seen to have basis
+        <md>
+        \left\{
+        \begin{amatrix}[rr]1\amp 0\\ 0 \amp -1  \end{amatrix},
+        \begin{amatrix}[rr]0\amp 1\\ 0\amp 0  \end{amatrix},
+        \begin{amatrix}[rr]0 \amp 0\\ 1\amp 0  \end{amatrix}
+        \right\}
+        </md>,
+        and hence <m>\dim W=3</m>. Since <m>\dim W'\lt\dim W</m>, we conclude that <m>W'\ne W</m>.
+      </p>
+    </solution>
+  </example>
+
+
+
+  </subsection>
+<xi:include href="./s_coordinatevectors_ex.ptx"/>
+</section>

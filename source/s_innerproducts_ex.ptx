@@ -1,0 +1,280 @@
+<exercises xml:id="s_innerproducts_ex">
+  <subexercises>
+  <title>WeBWork Exercises</title>
+    <exercise>
+      <!-- norm in Rn -->
+      <webwork source="Library/Rochester/setLinearAlgebra17DotProductRn/ur_la_17_2.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- angle in Rn -->
+      <webwork source="Library/Rochester/setLinearAlgebra17DotProductRn/ur_la_17_3.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- inner product on polynomials -->
+      <webwork source="Library/Rochester/setLinearAlgebra21InnerProductSpaces/ur_la_21_4.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- inner product on matrices -->
+      <webwork source="Library/Rochester/setLinearAlgebra21InnerProductSpaces/ur_la_21_3.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- inner product using integrals -->
+      <webwork source="Library/Rochester/setLinearAlgebra21InnerProductSpaces/ur_la_21_5.pg" />
+    </exercise>
+  </subexercises>
+  <exercise>
+    <statement>
+      <p>
+        For each of the following operations on <m>\R^2</m>,
+        determine whether it defines an inner product on <m>\R^2</m>.
+        If it fails to be an inner product,
+        identify which of the three inner product axioms
+        (if any)
+        it does satisfy,
+        and provide explicit counterexamples for any axiom that fails.
+      </p>
+      <ol>
+        <li>
+          <p>
+            <m>\angvec{(x_1,x_2),\ (y_1,y_2)}=x_1y_2+x_2y_1</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\angvec{(x_1,x_2),\ (y_1,y_2)}=2x_1y_1+x_1y_2+x_2y_1+3x_2y_2</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\angvec{(x_1,x_2), \ (y_1,y_2)}=x_1^2y_1^2+x_2^2y_2^2</m>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+    <hint>
+      <p>
+        The operation in (b) is an inner product. Use that fact that
+        <md>
+          \angvec{\boldx,\ \boldy}=\boldx^T \begin{amatrix}[cc]2\amp 1 \\ 1 \amp 3  \end{amatrix}\boldy
+        </md>,
+        where we treat <m>\boldx, \boldy</m> as column vectors. This helps to prove axioms (i)-(ii). For axiom (iii), use either a <q>complete the square</q> or quadratic formula argument on the expression <m>\langle \boldx, \boldx\rangle=2x_1^2+2x_1x_2+3x_2^2</m>.
+      </p>
+    </hint>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        We work within the inner product space given by <m>V=P_2</m> together with the evaluation at 0, 1, 2 inner product.
+      </p>
+      <p>
+        Let <m>q(x)=x</m>. Give a parametric description of the set
+        <md>
+        W=\{p(x)\in P_2\colon \langle p(x), q(x)\rangle =0\}
+        </md>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        We work in the inner product space given by <m>V=C([-\pi,\pi])</m> together with the integral inner product.
+        <ol>
+          <li>
+            <p>
+              Let <m>f(x)=\cos x, g(x)=\sin x</m>. Compute <m>\langle f,g \rangle </m> and <m>\norm{g}</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Show that if <m>f(x)</m> is an odd function (i.e.,
+              <m>f(x)=-f(-x)</m> for all <m>x</m>) and <m>g(x)</m> is an even function (<m>g(-x)=g(x)</m> for all <m>x</m>),
+              then <m>\langle f, g \rangle=0 </m>. <alert>Hint</alert>: use the area interpretation of the integral and properties of even/odd functions.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+<exercisegroup>
+  <title></title>
+  <introduction>
+    Compute the angle between the given vectors with respect to the given inner product. The exercises are designed to be done by hand: <ie />, do not express your answer in terms of <m>\arccos</m>.
+  </introduction>
+  <exercise>
+    <statement>
+      <p>
+        <m>V=\R^4</m> with the standard dot product; <m>\boldv=(1,1,1,1), \boldw=(1,-1,1,1)</m>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <m>V=\R^2</m> with the dot product with weights <m>1,2</m>; <m>\boldv=(1,0), \boldw=(-2,\sqrt{2})</m>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <m>V=C([0,1])</m> with the integral inner product; <m>f(x)=1, g(x)=x</m>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <m>V=P_2</m> with evaluation at <m>-1, 1</m> inner product; <m>p(x)=-\frac{1}{2}x+\frac{1}{2}, q(x)=2x</m>
+      </p>
+    </statement>
+</exercise>
+</exercisegroup>
+
+<exercise>
+  <statement>
+    <p>
+      Let <m>(V,\langle\, , \rangle)</m> be an inner product space. Prove that <m>\langle \boldv, \boldzero\rangle=0</m> for all <m>\boldv\in V</m>.
+    </p>
+  </statement>
+</exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Let <m>\boldv</m> and <m>\boldw</m> be nonzero vectors of the inner product space <m>(V, \langle\, , \rangle)</m>,
+        and let <m>\theta</m> be the angle between them.
+        Prove the following equivalence:
+        <md>
+        \norm{\boldv+\boldw}=\norm{\boldv}+\norm{\boldw}\text{ if and only if }  \theta=0
+        </md>.
+        Your proof should be a <em>chain of equivalences</em>
+        with each step justified.
+      </p>
+
+    </statement>
+    <hint>
+      <p>
+        The equality is true if and only if it is true after squaring both sides. (Why?) Use the definition
+        <md>
+          \norm{\boldv+\boldw}^2=\langle \boldv+\boldw, \boldv+\boldw\rangle
+        </md>
+        and expand the inner product.
+      </p>
+    </hint>
+    <!-- <solution>
+      <p>
+        <md>
+        <mrow>\norm{\boldv+\boldw}=\norm{\boldv}+\norm{\boldw}\amp \Leftrightarrow \norm{\boldv+\boldw}^2=\left(\norm{\boldv}+\norm{\boldw}\right)^2 \amp \text{ ( square both sides) }</mrow>
+        <mrow>\amp \Leftrightarrow (\boldv+\boldw)\cdot(\boldv+\boldw)=\norm{\boldv}^2+2\norm{\boldv}\norm{\boldw}+\norm{\boldw}^2</mrow>
+        <mrow>\amp \Leftrightarrow \boldv\cdot\boldv+2\boldv\cdot\boldw+\boldw\cdot\boldw=\boldv\cdot\boldv+2\norm{\boldv}\norm{\boldw}+\boldw\cdot\boldw</mrow>
+        <mrow>\amp \Leftrightarrow \boldv\cdot\boldw=\norm{\boldv}\norm{\boldw}</mrow>
+        <mrow>\amp \Leftrightarrow \frac{\boldv\cdot\boldw}{\norm{\boldv}\norm{\boldw}}=1</mrow>
+        <mrow>\amp \Leftrightarrow \cos(\theta)=1</mrow>
+        <mrow>\amp \Leftrightarrow \theta=0</mrow>
+        </md>.
+      </p>
+    </solution> -->
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>(V, \langle , \rangle )</m> be an inner product space.
+        Suppose vectors <m>\boldv, \boldw\in V</m> satisfy
+          <m>\norm{\boldv}=2</m> and <m>\norm{\boldw}=3</m>.
+          Using the Cauchy-Schwarz inequality (<xref ref="th_Cauchy-Schwarz" text="global"/>) find the maximum and minimum possible values of <m>\norm{\boldv-\boldw}</m>,
+          and give explicit examples where those values occur.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="ex_norm_props">
+    <statement>
+      <p>
+        Prove statements (1) and (3) of <xref ref="th_norm_basic_props"/>.
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Prove each inequality below using the Cauchy-Schwarz inequality (<xref ref="th_Cauchy-Schwarz" text="global"/>) applied to a judicious choice of inner product space, and possibly a judicious choice of vector in said inner product space.
+        <ol>
+          <li>
+            <p>
+              For all <m>f, g\in C([a,b])</m>
+              <md>
+                \left(\int_a^b f(x)g(x) \ dx\right)^2\leq \int_a^b f^2(x)\ dx\int_a^b g^2(x) \ dx
+              </md>.
+            </p>
+          </li>
+          <li>
+            <p>
+              For all <m>(x_1,x_2,\dots, x_n)\in\R^n</m>,
+              <md>
+                (x_1+x_2+\cdots +x_n)\leq\sqrt{x_1^2+x_2^2+\cdots +x_n^2}\sqrt{n}
+              </md>.
+            </p>
+          </li>
+          <li>
+            <p>
+              For all <m>a,b,\theta\in\R</m>
+              <md>
+                (a\cos\theta+b\sin\theta)^2\leq a^2+b^2
+              </md>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+
+  </exercise>
+<exercise xml:id="ex_isometries">
+  <title>Isometries of inner product spaces</title>
+  <statement>
+    <p>
+      Let <m>(V,\angvec{ \ , })</m> be an inner product space.
+      An <term>isometry</term>  of <m>V</m> is a function
+      <m>f\colon V\rightarrow V</m> that preserves distance: i.e.,
+      <md>
+        d(f(\boldv), f(\boldw))=d(\boldv, \boldw) \text{ for all \(\boldv, \boldw\in V\) }
+      </md>.
+      In this exercise we will show that any isometry that maps <m>\boldzero</m> to
+      <m>\boldzero</m> is a linear transformation. This is a very useful fact. For example, it implies the linearity of many geometric transformations we have considered: rotation about the origin in <m>\R^2</m>, reflection through a line in <m>\R^2</m>, <etc />.
+    </p>
+    <p>
+      In what follows assume that <m>f</m> is an isometry of <m>V</m> satisfying <m>f(\boldzero)=\boldzero</m>.
+    </p>
+      <ol>
+        <li>
+          <p>
+            Prove that <m>\norm{f(\boldv)}=\norm{\boldv}</m>:
+            i.e., <m>f</m> preserves norms.
+          </p>
+        </li>
+        <li>
+          <p>
+            Prove <m>\angvec{f(\boldv), f(\boldw)}=\angvec{\boldv, \boldw}</m>:
+            i.e., <m>f</m> preserves inner products.
+            Hint: first prove that <m>\angvec{\boldv, \boldw}=\frac{1}{2}(\norm{\boldv}^2+\norm{\boldw}^2-\norm{\boldv-\boldw}^2)</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            To prove <m>f</m> is linear it is enough to show
+            <m>f(\boldv+c\boldw)=f(\boldv)+cf(\boldw)</m> for all <m>\boldv, \boldw\in V</m>,
+            <m>c\in \R</m>.
+            To do so, use the above parts to show that
+            <md>
+              \norm{f(\boldv+c\boldw)-(f(\boldv)+cf(\boldw))}=0
+            </md>.
+          </p>
+        </li>
+      </ol>
+  </statement>
+</exercise>
+</exercises>

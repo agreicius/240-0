@@ -48,16 +48,16 @@
     <p>
       Let <m>A_1, A_2, \dots, A_n</m> be subsets of a common set <m>A</m>. The
     <term>(Cartesian) product</term> of <m>A_1, A_2,\dots, A_n</m>, denoted <m>A_1\times A_2\times\cdots \times A_n</m> or <m>\displaystyle\prod_{i=1}^nA_i</m>, is the set 
-    <me>
+    <md>
       \prod_{i=1}^nA_i=\{(a_1,a_2,\dots, a_n)\colon a_i\in A_i \text{ for all } 1\leq i\leq n\}
-    </me>.
+    </md>.
     In other words <m>\prod_{i=1}^nA_i</m> is the set of all <m>n</m>-tuples of <m>A</m> whose <m>i</m>-th coordinate lies in <m>A_i</m> for all <m>1\leq i\leq n</m>. 
   </p>
   <p>
     Given a set <m>A</m>, its <term><m>n</m>-ary Cartesian product</term> <m>A^n</m> is defined as
-    <me>
+    <md>
       A^n=\prod_{i=1}^n A=\underset{n\text{ times}}{\underbrace{A\times A\times\cdots \times A}}
-    </me>.
+    </md>.
   </p>
   </statement>
 </definition>

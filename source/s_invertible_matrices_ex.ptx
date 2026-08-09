@@ -1,6 +1,6 @@
 <exercises xml:id="s_invertible_matrices_ex">
   <subexercises>
-  <title>Written Exercises</title>
+   
   <exercise>
     <statement>
       <p>
@@ -159,13 +159,13 @@
       <mrow>B \amp =d_1B_1+d_2B_2+\cdots +d_sB_s=\sum_{j=1}^sd_jB_j</mrow>
     </md>,
     prove by induction on <m>r\geq 1</m> that 
-    <me>
+    <md>
       AB=\sum_{i=1}^r\sum_{j=1}^sc_id_jA_iB_j
-    </me>.
+    </md>.
     Note that each step (base and induction) of your induction on <m>r</m> will require an argument that uses induction on <m>s</m>! This is sometimes called <em>double induction</em>.  For example, in the base step <m>r=1</m> you must show that  
-    <me>
+    <md>
       c_1A_1(d_1B_1+d_2B_2+\cdots +d_sB_s)=c_1d_1A_1B_1+c_1d_2A_1B_2+\cdots c_1d_sA_1B_s
-    </me>
+    </md>
     for any <m>s\geq 1</m>; this should be proved by induction on <m>s</m>. 
     </p>
     
@@ -176,8 +176,8 @@
       <p>
         Let <m>p(x)=\anpoly</m> and <m>q(x)=\bmpoly</m> be polynomials with real coefficients. 
         For any square matrix <m>A</m>, show that the matrices <m>p(A)</m> and <m>q(A)</m> commute: i.e.,
-        <me> p(A)q(A)=q(A)p(A)
-        </me>.
+        <md> p(A)q(A)=q(A)p(A)
+        </md>.
         You may use the result of <xref ref="ex_expand_matrix_prod"/>. 
       </p>
     </statement>
@@ -194,8 +194,8 @@
         </title>
         <p>
           In this case we have <m>A^n=A^0=I</m>, and thus
-          <me> A^nq(A)=Iq(A)=q(A)=q(A)I=q(A)A^n
-          </me>,
+          <md> A^nq(A)=Iq(A)=q(A)=q(A)I=q(A)A^n
+          </md>,
           as desired.
         </p>
       </case>
@@ -204,8 +204,8 @@
         </title>
         <p>
         In this case we have <m>A^n=A</m>, and it is easy to see that
-          <me> Aq(A)=q(A)A=b_mA^{m+1}+b_{m-1}A^{m-1}+\cdots +b_1A^2+b_0A
-          </me>.
+          <md> Aq(A)=q(A)A=b_mA^{m+1}+b_{m-1}A^{m-1}+\cdots +b_1A^2+b_0A
+          </md>.
         </p>
       </case>
       <case>
@@ -240,8 +240,8 @@
       </p>
       <p>
         Show that <m>(A-I)</m> is invertible, and that in fact
-        <me> (A-I)^{-1}=-(A^{r-1}+A^{r-2}+\cdots +A+I)
-        </me>.
+        <md> (A-I)^{-1}=-(A^{r-1}+A^{r-2}+\cdots +A+I)
+        </md>.
         You may use the results of <xref ref="ex_expand_matrix_prod"/> and/or <xref ref="ex_poly_inA_commute"/>.
 .
       </p>

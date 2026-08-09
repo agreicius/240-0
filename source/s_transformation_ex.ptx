@@ -1,0 +1,342 @@
+<exercises xml:id="s_transformation_ex">
+  <subexercises>
+    <title>WeBWork Exercises</title>
+    <exercise>
+      <webwork source="Library/TCNJ/TCNJ_IntroLinearTransformations/problem17.pg" />
+    </exercise>
+
+    <exercise>
+      <webwork source="Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_18.pg" />
+    </exercise>
+
+    
+
+    <exercise>
+      <!-- similar question: Library/TCNJ/TCNJ_IntroLinearTransformations/problem18.pg -->
+      <webwork source="Library/Rochester/setLinearAlgebra14TransfOfRn/ur_la_14_30.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- similar problem: Library/TCNJ/TCNJ_IntroLinearTransformations/problem1.pg -->
+      <!-- similar problem: Library/TCNJ/TCNJ_IntroLinearTransformations/problem2.pg -->
+      <!-- similar problem: Library/TCNJ/TCNJ_IntroLinearTransformations/problem3.pg -->
+      <!-- similar problem: Library/TCNJ/TCNJ_IntroLinearTransformations/problem4.pg -->
+      <!-- similar problem: Library/TCNJ/TCNJ_IntroLinearTransformations/problem6.pg -->
+      <!-- similar problem: Library/TCNJ/TCNJ_IntroLinearTransformations/problem7.pg -->
+      <!-- similar problem: Library/TCNJ/TCNJ_IntroLinearTransformations/problem8.pg -->
+      <webwork source="Library/TCNJ/TCNJ_IntroLinearTransformations/problem15.pg" />
+    </exercise>
+
+    <exercise>
+      <webwork source="Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_20.pg" />
+    </exercise>
+    
+  </subexercises>
+  <exercisegroup>
+     <introduction>
+      <p>
+        Show that the function <m>T</m> defined is nonlinear by providing an explicit counterexample to one of the defining axioms or a consequence thereof.
+      </p>
+     </introduction> 
+     <exercise>
+      <statement>
+        <p>
+          <m>T\colon \R^2\rightarrow \R^2</m>,  <m>T((x,y))=(x,y)+(1,1)</m>
+        </p>
+      </statement>
+     </exercise>
+     <exercise>
+      <statement>
+        <p>
+          <m>T\colon M_{nn}\rightarrow M_{nn}</m>, <m>T(A)=A^2</m>
+        </p>
+      </statement>
+     </exercise>
+  
+     <exercise>
+      <statement>
+        <p>
+          <m>T\colon M_{nn}\rightarrow \R</m>, <m>T(A)=\det A</m>
+        </p>
+      </statement>
+     </exercise>
+     <exercise>
+      <statement>
+        <p>
+          <m>T\colon\R^3\rightarrow \R^2</m>, <m>T(x,y,z)=(xy,yz)</m>
+        </p>
+      </statement>
+     </exercise>
+      
+  </exercisegroup>
+  
+  <exercise xml:id="ex_transformation_vector_scale">
+    <title>Scalar multiplication</title>
+    <statement>
+      <p>
+        Let <m>V</m> be a vector space. Fix <m>c\in \R</m> and define <m>T\colon V\rightarrow V</m> as <m>T(\boldv)=c\boldv</m>: <ie />, <m>T</m> is scalar multiplication by <m>c</m>. Show that <m>T</m> is a linear transformation.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="ex_transformation_trace">
+    <title>Trace</title>
+    <statement>
+      <p>
+        Prove <xref ref="th_tr_linear">statement</xref> of <xref ref="th_lin_matrix_operations"/>. 
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="ex_transformation_matrix_mult">
+    <title>Left/right matrix multiplication</title>
+    <statement>
+      <p>
+      Let <m>B</m> be an <m>r\times m</m> matrix, and let <m>C</m> be an <m>n\times s</m> matrix.
+      Define the functions <m>T</m> and <m>S</m> as follows:
+        <md>
+          <mrow> T\colon M_{mn} \amp\rightarrow M_{rn} </mrow>
+          <mrow>A \amp\mapsto T(A)=BA </mrow>
+          <mrow>  \amp </mrow>
+          <mrow> S\colon M_{mn} \amp\rightarrow M_{ms} </mrow>
+          <mrow>  A\amp\mapsto S(A)=AC  </mrow>
+        </md>.
+        In other words, <m>T</m> is the <q>multiply on the left by <m>B</m></q> operation, and <m>S</m> is the  <q>multiply on the right by C</q> operation
+        Show that <m>T</m> and <m>S</m> are linear transformations.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="ex_transformation_conjugation">
+    <title>Conjugation</title>
+    <statement>
+      <p>
+        Prove <xref ref="th_conj_lin"/>. 
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="ex_transformation_sequence_shift">
+    <title>Sequence shift operators</title>
+    <statement>
+      <p>
+        Let <m>V=\R^\infty=\{(a_1,a_2,\dots, )\colon a_i\in\R\}</m>,
+        the space of all infinite sequences.
+        Define the
+        <term>shift left function</term>, <m>T_\ell</m>, and
+        <term>shift right function</term>, <m>T_r</m>, as follows:
+        <md>
+          <mrow>T_\ell\colon \R^\infty\amp \rightarrow \R^\infty \amp  T_r\colon \R^\infty\amp \rightarrow \R^\infty</mrow>
+          <mrow>s=(a_1,a_2, a_3,\dots )\amp \longmapsto T_\ell(s)=(a_2, a_3,\dots) \amp  s=(a_1,a_2, a_3,\dots )\amp \longmapsto T_r(s)=(0,a_1,a_2,\dots)</mrow>
+        </md>
+        Prove that <m>T_\ell</m> and <m>T_r</m> are linear transformations.
+      </p>
+    </statement>
+  </exercise>
+  
+  <exercise xml:id="ex_transformation_add_scale">
+    <title>Adding and scaling linear transformations</title>
+    <statement>
+      <p>
+        Suppose that <m>T\colon V\rightarrow W</m> and <m>S\colon V\rightarrow W</m> are linear transformations.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Define the function <m>T+S\colon V\rightarrow W</m> as <m>(T+S)(\boldv)=T(\boldv)+S(\boldv)</m>. Show that <m>T+S</m> is a linear transformation.
+          </p>
+        </li>
+        <li>
+          <p>
+            Define the function <m>cT\colon V\rightarrow W</m> as <m>cT(\boldv)=c(T(\boldv))</m>. Show that <m>cT</m> is a linear transformation.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+  
+  <exercise>
+    <title>Composition of transformations</title>
+    <statement>
+      <p>
+        Prove <xref ref="th_transform_composition"/>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="ex_span_independence_transform">
+    <title>Linear transformations, span, and independence</title>
+    <statement>
+      <p>
+        Suppose <m>T\colon V\rightarrow W</m> is a linear transformation.   Let <m>S=\{\boldv_1,\boldv_2,\dots ,\boldv_r\}</m> be a subset of <m>V</m>, and let <m>S'</m> be the image of <m>S</m> under <m>T</m>: <ie />,
+        <md>
+          S'=T(S)=\{T(\boldv_1), T(\boldv_2),\dots, T(\boldv_r)\}
+        </md>.
+        Assume <m>\boldv_i\ne \boldv_j</m> and <m>T(\boldv_i)\ne T(\boldv_j)</m> for all <m>i\ne j</m>.
+      </p>
+      <p>
+        Answer true or false: if true, provide a proof; if false, provide an explicit counterexample. Note: for a complete counterexample you need to specify <m>T\colon V\rightarrow W</m>, and <m>S</m>.
+      </p>
+      <ol>
+        <li>
+          <p>
+          If <m>S</m> is linearly independent, then <m>S'</m> is linearly independent.
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>S'</m> is linearly independent, then <m>S</m> is linearly independent.
+          </p>
+        </li>
+        <li>
+          <p>
+            If <m>S</m> is a spanning set for <m>V</m>, then <m>S'</m> is a spanning set for <m>\im T</m>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+  <exercise xml:id="ex_transformation_reflection">
+    <title>Reflection through a line</title>
+    <statement>
+      <p>
+      Fix an angle <m>\alpha</m> with <m>0\leq \alpha \leq \pi </m>, let <m>\ell_\alpha</m> be the line through the origin that makes an angle of <m>\alpha</m> with the positive <m>x</m>-axis, and let <m>r_\alpha\colon\R^2\rightarrow \R^2</m> be the reflection operation as described in <xref ref="d_reflection"/>.
+     Prove that <m>r_\alpha</m> is a linear transformation following the steps below.
+        <ol>
+          <li>
+            <p>
+              In a manner similar to <xref ref="th_transform_rotation"/>, describe <m>P'=r_\alpha(P)</m> in terms of the polar coordinates <m>(r,\theta)</m> of <m>P</m>. Additionally, it helps to write <m>\theta=\alpha+\phi</m>, where <m>\phi</m> is the angle the line segment from the origin to <m>P</m> makes with the line <m>\ell_\alpha</m>.
+              Include a drawing to support your explanation.
+            </p>
+          </li>
+          <li>
+            <p>
+              Use your description in (a), along with some trigonometric identities, to show <m>r_\alpha=T_A</m> where
+              <md>
+                A=\begin{bmatrix}\cos 2\alpha \amp \sin 2\alpha\\ \sin 2\alpha \amp -\cos 2\alpha \end{bmatrix}
+              </md>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="ex_transformation_composition_rotations_reflections">
+    <title>Compositions of rotations and reflections</title>
+    <statement>
+      <p>
+        In this exercise we will show that if we compose a rotation or reflection with another rotation or reflection, as defined in <xref ref="d_rotation"/> and <xref ref="d_reflection"/>, the result is yet another rotation or reflection.
+        For each part, express the given composition either as a rotation <m>\rho_\theta</m> or reflection <m>r_\theta</m>, where <m>\theta</m> is expressed in terms of <m>\alpha</m> and <m>\beta</m>.
+      </p>
+      <ol>
+        <li>
+          <p>
+          <m>\rho_\alpha\circ\rho_\beta</m>
+          </p>
+        </li>
+        <li>
+          <p>
+          <m>r_\alpha\circ r_\beta</m>
+          </p>
+        </li>
+        <li>
+          <p>
+          <m>\rho_\alpha\circ r_\beta</m>
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>r_\alpha\circ \rho_\beta</m>
+          </p>
+        </li>
+      </ol>
+    </statement>
+    <hint>
+      <p>
+        Use <xref ref="th_transform_rotation"/> and <xref ref="th_transform_reflection"/>, along with some trigonometric identities.
+      </p>
+    </hint>
+
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        The set <m>B=\{\boldv_1=(1,-1), \boldv_2=(1,1)\}</m> is a basis of <m>\R^2</m>. Suppose the linear transformation <m>T\colon \R^2\rightarrow \R^3</m> satisfies
+        <md>
+          T(\boldv_1)=(4,1,2), T(\boldv_2)=(1,0,2)
+        </md>.
+        Find a formula for <m>T(\boldx)</m>, where <m>\boldx=(x,y)</m> is a general element of <m>\R^2</m>.
+      </p>
+    </statement>
+  </exercise>
+  
+  <exercise>
+    <statement>
+      <p>
+        Suppose <m>T\colon V\rightarrow V</m> is a linear transformation, and <m>B</m> is a basis of <m>V</m> for which <m>T(\boldv)=\boldzero</m> for all <m>\boldv\in B</m>. Show that <m>T_0</m>: <ie />, <m>T</m> is the zero transformation from <m>V</m> to <m>V</m>.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Use (1) of <xref ref="th_bases_transformations"/>.
+      </p>
+    </hint>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Suppose <m>T\colon V\rightarrow V</m> is a linear transformation, and <m>B</m> is a basis of <m>V</m> for which <m>T(\boldv)=\boldv</m> for all <m>\boldv\in B</m>. Show that <m>T=\id_V</m>: <ie />, <m>T</m> is the identity transformation of <m>V</m>.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Use (1) of <xref ref="th_bases_transformations"/>.
+      </p>
+    </hint>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>T\colon \R^n\rightarrow \R^n</m> be a linear transformation. Assume there is a basis <m>B</m> of <m>\R^n</m> and a constant <m>c\in \R</m> such that <m>T(\boldv)=c\boldv</m> for all <m>\boldv\in B</m>. Prove: <m>T=T_{A}</m>, where
+        <md>
+          A=cI_n=\begin{amatrix}[cccc]
+        c \amp 0\amp \dots\amp 0\\
+        0\amp c\amp \dots \amp 0 \\
+        \vdots \amp \amp \amp \vdots\\
+        0\amp 0\amp \dots \amp c
+        \end{amatrix}
+        </md>.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Use (1) of <xref ref="th_bases_transformations"/>.
+      </p>
+    </hint>
+  </exercise>
+  <exercisegroup>
+  <title>Matrix transformations</title>
+  <introduction>
+  <p>
+  For each linear transformation <m>T\colon \R^n\rightarrow \R^m</m> and <m>\boldx\in \R^n</m> : (a) compute the standard matrix <m>A</m> of <m>T</m> using <xref ref="proc_standard_matrix"/>; (b) compute <m>T(\boldx)</m> using <m>A</m>. You may take for granted that the given <m>T</m> is linear.
+  </p>
+  </introduction>
+  <exercise>
+    <statement>
+      <p>
+        <md>
+          <mrow>T\colon \R^2\amp \rightarrow\R^4  \amp \boldx\amp=(1,3) </mrow>
+          <mrow> (x,y) \amp\mapsto (2x-y, 2y, x+y, x) </mrow>
+        </md>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+      <md>
+        <mrow> T\colon \R^4\amp \rightarrow \R^3 \amp
+        \boldx=(0,2,4,-1)</mrow>
+        <mrow>  (x_1,x_2,x_3,x_4)\amp\mapsto (2x_1-x_2+x_4, x_2-x_3, x_1+3x_2-x_3-x_4) </mrow>
+      </md>
+    </p>
+    </statement>
+  </exercise>
+  </exercisegroup>
+
+</exercises>

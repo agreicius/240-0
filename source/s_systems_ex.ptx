@@ -1,7 +1,7 @@
 <exercises xml:id="s_systems_ex">
   
   <subexercises>
-  <title>Written exercises</title>
+   
   <exercise xml:id="ex_solving_sys_geom">
     <title>Geometry of linear systems</title>
     <statement>
@@ -155,9 +155,9 @@
         </ol>
       do not change the set of solutions of a linear system.
       To prove this claim, let <m>L</m> be a general linear system
-      <me>
+      <md>
         \numeqsys
-      </me>.
+      </md>.
       Now consider each type of row operation separately,
       write down the new system <m>L'</m> you get by applying this row operation,
       and prove that an <m>n</m>-tuple
@@ -192,21 +192,21 @@
               </p>
                 <p>
                   If <m>s</m> satisfies <m>e_1</m>, then <m>a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n=b_i</m>. Multiplying both sides by <m>c</m> we see that
-                  <me>
+                  <md>
                     ca_{i1}s_1+ca_{i2}s_2+\cdots +ca_{in}s_n=cb_i,
-                  </me>
+                  </md>
                   and hence that <m>s</m> is also a solution of <m>c\,e_i=e_i'</m>.
 
                 </p>
                 <p>
                   For the other direction, if <m>s</m> satisfies <m>c e_i=e_i'</m>, then
-                  <me>
+                  <md>
                     ca_{ii}s_1+ca_{i2}s_2+\cdots ca_{in}s_n=cb_i.
-                  </me>
+                  </md>
                   Now, since <m>c\ne 0</m>, we can multiply both sides of this equation by <m>1/c</m> to see that
-                  <me>
+                  <md>
                     a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n=b_i
-                  </me>
+                  </md>
                   and hence that <m>s</m> is a solution to <m>e_i</m>.
 
                 </p>
@@ -216,13 +216,13 @@
               <title>Row addition</title>
               <p>
                 The only equation of <m>L'</m> that differs from <m>L</m> is
-                <me>
+                <md>
                   e_i'=e_i+ce_j
-                </me>.
+                </md>.
                 Writing this equation out in terms of coefficients gives us
-                <me>
+                <md>
                   e_i': a_{i1}x_1+a_{i2}x_2+\cdots +a_{in}x_n+c(a_{j1}x_1+a_{j2}x_2+\cdots +a_{jn}x_n)=b_i+cb_j
-                </me>.
+                </md>.
                 Now if <m>s</m> satisfies <m>L</m>,
                 then it satisfies <m>e_i</m> and <m>e_j</m>,
                 in which case evaluating the RHS of the <m>e_i'</m> above at <m>s</m> yields
@@ -233,21 +233,21 @@
                 Now suppose <m>s=(s_1,s_2,\dots,
                 s_n)</m> satisfies <m>L'</m>.
                 Since <m>s</m> satisfies <m>e_j'=e_j</m>, we have
-                <men xml:id="solveeqn" tag="star">
+                <md number="yes" xml:id="solveeqn" tag="star">
                   a_{j1}s_1+a_{j2}s_2+\cdots +a_{jn}s_n =b_j
-                </men>
+                </md>
                 Since <m>s</m> satisfies <m>e_i'</m>, we have
-                <me>
+                <md>
                   a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n+c(a_{j1}s_1+a_{j2}s_2+\cdots +a_{jn}s_n)=b_i+cb_j
-                </me>
+                </md>
                 Substituting <xref ref="solveeqn"/> into the equation above we get
-                <me>
+                <md>
                   a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n+c(b_j)=b_i+cb_j
-                </me>,
+                </md>,
                 and hence
-                <me>
+                <md>
                   a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n=b_i
-                </me>.
+                </md>.
                 This shows that <m>s</m> satisfies <m>e_i</m>.
                 It follows that <m>s</m> satisfies <m>L</m>.
               </p>
@@ -263,12 +263,12 @@
       <li>
         <p>
         Consider the following nonlinear system in the unknowns <m>x, y</m>:
-        <me>
+        <md>
           \begin{linsys}{2}
           x^2\amp +\amp y^2\amp =\amp 1\\
           x\amp +\amp y \amp =\amp \frac{1}{2}
           \end{linsys}
-        </me>.
+        </md>.
         <ol>
           <li>
             <p>
@@ -291,12 +291,12 @@
       <li>
         <p>
           Now consider a more general system
-          <men xml:id="eq_general_nonlinear">
+          <md number="yes" xml:id="eq_general_nonlinear">
             \begin{linsys}{2}
             x^2\amp +\amp y^2\amp =\amp 1\\
             ax\amp +\amp by \amp =\amp c,
             \end{linsys}
-          </men>
+          </md>
           where <m>a,b,c\in\R</m> are fixed constants and at least one of <m>a</m> or <m>b</m> is nonzero.
         </p>
         <ol>
@@ -322,13 +322,13 @@
   <statement>
     <p>
       In this exercise we investigate how the operation of squaring both sides of an equation changes the set of solutions. Let
-      <men xml:id="eq_general_equation">
+      <md number="yes" xml:id="eq_general_equation">
         F(x_1,x_2,\dots, x_n)=G(x_1,x_2,\dots, x_n)
-      </men>
+      </md>
       represent a general equation (linear or nonlinear) in the unknowns <m>x_1,x_2,\dots, x_n</m>, let
-      <men xml:id="eq_general_equation_squared">
+      <md number="yes" xml:id="eq_general_equation_squared">
         \left(F(x_1,x_2,\dots, x_n)\right)^2=\left(G(x_1,x_2,\dots, x_n)\right)^2
-      </men>
+      </md>
       be the equation obtained by squaring both sides of the <xref ref="eq_general_equation"/>, let <m>S_1</m> be the set of solutions to <xref ref="eq_general_equation"/>, and let <m>S_2</m> be the set of solutions to <xref ref="eq_general_equation_squared"/>.
     </p>
     <ol>

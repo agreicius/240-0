@@ -8,35 +8,7 @@
 <subsection xml:id="ss_dimension">
   <title>Dimension of a vector space</title>
   <p>
-    Before getting to the definition of dimension, we introduce the notion of the cardinality of a set, which essentially is just the number of distinct elements the set contains. 
-  </p>
-  <definition xml:id="d_cardinality">
-    <title>Cardinality of a set</title>
-    <idx><h>cardinality</h><h>of a set</h></idx>
-    <notation>
-      <usage><m>\val{X}</m></usage>
-      <description>the cardinality of the set <m>X</m></description>
-    </notation>
-    <statement>
-      <p>
-      Let <m>X</m> be a set. The <term>cardinality of <m>X</m></term>, denoted <m>\val{X}</m> is defined as follows:
-      <ul>
-        <li>
-          <p>
-            If <m>X</m> is finite, then its cardinality is the number <m>n</m> of distinct elements it contains, written <m>\val{X}=n</m>.
-          </p>
-        </li>
-        <li>
-          <p>
-            If <m>X</m> is infinite, then we say it has <term>infinite cardinality</term>, and write <m>\val{X}=\infty</m>.
-          </p>
-        </li>
-      </ul>
-      </p>
-    </statement>
-  </definition>
-  <p>
-    We are now ready to define the dimension of a vector space. 
+    [CAUTION! Make sure to edit this sections!!]
   </p>
   <definition xml:id="d_dimension">
     <title>Dimension of a vector space</title>
@@ -117,17 +89,17 @@ Even when we do not have a standard basis at our disposal, there are many situat
   <statement>
     <p>
       Use <xref ref="proc_dimension"/> to compute the dimension of the subspace <m>W\subseteq \R^5</m> defined as 
-      <me>  
+      <md>  
         W=\{(x_1,x_2,x_3,x_4,x_5)\in \R^5\colon x_1+x_2=x_4-x_5=0\}
-      </me>.
+      </md>.
     </p>
   </statement>
   <solution>
     <p>
       We saw in <xref ref="eg_byinspection_R5"/> that 
-      <me>
+      <md>
         B=\{(1,-1,0,0,0),(0,0,1,0,0),(0,0,0,1,1)\}
-      </me>
+      </md>
       is a basis of <m>W</m>. Thus <m>\dim W=3</m>. 
     </p>
   </solution>
@@ -142,7 +114,7 @@ Even when we do not have a standard basis at our disposal, there are many situat
 <solution>
   <p>
     We saw in <xref ref="eg_byinspection_basis"/> that <m>B=\{A_1, A_2, A_3\}</m> is a basis of <m>W</m>, where 
-    <me>
+    <md>
       A_1=
       \begin{bmatrix}
       1\amp 0\\ 0\amp 0
@@ -152,7 +124,7 @@ Even when we do not have a standard basis at our disposal, there are many situat
       , A_3=\begin{bmatrix}
       0\amp 0\\ 0\amp 1
       \end{bmatrix}
-    </me>.
+    </md>.
     We conclude that <m>\dim W=\abs{B}=3</m>. 
   </p>
 </solution>
@@ -176,9 +148,9 @@ Even when we do not have a standard basis at our disposal, there are many situat
     <proof>
       <p>
         Let <m>S=\{\boldv_1, \boldv_2, \dots, \boldv_n\}</m>, and let <m>S'=\{\boldw_1, \boldw_2, \dots, \boldw_r\}</m>. Since <m>S</m> spans <m>V</m>, each element of <m>S'</m> is a linear combination of elements of <m>S</m>: <ie />, we have
-        <men xml:id="eq_basis_bound">
+        <md number="yes" xml:id="eq_basis_bound">
           \boldw_j=a_{1j}\boldv_1+a_{2j}\boldv_2+\cdots a_{nj}\boldv_n=\sum_{i=1}^n\boldv_{ij}
-        </men>
+        </md>
         for all <m>1\leq j\leq r</m>. Now consider the following chain of equivalences:
         <md>
           <mrow>c_1\boldw_1+c_2\boldw_2+\cdots c_r\boldw_r=\boldzero \amp \iff c_1(\sum_{i=1}^n\boldv_{i1})+c_2(\sum_{i=1}^n\boldv_{i2})+\cdots +c_r\sum_{i=1}^n\boldv_{in}=\boldzero\amp (<xref ref="eq_basis_bound"/>) </mrow>
@@ -187,15 +159,15 @@ Even when we do not have a standard basis at our disposal, there are many situat
           <mrow>  \amp \iff (\sum_{j=1}^ra_{1j}c_j)\boldv_1+(\sum_{j=1}^ra_{2j}c_j)\boldv_2+\cdots (\sum_{j=1}^ra_{nj}c_j)\boldv_n=\boldzero </mrow>
         </md>.
         From the last vector equation, we see that if we can find a nonzero sequence <m>(c_1,c_2,\dots, c_r)</m> satisfying
-        <me>
+        <md>
           \sum_{j=1}^ra_{ij}c_j=0
-        </me>
+        </md>
         for all <m>1\leq i\leq n</m>, then there is a nontrivial combination of the <m>\boldw_i</m> equal to the zero vector, and hence that <m>S'</m> is linearly dependent. Such a sequence <m>(c_1,c_2,\dots, c_n)</m> corresponds to a solution to the homogeneous linear with augmented matrix
-        <me>
+        <md>
           \begin{amatrix}[r|r]
           A\amp \boldzero
           \end{amatrix}
-        </me>,
+        </md>,
         where <m>A=[a_{ij}]_{n\times r}</m>. Since this is a homogeneous system of <m>n</m> equations in <m>r</m> unknowns, and since <m>r>n</m>, there are in fact infinitely many solutions. (The system has at most <m>n</m> leading ones, and so there must be a free variable since one of the <m>r</m> columns in the equivalent row echelon matrix must fail to contain a leading one.) In particular there is a nonzero solution <m>(c_1,c_2,\dots, c_n)\ne \boldzero</m>, and we conclude that <m>S'</m> is linearly dependent.
       </p>
     </proof>
@@ -275,24 +247,24 @@ Even when we do not have a standard basis at our disposal, there are many situat
   <solution>
     <p>
       For each positive integer <m>i</m>, define <m>\bolds_i</m> to the infinite sequence whose <m>i</m>-th term is equal to one, and whose other terms are all equal to zero: <ie/>, 
-      <me>
+      <md>
         \bolds_i=(0,\dots, 0,\underset{i\text{th term}}{1},0,\dots)
-      </me>.
+      </md>.
       We will show that for all positive integers <m>n</m> the set 
-      <me>
+      <md>
         S_n=\{\bolds_1,\bolds_2,\dots, \bolds_n\}
-      </me>
+      </md>
       is linearly independent. It will then follow from <xref ref="cor_dim_infinite"/> that <m>\R^\infty</m> is infinite dimensional, since it contains linearly independent sets of arbitrarily large cardinality. 
     </p>
     <p>
       To show <m>S_n</m> is linearly independent, assume we have 
-      <me>
+      <md>
         c_1\bolds_1+c_2\bolds_2+\cdots +c_n\bolds_n=\boldzero=(0,0,\dots)
-      </me>
+      </md>
       for some scalars <m>c_1,c_2,\dots, c_n\in \R</m>. Since 
-      <me>
+      <md>
         c_1\bolds_1+c_2\bolds_2+\cdots +c_n\bolds_n=(c_1,c_2,\dots, c_n,0,\dots)
-      </me>,
+      </md>,
       we conclude that <m>c_1=c_2=\cdots=c_n=0</m>, proving that <m>S_n</m> is linearly independent. 
     </p>
   </solution>
@@ -376,9 +348,9 @@ The <q>contracting and expanding</q> theorem below is a very useful theoretical 
         <li>
           <p>
             Assume <m>S</m> is linearly independent. The procedure below constructs a finite chain of sets
-            <me>
+            <md>
               S=S_0\subseteq S_1\dots \subseteq S_k
-            </me>
+            </md>
             that ends with a basis <m>B=S_k</m>.
             <ul>
               <li>
@@ -500,9 +472,9 @@ The <q>contracting and expanding</q> theorem below is a very useful theoretical 
         <li>
           <p>
             Clearly, if <m>W=V</m>, then <m>\dim W=\dim V</m>. For the other direction, assume <m>\dim W=\dim V=n</m>. Let <m>B</m> be a basis for <m>W</m>. Since <m>B</m> is lienarly independent, it can be extended to a basis <m>B'</m> of <m>V</m> (<xref ref="th_basis_contract_expand" text="global"/>). Since <m>\val{B}=\dim W=\dim V</m>, and since all bases of <m>V</m> have cardinality <m>n</m>, we must have <m>B=B'</m>. It follows that <m>B</m> is also a basis of <m>V</m>, and hence that
-            <me>
+            <md>
               V=\Span B=W
-            </me>.
+            </md>.
           </p>
         </li>
       </ol>
@@ -514,7 +486,7 @@ The <q>contracting and expanding</q> theorem below is a very useful theoretical 
   <statement>
     <p>
       Let <m>W=\Span\{A_1, A_2, A_3\}\subseteq M_{22}</m>, where 
-       <me>
+       <md>
          A_1=
          \begin{amatrix}
          1\amp 1\\
@@ -530,7 +502,7 @@ The <q>contracting and expanding</q> theorem below is a very useful theoretical 
          0\amp 1\\
          1\amp 1
          \end{bmatrix}
-       </me>.
+       </md>.
        Let <m>W'</m> be the space of symmetric <m>2\times 2</m> matrices. Use <xref ref="cor_dimension_subspace"/> and the fact that <m>\dim W'=3</m> to prove that <m>W=W'</m>.
     </p>
   </statement>
@@ -595,7 +567,7 @@ The <q>contracting and expanding</q> theorem below is a very useful theoretical 
         <title><m>\dim W=2</m></title>
         <p>
           If <m>\dim W=2</m>, then <m>W</m> has a basis <m>B=\{\boldv_1, \boldv_2\}</m> containing two non-parallel vectors in <m>\R^3</m>. You learn in multivariable calculus that 
-          <me>W=\Span\{\boldv_1, \boldv_2\}=\{s\boldv_1+t\boldv_2\colon s,t\in \R\}</me> is the plane in <m>\R^3</m> passing through the origin with <q>direction vectors</q> <m>\boldv_1, \boldv_2</m>. In fact, you can show that the <em>cross product</em> <m>\boldn=\boldv_1\times \boldv_2</m> is a normal vector for the plane <m>W</m> in this case. Thus the <m>2</m>-dimensional subspaces of <m>\R^3</m> are planes passing through the origin.  
+          <md>W=\Span\{\boldv_1, \boldv_2\}=\{s\boldv_1+t\boldv_2\colon s,t\in \R\}</md> is the plane in <m>\R^3</m> passing through the origin with <q>direction vectors</q> <m>\boldv_1, \boldv_2</m>. In fact, you can show that the <em>cross product</em> <m>\boldn=\boldv_1\times \boldv_2</m> is a normal vector for the plane <m>W</m> in this case. Thus the <m>2</m>-dimensional subspaces of <m>\R^3</m> are planes passing through the origin.  
         </p>
       </li>
       <li>

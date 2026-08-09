@@ -1,0 +1,180 @@
+<exercises xml:id="s_coordinatevectors_ex">
+  <subexercises>
+    <title>WeBWork Exercises</title>
+    <exercise>
+      <!-- vectors -->
+      <webwork source="Library/Rochester/setLinearAlgebra10Bases/ur_la_10_2.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- matrix basis -->
+      <webwork source="Library/Rochester/setLinearAlgebra10Bases/ur_la_10_34.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- matrix basis -->
+      <webwork source="Library/NAU/setLinearAlgebra/coordinatesHalfMagix.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- polynomial basis -->
+      <webwork source="Library/Rochester/setLinearAlgebra10Bases/ur_la_10_6.pg" />
+    </exercise>
+  </subexercises>
+  <exercisegroup>
+  <title>Coordinate vectors in <m>\R^n</m></title>
+    <introduction>
+      <p>In each exercise an ordered basis <m>B</m> is given for <m>\R^3</m>. Compute <m>[\boldx]_B</m> for the given <m>\boldx\in \R^3</m>.
+    </p>
+    </introduction>
+    <exercise>
+      <statement>
+        <p>
+          <m>B=\left((1,0,0), (2,2,0), (3,3,3) \right)</m>, <m>\boldx=(2,-1,3)</m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>B=\left((5,-12,3), (1,2,3), (-4,5,6) \right)</m>, <m>\boldx=(2,-1,3)</m>
+        </p>
+      </statement>
+    </exercise>
+
+  </exercisegroup>
+  <exercisegroup>
+  <title>Coordinate vectors in <m>P_n</m> </title>
+
+    <introduction>
+      <p>
+        In each exercise an ordered basis <m>B</m> is given for <m>P_2</m>. Compute <m>[p]_B</m> for the given polynomial <m>p\in P_2</m>.
+      </p>
+
+    </introduction>
+    <exercise>
+      <statement>
+        <p>
+          <m>B=(1,x,x^2)</m>, <m>p(x)=-2x^2+3x-5</m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>B=(x^2+1, x+1, x^2+x)</m>, <m>p(x)=x^2-x+2</m>
+        </p>
+      </statement>
+    </exercise>
+  </exercisegroup>
+    <exercise>
+    <statement>
+      <p>
+        Let <m>B=(A_1,A_2,A_3,A_4)</m> where
+        <md>
+          A_1=\begin{bmatrix}
+            1\amp 0\\ 1\amp 0
+        \end{bmatrix}, A_2=\begin{bmatrix}
+          1\amp 1\\ 0\amp 0
+      \end{bmatrix}, A_3=\begin{bmatrix}
+        1\amp 0\\ 0\amp 1
+    \end{bmatrix}, A_4=\begin{bmatrix}
+      0\amp 0\\ 1\amp 0
+  \end{bmatrix}
+        </md>.
+        You may take for granted that <m>B</m> is an ordered basis of <m>M_{22}</m>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Compute <m>\left [ \begin{bmatrix}
+              6\amp 2\\ 5\amp 3
+            \end{bmatrix}\right]_B</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Compute <m>[A]_B</m> for an arbitrary matrix <m>\begin{bmatrix}
+              a\amp b\\ c\amp d
+            \end{bmatrix}\in M_{22}</m>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>S=\{p_1(x)=2x^2+x+1, p_2(x)=x-1, p_3(x)=x^2+1, p_4(x)=x^2-x-1\}\subseteq P_2 </m>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Use one of the techniques described in <xref ref="proc_contract_extend_general"/> to contract <m>S</m> to a basis of <m>W=\Span S</m>. To begin, choose your favorite ordered basis of <m>P_2</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Use your result in (a) to describe <m>W</m> is as simple a manner as possible.
+          </p>
+        </li>
+      </ol>
+    </statement>
+
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>S=\{ p_1=x^3+1, p_2=2x^3+x+1, p_3=3x^3+2x+1, p_4=2x^3+x^2+x+1\}\subseteq P_3</m>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Use one of the techniques described in <xref ref="proc_contract_extend_general"/> to contract <m>S</m> to a basis of <m>W=\Span S</m>. To begin, choose your favorite ordered basis of <m>P_3</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Using your result in (a) to decide whether <m>W=P_3</m>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>S=\{p_1(x)=x^2+x+1, p_2(x)=3x^2+6x\}\subseteq P_2</m>. Use one of the techniques described in <xref ref="proc_contract_extend_general"/> to extend <m>S</m> to a basis of <m>P_2</m>.
+      </p>
+    </statement>
+
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let
+        <md>
+          S=\left\{A_1=\begin{amatrix}[rr]1\amp 2\\1\amp 1 \end{amatrix}, \ A_2=\begin{amatrix}[rr] 1\amp 1\\2\amp 1\end{amatrix}, A_3=\begin{amatrix}[rr] -1\amp 1\\ -4\amp -1 \end{amatrix} , A_4=\begin{amatrix}[rr] 0\amp 1\\ 2\amp 0\end{amatrix}\right\}\subseteq M_{22}
+        </md>.
+        <ol>
+          <li>
+            <p>
+              Use one of the techniques described in <xref ref="proc_contract_extend_general"/> to contract <m>S</m> to a basis of <m>W=\Span S</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Show that
+              <md>
+                W=\{\begin{bmatrix}a\amp b\\ c\amp a\end{bmatrix}\colon a,b,c\in \R\}.
+              </md>
+              Use a dimension argument to make your life easier.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+
+  </exercise>
+  
+</exercises>

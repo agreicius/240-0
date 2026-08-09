@@ -24,9 +24,9 @@
       <p>
         An <m>n\times n</m> matrix <m>A</m>  is <term>invertible</term> (or <term>nonsingular</term>)
         if there is a <m>n\times n</m> matrix <m>B</m> satisfying
-        <men xml:id="eq_matrix_inverse">
+        <md number="yes" xml:id="eq_matrix_inverse">
           AB=BA=I_n
-        </men>.
+        </md>.
         When this is the case we call <m>B</m> an
         <term>inverse</term> of <m>A</m>,
         and we say that <m>A</m> and <m>B</m> are
@@ -80,18 +80,18 @@
           <title>Left-cancellation</title>
           <p>
             Given <m>n\times r</m> matrices <m>X</m> and <m>Y</m>, we have 
-      <me>
+      <md>
         QX=QY \iff X=Y
-      </me>.
+      </md>.
           </p>
         </li>
         <li>
           <title>Right-cancellation</title>
           <p>
             Given <m>m\times n</m> matrices <m>X</m> and <m>Y</m>, we have 
-            <me>
+            <md>
               XQ=YQ \iff X=Y
-            </me>.
+            </md>.
           </p>
         </li>
       </ol>
@@ -103,9 +103,9 @@
         <li>
           <p>
             We prove both implications of <m>QX=QY \iff X=Y</m> separately. The reverse implication (<m>\Leftarrow</m>) is obvious: 
-            <me>
+            <md>
               X=Y\implies QX=QY
-            </me>.
+            </md>.
            For the forward implication (<m>\Rightarrow</m>), we have 
            <md>
             <mrow> QX=QY \amp \implies Q^{-1}(QX)=Q^{-1}(QY) \amp (Q \text{ inv.})</mrow>
@@ -136,17 +136,17 @@
       <li>
         <p>
           If <m>X</m> and <m>Y</m> are <m>n\times r</m> matrices, then 
-          <me>
+          <md>
             QX=Y \iff X=Q^{-1}Y
-          </me>.
+          </md>.
         </p>
       </li>
       <li>
         <p>
           If <m>X</m> and <m>Y</m> are <m>m\times n</m> matrices, then 
-          <me>
+          <md>
             XQ=Y \iff X=YQ^{-1}
-          </me>.          
+          </md>.          
         </p>
       </li>
     </ol>
@@ -194,7 +194,7 @@
         </li>
         <li>
           <p>
-            Square zero matrices <m>\boldzero</m> are never invertible, since for any square matrix <m>B</m> of the same dimension we have <me>B\,\boldzero=\boldzero B=\boldzero\ne I</me>.
+            Square zero matrices <m>\boldzero</m> are never invertible, since for any square matrix <m>B</m> of the same dimension we have <md>B\,\boldzero=\boldzero B=\boldzero\ne I</md>.
             Thus there is no matrix satisfying the inverse property <xref ref="eq_matrix_inverse"/> with respect to <m>\boldzero</m>.
           </p>
         </li>
@@ -205,7 +205,7 @@
           2\amp -1\\ -3\amp 2
           \end{amatrix}
           </m>. Indeed, we have
-          <me>
+          <md>
           \begin{amatrix}[rr]2\amp 1\\ 3\amp 2
         \end{amatrix}\begin{amatrix}[rr]
         2\amp -1\\ -3\amp 2
@@ -213,7 +213,7 @@
         2\amp -1\\ -3\amp 2
         \end{amatrix}\begin{amatrix}[rr]2\amp 1\\ 3\amp 2
       \end{amatrix}=I_2
-          </me>,
+          </md>,
           as you can easily verify.
 
           </p>
@@ -226,9 +226,9 @@
               1\amp 1\amp 1
             \end{amatrix}</m> is not invertible. 
             Indeed, using the <xref ref="th_row_method" text="custom">row method of matrix multiplication</xref>, we see that given any matrix <m>B</m>, each row of <m>AB</m> is given by 
-            <me>\begin{amatrix}1\amp 1\amp 1
+            <md>\begin{amatrix}1\amp 1\amp 1
             \end{amatrix}\,B 
-            </me>. 
+            </md>. 
             It follows that all the rows of <m>AB</m> are identical, and hence that we cannot have <m>AB=I_3</m>, since the rows of <m>I_3</m> are not identical.
           </p>
         </li>
@@ -247,10 +247,10 @@
     </p>
     <p>
       When this is the case, we have
-      <me>
+      <md>
         \abcdmatrix{a}{b}{c}{d}^{-1}=\frac{1}{ad-bc}\begin{amatrix}[rr]d\amp -b \\ -c\amp a
       \end{amatrix}
-      </me>.
+      </md>.
     </p>
   </statement>
 </theorem>
@@ -261,9 +261,9 @@
   <p>
     Assume <m>ad-bc=0</m>. If <m>A=\boldzero</m>, then <m>A</m> is not invertible, as we saw in the example above. Thus we can assume <m>A</m> is nonzero, in which case <m>B=\begin{amatrix}[rr]d\amp -b\\ -c\amp a
   \end{amatrix}</m> is also nonzero. An easy computation shows
-  <me>
+  <md>
     AB=\abcdmatrix{ad-bc}{0}{0}{ad-bc}=\abcdmatrix{0}{0}{0}{0}.
-  </me>
+  </md>
   This implies <m>A</m> is not invertible. Indeed if it were, then the inverse <m>A^{-1}</m> would exist, and we'd have
   <md>
     <mrow>AB=\boldzero \amp\implies A^{-1}AB=\boldzero </mrow>
@@ -338,11 +338,13 @@ A^-1=
     <statement>
       <p>
         Let <m>A,B</m> be <m>n\times n</m> matrices. If <m>A</m> and <m>B</m> are both invertible, then so is their product <m>AB</m>. Using logical notation:
-        <men xml:id="eq_inv_implies_prod">
+        <md number="yes" xml:id="eq_inv_implies_prod">
           A\text{ and } B  \text{ invertible } \implies AB \text{ invertible }
-        </men>.
+        </md>.
         In fact when this is the case we have
-        <men xml:id="eq_inv_prod_form">(AB)^{-1}=B^{-1}A^{-1}</men>.
+        <md number="yes" xml:id="eq_inv_prod_form">
+          (AB)^{-1}=B^{-1}A^{-1}
+        </md>.
       </p>
     </statement>
   </theorem>
@@ -364,9 +366,9 @@ A^-1=
       <p>
         More generally, if <m>A_1,A_2,\dots A_r</m> are invertible <m>n\times n</m> matrices, then their product <m>A_1A_2\cdots A_r</m> is invertible. Furthermore, we have in this case
 
-        <men xml:id="eq_inv_prod_arb_form">
+        <md number="yes" xml:id="eq_inv_prod_arb_form">
           (A_1A_2\cdots A_r)^{-1}=A_r^{-1}A_{r-1}^{-1}\cdots A_1^{-1}
-        </men>.
+        </md>.
       </p>
     </statement>
   </corollary>
@@ -443,10 +445,10 @@ A^-1=
     <statement>
       <p>
       Let <m>A</m> be an <m>n\times n</m> matrix, and let <m>r\in\Z</m> be an integer. We define the power matrix <m>A^r</m> as follows:
-      <me>
+      <md>
         A^r=\begin{cases} I\amp \text{if } r=0;\\[2ex] \underset{r \text{ times}}{\underbrace{AA\cdots A}}\amp \text{if } r>0; \\[2ex] (A^{-1})^s \amp \text{if } r=-s &lt; 0 \text{ and } A \text{ is invertible}.
        \end{cases}
-      </me>.
+      </md>.
       </p>
     </statement>
   </definition>
@@ -462,9 +464,9 @@ A^-1=
     </notation><statement>
       <p>
         Let <m>f(x)=\anpoly</m> be a polynomial with real coefficients. For any square matrix <m>A</m> of size <m>n\times n</m>, we define the matrix <m>f(A)</m> as
-        <men xml:id="eq_matrix_polynomial">
+        <md number="yes" xml:id="eq_matrix_polynomial">
           f(A)=a_nA^n+a_{n-1}A^{n-1}+\cdots +a_1A+a_0I_n
-        </men>.
+        </md>.
         We call <m>f(A)</m> the result of <term>evaluating</term> the polynomial <m>f</m> at the matrix <m>A</m>.
       </p>
     </statement>
@@ -479,20 +481,20 @@ A^-1=
     <statement>
       <p>
         Let <m>f(x)=x^2-2x+1</m>. Evaluate <m>f</m> at  the matrices
-        <me>
+        <md>
           A=\begin{bmatrix}
             1\amp 1\\
             0\amp 1
         \end{bmatrix}
-        </me>
+        </md>
         and
-        <me>
+        <md>
           B=\begin{bmatrix}
             1\amp 1\amp 1\\
             1\amp 1\amp 1\\
             1\amp 1\amp 1
         \end{bmatrix}
-        </me>.
+        </md>.
       </p>
     </statement>
     <solution>
@@ -676,13 +678,13 @@ ZeroDivisionError: matrix must be nonsingular
     <statement>
       <p>
         Let <m>A</m> be invertible. We have 
-        <me>
+        <md>
           A \text{ invertible} \iff A^T \text{ invertible}
-        </me>,
+        </md>,
         in which case 
-        <men xml:id="eq_inverse_trans">
+        <md number="yes" xml:id="eq_inverse_trans">
         \left(A^T\right)^{-1}=\left(A^{-1}\right)^T
-        </men>.
+        </md>.
       </p>
     </statement>
     <proof>
@@ -691,9 +693,9 @@ ZeroDivisionError: matrix must be nonsingular
       </p>
       <p>
         Suppose <m>A</m> is invertible with inverse <m>A^{-1}</m>. To see that <m>A^T</m> is invertible, with inverse as specified in  <xref ref="eq_inverse_trans"/>, we need only show that
-        <me>
+        <md>
           A^T(A^{-1})^T=(A^{-1})^T\, A^T=I
-        </me>.
+        </md>.
         We verify the two equalities separately:
         <md>
           <mrow>A^T(A^{-1})^T\amp =\left(A^{-1}A\right)^T \amp (<xref ref="th_trans_props"/>)</mrow>

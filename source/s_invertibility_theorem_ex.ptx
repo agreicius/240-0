@@ -1,6 +1,6 @@
 <exercises xml:id="s_invertibility_theorem_ex">
   <subexercises>
-  <title>Written Exercises</title>
+   
   <exercisegroup>
     <title>Linear systems and matrix equations</title>
     <introduction>
@@ -12,12 +12,12 @@
     <exercise>
       <statement>
         <p>
-          <me>
+          <md>
             \begin{linsys}{3}
               x\amp +\amp 2y \amp -\amp z\amp =\amp 3 \\ 
               -3x \amp \amp \amp  +\amp 2z\amp = \amp 0
             \end{linsys}
-          </me>
+          </md>
           
         </p>
       </statement>
@@ -26,13 +26,13 @@
     <exercise>
       <statement>
         <p>
-          <me>
+          <md>
             \begin{linsys}{2} 
               2x\amp +\amp 3y\amp =\amp 5z+10 \\ 
               y \amp -\amp z \amp =\amp -x+2 \\ 
               z\amp +\amp x\amp = \amp -2y-4
             \end{linsys} 
-          </me>
+          </md>
   
         </p>
       </statement>
@@ -48,25 +48,25 @@
     <exercise>
       <statement>
         <p>
-          <me>
+          <md>
             \begin{linsys}{2}
             7x\amp +\amp 2y\amp =\amp 3 \\ 
             2x\amp +\amp y \amp =\amp -5
             \end{linsys}
-          </me>
+          </md>
         </p>
       </statement>
     </exercise>
     <exercise>
       <statement>
         <p>
-          <me>
+          <md>
             \begin{linsys}{3}
              \amp \amp 2y\amp +\amp 3z \amp =\amp -2 \\ 
              x\amp -\amp y \amp +\amp 2z \amp =\amp 1 \\ 
              x \amp +\amp y \amp +\amp  6z \amp =\amp 1
             \end{linsys}
-          </me>
+          </md>
         </p>
       </statement>
     </exercise>
@@ -111,8 +111,8 @@
             <mrow>\amp \xrightarrow[]{r_1 + \frac{3}{2}r_3} \begin{amatrix}[rrr|rrr]1\amp 0\amp 0\amp 1\amp 3\amp 1\\ 0\amp 1\amp 0\amp 0\amp 1\amp -1\\ 0\amp 0\amp 1\amp -2\amp 2\amp 0 \end{amatrix}</mrow>
           </md>.
       We conclude that
-          <me> A^{-1}=\begin{amatrix}[rrr] 1\amp 3\amp 1\\ 0\amp 1\amp -1\\ -2\amp 2\amp 0\end{amatrix}
-          </me>.
+          <md> A^{-1}=\begin{amatrix}[rrr] 1\amp 3\amp 1\\ 0\amp 1\amp -1\\ -2\amp 2\amp 0\end{amatrix}
+          </md>.
 
         </p>
       </solution>
@@ -185,13 +185,13 @@
         </p>
         <p>
         The corresponding elementary matrices are
-          <me>E_1 = \begin{amatrix}[rr]0\amp 1\\ 1\amp 0 \end{amatrix} , E_2 = \begin{amatrix}[rr]1/2\amp 0\\ 0\amp 1 \end{amatrix}, E_3=\begin{amatrix}[rr]1\amp 5/2\\ 0\amp 1 \end{amatrix}
-          </me>.
+          <md>E_1 = \begin{amatrix}[rr]0\amp 1\\ 1\amp 0 \end{amatrix} , E_2 = \begin{amatrix}[rr]1/2\amp 0\\ 0\amp 1 \end{amatrix}, E_3=\begin{amatrix}[rr]1\amp 5/2\\ 0\amp 1 \end{amatrix}
+          </md>.
         It follows that <m>E_3E_2E_1A=I</m>, and hence that
-          <me> A=E_1^{-1}E_{2}^{-1}E_3^{-1}=\begin{amatrix}[rr]0\amp 1\\ 1\amp 0 \end{amatrix}
+          <md> A=E_1^{-1}E_{2}^{-1}E_3^{-1}=\begin{amatrix}[rr]0\amp 1\\ 1\amp 0 \end{amatrix}
           \begin{amatrix}[rr]2\amp 0\\ 0\amp 1 \end{amatrix}
           \begin{amatrix}[rr]1\amp -5/2\\ 0\amp 1 \end{amatrix}
-          </me>.
+          </md>.
         </p>
 
       </solution>
@@ -263,8 +263,8 @@
         <mrow>(QA)\underset{n\times 1}{\boldx} \amp=\underset{m\times 1}{\boldzero} </mrow>
       </md>
         have the same set of solutions. In other words show that
-      <me> A\boldx=\boldzero \iff (QA)\boldx=\boldzero
-      </me>.
+      <md> A\boldx=\boldzero \iff (QA)\boldx=\boldzero
+      </md>.
     </p>
   </statement>
 </exercise>

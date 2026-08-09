@@ -1,0 +1,221 @@
+<exercises xml:id="s_spectral_theorem_ex">
+  <subexercises>
+    <title>WeBWork Exercises</title>
+    <exercise>
+      <!-- ortho decomposition -->
+      <webwork source="Library/NAU/setLinearAlgebra/diag3x3ortho.pg" />
+    </exercise>
+  </subexercises>
+  <exercisegroup>
+  <introduction>
+  <p>
+  Orthogonally diagonalize the given symmetric matrix <m>A</m> following <xref ref="proc_ortho_diag"/>: <ie /> find a diagonal matrix <m>D</m> and orthogonal matrix <m>Q</m> satisfying <m>D=Q^{T}AQ</m>.
+  </p>
+  </introduction>
+  <exercise>
+    <statement>
+      <p>
+        <m>A=\begin{amatrix}[rr]
+          2\amp 1\\ 1\amp 2
+        \end{amatrix}</m>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <m>A=\begin{amatrix}[rr]-1\amp 1\\ 1\amp 2  \end{amatrix}</m>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <m>A=\begin{amatrix}[rrr]-1 \amp 1 \amp -2 \\
+1 \amp -1 \amp -2 \\
+-2 \amp -2 \amp 2  \end{amatrix}</m>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <m>A=\frac{1}{6}\begin{amatrix}[rrr]
+        1\amp 7\amp -2\\
+        7\amp 1\amp -2\\
+        -2\amp -2\amp 10
+          \end{amatrix}</m>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <m>A=\begin{amatrix}[rrr]
+        1\amp 2\amp 1\\
+        2\amp 0\amp 0\\
+        1\amp 0\amp 3  \end{amatrix}</m>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <m>A=\begin{amatrix}[rrrr]
+        0 \amp 0 \amp 1 \amp 0 \\
+0 \amp 0 \amp 0 \amp 1 \\
+1 \amp 0 \amp 0 \amp 0 \\
+0 \amp 1 \amp 0 \amp 0  \end{amatrix}
+      </m></p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <m>A=\begin{amatrix}[rrrr]0 \amp 0 \amp 1 \amp 0 \\
+0 \amp 1 \amp 0 \amp 0 \\
+1 \amp 0 \amp 0 \amp 0 \\
+0 \amp 0 \amp 0 \amp 1  \end{amatrix}</m>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <m>A=\begin{amatrix}[rrrr]
+        1\amp 1\amp 1\amp 1\\
+         1\amp 1\amp 1\amp 1 \\
+         1\amp 1\amp 1\amp 1 \\
+         1\amp 1\amp 1\amp 1
+         \end{amatrix}
+        </m>
+      </p>
+    </statement>
+  </exercise>
+  </exercisegroup>
+
+  <exercise xml:id="ex_self-adjoint_symmetric">
+    <statement>
+      <p>
+        Let <m>(V, \langle\, , \rangle)</m> be a finite-dimensional inner product space, let <m>T\colon V\rightarrow V</m> be a linear transformation, and let <m>B=(\boldv_1, \boldv_2, \dots, \boldv_n)</m> be an ordered basis of <m>V</m>.
+
+        Prove: <m>T</m> is self-adjoint if and only if
+        <md>\langle T(\boldv_i),\boldv_j\rangle=\langle \boldv_i, T(\boldv_j)\rangle
+        </md> for all <m>1\leq i,j\leq n</m>. In other words, to prove <m>T</m> is self-adjoint it suffices to show property <xref ref="eq_self-adjoint"/> holds for all elements of a basis of <m>V</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise xml:id="ex_selfadjoint_complement">
+    <statement>
+      <p>
+        Let <m>(V, \langle\, , \rangle)</m> be a finite-dimensional inner product space, let <m>T\colon V\rightarrow V</m> be a self-adjoint operator, and let <m>W</m> be a subspace of <m>V</m>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Prove: if <m>\boldv\in W^\perp</m>, then <m>T(\boldv)\in W^\perp</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            By (a), restricting <m>T</m> to <m>W^\perp</m> defines a linear transformation
+            <md>
+              <mrow>T\vert_{W^\perp}\colon W^\perp\amp\rightarrow W^\perp </mrow>
+              <mrow> \boldv \amp \mapsto T(\boldv)</mrow>
+            </md>.
+          Prove that <m>T\vert_{W^\perp}</m> is self-adjoint. Here the inner product on the subspace <m>W^\perp</m> is inherited from <m>(V, \angvec{\, , \,})</m> by restriction.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Assume <m>A\in M_{nn}</m> is symmetric and orthogonal. Prove that the characteristic polynomial of <m>A</m> factors as <m>p(x)=(x-1)^r(x+1)^s</m> for some nonnegative integers <m>r,s</m>. In particular, the eigenvalues of <m>A</m> are among <m>1</m> and <m>-1</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercisegroup>
+  <introduction>
+  <p>
+    Let <m>\mathcal{C}\subseteq \R^2</m> be a conic curve defined by a quadratic equation of the form
+    <md number="yes" xml:id="eq_conic_eqn">
+    \mathcal{C}\colon ax^2+bxy+cy^2=d
+  </md>
+    where <m>a,b,c\in \R</m> are fixed constants. You may have learned that <m>\mathcal{C}</m> can be rotated to a conic <m>\mathcal{C}'</m> with a <q>standard equation</q> of the form <m>ex^2+fy^2=d</m>. In the following exercises we will see why this is true.
+  </p>
+  </introduction>
+  <exercise>
+    <statement>
+      <p>
+        Find a symmetric matrix <m>A\in M_{22}</m> satisfying the following property: <m>\boldx=(x,y)</m> satisfies <xref ref="eq_conic_eqn"/> if and only if
+        <md number="yes" xml:id="eq_conic_eqn_matrix">
+          \boldx \cdot (A\boldx)=\boldx^TA\boldx=d
+        </md>.
+        (Here we conflate the <m>1\times 1</m> matrix <m>\begin{bmatrix}d
+        \end{bmatrix}</m> with the scalar <m>d\in \R</m>.)
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Show that there is a rotation matrix <m>Q\in M_{22}</m> satisfying <m>D=Q^TAQ</m>, where
+        <md>
+          D=\begin{amatrix}[rr] e\amp 0\\ 0\amp f \end{amatrix}
+        </md>
+        for some <m>e,f\in \R</m>. 
+      </p>
+    </statement>
+    <hint>
+      <p>
+        See <xref ref="ex_ortho_matrix_rotation_reflection"/>.
+      </p>
+    </hint>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Show that <m>\boldx</m> satisfies <xref ref="eq_conic_eqn_matrix"/> if and only if <m>\boldx'=Q^{-1}\boldx=Q^T\boldx</m> satisfies
+        <md number="yes" xml:id="eq_conic_std">
+          ex+fy=d
+        </md>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Explain why we can conclude that there is a rotation that maps the conic <m>\mathcal{C}</m> with equation <xref ref="eq_conic_eqn"/> to the conic <m>\mathcal{C}'</m> with <q>standard equation</q> <xref ref="eq_conic_std"/>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>\mathcal{C}\subseteq\R^2</m> be the conic curve with equation
+        <md>
+          x^2+4xy+y^2=1
+        </md>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Find an angle <m>\theta</m> and constants <m>a,b\in \R</m> such that the rotation <m>\rho_\theta</m> maps <m>\mathcal{C}</m> to a conic <m>\mathcal{C}'</m> with defining equation
+            <md>
+              ax^2+by^2=1
+            </md>.
+          </p>
+        </li>
+        <li>
+          <p>
+            First graph <m>\mathcal{C}'</m>, and then graph <m>\mathcal{C}</m> using the result of (a). What type of conics (parabolas, ellipses, hyperbolas) are <m>\mathcal{C}</m> and <m>\mathcal{C'}</m> ?
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+  </exercisegroup>
+
+</exercises>

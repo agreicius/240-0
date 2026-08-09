@@ -239,7 +239,7 @@
         <mrow> \mathbb{Q} \amp = \{x\in\mathbb{R}\colon x=\tfrac{m}{n} \text{ for some } m,n\in\Z\}  </mrow>
       </md>.
       This yields the following chain of subsets:
-      <md xml:id="eq_chain_numbersystems">
+      <md number="yes" xml:id="eq_chain_numbersystems">
         \mathbb{Z}\subseteq\mathbb{Q}\subseteq\mathbb{R}
       </md>.
       Additionally, for any integer <m>a\in \Z</m> we denote by <m>\Z_{\geq a}</m> the set of all integers <m>n\geq a</m>: <ie/>, 

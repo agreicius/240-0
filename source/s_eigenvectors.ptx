@@ -1,0 +1,1099 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_eigenvectors">
+  <title>Eigenvectors and eigenvalues</title>
+  <introduction>
+    <p>
+      For the remaining sections of this chapter we will focus our investigation on linear transformations of the form <m>T\colon V\rightarrow V</m>: that is, transformations from a space <m>V</m> into itself. When <m>V</m> is finite-dimensional we can get a computational grip on <m>T</m> by choosing an ordered basis <m>B</m> and considering the matrix representation <m>[T]_B</m>. As was illustrated in <xref ref="eg_changebasis_reflection"/>, different matrix representations <m>[T]_B</m> and <m>[T]_{B'}</m> provide different insights into the nature of <m>T</m>. Furthermore, we see from this example that if the action of <m>T</m> on a chosen basis is simple to describe, then so too is the matrix representation of <m>T</m> with respect to that basis.
+    </p>
+    <p>
+      A particularly agreeable situation arises when the basis <m>B=(\boldv_1, \boldv_2, \dots, \boldv_n)</m> satisfies
+      <md>
+        T(\boldv_i)=c_i\boldv_i, c_i\in \R
+      </md>
+      for all <m>1\leq i\leq n</m>. Using recipe <xref ref="eq_matrixrep_formula"/> we in this case that the corresponding matrix representation
+      <md>
+        [T]_B=\begin{bmatrix}
+          c_1 \amp 0\amp \dots \amp \amp 0\\
+          0   \amp c_2\amp 0\amp \dots \amp 0\\
+          0\amp 0\amp \ddots \amp \amp 0\\
+          \vdots  \amp \amp \amp \amp \vdots \\
+          0\amp 0\amp \dots \amp 0\amp c_n
+      \end{bmatrix}
+      </md>
+      is diagonal! Diagonal matrices are about as simple as they come: they wear all of their properties (rank, nullity, invertibility, <etc />) on their sleeve.  If we hope to find a diagonal matrix representation of <m>T</m>, then we should seek nonzero vectors <m>\boldv</m> satisfying <m>T(\boldv)=c\boldv</m> for some <m>c\in \R</m>: these are called <em>eigenvectors</em> of <m>T</m>.
+    </p>
+  </introduction>
+
+  <subsection>
+    <title>Eigenvectors</title>
+    <p>
+      We further motivate the notion of an eigenvector with an illustrative example.
+    </p>
+    <example xml:id="eg_reflection_eigenvectors">
+      <statement>
+        <p>
+          Consider <m>T_A\colon \R^2\rightarrow \R^2</m> where
+           <md>
+           A=\frac{1}{5}\begin{amatrix}[rr]-3\amp 4\\ 4\amp 3 \end{amatrix}
+           </md>.
+           It turns out that <m>T=T_A</m> has a simple geometric description, though you would not have guessed this from the standard matrix <m>A</m>. To reveal the geometry at play, we represent <m>T</m> with respect to the nonstandard basis <m>B'=(\boldv_1=(1,2), \boldv_2=(2,-1))</m>. We compute 
+            <md>
+              <mrow>T((1,2)) \amp=A\colvec{1 \\ 2 }=\colvec{1 \\ 2}=1(1,2)+0(2,-1) </mrow>
+              <mrow>T_A((2,-1)) \amp=A\colvec{2 \\ -1}=-(2,-1)=0(1,2)+(-1)(2,-1) </mrow>
+            </md>. 
+            It follows, using the formula <xref ref="eq_matrixrep_formula"/>, that 
+            <md>
+              [T]_{B'}=\begin{amatrix}[rr] 1\amp 0\\ 0\amp -1  \end{amatrix}
+            </md>.
+            The alternative representation given by <m>A'=[T]_{B'}</m> nicely summarizes the action of <m>T</m>: it fixes the vector <m>\boldv_1=(1,2)</m> and maps the vector <m>\boldv_2=(2,-1)</m>, which is orthogonal to <m>(1,2)</m>, to <m>-(2,-1)</m>. We claim this implies that <m>T</m> is none other than reflection <m>r_\ell</m> through the line <m>\ell=\Span\{(1,2)\}</m>!  This follows from <xref ref="th_bases_transformations"/>. In more detail, from the geometry of the setup, it is easy to see that we have <m>r_\ell((1,2))=(1,2)</m> (reflection fixes the line <m>\ell</m>) and <m>r_\ell((2,-1))=-(2,-1)</m> (reflection ``flips" vectors perpendicular to <m>\ell</m>). Since <m>T</m> and <m>r_\ell</m> agree on the basis <m>B'</m>, we must have <m>T=r_\ell</m>. 
+          </p>
+          <p>
+            In even more detail, since <m>B'</m> is a basis, for any vector <m>\boldv\in \R^2</m> we can write
+          <md number="yes" xml:id="eq_reflection_decomposition">
+            \boldv=c_1\boldv_1+c_2\boldv_2
+          </md>
+          for some <m>c_1,c_2\in \R</m>. It follows that 
+          <md number="yes" xml:id="eq_reflection_formula_vec">
+            T(\boldv)=c_1T(\boldv_1)+c_2T(\boldv_2)=c_1\boldv_1-c_2\boldv_2
+          </md>.
+          Together, formulas <xref first="eq_reflection_decomposition" last="eq_reflection_formula_vec"/> give us a satisfying geometric understanding of our reflection operator <m>T=r_\ell</m>. 
+          Let <m>\ell^\perp=\Span\{(2,-1)\}</m>: this is the line perpendicular to <m>\ell</m> passing through the origin. Formula <xref ref="eq_reflection_decomposition"/> gives a decomposition of the vector <m>\boldv</m> in terms of its components along <m>\ell</m> and <m>\ell^\perp</m>. Formula <xref ref="eq_reflection_formula_vec"/> tells us what <m>T=r_\ell</m> does to this decomposition: namely, it leaves the component along <m>\ell</m> unchanged and ``flips" the component along <m>\ell^\perp</m>.
+          <figure xml:id="fig_reflection_eigenvectors">
+            <title>Reflection through <m>\ell=\Span\{(1,2)\}</m></title>
+            <image xml:id="im_reflection_eigenvectors" width="100%" source="images/im_reflection_eigenvectors"/>
+            <caption>Reflection <m>T=r_\ell</m>, <m>\ell=\Span\{(1,2)\}</m></caption>
+          </figure>
+          </p>
+      </statement>
+    </example>
+    <p>
+      The success of our analysis in <xref ref="eg_reflection_eigenvectors"/> depended on finding the vectors <m>\boldv_1</m> and <m>\boldv_2</m> satisfying <m>T(\boldv_1)=\boldv_1</m> and <m>T(\boldv_2)=(-1)\boldv_2</m>, as they provided a basis on which the action of <m>T</m> is particularly simple. As we make official in <xref ref="d_eigenvectors"/> the vectors <m>\boldv_1, \boldv_2</m> are called <em>eigenvectors</em> of <m>T</m>. 
+    </p>
+    <definition xml:id="d_eigenvectors">
+      <idx><h>eigenvector</h></idx>
+      <idx><h>eigenvalue</h></idx>
+      <title>Eigenvectors and eigenvalues</title>
+      <statement>
+        <p>
+          Let <m>T\colon V\rightarrow V</m> be a linear transformation.
+          A <em>nonzero</em> vector <m>\boldv\in V</m> satisfying
+          <md number="yes" xml:id="eq_eigenvector_def">
+            T(\boldv)=\lambda\boldv
+          </md> for some <m>\lambda\in\R</m> is called an <term>eigenvector</term> of <m>T</m> with <term>eigenvalue</term> <m>\lambda</m>.
+        </p>
+        <p>
+        Similarly, given a square <m>n\times n</m> matrix <m>A</m>,  a nonzero <m>\boldx\in \R^n</m> satisfying
+        <md number="yes" xml:id="eq_eigenvector_matrix_def">
+          A\boldx=\lambda\boldx
+        </md>
+        for some <m>\lambda\in \R</m> is called an <term>eigenvector</term> of <m>A</m> with <term>eigenvalue</term> <m>\lambda</m>. In other words, an eigenvector (resp., eigenvalue) of <m>A</m> is just an eigenvector (resp., eigenvalue) of the matrix transformation <m>T_A\colon \R^n\rightarrow \R^n</m>.
+      </p>
+        <p>
+        In both cases (linear transformation or matrix) we call an eigenvector with eigenvalue <m>\lambda</m> a <term><m>\lambda</m>-eigenvector</term>.
+        </p>
+      </statement>
+    </definition>
+      <remark xml:id="rm_eigenvector_lambda">
+      <statement>
+        <p>
+          You ask: Why use <m>\lambda</m> instead of <m>c</m> or <m>k</m>? My answer: tradition!
+        </p>
+      </statement>
+    </remark>
+        <remark xml:id="rm_eigenvector_nonzero">
+      <statement>
+        <p>
+         Note well the important condition that an eigenvector must be nonzero. This means the zero vector <m>\boldzero</m> by definition is <em>not</em> an eigenvector. If we allowed <m>\boldzero</m> as an eigenvector, then the notion of the eigenvalue <em>of an eigenvector</em> would no longer be well-defined. This is because for any linear transformation we have
+         <md>
+           T(\boldzero)=\boldzero,
+         </md>
+         which implies that
+         <md>
+           T(\boldzero)=\lambda\boldzero
+         </md>
+         for all <m>\lambda\in \R</m>.
+        </p>
+      </statement>
+    </remark>
+        <remark xml:id="rm_eigenvectors_visual">
+      <title>Visualizing eigenvectors</title>
+      <statement>
+        <p>
+        Suppose <m>\boldv\ne\boldzero</m> is an eigenvector of the linear transformation <m>T\colon V\rightarrow V</m>. Letting <m>W=\Span\{\boldv\}</m>, this means that <m>T(\boldv)=\lambda\boldv\in W</m>: <ie />, <m>T</m> maps an eigenvector to some other element of the one-dimensional subspace it defines. The special case where <m>V=\R^2</m> is easy to visualize and can help guide your intuition in the general case. (See <xref ref="fig_eigenvector_visual"/>) Here the space <m>\Span\{\boldv\}=\ell</m>
+        is a line passing through origin. If <m>\boldv</m> is an eigenvector of a given linear transformation, then it must be mapped to some other vector pointing along <m>\ell</m>: <eg />, <m>\lambda_1\boldv</m> or <m>\lambda_2\boldv_2</m>. It it is not an eigenvector, it gets mapped to a vector <m>\boldw</m> that does not point along <m>\ell</m>.
+        </p>
+      </statement>
+    </remark>
+    <figure xml:id="fig_eigenvector_visual">
+      <title>Visualizing eigenvectors</title>
+      <caption>Visualizing eigenvectors</caption>
+      <image xml:id="im_eigenvector_visual" width="100%" source="images/im_eigenvector_visual">
+      </image>
+    </figure>
+
+
+
+    <p>
+      Given a linear transformation <m>T\colon V\rightarrow V</m> we wish to (a) determine which values <m>\lambda\in \R</m> are eigenvalues of <m>T</m>, and (b) find all the eigenvectors corresponding to a given eigenvalue <m>\lambda</m>. In the next examples we carry out such an investigation in an <foreign>ad hoc</foreign> manner.
+    </p>
+    <example xml:id="eg_eigenvectors_zerotransform">
+      <title>Zero and identity transformations</title>
+      <statement>
+        <p>
+          Assume <m>V</m> is nonzero. Recall that the zero transformation <m>0_V\colon V\rightarrow V </m> and identity transformation <m>\id_V\colon V\rightarrow V</m> are defined as <m>0_V(\boldv)=\boldzero</m> and <m>\id_V(\boldv)=\boldv</m> for all <m>\boldv\in V</m>. Find all eigenvalues and eigenvectors of <m>0_V</m> and <m>\id_V</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Since <m>0_V(\boldv)=\boldzero=0\boldv</m> for all <m>\boldv\in V</m>, we see that <m>0</m> is the only eigenvalue of <m>0_V</m>, and that all nonzero vectors of <m>V</m> are <m>0</m>-eigenvectors.
+        </p>
+        <p>
+          Similarly, since <m>\id_V(\boldv)=\boldv=1\boldv</m> for all <m>\boldv\in V</m>, we see that <m>1</m> is the only eigenvalue of <m>\id_V</m>, and that all nonzero vectors of <m>V</m> are <m>1</m>-eigenvectors.
+        </p>
+      </solution>
+    </example>
+    <example xml:id="eg_eigenvectors_scaling">
+      <title>Scaling transformations</title>
+      <statement><p>
+        Let <m>V</m> be a vector space, let <m>c\in \R</m> be a fixed scalar, and let <m>T\colon V\rightarrow V</m> be the scaling transformation defined as <m>T(\boldv)=c\boldv</m> for all <m>\boldv\in V</m>. Find all eigenvectors and eigenvalues of <m>T</m>. 
+      </p></statement>
+      <solution>
+        <p>
+          Since <m>T(\boldv)=c\boldv</m> for all <m>\boldv</m>, we see that all nonzero vectors of <m>V</m> are eigenvectors with eigenvalue <m>c</m>. It follows that <m>c</m> is the only eigenvalue of <m>T</m>. 
+        </p>
+      </solution>
+    </example>
+    <example xml:id="eg_eigenvector_adhoc_reflection">
+      <title>Reflection</title>
+      <statement>
+        <p>
+        Let <m>\ell</m> be a line in <m>\R^2</m> passing through the origin, and define <m>T\colon \R^2\rightarrow \R^2</m> to be reflection through <m>\ell</m>. (See <xref ref="d_reflection"/>.) Find all eigenvectors and eigenvalues of <m>T</m>. Use a geometric argument.
+        </p>
+      </statement>
+      <solution>
+        <p>
+        Since the reflection operator fixes all elements of the line <m>\ell</m>, we have <m>T(\boldx)=\boldx</m> for any <m>\boldx\in \ell</m>. This shows that any nonzero element of <m>\ell</m> is an eigenvectors of <m>T</m> with eigenvalue <m>1</m>.
+      </p>
+      <p>
+        Similarly, since <m>\ell^\perp</m> is orthogonal to <m>\ell</m>, reflection through <m>\ell</m> takes any element <m>\boldx=(x,y)\in \ell^\perp</m> and maps it to <m>-\boldx=(-x,-y)</m>. Thus any nonzero element <m>\boldx\in \ell^\perp</m> is  an eigenvector of <m>T</m> with eigenvalue <m>-1</m>.
+      </p>
+      <p>
+        We claim that these two cases exhaust all eigenvectors of <m>T</m>. Indeed, in general a nonzero vector <m>\boldv</m> lies in the line <m>\ell'=\Span\{\boldx\}</m>, and its reflection <m>T(\boldx)</m> lies in the line <m>\ell''=\Span\{T(\boldx)\}</m>, which itself is the result of reflecting the line <m>\ell'</m> through <m>\ell</m>. Now assume <m>T(\boldx)=\lambda\boldx</m>. We must have <m>\lambda\ne 0</m>, since <m>T(\boldv)\ne \boldzero</m> if <m>\boldx\ne \boldzero</m>;
+        but if <m>\lambda\ne 0</m> it follows that the line <m>\ell=\Span\{\boldx\}</m> and its reflection <m>\ell''=\Span\{T(\boldv)\}</m> are equal. Clearly the only lines that are mapped to themselves by reflection through <m>\ell</m> are <m>\ell</m> and <m>\ell^\perp</m>. Thus if <m>\boldx</m> is an eigenvector of <m>T</m> it must lie in <m>\ell</m> or <m>\ell^\perp</m>.
+      </p>
+      </solution>
+    </example>
+    <example xml:id="eg_eigenvector_adhoc_rotation">
+      <title>Rotation</title>
+
+      <statement>
+        <p>
+          Fix <m>\theta\in (0,2\pi)</m> and define <m>T\colon \R^2\rightarrow \R^2</m> to be rotation by <m>\theta</m>. (See <xref ref="d_rotation"/>) Find all eigenvectors and eigenvalues of <m>T</m>. Use a geometric argument. Your answer will depend on the choice of <m>\theta</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <case>
+           <title>Case: <m>\theta=\pi</m></title>
+          <p>
+          Rotation by <m>\pi</m> sends every vector <m>\boldx\in \R^2</m> to <m>-\boldx</m>: <ie />, <m>T(\boldx)=-\boldx=(-1)\boldx</m>. It follows that <m>\lambda=-1</m> is the only eigenvalue of <m>T</m> and all <em>nonzero</em> elements of <m>\R^2</m> are eigenvectors with eigenvalue <m>-1</m>.
+          </p>
+          </case>
+          <case>
+           <title>Case: <m>\theta\ne \pi</m></title>
+          <p>
+            A similar argument to the one in <xref ref="eg_eigenvector_adhoc_reflection"/> shows that <m>T</m> has no eigenvalues in this case. In more detail, a nonzero vector <m>\boldx</m> lies in the line <m>\ell=\Span\{\boldx\}</m>, and its rotation <m>T(\boldx)</m> lies in the line <m>\ell'=\Span\{T(\boldx)\}</m>, which is the result of rotating <m>\ell</m> by the angle <m>\theta</m>. Since <m>\theta\ne \pi</m>, it is clear that <m>\ell\ne \ell'</m>, and thus we cannot have <m>T(\boldv)=\lambda\boldv</m> for some <m>\lambda\in \R</m>.
+          </p>
+          </case>
+        </p>
+
+      </solution>
+    </example>
+    <example xml:id="eg_eigenvector_adhoc_transposition">
+      <title>Transposition</title>
+      <statement>
+        <p>
+          Consider the linear transformation
+          <md>
+            <mrow>S\colon M_{22} \amp\rightarrow M_{22} </mrow>
+            <mrow> A \amp\mapsto A^T </mrow>
+          </md>.
+          Determine all eigenvectors and eigenvalues of <m>S</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          To be an eigenvector of <m>S</m> a nonzero matrix <m>A</m> must satisfy <m>S(A)=\lambda A</m> for some <m>\lambda\in \R</m>. Using the definition of <m>S</m>, this means
+          <md number="yes" xml:id="eq_eigenvectors_adhoc_transposition">
+            A^T=\lambda A
+          </md>.
+          We ask for which scalars <m>\lambda\in \R</m> does there exist a nonzero matrix <m>A</m> satisfying <xref ref="eq_eigenvectors_adhoc_transposition"/>. Let's consider some specific choices of <m>\lambda</m>.
+        </p>
+        <case>
+         <title>Case: <m>\lambda=1</m></title>
+        <p>
+        In this case <xref ref="eq_eigenvectors_adhoc_transposition"/> reads <m>A^T=A</m>. Thus the eigenvectors of <m>S</m> with eigenvalue <m>1</m> are precisely the nonzero  <em>symmetric</em> matrices: <ie />,
+        <md>
+          A=\begin{amatrix}[rr]a\amp b\\ b\amp c  \end{amatrix}
+        </md>.
+        </p>
+        </case>
+        <case>
+         <title>Case: <m>\lambda= -1</m></title>
+        <p>
+        For this choice of <m>\lambda</m> we seek nonzero matrices satisfying <m>S(A)=A^T=(-1)A=-A</m>. These are precisely the nonzero <em>skew-symmetric</em> matrices: <ie />,
+        <md>
+          A=\begin{amatrix}[rr]0\amp a\\ -a \amp 0  \end{amatrix}
+        </md>.
+        </p>
+        </case>
+        <case>
+         <title>Case: <m>\lambda\ne \pm 1</m></title>
+        <p>
+        Suppose <m>A=\begin{amatrix}[cc]a\amp b \\ c\amp d  \end{amatrix}</m> satisfies <m>A^T=\lambda A</m>. Equating the entries of these two matrices yields the system
+        <md>
+          <mrow> a \amp =\lambda a </mrow>
+          <mrow> d \amp = \lambda d</mrow>
+          <mrow> b \amp =\lambda c </mrow>
+          <mrow> c \amp =\lambda b </mrow>
+        </md>.
+        The first two equations imply <m>a=d=0</m>, using the fact that <m>\lambda\ne 1</m>. The second two equations imply further that <m>b=\lambda^2 b</m> and <m>c=\lambda^2 c</m>. Since <m>\lambda\ne \pm 1</m>, <m>\lambda^2\ne 1</m>. It follows that <m>b=c=0</m>. We conclude that for <m>\lambda\ne \pm 1</m>, if <m>A^T=\lambda A</m>, then <m>A=\boldzero</m>. It follows that <m>\lambda</m> is not an eigenvalue of <m>S</m> in this case.
+        </p>
+        </case>
+        In summation, our analysis shows that the transposition operator <m>S</m> has exactly two eigenvalues, <m>\lambda_1=1</m> and <m>\lambda_2=-1</m>, that the eigenvectors of <m>S</m> with eigenvalue 1 are the nonzero symmetric matrices, and that the eigenvalues of <m>S</m> with eigenvalue <m>-1</m> are the nonzero skew-symmetric matrices.
+      </solution>
+    </example>
+    <!-- <example xml:id="eg_eigenvectors_adhoc_derivative">
+      <title>Differentiation</title>
+      <statement>
+        <p>
+          Let <m>T\colon C^\infty(\R)\rightarrow C^\infty(\R)</m> be defined as <m>T(f)=f'</m>. Find all eigenvalues and eigenvectors of <m>T</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          An eigenvector of <m>T</m> is a nonzero function <m>f</m> satisfying <m>T(f)=\lambda f</m> for some <m>\lambda</m>. By definition, this means
+          <md number="yes" xml:id="eq_eigenvectors_adhoc_derivative">
+            f'=\lambda f
+          </md>
+          for some <m>\lambda\in\R</m>. Thus <m>\lambda</m> is an eigenvalue of <m>T</m> if and only if the differential equation <xref ref="eq_eigenvectors_adhoc_derivative"/> has a nonzero solution. This is true for all <m>\lambda\in \R</m>! Indeed for any <m>\lambda</m> the exponential function <m>f(x)=e^{\lambda x}</m> satisfies <m>f'(x)=\lambda e^{\lambda x}=\lambda f(x)</m> for all <m>x\in \R</m>. Furthermore, any solution to <xref ref="eq_eigenvectors_adhoc_derivative"/> is of the form <m>f(x)=Ce^{\lambda x}</m> for some <m>C\in \R</m>.
+          We conclude that (a) every <m>\lambda\in \R</m> is an eigenvalue of <m>T</m>, and (b) for a given <m>\lambda</m>, the <m>\lambda</m>-eigenvectors of <m>T</m> are precisely the functions of the form <m>f(x)=Ce^{\lambda x}</m> for some <m>C\ne 0</m>.
+        </p>
+      </solution>
+    </example> -->
+  </subsection>
+
+  <subsection>
+    <title>Finding eigenvalues and eigenvectors systematically</title>
+    <p>
+      You can imagine that our <foreign>ad hoc</foreign> approach to finding eigenvalues and eigenvectors will break down once the linear transformation under consideration becomes complicated enough. As such it is vital to have a systematic method of finding all eigenvalues and eigenvectors of a linear transformation <m>T\colon V\rightarrow V</m>. The rest of this section is devoted to describing just such a method in the special case where <m>\dim V=n\lt\infty</m>. The first key observation is that we can answer the eigenvalues/eigenvectors of <m>T</m> by answering the same question about <m>A=[T]_B</m>, where <m>B</m> is an ordered basis of <m>V</m>.
+    </p>
+    <theorem xml:id="th_eigenvectors_transformation_matrixrep">
+      <title>Eigenvectors of a linear transformation</title>
+      <statement>
+        <p>
+          Let <m>T\colon V\rightarrow V</m> be a linear transformation, let <m>B=(\boldv_1, \boldv_2, \dots, \boldv_n)</m> be an ordered basis of <m>V</m>, and let <m>A=[T]_B</m>.
+        </p>
+        <ol>
+          <li>
+            <p>
+              A vector <m>\boldv\in V</m> is an eigenvector of <m>T</m> with eigenvalue <m>\lambda</m> if and only if <m>\boldx=[\boldv]_B</m> is an eigenvector of <m>A</m> with eigenvalue <m>\lambda</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+             A real number <m>\lambda\in \R</m> is an eigenvalue of <m>T</m> if and only if it is an eigenvalue of <m>A</m>. Thus <m>T</m> and <m>A</m> have the same set of eigenvalues.
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <proof>
+        <p>
+          We prove statement (1) as a chain of equivalences:
+          <md>
+            <mrow>\boldv \text{ is an eigenvector of } T \amp \iff \boldv\ne 0 \text{ and } T\boldv=\lambda \boldv </mrow>
+            <mrow> \amp \iff \boldx=[\boldv]_B\ne \boldzero \text{ and } [T\boldv]_B=[\lambda\boldv] \amp (<xref ref="th_coordinates" text="global"/>, (2)) </mrow>
+            <mrow>  \amp \iff \boldx=[\boldv]_B\ne \boldzero \text{ and } [T\boldv]_B=\lambda[\boldv]_B \amp (<xref ref="th_coordinates" text="global"/>, (1))</mrow>
+            <mrow>  \amp \iff \boldx=[\boldv]\ne \boldzero \text{ and } [T]_B[\boldv]_B=\lambda[\boldv]_B \amp (<xref ref="th_matrixrep" text="global"/>)</mrow>
+            <mrow>  \amp \iff \boldx\ne 0 \text{ and } A\boldx=\lambda\boldx</mrow>
+            <mrow>  \amp \iff \boldx \text{ is an eigenvector of } A</mrow>
+          </md>.
+          From (1) it follows directly that if <m>\lambda</m> is an an eigenvalue of <m>T</m>, then it is an eigenvalue of <m>A=[T]_B</m>. Conversely, if <m>\lambda</m> is an eigenvalue of <m>A=[T]_B</m>, then there is a nonzero <m>\boldx\in\R^n </m> such that <m>A\boldx=\lambda \boldx</m>. Since <m>[\phantom{\boldv}]_B</m> is surjective (<xref ref="th_coordinates"/>, (3)), there is a vector <m>\boldv\in V</m> such that <m>[\boldv]_B</m>. It follows from (1) that <m>\boldv</m> is a <m>\lambda</m>-eigenvector of <m>T</m>, and thus that <m>\lambda</m> is an eigenvalue of <m>T</m>.
+        </p>
+      </proof>
+    </theorem>
+    <p>
+      Thanks to <xref ref="th_eigenvectors_transformation_matrixrep"/>, we can boil down the eigenvector/eigenvalue question for linear transformations of finite vector spaces to the analogous question about square matrices. The next theorem is the key result.
+    </p>
+    <theorem xml:id="th_eigenvectors_matrices">
+      <title>Eigenvectors of matrices</title>
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>n\times n</m> matrix. Fix <m>\lambda\in \R</m>.
+          <ol>
+            <li>
+              <p>
+                The eigenvectors of <m>A</m> with eigenvalue <m>\lambda</m> are the nonzero elements of the subspace <m>\NS(\lambda I-A)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                As a consequence, <m>\lambda\in \R</m> is an eigenvalue of <m>A</m> if and only if the matrix <m>\lambda I-A</m> is singular (<ie />, not invertible).
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <proof>
+        <p>
+          First observe that
+          <md>
+            A\boldx=\lambda\boldx \iff \lambda\boldx-A\boldx=\boldzero \iff (\lambda I-A)\boldx=\boldzero
+          </md>.
+          From this equivalence it follows that
+          <md>
+            \NS(\lambda I-A)=\{\boldx\in \R^n\colon A\boldx=\lambda \boldx\}
+          </md>.
+          Since an eigenvector must be nonzero, we conclude that the <m>\lambda</m>-eigenvectors of <m>A</m> are precisely the nonzero elements of <m>\NS(\lambda I-A)</m>. This proves statement (1). As a consequence, we see that <m>A</m> has <m>\lambda</m> as an eigenvalue if and only if <m>\NS (\lambda I-A)</m> contains nonzero element elements: <ie />, if and only if <m>\NS (\lambda I-A)\ne \{\boldzero\}</m>. By the <xref ref="th_invertibility_supersized" text="custom">invertibility theorem</xref> this is true if and only if <m>\lambda I-A</m> is not invertible.
+        </p>
+      </proof>
+
+    </theorem>
+    <p>
+      According to <xref ref="th_eigenvectors_matrices"/>,  the eigenvectors of <m>A</m> live in null spaces of matrices of the form <m>\lambda I-A</m>. Accordingly, we call these spaces <em>eigenspaces</em>.
+    </p>
+<definition xml:id="d_eigenspace">
+  <title>Eigenspaces</title>
+  <statement>
+    <p>
+      Let <m>A</m> be an <m>n\times n</m> matrix. Given <m>\lambda\in \R</m> the <term><m>\lambda</m>-eigenspace</term> of <m>A</m> is the subspace <m>W_\lambda\subseteq \R^n</m> defined as
+      <md>
+        W_\lambda=\NS (\lambda I -A)
+      </md>.
+      Similarly, given a linear transformation <m>T\colon V\rightarrow V</m> and <m>\lambda\in \R</m>, the <term><m>\lambda</m>-eigenspace</term> of <m>T</m>
+      is the subspace <m>W\subseteq V</m> defined as
+      <md>
+        W_\lambda=\NS(\lambda \id_V-T)
+      </md>.
+      In both cases the <em>nonzero</em> elements of <m>W_\lambda</m> are precisely the <m>\lambda</m>-eigenvectors.
+    </p>
+  </statement>
+</definition>
+
+<p>
+  We nearly have a complete method for computing the eigenvalues and eigenvectors of a square matrix <m>A</m>. The last step is to identify the values of <m>\lambda</m> for which <m>\lambda I-A</m> is not invertible. By the <xref ref="th_invertibility_supersized" text="custom">invertibility theorem</xref>, the matrix <m>\lambda I-A</m> is not invertible if and only if <m>\det (\lambda I-A)=0</m>. Thus the eigenvalues of <m>A</m> are precisely the <em>zeros</em> of the function <m>p(t)=\det(tI-A)</m>. We have proved the following corollary.
+</p>
+<corollary xml:id="cor_eigenvalues">
+  <title>Eigenvalues of a matrix</title>
+  <statement>
+    <p>
+      Let <m>A</m> be an <m>n\times n</m> matrix, let <m>p(t)=\det(tI-A)</m>, and let <m>\lambda\in \R</m>. The following are equivalent:
+    </p>
+    <ol>
+      <li>
+        <p>
+          <m>\lambda</m> is an eigenvalue of <m>A</m>;
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\lambda I-A</m> is singular;
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\det(\lambda I-A)=0</m>;
+        </p>
+      </li>
+      <li>
+        <p>
+         <m>p(\lambda)=0</m>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</corollary>
+<example xml:id="eg_eigenvalues_rotation">
+  <title>Rotation (again)</title>
+  <statement>
+    <p>
+    Fix <m>\theta\in (0,2\pi)</m> and let <m>T\colon \R^2\rightarrow \R^2</m> be rotation by <m>\theta</m>. Recall that we have <m>T=T_A</m> where
+    <md>
+      A=\begin{amatrix}[rr]\cos\theta\amp -\sin\theta\\ \sin\theta\amp \cos\theta  \end{amatrix}
+    </md>.
+    Now compute
+    <md>
+      <mrow>p(t)=\det(tI-A) \amp= \det \begin{bmatrix}
+        t-\cos\theta\amp \sin\theta\\ -\sin\theta\amp t-\cos\theta
+      \end{bmatrix} </mrow>
+      <mrow> \amp=t^2-2(\cos\theta)t+1</mrow>
+    </md>.
+    We can use the quadratic formula to find the roots of <m>p(t)</m>:
+    <md>
+      t=\frac{2\cos\theta\pm \sqrt{4\cos^2\theta-4}}{2}=\cos\theta\pm \sqrt{\cos^2\theta-1}
+    </md>.
+    When <m>\theta=\pi</m>, this reduces to <m>t=\cos\pi=-1</m>, confirming our conclusion in <xref ref="eg_eigenvector_adhoc_rotation"/> that <m>\lambda=-1</m> is the only eigenvalue of the rotation by <m>\pi</m> operator.
+    </p>
+    <p>
+      When <m>\theta\in (0,\pi)</m> and <m>\theta\ne \pi</m>, then <m>\cos^2\theta-1\lt 0</m>
+      and we see that <m>p(t)</m> has no real roots. This confirms our conclusion in <xref ref="eg_eigenvector_adhoc_rotation"/> that such rotations have no eigenvalues.
+    </p>
+  </statement>
+</example>
+<p>
+  Clearly the function <m>p(t)=\det(tI-A)</m> deserves a name; we call it the <em>characteristic polynomial</em> of <m>A</m>.
+</p>
+<definition>
+  <idx><h>characteristic polynomial</h><h>of a matrix</h></idx>
+  <title>Characteristic polynomial of a matrix</title>
+  <statement>
+    <p>
+      Let <m>A</m> be <m>n\times n</m>.
+      The <term>characteristic polynomial</term>
+      of <m>A</m> is the function
+      <md>
+      p(t)=\det(tI-A)
+      </md>.
+    </p>
+  </statement>
+</definition>
+<p>
+We will show below that <m>p(t)=\det(tI-A)</m> is indeed a polynomial (<xref ref="th_characteristic_polynomial"/>). We postpone that discussion for now in order to present some examples of systematically computing eigenvalues and eigenvectors of matrices. Below you find the the complete description of this procedure.
+</p>
+
+<algorithm xml:id="proc_eigenspaces_matrix">
+  <title>Computing eigenspaces of a matrix</title>
+  <statement>
+    <p>
+      Let <m>A</m> be an <m>n\times n</m> matrix. To find all eigenvalues <m>\lambda</m> of <m>A</m> and compute a basis for the corresponding eigenspace <m>W_\lambda</m>, proceed as follows.
+    </p>
+    <ol>
+      <li>
+        <p>
+          Compute <m>p(t)=\det(tI-A)</m>. Let
+          <m>\lambda_1, \lambda_2, \dots, \lambda_r</m> be the distinct <em>real</em> roots of <m>p(t)</m>. These are the eigenvalues of <m>A</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          For each <m>\lambda\in \{\lambda_1, \lambda_2,\dots, \lambda_r\}</m>, the corresponding eigenspace is
+          <md>
+          W_{\lambda}=\NS(\lambda I-A)
+          </md>.
+          Use the null space algorithm (<xref ref="proc_fund_spaces" text="global"/>) to compute a basis for <m>W_\lambda</m>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</algorithm>
+<example xml:id="eg_eigenspaces_A">
+  <title>Compute eigenspaces</title>
+  
+  
+  <statement>
+    <p>
+    Let <m>A=\begin{amatrix}[rr]1\amp 2\\ 1\amp 2 \end{amatrix}</m>.
+    <ol>
+      <li>
+        <p>
+          Find all eigenvalue of <m>A</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Compute a basis for the eigenspace <m>W_\lambda</m> for each eigenvalue <m>\lambda</m>.
+        </p>
+      </li>
+    </ol>
+    </p>
+  </statement>
+  <solution>
+    <p>
+      We compute
+      <md>p(t)=\det(tI-A)=\det \begin{amatrix}[rr]t-1\amp -2\\ -1\amp t-2 \end{amatrix}=t^2-3t=t(t-3)
+      </md>.
+      Thus the eigenvalues of <m>A</m> are <m>\lambda=0</m> and <m>\lambda=3</m>.
+    </p>
+    <case>
+     <title>Basis for <m>W_0</m></title>
+    <p>
+    We have
+    <md>
+      <mrow>W_0 \amp =\NS(0I-A)</mrow>
+      <mrow> \amp = \NS(-A) </mrow>
+      <mrow>  \amp =\NS\begin{amatrix}[rr]-1\amp -2\\ -1\amp -2 \end{amatrix}</mrow>
+      <mrow>  \amp =\Span\{(2,-1)\}</mrow>
+    </md>.
+    Thus <m>B=\{(2,-1)\}</m> is a basis for <m>W_0</m>.
+    </p>
+    </case>
+    <case>
+     <title>Basis for <m>W_3</m></title>
+    <p>
+    We have
+    <md>
+      <mrow>W_3 \amp =\NS(3I-A)</mrow>
+      <mrow>  \amp =\NS\begin{amatrix}[rr]2\amp -2\\ -1\amp 1 \end{amatrix}</mrow>
+      <mrow>  \amp =\Span\{(1,1)\}</mrow>
+    </md>.
+    Thus <m>B'=\{(1,1)\}</m> is a basis for <m>W_3</m>. 
+    </p>
+    </case>
+  </solution>
+</example>
+
+<example xml:id="eg_eigenspaces_B">
+  <title>Compute eigenspaces</title>
+  <statement>
+    <p>
+    Let
+    <md>
+    A=\begin{amatrix}[rrr]2\amp -1\amp -1\\ -1\amp 2\amp -1\\ -1\amp -1\amp 2 \end{amatrix}</md>.
+    </p>
+    <ol>
+      <li>
+        <p>
+          Find all eigenvalues of <m>A</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Compute a basis for the eigenspace <m>W_\lambda</m> for each eigenvalue <m>\lambda</m>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+  <solution>
+    <p>
+      First compute
+      <md>
+        <mrow>p(t) \amp = \det (tI-A)</mrow>
+        <mrow> \amp = \det \begin{amatrix}[rrr]t-2\amp 1\amp 1\\ 1\amp t-2\amp 1\\ 1\amp 1\amp t-2 \end{amatrix} </mrow>
+        <mrow>  \amp = t^3-6t^2+9t</mrow>
+        <mrow>  \amp = t(t^2-6t+9)</mrow>
+        <mrow>  \amp = t(t-3)^2</mrow>
+      </md>.
+      We see that the eigenvalues of <m>A</m> are <m>\lambda=0</m> and <m>\lambda=3</m>. Now compute bases for their corresponding eigenspaces.
+     </p>
+     <case>
+      <title>Basis of <m>W_0</m></title>
+     <p>
+     We have
+     <md>
+       <mrow>W_0 \amp = \NS(0I-A)</mrow>
+       <mrow> \amp = \NS \begin{amatrix}[rrr]-2\amp 1\amp 1\\ 1\amp -2\amp 1\\ 1\amp 1\amp -2 \end{amatrix}  </mrow>
+       <mrow>  \amp = \Span((1,1,1)) \amp <xref ref="proc_fund_spaces"/> </mrow>
+     </md>.
+     Thus <m>B=((1,1,1))</m> is a basis for <m>W_0</m>. 
+     </p>
+     </case>
+     <case>
+      <title>Basis of <m>W_3</m></title>
+     <p>
+     We have
+     <md>
+       <mrow>W_3 \amp = \NS(3I-A)</mrow>
+       <mrow> \amp= \NS \begin{amatrix}[rrr]1\amp 1\amp 1\\ 1\amp 1\amp 1\\ 1\amp 1\amp 1 \end{amatrix} </mrow>
+       <mrow>  \amp = \Span( (1,-1,0),(1,0,-1)) \amp <xref ref="proc_fund_spaces"/></mrow>
+     </md>.
+     Thus <m>B'=((1,-1,0),(1,0,-1))</m> is a basis for <m>W_3</m>. 
+     </p>
+     </case>
+  </solution>
+</example>
+<remark xml:id="rm_eigenspaces">
+  <title>Eigenspaces as packets of eigenvectors</title>
+  <p>
+    It is important to realize that if <m>\lambda</m> is an eigenvalue of <m>A</m>, then there is not just one <m>\lambda</m>-eigenvector, but rather an entire subspace <m>W_\lambda</m> of eigenvectors: that is, each of the infinitely many nonzero elements of <m>W_\lambda</m> is an eigenvector with eigenvalue <m>\lambda</m>. Thus every matrix has associated to it various <q>packets</q> of eigenvectors <m>W_{\lambda_1},W_{\lambda_2},\dots, W_{\lambda_r}</m> of varying size, as measured by <m>\dim W_{\lambda_i}</m>. 
+  </p>
+  <p>
+    For example the matrix <m>A</m> of <xref ref="eg_eigenspaces_B"/> has two packets of eigenvectors associated to it: the 0-eigenvectors form the 1-dimensional packet <m>W_0</m>, and the 3-eigenvectors form the 2-dimensional packet <m>W_3</m>.   
+  </p>
+  
+</remark>
+<p>
+  Our next example illustrates that the characteristic polynomial of a matrix may not factor completely into linear terms. 
+</p>
+<example xml:base="eg_eigenspaces_4by4">
+  <title>Compute eigenspaces</title>
+  <statement>
+    <p>
+      The characteristic polynomial of 
+      <md>
+        A=\begin{amatrix}[rrrr]
+        3 \amp -1 \amp -1 \amp -1 \\
+-5 \amp 2 \amp 2 \amp 3 \\
+6 \amp -1 \amp -2 \amp -3 \\
+1 \amp -1 \amp 0 \amp 0
+        \end{amatrix}
+      </md>
+      is <m>p(x)=t^{4} - 3 t^{3} + 3 t^{2} - 3 t + 2</m>.
+      <ol>
+        <li>
+          <p>
+            Find all eigenvalues of <m>A</m>. 
+          </p>
+        </li>
+        <li>
+          <p>
+            For each eigenvalue <m>\lambda</m> compute a basis for the eigenspace <m>W_\lambda</m>. 
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+  <solution>
+    <p>
+      <ol>
+        <li>
+          <p>
+            To find the eigenvalues of <m>A</m> we must factor the polynomial <m>p(t)</m>. We first look for integer roots that divide the constant term <m>2</m>. We see that <m>p(1)=0</m>, and thus that <m>(t-1)</m> is a factor of <m>p(t)</m>. Using polynomial long division, we see that 
+            <md>p(t)=(t-1)(t^3 - 2t^2 + t - 2)</md>. Continuing this process with the cubic polynomial, we factor
+            <md>
+              t^3 - 2t^2 + t - 2=(t-2)(t^2+1)
+            </md>.
+            Since <m>t^2+1</m> is irreducible over <m>\R</m>, we have our factorization 
+            <md>
+              p(t)=(t-1)(t-2)(t^2+1)
+            </md>, 
+            and we see that the eigenvalues of <m>A</m> are <m>\lambda=1</m> and <m>\lambda=2</m>.  
+          </p>
+        </li>
+        <li>
+          <case>
+            <title>Basis of <m>W_1</m></title>
+            <p>
+            We have 
+            <md>
+              <mrow>W_1 \amp =\NS (I-A)</mrow>
+              <mrow> \amp = \NS \begin{amatrix}[rrrr]
+                -2 \amp 1 \amp 1 \amp 1 \\
+                5 \amp -1 \amp -2 \amp -3 \\
+                -6 \amp 1 \amp 3 \amp 3 \\
+                -1 \amp 1 \amp 0 \amp 1
+              \end{amatrix}
+              </mrow>
+              <mrow> \amp = \NS \begin{amatrix}[rrrr]
+                1 \amp -\frac{1}{2} \amp -\frac{1}{2} \amp -\frac{1}{2} \\
+  0 \amp 1 \amp \frac{1}{3} \amp -\frac{1}{3} \\
+  0 \amp 0 \amp 1 \amp -1 \\
+  0 \amp 0 \amp 0 \amp 0
+              \end{amatrix}
+              </mrow>
+              <mrow> \amp =\Span\{(1,0,1,1)\}</mrow>
+            </md>.
+            We conclude that <m>B=\{(1,0,1,1)\}</m> is a basis of <m>W_1</m>. 
+            </p>
+            </case>
+          <case>
+          <title>Basis of <m>W_2</m></title>
+          <p>
+          We have 
+          <md>
+            <mrow>W_2 \amp =\NS (2-A)</mrow>
+            <mrow> \amp = \NS \begin{amatrix}[rrrr]
+              -1 \amp 1 \amp 1 \amp 1 \\
+5 \amp 0 \amp -2 \amp -3 \\
+-6 \amp 1 \amp 4 \amp 3 \\
+-1 \amp 1 \amp 0 \amp 2
+            \end{amatrix}
+            </mrow>
+            <mrow> \amp = \NS \begin{amatrix}[rrrr]
+              1 \amp -1 \amp -1 \amp -1 \\
+0 \amp 1 \amp \frac{3}{5} \amp \frac{2}{5} \\
+0 \amp 0 \amp 1 \amp -1 \\
+0 \amp 0 \amp 0 \amp 0
+            \end{amatrix}
+            </mrow>
+            <mrow> \amp = \Span\{(1,-1,1,1)\}</mrow>
+          </md>.
+          We conclude that <m>B'=\{(1,-1,1,1)\}</m> is a basis of <m>W_2</m>. 
+          </p>
+          </case>
+        </li>
+      </ol>
+    </p>
+  </solution>
+</example>
+<p>
+<xref first="eg_eigenspaces_A" last="eg_eigenspaces_B"/> bring to light a connection between eigenvalues and invertibility that is worth highlighting.
+</p>
+<corollary xml:id="cor_eigenvalue_invertible">
+<title>Null space as eigenspace</title>
+  <statement>
+    <p>
+      Let <m>A</m> be an <m>n\times n</m> matrix.
+      <ol>
+        <li>
+          <p>
+            The <m>0</m>-eigenspace of <m>A</m> is equal to the null space of <m>A</m>: <ie />,
+            <md>
+              W_0=\NS A
+            </md>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Zero is an eigenvalue of <m>A</m> if and only if <m>A</m> is not invertible.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+  <proof>
+      <ol>
+        <li>
+          <p>
+            We have
+            <md>
+              W_0=\NS(0I-A)=\NS(-A).
+            </md>
+            Since <m>-A\boldx=\boldzero</m> if and only if <m>A\boldx=\boldzero</m>, we conclude that <m>\NS(-A)=\NS A</m>, and hence <m>W_0=\NS A</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Zero is an eigenvalue of <m>A</m> if and only if <m>W_0</m> is nontrivial, if and only if <m>\NS A</m> is nontrivial (by (1)), if and only if <m>A</m> is not invertible.
+          </p>
+        </li>
+      </ol>
+  </proof>
+
+</corollary>
+<p>
+  Of course statement (2) of <xref ref="cor_eigenvalue_invertible"/> gives rise to yet another equivalent formulation of invertibility, and we include this in our ever-expanding <xref ref="th_invertibility_with_eigenvalue" text="custom">invertibility theorem</xref> at the end of the section. We end our current discussion with an example illustrating how to compute the eigenvalues and eigenvectors of an arbitrary linear transformation <m>T\colon V\rightarrow V</m> of a finite-dimensional space. The idea is to first represent <m>T</m> as a matrix with respect to some basis <m>B</m>, apply <xref ref="proc_eigenspaces_matrix"/> to this matrix, and then <q>lift</q> the results back to <m>V</m>.
+</p>
+<algorithm xml:id="proc_eigenspaces_transformation">
+  <title>Computing eigenspaces of a linear transformation</title>
+  <statement>
+    <p>
+      Let <m>T\colon V\rightarrow V</m> be a linear transformation of a finite-dimensional vector space <m>V</m>. To compute the eigenvalues and eigenspaces of <m>T</m>, proceed as follows.
+    </p>
+    <ol>
+      <li>
+        <p>
+          Pick <em>any</em> ordered basis <m>B</m> of <m>V</m> and compute <m>A=[T]_B</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Apply <xref ref="proc_eigenspaces_matrix"/> to <m>A</m> to compute bases of <m>W_\lambda</m> for each eigenvalue <m>\lambda</m> of <m>A</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          For each eigenvalue <m>\lambda</m>, <q>lift</q> the basis of <m>W_\lambda\subseteq \R^n</m> back up to <m>V</m> using the coordinate transformation <m>[\phantom{\boldv}]_B</m>. The result is the basis for the <m>\lambda</m>-eigenspace of <m>T</m>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+</algorithm>
+<example xml:id="eg_eigenvector_systematic_transposition">
+  <title>Transposition (again)</title>
+  <statement>
+    <p>
+      Let <m>S\colon M_{22}\rightarrow M_{22}</m> be defined as <m>S(A)=A^T</m>.
+    </p>
+    <ol>
+      <li>
+        <p>
+          Find all eigenvalues of <m>S</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          For each eigenvalue <m>\lambda</m> of <m>S</m> compute a basis for <m>W_\lambda</m>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+  <solution>
+    <p>
+      Let <m>B=(E_{11}, E_{12}, E_{21}, E_{22})</m>, the standard ordered basis of <m>M_{22}</m>. Compute <m>A=[S]_B</m>:
+      <md>
+        <mrow> A=[S]_B \amp =\begin{bmatrix}
+          \vert \amp \vert\amp \vert\amp \vert \\
+          [S(E_{11})]_B\amp [S(E_{12})]_B \amp [S(E_{21})]_B \amp [S(E_{22})]_B\\
+          \vert \amp \vert \amp \vert\amp \vert
+      \end{bmatrix} </mrow>
+      <mrow>  \amp = =\begin{bmatrix}
+        \vert \amp \vert\amp \vert\amp \vert \\
+        [E_{11}]_B\amp [E_{21}]_B \amp [E_{12}]_B \amp [E_{22}]_B \\
+        \vert \amp \vert \amp \vert\amp \vert
+    \end{bmatrix}
+    \amp (E_{11}^T=E_{11}, E_{12}^T=E_{21}, \text{etc.})</mrow>
+    <mrow>  \amp =\begin{bmatrix}
+      1\amp 0\amp 0\amp 0\\
+      0\amp 0\amp 1\amp 0\\
+      0\amp 1\amp 0\amp 0\\
+      0\amp 0\amp 0\amp 1
+    \end{bmatrix} </mrow>
+      </md>.
+    Now apply <xref ref="proc_eigenspaces_matrix"/> to <m>A</m>. From <m>p(t)=\det(tI-A)=(t-1)^2(t^2-1)=(t-1)^3(t+1)</m> we conclude that <m>\lambda=1</m> and <m>\lambda=-1</m> are the only eigenvalues of <m>A</m> (and hence also <m>S</m>). Bases for the corresponding eigenspaces of <m>A</m> are easily computed as
+    <md>
+      <mrow>\NS(I-A) \amp= \Span\{(1,0,0,0), (0,1,1,0), (0,0,0,1)\} </mrow>
+      <mrow> \NS(-I-A) \amp =\Span\{(0,1,-1,0)\} </mrow>
+    </md>.
+    Now lift these up to bases of the eigenspaces <m>W_1</m> and <m>W_{-1}</m> of <m>S</m>:
+    <md>
+      <mrow>W_1 \amp=\Span\left\{ A_1=\begin{bmatrix}
+        1\amp 0\\ 0 \amp 0
+      \end{bmatrix},
+      A_2=\begin{bmatrix}
+        0\amp 1\\ 1 \amp 0
+      \end{bmatrix},
+      A_3=\begin{bmatrix}
+        0\amp 0\\ 0 \amp 1
+      \end{bmatrix} \right\} </mrow>
+      <mrow>W_{-1} \amp= \Span\left\{A_4=
+      \begin{amatrix}[rr]
+        0\amp 1\\ -1 \amp 0
+      \end{amatrix} \right\} </mrow>
+    </md>.
+    It is easy to see that <m>W_1</m> and <m>W_2</m> are the subspaces of symmetric and skew-symmetric matrices, respectively. This is consistent with our analysis in <xref ref="eg_eigenvector_adhoc_transposition"/>.
+    </p>
+  </solution>
+</example>
+</subsection>
+<subsection xml:id="ss_eigenvectors_characteristic_polynomial">
+  <title>Properties of the characteristic polynomial</title>
+  <p>
+    We turn now to some very useful properties of the characteristic polynomial <m>p(t)=\det(tI-A)</m> of a square matrix <m>A</m>.
+  </p>
+<theorem xml:id="th_characteristic_polynomial">
+  <title>Characteristic polynomial</title>
+  <statement>
+    <p>
+      Let <m>A</m> be an <m>n\times n</m> matrix.
+    </p>
+    <ol>
+      <li>
+        <p>
+          The function <m>p(t)=\det (tI-A)</m> is a monic polynomial of degree <m>n</m> with real coefficients: <ie />,
+          <md number="yes" xml:id="eq_char_poly">
+          p(t)=t^n+a_{n-1}t^{n-1}+\cdots +a_1t+a_0, a_i\in \R
+        </md>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Over the complex numbers <m>\C</m> we can factor <m>p(t)</m> completely as
+          <md>
+            p(t)=(t-\lambda_1)(t-\lambda_2)\cdots (t-\lambda_n),
+          </md>
+          where the <m>\lambda_i\in \C</m> are the (not necessarily distinct) roots of <m>p(t)</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The eigenvalues of <m>A</m> are precisely the real roots of <m>p(t)</m>: <ie />, the <m>\lambda_i</m> for which <m>\lambda_i\in \R</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The coefficient <m>a_{n-1}</m> in <xref ref="eq_char_poly"/> satisfies
+          <md number="yes" xml:id="eq_char_poly_trace">
+            a_{n-1}=-\tr A=-(\lambda_1+\lambda_2+\cdots +\lambda_n)
+          </md>.
+        </p>
+      </li>
+      <li>
+        <p>
+          The coefficient <m>a_0</m> in <xref ref="eq_char_poly"/> satisfies
+        <md number="yes" xml:id="eq_char_poly_det">
+          a_0=(-1)^n\det A=(-1)^n\lambda_1\lambda_2\cdots \lambda_n
+        </md>.
+        </p>
+      </li>
+      <li>
+        <p>
+          We conclude that
+          <mdn>
+            <mrow xml:id="eq_tr_sum_eigenvalues"> \tr A \amp = \lambda_1+\lambda_2+\cdots +\lambda_n </mrow>
+            <mrow xml:id="eq_det_prod_eigenvalues"> \det A\amp = \lambda_1\lambda_2\cdots \lambda_n </mrow>
+          </mdn>.
+        </p>
+      </li>
+    </ol>
+  </statement>
+  <proof>
+    <proof>
+      <title>Proof of (1)</title>
+      <p>
+       We show the claim by induction on <m>n\geq 1</m>. The claim is easily seen to be true for all <m>1\times 1</m> and <m>2\times 2</m> matrices.
+      </p>
+      <p>
+        Fix <m>n\geq 3</m> and assume the claim is true for all <m>(n-1)\times (n-1)</m> matrices. Let <m>A=[a_{ij}]_{1\leq i,j\leq n}</m>.  Expanding  <m>p(t)=\det (tI-A)</m> along the first row yields
+        <md number="yes" xml:id="eq_char_poly_proof">
+          p(t)=(t-a_{11})\det(t-A)_{11}-a_{12}\det(t-A)_{12}+a_{13}\det(t-A)_{13}+\cdots,
+        </md>.
+        (Recall that for any matrix <m>B</m> the notation <m>B_{ij}</m> denotes the submatrix obtained by removing the <m>i</m>-th row and <m>j</m>-th column of <m>B</m>.) First observe that <m>(t-A)_{11}=t-A_{11}</m>, and thus <m>\det(t-A)_{11}</m> is the characteristic polynomial of the <m>(n-1)\times (n-1)</m> matrix <m>A_{11}</m>. By induction this is a monic polynomial of degree <m>n-1</m>, and hence the
+        first term of <xref ref="eq_char_poly_proof"/>, <m>(t-a_{11})\det(t-A)_{11}</m> is a monic polynomial of degree <m>n</m>. Unfortunately, the remaining terms in the expansion <xref ref="eq_char_poly_proof"/> do not lend themselves to a direct application of the induction hypothesis. However, we observe that the <m>(n-1)\times (n-1)</m> submatrices <m>(t-A)_{1j}</m> for <m>j\geq 2</m> all satisfy the following property: their first columns contains only scalars; the remaining columns contain exactly one entry of the form <m>t-c</m>, while the rest of the entries are scalars. An easy (additional) induction argument shows that the determinant of such a matrix is polynomial of degree at most <m>n-2</m>. (We leave this to you!) Since the first term of <xref ref="eq_char_poly_proof"/> is a monic polynomial of degree <m>n</m> and the rest of the terms are polynomials of degree at most <m>n-2</m>, we conclude that <m>p(t)</m> itself is a monic polynomial of degree <m>n</m>, as desired. 
+      </p>
+    </proof>
+    <proof>
+      <title>Proof of (2)-(3)</title>
+      <p>
+      Statement (2) is the fundamental theorem of algebra: every polynomial with real coeofficients factors completely over the complex numbers. Statement (3) follows from <xref ref="cor_eigenvalues"/>.
+      </p>
+    </proof>
+    <proof>
+      <title>Proof of (4)-(6)</title>
+      <p>
+        Statement (6) clearly follows from statements (4) and (5). From (1) and (2) we conclude
+        <md number="yes" xml:id="eq_char_poly_equality">
+          t^n+a_{n-1}t^{n-1}+\cdots +a_1t+a_0=(t-\lambda_1)(t-\lambda_2)\cdots (t-\lambda_n)
+        </md>.
+        Expanding out the right-hand side of this polynomial equality yields a polynomial of the form
+        <md>
+          t^n-(\lambda_1+\lambda_2+\cdots \lambda_n)t^{n-1}+\cdots +b_1t+(-1)^n\lambda_1\lambda_2\cdots \lambda_n
+        </md>.
+        Going back and equating coefficients between the left- and right-hand sides of <xref ref="eq_char_poly_equality"/> yields
+        <md>
+          <mrow>a_{n-1} \amp = -(\lambda_1+\lambda_2+\cdots +\lambda_n)</mrow>
+          <mrow> a_0 \amp =(-1)^n\lambda_1\lambda_2\cdots \lambda_n </mrow>
+        </md>.
+        This proves half of statements (4) and (5).
+        The fact that <m>a_{n-1}=-\tr A</m> can be proved by induction using a modified version of the argument from the proof of (1) above. It remains to show that <m>a_n=(-1)^n\det A</m>. We have
+        <md>
+          <mrow>a_n \amp= p(0) </mrow>
+          <mrow> \amp=\det(0I-A) </mrow>
+          <mrow>  \amp=\det(-A) </mrow>
+          <mrow>  \amp =(-1)^n\det A</mrow>
+        </md>.
+      </p>
+    </proof>
+  </proof>
+</theorem>
+    <remark xml:id="rm_char_poly_trick">
+  <title>Characteristic polynomial for <m>2\times 2</m> matrices</title>
+  <statement>
+    <p>
+      Let <m>A</m> be a <m>2\times 2</m> matrix, and let <m>p(t)=\det(tI-A)</m>. Using <xref first="eq_char_poly" last="eq_char_poly_det"/> we have
+    <md>
+      p(t)=t^2-(\tr A) t+\det A
+    </md>.
+    This is a useful trick if you want to produce a <m>2\times 2</m> matrix with a prescribed characteristic polynomial. For example, a matrix with characteristic polynomial <m>p(t)=t^2-2</m> has trace equal to 0 and determinant equal to <m>-2</m>. Such matrices are easy to construct: <eg />,
+    <md>
+    A_1=\begin{amatrix}[rr]0\amp 2\\ 1\amp 0  \end{amatrix}, A_2=\begin{amatrix}[rr]1\amp 1 \\ 1\amp -1  \end{amatrix}, A_3=\begin{amatrix}[rr] 3\amp -7 \\ 1\amp -3 \end{amatrix}
+    </md>.
+    </p>
+  </statement>
+</remark>
+
+<p>
+  An important consequence of <xref ref="th_characteristic_polynomial"/> is that an <m>n\times n</m> matrix <m>A</m> can have at most <m>n</m> distinct eigenvalues. Indeed, the eigenvalues of <m>A</m> are the real roots appearing among the <m>\lambda_i</m> in the factorization
+  <md>
+    p(t)=\det(tI-A)=(t-\lambda_1)(t-\lambda_2)\cdots (t-\lambda_n)
+  </md>. This proves the following corollary.
+</p>
+<corollary xml:id="cor_eigenvalues_atmost_n">
+  <title>Number of eigenvalues</title>
+  <statement>
+    <p>
+      An <m>n\times n</m> matrix <m>A</m> has at most <m>n</m> distinct eigenvalues.
+    </p>
+  </statement>
+</corollary>
+<p>
+  Lastly, as promised we end by incorporating statement (2) of <xref ref="cor_eigenvalue_invertible"/> into our invertibility theorem.
+</p>
+<theorem xml:id="th_invertibility_with_eigenvalue">
+  <title>Invertibility theorem</title>
+  <statement>
+    <p>
+      Let <m>A</m> be an <m>n\times n</m> matrix.
+      The following statements are equivalent.
+    <ol cols="2">
+      <li xml:id="inv6_statement_def">
+        <p>
+          <m>A</m> is invertible.
+        </p>
+      </li>
+
+      <li xml:id="inv6_statement_unique_sol">
+        <p>
+          The matrix equation <md>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</md> has a <em>unique solution</em> for any <m>\boldb\in \R^n</m>.
+        </p>
+      </li>
+      <li xml:id="inv6_statement_exists_sol">
+        <p>
+          The matrix equation <md>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</md> has a solution for any <m>\boldb\in \R^n</m>.
+        </p>
+      </li>
+      <li xml:id="inv6_statement_trivial_sol">
+        <p>
+          The matrix equation <md>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldzero}</md> has a unique solution: namely, <m>\boldx=\boldzero_{n\times 1}</m>.
+        </p>
+      </li>
+      <li xml:id="inv6_statement_row_equiv">
+        <p>
+          <m>A</m> is row equivalent to <m>I_n</m>,
+          the <m>n\times n</m> identity matrix.
+        </p>
+      </li>
+      <li xml:id="inv6_statement_prod_elems">
+        <p>
+          <m>A</m> is a product of elementary matrices.
+        </p>
+      </li>
+      <li xml:id="inv6_statement_det">
+        <p>
+          <m>\det A\ne 0</m>.
+        </p>
+      </li>
+      <li xml:id="inv6_statement_nullspace">
+        <p>
+          <m>\NS A=\{\boldzero\}</m>
+        </p>
+      </li>
+      <li xml:id="inv6_statement_nullity">
+        <p>
+          <m>\nullity A=0</m>
+        </p>
+      </li>
+      <li xml:id="inv6_statement_rank">
+        <p>
+          <m>\rank A=n</m>
+        </p>
+      </li>
+      <li xml:id="inv6_statement_rowspace">
+        <p>
+          <m>\RS A=\R^n</m>
+        </p>
+      </li>
+      <li xml:id="inv6_statement_colspace">
+        <p>
+          <m>\CS A=\R^n</m>
+        </p>
+      </li>
+      <li xml:id="inv6_statement_cols">
+        <p>
+          Any of the following equivalent conditions about the set <m>S</m> of columns of <m>A</m> hold: <m>S</m> is a basis of <m>\R^n</m>; <m>S</m> spans <m>\R^n</m>; <m>S</m> is linearly independent.
+        </p>
+      </li>
+      <li xml:id="inv6_statement_rows">
+        <p>
+          Any of the following equivalent conditions about the set <m>S</m> of rows of <m>A</m> hold: <m>S</m> is a basis of <m>\R^n</m>; <m>S</m> spans <m>\R^n</m>; <m>S</m> is linearly independent.
+        </p>
+      </li>
+      <li xml:id="inv6_isom">
+        <p>
+          The matrix transformationn <m>T_A\colon \R^n\rightarrow \R^n</m> is an isomorphism. 
+        </p>
+      </li>
+      <li xml:id="inv7_eigenvalue">
+        <p>
+          <m>0</m> is not an eigenvalue of <m>A</m>. 
+        </p>
+      </li>
+    </ol>
+  </p>
+  </statement>
+</theorem>
+</subsection>
+
+
+<xi:include href="./s_eigenvectors_ex.ptx"/>
+
+
+</section>

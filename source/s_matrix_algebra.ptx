@@ -62,10 +62,10 @@
       <m>B=[b_{ij}]_{r\times s}</m>,
       <m>C=[c_{ij}]_{s\times n}</m>.
       To show
-      <me>
+      <md>
         A(BC)=(AB)C
-      </me>,
-      we must show (1) that <m>A(BC)</m> and <m>(AB)C</m> have the same dimension, and (2) that <me>[A(BC)]_{ij}=[(AB)C]_{ij}</me> for all possible <m>(i,j)</m>.
+      </md>,
+      we must show (1) that <m>A(BC)</m> and <m>(AB)C</m> have the same dimension, and (2) that <md>[A(BC)]_{ij}=[(AB)C]_{ij}</md> for all possible <m>(i,j)</m>.
     </p>
       <p>
       The usual observation about <q>inner</q> and <q>outer</q> dimensions shows that both <m>A(BC)</m> and <m>(AB)C</m> have dimension <m>m\times n</m>.
@@ -107,17 +107,17 @@
     <p>
       The <term><m>n\times n</m> identity matrix</term>, denoted <m>I_n</m>,
       is the square <m>n\times n</m> matrix
-      <me>
+      <md>
         I_n=\begin{bmatrix}1\amp 0\amp 0 \amp \dots\amp 0\\ 0\amp 1 \amp 0 \amp \dots \amp 0\\
         0\amp 0\amp 1 \amp \dots \amp 0\\
       \vdots \amp \vdots \amp \amp \ddots \amp \vdots\\
      0\amp 0\amp \dots \amp 0\amp 1\end{bmatrix}
-      </me>
+      </md>
         with ones along the diagonal and zeros everywhere else. In other words, for all <m>1\leq i\leq n</m> and <m>1\leq j\leq n</m>, we have
-      <me>
+      <md>
         (I_n)_{ij}=\begin{cases} 1 \amp \text{if } i=j \\ 0\amp \text{if } i\ne j
       \end{cases}
-      </me>.
+      </md>.
       When there is no confusion about which dimension indentity matrix is intended, we will often write simply <m>I</m> instead of <m>I_n</m>.
     </p>
   </statement>
@@ -127,9 +127,9 @@
     <title>Multiplicative identities</title>
     <statement>
         <p> Let <m>n</m> be a positive integer. The <m>n\times n</m> identity matrix acts as a multiplicative identity among <m>n\times n</m> matrices in the following sense: for all <m>A\in M_{nn}</m> we have
-          <me>
+          <md>
             I_n\, A=A\, I_n=A
-          </me>.
+          </md>.
         </p>
     </statement>
   </theorem>
@@ -143,13 +143,13 @@
   <title>Cancellation laws fulfilled and violated</title>
   <p>
     When performing real number algebra, we frequently make use of cancellation laws, and these laws come in a variety of flavors. For example, the <em>additive cancellation law</em> asserts that 
-    <me>
+    <md>
       x+y=x+z \iff y=z
-    </me>
+    </md>
     for all <m>x,y,z\in \R</m>. Similarly, the <em>multiplicative cancellation law</em> asserts that for any <em>nonzero</em> <m>x\in \R</m>, we have   
-    <me>
+    <md>
       xy=xz \iff y=z
-    </me>
+    </md>
     for all <m>y,z\in \R</m>. We now investigate the extent to which these laws apply in matrix algebra. The results, as you will see, are mixed!
   </p>
   <theorem xml:id="c_matrix_additive_canc">
@@ -158,9 +158,9 @@
     <statement>
       <p>
         Given <m>m\times n</m> matrices <m>A, B</m>, and <m>C</m>, we have <m>A+B=A+C</m> if and only if <m>B=C</m>. Using logical notation:
-        <me>
+        <md>
           A+B=A+C \iff  B=C.
-        </me>
+        </md>
       </p>
     </statement>
     <proof>
@@ -203,9 +203,9 @@
 </remark>
 <warning>
 <p>Though we can perform additive cancellation in matrix algebra, we can <em>not</em> always perform <em>multiplicative cancellation</em>. For example, consider the matrices
-<me>
+<md>
 A=\begin{bmatrix}1\amp 1\\ 1\amp 1\end{bmatrix}, B=\begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix}, C=\begin{bmatrix}0\amp 0\\ 1\amp 0 \end{bmatrix}
-</me>.
+</md>.
 Check for yourself that <m>AB=AC</m>, and yet <m>B\ne C</m>. In other words, we cannot always <q>cancel</q> <m>A</m> from the matrix equation <m>AB=AC</m>.
 </p>
 </warning>
@@ -228,9 +228,9 @@ The example in our warning above is but one instance of the general failure of t
         <p>
           If the product of two matrices is the zero matrix,
           we <em>cannot</em> conclude that one of matrices is the zero matrix. In logical notation:
-          <men xml:id="eq_mult_has_zero_divisors">
+          <md number="yes" xml:id="eq_mult_has_zero_divisors">
             \underset{m\times n}{A}\, \underset{n\times r}{B}=\boldzero_{m\times r}\;\not\!\!\!\!\implies A=\boldzero_{m\times n} \text{ or }  B=\boldzero_{n\times r}
-          </men>.
+          </md>.
               </p>
             </li>
           </ol>
@@ -248,16 +248,16 @@ The example in our warning above is but one instance of the general failure of t
           <mrow> \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} \amp = \begin{bmatrix} 0\amp 0\\ 0\amp 0 \end{bmatrix} </mrow>
         </md>
         and thus 
-        <me>\begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \ne \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix}
-        </me>.
+        <md>\begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \ne \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix}
+        </md>.
         </p>
       </li>
       <li>
         <p>
             Observe that 
-            <me>
+            <md>
               \begin{bmatrix}0\amp 1\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix} =\begin{bmatrix}0\amp 0\\ 0\amp 0 \end{bmatrix} 
-            </me>.
+            </md>.
          This is an example of two nonzero matrices whose product is the zero matrix.
         </p>
       </li>
@@ -273,17 +273,17 @@ The example in our warning above is but one instance of the general failure of t
         <li>
           <p>
             Suppose matrices <m>A, B, C</m> satisfy <m>AB=AC</m> and <m>A\ne \boldzero</m>. We <em>cannot</em> conclude that <m>B=C</m>. In logical notation:
-            <men xml:id="eq_no_left_cancel" >
+            <md number="yes" xml:id="eq_no_left_cancel ">
               AB=AC \;\not\!\!\!\!\implies B=C
-            </men>
+            </md>
           </p>
         </li>
         <li>
           <p>
             Suppose matrices <m>B, C, D</m> satisfy <m>BD=CD</m> and <m>D\ne \boldzero</m>. We <em>cannot</em> conclude that <m>B=C</m>. In logical notation:
-            <men xml:id="eq_no_right_cancel">
+            <md number="yes" xml:id="eq_no_right_cancel">
               BD=CD \;\not\!\!\!\!\implies B=C
-            </men>
+            </md>
           </p>
         </li>
       </ol>
@@ -296,24 +296,24 @@ The example in our warning above is but one instance of the general failure of t
     <ol>
       <li>
         <p> Let <m>A=\begin{bmatrix}1\amp 1\amp 0\\ 0\amp 0\amp 0 \end{bmatrix}</m>, <m>B=\begin{bmatrix}1\amp 0\\ 0\amp 0\\ 0\amp 0 \end{bmatrix}</m>, <m>C=\begin{bmatrix}0\amp 0\\ 1\amp 0\\ 0\amp 0 \end{bmatrix}</m>. Verify for yourself that
-          <me>
+          <md>
             \begin{bmatrix}1\amp 1\amp 0\\ 0\amp 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 0\\ 0\amp 0\\ 0\amp 0 \end{bmatrix} = \begin{bmatrix}1\amp 1\amp 0\\ 0\amp 0\amp 0 \end{bmatrix} \begin{bmatrix}0\amp 0\\ 1\amp 0\\ 0\amp 0 \end{bmatrix}=
               \begin{bmatrix}
                 1\amp 0\\ 0\amp 0\\ 0\amp 0
               \end{bmatrix}
-          </me>.
+          </md>.
           Thus <m>AB=AC</m>, but clearly <m>B\ne C</m>.
         </p>
       </li>
       <li>
         <p>
           Let <m>B=\begin{bmatrix}2\amp 0\\ 0\amp 0 \end{bmatrix}</m>, <m>C=\begin{bmatrix}1\amp 1\\ 0\amp 0 \end{bmatrix}</m>, <m>D=\begin{bmatrix}1\amp 1\amp 1\\ 1\amp 1\amp 1 \end{bmatrix}</m>. We have
-          <me>
+          <md>
             \begin{bmatrix}2\amp 0\\ 0\amp 0 \end{bmatrix} \begin{bmatrix}1\amp 1\amp 1\\ 1\amp 1\amp 1 \end{bmatrix} = \begin{bmatrix}1\amp 1\\ 0\amp 0  \end{bmatrix} \begin{bmatrix}1\amp 1\amp 1\\ 1\amp 1\amp 1 \end{bmatrix}=
             \begin{bmatrix}
               2\amp 2\amp 2\\ 2\amp 2\amp 2
             \end{bmatrix}
-          </me>.
+          </md>.
           Thus <m>BD=CD</m>, but <m>B\ne C</m>.
         </p>
       </li>

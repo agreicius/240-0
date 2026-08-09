@@ -1,6 +1,6 @@
 <exercises xml:id="s_matrix_algebra_ex">
 <subexercises>
-<title>Written Exercises</title>
+ 
 <exercise>
   <statement>
     <p>
@@ -87,9 +87,9 @@
         <li>
           <p>
             In real number algebra we have the identity <m>(x+y)^2=x^2+2xy+y^2</m>. Show that two <m>n\times n</m> matrices <m>A</m>, <m>B</m> satisfy
-            <me>
+            <md>
               (A+B)^2=A^2+2AB+B^2
-            </me>
+            </md>
             if and only if <m>AB=BA</m>.
           </p>
         </li>
@@ -138,11 +138,11 @@
     <task>
       <statement>
         <p>
-      Find all <m>A</m> satisfying <me>A\, \begin{bmatrix}
+      Find all <m>A</m> satisfying <md>A\, \begin{bmatrix}
         1\amp 1\\ 1\amp 1
       \end{bmatrix}=\begin{bmatrix}
         1\amp 1\\ 1\amp 1
-      \end{bmatrix}</me>.
+      \end{bmatrix}</md>.
       </p>
       </statement>
       <hint>

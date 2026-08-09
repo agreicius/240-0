@@ -1,0 +1,1142 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_diagonalization">
+  <title>Diagonalization</title>
+<introduction>
+  <p>
+Our treatment of eigenvectors in <xref ref="s_eigenvectors"/> was motivated in part by the objective of finding particularly simple matrix representations <m>[T]_B</m> of a linear transformation <m>T\colon V\rightarrow V</m>. The simplest situation we could hope for is that there is a choice of basis <m>B</m> for which <m>[T]_B</m> is diagonal. We say that the basis <m>B</m> <em>diagonalizes</em> the transformation <m>T</m> in this case, and that <m>T</m> is <em>diagonalizable</em>. In this section we develop theoretical and computational tools for determining whether a linear transformation <m>T</m> is diagonalizable, and for finding a diagonalizing basis <m>B</m> when <m>T</m> is in fact diagonalizable.
+  </p>
+</introduction>
+
+
+  <subsection xml:id="ss_diagonalizable">
+    <title>Diagonalizable transformations</title>
+  <definition xml:id="d_diagonalizable">
+    <idx><h>diagonalizable</h></idx>
+    <idx><h>diagonalizing basis</h></idx>
+    <title>Diagonalizable</title>
+    <statement>
+      <p>
+        Let <m>V</m> be a finite-dimensional vector space. A linear transformation <m>T\colon V\rightarrow V</m> is
+        <term>diagonalizable</term>
+        if there exists an ordered basis <m>B</m> of <m>V</m> for which <m>[T]_B</m> is a diagonal matrix. In this case, we say the basis <m>B</m> <term>diagonalizes</term> <m>T</m>.
+      </p>
+      <p>
+        An <m>n\times n</m> matrix <m>A</m> is <term>diagonalizable</term> if the matrix transformation <m>T_A\colon \R^n\rightarrow \R^n</m> is diagonalizable.
+      </p>
+    </statement>
+  </definition>
+<p>
+As was already laid out in <xref ref="s_eigenvectors"/> a matrix representation <m>[T]_B</m> is diagonal if the elements of <m>B</m> are eigenvectors of <m>T</m>. According to <xref ref="th_diagonalizability_eigenbasis"/>, the converse is also true.
+</p>
+<theorem xml:id="th_diagonalizability_eigenbasis">
+  <title>Diagonalizabilty: basis of eigenvectors</title>
+  <statement>
+      <p>
+        Let <m>T\colon V\rightarrow V</m> be a linear transformation, and let <m>B=(\boldv_1, \boldv_2, \dots, \boldv_n)</m> be an ordered basis of <m>V</m>.
+      </p>
+        <ol>
+          <li>
+            <p>
+              The matrix <m>[T]_B</m> is diagonal if and only if <m>B</m> consists of eigenvectors of <m>T</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>[T]_B</m> is diagonal, then the <m>j</m>-th diagonal entry of <m>[T]_B</m> is the eigenvalue <m>\lambda_j</m> associated to the eigenvector <m>\boldv_j</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The transformation <m>T</m> is diagonalizable if and only if there is an ordered basis of <m>V</m> consisting of eigenvectors of <m>T</m>.
+            </p>
+          </li>
+        </ol>
+  </statement>
+  <proof>
+    <p>
+      Let <m>B=(\boldv_1, \boldv_2, \dots, \boldv_n)</m> be an ordered basis of <m>V</m>. The matrix <m>[T]_B</m> will be diagonal if and only if for each <m>1\leq j\leq n</m> the <m>j</m>-th column of <m>A</m> is of the form
+      <md>
+        (0,\dots, \lambda_j,0,\dots, 0)=\lambda_j\bolde_j
+      </md>
+      for some <m>\lambda_j</m>. By <xref ref="d_matrix_representation"/> the <m>j</m>-th column of <m>[T]_{B}</m> is the coordinate vector <m>[T(\boldv_j)]_{B}</m>. Thus <m>[T]_{B}</m> is diagonal if and only if for all <m>1\leq j\leq n</m> we have
+      <m>
+      [T(\boldv_j)]_B=\lambda_j\bolde_j
+      </m> for some <m>\lambda_j\in \R</m>. Next, by definition of <m>[\phantom{v}]_B</m>, we have
+      <md>
+      [T(\boldv_j]_B=(0,\dots, \lambda_j,0,\dots, 0)\iff T(\boldv_j)=\lambda_j\boldv_j
+      </md>.
+      We conclude that <m>[T]_B</m> is diagonal if and only if <m>\boldv_j</m> is an eigenvector of <m>T</m> for all <m>1\leq j\leq n</m>. Furthermore, when this is the case, we see that the <m>j</m>-th diagonal entry of <m>[T]_B</m> is the corresponding eigenvalue <m>\lambda_j</m>. This proves statements (1) and (2). Statement (3) follows from (1) and <xref ref="d_diagonalizable"/>.
+    </p>
+  </proof>
+</theorem>
+<p>
+The phrase <q>an ordered basis consisting of eigenvectors of <m>T</m></q> is a bit of a mouthful. The definition below allows us to shorten this to simply <q>an eigenbasis of <m>T</m></q>.
+</p>
+<definition xml:id="d_eigenbasis">
+  <idx><h>eigenbasis</h></idx>
+  <title>Eigenbasis</title>
+
+
+  <statement>
+    <p>
+    Let <m>T\colon V\rightarrow V</m> be a linear transformation. An ordered basis <m>B=(\boldv_1, \boldv_2,\dots, \boldv_n)</m> is an <term>eigenbasis</term> of <m>T</m> if <m>\boldv_j</m> is an eigenvector of <m>T</m> for all <m>1\leq j\leq n</m>.
+    </p>
+  </statement>
+</definition>
+<example xml:id="eg_diagonalizable_matrix">
+  <statement>
+    <p>
+      Let <m>T=T_A</m>, where
+      <md>
+      A=\frac{1}{5}\begin{amatrix}[rr]-3\amp 4\\ 4\amp 3 \end{amatrix}
+      </md>. We saw in <xref ref="eg_eigenvector_adhoc_reflection"/> that <m>\boldv_1=(1,2)</m> and <m>\boldv_2=(-1,2)</m> are eigenvectors of <m>T</m> with eigenvalues <m>1, -1</m>, respectively. It is clear that the two eigenvectors are linearly independent, and hence that <m>B'=(\boldv_1, \boldv_2)</m> is an eigenbasis of <m>T</m>. It follows from <xref ref="th_diagonalizability_eigenbasis"/>
+      that <m>T</m> is diagonalizable, and that in fact
+      <md>
+      [T]_{B'}=\begin{amatrix}[rr] 1\amp 0\\ 0\amp -1 \end{amatrix}
+      </md>, as one easily verifies.
+    </p>
+  </statement>
+</example>
+<example>
+  <statement>
+    <p>
+      Let <m>T\colon \R^2\rightarrow \R^2</m> be rotation by <m>\pi/4</m>: <ie />, <m>T=T_A</m>, where
+      <md>
+      A=\frac{1}{2}\begin{amatrix}[rr]\sqrt{2}\amp -\sqrt{2}\\ \sqrt{2}\amp \sqrt{2} \end{amatrix}
+      </md>. As discussed in <xref ref="eg_eigenvector_adhoc_rotation"/>, <m>T</m> has no eigenvectors whatsoever. It follows that there is no eigenbasis of <m>T</m>, and hence that <m>T</m> is not diagonalizable.
+    </p>
+  </statement>
+</example>
+<example>
+  <statement>
+    <p>
+      Let <m>T=T_A</m>, where
+      <md>
+      A=\begin{amatrix}[rr] 2\amp 1\\ 0\amp 2 \end{amatrix}
+      </md>. As is easily computed, <m>\lambda=2</m> is the only eigenvalue of <m>T</m>, and <m>W_2=\Span\{(1,0)\}</m>. It follows that <em>any two</em> eigenvectors <m>\boldv_1</m> and <m>\boldv_2</m> lie in the one-dimensional space <m>W_2</m>, and hence are scalar multiples of one another. Thus we cannot find two linearly independent eigenvectors of <m>T</m>. We conclude that <m>T</m> does not have an eigenbasis, and hence is not diagonalizable.
+    </p>
+  </statement>
+</example>
+</subsection>
+<subsection xml:id="ss_diagonalizable_independent_eigenvectors">
+  <title>Linear independence of eigenvectors</title>
+<p>
+  Roughly put, <xref ref="th_diagonalizability_eigenbasis"/> tells us that <m>T</m> is diagonalizable if it has <q>enough</q> eigenvectors: more precisely, if we can find a large enough collection of <em>linearly independent</em> eigenvectors. So when exactly can we do this? Our first examples were deceptively simple in this regard due to their low-dimensional setting. For transformations of higher-dimensional spaces we need more theory, which we now develop. <xref ref="th_independent_eigenvectors"/> will serve as one of the key results for our purposes. It tells us that eigenvectors chosen from different eigenspaces are linearly independent.
+</p>
+<theorem xml:id="th_independent_eigenvectors">
+  <title>Linear independence of eigenvectors</title>
+
+
+  <statement>
+    <p>
+      Let <m>T\colon V\rightarrow V</m> be a linear transformation,
+      and let <m>S=\{\boldv_1,\dots, \boldv_r\}</m> be a set of eigenvectors of <m>T</m> satisfying <m>T\boldv_i=\lambda_i\boldv_i</m>.
+      If the eigenvalues <m>\lambda_i</m> are distinct (<ie />, <m>\lambda_i\ne \lambda_j</m>  for <m>i\ne j</m>), then <m>S</m> is linearly independent.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      We prove the result by contradiction. Suppose we can find a finite set of eigenvectors with distinct eigenvalues that is linearly dependent. It follows that we can find such a set of <em>minimum cardinality</em>. In other words, there is positive integer <m>r</m> satisfying the following properties: (i) we can find a linearly dependent set of <m>r</m> eigenvectors of <m>T</m> with distinct eigenvalues; (ii) for all <m>k\lt r</m>, any set of <m>k</m> eigenvectors of <m>T</m> with distinct eigenvalues is linearly independent<fn> That we can find a minimal <m>r</m> in this sense is plausible enough, but we are secretly using the well-ordering principle of the integers here.</fn>.
+    </p>
+    <p>
+    Now assume <m>S=\{\boldv_1, \boldv_2, \dots, \boldv_r\}</m> is a set of minimal cardinality satisfying <m>T(\boldv_i)=\lambda_i\boldv_i</m> for all <m>1\leq i\leq n</m> and <m>\lambda_i\ne \lambda j</m> for all <m>1\leq i\lt j\leq n</m>. First observe that we must have <m>r\gt 1</m>: eigenvectors are nonzero by definition, and thus any set consisting of a single eigenvector is linearly independent. Next, since <m>S</m> is linearly dependent we have
+    <md number="yes" xml:id="eq_independent_eigenvectors_A">
+      c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r=\boldzero
+    </md>,
+    where <m>c_i\ne 0</m> for some <m>1\leq i\leq r</m>. After reordering, we may assume without loss of generality that <m>c_1\ne 0</m>. Next we apply <m>T</m> to both sides of <xref ref="eq_independent_eigenvectors_A"/>:
+    <mdn>
+      <mrow>c_1\boldv_1+c_2\boldv_2\cdots +c_r\boldv_r=\boldzero \amp\implies T(c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r)=T(\boldzero) </mrow>
+      <mrow> \amp\implies c_1T(\boldv_1)+c_2T(\boldv_2)+\cdots +c_rT(\boldv_r)=\boldzero </mrow>
+      <mrow xml:id="eq_independent_eigenvectors_B">  \amp\implies c_1\lambda_1\boldv_1+c_2\lambda_2\boldv_2+\cdots +c_r\lambda_r\boldv_r=\boldzero </mrow>
+    </mdn>.
+    From equation <xref ref="eq_independent_eigenvectors_A"/> and the equation in <xref ref="eq_independent_eigenvectors_B"/> we have
+    <md>
+      \lambda_r(c_1\boldv_1+c_2\boldv_2\cdots +c_r\boldv_r)- (c_1\lambda_1\boldv_1+c_2\lambda_2\boldv_2\cdots +c_r\lambda_r\boldv_r)=\boldzero
+    </md>,
+    and hence
+    <md number="yes" xml:id="eq_independent_eigenvectors_C">
+      c_1(\lambda_r-\lambda_1)\boldv_1+\cdots +c_{r-1}(\lambda_r-\lambda_{r-1})+\cancel{c_r(\lambda_r-\lambda_r)}\boldv_r=\boldzero
+    </md>.
+    Since <m>c_1\ne 0</m> and <m>\lambda_1\ne \lambda_r</m>, we have <m>c_1(\lambda_r-\lambda_1)\ne 0</m>. Thus equation <xref ref="eq_independent_eigenvectors_C"/> implies that the set <m>S'=\{\boldv_1, \boldv_2, \dots, \boldv_{r-1}\}</m> is a linearly dependent set of eigenvectors of <m>T</m> with distinct eigenvalues, contradicting the minimality of <m>r</m>. This completes our proof by contradiction.
+    </p>
+  </proof>
+
+</theorem>
+
+<corollary xml:id="cor_independent_eigenvectors">
+  <title>Diagonalizable if distinct eigenvalues</title>
+  <statement>
+    <p>
+      Let <m>T\colon V\rightarrow V</m> be a linear transformation,
+      and suppose <m>\dim V=n</m>.
+      If <m>T</m> has <m>n</m> distinct eigenvalues,
+      then <m>T</m> is diagonalizable.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Let <m>S=\{\boldv_1, \boldv_2,\dots, \boldv_n\}</m> be a set eigenvectors of <m>T</m> with distinct eigenvalues.
+      According to <xref ref="th_independent_eigenvectors"/>  the set <m>S</m>
+      is linearly independent. Since <m>\val{S}=n=\dim V</m> it follows that <m>B=(\boldv_1,\boldv_2,\dots, \boldv_n)</m> is an eigenbasis for <m>T</m> and hence <m>T</m> is diagonalizable.
+    </p>
+  </proof>
+</corollary>
+<example>
+  <statement>
+    <p>
+     Let <m>T=T_A</m>, where
+     <md>
+       A=\begin{amatrix}[rrr]
+       6 \amp 6 \amp -2 \\
+  -8 \amp -13 \amp 7 \\
+  -8 \amp -16 \amp 10
+\end{amatrix}
+     </md>.
+The characteristic polynomial of <m>A</m> is
+<md>
+p(t)=t^{3} - 3 t^{2} - 4 t + 12=(t+2)(t-2)(t-3)
+</md>.
+Since <m>A</m> has three distinct eigenvalues the linear transformation <m>T_A</m> is diagonalizable. Indeed,
+any choice of eigenvectors <m>\boldv_1, \boldv_2, \boldv_3</m> with <m>\boldv_1\in W_{-2}, \boldv_2\in W_2, \boldv_3\in W_3</m> is guaranteed to be linearly independent, and hence gives rise to an eigenbasis <m>B=(\boldv_1, \boldv_2, \boldv_3)</m> of <m>T_A</m>. For example the usual procedure allows us to easily find eigenvectors
+<md>
+\boldv_1=(1,-2,-2), \boldv_2=(1,-1,-1),\boldv_3=(2,-1,0)
+</md>
+from the three eigenspaces. You can verify for yourself that these three vectors are indeed linearly independent.
+</p>
+  </statement>
+</example>
+    <remark xml:id="rm_independent_eigenvectors">
+  <statement>
+    <p>
+      Let <m>T\colon V\rightarrow V</m> be a linear transformation, <m>\dim V=n</m>. It cannot be stressed enough that having <m>n</m> distinct eigenvalues is a <em>sufficient</em>, but not <em>necessary</em> condition for <m>T</m> to be diagonalizable. In other words we have
+      <md>
+        T \text{ has <m>n</m> distinct eigenvalues} \implies T \text{ diagonalizable}
+      </md>
+      but
+      <md>
+        T \text{ diagonalizable }\;\not\!\!\!\!\!\implies T \text{ has <m>n</m> distinct eigenvalues}
+      </md>.
+      A good counterexample to keep in mind is <m>T_I\colon \R^n\rightarrow \R^n</m>, where <m>I=I_n</m> is the <m>n\times n</m> identity matrix. The transformation is clearly diagonalizable since <m>[T]_B=I</m>, where <m>B=(\bolde_1, \bolde_2,\dots, \bolde_n)</m> is the standard basis; and yet <m>\lambda=1</m> is the only eigenvalue of <m>T</m>.
+    </p>
+  </statement>
+</remark>
+<p>
+<xref ref="th_independent_eigenvectors"/>
+makes no assumption about the dimension of <m>V</m> and can thus can be applied to linear transformations of infinite-dimensional spaces. The differential operator <m>T(f)=f'</m> provides an interesting example.
+</p>
+<!-- <example>
+<statement>
+  <title>Differentiation</title>
+  <p>
+    Let <m>V=C^\infty(\R)</m>,
+    and let <m>T\colon V\rightarrow V</m> be defined as <m>T(f)=f'</m>. For each <m>\lambda\in \R</m> let <m>f_{\lambda}(x)=e^{\lambda x}</m>. In <xref ref="eg_eigenvectors_adhoc_derivative"/> we saw that the functions <m>f_\lambda</m> are eigenvectors of <m>T</m> with eigenvalue <m>\lambda</m>: <ie />, <m>T(f_\lambda)=\lambda f_\lambda</m>. It follows from <xref ref="cor_independent_eigenvectors"/> that for any distinct values <m>\lambda_1, \lambda_2, \dots, \lambda_r</m>
+    the set <m>\{e^{\lambda_1x}, e^{\lambda_2x}, \dots, e^{\lambda_rx}\}</m>
+    is linearly independent, and thus that the (uncountably) infinite set  <m>S=\{e^{\lambda x}\colon \lambda\in \R\}\subseteq C^{\infty}(\R)</m> is linearly independent.
+  </p>
+</statement>
+</example> -->
+<p>
+  The next corollary is a useful strengthening of <xref ref="th_independent_eigenvectors"/>, and will be used to prove <xref ref="th_diagonalizability_eigenspaces"/>. Roughly speaking, it says that eigenspaces associated to distinct eigenvalues are <q>linearly independent</q>. Be careful: the phrase in quotes currently has no real meaning for us. We know what it means for <em>vectors</em> to be linearly independent, but not <em>subspaces</em>. However, it is a decent shorthand for the precise statement of <xref ref="cor_independent_eigenspaces"/>.
+</p>
+<corollary xml:id="cor_independent_eigenspaces">
+<title>Independence of eigenspaces</title>
+  <statement>
+    <p>
+      Let <m>T\colon V\rightarrow V</m> be a linear transformation, where <m>\dim V=n</m>. Let <m>\lambda_1, \lambda_2, \dots, \lambda_r</m> be
+          distinct eigenvalues of <m>T</m>, and for each <m>1\leq i\leq r</m> let
+            <m>W_{\lambda_i}</m> be the <m>\lambda_i</m>-eigenspace.
+      If
+          <md number="yes" xml:id="eq_independent_eigenspaces">
+            \boldw_1+\boldw_2+\cdots +\boldw_r=\boldzero
+          </md>,
+          where
+          <m>\boldw_i\in W_{\lambda_i}</m>, then <m>\boldw_i=\boldzero</m> for all <m>i</m>.
+        </p>
+  </statement>
+  <proof>
+    <p>
+      Before proving the result, we point out one subtlety here: although the <m>\boldw_i\in W_{\lambda_i}</m> for all <m>i</m>, we cannot assume that each <m>\boldw_i</m> is an eigenvector. Indeed, <m>\boldw_i</m> is an eigenvector in this case if and only if <m>\boldw_i\ne 0</m>. This observation guides the proof that follows.
+    </p>
+    <p>
+      To pick out the terms of <xref ref="eq_independent_eigenspaces"/> that are nonzero (if any), we define
+      <md>J=\{j \colon \boldw_j\ne 0\}=\{j_1, j_2,\dots, j_k\}
+      </md>. Assume by contradiction that <m>J</m> is nonempty: <ie />, <m>\val{J}=k\geq 1</m>. In this case we would have
+      <md>
+        <mrow>\boldzero \amp= \boldw_1+\boldw_2+\cdots \boldw_r </mrow>
+        <mrow> \amp = \boldw_{j_1}+\boldw_{j_2}+\cdots +\boldw_{j_k} </mrow>
+      </md>,
+      since <m>\boldw_i=\boldzero</m> for all <m>i\notin J</m>. But then
+      <md>
+        \boldw_{j_1}+\boldw_{j_2}+\cdots +\boldw_{j_k}=\boldzero
+      </md>
+      would be a nontrivial linear combination of the eigenvectors <m>\boldw_{j_i}</m> equal to <m>\boldzero</m>. Since the eigenvectors <m>\boldw_{j_i}</m> have distinct eigenvalues, this contradicts <xref ref="th_independent_eigenvectors"/>. Thus <m>J=\{\, \}</m>. Equivalently, <m>\boldw_i=\boldzero</m> for all <m>1\leq i\leq r</m>, as desired.
+    </p>
+  </proof>
+
+</corollary>
+<p>
+  At last we are ready to state and prove what will be our main tool for determining whether a linear transformation is diagonalizable.
+</p>
+<theorem xml:id="th_diagonalizability_eigenspaces">
+      <title>Diagonalizability: dimension of eigenspaces</title>
+      <statement>
+        <p>
+          Let <m>T\colon V\rightarrow V</m> be a linear transformation, where <m>\dim V=n</m>. Let <m>\lambda_1, \lambda_2, \dots, \lambda_r</m> be the
+              distinct eigenvalues of <m>T</m>, and for each <m>1\leq i\leq r</m>, let
+                <m>W_{\lambda_i}</m> be the <m>\lambda_i</m>-eigenspace. We have
+                <md>T \text{ is diagonalizable } \iff \sum_{i=1}^r\dim W_{\lambda_i}=n
+                </md>.
+        </p>
+      </statement>
+      <proof>
+        We prove the two implications separately. In each we use the equivalence
+        <md>
+          T \text{ is diagonalizable} \iff T \text{ has an eigenbasis } B
+        </md>,
+        proved in <xref ref="th_diagonalizability_eigenbasis"/>.
+        <proof>
+          <title>Proof: <m>T</m> diagonalizable <m>\implies \sum_{i=1}^r\dim W_{\lambda_i}=n</m></title>
+          <p>
+            Assume <m>T</m> is diagonalizable. From <xref ref="th_diagonalizability_eigenbasis"/>, there is an eigenbasis <m>B</m> of <m>T</m>. After reordering we may assume that
+            <md>
+              B=(\underset{W_{\lambda_1}}{\underbrace{\boldv_{\lambda_1,1},\dots, \boldv_{\lambda_1,n_1}}},\underset{W_{\lambda_2}}{\underbrace{\boldv_{\lambda_2,1},\dots, \boldv_{\lambda_2,n_2}}},\dots, \underset{W_{\lambda_r}}{\underbrace{\boldv_{\lambda_r,1},\dots, \boldv_{\lambda_r,n_r}}} )
+            </md>,
+            where for each <m>1\leq i\leq r</m> and each <m>1\leq j\leq n_i</m>, the element <m>\boldv_{\lambda_i,j}</m> is an eigenvector with eigenvalue <m>\lambda_i</m>: <ie />, <m>\boldv_{\lambda_i,j}\in W_{\lambda_i}</m>. Observer that since <m>B</m> is a list of <m>n</m> vectors, we have
+            <md>
+              n=n_1+n_2+\cdots+n_r
+            </md>.
+            We claim that for all <m>1\leq i\leq r</m> the set <m>S_{\lambda_i}=\{\boldv_{\lambda_i, 1}, \dots, \boldv_{\lambda_i, n_i}\}</m> is a basis of <m>W_{\lambda_i}</m>. The desired result follows in this case since
+            <md>
+              <mrow>\sum_{i=1}^r\dim W_{\lambda_i} \amp=\sum_{i=1}^r\val{S_{\lambda_i}} </mrow>
+              <mrow> \amp = \sum_{i=1}^r n_i </mrow>
+              <mrow>  \amp = n</mrow>
+            </md>.
+            Proceeding then to the claim, observe that each set <m>S_{\lambda_i}</m> is linearly independent, since the underlying set of <m>B</m> is linearly independent. Thus it suffices to show that <m>\Span S_{\lambda_i}=W_{\lambda_i}</m> for all <m>1\leq i\leq r</m>. To this end, fix an <m>i</m> with <m>1\leq i\leq n</m> and take any <m>\boldv\in W_{\lambda_i}</m>. Since <m>B</m> is a basis we can write
+            <md>
+              <mrow>\boldv \amp=
+              \underset{\boldw_{\lambda_1}}{\underbrace{\sum_{j=1}^{n_1}c_{1,j}\boldv_{\lambda_1, j}}}+\dots +\underset{\boldw_{\lambda_i}}{\underbrace{\sum_{j=1}^{n_i}c_{i,j}\boldv_{\lambda_i, j}}}+\dots \underset{\boldw_{\lambda_r}}{\underbrace{\sum_{j=1}^{n_r}c_{r,j}\boldv_{\lambda_r, j}}} </mrow>
+              <mrow> \amp=\boldw_1+\boldw_2+\cdots +\boldw_r </mrow>
+            </md>,
+            where for each <m>1\leq k\leq r</m> we have
+            <md>
+              \boldw_k=\sum_{i=1}^{n_k}c_{k,j}\boldv_{\lambda_k, j}\in W_{\lambda_k}
+            </md>.
+            Bringing <m>\boldv</m> to the right-hand side of the equation above yields
+            <md>
+              \boldzero=\boldw_1+\boldw_2+\cdots +(\boldw_i-\boldv)+\cdots +\boldw_r
+            </md>.
+            Recall that <m>\boldv\in W_{\lambda_i}</m>, and thus <m>\boldw_{i}-\boldv\in W){\lambda_i}</m>. Since <m>\boldw_k\in W_{\lambda_k}</m> for all <m>k\ne i</m>, it follows from <xref ref="cor_independent_eigenspaces"/> that
+            <md>
+              \boldw_1=\boldw_2=\dots=(\boldw_i-\boldv)=\dots =\boldw_r=0
+            </md>.
+            Thus
+            <md>
+            \boldv=w_i=\sum_{j=1}^{n_i}c_{i,j}\boldv_{\lambda_i, j}
+            </md>,
+            showing that <m>\boldv\in \Span S_{\lambda_i}</m>, as desired.
+          </p>
+        </proof>
+
+        <proof>
+          <title>Proof: <m>\sum_{i=1}^r\dim W_{\lambda_i}=n\implies T</m> is diagonalizable </title>
+          <p>
+          Let <m>n_i=\dim W_{\lambda_i}</m>  for all <m>1\leq i\leq r</m> . We assume that
+          <md>
+            n=\dim W_{\lambda_1}+
+          \dim W_{\lambda_2}+\cdots \dim W_{\lambda_r}=n_1+n_2+\cdots +n_r
+          </md>.
+          For each <m>1\leq i\leq n</m>, let
+          <md>
+            S_{\lambda_i}=\{\boldv_{\lambda_i, 1}, \boldv_{\lambda_i,2},\dots, \boldv_{\lambda_{i,n_i}}\}
+          </md>
+          be a basis of the eigenspace <m>W_{\lambda_i}</m>. We claim
+          <md>
+          B=(\underset{W_{\lambda_1}}{\underbrace{\boldv_{\lambda_1,1},\dots, \boldv_{\lambda_1,n_1}}},\underset{W_{\lambda_2}}{\underbrace{\boldv_{\lambda_2,1},\dots, \boldv_{\lambda_2,n_2}}},\dots, \underset{W_{\lambda_r}}{\underbrace{\boldv_{\lambda_r,1},\dots, \boldv_{\lambda_r,n_r}}} )
+          </md>
+          is an eigenbasis of <m>T</m>. Since <m>\boldzero\ne \boldv_{\lambda_i, j}\in W_{\lambda_i}</m> for all <m>1\leq i\leq r</m> and <m>1\leq j\leq n_i</m>, we see that <m>B</m> consists of eigenvectors of <m>T</m>. Since
+          <md>
+            n_1+n_2+\cdots n_r=n=\dim V
+          </md>,
+          to show that <m>B</m> is a basis it suffices to show that it is linearly independent. To this end, assume we have
+          <md>
+          <mrow>\boldzero \amp=
+          \underset{\boldw_{\lambda_1}}{\underbrace{\sum_{j=1}^{n_1}c_{1,j}\boldv_{\lambda_1, j}}} +\underset{\boldw_{\lambda_2}}{\underbrace{\sum_{j=1}^{n_2}c_{2,j}\boldv_{\lambda_2, j}}}+\dots \underset{\boldw_{\lambda_r}}{\underbrace{\sum_{j=1}^{n_r}c_{r,j}\boldv_{\lambda_r, j}}} </mrow>
+          <mrow> \amp=\boldw_1+\boldw_2+\cdots +\boldw_r </mrow>
+        </md>,
+        where for each <m>1\leq i\leq r</m> we have
+        <md>
+          \boldw_i=\sum_{i=1}^{n_i}c_{i,j}\boldv_{\lambda_i, j}\in W_{\lambda_k}
+        </md>.
+        By <xref ref="cor_independent_eigenspaces"/> we must have
+        <md>
+        \boldzero=\boldw_i=\sum_{i=1}^{n_i}c_{i,j}\boldv_{\lambda_i, j}
+        </md>
+        for all <m>i</m>. Finally, since the set
+        <md>
+          S_{\lambda_i}=\{\boldv_{\lambda_i, 1}, \boldv_{\lambda_i,2},\dots, \boldv_{\lambda_{i,n_i}}\}
+        </md>
+        is linearly independent for each <m>i</m>, we must have <m>c_{i,j}=0</m> for all <m>1\leq i\leq r</m> and <m>1\leq j\leq n_i</m>. This proves that <m>B</m> is linearly independent, hence a basis.
+        </p>
+        </proof>
+      </proof>
+    </theorem>
+    <p>
+      We now collect our various results about diagonalizability into one procedure that (a) decides whether a linear transformation <m>T</m> is diagonalizable, and (b) if it is, computes an eigenbasis for <m>T</m>. The procedure applies to any linear transformation of a finite-dimensional vector space, not just matrix transformations. As usual, the first step is to choose a matrix representation <m>A=[T]_B</m> for <m>T</m>.
+    </p>
+
+    <algorithm xml:id="proc_diagonalize">
+      <title>Deciding whether a linear transformation is diagonalizable</title>
+      <statement>
+        <p>
+          Let <m>T\colon V\rightarrow V</m> be a linear transformation, where <m>\dim V=n</m>. To decide whether <m>T</m> is diagonalizable proceed as follows.
+        </p>
+        <ol>
+          <li>
+            <p>
+              Pick any ordered basis <m>B</m> of <m>V</m> and compute <m>A=[T]_B</m>. We have <m>T</m> diagonalizable if and only if <m>A</m> diagonalizable.
+            </p>
+          </li>
+          <li>
+            <p>
+             Let <m>\lambda_1, \lambda_2, \dots, \lambda_r</m> be the distinct eigenvalues of <m>A</m>. Compute <m>n_i=\dim W_{\lambda_i}</m> for each <m>1\leq i\leq r</m>.
+              We have
+              <md>
+                A \text{ diagonalizable }\iff \sum_{i=1}^r\dim W_{\lambda_i}=n
+              </md>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Assume <m>A</m> is diagonalizable according to Step (2). For each <m>1\leq i\leq r</m> compute a basis
+              <m>
+                S_{\lambda_i}=\{\boldv_{\lambda_i, 1}, \boldv_{\lambda_i,2},\dots, \boldv_{\lambda_i, n_i} \}
+              </m>
+              of <m>W_{\lambda_i}</m>. The ordered list
+              <md>
+                B'=(\boldv_{\lambda_1,1},\dots, \boldv_{\lambda_1,n_1},\boldv_{\lambda_2,1},\dots, \boldv_{\lambda_2,n_2},\dots,\boldv_{\lambda_r,1},\dots, \boldv_{\lambda_r,n_r} )
+              </md>,
+              is an eigenbasis of <m>A</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <q>Lifting</q> the basis <m>B'</m> back to <m>V</m> via the coordinate transformation <m>[\phantom{\boldv}]_B</m> yields an eigenbasis <m>B''</m> of <m>T</m>. The matrix <m>[T]_{B''}</m> is diagonal, of the form
+              <md>
+              [T]_{B''}=
+                \begin{bmatrix}
+                \lambda_1 \amp \amp  \amp \amp \amp \amp   \\
+                         \amp \ddots \amp \amp \amp \amp     \\
+                  \amp   \amp   \lambda_2 \amp  \amp \amp   \\
+                \amp  \amp  \amp     \ddots \amp  \amp    \\
+                \amp  \amp  \amp    \amp   \lambda_r \amp   \\
+                \amp  \amp  \amp    \amp  \amp   \ddots    \\
+                \amp  \amp  \amp    \amp  \amp  \amp   \lambda_r
+                \end{bmatrix}
+              </md>.
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <proof>
+        <p>
+          For the most part the validity of this procedure is a direct consequence of <xref ref="th_diagonalizability_eigenbasis"/> and <xref ref="th_diagonalizability_eigenspaces"/>. However, there are two details that need to be pointed out.
+          <ul>
+            <li>
+              <p>
+                That <m>T</m> is diagonalizable if and only if <m>A=[T]_B</m> is diagonalizable follows from the fact that a basis of the <m>\lambda</m>-eigenspace of <m>A</m> to a basis of the <m>\lambda</m>-eigenspace of <m>T</m> using the coordinate vector transformation <m>[\phantom{v}]_B</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                That the ordered list <m>B'</m> described in Step 3 is in fact a basis is shown in the proof of <xref ref="th_diagonalizability_eigenspaces"/>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </proof>
+    </algorithm>
+    <example xml:id="eg_diagonalizable_uppertriang">
+      <statement>
+        <p>
+          Let <m>T=T_A</m>, where
+          <md>
+            A=\begin{amatrix}[rrr]
+            2\amp 1\amp 1\\
+            0\amp 3\amp 2\\
+            0\amp 0\amp 3
+            \end{amatrix}
+          </md>.
+          Decide whether <m>T</m> is diagonalizable. If yes, find an eigenbasis of <m>T</m>
+        and compute the corresponding matrix representing <m>T</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+         Note first that <m>A=[T]_B</m> where <m>B</m> is the standard basis of <m>\R^3</m>. (See <xref ref="th_matrixreps_matrixtransforms"/>.) Since <m>A</m> is upper triangular, we easily see that its characteristic polynomial is <m>p(t)=(t-1)(t-3)^2</m>. Next we investigate the eigenspaces:
+         <md>
+           W_2=\NS(2I-A)=\NS \begin{amatrix}[rrr]0\amp -1\amp -1\\ 0\amp 1\amp -2\\ 0\amp 0\amp 1  \end{amatrix},coordinatecoordinate
+           W_3=\NS(3I-A)=\NS \begin{amatrix}[rrr]-1\amp -1\amp -1\\ 0\amp 0\amp -2\\ 0\amp 0\amp 0  \end{amatrix}
+         </md>.
+          By inspection we see that both <m>2I-A</m> and <m>3I-A</m> have rank 2, and hence nullity <m>3-2=1</m> by the rank-nullity theorem. Thus both eigenspaces have dimension one, and we have <m>\dim W_2+\dim W_3=1+1=2\lt 3</m>. We conclude that <m>A</m>, and hence <m>T_A</m>, is not diagonalizable.
+        </p>
+      </solution>
+    </example>
+  <p>
+     The diagonalizability examples in this text will focus largely on the special case of matrix transformations <m>T_A\colon \R^n\rightarrow \R^n</m>. However, our conscience demands that we give at least one full example of a more abstract linear transformation.
+  </p>
+  <example xml:id="eg_diagonalizable_transposition">
+    <title>Transposition</title>
+    <statement>
+      <p>
+        Let <m>S\colon M_{22}\rightarrow M_{22}</m> be the linear transformation defined as <m>S(A)=A^T</m>. Decide whether <m>S</m> is diagonalizable. If yes, find an eigenbasis for <m>S</m> and compute the corresponding matrix representing <m>S</m>.
+      </p>
+
+    </statement>
+    <solution>
+      <p>
+      We saw in <xref ref="eg_eigenvector_systematic_transposition"/> that
+        <md>
+          [S]_B=\begin{bmatrix}
+            1\amp 0\amp 0\amp 0\\
+            0\amp 0\amp 1\amp 0\\
+            0\amp 1\amp 0\amp 0\\
+            0\amp 0\amp 0\amp 1
+          \end{bmatrix}
+        </md>,
+        where <m>B=(E_{11}, E_{12}, E_{21}, E_{22})</m> is the standard ordered basis of <m>M_{22}</m>. Furthermore, we saw that <m>1</m> and <m>-1</m> are the distinct eigenvalues of <m>A=[S]_B</m>, and that
+        <md>
+          S_1=\{(1,0,0,0), (0,1,1,0), (0,0,0,1)\}, S_{-1}=\Span\{(0,1,-1,0)\}
+        </md>
+        are bases of <m>W_1</m> and <m>W_{-1}</m>, respectively. It follows that <m>\dim W_1+\dim W_{-1}=3+1=4</m>, that <m>A</m> is diagonalizable, and that
+        <md>
+          B'=((1,0,0,0), (0,1,1,0), (0,0,0,1), (0,1,-1,0))
+        </md>
+        is an eigenbasis of <m>A</m>. We conclude that <m>S</m> is diagonalizable, and we lift <m>B'</m> via <m>[\phantom{v}]_B</m> to the eigenbasis
+        <md>
+          B''=\left\{
+          \begin{amatrix}[rr]1\amp 0\\ 0\amp 0  \end{amatrix},
+          \begin{amatrix}[rr]0\amp 1\\ 1\amp 0  \end{amatrix},
+          \begin{amatrix}[rr]0\amp 0\\ 0\amp 1  \end{amatrix},
+          \begin{amatrix}[rr]0\amp 1\\ -1\amp 0  \end{amatrix}
+          \right\}
+        </md>
+        of <m>S</m>. Lastly, we have
+        <md>
+          [S]_{B''}=
+          \begin{amatrix}[rrrr]1\amp 0\amp 0\amp 0\\ 0\amp 1\amp 0\amp 0\\ 0\amp 0\amp 1\amp 0\\ 0\amp 0\amp 0\amp -1  \end{amatrix}
+        </md>.
+      </p>
+    </solution>
+  </example>
+
+<paragraphs xml:id="ss_vid_eg_diag">
+  <title>Video example: deciding if diagonalizable</title>
+  <figure xml:id="fig_vid_diag">
+    <title>Video: deciding if diagonalizable</title>
+  <caption>Video: deciding if diagonalizable</caption>
+  <video xml:id="vid_diag" youtube="_5z8kv1rDKQ" />
+  </figure>
+</paragraphs>
+
+</subsection>
+<subsection xml:id="ss_diagonalizable_matrices">
+  <title>Diagonalizable matrices</title>
+  <p>
+    In this subsection we will focus on matrix transformations <m>T_A\colon \R^n\rightarrow \R^n</m>. Recall (<xref ref="th_matrixreps_matrixtransforms" text="global"/>) that in this situation we have <m>A=[T]_B</m> where <m>B</m> is the <em>standard basis</em> of <m>\R^n</m>. As such <xref ref="proc_diagonalize"/> boils down to steps (2)-(3), and the eigenbasis <m>B'</m> of <m>A</m> found in (3) is itself an eigenbasis for <m>T=T_A</m>. Letting <m>D=[T]_{B'}</m> the change of basis formula (<xref ref="th_change_of_basis_transformations" text="global" />) yields
+    <md>
+      D=P^{-1}AP
+    </md>,
+    where <m>P=\underset{B'\rightarrow B}{P}</m>. Lastly, since <m>B</m> is the standard basis of <m>\R^n</m>, the change of basis matrix <m>\underset{B'\rightarrow B}{P}</m> is obtained by placing the <m>j</m>-th element of <m>B'</m> as the <m>j</m>-th column for all <m>1\leq j\leq n</m>. We record these observations as a separate procedure specifically for matrix transformations.
+  </p>
+   <algorithm xml:id="proc_diagonalize_matrixtransform">
+     <title>Deciding whether a matrix is diagonalizable</title>
+     <statement>
+       <p>
+         Let <m>A</m> be an <m>n\times n</m> matrix, and let <m>T=T_A</m> be its corresponding matrix transformation. To decide whether <m>A</m> is diagonalizable, proceed as follows.
+       </p>
+       <ol>
+         <li>
+           <p>
+             Let <m>W_1, W_2, \dots, W_r</m> be the nonzero eigenspaces of <m>A</m>. We have
+             <md>
+               A \text{ diagonalizable}\iff \sum_{i=1}^r\dim W_i=n
+             </md>.
+           </p>
+         </li>
+         <li>
+           <p>
+             Assume <m>A</m> is diagonalizable and let <m>B'=(\boldv_1, \boldv_2, \dots, \boldv_n)</m> be an eigenbasis of <m>A</m> satisfying <m>A\boldv_i=\lambda_i\boldv_i</m> for all <m>1\leq i\leq n</m>. (We do not assume the <m>\lambda_i</m> are distinct here.) Letting
+             <md>
+               P=\begin{amatrix}[rrrr]\vert\amp \vert\amp \amp \vert \\
+             \boldv_1\amp \boldv_2\amp \cdots\amp \boldv_n \\
+             \vert\amp \vert\amp \amp \vert
+              \end{amatrix},
+              D=\begin{amatrix}[rrrr]
+              \lambda_1\amp 0\amp \dots \amp 0\\
+              0\amp \lambda_2\amp \dots \amp 0 \\
+              \vdots \amp  \amp \amp \vdots  \\
+            0\amp 0 \amp \dots \amp \lambda_n \end{amatrix}
+            </md>,
+            we have
+            <md number="yes" xml:id="eq_diagonalize_matrix">
+              D=P^{-1}AP
+            </md>.
+           </p>
+         </li>
+       </ol>
+     </statement>
+   </algorithm>
+<p>
+  The process of finding <m>P</m> and <m>D</m> satisfying <xref ref="eq_diagonalize_matrix"/> is called <em>diagonalizing</em> the matrix <m>A</m>; and we say that the matrix <m>P</m> <em>diagonalizes</em> <m>A</m> in this case. (Of course this is possible if and only if <m>A</m> is diagonalizable.)
+</p>
+  <example xml:id="eg_diagonalizable_big">
+    <statement>
+      <p>
+        The matrix
+        <md>
+        A=\begin{amatrix}[rrrr]14 \amp 21 \amp 3 \amp -39 \\ 12 \amp 25 \amp 3 \amp -41 \\ 12 \amp 24 \amp 5 \amp -42 \\ 12 \amp 22 \amp 3 \amp -38 \end{amatrix}
+        </md>
+        has characteristic polynomial <m>p(t)=t^4 - 6t^3 + 9t^2 + 4t - 12</m>. Decide whether <m>A</m> is diagonalizable. If yes, find an invertible matrix <m>P</m> and diagonal matrix <m>D</m> such that <m>D=P^{-1}AP</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+       To factor <m>p(t)</m>, we first look for integer roots dividing the constant term <m>-12</m>: <ie />, we test whether any of <m>\pm 1, \pm 2, \pm 3, \pm 4, \pm 6, \pm 12</m> are roots. Luckily, we see that <m>-1</m> is a root of <m>p(t)</m>. Doing polynomial division of <m>p(t)</m> by <m>(t+1)</m> yields
+       <md>
+         p(t)=(t+1)\underset{q(t)}{(t^3-7t^2+16t-12)}
+       </md>.
+       Repeating this factoring technique on <m>q(t)</m>, we see that <m>q(2)=0</m>, and thus can continue to factor:
+       <md>
+         <mrow> p(t)\amp=(t+1)(t^3-7t^2+16t-12)</mrow>
+         <mrow> \amp=(t+1)(t-2)(t^2-5t+6) </mrow>
+         <mrow>  \amp = (t+1)(t-2)^2(t-3)</mrow>
+       </md>.
+       We conclude that the eigenvalues of <m>A</m> are <m>-1</m>, <m>2</m>, and <m>3</m>.  We now compute bases for the corresponding eigenspaces. The bases below were obtained using <xref ref="proc_fund_spaces"/>. We omit the details of the Gaussian elimination performed in each case. (Check for yourself!)
+       <md>
+         <mrow>W_{-1} \amp =\NS \begin{amatrix}[rrrr]
+         -15\amp -21\amp -3\amp 39\\
+         -12\amp -26\amp -3\amp 41\\
+         -12\amp -24\amp -6\amp 42\\
+         -12\amp -22\amp -3\amp -37
+         \end{amatrix}=\Span\{(1,1,1,1)\} </mrow>
+         <mrow>W_{2} \amp =\NS \begin{amatrix}[rrrr]
+         -12\amp -21\amp -3\amp 39\\
+         -12\amp -23\amp -3\amp 41\\
+         -12\amp -24\amp -3\amp 42\\
+         -12\amp -22\amp -3\amp 40
+         \end{amatrix}=\Span\{(3,2,0,2),(1,1,2,1)\}  </mrow>
+         <mrow>W_{3} \amp =\NS \begin{amatrix}[rrrr]
+         -11\amp -21\amp -3\amp 39\\
+         -12\amp -22\amp -3\amp 41\\
+         -12\amp -24\amp -2\amp 42\\
+         -12\amp -22\amp -3\amp 41
+         \end{amatrix}=\Span\{(3,5,6,4)\}  </mrow>
+       </md>.
+       Since
+       <md>
+         \dim W_{-1}+\dim W_{2}+\dim W_{3}=1+2+1=4=\dim \R^4
+       </md>,
+       we conclude that <m>A</m> is diagonalizable. Furthermore, we have <m>D=P^{-1}AP</m>, where
+       <md>
+         P=\begin{amatrix}[rrrr]
+           1\amp 3\amp 1\amp 3\\
+           1\amp 2\amp 1\amp 5\\
+           1\amp 0\amp 2\amp 6\\
+           1\amp 2\amp 1\amp 4
+         \end{amatrix},
+         D=\begin{amatrix}[rrrr]
+         -1\amp 0 \amp 0 \amp 0 \\
+         0 \amp 2\amp 0\amp 0\\
+         0\amp 0\amp 2\amp 0\\
+         0\amp 0\amp 0\amp 3
+       \end{amatrix}
+       </md>.
+     </p>
+    </solution>
+  </example>
+  <p>
+    Recall that two square matrices <m>A</m> and <m>A'</m> are similar if <m>A'=P^{-1}AP</m> for some invertible matrix <m>P</m> (<xref ref="d_similar" text="global"/>). From the foregoing discussion it follows that a matrix <m>A</m> is diagonalizable if and only if it is similar to a diagonal matrix.
+  </p>
+  <corollary xml:id="cor_diagonalizable_matrix">
+    <title>Diagonalizabilty and similarity</title>
+    <statement>
+      <p>
+        An <m>n\times n</m> matrix <m>A</m> is diagonalizable if and only if it is similar to a diagonal matrix: <ie />, if and only if there is an invertible matrix <m>P</m> and a diagonal matrix <m>D</m> such that
+        <md>
+          D=P^{-1}AP
+        </md>.
+      </p>
+    </statement>
+    <proof>
+      <p>
+        According to <xref ref="th_similarity_matrixreps"/> the matrix <m>A</m> is similar to a diagonal matrix <m>D</m> if and only if there is a linear transformation <m>T\colon \R^n\rightarrow \R^n</m> and ordered bases <m>B, B'</m> of <m>\R^n</m> such that <m>[T]_B=A</m> and <m>[T]_{B'}=D</m>. By definition such a <m>T</m> would be diagonalizable, since <m>[T]_{B'}=D</m> is diagonal. Since <m>T</m> is diagonalizable if and only if <m>A=[T]_B</m> is diagonalizable, we conclude that <m>A</m> is similar to a diagonal matrix <m>D</m> if and only if <m>A</m>
+         is diagonalizable.
+      </p>
+
+    </proof>
+
+  </corollary>
+  <p>
+   We know from <xref ref="th_similarity_matrixreps"/> that similar matrices can be thought of as two matrix representations of the same overlying linear transformation <m>T</m>. As such similar matrices share many of the same algebraic properties, as <xref ref="th_similarity"/> details.
+</p>
+<theorem xml:id="th_similarity">
+  <title>Properties of similarity</title>
+  <statement>
+    <p>
+      Suppose <m>A</m> is similar to <m>A'</m>:
+      <ie />, there is an invertible matrix <m>P</m> such that <m>A'=P^{-1}AP</m>. The following hold:
+      <ol>
+        <li>
+          <p>
+            <m>A'</m> is similar to <m>A</m>: <ie />, there is an invertible matrix <m>Q</m> such that <m>A=Q^{-1}AQ</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A</m> and <m>A'</m> have the same characteristic polynomial.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A</m> and <m>A'</m> have the same eigenvalues.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A</m> and <m>A'</m> have the same trace and determinant.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>A</m> and <m>A'</m> have the same rank.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            For any <m>\lambda\in \R</m> we have <m>\dim W_{\lambda}=\dim W_{\lambda}'</m>, where <m>W_\lambda, W_\lambda'</m> are the <m>\lambda</m>-eigenspaces of <m>A</m> and <m>A'</m>, respectively.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+  <proof>
+    <p>
+      Statement (1) follows by taking <m>Q=P^{-1}</m>.
+    </p>
+    <p>
+      Let <m>p_A(t)</m> and <m>p_{A'}(t)</m> be the characteristic polynomials of <m>A</m> and <m>A'</m>, repsectively. We have
+      <md>
+        <mrow>p_{A'}(t)\amp =\det(tI-A')</mrow>
+        <mrow>\amp =\det(tI-P^{-1}AP) \amp (A'=P^{-1}AP)</mrow>
+        <mrow>\amp = \det(P^{-1}tIP-P^{-1}AP) \amp (\text{algebra}) </mrow>
+        <mrow>\amp = \det(P^{-1}(tI-A)P) \amp (\text{left/right dist.}) </mrow>
+        <mrow>\amp = \det(P^{-1})\det(tI-A)\det(P) \amp (<xref ref="th_det_mult" text="global"/>) </mrow>
+        <mrow>\amp = (\det(P))^{-1}\det(P)\det(tI-A)  </mrow>
+        <mrow>\amp = \det(tI-A)=p_A(t)</mrow>
+      </md>.
+      This proves statement (2).
+    </p>
+    <p>
+      Statement (3) follows from (2) since the eigenvalues of a matrix are the real roots of its characteristic polynomial. Furthermore, by <xref ref="th_characteristic_polynomial"/> the trace and determinant of a matrix are equal to the sum and product of the roots of its characteristic polynomial. Thus (4) also follows from (2).
+    </p>
+    <p>
+      The proofs of statements (5)-(6) are left as exercises.
+    </p>
+  </proof>
+</theorem>
+<p>
+  A diagonalizable matrix is similar to a diagonal matrix (<xref ref="cor_diagonalizable_matrix" text="global"/>) and similar matrices share many essential properties (<xref ref="th_similarity_matrixreps" text="global"/>, <xref ref="th_similarity" text="global"/>) In this spirit, a good way of thinking about a diagonalizable matrix is that it is <q>as good as diagonal</q>.
+</p>
+<principle xml:id="mantra_diagonalizable">
+  <title>Diagonalizable mantra</title>
+  <statement>
+    <p>
+      A diagonalizable matrix is as good as diagonal.
+    </p>
+  </statement>
+</principle>
+<p>
+  In practical terms, if <m>A</m> is diagonalizable, then we have
+  <mdn>
+    <mrow xml:id="eq_diagonalize_matrix_2"> D\amp=P^{-1}AP \amp A\amp=PDP^{-1} </mrow>
+  </mdn>
+  where <m>D</m> is diagonal. This allows us to answer questions about <m>A</m> by first answering the question for <m>D</m> and then use the equations in <xref ref="eq_diagonalize_matrix_2"/> to translate the results back to <m>A</m>. What makes this method effective is that algebraic questions involving diagonal matrices are easy to answer! Before getting to some illustrative examples, we need a few results about the operation <m>A\mapsto P^{-1}AP</m>, which is called <em>conjugation</em> by <m>P</m>.
+</p>
+<theorem xml:id="th_conjugation">
+  <title>Properties of conjugation</title>
+  <statement>
+    <p>
+      Let <m>P</m> be an invertible <m>n\times n</m> matrix.
+      <ol>
+        <li>
+          <title>Conjugation is linear</title>
+          <p>
+            For all <m>A_1,A_2\in M_{nn}</m> and <m>c_1,c_2\in \R</m>, we have <m>P^{-1}(c_1A_1+c_2A_2)P=c_1P^{-1}A_1P+c_2P^{-1}A_2P</m>.
+          </p>
+        </li>
+        <li>
+          <title>Conjugation commutes with powers</title>
+          <p>
+            For all <m>A\in M_{nn}</m> and integers <m>k\geq 0</m>, we have
+            <md>(P^{-1}AP)^k=P^{-1}A^kP</md>.
+            If <m>A</m> is invertible,
+            this equality holds for <em>all</em>
+            integers <m>n</m>.
+          </p>
+        </li>
+        <li>
+          <title>Conjugation commutes with polynomials</title>
+          <p>
+            Given any polynomial <m>f(x)=a_rx^r+a_{r-1}x^{r-1}+\cdots +a_1x+a_0</m> with real coefficients,
+            we have
+            <md>f(P^{-1}AP)=P^{-1}f(A)P</md>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </statement>
+  <proof>
+    <p>
+      The proof is left as an exercise.
+    </p>
+  </proof>
+</theorem>
+<example xml:id="eg_diagonalizable_matrix_powers">
+  <title>Diagonalizable: matrix powers</title>
+  <statement>
+    <p>
+      Assume <m>D=P^{-1}AP</m>, where <m>D</m> is diagonal.
+      The normally difficult computation <m>A^{k}</m> can be accomplished by first computing <m>D^{k}</m> (easy) and then observing that
+      <md>
+        <mrow>A^k\amp = (PDP^{-1})^k \amp </mrow>
+        <mrow> \amp =PD^kP^{-1} \amp (<xref ref="th_conjugation"/>, (2)) </mrow>
+      </md>.
+      For example, the matrix
+      <md>
+      A=\begin{amatrix}[rr]1\amp 3\\ 1\amp -1 \end{amatrix}
+      </md>
+      is diagonalizable and satisfies <m>D=P^{-1}AP</m>, where
+      <md>
+        P=\begin{amatrix}[rr]3\amp 1\\ 1\amp -1 \end{amatrix}, D=\begin{amatrix}[rr]2\amp 0\\ 0\amp -2 \end{amatrix}
+      </md>.
+      It follows that for any <m>k\in \Z</m> we have
+      <md>
+        <mrow>A^k \amp=PD^kP^{-1} </mrow>
+        <mrow> \amp = P\begin{amatrix}[rr]2^{k}\amp 0\\ 0\amp (-2)^{k} \end{amatrix} P^{-1}</mrow>
+        <mrow>  \amp = \frac{1}{4}\begin{amatrix}[rr]3\cdot2^k+(-2)^k\amp 3\cdot 2^k-3(-2)^{k}\\ 2^{k}-(-2)^k\amp 2^k+3(-2)^{k} \end{amatrix}</mrow>
+      </md>.
+    </p>
+  </statement>
+</example>
+<example xml:id="eg_diagonalizable_matrix_polynomials">
+  <title>Diagonalizable: matrix polynomials</title>
+  <statement>
+    <p>
+      Assume <m>D=P^{-1}AP</m>, where <m>D</m> is a diagonal <m>n\times n</m> matrix. Let <m>[D]_{ii}=d_{i}</m>. Given any polynomial <m>f(x)=\anpoly</m>, we have
+      <md>
+        <mrow>f(A) \amp= f(PDP^{-1}) </mrow>
+        <mrow> \amp =Pf(D)P^{-1}  \amp (<xref ref="th_conjugation"/>,(3))</mrow>
+      </md>.
+      Furthermore, since <m>D</m> is diagonal, it follows that <m>f(D)</m> is also diagonal, and in fact its diagonal entries are given by <m>f(d_i)</m>. This gives us an easy method of computing arbitrary polynomials of the matrix <m>A</m>.
+    </p>
+    <p>
+      Consider again the matrix <m>A</m> (and <m>P</m> and <m>D</m>) from  <xref ref="eg_diagonalizable_matrix_powers"/>.  Let <m>f(x)=x^2 -4</m>. Since <m>f(2)=f(-2)=0</m>, it follows that <m>f(D)=D^2-4I=\boldzero</m>. We conclude that
+      <md>
+        f(A)=A^2-4I=Pf(D)P^{-1}=P\boldzero P^{-1}=\boldzero
+      </md>,
+      as you can check directly.
+    </p>
+  </statement>
+</example>
+  <example>
+    <statement>
+      <p>
+        A <em>square-root</em> of an <m>n\times n</m> matrix <m>A</m> is a matrix <m>B</m> such that <m>B^2=A</m>. If <m>A</m> and <m>A'</m> are similar matrices, satisfying <m>A'=P^{-1}AP</m>, then <m>A</m> has a square-root if and only if <m>A'</m> has a square-root.
+        Indeed, if <m>B</m> satisfies <m>B^2=A</m>, then  <m>C=P^{-1}BP</m> satisfies
+        <md>
+          C^2=(P^{-1}BP)^2=P^{-1}B^2P=P^{-1}AP=A'
+        </md>.
+        Similarly, if <m>C</m> satisfies <m>C^2=A'</m>, then <m>B=PCP^{-1}</m> satisfies
+        <md>
+          B^2=(PCP^{-1})^2=PC^2P^{-1}=PA'P^{-1}=A
+        </md>.
+        As an example,
+        the matrix
+        <md>A=\begin{amatrix}[rr]0\amp -2\\ 1 \amp 3 \end{amatrix}
+        </md>
+        satisfies <m>D=P^{-1}AP</m>,
+        where
+        <md>
+          P=\begin{amatrix}[rr]2\amp 1\\ -1\amp -1 \end{amatrix}, D=\begin{amatrix}[rr]1\amp 0\\ 0\amp 2 \end{amatrix}
+        </md>.
+        Since
+        <md>C=\begin{bmatrix}1\amp 0\\ 0\amp \sqrt{2} \end{bmatrix}
+        </md> is a square-root of <m>D</m>,
+        <md>
+        B=PCP^{-1}=\begin{amatrix}[rr]2-\sqrt{2}\amp 2-2\sqrt{2}\\ -1+\sqrt{2}\amp -1+2\sqrt{2} \end{amatrix}
+        </md> is a square-root of <m>A</m>.
+      </p>
+      <p>
+        So when exactly does a diagonal matrix <m>D</m> have a square-root?
+        Clearly, it is <em>sufficient</em>  that the diagonal entries <m>d_i</m> satisfy
+        <m>d_i\geq 0</m> for all <m>i</m>, as in the example above.
+        Interestingly, this is not a necessary condition!
+        Indeed, consider the following example:
+        <md>
+        \begin{amatrix}[rr]-1\amp 0\\ 0\amp -1 \end{amatrix} =\begin{amatrix}[rr]0\amp -1\\ 1\amp 0 \end{amatrix} ^2
+        </md>.
+      </p>
+    </statement>
+  </example>
+
+
+</subsection>
+  <subsection>
+    <title>Algebraic and geometric multiplicity</title>
+    <p>
+      We end this section with a deeper look at what the characteristic polynomial reveals about eigenspaces. To begin with, we first define the characteristic polynomial of a general linear transformation <m>T\colon V\rightarrow V</m>, where <m>V</m> is a finite-dimensional vector space.
+    </p>
+    <definition xml:id="d_char_poly_transform">
+      <title>Characteristic polynomial of a transformation</title>
+      <statement>
+        <p>
+          Let <m>T\colon V\rightarrow V</m> be a linear transformation, where <m>V</m> is finite-dimensional. Let <m>B</m> be an ordered basis of <m>V</m>, and let <m>A=[T]_B</m>. We define the <term>characteristic polynomial</term> of <m>T</m> to be the characteristic polynomial of <m>A</m>: <ie />, the characteristic polynomial of <m>T</m> is
+          <md>
+            p(t)=\det(tI-A)
+          </md>.
+        </p>
+      </statement>
+    </definition>
+        <remark xml:id="rm_char_poly_transform">
+      <statement>
+        <p>
+          For the characteristic polynomial of a linear transformation <m>T\colon V\rightarrow V</m> to be well-defined, it should not depend on the choice of basis. This is true thanks to <xref ref="th_similarity"/> and <xref ref="th_change_of_basis_transformations"/>. Indeed, given two choice of ordered bases <m>B, B'</m> of <m>V</m>, the matrices <m>A=[T]_B</m> and <m>A'=[T]_{B'}</m> are similar (<xref ref="th_change_of_basis_transformations" text="global"/>), and thus their characteristic polynomials are equal (<xref ref="th_similarity" text="global"/>,(2)).
+        </p>
+      </statement>
+    </remark>
+    <p>
+      Let <m>T\colon V\rightarrow V</m> be a linear transformation, where <m>V</m> is finite-dimensional. If <m>\lambda\in \R</m> is an eigenvalue of <m>T</m>, then we can factor the chacteristic polynomial <m>p(t)</m> of <m>T</m> as <m>p(t)=(t-\lambda)^mq(t)</m>, where <m>\lambda</m> is not a root of <m>q(t)</m>. As we will see, the exponent <m>m</m> is an upper bound for the dimension of <m>W_\lambda</m>. We call <m>m</m> the <em>algebraic multiplicity</em> of the eigenvalue <m>\lambda</m>.
+    </p>
+    <definition xml:id="d_alg_geom_mult">
+      <idx><h>multiplicity of an eigenvalue</h><h>algebraic</h></idx>
+      <idx><h>multiplicity of an eigenvalue</h><h>geometric</h></idx>
+      <title>Algebraic/geometric multiplicity</title>
+      <statement>
+        <p>
+          Let <m>T\colon V\rightarrow V</m> be a linear transformation, where <m>V</m> is finite-dimensional, and let <m>p(t)</m> be the characteristic polynomial of <m>T</m>. Given an eigenvalue <m>\lambda\in \R</m> of <m>T</m>, we can factor <m>p(t)</m> as
+          <m>
+            p(t)=(t-\lambda)^mq(t)
+          </m>,
+          where <m>\lambda</m> is not a root of the polynomial <m>q(t)</m>: <ie />, <m>q(\lambda)\ne 0</m>. We call <m>m</m> the <term>geometric multiplicity</term> of the eigenvalue <m>\lambda</m>, and we call <m>\dim W_\lambda</m> its <term>geometric multiplicity</term>. If <m>m\gt 1</m>, we say <m>\lambda</m> is a <term>repeated</term> eigenvalue of <m>T</m>.
+        </p>
+      </statement>
+    </definition>
+    <theorem xml:id="th_alg_geom_mult">
+      <title>Algebraic and geometric multiplicity</title>
+      <statement>
+        <p>
+        Let <m>T\colon V\rightarrow V</m> be a linear transformation, where <m>
+        dim V=n</m>, let <m>p(t)</m> be the characteristic polynomial of <m>T</m>, and suppose <m>\lambda\in\R</m> is an eigenvalue of <m>T</m> of algebraic multiplicity <m>m\geq 1</m>: <ie />, <m>p(t)=(t-\lambda)^mq(t)</m> and <m>q(\lambda)\ne 0</m>. We have
+        <md>1\leq \dim W_\lambda\leq m
+        </md>.
+        In other words, the geometric multiplicity of an eigenvalue is bounded above by its algebraic multiplicity.
+        </p>
+      </statement>
+
+    <proof>
+      <p>
+        Since <m>\lambda</m> is an eigenvalue, we have <m>W_\lambda\ne \{\boldzero\}</m>, and thus <m>\dim W_\lambda\geq 1</m>.
+        Assume by contradiction that <m>\dim W_{\lambda}\gt m</m>. Let <m>m'=\dim W_{\lambda}</m>, and let <m>S_{\lambda}=\{\boldv_1,\boldv_2,\dots, \boldv_{m'}\}</m> be a basis for <m>W_{\lambda}</m>. We can extend <m>S_{\lambda}</m> to an ordered basis
+        <md>
+          B=(\boldv_1, \dots, \boldv_{m'}, \boldv_{m'+1},\dots, \boldv_n)
+        </md>
+        of <m>V</m>. By definition, the characteristic polynomial of <m>T</m> is given my <m>p(t)=\det(tI-A)</m>, where <m>A=[T]_B</m>w. Since <m>\boldv_1,\boldv_2,\dots, \boldv_{m'}</m> are <m>\lambda</m>-eigenvectors of <m>T</m>, the matrix <m>A=[T]_B</m> is of the form
+        <image xml:id="im_alg_geom_mult" width="40%">
+        <latex-image>
+        \begin{tikzpicture}[
+        Brace/.style={
+           decorate,
+           decoration={
+               brace,
+               raise=-2pt
+                }
+           },
+       DL/.style={
+          left delimiter=[,
+          right delimiter=],
+          inner sep=-2pt,
+              }
+        ]
+    \matrix[% General option for all nodes
+       matrix of math nodes,
+       text height=2.5ex,
+       text depth=0.75ex,
+       text width=3.25ex,
+       align=center,
+       column sep=5pt,
+       row sep=5pt,
+       nodes in empty cells,
+       ] at (0,0) (M){ % Matrix contents
+      \lambda 	\amp 0  			\amp \dots   		\amp 0   \amp *   \amp * \\
+      0  		\amp \lambda  	\amp   			\amp \vdots  \amp *  \amp*  \\
+      \vdots	  	\amp    	0		\amp \ddots		\amp   \amp *  \amp *  \\
+      0		\amp  \vdots 		\amp   			\amp \lambda   \amp *   \amp *  \\
+      \vdots 	\amp   			\amp   			\amp \vdots  \amp  * \amp * \\
+     0 		\amp 0   			\amp \dots  		\amp0  \amp  * \amp * \\
+   };
+   \node[DL,fit=(M-1-1)(M-6-6)](subM-1){};
+   \draw[Brace] (M-1-1.north)
+   -- (M-1-4.north)
+   node[midway,above]{$m'$};
+   \draw[Brace] (M-4-1.west)
+   -- (M-1-1.west)
+   node[midway,left]{$m'$};
+
+   \end{tikzpicture}
+    </latex-image>
+    </image>
+    An easy proof by induction on <m>m'</m> shows that for such a matrix <m>A</m> we have  <m>p(t)=\det(tI-A)=(t-\lambda)^{m'}r(t)</m> for some polynomial <m>r(t)</m>. On the other hand, since <m>\lambda</m> has algebraic multiplicity <m>m</m> we have <m>p(t)=(t-\lambda)^mq(t)</m> for some polynomial <m>q(t)</m> with <m>q(\lambda)=0</m>. Setting these two expressions equal to one another we see that
+    <md>
+      (t-\lambda)^{m'}r(t)=(t-\lambda)^mq(t)
+    </md>,
+    or equivalently,
+    <md>
+      (t-\lambda)^{m'-m}r(t)=q(t)
+    </md>.
+    Since <m>m'\gt m</m> it follows that <m>q(\lambda)=(\lambda-\lambda)^{m'-m}r(\lambda)=0</m>. Contradiction! We conclude that <m>\dim W_{\lambda}\leq m</m>, as desired.
+      </p>
+    </proof>
+</theorem>
+<corollary xml:id="cor_alg_geom_mult">
+<title>Algebraic and geometric multiplicity</title>
+  <statement>
+    <p>
+      Let <m>T\colon V\rightarrow V</m> be a linear transformation, where <m>\dim V=n</m>, and suppose the characteristic polynomial of <m>T</m> factors over <m>\mathbb{C}</m> as
+      <md number="yes" xml:id="eq_cor_alg_geom_mult">
+        p(t)=(t-\lambda_1)^{m_1}(t-\lambda_2)^{m_2}\cdots (t-\lambda_r)^{m_r}
+      </md>,
+      where <m>\lambda_i\ne \lambda_j</m> for all <m>1\leq i\lt j\leq n</m>. The following are equivalent:
+      <ol>
+        <li>
+          <p>
+            <m>T</m> is diagonalizable.
+          </p>
+        </li>
+        <li>
+          <p>
+            For all <m>1\leq i\leq n</m> we have <m>\lambda_i\in \R</m> and <m>\dim W_{\lambda_i}=m_i</m>.
+          </p>
+        </li>
+      </ol>
+      In other words, <m>T</m> is diagonalizable if and only if all roots of <m>p(t)</m> are real, and the geometric multiplicity of each eigenvalue is equal to its algebraic multiplicity.
+    </p>
+  </statement>
+  <proof>
+    <case>
+     <title>Implication: <m>(2)\implies (1)</m></title>
+    <p>
+    If (2) is true, then each <m>\lambda_i</m> is an eigenvalue of <m>T</m> and we have
+    <md>
+      \sum_{i=1}^r\dim W_{\lambda_i}=\sum_{i=1}^r m_i=n
+    </md>,
+    by counting degrees in <xref ref="eq_cor_alg_geom_mult"/>. It follows from <xref ref="th_diagonalizability_eigenbasis"/> that <m>T</m> is diagonalizable.
+    </p>
+    </case>
+    <case>
+     <title>Implication: <m>(1)\implies (2)</m></title>
+    <p>
+    If <m>T</m> is diagonalizable, then there is an ordered basis <m>B</m> of <m>V</m> for which <m>D=[T]_B</m> is diagonal. Letting <m>d_i</m> be the <m>i</m>-th diagonal element of <m>D</m>, we have
+    <md>
+    p(t)=\det(tI-D)=(t-d_1)(t-d_2)\dots (t-d_n)
+    </md>.
+    This expression tells us that <m>d_1, d_2, \dots, d_n</m> are the roots of <m>p(t)</m>, and hence that all roots are real since since <m>d_i\in \R</m> for all <m>1\leq i\leq n</m>. On the other hand  each <m>\lambda_i</m> is a root of <m>p(t)</m>, and thus <m>\lambda_i\in \R</m> for all <m>1\leq i\leq r</m>. It follows that <m>\lambda_1, \lambda_2, \dots, \lambda_r</m> are the distinct eigenvalues of <m>T</m>. By <xref ref="th_diagonalizability_eigenspaces"/>, since <m>T</m> is diagonalizable we must have
+    <md number="yes" xml:id="eq_cor_alg_geom_mult_proof">
+    \sum_{i=1}^r\dim W_{\lambda_i}=n
+  </md>.
+    Since <m>\dim W_{\lambda_i}\leq m_i</m>
+    for all <m>1\leq i\leq n</m> (<xref ref="th_alg_geom_mult" text="global"/>), and since <m>\sum_{i=1}^rm_i=n</m> (counting degrees in <xref ref="eq_cor_alg_geom_mult" text="global"/>), for the equality <xref ref="eq_cor_alg_geom_mult_proof"/> to hold we must have <m>\dim W_{\lambda_i}=m_i</m> for all <m>1\leq i\leq r</m>, as desired.
+    </p>
+    </case>
+  </proof>
+
+</corollary>
+<p>
+  From <xref ref="th_alg_geom_mult"/> and <xref ref="cor_alg_geom_mult"/> we can deduce a much finer picture of the eigenspaces of a linear transformation from its factored characteristic polynomial. This often reduces our workload when treating questions of diagonalizability, as the next examples illustrate.
+</p>
+<example xml:id="eg_alg_geom_1">
+  <statement>
+    <p>
+      The matrix
+      <md>
+        A=\begin{amatrix}[rrrr]
+        2 \amp -1 \amp 1 \amp 0 \\
+        -4 \amp 2 \amp 0 \amp -4 \\
+        -4 \amp 1 \amp 1 \amp -4 \\
+        -4 \amp 1 \amp -1 \amp -2
+        \end{amatrix}
+      </md>
+      has characteristic polynomial <m>p(t)=(t-1)(t+2)(t-2)^2</m>. Decide whether <m>A</m> is diagonalizable.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      The eigenvalues of <m>A</m> are <m>1,-2, 2</m>. Since the eigenvalues <m>1</m> and <m>-2</m> both have algebraic multiplicity <m>1</m>, we have by <xref ref="th_alg_geom_mult"/>
+      <md>
+        1\leq \dim W_1, \dim W_{-2}\leq 1
+      </md>,
+      and hence
+      <md>
+        \dim W_1=\dim W_{-2}=1
+      </md>.
+      It follows that <m>A</m> is diagonalizable if and only if <m>\dim W_{2}=2</m>. We have <m>W_{2}=\NS(2I-A)</m>, where
+      <md>
+        2I-A=
+        \begin{amatrix}[rrrr]
+        0 \amp 1 \amp -1 \amp 0 \\
+        4 \amp 0 \amp 0 \amp -4 \\
+        4 \amp -1 \amp 1 \amp -4 \\
+        4 \amp -1 \amp 1 \amp -4
+        \end{amatrix}
+      </md>.
+      This matrix clearly has rank 2 (the first two columns form a basis for its column space), and hence nullity <m>4-2=2</m>. We conclude that <m>A</m> is diagonalizable.
+    </p>
+  </solution>
+</example>
+<example xml:id="eg_alg_geom_2">
+  <statement>
+    <p>
+      The matrix
+      <md>
+        A=\begin{amatrix}[rrrr]
+        1 \amp 0 \amp -3 \amp 1 \\
+        0 \amp 1 \amp 1 \amp 1 \\
+        0 \amp 0 \amp -2 \amp 1 \\
+        0 \amp 0 \amp -1 \amp 0  \end{amatrix}
+      </md>
+    has characterisic polynomial <m>p(t)=(t-1)^2(t+1)^2</m>. Decide whether <m>A</m> is diagonalizable.
+    </p>
+  </statement>
+  <solution>
+    <p>
+      The eigenvalues of <m>A</m> are <m>1</m> and <m>-1</m>, and each has algebraic multiplicity <m>2</m>. Thus <m>1\leq\dim W_1, \dim W_{-1}\leq 2</m>, and <m>A</m> is diagonalizable if and only if
+      <md>
+        \dim W_1=\dim W_{-1}=2
+      </md>.
+      By inspection we see that <m>(1,0,0,0)</m> and <m>(0,1,0,0)</m> are <m>1</m>-eigenvectors, and thus we must have <m>\dim W_1=2</m>. Next we have <m>W_{-1}=\NS(-I-A)</m> where
+      <md>
+        -I-A=\begin{amatrix}[rrrr]
+        -2 \amp 0 \amp 3 \amp -1 \\
+        0 \amp -2 \amp -1 \amp -1 \\
+        0 \amp 0 \amp 1 \amp -1 \\
+        0 \amp 0 \amp 1 \amp -1
+      \end{amatrix}
+      </md>.
+      It is not difficult to see (either using Gaussian elimination or inspection) that this matrix has rank 3, and hence nullity 1. We conclude that <m>\dim W_{-1}=1\lt 2</m>, and hence <m>A</m> is not diagonalizable.
+    </p>
+  </solution>
+</example>
+  </subsection>
+
+
+<xi:include href="./s_diagonalization_ex.ptx"/>
+</section>

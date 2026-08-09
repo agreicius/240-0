@@ -35,9 +35,9 @@
     <title>Equivalence</title>
     <p>
       The equivalence <m>\mathcal{P}\iff\mathcal{Q}</m> is logically equivalent to the conjunction
-    <me>
+    <md>
       (\mathcal{P}\implies\mathcal{Q})\text{ and } (\mathcal{Q}\implies \mathcal{P})
-    </me>.
+    </md>.
      Accordingly, the standard way of proving <m>\mathcal{P}\iff \mathcal{Q}</m> is to prove the two implications  <m>\mathcal{P}\implies\mathcal{Q}</m> and <m>\mathcal{Q}\implies\mathcal{P}</m> separately. (Exercise: use a truth table to show these propositions are indeed equivalent!)
     </p>
   </subsubsection>
@@ -166,9 +166,9 @@
 <introduction>
 <p>
   Equality is not as simple as it may seem. In general an equality is a mathematical statement of the form
-<men xml:id="eq_equality">
+<md number="yes" xml:id="eq_equality">
 \text{LHS}=\text{RHS}
-</men>.
+</md>.
 Here <q>LHS</q> and <q>RHS</q> stand for left- and right-hand side, respectively. What exactly such an equality means depends very much on what kind of mathematical objects the two sides of the equation are: <eg />, numbers, sets, functions, etc.
 Below we discuss equality for objects of a particular type in detail. (See <xref ref="ss_set_properties"/> and <xref ref="ss_function_properties"/>.) In all settings, the notion of equality will be <em>transitive</em>: <ie />, if <m>x=y</m> and <m>y=z</m>, then <m>x=z</m>. We use transitivity implicitly when proving an equality via a <em>chain of equalities</em> as described below.
 </p>
@@ -203,9 +203,9 @@ What this suggests is that you are in fact proving an implication: namely, <em>i
   <title>Set inclusion</title>
   <p>
     Let <m>A</m> and <m>B</m> be sets. By <xref ref="d_set_inclusion"/>, to prove <m>A\subseteq B</m> we must show that for all elements <m>x</m> we have
-  <me>
+  <md>
     x\in A\implies x\in B
-  </me>.
+  </md>.
   This requires proving the implication above for a general element <m>x</m>, and we may use any of  the techniques described in <xref ref="sss_implication" text="title"/> and <xref ref="sss_logical_chains" text="title"/> to do so.
 </p>
 </subsubsection>
@@ -213,9 +213,9 @@ What this suggests is that you are in fact proving an implication: namely, <em>i
   <title>Set equality</title>
   <p>
     Let <m>A</m> and <m>B</m> be sets. To prove <m>A=B</m> directly using <xref ref="d_set_equality"/> we must show that for all elements <m>x</m> we have
-    <me>
+    <md>
       x\in A \iff x\in B
-    </me>.
+    </md>.
      To prove this universal equivalence, we must give an argument for the equivalence that holds for a general element <m>x</m>.
   </p>
   <p>
@@ -253,13 +253,13 @@ The universal quantifier <q>for all <m>x\in X</m></q> of item (ii) gives this su
  <title>Injectivity</title>
 <p>
 To show <m>f</m> is injective, we must show that the implication
-<me>
+<md>
   f(x)=f(x')\implies x=x'
-</me>
+</md>
 holds for all <m>x,x'\in </m>. Frequently it will be convenient to prove the (universal) contrapositive:
-<me>
+<md>
   x\ne x'\implies f(x)\ne f(x')
-</me>
+</md>
 for all <m>x,x'\in X</m>.
 </p>
 <p>
@@ -270,9 +270,9 @@ for all <m>x,x'\in X</m>.
  <title>Surjectivity</title>
 <p>
 To prove <m>f</m> is surjective, we must prove the universal quantification:
-<me>
+<md>
   \text{for all } y\in Y, \text{ there exists an } x\in X\ \text{ such that } f(x)=y
-</me>.
+</md>.
 To prove <m>f</m> is <em>not</em> surjective, we must prove the negation of this proposition (<xref ref="rm_negating_quantifiers"/>): <ie />, there exists a <m>y\in Y</m> for which there is no <m>x\in X</m> with <m>f(x)=y</m>.
 </p>
 </case>
@@ -294,13 +294,13 @@ To show <m>f</m> is bijective directly using <xref ref="d_injective_surjective_b
   <introduction>
   <p>
     <em>Mathematical induction</em> is a technique for proving universal quantifications of the form
-    <me>
+    <md>
       \text{For all integers } n\geq b, \, P(n)
-    </me>,
+    </md>,
     where <m>b</m> is a fixed starting integer, called the <term>base</term>, and <m>P</m> is a predicate defined on the integers. If the setting makes clear that <m>n</m> ranges over integers, we write such propositions using logical notation as
-    <me>
+    <md>
       \forall n\geq b\, P(n)
-    </me>.
+    </md>.
   </p>
 </introduction>
   <subsubsection xml:id="sss_weak_induction">
@@ -319,9 +319,9 @@ To show <m>f</m> is bijective directly using <xref ref="d_injective_surjective_b
      <title>Induction step</title>
     <p>
     Prove the universal implication
-    <me>
+    <md>
       \forall n\geq b\, P(n)\implies P(n+1)
-    </me>.
+    </md>.
     In practice, if proving the implication <m>P(n)\implies P(n+1)</m> directly, this means we assume <m>P(n)</m> is true (the <term>induction hypothesis</term>), and use this assumption to show <m>P(n+1)</m> is true.
     </p>
     </case>
@@ -330,7 +330,7 @@ To show <m>f</m> is bijective directly using <xref ref="d_injective_surjective_b
       <statement>
         <p>
           When meeting a proposition in the wild that we wish to prove by induction, you should first take care to model the proposition in the form
-          <me>\forall n\geq b\, P(n)</me>. Make explicit the predicate <m>P</m> in question, as well as the base case <m>b</m>. We illustrate this preparatory <q>Step 0</q> in the examples below.
+          <md>\forall n\geq b\, P(n)</md>. Make explicit the predicate <m>P</m> in question, as well as the base case <m>b</m>. We illustrate this preparatory <q>Step 0</q> in the examples below.
         </p>
       </statement>
     </remark>
@@ -339,13 +339,13 @@ To show <m>f</m> is bijective directly using <xref ref="d_injective_surjective_b
       <statement>
         <p>
           Prove the identity
-          <me>
+          <md>
             \sum_{k=1}^n k=\frac{n(n+1)}{2}
-          </me>
+          </md>
           for all <m>n\geq 1</m>. Recall:
-          <me>
+          <md>
             \sum_{k=1}^n k=1+2+\cdots +n
-          </me>.
+          </md>.
         </p>
       </statement>
       <solution>
@@ -356,18 +356,18 @@ To show <m>f</m> is bijective directly using <xref ref="d_injective_surjective_b
          <title>Step 0: preparation</title>
         <p>
           The proposition is modeled logically as <m>\forall n\geq 1 \, P(n)</m>, where <m>P(n)</m> is the proposition that
-          <me>
+          <md>
             \sum_{k=1}^n k=\frac{n(n+1)}{2}
-          </me>.
+          </md>.
         </p>
         </case>
         <case>
          <title>Base step: <m>n=1</m></title>
         <p>
         The proposition <m>P(1)</m> is the statement that
-        <me>
+        <md>
           1=\frac{1(1+1)}{2}
-        </me>,
+        </md>,
         which is clearly true.
         </p>
         </case>
@@ -375,17 +375,17 @@ To show <m>f</m> is bijective directly using <xref ref="d_injective_surjective_b
          <title>Induction step</title>
         <p>
         We must show the universal implication
-        <me>
+        <md>
           \forall n\geq 1\, P(n)\implies P(n+1)
-        </me>.
+        </md>.
         Let <m>n\geq 1</m>, and assume <m>P(n)</m> is true: <ie />,
-        <me>
+        <md>
           \sum_{k=1}^n k=\frac{n(n+1)}{2}
-        </me>
+        </md>
         The proposition <m>P(n+1)</m> states that
-        <me>
+        <md>
           \sum_{k=1}^{n+1} k=\frac{(n+1)(n+2)}{2}
-        </me>. We prove this, assuming <m>P(n)</m>, via a chain of equalities:
+        </md>. We prove this, assuming <m>P(n)</m>, via a chain of equalities:
         <md>
           <mrow> \sum_{k=1}^{n+1} k\amp= \sum_{k=1}^{n} k+(n+1) </mrow>
           <mrow> \amp=\frac{n(n+1)}{2}+n+1\amp (\text{induction hyp.}) </mrow>
@@ -440,9 +440,9 @@ To show <m>f</m> is bijective directly using <xref ref="d_injective_surjective_b
   <title>Strong induction step</title>
  <p>
  Prove the universal implication
- <me>
+ <md>
    \forall n\geq b\, \left(P(b)\land P(b+1)\cdots \land P(n)\right) \implies P(n+1)
- </me>.
+ </md>.
  This technique is called strong induction, as now the induction hypothesis is much stronger: to prove this implication directly we assume <m>P(k)</m> is true for all <m>1\leq k\leq n</m> (not just <m>k=n</m> as in weak induction), and use this assumption to show <m>P(n+1)</m> is true.
  </p>
 </case>
@@ -476,9 +476,9 @@ To show <m>f</m> is bijective directly using <xref ref="d_injective_surjective_b
      <title>Strong induction step</title>
     <p>
       We must show the universal implication
-      <me>
+      <md>
         \forall n\geq 2\, \left( P(1)\land P(2)\land\cdots \land P(n)\right)\implies P(n+1)
-      </me>.
+      </md>.
       Let <m>n\geq 2</m>, and assume <m>P(k)</m> is true for all <m>2\leq k\leq n</m>: <ie />, for all such <m>k</m> we assume <m>k</m> can be written as a product of primes. We use this assumption to prove <m>P(n+1)</m>: <ie />, that <m>n+1</m> is a product of primes. We proceed in two cases, depending on whether <m>n+1</m> is itself prime.
     </p>
     <case>
@@ -495,9 +495,9 @@ To show <m>f</m> is bijective directly using <xref ref="d_injective_surjective_b
        <mrow>k_1 \amp=p_1p_2\cdots p_r \amp k_2=q_1q_2\cdots q_s</mrow>
      </md>,
      where <m>p_i</m> and <m>q_j</m>  are prime for all <m>1\leq i\leq r</m> and <m>1\leq j\leq s</m>. It follows that
-    <me>
+    <md>
       n+1=k_1k_2=p_1p_2\cdots p_rq_1q_2\cdots q_s
-    </me>,
+    </md>,
     and hence that <m>n+1</m> is also a product of primes, as desired.
     </p>
     </case>

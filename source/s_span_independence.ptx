@@ -17,9 +17,9 @@
     <p>
       Recall that a linear combination
       in a vector space <m>V</m> is a vector of the form
-      <me>
+      <md>
         \boldv=c_1\boldv_1+c_2\boldv_2\cdots +c_n\boldv_n
-      </me>,
+      </md>,
       where <m>c_i\in \R</m> are scalars.
       We use this notion to define the
       <em>span</em> of a set of vectors.
@@ -43,9 +43,9 @@
               <li>
                 <p>
                   Otherwise we define <m>\Span S</m> to be the set of all linear combinations of elements of <m>S</m>: <ie />,
-                  <me>
+                  <md>
                     \Span S=\{\boldv\in V\colon \boldv=c_1\boldv_1+c_2\boldv_2\cdots +c_n\boldv_n \text{ for some } \boldv_i\in S \text{ and } c_i\in \R\}
-                  </me>.
+                  </md>.
                 </p>
               </li>
             </ul>
@@ -145,38 +145,38 @@
           <li>
             <p>
               By definition
-              <me>
+              <md>
                 S=\{a(1,0)+b(0,1)\colon a,b\in \R\}=\{(a,b)\colon a,b\in\R\}
-              </me>.
+              </md>.
               Thus <m>\Span S=\R^2</m>, the entire <m>xy</m>-plane.
             </p>
           </li>
           <li>
             <p>
               By definition
-              <me>
+              <md>
                 S=\{a(1,1)+b(2,2)\colon a,b\in \R\}=\{(a+2b,a+2b)\colon a,b\in\R\}
-              </me>.
+              </md>.
               It is easy to see that <m>S=\{(c,c)\colon t\in \R\}</m>, the line with equation <m>y=x</m>. Note that in this case we have
-              <me>
+              <md>
                 S=\Span\{(1,1), (2,2)\}=\Span \{(1,1)\}
-              </me>,
+              </md>,
               and thus that the vector <m>(2,2)</m> is in some sense redundant.
             </p>
           </li>
           <li>
             <p>
               By definition
-              <me>
+              <md>
                 S=\{a(1,1)+b(1,2)\colon a,b\in \R\}=\{(a+b,a+2b)\colon a,b\in\R\}
-              </me>.
+              </md>.
               Claim: <m>\Span S=\R^2</m>. Proving the claim amounts to showing that for all <m>(c,d)\in \R^2</m> there exist <m>a,b\in \R</m> such that
-              <me>
+              <md>
                 \begin{array}{ccccc}
                   a \amp +\amp b \amp =\amp c\\
                   a \amp +\amp 2b \amp =\amp d
                 \end{array}
-              </me>.
+              </md>.
                 Solving this system using Gaussian elimination, we see that the system has the unique solution
                 <md>
                 <mrow>
@@ -184,9 +184,9 @@
                 </mrow>
                 </md>,
                 and thus that
-                <me>
+                <md>
                   (2c-d)(1,1)+(d-c)(1,2)=(c,d)
-                </me>.
+                </md>.
                 This proves <m>\Span S=\R^2</m>, as claimed.
               </p>
             </li>
@@ -250,9 +250,9 @@
                 <mrow>\boldv \amp =c_1\boldv_1+c_2\boldv_2+\cdots +c_r\boldv_r \amp \boldw \amp = c_{r+1}\boldv_{r+1}+c_{r+2}\boldv_{r+2}+\cdots +c_{r+s}\boldv_{r+s}</mrow>
               </md>
               for some vectors <m>\boldv_1, \boldv_2, \dots, \boldv_{r+s}\in S</m> and scalars <m>c_1,c_2,\dots, c_{r+s}</m>. Then for any <m>c,d\in \R</m> we have
-              <me>
+              <md>
               c\boldv+d\boldw=cc_1\boldv_1+cc_2\boldv_2+\cdots +cc_r\boldv_r+dc_{r+1}\boldv_{r+1}+dc_{r+2}\boldv_{r+2}+\cdots +dc_{r+s}\boldv_{r+s}
-              </me>,
+              </md>,
               which is clearly a linear combination of elements of <m>S</m>. Thus <m>c\boldv+d\boldw\in \Span S</m>, as desired.
             </p>
           </li>
@@ -315,7 +315,7 @@
             <title>Polynomials</title>
             <p>
             Let <m>V=P</m>, the space of <em>all</em> polynomials. In a similar vein, the set
-            <me>S=\{1, x, x^2, \dots\}=\{x^i\colon i\geq 0\} </me>
+            <md>S=\{1, x, x^2, \dots\}=\{x^i\colon i\geq 0\} </md>
             of <em>all</em> monomials is a spanning set for <m>P</m>.
             </p>
           </li> -->
@@ -341,12 +341,12 @@
           <li>
             <p>
               <m>V=M_{22}</m>, <m>S=\{A_1, A_2, A_3, A_4\}</m>,
-              <me>
+              <md>
                 A_1=\begin{amatrix}[rr]1\amp 1\\ 1\amp 1  \end{amatrix},
                 A_2=\begin{amatrix}[rr]1\amp -1\\ 0\amp 0  \end{amatrix},
                 A_3=\begin{amatrix}[rr]0\amp 0\\ 1\amp -1  \end{amatrix},
                 A_4=\begin{amatrix}[rr]1\amp 1\\ -1\amp -1  \end{amatrix}
-              </me>.
+              </md>.
             </p>
           </li>
           <!-- <li>
@@ -368,55 +368,55 @@
             <li>
               <p>
                 We must show, given any <m>A=\begin{amatrix}[rr]a\amp b\\ c\amp d  \end{amatrix}</m>, we can find <m>c_1, c_2, c_3, c_4\in \R</m> such that
-                <me>
+                <md>
                   c_1A_1+c_2A_2+c_3A_3+c_4A_4=\begin{amatrix}[rr]a\amp b\\ c\amp d  \end{amatrix}
-                </me>,
+                </md>,
                 or
-                <me>
+                <md>
                   \begin{amatrix}[rr]c_1+c_2+c_4 \amp c_1-c_2+c_4\\
                   c_1+c_3-c_4\amp c_1-c_3-c_4  \end{amatrix}
                   =
                   \begin{amatrix}[rr]a\amp b \\ c\amp d  \end{amatrix}
-                </me>.
+                </md>.
                 We can find such <m>c_i</m> if and only if the system with augmented matrix
-                <me>
+                <md>
                   \begin{amatrix}[rrrr|r]
                   1\amp 1\amp 0\amp 1\amp a\\
                   1\amp -1\amp 0\amp 1\amp b \\
                   1\amp 0\amp 1\amp -1\amp c\\
                   1\amp 0\amp -1\amp -1\amp d
                 \end{amatrix}
-                </me>
+                </md>
                 is consistent. This matrix row reduces to
-                <me>
+                <md>
                 \begin{amatrix}[rrrr|r]
                 \boxed{1}\amp 1\amp 0\amp 1\amp a\\
                 0\amp \boxed{1}\amp 0\amp 0\amp \frac{a-b}{2} \\
                 0\amp 0\amp \boxed{1}\amp -2\amp c-\frac{a+b}{2}\\
                 0\amp 0\amp 0\amp \boxed{1}\amp \frac{a+b-c-d}{4}
               \end{amatrix}
-                </me>.
+                </md>.
                 Since the last column will never contain a leading one, we conclude that the system is consistent for any choice of <m>a,b,c,d</m>, and thus that <m>\Span S=M_{22}</m>, as claimed.
               </p>
             </li>
             <!-- <li>
               <p>
                 We must show that given any <m>p(x)=ax^2+bx+c</m> we can find <m>c_1,c_2,c_3</m> such that
-                <me>
+                <md>
                   c_1(x^2+x+1)+c_2(x^2-1)+c_3(x-1)=ax^2+bx+c
-                </me>,
+                </md>,
                 or
-                <me>
+                <md>
                   (c_1+c_2)x^2+(c_1+c_3)x+(c_1-c_2-c_3)=ax^2+bx+c
-                </me>.
+                </md>.
                 According to <xref ref="th_poly_equality"/> this equality holds if and only if
-                <me>
+                <md>
                   \begin{linsys}{3}
                     c_1 \amp +\amp c_2 \amp  \amp \amp = \amp a\\
                     c_1 \amp \amp \amp + \amp c_3 \amp = \amp b\\
                     c_1 \amp -\amp c_2 \amp - \amp c_3 \amp = \amp c
                   \end{linsys}
-                </me>.
+                </md>.
                 As in the examples above, our reasoning implies  <m>\Span S=P_2</m> if and only if this system is consistent for <em>any</em> choice of <m>a,b,c</m>. Thus usual Gaussian elimination procedure tells us that this is indeed so. We leave the details to you.
               </p>
             </li> -->
@@ -440,14 +440,14 @@
       <statement>
         <p>
           Let <m>V</m> be a vector space. A subset <m>S\subseteq V</m> is <term>linearly independent</term> if for any collection <m>\boldv_1,\boldv_2,\dots, \boldv_n</m> of distinct vectors of <m>S</m> (<ie/>, <m>\boldv_i\ne \boldv_j</m> for <m>i\ne j</m>), and any scalars <m>c_1,c_2,\dots, c_n\in \R</m>, the following implication holds:
-          <me>
+          <md>
             c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n=\boldzero \implies c_1=c_2=\cdots =c_n=0
-          </me>.
+          </md>.
           A subset <m>S</m> is <term>linearly dependent</term>
           if it is not linearly independent: <ie/>, if we can find distinct vectors <m>\boldv_1,\boldv_2,\dots, \boldv_n\in S</m>, and scalars <m>c_1, c_2,\dots, c_n</m> with <m>c_i\ne 0</m> for some <m>i</m>, such that 
-          <me>
+          <md>
             c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n=\boldzero
-          </me>.
+          </md>.
           <!-- In other words, <m>S</m> is linearly independent if there is no non-trivial linear combination of equal to <m>\boldzero</m>, and linearly dependent if there is a nontrivial linear combination of the <m>\boldv_i</m> equal to <m>\boldzero</m>. --> 
         </p>
       </statement>
@@ -487,9 +487,9 @@
             <li>
               <p>
                 For all <m>c_1,c_2,\dots, c_n\in \R</m>,
-                <men xml:id="eq_d_lin_ind">
+                <md number="yes" xml:id="eq_d_lin_ind">
                  c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n=\boldzero \implies c_1=c_2=\cdots =c_n=0
-                </men>.
+                </md>.
               </p>
             </li>
           </ol>
@@ -517,11 +517,11 @@
           <li>
             <p>
               Suppose <m>S=\{\boldv, \boldw\}</m>, where <m>\boldv\ne\boldw</m>. If <m>S</m> is linearly dependent, then we have 
-              <me>c\boldv+d\boldw=\boldzero</me>,
+              <md>c\boldv+d\boldw=\boldzero</md>,
               where <m>c\ne 0</m> or <m>d\ne 0</m>. 
               If <m>c\ne 0</m>, then we can solve 
-              <me>\boldv=-\frac{d}{c}\boldw</me>. Similarly, if <m>d\ne 0</m>, then we have 
-              <me>\boldw=-\frac{c}{d}\boldv</me>. In both cases, we see that one of the vectors is a scalar multiple of the other. Conversely, if one the two vectors is a scalar multiple of the other, then it is easy to see that there is a nontrivial linear combination equal to <m>\boldzero</m>: <eg/>, if <m>\boldv=c\boldw</m>, then <m>\boldv-c\boldw=\boldzero</m>. We conclude that <m>S</m> is linearly dependent of if and only if one of the vectors is a scalar multiple of the other, and linearly independent if and only if neither vector is a scalar multiple of the other. 
+              <md>\boldv=-\frac{d}{c}\boldw</md>. Similarly, if <m>d\ne 0</m>, then we have 
+              <md>\boldw=-\frac{c}{d}\boldv</md>. In both cases, we see that one of the vectors is a scalar multiple of the other. Conversely, if one the two vectors is a scalar multiple of the other, then it is easy to see that there is a nontrivial linear combination equal to <m>\boldzero</m>: <eg/>, if <m>\boldv=c\boldw</m>, then <m>\boldv-c\boldw=\boldzero</m>. We conclude that <m>S</m> is linearly dependent of if and only if one of the vectors is a scalar multiple of the other, and linearly independent if and only if neither vector is a scalar multiple of the other. 
             </p>
           </li>
         </ol>
@@ -535,24 +535,24 @@
       <title>Linear dependence and redundancy</title>
       <p>
         Let <m>S=\{\boldv_1,\boldv_2, \dots, \boldv_n\}</m> be a subset of the vector space <m>V</m>, where the <m>\boldv_i</m> are distinct. If <m>n\geq 2</m>, then <m>S</m> is linearly dependent if and only if we can express some element of <m>S</m> as a linear combination of the others: <ie/>, if and only if we have 
-        <men xml:id="eq_lin_dep">
+        <md number="yes" xml:id="eq_lin_dep">
           \boldv_i=\sum_{j\ne i}\boldv_j
-        </men>.
+        </md>.
         Indeed, assume we have a vector equation of the form <xref ref="eq_lin_dep"/> for some <m>1\leq i\leq n</m>. If <m>\boldv_i=\boldzero</m>, then <m>S</m> is automatically dependent. (See (1) from <xref ref="eg_independence_basic_examples"/>.) Otherwise the linear combination on the right side of <xref ref="eq_lin_dep"/> must be nontrivial, in which case 
-        <me>
+        <md>
           \boldv_i+\sum_{j\ne i}-c_j\boldv_j=\boldzero
-        </me>
+        </md>
         is a nontrivial linear combination of distinct elements equal to <m>\boldzero</m>. Thus <m>S</m> is linearly dependent. 
       </p>
       <p>
         Conversely, if <m>S</m> is linearly dependent, then there are scalars <m>c_1,c_2,\dots, c_n\in \R</m> such that 
-        <me>
+        <md>
           c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n=\boldzero
-        </me>
+        </md>
         and <m>\boldc_i\ne 0</m> for some <m>1\leq i\leq n</m>, in which case
-        <me>
+        <md>
           \boldv_i=\sum_{j\ne i}-\frac{c_j}{c_i}\boldv_j
-        </me>.
+        </md>.
       </p>
       
     </remark>
@@ -567,9 +567,9 @@
       <li>
         <p>
           Write out the general <em>vector equation</em>
-          <me>
+          <md>
           c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n=\boldzero
-          </me>.
+          </md>.
         </p>
       </li>
       <li>
@@ -614,9 +614,9 @@
         <li>
           <p>
             <m>V=M_{22}</m>, <m>S=\{A_1, A_2, A_3, A_4\}</m>, where
-            <me>
+            <md>
               A_1=\begin{bmatrix}3\amp 1\\ 2\amp -3 \end{bmatrix} , A_2= \begin{bmatrix}0\amp 4\\ 2\amp 0 \end{bmatrix} , A_3=\begin{bmatrix}-2\amp -2\\ -2\amp 2 \end{bmatrix}
-            </me>.
+            </md>.
           </p>
         </li>
       </ol>
@@ -627,22 +627,22 @@
       <li>
         <p>
         We have
-        <me>
+        <md>
           a(1,1,2)+b(1,0,1)+c(-2,1,-1)=(0,0,0)
-        </me>
+        </md>
         if and only if
-        <me>
+        <md>
           \begin{linsys}{3}
             a \amp +\amp b\amp -\amp 2c\amp =0\\
             a \amp \amp \amp +\amp c\amp =0\\
             2a \amp +\amp b\amp -\amp c\amp =0\\
           \end{linsys}
-        </me>.
+        </md>.
         After a little Gaussian elimination we see that
         <m>(a,b,c)=(1,-3,-1)</m> is a nonzero solution to this system, and thus that
-        <me>
+        <md>
           (1,1,2)-3(1,0,1)-(-2,1,-1)=(0,0,0)
-        </me>
+        </md>
         Since there is a nontrivial linear combination of elements of <m>S</m> yielding the zero vector, we conclude <m>S</m> is linearly dependent.
         </p>
       </li>
@@ -686,17 +686,17 @@
 
           <li xml:id="inv3_statement_unique_sol">
             <p>
-              The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</me> has a unique solution for any <m>\boldb\in \R^n</m>.
+              The matrix equation <md>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</md> has a unique solution for any <m>\boldb\in \R^n</m>.
             </p>
           </li>
           <li xml:id="inv3_statement_exists_sol">
             <p>
-              The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</me> has a solution for any <m>\boldb\in \R^n</m>.
+              The matrix equation <md>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldb}</md> has a solution for any <m>\boldb\in \R^n</m>.
             </p>
           </li>
           <li xml:id="inv3_statement_trivial_sol">
             <p>
-              The matrix equation <me>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldzero}</me> has a unique solution: namely, <m>\boldx=\boldzero_{n\times 1}</m>.
+              The matrix equation <md>A\underset{n\times 1}{\boldx}=\underset{n\times 1}{\boldzero}</md> has a unique solution: namely, <m>\boldx=\boldzero_{n\times 1}</m>.
             </p>
           </li>
           <li xml:id="inv3_statement_row_equiv">
@@ -778,9 +778,9 @@
         and let <m>S=\{f_1,f_2,\dots ,f_n\}</m> be a set of elements of <m>V</m>.
         Let <m>W(x)</m> be the Wronskian of the <m>f_i</m>.
         Then
-        <me>
+        <md>
           W\ne\boldzero\Rightarrow \text{ \(S\) is linearly independent }
-        </me>.
+        </md>.
       </p>
     </statement>
   </theorem> -->

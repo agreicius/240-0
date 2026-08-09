@@ -16,13 +16,13 @@
   <statement>
     <p>
       Assume <m>X\subseteq \C</m> a <term>polynomial</term> on <m>X</m> is a function <m>f</m> of the form 
-      <men xml:id="eq_poly_powerseries">
+      <md number="yes" xml:id="eq_poly_powerseries">
       f(x)=\sum_{i=1}^\infty a_ix^i
-      </men>,
+      </md>,
       where <m>a_i\in \C</m> for all <m>i</m>, and there is a positive integer <m>n</m> such that <m>a_i=0</m> for all <m>i&gt; n</m>. Equivalently, <m>f</m> is a function of the form 
-      <men xml:id="eq_poly">
+      <md number="yes" xml:id="eq_poly">
       f(x)=\anpoly
-      </men>,
+      </md>,
       where <m>a_i\in \C</m> for all <m>1\leq i\leq n</m>. 
       </p>
       <p>
@@ -51,9 +51,9 @@
       <li>
         <p>
           If <m>f</m> is a polynomial on <m>X</m> and <m>c\in X</m> is a root of <m>f</m>, then there is a polynomial <m>g</m> on <m>X</m> such that
-          <men xml:id="eq_poly_factor">
+          <md number="yes" xml:id="eq_poly_factor">
             f(x)=(x-c)g(x)
-          </men>.
+          </md>.
         </p>
       </li>
       <li xml:id="th_at_most_n_roots">
@@ -153,9 +153,9 @@
     <statement>
       <p>
         Any polynomial <m>f(x)=\anpoly</m>, thought of as a function from <m>\C</m> to itself, can be factored into linear terms as
-        <me>
+        <md>
           f(x)=(x-z_1)(x-z_2)\cdots (x-z_n)
-        </me>,
+        </md>,
         where the <m>z_i</m> are (not necessarily distinct) complex numbers.
       </p>
     </statement>

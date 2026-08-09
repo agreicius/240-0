@@ -1,7 +1,7 @@
 <exercises xml:id="s_matrix_ex">
 
 <subexercises>
-<title>Written Exercises</title>
+ 
 <exercise>
   <statement>
     <p>
@@ -32,12 +32,12 @@
   <statement>
     <p>
       Let
-      <me>
+      <md>
         A = \begin{bmatrix}3\amp 0\\ -1\amp 2\\ 1\amp 1 \end{bmatrix} , \hspace{5pt} B = \begin{bmatrix}4\amp -1\\ 0\amp 2 \end{bmatrix} , \hspace{5pt} C = \begin{bmatrix}1\amp 4\amp 2\\ 3\amp 1\amp 5 \end{bmatrix}
-      </me>
-      <me>
+      </md>
+      <md>
         D = \begin{bmatrix}1\amp 5\amp 2\\ -1\amp 0\amp 1\\ 3\amp 2\amp 4 \end{bmatrix} ,  \hspace{5pt} E = \begin{bmatrix}6\amp 1\amp 3\\ -1\amp 1\amp 2\\ 4\amp 1\amp 3 \end{bmatrix}
-      </me>.
+      </md>.
       Compute the following matrices,
       or else explain why the given expression is not well defined.
       <ol>
@@ -64,9 +64,9 @@
   <statement>
     <p>
       Let
-      <me>
+      <md>
         A = \begin{bmatrix}3\amp -2\amp 7\\ 6\amp 5\amp 4\\ 0\amp 4\amp 9 \end{bmatrix} , \hspace{5pt} B = \begin{bmatrix}6\amp -2\amp 4\\ 0\amp 1\amp 3\\ 7\amp 7\amp 5 \end{bmatrix}
-      </me>.
+      </md>.
       Compute the following using either the row or column method of matrix multiplication. Make sure to show how you are using the relevant method.
       <ol>
         <li>
@@ -95,9 +95,9 @@
           Using expansion by columns,
           the first column of <m>AB</m> is given by <m>A</m> times the first column of <m>B</m>.
           We compute
-          <me>
+          <md>
             \begin{bmatrix}3\amp -2\amp 7\\ 6\amp 5\amp 4\\ 0\amp 4\amp 9 \end{bmatrix} \begin{bmatrix}6\\ 0\\ 7 \end{bmatrix} = 6 \begin{amatrix}[r]3 \\ 6 \\ 0  \end{amatrix}+0 \begin{amatrix}[r]-2 \\ 5 \\ 4  \end{amatrix}+7\begin{amatrix}[r]7 \\ 4 \\ 9  \end{amatrix}= \begin{bmatrix}67\\ 64\\ 63 \end{bmatrix}
-          </me>
+          </md>
         </p>
       </li>
     </ol>
@@ -108,10 +108,10 @@
   <statement>
     <p>
       Use the row or column method to quickly compute the following product:
-      <me>
+      <md>
         \begin{amatrix}[rrrrr]1\amp -1\amp 1\amp -1\amp 1\\ 1\amp -1\amp 1\amp -1\amp 1\\ 1\amp -1\amp 1\amp -1\amp 1\\ 1\amp -1\amp 1\amp -1\amp 1\\ 1\amp -1\amp 1\amp -1\amp 1 \end{amatrix}
           \begin{amatrix}[rrrr]1\amp 1\amp 1\amp 1\\ -1\amp 0\amp 0\amp 0\\ 0\amp 1\amp 0\amp 0\\ 0\amp 0\amp 2\amp 0\\ 0\amp 0\amp 0\amp 3 \end{amatrix}
-      </me>
+      </md>
     </p>
   </statement>
   <solution>
@@ -122,16 +122,16 @@
       Note that the rows of <m>A</m> are all identical,
       and equal to <m>\begin{bmatrix}1 \amp -1 \amp 1 \amp -1 \amp 1 \end{bmatrix}</m>.
       From the row method it follows that each row of <m>AB</m> is given by
-      <me>
+      <md>
         \begin{bmatrix}1 \amp -1 \amp 1 \amp -1 \amp 1 \end{bmatrix} B
-      </me>.
+      </md>.
     </p>
     <p>
       Thus the rows of <m>AB</m> are all identical,
       and the row method computes the product above by taking the corresponding alternating sum of the rows of <m>B</m>:
-      <me>
+      <md>
         \begin{bmatrix}1 \amp -1 \amp 1 \amp -1 \amp 1 \end{bmatrix} B=\begin{bmatrix}2\amp 2\amp -1\amp 4 \end{bmatrix}
-      </me>.
+      </md>.
     </p>
     <p>
       Thus <m>AB</m> is the the <m>5\times 4</m> matrix,
@@ -146,9 +146,9 @@
       <m>3\times n</m> matrix <m>A=\begin{bmatrix}-\boldr_1-\\ -\boldr_2-\\ -\boldr_3- \end{bmatrix}</m> on the left;
       i.e., the matrix <m>B_iA</m> is the result of performing a certain row operation on the matrix <m>A</m>.
       Use the row method of matrix multiplication to decide what row operation each <m>B_i</m> performs.
-      <me>
+      <md>
         B_1=\begin{bmatrix}1\amp 0\amp 0\\ 0\amp 1\amp 0\\ -2\amp 0\amp 1 \end{bmatrix} , B_2=\begin{bmatrix}1\amp 0\amp 0\\ 0\amp \frac{1}{2}\amp 0\\ 0\amp 0\amp 1 \end{bmatrix} , B_3=\begin{bmatrix}0\amp 0\amp 1\\ 0\amp 1\amp 0\\ 1\amp 0\amp 0 \end{bmatrix}
-      </me>.
+      </md>.
       </p>
   </statement>
   <!-- <solution>
@@ -170,9 +170,9 @@
   <statement>
     <p>
       Let <m>r\geq 2</m> be an integer. Prove, by induction on <m>r</m>, that for any <m>m\times n</m> matrices <m>A_1, A_2,\dots, A_r</m> and scalars <m>c_1,c_2,\dots, c_r</m>, we have
-      <me>
+      <md>
         [c_1A_1+c_2A_2+\cdots +c_rA_r]_{ij} =c_1[A_1]_{ij}+c_2[A_2]_{ij}+\cdots c_r[A_r]_{ij}
-      </me>
+      </md>
       for all <m>1\leq i\leq m</m>, <m>1\leq j\leq n</m>.
     </p>
   </statement>

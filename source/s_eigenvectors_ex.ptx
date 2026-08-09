@@ -1,0 +1,256 @@
+<exercises xml:id="s_eigenvectors_ex">
+<subexercises>
+  <title>WeBWork Exercises</title>
+    <exercise>
+      <!-- eigenvalues only -->
+      <webwork source="Library/TCNJ/TCNJ_Eigenvalues/problem3.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- eigenvectors of 3x3 matrix -->
+      <webwork source="Library/TCNJ/TCNJ_Eigenvalues/problem13.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- eigenvectors of 4x4 matrix -->
+      <webwork source="Library/TCNJ/TCNJ_CharacteristicPolynomial/problem4.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- trace, det -->
+      <webwork source="Library/Rochester/setLinearAlgebra11Eigenvalues/ur_la_11_13.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- linear combinations -->
+      <webwork source="Library/Rochester/setLinearAlgebra11Eigenvalues/ur_la_11_26.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- linear combinations -->
+      <webwork source="Library/Rochester/setLinearAlgebra11Eigenvalues/ur_la_11_27.pg" />
+    </exercise>
+</subexercises>
+<exercisegroup>
+  <introduction>
+  <p>
+    For each matrix below (a) compute the characteristic polynomial <m>p(t)</m>, (b) find all eigenvalues of the matrix, and (c) compute bases for eigenspaces of each eigenvalue.
+  </p>
+  </introduction>
+  <exercise>
+    <statement>
+      <p>
+        <m>A=\begin{bmatrix}
+          2\amp 1\\ 1\amp 2
+        \end{bmatrix}</m>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <m>A=\begin{amatrix}[rr]
+        2\amp -3\\ 0\amp 2
+        \end{amatrix}
+        </m>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <m>A=\begin{amatrix}[rr]
+        2\amp 0\\ 0\amp 2
+        \end{amatrix}
+        </m>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        A=<m>\begin{amatrix}[rr]
+        1\amp 2\\ 2\amp -4
+        \end{amatrix}
+        </m>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <m>A=\begin{amatrix}[rrr]
+        1\amp 0\amp -2\\ 0\amp 0\amp 0\\ -2\amp 0\amp 4
+        \end{amatrix}
+        </m>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <m>A=\begin{amatrix}[rrr]
+        0\amp 1\amp 1\\ 1\amp 0\amp 1\\ 1\amp 1\amp 0
+        \end{amatrix}
+        </m>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <m>A=\begin{amatrix}[rrr]
+        1\amp -3\amp 3\\ 3\amp -5\amp 3\\ 6\amp -6\amp 4
+        \end{amatrix}
+        </m>
+      </p>
+    </statement>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        <m>A=\begin{amatrix}[rrrr]
+        9\amp -8\amp 6\amp 3\\ 0\amp -1\amp 0\amp 0\\ 0\amp 0\amp 3\amp 0\\ 0\amp 0\amp 0\amp 7
+        \end{amatrix}
+        </m>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <m>A=\begin{amatrix}[rrrr]
+          1 \amp 2 \amp -2 \amp -2 \\
+          -2 \amp -3 \amp 2 \amp 2 \\
+          -3 \amp -3 \amp 2 \amp 0 \\
+          1 \amp 1 \amp -1 \amp 1
+        \end{amatrix}
+        </m> 
+      </p>
+    </statement>
+    <hint>
+      <p>
+        The characteristic polynomial of <m>A</m> is <m>p(t)=t^4 - t^3 - 3t^2 + t + 2</m>.
+      </p>
+    </hint>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Matrices <m>A</m> and <m>B</m> below both have characteristic polynomial <m>p(t)=t^3-3t+2</m>. For each matrix compute a basis of <m>W_\lambda</m> for each eigenvalue <m>\lambda</m>.
+        <ol>
+          <li>
+            <p>
+              <m>A=\begin{amatrix}[rrr]
+              -5\amp 0\amp 3\\ -6\amp 1\amp 3\\ -6\amp 0\amp 4
+              \end{amatrix}
+              </m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>B=\begin{amatrix}[rrr]
+              -2\amp -3\amp 3\\ -3\amp -3\amp 4\\ -3\amp -4\amp 5
+              \end{amatrix}
+              </m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>A</m> be an invertible matrix. Prove: <m>\lambda</m> is an eigenvalue of <m>A</m> if and only if <m>\lambda^{-1}</m> is an eigenvalue of <m>A^{-1}</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <introduction>
+      <p>
+      Let <m>A</m> be a square matrix.
+      </p>
+    </introduction>
+      <task>
+        <statement>
+          <p>
+        Prove: <m>A</m> and <m>A^T</m> have the same characteristic polynomial.
+      </p>
+        </statement>
+        <hint>
+        <p>
+          First show that <m>(tI-A^T)=(tI-A)^T</m>, then use a relevant property of the determinant.
+        </p>
+      </hint>
+      </task>
+      <task>
+        <statement>
+          <p>
+        Prove: <m>A</m> and <m>A^T</m> have the same eigenvalues.
+      </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+        Fix <m>\lambda\in \R</m> and let <m>W_\lambda, W_\lambda'</m> be the <m>\lambda</m>-eigenspaces of <m>A</m> and <m>A^T</m>, respectively. Prove: <m>\dim W_\lambda=\dim W_\lambda'</m>.
+      </p>
+        </statement>
+        <hint>
+        <p>
+          First show that <m>(\lambda I-A^T)=(\lambda I -A)^T</m>, then use the rank-nullity theorem.
+        </p>
+      </hint>
+      </task>
+  </exercise>
+
+  <exercise>
+    <statement>
+      <p>
+        Let <m>\lambda</m> be an eigenvalue of the matrix <m>A</m>.
+        <ol>
+          <li>
+            <p>
+              Prove by induction: <m>\lambda^k</m> is an eigenvalue of <m>A^k</m> for any positive integer <m>k</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Assume that <m>A</m> is invertible. Prove: <m>\lambda^k</m> is an eigenvalue of <m>A^k</m> for any integer <m>k</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Assume <m>A</m> is a square matrix satisfying <m>A^k=\boldzero</m> for some positive integer <m>k</m>. Show that <m>0</m> is the only eigenvalue of <m>A</m>. Your argument must make clear that <m>0</m> is in fact an eigenvalue of <m>A</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Assume <m>A</m> is a square matrix satisfying <m>A^2=A</m>
+      
+      <ol>
+        <li>
+          <p>
+            Prove: if <m>\lambda\in \R</m> is an eigenvalue of <m>A</m>, then <m>\lambda=0</m> or <m>\lambda=1</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Prove: if <m>A</m> does not have <m>0</m> as an eigenvalue, then <m>A=I</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+    </statement>
+  </exercise>
+</exercisegroup>
+</exercises>

@@ -1,0 +1,7 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="c_innerproductspaces">
+  <title>Inner product spaces</title>
+  <xi:include  href="s_innerproducts.ptx"/>
+  <xi:include  href="s_orthogonal_bases.ptx"/>
+  <xi:include  href="s_orthogonal_projection.ptx"/>
+  <xi:include  href="s_spectral_theorem.ptx"/>
+</chapter>

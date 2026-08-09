@@ -1,0 +1,601 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_orthogonality">
+  <title>Orthogonal bases</title>
+  <subsection xml:id="ss_orthogonal">
+    <title>Orthogonal vectors and sets</title>
+    <definition>
+      <title>Orthogonality</title>
+      <idx><h>orthogonal</h><h>vectors</h></idx>
+      <idx><h>orthogonal</h><h>sets</h></idx>
+      <idx><h>orthonormal</h><h>basis</h></idx>
+      <statement>
+        <p>
+          Let <m>(V,\langle \ , \rangle)</m> be an inner product space. Vectors <m>\boldv, \boldw\in V</m> are <term>orthogonal</term> if <m>\langle \boldv, \boldw\rangle =0</m>.
+        </p>
+        <p>
+          Let <m>S\subseteq V</m> be a set of <em>nonzero</em> vectors.
+          <ul>
+            <li>
+              <p>
+                The set <m>S</m> is <term>orthogonal</term>
+                if <m>\langle\boldv,\boldw \rangle=0</m> for all <m>\boldv\ne\boldw\in S</m>. We say that the elements of <m>S</m>
+                are <term>pairwise orthogonal</term> in this case.
+              </p>
+            </li>
+            <li>
+              <p>
+                The set <m>S</m> is <term>orthonormal</term> if it is both orthogonal and satisfies
+                <m>\norm{\boldv}=1</m> for all <m>\boldv\in S</m>: <ie />, <m>S</m> consists of pairwise orthogonal unit vectors.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </statement>
+    </definition>
+    <theorem xml:id="th_orthogonal">
+      <title>Orthogonal implies linearly independent</title>
+      <statement>
+        <p>
+          Let <m>(V,\langle\ , \rangle)</m> be an inner product space.
+          If <m>S</m> is orthogonal,
+          then <m>S</m> is linearly independent.
+        </p>
+      </statement>
+      <proof>
+        <p>
+          Given any distinct elements <m>\boldv_1, \boldv_2, \dots, \boldv_r\in S</m>, we have
+        <md>
+          <mrow>c_1\boldv_1 +c_2\boldv_2+\cdots +c_r\boldv_r=\boldzero\amp \Rightarrow\amp  \langle c_1\boldv_1 +c_2\boldv_2 +\cdots +c_r\boldv_r,\boldv_i\rangle=\langle\boldzero,\boldv_i\rangle</mrow>
+          <mrow>\amp \Rightarrow\amp  c_1\langle\boldv_1,\boldv_i\rangle +c_2\langle \boldv_2,\boldv_i\rangle +\cdots +c_r\langle\boldv_r,\boldv_i\rangle=0</mrow>
+          <mrow>\amp \Rightarrow\amp  c_i\langle \boldv_i,\boldv_i\rangle=0 \ \text{ (since \(\langle\boldv_j,\boldv_i\rangle= 0\) for \(j\ne i\)) }</mrow>
+          <mrow>\amp \Rightarrow\amp  c_i=0  \text{ (since \(\langle\boldv_i,\boldv_i\rangle\ne 0\)) }</mrow>
+        </md>.
+        This proves that <m>S</m> is linearly independent.
+        </p>
+      </proof>
+    </theorem>
+
+    <example>
+      <statement>
+        <p>
+          Show that the set <m>S=\{\boldx_1=(1,1,1),\boldx_2=(1,2,-3), \boldx_3=(-5,4,1)\}</m> is orthogonal with respect to the dot product. Explain why it follows that <m>S</m> is a basis of <m>\R^3</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          A simple computation shows <m>\boldx_i\cdot \boldx_j=0</m> for all <m>1\leq i\ne j\leq 3</m>, showing that <m>S</m> is orthogonal. <xref ref="th_orthogonal"/> implies <m>S</m> is linearly independent. Since <m>\val{S}=\dim \R^3=3</m>, it follows from <xref ref="cor_street_smarts"/> that <m>S</m> is a basis.
+        </p>
+      </solution>
+    </example>
+  <example xml:id="eg_orthogonal_functions">
+    <statement>
+      <p>
+        Let <m>V=C([0,2\pi])</m> with integral inner product <m>\langle f, g\rangle=\int_0^{2\pi} f(x)g(x) \, dx</m>, and let
+        <md>
+          S=\{1, \cos(x),\sin(x),\cos(2x),\sin(2x), \dots\}=\{\cos(nx)\colon n\in\Z_{>0}\}\cup\{\sin(mx)\colon m\in\Z_{>0}\}
+        </md>,
+        where the element <m>1\in S</m> is understood as the constant function <m>f(x)=1</m> for all <m>x\in [0,2\pi]</m>.
+      Show that <m>S</m> is orthogonal and hence linearly independent.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        First observe that
+        <md>
+          <mrow> \angvec{1,1} \amp = \int_0^{2\pi} 1\, dx=2\pi </mrow>
+          <mrow>\angvec{1, \cos n x} \amp= \int_0^{2\pi}\cos n x\, dx=0 </mrow>
+          <mrow>\angvec{1, \sin n x} \amp= \int_0^{2\pi}\sin n x\, dx=0 </mrow>
+        </md>
+        for all <m>n</m>. (Note: since <m>\angvec{1,1}=2\pi\ne 1</m>, the set <m>S</m> is not orthonormal. )
+        Next, using the trigonometric identities
+        <md>
+          <mrow>\cos\alpha\cos\beta \amp =\frac{1}{2}(\cos(\alpha-\beta)+\cos(\alpha+\beta))</mrow>
+          <mrow> \sin\alpha\sin\beta  \amp=\frac{1}{2}(\cos(\alpha-\beta)-\cos(\alpha+\beta)) </mrow>
+          <mrow> \sin\alpha\cos\beta \amp =\frac{1}{2}(\sin(\alpha-\beta)+\sin(\alpha+\beta)) </mrow>
+        </md>
+        it follows that
+        <md>
+          <mrow>\langle \cos(nx),\cos(mx)\rangle=\int_0^{2\pi}\cos(nx)\cos(mx)\, dx\amp =\begin{cases} 0\amp  \text{ if \(n\ne m\) }</mrow>
+          <mrow>\pi\amp  \text{ if \(n=m\) }  \end{cases}</mrow>
+          <mrow>\langle \sin(nx),\sin(mx)\rangle=\int_0^{2\pi}\sin(nx)\sin(mx)\, dx\amp =\begin{cases} 0\amp  \text{ if \(n\ne m\) }</mrow>
+          <mrow>\pi\amp  \text{ if \(n=m\) }  \end{cases}</mrow>
+          <mrow>\langle \cos(nx),\sin(mx)\rangle=\int_0^{2\pi}\cos(nx)\sin(mx)\, dx\amp =0 \text{ for any \(n,m\) }</mrow>
+        </md>.
+      </p>
+    </solution>
+  </example>
+</subsection>
+  <subsection>
+    <title>Orthogonal bases</title>
+    <p>
+      Given an inner product space <m>V</m> we will see that working with orthogonal sets of vectors is extremely convenient computationally speaking. In particular, when picking basis of <m>V</m>, we will look for one consisting of orthogonal vectors. Not surprisingly, this is called an <em>orthogonal basis</em>.
+    </p>
+    <definition xml:id="d_orthogonal_basis">
+      <title>Orthogonal and orthonormal bases</title>
+      <idx><h>orthogonal</h><h>basis</h></idx>
+      <idx><h>orthonormal</h><h>basis</h></idx>
+      <statement>
+        <p>
+          Let <m>(V,\langle \ , \rangle)</m> be an inner product space. An <term>orthogonal basis</term> (resp., <term>orthonormal basis</term>) of <m>V</m> is a basis <m>B</m> that is orthogonal (resp., orthonormal) as a set.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      We will see in <xref ref="th_orthogonal_basis_formula"/> precisely why working with orthogonal or orthonormal bases is so convenient. Before we do so, however, we would like some guarantee that we can actually find an orthogonal basis. The <em>Gram-Schmidt procedure</em> comes to our rescue in this regard, at least in the finite-dimensional case, as it provides a method of converting an arbitrary basis into an orthogonal one.
+    </p>
+    <algorithm xml:id="proc_gram-schmidt">
+      <title>Gram-Schmidt procedure</title>
+      <idx><h>Gram-Schmidt procedure</h></idx>
+      <statement>
+        <p>
+          Let <m>(V, \langle \ , \ \rangle)</m> be an inner product space of dimension <m>n</m>,
+          and let <m>B=\{\boldv_1, \boldv_2, \dots, \boldv_n\}</m> be a basis for <m>V</m>.
+          We can convert <m>B</m> into an orthogonal basis
+          <m>B'=\{\boldw_1, \boldw_2, \dots, \boldw_n\}</m>, and further to an orthonormal basis <m>B''=\{\boldu_1, \boldu_2, \dots, \boldu_n\}</m>, as follows:
+          <ol>
+            <li>
+              <p>
+                Set <m>\boldw_1=\boldv_1</m>.
+              </p>
+            </li>
+            <li>
+              <title>Orthogonalize</title>
+              <p>
+                Proceeding in succession for each <m>2\leq r\leq n</m>, replace <m>\boldv_r</m> with the vector <m>\boldw_r</m> defined as 
+                <md>
+                  \boldw_r=\boldv_r-\frac{\angvec{\boldv_r, \boldw_{r-1}}}{\angvec{\boldw_{r-1},\boldw_{r-1}}}\boldw_{r-1}-\frac{\angvec{\boldv_r, \boldw_{r-2}}}{\angvec{\boldw_{r-2},\boldw_{r-2}}}\boldw_{r-2}-\cdots -\frac{\angvec{\boldv_r, \boldw_{1}}}{\angvec{\boldw_{1},\boldw_{1}}}\boldw_1
+                </md>.
+                The resulting set <m>B'=\{\boldw_1, \boldw_2, \dots, \boldw_n\}</m> is an orthogonal basis of <m>V</m>.
+              </p>
+            </li>
+            <li>
+              <title>Normalize</title>
+              <p>
+                For each <m>1\leq i\leq n</m> let
+                <md>
+                  \boldu_i=\frac{1}{\norm{\boldw_i}}\,\boldw_i
+                </md>.
+                The set <m>B''=\{\boldu_1, \boldu_2, \dots, \boldu_n\}</m> is an orthonormal basis of <m>V</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </algorithm>
+      <corollary xml:id="cor_orthonormal_existence">
+        <title>Existence of orthonormal bases</title>
+        <statement>
+          <p>
+            Let <m>(V,\langle \ , \rangle)</m> be an inner product space of dimension <m>n</m>.
+          </p>
+          <ol>
+            <li>
+              <p>
+              There is an orthonormal basis for <m>V</m>. In fact, any basis of <m>V</m> can be converted to an orthonormal basis using the <xref ref="proc_gram-schmidt" text="custom">Gram-Schmidt procedure</xref>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>S\subseteq V</m> is an orthogonal set, then there is an orthogonal basis <m>B</m> containing <m>S</m>: <ie />, any orthogonal set can be extended to an orthogonal basis.
+              </p>
+            </li>
+          </ol>
+        </statement>
+        <proof>
+          <ol>
+            <li>
+              <p>
+                See <xref ref="proc_gram-schmidt"/> and its proof.
+              </p>
+            </li>
+            <li>
+              <p>
+                The orthogonal set <m>S</m> is linearly independent by <xref ref="th_orthogonal"/>. Let <m>S=\{\boldv_1,\boldv_2,\dots, \boldv_r\}</m> be the distinct elements of <m>S</m>. (We must have <m>r\leq n</m> since <m>S</m> is linearly independent.) By <xref ref="th_basis_contract_expand"/> we can extend <m>S</m> to a basis <m>B=\{\boldv_1,\dots, \boldv_r, \boldv_{r+1}, \dots, \boldv_n\}</m>. It is easy to see that when we apply the Gram-Schmidt procedure to <m>B</m>, the first <m>r</m> vectors are left unchanged, as they are already pairwise orthogonal. Thus Gram-Schmidt returns an orthogonal basis of the form <m>B'=\{\boldv_1,\dots, \boldv_r, \boldw_{r+1}, \dots, \boldw_n\}</m>, as desired.
+              </p>
+            </li>
+          </ol>
+        </proof>
+      </corollary>
+      <p>
+        Now let's see the computational virtue of working with orthogonal bases. 
+      </p>
+
+    <theorem xml:id="th_orthogonal_basis_formula">
+      <title>Calculating with orthogonal bases</title>
+      <statement>
+        <p>
+          Let <m>(V, \langle , \rangle )</m> be an inner product space of dimension <m>n</m> and let
+        </p>
+        <ol>
+          <li>
+            <p>
+              Let <m>B=\{\boldv_1,\dots,\boldv_n\}\subseteq V</m> be an
+              orthogonal basis of <m>V</m>. For any <m>\boldv\in V</m> we have
+              <md>
+              \boldv=c_1\boldv_1+c_2\boldb_2+\cdots +c_n\boldv_n
+              </md>, where
+              <md number="yes" xml:id="eq_inner_prod_formula_orthogonal">
+              c_i=\frac{\langle \boldv,\boldv_i\rangle}{\langle\boldv_i,\boldv_i\rangle}
+            </md>
+              for all <m>1\leq i\leq n</m>.
+              </p>
+              <p>
+              If <m>B</m> is <em>orthonormal</em>, so that <m>\langle \boldv_i, \boldv_i\rangle =1</m> for all <m>1\leq i\leq n</m>, then the inner product formula <xref ref="eq_inner_prod_formula_orthogonal"/> reduces to the simpler 
+              <md number="yes" xml:id="eq_inner_prod_formula_orthonormal">
+                c_i=\langle \boldv, \boldv_i\rangle
+              </md>.
+            </p>
+          </li>
+          <li>
+            <title>Generalized Pythagorean theorem</title>
+            <p>
+              Let <m>B=\{\boldv_1,\dots,\boldv_n\}\subseteq V</m> be an
+              orthonormal basis of <m>V</m>. Given <m>
+              \boldv=c_1\boldv_1+c_2\boldb_2+\cdots +c_n\boldv_n
+              </m>, we have
+              <md>
+                \norm{\boldv}=\sqrt{c_1^2+c_2^2+\cdots c_n^2}
+              </md>.
+            </p>
+          </li>
+        </ol>
+      </statement>
+    </theorem>
+  <example>
+    <statement>
+      <p>
+        Consider the inner product space <m>V=\R^2</m> with the dot product.
+        <ol>
+          <li>
+            <p>
+              Verify that <m>B'=\{\boldv_1=(\sqrt{3}/2,1/2), \boldv_2=(-1/2,\sqrt{3}/2)\}</m> is an orthonormal basis of <m>\R^2</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <m>\boldv=(4,2)</m>. Find the scalars <m>c_1, c_2\in \R</m> such that <m>\boldv=c_1\boldv_1+c_2\boldv_2</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Verify that <m>\norm{\boldv}=\sqrt{c_1^2+c_2^2}</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <ol>
+        <li>
+          <p>
+            Easily verified.
+          </p>
+        </li>
+        <li>
+          <p>
+            Using <xref ref="th_orthogonal_basis_formula"/> we compute
+            <md>
+              <mrow>c_1 \amp =\boldv\cdot \boldv_1=2\sqrt{3}+1  </mrow>
+              <mrow> c_2\amp= \boldv\cdot \boldv_2=\sqrt{3}-2 </mrow>
+            </md>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Computing  directly yields <m>\norm{\boldv}=\sqrt{20}=2\sqrt{5}</m>. Using the generalized Pythagorean theorem we have
+            <md>
+              <mrow>\norm{\boldv} \amp= \sqrt{(2\sqrt{3}+1)^2+(\sqrt{3}-2)^2} </mrow>
+              <mrow> \amp=\sqrt{(12+4\sqrt{3}+1)+(3-4\sqrt{3}+4)} </mrow>
+              <mrow>  \amp = \sqrt{20}=2\sqrt{5}</mrow>
+            </md>,
+            as desired.
+          </p>
+        </li>
+      </ol>
+    </solution>
+  </example>
+  <p>
+    As the previous example and <xref ref="th_orthogonal_basis_formula"/> begin to make clear, orthogonal bases, and especially orthonormal bases make our life easier computationally speaking. This observation is worthy of a mantra. 
+  </p>
+  <principle xml:id="mantra_orthogonal_bases">
+    <title>Orthogonal basis mantra</title>
+    <statement>
+      <p>
+        Working with an orthogonal basis is nice; working with an orthonormal basis is even nicer. 
+      </p>
+    </statement>
+  </principle>
+  </subsection>
+  <subsection xml:id="ss_orthogonal_change_of_basis">
+    <title>Coordinate vectors and matrix representations</title>
+    <p>
+      Let <m>V</m> be an inner product space. By an <em>orthogonal</em> (resp., <em>orthonormal</em>) ordered basis of <m>V</m>, we mean an ordered basis <m>(\boldv_1, \boldv_2, \dots, \boldv_n)</m> for which the underlying set <m>\{\boldv_1, \boldv_2, \dots, \boldv_n\}</m> is orthogonal (resp., orthonormal). It should come as little surprise that as a consequence of <xref ref="th_orthogonal_basis_formula"/>, computing coordinate vectors and matrix representations with respect to orthogonal bases is especially easy.
+    </p>
+    <p> For example, if <m>B=(\boldv_1, \boldv_2, \dots, \boldv_n)</m> is an orthogonal basis with respect to some inner product <m>\langle , \rangle </m>, then by <xref ref="eq_inner_prod_formula_orthogonal"/> we have
+      <md>
+        \boldv=\frac{\langle \boldv,\boldv_1  \rangle }{\langle \boldv_1, \boldv_1\rangle }\boldv_1+\frac{\langle \boldv,\boldv_1  \rangle }{\langle \boldv_1, \boldv_1\rangle }\boldv_1+\cdots +\frac{\langle \boldv,\boldv_n  \rangle }{\langle \boldv_n, \boldv_n\rangle }\boldv_n
+      </md>,
+      and thus, using definition <xref ref="d_coordinatevector"/>, we have 
+      <md>
+        [\boldv]_B=\left(\frac{\langle \boldv,\boldv_1  \rangle }{\langle \boldv_1, \boldv_1\rangle }, \frac{\langle \boldv,\boldv_2  \rangle }{\langle \boldv_2, \boldv_2\rangle },\dots, \frac{\langle \boldv,\boldv_n  \rangle }{\langle \boldv_n, \boldv_n\rangle }\right)
+      </md>.
+      We have thus proved the following theorem.
+    </p>
+    <theorem xml:id="th_coordinates_orthogonal">
+      <title>Coordinate vectors for orthogonal bases</title>
+      <statement>
+        <p>
+        Let <m>(V,\langle , \rangle )</m> be an inner product space and let <m>B=(\boldv_1, \boldv_2, \dots, \boldv_n)</m> be an ordered basis. 
+        <ol>
+          <li>
+            <title>Orthogonal basis</title>
+            <p>
+              If <m>B</m> is orthogonal, then for all <m>\boldv\in V</m> we have
+              <md number="yes" xml:id="eq_coor_vec_orthogonal">
+                [\boldv]_B=\left(\frac{\langle \boldv,\boldv_1  \rangle }{\langle \boldv_1, \boldv_1\rangle }, \frac{\langle \boldv,\boldv_2  \rangle }{\langle \boldv_2, \boldv_2\rangle },\dots, \frac{\langle \boldv,\boldv_n  \rangle }{\langle \boldv_n, \boldv_n\rangle }\right)
+              </md>.
+            </p>
+          </li>
+          <li>
+            <title>Orthonormal basis</title>
+            <p>
+              If <m>B</m> is orthonormal, then for all <m>\boldv\in V</m> we have
+              <md number="yes" xml:id="eq_coor_vec_orthonormal">
+                [\boldv]_B=\left(\langle \boldv,\boldv_1  \rangle, \langle \boldv,\boldv_2  \rangle ,\dots, \langle \boldv,\boldv_n  \rangle\right)
+              </md>.
+            </p>
+          </li>
+        </ol> 
+        </p>
+      </statement>
+    </theorem>
+    <example>
+      <title>Orthogonal bases</title>
+      <statement>
+        <p>
+          Let <m>V=\R^2</m> and <m>B=((1,1),(-1,2))</m>. Find a general formula for <m>[(a,b)]_B</m>. Note: <m>B</m> is orthogonal with respect to the weighted dot product
+          <md>
+            \langle (x_1,x_2), (y_1,y_2)\rangle =2x_1y_1+x_2y_2
+          </md>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Applying the inner product formula <xref ref="eq_coor_vec_orthogonal"/> to <m>B</m> and the dot product with weights <m>2, 1</m>, for any <m>\boldv=(a,b)</m> we compute
+          <md>
+            <mrow>[(a,b)]_B \amp =\left(\frac{\langle (a,b), (1,1)\rangle }{\langle (1,1),(1,1) \rangle }, \frac{\langle (a,b), (-1,2)\rangle }{\langle (-1,2),(-1,2) \rangle }\right)</mrow>
+            <mrow> \amp=\left(\frac{1}{3}(2a+b),\frac{1}{3}(-a+b) \right) </mrow>
+          </md>.
+          Let's check our formula with <m>\boldv=(3,-3)</m>. The formula yields <m>[(3,-3)]_B=(1,-2)</m>, and indeed we see that
+          <md>
+            (3,-3)=1(1,1)-2(-1,2)
+          </md>.
+  
+        </p>
+      </solution>
+    </example>
+    <p>
+      Similarly, the computations involved in change of basis matrices are significantly easier when at least one of the bases involved is orthogonal. This is a direct consequence of the fact that the change of basis matrix formula <xref ref="eq_change_basis_matrix"/> involves computing coordinate vectors; and this is easy to do when the basis in question is orthogonal, thanks to the inner product formula <xref ref="eq_coor_vec_orthogonal"/>. 
+    </p>
+    <p>
+      Things get even easier if both bases <m>B</m> and <m>B'</m> involved are in fact <em>orthonormal</em>. As we show below, it turns out in this case that the inverse of the change of basis matrix is just its transpose: 
+      <md>
+        \left(\underset{B\rightarrow B'}{P}\right)^{-1}=\left(\underset{B\rightarrow B'}{P}\right)^T
+      </md>. 
+      It follows from <xref ref="eq_change_basis_inverse"/> that when both bases are orthonormal, we can obtain one change of basis matrix from the other simply by computing the transpose. An invertible matrix whose inverse is equal to its transpose is called an <em>elementary matrix</em>. We develop some general theory about this special family of matrices (interesting in its own right) before treating change of basis matrices. 
+    </p>
+      <definition xml:id="d_orthogonal_matrix">
+        <title>Orthogonal matrices</title>
+        <statement>
+          <p>
+          An invertible <m>n\times n</m> matrix <m>A</m> is <term>orthogonal</term> if <m>A^{-1}=A^T</m>.
+          </p>
+        </statement>
+      </definition>
+        <remark xml:id="rm_orthogonal_matrices">
+        <p>
+          Since for an invertible matrix <m>A</m> we have <m>(A^T)^{-1}=(A^{-1})^T</m> it follows immediately from <xref ref="d_orthogonal_matrix"/> that
+          <md>
+            A \text{ is orthogonal}\iff A^T \text{ is orthogonal} \iff A^{-1} \text{ is orthogonal}
+          </md>.
+        </p>
+      </remark>
+    <example>
+      <statement>
+        <p>
+          Let 
+          <md>
+          A=\begin{amatrix}[rr]\frac{\sqrt{2}}{2}\amp -\frac{\sqrt{2}}{2}\\ \frac{\sqrt{2}}{2} \amp \frac{\sqrt{2}}{2} \end{amatrix}
+          </md>.
+          Check for yourself that <m>A^TA=I</m>. Thus <m>A</m> is an orthogonal matrix. 
+        </p>
+        <p>
+          Now observe that the columns of <m>A</m> are orthonormal with respect to the dot product: 
+          <md>
+            <mrow>\frac{2}{2}(1,1)\cdot \frac{2}{2}(1,1)  \amp =1 \amp \frac{2}{2}(1,-1)\cdot \frac{2}{2}(1,-1)\amp=1 </mrow>
+            <mrow>\frac{2}{2}(1,1)\cdot \frac{2}{2}(1,-1) \amp=0 </mrow>
+          </md>.
+          This is not a coincidence! 
+        </p>
+      </statement>
+    </example>
+      <theorem xml:id="th_orthogonal_matrices">
+        <title>Orthogonal matrices</title>
+        <statement>
+          <p>
+            Let <m>A</m> be an <m>n\times n</m> matrix. The following statements are equivalent.
+          </p>
+          <ol>
+            <li>
+              <p>
+                The matrix <m>A</m> is orthogonal.
+              </p>
+            </li>
+            <li>
+              <p>
+                The columns of <m>A</m> form an orthonormal basis of <m>\R^n</m> with respect to the dot product.
+              </p>
+            </li>
+            <li>
+              <p>
+                The rows of <m>A</m> form an orthonormal basis of <m>\R^n</m> with respect to the dot product.
+              </p>
+            </li>
+          </ol>
+        </statement>
+        <proof>
+          <p>
+             Let <m>\boldr_i</m> and <m>\boldc_i</m> be the <m>i</m>-th row and column of <m>A</m>, respectively, for each <m>1\leq i\leq n</m>. From <xref ref="th_matrix_mult_dot_product"/> we see that
+            <mdn>
+              <mrow xml:id="eq_orthogonal_matrixleft">A^TA \amp=[\boldc_i\cdot \boldc_j]_{1\leq i,j\leq n} </mrow>
+              <mrow xml:id="eq_orthogonal_matrixright">AA^T \amp=[\boldr_i\cdot \boldr_j]_{1\leq i,j\leq n} </mrow>
+            </mdn>.
+            We use here that rows of <m>A^T</m> are the columns of <m>A</m>, and the columns of <m>A^T</m> are the rows of <m>A</m>. From <xref first="eq_orthogonal_matrixleft" last="eq_orthogonal_matrixright"/> it follows easily that
+            <md>
+              <mrow>A^{-1}=A^T \amp \iff A^TA=I </mrow>
+              <mrow> \amp \iff \boldc_i\cdot\boldc_j=\begin{cases} 1\amp \text{if } i=j\\ 0\amp \text{if } i\ne j\end{cases} </mrow>
+              <mrow>  \amp \iff \{\boldc_1,\boldc_2,\dots, \boldc_n\} \text{ is orthonormal}</mrow>
+              <mrow>  \amp \iff \{\boldc_1,\boldc_2,\dots, \boldc_n\} \text{ is an orthonormal basis}\amp (n=\dim\R^n)</mrow>
+            </md>,
+            and
+            <md>
+              <mrow>A^{-1}=A^T \amp \iff AA^T=I </mrow>
+              <mrow> \amp \iff \boldr_i\cdot\boldr_j=\begin{cases} 1\amp \text{if } i=j\\ 0\amp \text{if } i\ne j\end{cases} </mrow>
+              <mrow>  \amp \iff \{\boldr_1,\boldr_2,\dots, \boldr_n\} \text{ is orthonormal}</mrow>
+              <mrow>  \amp \iff \{\boldr_1,\boldr_2,\dots, \boldr_n\} \text{ is an orthonormal basis} \amp (n=\dim\R^n)</mrow>
+            </md>.
+            This proves <m>(1)\iff (2)</m> and <m>(1)\iff (3)</m>. The result follows.
+          </p>
+        </proof>
+      </theorem>
+          <remark xml:id="rm_orthogonal_matrices_misnomer">
+        <p>
+          It is somewhat unfortunate that the property of being an <em>orthogonal</em> matrix is equivalent to your rows or columns forming an <em>orthonormal</em> basis. You ask: Why not simply call such matrices <em>orthonormal</em> matrices? My answer: tradition!
+        </p>
+      </remark>
+    
+    <theorem xml:id="th_changebasis_orthonormal">
+      <title>Orthonormal change of basis</title>
+      <statement>
+        <p>
+          Let <m>(V,\langle\, , \rangle)</m> be a finite dimensional inner product space, and suppose <m>B</m> and <m>B'</m> are orthonormal bases of <m>V</m>.
+        </p>
+        <ol>
+          <li>
+            <p>
+              The matrices <m>\underset{B\rightarrow B'}{P}</m> and <m>\underset{B'\rightarrow B}{P}</m> are orthogonal.
+            </p>
+          </li>
+          <li>
+            <p>
+              We have
+              <md>
+                \underset{B'\rightarrow B}{P}=\left( \underset{B\rightarrow B'}{P} \right)^T
+              </md>.
+            </p>
+          </li>
+        </ol>
+      </statement>
+      <proof>
+        <ol>
+          <li>
+            <p>
+              Let <m>B=(\boldv_1, \boldv_2,\dots, \boldv_n)</m>. By definition, the columns of <m>\underset{B\rightarrow B'}{P}</m> are the coordinate vectors <m>[\boldv_i]_{B'}</m>, <m>1\leq i\leq n</m>. By <xref ref="ex_coordinates_orthonormal"/>, these coordinate vectors form an orthonormal subset of <m>\R^n</m>; since there are <m>n=\dim\R^n</m> of them, they form an orthonormal basis. From <xref ref="th_orthogonal_matrices"/> it follows that <m>\underset{B\rightarrow B'}{P}</m> is orthogonal.
+              Lastly, from <xref ref="rm_orthogonal_matrices"/> it follows that <m>\underset{B'\rightarrow B}{P}=\left(\underset{B\rightarrow B'}{P}\right)^{-1}</m> is also orthogonal.
+            </p>
+          </li>
+          <li>
+            <p>
+              Since <m>\underset{B\rightarrow B'}{P}</m> is orthogonal, we have
+              <md>
+                \underset{B'\rightarrow B}{P}=\left(\underset{B\rightarrow B'}{P}\right)^{-1}=\left(\underset{B\rightarrow B'}{P}\right)^T
+              </md>.
+            </p>
+          </li>
+        </ol>
+      </proof>
+    
+    </theorem>
+    <example xml:id="eg_change_basis_matrix_ortho">
+      <title>Orthonormal change of basis: <m>\R^n</m></title>
+      <statement>
+        <p>
+          Let <m>B</m> be the standard ordered basis of <m>\R^3</m>. The ordered basis 
+          <md>
+            B'=\left(\frac{1}{\sqrt{6}}(1,1,-2), \frac{1}{\sqrt{2}}(1,-1,0), \frac{1}{\sqrt{3}}(1,1,1) \right)
+          </md>
+          is orthonormal with respect to the dot product. Compute the change of basis matrix <m>\underset{B\rightarrow B'}{P}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Since <m>B</m> is the standard ordered basis, we can easily compute 
+          <md>
+            \underset{B'\rightarrow B}{P}=\begin{amatrix}[rrr]
+              1/\sqrt{6}\amp 1/\sqrt{2}\amp 1/\sqrt{3} \\
+              1/\sqrt{6} \amp -1/\sqrt{2} \amp 1/\sqrt{3} \\
+              -2/\sqrt{6} \amp 0 \amp 1/\sqrt{3}
+            \end{amatrix}            
+          </md>.
+          Since <m>B</m> and <m>B'</m> are both orthonormal bases (with respect to the dot product), we have 
+          <md>
+            <mrow>\underset{B\rightarrow B'}{P} \amp = \underset{B'\rightarrow B}{P}^T</mrow>
+            <mrow> \amp = \left( \begin{amatrix}[rrr]
+              1/\sqrt{6}\amp 1/\sqrt{2}\amp 1/\sqrt{3} \\
+              1/\sqrt{6} \amp -1/\sqrt{2} \amp 1/\sqrt{3} \\
+              -2/\sqrt{6} \amp 0 \amp 1/\sqrt{3}
+            \end{amatrix}\right) ^T</mrow>
+            <mrow> \amp = 
+              \begin{amatrix}[rrr]
+              1/\sqrt{6}\amp 1/\sqrt{6}\amp -2/\sqrt{6} \\
+              1/\sqrt{2} \amp -1/\sqrt{2} \amp 0 \\
+              1/\sqrt{3} \amp 1/\sqrt{3} \amp 1/\sqrt{3}
+            \end{amatrix}            
+            </mrow>
+          </md>.          
+        </p>.
+      </solution>
+    </example>
+    <example xml:id="eg_change_basis_orthogonal_poly">
+      <title>Orthonormal change of basis: polynomials</title>
+      <statement>
+        <p>
+          Consider the vector space <m>P_1</m> with inner product <m>\langle p(x), q(x)\rangle=p(-1)q(-1)+p(1)q(1)</m>. The ordered bases
+          <md>
+          <mrow>B\amp =\left(p_1(x)=\frac{1}{\sqrt{2}}x,p_2(x)=\frac{1}{\sqrt{2}}\right)</mrow>
+          <mrow> B'\amp=\left(q_1(x)=\frac{1}{2}(x-1), q_2(x)=\frac{1}{2}(x+1)\right)</mrow>
+          </md>
+          are both orthonormal with respect to this inner product. Compute <m>\underset{B\rightarrow B'}{P}</m> and <m>\underset{B'\rightarrow B}{P}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Since <m>B'</m> is orthonormal, we use  <xref ref="th_coordinates_orthogonal"/> to compute
+          <md>
+            <mrow> [p_1(x)]_{B'} \amp = \left(\langle p_1(x),q_1(x)\rangle, \langle p_1(x),q_2(x)\rangle\right)</mrow>
+            <mrow> \amp =(p_1(-1)q_1(-1)+p_1(1)q_2(1),p_1(1)q_1(1)+p_1(1)q_2(1))=\frac{1}{\sqrt{2}}(1,1)</mrow>
+            <mrow> [p_2(x)]_{B'} \amp = \left(\langle p_2(x),q_1(x)\rangle, \langle p_1(x),q_2(x)\rangle\right)</mrow>
+            <mrow> \amp =(p_2(-1)q_1(-1)+p_2(1)q_2(1),p_2(1)q_1(1)+p_2(1)q_2(1))=\frac{1}{\sqrt{2}}(-1,1)</mrow>
+          </md>.
+          Thus
+          <md>
+          \underset{B\rightarrow B'}{P}=\frac{1}{\sqrt{2}}\begin{amatrix}[rr]
+          1\amp -1\\
+          1\amp 1
+          \end{amatrix}
+          </md>
+          and by <xref ref="th_changebasis_orthonormal"/>
+          <md>
+            \underset{B'\rightarrow B}{P}=(\underset{B\rightarrow B'}{P})^T=\frac{1}{\sqrt{2}}\begin{amatrix}[rr]
+            1\amp 1\\
+            -1\amp 1
+            \end{amatrix}
+          </md>.
+        </p>
+      </solution>
+    </example>
+
+  </subsection>
+
+
+  <xi:include href="./s_orthogonal_bases_ex.ptx"/>
+</section>

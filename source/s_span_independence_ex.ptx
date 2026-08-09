@@ -55,9 +55,9 @@ In each exercise, determine whether the given subset <m>S</m> of the vector spac
   <statement>
     <p>
       Let <m>V=M_{22}</m> and let <m>S=\{ A_1, A_2, A_3\}</m>, where
-      <me>
+      <md>
         A_1=\begin{bmatrix}1\amp 0\\ 1\amp c \end{bmatrix},  A_2=\begin{bmatrix}-1\amp 0\\ c\amp 1 \end{bmatrix},  A_3=\begin{bmatrix}2\amp 0\\ 1\amp 3 \end{bmatrix}
-      </me>.
+      </md>.
       Determine all values <m>c\in \R</m> for which <m>S</m> is linearly independent.
     </p>
   </statement>
@@ -100,9 +100,9 @@ In each exercise, determine whether the given subset <m>S</m> of the vector spac
       In this exercise we identify elements of <m>V=\R^n</m> with <m>n\times 1</m> column vectors.
     </p>
     <p> Let <m>S=\{\boldv_1,\boldv_2,\dots, \boldv_n\}</m> be a subset of <m>\R^n</m>, and let <m>A</m> be the <m>n\times n</m> matrix whose <m>j</m>-th column is <m>\boldv_j</m>: <ie />,
-      <me>
+      <md>
       A=\begin{bmatrix}\vert \amp \vert \amp \cdots \amp \vert\\ \boldv_1\amp \boldv_2\amp  \amp \boldv_n\\ \vert \amp \vert \amp \cdots \amp \vert \end{bmatrix}
-      </me>.
+      </md>.
     </p>
     <ol>
       <li>

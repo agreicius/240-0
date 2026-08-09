@@ -72,19 +72,19 @@
   <statement>
     <p>
       Use a truth table to find all truth value assignments of <m>\mathcal{P}</m> and <m>\mathcal{Q}</m> making the compound proposition
-      <me>
+      <md>
         \neg\mathcal{P}\implies (\mathcal{Q}\implies P)
-      </me>
+      </md>
       false.
     </p>
   </statement>
   <solution>
     <p>
       We construct a truth table with columns for <m>\mathcal{P}</m>, <m>\mathcal{Q}</m>, <m>\neg\mathcal{P}</m>, <m>\mathcal{Q\implies P}</m>, and <m>\neg\mathcal{P}\implies (\mathcal{Q}\implies P)</m>:
-      <me>
+      <md>
       \begin{array}{c|c|c|c||c}\mathcal{P}\amp\mathcal{Q}\amp\neg\mathcal{P}\amp \mathcal{Q}\implies \mathcal{P}\amp \neg\mathcal{P}\implies(\mathcal{Q}\implies \mathcal{P}) \\
       \hline T\amp T\amp F\amp T\amp T\\T\amp F\amp F\amp T\amp T\\ F\amp T\amp T\amp F\amp F\\ F\amp F\amp T\amp T\amp T\end{array}
-      </me>.
+      </md>.
       We conclude that <m>\neg\mathcal{P}\implies (\mathcal{Q}\implies P)</m> is false exactly when <m>\mathcal{P}</m> is false and <m>\mathcal{Q}</m> is true. (It follows that <m>\neg\mathcal{P}\implies (\mathcal{Q}\implies P)</m> is equivalent to <m>Q\implies P</m>. )
     </p>
 
@@ -165,8 +165,8 @@
   <solution>
     <p>
       Fix our domain of discourse to be <m>D=\R</m>. For any <m>r,s\in \R</m>, let <m>Q(r,s)</m> be the proposition that <m>s</m> is a square-root of <m>r</m>. Define <m>P(x)</m> to be the propositional function
-      <me>x>0 \implies \exists y\, Q(x,y)
-      </me>.
+      <md>x>0 \implies \exists y\, Q(x,y)
+      </md>.
       Thus for any <m>r\in\R</m>, <m>P(r)</m> is the proposition that if <m>r</m> is positive, then <m>r</m> has a square-root. It follows that <m>\forall x\in\R\, P(x)</m> is the proposition that for all real numbers <m>x</m>, if <m>x</m> is positive, then  <m>x</m> has a square-root. This is clearly equivalent to the proposition that every positive real number has a square-root, as desired.
     </p>
     <p>
@@ -193,13 +193,13 @@
   <statement>
     <p>
     Let <m>P(x)</m> be a propositional function with domain of discourse <m>D</m>. According to <xref ref="d_quantifiers"/> a universal quantification <m>\forall x\, P(x)</m> is false if it is <em>not the case</em> that <m>P(d)</m> is true for all for all <m>d\in D</m>; that is, if there is some <m>d\in D</m> such that <m>P(d)</m> is false. Letting <m>\neg P(x)</m> be the propositional function defined as <m>\neg P(d)</m> for all <m>d\in D</m>, we see that <m>\forall x\,  P(x) </m> is false if and only if <m>\exists x\, \neg P(x)</m> is true. This proves the equivalence
-    <me>
+    <md>
       \neg\forall x\, P(x)\iff \exists x\, \neg P(x)
-    </me>.
+    </md>.
     Similarly, we have
-    <me>
+    <md>
       \neg\exists x\, P(x)\iff \forall x\, \neg P(x)
-    </me>.
+    </md>.
     These equivalences can be understood as rules of negating quantifier statements. They can be summarized as follow: <q>swap quantifiers and negate the predicate.</q>
     </p>
   </statement>
@@ -213,9 +213,9 @@
   <statement>
     <p>
       Let <m>f(x)</m> be a function with domain <m>\R</m>, and let <m>c\in \R</m> be a point of this domain. By definition, the proposition that <m>\lim\limits_{x\to c}f(x)</m> exists is equivalent to the following proposition:
-      <men xml:id="eq_proposition">
+      <md number="yes" xml:id="eq_proposition">
         \exists L\in\R\,  \forall \epsilon \gt 0\, \exists \delta \gt0\,  \forall x\in\mathbb{R}\ (\val{x-c}\lt\delta\implies \val{f(x)-L}\lt\epsilon)
-      </men>.
+      </md>.
       (We made a number of shortcuts in our logical notation above (<eg /> <m>\forall \epsilon\gt 0</m>, <m>\exists\delta\gt 0</m>) in order to simplify the expression somewhat; the intended meaning should still be clear. )
     </p>
     <p>

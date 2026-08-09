@@ -544,7 +544,7 @@
         <li>
           <title>Column and row space dimension</title>
          <p>
-          <md number="yes" xml:id="eq_col_row">\dim \CS A=\dim \RS A</md>.
+          <md number="yes" xml:id="eq_col_row>\dim \CS A=\dim \RS A</md">.
          </p>
         </li>
         <li>

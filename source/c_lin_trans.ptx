@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="c_lin_trans" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Linear transformations</title>
+    <xi:include href="./s_transformation.ptx" />
+    <xi:include href="./s_nullspace_image_isom.ptx" />
+    <xi:include href="./s_coordinatevectors.ptx" />
+    <xi:include href="./s_matrixreps.ptx" />
+    <xi:include href="./s_changeofbasis.ptx" />
+</chapter>

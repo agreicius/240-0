@@ -48,18 +48,18 @@ For each vector space <m>V</m> and subset <m>S</m>, use the one-step technique (
       <li>
         <p>
           <m>S=\{A_1, A_2, A_3, A_4 \}</m>, where
-          <me>
+          <md>
             A_1=\begin{bmatrix}1\amp 1\\ 1\amp 1 \end{bmatrix},  \ A_2=\begin{bmatrix}1\amp -1\\ 0\amp 0 \end{bmatrix}, \ A_3=\begin{bmatrix}0\amp -1\\ 1\amp 0 \end{bmatrix},  \ A_4=\begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix}
-          </me>
+          </md>
 
         </p>
       </li>
       <li>
         <p>
           <m>S=\{A_1, A_2, A_3, A_4 \}</m>, where
-          <me>
+          <md>
             A_1=\begin{bmatrix}1\amp 1\\ 1\amp 1 \end{bmatrix},  \ A_2=\begin{bmatrix}1\amp -1\\ -1\amp 0 \end{bmatrix}, \ A_3=\begin{bmatrix}0\amp 1\\ 1\amp 0 \end{bmatrix},  \ A_4=\begin{bmatrix}1\amp 0\\ 0\amp 0 \end{bmatrix}
-          </me>
+          </md>
         </p>
       </li>
     </ol>
@@ -128,9 +128,9 @@ For each given <m>V</m> and subspace <m>W\subseteq V</m>, provide a basis for <m
     <p>
       Suppose <m>B=\{\boldv_1,\boldv_2,\boldv_3\}</m> be a basis for the vector space<m>V</m>.
       Let <m>B'=\{\boldu_1,\boldu_2,\boldu_3\}</m>, where
-      <me>
+      <md>
       \boldu_1 = \boldv_1, \boldu_2 = \boldv_1 + \boldv_2, \boldu_3 = \boldv_1 +\boldv_2 + \boldv_3
-      </me>.
+      </md>.
       Prove that <m>B'</m> is a basis.
     </p>
   </statement>

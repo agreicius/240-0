@@ -15,15 +15,15 @@
         A <term>linear expression</term> in the <m>n</m> unknowns
         (or variables)
         <m>x_1,x_2,\dots x_n</m> is an expression of the form
-        <me>
+        <md>
           a_1x_1+a_2x_2+\cdots +a_nx_n+c
-        </me>,
+        </md>,
         where <m>a_1,a_2,\dots, a_n,c</m> are fixed real numbers.
       </p>
       <p>A <term>linear equation</term> in the unknowns <m>x_1,x_2,\dots, x_n</m> is an equation that can be simplified, using only addition and subtraction, to an equation of the form
-        <men xml:id="eq_std_form">
+        <md number="yes" xml:id="eq_std_form">
           a_1x_1+a_2x_2+\cdots a_nx_n=b,
-        </men>
+        </md>
         which we call its <term>standard form </term>. An equation in the unknowns <m>x_1,x_2,\dots, x_n</m> is <term>nonlinear</term> if it cannot be simplified to the form <xref ref="eq_std_form"/> using only addition and subtraction.
       </p>
       <p>
@@ -52,13 +52,13 @@
         <li>
           <p>
             The equation 
-            <me>
+            <md>
               \frac{3}{x+2y+z}=1
-            </me>
+            </md>
             is nonlinear. Interestingly, however, the set of solutions to this equation is equal to the set of solutions to the linear equation 
-            <me>
+            <md>
               x+2y+z=3
-            </me>.
+            </md>.
             This illustrates that <xref ref="d_lin-equation"/> is concerned strictly with the form of an equation, and not with the solutions to that equation. 
           </p>
         </li>
@@ -74,15 +74,15 @@
     <statement>
       <p>
         A <term>solution to a linear equation</term>
-        <me>
+        <md>
           a_1x_1+a_2x_2+\cdots a_nx_n=b
-        </me>
+        </md>
         is an <m>n</m>-tuple
         <m>(s_1,s_2,\dots,
         s_n)</m> of real numbers for which the variable assignment <m>x_1=s_1, x_2=s_2,\dots, x_n=s_n</m> makes the equation true: <ie/>, the tuple <m>(s_1,s_2,\dots, s_n)</m> satisfies  
-        <me>
+        <md>
           a_1s_1+a_2s_2+\cdots a_ns_n=b
-        </me>.
+        </md>.
         We say <m>(s_1,\dots ,s_n)</m> <term>solves the equation</term> in this case.
       </p>
     </statement>
@@ -95,11 +95,11 @@
     <title>Hyperplane</title>
     <statement>
       <p> A linear equation 
-        <men xml:id="eq_hyper">a_1x_1+a_2x_2+\cdots a_nx_n=b</men> 
+        <md number="yes" xml:id="eq_hyper">a_1x_1+a_2x_2+\cdots a_nx_n=b</md> 
         is <term>nontrivial</term> if <m>a_i\ne 0</m> for some <m>1\leq i\leq n</m>. Given a nontrivial equation <xref ref="eq_hyper"/>, the set of solutions 
-      <me>
+      <md>
         S=\{(s_1,s_2,\dots, s_n)\in \R^n\colon a_1s_1+\cdots+a_ns_n=b \}
-      </me>
+      </md>
       is called a <term>hyperplane</term> in <m>\R^n</m>. We have the two following special cases, corresponding to <m>n=2</m> and <m>n=3</m>:
       <ul>
         <li>
@@ -120,14 +120,15 @@
     <title>Visualizing lines in <m>\R^2</m></title>
     <p>
       Let <m>\ell\subseteq \R^2</m> be a line: <ie/>, <m>\ell</m> is the solution to some nontrivial linear equation <m>ax+by=c</m>. Since the equation is nontrivial, we have <m>a\ne 0</m> or <m>b\ne 0</m>. If <m>b\ne 0</m>, we may put the equation in the form 
-      <me>
+      <md>
         y=-\frac{a}{b}x+\frac{c}{b}
-      </me>, 
-      in which case we recognize <m>m=-a/b</m> as the slope of <m>\ell</m> and <m>c/b</m> as the <m>y</m>-intercept. If <m>b=0</m>, then <m>a\ne 0</m>, and the equation can be solved as <m>x=c/a</m>, which we recognize as the vertical line passing through the point <m>(c/a,0)</m>.
+      </md>, 
+      in which case we recognize <m>m=-a/b</m> as the slope of <m>\ell</m> and <m>c/b</m> as the <m>y</m>-intercept. 
     </p>
     <p>
-      It is easy to see that the equation defining <m>\ell</m> is homogenous if and only if <m>(0,0)</m> is a point on <m>\ell</m>: <ie/>, <m>\ell</m> is defined by a homogeneous equation if and only if it passes through the origin. 
+      If <m>b=0</m>, then <m>a\ne 0</m>, and the equation can be solved as <m>x=c/a</m>, which we recognize as the vertical line passing through the point <m>(c/a,0)</m>.
     </p>
+    
     <figure xml:id="fig_lines">
       <caption>Lines in <m>\R^2</m></caption>
       <image xml:id="im_lines_R2" width="50%">
@@ -149,16 +150,13 @@
     <title>Visualizing planes in <m>\R^3</m></title>
     <p>
       Let <m>\mathcal{P}\subseteq \R^3</m> be a plane defined by the nontrivial equation 
-      <men xml:id="eq_vis_plane">
+      <md number="yes" xml:id="eq_vis_plane">
         ax+by+cz=d
-      </men>. 
-      Later we will describe an approach to visualizing <m>\mathcal{P}</m> in terms of its <q>normal vector</q> <m>\boldn=(a,b,c)</m>. For now we recall a more elementary approach. Namely, simply find by inspection three <em>non-colinear</em> points <m>P,Q,R</m> satisfying <xref ref="eq_vis_plane"/>, sketch the triangle in <m>\R^3</m> they define, and then envision <m>\mathcal{P}</m> as the plane in <m>\R^3</m> containing this triangle. In practice we can find three such points by picking arbitrary values for two of the three variables, and solving for the third variable using <xref ref="eq_vis_plane"/>.
+      </md>. 
+      We will describe two methods of visualizing <m>\mathcal{P}</m>. The first, more elementary approach might be described as the <em>triangle method</em>. This entails first finding by inspection three <em>non-colinear</em> points <m>P,Q,R</m> satisfying equation <xref ref="eq_vis_plane"/>. The plane <m>\mathcal{P}</m> is then visualized by sketching the triangle <m>\triangle PQR</m> in <m>\R^3</m> they define, and envisioning <m>\mathcal{P}</m> as the plane in <m>\R^3</m> containing this triangle. In practice we can find three such points by picking arbitrary values for two of the three variables, and solving for the third variable using <xref ref="eq_vis_plane"/>.
     </p>
     <p>
       For example, if <m>\mathcal{P}</m> is the plane with equation <m>x+y+z=2</m>, we see easily that <m>P=(2,0,0), Q=(0,2,0), R=(0,0,2)</m> lie on <m>\mathcal{P}</m>, allowing us to produce the graph in <xref ref="fig_visualize_plane"/>. 
-    </p>
-    <p>
-      As with lines, it is easy to see that the equation <xref ref="eq_vis_plane"/> defining <m>\mathcal{P}</m> is homogeneous if and only if <m>\mathcal{P}</m> passes through the origin <m>(0,0,0)</m>. 
     </p>
     <figure xml:id="fig_visualize_plane">
       <title>Using Sage to visualize <m>\mathcal{P}\colon ax+by+cz=d</m> via normal vector <m>\boldn=(a,b,c)</m></title>
@@ -180,15 +178,13 @@ T+p1+p2+p3+T1+T2+T3+a
         </sageplot>
       </image>
     </figure>
-      <!-- Since the equation <m>ax+by+cz=d</m> is nontrivial, one of the coefficients <m>a,b,c</m> is nonzero, allowing us to solve for its corresponding variable in terms of the others. For example, if the equation is <m>2x+0y+</m>  the vector <m>\boldn=(a,b,c)</m> is nonzero. We call <m>\boldn</m> a normal vector to the plane <m>\mathcal{P}</m>. Given any point <m>P=(x_0,y_0,z_0)\in \mathcal{P}</m>, we visualize <m>\mathcal{P}</m> as the set of all points <m>Q=(x,y,z)</m> such that the vector <m>\overrightarrow{PQ}=(x-x_0, y-y_0, z-z_0)</m> is orthogonal to <m>\mathcal{n}</m>. This allows us to envision <m>\mathcal{P}</m> as <q>the plane passing through <m>P</m> and orthogonal to <m>\boldn</m></q>.
-    </p>
     <p>
-      As with lines, the equation defining a plane <m>\mathcal{P}</m> is homogeneous if and only if the plane passes through the origin. 
+        Leaning on your multivariable calculus background, we also recall a method of visualization using normal vectors. Since the equation <xref ref="eq_vis_plane"/> is nontrivial, the vector <m>\boldn=(a,b,c)</m> is nonzero and is called a <term>normal vector</term> to the plane <m>\mathcal{P}</m>. The <em>normal vector method</em> for visualizing <m>\mathcal{P}</m> proceeds as follows: pick any point <m>P=(x_0,y_0,z_0)\in \mathcal{P}</m>, and visualize <m>\mathcal{P}</m> as the set of all points <m>Q=(x,y,z)</m> such that the vector <m>\overrightarrow{PQ}=(x-x_0, y-y_0, z-z_0)</m> is orthogonal to <m>\mathcal{n}</m>. This allows us to identify <m>\mathcal{P}</m> as the plane passing through <m>P</m> and orthogonal to <m>\boldn</m>.
     </p>
-    <figure xml:id="fig_visualize_plane">
+    <figure xml:id="fig_visualize_plane_normal">
       <title>Using Sage to visualize <m>\mathcal{P}\colon ax+by+cz=d</m> via normal vector <m>\boldn=(a,b,c)</m></title>
       <caption>Visualizing <m>\mathcal{P}\colon ax+by+cz=d</m> via normal vector <m>\boldn=(a,b,c)</m></caption>
-      <image xml:id="im_plane" width="75%">
+      <image xml:id="im_plane_normal" width="75%">
 <shortdescription>A plane and its normal vector</shortdescription>
 <sageplot variant="3d" aspect="1.0">
 a=-8
@@ -214,7 +210,11 @@ Pt1+Pt2+Ar1+Ar2+T1+T2+T3+Plane
 </sageplot>
 
 </image>
-    </figure> -->
+
+    </figure>
+    <p>
+      Note: by invoking orthogonality, we might be accused of having gotten ahead of ourselves somewhat. Although we will take up the notion of orthogonality in full generality in <xref ref="c_innerproductspaces"/>, we are justified in using it in the context of <m>\R^3</m>, since this is treated in standard multivariable calculus courses. 
+    </p>
   </example>
   <p>
     Next we introduce <em>linear systems</em>, which are just collections of linear equations. 
@@ -227,9 +227,9 @@ Pt1+Pt2+Ar1+Ar2+T1+T2+T3+Plane
         A <term>system of linear equations</term>
         (or <term>linear system</term>)
         is a set of linear equations.
-        <men xml:id="eq_lin_syst">
+        <md number="yes" xml:id="eq_lin_syst">
           \eqsys
-        </men>
+        </md>
         The linear system <xref ref="eq_lin_syst"/> is <term>homogeneous</term> if each of its equations is homogeneous: <ie/>, if <m>b_i=0</m> for all <m>1\leq i\leq m</m>.
       </p>
       <p>
@@ -245,13 +245,13 @@ Pt1+Pt2+Ar1+Ar2+T1+T2+T3+Plane
   </definition>
   <p>
   When displaying a system of <m>m</m> equations in the <m>n</m> unknowns <m>x_1,x_2,\dots x_n</m>, we typically write each equation in standard form and align the corresponding terms of each equation into columns:
-    <me>
+    <md>
       \eqsys
-    </me>
+    </md>
 A homogeneous system is thus typically written as:
-<me>
+<md>
   \homsys.
-</me>
+</md>
 </p>
 <remark>
   <title>Displaying linear systems</title>
@@ -279,13 +279,13 @@ A homogeneous system is thus typically written as:
   For each system, compute the set of solutions.
   <ol>
     <li>
-      <me>\begin{linsys}{2} x\amp -\amp y\amp =\amp 0\\ x\amp -\amp y\amp =\amp 1\end{linsys}</me>
+      <md>\begin{linsys}{2} x\amp -\amp y\amp =\amp 0\\ x\amp -\amp y\amp =\amp 1\end{linsys}</md>
     </li>
     <li>
-      <me>\begin{linsys}{2} x\amp -\amp y\amp =\amp 0\\ x\amp +\amp y\amp =\amp 1\end{linsys}</me>
+      <md>\begin{linsys}{2} x\amp -\amp y\amp =\amp 0\\ x\amp +\amp y\amp =\amp 1\end{linsys}</md>
     </li>
     <li>
-      <me>\begin{linsys}{2} x\amp -\amp y\amp =\amp 1\\ 2x\amp -\amp 2y\amp =\amp 2\end{linsys}</me>
+      <md>\begin{linsys}{2} x\amp -\amp y\amp =\amp 1\\ 2x\amp -\amp 2y\amp =\amp 2\end{linsys}</md>
     </li>
   </ol>
   </p>
@@ -341,19 +341,19 @@ A homogeneous system is thus typically written as:
       </li>
     </ol>
     We will prove this in full rigor in <xref ref="s_solving"/>. However, we get an inkling of why this should be true in the case of two or three unknowns, where we can put our geometric understanding to work. For example, consider a general system of <m>m</m> equations in just two unknowns <m>x</m> and <m>y</m>: 
-    <men>
+    <md>
       \begin{linsys}{2} 
       a_{11}x\amp +\amp a_{12}y\amp =\amp b_1 \\ 
       a_{21}x\amp +\amp a_{22}y\amp =\amp b_2 \\ 
       \vdots \amp \amp \vdots \amp \amp \vdots \\
       a_{m1}x\amp +\amp a_{m2}y\amp =\amp b_m  
       \end{linsys}
-    </men>
+    </md>
     Assume for simplicity that each equation in the system is nontrivial, and thus that 
     for each <m>1\leq i\leq m</m>, the <m>i</m>-th equation of this system defines a line 
-    <men xml:id="eq_sys_line">
+    <md number="yes" xml:id="eq_sys_line">
       \ell_i\colon a_{i1}x+a_{i2}y=b_i
-    </men>.
+    </md>.
     A solution <m>P=(s_1,s_2,\dots, s_n)</m> of the system, being a solution of each equation <xref ref="eq_sys_line"/>, must lie on each of the <m>m</m> lines <m>\ell_i</m>. In other words, the set of solutions to the system is precisely the set of points <m>P</m> lying in the common intersection of all of these lines. Thus our qualitative description of the set of solutions to this system amounts to the <em>geometric</em> fact that the intersection of any collection of lines in <m>\R^2</m> is either empty, contains a unique point, or is infinite. <xref ref="ex_solving_sys_geom"/> has you prove this geometric fact, as well as the analogous statement for systems of equations in three unknowns. For now we illustrate this by reexamining <xref ref="s_systems_eg_2eqns2varss"/> from a geometric point of view. 
   </p>
 <example xml:id="eg_system_of_lines">
@@ -394,21 +394,21 @@ A homogeneous system is thus typically written as:
 </p>
 <p>
   For example, consider the system
-    <men xml:id="s_systems_eq_runningexample">
+    <md number="yes" xml:id="eq_runningexample">
       \begin{linsys}{3} 2x\amp -\amp y\amp -\amp z\amp =\amp 3\\ x\amp \amp \amp -\amp z\amp =\amp 2 \\ x\amp -\amp y\amp \amp \amp =\amp 1 \end{linsys}
-    </men>
+    </md>
   Observe first that the triple <m>(5,2,5)</m> is not a solution to the system; one easily checks that is satisfies the first and second equations, but not the third. Similarly, it is easy to verify that <m>(4,2,3)</m> and <m>(0,-1,2)</m> are both solutions to the system. The question remains: How do we find <em>all</em> solutions to the linear system in a systematic way?
 </p>
 <remark>
-  <p>Notice the somewhat funny spacing in <xref ref="s_systems_eq_runningexample"/>. This is in force in order to align the unknowns in separate columns. In general, when handed a linear system in the wild, your first step should be to write each equation in standard form, and make sure the unknowns are aligned vertically in this manner.
+  <p>Notice the somewhat funny spacing in <xref ref="eq_runningexample"/>. This is in force in order to align the unknowns in separate columns. In general, when handed a linear system in the wild, your first step should be to write each equation in standard form, and make sure the unknowns are aligned vertically in this manner.
 </p>
 </remark>
   <paragraphs xml:id="pars-">
     <title>Some systems are easier to solve than others</title>
     <p>Below you find two systems of three equations in three unknowns.
-    <me>
+    <md>
       \begin{array}{ccc} \text{ System } L \amp \hspace{5pt}\amp \text{ System } L' \\ \hline \begin{linsys}{3} 2x\amp +\amp 3y\amp +\amp -z\amp =\amp 18\\ x\amp +\amp 2y\amp -\amp 2z\amp =\amp 8\\ -\frac{1}{2}x\amp +\amp -\frac{1}{2}y\amp +\amp \frac{1}{2}z\amp =\amp -3 \end{linsys} \amp  \amp \begin{linsys}{3} x\amp +\amp y\amp +\amp z\amp =\amp 10\\ \amp \amp y\amp -\amp 3z\amp =\amp -2\\ \amp \amp \amp \amp z\amp =\amp 2 \end{linsys} \end{array}
-    </me>
+    </md>
   The staircase pattern of <m>L'</m> allows us to solve easily by
     <em>backwards substitution</em>. In more detail:
   <ol>
@@ -533,9 +533,9 @@ A homogeneous system is thus typically written as:
     <title>Complete example</title>
     <p>
       Consider again the linear system
-      <me>
+      <md>
         \begin{linsys}{3} 2x\amp +\amp 3y\amp +\amp -z\amp =\amp 18\\ x\amp +\amp 2y\amp -\amp 2z\amp =\amp 8\\ -\frac{1}{2}x\amp +\amp -\frac{1}{2}y\amp +\amp \frac{1}{2}z\amp =\amp -3 \end{linsys}
-      </me>
+      </md>
     </p>
     <p>
       We transform the system as as follows:
@@ -592,24 +592,24 @@ A homogeneous system is thus typically written as:
  </p>
  <p>
    The notation
-   <me>
+   <md>
      L\xrightarrow{c\, e_i}L'
-   </me>
+   </md>
    indicates that system <m>L'</m> is obtained from <m>L</m> by replacing equation <m>e_i</m> with <m>c\, e_i</m>.
 
  </p>
  <p>
    The notation
-   <me>
+   <md>
      L\xrightarrow{e_i\leftrightarrow e_j}L'
-   </me>
+   </md>
    indicates that system <m>L'</m> is obtained from <m>L</m> by swapping rows <m>e_i</m> and <m>e_j</m>.
  </p>
  <p>
    The notation
-   <me>
+   <md>
      L\xrightarrow{e_i+c\,e_j}L'
-   </me>
+   </md>
    indicates that system <m>L'</m> is obtained from <m>L</m> by replacing equation <m>e_i</m> with <m>e_i+c\,e_i</m>.
 
  </p>

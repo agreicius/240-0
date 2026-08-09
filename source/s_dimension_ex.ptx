@@ -138,10 +138,10 @@
   <exercise>
     <statement>
       <p> Suppoe <m>B=\{\boldv_1,\boldv_2,\boldv_3\}</m> be a basis for the vector space<m>V</m>.
-        Let <m>B'=\{\boldu_1,\boldu_2,\boldu_3\}</m>, where <me>
+        Let <m>B'=\{\boldu_1,\boldu_2,\boldu_3\}</m>, where <md>
           \boldu_1 = \boldv_1, \boldu_2 = \boldv_1 + \boldv_2, \boldu_3 = \boldv_1 +\boldv_2 +
         \boldv_3
-        </me>.
+        </md>.
         Prove that <m>B'</m> is a basis. </p>
     </statement>
     <hint>
@@ -166,11 +166,11 @@
   <exercise>
     <statement>
       <p> Let <m>V=M_{33}</m>, <m>W=\{A\in M_{33}\colon A^T=-A\}</m>, and <m>W'=\Span\{ A_1, A_2,
-        A_3\}</m>, where <me>
+        A_3\}</m>, where <md>
           A_1=\begin{bmatrix}0\amp 1\amp 2\\ -1\amp 0\amp 1\\ -2\amp -1\amp 0 \end{bmatrix} , \
         A_2=\begin{bmatrix}0\amp 1\amp -1\\ -1\amp 0\amp 1\\ 1\amp -1\amp 0 \end{bmatrix} ,\
         A_3=\begin{bmatrix}0\amp 1\amp 0\\ -1\amp 0\amp -1\\ 0\amp 1\amp 0 \end{bmatrix}
-        </me>
+        </md>
         Show that <m>W'=W</m> as follows: <ol>
           <li> Show that <m>W'\subseteq W</m>. </li>
           <li>
@@ -183,9 +183,9 @@
   </exercise>
   <exercise>
     <statement>
-      <p> Let <m>V=M_{23}</m> and define <me>
+      <p> Let <m>V=M_{23}</m> and define <md>
           W=\{A\in M_{23}\colon \text{ all rows and columns of \(A\) sum to 0 } \}
-        </me>.
+        </md>.
         Find a basis for <m>W</m> by inspection and compute its dimension. </p>
     </statement>
   </exercise>
@@ -216,17 +216,17 @@
       </ol>
     </statement>
     <hint>
-      <p> Use your results from <xref ref="ex_basis_matrix_families" />. The identity <me>
+      <p> Use your results from <xref ref="ex_basis_matrix_families" />. The identity <md>
         \sum_{i=1}^n i=\frac{(n+1)n}{2}
-        </me> will be helpful. </p>
+        </md> will be helpful. </p>
     </hint>
   </exercise>
   <exercise>
     <statement>
       <p> Let <m>A\in M_{nn}</m>. Show that there is a nonzero polynomial <m>p(x)=a_{n^2}x^{n^2}+a_{n^2-1}x^{n^2-1}+\cdots
-        +a_1x+a_0</m> such that <me>
+        +a_1x+a_0</m> such that <md>
           p(A)=a_{n^2}A^{n^2}+a_{n^2-1}A^{n^2-1}+\cdots +a_1A+a_0I_n=\underset{n\times n}{\boldzero}
-        </me>
+        </md>
         .
     </p>
     </statement>

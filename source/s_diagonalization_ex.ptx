@@ -1,0 +1,273 @@
+<exercises xml:id="s_diagonalization_ex">
+  <subexercises>
+    <title>WeBWork Exercises</title>
+    <exercise>
+      <!-- diagonalize 2x2 matrix -->
+      <webwork source="Library/TCNJ/TCNJ_Diagonalization/problem4.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- diagonalize 3x3 matrix -->
+      <webwork source="Library/NAU/setLinearAlgebra/diag3x3.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- similar matrices -->
+      <webwork source="Library/NAU/setLinearAlgebra/similarB.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- power of a matrix -->
+      <webwork source="Library/Hope/Multi1/05-04-Diagonalization/DiagR_05.pg" />
+    </exercise>
+  </subexercises>
+  <exercisegroup>
+    <introduction>
+    <p>
+    For each matrix <m>A</m> use <xref ref="proc_diagonalize"/> to determine whether it is diagonalizable. If yes, then produce an invertible matrix <m>P</m> and diagonal matrix <m>D</m> satisfying <m>D=P^{-1}AP</m>. For the last matrix the characteristic polynomial <m>p(t)</m> is provided for convenience.
+    </p>
+    </introduction>
+    <exercise>
+      <statement>
+        <p>
+          <m>A=\begin{amatrix}[rrr]
+          3\amp 0\amp 0 \\ 0\amp 2\amp 0\\ 0\amp 1\amp 2
+          \end{amatrix}
+          </m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>A=\begin{amatrix}[rrr]
+          -1\amp 4\amp -2\\ -3\amp 4\amp 0\\ -3\amp 1\amp 3
+          \end{amatrix}
+          </m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>A=\begin{amatrix}[rrr]
+          0\amp 0\amp 0\\ 0\amp 0\amp 0 \\ 3\amp 0\amp 1
+          \end{amatrix}
+          </m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>A=\begin{amatrix}[rrr]
+          5\amp 0\amp 0\\ 1\amp 5\amp 0 \\ 0\amp 1\amp 5
+          \end{amatrix}
+          </m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>A=\begin{amatrix}[rrr]
+          19\amp -9\amp -6\\ 25\amp -11\amp -9\\ 17\amp -9\amp -4
+          \end{amatrix}
+          </m>; <m>p(t)=t^3-4t^2+5t-2</m>
+        </p>
+      </statement>
+    </exercise>
+  </exercisegroup>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>A=\begin{bmatrix} a \amp b \\ c \amp d\end{bmatrix} </m>. Show that <m>A</m> is diagonalizable if and only if either <m>(a-d)^2+4bc\gt 0</m> or <m>A=aI</m> (<ie />, <m>a=d</m> and <m>b=c=0</m>).
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Prove <xref ref="th_similarity"/>.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Show that for any <m>c\in \R</m> we have <m>cI-P^{-1}AP=P^{-1}(cI-A)P</m>.
+      </p>
+    </hint>
+  </exercise>
+  <exercisegroup>
+    <introduction>
+    <p>
+    For each exercise construct a <m>3\times 3</m> matrix <m>A</m> satisfying the given conditions. Begin by showing that the given <m>A</m> must be diagonalizable.
+    </p>
+    </introduction>
+    <exercise>
+      <statement>
+        <p>
+          <m>A</m> has eigenspaces <m>W_2=\Span\{(1,0,1),(1,1,1)</m> and <m>W_{-1}=\Span\{(1,0,-1)\}</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>A\boldw=\boldw</m> for all <m>\boldw\in W=\{(x,y,z)\colon x+y+z=0\}</m>, <m>A\boldx=\boldzero</m> for <m>\boldx=(1,1,1)</m>.
+        </p>
+      </statement>
+    </exercise>
+  </exercisegroup>
+  <exercise>
+    <statement>
+      <p>
+        Assume <m>A</m> is a <m>3\times 3</m> matrix with eigenvalues <m>0</m>, <m>1</m>, and <m>-1</m>.
+      </p>
+      <ol>
+        <li>
+          <p>
+            Show that <m>A</m> is diagonalizable. Provide an explicit diagonal matrix <m>D</m> that <m>A</m> is similar to.
+          </p>
+        </li>
+        <li>
+          <p>
+            Prove that <m>A^n=A</m> for all odd integers <m>n\geq 1</m>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Prove statement (5) of <xref ref="th_characteristic_polynomial"/>.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Use <xref ref="th_similarity_matrixreps"/> and <xref ref="th_matrixreps_model"/>.
+      </p>
+    </hint>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Prove statement (6) of <xref ref="th_characteristic_polynomial"/>.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Use <xref ref="th_similarity_matrixreps"/> and <xref ref="proc_eigenspaces_transformation"/>.
+      </p>
+    </hint>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        According to <xref ref="th_similarity"/> if <m>A</m> and <m>B</m> are similar, then they have the same rank. Show that the converse is false by showing that the matrices
+        <md>
+          A=\begin{amatrix}[rr]
+          1\amp 0\\ 0\amp 0
+          \end{amatrix}, B=\begin{amatrix}[rr]
+          0\amp 1\\ 0\amp 0
+          \end{amatrix}
+        </md>
+        have the same rank, but are not similar.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        According to <xref ref="th_similarity"/> if <m>A</m> and <m>B</m> are similar, then they have the same characteristic polynomial. Show that the converse is false by showing that the matrices
+        <md>
+          A=\begin{amatrix}[rr]
+          1\amp 1\\ 0\amp 1
+          \end{amatrix}, B=\begin{amatrix}[rr]
+          1\amp 0\\ 0\amp 1
+          \end{amatrix}
+        </md>
+        have the same characteristic polynomial, but are not similar.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Prove all statements of <xref ref="th_conjugation"/>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <introduction>
+      <p>
+        In each case information about a matrix <m>A</m> is given. Decide whether <m>A</m> is diagonalizable.
+      </p>
+    </introduction>
+    <task>
+      <statement>
+        <p>
+           <m>A\in M_{33}</m>, <m>p(t)=\det(tI-A)=t^3-t^2</m>, <m>\nullity A=2</m>
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+          <m>A\in M_{33}</m>, <m>p(t)=\det(tI-A)=t^3+t^2-t</m>
+        </p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>
+            <m>A\in M_{22}</m>, <m>\tr A=4</m>, <m>\det A=3</m>
+        </p>
+      </statement>
+      <hint>
+            <p>
+              See <xref ref="rm_char_poly_trick"/>.
+            </p>
+          </hint>
+    </task>
+     
+  </exercise>
+  <exercise xml:id="ex_diagonalization">
+    <statement>
+      <p>
+        Each matrix <m>A</m> below has characteristic polynomial <m>p(t)=t^3-3t+2</m>. Use <xref ref="proc_diagonalize"/> to decide whether <m>A</m> is diagonalizable. If yes, provide an invertible <m>P</m> and diagonal <m>D</m> satisfying <m>D=P^{-1}AP</m>.
+        <ol>
+          <li>
+            <p>
+              <m>A=\begin{amatrix}[rrr]
+              -5\amp 0\amp 3\\ -6\amp 1\amp 3\\ -6\amp 0\amp 4
+              \end{amatrix}
+              </m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>A=\begin{amatrix}[rrr]
+              -2\amp -3\amp -3\\ -3\amp -3\amp 4\\ -3\amp -4\amp 5
+              \end{amatrix}
+              </m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Let
+        <md>
+          A=\begin{amatrix}[rrr]
+          -5\amp 0\amp 3\\ -6\amp 1\amp 3\\ -6\amp 0\amp 4
+          \end{amatrix}
+        </md>.
+        Use your work from <xref ref="ex_diagonalization"/> to find a matrix <m>C</m> satisfying <m>C^3=A</m>.
+      </p>
+    </statement>
+  </exercise>
+</exercises>

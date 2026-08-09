@@ -18,6 +18,9 @@
     <xi:include href="./c_lin_sys.ptx" />
     <xi:include href="./c_matrices.ptx" />
     <xi:include href="./c_vectorspace.ptx" />
+    <xi:include href="c_lin_trans.ptx" />
+    <xi:include href="c_eigenvectors.ptx" />
+    <xi:include href="c_innerproductspaces.ptx" />
 
     <!-- Include backmatter -->
     <backmatter>

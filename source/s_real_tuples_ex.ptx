@@ -298,7 +298,7 @@ Finish the proof of <xref ref="th_zero_space"/>. That is, show that the unique o
   
 <statement>
 <p>
-True or false: if true, provide a proof; if false, provide an explicit counterexample. 
+If true, provide a proof; if false, provide an explicit counterexample. 
 <ol>
   <li>
     <p>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="c_eigenvectors" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Eigenvectors and diagonalization</title>
+    <xi:include href="./s_eigenvectors.ptx" />
+    <xi:include href="./s_diagonalization.ptx" />
+</chapter>

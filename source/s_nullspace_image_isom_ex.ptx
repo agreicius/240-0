@@ -1,0 +1,216 @@
+<exercises xml:id="s_nullspace_image_ex">
+  <subexercises>
+    <title>WeBWork Exercises</title>
+    <exercise>
+      <!-- true/false -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.1.34.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- true/false -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.1.36.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- true/false -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.1.48.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- true/false -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.1.35.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- true/false -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.1.49.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- injective dimensions -->
+      <webwork source="Library/TCNJ/TCNJ_MatrixLinearTransformation/problem16.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- surjective dimensions -->
+      <webwork source="Library/TCNJ/TCNJ_MatrixLinearTransformation/problem25.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- abstract vectors -->
+      <webwork source="Library/TCNJ/TCNJ_MatrixLinearTransformation/problem17.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- abstract vectors -->
+      <webwork source="Library/TCNJ/TCNJ_MatrixLinearTransformation/problem23.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- definitions -->
+      <webwork source="Library/TCNJ/TCNJ_MatrixLinearTransformation/problem22.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- row-echelon -->
+      <webwork source="Library/TCNJ/TCNJ_MatrixLinearTransformation/problem26.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- find vector in image -->
+      <webwork source="Library/TCNJ/TCNJ_IntroLinearTransformations/problem23.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- find preimage -->
+      <webwork source="Library/TCNJ/TCNJ_IntroLinearTransformations/problem11.pg" />
+    </exercise>
+
+    <!-- <exercise>
+              transformation of matrices
+              this problem uses basis
+              should come in a later chapter
+              <webwork source="Library/NAU/setLinearAlgebra/LinTransImage.pg" />
+            </exercise> -->
+  </subexercises>
+  <subexercises>
+   
+  <exercisegroup>
+  <title>Computing <m>\NS T</m> and <m>\im T</m> parametrically</title>
+    <introduction>
+      <p>
+        For each linear transformation <m>T</m> give parametric descriptions of <m>\NS T</m> and <m>\im T</m>. To do so you will want to relate each computation to a system of linear equations.
+      </p>
+    </introduction>
+    <exercise>
+      <statement>
+        <p>
+          <md>
+            <mrow>T\colon \R^4 \amp \rightarrow \R^3 </mrow>
+            <mrow> (x,y,z,w)\amp\mapsto (x+z+w, x-y-z,-2x+y-w) </mrow>
+          </md>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <md>
+            <mrow> T\colon M_{22}\amp \rightarrow M_{22} </mrow>
+            <mrow> A \amp\mapsto \begin{amatrix}[rr]1\amp 1\\ 1\amp 1  \end{amatrix}A </mrow>
+          </md>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <md>
+            <mrow> T\colon P_2\amp \rightarrow P_2 </mrow>
+            <mrow> f \amp\mapsto f(x)+f'(x)</mrow>
+          </md>
+        </p>
+      </statement>
+    </exercise>
+  </exercisegroup>
+
+  <exercisegroup>
+  <title>Identifying <m>\im T</m></title>
+  <introduction>
+  <p>
+  For the given linear transformation <m>T</m> prove the claim about <m>\im T</m>.
+  </p>
+  </introduction>
+  <exercise>
+    <statement>
+      <p>
+        <md>
+          <mrow>T\colon \R^\infty \amp \rightarrow \R^\infty </mrow>
+          <mrow> s=(a_1,a_2,\dots)\amp\mapsto T(s)=(a_2,a_3,\dots) </mrow>
+        </md>.
+        Claim: <m>\im T=\R^\infty</m>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <md>
+          <mrow>T\colon C(\R) \amp \rightarrow C(\R) </mrow>
+          <mrow> f(x)\amp\mapsto g(x)=f(x)+f(-x)</mrow>
+        </md>.
+        Claim: <m>\im T</m> is the set of all continuous symmetric functions. In other words,
+        <md>
+          \im T=\{f\in C(\R)\colon f(-x)=f(x)\}.
+        </md>
+      </p>
+    </statement>
+  </exercise>
+  </exercisegroup>
+
+<exercisegroup>
+<title>Identifying <m>W</m> as a null space</title>
+<introduction>
+<p>
+For each subset <m>W\subseteq V</m> show <m>W</m> is a subspace by identifying it with the null space of a linear transformation <m>T</m>. You may use any of the examples from <xref ref="s_transformation"/>, and any of the results from the exercises in <xref ref="s_transformation_ex"/>.
+</p>
+</introduction>
+<exercise>
+  <statement>
+    <p>
+      <md>
+        W=\{A\in M_{nn}\colon \tr A=0\}
+      </md>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <md>
+        W=\{A\in M_{nn}\colon A^T=-A\}
+      </md>
+    </p>
+  </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <md>
+        W=\{f\in C^2(\R)\colon f''=2f'-3f\}
+      </md>
+    </p>
+  </statement>
+</exercise>
+</exercisegroup>
+
+<exercise xml:id="ex_cor_injective_surjective_1">
+  <title>Dimension, injectivity, surjectivity</title>
+  <statement>
+    <p>
+      Prove statement (1) of <xref ref="cor_injective_surjective"/>. Use <xref ref="th_injective_surjective"/> and <xref ref="th_rank-nullity"/>. 
+    </p>
+  </statement>
+</exercise>
+<exercise xml:id="ex_cor_injective_surjective_2">
+  <statement>
+    <p>
+      Prove statement (2) of <xref ref="cor_injective_surjective"/>. Use <xref ref="th_injective_surjective"/> and <xref ref="th_rank-nullity"/>. 
+    </p>
+  </statement>
+</exercise>
+<exercise xml:id="ex_isom_inverse_linear">
+  <statement>
+    <p>
+      Prove <xref ref="th_isom_inverse_linear"/>. Use the defining identities of the inverse function: namely, we have 
+      <md>
+        <mrow>T^{-1}(T(\boldv)) \amp = \boldv \text{ for all } \boldv\in V</mrow>
+        <mrow>T(T^{-1}(\boldw)) \amp = \boldw \text{ for all } \boldw\in W</mrow>
+      </md>.
+    </p>
+  </statement>
+</exercise>
+
+</subexercises>
+
+</exercises>

@@ -52,12 +52,12 @@
   <statement>
     <p>
       Let <m>L</m> be the linear system in the unknowns <m>x_1, x_2, x_3, x_4</m> with augmented matrix
-      <me>
+      <md>
       A=\begin{amatrix}[cccc|r]\boxed{1}\amp1\amp3\amp2\amp4\\
       0\amp\boxed{1}\amp1\amp2\amp3\\
       0\amp0\amp0\amp\boxed{1}\amp-5
     \end{amatrix}
-    </me>.
+    </md>.
     Then <m>x_1, x_2, x_4</m> are leading variables, since the first, second, and fourth columns of <m>A</m> have leading ones, as indicated by the boxes. The variable <m>x_3</m> is free since the third column of <m>A</m> has no leading one.
   </p>
 </statement>
@@ -66,34 +66,34 @@
   <title>Solving linear systems</title>
   <p>
   In our model example we transformed the original system <m>L</m> to the equivalent system <m>L'</m> below:
-  <me>
+  <md>
   \begin{array}{rcrcrcrcrcl} x_1\amp +\amp 2x_2\amp-\amp 5x_3\amp+\amp 3x_4 \amp +\amp 6x_5\amp =\amp 14\\
     \amp \amp \amp \amp x_3\amp-\amp \amp \amp \frac{7}{2}x_5\amp =\amp -6\\
     \amp \amp \amp \amp \amp \amp \amp \amp  x_5\amp =\amp 2 \end{array}
-    </me>.
+    </md>.
     The free variables of <m>L'</m> are <m>x_2</m> and <m>x_4</m>; the leading variables are <m>x_1, x_3</m>, and <m>x_5</m>. Observe that if we assign <m>x_2=s</m> and <m>x_4=t</m>, where <m>r</m> and <m>s</m> are any real numbers, then we are left with a system <m>L''</m> in three unknowns (<m>x_1,x_3,x_5</m>) of the form
-    <me>
+    <md>
     \begin{array}{rcrcrcl} x_1\amp-\amp 5x_3\amp+\amp 6x_5\amp= \amp 14-2s-3t\\
      \amp \amp x_3\amp -\amp \frac{7}{2}x_5\amp = \amp -6\\
      \amp \amp  \amp \amp x_5\amp =\amp 2 
       \end{array}
-      </me>.
+      </md>.
       Using back-substitution, we see that the unknowns <m>x_1, x_3, x_5</m> are then uniquely expressed in terms of <m>s</m> and <m>t</m> as
-      <men xml:id="ex_modelSolve">
+      <md number="yes" xml:id="ex_modelSolve">
         x_5=2, x_3=1, x_1=7-2s-3t.
-      </men>
+      </md>
       Thus for any choice of real numbers <m>s</m> and <m>t</m> we get a unique solution of the form
-      <me>
+      <md>
       (x_1,x_2,x_3,x_4,x_5)=(7-2s-3t, s, 1, t, 2)
-      </me>.
+      </md>.
       We conclude the set <m>S</m> of solutions to <m>L</m> is given as
-      <men xml:id="s_solving_eq_setnotation">
+      <md number="yes" xml:id="eq_setnotation">
         S=\left\{(7-2s-3t, s, 1, t, 2)\colon s, t\in\R\right\}.
-      </men>
+      </md>
       Alternatively, we can describe the solutions to <m>L</m> with the <em>parametric equations</em>
-      <men xml:id="s_solving_eq_parametric">
+      <md number="yes" xml:id="eq_parametric">
         x_1=7-2s-3t, x_2=s, x_3=1, x_4=t, x_5=2, \ t,s\in\R
-      </men>.
+      </md>.
     </p>
 </example>
 
@@ -101,7 +101,7 @@
       <title>Mandate</title>
       <idx><h>parametric equations</h></idx>
         <p>
-          Get used to describing solutions to linear systems using either the set notation format of <xref ref="s_solving_eq_setnotation"/> or the parametric equation format of <xref ref="s_solving_eq_parametric"/>.
+          Get used to describing solutions to linear systems using either the set notation format of <xref ref="eq_setnotation"/> or the parametric equation format of <xref ref="eq_parametric"/>.
         </p>
         <p>
           Note also the distinct roles played by free and leading variables in the description of solutions. We assign each free variable <em>freely</em> to any choice of real parameters (<m>s</m> and <m>t</m> in our example), and then solve for the leading variables in terms of these parameters in a unique manner. In particular, the leading variables are completely determined by our assignment of free variables.
@@ -189,9 +189,9 @@
     </p>
     <p>
       Regarding consistency: if the last column of the augmented matrix <m>U</m> associated to <m>L'</m> has a leading one in the <m>i</m>-th row, then the corresponding equation in <m>L'</m> is
-      <me>
+      <md>
       0x_1+0x_2+\cdots 0x_n=1.
-      </me>
+      </md>
       Clearly this equation has no solutions, and hence the set of solutions to <m>L'</m> is empty.
     </p>
     <p>
@@ -202,9 +202,9 @@
       <statement>
         <p>
           Suppose in Step 3 you determine that there are no free variables. Then each of the first <m>n</m> columns of <m>U</m> has a leading one in it. If follows that for each <m>1\leq i \leq n</m> the <m>i</m>-th equation of <m>L'</m> is of the form
-          <men xml:id="s_solving_case1eq">
+          <md number="yes" xml:id="eq_solving_case1eq">
             x_i+c_{i,i+1}x_{i+1}+\cdots c_{i,n}x_n=b_i.
-          </men>
+          </md>
           Since <m>U</m> does not have a leading one in the last column, it follows that all equations beyond the <m>n</m>-th equation are of the form
           <m>0x_1+0x_2+\cdots 0x_n=0</m>, and as such may be disregarded since they are satisfied by any choice of the <m>x_i</m>.
           The remaining system of <m>n</m> equations in <m>n</m> unknowns can be solved by back-substitution, yielding a <em>unique</em> solution <m>(x_1,x_2,\dots, x_n)</m> of the form
@@ -215,7 +215,7 @@
           <mrow>  \amp =b_{n-2}-c_{n-2,n}b_n-c_{n-2,n-1}(b_{n-1}-c_{n-1,n}b_n)</mrow>
           <mrow>  \amp \vdots </mrow>
           </md>
-          Do not concern yourself overly with the exact formulas. The important point here is that once we know there is a unique assignment of the variables <m>x_n, x_{n-1},\dots, x_{i+1}</m> that satisfies the system, <xref ref="s_solving_case1eq"/> allows us to solve for <m>x_i</m> in terms of the the <m>x_j</m>, <m>j>i</m>. As such working our way up from the last equation, we find there is a unique solution to the system.
+          Do not concern yourself overly with the exact formulas. The important point here is that once we know there is a unique assignment of the variables <m>x_n, x_{n-1},\dots, x_{i+1}</m> that satisfies the system, <xref ref="eq_solving_case1eq"/> allows us to solve for <m>x_i</m> in terms of the the <m>x_j</m>, <m>j>i</m>. As such working our way up from the last equation, we find there is a unique solution to the system.
         </p>
       </statement>
     </case>
@@ -223,9 +223,9 @@
       <title>Case 2: free variables</title>
       <p>
         Suppose now that <m>x_{i_1}, x_{i_2},\dots , x_{i_r}</m> are the leading variables of <m>L'</m>, and <m>x_{j_1}, x_{j_2},\dots, x_{j_s}</m> are the free variables. Again, since <m>U</m> does not have a leading one in the last column, there are exactly <m>r</m> nonzero equations in <m>L'</m>: one for each leading variable. After bringing any terms involving free variables to the right, the <m>k</m>-th such equation takes the form
-        <me>
+        <md>
         x_{i_k}+c_{k,k+1}x_{i_{k+1}}+\cdots c_{k,r}x_{i_{r}}=d_k-G_k(x_{j_1},x_{j_2},\dots, x_{j_s})
-        </me>. As in the previous case, back-substitution now allows us to solve for each leading variable as a function of the free variables:
+        </md>. As in the previous case, back-substitution now allows us to solve for each leading variable as a function of the free variables:
         <md>
         <mrow> x_{i_r}\amp =d_r-G_r(x_{j_1},x_{j_2},\dots, x_{j_s})</mrow>
         <mrow> \amp =F_s(x_{j_1},x_{j_2},\dots, x_{j_s})</mrow>
@@ -236,21 +236,21 @@
         <mrow> x_1 \amp=F_1(x_{j_1},x_{j_2},\dots, x_{j_s}) </mrow>
         </md>
         This new system of equations clearly has the same set of solutions as <m>L'</m> (and <m>L</m>), since it was obtained from <m>L'</m> by deleting zero rows of <m>U</m> and using only addition and subtraction operations. Furthermore, it is clear that any assignment of the free variables
-        <me>
+        <md>
           x_{j_1}=t_1, x_{j_2}=t_2,\dots, x_{j_s}=t_s
-        </me>
+        </md>
         extends uniquely to the solution of <m>L'</m> that further assigns
-        <me>
+        <md>
           x_{i_1}=F_1(t_1,t_2,\dots, t_s), x_{i_2}=F_2(t_1,t_2,\dots, t_s), \dots, x_r=F_r(t_1,t_2,\dots, t_s)
-        </me>.
+        </md>.
         The idea behind uniqueness here, is that once you assign values to the free variables, the values of the leading variables are completely determined by the equations <m>x_{i_k}=F_k(x_{j_1},x_{j_2},\dots, x_{j_s})</m>.
       </p>
       <p>
         Lastly, we show that every solution of <m>L'</m> (and <m>L</m>) is obtained in this way. Suppose <m>u=(u_1,u_2,\dots, u_n)</m> is a solution. According to the discussion above <m>u</m> must be the unique solution to <m>L'</m> corresponding to the free variable assignment
-        <me>
+        <md>
           x_{j_1}=u_{j_1}, x_{j_2}=u_{j_2},\dots , x_{j_s}=u_{j_s}
-        </me>
-         and corresponding leading variable assignment <me>x_{i_1}=F_1(u_{j_1},x_{j_2},\dots, x_{i_2}), x_{i_2}=F_2(u_{j_1},x_{j_2},\dots, x_{j_s}),\dots, x_{i_r}=F_r(u_{j_1},x_{j_2},\dots, x_{j_s})</me>.
+        </md>
+         and corresponding leading variable assignment <md>x_{i_1}=F_1(u_{j_1},x_{j_2},\dots, x_{i_2}), x_{i_2}=F_2(u_{j_1},x_{j_2},\dots, x_{j_s}),\dots, x_{i_r}=F_r(u_{j_1},x_{j_2},\dots, x_{j_s})</md>.
       </p>
     </case>
   </proof>
@@ -379,9 +379,9 @@
 </figure> -->
   <p>
     Consider the special case of a homogeneous system
-    <me>
+    <md>
     \homsys
-    </me>
+    </md>
     Such a system is always consistent. Why? Observe that <m>(x_1,x_2,\dots,
     x_n)=(0,0,\dots, 0)</m> is guaranteed to be a solution. Alternatively,
     it is easy to see that row reducing the system results in an augmented matrix <m>U</m> whose last column is a zero column: a zero column certainly contains no leading ones. Thus, in the special case of a homogeneous system, <xref ref="c_qualitative"/> boils down to the following result. </p>
@@ -413,17 +413,17 @@
 <title>Vector parametrization description</title>
 <p>
   Consider again the solution set to the linear system in <xref ref="eg_solving_system"/>, which we described using parametric equations as 
-  <me>
+  <md>
     x_1=7-2s-3t, x_2=s, x_3=1, x_4=t, x_5=2, \ s,t \in\R
-  </me>, 
+  </md>, 
   and using set building notation as 
-  <me>
+  <md>
     S=\left\{(7-2s-3t, s, 1, t, 2)\colon s, t\in\R\right\}
-  </me>.
+  </md>.
  Using the vector space structure of <m>\R^5</m>, we can give yet another description of the general solution: 
- <me>
+ <md>
   \boldx=(7,0,1,0,2)+s(-2,1,0,0,0)+t(-3,0,0,1,0), \ s,t\in \R
- </me>.
+ </md>.
  We will call this the <em>vector parametrization</em> description of the solution set. This description is obtained in steps by first breaking up the expression <m>(7-2s-3t, s, 1, t, 2)</m> into a constant vector plus a vector involving the parameters <m>s</m> and <m>t</m>, and then rewriting the latter as a linear combination of two vectors with <m>s</m> and <m>t</m> as the coefficients: 
  <md>
   <mrow> (7-2s-3t, s, 1, t, 2) \amp = (7,0,1,0,2)+(-2s-3t,s,0,t,0) </mrow>
@@ -431,24 +431,24 @@
   <mrow> \amp =(7,0,1,0,2)+s(-2,1,0,0,0)+t(-3,0,0,1,0)</mrow>
  </md>.
  The solution set of any consistent linear system can be described in this manner. In general, given a consistent system in <m>n</m> unknowns with <m>k</m> free variables, the general solution of the system is given by a vector parametrization of the form  
- <men xml:id="eq_vector_param">
+ <md number="yes" xml:id="eq_vector_param">
   (a_1,a_2,\dots, a_n)+t_1\boldv_1+t_2\boldv_2+\cdots +t_k\boldv_k
- </men>.
+ </md>.
  The vector parametrization <xref ref="eq_vector_param"/> leads to a useful geometric understanding of the set of solutions to a linear system. The point <m>P=(a_1,a_2,\dots, a_n)</m> can be thought of as a <em>particular solution</em> to the equation: the solution you obtain by choosing <m>t_1=t_2=\cdots =t_k=0</m> in <xref ref="eq_vector_param"/>. The general solution is then obtained by adding to the point <m>P</m> any linear combination of the vectors <m>\boldv_1,\boldv_2,\dots, \boldv_k</m>. 
 </p>
 <example>
   <title>Vector parametrization</title>
   <p>
     Consider the linear equation <m>x+y+z=4</m>. The corresponding augmented matrix of this equation is
-    <me>
+    <md>
       \begin{amatrix}[ccc|c]
       1 \amp 1\amp 1\amp 4
       \end{amatrix}
-    </me>,
+    </md>,
     which is already in row echelon form. Using <xref ref="proc_solveSystem"/>, we see that the general solution is 
-    <me>
+    <md>
       (4-s-t,s,t)=(4,0,0)+s\underset{\boldv}{\underbrace{(-1,1,0)}}+t\underset{\boldw}{\underbrace{(-1,0,1)}}
-    </me>.
+    </md>.
     This vector parametrization description allows us to visualize the plane <m>\mathcal{P}</m> with equation <m>x+y+z=4</m> as the set of all points obtained by translating the point <m>P=(4,0,0)</m> by various linear combinations of <m>\boldv=(-1,1,0)</m> and <m>\boldw=(-1,0,1)</m>. In this manner, the two vectors <m>\boldv</m> and <m>\boldw</m> determine a (non-rectangular) grid on <m>\mathcal{P}</m>. 
     <figure xml:id="fig_plane_vector_param">
       <caption>Vector parametrization of plane <m>x+y+z=4</m></caption>
