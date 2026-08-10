@@ -1,6 +1,6 @@
-openDate          = 01/01/2027 at 12:00am
-dueDate           = 12/31/2027 at 10:00pm
-answerDate        = 12/31/2027 at 10:00pm
+openDate          = 08/10/2026 at 12:00am
+dueDate           = 02/10/2027 at 10:00pm
+answerDate        = 02/10/2027 at 10:00pm
 paperHeaderFile   = Real_vector_spaces/header/Real_vector_spaces.pg
 screenHeaderFile  = Real_vector_spaces/header/Real_vector_spaces.pg
 description       = Real vector spaces
@@ -75,31 +75,31 @@ problem_id = 9
 problem_end
 problem_start
 source_file = Library/TCNJ/TCNJ_LinearSystems/problem1.pg
-problem_id = 20
-problem_end
-problem_start
-source_file = Library/TCNJ/TCNJ_RowReduction/problem5.pg
 problem_id = 21
 problem_end
 problem_start
-source_file = Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/holt_01_01_024.pg
+source_file = Library/TCNJ/TCNJ_RowReduction/problem5.pg
 problem_id = 22
 problem_end
 problem_start
-source_file = Library/TCNJ/TCNJ_LinearSystems/problem3.pg
+source_file = Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/holt_01_01_024.pg
 problem_id = 23
 problem_end
 problem_start
-source_file = Library/TCNJ/TCNJ_LinearSystems/problem4.pg
+source_file = Library/TCNJ/TCNJ_LinearSystems/problem3.pg
 problem_id = 24
 problem_end
 problem_start
+source_file = Library/TCNJ/TCNJ_LinearSystems/problem4.pg
+problem_id = 25
+problem_end
+problem_start
 source_file = Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/holt_01_02_010.pg
-problem_id = 17
+problem_id = 16
 problem_end
 problem_start
 source_file = Library/ASU-topics/set119LinearSystems/p28.pg
-problem_id = 18
+problem_id = 17
 problem_end
 problem_start
 source_file = Library/Mizzou/Finite_Math/Augmented_Matrices/AugMatrix1a.pg
@@ -119,23 +119,23 @@ problem_id = 19
 problem_end
 problem_start
 source_file = Library/ASU-topics/set119MatrixAlgebra/p17.pg
-problem_id = 36
+problem_id = 35
 problem_end
 problem_start
 source_file = Library/Dartmouth/setMTWCh1S5/problem_1.pg
-problem_id = 37
+problem_id = 36
 problem_end
 problem_start
 source_file = Library/ASU-topics/set119MatrixAlgebra/p32.pg
-problem_id = 38
+problem_id = 37
 problem_end
 problem_start
 source_file = Library/ASU-topics/set119MatrixAlgebra/p7.pg
-problem_id = 39
+problem_id = 38
 problem_end
 problem_start
 source_file = Library/ASU-topics/set119MatrixAlgebra/p14.pg
-problem_id = 40
+problem_id = 39
 problem_end
 problem_start
 source_file = Contrib/MountAllison/1-3_Matrices_and_Matrix_Operations/true_false.pg

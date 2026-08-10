@@ -20,23 +20,84 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 <link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
 <link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
-<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
-startMathJax({
-hasWebworkReps: true,
-hasSage: true,
-isReact: false,
-htmlPresentation: false,
-});
-</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
-<meta name="twitter:title" content="Real vector spaces: A first course in linear algebra">
-<meta property="og:title" content="Real vector spaces: A first course in linear algebra">
-<meta property="book:title" content="Real vector spaces: A first course in linear algebra">
-<meta name="twitter:description" content="This is the course resource for Northwestern University's first course in in linear algebra (Math 240-0). Definitions of real vector spaces and linear transformations thereof are given in full generality, but examples focus on vector spaces of real-valued tuples indexed by an arbitrary set.">
-<meta property="og:description" content="This is the course resource for Northwestern University's first course in in linear algebra (Math 240-0). Definitions of real vector spaces and linear transformations thereof are given in full generality, but examples focus on vector spaces of real-valued tuples indexed by an arbitrary set.">
-<meta name="twitter:card" content="summary">
-<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.45"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<meta property="book:title" content="Real vector spaces">
+<meta property="book:author" content="Aaron Greicius">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
 <!--**     log level is 0, Runestone Services are disabled     **-->
@@ -59,59 +120,51 @@ eBookConfig.enableScratchAC = true;
 eBookConfig.acDefaultLanguage = 'python';
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '8.2.3';
+eBookConfig.runestone_version = '8.2.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.40bd1420d3277749.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.f00d2d175c91fc71.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<script src="_static/prefix-runtime.40bd1420d3277749.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.b388362b5f43738a.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8086b62682b271d1.css">
-<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/dist/pretext-webwork/2.20/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/pretext-webwork/2.20/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body id="NUlinearalgfirstcourse" class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
 <a id="logo-link" class="logo-link" target="_blank" href=""><img src="external/images/im_holycomm.svg" alt="Logo image"></a><div class="title-container">
-<div class="heading ptx-banner-heading"><a href="my-great-book.html"><span class="title">Real vector spaces</span> <span class="subtitle">A first course in linear algebra</span></a></div>
+<h1 class="heading"><a href="my-great-book.html"><span class="title">Real vector spaces</span> <span class="subtitle">A first course in linear algebra</span></a></h1>
 <p class="byline">Aaron Greicius</p>
 </div>
 </div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
-<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
-<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
-<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
-<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
 </div>
-<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
-<h2 class="heading ptx-search-results-heading">Search Results: </h2>
-<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
-<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
 </div>
-<span class="nav-other-controls"><button type="button" id="ptx-calculator-toggle" class="ptx-calculator-toggle button" title="Calculator"><span class="icon material-symbols-outlined" aria-hidden="true">&#xea5f;</span><span class="name">Calculator</span></button><dialog id="ptx-calculator-container" class="ptx-dialog ptx-calculator-container" aria-label="Calculator"><div id="ptx-geogebra-calculator" class="ptx-geogebra-calculator"></div>
-<script id="ptx-geogebra-calculator-params">
-let ggbParams = {
-    "appName": "classic"
-};
-</script></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
-<h2 class="heading">Readability settings</h2>
-<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
 </div>
-<div class="ptx-readability-options-group">
-<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
-</div>
-<div class="ptx-readability-options-group">
-<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
-</div>
-<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
-<legend>Theme</legend>
-<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
-</fieldset>
-<fieldset class="ptx-readability-options-group">
-<legend>Assistive technologies</legend>
-<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
-</fieldset>
-<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="appendix-defs.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="my-great-book-12.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="appendix-egs.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span><span class="nav-runestone-controls"><button onclick="runestoneComponents.popupScratchAC()" class="activecode-toggle button" title="Scratch ActiveCode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf097;</span><span class="name">Scratch ActiveCode</span></button></span>
+<span class="nav-other-controls"><button id="calculator-toggle" class="calculator-toggle button" title="Show calculator" aria-expanded="false" aria-controls="calculator-container"><span class="icon material-symbols-outlined" aria-hidden="true">&#xea5f;</span><span class="name">Calc</span></button><div id="calculator-container" class="calculator-container" style="display: none; z-index:100;"><div id="geogebra-calculator"></div></div>
+<script>
+var ggbApp = new GGBApplet({"appName": "classic",
+    "width": 330,
+    "height": 600,
+    "showToolBar": true,
+    "showAlgebraInput": true,
+    "perspective": "G/A",
+    "algebraInputPosition": "bottom",
+    "scaleContainerClass": "calculator-container",
+    "allowUpscale": true,
+    "autoHeight": true,
+    "disableAutoScale": false},
+true);
+</script><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="appendix-defs.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="my-great-book-12.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="appendix-egs.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span><span class="nav-runestone-controls"><button onclick="runestoneComponents.popupScratchAC()" class="activecode-toggle button" title="Open Scratch ActiveCode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf097;</span><span class="name">Scratch ActiveCode</span></button></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
 \newcommand{\Q}{{\mathbb Q}}
 \newcommand{\R}{{\mathbb R}}
@@ -322,14 +375,14 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <div class="ptx-page">
-<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="c_foundations.html" class="internal"><span class="codenumber">0</span> <span class="title">Foundations</span></a></div>
-<ul id="ptx-toc-group-c_foundations" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_sets_tuples.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Sets and tuples</span></a></div>
-<ul id="ptx-toc-group-s_sets_tuples" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_tuples.html#s_sets" class="internal"><span class="codenumber">0.1.1</span> <span class="title">Sets</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_tuples.html#ss_tuples" class="internal"><span class="codenumber">0.1.2</span> <span class="title">Tuples</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_tuples.html#ss_sets_functions_ww" class="internal"><span class="codenumber">0.1.3</span> <span class="title">WeBWork Exercises</span></a></div></li>
@@ -337,7 +390,7 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_functions.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Functions</span></a></div>
-<ul id="ptx-toc-group-s_functions" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_functions.html#ss_functions_definitions" class="internal"><span class="codenumber">0.2.1</span> <span class="title">Definition and notation</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_functions.html#ss_function_image_properties" class="internal"><span class="codenumber">0.2.2</span> <span class="title">Function image, injections, surjections, bijections</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_functions.html#ss_functions_ww" class="internal"><span class="codenumber">0.2.3</span> <span class="title">WeBWork Exercises</span></a></div></li>
@@ -345,7 +398,7 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_logic.html" class="internal"><span class="codenumber">0.3</span> <span class="title">Logic</span></a></div>
-<ul id="ptx-toc-group-s_logic" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_propositional_calculus" class="internal"><span class="codenumber">0.3.1</span> <span class="title">Propositional logic</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_predicate_logic" class="internal"><span class="codenumber">0.3.2</span> <span class="title">Predicate logic</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_logic_ww" class="internal"><span class="codenumber">0.3.3</span> <span class="title">WeBWork Exercises</span></a></div></li>
@@ -353,10 +406,10 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_proof_technique.html" class="internal"><span class="codenumber">0.4</span> <span class="title">Proof techniques</span></a></div>
-<ul id="ptx-toc-group-s_proof_technique" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="s_proof_technique.html#ss_logical_structure" class="internal"><span class="codenumber">0.4.1</span> <span class="title">Logical structure</span></a></div>
-<ul id="ptx-toc-group-ss_logical_structure" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_implication" class="internal"><span class="title">Implication</span></a></div></li>
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_disjunction" class="internal"><span class="title">Disjunction</span></a></div></li>
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_equivalence" class="internal"><span class="title">Equivalence</span></a></div></li>
@@ -366,25 +419,25 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="s_proof_technique.html#ss_Equalities" class="internal"><span class="codenumber">0.4.2</span> <span class="title">Equalities</span></a></div>
-<ul id="ptx-toc-group-ss_Equalities" class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_chain_equalities" class="internal"><span class="title">Chain of equalities</span></a></div></li></ul>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_chain_equalities" class="internal"><span class="title">Chain of equalities</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="s_proof_technique.html#ss_set_properties" class="internal"><span class="codenumber">0.4.3</span> <span class="title">Basic set properties</span></a></div>
-<ul id="ptx-toc-group-ss_set_properties" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_inclusion" class="internal"><span class="title">Set inclusion</span></a></div></li>
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_equality" class="internal"><span class="title">Set equality</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="s_proof_technique.html#ss_function_properties" class="internal"><span class="codenumber">0.4.4</span> <span class="title">Basic function properties</span></a></div>
-<ul id="ptx-toc-group-ss_function_properties" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_function_equality" class="internal"><span class="title">Function equality</span></a></div></li>
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_injective_surjective_bijective" class="internal"><span class="title">Injective, surjective, bijective</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="s_proof_technique.html#ss_mathematical_induction" class="internal"><span class="codenumber">0.4.5</span> <span class="title">Mathematical induction</span></a></div>
-<ul id="ptx-toc-group-ss_mathematical_induction" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_weak_induction" class="internal"><span class="title">Proof by induction</span></a></div></li>
 <li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_strong_induction" class="internal"><span class="title">Proof by strong induction</span></a></div></li>
 </ul>
@@ -393,7 +446,7 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_complex_numbers.html" class="internal"><span class="codenumber">0.5</span> <span class="title">Complex numbers</span></a></div>
-<ul id="ptx-toc-group-s_complex_numbers" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_complex_numbers.html#ss_complex_definition" class="internal"><span class="codenumber">0.5.1</span> <span class="title">Definition of <span class="process-math">\(\C\)</span></span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_complex_numbers.html#ss_complex_conjugation" class="internal"><span class="codenumber">0.5.2</span> <span class="title">Absolute value and complex conjugation</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_complex_numbers.html#ss_complex_numbers_ww" class="internal"><span class="codenumber">0.5.3</span> <span class="title">WeBWork Exercises</span></a></div></li>
@@ -401,7 +454,7 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_polynomials.html" class="internal"><span class="codenumber">0.6</span> <span class="title">Polynomials</span></a></div>
-<ul id="ptx-toc-group-s_polynomials" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_polynomials.html#ss_poly_def" class="internal"><span class="codenumber">0.6.1</span> <span class="title">Basic definitions</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_polynomials.html#ss_degree" class="internal"><span class="codenumber">0.6.2</span> <span class="title">Degree of a polynomial</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_polynomials.html#ss_poly_factoring" class="internal"><span class="codenumber">0.6.3</span> <span class="title">Factoring polynomials</span></a></div></li>
@@ -412,9 +465,9 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="c_tuples.html" class="internal"><span class="codenumber">1</span> <span class="title">Introduction to vector spaces</span></a></div>
-<ul id="ptx-toc-group-c_tuples" class="structural toc-item-list"><li class="toc-item toc-section">
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_real_tuples.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Real-valued tuples</span></a></div>
-<ul id="ptx-toc-group-s_real_tuples" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_real_tuples.html#ss_real_tuples" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Real-valued tuples</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_real_tuples.html#ss_tuples_vector_ops" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Vector operations on <span class="process-math">\(\R^I\)</span></span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_real_tuples.html#ss_Rn_visual" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Visualizing <span class="process-math">\(\R^n\)</span></span></a></div></li>
@@ -424,10 +477,10 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="c_lin_sys.html" class="internal"><span class="codenumber">2</span> <span class="title">Systems of linear equations</span></a></div>
-<ul id="ptx-toc-group-c_lin_sys" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_systems.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Systems of linear equations</span></a></div>
-<ul id="ptx-toc-group-s_systems" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_systems.html#ss_linear_equations" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Systems of linear equations</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_systems.html#ss_row_equivalence" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Row operations</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_systems.html#ss_systems_ww" class="internal"><span class="codenumber">2.1.3</span> <span class="title">WeBWork Exercises</span></a></div></li>
@@ -436,11 +489,11 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_ge.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Gaussian elimination</span></a></div>
-<ul id="ptx-toc-group-s_ge" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ge.html#ss_ge_row_echelon" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Row echelon matrices</span></a></div></li>
 <li class="toc-item toc-subsection">
 <div class="toc-title-box"><a href="s_ge.html#ss_gaussian_elimination" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Gaussian elimination</span></a></div>
-<ul id="ptx-toc-group-ss_gaussian_elimination" class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ge.html#ss_gaussian_elimination-8" class="internal"><span class="title">Model example</span></a></div></li></ul>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ge.html#ss_gaussian_elimination-8" class="internal"><span class="title">Model example</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_ge.html#ss_ge_ww" class="internal"><span class="codenumber">2.2.3</span> <span class="title">WeBWork Exercises</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_ge.html#s_ge_ex" class="internal"><span class="codenumber">2.2.4</span> <span class="title">Exercises</span></a></div></li>
@@ -448,7 +501,7 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_solving.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Solving linear systems</span></a></div>
-<ul id="ptx-toc-group-s_solving" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_solving.html#ss_workingExample" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Model example continued</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_solving.html#ss_solveSystem" class="internal"><span class="codenumber">2.3.2</span> <span class="title">General method for solving linear systems</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_solving.html#s_solving-5" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Vector parametrization description</span></a></div></li>
@@ -460,10 +513,10 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="c_matrices.html" class="internal"><span class="codenumber">3</span> <span class="title">Matrices</span></a></div>
-<ul id="ptx-toc-group-c_matrices" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_matrix.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Matrix arithmetic</span></a></div>
-<ul id="ptx-toc-group-s_matrix" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#ss_matrix_attributes" class="internal"><span class="codenumber">3.1.1</span> <span class="title">The basics</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#ss_matrix_arithmetic" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Vector space structure of <span class="process-math">\(M_{mn}\)</span></span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix.html#ss_matrix_mult" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Matrix multiplication</span></a></div></li>
@@ -475,7 +528,7 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_matrix_algebra.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Matrix algebra</span></a></div>
-<ul id="ptx-toc-group-s_matrix_algebra" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix_algebra.html#ss_matrix_mult_props" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Matrix multiplication properties</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix_algebra.html#ss_cancellation" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Cancellation laws fulfilled and violated</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrix_algebra.html#ss_transpose_props" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Transpostition properties</span></a></div></li>
@@ -485,7 +538,7 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_invertible_matrices.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Invertible matrices</span></a></div>
-<ul id="ptx-toc-group-s_invertible_matrices" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertible_matrices.html#subsec-" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Invertible matrices</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertible_matrices.html#s_invertible_matrices-4" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Powers of matrices, matrix polynomials</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertible_matrices.html#ss_invertible_matrices_ww" class="internal"><span class="codenumber">3.3.3</span> <span class="title">WeBWork Exercises</span></a></div></li>
@@ -494,7 +547,7 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_invertibility_theorem.html" class="internal"><span class="codenumber">3.4</span> <span class="title">The invertibility theorem</span></a></div>
-<ul id="ptx-toc-group-s_invertibility_theorem" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_elementary_matrix" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Elementary matrices</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_systems_to_matrix_eqns" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Interlude on matrix equations</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_invertibility_theorem.html#ss_invertibility_th" class="internal"><span class="codenumber">3.4.3</span> <span class="title">The invertibility theorem</span></a></div></li>
@@ -506,7 +559,7 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_det.html" class="internal"><span class="codenumber">3.5</span> <span class="title">The determinant</span></a></div>
-<ul id="ptx-toc-group-s_det" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_det.html#ss_det" class="internal"><span class="codenumber">3.5.1</span> <span class="title">Definition of the determinant</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_det.html#ss_expansion_rows_columns" class="internal"><span class="codenumber">3.5.2</span> <span class="title">Expansion along rows and columns</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_det.html#ss_det_row_ops" class="internal"><span class="codenumber">3.5.3</span> <span class="title">Row operations and determinant</span></a></div></li>
@@ -518,10 +571,10 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="c_vectorspace.html" class="internal"><span class="codenumber">4</span> <span class="title">Vector spaces</span></a></div>
-<ul id="ptx-toc-group-c_vectorspace" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_subspace.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Subspaces</span></a></div>
-<ul id="ptx-toc-group-s_subspace" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace.html#ss_subspace" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Definition of subspace</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace.html#ss_subspaces_tuples" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Subspaces of <span class="process-math">\(\R^n\)</span></span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace.html#ss_subspace_matrices" class="internal"><span class="codenumber">4.1.3</span> <span class="title">Important subspaces of <span class="process-math">\(M_{nn}\)</span></span></a></div></li>
@@ -530,7 +583,7 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_span_independence.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Span and linear independence</span></a></div>
-<ul id="ptx-toc-group-s_span_independence" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_independence.html#s_span_independence-3" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Span</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_independence.html#ss_linear_independence" class="internal"><span class="codenumber">4.2.2</span> <span class="title">Linear independence</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_span_independence.html#subsec-invertibility-span-and-linear-independence" class="internal"><span class="codenumber">4.2.3</span> <span class="title">Invertibility, span, and linear independence</span></a></div></li>
@@ -539,14 +592,14 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_basis.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Bases</span></a></div>
-<ul id="ptx-toc-group-s_basis" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_basis.html#ss_bases" class="internal"><span class="codenumber">4.3.1</span> <span class="title">Bases of vector spaces</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_basis.html#s_basis_ex" class="internal"><span class="codenumber">4.3.2</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_dimension.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Dimension</span></a></div>
-<ul id="ptx-toc-group-s_dimension" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_dimension.html#ss_dimension" class="internal"><span class="codenumber">4.4.1</span> <span class="title">Dimension of a vector space</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_dimension.html#ss_further_props" class="internal"><span class="codenumber">4.4.2</span> <span class="title">Further properties of dimension</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_dimension.html#s_dimension_ex" class="internal"><span class="codenumber">4.4.3</span> <span class="title">Exercises</span></a></div></li>
@@ -554,7 +607,7 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_rank_nullity.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Fundamental spaces</span></a></div>
-<ul id="ptx-toc-group-s_rank_nullity" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_rank_nullity.html#ss_fundamental_spaces" class="internal"><span class="codenumber">4.5.1</span> <span class="title">Fundamental spaces of matrices</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_rank_nullity.html#ss_expand_contract" class="internal"><span class="codenumber">4.5.2</span> <span class="title">Contracting and expanding to bases</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_rank_nullity.html#ss_fund_spaces_inv_th" class="internal"><span class="codenumber">4.5.3</span> <span class="title">Fundamental spaces and invertibility</span></a></div></li>
@@ -565,10 +618,10 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="c_lin_trans.html" class="internal"><span class="codenumber">5</span> <span class="title">Linear transformations</span></a></div>
-<ul id="ptx-toc-group-c_lin_trans" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_transformation.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Linear transformations</span></a></div>
-<ul id="ptx-toc-group-s_transformation" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#ss_linear_transform" class="internal"><span class="codenumber">5.1.1</span> <span class="title">Linear transformations</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#ss_trans_bases" class="internal"><span class="codenumber">5.1.2</span> <span class="title">Bases and linear transformations</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_transformation.html#ss_matrix_transforms" class="internal"><span class="codenumber">5.1.3</span> <span class="title">Matrix transformations</span></a></div></li>
@@ -579,7 +632,7 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_nullspace_image_isom.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Null space, image, and isomophisms</span></a></div>
-<ul id="ptx-toc-group-s_nullspace_image_isom" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_nullspace_image_isom.html#ss_nullspace_image" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Null space and image</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_nullspace_image_isom.html#ss_rank-nullity" class="internal"><span class="codenumber">5.2.2</span> <span class="title">The rank-nullity theorem</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_nullspace_image_isom.html#ss_injective_surjective_transforms" class="internal"><span class="codenumber">5.2.3</span> <span class="title">Injective and surjective linear transformations</span></a></div></li>
@@ -589,7 +642,7 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_coordinatevectors.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Coordinate vectors</span></a></div>
-<ul id="ptx-toc-group-s_coordinatevectors" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_coordinatevectors.html#ss_coordinate_vectors" class="internal"><span class="codenumber">5.3.1</span> <span class="title">Coordinate vectors</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_coordinatevectors.html#ss_coordinate_transformation" class="internal"><span class="codenumber">5.3.2</span> <span class="title">Coordinate vector transformation</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_coordinatevectors.html#s_coordinatevectors_ex" class="internal"><span class="codenumber">5.3.3</span> <span class="title">Exercises</span></a></div></li>
@@ -597,7 +650,7 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_matrixreps.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Matrix representations of linear transformations</span></a></div>
-<ul id="ptx-toc-group-s_matrixreps" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrixreps.html#ss_matrix_reps" class="internal"><span class="codenumber">5.4.1</span> <span class="title">Matrix representations of linear transformations</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_matrixreps.html#ss_matrixreps_models" class="internal"><span class="codenumber">5.4.2</span> <span class="title">Matrix representations as models</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_matrixreps.html#s_matrixreps_ex" class="internal"><span class="codenumber">5.4.3</span> <span class="title">Exercises</span></a></div></li>
@@ -605,7 +658,7 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_changeofbasis.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Change of basis</span></a></div>
-<ul id="ptx-toc-group-s_changeofbasis" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_changeofbasis.html#ss_change_of_basis" class="internal"><span class="codenumber">5.5.1</span> <span class="title">Change of basis matrix</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_changeofbasis.html#s_changeofbasis-4" class="internal"><span class="codenumber">5.5.2</span> <span class="title">Change of basis for transformations</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_changeofbasis.html#ss_changebasis_similarity" class="internal"><span class="codenumber">5.5.3</span> <span class="title">Similarity and the holy commutative tent of linear algebra</span></a></div></li>
@@ -616,10 +669,10 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="c_eigenvectors.html" class="internal"><span class="codenumber">6</span> <span class="title">Eigenvectors and diagonalization</span></a></div>
-<ul id="ptx-toc-group-c_eigenvectors" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_eigenvectors.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Eigenvectors and eigenvalues</span></a></div>
-<ul id="ptx-toc-group-s_eigenvectors" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_eigenvectors.html#s_eigenvectors-3" class="internal"><span class="codenumber">6.1.1</span> <span class="title">Eigenvectors</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_eigenvectors.html#s_eigenvectors-4" class="internal"><span class="codenumber">6.1.2</span> <span class="title">Finding eigenvalues and eigenvectors systematically</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_eigenvectors.html#ss_eigenvectors_characteristic_polynomial" class="internal"><span class="codenumber">6.1.3</span> <span class="title">Properties of the characteristic polynomial</span></a></div></li>
@@ -628,7 +681,7 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_diagonalization.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Diagonalization</span></a></div>
-<ul id="ptx-toc-group-s_diagonalization" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_diagonalization.html#ss_diagonalizable" class="internal"><span class="codenumber">6.2.1</span> <span class="title">Diagonalizable transformations</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_diagonalization.html#ss_diagonalizable_independent_eigenvectors" class="internal"><span class="codenumber">6.2.2</span> <span class="title">Linear independence of eigenvectors</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_diagonalization.html#ss_diagonalizable_matrices" class="internal"><span class="codenumber">6.2.3</span> <span class="title">Diagonalizable matrices</span></a></div></li>
@@ -640,10 +693,10 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="c_innerproductspaces.html" class="internal"><span class="codenumber">7</span> <span class="title">Inner product spaces</span></a></div>
-<ul id="ptx-toc-group-c_innerproductspaces" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_innerproducts.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Inner product spaces</span></a></div>
-<ul id="ptx-toc-group-s_innerproducts" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_innerproducts.html#ss_norm_distance" class="internal"><span class="codenumber">7.1.1</span> <span class="title">Norm and distance</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_innerproducts.html#s_innerproducts-4" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Cauchy-Schwarz inequality, triangle inequalities, and angles between vectors</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_innerproducts.html#s_innerproducts-5" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Choosing your inner product</span></a></div></li>
@@ -652,7 +705,7 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_orthogonality.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Orthogonal bases</span></a></div>
-<ul id="ptx-toc-group-s_orthogonality" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_orthogonality.html#ss_orthogonal" class="internal"><span class="codenumber">7.2.1</span> <span class="title">Orthogonal vectors and sets</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_orthogonality.html#s_orthogonality-3" class="internal"><span class="codenumber">7.2.2</span> <span class="title">Orthogonal bases</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_orthogonality.html#ss_orthogonal_change_of_basis" class="internal"><span class="codenumber">7.2.3</span> <span class="title">Coordinate vectors and matrix representations</span></a></div></li>
@@ -661,7 +714,7 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_orthogonal_projection.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Orthogonal projection</span></a></div>
-<ul id="ptx-toc-group-s_orthogonal_projection" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_orthogonal_projection.html#ss_ortho_complement" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Orthogonal complement</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_orthogonal_projection.html#s_orthogonal_projection-4" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Orthogonal Projection</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_orthogonal_projection.html#s_orthogonal_projection-5" class="internal"><span class="codenumber">7.3.3</span> <span class="title">Orthogonal projection in <span class="process-math">\(\R^2\)</span> and <span class="process-math">\(\R^3\)</span></span></a></div></li>
@@ -672,7 +725,7 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_spectral_theorem.html" class="internal"><span class="codenumber">7.4</span> <span class="title">The spectral theorem</span></a></div>
-<ul id="ptx-toc-group-s_spectral_theorem" class="structural toc-item-list">
+<ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_spectral_theorem.html#ss_self-adjoint" class="internal"><span class="codenumber">7.4.1</span> <span class="title">Self-adjoint operators</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_spectral_theorem.html#ss_spectal_theorem_operators" class="internal"><span class="codenumber">7.4.2</span> <span class="title">The spectral theorem for self-adjoint operators</span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_spectral_theorem.html#s_spectral_theorem_ex" class="internal"><span class="codenumber">7.4.3</span> <span class="title">Exercises</span></a></div></li>
@@ -682,7 +735,7 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </li>
 <li class="toc-item toc-backmatter contains-active">
 <div class="toc-title-box"><a href="my-great-book-12.html" class="internal"><span class="title">Backmatter</span></a></div>
-<ul class="structural toc-item-list contains-active" id="ptx-toc-group-my-great-book-12">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-notation.html" class="internal"><span class="codenumber">A</span> <span class="title">Notation</span></a></div></li>
 <li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-exercises.html" class="internal"><span class="codenumber">B</span> <span class="title">Exercises</span></a></div></li>
 <li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-defs.html" class="internal"><span class="codenumber">C</span> <span class="title">Definitions</span></a></div></li>
@@ -694,26 +747,24 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content">
-<section class="appendix" id="appendix-thms">
-<h1 class="heading">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="appendix" id="appendix-thms"><h2 class="heading">
 <span class="type">Appendix</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">D</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Theory and procedures</span>
-</h1>
-<h3 class="heading hide-type" title="Section 0.2: Functions">
+</h2>
+<h4 class="heading hide-type" title="Section 0.2: Functions">
 <span class="codenumber">0.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Functions</span>
-</h3>
+</h4>
 <div>
 <a href="s_functions.html#th_invertible_bijective" class="xref" data-knowl="./knowl/list-of/th_invertible_bijective.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 0.2.11: Invertible is equivalent to bijective">Theorem 0.2.11</a> Invertible is equivalent to bijective</div>
-<h3 class="heading hide-type" title="Section 0.5: Complex numbers">
+<h4 class="heading hide-type" title="Section 0.5: Complex numbers">
 <span class="codenumber">0.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Complex numbers</span>
-</h3>
+</h4>
 <div>
 <a href="s_complex_numbers.html#th_complex_arithmetic_basic" class="xref" data-knowl="./knowl/list-of/th_complex_arithmetic_basic.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 0.5.6: Basic properties of complex arithmetic">Theorem 0.5.6</a> Basic properties of complex arithmetic</div>
 <div>
 <a href="s_complex_numbers.html#th_complex_conjugation_modulus" class="xref" data-knowl="./knowl/list-of/th_complex_conjugation_modulus.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 0.5.10: Properties of conjugation and modulus">Theorem 0.5.10</a> Properties of conjugation and modulus</div>
-<h3 class="heading hide-type" title="Section 0.6: Polynomials">
+<h4 class="heading hide-type" title="Section 0.6: Polynomials">
 <span class="codenumber">0.6</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Polynomials</span>
-</h3>
+</h4>
 <div>
 <a href="s_polynomials.html#th_poly_basic" class="xref" data-knowl="./knowl/list-of/th_poly_basic.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 0.6.3: Basic properties of polynomials">Theorem 0.6.3</a> Basic properties of polynomials</div>
 <div>
@@ -722,9 +773,9 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 <a href="s_polynomials.html#th_poly_degree" class="xref" data-knowl="./knowl/list-of/th_poly_degree.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 0.6.6: Basic properties of degree">Theorem 0.6.6</a> Basic properties of degree</div>
 <div>
 <a href="s_polynomials.html#th_fund_alg" class="xref" data-knowl="./knowl/list-of/th_fund_alg.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 0.6.7: Fundamental theorem of algebra">Theorem 0.6.7</a> Fundamental theorem of algebra</div>
-<h3 class="heading hide-type" title="Section 1.1: Real-valued tuples">
+<h4 class="heading hide-type" title="Section 1.1: Real-valued tuples">
 <span class="codenumber">1.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Real-valued tuples</span>
-</h3>
+</h4>
 <div>
 <a href="s_real_tuples.html#prop_ntuple_equality" class="xref" data-knowl="./knowl/list-of/prop_ntuple_equality.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 1.1.10: Equality of n-tuples">Proposition 1.1.10</a> Equality of <span class="process-math">\(n\)</span>-tuples</div>
 <div>
@@ -733,32 +784,32 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 <a href="s_real_tuples.html#th_tuples_vector_space" class="xref" data-knowl="./knowl/list-of/th_tuples_vector_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.1.19: \R^I is a vector space">Theorem 1.1.19</a> <span class="process-math">\(\R^I\)</span> is a vector space</div>
 <div>
 <a href="s_real_tuples.html#th_zero_space" class="xref" data-knowl="./knowl/list-of/th_zero_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.1.20: Zero space">Theorem 1.1.20</a> Zero space</div>
-<h3 class="heading hide-type" title="Section 2.1: Systems of linear equations">
+<h4 class="heading hide-type" title="Section 2.1: Systems of linear equations">
 <span class="codenumber">2.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Systems of linear equations</span>
-</h3>
+</h4>
 <div>
 <a href="s_systems.html#s_systems_th_rowops" class="xref" data-knowl="./knowl/list-of/s_systems_th_rowops.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.1.17: Row equivalence theorem">Theorem 2.1.17</a> Row equivalence theorem</div>
-<h3 class="heading hide-type" title="Section 2.2: Gaussian elimination">
+<h4 class="heading hide-type" title="Section 2.2: Gaussian elimination">
 <span class="codenumber">2.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Gaussian elimination</span>
-</h3>
+</h4>
 <div>
 <a href="s_ge.html#d_GE" class="xref" data-knowl="./knowl/list-of/d_GE.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 2.2.10: Gaussian elimination">Procedure 2.2.10</a> Gaussian elimination</div>
 <div>
 <a href="s_ge.html#d_GaussJordan" class="xref" data-knowl="./knowl/list-of/d_GaussJordan.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 2.2.12: Gauss-Jordan elimination">Procedure 2.2.12</a> Gauss-Jordan elimination</div>
 <div>
 <a href="s_ge.html#th_matrixforms" class="xref" data-knowl="./knowl/list-of/th_matrixforms.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.2.14: Row equivalent matrix forms">Theorem 2.2.14</a> Row equivalent matrix forms</div>
-<h3 class="heading hide-type" title="Section 2.3: Solving linear systems">
+<h4 class="heading hide-type" title="Section 2.3: Solving linear systems">
 <span class="codenumber">2.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Solving linear systems</span>
-</h3>
+</h4>
 <div>
 <a href="s_solving.html#proc_solveSystem" class="xref" data-knowl="./knowl/list-of/proc_solveSystem.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 2.3.6: Solving linear systems">Procedure 2.3.6</a> Solving linear systems</div>
 <div>
 <a href="s_solving.html#c_qualitative" class="xref" data-knowl="./knowl/list-of/c_qualitative.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 2.3.11: 0 1 or \infty-many solutions">Corollary 2.3.11</a> <span class="process-math">\(0\text{,}\)</span> <span class="process-math">\(1\text{,}\)</span> or <span class="process-math">\(\infty\)</span>-many solutions</div>
 <div>
 <a href="s_solving.html#s_solving_homogeneous" class="xref" data-knowl="./knowl/list-of/s_solving_homogeneous.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 2.3.13: Solutions to homogeneous equations">Corollary 2.3.13</a> Solutions to homogeneous equations</div>
-<h3 class="heading hide-type" title="Section 3.1: Matrix arithmetic">
+<h4 class="heading hide-type" title="Section 3.1: Matrix arithmetic">
 <span class="codenumber">3.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Matrix arithmetic</span>
-</h3>
+</h4>
 <div>
 <a href="s_matrix.html#th_matrix_vector_space" class="xref" data-knowl="./knowl/list-of/th_matrix_vector_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.1.15: Vector space structure of M_{mn}">Theorem 3.1.15</a> Vector space structure of <span class="process-math">\(M_{mn}\)</span>
 </div>
@@ -768,9 +819,9 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 <a href="s_matrix.html#th_column_method" class="xref" data-knowl="./knowl/list-of/th_column_method.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.1.26: Column method of matrix multiplication">Theorem 3.1.26</a> Column method of matrix multiplication</div>
 <div>
 <a href="s_matrix.html#th_row_method" class="xref" data-knowl="./knowl/list-of/th_row_method.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.1.28: Row method of matrix multiplication">Theorem 3.1.28</a> Row method of matrix multiplication</div>
-<h3 class="heading hide-type" title="Section 3.2: Matrix algebra">
+<h4 class="heading hide-type" title="Section 3.2: Matrix algebra">
 <span class="codenumber">3.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Matrix algebra</span>
-</h3>
+</h4>
 <div>
 <a href="s_matrix_algebra.html#th_matrix_alg_props" class="xref" data-knowl="./knowl/list-of/th_matrix_alg_props.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.2.1: Properties of matrix multiplication">Theorem 3.2.1</a> Properties of matrix multiplication</div>
 <div>
@@ -783,9 +834,9 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 <a href="s_matrix_algebra.html#th_matrix_cancel" class="xref" data-knowl="./knowl/list-of/th_matrix_cancel.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 3.2.10: Failure of multiplicative cancellation">Corollary 3.2.10</a> Failure of multiplicative cancellation</div>
 <div>
 <a href="s_matrix_algebra.html#th_trans_props" class="xref" data-knowl="./knowl/list-of/th_trans_props.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.2.12: Properties of matrix transposition">Theorem 3.2.12</a> Properties of matrix transposition</div>
-<h3 class="heading hide-type" title="Section 3.3: Invertible matrices">
+<h4 class="heading hide-type" title="Section 3.3: Invertible matrices">
 <span class="codenumber">3.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Invertible matrices</span>
-</h3>
+</h4>
 <div>
 <a href="s_invertible_matrices.html#th_inverse_unique" class="xref" data-knowl="./knowl/list-of/th_inverse_unique.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.3.2: Inverses are unique">Theorem 3.3.2</a> Inverses are unique</div>
 <div>
@@ -802,9 +853,9 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 <a href="s_invertible_matrices.html#th_power_rules" class="xref" data-knowl="./knowl/list-of/th_power_rules.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.3.14: Properties of matrix powers">Theorem 3.3.14</a> Properties of matrix powers</div>
 <div>
 <a href="s_invertible_matrices.html#th_inverse_trans" class="xref" data-knowl="./knowl/list-of/th_inverse_trans.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.3.15: Inverse and transpose">Theorem 3.3.15</a> Inverse and transpose</div>
-<h3 class="heading hide-type" title="Section 3.4: The invertibility theorem">
+<h4 class="heading hide-type" title="Section 3.4: The invertibility theorem">
 <span class="codenumber">3.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The invertibility theorem</span>
-</h3>
+</h4>
 <div>
 <a href="s_invertibility_theorem.html#th_elementary_matrices" class="xref" data-knowl="./knowl/list-of/th_elementary_matrices.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.4.2: Elementary matrix formulas">Theorem 3.4.2</a> Elementary matrix formulas</div>
 <div>
@@ -825,9 +876,9 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 <a href="s_invertibility_theorem.html#cor_row_equivalence_invertibility" class="xref" data-knowl="./knowl/list-of/cor_row_equivalence_invertibility.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 3.4.17: Row equivalence and invertible matrices">Corollary 3.4.17</a> Row equivalence and invertible matrices</div>
 <div>
 <a href="s_invertibility_theorem.html#cor_RRE_uniqueness" class="xref" data-knowl="./knowl/list-of/cor_RRE_uniqueness.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 3.4.19: Uniqueness of reduced row echelon form">Corollary 3.4.19</a> Uniqueness of reduced row echelon form</div>
-<h3 class="heading hide-type" title="Section 3.5: The determinant">
+<h4 class="heading hide-type" title="Section 3.5: The determinant">
 <span class="codenumber">3.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The determinant</span>
-</h3>
+</h4>
 <div>
 <a href="s_det.html#th_det_triangular" class="xref" data-knowl="./knowl/list-of/th_det_triangular.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.5.5: Determinant of triangular matrices">Theorem 3.5.5</a> Determinant of triangular matrices</div>
 <div>
@@ -852,9 +903,9 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 <a href="s_det.html#th_det_mult" class="xref" data-knowl="./knowl/list-of/th_det_mult.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.5.26: Determinant is multiplicative">Theorem 3.5.26</a> Determinant is multiplicative</div>
 <div>
 <a href="s_det.html#th_invertibility_expanded" class="xref" data-knowl="./knowl/list-of/th_invertibility_expanded.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.5.27: Invertibility theorem">Theorem 3.5.27</a> Invertibility theorem</div>
-<h3 class="heading hide-type" title="Section 4.1: Subspaces">
+<h4 class="heading hide-type" title="Section 4.1: Subspaces">
 <span class="codenumber">4.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Subspaces</span>
-</h3>
+</h4>
 <div>
 <a href="s_subspace.html#proc_twostep_proof" class="xref" data-knowl="./knowl/list-of/proc_twostep_proof.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 4.1.4: Two-step proof for subspaces">Procedure 4.1.4</a> Two-step proof for subspaces</div>
 <div>
@@ -869,9 +920,9 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 <a href="s_subspace.html#cor_matrix_equations" class="xref" data-knowl="./knowl/list-of/cor_matrix_equations.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 4.1.16: Null space and linear systems">Corollary 4.1.16</a> Null space and linear systems</div>
 <div>
 <a href="s_subspace.html#th_matrix_subspaces" class="xref" data-knowl="./knowl/list-of/th_matrix_subspaces.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.1.22: Matrix subspaces">Theorem 4.1.22</a> Matrix subspaces</div>
-<h3 class="heading hide-type" title="Section 4.2: Span and linear independence">
+<h4 class="heading hide-type" title="Section 4.2: Span and linear independence">
 <span class="codenumber">4.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Span and linear independence</span>
-</h3>
+</h4>
 <div>
 <a href="s_span_independence.html#th_span" class="xref" data-knowl="./knowl/list-of/th_span.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.2.6: Spans are subspaces">Theorem 4.2.6</a> Spans are subspaces</div>
 <div>
@@ -880,18 +931,18 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 <a href="s_span_independence.html#proc_linear_independence" class="xref" data-knowl="./knowl/list-of/proc_linear_independence.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 4.2.15: Linear independence of a finite set">Procedure 4.2.15</a> Linear independence of a finite set</div>
 <div>
 <a href="s_span_independence.html#th_invertibility_3" class="xref" data-knowl="./knowl/list-of/th_invertibility_3.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.2.17: Invertibility theorem">Theorem 4.2.17</a> Invertibility theorem</div>
-<h3 class="heading hide-type" title="Section 4.3: Bases">
+<h4 class="heading hide-type" title="Section 4.3: Bases">
 <span class="codenumber">4.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Bases</span>
-</h3>
+</h4>
 <div>
 <a href="s_basis.html#th_basis_equivalence" class="xref" data-knowl="./knowl/list-of/th_basis_equivalence.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.3.4: Basis equivalence">Theorem 4.3.4</a> Basis equivalence</div>
 <div>
 <a href="s_basis.html#proc_basis_onestep" class="xref" data-knowl="./knowl/list-of/proc_basis_onestep.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 4.3.5: One-step technique for bases">Procedure 4.3.5</a> One-step technique for bases</div>
 <div>
 <a href="s_basis.html#proc_provide_basis" class="xref" data-knowl="./knowl/list-of/proc_provide_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 4.3.11: By-inspection basis technique">Procedure 4.3.11</a> By-inspection basis technique</div>
-<h3 class="heading hide-type" title="Section 4.4: Dimension">
+<h4 class="heading hide-type" title="Section 4.4: Dimension">
 <span class="codenumber">4.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Dimension</span>
-</h3>
+</h4>
 <div>
 <a href="s_dimension.html#th_basis_span_bounds" class="xref" data-knowl="./knowl/list-of/th_basis_span_bounds.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.4.9: Spanning set bound">Theorem 4.4.9</a> Spanning set bound</div>
 <div>
@@ -908,9 +959,9 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 <a href="s_dimension.html#cor_dimension_subspace" class="xref" data-knowl="./knowl/list-of/cor_dimension_subspace.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 4.4.16: Dimension of subspaces">Corollary 4.4.16</a> Dimension of subspaces</div>
 <div>
 <a href="s_dimension.html#th_dimension_compendium" class="xref" data-knowl="./knowl/list-of/th_dimension_compendium.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.4.19: Dimension theory compendium">Theorem 4.4.19</a> Dimension theory compendium</div>
-<h3 class="heading hide-type" title="Section 4.5: Fundamental spaces">
+<h4 class="heading hide-type" title="Section 4.5: Fundamental spaces">
 <span class="codenumber">4.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Fundamental spaces</span>
-</h3>
+</h4>
 <div>
 <a href="s_rank_nullity.html#th_col_space" class="xref" data-knowl="./knowl/list-of/th_col_space.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.5.5: Column space and linear systems">Theorem 4.5.5</a> Column space and linear systems</div>
 <div>
@@ -924,9 +975,9 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </div>
 <div>
 <a href="s_rank_nullity.html#th_invertibility_supersized" class="xref" data-knowl="./knowl/list-of/th_invertibility_supersized.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 4.5.21: Invertibility theorem">Theorem 4.5.21</a> Invertibility theorem</div>
-<h3 class="heading hide-type" title="Section 5.1: Linear transformations">
+<h4 class="heading hide-type" title="Section 5.1: Linear transformations">
 <span class="codenumber">5.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Linear transformations</span>
-</h3>
+</h4>
 <div>
 <a href="s_transformation.html#th_transform_zero_identity_scaling" class="xref" data-knowl="./knowl/list-of/th_transform_zero_identity_scaling.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.1.9: Elementary linear transformation proofsZero, identity, and scaling transformations">Theorem 5.1.9</a> Elementary linear transformation proofsZero, identity, and scaling transformations</div>
 <div>
@@ -949,9 +1000,9 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 <a href="s_transformation.html#th_transform_reflection" class="xref" data-knowl="./knowl/list-of/th_transform_reflection.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.1.38: Reflection is a linear transformation">Theorem 5.1.38</a> Reflection is a linear transformation</div>
 <div>
 <a href="s_transformation.html#th_transform_composition" class="xref" data-knowl="./knowl/list-of/th_transform_composition.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.1.41: Composition of linear transformations">Theorem 5.1.41</a> Composition of linear transformations</div>
-<h3 class="heading hide-type" title="Section 5.2: Null space, image, and isomophisms">
+<h4 class="heading hide-type" title="Section 5.2: Null space, image, and isomophisms">
 <span class="codenumber">5.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Null space, image, and isomophisms</span>
-</h3>
+</h4>
 <div>
 <a href="s_nullspace_image_isom.html#th_nullspace_image" class="xref" data-knowl="./knowl/list-of/th_nullspace_image.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.2.3: Null space and image">Theorem 5.2.3</a> Null space and image</div>
 <div>
@@ -975,27 +1026,27 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </div>
 <div>
 <a href="s_nullspace_image_isom.html#th_invertibility_with_isom" class="xref" data-knowl="./knowl/list-of/th_invertibility_with_isom.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.2.24: Invertibility theorem">Theorem 5.2.24</a> Invertibility theorem</div>
-<h3 class="heading hide-type" title="Section 5.3: Coordinate vectors">
+<h4 class="heading hide-type" title="Section 5.3: Coordinate vectors">
 <span class="codenumber">5.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Coordinate vectors</span>
-</h3>
+</h4>
 <div>
 <a href="s_coordinatevectors.html#proc_coor_vec" class="xref" data-knowl="./knowl/list-of/proc_coor_vec.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 5.3.4: Computing coordinate vectors">Procedure 5.3.4</a> Computing coordinate vectors</div>
 <div>
 <a href="s_coordinatevectors.html#th_coordinates" class="xref" data-knowl="./knowl/list-of/th_coordinates.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.3.11: Coordinate vector transformation">Theorem 5.3.11</a> Coordinate vector transformation</div>
 <div>
 <a href="s_coordinatevectors.html#proc_contract_extend_general" class="xref" data-knowl="./knowl/list-of/proc_contract_extend_general.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 5.3.12: Contracting and extending to bases in general spaces">Procedure 5.3.12</a> Contracting and extending to bases in general spaces</div>
-<h3 class="heading hide-type" title="Section 5.4: Matrix representations of linear transformations">
+<h4 class="heading hide-type" title="Section 5.4: Matrix representations of linear transformations">
 <span class="codenumber">5.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Matrix representations of linear transformations</span>
-</h3>
+</h4>
 <div>
 <a href="s_matrixreps.html#th_matrixreps_matrixtransforms" class="xref" data-knowl="./knowl/list-of/th_matrixreps_matrixtransforms.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.4.3: Standard matrix as a matrix representation">Theorem 5.4.3</a> Standard matrix as a matrix representation</div>
 <div>
 <a href="s_matrixreps.html#th_matrixrep" class="xref" data-knowl="./knowl/list-of/th_matrixrep.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.4.6: Defining property of matrix representation">Theorem 5.4.6</a> Defining property of matrix representation</div>
 <div>
 <a href="s_matrixreps.html#th_matrixreps_model" class="xref" data-knowl="./knowl/list-of/th_matrixreps_model.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.4.9: Computing with matrix representations">Theorem 5.4.9</a> Computing with matrix representations</div>
-<h3 class="heading hide-type" title="Section 5.5: Change of basis">
+<h4 class="heading hide-type" title="Section 5.5: Change of basis">
 <span class="codenumber">5.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Change of basis</span>
-</h3>
+</h4>
 <div>
 <a href="s_changeofbasis.html#th_change_of_basis_coordinates" class="xref" data-knowl="./knowl/list-of/th_change_of_basis_coordinates.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.5.2: Change of basis for coordinate vectors">Theorem 5.5.2</a> Change of basis for coordinate vectors</div>
 <div>
@@ -1008,9 +1059,9 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 <a href="s_changeofbasis.html#proc_standard_matrix_via_change_of_basis" class="xref" data-knowl="./knowl/list-of/proc_standard_matrix_via_change_of_basis.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 5.5.16: Computing the standard matrix using change of basis">Procedure 5.5.16</a> Computing the standard matrix using change of basis</div>
 <div>
 <a href="s_changeofbasis.html#th_similarity_matrixreps" class="xref" data-knowl="./knowl/list-of/th_similarity_matrixreps.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 5.5.23: Similarity and matrix representations">Theorem 5.5.23</a> Similarity and matrix representations</div>
-<h3 class="heading hide-type" title="Section 6.1: Eigenvectors and eigenvalues">
+<h4 class="heading hide-type" title="Section 6.1: Eigenvectors and eigenvalues">
 <span class="codenumber">6.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Eigenvectors and eigenvalues</span>
-</h3>
+</h4>
 <div>
 <a href="s_eigenvectors.html#th_eigenvectors_transformation_matrixrep" class="xref" data-knowl="./knowl/list-of/th_eigenvectors_transformation_matrixrep.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.1.13: Eigenvectors of a linear transformation">Theorem 6.1.13</a> Eigenvectors of a linear transformation</div>
 <div>
@@ -1029,9 +1080,9 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 <a href="s_eigenvectors.html#cor_eigenvalues_atmost_n" class="xref" data-knowl="./knowl/list-of/cor_eigenvalues_atmost_n.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 6.1.29: Number of eigenvalues">Corollary 6.1.29</a> Number of eigenvalues</div>
 <div>
 <a href="s_eigenvectors.html#th_invertibility_with_eigenvalue" class="xref" data-knowl="./knowl/list-of/th_invertibility_with_eigenvalue.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.1.30: Invertibility theorem">Theorem 6.1.30</a> Invertibility theorem</div>
-<h3 class="heading hide-type" title="Section 6.2: Diagonalization">
+<h4 class="heading hide-type" title="Section 6.2: Diagonalization">
 <span class="codenumber">6.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Diagonalization</span>
-</h3>
+</h4>
 <div>
 <a href="s_diagonalization.html#th_diagonalizability_eigenbasis" class="xref" data-knowl="./knowl/list-of/th_diagonalizability_eigenbasis.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.2.2: Diagonalizabilty: basis of eigenvectors">Theorem 6.2.2</a> Diagonalizabilty: basis of eigenvectors</div>
 <div>
@@ -1056,18 +1107,18 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 <a href="s_diagonalization.html#th_alg_geom_mult" class="xref" data-knowl="./knowl/list-of/th_alg_geom_mult.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 6.2.29: Algebraic and geometric multiplicity">Theorem 6.2.29</a> Algebraic and geometric multiplicity</div>
 <div>
 <a href="s_diagonalization.html#cor_alg_geom_mult" class="xref" data-knowl="./knowl/list-of/cor_alg_geom_mult.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 6.2.30: Algebraic and geometric multiplicity">Corollary 6.2.30</a> Algebraic and geometric multiplicity</div>
-<h3 class="heading hide-type" title="Section 7.1: Inner product spaces">
+<h4 class="heading hide-type" title="Section 7.1: Inner product spaces">
 <span class="codenumber">7.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Inner product spaces</span>
-</h3>
+</h4>
 <div>
 <a href="s_innerproducts.html#th_norm_basic_props" class="xref" data-knowl="./knowl/list-of/th_norm_basic_props.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.1.8: Basic properties of norm and distance">Theorem 7.1.8</a> Basic properties of norm and distance</div>
 <div>
 <a href="s_innerproducts.html#th_Cauchy-Schwarz" class="xref" data-knowl="./knowl/list-of/th_Cauchy-Schwarz.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.1.9: Cauchy-Schwarz inequality">Theorem 7.1.9</a> Cauchy-Schwarz inequality</div>
 <div>
 <a href="s_innerproducts.html#th_triangle_inequalities" class="xref" data-knowl="./knowl/list-of/th_triangle_inequalities.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.1.10: Triangle Inequalities">Theorem 7.1.10</a> Triangle Inequalities</div>
-<h3 class="heading hide-type" title="Section 7.2: Orthogonal bases">
+<h4 class="heading hide-type" title="Section 7.2: Orthogonal bases">
 <span class="codenumber">7.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Orthogonal bases</span>
-</h3>
+</h4>
 <div>
 <a href="s_orthogonality.html#th_orthogonal" class="xref" data-knowl="./knowl/list-of/th_orthogonal.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.2.2: Orthogonal implies linearly independent">Theorem 7.2.2</a> Orthogonal implies linearly independent</div>
 <div>
@@ -1082,9 +1133,9 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 <a href="s_orthogonality.html#th_orthogonal_matrices" class="xref" data-knowl="./knowl/list-of/th_orthogonal_matrices.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.2.16: Orthogonal matrices">Theorem 7.2.16</a> Orthogonal matrices</div>
 <div>
 <a href="s_orthogonality.html#th_changebasis_orthonormal" class="xref" data-knowl="./knowl/list-of/th_changebasis_orthonormal.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.2.18: Orthonormal change of basis">Theorem 7.2.18</a> Orthonormal change of basis</div>
-<h3 class="heading hide-type" title="Section 7.3: Orthogonal projection">
+<h4 class="heading hide-type" title="Section 7.3: Orthogonal projection">
 <span class="codenumber">7.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Orthogonal projection</span>
-</h3>
+</h4>
 <div>
 <a href="s_orthogonal_projection.html#th_orthogonal_complement" class="xref" data-knowl="./knowl/list-of/th_orthogonal_complement.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.3.5: Orthogonal complement">Theorem 7.3.5</a> Orthogonal complement</div>
 <div>
@@ -1101,9 +1152,9 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 <a href="s_orthogonal_projection.html#cor_orthoproj_linear" class="xref" data-knowl="./knowl/list-of/cor_orthoproj_linear.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 7.3.23: Orthgonal projection is linear">Corollary 7.3.23</a> Orthgonal projection is linear</div>
 <div>
 <a href="s_orthogonal_projection.html#th_leastsquares" class="xref" data-knowl="./knowl/list-of/th_leastsquares.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.3.31: Least-squares matrix formula">Theorem 7.3.31</a> Least-squares matrix formula</div>
-<h3 class="heading hide-type" title="Section 7.4: The spectral theorem">
+<h4 class="heading hide-type" title="Section 7.4: The spectral theorem">
 <span class="codenumber">7.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The spectral theorem</span>
-</h3>
+</h4>
 <div>
 <a href="s_spectral_theorem.html#th_self-adjoint_symmetric" class="xref" data-knowl="./knowl/list-of/th_self-adjoint_symmetric.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 7.4.2: Self-adjoint operators and symmetry">Theorem 7.4.2</a> Self-adjoint operators and symmetry</div>
 <div>
@@ -1118,9 +1169,7 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 <a href="s_spectral_theorem.html#cor_spectral" class="xref" data-knowl="./knowl/list-of/cor_spectral.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 7.4.11: Spectral theorem for symmetric matrices">Corollary 7.4.11</a> Spectral theorem for symmetric matrices</div>
 <div>
 <a href="s_spectral_theorem.html#proc_ortho_diag" class="xref" data-knowl="./knowl/list-of/proc_ortho_diag.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 7.4.12: Orthogonal diagonalization">Procedure 7.4.12</a> Orthogonal diagonalization</div>
-<div class="autopermalink" aria-hidden="true" data-description="Appendix D: Theory and procedures"><a tabindex="-1" href="#appendix-thms" title="Copy heading and permalink for Appendix D: Theory and procedures" aria-label="Copy heading and permalink for Appendix D: Theory and procedures">🔗</a></div>
-</section>
-</div>
+<div class="autopermalink" data-description="Appendix D: Theory and procedures"><a href="#appendix-thms" title="Copy heading and permalink for Appendix D: Theory and procedures" aria-label="Copy heading and permalink for Appendix D: Theory and procedures">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="appendix-defs.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="appendix-egs.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
