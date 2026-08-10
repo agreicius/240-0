@@ -2,7 +2,7 @@
   <title>Systems of linear equations</title>
   <introduction>
     <p>
-      Computing and studying solutions to equations, and <em>systems of equations</em>, unquestionably plays an important role in mathematics; though we hasten to add that this is not all that mathematicians do! In this chapter we will develop an essentially complete theory of a particularly simple family of mathematical equations: namely, <em>linear equations</em>.  This will serve as a somewhat indirect introduction to our study of linear algebra, as lurking below our parametric descriptions of solutions to linear systems lie vector space notions like subspace, span, and linear independence. Furthermore, we will introduce one of the most important computational tools of linear algebra: <xref ref="d_GE" text="custom">Gaussian elimination</xref>.  
+      Computing and studying solutions to equations, and <em>systems of equations</em>, unquestionably plays an important role in mathematics. We hasten to add, however, that this is not all that mathematicians do! In this chapter we will develop an essentially complete theory of a particularly simple family of mathematical equations: namely, <em>linear equations</em>.  Vector spaces, though not named explicitly in this chapter, are very much still in play, as lurking below our parametric descriptions of solutions to linear systems lie vector space notions like subspace, span, and linear independence that we treat in more detail in <xref ref="c_vectorspace"/>. Furthermore, we will introduce one of the most important computational tools for the study of vector spaces: <xref ref="d_GE" text="custom">Gaussian elimination</xref>.  
    </p>
   </introduction>
   <subsection xml:id="ss_linear_equations">
@@ -31,6 +31,7 @@
       </p>
     </statement>
   </definition>
+  
   <example>
     <title>Linear and nonlinear equations</title>
     <statement>
@@ -217,7 +218,7 @@ Pt1+Pt2+Ar1+Ar2+T1+T2+T3+Plane
     </p>
   </example>
   <p>
-    Next we introduce <em>linear systems</em>, which are just collections of linear equations. 
+    As is driven home by our visualizations of lines and planes, the set of solutions to a single nontrivial linear equation is <em>infinite</em>. This begs the question of how best to describe this infinite set. We will take this up in <xref ref="s_solving"/>. For now we move on from a single linear equation to a <em>systems of linear equations</em>, which are just collections of linear equations. 
   </p>
   <definition xml:id="d_lin-sys">
     <title>Systems of linear equations</title>

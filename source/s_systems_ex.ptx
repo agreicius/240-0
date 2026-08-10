@@ -1,7 +1,118 @@
 <exercises xml:id="s_systems_ex">
   
-  <subexercises>
-   
+<exercisegroup>
+<title>Systems with two unknowns</title>
+
+
+  <introduction>
+    <p>
+      For the given linear system, determine the set <m>S</m> of all solutions algebraically, using row operations, and confirm your answer geometrically by sketching the configuration of lines corresponding to the system. 
+    </p>
+  <p>
+  The set <m>S</m> will either be empty (in which case write <m>S=\emptyset</m>), contain exactly one pair <m>(a,b)</m>, or form a line in <m>\R^2</m>. In the last you should describe <m>S</m> parametrically either in the form <m>S=\{(t,at+b)\mid t\in \R\}</m> or <m>S=\{(at+b,t)\mid t\in \R\}</m> for some <m>a,b\in \R</m> of your choosing.
+  </p>
+  </introduction>
+
+  <exercise>
+    <statement>
+      <p>
+        <md>\begin{linsys}{2}
+        3x\amp+ \amp 2y\amp =\amp 7\\
+        -2x\amp+\amp 3y\amp =\amp 11
+        \end{linsys}</md>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <md>\begin{linsys}{2}
+        2x\amp +\amp 3y\amp =\amp 5\\
+        4x\amp +\amp 6y\amp =\amp 10
+        \end{linsys}</md>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <md>\begin{linsys}{2}
+        2x\amp +\amp y\amp =\amp 4\\
+        x\amp -\amp y\amp=\amp 1\\
+        3x\amp +\amp 3y\amp =\amp 6
+        \end{linsys}</md>
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <md>\begin{linsys}{2}
+        x\amp +\amp y\amp =\amp 1\\
+        2x\amp -\amp y\amp =\amp 5\\
+        3x\amp +\amp y\amp =\amp 5
+        \end{linsys}</md>
+      </p>
+    </statement>
+  </exercise>
+</exercisegroup>  
+<exercisegroup>
+<title>Systems with three unknowns</title>
+
+
+  <introduction>
+    <p>
+      For the given linear system determine algebraically, using row operations, whether the set of solutions <m>S</m> is empty, contains exactly one triple <m>(a,b,c)</m> (in which case provide this point), or is infinite. In the last case you can just state that <m>S</m> is infinite without explicitly describing it. 
+    </p>
+    <p>
+      Additionally, sketch the configuration of planes corresponding to the system as confirmation of your answer. Use the normal vector method described in <xref ref="eg_vis_plane"/>.
+    </p>
+  </introduction>
+<exercise>
+    <statement>
+      <p>
+        <md>\begin{linsys}{3}
+        x\amp +\amp y\amp +\amp z\amp = 1\\
+        x\amp +\amp y\amp +\amp z\amp =3
+        \end{linsys}</md>
+        </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <md>\begin{linsys}{3}
+        x\amp +\amp y\amp +\amp z\amp = 1\\
+        2x\amp +\amp y\amp +\amp z\amp =1
+        \end{linsys}</md>
+        </p>
+    </statement>
+  </exercise>
+  
+   <exercise>
+    <statement>
+      <p>
+        <md>\begin{linsys}{3}
+        x\amp +\amp y\amp +\amp z\amp = 1\\
+        2x\amp +\amp y\amp +\amp z\amp =1\\
+        x\amp+\amp y\amp -\amp z\amp =3
+        \end{linsys}</md>
+        </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        <md>\begin{linsys}{3}
+        x\amp +\amp y\amp +\amp z\amp = 1\\
+        2x\amp +\amp y\amp +\amp z\amp =1\\
+        3x\amp+\amp y\amp +\amp z\amp =2
+        \end{linsys}</md>
+        </p>
+    </statement>
+  </exercise>
+
+</exercisegroup> 
   <exercise xml:id="ex_solving_sys_geom">
     <title>Geometry of linear systems</title>
     <statement>
@@ -345,5 +456,4 @@
     </ol>
   </statement>
 </exercise>
-</subexercises>
 </exercises>
