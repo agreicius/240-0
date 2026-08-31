@@ -72,23 +72,38 @@ show(B)
 show(C)
 B is C
 </script></div>
-<div class="para logical">
-<div class="para">The following activities could be useful for implementing Gaussian elimination in a manner that shows all intervening steps. Use the empty Sage cell below to experiment.</div>
-<ul class="disc" id="sage_ge-7-1">
-<li>
-<div class="para">Modify the <code class="code-inline tex2jax_ignore">row_echelon_form</code> code to make a non-recursive algorithm.<div class="autopermalink" data-description="Paragraph"><a href="#sage_ge-7-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">The function <code class="code-inline tex2jax_ignore">row_echelon_form_steps()</code> defined below ia a non-recursive implementation of Gaussian elimination that also displays all the steps of the algorithm. The last cell applies this function to a random <span class="process-math">\(3\times 4\)</span> matrix (with a significant number of zero entries). By modifying this cell appropriately, you can check your work when performing Gaussian elimination to the letter on a given matrix.<div class="autopermalink" data-description="Paragraph"><a href="#sage_ge-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item"><a href="#sage_ge-7-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-<li>
-<div class="para">Add <code class="code-inline tex2jax_ignore">show</code> commands to your non-recursive version of <code class="code-inline tex2jax_ignore">row_echelon_form</code> to show steps in the row reduction.<div class="autopermalink" data-description="Paragraph"><a href="#sage_ge-7-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div class="autopermalink" data-description="Item"><a href="#sage_ge-7-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
-</li>
-</ul>
-<div class="autopermalink" data-description="Paragraph"><a href="#sage_ge-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div>
-<div id="sage_ge-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">
+<div id="sage_ge-8" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">def row_echelon_form_steps(A):
+    m,n=A.dimensions()
+    R=A.base_ring()
+    K=R.fraction_field()
+    A=A.change_ring(K)
+    show(A)
+    if A.is_zero() or m==0 or n==0: return A
+    else:
+        i,j=0,0
+        while i< m and j< n and not A[i:,:].is_zero():
+            while A[i:,:].column(j).is_zero():
+                j+=1
+            if A[i,j]==0:
+                k=i
+                while A[k,j]==0:
+                    k+=1
+                A.swap_rows(i,k)
+                show(A)
+            if not A[i,j]==1:
+                A.rescale_row(i,1/A[i,j])
+                show(A)
+            for k in range(i+1,m):
+                if A[k,j] != 0:
+                    A.add_multiple_of_row(k,i,-A[k,j])
+                    show(A)
+            i+=1
+    return(A)
+</script></div>
+<div id="sage_ge-9" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">A=random_matrix(ZZ,3,4, density=0.5)
+row_echelon_form_steps(A)
 </script></div>
 <div class="autopermalink" data-description="Sage Example 4: Gaussian elimination"><a href="#sage_ge" title="Copy heading and permalink for Sage Example 4: Gaussian elimination" aria-label="Copy heading and permalink for Sage Example 4: Gaussian elimination">🔗</a></div></article><span class="incontext"><a class="internal" href="s_ge.html#sage_ge">in-context</a></span>
 </body>
