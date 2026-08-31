@@ -5,24 +5,24 @@
       In <xref ref="s_systems"/> we sketched a procedure for solving a linear system <m>L</m>. That procedure involved applying a sequence of row operations to <m>L</m> to obtain a <q>simpler</q> system <m>L'</m>.
     </p>
     <p>
-      We will fill out this sketch in the next two sections. Specifically, we will
-      <ol>
+      We will fill out this sketch in the next two sections. Specifically, we will: 
+      <ul>
         <li>
           <p>
-          describe precisely what we mean by a <q>simpler</q> system,
+          describe precisely what we mean by a <q>simpler</q> system (see <xref ref="d_row_echelon"/>); 
           </p>
         </li>
         <li>
           <p>
-            provide an algorithm (or recipe) that decides exactly what sequence of row operations to apply to obtain this simpler system,
+            provide an algorithm (or recipe) that decides exactly what sequence of row operations to apply to obtain this simpler system (see <xref ref="proc_GE"/>);
           </p>
         </li>
         <li>
           <p>
-            explain how to find <em>all</em> solutions of the resulting simpler system.
+            explain how to find <em>all</em> solutions of the resulting simpler system (see <xref ref="s_solving"/>).
           </p>
         </li>
-      </ol>
+      </ul>
     </p>
    </introduction> 
 
@@ -289,7 +289,7 @@ delimiter={]}]
     <statement>
       <p>
         An <term>elementary row operation</term> is one of the three following types of matrix operations. Let <m>A</m> be a given <m>m\times n</m> matrix, and denote by <m>r_i</m> the <m>i</m>-th row of <m>A</m>.
-      </p>
+      
         <dl>
           <li xml:id="d_row_scale">
             <title>Scalar multplication</title>
@@ -311,7 +311,6 @@ delimiter={]}]
             </p>
           </li>
         </dl>
-    <p>
       The act of transforming a matrix using elementary row operations is called <term>row reduction</term>.
     </p>
     <p>
@@ -319,25 +318,15 @@ delimiter={]}]
     </p>
     </statement>
   </definition>
-  <remark xml:id="s_ge_notation">
-    <title>Notation</title>
-    <notation>
-      <usage><m>A\xrightarrow{c\,r_i} B</m></usage>
-      <description>scalar multiplication</description>
-    </notation>
-    <notation>
-      <usage><m>A\xrightarrow{r_i\leftrightarrow r_j} B</m></usage>
-      <description>row swap</description>
-    </notation>
-    <notation>
-      <usage><m>A\xrightarrow{r_i+c\,r_j} B</m></usage>
-      <description>replace <m>r_i</m> with <m>r_i+c\,r_j</m></description>
-    </notation>
-    Our former elementary operation notation easily transfers to row operations on matrices. The expressions
+  <remark xml:id="rm_ge_notation">
+    <title>Row operation notation</title>
+    <p>
+      Our former elementary operation notation easily transfers to row operations on matrices. The expressions
     <md>
       <mrow>A\amp \xrightarrow{c\,r_i} B \amp A\amp \xrightarrow{r_i\leftrightarrow r_j} B\amp A\amp\xrightarrow{r_i+c\,r_j} B</mrow>
     </md>
     denote the operations that replace row <m>r_i</m> in <m>A</m> with <m>c\, r_i</m>, swap rows <m>r_i</m> and <m>r_j</m> in <m>A</m>, and replace <m>r_i</m> in <m>A</m> with <m>r_i+c\, r_j</m>, respectively.
+  </p>
   </remark>
   <p>
   At last we are ready to define Gaussian elimination. In its essence this is simply a procedure, or <em>algorithm</em>, that takes an input matrix <m>A</m> and row reduces it to a matrix <m>B</m> in row echelon form. It is important to note that although we employ Gaussian elimination in this chapter primarily to the end of simplifying and solving linear systems, this is not its only application. Indeed, we will come back to the procedure again and again, in a great variety of contexts and to greatly diverse ends. Gaussian elimination is one of linear algebra's most important tools. We memorialize this here as an official principle.
@@ -350,14 +339,14 @@ delimiter={]}]
       </p>
     </statement>
   </principle>
-  <algorithm xml:id="d_GE">
+  <algorithm xml:id="proc_GE">
   <title>Gaussian elimination</title>
     <idx><h>Gaussian elimination</h></idx>
     <statement>
       <p>
         <term>Gaussian elimination</term>
         is the algorithm described below. It takes as an input a matrix <m>A</m> and returns as an output a row equivalent matrix <m>B</m> in row echelon form.
-      </p>
+     
 
   <dl>
     <li>
@@ -386,13 +375,14 @@ delimiter={]}]
       </p>
     </li>
   </dl>
+   </p>
   </statement>
 </algorithm>
 
   <subsection>
     <title> Model example</title>
     <p>
-    Use the following example as a model of how to both perform and annotate the steps in Gaussian elimination. When first learning this procedure, make sure to follow it <em>to the letter</em>. In particular, in the spirit of the mandate issued in <xref ref="s_systems_rm_oneoperation"/>, you should only perform one row operation at a time, and only in the sequence prescribed in Steps 1-4 of <xref ref="d_GE"/>.
+    Use the following example as a model of how to both perform and annotate the steps in Gaussian elimination. When first learning this procedure, make sure to follow it <em>to the letter</em>. In particular, in the spirit of the mandate issued in <xref ref="s_systems_rm_oneoperation"/>, you should only perform one row operation at a time, and only in the sequence prescribed in Steps 1-4 of <xref ref="proc_GE"/>.
     </p>
     <example xml:id="eg_model_example">
       <title>Row echelon form</title>
@@ -462,12 +452,12 @@ delimiter={]}]
   The matrix outputted by Gaussian elimination is guaranteed to be in row echelon form, but it may not be in <em>reduced</em> row echelon form. <em>Gauss-Jordan elimination</em> describes a systematic way to continue reducing to this even simpler state.
 </p>
 </subsection>
-<algorithm xml:id="d_GaussJordan">
+<algorithm xml:id="proc_GaussJordan">
       <title>Gauss-Jordan elimination</title>
       <statement>
         <p>
         <term>Gauss-Jordan elimination</term> is the algorithm described below. It takes as an input a matrix <m>A</m> and returns a row equivalent matrix <m>B</m> in reduced row echelon form.
-        </p>
+        
         <dl>
           <li>
             <title>Steps 1-4</title>
@@ -488,6 +478,7 @@ delimiter={]}]
             </p>
           </li>
         </dl>
+      </p>
       </statement>
     </algorithm>
     <example xml:id="eg_model_rref">
@@ -509,7 +500,7 @@ delimiter={]}]
     </p>
     </example>
   <p>
-   <xref ref="d_GE"/> and <xref ref="d_GaussJordan"/> are really theorems in disguise, and we make this official in <xref ref="th_matrixforms"/>.
+   <xref ref="proc_GE"/> and <xref ref="proc_GaussJordan"/> are really theorems in disguise: implicit in both procedure descriptions is (a) that the procedure terminates, and (b) that itproduces a matrix that is row equivalent to the original one in row echelon (resp., reduced row echelon) form. Let's make this explicit. 
  </p>
 <theorem xml:id="th_matrixforms">
   <title>Row equivalent matrix forms</title>
@@ -518,13 +509,13 @@ delimiter={]}]
       <li xml:id="th_REexistence">
         <title>Row echelon forms exist</title>
         <p>
-        Any matrix <m>A</m> is row equivalent to a matrix in row echelon form. Indeed, Gaussian elimination row reduces any matrix to a matrix in row echelon form.
+        Any matrix <m>A</m> is row equivalent to a matrix in row echelon form. Indeed, applying <xref ref="proc_GE" text="custom">Gaussian elimination</xref> to <m>A</m> produces a matrix in row echelon form that is row equivalent to <m>A</m>. 
         </p>
       </li>
       <li xml:id="th_RREexistence">
         <title>Reduced row echelon forms exist</title>
         <p>
-        Any matrix <m>A</m> is row equivalent to a matrix in reduced row echelon form. Indeed, Gauss-Jordan elimination row reduces any matrix to a matrix in reduced row echelon form.
+        Any matrix <m>A</m> is row equivalent to a matrix in reduced row echelon form. Indeed, applying <xref ref="proc_GaussJordan" text="custom">Gauss-Jordan elimination</xref> to <m>A</m> produces a matrix in reduced row echelon form that is row equivalent to <m>A</m>.
         </p>
       </li>
       <li xml:id="th_RREuniqueness">
@@ -537,7 +528,7 @@ delimiter={]}]
   </statement>
 </theorem>
 
-<p>We will make heavy use of the first two results of <xref ref="th_matrixforms"/>. The proofs of these statements are not difficult, but not especially illuminating. Accordingly we omit them here, and point the interested reader to Robert Beezer's <url href="http://linear.ups.edu/fcla" visual="linear.ups.edu/fcla"><em>A First Course in Linear Algebra </em></url>. (See <url href="http://linear.ups.edu/fcla/section-RREF.html#theorem-REMEF" visual="linear.ups.edu/fcla/section-RREF.html#theorem-REMEF">Theorem REMEF</url>.)
+<p>We will make heavy use of the first two results of <xref ref="th_matrixforms"/>. The proofs of these statements are not difficult, but not especially illuminating. Accordingly we omit them here, and point the interested reader to Robert Beezer's <url href="https://linear.pugetsound.edu/fcla" visual="linear.pugetsound.edu/fcla"><em>A First Course in Linear Algebra </em></url>. (See <url href="https://linear.pugetsound.edu/fcla/section-RREF.html#theorem-REMEF">Theorem REMEF</url>.)
 </p>
 <p>The third statement of <xref ref="th_matrixforms"/>, that every matrix is row equivalent to a <em>unique</em> matrix in reduced row echelon form, does in fact have an enlightening proof. We will postpone this proof, however, until we have a little more theory at our disposal. (See <xref ref="cor_RRE_uniqueness"/>.) Until then we will conscientiously <em>not</em> make use of this fact when developing any of our further theory.</p>
 <example xml:id="s_ge_ex_REFnotunique">
@@ -618,27 +609,50 @@ In the first Sage cell below you find a recursive implementation of Gaussian eli
 </output>
 </sage>
 <p>
-  The following activities could be useful for implementing Gaussian elimination in a manner that shows all intervening steps. Use the empty Sage cell below to experiment.
-  <ul>
-    <li>
-      <p>
-        Modify the <c>row_echelon_form</c> code to make a non-recursive algorithm.
-      </p>
-    </li>
-    <li>
-      <p>
-        Add <c>show</c> commands to your non-recursive version of <c>row_echelon_form</c> to show steps in the row reduction.
-      </p>
-    </li>
-  </ul>
+  The function <c>row_echelon_form_steps()</c> defined below ia a non-recursive implementation of Gaussian elimination that also displays all the steps of the algorithm. The last cell applies this function to a random <m>3\times 4</m> matrix (with a significant number of zero entries). By modifying this cell appropriately, you can check your work when performing Gaussian elimination to the letter on a given matrix. 
 </p>
 <sage>
 <input>
-
+def row_echelon_form_steps(A):
+    m,n=A.dimensions()
+    R=A.base_ring()
+    K=R.fraction_field()
+    A=A.change_ring(K)
+    show(A)
+    if A.is_zero() or m==0 or n==0: return A
+    else:
+        i,j=0,0
+        while i&lt; m and j&lt; n and not A[i:,:].is_zero():
+            while A[i:,:].column(j).is_zero():
+                j+=1
+            if A[i,j]==0:
+                k=i
+                while A[k,j]==0:
+                    k+=1
+                A.swap_rows(i,k)
+                show(A)
+            if not A[i,j]==1:
+                A.rescale_row(i,1/A[i,j])
+                show(A)
+            for k in range(i+1,m):
+                if A[k,j] != 0:
+                    A.add_multiple_of_row(k,i,-A[k,j])
+                    show(A)
+            i+=1
+    return(A)
 </input>
 <output>
 
 </output>
+</sage>
+<sage>
+  <input>
+    A=random_matrix(ZZ,3,4, density=0.5)
+    row_echelon_form_steps(A)
+  </input>
+  <output>
+    
+  </output>
 </sage>
 </project>
 </subsection>

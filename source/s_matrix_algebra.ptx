@@ -273,7 +273,7 @@ The example in our warning above is but one instance of the general failure of t
         <li>
           <p>
             Suppose matrices <m>A, B, C</m> satisfy <m>AB=AC</m> and <m>A\ne \boldzero</m>. We <em>cannot</em> conclude that <m>B=C</m>. In logical notation:
-            <md number="yes" xml:id="eq_no_left_cancel ">
+            <md number="yes" xml:id="eq_no_left_cancel">
               AB=AC \;\not\!\!\!\!\implies B=C
             </md>
           </p>

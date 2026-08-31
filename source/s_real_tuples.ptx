@@ -371,7 +371,7 @@ Display the given matrix <m>A</m> as a rectangular array.
   <title>Tuple equality</title>
   <statement>
   <p>
-  Two real-valued tuples <m>(a_i)_{i\in I}</m> and <m>(b_j)_{j\in J}</m> are <term>equal</term>, denoted <m>(a_i)_{i\in I}=(b_j)_{j\in J}</m> if the following two conditions hold. 
+  Two real-valued tuples <m>(a_i)_{i\in I}</m> and <m>(b_j)_{j\in J}</m> are <term>equal</term>, denoted <m>(a_i)_{i\in I}=(b_j)_{j\in J}</m>, if the following two conditions hold. 
   <ol marker="(i)">
     <li>
       <p>

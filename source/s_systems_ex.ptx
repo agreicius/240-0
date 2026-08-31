@@ -280,9 +280,10 @@
           Let <m>L</m> be the original system with equations <m>e_1,e_2,\dots ,e_m</m>.
           For each specified row operation,
           we will call the resulting new system <m>L'</m> and its equations <m>e'_1,e'_2,\dots , e'_m</m>.
-        </p>
-        <case>
-        <title>Row swap</title>
+        
+        <ul>
+        <li>
+          <title>Row swap</title>
               <p>
                 In this case systems <m>L</m> and <m>L'</m> have exactly the same equations,
                 just written in a different order.
@@ -291,8 +292,9 @@
                 since these are the same equations!
                 It follows that <m>s</m> is a solution of <m>L</m> if and only if it is a solution to <m>L'</m>.
               </p>
-        </case>
-        <case>
+            </li>
+        
+        <li>
               <title>Scalar multiplication</title>
               <p>
                 In this case <m>e_j=e'_j</m> for all <m>j\ne i</m>,
@@ -322,8 +324,8 @@
 
                 </p>
 
-            </case>
-            <case>
+            </li>
+            <li>
               <title>Row addition</title>
               <p>
                 The only equation of <m>L'</m> that differs from <m>L</m> is
@@ -344,7 +346,7 @@
                 Now suppose <m>s=(s_1,s_2,\dots,
                 s_n)</m> satisfies <m>L'</m>.
                 Since <m>s</m> satisfies <m>e_j'=e_j</m>, we have
-                <md number="yes" xml:id="solveeqn" tag="star">
+                <md tag="star" xml:id="solveeqn" >
                   a_{j1}s_1+a_{j2}s_2+\cdots +a_{jn}s_n =b_j
                 </md>
                 Since <m>s</m> satisfies <m>e_i'</m>, we have
@@ -362,14 +364,17 @@
                 This shows that <m>s</m> satisfies <m>e_i</m>.
                 It follows that <m>s</m> satisfies <m>L</m>.
               </p>
-          </case>
+          </li>
+          </ul>
+          </p>
       </solution>
   </exercise>
 
   <exercise xml:id="ex_solving_nonlinear_system">
 <title>Nonlinear systems</title>
   <statement>
-    A <em>nonlinear</em> system of equations is a collection of equations, at least one of which is nonlinear. Our definition of a solution to a linear system generalizes easily to any system of equations.
+    <p>
+      A <em>nonlinear</em> system of equations is a collection of equations, at least one of which is nonlinear. Our definition of a solution to a linear system generalizes easily to any system of equations.
     <ol>
       <li>
         <p>
@@ -409,7 +414,7 @@
             \end{linsys}
           </md>
           where <m>a,b,c\in\R</m> are fixed constants and at least one of <m>a</m> or <m>b</m> is nonzero.
-        </p>
+        
         <ol>
           <li>
             <p>
@@ -422,8 +427,10 @@
             </p>
           </li>
         </ol>
+        </p>
       </li>
     </ol>
+    </p>
   </statement>
 
 </exercise>
@@ -456,4 +463,45 @@
     </ol>
   </statement>
 </exercise>
+<exercise>
+<title>True or false</title>
+  <statement>
+<p>
+If true, provide a proof; if false, provide an explicit counterexample. 
+<ol marker="(a)">
+  <li>
+    <p>
+      If two systems of linear equations are row equivalent, then they have the same set of solutions. 
+    </p>
+  </li>
+  <li>
+    <p>
+      If two systems of linear equations have the same set of solutions, then they are row equivalent. 
+    </p>
+  </li>
+  <li>
+    <p>
+      A linear system either has no solutions or exactly one solution. 
+    </p>
+  </li>
+  <li>
+    <p>
+      A linear system with more unknowns than equations has infinitely many solutions. 
+    </p>
+  </li>
+  <li>
+    <p>
+      A linear system in two unknowns either has no solutions, exactly one solution, or infinitely many solutions.
+    </p>
+  </li>
+  <li>
+    <p>
+      A linear system in three unknowns either has no solutions, exactly one solution, or infinitely many solutions.
+    </p>
+  </li>
+</ol>
+</p>
+</statement>
+</exercise>
+
 </exercises>

@@ -2,7 +2,7 @@
   <title>Systems of linear equations</title>
   <introduction>
     <p>
-      Computing and studying solutions to equations, and <em>systems of equations</em>, unquestionably plays an important role in mathematics. We hasten to add, however, that this is not all that mathematicians do! In this chapter we will develop an essentially complete theory of a particularly simple family of mathematical equations: namely, <em>linear equations</em>.  Vector spaces, though not named explicitly in this chapter, are very much still in play, as lurking below our parametric descriptions of solutions to linear systems lie vector space notions like subspace, span, and linear independence that we treat in more detail in <xref ref="c_vectorspace"/>. Furthermore, we will introduce one of the most important computational tools for the study of vector spaces: <xref ref="d_GE" text="custom">Gaussian elimination</xref>.  
+      Computing and studying solutions to equations, and <em>systems of equations</em>, unquestionably plays an important role in mathematics. We hasten to add, however, that this is not all that mathematicians do! In this chapter we will develop an essentially complete theory of a particularly simple family of mathematical equations: namely, <em>linear equations</em>.  Vector spaces, though not named explicitly in this chapter, are very much still in play, as lurking below our parametric descriptions of solutions to linear systems lie vector space notions like subspace, span, and linear independence that we treat in more detail in <xref ref="c_vectorspace"/>. Furthermore, we will introduce one of the most important computational tools for the study of vector spaces: <xref ref="proc_GE" text="custom">Gaussian elimination</xref>.  
    </p>
   </introduction>
   <subsection xml:id="ss_linear_equations">
@@ -587,7 +587,7 @@ A homogeneous system is thus typically written as:
     </p>
   </example>
   <remark xml:id="s_systems_notation_rowops">
- <title>Notation</title>
+ <title>Elementary operation notation</title>
  <p>
   As we will see later, keeping track of the exact sequence of row operations is important in some situations. The notation used in the last example is useful for this bookkeeping. Let's explicate the notation somewhat.
  </p>
