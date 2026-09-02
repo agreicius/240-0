@@ -8,7 +8,7 @@
 <title>Solving linear systems</title>
 
   <introduction>
-  <p>Solve the following systems of equations.
+  <p>Solve the given linear system.
   <ul>
     <li>
       <p>
@@ -22,7 +22,7 @@
     </li>
     <li>
       <p>
-        Express your answer in both the parametric equation format and set notation format.
+        Express your answer in both set notation and vector parametrization form.
       </p>
     </li>
   </ul>
@@ -51,59 +51,72 @@
         <mrow>x_3\amp = 2</mrow>
         <mrow>x_4\amp = -\frac{3}{7}</mrow>
       </md>.
-      Thus the set of solutions is
+      Thus the set notation form of the set of solutions is
       <md>
         \left\{ \left(\frac{32}{7}-2t, t, 2, -\frac{3}{7}\right)\colon t\in \R\right\}
+      </md>, 
+      and the vector parametrization description of the general solution <m>\boldx</m> is thus
+      <md number="yes">
+        <mrow>\boldx\amp =(32/2,0,2,-3/7)+t(-2,1,0,0) \amp  t\in \R </mrow>
       </md>.
     </p>
     </solution>
   </exercise>
+<exercise>
+  <statement>
+    <p>
+      <md>
+        \begin{linsys}{4} x_1\amp +\amp x_2\amp -\amp x_3\amp +\amp x_4\amp =\amp 1\\ -2x_1\amp -\amp 2x_2\amp +\amp 2x_3\amp -\amp 2x_4\amp =\amp -2\\ x_1\amp +\amp x_2\amp +\amp x_3\amp +\amp 2x_4\amp =\amp 3 \end{linsys}
+      </md>
+    </p>
+  </statement>
 
-  <exercise>
-    <statement>
-      <p>
-        <md>
-          \begin{array}{rcrcrcrcc} x_1\amp +\amp x_2\amp -\amp x_3\amp +\amp x_4\amp =\amp 1\\ 
-          -2x_1\amp -\amp 2x_2\amp +\amp 2x_3\amp -\amp 2x_4\amp =\amp -2\\ 
-          x_1\amp +\amp x_2\amp +\amp x_3\amp +\amp 2x_4\amp =\amp 3 
-          \end{array}
-        </md>
-      </p>
-    </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <md>
+       <mrow>y_1-7y_2+6y_4 \amp = 5\\
+        y_3-2y_4\amp = -3 \\
+        -y_1+7y_2-4y_3+2y_4\amp =7
+       </mrow>
+      </md>
+    </p>
+  </statement>
 
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        <md>
-          \begin{linsys}{3} 2x_1 \amp +\amp  2x_2  \amp +\amp 2x_3\amp =\amp 0\\ -2x_1 \amp +\amp  5x_2 \amp +\amp 2x_3\amp =\amp 1\\ 8x_1 \amp +\amp   x_2   \amp +\amp 4x_3\amp =\amp -1 \end{linsys}
-        </md>
-      </p>
-    </statement>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <md>
+        \begin{linsys}{3} 2x_1 \amp +\amp  2x_2  \amp +\amp 2x_3\amp =\amp 0\\ -2x_1 \amp +\amp  5x_2 \amp +\amp 2x_3\amp =\amp 1\\ 8x_1 \amp +\amp   x_2   \amp +\amp 4x_3\amp =\amp -1 \end{linsys}
+      </md>
+    </p>
+  </statement>
 
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        <md>
-          \begin{linsys}{3} \amp \amp -2b  \amp +\amp 3c\amp =\amp 1\\ 3a \amp +\amp  6b \amp -\amp 3c\amp =\amp -2\\ 6a \amp +\amp   6b   \amp +\amp 3c\amp =\amp 5 \end{linsys}
-        </md>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <md>
+        \begin{linsys}{3} \amp \amp -2b  \amp +\amp 3c\amp =\amp 1\\ 3a \amp +\amp  6b \amp -\amp 3c\amp =\amp -2\\ 6a \amp +\amp   6b   \amp +\amp 3c\amp =\amp 5 \end{linsys}
+      </md>
 
-      </p>
-    </statement>
+    </p>
+  </statement>
 
-  </exercise>
-  <exercise>
-    <statement>
-      <p>
-        <md>
-          \begin{linsys}{5} \amp  \amp  \amp \amp  T_3\amp +\amp T_4\amp +\amp T_5 \amp =\amp 0\\ -T_1\amp -\amp T_2 \amp +\amp 2T_3 \amp -\amp 3T_4\amp +\amp T_5 \amp =\amp 0\\ T_1\amp + \amp T_2 \amp -\amp 2T_3 \amp \amp \amp -\amp T_5 \amp =\amp 0\\ 2T_1\amp + \amp 2T_2 \amp -\amp T_3 \amp \amp \amp +\amp T_5 \amp =\amp 0 \end{linsys}
-        </md>
+</exercise>
+<exercise>
+  <statement>
+    <p>
+      <md>
+        \begin{linsys}{5} \amp  \amp  \amp \amp  T_3\amp +\amp T_4\amp +\amp T_5 \amp =\amp 0\\ -T_1\amp -\amp T_2 \amp +\amp 2T_3 \amp -\amp 3T_4\amp +\amp T_5 \amp =\amp 0\\ T_1\amp + \amp T_2 \amp -\amp 2T_3 \amp \amp \amp -\amp T_5 \amp =\amp 0\\ 2T_1\amp + \amp 2T_2 \amp -\amp T_3 \amp \amp \amp +\amp T_5 \amp =\amp 0 \end{linsys}
+      </md>
 
-      </p>
-    </statement>
+    </p>
+  </statement>
 
-  </exercise>
+</exercise>
 
 </exercisegroup>
 

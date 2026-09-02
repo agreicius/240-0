@@ -144,11 +144,11 @@
         <dl>
           <li>
             <title>(iv)</title>
-            Any column of the matrix that contains a leading one has zeros elsewhere. In other words, if a column contains a leading one, then that is the only nonzero entry of that column.
+            <p>
+              Any column of the matrix that contains a leading one has zeros elsewhere. In other words, if a column contains a leading one, then that is the only nonzero entry of that column.
+            </p>
           </li>
         </dl>
-      </p>
-      <p>
       A linear system <m>L</m> is in <term>row echelon form</term> (resp. <term>reduced row echelon form</term>) if its augmented matrix is in row echelon form (resp. reduced row echelon form).
       </p>
     </statement>

@@ -133,28 +133,28 @@
       <statement>
         <p>
           Let <m>L</m> be a linear system in the unknowns <m>x_1,x_2,\dots, x_n</m>, and let <m>S</m> be the set of all solutions of <m>L</m>. We compute <m>S</m> as follows.
-        </p>
-        <dl>
+        
+        <ol>
           <li>
-            <title>Step 1</title>
+            
             <p>
               Apply Gaussian elimination to reduce <m>L</m> to an equivalent system <m>L'</m> in row echelon form.
             </p>
           </li>
           <li>
-            <title>Step 2</title>
+            
             <p>
               Let <m>U</m> be the augmented matrix associated to <m>L'</m>. If the last column of <m>U</m> has a leading one, then <m>L</m> is inconsistent: <ie />, <m>S=\{ \}</m> is the empty set. Otherwise, proceed to the next step.
             </p>
           </li>
           <li>
-            <title>Step 3</title>
+           
             <p>
               Determine which if any of the unknowns are free variables of <m>L'</m>.
             </p>
           </li>
           <li>
-            <title>Step 4</title>
+            
             <p>
               If there are no free variables, solve for each unknown using back-substitution. In this case, there is a unique solution to <m>L</m>: <ie />, <m>S=\{(s_1,s_2,\dots, s_n)\}</m> contains exactly one element.
             </p>
@@ -180,7 +180,8 @@
             where <m>t_1,t_2,\dots, t_s</m> are any real numbers.
           </p>
         </li>
-      </dl>
+      </ol>
+      </p>
     </statement>
   </algorithm>
   <proof>
@@ -330,24 +331,24 @@
     <statement>
       <p>Let <m>L</m> be a linear system of equations, let <m>L'</m> be an equivalent system in row reduced form, and let <m>U</m> be the augmented matrix associated to <m>L'</m>.</p>
       <p>The system <m>L</m> has either no solutions, exactly one solution, or infinitely many solutions. In more detail:
-    </p>
-    <ul type="i">
+    <ul>
       <li>
         <p>
-          If <m>U</m> has a leading one in its last column, then <m>L</m> has no solutions.
+          if <m>U</m> has a leading one in its last column, then <m>L</m> has no solutions.
         </p>
       </li>
       <li>
         <p>
-          If <m>U</m> does not have a leading one in its last column and <m>L'</m> has no free variables, then <m>L</m> has a unique solution.
+          if <m>U</m> does not have a leading one in its last column and <m>L'</m> has no free variables, then <m>L</m> has a unique solution;
         </p>
       </li>
       <li>
         <p>
-          If <m>U</m> does not have a leading one in its last column and <m>L'</m> has a free variable, then <m>L</m> has infinitely many solutions.
+          if <m>U</m> does not have a leading one in its last column and <m>L'</m> has a free variable, then <m>L</m> has infinitely many solutions.
         </p>
       </li>
     </ul>
+  </p>
   </statement>
 </corollary>
 <p>
@@ -422,7 +423,7 @@
   </md>.
  Using the vector space structure of <m>\R^5</m>, we can give yet another description of the general solution: 
  <md>
-  \boldx=(7,0,1,0,2)+s(-2,1,0,0,0)+t(-3,0,0,1,0), \ s,t\in \R
+  <mrow> \boldx\amp =(7,0,1,0,2)+s(-2,1,0,0,0)+t(-3,0,0,1,0) \amp  s,t\in \R</mrow>
  </md>.
  We will call this the <em>vector parametrization</em> description of the solution set. This description is obtained in steps by first breaking up the expression <m>(7-2s-3t, s, 1, t, 2)</m> into a constant vector plus a vector involving the parameters <m>s</m> and <m>t</m>, and then rewriting the latter as a linear combination of two vectors with <m>s</m> and <m>t</m> as the coefficients: 
  <md>
@@ -431,8 +432,8 @@
   <mrow> \amp =(7,0,1,0,2)+s(-2,1,0,0,0)+t(-3,0,0,1,0)</mrow>
  </md>.
  The solution set of any consistent linear system can be described in this manner. In general, given a consistent system in <m>n</m> unknowns with <m>k</m> free variables, the general solution of the system is given by a vector parametrization of the form  
- <md number="yes" xml:id="eq_vector_param">
-  (a_1,a_2,\dots, a_n)+t_1\boldv_1+t_2\boldv_2+\cdots +t_k\boldv_k
+ <md number="yes">
+  <mrow xml:id="eq_vector_param">(a_1,a_2,\dots, a_n)+t_1\boldv_1+t_2\boldv_2+\cdots +t_k\boldv_k \amp \amp t_i\in \R \text{ for all } 1\leq i\leq k</mrow>
  </md>.
  The vector parametrization <xref ref="eq_vector_param"/> leads to a useful geometric understanding of the set of solutions to a linear system. The point <m>P=(a_1,a_2,\dots, a_n)</m> can be thought of as a <em>particular solution</em> to the equation: the solution you obtain by choosing <m>t_1=t_2=\cdots =t_k=0</m> in <xref ref="eq_vector_param"/>. The general solution is then obtained by adding to the point <m>P</m> any linear combination of the vectors <m>\boldv_1,\boldv_2,\dots, \boldv_k</m>. 
 </p>
