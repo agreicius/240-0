@@ -841,10 +841,11 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 <dl class="description-list">
 <dt id="d_row_echelon-2-3-2-1">(iv)<div class="autopermalink" data-description="Item: (iv)"><a href="#d_row_echelon-2-3-2-1" title="Copy heading and permalink for Item: (iv)" aria-label="Copy heading and permalink for Item: (iv)">🔗</a></div>
 </dt>
-<dd> Any column of the matrix that contains a leading one has zeros elsewhere. In other words, if a column contains a leading one, then that is the only nonzero entry of that column.</dd>
+<dd><div class="para" id="d_row_echelon-2-3-2-1-2">Any column of the matrix that contains a leading one has zeros elsewhere. In other words, if a column contains a leading one, then that is the only nonzero entry of that column.<div class="autopermalink" data-description="Paragraph"><a href="#d_row_echelon-2-3-2-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></dd>
 </dl>
+<div class="para">A linear system <span class="process-math">\(L\)</span> is in <dfn class="terminology">row echelon form</dfn> (resp. <dfn class="terminology">reduced row echelon form</dfn>) if its augmented matrix is in row echelon form (resp. reduced row echelon form).</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#d_row_echelon-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="d_row_echelon-2-4">A linear system <span class="process-math">\(L\)</span> is in <dfn class="terminology">row echelon form</dfn> (resp. <dfn class="terminology">reduced row echelon form</dfn>) if its augmented matrix is in row echelon form (resp. reduced row echelon form).<div class="autopermalink" data-description="Paragraph"><a href="#d_row_echelon-2-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Definition 2.2.4: Row echelon form"><a href="#d_row_echelon" title="Copy heading and permalink for Definition 2.2.4: Row echelon form" aria-label="Copy heading and permalink for Definition 2.2.4: Row echelon form">🔗</a></div></article><div class="para logical" id="ss_ge_row_echelon-7">
 <div class="para">A matrix in row echelon form displays a staircase pattern of ones as illustrated in <a href="s_ge.html#fig_echelon" class="xref" data-knowl="./knowl/xref/fig_echelon.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 2.2.5">Figure 2.2.5</a>. <figure class="figure figure-like" id="fig_echelon"><div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="generated/latex-image/im_echelon.svg" role="img" class="contained" alt="Staircase pattern of row echelon form"></div>
@@ -959,8 +960,10 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 <article class="definition definition-like" id="d_rowops"><h4 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Elementary row operations on matrices.</span>
 </h4>
-<div class="para" id="d_rowops-8-1">An <dfn class="terminology">elementary row operation</dfn> is one of the three following types of matrix operations. Let <span class="process-math">\(A\)</span> be a given <span class="process-math">\(m\times n\)</span> matrix, and denote by <span class="process-math">\(r_i\)</span> the <span class="process-math">\(i\)</span>-th row of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#d_rowops-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <dl class="description-list">
+<div class="para logical" id="d_rowops-8-1">
+<div class="para">An <dfn class="terminology">elementary row operation</dfn> is one of the three following types of matrix operations. Let <span class="process-math">\(A\)</span> be a given <span class="process-math">\(m\times n\)</span> matrix, and denote by <span class="process-math">\(r_i\)</span> the <span class="process-math">\(i\)</span>-th row of <span class="process-math">\(A\text{.}\)</span>
+</div>
+<dl class="description-list">
 <dt id="d_row_scale">Scalar multplication<div class="autopermalink" data-description="Item: Scalar multplication"><a href="#d_row_scale" title="Copy heading and permalink for Item: Scalar multplication" aria-label="Copy heading and permalink for Item: Scalar multplication">🔗</a></div>
 </dt>
 <dd><div class="para" id="d_row_scale-2">Multiply a row by a <em class="emphasis">nonzero</em> number <span class="process-math">\(c\ne 0\text{:}\)</span> i.e., replace <span class="process-math">\(r_i\)</span> with <span class="process-math">\(c\,r_i\text{,}\)</span> the result of multiplying all entries of the row by <span class="process-math">\(c\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#d_row_scale-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -973,8 +976,10 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </dt>
 <dd><div class="para" id="d_row_add-2">Add a multiple of one row to another: i.e., replace <span class="process-math">\(r_i\)</span> with <span class="process-math">\(r_i+cr_j\)</span> for some <span class="process-math">\(c\text{,}\)</span> <span class="process-math">\(i\text{,}\)</span> and <span class="process-math">\(j\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#d_row_add-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></dd>
-</dl> <div class="para" id="d_rowops-8-3">The act of transforming a matrix using elementary row operations is called <dfn class="terminology">row reduction</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#d_rowops-8-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <div class="para" id="d_rowops-8-4">Two matrices are <dfn class="terminology">row equivalent</dfn> if the one can be obtained from the other by performing a finite sequence of elementary row operations.<div class="autopermalink" data-description="Paragraph"><a href="#d_rowops-8-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</dl>
+<div class="para">The act of transforming a matrix using elementary row operations is called <dfn class="terminology">row reduction</dfn>.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#d_rowops-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="d_rowops-8-2">Two matrices are <dfn class="terminology">row equivalent</dfn> if the one can be obtained from the other by performing a finite sequence of elementary row operations.<div class="autopermalink" data-description="Paragraph"><a href="#d_rowops-8-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Definition 2.2.7: Elementary row operations on matrices"><a href="#d_rowops" title="Copy heading and permalink for Definition 2.2.7: Elementary row operations on matrices" aria-label="Copy heading and permalink for Definition 2.2.7: Elementary row operations on matrices">🔗</a></div></article><article class="remark remark-like" id="rm_ge_notation"><h4 class="heading">
 <span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Row operation notation.</span>
@@ -999,26 +1004,29 @@ A\amp \xrightarrow{c\,r_i} B \amp A\amp \xrightarrow{r_i\leftrightarrow r_j} B\a
 <div class="autopermalink" data-description="Mantra 2.2.9: Gaussian elimination mantra"><a href="#princ_GE" title="Copy heading and permalink for Mantra 2.2.9: Gaussian elimination mantra" aria-label="Copy heading and permalink for Mantra 2.2.9: Gaussian elimination mantra">🔗</a></div></article><article class="algorithm theorem-like" id="proc_GE"><h4 class="heading">
 <span class="type">Procedure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Gaussian elimination.</span>
 </h4>
-<div class="para" id="proc_GE-3-1">
-<dfn class="terminology">Gaussian elimination</dfn> is the algorithm described below. It takes as an input a matrix <span class="process-math">\(A\)</span> and returns as an output a row equivalent matrix <span class="process-math">\(B\)</span> in row echelon form.<div class="autopermalink" data-description="Paragraph"><a href="#proc_GE-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <dl class="description-list">
-<dt id="proc_GE-3-2-1">Step 1<div class="autopermalink" data-description="Item: Step 1"><a href="#proc_GE-3-2-1" title="Copy heading and permalink for Item: Step 1" aria-label="Copy heading and permalink for Item: Step 1">🔗</a></div>
+<div class="para logical" id="proc_GE-3-1">
+<div class="para">
+<dfn class="terminology">Gaussian elimination</dfn> is the algorithm described below. It takes as an input a matrix <span class="process-math">\(A\)</span> and returns as an output a row equivalent matrix <span class="process-math">\(B\)</span> in row echelon form.</div>
+<dl class="description-list">
+<dt id="proc_GE-3-1-4-1">Step 1<div class="autopermalink" data-description="Item: Step 1"><a href="#proc_GE-3-1-4-1" title="Copy heading and permalink for Item: Step 1" aria-label="Copy heading and permalink for Item: Step 1">🔗</a></div>
 </dt>
-<dd><div class="para" id="proc_GE-3-2-1-2">Find the leftmost nonzero column and perform a row swap to move the row with this nonzero entry to the top of the matrix.<div class="autopermalink" data-description="Paragraph"><a href="#proc_GE-3-2-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<dd><div class="para" id="proc_GE-3-1-4-1-2">Find the leftmost nonzero column and perform a row swap to move the row with this nonzero entry to the top of the matrix.<div class="autopermalink" data-description="Paragraph"><a href="#proc_GE-3-1-4-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></dd>
-<dt id="proc_GE-3-2-2">Step 2<div class="autopermalink" data-description="Item: Step 2"><a href="#proc_GE-3-2-2" title="Copy heading and permalink for Item: Step 2" aria-label="Copy heading and permalink for Item: Step 2">🔗</a></div>
+<dt id="proc_GE-3-1-4-2">Step 2<div class="autopermalink" data-description="Item: Step 2"><a href="#proc_GE-3-1-4-2" title="Copy heading and permalink for Item: Step 2" aria-label="Copy heading and permalink for Item: Step 2">🔗</a></div>
 </dt>
-<dd><div class="para" id="proc_GE-3-2-2-2">Scale the new top row to produce a leading one in the row. Call this new row <span class="process-math">\(r\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#proc_GE-3-2-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<dd><div class="para" id="proc_GE-3-1-4-2-2">Scale the new top row to produce a leading one in the row. Call this new row <span class="process-math">\(r\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#proc_GE-3-1-4-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></dd>
-<dt id="proc_GE-3-2-3">Step 3<div class="autopermalink" data-description="Item: Step 3"><a href="#proc_GE-3-2-3" title="Copy heading and permalink for Item: Step 3" aria-label="Copy heading and permalink for Item: Step 3">🔗</a></div>
+<dt id="proc_GE-3-1-4-3">Step 3<div class="autopermalink" data-description="Item: Step 3"><a href="#proc_GE-3-1-4-3" title="Copy heading and permalink for Item: Step 3" aria-label="Copy heading and permalink for Item: Step 3">🔗</a></div>
 </dt>
-<dd><div class="para" id="proc_GE-3-2-3-2">For each row <span class="process-math">\(r_i\)</span> below <span class="process-math">\(r\)</span> perform a row operation of the form <span class="process-math">\(r_i+c\,r\)</span> to replace all entries below the leading one of <span class="process-math">\(r\)</span> with zeros.<div class="autopermalink" data-description="Paragraph"><a href="#proc_GE-3-2-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<dd><div class="para" id="proc_GE-3-1-4-3-2">For each row <span class="process-math">\(r_i\)</span> below <span class="process-math">\(r\)</span> perform a row operation of the form <span class="process-math">\(r_i+c\,r\)</span> to replace all entries below the leading one of <span class="process-math">\(r\)</span> with zeros.<div class="autopermalink" data-description="Paragraph"><a href="#proc_GE-3-1-4-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></dd>
-<dt id="proc_GE-3-2-4">Step 4<div class="autopermalink" data-description="Item: Step 4"><a href="#proc_GE-3-2-4" title="Copy heading and permalink for Item: Step 4" aria-label="Copy heading and permalink for Item: Step 4">🔗</a></div>
+<dt id="proc_GE-3-1-4-4">Step 4<div class="autopermalink" data-description="Item: Step 4"><a href="#proc_GE-3-1-4-4" title="Copy heading and permalink for Item: Step 4" aria-label="Copy heading and permalink for Item: Step 4">🔗</a></div>
 </dt>
-<dd><div class="para" id="proc_GE-3-2-4-2">Begin again with Step 1 applied to the matrix consisting of all rows below <span class="process-math">\(r\text{.}\)</span> Continue until the matrix is in row echelon form.<div class="autopermalink" data-description="Paragraph"><a href="#proc_GE-3-2-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<dd><div class="para" id="proc_GE-3-1-4-4-2">Begin again with Step 1 applied to the matrix consisting of all rows below <span class="process-math">\(r\text{.}\)</span> Continue until the matrix is in row echelon form.<div class="autopermalink" data-description="Paragraph"><a href="#proc_GE-3-1-4-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></dd>
 </dl>
+<div class="autopermalink" data-description="Paragraph"><a href="#proc_GE-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="autopermalink" data-description="Procedure 2.2.10: Gaussian elimination"><a href="#proc_GE" title="Copy heading and permalink for Procedure 2.2.10: Gaussian elimination" aria-label="Copy heading and permalink for Procedure 2.2.10: Gaussian elimination">🔗</a></div></article><section class="subsection" id="ss_gaussian_elimination-8"><h4 class="heading hide-type">
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Model example</span>
 </h4>
@@ -1099,22 +1107,25 @@ x_5\amp =\amp 2 \end{array}\text{,}
 <div class="autopermalink" data-description="Subsection: Model example"><a href="#ss_gaussian_elimination-8" title="Copy heading and permalink for Subsection: Model example" aria-label="Copy heading and permalink for Subsection: Model example">🔗</a></div></section><article class="algorithm theorem-like" id="proc_GaussJordan"><h4 class="heading">
 <span class="type">Procedure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Gauss-Jordan elimination.</span>
 </h4>
-<div class="para" id="proc_GaussJordan-2-1">
-<dfn class="terminology">Gauss-Jordan elimination</dfn> is the algorithm described below. It takes as an input a matrix <span class="process-math">\(A\)</span> and returns a row equivalent matrix <span class="process-math">\(B\)</span> in reduced row echelon form.<div class="autopermalink" data-description="Paragraph"><a href="#proc_GaussJordan-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> <dl class="description-list">
-<dt id="proc_GaussJordan-2-2-1">Steps 1-4<div class="autopermalink" data-description="Item: Steps 1-4"><a href="#proc_GaussJordan-2-2-1" title="Copy heading and permalink for Item: Steps 1-4" aria-label="Copy heading and permalink for Item: Steps 1-4">🔗</a></div>
+<div class="para logical" id="proc_GaussJordan-2-1">
+<div class="para">
+<dfn class="terminology">Gauss-Jordan elimination</dfn> is the algorithm described below. It takes as an input a matrix <span class="process-math">\(A\)</span> and returns a row equivalent matrix <span class="process-math">\(B\)</span> in reduced row echelon form.</div>
+<dl class="description-list">
+<dt id="proc_GaussJordan-2-1-4-1">Steps 1-4<div class="autopermalink" data-description="Item: Steps 1-4"><a href="#proc_GaussJordan-2-1-4-1" title="Copy heading and permalink for Item: Steps 1-4" aria-label="Copy heading and permalink for Item: Steps 1-4">🔗</a></div>
 </dt>
-<dd><div class="para" id="proc_GaussJordan-2-2-1-2">Apply Gaussian elimination to transform <span class="process-math">\(A\)</span> to a matrix in row echelon form.<div class="autopermalink" data-description="Paragraph"><a href="#proc_GaussJordan-2-2-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<dd><div class="para" id="proc_GaussJordan-2-1-4-1-2">Apply Gaussian elimination to transform <span class="process-math">\(A\)</span> to a matrix in row echelon form.<div class="autopermalink" data-description="Paragraph"><a href="#proc_GaussJordan-2-1-4-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></dd>
-<dt id="proc_GaussJordan-2-2-2">Step 5<div class="autopermalink" data-description="Item: Step 5"><a href="#proc_GaussJordan-2-2-2" title="Copy heading and permalink for Item: Step 5" aria-label="Copy heading and permalink for Item: Step 5">🔗</a></div>
+<dt id="proc_GaussJordan-2-1-4-2">Step 5<div class="autopermalink" data-description="Item: Step 5"><a href="#proc_GaussJordan-2-1-4-2" title="Copy heading and permalink for Item: Step 5" aria-label="Copy heading and permalink for Item: Step 5">🔗</a></div>
 </dt>
-<dd><div class="para" id="proc_GaussJordan-2-2-2-2">Find the rightmost column of the matrix containing a leading one. Let <span class="process-math">\(r_i\)</span> be the row containing this leading one. For each row <span class="process-math">\(r_j\)</span> above <span class="process-math">\(r_i\)</span> perform a row operation of the form <span class="process-math">\(r_i+c\,r_j\)</span> to replace all entries above the leading one with zeros.<div class="autopermalink" data-description="Paragraph"><a href="#proc_GaussJordan-2-2-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<dd><div class="para" id="proc_GaussJordan-2-1-4-2-2">Find the rightmost column of the matrix containing a leading one. Let <span class="process-math">\(r_i\)</span> be the row containing this leading one. For each row <span class="process-math">\(r_j\)</span> above <span class="process-math">\(r_i\)</span> perform a row operation of the form <span class="process-math">\(r_i+c\,r_j\)</span> to replace all entries above the leading one with zeros.<div class="autopermalink" data-description="Paragraph"><a href="#proc_GaussJordan-2-1-4-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></dd>
-<dt id="proc_GaussJordan-2-2-3">Step 6<div class="autopermalink" data-description="Item: Step 6"><a href="#proc_GaussJordan-2-2-3" title="Copy heading and permalink for Item: Step 6" aria-label="Copy heading and permalink for Item: Step 6">🔗</a></div>
+<dt id="proc_GaussJordan-2-1-4-3">Step 6<div class="autopermalink" data-description="Item: Step 6"><a href="#proc_GaussJordan-2-1-4-3" title="Copy heading and permalink for Item: Step 6" aria-label="Copy heading and permalink for Item: Step 6">🔗</a></div>
 </dt>
-<dd><div class="para" id="proc_GaussJordan-2-2-3-2">Begin again with Step 5 applied to the next column to the left that contains a leading one. Continue until the matrix is in reduced row echelon form.<div class="autopermalink" data-description="Paragraph"><a href="#proc_GaussJordan-2-2-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<dd><div class="para" id="proc_GaussJordan-2-1-4-3-2">Begin again with Step 5 applied to the next column to the left that contains a leading one. Continue until the matrix is in reduced row echelon form.<div class="autopermalink" data-description="Paragraph"><a href="#proc_GaussJordan-2-1-4-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></dd>
 </dl>
+<div class="autopermalink" data-description="Paragraph"><a href="#proc_GaussJordan-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="autopermalink" data-description="Procedure 2.2.12: Gauss-Jordan elimination"><a href="#proc_GaussJordan" title="Copy heading and permalink for Procedure 2.2.12: Gauss-Jordan elimination" aria-label="Copy heading and permalink for Procedure 2.2.12: Gauss-Jordan elimination">🔗</a></div></article><article class="example example-like" id="eg_model_rref"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Reduced row echelon form.</span>
 </h4>
@@ -1420,49 +1431,79 @@ A = \displaystyle\left[\begin{array}{rrr|r}
 <span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.2.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
 </h3>
 <article class="subexercises" id="s_ge_ex-1"><div class="exercisegroup" id="s_ge_ex-1-1">
-<h5 class="heading"><span class="title">Exercise Group.</span></h5>
-<div class="introduction" id="s_ge_ex-1-1-1"><div class="para" id="s_ge_ex-1-1-1-1">Explain why each of the following matrices fails to be in row echelon form.<div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<h5 class="heading"><span class="title">Echelon forms.</span></h5>
+<div class="introduction" id="s_ge_ex-1-1-2"><div class="para" id="s_ge_ex-1-1-2-1">For the given matrix, determine (a) whether it is in row echelon form, and (b) whether it is in reduced row echelon form. Justify your answer.<div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></div>
 <div class="exercisegroup-exercises">
-<article class="exercise exercise-like" id="s_ge_ex-1-1-2"><h6 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h6>
-<div class="para" id="s_ge_ex-1-1-2-1-1">
-<span class="process-math">\(A=\begin{bmatrix}
+<article class="exercise exercise-like" id="s_ge_ex-1-1-3"><h6 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h6>
+<div class="para" id="s_ge_ex-1-1-3-1-1">
+<span class="process-math">\(\begin{bmatrix}
 1 \amp 2\amp 2\amp -3\\
 0\amp -3\amp 4\amp 0\\
 0\amp 0\amp 0\amp 1
-\end{bmatrix}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+\end{bmatrix}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions"><details id="s_ge_ex-1-1-2-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
-<div class="para" id="s_ge_ex-1-1-2-2-1">The first nonzero term in the second row is not a one.<div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="solutions"><details id="s_ge_ex-1-1-3-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="s_ge_ex-1-1-3-2-1">(a) The matrix is not in row echelon form, since the first nonzero entry in the second row is not a one.<div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-1-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 2.2.4.1.1"><a href="#s_ge_ex-1-1-2-2" title="Copy heading and permalink for Solution 2.2.4.1.1" aria-label="Copy heading and permalink for Solution 2.2.4.1.1">🔗</a></div>
+<div class="para" id="s_ge_ex-1-1-3-2-2">(b) Since the matrix is not in row echelon form, it is definitely not in reduced row echelon form.<div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-1-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 2.2.4.1.1"><a href="#s_ge_ex-1-1-3-2" title="Copy heading and permalink for Solution 2.2.4.1.1" aria-label="Copy heading and permalink for Solution 2.2.4.1.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Exercise 2.2.4.1"><a href="#s_ge_ex-1-1-2" title="Copy heading and permalink for Exercise 2.2.4.1" aria-label="Copy heading and permalink for Exercise 2.2.4.1">🔗</a></div></article><article class="exercise exercise-like" id="s_ge_ex-1-1-3"><h6 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h6>
-<div class="para" id="s_ge_ex-1-1-3-1-1">
-<span class="process-math">\(A=\begin{bmatrix}
+<div class="autopermalink" data-description="Exercise 2.2.4.1"><a href="#s_ge_ex-1-1-3" title="Copy heading and permalink for Exercise 2.2.4.1" aria-label="Copy heading and permalink for Exercise 2.2.4.1">🔗</a></div></article><article class="exercise exercise-like" id="s_ge_ex-1-1-4"><h6 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h6>
+<div class="para" id="s_ge_ex-1-1-4-1-1">
+<span class="process-math">\(\begin{bmatrix}
+1\amp 0\amp 0\amp 0\\
+0\amp 1\amp 0\amp 0\\
+0\amp 0\amp 0\amp 1
+\end{bmatrix}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-1-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.2.4.2"><a href="#s_ge_ex-1-1-4" title="Copy heading and permalink for Exercise 2.2.4.2" aria-label="Copy heading and permalink for Exercise 2.2.4.2">🔗</a></div></article><article class="exercise exercise-like" id="s_ge_ex-1-1-5"><h6 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h6>
+<div class="para" id="s_ge_ex-1-1-5-1-1">
+<span class="process-math">\(\begin{bmatrix}
+1\amp 0\amp 0\amp 1\\
+0\amp 1\amp 0\amp 0\\
+0\amp 0\amp 0\amp 1
+\end{bmatrix}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-1-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.2.4.3"><a href="#s_ge_ex-1-1-5" title="Copy heading and permalink for Exercise 2.2.4.3" aria-label="Copy heading and permalink for Exercise 2.2.4.3">🔗</a></div></article><article class="exercise exercise-like" id="s_ge_ex-1-1-6"><h6 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h6>
+<div class="para" id="s_ge_ex-1-1-6-1-1">
+<span class="process-math">\(\begin{bmatrix}
 0\amp 1\amp 2\amp -3\\
 0\amp 1\amp 4\amp 0\\
 0\amp 0\amp 0\amp 1
-\end{bmatrix}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+\end{bmatrix}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-1-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 2.2.4.2"><a href="#s_ge_ex-1-1-3" title="Copy heading and permalink for Exercise 2.2.4.2" aria-label="Copy heading and permalink for Exercise 2.2.4.2">🔗</a></div></article><article class="exercise exercise-like" id="s_ge_ex-1-1-4"><h6 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h6>
-<div class="para" id="s_ge_ex-1-1-4-1-1">
-<span class="process-math">\(A=\begin{bmatrix}
+<div class="autopermalink" data-description="Exercise 2.2.4.4"><a href="#s_ge_ex-1-1-6" title="Copy heading and permalink for Exercise 2.2.4.4" aria-label="Copy heading and permalink for Exercise 2.2.4.4">🔗</a></div></article><article class="exercise exercise-like" id="s_ge_ex-1-1-7"><h6 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h6>
+<div class="para" id="s_ge_ex-1-1-7-1-1">
+<span class="process-math">\(\begin{bmatrix}
 1\amp 1\amp 2\amp -3\\
 0\amp 0\amp 0\amp 0\\
 0\amp 1\amp 1\amp 1
-\end{bmatrix}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-1-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+\end{bmatrix}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-1-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 2.2.4.3"><a href="#s_ge_ex-1-1-4" title="Copy heading and permalink for Exercise 2.2.4.3" aria-label="Copy heading and permalink for Exercise 2.2.4.3">🔗</a></div></article>
+<div class="autopermalink" data-description="Exercise 2.2.4.5"><a href="#s_ge_ex-1-1-7" title="Copy heading and permalink for Exercise 2.2.4.5" aria-label="Copy heading and permalink for Exercise 2.2.4.5">🔗</a></div></article><article class="exercise exercise-like" id="s_ge_ex-1-1-8"><h6 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h6>
+<div class="para" id="s_ge_ex-1-1-8-1-1">
+<span class="process-math">\(\begin{bmatrix}
+0\amp 1\amp 0\amp 0\\
+0\amp 0\amp 1\amp 1\\
+0\amp 1\amp 0\amp 1
+\end{bmatrix}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-1-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise Group 1–3"><a href="#s_ge_ex-1-1" title="Copy heading and permalink for Exercise Group 1–3" aria-label="Copy heading and permalink for Exercise Group 1–3">🔗</a></div>
+<div class="autopermalink" data-description="Exercise 2.2.4.6"><a href="#s_ge_ex-1-1-8" title="Copy heading and permalink for Exercise 2.2.4.6" aria-label="Copy heading and permalink for Exercise 2.2.4.6">🔗</a></div></article>
+</div>
+<div class="autopermalink" data-description="Exercise Group 1–6: Echelon forms"><a href="#s_ge_ex-1-1" title="Copy heading and permalink for Exercise Group 1–6: Echelon forms" aria-label="Copy heading and permalink for Exercise Group 1–6: Echelon forms">🔗</a></div>
 </div>
 <div class="exercisegroup" id="s_ge_ex-1-2">
-<h5 class="heading"><span class="title">Exercise Group.</span></h5>
-<div class="introduction" id="s_ge_ex-1-2-1"><div class="para" id="s_ge_ex-1-2-1-1">For each of the given linear systems, find an equivalent system in row echelon form. Use augmented matrices and follow the Gaussian elimination algorithm to the letter.<div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div></div>
+<h5 class="heading"><span class="title">Reducing linear systems.</span></h5>
+<div class="introduction" id="s_ge_ex-1-2-2">
+<div class="para" id="s_ge_ex-1-2-2-1">Using augmented matrices, (a) perform <a href="s_ge.html#proc_GE" class="xref" data-knowl="./knowl/xref/proc_GE.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 2.2.10: Gaussian elimination">Gaussian elimination</a> to find a row echelon form linear system equivalent to the given linear system, and (b) perform <a href="s_ge.html#proc_GaussJordan" class="xref" data-knowl="./knowl/xref/proc_GaussJordan.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 2.2.12: Gauss-Jordan elimination">Gauss-Jordan elimination</a> to find a reduced row echelon form linear system equivalent to the given linear system.<div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="s_ge_ex-1-2-2-2">Make sure to bring the system into standard form before associating to it an augmented matrix.<div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-2-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</div>
 <div class="exercisegroup-exercises">
-<article class="exercise exercise-like" id="s_ge_equivsys"><h6 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h6>
+<article class="exercise exercise-like" id="s_ge_equivsys"><h6 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h6>
 <div class="para logical" id="s_ge_equivsys-1-1">
 <div class="displaymath process-math" id="s_ge_equivsys-1-1-1">
 \begin{equation*}
@@ -1480,7 +1521,7 @@ L\colon \
 \begin{linsys}{4} x_1\amp +\amp 2x_2\amp -\amp x_3\amp-\amp x_4\amp=\amp 3\\ 3x_1\amp +\amp 6x_2\amp - \amp 2x_3\amp + \amp 4x_4\amp =\amp 8\\ -x_1\amp - \amp 2x_2 \amp +\amp 2x_3\amp + \amp x_4\amp = \amp -1 \end{linsys}\text{.}
 \end{equation*}
 </div>
-<div class="para">Then perform Gaussian elimination on the associated augmented matrix:</div>
+<div class="para">Now perform Gaussian elimination on the associated augmented matrix:</div>
 <div class="displaymath process-math" id="s_ge_equivsys-2-1-2">
 \begin{align*}
 \begin{bmatrix}1\amp 2\amp -1\amp -1\amp 3\\ 3\amp 6\amp -2\amp 4\amp 8\\ -1\amp -2\amp 2\amp 1\amp -1 \end{bmatrix} \amp \xrightarrow[\hspace{35pt}]{r_2-3r_1}\amp \begin{bmatrix}1\amp 2\amp -1\amp -1\amp 3\\ 0\amp 0\amp 1\amp 7\amp -1\\ -1\amp -2\amp 2\amp 1\amp -1 \end{bmatrix}\\
@@ -1496,51 +1537,131 @@ L'\colon \
 \begin{linsys}{4} x_1\amp +\amp 2x_2\amp -\amp x_3\amp-\amp x_4\amp=\amp 3\\  \amp \amp \amp \amp x_3\amp + \amp 7x_4\amp =\amp -1\\ \amp \amp \amp \amp \amp  \amp x_4\amp = \amp -\frac{3}{7} \end{linsys}\text{.}
 \end{equation*}
 </div>
+<div class="para">To get a system in reduced row echelon form, we continue row reducing the row echelon matrix above using Gauss-Jordan elimination, beginning by eliminating the nonzero entries above the rightmost leading one:</div>
+<div class="displaymath process-math" id="s_ge_equivsys-2-1-4">
+\begin{align*}
+\begin{bmatrix}1\amp 2\amp -1\amp -1\amp 3\\ 0\amp 0\amp 1\amp 7\amp -1\\ 0\amp 0\amp 0\amp 1\amp -\frac{3}{7} \end{bmatrix} \amp \xrightarrow[\hspace{35pt}]{r_2-7r_3} \amp \begin{bmatrix}1\amp 2\amp -1\amp -1\amp 3\\ 0\amp 0\amp 1\amp 0\amp 2 \\ 0\amp 0\amp 0\amp 1\amp -\frac{3}{7} \end{bmatrix} \\
+\amp \xrightarrow[\hspace{35pt}]{r_1+r_3} \amp \begin{bmatrix}1\amp 2\amp -1\amp 0\amp \frac{18}{7}\\ 0\amp 0\amp 1\amp 0\amp 2 \\ 0\amp 0\amp 0\amp 1\amp -\frac{3}{7} \end{bmatrix}\\
+\amp \xrightarrow[\hspace{35pt}]{r_1+r_2} \amp \begin{bmatrix}1\amp 2\amp 0\amp 0\amp \frac{32}{7}\\ 0\amp 0\amp 1\amp 0\amp 2 \\ 0\amp 0\amp 0\amp 1\amp -\frac{3}{7} \end{bmatrix}\text{.}
+\end{align*}
+</div>
+<div class="para">The corresponding equivalent system is</div>
+<div class="displaymath process-math" id="s_ge_equivsys-2-1-5">
+\begin{equation*}
+L''\colon \
+\begin{linsys}{4} x_1\amp +\amp 2x_2\amp \amp \amp \amp \amp =\amp \frac{32}{7}\\  \amp \amp \amp \amp x_3\amp \amp \amp =\amp 2\\ \amp \amp \amp \amp \amp  \amp x_4\amp = \amp -\frac{3}{7} \end{linsys}\text{.}
+\end{equation*}
+</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#s_ge_equivsys-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Solution 2.2.4.4.1"><a href="#s_ge_equivsys-2" title="Copy heading and permalink for Solution 2.2.4.4.1" aria-label="Copy heading and permalink for Solution 2.2.4.4.1">🔗</a></div>
+<div class="autopermalink" data-description="Solution 2.2.4.7.1"><a href="#s_ge_equivsys-2" title="Copy heading and permalink for Solution 2.2.4.7.1" aria-label="Copy heading and permalink for Solution 2.2.4.7.1">🔗</a></div>
 </div></details></div>
-<div class="autopermalink" data-description="Exercise 2.2.4.4"><a href="#s_ge_equivsys" title="Copy heading and permalink for Exercise 2.2.4.4" aria-label="Copy heading and permalink for Exercise 2.2.4.4">🔗</a></div></article><article class="exercise exercise-like" id="s_ge_ex-1-2-3"><h6 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h6>
-<div class="para logical" id="s_ge_ex-1-2-3-1-1">
-<div class="displaymath process-math" id="s_ge_ex-1-2-3-1-1-1">
+<div class="autopermalink" data-description="Exercise 2.2.4.7"><a href="#s_ge_equivsys" title="Copy heading and permalink for Exercise 2.2.4.7" aria-label="Copy heading and permalink for Exercise 2.2.4.7">🔗</a></div></article><article class="exercise exercise-like" id="s_ge_ex-1-2-4"><h6 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h6>
+<div class="para logical" id="s_ge_ex-1-2-4-1-1">
+<div class="displaymath process-math" id="s_ge_ex-1-2-4-1-1-1">
 \begin{equation*}
 \begin{linsys}{4} x_1\amp +\amp x_2\amp -\amp x_3\amp +\amp x_4\amp =\amp 1\\ -2x_1\amp -\amp 2x_2\amp +\amp 2x_3\amp -\amp 2x_4\amp =\amp -2\\ x_1\amp +\amp x_2\amp +\amp x_3\amp +\amp 2x_4\amp =\amp 3 \end{linsys}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-2-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-2-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 2.2.4.5"><a href="#s_ge_ex-1-2-3" title="Copy heading and permalink for Exercise 2.2.4.5" aria-label="Copy heading and permalink for Exercise 2.2.4.5">🔗</a></div></article><article class="exercise exercise-like" id="s_ge_ex-1-2-4"><h6 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h6>
-<div class="para logical" id="s_ge_ex-1-2-4-1-1">
-<div class="displaymath process-math" id="s_ge_ex-1-2-4-1-1-1">
+<div class="autopermalink" data-description="Exercise 2.2.4.8"><a href="#s_ge_ex-1-2-4" title="Copy heading and permalink for Exercise 2.2.4.8" aria-label="Copy heading and permalink for Exercise 2.2.4.8">🔗</a></div></article><article class="exercise exercise-like" id="s_ge_ex-1-2-5"><h6 class="heading"><span class="codenumber">9<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h6>
+<div class="para logical" id="s_ge_ex-1-2-5-1-1">
+<div class="displaymath process-math" id="s_ge_ex-1-2-5-1-1-1">
+\begin{align*}
+y_1-7y_2+6y_4 \amp = 5\\
+y_3-2y_4\amp = -3 \\
+-y_1+7y_2-4y_3+2y_4\amp =7
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-2-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.2.4.9"><a href="#s_ge_ex-1-2-5" title="Copy heading and permalink for Exercise 2.2.4.9" aria-label="Copy heading and permalink for Exercise 2.2.4.9">🔗</a></div></article><article class="exercise exercise-like" id="s_ge_ex-1-2-6"><h6 class="heading"><span class="codenumber">10<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h6>
+<div class="para logical" id="s_ge_ex-1-2-6-1-1">
+<div class="displaymath process-math" id="s_ge_ex-1-2-6-1-1-1">
 \begin{equation*}
 \begin{linsys}{3} 2x_1 \amp +\amp  2x_2  \amp +\amp 2x_3\amp =\amp 0\\ -2x_1 \amp +\amp  5x_2 \amp +\amp 2x_3\amp =\amp 1\\ 8x_1 \amp +\amp   x_2   \amp +\amp 4x_3\amp =\amp -1 \end{linsys}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-2-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-2-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 2.2.4.6"><a href="#s_ge_ex-1-2-4" title="Copy heading and permalink for Exercise 2.2.4.6" aria-label="Copy heading and permalink for Exercise 2.2.4.6">🔗</a></div></article><article class="exercise exercise-like" id="s_ge_ex-1-2-5"><h6 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h6>
-<div class="para logical" id="s_ge_ex-1-2-5-1-1">
-<div class="displaymath process-math" id="s_ge_ex-1-2-5-1-1-1">
+<div class="autopermalink" data-description="Exercise 2.2.4.10"><a href="#s_ge_ex-1-2-6" title="Copy heading and permalink for Exercise 2.2.4.10" aria-label="Copy heading and permalink for Exercise 2.2.4.10">🔗</a></div></article><article class="exercise exercise-like" id="s_ge_ex-1-2-7"><h6 class="heading"><span class="codenumber">11<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h6>
+<div class="para logical" id="s_ge_ex-1-2-7-1-1">
+<div class="displaymath process-math" id="s_ge_ex-1-2-7-1-1-1">
 \begin{equation*}
 \begin{linsys}{3} \amp \amp -2b  \amp +\amp 3c\amp =\amp 1\\ 3a \amp +\amp  6b \amp -\amp 3c\amp =\amp -2\\ 6a \amp +\amp   6b   \amp +\amp 3c\amp =\amp 5 \end{linsys}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-2-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-2-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 2.2.4.7"><a href="#s_ge_ex-1-2-5" title="Copy heading and permalink for Exercise 2.2.4.7" aria-label="Copy heading and permalink for Exercise 2.2.4.7">🔗</a></div></article><article class="exercise exercise-like" id="s_ge_ex-1-2-6"><h6 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h6>
-<div class="para logical" id="s_ge_ex-1-2-6-1-1">
-<div class="displaymath process-math" id="s_ge_ex-1-2-6-1-1-1">
+<div class="autopermalink" data-description="Exercise 2.2.4.11"><a href="#s_ge_ex-1-2-7" title="Copy heading and permalink for Exercise 2.2.4.11" aria-label="Copy heading and permalink for Exercise 2.2.4.11">🔗</a></div></article><article class="exercise exercise-like" id="s_ge_ex-1-2-8"><h6 class="heading"><span class="codenumber">12<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h6>
+<div class="para logical" id="s_ge_ex-1-2-8-1-1">
+<div class="displaymath process-math" id="s_ge_ex-1-2-8-1-1-1">
 \begin{equation*}
 \begin{linsys}{5} \amp  \amp  \amp \amp  T_3\amp +\amp T_4\amp +\amp T_5 \amp =\amp 0\\ -T_1\amp -\amp T_2 \amp +\amp 2T_3 \amp -\amp 3T_4\amp +\amp T_5 \amp =\amp 0\\ T_1\amp + \amp T_2 \amp -\amp 2T_3 \amp \amp \amp -\amp T_5 \amp =\amp 0\\ 2T_1\amp + \amp 2T_2 \amp -\amp T_3 \amp \amp \amp +\amp T_5 \amp =\amp 0 \end{linsys}
 \end{equation*}
 </div>
-<div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-2-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-2-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Exercise 2.2.4.8"><a href="#s_ge_ex-1-2-6" title="Copy heading and permalink for Exercise 2.2.4.8" aria-label="Copy heading and permalink for Exercise 2.2.4.8">🔗</a></div></article>
+<div class="autopermalink" data-description="Exercise 2.2.4.12"><a href="#s_ge_ex-1-2-8" title="Copy heading and permalink for Exercise 2.2.4.12" aria-label="Copy heading and permalink for Exercise 2.2.4.12">🔗</a></div></article>
 </div>
-<div class="autopermalink" data-description="Exercise Group 4–8"><a href="#s_ge_ex-1-2" title="Copy heading and permalink for Exercise Group 4–8" aria-label="Copy heading and permalink for Exercise Group 4–8">🔗</a></div>
+<div class="autopermalink" data-description="Exercise Group 7–12: Reducing linear systems"><a href="#s_ge_ex-1-2" title="Copy heading and permalink for Exercise Group 7–12: Reducing linear systems" aria-label="Copy heading and permalink for Exercise Group 7–12: Reducing linear systems">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Subexercises"><a href="#s_ge_ex-1" title="Copy heading and permalink for Subexercises" aria-label="Copy heading and permalink for Subexercises">🔗</a></div></article><div class="autopermalink" data-description="Exercises 2.2.4"><a href="#s_ge_ex" title="Copy heading and permalink for Exercises 2.2.4" aria-label="Copy heading and permalink for Exercises 2.2.4">🔗</a></div></section><div class="autopermalink" data-description="Section 2.2: Gaussian elimination"><a href="#s_ge" title="Copy heading and permalink for Section 2.2: Gaussian elimination" aria-label="Copy heading and permalink for Section 2.2: Gaussian elimination">🔗</a></div></section></div>
+<article class="exercise exercise-like" id="s_ge_ex-1-3"><h5 class="heading">
+<span class="codenumber">13<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">True or false.</span>
+</h5>
+<div class="para logical" id="s_ge_ex-1-3-2-1">
+<div class="para">If true, provide a proof; if false, provide an explicit counterexample.</div>
+<ol class="lower-alpha ol-marker-4" id="s_ge_ex-1-3-2-1-1">
+<li id="s_ge_ex-1-3-2-1-1-1">
+<div class="para" id="s_ge_ex-1-3-2-1-1-1-1">The augmented matrix associate to a system of <span class="process-math">\(m\)</span> linear equations in <span class="process-math">\(n\)</span> unknowns is <span class="process-math">\(n\times m\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-3-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.4.13.a"><a href="#s_ge_ex-1-3-2-1-1-1" title="Copy heading and permalink for Item 2.2.4.13.a" aria-label="Copy heading and permalink for Item 2.2.4.13.a">🔗</a></div>
+</li>
+<li id="s_ge_ex-1-3-2-1-1-2">
+<div class="para" id="s_ge_ex-1-3-2-1-1-2-1">The augmented matrix associate to a system of <span class="process-math">\(m\)</span> linear equations in <span class="process-math">\(n\)</span> unknowns is <span class="process-math">\(m\times n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-3-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.4.13.b"><a href="#s_ge_ex-1-3-2-1-1-2" title="Copy heading and permalink for Item 2.2.4.13.b" aria-label="Copy heading and permalink for Item 2.2.4.13.b">🔗</a></div>
+</li>
+<li id="s_ge_ex-1-3-2-1-1-3">
+<div class="para" id="s_ge_ex-1-3-2-1-1-3-1">Given a matrix <span class="process-math">\(A\text{,}\)</span> there is a matrix <span class="process-math">\(B\)</span> in row echelon form that is row equivalent to <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-3-2-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.4.13.c"><a href="#s_ge_ex-1-3-2-1-1-3" title="Copy heading and permalink for Item 2.2.4.13.c" aria-label="Copy heading and permalink for Item 2.2.4.13.c">🔗</a></div>
+</li>
+<li id="s_ge_ex-1-3-2-1-1-4">
+<div class="para" id="s_ge_ex-1-3-2-1-1-4-1">Given a matrix <span class="process-math">\(A\text{,}\)</span> there is a <em class="emphasis">unique</em> matrix <span class="process-math">\(B\)</span> in row echelon form that is row equivalent to <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-3-2-1-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.4.13.d"><a href="#s_ge_ex-1-3-2-1-1-4" title="Copy heading and permalink for Item 2.2.4.13.d" aria-label="Copy heading and permalink for Item 2.2.4.13.d">🔗</a></div>
+</li>
+<li id="s_ge_ex-1-3-2-1-1-5">
+<div class="para" id="s_ge_ex-1-3-2-1-1-5-1">An <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\)</span> is row echelon form can have at most <span class="process-math">\(m\)</span> leading ones.<div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-3-2-1-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.4.13.e"><a href="#s_ge_ex-1-3-2-1-1-5" title="Copy heading and permalink for Item 2.2.4.13.e" aria-label="Copy heading and permalink for Item 2.2.4.13.e">🔗</a></div>
+</li>
+<li id="s_ge_ex-1-3-2-1-1-6">
+<div class="para" id="s_ge_ex-1-3-2-1-1-6-1">An <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\)</span> is row echelon form can have at most <span class="process-math">\(n\)</span> leading ones.<div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-3-2-1-1-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.4.13.f"><a href="#s_ge_ex-1-3-2-1-1-6" title="Copy heading and permalink for Item 2.2.4.13.f" aria-label="Copy heading and permalink for Item 2.2.4.13.f">🔗</a></div>
+</li>
+<li id="s_ge_ex-1-3-2-1-1-7">
+<div class="para" id="s_ge_ex-1-3-2-1-1-7-1">An <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\)</span> is row echelon form can have at most <span class="process-math">\(\min\{m,n\}\)</span> leading ones.<div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-3-2-1-1-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.4.13.g"><a href="#s_ge_ex-1-3-2-1-1-7" title="Copy heading and permalink for Item 2.2.4.13.g" aria-label="Copy heading and permalink for Item 2.2.4.13.g">🔗</a></div>
+</li>
+<li id="s_ge_ex-1-3-2-1-1-8">
+<div class="para" id="s_ge_ex-1-3-2-1-1-8-1">If every column of a matrix in row echelon form contains a leading one, then all entries that are not leading ones are equal to zero.<div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-3-2-1-1-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.4.13.h"><a href="#s_ge_ex-1-3-2-1-1-8" title="Copy heading and permalink for Item 2.2.4.13.h" aria-label="Copy heading and permalink for Item 2.2.4.13.h">🔗</a></div>
+</li>
+<li id="s_ge_ex-1-3-2-1-1-9">
+<div class="para" id="s_ge_ex-1-3-2-1-1-9-1">If every column of a matrix in reduced row echelon form contains a leading one, then all entries that are not leading ones are equal to zero.<div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-3-2-1-1-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2.2.4.13.i"><a href="#s_ge_ex-1-3-2-1-1-9" title="Copy heading and permalink for Item 2.2.4.13.i" aria-label="Copy heading and permalink for Item 2.2.4.13.i">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#s_ge_ex-1-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 2.2.4.13: True or false"><a href="#s_ge_ex-1-3" title="Copy heading and permalink for Exercise 2.2.4.13: True or false" aria-label="Copy heading and permalink for Exercise 2.2.4.13: True or false">🔗</a></div></article><div class="autopermalink" data-description="Subexercises"><a href="#s_ge_ex-1" title="Copy heading and permalink for Subexercises" aria-label="Copy heading and permalink for Subexercises">🔗</a></div></article><div class="autopermalink" data-description="Exercises 2.2.4"><a href="#s_ge_ex" title="Copy heading and permalink for Exercises 2.2.4" aria-label="Copy heading and permalink for Exercises 2.2.4">🔗</a></div></section><div class="autopermalink" data-description="Section 2.2: Gaussian elimination"><a href="#s_ge" title="Copy heading and permalink for Section 2.2: Gaussian elimination" aria-label="Copy heading and permalink for Section 2.2: Gaussian elimination">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="s_systems.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_solving.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
