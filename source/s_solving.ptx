@@ -71,18 +71,25 @@
     \amp \amp \amp \amp x_3\amp-\amp \amp \amp \frac{7}{2}x_5\amp =\amp -6\\
     \amp \amp \amp \amp \amp \amp \amp \amp  x_5\amp =\amp 2 \end{array}
     </md>.
-    The free variables of <m>L'</m> are <m>x_2</m> and <m>x_4</m>; the leading variables are <m>x_1, x_3</m>, and <m>x_5</m>. Observe that if we assign <m>x_2=s</m> and <m>x_4=t</m>, where <m>r</m> and <m>s</m> are any real numbers, then we are left with a system <m>L''</m> in three unknowns (<m>x_1,x_3,x_5</m>) of the form
+    The free variables of <m>L'</m> are <m>x_2</m> and <m>x_4</m>; the leading variables are <m>x_1, x_3</m>, and <m>x_5</m>. 
+  </p>
+  <p>
+    Starting with the last equation and working our way backwards   we can express each <em>leading variable</em> <m>x_i</m> (<m>i=1,3,5</m>) in terms of the of the <em>free variables</em> <m>x_2</m> and <m>x_4</m> (and possibly a constant): 
     <md>
-    \begin{array}{rcrcrcl} x_1\amp-\amp 5x_3\amp+\amp 6x_5\amp= \amp 14-2s-3t\\
-     \amp \amp x_3\amp -\amp \frac{7}{2}x_5\amp = \amp -6\\
-     \amp \amp  \amp \amp x_5\amp =\amp 2 
-      \end{array}
-      </md>.
-      Using back-substitution, we see that the unknowns <m>x_1, x_3, x_5</m> are then uniquely expressed in terms of <m>s</m> and <m>t</m> as
-      <md number="yes" xml:id="ex_modelSolve">
-        x_5=2, x_3=1, x_1=7-2s-3t.
-      </md>
-      Thus for any choice of real numbers <m>s</m> and <m>t</m> we get a unique solution of the form
+      <mrow>x_5 \amp = 2</mrow>
+      <mrow>x_3 \amp = -6+\tfrac{7}{2}x_5=1</mrow>
+      <mrow>x_1 \amp = 14-2x_2-3x_4-6x_5=7-2x_2-3x_4</mrow>
+    </md>.
+    It follows that <em>any</em> assignment of values to the free variables of the form 
+    <md>
+      <mrow>x_2\amp =s, x_4=t \amp s,t\amp \in \R</mrow>
+    </md>
+    extends to a <em>unique</em> solution of <m>L'</m> of the form 
+    <md>
+      <mrow>\text{Free variables}\amp \colon\amp  x_2\amp =s, x_4=t </mrow>
+      <mrow>\text{Leading variables}\amp \colon \amp  x_1\amp =7-2s-3t, x_3=1, x_5=2</mrow>
+    </md>.
+     Thus for any choice of real numbers <m>s</m> and <m>t</m> we get a unique solution of the form
       <md>
       (x_1,x_2,x_3,x_4,x_5)=(7-2s-3t, s, 1, t, 2)
       </md>.
@@ -90,9 +97,9 @@
       <md number="yes" xml:id="eq_setnotation">
         S=\left\{(7-2s-3t, s, 1, t, 2)\colon s, t\in\R\right\}.
       </md>
-      Alternatively, we can describe the solutions to <m>L</m> with the <em>parametric equations</em>
-      <md number="yes" xml:id="eq_parametric">
-        x_1=7-2s-3t, x_2=s, x_3=1, x_4=t, x_5=2, \ t,s\in\R
+      Alternatively, we can give a <em>parametric equations</em> description of the solutions to <m>L</m>:
+      <md number="yes">
+       <mrow xml:id="eq_parametric"> x_1\amp =7-2s-3t, x_2=s, x_3=1, x_4=t, x_5=2 \amp t,s\in\R </mrow>
       </md>.
     </p>
 </example>
@@ -101,7 +108,7 @@
       <title>Mandate</title>
       <idx><h>parametric equations</h></idx>
         <p>
-          Get used to describing solutions to linear systems using either the set notation format of <xref ref="eq_setnotation"/> or the parametric equation format of <xref ref="eq_parametric"/>.
+          Get used to describing solutions to linear systems using either the set notation form of <xref ref="eq_setnotation"/> or the parametric equation form of <xref ref="eq_parametric"/>.
         </p>
         <p>
           Note also the distinct roles played by free and leading variables in the description of solutions. We assign each free variable <em>freely</em> to any choice of real parameters (<m>s</m> and <m>t</m> in our example), and then solve for the leading variables in terms of these parameters in a unique manner. In particular, the leading variables are completely determined by our assignment of free variables.
@@ -111,21 +118,7 @@
   <subsection xml:id="ss_solveSystem">
     <title>General method for solving linear systems</title>
     <p>
-      Before describing a precise algorithm for computing the set of solutions to a linear system, we must address the possibility that there are no solutions to the system whatsoever. Such a system is called <em>inconsistent</em>.
-    </p>
-    <definition xml:id="d_consistent">
-      <title>Consistent and inconsistent systems</title>
-      <idx><h>consistent</h></idx>
-      <idx><h>inconsistent</h></idx>
-      <statement>
-        <p>
-          A linear system is <term>consistent</term> if it has at least one solution; it is <term>inconsistent</term> if it has no solutions.
-        </p>
-      </statement>
-    </definition>
-    <p>
-      We are now in a position to describe an algorithm for computing the set of solutions of a linear system.
-
+      The procedure used in <xref ref="eg_solving_system"/> is easily generalized to yield a systematic method for finding all solutions to a linear system. In a nutshell we proceed as follows: reduce the system to one in row echelon form, sort the unknowns into free and leading variables, express the leading variables in terms of the free variables, assign any real values to each free variable and determine the corresponding values of the leading variables. <xref ref="proc_solveSystem"/> provides a more precise description, as well as a proof that the method is valid. 
     </p>
     <algorithm xml:id="proc_solveSystem">
       <title>Solving linear systems</title>
@@ -136,48 +129,49 @@
         
         <ol>
           <li>
-            
+            <title>Gaussian elimination</title>  
             <p>
-              Apply Gaussian elimination to reduce <m>L</m> to an equivalent system <m>L'</m> in row echelon form.
+              Apply Gaussian elimination to reduce <m>L</m> to an equivalent system <m>L'</m> in row echelon form with augmented matrix <m>U</m>. 
             </p>
           </li>
           <li>
-            
+            <title>No solutions</title>
             <p>
-              Let <m>U</m> be the augmented matrix associated to <m>L'</m>. If the last column of <m>U</m> has a leading one, then <m>L</m> is inconsistent: <ie />, <m>S=\{ \}</m> is the empty set. Otherwise, proceed to the next step.
+               If the last column of <m>U</m> has a leading one, then <m>L</m> is inconsistent: <ie />, <m>S=\{ \}</m> is the empty set. Otherwise, proceed to the next step.
             </p>
           </li>
           <li>
-           
+           <title>Sort variables</title>
             <p>
-              Determine which if any of the unknowns are free variables of <m>L'</m>.
+              Determine which of the unknowns are leading variables and which are free variables by applying <xref ref="d_free-leading"/> to <m>L'</m>. 
+            </p>
+          </li>
+            <li>
+            <title>Unique solution</title>
+            <p>
+              If there are no free variables, solve for each unknown starting with the last equation and working backwards  . In this case there is a unique solution to <m>L</m>.
             </p>
           </li>
           <li>
-            
+          <title>Infinite solutions</title>
             <p>
-              If there are no free variables, solve for each unknown using back-substitution. In this case, there is a unique solution to <m>L</m>: <ie />, <m>S=\{(s_1,s_2,\dots, s_n)\}</m> contains exactly one element.
-            </p>
-            <p>
-              Otherwise, let <m>x_{i_1}, x_{i_2},\dots , x_{i_r}</m> be the leading variables of <m>L'</m>, and let <m>x_{j_1},x_{j_2},\dots, x_{j_s}</m> be the free variables. Back-substitution allows us to express each leading variable in terms of the free variables. In other words, we can write
+              Otherwise, let <m>x_{i_1}, x_{i_2},\dots , x_{i_r}</m> be the leading variables of <m>L'</m>, and let <m>x_{j_1},x_{j_2},\dots, x_{j_s}</m> be the free variables. Starting with the last nonzero equation and working backwards  , express the leading variables as functions <m>x_{i_k}=F_k(x_{j_1},x_{j_2},\dots, x_{j_s})</m> of the free variables: 
               <md>
-              <mrow> x_{i_1}\amp=F_1(x_{j_1},x_{j_2},\dots, x_{j_s}) </mrow>
-              <mrow> x_{i_2}\amp =F_2(x_{j_1},x_{j_2},\dots, x_{j_s}) </mrow>
+              <mrow> x_{i_r}\amp=F_r(x_{j_1},x_{j_2},\dots, x_{j_s}) </mrow>
+              <mrow> x_{i_{r-1}}\amp =F_{r-1}(x_{j_1},x_{j_2},\dots, x_{j_s}) </mrow>
               <mrow>  \vdots \amp </mrow>
-              <mrow> x_{i_r} \amp =F_s(x_{j_1},x_{j_2},\dots, x_{j_s})
+              <mrow> x_{i_1} \amp =F_1(x_{j_1},x_{j_2},\dots, x_{j_s})
               </mrow>
-              </md>,
-            where each <m>F_i(x_{j_1},x_{j_2},\dots, x_{j_s})</m> is a linear expression in the free variables.
-            Each solution of <m>L</m> thus corresponds to a <em>unique</em> variable assignment of the form
-            <md>
-            <mrow>\text{Free variables: } x_{j_1}\amp=t_{1}, \ x_{j_2}=t_{2},\dots, x_{j_s}=t_{s}</mrow>
-            <mrow> \text{Leading variables: } x_{i_1}\amp =F_1(t_1,t_2,\dots, t_s) </mrow>
-            <mrow> x_{i_2}\amp =F_2(t_1,t_2,\dots, t_s) </mrow>
-            <mrow>  \vdots \amp </mrow>
-            <mrow> x_{i_r} \amp =F_s(t_1,t_2,\dots, t_s)
-            </mrow>
+              </md>.
+            Each solution of <m>L</m> corresponds to a <em>unique</em> assignment of values to the free variables. In more detail, for each choice of assignments 
+            <md number="yes">
+              <mrow xml:id="eq_assign_free"> x_{j_1}\amp=t_{1}, \ x_{j_2}=t_{2},\dots, x_{j_s}=t_{s} \amp t_i\in \R </mrow>
             </md>,
-            where <m>t_1,t_2,\dots, t_s</m> are any real numbers.
+            we get the corresponding solution to <m>L'</m> described parametrically as follows:
+            <md number="yes">
+            <mrow xml:id="eq_assign_free_sol">\text{Free variables}\amp \colon \amp  x_{j_1}\amp =t_{1}, x_{j_2}=t_{2},\dots, x_{j_s}=t_{s}</mrow>
+            <mrow xml:id="eq_determine_lead"> \text{Leading variables}\amp \colon \amp  x_{i_1}\amp=F_1(t_1,\dots, t_s), x_{i_2} =F_2(t_1,\dots, t_s), \dots, x_{i_r}=F_r(t_1,\dots, t_s) </mrow>
+            </md>.
           </p>
         </li>
       </ol>
@@ -198,63 +192,217 @@
     <p>
       Suppose now that the last column of <m>U</m> does not have a leading one.
     </p>
-    <case>
-      <title>Case 1: no free variables</title>
-      <statement>
-        <p>
-          Suppose in Step 3 you determine that there are no free variables. Then each of the first <m>n</m> columns of <m>U</m> has a leading one in it. If follows that for each <m>1\leq i \leq n</m> the <m>i</m>-th equation of <m>L'</m> is of the form
-          <md number="yes" xml:id="eq_solving_case1eq">
-            x_i+c_{i,i+1}x_{i+1}+\cdots c_{i,n}x_n=b_i.
-          </md>
-          Since <m>U</m> does not have a leading one in the last column, it follows that all equations beyond the <m>n</m>-th equation are of the form
-          <m>0x_1+0x_2+\cdots 0x_n=0</m>, and as such may be disregarded since they are satisfied by any choice of the <m>x_i</m>.
-          The remaining system of <m>n</m> equations in <m>n</m> unknowns can be solved by back-substitution, yielding a <em>unique</em> solution <m>(x_1,x_2,\dots, x_n)</m> of the form
-          <md>
+    <p>
+      Consider first the case where there are no free variables, so that <m>x_1,x_2,\dots, x_n</m> are all leading variables. It follows that, starting at the <m>n</m>-th equation of <m>L'</m>, we have equations of the form 
+      <md>
+        <mrow>x_n \amp = b_n</mrow>
+        <mrow>x_{n-1}+c_{n-1, n}x_n \amp =b_{n-1}</mrow>
+        <mrow> \amp \vdots </mrow>
+        <mrow>x_1+c_{1,2}x_2+\cdots +c_{1,n}x_n \amp =b_1</mrow>
+      </md>
+      and that all other equations of <m>L'</m> are of the form
+          <m>0x_1+0x_2+\cdots 0x_n=0</m>, and as such may be disregarded since they are satisfied by any choice of the <m>x_i</m>. Starting with the last equation <m>x_n=b_n</m> and working backwards to solve for each previous variable, it is clear that there is a unique choice of assignments to the variables <m>x_1,x_2,\dots x_n</m> yielding a solution. Indeed, we have 
+           <md>
           <mrow> x_n \amp =b_n </mrow>
           <mrow>  x_{n-1}\amp =b_{n-1}-c_{n-1,n}x_n=b_{n-1}-c_{n-1,n}b_n </mrow>
           <mrow>  x_{n-2}\amp = b_{n-2}-c_{n-2,n}x_{n}-c_{n-2,n-1}x_{n-1}</mrow>
-          <mrow>  \amp =b_{n-2}-c_{n-2,n}b_n-c_{n-2,n-1}(b_{n-1}-c_{n-1,n}b_n)</mrow>
-          <mrow>  \amp \vdots </mrow>
-          </md>
-          Do not concern yourself overly with the exact formulas. The important point here is that once we know there is a unique assignment of the variables <m>x_n, x_{n-1},\dots, x_{i+1}</m> that satisfies the system, <xref ref="eq_solving_case1eq"/> allows us to solve for <m>x_i</m> in terms of the the <m>x_j</m>, <m>j>i</m>. As such working our way up from the last equation, we find there is a unique solution to the system.
-        </p>
-      </statement>
-    </case>
-    <case>
-      <title>Case 2: free variables</title>
-      <p>
-        Suppose now that <m>x_{i_1}, x_{i_2},\dots , x_{i_r}</m> are the leading variables of <m>L'</m>, and <m>x_{j_1}, x_{j_2},\dots, x_{j_s}</m> are the free variables. Again, since <m>U</m> does not have a leading one in the last column, there are exactly <m>r</m> nonzero equations in <m>L'</m>: one for each leading variable. After bringing any terms involving free variables to the right, the <m>k</m>-th such equation takes the form
+          </md>,
+          and so on down to <m>x_1</m>. This intuitive argument can be made rigorous using a simple induction argument summarized as follows: assume we have shown that we must have  <m>x_{i+1}=s_{i+1}, x_{i+2}=s_{i+2},\dots, x_{n}=s_{n}</m> for some unique values <m>s_{i+1},\dots, s_{n}</m>; then <m>x_i</m> is uniquely determined as 
+          <md>
+
+            <mrow>x_i\amp=b_i-c_{i,i+1}x_{i+1}-c_{i,i+2}x_{i+2}-\cdots -c_{i,n}x_{n}</mrow>
+            <mrow>\amp =b_i-c_{i,i+1}s_{i+1}-c_{i,i+2}s_{i+2}-\cdots -c_{i,n}s_{n}=s_i</mrow>
+          </md>.
+        Suppose now that there are free variables, let <m>x_{i_1}, x_{i_2},\dots , x_{i_r}</m> be the leading variables of <m>L'</m>, and let <m>x_{j_1}, x_{j_2},\dots, x_{j_s}</m> be the free variables. Again, since <m>U</m> does not have a leading one in the last column, there are exactly <m>r</m> nonzero equations in <m>L'</m>: one for each leading variable. After bringing any terms involving free variables to the right, the <m>k</m>-th such equation takes the form
         <md>
-        x_{i_k}+c_{k,k+1}x_{i_{k+1}}+\cdots c_{k,r}x_{i_{r}}=d_k-G_k(x_{j_1},x_{j_2},\dots, x_{j_s})
-        </md>. As in the previous case, back-substitution now allows us to solve for each leading variable as a function of the free variables:
+        x_{i_k}+c_{k,k+1}x_{i_{k+1}}+\cdots c_{k,r}x_{i_{r}}=d_k+G_k(x_{j_1},x_{j_2},\dots, x_{j_s})
+        </md>. As in the previous case, back-substitution now allows us to express each leading variable as a function only of the free variables, yielding an equivalent system of the form
         <md>
-        <mrow> x_{i_r}\amp =d_r-G_r(x_{j_1},x_{j_2},\dots, x_{j_s})</mrow>
-        <mrow> \amp =F_s(x_{j_1},x_{j_2},\dots, x_{j_s})</mrow>
+        <mrow> x_{i_r}\amp =d_r-G_r(x_{j_1},x_{j_2},\dots, x_{j_s})=F_r(x_{j_1},x_{j_2},\dots, x_{j_s})</mrow>
         <mrow> x_{i_{r-1}}\amp=d_{r-1}-c_{r}x_{i_r}-G_{r-1}(x_{j_1},x_{j_2},\dots, x_{j_s})</mrow>
         <mrow>  \amp = d_{r-1}-c_{r}F_r(x_{j_1},x_{j_2},\dots, x_{j_s})-G_{r-1}(x_{j_1},x_{j_2},\dots, x_{j_s})</mrow>
         <mrow>  \amp =F_{r-1}(x_{j_1},x_{j_2},\dots, x_{j_s})</mrow>
         <mrow>  \amp \vdots </mrow>
         <mrow> x_1 \amp=F_1(x_{j_1},x_{j_2},\dots, x_{j_s}) </mrow>
-        </md>
-        This new system of equations clearly has the same set of solutions as <m>L'</m> (and <m>L</m>), since it was obtained from <m>L'</m> by deleting zero rows of <m>U</m> and using only addition and subtraction operations. Furthermore, it is clear that any assignment of the free variables
+        </md>.
+       We conclude that any assignment of the free variables
         <md>
           x_{j_1}=t_1, x_{j_2}=t_2,\dots, x_{j_s}=t_s
         </md>
-        extends uniquely to the solution of <m>L'</m> that further assigns
+        extends to a solution of <m>L</m> for which the leading variables <m>must</m> satisfy 
         <md>
           x_{i_1}=F_1(t_1,t_2,\dots, t_s), x_{i_2}=F_2(t_1,t_2,\dots, t_s), \dots, x_r=F_r(t_1,t_2,\dots, t_s)
         </md>.
-        The idea behind uniqueness here, is that once you assign values to the free variables, the values of the leading variables are completely determined by the equations <m>x_{i_k}=F_k(x_{j_1},x_{j_2},\dots, x_{j_s})</m>.
       </p>
       <p>
-        Lastly, we show that every solution of <m>L'</m> (and <m>L</m>) is obtained in this way. Suppose <m>u=(u_1,u_2,\dots, u_n)</m> is a solution. According to the discussion above <m>u</m> must be the unique solution to <m>L'</m> corresponding to the free variable assignment
+        Lastly, we must show that every solution of <m>L</m> is described as above. To this end, suppose <m>\boldu=(u_1,u_2,\dots, u_n)</m> is a solution. From the discussion above, we know that corresponding to the free variable assignment 
         <md>
-          x_{j_1}=u_{j_1}, x_{j_2}=u_{j_2},\dots , x_{j_s}=u_{j_s}
+          x_{j_1}=u_{j_1}, x_{j_2}=u_{j_2},\dots, x_{j_s}=u_{j_s}
         </md>
-         and corresponding leading variable assignment <md>x_{i_1}=F_1(u_{j_1},x_{j_2},\dots, x_{i_2}), x_{i_2}=F_2(u_{j_1},x_{j_2},\dots, x_{j_s}),\dots, x_{i_r}=F_r(u_{j_1},x_{j_2},\dots, x_{j_s})</md>.
+      there is a <em>unique</em> solution of <m>L</m>, and that the free variables for this solution satisfy <m>x_{i_k}=F_k(u_{j_1},u_{j_2},\dots, u_{j_s})</m>. Thus <m>\boldu</m> must be this same solution.
       </p>
-    </case>
   </proof>
+<remark xml:id="rm_free_versus_leading">
+  <title>Free versus leading</title>
+  <p>
+  We observe again the important difference in the role played by free and leading variables in this procedure. Once we determine the free variables of the system (using Gaussian elimination), the general solution is obtained in a twofold manner: <em>first</em> assign arbitrary values to the free variables as in <xref ref="eq_assign_free"/>, <em>then</em> determine the values of the leading variables in terms of these assignments as in <xref ref="eq_determine_lead"/>. In this manner, we see that we can freely assign any real value to the free variables, but for each such assignment, the values of the leading variables in a solution are then completely determined. 
+  </p>
+  </remark>
+  <example xml:id="eg_solve_sys">
+  <title>Solving linear systems</title>
+  <statement>
+  <p>
+  Use <xref ref="proc_solveSystem"/> to describe the set of solutions <m>S</m> to the given linear system. Express your answer both in set notation form and, when appropriate, parametric equation form. 
+<ol>
+  <li>
+    <p>
+      <md>
+        3x-y=6-x-y-z=x+z-1
+      </md>
+    </p>
+  </li>
+  <li>
+    <p>
+      <md>
+        \begin{linsys}{4}
+        x\amp +\amp y\amp +\amp z\amp +\amp w\amp =\amp 1\\
+        2x\amp +\amp 2y\amp +\amp 2z\amp +\amp 2w\amp = \amp  3 \\
+        2x\amp +\amp 2y\amp -\amp z\amp \amp \amp =\amp -2 \\
+        3x\amp +\amp 3y\amp +\amp 2z\amp\amp \amp =\amp 0
+        \end{linsys}
+      </md>
+    </p>
+  </li>
+  <li>
+    <p>
+      <md>
+  \begin{linsys}{5}
+        x_1\amp +\amp x_2\amp +\amp x_3\amp +\amp x_4+\amp x_5 \amp =\amp 1\\
+        \amp +\amp \amp +\amp x_3\amp -\amp x_4\amp+\amp 2x_5\amp =\amp 1\\
+        x_1\amp + \amp x_2 \amp +\amp 2x_3\amp \amp \amp+\amp 3x_5\amp =\amp 2
+  \end{linsys}
+      </md>
+    </p>
+  </li>
+</ol>  
+</p>
+  </statement>
+  <solution>
+  <p>
+  <ol>
+    <li>
+      <p>
+        First observe, using the fact that equality is transitive, that <m>(x,y,z)</m> solves this chain of two equalities if and only if it solves the system 
+        <md>
+          \begin{linsys}{2}
+          3x\amp -\amp y\amp =\amp 6-x-y-z\\
+          3x\amp -\amp y\amp =\amp x+z-1
+          \end{linsys}
+        </md>,
+        which in standard form is 
+        <md>
+          \begin{linsys}{3}
+          4x\amp \amp \amp +\amp z\amp =\amp 6\\
+          2x\amp -\amp y\amp -\amp z\amp =\amp -1
+          \end{linsys}
+        </md>.
+        The augmented matrix of the system row reduces as 
+        <md>
+          \begin{amatrix}[rrr|l]
+          4\amp 0\amp 1\amp 6\\
+          2\amp -1\amp -1\amp -1
+          \end{amatrix}
+          \xrightarrow[]{\text{row ops}}\begin{amatrix}[rrr|l]
+          \boxed{1}\amp 0\amp \frac{1}{4}\amp \frac{3}{2}\\
+          0\amp \boxed{1}\amp \frac{3}{2}\amp 4
+          \end{amatrix}
+        </md>,
+        as you can check yourself (or with the help of <xref ref="sage_ge"/>). 
+      </p>
+      <p>
+        Since the leading ones of the reduced matrix appear only in the first two columns, the first two unknowns <m>x</m> and <m>y</m> are leading variables, and the last unknown <m>z</m> is free. Taking the corresponding system 
+        <md>
+          \begin{linsys}{3}
+          x\amp  \amp +\amp \frac{1}{4}z\amp =\amp \frac{3}{2}\\
+          \amp \amp y\amp +\amp \frac{3}{2}z\amp =\amp 4
+          \end{linsys}
+        </md>
+        and solving for the leading variables in terms of the free variables yields 
+        <md>
+          <mrow>x \amp = \frac{3}{2}-\frac{1}{4}z </mrow>
+          <mrow>y \amp = 4-\frac{3}{2}z</mrow>
+        </md>.
+        The parametric equations description of the general solution is then 
+        <md>
+          <mrow>z \amp =t \amp t\in \R </mrow>
+          <mrow>x \amp =\frac{3}{2}-\frac{1}{4}t</mrow>
+          <mrow>y \amp = 4-\frac{3}{2}t</mrow>
+        </md>.
+        Using set notation, the set of solutions <m>S</m> is 
+        <md>
+          S=\left\{\left(\tfrac{3}{2}-\tfrac{1}{4}t, 4-\tfrac{3}{2}t, t\right)\colon t\in \R\right\}
+        </md>.
+      </p>
+    </li>
+    <li>
+      <p>
+        In this case the augmented matrix of the system row reduces as 
+        <md>
+          \begin{amatrix}[rrrr|r]
+          1\amp 1\amp 1\amp 1\amp 1\\
+          2\amp 2\amp 2\amp 2\amp 3\\
+          2\amp 2\amp -1\amp 0\amp -2\\
+          3\amp 3\amp 2\amp 0\amp 0
+          \end{amatrix}
+          \xrightarrow[]{\text{row ops}}\begin{amatrix}[rrrr|r]
+          \boxed{1}\amp 1\amp 1\amp 1\amp 1\\
+          0\amp 0\amp \boxed{1}\amp \tfrac{2}{3}\amp \tfrac{4}{3}\\
+          0\amp 0\amp 0\amp \boxed{1}\amp \tfrac{5}{7}\\
+          0\amp 0\amp 0\amp 0\amp \boxed{1}
+          \end{amatrix}
+        </md>.
+        Since the last column of the reduced matrix has a leading one, we conclude that the system is inconsistent, and hence has no solutions. Thus <m>S=\emptyset</m>. 
+      </p>
+    </li>
+    <li>
+      <p>
+        In this case the augmented matrix of the system row reduces as 
+        <md>
+          \begin{amatrix}[rrrrr|r]
+          1\amp 1\amp 1\amp 1\amp 1\amp 1\\
+          0\amp 0\amp 1\amp -1\amp 2\amp 1\\
+          1\amp 1\amp 2\amp 0\amp 3\amp 2
+          \end{amatrix}
+          \xrightarrow[]{\text{row ops}}\begin{amatrix}[rrrrr|r]
+          \boxed{1}\amp 1\amp 1\amp 1\amp 1\amp 1\\
+          0\amp 0\amp \boxed{1}\amp -1\amp 2\amp 1\\
+          0\amp 0\amp 0\amp 0\amp 0\amp 0
+          \end{amatrix}
+        </md>.
+        From the placement of the leading ones, we see that the first and third unknowns are leading, and the rest are free. Writing the leading variables in terms of the free ones, we have
+        <md>
+          <mrow>x_3 \amp =1+x_4+2x_5</mrow>
+          <mrow>x_1 \amp = 1-x_2-x_3-x_4-x_5</mrow>
+          <mrow> \amp = -x_2-2x_4+3x_5</mrow>
+        </md>.
+        The parametric equations description of the general solution is then
+        <md>
+          <mrow>x_2 \amp =s, x_4=t, x_5=u \amp s,t,u\in \R</mrow>
+          <mrow>x_3 \amp =1+t+2u</mrow>
+          <mrow>x_1 \amp =-s-2t+3u</mrow>
+        </md>.
+        Using set notation, the set of solutions <m>S</m> is
+        <md>
+          S=\left\{(-s-2t+3u, s, 1+t+2u, t, u)\colon s,t,u\in \R\right\}.
+        </md>
+      </p>
+    </li>
+  </ol>
+  </p>
+  </solution>
+  </example>
+  
+  
   <example xml:id="vid_eg_GE1" >
     <title>Video: solving linear systems</title>
     <p>
