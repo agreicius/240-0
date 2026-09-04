@@ -19,57 +19,62 @@
 </head>
 <body class="ignore-math">
 <article class="algorithm theorem-like"><h4 class="heading">
-<span class="type">Procedure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Solving linear systems.</span>
+<span class="type">Procedure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Solving linear systems.</span>
 </h4>
 <div class="para logical">
 <div class="para">Let <span class="process-math">\(L\)</span> be a linear system in the unknowns <span class="process-math">\(x_1,x_2,\dots, x_n\text{,}\)</span> and let <span class="process-math">\(S\)</span> be the set of all solutions of <span class="process-math">\(L\text{.}\)</span> We compute <span class="process-math">\(S\)</span> as follows.</div>
 <ol class="decimal" id="proc_solveSystem-2-1-6">
 <li>
-<div class="para">Apply Gaussian elimination to reduce <span class="process-math">\(L\)</span> to an equivalent system <span class="process-math">\(L'\)</span> in row echelon form.<div class="autopermalink" data-description="Paragraph"><a href="#proc_solveSystem-2-1-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="heading li--heading"><span class="title li--heading-title">Gaussian elimination.</span></span><div class="para">Apply Gaussian elimination to reduce <span class="process-math">\(L\)</span> to an equivalent system <span class="process-math">\(L'\)</span> in row echelon form with augmented matrix <span class="process-math">\(U\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#proc_solveSystem-2-1-6-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 1"><a href="#proc_solveSystem-2-1-6-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+<div class="autopermalink" data-description="Item 1: Gaussian elimination"><a href="#proc_solveSystem-2-1-6-1" title="Copy heading and permalink for Item 1: Gaussian elimination" aria-label="Copy heading and permalink for Item 1: Gaussian elimination">🔗</a></div>
 </li>
 <li>
-<div class="para">Let <span class="process-math">\(U\)</span> be the augmented matrix associated to <span class="process-math">\(L'\text{.}\)</span> If the last column of <span class="process-math">\(U\)</span> has a leading one, then <span class="process-math">\(L\)</span> is inconsistent: i.e., <span class="process-math">\(S=\{ \}\)</span> is the empty set. Otherwise, proceed to the next step.<div class="autopermalink" data-description="Paragraph"><a href="#proc_solveSystem-2-1-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="heading li--heading"><span class="title li--heading-title">No solutions.</span></span><div class="para">If the last column of <span class="process-math">\(U\)</span> has a leading one, then <span class="process-math">\(L\)</span> is inconsistent: i.e., <span class="process-math">\(S=\{ \}\)</span> is the empty set. Otherwise, proceed to the next step.<div class="autopermalink" data-description="Paragraph"><a href="#proc_solveSystem-2-1-6-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 2"><a href="#proc_solveSystem-2-1-6-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+<div class="autopermalink" data-description="Item 2: No solutions"><a href="#proc_solveSystem-2-1-6-2" title="Copy heading and permalink for Item 2: No solutions" aria-label="Copy heading and permalink for Item 2: No solutions">🔗</a></div>
 </li>
 <li>
-<div class="para">Determine which if any of the unknowns are free variables of <span class="process-math">\(L'\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#proc_solveSystem-2-1-6-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="heading li--heading"><span class="title li--heading-title">Sort variables.</span></span><div class="para">Determine which of the unknowns are leading variables and which are free variables by applying <a href="s_solving.html#d_free-leading" class="xref" data-knowl="./knowl/xref/d_free-leading.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 2.3.1: Free and leading variables">Definition 2.3.1</a> to <span class="process-math">\(L'\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#proc_solveSystem-2-1-6-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Item 3"><a href="#proc_solveSystem-2-1-6-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+<div class="autopermalink" data-description="Item 3: Sort variables"><a href="#proc_solveSystem-2-1-6-3" title="Copy heading and permalink for Item 3: Sort variables" aria-label="Copy heading and permalink for Item 3: Sort variables">🔗</a></div>
 </li>
 <li>
-<div class="para">If there are no free variables, solve for each unknown using back-substitution. In this case, there is a unique solution to <span class="process-math">\(L\text{:}\)</span> i.e., <span class="process-math">\(S=\{(s_1,s_2,\dots, s_n)\}\)</span> contains exactly one element.<div class="autopermalink" data-description="Paragraph"><a href="#proc_solveSystem-2-1-6-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="heading li--heading"><span class="title li--heading-title">Unique solution.</span></span><div class="para">If there are no free variables, solve for each unknown starting with the last equation and working backwards  . In this case there is a unique solution to <span class="process-math">\(L\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#proc_solveSystem-2-1-6-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para logical">
-<div class="para">Otherwise, let <span class="process-math">\(x_{i_1}, x_{i_2},\dots , x_{i_r}\)</span> be the leading variables of <span class="process-math">\(L'\text{,}\)</span> and let <span class="process-math">\(x_{j_1},x_{j_2},\dots, x_{j_s}\)</span> be the free variables. Back-substitution allows us to express each leading variable in terms of the free variables. In other words, we can write</div>
+<div class="autopermalink" data-description="Item 4: Unique solution"><a href="#proc_solveSystem-2-1-6-4" title="Copy heading and permalink for Item 4: Unique solution" aria-label="Copy heading and permalink for Item 4: Unique solution">🔗</a></div>
+</li>
+<li>
+<span class="heading li--heading"><span class="title li--heading-title">Infinite solutions.</span></span><div class="para logical">
+<div class="para">Otherwise, let <span class="process-math">\(x_{i_1}, x_{i_2},\dots , x_{i_r}\)</span> be the leading variables of <span class="process-math">\(L'\text{,}\)</span> and let <span class="process-math">\(x_{j_1},x_{j_2},\dots, x_{j_s}\)</span> be the free variables. Starting with the last nonzero equation and working backwards  , express the leading variables as functions <span class="process-math">\(x_{i_k}=F_k(x_{j_1},x_{j_2},\dots, x_{j_s})\)</span> of the free variables:</div>
 <div class="displaymath process-math">
 \begin{align*}
-x_{i_1}\amp=F_1(x_{j_1},x_{j_2},\dots, x_{j_s}) \\
-x_{i_2}\amp =F_2(x_{j_1},x_{j_2},\dots, x_{j_s}) \\
+x_{i_r}\amp=F_r(x_{j_1},x_{j_2},\dots, x_{j_s}) \\
+x_{i_{r-1}}\amp =F_{r-1}(x_{j_1},x_{j_2},\dots, x_{j_s}) \\
 \vdots \amp \\
-x_{i_r} \amp =F_s(x_{j_1},x_{j_2},\dots, x_{j_s})\text{,}
+x_{i_1} \amp =F_1(x_{j_1},x_{j_2},\dots, x_{j_s})\text{.}
 \end{align*}
 </div>
-<div class="para">where each <span class="process-math">\(F_i(x_{j_1},x_{j_2},\dots, x_{j_s})\)</span> is a linear expression in the free variables. Each solution of <span class="process-math">\(L\)</span> thus corresponds to a <em class="emphasis">unique</em> variable assignment of the form</div>
+<div class="para">Each solution of <span class="process-math">\(L\)</span> corresponds to a <em class="emphasis">unique</em> assignment of values to the free variables. In more detail, for each choice of assignments</div>
 <div class="displaymath process-math">
-\begin{align*}
-\text{Free variables: } x_{j_1}\amp=t_{1}, \ x_{j_2}=t_{2},\dots, x_{j_s}=t_{s}\\
-\text{Leading variables: } x_{i_1}\amp =F_1(t_1,t_2,\dots, t_s) \\
-x_{i_2}\amp =F_2(t_1,t_2,\dots, t_s) \\
-\vdots \amp \\
-x_{i_r} \amp =F_s(t_1,t_2,\dots, t_s)\text{,}
-\end{align*}
+\begin{align}
+x_{j_1}\amp=t_{1}, \ x_{j_2}=t_{2},\dots, x_{j_s}=t_{s} \amp t_i\in \R \text{,}\tag{2.3.3}
+\end{align}
 </div>
-<div class="para">where <span class="process-math">\(t_1,t_2,\dots, t_s\)</span> are any real numbers.</div>
-<div class="autopermalink" data-description="Paragraph"><a href="#proc_solveSystem-2-1-6-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">we get the corresponding solution to <span class="process-math">\(L'\)</span> described parametrically as follows:</div>
+<div class="displaymath process-math">
+\begin{align}
+\text{Free variables}\amp \colon \amp  x_{j_1}\amp =t_{1}, x_{j_2}=t_{2},\dots, x_{j_s}=t_{s}\tag{2.3.4}\\
+\text{Leading variables}\amp \colon \amp  x_{i_1}\amp=F_1(t_1,\dots, t_s), x_{i_2} =F_2(t_1,\dots, t_s), \dots, x_{i_r}=F_r(t_1,\dots, t_s) \text{.}\tag{2.3.5}
+\end{align}
 </div>
-<div class="autopermalink" data-description="Item 4"><a href="#proc_solveSystem-2-1-6-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#proc_solveSystem-2-1-6-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5: Infinite solutions"><a href="#proc_solveSystem-2-1-6-5" title="Copy heading and permalink for Item 5: Infinite solutions" aria-label="Copy heading and permalink for Item 5: Infinite solutions">🔗</a></div>
 </li>
 </ol>
 <div class="autopermalink" data-description="Paragraph"><a href="#proc_solveSystem-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" data-description="Procedure 2.3.6: Solving linear systems"><a href="#proc_solveSystem" title="Copy heading and permalink for Procedure 2.3.6: Solving linear systems" aria-label="Copy heading and permalink for Procedure 2.3.6: Solving linear systems">🔗</a></div></article><span class="incontext"><a class="internal" href="s_solving.html#proc_solveSystem">in-context</a></span>
+<div class="autopermalink" data-description="Procedure 2.3.5: Solving linear systems"><a href="#proc_solveSystem" title="Copy heading and permalink for Procedure 2.3.5: Solving linear systems" aria-label="Copy heading and permalink for Procedure 2.3.5: Solving linear systems">🔗</a></div></article><span class="incontext"><a class="internal" href="s_solving.html#proc_solveSystem">in-context</a></span>
 </body>
 </html>
