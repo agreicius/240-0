@@ -442,7 +442,7 @@ Geometrically this is the line in <m>\R^3</m> passing through <m>(0,0,0)</m> wit
         <md>
           <mrow>A\boldv \amp = A(\boldx_p+\boldw)</mrow>
           <mrow> \amp = A\boldx_p+A\boldw</mrow>
-          <mrow> \amp = \boldb+\boldzerp \amp (\boldx_p\in S, \boldw\in \NS A)</mrow>
+          <mrow> \amp = \boldb+\boldzero \amp (\boldx_p\in S, \boldw\in \NS A)</mrow>
           <mrow> \amp = \boldb</mrow>
         </md>.
         This shows that if <m>\boldv\in \boldx_p+\NS A</m>, then <m>\boldv\in S</m>, and thus that <m>\boldx_p+A\subseteq S</m>. For the other inclusion, if <m>\boldv\in S</m>, then we have 

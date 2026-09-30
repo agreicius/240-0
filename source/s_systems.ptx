@@ -27,7 +27,7 @@
         which we call its <term>standard form </term>. An equation in the unknowns <m>x_1,x_2,\dots, x_n</m> is <term>nonlinear</term> if it cannot be simplified to the form <xref ref="eq_std_form"/> using only addition and subtraction.
       </p>
       <p>
-        Given a linear equation with standard form <xref ref="eq_std_form"/>, the equation is called <term>homogeneous</term> if <m>b=0</m>, and <term>nonhomogeneous</term> if <m>b\ne 0</m>.
+        A linear equation in standard form <xref ref="eq_std_form"/> is <term>nontrivial</term> if <m>a_i\ne 0</m> for some <m>1\leq i\leq n</m>. It is <term>homogeneous</term> if <m>b=0</m> and <term>nonhomogeneous</term> if <m>b\ne 0</m>.
       </p>
     </statement>
   </definition>
