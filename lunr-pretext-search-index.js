@@ -1050,7 +1050,7 @@ var ptx_lunr_docs = [
   "url": "s_real_tuples.html#sage_vec_ops",
   "type": "Sage Example",
   "number": "3",
-  "title": "Vector operations: <span class=\"process-math\">\\(\\R^n\\)<\/span> and <span class=\"process-math\">\\(\\ML_{m\\times n}(\\R)\\)<\/span>.",
+  "title": "Vector operations: <span class=\"process-math\">\\(\\R^n\\)<\/span> and <span class=\"process-math\">\\(\\ML_{m, n}(\\R)\\)<\/span>.",
   "body": " Vector operations: and   To create an -tuple in Sage, use the vector() command. The input should be a sequence of numbers enclosed in brackets.   You can make use of sequence routines to create special types of -tuples.   If you prefer the two outputs above to not be listed as a pair, you can use the print() command in sequence. (This is a peculiarity of interactive SageCells, not Sage itself.)   The standard vector operations of are implemented using an intuitive syntax in Sage.   Once a vector v is created in Sage, various properties of the vector can be computed using the v.foo() syntax. For example, the command v.length() returns the length of the vector v .   Matrices are created in Sage using the matrix() command, and are entered as a list of lists, where the -th list of this list represents the -th row of the matrix, considered as a rectangular array. Note that show() outputs a typeset display of the matrix, as contrasted with the text ouput of print() .   The Sage syntax for vector operations in is identical to that for . The command matrix(2,3,range(-4,2)) used below instructs Sage to create a matrix whose entries are the integers from to , arranged by wrapping along the two rows.   Lastly, to retrieve entries from -tuples or matrices, Sage uses the usual Python list syntax: , v[i] and A[i,j] . As with all things Python, we always count from 0. Thus if A is assigned to a matrix in Sage, A[i,j] is its -th entry.   "
 },
 {
@@ -2239,7 +2239,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.1",
   "title": "Matrix arithmetic",
-  "body": " Matrix arithmetic   Matrices played a small supporting role in our discussion of linear systems in . In this chapter we bring them to center stage and give them a full-blown treatment as independent mathematical objects in their own right.  Like any mathematical entity worth its salt, matrices can be employed in a vast multitude of ways. As such it is important to allow matrices to transcend their humble beginnings in this course as boiled down systems of linear equations. We record this observation as another principle.  Matrix mantra   A matrix is a matrix is a matrix.  Not every matrix should be thought of as an augmented matrix associated to a linear system.       The basics   Matrix notation    Matrix whose -th entry is     -th entry of the matrix       Matrix-building notation  matrix matrix-building notation  The notation denotes the matrix whose -th entry ( -th row, -th column) is . When there is no danger of confusion, this notation is often shortened to .    Matrix entry notation  matrix matrix entry notation  Given a matrix , the notation denotes the -th entry of .   Thus if , then for all and .     The matrix-building notation is often used simply to give names to the entries of an arbitrary matrix. However, it can also be used to describe a matrix whose -th entry is given by specified rule or formula.  For example, let , where . This is the matrix whose -th entry is . Thus . In this example we have and for .   Using matrix notation we can now precisely define what the rows and columns of a matrix are.   Rows and columns of a matrix   Let be an matrix. For each , -th row of is the -tuple . Similarly, for each , the -th column of is the -tuple . Given -tuples , we denote by the matrix whose -th row is .  Similarly, given -tuples , we denote by the matrix whose -th column is .    In everyday language the notion of equality is taken as self-evident. Two things are equal if they are the same. What more is there to say? In mathematics, each time we introduce a new type of mathematical object (e.g., sets, functions, -tuples, etc.) we need to spell out exactly what we mean for two objects to be considered equal. We do so now with matrices.   Matrix equality   Let and be matrices of dimension and , respectively. The two matrices are equal if    and ;     for all and .     In other words, we have if and only if and have the same shape, and each entry of is equal to the corresponding entry of .     Matrix equality   The matrices are not equal to one another, despite their having the same entries that appear roughly in the same order. In this case equality does not hold as and have different shapes: is , and is .  The matrices and have the same dimension, but are not equal since .     Matrices of particular shape  matrix square   matrix row vector   matrix column vector   matrix diagonal of square matrix  matrix zero matrix   A matrix is square if its dimension is : , if . The diagonal of a square matrix consists of the entries of of the form for .  A matrix is called a row vector . The -th entry of a row vector is denoted   An matrix , is called a column vector . The -th entry of a column vector is denoted .     Tuples, row vectors, and column vectors  You are perhaps wondering why we make a distinction between -tuples, row vectors, and column vectors. One answer is that a matrix is not simply an ordered sequence: it is an ordered sequence arranged in a very particular way. This subtlety is baked into the very definition of matrix equality, and allows us to say that . There are situations, however, where we don't need this extra layer of structure, where we want to treat an ordered sequence simply as an ordered sequence. In such situations tuples are preferred to row or column vectors.  Of course there will be times where we wish to treat an ordered sequence now as a tuple and now as a row or column vector. In these situations we will clarify what is meant by using the phrase treated as a tuple , treated as a row vector , or treated as a column vector . For example, the tuple , treated as a row vector, is the matrix .  That said, the close connection between linear systems and matrix equations makes it very convenient to be able to treat an -tuple as if it were the column vector , and vice versa. This conflation is so convenient, in fact, that we will simply declare it to be true by fiat! This means that going forward we are permitted to treat tuples as column vectors and vice versa without further comment.    Tuples shall be column vectors, and vice versa   We hereby declare that for all we have . In other words, tuples are henceforth the same as column vectors.     Matrix entries, rows, and columns  Sage syntax for accessing specific entries of a matrix is similar in spirit to our matrix entry notation. However, as with all things Python, we always count from 0. Thus if A is assigned to a matrix in Sage, A[i,j] is its -th entry.   Prescribed subsets of matrix entries are obtained via slicing methods: for example, A[a:b, c:d] returns the collection of entries with and , arranged as a matrix.   Leaving the left or right side of : blank in this notation removes the corresponding restriction bound (left or right) from the index in question. Thus A[2, :] returns the third row of , and A[1:, 3] returns the portion of the fourth column of beginning with its second entry.   Alternatively, we can obtain a list of all rows or columns of using the the methods rows() and columns() .   Use the empty cell below to try out some of these commands.      Vector space structure of  We now lay out the various algebraic operations we will use to combine and transform matrices; we refer to the use of these operations loosely as matrix arithmetic . Some of these operations resemble familiar operations from real arithmetic in terms of their notation and definition. Do not be lulled into complacency! These are new operations defined for a new class of mathematical objects, and must be treated carefully. In particular, pay close attention to (a) exactly what type of mathematical objects serve as inputs for each operation (the ingredients of the operation), and (b) what type of mathematical object is outputted.   Matrix addition and scalar multiplication  matrix addition  matrix scalar multiplication   Let and be positive integers.   Matrix addition  Given matrices , we define their matrix sum  to be the matrix satisfying for all and . Equivalently, if and , then . The operation is called matrix addition .    Given an matrix and scalar , the scalar multiple of by is the matrix satisfying for all and . Equivalently, if , then . The operation is called matrix scalar multiplication .        Observe that matrix addition is not defined for any pair of matrices. The ingredients of matrix addition are two matrices of the same dimension ; and the output is a third matrix of this common dimension.   Not surprisingly, as the names of our matrix operations suggest, the set of all matrices constitutes a vector space with respect to matrix addition and scalar multiplication. Before proving this fact, we introduce what will be the zero vectors and vector inverses of these vector spaces.   Zero matrices    the zero matrix    The  zero matrix , denoted , is the matrix, all of whose entries are equal to zero: i.e., for all and .  When there is no confusion about which dimension zero matrix is intended, we will often write simply instead of .     Additive inverse matrix   The additive inverse of an matrix is the matrix defined as .     Additive inverse matrix   Additive inverse matrix is admittedly a bit clunky. We are taking pains here not to call simply the inverse of , as this term is reserved for multiplicative inverses of matrices. (See .)    Vector space structure of   Let and be positive integers.   The set , together with the matrix addition and scalar multiplication, is a vector space.    The zero vector of is the zero matrix .    Given a matrix its vector inverse is the additive inverse matrix .       Having identified the relevant operations, as well as the proposed zero vector and vector inverses, we must verify that the vector axioms hold. We do so for Axioms i, iii, and iv, leaving the rest as an exercise.   Axiom i      Axiom iii      Axiom iv        Matrix difference and matrix linear combination  Having established that is a vector space under matrix addition and scalar multiplication, this set of matrices automatically inherits the various features and properties enjoyed by general vector spaces. For example, the vector difference operation (defined for any vector space) gives rise in the case of to a matrix difference operation. Namely, for any we have . Similarly, the general notion of a linear combination of vectors, gives rise to the notion of matrix linear combinations . Namely, given , and scalars , we have the matrix linear combination .    Matrix linear combinations   Let and . Compute .     .     Expressing matrix as a linear combination   Show that can be expressed as a linear combination of the matrices .    We must solve the matrix (or row vector) equation for the scalars . Computing the linear combination on the left yields the matrix equation . Using the definition of matrix equality ( ), we get the system of equations . Using Gaussian elimination we find that there is a unique solution to this system: namely, . We conclude that .     Let be matrices. An easy induction argument on shows that for any scalars we have for all , . (See . )     Matrix multiplication  So how do we define the product of two matrices? Looking at the previous operations, you might have guessed that we should define the product of two matrices by taking the product of their corresponding entries. Not so!   Matrix multiplication  matrix multiplication   Let be positive integers. Given an matrix and an matrix , we define their product to be the matrix satisfying for all and . Equivalently, if and , then , where . The operation is called matrix multiplication .     Visualizing matrix multiplication  In , the -th entry is computed by moving across the -th row of and down the -th column of .       Size and matrix multiplication  Observe how, like addition, matrix multiplication is not defined for any pair of matrices: there must be a certain agreement in their dimensions.  In more detail, for the product of and to be defined, we need . In other words we need the inner dimensions of and to be equal: . If this condition is met, the dimension of the resulting matrix is determined by the outer dimensions of and . Schematically, you can think of the inner dimensions as being canceled out :     Matrix multiplication  Consider the matrices . Since the inner dimensions of and agree, we can form the product matrix , which has dimension . Let for all . Using , we compute . We conclude that .   Formula for the -th entry of a matrix product is easily identified as the dot product of the -th row of with the -th column of . This gives us a succinct way of describing the entries of the product in terms of the dot product.   Dot product and matrix multiplication   Let be positive integers. Given matrices and , let be the -th row of for all , and let be -th column of for all , so that . For all , we have . In other words, the -th entry of is the dot product of the -th row of and the -th column of .    Let and , so that for all and . Given any pair with and , we have , as claimed.     Matrix multiplication via dot product  Consider the matrices . The two rows of are . The two columns of are . Using the dot product description of matrix multiplication, we compute .   The definition of a matrix product is undoubtedly more complicated than you expected, and seems to come completely out of the blue. All of this will make more sense once we begin thinking of matrices as defining certain functions . Our formula for the entries of is chosen precisely so that this new matrix corresponds to the composition of the functions and : so that . (See .) Under this interpretation, the ponderous restriction on the dimensions of the ingredient matrices ensures that the two functions and can be composed.   Matrix arithmetic  We use + and * for matrix addition and multiplication.   As evidence of Sage's flexibility, the same symbol * is also used for scalar multiplication.   Edit the cell below to practice these operations.      Alternative methods of multiplication  In addition to the given definition of matrix multiplication, we will make heavy use of two further ways of computing matrix products, called the column and row methods of matrix multiplication.   Column method of matrix multiplication  matrix multiplication column method   Let and . The column method of matrix multiplication computes using the two steps below.   Step 1  Let be the -th column of , considered as a column vector. Then .    Step 2  Let be the -th column of , considered as a column vector. Given any column vector we have .       We prove the equalities in both steps separately.   Proof of Step 1  We must show , where . First we show and have the same size. By definition of matrix multiplication, is . By construction has columns and its -th column is . Since and have size and , respectively, has size . Thus each of the columns of is an column vector. It follows that is , as desired.  Next we show that for all , . Since the -th entry of is the -th entry of the -th column of , we have .    Proof of Step 2  We must show that , where . The usual argument shows that both and are column vectors. It remains only to show that the -th entry of the column is equal to the -th entry of for all . For any such we have .       amounts to a two-step process for computing an arbitrary matrix product .  The first statement (Step 1) tells us that the -th column of the matrix can be obtained by computing the product of with the -th column of .  The second statement (Step 2) tells us that each product can itself be computed as a certain linear combination of the columns of with coefficients drawn from .  A similar remark applies to computing matrix products using the row method, as described below in .    Row method of matrix multiplication  matrix multiplication row method   Let and . The row method of matrix multiplication computes using the two steps below.   Step 1  Let be the -th row of . Then .    Step 2  Let be the -th row of . Given any row vector we have .       The proof is very similar to that of and is left to the reader.     Column and row methods   Let and   Compute using (a) the definition of matrix multiplication, (b) the column method, (c) the row method.       Using the definition, we see easily that     Let be the columns of , and let be the columns of . We have     Now let be the rows of , and let be the rows of . We have         Column and row methods  Let's verify the validity of the column and row methods using Sage in some specific examples. Below we generate random integer matrices and of dimension and , respectively, and compute their product .   Let's check that the -th column of is equal to the product of with the -th column of .   Alternatively, we can visually confirm these equalities using the display of in the first cell above. Observe that the result of A*colsB[i] is displayed by Sage as a tuple, though technically for us this is a column vector.   Next, let's verify that the result of multiplying and the -th column of is the corresponding linear combination of the columns of given by the coefficients of this column.   Now use the Sage cells below to demonstrate the validity of the row method for the product . Simply modify the code in the two cells above to reflect the row method, as opposed to the column method.      Video example of matrix multiplication   Video: three methods of matrix multiplication       Transpose of a matrix  We end this section with one last operation, matrix transposition . We will not make much use of this operation until later, but this is as good a place as any to introduce it.   Matrix transposition  matrix transposition  transpose   Given an matrix its transpose is the matrix whose -entry is the -th entry of . In other words, is the matrix satisfying for all and .     Given a matrix we can give a column- or row-based description of as follows:    is the matrix whose -th row is the -th column of .     is the matrix whose -th column is the -th row of .       Transpose   Let ; then .  Let , then .     Matrix transposition  Matrix transposition is implemented in Sage as the transpose() method. In the cell below we (a) choose random integers , (b) choose a random matrix with integer entries, and (c) compute the transpose of .   As usual, experiment with the Sage cell below.      WeBWork Exercises      Enter T or F depending on whether the statement is true or false. (You must enter T or F -- True and False will not work.)    If A is a square matrix such that AA equals the 0 matrix, then A must equal the 0 matrix.    If A has dimensions and B has dimensions , then AB has dimensions .              Matrix Products: Consider the matrices   Of the possible matrix products ,  which make sense?    C            If A is B is and C is then:  a) BA has dimension    b) CB has dimension    c) AC has dimension                                            Determine and such that                           Determine the value(s) of such that   =  Note: If there is more than one value separate them by commas.                  For each part below write down the most general matrix satisfying the given condition (use letter names ,etc. for entries).     for all .     for all      for .        Let  . Compute the following matrices, or else explain why the given expression is not well defined.                       Let . Compute the following using either the row or column method of matrix multiplication. Make sure to show how you are using the relevant method.   the first column of ;    the second row of ;    the third column of .          Using expansion by columns, the first column of is given by times the first column of . We compute          Use the row or column method to quickly compute the following product:     I'll just describe the row method here.  Note that the rows of are all identical, and equal to . From the row method it follows that each row of is given by .  Thus the rows of are all identical, and the row method computes the product above by taking the corresponding alternating sum of the rows of : .  Thus is the the matrix, all of whose rows are .      Each of the matrices below performs a specific row operation when multiplying a matrix on the left; i.e., the matrix is the result of performing a certain row operation on the matrix . Use the row method of matrix multiplication to decide what row operation each performs. .       Let be an integer. Prove, by induction on , that for any matrices and scalars , we have for all , .      "
+  "body": " Matrix arithmetic   Matrices played a small supporting role in our discussion of linear systems in . In this chapter we bring them to center stage and give them a full-blown treatment as independent mathematical objects in their own right.  Like any mathematical entity worth its salt, matrices can be employed in a vast multitude of ways. As such it is important to allow matrices to transcend their humble beginnings in this course as boiled down systems of linear equations. We record this observation as another principle.   Matrix mantra   A matrix is a matrix is a matrix.  Not every matrix should be thought of as an augmented matrix associated to a linear system.      The basics  We introduced matrices back in as tuples indexed by a an index set of the form , and introduced the notation to denote the matrix whose -th entry is for all . Occasionally, we will wish to focus on a single entry of a matrix , in which case the entry notation introduced in will come in handy.   Matrix notation    Matrix whose -th entry is     -th entry of the matrix       Matrix-building notation  matrix matrix-building notation  The notation denotes the matrix whose -th entry is for all . When there is no danger of confusion, this notation is often shortened to .    Matrix entry notation  matrix matrix entry notation  Given a matrix , the notation denotes the -th entry of .   Thus if , then for all and .     The matrix-building notation is often used simply to give names to the entries of an arbitrary matrix. However, it can also be used to describe a matrix whose -th entry is given by specified rule or formula.  For example, let , where . This is the matrix whose -th entry is . Thus . In this example we have and for .   Using matrix notation we can now precisely define what the rows and columns of a matrix are.   Rows and columns of a matrix   Let be an matrix. For each , the -th row of is the -tuple .  Similarly, for each , the -th column of is the -tuple . Given -tuples , we denote by the matrix whose -th row is .  Similarly, given -tuples , we denote by the matrix whose -th column is .    It will be convenient to have names for matrices of particular shapes, as we now define.   Matrices of particular shape  matrix square   matrix row vector   matrix column vector    A matrix is square if its dimension is : , if . The diagonal of a square matrix consists of the entries of of the form for .  A matrix is called a row vector . The -th entry of a row vector is denoted   An matrix , is called a column vector . The -th entry of a column vector is denoted .     Row vectors, column vectors, and -tuples  In we used the definition of tuple equality ( ) to draw a sharp distinction between -tuples, and what we can now call row vectors and column vectors. We pointed out that no two of the objects are equal, as their index sets are all distinct. Thus, strictly speaking -tuples, row vectors, and column vectors are distinct mathematical objects.  That said, it is useful to have some flexibility in moving between these three different classes of objects, allowing us to begin with an -tuple and treat it as a row vector or column vector, or conversely. When so doing, we will use phrases like treated as a row vector , treated as a column vector , or treated as an -tuple to clarify.  It turns out that it is particularly convenient to conflate -tuples with column vectors , as you will see when we discuss the relation between solutions to linear systems and solutions to matrix equations. In fact, it is so convenient that we will simply declare by fiat that -tuples and column vectors are one and the same thing! This means that going forward we are permitted to treat tuples as column vectors and vice versa without further comment.    Column vectors shall be -tuples, and vice versa   We hereby declare that for all we have . In other words, -tuples are henceforth the same thing as column vectors.     Matrix entries, rows, and columns  Sage syntax for accessing specific entries of a matrix is similar in spirit to our matrix entry notation. However, as with all things Python, we always count from 0. Thus if A is assigned to a matrix in Sage, A[i,j] is its -th entry.   Prescribed subsets of matrix entries are obtained via slicing methods: for example, A[a:b, c:d] returns the collection of entries with and , arranged as a matrix.   Leaving the left or right side of : blank in this notation removes the corresponding restriction bound (left or right) from the index in question. Thus A[2, :] returns the third row of , and A[1:, 3] returns the portion of the fourth column of beginning with its second entry.   Alternatively, we can obtain a list of all rows or columns of using the the methods rows() and columns() .   Use the empty cell below to try out some of these commands.       Matrix multiplication  Recall that the set of all matrices has a vector space structure with respect to the operations of matrix addition and matrix scalar multiplication defined as , that the additive identity of is the zero matrix , and that the additive inverse of a matrix is the matrix .  We now add a third operation to this matrix arithmetic: matrix multiplication . Looking at the definition of matrix addition (which is defined entry-wise), you might guess that matrix multiplication is defined similarly: that is, that the product of two matrices should be defined simply by multiplying the corresponding entries. Not so! Though there is nothing fundamentally wrong with such a proposal, for reasons that will be made clear later, it turns out that the more complicated (and less intuitive) definition below is the one we are after.   Matrix multiplication  matrix multiplication   Let be positive integers. Given an matrix and an matrix , we define their product to be the matrix defined as . Equivalently, using matrix-entry notation, we have for all and .  The operation is called matrix multiplication .     Visualizing matrix multiplication  In , the -th entry is computed by moving across the -th row of and down the -th column of .       Size and matrix multiplication  Observe how, like addition, matrix multiplication is not defined for any pair of matrices: there must be a certain agreement in their dimensions.  In more detail, for the product of and to be defined, we need . In other words we need the inner dimensions of and to be equal: . If this condition is met, the dimension of the resulting matrix is determined by the outer dimensions of and . Schematically, you can think of the inner dimensions as being canceled out :     Matrix multiplication  Consider the matrices . Since the inner dimensions of and agree, we can form the product matrix , which has dimension . Let for all . Using , we compute . We conclude that .   The formula for the -th entry of the matrix product is reminiscent of the dot product operation on . In we generalize this notion to , and as a result, we are able to succinctly describe the -th entry of as the dot product of the -th row of with the -th column of . (See .) We will have a lot more to say about the dot product in , but for now we will use it simply as a useful way to describe matrix multiplication.   Dot product   Given -vectors and , their dot product , denoted , is defined as . The operation is called the dot product on .     Dot product and matrix multiplication   Let be positive integers. Given matrices and , let be the -th row of for all , and let be -th column of for all , so that . For all , we have . In other words, the -th entry of is the dot product of the -th row of and the -th column of .    Let and , so that for all and . Given any pair with and , we have , as claimed.     Matrix multiplication via dot product  Consider the matrices . The two rows of are . The two columns of are . Using the dot product description of matrix multiplication, we compute .   The definition of a matrix product is undoubtedly more complicated than you expected, and seems to come completely out of the blue. All of this will make more sense once we begin thinking of matrices as defining certain functions . Our formula for the entries of is chosen precisely so that this new matrix corresponds to the composition of the functions and : so that . (See .) Under this interpretation, the ponderous restriction on the dimensions of the ingredient matrices ensures that the two functions and can be composed.   Matrix arithmetic  We use + and * for matrix addition and multiplication.   As evidence of Sage's flexibility, the same symbol * is also used for scalar multiplication.   Edit the cell below to practice these operations.      Alternative methods of multiplication  In addition to the given definition of matrix multiplication, we will make heavy use of two further ways of computing matrix products, called the column and row methods of matrix multiplication.   Column method of matrix multiplication  matrix multiplication column method   Let and . The column method of matrix multiplication computes using the two steps below.   Step 1  Let be the -th column of , considered as a column vector. Then .    Step 2  Let be the -th column of , considered as a column vector. Given any column vector we have .       We prove the equalities in both steps separately.   Proof of Step 1  We must show , where . First we show and have the same size. By definition of matrix multiplication, is . By construction has columns and its -th column is . Since and have size and , respectively, has size . Thus each of the columns of is an column vector. It follows that is , as desired.  Next we show that for all , . Since the -th entry of is the -th entry of the -th column of , we have .    Proof of Step 2  We must show that , where . The usual argument shows that both and are column vectors. It remains only to show that the -th entry of the column is equal to the -th entry of for all . For any such we have .       amounts to a two-step process for computing an arbitrary matrix product .  The first statement (Step 1) tells us that the -th column of the matrix can be obtained by computing the product of with the -th column of .  The second statement (Step 2) tells us that each product can itself be computed as a certain linear combination of the columns of with coefficients drawn from .  A similar remark applies to computing matrix products using the row method, as described below in .    Row method of matrix multiplication  matrix multiplication row method   Let and . The row method of matrix multiplication computes using the two steps below.   Step 1  Let be the -th row of . Then .    Step 2  Let be the -th row of . Given any row vector we have .       The proof is very similar to that of and is left to the reader.     Column and row methods   Let and   Compute using (a) the definition of matrix multiplication, (b) the column method, (c) the row method.       Using the definition, we see easily that     Let be the columns of , and let be the columns of . We have     Now let be the rows of , and let be the rows of . We have         Column and row methods  Let's verify the validity of the column and row methods using Sage in some specific examples. Below we generate random integer matrices and of dimension and , respectively, and compute their product .   Let's check that the -th column of is equal to the product of with the -th column of .   Alternatively, we can visually confirm these equalities using the display of in the first cell above. Observe that the result of A*colsB[i] is displayed by Sage as a tuple, though technically for us this is a column vector.   Next, let's verify that the result of multiplying and the -th column of is the corresponding linear combination of the columns of given by the coefficients of this column.   Now use the Sage cells below to demonstrate the validity of the row method for the product . Simply modify the code in the two cells above to reflect the row method, as opposed to the column method.      Video example of matrix multiplication   Video: three methods of matrix multiplication       Transpose of a matrix  We end this section with one last operation, matrix transposition . We will not make much use of this operation until later, but this is as good a place as any to introduce it.   Matrix transposition  matrix transposition  transpose   Given an matrix its transpose is the matrix whose -entry is the -th entry of . In other words, is the matrix satisfying for all and .     Given a matrix we can give a column- or row-based description of as follows:    is the matrix whose -th row is the -th column of .     is the matrix whose -th column is the -th row of .       Transpose   Let ; then .  Let , then .     Matrix transposition  Matrix transposition is implemented in Sage as the transpose() method. In the cell below we (a) choose random integers , (b) choose a random matrix with integer entries, and (c) compute the transpose of .   As usual, experiment with the Sage cell below.      WeBWork Exercises      Enter T or F depending on whether the statement is true or false. (You must enter T or F -- True and False will not work.)    If A is a square matrix such that AA equals the 0 matrix, then A must equal the 0 matrix.    If A has dimensions and B has dimensions , then AB has dimensions .              Matrix Products: Consider the matrices   Of the possible matrix products ,  which make sense?    C            If A is B is and C is then:  a) BA has dimension    b) CB has dimension    c) AC has dimension                                            Determine and such that                           Determine the value(s) of such that   =  Note: If there is more than one value separate them by commas.                  For each part below write down the most general matrix satisfying the given condition (use letter names ,etc. for entries).     for all .     for all      for .        Let  . Compute the following matrices, or else explain why the given expression is not well defined.                       Let . Compute the following using either the row or column method of matrix multiplication. Make sure to show how you are using the relevant method.   the first column of ;    the second row of ;    the third column of .          Using expansion by columns, the first column of is given by times the first column of . We compute          Use the row or column method to quickly compute the following product:     I'll just describe the row method here.  Note that the rows of are all identical, and equal to . From the row method it follows that each row of is given by .  Thus the rows of are all identical, and the row method computes the product above by taking the corresponding alternating sum of the rows of : .  Thus is the the matrix, all of whose rows are .      Each of the matrices below performs a specific row operation when multiplying a matrix on the left; i.e., the matrix is the result of performing a certain row operation on the matrix . Use the row method of matrix multiplication to decide what row operation each performs. .       Let be an integer. Prove, by induction on , that for any matrices and scalars , we have for all , .      "
 },
 {
   "id": "princ_matrix_mantra",
@@ -2257,12 +2257,12 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "3.1.2",
   "title": "Matrix notation.",
-  "body": " Matrix notation    Matrix whose -th entry is     -th entry of the matrix       Matrix-building notation  matrix matrix-building notation  The notation denotes the matrix whose -th entry ( -th row, -th column) is . When there is no danger of confusion, this notation is often shortened to .    Matrix entry notation  matrix matrix entry notation  Given a matrix , the notation denotes the -th entry of .   Thus if , then for all and .   "
+  "body": " Matrix notation    Matrix whose -th entry is     -th entry of the matrix       Matrix-building notation  matrix matrix-building notation  The notation denotes the matrix whose -th entry is for all . When there is no danger of confusion, this notation is often shortened to .    Matrix entry notation  matrix matrix entry notation  Given a matrix , the notation denotes the -th entry of .   Thus if , then for all and .   "
 },
 {
-  "id": "ss_matrix_attributes-3",
+  "id": "ss_matrix_attributes-4",
   "level": "2",
-  "url": "s_matrix.html#ss_matrix_attributes-3",
+  "url": "s_matrix.html#ss_matrix_attributes-4",
   "type": "Remark",
   "number": "3.1.3",
   "title": "",
@@ -2275,52 +2275,34 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "3.1.4",
   "title": "Rows and columns of a matrix.",
-  "body": " Rows and columns of a matrix   Let be an matrix. For each , -th row of is the -tuple . Similarly, for each , the -th column of is the -tuple . Given -tuples , we denote by the matrix whose -th row is .  Similarly, given -tuples , we denote by the matrix whose -th column is .   "
-},
-{
-  "id": "d_matrix_equality",
-  "level": "2",
-  "url": "s_matrix.html#d_matrix_equality",
-  "type": "Definition",
-  "number": "3.1.5",
-  "title": "Matrix equality.",
-  "body": " Matrix equality   Let and be matrices of dimension and , respectively. The two matrices are equal if    and ;     for all and .     In other words, we have if and only if and have the same shape, and each entry of is equal to the corresponding entry of .   "
-},
-{
-  "id": "eg_inequality",
-  "level": "2",
-  "url": "s_matrix.html#eg_inequality",
-  "type": "Example",
-  "number": "3.1.6",
-  "title": "Matrix equality.",
-  "body": " Matrix equality   The matrices are not equal to one another, despite their having the same entries that appear roughly in the same order. In this case equality does not hold as and have different shapes: is , and is .  The matrices and have the same dimension, but are not equal since .   "
+  "body": " Rows and columns of a matrix   Let be an matrix. For each , the -th row of is the -tuple .  Similarly, for each , the -th column of is the -tuple . Given -tuples , we denote by the matrix whose -th row is .  Similarly, given -tuples , we denote by the matrix whose -th column is .   "
 },
 {
   "id": "d_square_matrices",
   "level": "2",
   "url": "s_matrix.html#d_square_matrices",
   "type": "Definition",
-  "number": "3.1.7",
+  "number": "3.1.5",
   "title": "Matrices of particular shape.",
-  "body": " Matrices of particular shape  matrix square   matrix row vector   matrix column vector   matrix diagonal of square matrix  matrix zero matrix   A matrix is square if its dimension is : , if . The diagonal of a square matrix consists of the entries of of the form for .  A matrix is called a row vector . The -th entry of a row vector is denoted   An matrix , is called a column vector . The -th entry of a column vector is denoted .   "
+  "body": " Matrices of particular shape  matrix square   matrix row vector   matrix column vector    A matrix is square if its dimension is : , if . The diagonal of a square matrix consists of the entries of of the form for .  A matrix is called a row vector . The -th entry of a row vector is denoted   An matrix , is called a column vector . The -th entry of a column vector is denoted .   "
 },
 {
   "id": "rm_tuples_rows_columns",
   "level": "2",
   "url": "s_matrix.html#rm_tuples_rows_columns",
   "type": "Remark",
-  "number": "3.1.8",
-  "title": "Tuples, row vectors, and column vectors.",
-  "body": " Tuples, row vectors, and column vectors  You are perhaps wondering why we make a distinction between -tuples, row vectors, and column vectors. One answer is that a matrix is not simply an ordered sequence: it is an ordered sequence arranged in a very particular way. This subtlety is baked into the very definition of matrix equality, and allows us to say that . There are situations, however, where we don't need this extra layer of structure, where we want to treat an ordered sequence simply as an ordered sequence. In such situations tuples are preferred to row or column vectors.  Of course there will be times where we wish to treat an ordered sequence now as a tuple and now as a row or column vector. In these situations we will clarify what is meant by using the phrase treated as a tuple , treated as a row vector , or treated as a column vector . For example, the tuple , treated as a row vector, is the matrix .  That said, the close connection between linear systems and matrix equations makes it very convenient to be able to treat an -tuple as if it were the column vector , and vice versa. This conflation is so convenient, in fact, that we will simply declare it to be true by fiat! This means that going forward we are permitted to treat tuples as column vectors and vice versa without further comment.  "
+  "number": "3.1.6",
+  "title": "Row vectors, column vectors, and <span class=\"process-math\">\\(n\\)<\/span>-tuples.",
+  "body": " Row vectors, column vectors, and -tuples  In we used the definition of tuple equality ( ) to draw a sharp distinction between -tuples, and what we can now call row vectors and column vectors. We pointed out that no two of the objects are equal, as their index sets are all distinct. Thus, strictly speaking -tuples, row vectors, and column vectors are distinct mathematical objects.  That said, it is useful to have some flexibility in moving between these three different classes of objects, allowing us to begin with an -tuple and treat it as a row vector or column vector, or conversely. When so doing, we will use phrases like treated as a row vector , treated as a column vector , or treated as an -tuple to clarify.  It turns out that it is particularly convenient to conflate -tuples with column vectors , as you will see when we discuss the relation between solutions to linear systems and solutions to matrix equations. In fact, it is so convenient that we will simply declare by fiat that -tuples and column vectors are one and the same thing! This means that going forward we are permitted to treat tuples as column vectors and vice versa without further comment.  "
 },
 {
   "id": "declaration_tuples_columns",
   "level": "2",
   "url": "s_matrix.html#declaration_tuples_columns",
   "type": "Fiat",
-  "number": "3.1.9",
-  "title": "Tuples shall be column vectors, and vice versa.",
-  "body": " Tuples shall be column vectors, and vice versa   We hereby declare that for all we have . In other words, tuples are henceforth the same as column vectors.   "
+  "number": "3.1.7",
+  "title": "Column vectors shall be <span class=\"process-math\">\\(n\\)<\/span>-tuples, and vice versa.",
+  "body": " Column vectors shall be -tuples, and vice versa   We hereby declare that for all we have . In other words, -tuples are henceforth the same thing as column vectors.   "
 },
 {
   "id": "sage_matrix_entries_rows_cols",
@@ -2332,119 +2314,29 @@ var ptx_lunr_docs = [
   "body": " Matrix entries, rows, and columns  Sage syntax for accessing specific entries of a matrix is similar in spirit to our matrix entry notation. However, as with all things Python, we always count from 0. Thus if A is assigned to a matrix in Sage, A[i,j] is its -th entry.   Prescribed subsets of matrix entries are obtained via slicing methods: for example, A[a:b, c:d] returns the collection of entries with and , arranged as a matrix.   Leaving the left or right side of : blank in this notation removes the corresponding restriction bound (left or right) from the index in question. Thus A[2, :] returns the third row of , and A[1:, 3] returns the portion of the fourth column of beginning with its second entry.   Alternatively, we can obtain a list of all rows or columns of using the the methods rows() and columns() .   Use the empty cell below to try out some of these commands.   "
 },
 {
-  "id": "d_matrix_add_subtract",
-  "level": "2",
-  "url": "s_matrix.html#d_matrix_add_subtract",
-  "type": "Definition",
-  "number": "3.1.10",
-  "title": "Matrix addition and scalar multiplication.",
-  "body": " Matrix addition and scalar multiplication  matrix addition  matrix scalar multiplication   Let and be positive integers.   Matrix addition  Given matrices , we define their matrix sum  to be the matrix satisfying for all and . Equivalently, if and , then . The operation is called matrix addition .    Given an matrix and scalar , the scalar multiple of by is the matrix satisfying for all and . Equivalently, if , then . The operation is called matrix scalar multiplication .      "
-},
-{
-  "id": "ss_matrix_arithmetic-4",
-  "level": "2",
-  "url": "s_matrix.html#ss_matrix_arithmetic-4",
-  "type": "Remark",
-  "number": "3.1.11",
-  "title": "",
-  "body": " Observe that matrix addition is not defined for any pair of matrices. The ingredients of matrix addition are two matrices of the same dimension ; and the output is a third matrix of this common dimension.  "
-},
-{
-  "id": "d_zero_matrix",
-  "level": "2",
-  "url": "s_matrix.html#d_zero_matrix",
-  "type": "Definition",
-  "number": "3.1.12",
-  "title": "Zero matrices.",
-  "body": " Zero matrices    the zero matrix    The  zero matrix , denoted , is the matrix, all of whose entries are equal to zero: i.e., for all and .  When there is no confusion about which dimension zero matrix is intended, we will often write simply instead of .   "
-},
-{
-  "id": "d_additive_inverse",
-  "level": "2",
-  "url": "s_matrix.html#d_additive_inverse",
-  "type": "Definition",
-  "number": "3.1.13",
-  "title": "Additive inverse matrix.",
-  "body": " Additive inverse matrix   The additive inverse of an matrix is the matrix defined as .   "
-},
-{
-  "id": "ss_matrix_arithmetic-8",
-  "level": "2",
-  "url": "s_matrix.html#ss_matrix_arithmetic-8",
-  "type": "Remark",
-  "number": "3.1.14",
-  "title": "Additive inverse matrix.",
-  "body": " Additive inverse matrix   Additive inverse matrix is admittedly a bit clunky. We are taking pains here not to call simply the inverse of , as this term is reserved for multiplicative inverses of matrices. (See .)  "
-},
-{
-  "id": "th_matrix_vector_space",
-  "level": "2",
-  "url": "s_matrix.html#th_matrix_vector_space",
-  "type": "Theorem",
-  "number": "3.1.15",
-  "title": "Vector space structure of <span class=\"process-math\">\\(M_{mn}\\)<\/span>.",
-  "body": " Vector space structure of   Let and be positive integers.   The set , together with the matrix addition and scalar multiplication, is a vector space.    The zero vector of is the zero matrix .    Given a matrix its vector inverse is the additive inverse matrix .       Having identified the relevant operations, as well as the proposed zero vector and vector inverses, we must verify that the vector axioms hold. We do so for Axioms i, iii, and iv, leaving the rest as an exercise.   Axiom i      Axiom iii      Axiom iv      "
-},
-{
-  "id": "rm_matrix_diff",
-  "level": "2",
-  "url": "s_matrix.html#rm_matrix_diff",
-  "type": "Remark",
-  "number": "3.1.16",
-  "title": "Matrix difference and matrix linear combination.",
-  "body": " Matrix difference and matrix linear combination  Having established that is a vector space under matrix addition and scalar multiplication, this set of matrices automatically inherits the various features and properties enjoyed by general vector spaces. For example, the vector difference operation (defined for any vector space) gives rise in the case of to a matrix difference operation. Namely, for any we have . Similarly, the general notion of a linear combination of vectors, gives rise to the notion of matrix linear combinations . Namely, given , and scalars , we have the matrix linear combination .  "
-},
-{
-  "id": "eg_matrix_lin_comb",
-  "level": "2",
-  "url": "s_matrix.html#eg_matrix_lin_comb",
-  "type": "Example",
-  "number": "3.1.17",
-  "title": "Matrix linear combinations.",
-  "body": " Matrix linear combinations   Let and . Compute .     .   "
-},
-{
-  "id": "eg_matrix_lin_comb_solve",
-  "level": "2",
-  "url": "s_matrix.html#eg_matrix_lin_comb_solve",
-  "type": "Example",
-  "number": "3.1.18",
-  "title": "Expressing matrix as a linear combination.",
-  "body": " Expressing matrix as a linear combination   Show that can be expressed as a linear combination of the matrices .    We must solve the matrix (or row vector) equation for the scalars . Computing the linear combination on the left yields the matrix equation . Using the definition of matrix equality ( ), we get the system of equations . Using Gaussian elimination we find that there is a unique solution to this system: namely, . We conclude that .   "
-},
-{
-  "id": "rm_entry_lin_comb",
-  "level": "2",
-  "url": "s_matrix.html#rm_entry_lin_comb",
-  "type": "Remark",
-  "number": "3.1.19",
-  "title": "",
-  "body": " Let be matrices. An easy induction argument on shows that for any scalars we have for all , . (See . )  "
-},
-{
   "id": "d_matrix_mult",
   "level": "2",
   "url": "s_matrix.html#d_matrix_mult",
   "type": "Definition",
-  "number": "3.1.20",
+  "number": "3.1.8",
   "title": "Matrix multiplication.",
-  "body": " Matrix multiplication  matrix multiplication   Let be positive integers. Given an matrix and an matrix , we define their product to be the matrix satisfying for all and . Equivalently, if and , then , where . The operation is called matrix multiplication .   "
+  "body": " Matrix multiplication  matrix multiplication   Let be positive integers. Given an matrix and an matrix , we define their product to be the matrix defined as . Equivalently, using matrix-entry notation, we have for all and .  The operation is called matrix multiplication .   "
 },
 {
   "id": "fig_matrix_mult",
   "level": "2",
   "url": "s_matrix.html#fig_matrix_mult",
   "type": "Figure",
-  "number": "3.1.21",
+  "number": "3.1.9",
   "title": "Visualizing matrix multiplication",
   "body": " Visualizing matrix multiplication  In , the -th entry is computed by moving across the -th row of and down the -th column of .     "
 },
 {
-  "id": "ss_matrix_mult-5",
+  "id": "ss_matrix_mult-6",
   "level": "2",
-  "url": "s_matrix.html#ss_matrix_mult-5",
+  "url": "s_matrix.html#ss_matrix_mult-6",
   "type": "Remark",
-  "number": "3.1.22",
+  "number": "3.1.10",
   "title": "Size and matrix multiplication.",
   "body": " Size and matrix multiplication  Observe how, like addition, matrix multiplication is not defined for any pair of matrices: there must be a certain agreement in their dimensions.  In more detail, for the product of and to be defined, we need . In other words we need the inner dimensions of and to be equal: . If this condition is met, the dimension of the resulting matrix is determined by the outer dimensions of and . Schematically, you can think of the inner dimensions as being canceled out :   "
 },
@@ -2453,16 +2345,25 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#eg_matrix_mult",
   "type": "Example",
-  "number": "3.1.23",
+  "number": "3.1.11",
   "title": "Matrix multiplication.",
   "body": " Matrix multiplication  Consider the matrices . Since the inner dimensions of and agree, we can form the product matrix , which has dimension . Let for all . Using , we compute . We conclude that .  "
+},
+{
+  "id": "d_dot_product",
+  "level": "2",
+  "url": "s_matrix.html#d_dot_product",
+  "type": "Definition",
+  "number": "3.1.12",
+  "title": "Dot product.",
+  "body": " Dot product   Given -vectors and , their dot product , denoted , is defined as . The operation is called the dot product on .   "
 },
 {
   "id": "th_matrix_mult_dot_product",
   "level": "2",
   "url": "s_matrix.html#th_matrix_mult_dot_product",
   "type": "Theorem",
-  "number": "3.1.24",
+  "number": "3.1.13",
   "title": "Dot product and matrix multiplication.",
   "body": " Dot product and matrix multiplication   Let be positive integers. Given matrices and , let be the -th row of for all , and let be -th column of for all , so that . For all , we have . In other words, the -th entry of is the dot product of the -th row of and the -th column of .    Let and , so that for all and . Given any pair with and , we have , as claimed.   "
 },
@@ -2471,14 +2372,14 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#eg_matrix_mult_dot_prod",
   "type": "Example",
-  "number": "3.1.25",
+  "number": "3.1.14",
   "title": "Matrix multiplication via dot product.",
   "body": " Matrix multiplication via dot product  Consider the matrices . The two rows of are . The two columns of are . Using the dot product description of matrix multiplication, we compute .  "
 },
 {
-  "id": "ss_matrix_mult-11",
+  "id": "ss_matrix_mult-13",
   "level": "2",
-  "url": "s_matrix.html#ss_matrix_mult-11",
+  "url": "s_matrix.html#ss_matrix_mult-13",
   "type": "Sage Example",
   "number": "7",
   "title": "Matrix arithmetic.",
@@ -2489,7 +2390,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#th_column_method",
   "type": "Theorem",
-  "number": "3.1.26",
+  "number": "3.1.15",
   "title": "Column method of matrix multiplication.",
   "body": " Column method of matrix multiplication  matrix multiplication column method   Let and . The column method of matrix multiplication computes using the two steps below.   Step 1  Let be the -th column of , considered as a column vector. Then .    Step 2  Let be the -th column of , considered as a column vector. Given any column vector we have .       We prove the equalities in both steps separately.   Proof of Step 1  We must show , where . First we show and have the same size. By definition of matrix multiplication, is . By construction has columns and its -th column is . Since and have size and , respectively, has size . Thus each of the columns of is an column vector. It follows that is , as desired.  Next we show that for all , . Since the -th entry of is the -th entry of the -th column of , we have .    Proof of Step 2  We must show that , where . The usual argument shows that both and are column vectors. It remains only to show that the -th entry of the column is equal to the -th entry of for all . For any such we have .    "
 },
@@ -2498,7 +2399,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#s_column_row_method-4",
   "type": "Remark",
-  "number": "3.1.27",
+  "number": "3.1.16",
   "title": "",
   "body": "  amounts to a two-step process for computing an arbitrary matrix product .  The first statement (Step 1) tells us that the -th column of the matrix can be obtained by computing the product of with the -th column of .  The second statement (Step 2) tells us that each product can itself be computed as a certain linear combination of the columns of with coefficients drawn from .  A similar remark applies to computing matrix products using the row method, as described below in .  "
 },
@@ -2507,7 +2408,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#th_row_method",
   "type": "Theorem",
-  "number": "3.1.28",
+  "number": "3.1.17",
   "title": "Row method of matrix multiplication.",
   "body": " Row method of matrix multiplication  matrix multiplication row method   Let and . The row method of matrix multiplication computes using the two steps below.   Step 1  Let be the -th row of . Then .    Step 2  Let be the -th row of . Given any row vector we have .       The proof is very similar to that of and is left to the reader.   "
 },
@@ -2516,7 +2417,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#s_matrix_ex_product",
   "type": "Example",
-  "number": "3.1.29",
+  "number": "3.1.18",
   "title": "Column and row methods.",
   "body": " Column and row methods   Let and   Compute using (a) the definition of matrix multiplication, (b) the column method, (c) the row method.       Using the definition, we see easily that     Let be the columns of , and let be the columns of . We have     Now let be the rows of , and let be the rows of . We have       "
 },
@@ -2534,7 +2435,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#video_eg_matrix_mult_vid",
   "type": "Example",
-  "number": "3.1.30",
+  "number": "3.1.19",
   "title": "Video example of matrix multiplication.",
   "body": " Video example of matrix multiplication   Video: three methods of matrix multiplication    "
 },
@@ -2543,16 +2444,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#d_transpose",
   "type": "Definition",
-  "number": "3.1.32",
+  "number": "3.1.21",
   "title": "Matrix transposition.",
   "body": " Matrix transposition  matrix transposition  transpose   Given an matrix its transpose is the matrix whose -entry is the -th entry of . In other words, is the matrix satisfying for all and .   "
 },
 {
-  "id": "s_matrix-7-4",
+  "id": "s_matrix-6-4",
   "level": "2",
-  "url": "s_matrix.html#s_matrix-7-4",
+  "url": "s_matrix.html#s_matrix-6-4",
   "type": "Remark",
-  "number": "3.1.33",
+  "number": "3.1.22",
   "title": "",
   "body": " Given a matrix we can give a column- or row-based description of as follows:    is the matrix whose -th row is the -th column of .     is the matrix whose -th column is the -th row of .     "
 },
@@ -2561,14 +2462,14 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#eg_transpose",
   "type": "Example",
-  "number": "3.1.34",
+  "number": "3.1.23",
   "title": "Transpose.",
   "body": " Transpose   Let ; then .  Let , then .   "
 },
 {
-  "id": "s_matrix-7-6",
+  "id": "s_matrix-6-6",
   "level": "2",
-  "url": "s_matrix.html#s_matrix-7-6",
+  "url": "s_matrix.html#s_matrix-6-6",
   "type": "Sage Example",
   "number": "9",
   "title": "Matrix transposition.",
@@ -2579,7 +2480,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#ss_matrix_ww-2",
   "type": "WeBWorK",
-  "number": "3.1.35",
+  "number": "3.1.24",
   "title": "",
   "body": "    Enter T or F depending on whether the statement is true or false. (You must enter T or F -- True and False will not work.)    If A is a square matrix such that AA equals the 0 matrix, then A must equal the 0 matrix.    If A has dimensions and B has dimensions , then AB has dimensions .         "
 },
@@ -2588,7 +2489,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#ss_matrix_ww-3",
   "type": "WeBWorK",
-  "number": "3.1.36",
+  "number": "3.1.25",
   "title": "",
   "body": "    Matrix Products: Consider the matrices   Of the possible matrix products ,  which make sense?    C       "
 },
@@ -2597,7 +2498,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#ss_matrix_ww-4",
   "type": "WeBWorK",
-  "number": "3.1.37",
+  "number": "3.1.26",
   "title": "",
   "body": "    If A is B is and C is then:  a) BA has dimension    b) CB has dimension    c) AC has dimension                                       "
 },
@@ -2606,7 +2507,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#ss_matrix_ww-5",
   "type": "WeBWorK",
-  "number": "3.1.38",
+  "number": "3.1.27",
   "title": "",
   "body": "    Determine and such that                      "
 },
@@ -2615,7 +2516,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#ss_matrix_ww-6",
   "type": "WeBWorK",
-  "number": "3.1.39",
+  "number": "3.1.28",
   "title": "",
   "body": "    Determine the value(s) of such that   =  Note: If there is more than one value separate them by commas.            "
 },
@@ -2624,7 +2525,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#s_matrix_ex-1-1",
   "type": "Exercise",
-  "number": "3.1.7.1",
+  "number": "3.1.6.1",
   "title": "",
   "body": "  For each part below write down the most general matrix satisfying the given condition (use letter names ,etc. for entries).     for all .     for all      for .     "
 },
@@ -2633,7 +2534,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#s_matrix_ex-1-2",
   "type": "Exercise",
-  "number": "3.1.7.2",
+  "number": "3.1.6.2",
   "title": "",
   "body": "  Let  . Compute the following matrices, or else explain why the given expression is not well defined.                    "
 },
@@ -2642,7 +2543,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#s_matrix_ex-1-3",
   "type": "Exercise",
-  "number": "3.1.7.3",
+  "number": "3.1.6.3",
   "title": "",
   "body": "  Let . Compute the following using either the row or column method of matrix multiplication. Make sure to show how you are using the relevant method.   the first column of ;    the second row of ;    the third column of .          Using expansion by columns, the first column of is given by times the first column of . We compute       "
 },
@@ -2651,7 +2552,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#s_matrix_ex-1-4",
   "type": "Exercise",
-  "number": "3.1.7.4",
+  "number": "3.1.6.4",
   "title": "",
   "body": "  Use the row or column method to quickly compute the following product:     I'll just describe the row method here.  Note that the rows of are all identical, and equal to . From the row method it follows that each row of is given by .  Thus the rows of are all identical, and the row method computes the product above by taking the corresponding alternating sum of the rows of : .  Thus is the the matrix, all of whose rows are .   "
 },
@@ -2660,7 +2561,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#s_matrix_ex-1-5",
   "type": "Exercise",
-  "number": "3.1.7.5",
+  "number": "3.1.6.5",
   "title": "",
   "body": "  Each of the matrices below performs a specific row operation when multiplying a matrix on the left; i.e., the matrix is the result of performing a certain row operation on the matrix . Use the row method of matrix multiplication to decide what row operation each performs. .    "
 },
@@ -2669,7 +2570,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#ex_entry_lin_comb",
   "type": "Exercise",
-  "number": "3.1.7.6",
+  "number": "3.1.6.6",
   "title": "",
   "body": "  Let be an integer. Prove, by induction on , that for any matrices and scalars , we have for all , .   "
 },

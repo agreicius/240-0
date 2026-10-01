@@ -19,21 +19,26 @@
 </head>
 <body class="ignore-math">
 <article class="definition definition-like"><h2 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.1.20</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Matrix multiplication.</span>
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.1.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Matrix multiplication.</span>
 </h2>
 <div class="para logical">
-<div class="para">Let <span class="process-math">\(m,n,r\)</span> be positive integers. Given an <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\in M_{mn}\)</span> and an <span class="process-math">\(n\times r\)</span> matrix <span class="process-math">\(B\in M_{nr}\text{,}\)</span> we define their <dfn class="terminology">product</dfn> to be the <span class="process-math">\(m\times r\)</span> matrix <span class="process-math">\(AB\)</span> satisfying</div>
+<div class="para">Let <span class="process-math">\(m,n,r\)</span> be positive integers. Given an <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A=[a_{i,j}]_{m\times n}\)</span> and an <span class="process-math">\(n\times r\)</span> matrix <span class="process-math">\(B=[b_{i,j}]_{n\times r}\text{,}\)</span> we define their <dfn class="terminology">product</dfn> to be the <span class="process-math">\(m\times r\)</span> matrix <span class="process-math">\(AB\)</span> defined as</div>
 <div class="displaymath process-math">
 \begin{equation}
-[AB]_{ij}=[A]_{i1}[B]_{1j}+[A]_{i2}[B]_{2j}+\cdots [A]_{in}[B]_{nj}=\sum_{k=1}^n[A]_{ik}[B]_{kj}\tag{3.1.1}
+AB=\left[\sum_{k=1}^{n}a_{ik}b_{kj}\right]_{m\times r}\text{.}\tag{3.1.1}
 \end{equation}
 </div>
-<div class="para">for all <span class="process-math">\(1\leq i\leq m\)</span> and <span class="process-math">\(1\leq j\leq r\text{.}\)</span> Equivalently, if <span class="process-math">\(A=[a_{ij}]\)</span> and <span class="process-math">\(B=[b_{ij}]\text{,}\)</span> then <span class="process-math">\(AB=[c_{ij}]\text{,}\)</span> where</div>
+<div class="para">Equivalently, using matrix-entry notation, we have</div>
 <div class="displaymath process-math">
-\begin{equation*}
-c_{ij}=\sum_{k=1}^na_{ik}b_{kj}\text{.}
-\end{equation*}
+\begin{align}
+[AB]_{i,j} \amp =\sum_{k=1}^{n}a_{i,j}b_{k,j}\tag{3.1.2}
+\end{align}
 </div>
+<div class="para">for all <span class="process-math">\(1\leq i\leq m\)</span> and <span class="process-math">\(1\leq j\leq r\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#d_matrix_mult-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical">
 <div class="para">The operation</div>
 <div class="displaymath process-math">
 \begin{align*}
@@ -42,9 +47,9 @@ M_{mn}\times M_{nr} \amp \rightarrow M_{mr}\\
 \end{align*}
 </div>
 <div class="para">is called <dfn class="terminology">matrix multiplication</dfn>.</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#d_matrix_mult-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#d_matrix_mult-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Definition 3.1.20: Matrix multiplication"><a tabindex="-1" href="#d_matrix_mult" title="Copy heading and permalink for Definition 3.1.20: Matrix multiplication" aria-label="Copy heading and permalink for Definition 3.1.20: Matrix multiplication">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 3.1.8: Matrix multiplication"><a tabindex="-1" href="#d_matrix_mult" title="Copy heading and permalink for Definition 3.1.8: Matrix multiplication" aria-label="Copy heading and permalink for Definition 3.1.8: Matrix multiplication">🔗</a></div>
 </article><span class="incontext"><a class="internal" href="s_matrix.html#d_matrix_mult">In Context</a></span>
 </body>
 </html>
