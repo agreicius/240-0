@@ -830,7 +830,7 @@ Recall that Sage captures the double-index nature of a matrix by nesting lists: 
         <xref ref="sage_vec_ops"/> demonstrates how vector operations on <m>\R^n</m> and <m>\ML_{m,n}(\R)</m> are implemented in Sage. 
      </p>
     <project xml:id="sage_vec_ops">
-        <title>Vector operations: <m>\R^n</m> and <m>\ML_{m\times n}(\R)</m> </title>
+        <title>Vector operations: <m>\R^n</m> and <m>\ML_{m, n}(\R)</m> </title>
         <p>
             To create an <m>n</m>-tuple in Sage, use the <c>vector()</c> command.
             The input should be a sequence of numbers enclosed in brackets.
@@ -1333,7 +1333,7 @@ Recall that Sage captures the double-index nature of a matrix by nesting lists: 
         </statement>
         </definition>
         <p>
-        For now, we will mainly focus on vector spaces of the form <m>V=\R^I</m> or <m>V=\{\boldzero\}</m>, leaving a more thorough investigation of vector spaces in all of their abstract glory until <xref ref="c_vectorspace"/>. However, as we introduce new concepts connected to vector spaces, we will always state them in full generality for a general vector space <m>V</m>. This is done mainly out of convenience, so that we do not have to repeat the same definition later on. Since our emphasis is on vector spaces of the form <m>\R^I</m>, we will take care to follow up any new definition with some examples taken from some familiar vector spaces of the form <m>\R^n</m>, <m>\ML_{m\times n}(\R)</m>, <m>\R^\infty</m>. We put this into practice with our next definition. 
+        For now, we will mainly focus on vector spaces of the form <m>V=\R^I</m> or <m>V=\{\boldzero\}</m>, leaving a more thorough investigation of vector spaces in all of their abstract glory until <xref ref="c_vectorspace"/>. However, as we introduce new concepts connected to vector spaces, we will always state them in full generality for a general vector space <m>V</m>. This is done mainly out of convenience, so that we do not have to repeat the same definition later on. Since our emphasis is on vector spaces of the form <m>\R^I</m>, we will take care to follow up any new definition with some examples taken from some familiar vector spaces of the form <m>\R^n</m>, <m>\ML_{m,n}(\R)</m>, <m>\R^\infty</m>. We put this into practice with our next definition. 
         </p>
             <definition xml:id="d_lin_comb">
                 <title>Linear combination</title>

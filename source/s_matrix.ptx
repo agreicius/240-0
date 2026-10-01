@@ -5,7 +5,7 @@
       Matrices played a small supporting role in our discussion of linear systems in <xref ref="c_lin_sys"/>. In this chapter we bring them to center stage and give them a full-blown treatment as independent mathematical objects in their own right.
     </p>
     <p>Like any mathematical entity worth its salt, matrices can be employed in a vast multitude of ways. As such it is important to allow matrices to transcend their humble beginnings in this course as boiled down systems of linear equations. We record this observation as another principle.
-
+     </p>
       <principle xml:id="princ_matrix_mantra">
         <title>Matrix mantra</title>
         <statement>
@@ -17,21 +17,27 @@
           </p>
         </statement>
       </principle>
-    </p>
+   
   </introduction>
   <subsection xml:id="ss_matrix_attributes">
     <title>The basics</title>
-    
+  <p>
+    We introduced matrices back in <xref ref="s_real_tuples"/> as tuples indexed by a an index set of the form 
+    <md>
+      I=\{(i,j)\mid 1\leq i\leq m, 1\leq j\leq n\}
+    </md>,
+  and introduced the notation <m>A=[a_{i,j}]_{m\times n}</m> to denote the matrix whose <m>i,j</m>-th entry is <m>a_{i,j}</m> for all <m>1\leq i\leq m, 1\leq j\leq n</m>. Occasionally, we will wish to focus on a single entry of a matrix <m>A</m>, in which case the entry notation <m>[A]_{i,j}</m> introduced in <xref ref="d_matrix_notation"/> will come in handy. 
+  </p> 
 
 <definition xml:id="d_matrix_notation">
 <title>Matrix notation</title>
   <notation>
-    <usage><m>[a_{ij}]_{m\times n}</m></usage>
+    <usage><m>[a_{i,j}]_{m\times n}</m></usage>
     <description>Matrix whose <m>ij</m>-th entry is <m>a_{ij}</m></description>
   </notation>
   <notation>
-    <usage><m>(A)_{ij}</m></usage>
-    <description><m>ij</m>-th entry of the matrix <m>A</m></description>
+    <usage><m>[A]_{i,j}</m></usage>
+    <description><m>i,j</m>-th entry of the matrix <m>A</m></description>
   </notation>
   <statement>
     <p>
@@ -40,8 +46,8 @@
         <title>Matrix-building notation</title>
         <idx><h>matrix</h><h>matrix-building notation</h></idx>
         <p>
-          The notation <m>[a_{ij}]_{m\times n}</m> denotes the
-          <m>m\times n</m> matrix whose <m>ij</m>-th entry (<m>i</m>-th row, <m>j</m>-th column) is <m>a_{ij}</m>. When there is no danger of confusion, this notation is often shortened to <m>[a_{ij}]</m>.
+          The notation <m>[a_{i,j}]_{m\times n}</m> denotes the
+          <m>m\times n</m> matrix whose <m>i,j</m>-th entry is <m>a_{i,j}</m> for all <m>1\leq i\leq m, 1\leq j\leq n</m>. When there is no danger of confusion, this notation is often shortened to <m>[a_{i,j}]</m>.
         </p>
       </li>
       <li>
@@ -49,25 +55,25 @@
         <idx><h>matrix</h><h>matrix entry notation</h></idx>
         <p>
           Given a matrix <m>A</m>,
-          the notation <m>[A]_{ij}</m> denotes the <m>ij</m>-th entry of <m>A</m>.
+          the notation <m>[A]_{i,j}</m> denotes the <m>i,j</m>-th entry of <m>A</m>.
         </p>
       </li>
     </dl>
-      Thus if <m>A=[a_{ij}]_{m\times n}</m>, then <m>[A]_{ij}=a_{ij}</m> for all <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>.
+      Thus if <m>A=[a_{i,j}]_{m\times n}</m>, then <m>[A]_{i,j}=a_{i,j}</m> for all <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>.
     </p>
   </statement>
 </definition>
 <remark>
   <p>
-    The matrix-building notation is often used simply to give names to the entries of an arbitrary matrix. However, it can also be used to describe a matrix whose <m>ij</m>-th entry is given by specified rule or formula.
+    The matrix-building notation is often used simply to give names to the entries of an arbitrary matrix. However, it can also be used to describe a matrix whose <m>i,j</m>-th entry is given by specified rule or formula.
   </p>
   <p>
-    For example, let <m>A=[a_{ij}]_{2\times 3}</m>, where <m>a_{ij}=(i-j)j</m>. This is the <m>2\times 3</m> matrix whose <m>ij</m>-th entry is <m>(i-j)j</m>. Thus
+    For example, let <m>A=[a_{i,j}]_{2\times 3}</m>, where <m>a_{i,j}=(i-j)j</m>. This is the <m>2\times 3</m> matrix whose <m>i,j</m>-th entry is <m>(i-j)j</m>. Thus
     <md>
       A=\begin{bmatrix}(1-1)1 \amp (1-2)2 \amp (1-3)3\\ (2-1)1 \amp (2-2)2 \amp (2-3)3
     \end{bmatrix}=\begin{bmatrix}0 \amp -2 \amp -6\\ 1 \amp 0 \amp -3 \end{bmatrix}
     </md>.
-    In this example we have <m>[A]_{23}=-3</m> and <m>[A]_{ii}=0</m> for <m>i=1,2</m>.
+    In this example we have <m>[A]_{2,3}=-3</m> and <m>[A]_{i,i}=0</m> for <m>i=1,2</m>.
   </p>
 </remark>
 <p>
@@ -77,11 +83,13 @@
   <title>Rows and columns of a matrix</title>
   <statement>
     <p>
-      Let <m>A</m> be an <m>m\times n</m> matrix. For each <m>1\leq i\leq m</m>,  <term><m>i</m>-th row</term> of <m>A</m> is the <m>n</m>-tuple 
-      <md>(a_{i 1},  a_{i2}, \dots,  a_{i n})\in \R^n</md>.
+      Let <m>A=[a_{i,j}]_{m\times n}</m> be an <m>m\times n</m> matrix. For each <m>1\leq i\leq m</m>, the  <term><m>i</m>-th row</term> of <m>A</m> is the <m>n</m>-tuple 
+      <md>(a_{i,1},  a_{i,2}, \dots,  a_{i,n})\in \R^n</md>.
+    </p>
+    <p>
       Similarly, for each <m>1\leq j\leq n</m>, the <term><m>j</m>-th column</term> of <m>A</m> is the <m>m</m>-tuple 
       <md>
-        (a_{1 j}, a_{2 j},  \dots, a_{m j})\in \R^m
+        (a_{1, j}, a_{2, j},  \dots, a_{m, j})\in \R^m
       </md>.
       Given <m>n</m>-tuples <m>\boldr_1, \boldr_2,\dots, \boldr_m\in \R^n</m>, we denote by 
       <md>
@@ -104,49 +112,10 @@
     </p>
   </statement>
 </definition>
-  <p>
-  In everyday language the notion of equality is taken as self-evident. Two things are equal if they are the same. What more is there to say? In mathematics, each time we introduce a new type of mathematical object (e.g., sets, functions, <m>n</m>-tuples, etc.) we need to spell out exactly what we mean for two objects to be considered equal. We do so now with matrices.
+<p>
+  It will be convenient to have names for matrices of particular shapes, as we now define. 
 </p>
-  <definition xml:id="d_matrix_equality">
-    <title>Matrix equality</title>
-    <statement>
-      <p>
-        Let <m>A</m> and <m>B</m> be matrices of dimension <m>m\times n</m> and <m>m'\times n'</m>, respectively.  The two matrices are <term>equal</term> if
-        <ol>
-          <li>
-            <p>
-              <m>m=m'</m> and <m>n=n'</m>;
-            </p>
-          </li>
-          <li>
-            <p>
-              <m>[A]_{ij}=[B]_{ij}</m> for all
-              <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
-      <p>
-        In other words, we have <m>A=B</m> if and only if <m>A</m> and <m>B</m> have the same shape, and each entry of <m>A</m> is equal to the corresponding entry of <m>B</m>.
-      </p>
-    </statement>
-  </definition>
-  <example xml:id="eg_inequality">
-  <title>Matrix equality</title>
-    <statement>
-      <p>
-        The matrices 
-        <md>
-          <mrow>A \amp =\begin{bmatrix}1\amp 2\amp 3\amp 4 \end{bmatrix} 
-          \amp B\amp = \begin{bmatrix} 1\\ 2\\ 3\\ 4\end{bmatrix}</mrow>
-        </md>
-         are not equal to one another, despite their having the same entries that appear roughly in the same order. In this case equality does not hold as <m>A</m> and <m>B</m> have different shapes: <m>A</m> is <m>1\times 4</m>, and <m>B</m> is <m>4\times 1</m>.
-      </p>
-      <p>
-        The matrices <m>A=\begin{bmatrix}1\amp 2 \\3\amp 4 \end{bmatrix}</m> and <m>B=\begin{bmatrix}1\amp 2\\ 5\amp 4\end{bmatrix}</m> have the same dimension, but are not equal since <m>[A]_{21}=3\ne 5=[B]_{21}</m>.
-      </p>
-    </statement>
-  </example>
+
   <definition xml:id="d_square_matrices">
     <title>Matrices of particular shape</title>
     <idx><h>matrix</h><h>square</h>
@@ -155,11 +124,9 @@
     </idx>
     <idx><h>matrix</h><h>column vector</h>
     </idx>
-    <idx><h>matrix</h><h>diagonal of square matrix</h></idx>
-    <idx><h>matrix</h><h>zero matrix</h></idx>
     <statement>
       <p>
-        A matrix <m>A</m> is <term>square</term> if its dimension is <m>n\times n</m>: <ie/>, if <m>A\in M_{nn}</m>. The <term>diagonal</term> of a square matrix <m>A\in M_{nn}</m> consists of the entries of <m>A</m> of the form <m>[A]_{ii}</m> for <m>1\leq i\leq n</m>.
+        A matrix <m>A</m> is <term>square</term> if its dimension is <m>n\times n</m>: <ie/>, if <m>A\in M_{nn}</m>. The <term>diagonal</term> of a square matrix <m>A\in M_{nn}</m> consists of the entries of <m>A</m> of the form <m>[A]_{i,i}</m> for <m>1\leq i\leq n</m>.
       </p>
       <p>
       A <m>1\times n</m> matrix
@@ -176,32 +143,30 @@
   </definition>
   
     <remark xml:id="rm_tuples_rows_columns">
-    <title>Tuples, row vectors, and column vectors</title>
+    <title>Row vectors, column vectors, and <m>n</m>-tuples</title>
     <p>
-      You are perhaps wondering why we make a distinction between <m>n</m>-tuples, <m>1\times n</m> row vectors, and <m>n\times 1</m> column vectors. One answer is that a matrix is not simply an ordered sequence: it is an ordered sequence arranged in a very particular way. This subtlety is baked into the very definition of matrix equality, and allows us to say that <md>
-        \begin{amatrix}[rr]1\amp 2  \end{amatrix}\ne \begin{amatrix}[r]1\\ 2  \end{amatrix}
-        </md>.
-        There are situations, however, where we don't need this extra layer of structure, where we want to treat an ordered sequence simply as an ordered sequence. In such situations tuples are preferred to row or column vectors.
+    In <xref ref="s_real_tuples"/> we used the definition of tuple equality (<xref ref="d_tuple_equality_real"/>) to draw a sharp distinction between <m>n</m>-tuples, and what we can now call row vectors and column vectors. We pointed out that no two of the objects
+    <md>
+      <mrow>(a_1,a_2,\dots, a_n) \amp \amp \colvec{a_1\\ a_2\\ \vdots \\ a_n} \amp \amp \rowvec{a_1\amp a_2\amp \dots \amp a_n}</mrow>
+    </md> 
+    are equal, as their index sets are all distinct. Thus, strictly speaking <m>n</m>-tuples, row vectors, and column vectors are distinct mathematical objects.  
       </p>
-      <p>Of course there will be times where we wish to treat an ordered sequence now as a tuple and now as a row or column vector. In these situations we will clarify what is meant by using the phrase <q>treated as a tuple</q>, <q>treated as a row vector</q>, or <q>treated as a column vector</q>. For example, the tuple <m>(1,2)</m>, treated as a row vector, is the <m>1\times 2</m> matrix <m>\begin{bmatrix}1 \amp 2\end{bmatrix}</m>. 
+      <p>
+  That said, it is useful to have some flexibility in moving between these three different classes of objects, allowing us to begin with an <m>n</m>-tuple <m>(a_1,a_2,\dots, a_n)</m> and treat it as a row vector or column vector, or conversely. When so doing, we will use phrases like <q>treated as a row vector</q>,<q>treated as a column vector</q>, or <q>treated as an <m>n</m>-tuple</q> to clarify. 
       </p>
       <p> 
-      That said, the close connection between linear systems and matrix equations makes it very convenient to be able to treat an <m>n</m>-tuple <m>(c_1,c_2,\dots, c_n)</m> as if it were the column vector
-      <md>
-        \colvec{c_1\\ c_2\\ \vdots \\ c_n}
-      </md>,
-      and vice versa. This conflation is so convenient, in fact, that we will simply declare it to be true by fiat! This means that going forward we are permitted to treat tuples as column vectors and vice versa without further comment. 
+      It turns out that it is particularly convenient to conflate <m>n</m>-tuples with <em>column vectors</em>, as you will see when we discuss the relation between solutions to linear systems and solutions to matrix equations. In fact, it is so convenient that we will simply declare by fiat that <m>n</m>-tuples and <m>n\times 1</m> column vectors are one and the same thing! This means that going forward we are permitted to treat tuples as column vectors and vice versa without further comment. 
     </p>
   </remark>
   <assumption xml:id="declaration_tuples_columns">
-    <title>Tuples shall be column vectors, and vice versa</title>
+    <title>Column vectors shall be <m>n</m>-tuples, and vice versa</title>
     <statement>
       <p>
         We hereby declare that for all <m>\boldx=(c_1,c_2,\dots, c_n)\in \R^n</m> we have
         <md>
           \boldx=(c_1,c_2,\dots, c_n)=\colvec{c_1\\ c_2\\ \vdots \\ c_n}
         </md>.
-        In other words, tuples are henceforth the same as column vectors.
+        In other words, <m>n</m>-tuples are henceforth the same thing as <m>n\times 1</m> column vectors.
       </p>
     </statement>
   </assumption>
@@ -225,7 +190,7 @@
     </output>
     </sage>
     <p>
-      Prescribed subsets of matrix entries are obtained via <em>slicing</em> methods: for example, <c>A[a:b, c:d]</c> returns the collection of entries <m>[A]_{ij}</m> with <m>a+1\leq i\lt b+1</m> and <m>c+1\leq j\lt d</m>, arranged as a matrix.
+      Prescribed subsets of matrix entries are obtained via <em>slicing</em> methods: for example, <c>A[a:b, c:d]</c> returns the collection of entries <m>[A]_{i,j}</m> with <m>a+1\leq i\lt b+1</m> and <m>c+1\leq j\lt d</m>, arranged as a matrix.
     </p>
     <sage>
     <input>
@@ -277,7 +242,7 @@
   </project>
 
 </subsection>
-  <subsection xml:id="ss_matrix_arithmetic">
+  <!-- <subsection xml:id="ss_matrix_arithmetic">
     <title>Vector space structure of <m>M_{mn}</m></title>
     <p>
       We now lay out the various algebraic operations we will use to combine and transform matrices; we refer to the use of these operations loosely as <em>matrix arithmetic</em>. Some of these operations resemble familiar operations from real arithmetic in terms of their notation and definition. Do not be lulled into complacency! These are new operations defined for a new class of mathematical objects, and must be treated carefully. In particular, pay close attention to (a) exactly what type of mathematical objects serve as inputs for each operation (the <em>ingredients</em> of the operation), and (b) what type of mathematical object is outputted.
@@ -490,25 +455,36 @@
       </p>
     </remark>
 
-  </subsection>
+  </subsection> -->
   <subsection xml:id="ss_matrix_mult">
   <title>Matrix multiplication</title>
     <p>
-      So how do we define the product of two matrices? Looking at the previous operations, you might have guessed that we should define the product of two <m>m\times n</m> matrices by taking the product of their corresponding entries. Not so!
+      Recall that the set <m>\ML_{m,n}(\R)</m> of all <m>m\times n</m> matrices has a <xref ref="d_vector_space" text="custom">vector space structure</xref> with respect to the operations of matrix addition and matrix scalar multiplication defined as 
+      <md>
+        <mrow>[a_{i,j}]_{m\times n}+[b_{i,j}]_{m\times n} \amp = [a_{i,j}+b_{i,j}]_{m\times n}</mrow>
+        <mrow>c\cdot [a_{i,j}]_{m\times n} \amp =[ca_{i,j}]_{m\times n}</mrow>
+      </md>,
+      that the additive identity of <m>\ML_{m,n}(\R)</m> is the <m>m\times n</m> zero matrix <m>\boldzero_{m\times n}=[0]_{m\times n}</m>, and that the additive inverse of a matrix <m>A=[a_{i,j}]_{m\times n}</m> is the matrix <m>-A=[-a_{i,j}]_{m\times n}</m>. 
+    </p>
+  <p>
+      We now add a third operation to this matrix arithmetic: <em>matrix multiplication</em>. Looking at the definition of matrix addition (which is defined entry-wise), you might guess that matrix multiplication is defined similarly: that is, that the product of two matrices should be defined simply by multiplying the corresponding entries. Not so! Though there is nothing fundamentally wrong with such a proposal, for reasons that will be made clear later, it turns out that the more complicated (and less intuitive) definition below is the one we are after. 
     </p>
   <definition xml:id="d_matrix_mult">
     <title>Matrix multiplication</title>
       <idx><h>matrix multiplication</h></idx>
     <statement>
       <p>Let <m>m,n,r</m> be positive integers. Given an <m>m\times n</m> matrix
-        <m>A\in M_{mn}</m> and an <m>n\times r</m> matrix <m>B\in M_{nr}</m>, we define their <term>product</term> to be the <m>m\times r</m> matrix <m>AB</m> satisfying 
+        <m>A=[a_{i,j}]_{m\times n}</m> and an <m>n\times r</m> matrix <m>B=[b_{i,j}]_{n\times r}</m>, we define their <term>product</term> to be the <m>m\times r</m> matrix <m>AB</m> defined as  
         <md number="yes" xml:id="eq_matrix_mult">
-          [AB]_{ij}=[A]_{i1}[B]_{1j}+[A]_{i2}[B]_{2j}+\cdots [A]_{in}[B]_{nj}=\sum_{k=1}^n[A]_{ik}[B]_{kj}
-        </md>
-        for all <m>1\leq i\leq m</m> and <m>1\leq j\leq r</m>. Equivalently, if <m>A=[a_{ij}]</m> and <m>B=[b_{ij}]</m>, then <m>AB=[c_{ij}]</m>, where 
-        <md>
-          c_{ij}=\sum_{k=1}^na_{ik}b_{kj}
+          AB=\left[\sum_{k=1}^{n}a_{ik}b_{kj}\right]_{m\times r}
         </md>.
+        Equivalently, using matrix-entry notation, we have 
+      <md number="yes" >
+          <mrow xml:id="eq_matrix_mult_entry">[AB]_{i,j} \amp =\sum_{k=1}^{n}a_{i,j}b_{k,j}</mrow>
+        </md>
+        for all <m>1\leq i\leq m</m> and <m>1\leq j\leq r</m>.
+      </p>
+      <p>
         The operation 
         <md>
           <mrow>M_{mn}\times M_{nr} \amp \rightarrow M_{mr}</mrow>
@@ -520,7 +496,7 @@
   </definition>
   <figure xml:id="fig_matrix_mult">
     <title>Visualizing matrix multiplication </title>
-    <caption>In <m>C=AB</m>, the <m>ij</m>-th entry <m>c_{ij}=\sum_{k=1}^na_{ik}b_{kj}</m> is computed by moving across the <m>i</m>-th row of <m>A</m> and down the <m>j</m>-th column of <m>B</m>. </caption>
+    <caption>In <m>C=AB</m>, the <m>i,j</m>-th entry <m>c_{i,j}=\sum_{k=1}^na_{ik}b_{kj}</m> is computed by moving across the <m>i</m>-th row of <m>A</m> and down the <m>j</m>-th column of <m>B</m>. </caption>
 
     <image xml:id="im_matrix_mult" width="100%">
       <latex-image>
@@ -577,7 +553,7 @@ DL/.style={
       Observe how, like addition, matrix multiplication is not defined for any pair of matrices: there must be a certain agreement in their dimensions. 
     </p>
     <p>
-      In more detail, for the product of <m>A_{mn}</m> and <m>B_{pr}</m> to be defined,
+      In more detail, for the product of <m>A_{m,n}</m> and <m>B_{p,r}</m> to be defined,
       we need <m>n=p</m>. In other words we need the
       <q>inner</q> dimensions of <m>A</m> and <m>B</m> to be equal:
       <md>
@@ -620,8 +596,30 @@ DL/.style={
     </p>
   </example>
   <p>
-    Formula <xref ref="eq_matrix_mult"/> for the <m>ij</m>-th entry of a matrix product <m>AB</m> is easily identified as the <xref ref="d_dot_product" text="custom">dot product</xref> of the <m>i</m>-th row of <m>A</m> with the <m>j</m>-th column of <m>B</m>. This gives us a succinct way of describing the entries of the product <m>AB</m> in terms of the dot product. 
+    The formula <xref ref="eq_matrix_mult_entry"/> for the <m>i,j</m>-th entry of the matrix product <m>AB</m> is reminiscent of the dot product
+    <md>
+      (a_1,a_2,a_3)\cdot (b_1,b_2,b_3)=a_1b_1+a_2b_2+a_3b_3
+    </md>
+    operation on <m>\R^3</m>. In <xref ref="d_dot_product"/> we generalize this notion to <m>\R^n</m>, and as a result, we are able to succinctly describe the <m>i,j</m>-th entry of <m>AB</m> as the <em>dot product</em> of the <m>i</m>-th row of <m>A</m> with the <m>j</m>-th column of <m>B</m>. (See <xref ref="th_matrix_mult_dot_product"/>.) We will have a lot more to say about the dot product in <xref ref="s_innerproducts"/>, but for now we will use it simply as a useful way to describe matrix multiplication.  
   </p>
+  <definition xml:id="d_dot_product">
+  <title>Dot product</title>
+  <statement>
+  <p>
+  Given <m>n</m>-vectors <m>\boldv=(a_1,a_2,\dots, a_n)</m> and <m>\boldw=(b_1,b_2,\dots, b_n)</m>, their <term>dot product</term>, denoted <m>\boldv\cdot\boldw</m>, is defined as 
+  <md number="yes" xml:id="eq_dot_product">
+    \boldv\cdot \boldw=\sum_{i=1}^na_ib_i=a_1b_1+a_2b_2+\cdots +a_nb_n
+  </md>.
+  The operation 
+  <md>
+    <mrow>\R^n\times \R^n \amp \rightarrow \R</mrow>
+    <mrow>(\boldv,\boldw) \amp \longmapsto \boldv\cdot\boldw</mrow>
+  </md>
+  is called the <term>dot product</term> on <m>\R^n</m>. 
+  </p>
+  </statement>
+  </definition>
+  
   <theorem xml:id="th_matrix_mult_dot_product">
     <title>Dot product and matrix multiplication</title>
     <statement>
