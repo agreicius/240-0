@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_complex_numbers_ex-3" assembly-id="s_complex_numbers_ex-3">
+  <static seed="12" source="Library/Hope/Multi1/05-03-Complex-numbers/Complex_arithmetic_04.pg">
+    <statement><p>Evaluate the following expressions and write them in the form <m>a + b i</m>.</p>
+<p><m>({-3+5i})({8+7i}) =</m> <fillin characters="20" name="AnSwEr0001"/>.</p>
+<p><m>({-3+5i})\overline{({8+7i})} =</m> <fillin characters="20" name="AnSwEr0002"/>.</p>
+<p><m>\overline{({-3+5i})({8+7i})} =</m> <fillin characters="20" name="AnSwEr0003"/>.</p>
+<p><m>({-3+5i})\overline{{-3+5i}} =</m> <fillin characters="20" name="AnSwEr0004"/>.</p>
+<p><m>| {-3+5i} | =</m> <fillin characters="20" name="AnSwEr0005"/>.</p>
+</statement>
+    <answer>
+      <p>
+        <m>-59+19i</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>11+61i</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>-59-19i</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>34</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>5.83095</m>
+      </p>
+    </answer>
+  </static>
+  <rendering-data sourceFilePath="Library/Hope/Multi1/05-03-Complex-numbers/Complex_arithmetic_04.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/Hope/Multi1/05-03-Complex-numbers/Complex_arithmetic_04.pg"/>
+</webwork-reps>

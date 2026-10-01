@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-ss_logic_ww-7" assembly-id="ss_logic_ww-7">
+  <static seed="11" source="Library/NAU/setFoundations/MAT320_0401.pg">
+    <statement><p>Suppose <m>{ A_i  \ | \ i\in I }</m> is an indexed family of sets. For each statement below, write the letter of the equivalent symbolic form.</p>
+<p><ol>
+<li>
+<p><m>B\cap A_i \not = \emptyset</m> for every <m>i</m></p>
+</li>
+<li>
+<p><m>B \subseteq (\bigcup_{i \in I} A_i)</m></p>
+</li>
+<li>
+<p><m>B\subseteq A_i</m> for some <m>i</m></p>
+</li>
+</ol></p>
+<p><ol label="A.">
+<li>
+<p><m>(\forall i \in I) (\exists x \in B)(x \in A_i)</m></p>
+</li>
+<li>
+<p><m>(\exists i \in I)(\forall x \in B)(x \in A_i)</m></p>
+</li>
+<li>
+<p><m>(\forall x \in B)(\exists i \in I)(x \in A_i)</m></p>
+</li>
+</ol></p>
+</statement>
+  </static>
+  <rendering-data sourceFilePath="Library/NAU/setFoundations/MAT320_0401.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/NAU/setFoundations/MAT320_0401.pg"/>
+</webwork-reps>

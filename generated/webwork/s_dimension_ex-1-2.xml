@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_dimension_ex-1-2" assembly-id="s_dimension_ex-1-2">
+  <static seed="58" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.48_54a.pg">
+    <statement><p>Are the following statements true or false?</p>
+<p><ol>
+<li>
+<p>Let <m>m\lt n</m>. Then <m>U =</m> {<m>u_1, u_2,\ldots, u_m</m>} in <m>R^n</m> can form a basis  for <m>R^n</m> if the correct <m>n-m</m> vectors are added to <m>U</m>.</p>
+</li>
+<li>
+<p>If  <m>\  S_1</m> is of dimension 3 and is a subspace of <m>R^4</m>, then there can not exist a subspace<m>S_2</m> of <m>R^4</m> such that <m>S_1 \subset S_2 \subset R^4</m> with <m>S_1 \ne S_2</m> and <m>S_2 \ne R^4</m>.</p>
+</li>
+<li>
+<p>The set {0} forms a basis for the zero subspace.</p>
+</li>
+<li>
+<p>Let <m>m&gt;n</m>. Then <m>U =</m> {<m>u_1, u_2,\ldots, u_m</m>} in <m>R^n</m> can form a basis  for <m>R^n</m> if the correct <m>m-n</m> vectors are removed from <m>U</m>.</p>
+</li>
+<li>
+<p><m>R^n</m> has exactly one subspace of dimension <m>m</m> for each of <m>m = 0,1,2,\ldots, n</m> .</p>
+</li>
+</ol></p>
+</statement>
+  </static>
+  <rendering-data sourceFilePath="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.48_54a.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.48_54a.pg"/>
+</webwork-reps>

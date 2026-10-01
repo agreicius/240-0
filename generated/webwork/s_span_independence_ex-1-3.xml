@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_span_independence_ex-1-3" assembly-id="s_span_independence_ex-1-3">
+  <static seed="52" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/2.3.45.pg">
+    <statement><p>Let <m>\lbrace{{\bf u}_1, {\bf u}_2, {\bf u}_3}\rbrace</m> be a linearly independent set of vectors.</p>
+<p>Select the best statement.</p>
+<p><var form="buttons">
+<li>
+<p><m>\lbrace{{\bf u}_1, {\bf u}_2, {\bf u}_3, {\bf u}_4}\rbrace</m> is also a linearly independent set of vectors unless <m>{\bf u}_4={\bf 0}</m>.</p>
+</li>
+<li>
+<p><m>\lbrace{{\bf u}_1, {\bf u}_2, {\bf u}_3, {\bf u}_4}\rbrace</m> could be a linearly independent or linearly dependent set of vectors depending on the vectors chosen.</p>
+</li>
+<li>
+<p><m>\lbrace{{\bf u}_1, {\bf u}_2, {\bf u}_3, {\bf u}_4}\rbrace</m> is always a linearly dependent set of vectors.</p>
+</li>
+<li>
+<p><m>\lbrace{{\bf u}_1, {\bf u}_2, {\bf u}_3, {\bf u}_4}\rbrace</m> is also a linearly independent set of vectors unless <m>{\bf u}_4</m> is a scalar multiple another vector in the set.</p>
+</li>
+<li>
+<p><m>\lbrace{{\bf u}_1, {\bf u}_2, {\bf u}_3, {\bf u}_4}\rbrace</m> is always a linearly independent set of vectors.</p>
+</li>
+<li>
+<p>none of the above</p>
+</li>
+</var></p>
+</statement>
+    <solution><m>{\bf u}_4</m> is a linear combination of <m>\lbrace{{\bf u}_1, {\bf u}_2, {\bf u}_3}\rbrace</m>
+then <m>\lbrace{{\bf u}_1, {\bf u}_2, {\bf u}_3, {\bf u}_4}\rbrace</m> is linearly dependent.
+Otherwise the set in linearly independent.
+
+
+
+
+<m>\lbrace{{\bf u}_1, {\bf u}_2, {\bf u}_3, {\bf u}_4}\rbrace</m> could be a linearly independent or linearly dependent set of vectors depending on the vectors chosen.
+
+
+</solution>
+  </static>
+  <rendering-data sourceFilePath="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/2.3.45.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/2.3.45.pg"/>
+</webwork-reps>

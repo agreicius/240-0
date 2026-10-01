@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_matrix_ex-1-2" assembly-id="s_matrix_ex-1-2">
+  <static seed="27" source="Library/ASU-topics/set119MatrixAlgebra/p17.pg">
+    <statement><p>Enter T or F depending on whether the statement is true or false.
+(You must enter T or F -- True and False will not work.)</p>
+<p><ol>
+<li>
+<p>If A has dimensions <m>m \times n</m> and B has dimensions <m>n \times r</m>, 
+then AB has dimensions <m>m \times r</m>.</p>
+</li>
+<li>
+<p>If AB has dimensions <m>k \times p</m>, then the number of rows of A is p.</p>
+</li>
+</ol></p>
+</statement>
+  </static>
+  <rendering-data sourceFilePath="Library/ASU-topics/set119MatrixAlgebra/p17.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/ASU-topics/set119MatrixAlgebra/p17.pg"/>
+</webwork-reps>

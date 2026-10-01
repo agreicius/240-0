@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_coordinatevectors_ex-1-4" assembly-id="s_coordinatevectors_ex-1-4">
+  <static seed="85" source="Library/NAU/setLinearAlgebra/coordinatesHalfMagix.pg">
+    <statement><p>A square matrix <m>A</m> is called <em> half-magic </em> 
+if the sum of the numbers in each row and column is the same. 
+The common sum in each row and column is denoted by <m>s(A)</m> 
+and is called the <em> magic sum </em> of the matrix <m>A</m>.
+Let <m>V</m> be the vector space of <m>2\times 2</m> half-magic squares.</p>
+<p>(a) Find an ordered basis <m>B</m> for <m>V</m>.</p>
+<p><m>B = (</m>
+<fillin cols="2" rows="2"/>,
+<fillin cols="2" rows="2"/> 
+<m>)</m>.</p>
+<p>(b) Find the coordinate vector <m>[M]_B</m> of <m>M=\left[\begin{array}{cc}
+-2 \amp 1\cr
+1 \amp -2
+\end{array}\right]</m> in your chosen ordered basis <m>B</m>.</p>
+<p><m>[M]_B =</m>
+<fillin rows="2"/>.</p>
+</statement>
+  </static>
+  <rendering-data sourceFilePath="Library/NAU/setLinearAlgebra/coordinatesHalfMagix.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/NAU/setLinearAlgebra/coordinatesHalfMagix.pg"/>
+</webwork-reps>

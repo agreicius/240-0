@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_nullspace_image_ex-1-4" assembly-id="s_nullspace_image_ex-1-4">
+  <static seed="72" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.1.48.pg">
+    <statement><p>If <m>T:{\mathbb R}^8\to {\mathbb R}^2</m> is a linear transformation, then consider whether the set ker (<m>T</m> ) 
+is a subspace of  <m>{\mathbb R}^{8}</m>.</p>
+<p>Select true or false for each statement.
+ first problem looking at subspaces
+<ol>
+<li>
+<p>This set contains the zero vector and is closed under vector addition and scalar multiplication.</p>
+</li>
+<li>
+<p>This set is a subspace of <m>{\mathbb R}^8</m></p>
+</li>
+<li>
+<p>This set is a subset of the codomain</p>
+</li>
+<li>
+<p>This set is a subset of the domain.</p>
+</li>
+</ol></p>
+</statement>
+    <solution><m>{\mathbb R}^8</m>, that contains the zero vector, and is closed under vector addition and scalar multiplication.
+
+
+
+</solution>
+  </static>
+  <rendering-data sourceFilePath="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.1.48.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.1.48.pg"/>
+</webwork-reps>

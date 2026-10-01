@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_transformation_ex-1-6" assembly-id="s_transformation_ex-1-6">
+  <static seed="69" source="Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_20.pg">
+    <statement><p>Let <m>V</m> be a vector space, <m>v, u \in V</m>, and let <m>T_1: V \rightarrow V</m> and <m>T_2: V \rightarrow V</m> be
+linear transformations such that 
+<me>T_1(v) = 5 v  - 5 u, \ \ \ T_1(u) = -7 v  - 2 u,</me>
+<me>T_2(v) = 3 v + 2 u, \ \ \ T_2(u) = -7 v  - 5 u.</me>  
+Find the images of <m>v</m> and <m>u</m> under the composite of <m>T_1</m> and <m>T_2</m>.</p>
+<p><m>(T_2 T_1)(v) =</m> <fillin characters="30" name="AnSwEr0001"/>,</p>
+<p><m>(T_2 T_1)(u) =</m> <fillin characters="30" name="AnSwEr0002"/>.</p>
+</statement>
+    <answer>
+      <p>
+        <m>50v+35u</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>-7v+-4u</m>
+      </p>
+    </answer>
+  </static>
+  <rendering-data sourceFilePath="Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_20.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_20.pg"/>
+</webwork-reps>

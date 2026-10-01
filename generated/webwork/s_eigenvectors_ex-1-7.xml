@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_eigenvectors_ex-1-7" assembly-id="s_eigenvectors_ex-1-7">
+  <static seed="105" source="Library/Rochester/setLinearAlgebra11Eigenvalues/ur_la_11_27.pg">
+    <statement><p>Let <me>\vec{v}_1=\left[\begin{array}{c}
+0\cr
+1\cr
+2
+\end{array}\right], \vec{v}_2 = \left[\begin{array}{c}
+1\cr
+-1\cr
+0
+\end{array}\right], \vec{v}_3 = \left[\begin{array}{c}
+1\cr
+0\cr
+-1
+\end{array}\right]</me>
+be eigenvectors of the matrix <m>A</m> which correspond to the eigenvalues <m>\lambda_1 = -2</m>, 
+<m>\lambda_2 = -1</m>, and <m>\lambda_3 = 1</m>, respectively, and let 
+<me>\vec{x}=\left[\begin{array}{c}
+4\cr
+-1\cr
+0
+\end{array}\right].</me></p>
+<p>Express <m>\vec{x}</m> as a linear combination of <m>\vec{v}_1</m>, <m>\vec{v}_2</m>, and <m>\vec{v}_3</m>, and find <m>A\vec{x}</m>.</p>
+<p><m>\vec{x}=</m> <fillin characters="15" name="AnSwEr0001"/> <m>\vec{v}_1+</m> <fillin characters="15" name="AnSwEr0002"/> <m>\vec{v}_2+</m> <fillin characters="15" name="AnSwEr0003"/> <m>\vec{v}_3</m>.</p>
+<p><m>A\vec{x}=</m> <fillin rows="3"/></p>
+</statement>
+    <answer>
+      <p>
+        <m>1</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>2</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>2</m>
+      </p>
+    </answer>
+  </static>
+  <rendering-data sourceFilePath="Library/Rochester/setLinearAlgebra11Eigenvalues/ur_la_11_27.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/Rochester/setLinearAlgebra11Eigenvalues/ur_la_11_27.pg"/>
+</webwork-reps>

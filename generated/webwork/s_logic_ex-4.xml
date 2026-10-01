@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_logic_ex-4" assembly-id="s_logic_ex-4">
+  <static seed="7" source="Library/ASU-topics/setDiscrete/katie1.4_2.pg">
+    <statement><p>Let  P(x) be the statement "x  is a duck", let  Q(x) be the statement "x  is one of my poultry", let  R(x) be the statement "x  is an officer", and let S(x) be the statement "x  is willing to waltz". Express each of the following statements in terms of  P(x), Q(x), R(x) and S(x), quantifiers, and logical connectives. Let the universe of discourse consist of all living creatures. Put the appropriate letter next to the corresponding symbolic form.</p>
+<p><ol>
+<li>
+<p><m>\forall x (Q(x) \rightarrow P(x))</m></p>
+</li>
+<li>
+<p><m>\forall x (P(x) \rightarrow \lnot S(x))</m></p>
+</li>
+<li>
+<p><m>\exists x ( P(x) \wedge \lnot S(x))</m></p>
+</li>
+<li>
+<p><m>\forall x (R(x) \rightarrow S(x))</m></p>
+</li>
+<li>
+<p><m>\forall x (Q(x) \rightarrow \lnot R(x))</m></p>
+</li>
+</ol></p>
+<p>a)  Some ducks are not willing to waltz.</p>
+<p>b)  No ducks are willing to waltz.</p>
+<p>c)  No officers ever decline to waltz.</p>
+<p>d)  All my poultry are ducks.</p>
+<p>e)  My poultry are not officers.</p>
+</statement>
+  </static>
+  <rendering-data sourceFilePath="Library/ASU-topics/setDiscrete/katie1.4_2.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/ASU-topics/setDiscrete/katie1.4_2.pg"/>
+</webwork-reps>

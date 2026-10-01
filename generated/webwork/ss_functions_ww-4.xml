@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-ss_functions_ww-4" assembly-id="ss_functions_ww-4">
+  <static seed="5" source="Library/LoyolaChicago/Precalc/Chap8Sec2/Q08.pg">
+    <statement><p>Consider the functions
+<m>f(x) = \sqrt[7]{\frac{x}{4}} + 8</m>,
+<m>g(x) = -8 + 4 x^{7}</m>,
+<m>h(x) = \sqrt[7]{\frac{x}{4}} - 8</m>,
+<m>p(x) = \sqrt[7]{\frac{x - 8}{4}}</m>,
+<m>q(x) = 8 + 4 x^{7}</m>, and
+<m>r(x) = \sqrt[7]{\frac{x + 8}{4}}</m>.</p>
+<p>Which of these functions are inverses of each other?</p>
+<p><var form="checkboxes">
+<li>
+<p><m>p(x)</m> and <m>q(x)</m></p>
+</li>
+<li>
+<p><m>g(x)</m> and <m>p(x)</m></p>
+</li>
+<li>
+<p><m>f(x)</m> and <m>q(x)</m></p>
+</li>
+<li>
+<p><m>h(x)</m> and <m>q(x)</m></p>
+</li>
+<li>
+<p><m>g(x)</m> and <m>h(x)</m></p>
+</li>
+<li>
+<p><m>q(x)</m> and <m>r(x)</m></p>
+</li>
+<li>
+<p><m>g(x)</m> and <m>r(x)</m></p>
+</li>
+<li>
+<p><m>f(x)</m> and <m>g(x)</m></p>
+</li>
+<li>
+<p>No pairs of these functions are inverses of each other.</p>
+</li>
+</var></p>
+</statement>
+    <solution><alert>  SOLUTION </alert>
+
+
+
+One way we can check which functions are inverses is to make
+sure they satisfy the identities <m>f \left( f^{-1}(x) \right)=x</m> and
+<m>f^{-1} \left( f(x) \right)=x</m>.  This will show that
+<m>p(x)</m> and <m>q(x)</m> and
+<m>g(x)</m> and <m>r(x)</m> are inverses of each other,
+while the other pairs of functions are not.
+
+
+
+Let's consider <m>p(x)</m> and <m>q(x)</m>.  The composition
+<me>\begin{aligned}
+ p\left(q(x)\right)
+\amp = 8 +  4 \left(\sqrt[7]{ \frac{x - 8}{4}}\right)^{7} \\
+\amp = 8 + 4 \left( \frac{x - 8}{4} \right) \\
+\amp = 8 + (x-8) = x.
+\end{aligned}</me>
+Also,
+<me>\begin{aligned}
+ q\left(p(x)\right)
+\amp = \sqrt[7]{\frac{\left( 8+4 x^{7} \right)-8}{4}} \\
+\amp = \sqrt[7]{x^{7}} = x.
+\end{aligned}</me>
+Thus these are inverses of one another.  We can similarly show that
+<m>g(x)</m> and <m>r(x)</m> are inverses of each other.
+
+
+
+However, the remaining pairs are not inverses.  For example, if we
+consider <m>q(x)</m> and <m>r(x)</m>, we have
+<me>\begin{aligned}
+  q\left(r(x)\right)
+\amp = 8 +  4 \left( \sqrt[7]{ \frac{x + 8}{4}} \right)^{7}\\
+\amp = 8 + (x+8) = x + 16 \ne x.
+\end{aligned}</me>
+Thus these functions are not inverses of each other.
+
+
+
+</solution>
+  </static>
+  <rendering-data sourceFilePath="Library/LoyolaChicago/Precalc/Chap8Sec2/Q08.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/LoyolaChicago/Precalc/Chap8Sec2/Q08.pg"/>
+</webwork-reps>

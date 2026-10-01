@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_det_ex-1-5" assembly-id="s_det_ex-1-5">
+  <static seed="48" source="Library/Rochester/setLinearAlgebra6Determinants/ur_la_6_9.pg">
+    <statement><p>If <m>A</m> and <m>B</m> are <m>2 \times 2</m> matrices, <m>\det (A)=-1</m>, <m>\det (B)=9</m>, then</p>
+<p><m>\det  (AB) =</m> <fillin characters="10" name="AnSwEr0001"/>,</p>
+<p><m>\det  (-2 A) =</m> <fillin characters="10" name="AnSwEr0002"/>,</p>
+<p><m>\det  (A^{T}) =</m> <fillin characters="10" name="AnSwEr0003"/>,</p>
+<p><m>\det  (B^{-1}) =</m> <fillin characters="10" name="AnSwEr0004"/>,</p>
+<p><m>\det  (B^4) =</m> <fillin characters="10" name="AnSwEr0005"/>.</p>
+</statement>
+    <answer>
+      <p>
+        <m>-9</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>-4</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>-1</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>0.111111111111111</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>6561</m>
+      </p>
+    </answer>
+  </static>
+  <rendering-data sourceFilePath="Library/Rochester/setLinearAlgebra6Determinants/ur_la_6_9.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/Rochester/setLinearAlgebra6Determinants/ur_la_6_9.pg"/>
+</webwork-reps>
