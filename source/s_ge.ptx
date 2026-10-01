@@ -352,7 +352,7 @@ delimiter={]}]
     <li>
       <title>Step 1</title>
       <p>
-        Find the leftmost nonzero column and perform a row swap to move the row with this nonzero entry to the top of the matrix.
+        Find the leftmost nonzero column and perform a row swap to move the row with the first nonzero entry in this column to the top of the matrix.
       </p>
     </li>
     <li>
