@@ -711,7 +711,7 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 <span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Invertible matrices</span>
 </h1>
 <section class="introduction" id="s_invertible_matrices-2">
-<div class="para" id="s_invertible_matrices-2-1">Picking up the thread of <a href="s_matrix_algebra.html#rm_cancel_failure" class="xref" data-knowl="./knowl/xref/rm_cancel_failure.html" data-reveal-label="Reveal" data-close-label="Close" title="Remark 3.2.11">Remark 3.2.11</a>, we observe that the cancellation property enjoyed in real number algebra is a consequence of the fact that every nonzero real number <span class="process-math">\(a\ne 0\)</span> has a <em class="emphasis">multiplicative inverse</em>, denoted <span class="process-math">\(a^{-1}\)</span> or <span class="process-math">\(1/a\text{,}\)</span> that satisfies <span class="process-math">\(aa^{-1}=1\text{.}\)</span> Indeed, “canceling” the <span class="process-math">\(a\)</span> in the equation <span class="process-math">\(ab=ac\)</span> (assuming <span class="process-math">\(a\ne 0\)</span>) is really the act of multiplying both sides of this equation by the multiplicative inverse <span class="process-math">\(a^{-1}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_invertible_matrices-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="s_invertible_matrices-2-1">Picking up the thread of <a href="s_matrix_algebra.html#rm_cancel_failure" class="xref" data-knowl="./knowl/xref/rm_cancel_failure.html" data-reveal-label="Reveal" data-close-label="Close" title="Remark 3.2.12">Remark 3.2.12</a>, we observe that the cancellation property enjoyed in real number algebra is a consequence of the fact that every nonzero real number <span class="process-math">\(a\ne 0\)</span> has a <em class="emphasis">multiplicative inverse</em>, denoted <span class="process-math">\(a^{-1}\)</span> or <span class="process-math">\(1/a\text{,}\)</span> that satisfies <span class="process-math">\(aa^{-1}=1\text{.}\)</span> Indeed, “canceling” the <span class="process-math">\(a\)</span> in the equation <span class="process-math">\(ab=ac\)</span> (assuming <span class="process-math">\(a\ne 0\)</span>) is really the act of multiplying both sides of this equation by the multiplicative inverse <span class="process-math">\(a^{-1}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_invertible_matrices-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="s_invertible_matrices-2-2">Ever on the lookout for connections between real number and matrix algebra, we ask whether there is a sensible analogue of multiplicative inverses for matrices. We have seen already that identity matrices <span class="process-math">\(I_n\)</span> play the role of multiplicative identities for <span class="process-math">\(n\times n\)</span> matrices, just as the number <span class="process-math">\(1\)</span> does for real numbers. This suggests we should restrict our attention to <span class="process-math">\(n\times n\)</span> matrices. The following definition is then the desired analogue of the multiplicative inverse of a nonzero real number.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_invertible_matrices-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></section>
@@ -1433,14 +1433,14 @@ A^T(A^{-1})^T=(A^{-1})^T\, A^T=I\text{.}
 <div class="para">We verify the two equalities separately:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_inverse_trans.html ./knowl/xref/th_trans_props.html ./knowl/xref/th_trans_props.html" id="th_inverse_trans-3-2-6">
 \begin{align*}
-A^T(A^{-1})^T\amp =\left(A^{-1}A\right)^T \amp (\knowl{./knowl/xref/th_trans_props.html}{\text{Theorem 3.2.12}})\\
+A^T(A^{-1})^T\amp =\left(A^{-1}A\right)^T \amp (\knowl{./knowl/xref/th_trans_props.html}{\text{Theorem 3.2.13}})\\
 \amp =I_n^T \\
 \amp =I_n  \checkmark
 \end{align*}
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_inverse_trans.html ./knowl/xref/th_trans_props.html ./knowl/xref/th_trans_props.html" id="th_inverse_trans-3-2-7">
 \begin{align*}
-(A^{-1})^TA^T \amp =(AA^{-1})^T \amp (\knowl{./knowl/xref/th_trans_props.html}{\text{Theorem 3.2.12}})\\
+(A^{-1})^TA^T \amp =(AA^{-1})^T \amp (\knowl{./knowl/xref/th_trans_props.html}{\text{Theorem 3.2.13}})\\
 \amp =I_n^T=I_n \ \checkmark\text{.}
 \end{align*}
 </div>

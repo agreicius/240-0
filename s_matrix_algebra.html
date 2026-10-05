@@ -701,7 +701,7 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 <section class="introduction" id="s_matrix_algebra-2">
 <div class="para" id="s_matrix_algebra-2-1">The last section was devoted to what might be called the <em class="emphasis">arithmetic</em> of matrices. We learned the basic operations of adding, multiplying, scaling, and transposing matrices. In this section we tackle the <em class="emphasis">algebra</em> of matrices. We will investigate the properties enjoyed (and not enjoyed) by our matrix operations, and will show how to use these operations to solve matrix equations.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_matrix_algebra-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="s_matrix_algebra-2-2">As you learn about matrix algebra, always keep in mind your old friend, real number algebra. For the most part these two algebraic systems closely resemble one another, as <a href="s_matrix_algebra.html#th_matrix_alg_props" class="xref" data-knowl="./knowl/xref/th_matrix_alg_props.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.2.1: Properties of matrix multiplication">Theorem 3.2.1</a> below makes clear. However, there are two crucial points where they differ (see <a href="s_matrix_algebra.html#th_matrix_abnormalities" class="xref" data-knowl="./knowl/xref/th_matrix_abnormalities.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.2.9: Matrix algebra abnormalities">Theorem 3.2.9</a>): two important properties of real number algebra that do not hold for matrices. The consequences of these two simple aberrations are far-reaching and imbue matrix algebra with a fascinating richness in comparison to real number algebra.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_matrix_algebra-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="s_matrix_algebra-2-2">As you learn about matrix algebra, always keep in mind your old friend, real number algebra. For the most part these two algebraic systems closely resemble one another, as <a href="s_matrix_algebra.html#th_matrix_alg_props" class="xref" data-knowl="./knowl/xref/th_matrix_alg_props.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.2.1: Properties of matrix multiplication">Theorem 3.2.1</a> below makes clear. However, there are two crucial points where they differ (see <a href="s_matrix_algebra.html#th_matrix_abnormalities" class="xref" data-knowl="./knowl/xref/th_matrix_abnormalities.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.2.10: Matrix algebra abnormalities">Theorem 3.2.10</a>): two important properties of real number algebra that do not hold for matrices. The consequences of these two simple aberrations are far-reaching and imbue matrix algebra with a fascinating richness in comparison to real number algebra.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_matrix_algebra-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div></section>
 <section class="subsection" id="ss_matrix_mult_props">
 <h2 class="heading hide-type">
@@ -718,29 +718,28 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 <li id="th_matrixmult_assoc">
 <span class="heading li--heading"><span class="title li--heading-title">Associative law.</span></span>
 <div class="para" id="th_matrixmult_assoc-2">
-<span class="process-math">\(A(BC)=(AB)C\)</span> for all <span class="process-math">\(A\in M_{mr}, B\in M_{rs}, C\in M_{sn}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_matrixmult_assoc-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(A(BC)=(AB)C\)</span> for all <span class="process-math">\(A\in \ML_{m,r}(\R), B\in \ML_{r,s}(\R), C\in \ML_{s,n}(\R)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_matrixmult_assoc-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Item 1: Associative law"><a tabindex="-1" href="#th_matrixmult_assoc" title="Copy heading and permalink for Item 1: Associative law" aria-label="Copy heading and permalink for Item 1: Associative law">🔗</a></div>
 </li>
 <li id="th_matrix_leftdist">
 <span class="heading li--heading"><span class="title li--heading-title">Left-distributive law.</span></span>
 <div class="para" id="th_matrix_leftdist-2">
-<span class="process-math">\(A(B+C)=AB+AC\)</span> for all <span class="process-math">\(A\in M_{mr}\)</span> and <span class="process-math">\(B,C\in M_{rn}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_matrix_leftdist-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(A(B+C)=AB+AC\)</span> for all <span class="process-math">\(A\in \ML_{m,r}(\R)\)</span> and <span class="process-math">\(B,C\in \ML_{r,n}(\R)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_matrix_leftdist-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Item 2: Left-distributive law"><a tabindex="-1" href="#th_matrix_leftdist" title="Copy heading and permalink for Item 2: Left-distributive law" aria-label="Copy heading and permalink for Item 2: Left-distributive law">🔗</a></div>
 </li>
 <li id="th_matrix_rightdist">
 <span class="heading li--heading"><span class="title li--heading-title">Right-distributive law.</span></span>
 <div class="para" id="th_matrix_rightdist-2">
-<span class="process-math">\((B+C)A=BA+CA\)</span> for all <span class="process-math">\(B,C\in M_{mr}\)</span> and <span class="process-math">\(A\in M_{rn}
-\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_matrix_rightdist-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\((B+C)A=BA+CA\)</span> for all <span class="process-math">\(B,C\in \ML_{m,r}(\R)\)</span> and <span class="process-math">\(A\in \ML_{r,n}(\R)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_matrix_rightdist-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Item 3: Right-distributive law"><a tabindex="-1" href="#th_matrix_rightdist" title="Copy heading and permalink for Item 3: Right-distributive law" aria-label="Copy heading and permalink for Item 3: Right-distributive law">🔗</a></div>
 </li>
 <li id="th_matrixscale_comm">
 <span class="heading li--heading"><span class="title li--heading-title">Scaling commutative law.</span></span>
 <div class="para" id="th_matrixscale_comm-2">
-<span class="process-math">\(a(BC)=(aB)C=B(aC)\)</span> for all <span class="process-math">\(a\in \R\text{,}\)</span> <span class="process-math">\(B\in M_{mr}\text{,}\)</span> <span class="process-math">\(C\in M_{rn}\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_matrixscale_comm-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="process-math">\(a(BC)=(aB)C=B(aC)\)</span> for all <span class="process-math">\(a\in \R\text{,}\)</span> <span class="process-math">\(B\in \ML_{m,r}(\R)\text{,}\)</span> <span class="process-math">\(C\in \ML_{r,n}(\R)\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_matrixscale_comm-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Item 4: Scaling commutative law"><a tabindex="-1" href="#th_matrixscale_comm" title="Copy heading and permalink for Item 4: Scaling commutative law" aria-label="Copy heading and permalink for Item 4: Scaling commutative law">🔗</a></div>
 </li>
@@ -749,33 +748,75 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Theorem 3.2.1: Properties of matrix multiplication"><a tabindex="-1" href="#th_matrix_alg_props" title="Copy heading and permalink for Theorem 3.2.1: Properties of matrix multiplication" aria-label="Copy heading and permalink for Theorem 3.2.1: Properties of matrix multiplication">🔗</a></div>
 </article>
-<div class="para" id="ss_matrix_mult_props-4">How does one actually prove one of these properties? These are all <em class="emphasis">matrix equalities</em> of the form <span class="process-math">\(X=Y\text{,}\)</span> so according to the <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "d_matrix_equality" missing or not unique]</code> we must show (1) that the matrices <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> have the same size, and (2) that <span class="process-math">\((X)_{ij}=(Y)_{ij}\)</span> for all <span class="process-math">\((i,j)\text{.}\)</span> The proof below illustrates this technique for the <a href="s_matrix_algebra.html#th_matrixmult_assoc" class="xref" data-knowl="./knowl/xref/th_matrixmult_assoc.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1: Associative law">multiplication associative law</a> of <a href="s_matrix_algebra.html#th_matrix_alg_props" class="xref" data-knowl="./knowl/xref/th_matrix_alg_props.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.2.1: Properties of matrix multiplication">Theorem 3.2.1</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_matrix_mult_props-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ss_matrix_mult_props-4">How does one actually prove one of these properties? These are all <em class="emphasis">matrix equalities</em> of the form <span class="process-math">\(A=B\text{,}\)</span> and according to <a href="s_real_tuples.html#prop_equality_matrix" class="xref" data-knowl="./knowl/xref/prop_equality_matrix.html" data-reveal-label="Reveal" data-close-label="Close" title="Proposition 1.1.11: Equality of matrices">Proposition 1.1.11</a>, two matrices are equal if (a) they are of the same shape, and (b) their corresponding entries are equal. Let’s make an official procedure out of this, using matrix-entry notation.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_matrix_mult_props-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<details id="ss_matrix_mult_props-5" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="title">Proof of (1).</span></h3></summary>
+<article class="algorithm theorem-like" id="proc_matrix_equality"><h3 class="heading">
+<span class="type">Procedure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Proving matrix equalities.</span>
+</h3>
+<div class="para logical" id="proc_matrix_equality-2-1">
+<div class="para">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(m\times n\)</span> matrix, and let <span class="process-math">\(B\)</span> be an <span class="process-math">\(m'\times n'\)</span> matrix. To show that <span class="process-math">\(A=B\)</span> proceed as follows.</div>
+<ol class="decimal" id="proc_matrix_equality-2-1-6">
+<li id="proc_matrix_equality-2-1-6-1">
+<span class="heading li--heading"><span class="title li--heading-title">Same dimensions.</span></span>
+<div class="para" id="proc_matrix_equality-2-1-6-1-2">Show that <span class="process-math">\(m=m'\)</span> and <span class="process-math">\(n=n'\text{:}\)</span> i.e., show that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> have the same shape.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#proc_matrix_equality-2-1-6-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 1: Same dimensions"><a tabindex="-1" href="#proc_matrix_equality-2-1-6-1" title="Copy heading and permalink for Item 1: Same dimensions" aria-label="Copy heading and permalink for Item 1: Same dimensions">🔗</a></div>
+</li>
+<li id="proc_matrix_equality-2-1-6-2">
+<span class="heading li--heading"><span class="title li--heading-title">Same entries.</span></span>
+<div class="para logical" id="proc_matrix_equality-2-1-6-2-2">
+<div class="para">Having shown that both matrices are of dimension <span class="process-math">\(m\times n\text{,}\)</span> show that</div>
+<div class="displaymath process-math" id="proc_matrix_equality-2-1-6-2-2-2">
+\begin{align}
+[A]_{i,j} \amp =[B]_{i,j}\tag{3.2.1}
+\end{align}
+</div>
+<div class="para">for all <span class="process-math">\(1\leq i\leq m, 1\leq j\leq n\text{.}\)</span> Equivalently, if <span class="process-math">\(A=[a_{i,j}]_{m\times n}\)</span> and <span class="process-math">\(B=[b_{i,j}]_{m\times n}\text{,}\)</span> show that <span class="process-math">\(a_{i,j}=b_{i,j}\)</span> for all <span class="process-math">\(1\leq i\leq m, 1\leq j\leq n\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#proc_matrix_equality-2-1-6-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 2: Same entries"><a tabindex="-1" href="#proc_matrix_equality-2-1-6-2" title="Copy heading and permalink for Item 2: Same entries" aria-label="Copy heading and permalink for Item 2: Same entries">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#proc_matrix_equality-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Procedure 3.2.2: Proving matrix equalities"><a tabindex="-1" href="#proc_matrix_equality" title="Copy heading and permalink for Procedure 3.2.2: Proving matrix equalities" aria-label="Copy heading and permalink for Procedure 3.2.2: Proving matrix equalities">🔗</a></div>
+</article>
+<div class="para" id="ss_matrix_mult_props-6">Let’s illustrate <a href="s_matrix_algebra.html#proc_matrix_equality" class="xref" data-knowl="./knowl/xref/proc_matrix_equality.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 3.2.2: Proving matrix equalities">Procedure 3.2.2</a> by proving the <a href="s_matrix_algebra.html#th_matrixmult_assoc" class="xref" data-knowl="./knowl/xref/th_matrixmult_assoc.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1: Associative law">multiplication associative law</a> of <a href="s_matrix_algebra.html#th_matrix_alg_props" class="xref" data-knowl="./knowl/xref/th_matrix_alg_props.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.2.1: Properties of matrix multiplication">Theorem 3.2.1</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_matrix_mult_props-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ss_matrix_mult_props-7" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="title">Proof of Theorem 3.2.1: associative law.</span></h3></summary>
 <article class="hiddenproof knowl__content">
-<div class="para logical" id="ss_matrix_mult_props-5-2">
+<div class="para logical" id="ss_matrix_mult_props-7-2">
 <div class="para">We prove only the <a href="s_matrix_algebra.html#th_matrixmult_assoc" class="xref" data-knowl="./knowl/xref/th_matrixmult_assoc.html" data-reveal-label="Reveal" data-close-label="Close" title="Item 1: Associative law">associative law</a>. Let <span class="process-math">\(A=[a_{ij}]_{m\times r}\text{,}\)</span> <span class="process-math">\(B=[b_{ij}]_{r\times s}\text{,}\)</span> <span class="process-math">\(C=[c_{ij}]_{s\times n}\text{.}\)</span> To show</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_matrixmult_assoc.html" id="ss_matrix_mult_props-5-2-5">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_matrixmult_assoc.html" id="ss_matrix_mult_props-7-2-5">
 \begin{equation*}
 A(BC)=(AB)C\text{,}
 \end{equation*}
 </div>
 <div class="para">we must show (1) that <span class="process-math">\(A(BC)\)</span> and <span class="process-math">\((AB)C\)</span> have the same dimension, and (2) that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_matrixmult_assoc.html" id="ss_matrix_mult_props-5-2-8">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_matrixmult_assoc.html" id="ss_matrix_mult_props-7-2-8">
 \begin{equation*}
 [A(BC)]_{ij}=[(AB)C]_{ij}
 \end{equation*}
 </div>
 <div class="para">for all possible <span class="process-math">\((i,j)\text{.}\)</span>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_matrix_mult_props-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_matrix_mult_props-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ss_matrix_mult_props-5-3">The usual observation about “inner” and “outer” dimensions shows that both <span class="process-math">\(A(BC)\)</span> and <span class="process-math">\((AB)C\)</span> have dimension <span class="process-math">\(m\times n\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_matrix_mult_props-5-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para logical" id="ss_matrix_mult_props-7-3">
+<div class="para">Addressing the dimensions of the left and right sides, note that since <span class="process-math">\(A\in \ML_{m,r}(\R), B\in \ML_{r,s}, C\in \ML_{s,n}(\R)\text{,}\)</span> we have (using <a href="s_matrix.html#d_matrix_mult" class="xref" data-knowl="./knowl/xref/d_matrix_mult.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.8: Matrix multiplication">Definition 3.1.8</a>)</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_matrix_mult.html" id="ss_matrix_mult_props-7-3-3">
+\begin{align*}
+AB \amp \in \ML_{m,s}(\R) \amp BC\amp \in \ML_{s,n}(\R)\\
+A(BC) \amp \in \ML_{m,n}(\R) \amp (AB)C\amp \in \ML_{m,n}(\R)\text{.}
+\end{align*}
 </div>
-<a href="s_matrix.html#d_matrix_mult" class="xref" data-knowl="./knowl/xref/d_matrix_mult.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 3.1.8: Matrix multiplication">Definition 3.1.8</a>
-<div class="para logical" id="ss_matrix_mult_props-5-5">
+<div class="para">Thus <span class="process-math">\(A(BC)\)</span> and <span class="process-math">\((AB)C\)</span> are both <span class="process-math">\(m\times n\)</span> matrices.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_matrix_mult_props-7-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="ss_matrix_mult_props-7-4">
 <div class="para">Next, given any  <span class="process-math">\((i,j)\)</span> with <span class="process-math">\(1\leq i\leq m\)</span> and <span class="process-math">\(1\leq j\leq n\text{,}\)</span> we have:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_matrix_mult.html ./knowl/xref/d_matrix_mult.html" id="ss_matrix_mult_props-5-5-4">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_matrix_mult.html ./knowl/xref/d_matrix_mult.html" id="ss_matrix_mult_props-7-4-4">
 \begin{align*}
 [A(BC)]_{ij}\amp=\sum_{\ell=1}^ra_{i\ell}[BC]_{\ell j}  \amp (\knowl{./knowl/xref/d_matrix_mult.html}{\text{Definition 3.1.8}})\\
 \amp=\sum_{\ell=1}^ra_{i\ell}\left(\sum_{k=1}^sb_{\ell k}c_{kj}\right) \amp (\knowl{./knowl/xref/d_matrix_mult.html}{\text{Definition 3.1.8}})\\
@@ -785,23 +826,23 @@ A(BC)=(AB)C\text{,}
 =\amp \sum_{k=1}^s[AB]_{ik}c_{kj}  =\Bigl[(AB)C]_{ij}
 \end{align*}
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_matrix_mult_props-5-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_matrix_mult_props-7-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ss_matrix_mult_props-5-6">This proves that all entries of the two matrices are equal, and hence <span class="process-math">\(A(BC)=(AB)C\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_matrix_mult_props-5-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ss_matrix_mult_props-7-5">This proves that all entries of the two matrices are equal, and hence <span class="process-math">\(A(BC)=(AB)C\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_matrix_mult_props-7-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Proof 3.2.1.1: Proof of (1)"><a tabindex="-1" href="#ss_matrix_mult_props-5" title="Copy heading and permalink for Proof 3.2.1.1: Proof of (1)" aria-label="Copy heading and permalink for Proof 3.2.1.1: Proof of (1)">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 3.2.1.1: Proof of Theorem 3.2.1: associative law"><a tabindex="-1" href="#ss_matrix_mult_props-7" title="Copy heading and permalink for Proof 3.2.1.1: Proof of Theorem 3.2.1: associative law" aria-label="Copy heading and permalink for Proof 3.2.1.1: Proof of Theorem 3.2.1: associative law">🔗</a></div>
 </article></details>
 <article class="example example-like" id="eg_vid_prove_matrix_assoc"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Video example: proving matrix equalities.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Video example: proving matrix equalities.</span>
 </h3>
 <figure class="figure figure-like" id="fig_proof_assoc"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/EDGxkEV5mm0?&amp;modestbranding=1&amp;rel=0" id="vid_proof_assoc"></iframe></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Video: matrix multiplication is associative<div class="autopermalink" aria-hidden="true" data-description="Figure 3.2.3"><a tabindex="-1" href="#fig_proof_assoc" title="Copy heading and permalink for Figure 3.2.3" aria-label="Copy heading and permalink for Figure 3.2.3">🔗</a></div></figcaption>
-</figure><div class="autopermalink" aria-hidden="true" data-description="Example 3.2.2: Video example: proving matrix equalities"><a tabindex="-1" href="#eg_vid_prove_matrix_assoc" title="Copy heading and permalink for Example 3.2.2: Video example: proving matrix equalities" aria-label="Copy heading and permalink for Example 3.2.2: Video example: proving matrix equalities">🔗</a></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Video: matrix multiplication is associative<div class="autopermalink" aria-hidden="true" data-description="Figure 3.2.4"><a tabindex="-1" href="#fig_proof_assoc" title="Copy heading and permalink for Figure 3.2.4" aria-label="Copy heading and permalink for Figure 3.2.4">🔗</a></div></figcaption>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Example 3.2.3: Video example: proving matrix equalities"><a tabindex="-1" href="#eg_vid_prove_matrix_assoc" title="Copy heading and permalink for Example 3.2.3: Video example: proving matrix equalities" aria-label="Copy heading and permalink for Example 3.2.3: Video example: proving matrix equalities">🔗</a></div>
 </article>
-<div class="para" id="ss_matrix_mult_props-7">Like real number algebra, there are certain matrices that satisfy special properties with regard to the operations of addition and multiplication. We have seen examples of this already thanks to the natural vector space structure of <span class="process-math">\(M_{mn}\text{.}\)</span> For example, the <span class="process-math">\(m\times n\)</span> zero matrix <span class="process-math">\(\boldzero_{m\times n}\)</span> acts as an <em class="emphasis">additive indentity</em> (i.e., <span class="process-math">\(\boldzero_{m\times n}+A=A\)</span> for all <span class="process-math">\(A\in M_{mn}\)</span>) and vector inverses <span class="process-math">\(-A\)</span> act as <em class="emphasis">additive inverses</em> (i.e., <span class="process-math">\(-A+A=\boldzero_{m\times n}\)</span> for all <span class="process-math">\(A\in M_{mn}\)</span>). We now introduce the identity matrices <span class="process-math">\(I_n\text{,}\)</span> which satisfy a <em class="emphasis">multiplicative identity</em> property with respect to matrix multiplication, and thus play a role analogous to the number <span class="process-math">\(1\)</span> among real numbers.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_matrix_mult_props-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ss_matrix_mult_props-9">Like real number algebra, there are certain matrices that satisfy special properties with regard to the operations of addition and multiplication. We have seen examples of this already thanks to the natural vector space structure of <span class="process-math">\(M_{mn}\text{.}\)</span> For example, the <span class="process-math">\(m\times n\)</span> zero matrix <span class="process-math">\(\boldzero_{m\times n}\)</span> acts as an <em class="emphasis">additive indentity</em> (i.e., <span class="process-math">\(\boldzero_{m\times n}+A=A\)</span> for all <span class="process-math">\(A\in M_{mn}\)</span>) and vector inverses <span class="process-math">\(-A\)</span> act as <em class="emphasis">additive inverses</em> (i.e., <span class="process-math">\(-A+A=\boldzero_{m\times n}\)</span> for all <span class="process-math">\(A\in M_{mn}\)</span>). We now introduce the identity matrices <span class="process-math">\(I_n\text{,}\)</span> which satisfy a <em class="emphasis">multiplicative identity</em> property with respect to matrix multiplication, and thus play a role analogous to the number <span class="process-math">\(1\)</span> among real numbers.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_matrix_mult_props-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="definition definition-like" id="d_identity_matrix"><h3 class="heading">
-<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Identity matrix.</span>
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Identity matrix.</span>
 </h3>
 <div class="para logical" id="d_identity_matrix-5-1">
 <div class="para">The <dfn class="terminology"><span class="process-math">\(n\times n\)</span> identity matrix</dfn>, denoted <span class="process-math">\(I_n\text{,}\)</span> is the square <span class="process-math">\(n\times n\)</span> matrix</div>
@@ -824,10 +865,10 @@ I_n=\begin{bmatrix}1\amp 0\amp 0 \amp \dots\amp 0\\ 0\amp 1 \amp 0 \amp \dots \a
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#d_identity_matrix-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Definition 3.2.4: Identity matrix"><a tabindex="-1" href="#d_identity_matrix" title="Copy heading and permalink for Definition 3.2.4: Identity matrix" aria-label="Copy heading and permalink for Definition 3.2.4: Identity matrix">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Definition 3.2.5: Identity matrix"><a tabindex="-1" href="#d_identity_matrix" title="Copy heading and permalink for Definition 3.2.5: Identity matrix" aria-label="Copy heading and permalink for Definition 3.2.5: Identity matrix">🔗</a></div>
 </article>
 <article class="theorem theorem-like" id="th_matrix_add_mult_ident"><h3 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Multiplicative identities.</span>
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Multiplicative identities.</span>
 </h3>
 <div class="para logical" id="th_matrix_add_mult_ident-2-1">
 <div class="para">Let <span class="process-math">\(n\)</span> be a positive integer. The <span class="process-math">\(n\times n\)</span> identity matrix acts as a multiplicative identity among <span class="process-math">\(n\times n\)</span> matrices in the following sense: for all <span class="process-math">\(A\in M_{nn}\)</span> we have</div>
@@ -838,13 +879,13 @@ I_n\, A=A\, I_n=A\text{.}
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_matrix_add_mult_ident-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Theorem 3.2.5: Multiplicative identities"><a tabindex="-1" href="#th_matrix_add_mult_ident" title="Copy heading and permalink for Theorem 3.2.5: Multiplicative identities" aria-label="Copy heading and permalink for Theorem 3.2.5: Multiplicative identities">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 3.2.6: Multiplicative identities"><a tabindex="-1" href="#th_matrix_add_mult_ident" title="Copy heading and permalink for Theorem 3.2.6: Multiplicative identities" aria-label="Copy heading and permalink for Theorem 3.2.6: Multiplicative identities">🔗</a></div>
 </article>
-<details id="ss_matrix_mult_props-10" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
+<details id="ss_matrix_mult_props-12" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
 <article class="hiddenproof knowl__content">
-<div class="para" id="ss_matrix_mult_props-10-1">Left as an exercise.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_matrix_mult_props-10-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ss_matrix_mult_props-12-1">Left as an exercise.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_matrix_mult_props-12-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Proof 3.2.1.2"><a tabindex="-1" href="#ss_matrix_mult_props-10" title="Copy heading and permalink for Proof 3.2.1.2" aria-label="Copy heading and permalink for Proof 3.2.1.2">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 3.2.1.2"><a tabindex="-1" href="#ss_matrix_mult_props-12" title="Copy heading and permalink for Proof 3.2.1.2" aria-label="Copy heading and permalink for Proof 3.2.1.2">🔗</a></div>
 </article></details><div class="autopermalink" aria-hidden="true" data-description="Subsection 3.2.1: Matrix multiplication properties"><a tabindex="-1" href="#ss_matrix_mult_props" title="Copy heading and permalink for Subsection 3.2.1: Matrix multiplication properties" aria-label="Copy heading and permalink for Subsection 3.2.1: Matrix multiplication properties">🔗</a></div>
 </section>
 <section class="subsection" id="ss_cancellation">
@@ -868,7 +909,7 @@ xy=xz \iff y=z
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_cancellation-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="c_matrix_additive_canc"><h3 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Additive cancellation of matrices.</span>
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Additive cancellation of matrices.</span>
 </h3>
 <div class="para logical" id="c_matrix_additive_canc-2-1">
 <div class="para">Given <span class="process-math">\(m\times n\)</span> matrices <span class="process-math">\(A, B\text{,}\)</span> and <span class="process-math">\(C\text{,}\)</span> we have <span class="process-math">\(A+B=A+C\)</span> if and only if <span class="process-math">\(B=C\text{.}\)</span> Using logical notation:</div>
@@ -879,7 +920,7 @@ A+B=A+C \iff  B=C.
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#c_matrix_additive_canc-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Theorem 3.2.6: Additive cancellation of matrices"><a tabindex="-1" href="#c_matrix_additive_canc" title="Copy heading and permalink for Theorem 3.2.6: Additive cancellation of matrices" aria-label="Copy heading and permalink for Theorem 3.2.6: Additive cancellation of matrices">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 3.2.7: Additive cancellation of matrices"><a tabindex="-1" href="#c_matrix_additive_canc" title="Copy heading and permalink for Theorem 3.2.7: Additive cancellation of matrices" aria-label="Copy heading and permalink for Theorem 3.2.7: Additive cancellation of matrices">🔗</a></div>
 </article>
 <details id="c_matrix_additive_canc-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
 <article class="hiddenproof knowl__content">
@@ -904,25 +945,25 @@ A+B=A+C\amp \implies -A+(A+B)=-A+(A+C) \\
 <div class="para" id="c_matrix_additive_canc-3-3-2">This direction is obvious: if <span class="process-math">\(B\)</span> and <span class="process-math">\(C\)</span> are equal matrices, then they remain equal when we add <span class="process-math">\(A\)</span> to each of them.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#c_matrix_additive_canc-3-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Case: Proof: B=C\implies A+B=A+C"><a tabindex="-1" href="#c_matrix_additive_canc-3-3" title="Copy heading and permalink for Case: Proof: B=C\implies A+B=A+C" aria-label="Copy heading and permalink for Case: Proof: B=C\implies A+B=A+C">🔗</a></div>
-</article><div class="autopermalink" aria-hidden="true" data-description="Proof 3.2.6.1"><a tabindex="-1" href="#c_matrix_additive_canc-3" title="Copy heading and permalink for Proof 3.2.6.1" aria-label="Copy heading and permalink for Proof 3.2.6.1">🔗</a></div>
+</article><div class="autopermalink" aria-hidden="true" data-description="Proof 3.2.7.1"><a tabindex="-1" href="#c_matrix_additive_canc-3" title="Copy heading and permalink for Proof 3.2.7.1" aria-label="Copy heading and permalink for Proof 3.2.7.1">🔗</a></div>
 </article></details>
 <article class="remark remark-like" id="ss_cancellation-4"><h3 class="heading">
-<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
-<div class="para" id="ss_cancellation-4-1">The algebraic importance of <a href="s_matrix_algebra.html#c_matrix_additive_canc" class="xref" data-knowl="./knowl/xref/c_matrix_additive_canc.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.2.6: Additive cancellation of matrices">Theorem 3.2.6</a> is that we can perform <em class="emphasis">additive cancellation</em>  in matrix equations just as we do in real number algebra. For example, we can solve the matrix equation <span class="process-math">\(A+B=3A\)</span> for <span class="process-math">\(B\)</span> as follows:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_cancellation-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ss_cancellation-4-1">The algebraic importance of <a href="s_matrix_algebra.html#c_matrix_additive_canc" class="xref" data-knowl="./knowl/xref/c_matrix_additive_canc.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.2.7: Additive cancellation of matrices">Theorem 3.2.7</a> is that we can perform <em class="emphasis">additive cancellation</em>  in matrix equations just as we do in real number algebra. For example, we can solve the matrix equation <span class="process-math">\(A+B=3A\)</span> for <span class="process-math">\(B\)</span> as follows:<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_cancellation-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/c_matrix_additive_canc.html ./knowl/xref/c_matrix_additive_canc.html" id="ss_cancellation-4-2">
 \begin{align*}
 A+B\amp = 3A\\
 A+B\amp = (1+2)A\\
 A+B\amp = A+2A\\
-B\amp = 2A \amp (\knowl{./knowl/xref/c_matrix_additive_canc.html}{\text{Theorem 3.2.6}})\text{.}
+B\amp = 2A \amp (\knowl{./knowl/xref/c_matrix_additive_canc.html}{\text{Theorem 3.2.7}})\text{.}
 \end{align*}
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Remark 3.2.7"><a tabindex="-1" href="#ss_cancellation-4" title="Copy heading and permalink for Remark 3.2.7" aria-label="Copy heading and permalink for Remark 3.2.7">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 3.2.8"><a tabindex="-1" href="#ss_cancellation-4" title="Copy heading and permalink for Remark 3.2.8" aria-label="Copy heading and permalink for Remark 3.2.8">🔗</a></div>
 </article>
 <article class="warning remark-like" id="ss_cancellation-5"><h3 class="heading">
-<span class="type">Warning</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Warning</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para logical" id="ss_cancellation-5-1">
 <div class="para">Though we can perform additive cancellation in matrix algebra, we can <em class="emphasis">not</em> always perform <em class="emphasis">multiplicative cancellation</em>. For example, consider the matrices</div>
@@ -935,12 +976,12 @@ A=\begin{bmatrix}1\amp 1\\ 1\amp 1\end{bmatrix}, B=\begin{bmatrix}1\amp 0\\ 0\am
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_cancellation-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Warning 3.2.8"><a tabindex="-1" href="#ss_cancellation-5" title="Copy heading and permalink for Warning 3.2.8" aria-label="Copy heading and permalink for Warning 3.2.8">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Warning 3.2.9"><a tabindex="-1" href="#ss_cancellation-5" title="Copy heading and permalink for Warning 3.2.9" aria-label="Copy heading and permalink for Warning 3.2.9">🔗</a></div>
 </article>
 <div class="para" id="ss_cancellation-6">The example in our warning above is but one instance of the general failure of the principle of multiplicative cancellation in matrix algebra. This in turn is a consequence of the following theorem, which identifies the two crucial places where matrix algebra differs significantly from real number algebra.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_cancellation-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="th_matrix_abnormalities"><h3 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Matrix algebra abnormalities.</span>
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Matrix algebra abnormalities.</span>
 </h3>
 <div class="para logical" id="th_matrix_abnormalities-2-1">
 <ol class="decimal" id="th_matrix_abnormalities-2-1-1">
@@ -956,7 +997,7 @@ A=\begin{bmatrix}1\amp 1\\ 1\amp 1\end{bmatrix}, B=\begin{bmatrix}1\amp 0\\ 0\am
 <div class="para">If the product of two matrices is the zero matrix, we <em class="emphasis">cannot</em> conclude that one of matrices is the zero matrix. In logical notation:</div>
 <div class="displaymath process-math" id="eq_mult_has_zero_divisors">
 \begin{equation}
-\underset{m\times n}{A}\, \underset{n\times r}{B}=\boldzero_{m\times r}\;\not\!\!\!\!\implies A=\boldzero_{m\times n} \text{ or }  B=\boldzero_{n\times r}\text{.}\tag{3.2.1}
+\underset{m\times n}{A}\, \underset{n\times r}{B}=\boldzero_{m\times r}\;\not\!\!\!\!\implies A=\boldzero_{m\times n} \text{ or }  B=\boldzero_{n\times r}\text{.}\tag{3.2.2}
 \end{equation}
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_mult_has_zero_divisors-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -966,10 +1007,10 @@ A=\begin{bmatrix}1\amp 1\\ 1\amp 1\end{bmatrix}, B=\begin{bmatrix}1\amp 0\\ 0\am
 </ol>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_matrix_abnormalities-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Theorem 3.2.9: Matrix algebra abnormalities"><a tabindex="-1" href="#th_matrix_abnormalities" title="Copy heading and permalink for Theorem 3.2.9: Matrix algebra abnormalities" aria-label="Copy heading and permalink for Theorem 3.2.9: Matrix algebra abnormalities">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 3.2.10: Matrix algebra abnormalities"><a tabindex="-1" href="#th_matrix_abnormalities" title="Copy heading and permalink for Theorem 3.2.10: Matrix algebra abnormalities" aria-label="Copy heading and permalink for Theorem 3.2.10: Matrix algebra abnormalities">🔗</a></div>
 </article>
 <div class="para logical" id="ss_cancellation-8">
-<div class="para">This is a good place to point out that to prove an identity does not hold, it suffices to provide a single counterexample to that effect. We do so for each failed identity of <a href="s_matrix_algebra.html#th_matrix_abnormalities" class="xref" data-knowl="./knowl/xref/th_matrix_abnormalities.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.2.9: Matrix algebra abnormalities">Theorem 3.2.9</a> in turn. There is no significance to the particular counterexamples chosen here, and indeed there are infinitely many counterexamples to choose from in both cases.</div>
+<div class="para">This is a good place to point out that to prove an identity does not hold, it suffices to provide a single counterexample to that effect. We do so for each failed identity of <a href="s_matrix_algebra.html#th_matrix_abnormalities" class="xref" data-knowl="./knowl/xref/th_matrix_abnormalities.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.2.10: Matrix algebra abnormalities">Theorem 3.2.10</a> in turn. There is no significance to the particular counterexamples chosen here, and indeed there are infinitely many counterexamples to choose from in both cases.</div>
 <ol class="decimal" id="ss_cancellation-8-2">
 <li id="ss_cancellation-8-2-1">
 <div class="para logical" id="ss_cancellation-8-2-1-1">
@@ -1006,10 +1047,10 @@ A=\begin{bmatrix}1\amp 1\\ 1\amp 1\end{bmatrix}, B=\begin{bmatrix}1\amp 0\\ 0\am
 </ol>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_cancellation-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ss_cancellation-9">An important consequence of the abnormality <a href="s_matrix_algebra.html#eq_mult_has_zero_divisors" class="xref" data-knowl="./knowl/xref/eq_mult_has_zero_divisors.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.2.1">(3.2.1)</a> is that matrix algebra does not enjoy the property of multiplicative cancellation.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_cancellation-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ss_cancellation-9">An important consequence of the abnormality <a href="s_matrix_algebra.html#eq_mult_has_zero_divisors" class="xref" data-knowl="./knowl/xref/eq_mult_has_zero_divisors.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.2.2">(3.2.2)</a> is that matrix algebra does not enjoy the property of multiplicative cancellation.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_cancellation-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="corollary theorem-like" id="th_matrix_cancel"><h3 class="heading">
-<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Failure of multiplicative cancellation.</span>
+<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Failure of multiplicative cancellation.</span>
 </h3>
 <ol class="decimal" id="th_matrix_cancel-2-1">
 <li id="th_matrix_cancel-2-1-1">
@@ -1017,7 +1058,7 @@ A=\begin{bmatrix}1\amp 1\\ 1\amp 1\end{bmatrix}, B=\begin{bmatrix}1\amp 0\\ 0\am
 <div class="para">Suppose matrices <span class="process-math">\(A, B, C\)</span> satisfy <span class="process-math">\(AB=AC\)</span> and <span class="process-math">\(A\ne \boldzero\text{.}\)</span> We <em class="emphasis">cannot</em> conclude that <span class="process-math">\(B=C\text{.}\)</span> In logical notation:</div>
 <div class="displaymath process-math" id="eq_no_left_cancel">
 \begin{equation}
-AB=AC \;\not\!\!\!\!\implies B=C\tag{3.2.2}
+AB=AC \;\not\!\!\!\!\implies B=C\tag{3.2.3}
 \end{equation}
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_matrix_cancel-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -1029,7 +1070,7 @@ AB=AC \;\not\!\!\!\!\implies B=C\tag{3.2.2}
 <div class="para">Suppose matrices <span class="process-math">\(B, C, D\)</span> satisfy <span class="process-math">\(BD=CD\)</span> and <span class="process-math">\(D\ne \boldzero\text{.}\)</span> We <em class="emphasis">cannot</em> conclude that <span class="process-math">\(B=C\text{.}\)</span> In logical notation:</div>
 <div class="displaymath process-math" id="eq_no_right_cancel">
 \begin{equation}
-BD=CD \;\not\!\!\!\!\implies B=C\tag{3.2.3}
+BD=CD \;\not\!\!\!\!\implies B=C\tag{3.2.4}
 \end{equation}
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_matrix_cancel-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -1037,7 +1078,7 @@ BD=CD \;\not\!\!\!\!\implies B=C\tag{3.2.3}
 <div class="autopermalink" aria-hidden="true" data-description="Item 2"><a tabindex="-1" href="#th_matrix_cancel-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
 </ol>
-<div class="autopermalink" aria-hidden="true" data-description="Corollary 3.2.10: Failure of multiplicative cancellation"><a tabindex="-1" href="#th_matrix_cancel" title="Copy heading and permalink for Corollary 3.2.10: Failure of multiplicative cancellation" aria-label="Copy heading and permalink for Corollary 3.2.10: Failure of multiplicative cancellation">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Corollary 3.2.11: Failure of multiplicative cancellation"><a tabindex="-1" href="#th_matrix_cancel" title="Copy heading and permalink for Corollary 3.2.11: Failure of multiplicative cancellation" aria-label="Copy heading and permalink for Corollary 3.2.11: Failure of multiplicative cancellation">🔗</a></div>
 </article>
 <details id="ss_cancellation-11" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
 <article class="hiddenproof knowl__content">
@@ -1082,11 +1123,11 @@ BD=CD \;\not\!\!\!\!\implies B=C\tag{3.2.3}
 <div class="autopermalink" aria-hidden="true" data-description="Proof 3.2.2.1"><a tabindex="-1" href="#ss_cancellation-11" title="Copy heading and permalink for Proof 3.2.2.1" aria-label="Copy heading and permalink for Proof 3.2.2.1">🔗</a></div>
 </article></details>
 <article class="remark remark-like" id="rm_cancel_failure"><h3 class="heading">
-<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3>
 <div class="para" id="rm_cancel_failure-1">Mark well this important abnormality of matrix algebra. Confronted with a real number equation of the form <span class="process-math">\(ab=ac\text{,}\)</span> we have a deeply ingrained impulse to declare that either <span class="process-math">\(a=0\)</span> or <span class="process-math">\(b=c\text{.}\)</span> (If we’re sloppy we may forget about that first possibility.) The corresponding maneuver for the matrix equation <span class="process-math">\(AB=AC\)</span> is simply not available to us, unless we know something more about <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#rm_cancel_failure-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Remark 3.2.11"><a tabindex="-1" href="#rm_cancel_failure" title="Copy heading and permalink for Remark 3.2.11" aria-label="Copy heading and permalink for Remark 3.2.11">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Remark 3.2.12"><a tabindex="-1" href="#rm_cancel_failure" title="Copy heading and permalink for Remark 3.2.12" aria-label="Copy heading and permalink for Remark 3.2.12">🔗</a></div>
 </article><div class="autopermalink" aria-hidden="true" data-description="Subsection 3.2.2: Cancellation laws fulfilled and violated"><a tabindex="-1" href="#ss_cancellation" title="Copy heading and permalink for Subsection 3.2.2: Cancellation laws fulfilled and violated" aria-label="Copy heading and permalink for Subsection 3.2.2: Cancellation laws fulfilled and violated">🔗</a></div>
 </section>
 <section class="subsection" id="ss_transpose_props">
@@ -1096,7 +1137,7 @@ BD=CD \;\not\!\!\!\!\implies B=C\tag{3.2.3}
 <div class="para" id="ss_transpose_props-2">We end our foray into matrix algebra with some properties articulating how matrix transposition interacts with matrix addition, multiplication and scalar multiplication.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ss_transpose_props-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="th_trans_props"><h3 class="heading">
-<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Properties of matrix transposition.</span>
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Properties of matrix transposition.</span>
 </h3>
 <div class="para logical" id="th_trans_props-2-1">
 <div class="para">In what follows <span class="process-math">\(m,n,r\)</span> will denote positive integers.</div>
@@ -1128,7 +1169,7 @@ BD=CD \;\not\!\!\!\!\implies B=C\tag{3.2.3}
 </ol>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_trans_props-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Theorem 3.2.12: Properties of matrix transposition"><a tabindex="-1" href="#th_trans_props" title="Copy heading and permalink for Theorem 3.2.12: Properties of matrix transposition" aria-label="Copy heading and permalink for Theorem 3.2.12: Properties of matrix transposition">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Theorem 3.2.13: Properties of matrix transposition"><a tabindex="-1" href="#th_trans_props" title="Copy heading and permalink for Theorem 3.2.13: Properties of matrix transposition" aria-label="Copy heading and permalink for Theorem 3.2.13: Properties of matrix transposition">🔗</a></div>
 </article>
 <details id="th_trans_props-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h3></summary>
 <article class="hiddenproof knowl__content">
@@ -1148,14 +1189,14 @@ BD=CD \;\not\!\!\!\!\implies B=C\tag{3.2.3}
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#th_trans_props-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Proof 3.2.12.1"><a tabindex="-1" href="#th_trans_props-3" title="Copy heading and permalink for Proof 3.2.12.1" aria-label="Copy heading and permalink for Proof 3.2.12.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Proof 3.2.13.1"><a tabindex="-1" href="#th_trans_props-3" title="Copy heading and permalink for Proof 3.2.13.1" aria-label="Copy heading and permalink for Proof 3.2.13.1">🔗</a></div>
 </article></details>
 <article class="example example-like" id="eg_vid_prove_matrix_transpose"><h3 class="heading">
-<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Video example: proving matrix equalities.</span>
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Video example: proving matrix equalities.</span>
 </h3>
 <figure class="figure figure-like" id="fig_proof_transp"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/twq0_HdpC3w?&amp;modestbranding=1&amp;rel=0" id="vid_proof_transp"></iframe></div>
-<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.14<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Video: transpose property<div class="autopermalink" aria-hidden="true" data-description="Figure 3.2.14"><a tabindex="-1" href="#fig_proof_transp" title="Copy heading and permalink for Figure 3.2.14" aria-label="Copy heading and permalink for Figure 3.2.14">🔗</a></div></figcaption>
-</figure><div class="autopermalink" aria-hidden="true" data-description="Example 3.2.13: Video example: proving matrix equalities"><a tabindex="-1" href="#eg_vid_prove_matrix_transpose" title="Copy heading and permalink for Example 3.2.13: Video example: proving matrix equalities" aria-label="Copy heading and permalink for Example 3.2.13: Video example: proving matrix equalities">🔗</a></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.15<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Video: transpose property<div class="autopermalink" aria-hidden="true" data-description="Figure 3.2.15"><a tabindex="-1" href="#fig_proof_transp" title="Copy heading and permalink for Figure 3.2.15" aria-label="Copy heading and permalink for Figure 3.2.15">🔗</a></div></figcaption>
+</figure><div class="autopermalink" aria-hidden="true" data-description="Example 3.2.14: Video example: proving matrix equalities"><a tabindex="-1" href="#eg_vid_prove_matrix_transpose" title="Copy heading and permalink for Example 3.2.14: Video example: proving matrix equalities" aria-label="Copy heading and permalink for Example 3.2.14: Video example: proving matrix equalities">🔗</a></div>
 </article><div class="autopermalink" aria-hidden="true" data-description="Subsection 3.2.3: Transpostition properties"><a tabindex="-1" href="#ss_transpose_props" title="Copy heading and permalink for Subsection 3.2.3: Transpostition properties" aria-label="Copy heading and permalink for Subsection 3.2.3: Transpostition properties">🔗</a></div>
 </section>
 <section class="subsection" id="ss_matrix_algebra_ww">
@@ -1163,7 +1204,7 @@ BD=CD \;\not\!\!\!\!\implies B=C\tag{3.2.3}
 <span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">WeBWork Exercises</span>
 </h2>
 <details id="ss_matrix_algebra_ww-2" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
-<span class="type">WeBWorK</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">WeBWorK</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3></summary>
 <article class="exercise exercise-like knowl__content"><div id="ss_matrix_algebra_ww-2-ww-inner" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="34" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-origin="webwork2" data-sourceFilePath="Contrib/MountAllison/1-3_Matrices_and_Matrix_Operations/true_false.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
 <div class="problem-buttons"><button class="webwork-button" onclick="handleWW('ss_matrix_algebra_ww-2-ww-inner')">Activate</button></div>
@@ -1175,37 +1216,37 @@ BD=CD \;\not\!\!\!\!\implies B=C\tag{3.2.3}
 <li id="extracted-ss_matrix_algebra_ww-2-1-1-2-1-1">
 <div class="para" id="extracted-ss_matrix_algebra_ww-2-1-1-2-1-1-1">If <span class="process-math">\(\displaystyle A\)</span> and <span class="process-math">\(\displaystyle B\)</span> are square matrices of the same size then <span class="process-math">\(\displaystyle (A+B)^2 = A^2 + 2AB + B^2\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-2-1-1-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 3.2.15.1"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-2-1-1-2-1-1" title="Copy heading and permalink for Item 3.2.15.1" aria-label="Copy heading and permalink for Item 3.2.15.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3.2.16.1"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-2-1-1-2-1-1" title="Copy heading and permalink for Item 3.2.16.1" aria-label="Copy heading and permalink for Item 3.2.16.1">🔗</a></div>
 </li>
 <li id="extracted-ss_matrix_algebra_ww-2-1-1-2-1-2">
 <div class="para" id="extracted-ss_matrix_algebra_ww-2-1-1-2-1-2-1">If <span class="process-math">\(\displaystyle A\)</span> and <span class="process-math">\(\displaystyle B\)</span> are matrices such that <span class="process-math">\(\displaystyle AB = O\)</span> and <span class="process-math">\(\displaystyle A \neq O\text{,}\)</span> then <span class="process-math">\(\displaystyle B = O\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-2-1-1-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 3.2.15.2"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-2-1-1-2-1-2" title="Copy heading and permalink for Item 3.2.15.2" aria-label="Copy heading and permalink for Item 3.2.15.2">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3.2.16.2"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-2-1-1-2-1-2" title="Copy heading and permalink for Item 3.2.16.2" aria-label="Copy heading and permalink for Item 3.2.16.2">🔗</a></div>
 </li>
 <li id="extracted-ss_matrix_algebra_ww-2-1-1-2-1-3">
 <div class="para" id="extracted-ss_matrix_algebra_ww-2-1-1-2-1-3-1">If <span class="process-math">\(\displaystyle A\)</span> and <span class="process-math">\(\displaystyle B\)</span> are square matrices of the same size, then <span class="process-math">\(\displaystyle (A+B)(A-B) = A^2 - B^2\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-2-1-1-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 3.2.15.3"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-2-1-1-2-1-3" title="Copy heading and permalink for Item 3.2.15.3" aria-label="Copy heading and permalink for Item 3.2.15.3">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3.2.16.3"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-2-1-1-2-1-3" title="Copy heading and permalink for Item 3.2.16.3" aria-label="Copy heading and permalink for Item 3.2.16.3">🔗</a></div>
 </li>
 <li id="extracted-ss_matrix_algebra_ww-2-1-1-2-1-4">
 <div class="para" id="extracted-ss_matrix_algebra_ww-2-1-1-2-1-4-1">The matrices <span class="process-math">\(\displaystyle A^TA\)</span> and <span class="process-math">\(\displaystyle AA^T\)</span> are always defined, regardless of the size of <span class="process-math">\(\displaystyle A\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-2-1-1-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 3.2.15.4"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-2-1-1-2-1-4" title="Copy heading and permalink for Item 3.2.15.4" aria-label="Copy heading and permalink for Item 3.2.15.4">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3.2.16.4"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-2-1-1-2-1-4" title="Copy heading and permalink for Item 3.2.16.4" aria-label="Copy heading and permalink for Item 3.2.16.4">🔗</a></div>
 </li>
 <li id="extracted-ss_matrix_algebra_ww-2-1-1-2-1-5">
 <div class="para" id="extracted-ss_matrix_algebra_ww-2-1-1-2-1-5-1">If <span class="process-math">\(\displaystyle A\)</span> is a square matrix for which <span class="process-math">\(\displaystyle A^2 = A\text{,}\)</span> then either <span class="process-math">\(\displaystyle A = I\)</span> or <span class="process-math">\(\displaystyle A = O\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-2-1-1-2-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Item 3.2.15.5"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-2-1-1-2-1-5" title="Copy heading and permalink for Item 3.2.15.5" aria-label="Copy heading and permalink for Item 3.2.15.5">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 3.2.16.5"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-2-1-1-2-1-5" title="Copy heading and permalink for Item 3.2.16.5" aria-label="Copy heading and permalink for Item 3.2.16.5">🔗</a></div>
 </li>
 </ol>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-2-1-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 </div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="WeBWorK 3.2.15"><a tabindex="-1" href="#ss_matrix_algebra_ww-2" title="Copy heading and permalink for WeBWorK 3.2.15" aria-label="Copy heading and permalink for WeBWorK 3.2.15">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="WeBWorK 3.2.16"><a tabindex="-1" href="#ss_matrix_algebra_ww-2" title="Copy heading and permalink for WeBWorK 3.2.16" aria-label="Copy heading and permalink for WeBWorK 3.2.16">🔗</a></div>
 </article></details>
 <details id="ss_matrix_algebra_ww-3" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
-<span class="type">WeBWorK</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">WeBWorK</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3></summary>
 <article class="exercise exercise-like knowl__content"><div id="ss_matrix_algebra_ww-3-ww-inner" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="35" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-origin="webwork2" data-sourceFilePath="Library/Utah/Business_Algebra/set10_Matrices/p17.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
 <div class="problem-buttons"><button class="webwork-button" onclick="handleWW('ss_matrix_algebra_ww-3-ww-inner')">Activate</button></div>
@@ -1218,36 +1259,36 @@ BD=CD \;\not\!\!\!\!\implies B=C\tag{3.2.3}
 <div class="para" id="extracted-ss_matrix_algebra_ww-3-1-2-1">
 <span class="process-math">\(5\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-3-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Answer 3.2.16.1"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-3-1-2" title="Copy heading and permalink for Answer 3.2.16.1" aria-label="Copy heading and permalink for Answer 3.2.16.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Answer 3.2.17.1"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-3-1-2" title="Copy heading and permalink for Answer 3.2.17.1" aria-label="Copy heading and permalink for Answer 3.2.17.1">🔗</a></div>
 </div></details>
 <details id="extracted-ss_matrix_algebra_ww-3-1-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="answer solution-like knowl__content">
 <div class="para" id="extracted-ss_matrix_algebra_ww-3-1-3-1">
 <span class="process-math">\(9\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-3-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Answer 3.2.16.2"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-3-1-3" title="Copy heading and permalink for Answer 3.2.16.2" aria-label="Copy heading and permalink for Answer 3.2.16.2">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Answer 3.2.17.2"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-3-1-3" title="Copy heading and permalink for Answer 3.2.17.2" aria-label="Copy heading and permalink for Answer 3.2.17.2">🔗</a></div>
 </div></details>
 <details id="extracted-ss_matrix_algebra_ww-3-1-4" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="answer solution-like knowl__content">
 <div class="para" id="extracted-ss_matrix_algebra_ww-3-1-4-1">
 <span class="process-math">\(9\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-3-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Answer 3.2.16.3"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-3-1-4" title="Copy heading and permalink for Answer 3.2.16.3" aria-label="Copy heading and permalink for Answer 3.2.16.3">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Answer 3.2.17.3"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-3-1-4" title="Copy heading and permalink for Answer 3.2.17.3" aria-label="Copy heading and permalink for Answer 3.2.17.3">🔗</a></div>
 </div></details>
 <details id="extracted-ss_matrix_algebra_ww-3-1-5" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="answer solution-like knowl__content">
 <div class="para" id="extracted-ss_matrix_algebra_ww-3-1-5-1">
 <span class="process-math">\(5\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-3-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Answer 3.2.16.4"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-3-1-5" title="Copy heading and permalink for Answer 3.2.16.4" aria-label="Copy heading and permalink for Answer 3.2.16.4">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Answer 3.2.17.4"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-3-1-5" title="Copy heading and permalink for Answer 3.2.17.4" aria-label="Copy heading and permalink for Answer 3.2.17.4">🔗</a></div>
 </div></details>
 </div>
 </div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="WeBWorK 3.2.16"><a tabindex="-1" href="#ss_matrix_algebra_ww-3" title="Copy heading and permalink for WeBWorK 3.2.16" aria-label="Copy heading and permalink for WeBWorK 3.2.16">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="WeBWorK 3.2.17"><a tabindex="-1" href="#ss_matrix_algebra_ww-3" title="Copy heading and permalink for WeBWorK 3.2.17" aria-label="Copy heading and permalink for WeBWorK 3.2.17">🔗</a></div>
 </article></details>
 <details id="ss_matrix_algebra_ww-4" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
-<span class="type">WeBWorK</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+<span class="type">WeBWorK</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.2.18</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h3></summary>
 <article class="exercise exercise-like knowl__content"><div id="ss_matrix_algebra_ww-4-ww-inner" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="36" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-localize-hint="Hint" data-localize-solution="Solution" data-origin="webwork2" data-sourceFilePath="Library/Utah/Business_Algebra/set10_Matrices/p21.pg" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
 <div class="problem-buttons"><button class="webwork-button" onclick="handleWW('ss_matrix_algebra_ww-4-ww-inner')">Activate</button></div>
@@ -1311,61 +1352,61 @@ c_{21} \amp  c_{22}
 <div class="para" id="extracted-ss_matrix_algebra_ww-4-1-2-1">
 <span class="process-math">\(0\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-4-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Answer 3.2.17.1"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-4-1-2" title="Copy heading and permalink for Answer 3.2.17.1" aria-label="Copy heading and permalink for Answer 3.2.17.1">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Answer 3.2.18.1"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-4-1-2" title="Copy heading and permalink for Answer 3.2.18.1" aria-label="Copy heading and permalink for Answer 3.2.18.1">🔗</a></div>
 </div></details>
 <details id="extracted-ss_matrix_algebra_ww-4-1-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="answer solution-like knowl__content">
 <div class="para" id="extracted-ss_matrix_algebra_ww-4-1-3-1">
 <span class="process-math">\(-2\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-4-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Answer 3.2.17.2"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-4-1-3" title="Copy heading and permalink for Answer 3.2.17.2" aria-label="Copy heading and permalink for Answer 3.2.17.2">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Answer 3.2.18.2"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-4-1-3" title="Copy heading and permalink for Answer 3.2.18.2" aria-label="Copy heading and permalink for Answer 3.2.18.2">🔗</a></div>
 </div></details>
 <details id="extracted-ss_matrix_algebra_ww-4-1-4" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="answer solution-like knowl__content">
 <div class="para" id="extracted-ss_matrix_algebra_ww-4-1-4-1">
 <span class="process-math">\(14\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-4-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Answer 3.2.17.3"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-4-1-4" title="Copy heading and permalink for Answer 3.2.17.3" aria-label="Copy heading and permalink for Answer 3.2.17.3">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Answer 3.2.18.3"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-4-1-4" title="Copy heading and permalink for Answer 3.2.18.3" aria-label="Copy heading and permalink for Answer 3.2.18.3">🔗</a></div>
 </div></details>
 <details id="extracted-ss_matrix_algebra_ww-4-1-5" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="answer solution-like knowl__content">
 <div class="para" id="extracted-ss_matrix_algebra_ww-4-1-5-1">
 <span class="process-math">\(6\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-4-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Answer 3.2.17.4"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-4-1-5" title="Copy heading and permalink for Answer 3.2.17.4" aria-label="Copy heading and permalink for Answer 3.2.17.4">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Answer 3.2.18.4"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-4-1-5" title="Copy heading and permalink for Answer 3.2.18.4" aria-label="Copy heading and permalink for Answer 3.2.18.4">🔗</a></div>
 </div></details>
 <details id="extracted-ss_matrix_algebra_ww-4-1-6" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="answer solution-like knowl__content">
 <div class="para" id="extracted-ss_matrix_algebra_ww-4-1-6-1">
 <span class="process-math">\(23\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-4-1-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Answer 3.2.17.5"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-4-1-6" title="Copy heading and permalink for Answer 3.2.17.5" aria-label="Copy heading and permalink for Answer 3.2.17.5">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Answer 3.2.18.5"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-4-1-6" title="Copy heading and permalink for Answer 3.2.18.5" aria-label="Copy heading and permalink for Answer 3.2.18.5">🔗</a></div>
 </div></details>
 <details id="extracted-ss_matrix_algebra_ww-4-1-7" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="answer solution-like knowl__content">
 <div class="para" id="extracted-ss_matrix_algebra_ww-4-1-7-1">
 <span class="process-math">\(6\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-4-1-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Answer 3.2.17.6"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-4-1-7" title="Copy heading and permalink for Answer 3.2.17.6" aria-label="Copy heading and permalink for Answer 3.2.17.6">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Answer 3.2.18.6"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-4-1-7" title="Copy heading and permalink for Answer 3.2.18.6" aria-label="Copy heading and permalink for Answer 3.2.18.6">🔗</a></div>
 </div></details>
 <details id="extracted-ss_matrix_algebra_ww-4-1-8" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="answer solution-like knowl__content">
 <div class="para" id="extracted-ss_matrix_algebra_ww-4-1-8-1">
 <span class="process-math">\(24\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-4-1-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Answer 3.2.17.7"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-4-1-8" title="Copy heading and permalink for Answer 3.2.17.7" aria-label="Copy heading and permalink for Answer 3.2.17.7">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Answer 3.2.18.7"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-4-1-8" title="Copy heading and permalink for Answer 3.2.18.7" aria-label="Copy heading and permalink for Answer 3.2.18.7">🔗</a></div>
 </div></details>
 <details id="extracted-ss_matrix_algebra_ww-4-1-9" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
 <div class="answer solution-like knowl__content">
 <div class="para" id="extracted-ss_matrix_algebra_ww-4-1-9-1">
 <span class="process-math">\(2\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-4-1-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Answer 3.2.17.8"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-4-1-9" title="Copy heading and permalink for Answer 3.2.17.8" aria-label="Copy heading and permalink for Answer 3.2.17.8">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Answer 3.2.18.8"><a tabindex="-1" href="#extracted-ss_matrix_algebra_ww-4-1-9" title="Copy heading and permalink for Answer 3.2.18.8" aria-label="Copy heading and permalink for Answer 3.2.18.8">🔗</a></div>
 </div></details>
 </div>
 </div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="WeBWorK 3.2.17"><a tabindex="-1" href="#ss_matrix_algebra_ww-4" title="Copy heading and permalink for WeBWorK 3.2.17" aria-label="Copy heading and permalink for WeBWorK 3.2.17">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="WeBWorK 3.2.18"><a tabindex="-1" href="#ss_matrix_algebra_ww-4" title="Copy heading and permalink for WeBWorK 3.2.18" aria-label="Copy heading and permalink for WeBWorK 3.2.18">🔗</a></div>
 </article></details><div class="autopermalink" aria-hidden="true" data-description="Subsection 3.2.4: WeBWork Exercises"><a tabindex="-1" href="#ss_matrix_algebra_ww" title="Copy heading and permalink for Subsection 3.2.4: WeBWork Exercises" aria-label="Copy heading and permalink for Subsection 3.2.4: WeBWork Exercises">🔗</a></div>
 </section>
 <section class="exercises" id="s_matrix_algebra_ex">
@@ -1396,12 +1437,12 @@ c_{21} \amp  c_{22}
 <div class="autopermalink" aria-hidden="true" data-description="Exercise 3.2.5.1"><a tabindex="-1" href="#s_matrix_algebra_ex-1-1" title="Copy heading and permalink for Exercise 3.2.5.1" aria-label="Copy heading and permalink for Exercise 3.2.5.1">🔗</a></div>
 </article>
 <article class="exercise exercise-like" id="s_matrix_algebra_ex-1-2"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="para" id="s_matrix_algebra_ex-1-2-1-1">Prove <a href="s_matrix_algebra.html#th_matrix_add_mult_ident" class="xref" data-knowl="./knowl/xref/th_matrix_add_mult_ident.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.2.5: Multiplicative identities">Theorem 3.2.5</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_matrix_algebra_ex-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="s_matrix_algebra_ex-1-2-1-1">Prove <a href="s_matrix_algebra.html#th_matrix_add_mult_ident" class="xref" data-knowl="./knowl/xref/th_matrix_add_mult_ident.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.2.6: Multiplicative identities">Theorem 3.2.6</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_matrix_algebra_ex-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" aria-hidden="true" data-description="Exercise 3.2.5.2"><a tabindex="-1" href="#s_matrix_algebra_ex-1-2" title="Copy heading and permalink for Exercise 3.2.5.2" aria-label="Copy heading and permalink for Exercise 3.2.5.2">🔗</a></div>
 </article>
 <article class="exercise exercise-like" id="s_matrix_algebra_ex-1-3"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
-<div class="para" id="s_matrix_algebra_ex-1-3-1-1">In this exercise you will complete the proof of <a href="s_matrix_algebra.html#th_trans_props" class="xref" data-knowl="./knowl/xref/th_trans_props.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.2.12: Properties of matrix transposition">Theorem 3.2.12</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_matrix_algebra_ex-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="s_matrix_algebra_ex-1-3-1-1">In this exercise you will complete the proof of <a href="s_matrix_algebra.html#th_trans_props" class="xref" data-knowl="./knowl/xref/th_trans_props.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.2.13: Properties of matrix transposition">Theorem 3.2.13</a>.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#s_matrix_algebra_ex-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> 
 <ol class="lower-alpha lower-alpha-level-1" id="s_matrix_algebra_ex-1-3-1-2">
 <li id="s_matrix_algebra_ex-1-3-1-2-1">
