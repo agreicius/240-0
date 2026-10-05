@@ -7,7 +7,7 @@
   As you learn about matrix algebra, always keep in mind your old friend, real number algebra. For the most part these two algebraic systems closely resemble one another, as <xref ref="th_matrix_alg_props"/> below makes clear. However, there are two crucial points where they differ (see <xref ref="th_matrix_abnormalities"/>): two important properties of real number algebra that do not hold for matrices. The consequences of these two simple aberrations are far-reaching and imbue matrix algebra with a fascinating richness in comparison to real number algebra.
   </p>
   </introduction>
-  \<subsection xml:id="ss_matrix_mult_props">
+  <subsection xml:id="ss_matrix_mult_props">
     <title>Matrix multiplication properties</title>
   <p>
     We begin with a few results that establish a close connection between matrix multiplication and real number multiplication. 
@@ -21,26 +21,25 @@
             <li xml:id="th_matrixmult_assoc">
               <title>Associative law</title>
               <p>
-                <m>A(BC)=(AB)C</m> for all <m>A\in M_{mr}, B\in M_{rs}, C\in M_{sn}</m>
+                <m>A(BC)=(AB)C</m> for all <m>A\in \ML_{m,r}(\R), B\in \ML_{r,s}(\R), C\in \ML_{s,n}(\R)</m>
               </p>
             </li>
             <li xml:id="th_matrix_leftdist">
               <title>Left-distributive law</title>
               <p>
-                <m>A(B+C)=AB+AC</m> for all <m>A\in M_{mr}</m> and <m>B,C\in M_{rn}</m>.
+                <m>A(B+C)=AB+AC</m> for all <m>A\in \ML_{m,r}(\R)</m> and <m>B,C\in \ML_{r,n}(\R)</m>.
               </p>
             </li>
             <li xml:id="th_matrix_rightdist">
               <title>Right-distributive law</title>
               <p>
-                <m>(B+C)A=BA+CA</m> for all <m>B,C\in M_{mr}</m> and <m>A\in M_{rn}
-                </m>.
+                <m>(B+C)A=BA+CA</m> for all <m>B,C\in \ML_{m,r}(\R)</m> and <m>A\in \ML_{r,n}(\R)</m>.
               </p>
             </li>
             <li xml:id="th_matrixscale_comm">
               <title>Scaling commutative law</title>
               <p>
-                <m>a(BC)=(aB)C=B(aC)</m> for all <m>a\in \R</m>, <m>B\in M_{mr}</m>, <m>C\in M_{rn}</m>. 
+                <m>a(BC)=(aB)C=B(aC)</m> for all <m>a\in \R</m>, <m>B\in \ML_{m,r}(\R)</m>, <m>C\in \ML_{r,n}(\R)</m>. 
               </p>
             </li>
           </ol>
@@ -49,14 +48,39 @@
     </theorem>
     <p>
       How does one actually prove one of these properties?
-      These are all <em>matrix equalities</em> of the form <m>X=Y</m>, so
-      according to the <xref ref="d_matrix_equality" text='custom'> matrix equality definition</xref>
-      we must show (1) that the matrices <m>X</m> and <m>Y</m> have the same size,
-      and (2) that <m>(X)_{ij}=(Y)_{ij}</m> for all <m>(i,j)</m>. The proof below illustrates this technique for the <xref ref="th_matrixmult_assoc" text="custom">multiplication associative law</xref> of <xref ref="th_matrix_alg_props"/>.
+      These are all <em>matrix equalities</em> of the form <m>A=B</m>, and according to <xref ref="prop_equality_matrix"/>, two matrices are equal if (a) they are of the same shape, and (b) their corresponding entries are equal. Let's make an official procedure out of this, using matrix-entry notation. 
     </p>
-
+    <algorithm xml:id="proc_matrix_equality">
+      <title>Proving matrix equalities</title>
+      <statement>
+        <p>
+          Let <m>A</m> be an <m>m\times n</m> matrix, and let <m>B</m> be an <m>m'\times n'</m> matrix. To show that <m>A=B</m> proceed as follows. 
+          <ol>
+            <li>
+              <title>Same dimensions</title>
+              <p>
+                Show that <m>m=m'</m> and <m>n=n'</m>: <ie/>, show that <m>A</m> and <m>B</m> have the same shape. 
+              </p>
+            </li>
+            <li>
+              <title>Same entries</title>
+              <p>
+                Having shown that both matrices are of dimension <m>m\times n</m>, show that 
+                <md number="yes">
+                  <mrow>[A]_{i,j} \amp =[B]_{i,j}</mrow>
+                </md>
+                for all <m>1\leq i\leq m, 1\leq j\leq n</m>. Equivalently, if <m>A=[a_{i,j}]_{m\times n}</m> and <m>B=[b_{i,j}]_{m\times n}</m>, show that <m>a_{i,j}=b_{i,j}</m> for all <m>1\leq i\leq m, 1\leq j\leq n</m>. 
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </algorithm>
+<p>
+  Let's illustrate <xref ref="proc_matrix_equality"/> by proving the <xref ref="th_matrixmult_assoc" text="custom">multiplication associative law</xref> of <xref ref="th_matrix_alg_props"/>.
+</p>
   <proof>
-    <title>Proof of (1)</title>
+    <title>Proof of <xref ref="th_matrix_alg_props"/>: associative law</title>
     <p>We prove only the <xref ref="th_matrixmult_assoc" text="custom">associative law</xref>.
     Let <m>A=[a_{ij}]_{m\times r}</m>,
       <m>B=[b_{ij}]_{r\times s}</m>,
@@ -68,8 +92,13 @@
       we must show (1) that <m>A(BC)</m> and <m>(AB)C</m> have the same dimension, and (2) that <md>[A(BC)]_{ij}=[(AB)C]_{ij}</md> for all possible <m>(i,j)</m>.
     </p>
       <p>
-      The usual observation about <q>inner</q> and <q>outer</q> dimensions shows that both <m>A(BC)</m> and <m>(AB)C</m> have dimension <m>m\times n</m>.
-    </p><xref ref="d_matrix_mult"/>
+      Addressing the dimensions of the left and right sides, note that since <m>A\in \ML_{m,r}(\R), B\in \ML_{r,s}, C\in \ML_{s,n}(\R)</m>, we have (using <xref ref="d_matrix_mult"/>)
+      <md>
+        <mrow>AB \amp \in \ML_{m,s}(\R) \amp BC\amp \in \ML_{s,n}(\R)</mrow>
+        <mrow> A(BC) \amp \in \ML_{m,n}(\R) \amp (AB)C\amp \in \ML_{m,n}(\R)</mrow>
+      </md>.
+      Thus <m>A(BC)</m> and <m>(AB)C</m> are both <m>m\times n</m> matrices. 
+    </p>
     <p> Next, given any  <m>(i,j)</m> with <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>, we have:
       <md>
         <mrow> [A(BC)]_{ij}\amp=\sum_{\ell=1}^ra_{i\ell}[BC]_{\ell j}  \amp (<xref ref="d_matrix_mult"/>)</mrow>

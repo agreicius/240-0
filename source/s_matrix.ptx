@@ -934,9 +934,9 @@ DL/.style={
           <p>
             Now let <m>\bolda_1, \bolda_2</m> be the <em>rows</em> of <m>A</m>, and let <m>\boldb_1, \boldb_2, \boldb_3</m> be the <em>rows</em> of <m>B</m>. We have
             <md>
-              <mrow>AB \amp= \begin{amatrix}[c]--\bolda_1\, B--\\ --\bolda_2\, B-- \end{amatrix}\amp \text{(Step 1)}</mrow>
-              <mrow> \amp= \begin{amatrix}[c]--(1\boldb_1+1\boldb_2-2\boldb_3)-- \\
-              --(1\boldb_1+3\boldb_2+2\boldb_3)-- \end{amatrix} \amp \text{(Step 2)} </mrow>
+              <mrow>AB \amp= \begin{amatrix}[c]\ -\bolda_1\, B- \ \\ \ -\bolda_2\, B- \   \end{amatrix}\amp \text{(Step 1)}</mrow>
+              <mrow> \amp= \begin{amatrix}[c]\ -(1\boldb_1+1\boldb_2-2\boldb_3)-\  \\
+              \ -(1\boldb_1+3\boldb_2+2\boldb_3)-\  \end{amatrix} \amp \text{(Step 2)} </mrow>
               <mrow>  \amp=\begin{amatrix}[rr]5\amp 0\\ -3\amp 6 \end{amatrix} \amp \text{(arithmetic)} </mrow>
             </md>
           </p>
