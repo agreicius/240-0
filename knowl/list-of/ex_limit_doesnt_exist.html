@@ -18,9 +18,9 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<article class="example example-like"><h2 class="heading">
+<article class="example example-like"><h4 class="heading">
 <span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">0.3.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The limit does not exist.</span>
-</h2>
+</h4>
 <div class="para logical">
 <div class="para">Let <span class="process-math">\(f(x)\)</span> be a function with domain <span class="process-math">\(\R\text{,}\)</span> and let <span class="process-math">\(c\in \R\)</span> be a point of this domain. By definition, the proposition that <span class="process-math">\(\lim\limits_{x\to c}f(x)\)</span> exists is equivalent to the following proposition:</div>
 <div class="displaymath process-math">
@@ -29,13 +29,10 @@
 \end{equation}
 </div>
 <div class="para">(We made a number of shortcuts in our logical notation above (e.g. <span class="process-math">\(\forall \epsilon\gt 0\text{,}\)</span> <span class="process-math">\(\exists\delta\gt 0\)</span>) in order to simplify the expression somewhat; the intended meaning should still be clear. )</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_limit_doesnt_exist-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
-</div> 
-<div class="para">Use the negation rules described in <a href="s_logic.html#rm_negating_quantifiers" class="xref" data-knowl="./knowl/xref/rm_negating_quantifiers.html" data-reveal-label="Reveal" data-close-label="Close" title="Remark 0.3.9: Negating quantifiers">Negating quantifiers</a> to derive a similar proposition equivalent to the statement that <span class="process-math">\(\lim\limits_{x\to c}f(x)\)</span> do not exist.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_limit_doesnt_exist-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex_limit_doesnt_exist-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para">Use the negation rules described in <a href="s_logic.html#rm_negating_quantifiers" class="xref" data-knowl="./knowl/xref/rm_negating_quantifiers.html" data-reveal-label="Reveal" data-close-label="Close" title="Remark 0.3.9: Negating quantifiers">Negating quantifiers</a> to derive a similar proposition equivalent to the statement that <span class="process-math">\(\lim\limits_{x\to c}f(x)\)</span> do not exist.<div class="autopermalink" data-description="Paragraph"><a href="#ex_limit_doesnt_exist-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="solutions">
-<details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
-<div class="solution solution-like knowl__content">
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para logical">
 <div class="para">Let <span class="process-math">\(\mathcal{P}\)</span> be the proposition in <a href="s_logic.html#eq_proposition" class="xref" data-knowl="./knowl/xref/eq_proposition.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 0.3.1">(0.3.1)</a>. Using the negation rules in series, we derive the <em class="emphasis">chain of equivalences</em>  below (see <a href="s_proof_technique.html#sss_logical_chains" class="internal" title="Subsubsection: Chains of implications/equivalences">Chains of implications/equivalences</a>). We’ve added parentheses to emphasize what is being negated at each step. Note how a quantifiers are “swapped” each time we pass the negation to the right.</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_proposition.html ./knowl/xref/sss_logical_chains.html">
@@ -48,12 +45,10 @@
 \end{align*}
 </div>
 <div class="para">(The last link in our chain uses the fact that <span class="process-math">\(\neg(\mathcal{Q}\implies\mathcal{R})\)</span> is equivalent to <span class="process-math">\(\mathcal{Q}\land\neg\mathcal{R}\text{,}\)</span> as a truth table easily shows.) Translating back into English, we conclude that the limit not existing (<span class="process-math">\(\neg\mathcal{P}\)</span>) is equivalent to the following: for every <span class="process-math">\(L\in \mathbb{R}\)</span> there is an <span class="process-math">\(\epsilon\gt 0\)</span> such that for all <span class="process-math">\(\delta\gt 0\)</span> there exists an <span class="process-math">\(x\in\mathbb{R}\)</span> satisfying <span class="process-math">\(\val{x-c}\lt \delta\)</span> and <span class="process-math">\(\val{f(x)-L}\not\gt\epsilon\text{.}\)</span> Quite a mouthful!</div>
-<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex_limit_doesnt_exist-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex_limit_doesnt_exist-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Solution 0.3.10.1"><a tabindex="-1" href="#ex_limit_doesnt_exist-3" title="Copy heading and permalink for Solution 0.3.10.1" aria-label="Copy heading and permalink for Solution 0.3.10.1">🔗</a></div>
-</div></details>
-</div>
-<div class="autopermalink" aria-hidden="true" data-description="Example 0.3.10: The limit does not exist"><a tabindex="-1" href="#ex_limit_doesnt_exist" title="Copy heading and permalink for Example 0.3.10: The limit does not exist" aria-label="Copy heading and permalink for Example 0.3.10: The limit does not exist">🔗</a></div>
-</article><span class="incontext"><a class="internal" href="s_logic.html#ex_limit_doesnt_exist">In Context</a></span>
+<div class="autopermalink" data-description="Solution 0.3.10.1"><a href="#ex_limit_doesnt_exist-3" title="Copy heading and permalink for Solution 0.3.10.1" aria-label="Copy heading and permalink for Solution 0.3.10.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 0.3.10: The limit does not exist"><a href="#ex_limit_doesnt_exist" title="Copy heading and permalink for Example 0.3.10: The limit does not exist" aria-label="Copy heading and permalink for Example 0.3.10: The limit does not exist">🔗</a></div></article><span class="incontext"><a class="internal" href="s_logic.html#ex_limit_doesnt_exist">in-context</a></span>
 </body>
 </html>
