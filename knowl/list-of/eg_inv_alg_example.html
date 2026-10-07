@@ -23,13 +23,13 @@
 </h4>
 <div class="para logical">
 <div class="para">Let</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_invertibility_algorithm.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_inv_alg.html">
 \begin{equation*}
 A=\begin{amatrix}[rrr]1\amp 2\amp 0\\ 1\amp 2\amp 1\\ -1\amp -1\amp 3 \end{amatrix} \text{.}
 \end{equation*}
 </div>
 <div class="para">Combining both algorithms we can decide whether <span class="process-math">\(A\)</span> is invertible, and if so, compute <span class="process-math">\(A^{-1}\)</span> and write <span class="process-math">\(A\)</span> as a product of elementary matrices.</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_invertibility_algorithm.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_inv_alg.html">
 \begin{align*}
 \begin{amatrix}[rrr|rrr]1\amp 2\amp 0\amp 1\amp 0\amp 0\\ 1\amp 2\amp 1\amp 0\amp 1\amp 0\\ -1\amp -1\amp 3\amp 0\amp 0\amp 1 \end{amatrix}  \amp \xrightarrow{r_2-r_1} \begin{amatrix}[rrr|rrr]1\amp 2\amp 0\amp 1\amp 0\amp 0\\ 0\amp 0\amp 1\amp -1\amp 1\amp 0\\ -1\amp -1\amp 3\amp 0\amp 0\amp 1 \end{amatrix}\\
 \amp \xrightarrow{r_3+r_1} \begin{amatrix}[rrr|rrr]1\amp 2\amp 0\amp 1\amp 0\amp 0\\ 0\amp 0\amp 1\amp -1\amp 1\amp 0\\ 0\amp 1\amp 3\amp 1\amp 0\amp 1 \end{amatrix}\\
@@ -38,20 +38,20 @@ A=\begin{amatrix}[rrr]1\amp 2\amp 0\\ 1\amp 2\amp 1\\ -1\amp -1\amp 3 \end{amatr
 \amp \xrightarrow{r_1-2r_2} \begin{amatrix}[rrr|rrr]1\amp 0\amp 0\amp -7\amp 6\amp -2\\ 0\amp 1\amp 0\amp 4\amp -3\amp 1\\ 0\amp 0\amp 1\amp -1\amp 1\amp 0 \end{amatrix}
 \end{align*}
 </div>
-<div class="para">According to <a href="s_invertibility_theorem.html#th_invertibility_algorithm" class="xref" data-knowl="./knowl/xref/th_invertibility_algorithm.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 3.4.10: Inverse algorithm">Procedure 3.4.10</a>, the computation shows that <span class="process-math">\(A\)</span> is invertible and</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_invertibility_algorithm.html">
+<div class="para">According to <a href="s_invertibility_theorem.html#proc_inv_alg" class="xref" data-knowl="./knowl/xref/proc_inv_alg.html" data-reveal-label="Reveal" data-close-label="Close" title="Procedure 3.4.10: Inverse algorithm">Procedure 3.4.10</a>, the computation shows that <span class="process-math">\(A\)</span> is invertible and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_inv_alg.html">
 \begin{equation*}
 A^{-1}=\begin{amatrix}[rrr]-7\amp 6\amp -2\\ 4\amp -3\amp 1\\ -1\amp 1\amp 0 \end{amatrix}\text{.}
 \end{equation*}
 </div>
 <div class="para">Next, representing our row operations as elementary matrices, we see that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_invertibility_algorithm.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_inv_alg.html">
 \begin{equation*}
 E_5E_4E_3E_2E_1A=I\text{,}
 \end{equation*}
 </div>
 <div class="para">where</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_invertibility_algorithm.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_inv_alg.html">
 \begin{align*}
 E_1\amp =\begin{amatrix}[rrr] 1\amp 0\amp 0\\
 -1\amp 1\amp 0\\
@@ -69,7 +69,7 @@ E_5\amp =\begin{amatrix}[rrr]1\amp -2\amp 0\\
 \end{align*}
 </div>
 <div class="para">We conclude that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_invertibility_algorithm.html">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_inv_alg.html">
 \begin{align*}
 A \amp =E_1^{-1}E_2^{-1}E_3^{-1}E_4^{-1}E_5^{-1}\\
 \amp= \begin{amatrix}[rrr] 1\amp 0\amp 0\\
