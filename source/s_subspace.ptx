@@ -2,7 +2,7 @@
   <title>Subspaces</title>
   <introduction>
     <p>
-      We return now to our main object of study: vector spaces. Our foray into the theory of matrices will prove to be useful in this regard in two ways: on the one hand, matrix spaces <m>M_{mn}</m> are themselves interesting examples of vector spaces; on the other hand, matrices serve as an essential computational tool for describing and investigating general vector spaces. 
+      We return now to our main object of study: vector spaces. Our foray into the theory of matrices will prove to be useful in this regard in two ways: on the one hand, matrix spaces <m>\ML_{m,n}(\R)</m> are themselves interesting examples of vector spaces; on the other hand, matrices serve as an essential computational tool for describing and investigating general vector spaces. 
     </p>
     <p>
       In this section we will study <xref ref="d_subspace" text="custom">subspaces</xref>, which are special subsets of vector spaces that <em>respect</em> the defining structure of a vector spaces: namely, the two vector operations. <xref ref="d_subspace"/> makes precise what we mean here by <sq>respect</sq>. 
@@ -13,6 +13,73 @@
   </introduction>
   <subsection xml:id="ss_subspace">
     <title>Definition of subspace</title>
+    <p>
+      Recall that a vector space, as defined in <xref ref="d_vector_space"/>, is simply a set <m>V</m> with two operations, called vector addition and scalar multiplication, that satisfy conditions (i)-(viii) of that definition, the so-called vector space axioms. Recall further that <m>\R^n</m> and <m>\ML_{m.n}(\R)</m>, together with their usual notions of addition and scalar multiplication, are two types of <em>examples</em> of vector spaces. When studying vector spaces in general, however, we make no assumptions about the underlying set <m>V</m> or given vector operations, beyond the fact that these operations satisfy the vector space axioms. Working at this level of generality, it will be useful to identify a number of additional properties (besides the axioms themselves) that are enjoyed by all vector spaces.
+    </p>
+    <proposition xml:id="prop_vectorspace_props">
+            <title>Basic vector space properties</title>
+            <statement>
+              <p>
+                Let <m>V</m> be a vector space.
+                <ol>
+                  <li>
+                    <p>
+                      <m>0\, \boldv=\boldzero</m> for all <m>\boldv\in V</m>.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                       <m>c\, \boldzero=\boldzero</m> for all <m>c\in \R</m>.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                       <m>(-1)\boldv=-\boldv</m> for all <m>\boldv\in V</m>.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      For all <m>\boldv\in V</m>, if <m>c\,\boldv=\boldzero</m>, then <m>c=0</m> or <m>\boldv=\boldzero</m>. Using logical shorthand: 
+                      <md>
+                        c\,\boldv=\boldzero\implies c=0 \text{ or } \boldv=\boldzero
+                      </md>.
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </statement>
+            <proof>
+                <p>
+                  We prove (1), leaving (2)-(4) as an exercise.
+                </p>
+                <p>
+                  First observe that <m>0\boldv=(0+0)\boldv</m>, since <m>0=0+0</m>.
+                </p>
+                <p>
+                  By Axiom (vi) we have <m>(0+0)\boldv=0\boldv+0\boldv</m>.
+                  Thus <m>0\boldv=0\boldv+0\boldv</m>.
+                </p>
+                <p>
+                  Now add <m>-0\boldv</m>, the vector inverse of <m>0\boldv</m>,
+                  to both sides of the last equation:
+                  <md>
+                    -0\boldv+0\boldv=-0\boldv+(0\boldv+0\boldv)
+                  </md>.
+                </p>
+                <p>
+                Now simplify this equation step by step using the axioms:
+                  <md>
+                    <mrow> -0\boldv+0\boldv=-0\boldv+(0\boldv+0\boldv)\amp\implies
+                    \boldzero=(-0\boldv+0\boldv)+0\boldv \amp (\text{Axiom (iv) and Axiom (ii)}) </mrow>
+                    <mrow> \amp\implies \boldzero=\boldzero+0\boldv \amp (\text{(Axiom (iv))})</mrow>
+                    <mrow>  \amp\implies \boldzero=0\boldv </mrow>
+                  </md>.
+                </p>
+              </proof>
+          </proposition>
+      <p>
+        A subspace of a vector space <m>V</m> is a subset that is <em>closed under addition</em> and <em>closed under scalar multiplication</em>, as is made precise in our next definition.
+      </p>
     <definition xml:id="d_subspace">
       <title>Subspace</title>
       <idx><h>subspace</h></idx>
@@ -207,7 +274,7 @@
     The <q>existential axioms</q> (iii) and (iv) of <xref ref="d_vector_space"/>, however, require special consideration. By definition, a subspace <m>W</m> contains the zero vector of <m>V</m>, and clearly this still acts as the zero vector when we restrict the vector operations to <m>W</m>. What about vector inverses? We know that for any <m>\boldv\in W</m> there is a vector inverse <m>-\boldv</m> lying somewhere in <m>V</m>. We must show that in fact <m>-\boldv</m> lies in <m>W</m>: <ie /> we need to show that the operation of taking the vector inverse is well-defined on <m>W</m>. We prove this as follows:
     <md>
     <mrow>\boldv\in W \amp\implies (-1)\boldv\in W \amp (<xref ref="d_subspace"/>, \text{(iii) } )</mrow>
-    <mrow> \amp\implies -\boldv\in W \amp (<xref ref="th_vectorspace_props"/>, (iii)) </mrow>
+    <mrow> \amp\implies -\boldv\in W \amp (<xref ref="vec_"/>, (iii)) </mrow>
     </md>.
   </p>
 <p>

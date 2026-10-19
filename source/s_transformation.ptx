@@ -382,7 +382,7 @@
                       Given <m>c\in \R</m> and <m>\boldv\in V</m>, we have
                       <md>
                         <mrow>T_0(c\boldv) \amp = \boldzero_W \amp (\text{def. of } T_0)</mrow>
-                        <mrow> \amp = c\boldzero_W \amp (<xref ref="th_vectorspace_props" text="global"/>
+                        <mrow> \amp = c\boldzero_W \amp (<xref ref="prop_vectorspace_props" text="global"/>
                         ) </mrow>
                         <mrow>  \amp = cT_0(\boldv) \amp (\text{def. of } T_0)</mrow>
                       </md>.
@@ -471,7 +471,7 @@
           <ol>
             <li>
               <p>
-                We employ some similar trickery to what was done in the proof of <xref ref="th_vectorspace_props"/>.
+                We employ some similar trickery to what was done in the proof of <xref ref="prop_vectorspace_props"/>.
                 Assuming <m>T</m> is linear:
                 <md>
                   <mrow>T(\boldzero_V)  \amp= T(\boldzero_V+\boldzero_V)</mrow>

@@ -511,7 +511,7 @@
             <p>
               If <m>S=\{\boldv\}</m>, then <m>S</m> is linearly independent if and only if <m>\boldv\ne \boldzero</m>. The previous comment shows why <m>\boldv\ne \boldzero</m> is a necessary condition. Let's see why it is sufficient.
             </p>
-            <p> Suppose <m>\boldv\ne\boldzero</m>, and suppose we have <m>c\boldv=\boldzero</m>. By <xref ref="th_vectorspace_props"/> we have <m>c=0</m> or <m>\boldv=\boldzero</m> (<xref ref="th_vectorspace_props"/>). Since <m>\boldv\ne 0</m>, we conclude <m>c=0</m>. This shows that the only linear combination of <m>S</m> yielding <m>\boldzero</m> is the trivial one.
+            <p> Suppose <m>\boldv\ne\boldzero</m>, and suppose we have <m>c\boldv=\boldzero</m>. By <xref ref="prop_vectorspace_props"/> we have <m>c=0</m> or <m>\boldv=\boldzero</m> (<xref ref="prop_vectorspace_props"/>). Since <m>\boldv\ne 0</m>, we conclude <m>c=0</m>. This shows that the only linear combination of <m>S</m> yielding <m>\boldzero</m> is the trivial one.
             </p>
           </li>
           <li>
