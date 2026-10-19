@@ -1,31 +1,4 @@
 <exercises xml:id="s_changeofbasis_ex">
-  <subexercises>
-    <title>WeBWork Exercises</title>
-    <exercise>
-      <!-- transition matrices -->
-      <webwork source="Library/NAU/setLinearAlgebra/R2BasisTrans.pg" />
-    </exercise>
-
-    <exercise>
-      <!-- upper triangular matrices -->
-      <webwork source="Library/NAU/setLinearAlgebra/Trace0BasisTrans.pg" />
-    </exercise>
-
-    <exercise>
-      <!-- matrix multiplication -->
-      <webwork source="Library/Hope/Multi1/04-04-Basis-and-functions/Matrix_rep_04.pg" />
-    </exercise>
-
-    <exercise>
-      <!-- polynomials -->
-      <webwork source="Library/Hope/Multi1/04-04-Basis-and-functions/Matrix_rep_06.pg" />
-    </exercise>
-
-    <exercise>
-      <!-- polynomials -->
-      <webwork source="Library/Hope/Multi1/04-04-Basis-and-functions/Matrix_rep_07.pg" />
-    </exercise>
-  </subexercises>
   <exercisegroup>
   <title>Change of basis matrix</title>
   

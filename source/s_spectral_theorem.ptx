@@ -516,5 +516,12 @@ An operator that admits an orthogonal (and hence an orthonormal) eigenbasis is c
 </example>
 </subsection>
 
+  <subsection>
+    <title>WeBWork Exercises</title>
+    <exercise>
+      <!-- ortho decomposition -->
+      <webwork source="Library/NAU/setLinearAlgebra/diag3x3ortho.pg" />
+    </exercise>
+    </subsection>
 <xi:include href="./s_spectral_theorem_ex.ptx"/>
 </section>

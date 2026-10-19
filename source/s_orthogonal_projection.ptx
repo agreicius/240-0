@@ -1166,5 +1166,48 @@ The last two computations, <m>\proj{(-2,-4,-2)}{\ell}=(-2,-4,-2)</m> and <m>\pro
 
 </subsection>
 
+  <subsection>
+    <title>WeBWork Exercises</title>
+
+    <exercise>
+      <!-- orthogonal projection -->
+      <webwork source="Library/TCNJ/TCNJ_OrthogonalSets/problem2.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- orthogonal components -->
+      <webwork source="Library/TCNJ/TCNJ_OrthogonalSets/problem4.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- distance and plane -->
+      <webwork source="Library/Mizzou/Matrix_Theory/HW_5/prob_3.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- plane and normal line -->
+      <webwork source="Library/Rochester/setLinearAlgebra10Bases/ur_la_10_18.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- Gram-Schmidt -->
+      <webwork source="Library/Rochester/setLinearAlgebra18OrthogonalBases/ur_la_18_5.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- Least Squares matrix -->
+      <webwork source="Library/Rochester/setLinearAlgebra20LeastSquares/ur_la_20_1.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- least squares line -->
+      <webwork source="Library/METU-NCC/Applied_Math/least-squares/line.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- least squares parabola -->
+      <webwork source="Library/METU-NCC/Applied_Math/least-squares/parabola.pg" />
+    </exercise>
+    </subsection>
 <xi:include href="./s_orthogonal_projection_ex.ptx"/>
 </section>

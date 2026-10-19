@@ -1,37 +1,4 @@
 <exercises xml:id="s_transformation_ex">
-  <subexercises>
-    <title>WeBWork Exercises</title>
-    <exercise>
-      <webwork source="Library/TCNJ/TCNJ_IntroLinearTransformations/problem17.pg" />
-    </exercise>
-
-    <exercise>
-      <webwork source="Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_18.pg" />
-    </exercise>
-
-    
-
-    <exercise>
-      <!-- similar question: Library/TCNJ/TCNJ_IntroLinearTransformations/problem18.pg -->
-      <webwork source="Library/Rochester/setLinearAlgebra14TransfOfRn/ur_la_14_30.pg" />
-    </exercise>
-
-    <exercise>
-      <!-- similar problem: Library/TCNJ/TCNJ_IntroLinearTransformations/problem1.pg -->
-      <!-- similar problem: Library/TCNJ/TCNJ_IntroLinearTransformations/problem2.pg -->
-      <!-- similar problem: Library/TCNJ/TCNJ_IntroLinearTransformations/problem3.pg -->
-      <!-- similar problem: Library/TCNJ/TCNJ_IntroLinearTransformations/problem4.pg -->
-      <!-- similar problem: Library/TCNJ/TCNJ_IntroLinearTransformations/problem6.pg -->
-      <!-- similar problem: Library/TCNJ/TCNJ_IntroLinearTransformations/problem7.pg -->
-      <!-- similar problem: Library/TCNJ/TCNJ_IntroLinearTransformations/problem8.pg -->
-      <webwork source="Library/TCNJ/TCNJ_IntroLinearTransformations/problem15.pg" />
-    </exercise>
-
-    <exercise>
-      <webwork source="Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_20.pg" />
-    </exercise>
-    
-  </subexercises>
   <exercisegroup>
      <introduction>
       <p>

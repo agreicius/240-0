@@ -1,26 +1,4 @@
 <exercises xml:id="s_coordinatevectors_ex">
-  <subexercises>
-    <title>WeBWork Exercises</title>
-    <exercise>
-      <!-- vectors -->
-      <webwork source="Library/Rochester/setLinearAlgebra10Bases/ur_la_10_2.pg" />
-    </exercise>
-
-    <exercise>
-      <!-- matrix basis -->
-      <webwork source="Library/Rochester/setLinearAlgebra10Bases/ur_la_10_34.pg" />
-    </exercise>
-
-    <exercise>
-      <!-- matrix basis -->
-      <webwork source="Library/NAU/setLinearAlgebra/coordinatesHalfMagix.pg" />
-    </exercise>
-
-    <exercise>
-      <!-- polynomial basis -->
-      <webwork source="Library/Rochester/setLinearAlgebra10Bases/ur_la_10_6.pg" />
-    </exercise>
-  </subexercises>
   <exercisegroup>
   <title>Coordinate vectors in <m>\R^n</m></title>
     <introduction>

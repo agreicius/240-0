@@ -551,5 +551,17 @@
 			</solution>
 		</example>
 	</subsection>
+  <subsection>
+  <title>WeBWork Exercises</title>
+    <exercise>
+      <!-- basis of trace 0 matrices -->
+      <webwork source="Library/NAU/setLinearAlgebra/basisTrace0.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- basis of half magic matrices -->
+      <webwork source="Library/NAU/setLinearAlgebra/basisHalfMagic.pg" />
+    </exercise>
+  </subsection>
 	<xi:include href="./s_basis_ex.ptx"/>
 </section>

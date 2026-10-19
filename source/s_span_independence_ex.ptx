@@ -1,34 +1,4 @@
 <exercises xml:id="s_span_independence_ex">
-  <subexercises>
-    <title>WeBWork Exercises</title>
-    <exercise>
-      <!-- another similar problem: Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/2.2.62.pg -->
-      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/2.2.61.pg" />
-    </exercise>
-
-
-    <exercise>
-      <!-- several similar multiple questions from 2.3.45 to 2.3.52 -->
-      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/2.3.45.pg" />
-    </exercise>
-
-    <exercise>
-      <!-- several similar multiple questions from 2.3.45 to 2.3.52 -->
-      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/2.3.46.pg" />
-    </exercise>
-
-    
-
-    <exercise>
-      <!-- linear independence of vectors -->
-      <webwork source="Library/Rochester/setLinearAlgebra9Dependence/ur_la_9_1b.pg" />
-    </exercise>
-
-    <exercise>
-      <!-- span of matrices -->
-      <webwork source="Library/NAU/setLinearAlgebra/span.pg" />
-    </exercise>
-  </subexercises>
   <exercisegroup>
 <introduction>
 <p>

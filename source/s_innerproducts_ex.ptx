@@ -1,31 +1,4 @@
 <exercises xml:id="s_innerproducts_ex">
-  <subexercises>
-  <title>WeBWork Exercises</title>
-    <exercise>
-      <!-- norm in Rn -->
-      <webwork source="Library/Rochester/setLinearAlgebra17DotProductRn/ur_la_17_2.pg" />
-    </exercise>
-
-    <exercise>
-      <!-- angle in Rn -->
-      <webwork source="Library/Rochester/setLinearAlgebra17DotProductRn/ur_la_17_3.pg" />
-    </exercise>
-
-    <exercise>
-      <!-- inner product on polynomials -->
-      <webwork source="Library/Rochester/setLinearAlgebra21InnerProductSpaces/ur_la_21_4.pg" />
-    </exercise>
-
-    <exercise>
-      <!-- inner product on matrices -->
-      <webwork source="Library/Rochester/setLinearAlgebra21InnerProductSpaces/ur_la_21_3.pg" />
-    </exercise>
-
-    <exercise>
-      <!-- inner product using integrals -->
-      <webwork source="Library/Rochester/setLinearAlgebra21InnerProductSpaces/ur_la_21_5.pg" />
-    </exercise>
-  </subexercises>
   <exercise>
     <statement>
       <p>

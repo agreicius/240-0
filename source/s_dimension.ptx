@@ -644,5 +644,28 @@ The <q>contracting and expanding</q> theorem below is a very useful theoretical 
 </theorem>
 
 </subsection>
+<subsection>
+    <title>WeBWork Exercises</title>
+
+    <exercise>
+      <!-- true/false -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.48_54a.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- multiple choice -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.55.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- multiple choice -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.56.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- compute dimension -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.17_21a.pg" />
+    </exercise>
+  </subsection>
 <xi:include href="./s_dimension_ex.ptx"/>
 </section>

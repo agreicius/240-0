@@ -1,6 +1,4 @@
 <exercises xml:id="s_det_ex">
-<subexercises>
-
 <exercise>
   <statement>
     <p>
@@ -385,5 +383,4 @@ The following exercises explore the relationship between a square matrix <m>A</m
     </p>
   </statement>
 </exercise>
-</subexercises>
 </exercises>

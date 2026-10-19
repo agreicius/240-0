@@ -1,36 +1,4 @@
 <exercises xml:id="s_eigenvectors_ex">
-<subexercises>
-  <title>WeBWork Exercises</title>
-    <exercise>
-      <!-- eigenvalues only -->
-      <webwork source="Library/TCNJ/TCNJ_Eigenvalues/problem3.pg" />
-    </exercise>
-
-    <exercise>
-      <!-- eigenvectors of 3x3 matrix -->
-      <webwork source="Library/TCNJ/TCNJ_Eigenvalues/problem13.pg" />
-    </exercise>
-
-    <exercise>
-      <!-- eigenvectors of 4x4 matrix -->
-      <webwork source="Library/TCNJ/TCNJ_CharacteristicPolynomial/problem4.pg" />
-    </exercise>
-
-    <exercise>
-      <!-- trace, det -->
-      <webwork source="Library/Rochester/setLinearAlgebra11Eigenvalues/ur_la_11_13.pg" />
-    </exercise>
-
-    <exercise>
-      <!-- linear combinations -->
-      <webwork source="Library/Rochester/setLinearAlgebra11Eigenvalues/ur_la_11_26.pg" />
-    </exercise>
-
-    <exercise>
-      <!-- linear combinations -->
-      <webwork source="Library/Rochester/setLinearAlgebra11Eigenvalues/ur_la_11_27.pg" />
-    </exercise>
-</subexercises>
 <exercisegroup>
   <introduction>
   <p>

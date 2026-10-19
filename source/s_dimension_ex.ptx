@@ -1,28 +1,4 @@
 <exercises xml:id="s_dimension_ex">
-  <subexercises>
-    <title>WeBWork Exercises</title>
-    
-    <exercise>
-      <!-- true/false -->
-      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.48_54a.pg" />
-    </exercise>
-
-    <exercise>
-      <!-- multiple choice -->
-      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.55.pg" />
-    </exercise>
-
-    <exercise>
-      <!-- multiple choice -->
-      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.56.pg" />
-    </exercise>
-
-    <exercise>
-      <!-- compute dimension -->
-      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.17_21a.pg" />
-    </exercise>
-  </subexercises>
-
   <exercisegroup>
     <title>Street smarts</title>
     <introduction>
@@ -137,7 +113,7 @@
     </exercisegroup>
   <exercise>
     <statement>
-      <p> Suppoe <m>B=\{\boldv_1,\boldv_2,\boldv_3\}</m> be a basis for the vector space<m>V</m>.
+      <p> Suppoe <m>B=\{\boldv_1,\boldv_2,\boldv_3\}</m> be a basis for the vector space <m>V</m>.
         Let <m>B'=\{\boldu_1,\boldu_2,\boldu_3\}</m>, where <md>
           \boldu_1 = \boldv_1, \boldu_2 = \boldv_1 + \boldv_2, \boldu_3 = \boldv_1 +\boldv_2 +
         \boldv_3

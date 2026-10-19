@@ -1,24 +1,4 @@
 <exercises xml:id="s_rank_nullity_ex">
-<subexercises>
-  <title>WeBWork Exercises</title>
-    <exercise>
-      <!-- fill in the blanks -->
-      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.3.15.pg" />
-    </exercise>
-
-    <exercise>
-      <!-- true/false -->
-      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.48_54a.pg" />
-    </exercise>
-
-    <exercise>
-      <!-- true/false -->
-      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/4.2.41_47a.pg" />
-    </exercise>
-
-
-    
-</subexercises>
 
   
  

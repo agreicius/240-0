@@ -5,7 +5,7 @@
       There are many situations in mathematics where we want to describe an infinite set in a concise manner. We saw this at work already in <xref ref="s_solving"/>, where infinite sets of solutions to linear systems were neatly described with parametric expressions.
     </p>
     <p>
-      A similar issue arises when describing vector spaces and their subspaces. As we know, any vector space is either the zero space or infinite (<xref ref="ex_vs_zero_or_infinite"/>). If we happen to be dealing with a subspace of <m>\R^n</m>, then there is the possibility of giving a parametric description; but how do we proceed when working in one of our more exotic vector spaces like <m>C^1(\R)</m>?
+      A similar issue arises when describing vector spaces and their subspaces. As we know, any vector space is either the zero space or infinite. If we happen to be dealing with a subspace of <m>\R^n</m>, then there is the possibility of giving a parametric description; but how do we proceed when working in one of our more exotic vector spaces like <m>C^1(\R)</m>?
     </p>
     <p>
     As we will see in <xref ref="s_basis"/> the relevant linear algebraic tool for this purpose is the concept of a <em>basis</em>. Loosely speaking, a basis for a vector space <m>V</m> is a set of vectors that is large enough to <em>generate</em> the entire space, and small enough to contain <em>no redundancies</em>. What exactly we mean by <q>generate</q> is captured by the rigorous notion of <em>span</em>; and what we mean by <q>no redundancies</q> is captured by <em>linear independence</em>.
@@ -53,32 +53,30 @@
         </statement>
       </definition>
           <remark xml:id="rm_span">
-        <statement>
-          <p>
-          Let <m>S</m> be a subset of <m>V</m>. Some simple observations:
-          <ol>
-            <li>
+        <p>
+        Let <m>S</m> be a subset of <m>V</m>. Some simple observations:
+        <ol>
+          <li>
+            <p>
+              The zero vector is always an element of <m>\Span S</m>.  Indeed, if <m>S=\emptyset</m>, then <m>\Span S=\{\boldzero\}</m> by definition. Otherwise, given any <m>\boldv\in S</m>, the linear combination <m>0\boldv=\boldzero</m> is an element of <m>\Span S</m>.
+            </p>
+          </li>
+          <li>
               <p>
-                The zero vector is always an element of <m>\Span S</m>.  Indeed, if <m>S=\emptyset</m>, then <m>\Span S=\{\boldzero\}</m> by definition. Otherwise, given any <m>\boldv\in S</m>, the linear combination <m>0\boldv=\boldzero</m> is an element of <m>\Span S</m>.
+                We have <m>S\subseteq \Span S</m>: <ie />, <m>\Span S</m> includes <m>S</m> itself. Indeed, given any <m>\boldv\in S</m>, the linear combination <m>1\boldv=\boldv</m> is an element of <m>\Span S</m>.
               </p>
-            </li>
-            <li>
-                <p>
-                  We have <m>S\subseteq \Span S</m>: <ie />, <m>\Span S</m> includes <m>S</m> itself. Indeed, given any <m>\boldv\in S</m>, the linear combination <m>1\boldv=\boldv</m> is an element of <m>\Span S</m>.
-                </p>
-            </li>
+          </li>
 
-            <li>
-              <p>
-                If <m>S=\{\boldv\}</m> contains exactly one element, then <m>\Span S=\{c\boldv\colon c\in \R\}</m> is simply the set of all scalar multiples of <m>\boldv</m>.
-              </p>
-              <p>
-                If <m>\boldv\ne \boldzero</m>, then we know that this set is infinite (<xref ref="ex_vs_zero_or_infinite"/>). Thus even when <m>S</m> is <em>finite</em>, <m>\Span S</m> will be <em>infinite</em>, as long as <m>S</m> contains nonzero vectors.
-              </p>
-            </li>
-          </ol>
-          </p>
-        </statement>
+          <li>
+            <p>
+              If <m>S=\{\boldv\}</m> contains exactly one element, then <m>\Span S=\{c\boldv\colon c\in \R\}</m> is simply the set of all scalar multiples of <m>\boldv</m>.
+            </p>
+            <p>
+              If <m>\boldv\ne \boldzero</m>, then in fact the set <m>\Span S=\{c\boldv\mid c\in \R\}</m> is infinite! Thus even when <m>S</m> is <em>finite</em>, <m>\Span S</m> will be <em>infinite</em>, as long as <m>S</m> contains nonzero vectors.
+            </p>
+          </li>
+        </ol>
+        </p>
       </remark>
     <example xml:id="eg_span_2space">
       <title>Examples in <m>\R^2</m></title>
@@ -750,6 +748,36 @@
 
   </subsection>
 
+  <subsection>
+    <title>WeBWork Exercises</title>
+    <exercise>
+      <!-- another similar problem: Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/2.2.62.pg -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/2.2.61.pg" />
+    </exercise>
+
+
+    <exercise>
+      <!-- several similar multiple questions from 2.3.45 to 2.3.52 -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/2.3.45.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- several similar multiple questions from 2.3.45 to 2.3.52 -->
+      <webwork source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/2.3.46.pg" />
+    </exercise>
+
+
+
+    <exercise>
+      <!-- linear independence of vectors -->
+      <webwork source="Library/Rochester/setLinearAlgebra9Dependence/ur_la_9_1b.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- span of matrices -->
+      <webwork source="Library/NAU/setLinearAlgebra/span.pg" />
+    </exercise>
+    </subsection>
 <xi:include href="./s_span_independence_ex.ptx"/>
 
   <!-- <subsection>

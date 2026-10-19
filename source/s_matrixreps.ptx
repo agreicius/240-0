@@ -559,6 +559,48 @@
   </example> -->
 
   </subsection>
+  <subsection>
+    <title>WeBWork Exercises</title>
+    <exercise>
+      <!-- match -->
+      <webwork source="Library/TCNJ/TCNJ_MatrixLinearTransformation/problem10.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- polynomials -->
+      <webwork source="Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_9.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- matrix transform -->
+      <webwork source="Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_4.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- matrix transforms -->
+      <webwork source="Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_6.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- matrix tranforms -->
+      <webwork source="Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_5.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- trig -->
+      <webwork source="Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_13.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- transformation of a subspace -->
+      <webwork source="Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_15.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- similar matrices -->
+      <webwork source="Library/NAU/setLinearAlgebra/similar2.pg" />
+    </exercise>
+    </subsection>
   <xi:include href="./s_matrixreps_ex.ptx"/>
 
   </section>

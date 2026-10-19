@@ -423,5 +423,27 @@
 
 
   </subsection>
+  <subsection>
+    <title>WeBWork Exercises</title>
+    <exercise>
+      <!-- vectors -->
+      <webwork source="Library/Rochester/setLinearAlgebra10Bases/ur_la_10_2.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- matrix basis -->
+      <webwork source="Library/Rochester/setLinearAlgebra10Bases/ur_la_10_34.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- matrix basis -->
+      <webwork source="Library/NAU/setLinearAlgebra/coordinatesHalfMagix.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- polynomial basis -->
+      <webwork source="Library/Rochester/setLinearAlgebra10Bases/ur_la_10_6.pg" />
+    </exercise>
+    </subsection>
 <xi:include href="./s_coordinatevectors_ex.ptx"/>
 </section>

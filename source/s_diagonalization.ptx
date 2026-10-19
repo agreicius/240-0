@@ -1138,5 +1138,27 @@ makes no assumption about the dimension of <m>V</m> and can thus can be applied 
   </subsection>
 
 
+  <subsection>
+    <title>WeBWork Exercises</title>
+    <exercise>
+      <!-- diagonalize 2x2 matrix -->
+      <webwork source="Library/TCNJ/TCNJ_Diagonalization/problem4.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- diagonalize 3x3 matrix -->
+      <webwork source="Library/NAU/setLinearAlgebra/diag3x3.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- similar matrices -->
+      <webwork source="Library/NAU/setLinearAlgebra/similarB.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- power of a matrix -->
+      <webwork source="Library/Hope/Multi1/05-04-Diagonalization/DiagR_05.pg" />
+    </exercise>
+    </subsection>
 <xi:include href="./s_diagonalization_ex.ptx"/>
 </section>

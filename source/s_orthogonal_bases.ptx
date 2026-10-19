@@ -597,5 +597,33 @@
   </subsection>
 
 
+  <subsection>
+    <title>WeBWork Exercises</title>
+    <exercise>
+      <!-- coordinates -->
+      <webwork source="Library/Mizzou/Matrix_Theory/HW_6/prob_1.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- GS for R3 -->
+      <webwork source="Library/Rochester/setLinearAlgebra18OrthogonalBases/ur_la_18_2.pg" />
+    </exercise>
+
+
+    <exercise>
+      <!-- GS for R4 -->
+      <webwork source="Library/Rochester/setLinearAlgebra18OrthogonalBases/ur_la_18_5.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- onb of image -->
+      <webwork source="Library/Rochester/setLinearAlgebra18OrthogonalBases/ur_la_18_8.pg" />
+    </exercise>
+
+    <exercise>
+      <!-- onb of kernel -->
+      <webwork source="Library/Rochester/setLinearAlgebra18OrthogonalBases/ur_la_18_7.pg" />
+    </exercise>
+    </subsection>
   <xi:include href="./s_orthogonal_bases_ex.ptx"/>
 </section>
