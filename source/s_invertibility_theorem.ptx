@@ -157,7 +157,7 @@
     \text{$j$-th} \amp 0 \amp 0 \amp 1 \amp \dots\amp 0 \amp 0 \\
      \amp  \amp \vdots \amp  \amp  \amp \vdots \amp  \\
      \amp 0 \amp 0\amp 0 \amp \dots \amp 0 \amp 1\\
-     \amp \amp \amp \amp $\underset{cr_i}{E}$ \\
+     \amp \amp \amp \amp $\underset{r_i\leftrightarrow r_j}{E}$ \\
     };
 
           \begin{scope}[on background layer]
