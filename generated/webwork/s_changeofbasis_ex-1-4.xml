@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_changeofbasis_ex-1-4" assembly-id="s_changeofbasis_ex-1-4">
+  <static seed="97" source="Library/Hope/Multi1/04-04-Basis-and-functions/Matrix_rep_04.pg">
+    <statement><p>Let <m>f : \mathbb{R}^{2} \to \mathbb{R}^{3}</m> be the linear transformation defined by
+<me>f(\vec{x}) = \left[\begin{array}{cc}
+3 \amp -1\cr
+-3 \amp -2\cr
+2 \amp -4
+\end{array}\right] \vec{x}.</me>
+Let
+<me>\begin{array}{lcl}
+\mathcal{B} \amp  = \amp  \lbrace \left\lt -1,1\right&gt;, \left\lt 3,-4\right&gt; \rbrace, \\
+\mathcal{C} \amp  = \amp  \lbrace \left\lt 1,-1,1\right&gt;, \left\lt 1,0,1\right&gt;, \left\lt -3,1,-2\right&gt; \rbrace,
+\end{array}</me>
+be bases for <m>\mathbb{R}^{2}</m> and <m>\mathbb{R}^{3}</m>, respectively.
+Find the matrix <m>\lbrack f \rbrack_{\mathcal{B}}^{\mathcal{C}}</m> for <m>f</m> relative to the basis <m>\mathcal{B}</m> in the domain and <m>\mathcal{C}</m> in the codomain.</p>
+<p><m>\lbrack f \rbrack_{\mathcal{B}}^{\mathcal{C}} =</m> <fillin cols="2" rows="3"/></p>
+</statement>
+  </static>
+  <rendering-data sourceFilePath="Library/Hope/Multi1/04-04-Basis-and-functions/Matrix_rep_04.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/Hope/Multi1/04-04-Basis-and-functions/Matrix_rep_04.pg"/>
+</webwork-reps>

@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-ss_matrix_ww-5" assembly-id="ss_matrix_ww-5">
+  <static seed="32" source="Library/ASU-topics/set119MatrixAlgebra/p7.pg">
+    <statement><p>Determine <m>x</m> and <m>y</m> such that</p>
+<p><me>\left[\begin{array}{ccc}
+0\amp  -4\amp  0 \cr
+-2\amp  1\amp  3 
+\end{array}\right]
+ + \left[\begin{array}{ccc}
+x-y      \amp  -2 \amp  3 \\
+0 \amp  x        \amp  0 
+\end{array} \right]
+= \left[\begin{array}{ccc}
+4 \amp  -6 \amp  3 \\
+-2 \amp  2 x +y   \amp  3
+\end{array}\right]</me></p>
+<p><m>x =</m>    <fillin characters="10" name="AnSwEr0001"/></p>
+<p><m>y =</m>   <fillin characters="10" name="AnSwEr0002"/></p>
+</statement>
+    <answer>
+      <p>
+        <m>2.5</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>-1.5</m>
+      </p>
+    </answer>
+  </static>
+  <rendering-data sourceFilePath="Library/ASU-topics/set119MatrixAlgebra/p7.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/ASU-topics/set119MatrixAlgebra/p7.pg"/>
+</webwork-reps>

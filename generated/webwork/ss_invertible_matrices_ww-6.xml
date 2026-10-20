@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-ss_invertible_matrices_ww-6" assembly-id="ss_invertible_matrices_ww-6">
+  <static seed="41" source="Library/Utah/Business_Algebra/set10_Matrices/p24.pg">
+    <statement><p>Let</p>
+<p><me>A=\left(\begin{array}{cc} 
+            6 \amp  8 \cr
+	    -8 \amp  4
+	   \end{array}\right), 
+B=\left(\begin{array}{cc} 
+            8 \amp  -8 \cr
+	    4 \amp  2 
+	   \end{array}\right).</me></p>
+<p>Then</p>
+<p><me>AB=\left(\begin{array}{cc} 
+            a_{11} \amp  a_{12} \cr
+	    a_{21} \amp  a_{22} 
+	    \end{array}\right)</me></p>
+<p>where 
+<m>a_{11}=</m> <fillin characters="3" name="AnSwEr0001"/>,
+<m>a_{12}=</m> <fillin characters="3" name="AnSwEr0002"/>,
+<m>a_{21}=</m> <fillin characters="3" name="AnSwEr0003"/>,
+<m>a_{22}=</m> <fillin characters="3" name="AnSwEr0004"/>,</p>
+<p><me>BA=\left(\begin{array}{cc} 
+            b_{11} \amp  b_{12} \cr
+	    b_{21} \amp  b_{22}  
+	   \end{array}\right)</me></p>
+<p>where 
+<m>b_{11}=</m> <fillin characters="3" name="AnSwEr0005"/>,
+<m>b_{12}=</m> <fillin characters="3" name="AnSwEr0006"/>,
+<m>b_{21}=</m> <fillin characters="3" name="AnSwEr0007"/>,
+<m>b_{22}=</m> <fillin characters="3" name="AnSwEr0008"/>,</p>
+<p>and</p>
+<p><me>A^T B^T=\left(\begin{array}{cc} 
+            c_{11} \amp  c_{12} \cr
+	    c_{21} \amp  c_{22} 
+	   \end{array}\right)</me></p>
+<p>where 
+<m>c_{11}=</m> <fillin characters="3" name="AnSwEr0009"/>,
+<m>c_{12}=</m> <fillin characters="3" name="AnSwEr0010"/>,
+<m>c_{21}=</m> <fillin characters="3" name="AnSwEr0011"/>,
+<m>c_{22}=</m> <fillin characters="3" name="AnSwEr0012"/>.</p>
+</statement>
+    <answer>
+      <p>
+        <m>80</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>-32</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>-48</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>72</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>112</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>32</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>8</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>40</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>112</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>8</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>32</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>40</m>
+      </p>
+    </answer>
+  </static>
+  <rendering-data sourceFilePath="Library/Utah/Business_Algebra/set10_Matrices/p24.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/Utah/Business_Algebra/set10_Matrices/p24.pg"/>
+</webwork-reps>

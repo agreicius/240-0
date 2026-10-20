@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_eigenvectors_ex-1-6" assembly-id="s_eigenvectors_ex-1-6">
+  <static seed="104" source="Library/Rochester/setLinearAlgebra11Eigenvalues/ur_la_11_26.pg">
+    <statement><p>If <m>\vec{v}_1 = \left[\begin{array}{c}
+5\cr
+-4
+\end{array}\right]</m> and <m>\vec{v}_2=\left[\begin{array}{c}
+-2\cr
+1
+\end{array}\right]</m> 
+are eigenvectors of a matrix <m>A</m> corresponding 
+to the eigenvalues <m>\lambda_1=1</m> and <m>\lambda_2=6</m>, respectively,</p>
+<p>then <m>A(\vec{v}_1 + \vec{v}_2) =</m> <fillin rows="2"/></p>
+<p>and <m>A(-3 \vec{v}_1)=</m> <fillin rows="2"/></p>
+</statement>
+  </static>
+  <rendering-data sourceFilePath="Library/Rochester/setLinearAlgebra11Eigenvalues/ur_la_11_26.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/Rochester/setLinearAlgebra11Eigenvalues/ur_la_11_26.pg"/>
+</webwork-reps>

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_invertible_matrices_ex-1-2" assembly-id="s_invertible_matrices_ex-1-2">
+  <static seed="35" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.48.pg">
+    <statement><p>If <m>A</m> and <m>B</m> are invertible <m>n\times n</m> matrices,
+then the inverse of <m>A+B</m> is <m>A^{-1}+B^{-1}</m>.<ul form="popup" name="AnSwEr0001"><li>
+</li><li>
+<p>True</p>
+</li><li>
+<p>False</p>
+</li></ul></p>
+</statement>
+    <answer>
+      <p>
+        <m>\text{False}</m>
+      </p>
+    </answer>
+    <solution><p><alert>SOLUTION:</alert> 
+False. For example, let <m>A = I_n</m>, and <m>B = -I_n</m>, then <m>A+B = 0_n</m>, which is not invertible.</p>
+</solution>
+  </static>
+  <rendering-data sourceFilePath="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.48.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.48.pg"/>
+</webwork-reps>

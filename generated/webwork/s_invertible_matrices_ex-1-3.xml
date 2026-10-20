@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_invertible_matrices_ex-1-3" assembly-id="s_invertible_matrices_ex-1-3">
+  <static seed="36" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.54.pg">
+    <statement><p>Solve for the matrix <m>X</m> if <m>AX(D+B X)^{-1} = C</m>. Assume that all matrices are <m>n\times n</m> and invertible as needed.</p>
+<p><m>X =</m><fillin characters="10" name="AnSwEr0001"/></p>
+</statement>
+    <answer>
+      <p>
+        <m>\left(A-CB\right)^{-1}CD</m>
+      </p>
+    </answer>
+    <solution><p><alert>SOLUTION:</alert> 
+Note that
+<me>\begin{align*}
+AX(D+BX)^{-1} = C \amp \Rightarrow AX = C(D+BX) = CD + CBX \\
+\amp \Rightarrow  AX - CBX = CD\\
+\amp \Rightarrow (A-CB)X = CD \\
+\amp \Rightarrow X = (A-CB)^{-1} CD.
+\end{align*}</me></p>
+</solution>
+  </static>
+  <rendering-data sourceFilePath="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.54.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.3.54.pg"/>
+</webwork-reps>

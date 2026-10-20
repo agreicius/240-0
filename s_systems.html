@@ -707,11 +707,12 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="s_innerproducts.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Inner product spaces</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_innerproducts.html#ss_norm_distance" class="internal"><span class="codenumber">7.1.1</span> <span class="title">Norm and distance</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_innerproducts.html#s_innerproducts-4" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Cauchy-Schwarz inequality, triangle inequalities, and angles between vectors</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_innerproducts.html#s_innerproducts-5" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Choosing your inner product</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_innerproducts.html#s_innerproducts-6" class="internal"><span class="codenumber">7.1.4</span> <span class="title">WeBWork Exercises</span></a></div></li>
-<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_innerproducts.html#s_innerproducts_ex" class="internal"><span class="codenumber">7.1.5</span> <span class="title">Exercises</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_innerproducts.html#ss_inner_products" class="internal"><span class="codenumber">7.1.1</span> <span class="title">Inner products</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_innerproducts.html#ss_norm_distance" class="internal"><span class="codenumber">7.1.2</span> <span class="title">Norm and distance</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_innerproducts.html#s_innerproducts-5" class="internal"><span class="codenumber">7.1.3</span> <span class="title">Cauchy-Schwarz inequality, triangle inequalities, and angles between vectors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_innerproducts.html#s_innerproducts-6" class="internal"><span class="codenumber">7.1.4</span> <span class="title">Choosing your inner product</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_innerproducts.html#s_innerproducts-7" class="internal"><span class="codenumber">7.1.5</span> <span class="title">WeBWork Exercises</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_innerproducts.html#s_innerproducts_ex" class="internal"><span class="codenumber">7.1.6</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -1784,9 +1785,9 @@ a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n+c(a_{j1}s_1+a_{j2}s_2+\cdots +a_{jn}s_n)\a
 <div class="para">showing that <span class="process-math">\(s\)</span> satisfies <span class="process-math">\(e_i'\text{.}\)</span> Now suppose <span class="process-math">\(s=(s_1,s_2,\dots,
 s_n)\)</span> satisfies <span class="process-math">\(L'\text{.}\)</span> Since <span class="process-math">\(s\)</span> satisfies <span class="process-math">\(e_j'=e_j\text{,}\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/solveeqn.html" id="solveeqn">
-\begin{equation*}
-a_{j1}s_1+a_{j2}s_2+\cdots +a_{jn}s_n =b_j
-\end{equation*}
+\begin{equation}
+a_{j1}s_1+a_{j2}s_2+\cdots +a_{jn}s_n =b_j\tag{2.1.7}
+\end{equation}
 </div>
 <div class="para">Since <span class="process-math">\(s\)</span> satisfies <span class="process-math">\(e_i'\text{,}\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/solveeqn.html" id="ex_row_ops_preserve-3-1-5-3-2-21">
@@ -1794,7 +1795,7 @@ a_{j1}s_1+a_{j2}s_2+\cdots +a_{jn}s_n =b_j
 a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n+c(a_{j1}s_1+a_{j2}s_2+\cdots +a_{jn}s_n)=b_i+cb_j
 \end{equation*}
 </div>
-<div class="para">Substituting <a href="s_systems.html#solveeqn" class="xref" data-knowl="./knowl/xref/solveeqn.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation">()</a> into the equation above we get</div>
+<div class="para">Substituting <a href="s_systems.html#solveeqn" class="xref" data-knowl="./knowl/xref/solveeqn.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.7">(2.1.7)</a> into the equation above we get</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/solveeqn.html" id="ex_row_ops_preserve-3-1-5-3-2-23">
 \begin{equation*}
 a_{i1}s_1+a_{i2}s_2+\cdots +a_{in}s_n+c(b_j)=b_i+cb_j\text{,}
@@ -1864,7 +1865,7 @@ x\amp +\amp y \amp =\amp \frac{1}{2}
 \begin{linsys}{2}
 x^2\amp +\amp y^2\amp =\amp 1\\
 ax\amp +\amp by \amp =\amp c,
-\end{linsys}\tag{2.1.7}
+\end{linsys}\tag{2.1.8}
 \end{equation}
 </div>
 <div class="para">where <span class="process-math">\(a,b,c\in\R\)</span> are fixed constants and at least one of <span class="process-math">\(a\)</span> or <span class="process-math">\(b\)</span> is nonzero.</div>
@@ -1875,7 +1876,7 @@ ax\amp +\amp by \amp =\amp c,
 <div class="autopermalink" data-description="Item 2.1.4.11.b.i"><a href="#ex_solving_nonlinear_system-2-1-2-2-1-5-1" title="Copy heading and permalink for Item 2.1.4.11.b.i" aria-label="Copy heading and permalink for Item 2.1.4.11.b.i">🔗</a></div>
 </li>
 <li id="ex_solving_nonlinear_system-2-1-2-2-1-5-2">
-<div class="para" id="ex_solving_nonlinear_system-2-1-2-2-1-5-2-1">Use your geometric interpretation in (i) to argue that the system <a href="s_systems.html#eq_general_nonlinear" class="xref" data-knowl="./knowl/xref/eq_general_nonlinear.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.7">(2.1.7)</a> has either 0, 1, or 2 solutions. Give explicit examples of such systems corresponding to each of these three cases.<div class="autopermalink" data-description="Paragraph"><a href="#ex_solving_nonlinear_system-2-1-2-2-1-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="ex_solving_nonlinear_system-2-1-2-2-1-5-2-1">Use your geometric interpretation in (i) to argue that the system <a href="s_systems.html#eq_general_nonlinear" class="xref" data-knowl="./knowl/xref/eq_general_nonlinear.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.8">(2.1.8)</a> has either 0, 1, or 2 solutions. Give explicit examples of such systems corresponding to each of these three cases.<div class="autopermalink" data-description="Paragraph"><a href="#ex_solving_nonlinear_system-2-1-2-2-1-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Item 2.1.4.11.b.ii"><a href="#ex_solving_nonlinear_system-2-1-2-2-1-5-2" title="Copy heading and permalink for Item 2.1.4.11.b.ii" aria-label="Copy heading and permalink for Item 2.1.4.11.b.ii">🔗</a></div>
 </li>
@@ -1894,16 +1895,16 @@ ax\amp +\amp by \amp =\amp c,
 <div class="para">In this exercise we investigate how the operation of squaring both sides of an equation changes the set of solutions. Let</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_general_equation.html ./knowl/xref/eq_general_equation.html ./knowl/xref/eq_general_equation_squared.html" id="eq_general_equation">
 \begin{equation}
-F(x_1,x_2,\dots, x_n)=G(x_1,x_2,\dots, x_n)\tag{2.1.8}
+F(x_1,x_2,\dots, x_n)=G(x_1,x_2,\dots, x_n)\tag{2.1.9}
 \end{equation}
 </div>
 <div class="para">represent a general equation (linear or nonlinear) in the unknowns <span class="process-math">\(x_1,x_2,\dots, x_n\text{,}\)</span> let</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_general_equation.html ./knowl/xref/eq_general_equation.html ./knowl/xref/eq_general_equation_squared.html" id="eq_general_equation_squared">
 \begin{equation}
-\left(F(x_1,x_2,\dots, x_n)\right)^2=\left(G(x_1,x_2,\dots, x_n)\right)^2\tag{2.1.9}
+\left(F(x_1,x_2,\dots, x_n)\right)^2=\left(G(x_1,x_2,\dots, x_n)\right)^2\tag{2.1.10}
 \end{equation}
 </div>
-<div class="para">be the equation obtained by squaring both sides of the <a href="s_systems.html#eq_general_equation" class="xref" data-knowl="./knowl/xref/eq_general_equation.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.8">(2.1.8)</a>, let <span class="process-math">\(S_1\)</span> be the set of solutions to <a href="s_systems.html#eq_general_equation" class="xref" data-knowl="./knowl/xref/eq_general_equation.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.8">(2.1.8)</a>, and let <span class="process-math">\(S_2\)</span> be the set of solutions to <a href="s_systems.html#eq_general_equation_squared" class="xref" data-knowl="./knowl/xref/eq_general_equation_squared.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.9">(2.1.9)</a>.</div>
+<div class="para">be the equation obtained by squaring both sides of the <a href="s_systems.html#eq_general_equation" class="xref" data-knowl="./knowl/xref/eq_general_equation.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.9">(2.1.9)</a>, let <span class="process-math">\(S_1\)</span> be the set of solutions to <a href="s_systems.html#eq_general_equation" class="xref" data-knowl="./knowl/xref/eq_general_equation.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.9">(2.1.9)</a>, and let <span class="process-math">\(S_2\)</span> be the set of solutions to <a href="s_systems.html#eq_general_equation_squared" class="xref" data-knowl="./knowl/xref/eq_general_equation_squared.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.10">(2.1.10)</a>.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#s_systems_ex-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <ol class="lower-alpha lower-alpha-level-1" id="s_systems_ex-6-2-2">
 <li id="s_systems_ex-6-2-2-1">
@@ -1912,7 +1913,7 @@ F(x_1,x_2,\dots, x_n)=G(x_1,x_2,\dots, x_n)\tag{2.1.8}
 <div class="autopermalink" data-description="Item 2.1.4.12.a"><a href="#s_systems_ex-6-2-2-1" title="Copy heading and permalink for Item 2.1.4.12.a" aria-label="Copy heading and permalink for Item 2.1.4.12.a">🔗</a></div>
 </li>
 <li id="s_systems_ex-6-2-2-2">
-<div class="para" id="s_systems_ex-6-2-2-2-1">Given an explicit example of an equation of the form <a href="s_systems.html#eq_general_equation" class="xref" data-knowl="./knowl/xref/eq_general_equation.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.8">(2.1.8)</a> in two variables for which <span class="process-math">\(S_2\not\subseteq S_1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_systems_ex-6-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="s_systems_ex-6-2-2-2-1">Given an explicit example of an equation of the form <a href="s_systems.html#eq_general_equation" class="xref" data-knowl="./knowl/xref/eq_general_equation.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 2.1.9">(2.1.9)</a> in two variables for which <span class="process-math">\(S_2\not\subseteq S_1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_systems_ex-6-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Item 2.1.4.12.b"><a href="#s_systems_ex-6-2-2-2" title="Copy heading and permalink for Item 2.1.4.12.b" aria-label="Copy heading and permalink for Item 2.1.4.12.b">🔗</a></div>
 </li>

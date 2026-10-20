@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-ss_matrix_ww-4" assembly-id="ss_matrix_ww-4">
+  <static seed="31" source="Library/ASU-topics/set119MatrixAlgebra/p32.pg">
+    <statement><p>If A is <m>3 \times 4,</m>  B is <m>7 \times 3</m> and C is <m>4 \times 7</m> then:</p>
+<p>a) BA has dimension    <fillin characters="8" name="AnSwEr0001"/> <m>\times</m>  <fillin characters="8" name="AnSwEr0002"/></p>
+<p>b) CB has dimension    <fillin characters="8" name="AnSwEr0003"/> <m>\times</m>  <fillin characters="8" name="AnSwEr0004"/></p>
+<p>c) AC has dimension    <fillin characters="8" name="AnSwEr0005"/> <m>\times</m>  <fillin characters="8" name="AnSwEr0006"/></p>
+</statement>
+    <answer>
+      <p>
+        <m>7</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>4</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>4</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>3</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>3</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>7</m>
+      </p>
+    </answer>
+  </static>
+  <rendering-data sourceFilePath="Library/ASU-topics/set119MatrixAlgebra/p32.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/ASU-topics/set119MatrixAlgebra/p32.pg"/>
+</webwork-reps>

@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-ss_sets_functions_ww-3" assembly-id="ss_sets_functions_ww-3">
+  <static seed="2" source="Library/SDSU/Discrete/Sets/cartesianprodB4.pg">
+    <statement><p>Let <m>S = \lbrace w,x,y,z\rbrace</m>, <m>T = \lbrace 0\rbrace</m></p>
+<p>How many elements are in <m>S\times T</m>?
+<fillin characters="5" name="AnSwEr0001"/></p>
+<p>Determine <m>S\times T</m></p>
+<p>[Note: Enter your answer as a comma-separated list. Pairs should be denoted with parentheses.]</p>
+<p><m>\lbrace</m><fillin characters="20" name="AnSwEr0002"/><m>\rbrace</m></p>
+</statement>
+    <answer>
+      <p>
+        <m>4</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>\left(\text{w}, 0\right), \left(\text{x}, 0\right), \left(\text{y}, 0\right), \left(\text{z}, 0\right)</m>
+      </p>
+    </answer>
+    <solution><m>S = \lbrace w,x,y,z\rbrace</m> 
+
+
+<m>T = \lbrace 0\rbrace</m> 
+
+
+The number of elements in a Cartesian product is simply <m>N(A)\cdot N(B)</m> for any sets <m>A, B</m>. 
+
+
+Thus, the number of elements in <m>S\times T</m> is 
+
+
+<m>N(A)\cdot N(B) = 4\cdot 1 = 4</m> 
+
+
+The Cartesian product <m>A\times B</m> is defined as the set of all ordered pairs whose first component is a member of <m>A</m> and whose second component is a member of <m>B</m>. 
+
+
+More formally, <m>A\times B = \lbrace (a,b) \vert a\in A \textbf{ and } b\in B\rbrace</m> 
+
+
+Thus, <m>S\times T</m> is 
+
+
+<m>\lbrace (w,0),(x,0),(y,0),(z,0)\rbrace</m> 
+
+
+
+
+</solution>
+  </static>
+  <rendering-data sourceFilePath="Library/SDSU/Discrete/Sets/cartesianprodB4.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/SDSU/Discrete/Sets/cartesianprodB4.pg"/>
+</webwork-reps>

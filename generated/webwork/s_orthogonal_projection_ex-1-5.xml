@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_orthogonal_projection_ex-1-5" assembly-id="s_orthogonal_projection_ex-1-5">
+  <static seed="123" source="Library/Rochester/setLinearAlgebra10Bases/ur_la_10_18.pg">
+    <statement><p>Find bases of the kernel and image of the orthogonal projection onto the plane <m>-6 x  - 2 y + z = 0</m> in
+<m>{\mathbb R}^3</m>.</p>
+<p>A basis for the kernel is 
+<m>\Bigg\lbrace</m> 
+<fillin rows="3"/> 
+<m>\Bigg\rbrace.</m></p>
+<p>A basis for the image is 
+<m>\Bigg\lbrace</m> 
+<fillin rows="3"/>, 
+<fillin rows="3"/> 
+<m>\Bigg\rbrace.</m></p>
+</statement>
+  </static>
+  <rendering-data sourceFilePath="Library/Rochester/setLinearAlgebra10Bases/ur_la_10_18.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/Rochester/setLinearAlgebra10Bases/ur_la_10_18.pg"/>
+</webwork-reps>

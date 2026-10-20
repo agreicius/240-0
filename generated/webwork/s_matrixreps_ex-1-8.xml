@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_matrixreps_ex-1-8" assembly-id="s_matrixreps_ex-1-8">
+  <static seed="93" source="Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_15.pg">
+    <statement><p>Let <m>V</m> be the plane with equation <m>x_1 + 2 x_2  - 4 x_3 =0</m> in <m>{\mathbb R}^3</m>.  The linear transformation 
+<me>T\left(\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}\right)= \left[\begin{array}{ccc}
+-6 \amp -2 \amp -4\cr
+1 \amp -1 \amp -2\cr
+-1 \amp -1 \amp -2
+\end{array}\right] \begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}</me> maps <m>V</m> into <m>V</m> so, by restricting it to <m>V</m>, we may regard it as a linear transformation <m>\tilde T \colon V \to V</m>.</p>
+<p>Find the matrix <m>A</m> of the restricted map  <m>\tilde T \colon V \to V</m> with respect to the basis
+<m>\left\lbrace \left[\begin{array}{c}
+-2\cr
+1\cr
+0
+\end{array}\right], \left[\begin{array}{c}
+4\cr
+0\cr
+1
+\end{array}\right] \right\rbrace.</m></p>
+<p><m>A=</m> <fillin cols="2" rows="2"/></p>
+</statement>
+  </static>
+  <rendering-data sourceFilePath="Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_15.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_15.pg"/>
+</webwork-reps>

@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_transformation_ex-1-2" assembly-id="s_transformation_ex-1-2">
+  <static seed="65" source="Library/TCNJ/TCNJ_IntroLinearTransformations/problem17.pg">
+    <statement><p>Let <m>T : {\mathbb R}^2 \to {\mathbb R}^2</m> be a linear transformation
+that sends the vector
+<m>\vec{u} =(5,2)</m> into <m>(2,1)</m> and maps  <m>\vec{v}= (1,3)</m> into 
+<m>(-1, 3)</m>.</p>
+<p>Use properties of a linear transformation to calculate the following.
+(Enter your answers as ordered pairs, such as <m>(1,2)</m>, including the parentheses.)</p>
+<p><m>T(-4 \vec{u}) =</m> <fillin characters="15" name="AnSwEr0001"/>,</p>
+<p><m>T(9 \vec{v}) =</m> <fillin characters="15" name="AnSwEr0002"/>,</p>
+<p><m>T(-4 \vec{u} + 9 \vec{v}) =</m> <fillin characters="15" name="AnSwEr0003"/>.</p>
+</statement>
+    <answer>
+      <p>
+        <m>\left(-8,-4\right)</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>\left(-9,27\right)</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>\left(-17,23\right)</m>
+      </p>
+    </answer>
+    <solution><p><m>T(-4 \vec{u}) = -4T(\vec{u})=-4(2,1)=(-8,-4)</m>
+<m>T(9 \vec{v}) = 9T(\vec{v})=9(1,3)=(-9,27)</m>
+<m>\displaystyle{\begin{aligned} T(-4 \vec{u} + 9 \vec{v}) \amp = -4T(\vec{u})+9T(\vec{v})\\
+\amp =(-8,-4)+($ans21,$ans22)  \\
+\amp = ($ans31,$ans32) \end{aligned}}</m></p>
+</solution>
+  </static>
+  <rendering-data sourceFilePath="Library/TCNJ/TCNJ_IntroLinearTransformations/problem17.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/TCNJ/TCNJ_IntroLinearTransformations/problem17.pg"/>
+</webwork-reps>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_matrixreps_ex-1-7" assembly-id="s_matrixreps_ex-1-7">
+  <static seed="92" source="Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_13.pg">
+    <statement><p>Let <m>V</m> be the space spanned by the two functions <m>\cos(t)</m> and <m>\sin(t)</m>. 
+Find the matrix <m>A</m> of the linear transformation <m>T(f(t)) = f''(t) + 3 f'(t) + 4 f(t)</m> from <m>V</m> into
+itself with respect to the basis <m>\left\lbrace \cos(t), \sin(t) \right\rbrace</m>.</p>
+<p><m>A=</m> <fillin cols="2" rows="2"/></p>
+</statement>
+  </static>
+  <rendering-data sourceFilePath="Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_13.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/Rochester/setLinearAlgebra15TransfOfLinSpaces/ur_la_15_13.pg"/>
+</webwork-reps>

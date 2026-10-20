@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-ss_matrix_ww-3" assembly-id="ss_matrix_ww-3">
+  <static seed="30" source="Library/Dartmouth/setMTWCh1S5/problem_1.pg">
+    <statement><p><alert> Matrix Products: </alert> Consider the matrices</p>
+<p><me>A = \begin{pmatrix}4\amp 7\amp 3\\9\amp 6\amp 9\end{pmatrix}, 
+B = \begin{pmatrix}1\amp 7\amp 10\amp 8\\6\amp 6\amp 10\amp 6\\
+    3\amp 8\amp 7\amp 5\end{pmatrix},\textrm{ and }
+C = \begin{pmatrix}9\amp 9\\6\amp 1\\1\amp 7\\3\amp 7\end{pmatrix}</me></p>
+<p>Of the possible matrix products <m>ABC, ACB, BAC, BCA, CAB, CBA</m>,</p>
+<p>which make sense? <fillin characters="10" name="AnSwEr0001"/></p>
+</statement>
+    <answer>
+      <p>C</p>
+    </answer>
+  </static>
+  <rendering-data sourceFilePath="Library/Dartmouth/setMTWCh1S5/problem_1.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/Dartmouth/setMTWCh1S5/problem_1.pg"/>
+</webwork-reps>

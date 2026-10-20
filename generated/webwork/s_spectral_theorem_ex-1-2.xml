@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-s_spectral_theorem_ex-1-2" assembly-id="s_spectral_theorem_ex-1-2">
+  <static seed="128" source="Library/NAU/setLinearAlgebra/diag3x3ortho.pg">
+    <statement><p>Let <m>A = \left[\begin{array}{ccc}
+-3 \amp 12 \amp -6\cr
+12 \amp -3 \amp 6\cr
+-6 \amp 6 \amp 6
+\end{array}\right]</m>. Find an orthogonal matrix <m>P</m> with rational entries and a diagonal matrix <m>D</m> such that <m>D = P^TAP</m>.</p>
+<p><m>P=</m> <fillin cols="3" rows="3"/>, <m>D=</m> <fillin cols="3" rows="3"/></p>
+</statement>
+  </static>
+  <rendering-data sourceFilePath="Library/NAU/setLinearAlgebra/diag3x3ortho.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/NAU/setLinearAlgebra/diag3x3ortho.pg"/>
+</webwork-reps>
