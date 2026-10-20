@@ -2,10 +2,343 @@
   <title>Inner product spaces</title>
   <introduction>
     <p>
-     At last we return to that additional layer that can added atop a vector space structure: the <xref ref="d_innerproduct" text="custom">inner product</xref>. 
-    </p>
+            In this section we introduce an additional type of operation that can be defined on a vector space <m>V</m> called an <em>inner product</em>. The class (and motivating) example of an inner product is the dot product on <m>\R^n</m>, as defined in <xref ref="d_dot_product"/>.  As we will see, an inner product adds an additional and analytically useful layer added to the vector space structure of <m>V</m> that gives rise to a number of useful analytic tools. More generally, the dot product turns out to be just one example of what is called an <em>inner product</em> on a vector space. Inner products imbue vector spaces with valuable geometric content, a few of which are highlighted below. 
+            In this section we introduce an additional type of operation that can be defined on a vector space <m>V</m> called an <em>inner product</em>. The class (and motivating) example of an inner product is the dot product on <m>\R^n</m>, as defined in <xref ref="d_dot_product"/>.  As we will see, an inner product adds an additional and analytically useful layer of structure to a vector space. Inner products imbue vector spaces with valuable geometric content, a few of which are highlighted below. 
+            <ul>
+              <li>
+                <title>Distance and angle</title>
+                <p>
+                  A notion of <em>distance</em> and <em>angle</em> between two vectors can be defined relative to a given inner product. These provide a numeric measurement of how <q>close</q> (distance) or <q>closely oriented</q> (angle) two vectors in our space are.
+                </p>
+              </li>
+              <li>
+                <title>Orthogonality</title>
+                <p>
+                Two vectors of an inner product space are <em>orthogonal</em> if their inner product is equal to zero. Orthogonality leads to a general notion of <em>orthogonal projection</em>, and is part of the definition of an <em>orthogonal basis</em>. 
+                </p>
+              </li>
+            </ul>
+            We will get into these geometric notions in detail later. For now we content ourselves simply with defining what an inner product is. We will also show that the dot product is just one example of infinitely many inner products that can be defined on <m>\R^n</m>. In particular, we will define a family of natural inner products on <m>\R^n</m> called <em>weighted dot products</em>, which play an important role in statistics and data science. 
+          </p>
   </introduction>
-    
+    <subsection xml:id="ss_inner_products">
+    <title>Inner products</title>
+    <definition xml:id="d_innerproduct">
+            <title>Inner product</title>
+            <statement>
+              <p>
+                Let <m>V</m> be a vector space.
+                An <term>inner product</term> on <m>V</m> is an operation that takes as input a pair of vectors <m>\boldv, \boldw\in V</m> and outputs a scalar <m>\langle \boldv, \boldw \rangle \in \R</m>. Using function notation:
+                <md>
+                <mrow>\langle \ , \rangle \colon \amp V\times V\rightarrow \R</mrow>
+                <mrow>(\boldv_1,\boldv_2)\amp \mapsto \langle \boldv_1,\boldv_2\rangle</mrow>
+                </md>.
+                Furthermore, this operation must satisfy the following axioms.
+                <ol marker="i">
+                  <li xml:id="d_inner_i">
+                    <title>Symmetry</title>
+                    <p>
+                    For all <m>\boldv, \boldw\in V</m> we have
+                    <md>
+                      \langle \boldv, \boldw \rangle =\langle \boldw, \boldv \rangle
+                    </md>.
+                    </p>
+                  </li>
+                  <li xml:id="d_inner_ii">
+                    <title>Linearity</title>
+                    <p>
+                      For all <m>\boldv, \boldw, \boldu\in V</m> and <m>c, d\in \R</m> we have :
+                      <md>
+                        \langle c\boldv+d\boldw, \boldu \rangle =c \langle \boldv, \boldu \rangle +d \langle \boldw, \boldu \rangle
+                      </md>.
+                      It follows by (i) (symmetry) that
+                      <md>
+                        \langle \boldu, c\boldv+d\boldw \rangle =c \langle \boldu, \boldv \rangle +d \langle \boldu, \boldw \rangle
+                      </md>.
+                    </p>
+                  </li>
+                  <li xml:id="d_inner_iii" >
+                    <title>Positive definiteness</title>
+                    <p>
+                      For all <m>\boldv\in V</m> we have
+                      <md>
+                        <mrow> \langle \boldv, \boldv \rangle \amp\geq 0,\text{ and} \amp (\text{positivity})</mrow>
+                        <mrow> \langle \boldv, \boldv \rangle \amp=0 \text{ if and only if } \boldv=\boldzero \amp (\text{definiteness}) </mrow>
+                      </md>.
+                    </p>
+                  </li>
+                </ol>
+                An <term>inner product space</term> is a pair <m>(V, \langle , \rangle )</m>, where <m>V</m> is a vector space, and <m>\langle , \rangle </m> is a choice of inner product on <m>V</m>.
+              </p>
+            </statement>
+          </definition>
+          
+          <p>
+           Although we will almost exclusively work with the dot product in this treatment of linear algebra, it is worth considering a natural family of inner products on <m>\R^n</m> that the dot product fits nicely into: namely, <em>weighted dot products</em>. These examples of inner products are especially important in data science. 
+          </p>
+          <definition xml:id="d_weighted_dot_product">
+            <title>Weighted dot product</title>
+            <statement>
+                <p>
+                    Let <m>k_1, k_2, \dots , k_n</m> be a list of positive real numbers: <ie/>, <m>k_i&gt; 0</m> for all <m>1\leq i\leq n</m>. The <term>weighted dot product</term> with weights <m>(k_1,k_2,\dots, k_n)</m> is the operation 
+                    <md>
+                        <mrow>\R^n\times\R^n \amp \rightarrow \R</mrow>
+                        <mrow>(\boldx,\boldy) \amp \mapsto \angvec{\boldx,\boldy}</mrow>
+                    </md>
+                    defined as on <m>n</m>-vectors <m>\boldx=(x_1,x_2,\dots, x_n)</m> and <m>\boldy=(y_1,y_2,\dots, y_n)</m> as follows: 
+                    <md number="yes" xml:id="eq_weighted_dot_product">
+                        \angvec{\boldx,\boldy}=\sum_{i=1}^nk_ix_iy_i=k_1x_1y_1+k_2x_2y_2+\cdots k_nx_ny_n
+                    </md>.
+                    When <m>k_i=1</m> for all <m>1\leq i\leq n</m>, the weighted dot product is equal to the dot product. 
+                </p>
+            </statement>
+          </definition>
+          <example xml:id="eg_weigh_dot">
+            <title>Weighted dot product</title>
+              <statement>
+                <p>
+                The dot product with weights <m>(2, 1, 3)</m> on <m>\R^3</m> is defined as
+                <md>
+                  \langle \boldx, \boldy  \rangle= 2x_1y_1+x_2y_2+3x_3y_3
+                </md>.
+                Let <m>\boldx=(-1,-1,-1)</m> and <m>\boldy=(1,0,1)</m>. We have
+                <md>
+                  \langle \boldx, \boldy \rangle =2(-1)+0-3=-5
+                </md>,
+                and
+                <md>
+                  \langle \boldx, \boldx \rangle =2(-1)^2+1(-1)^2+3(-1)^2=2+1+3=6
+                </md>.
+                </p>
+              </statement>
+            </example>
+          <p>
+            We now show that any weighted dot product (including the dot product itself) is an inner product on <m>\R^n</m>. 
+          </p>
+          <theorem xml:id="th_weighted_dot_product">
+            <title>Weighted dot product</title>
+            <statement>
+                <p>
+                    Let <m>k_1, k_2, \dots , k_n</m> be a list of positive real numbers. The weighted dot product on <m>\R^n</m> with weights <m>(k_1,k_2,\dots, k_n)</m> is an inner product. In particular, the dot product is an inner product. 
+                </p>
+            </statement>
+            <proof>
+                <p>
+                   We verify each axiom in turn. Throughout we assume <m>\boldx=(x_1,x_2,\dots, x_n)</m>, <m>\boldy=(y_1,y_2,\dots, y_n)</m>, and <m>\boldw=(w_1,w_2,\dots, w_n)</m> are arbitrary elements of <m>\R^n</m>. 
+                </p>
+                <case>
+                <title>Axiom i</title>
+                <p>
+                  We have 
+                  <md>
+                    <mrow>\angvec{\boldx,\boldy} \amp = \sum_{k=1}^n k_ix_iy_i \amp \text{(def.)}</mrow>
+                    <mrow> \amp = \sum_{k=1}^n k_iy_ix_i \amp \text{(real mult. is commut.)}</mrow>
+                    <mrow> \amp = \angvec{\boldy,\boldx} \amp \text{(def.)}</mrow> 
+                  </md>.
+                </p>
+                </case>
+                <case>
+                <title>Axiom ii</title>
+                <p>
+                Given scalars <m>c,d\in \R</m>, we have 
+                <md>
+                  c\boldx+d\boldy=(cx_1+dy_1,cx_2+dy_2,\dots, cx_n+dy_n)
+                </md>,
+                and thus
+                <md>
+                  <mrow>\angvec{c\boldx+d\boldy, \boldw} \amp = \sum_{i=1}^n k_i(cx_i+dy_i)w_i \amp \text{(def.)}</mrow>
+                  <mrow> \amp = \sum_{i=1}^nck_ix_iw_i+dk_iy_iw_i \amp \text{(dist. prop. of reals)}  </mrow>
+                  <mrow> \amp = c\sum_{i=1}^nk_ix_iw_i+d\sum_{i=1}^nk_iy_iw_i \amp \text{(props. of real arith.)} </mrow>
+                  <mrow> \amp = c\angvec{\boldx,\boldw}+d\angvec{\boldy,\boldw}</mrow>
+                </md>.
+                </p>
+                </case>
+                <case>
+                <title>Axiom iii</title>
+                <p>
+                We have 
+                <md>
+                  \langle \boldx, \boldx \rangle=k_1x_1^2+k_2x_2^2+\cdots k_nx_n^2
+                </md>.
+                Since <m>k_i&gt; 0</m> and <m>x_i^2\geq 0</m> for all <m>i</m> (squares of real numbers are nonnegative), we have <m>\langle \boldx, \boldx \rangle\geq 0</m> for any <m>\boldx</m>.
+                </p>
+                <p>
+                  We now show that <m>\angvec{\boldx,\boldx}=0</m> if and only if <m>\boldx=\boldzero=(0,0,\dots, 0)</m>. The reverse implication is clear: if <m>x_i=0</m> for all <m>i</m>, then <m>\sum_{i=1}^nk_ix_i^2=\sum_{i=1}^n 0=0</m>. We prove the forward implication by showing that its contrapositive is true: <ie/>, if <m>\boldx\ne \boldzero</m>, then <m>\angvec{\boldx,\boldx} \ne 0</m>. If <m>\boldx\ne \boldzero</m>, then we have <m>x_{i_0}\ne 0</m> for some <m>1\leq i_0\leq n</m>, in which case <m>k_{i_0}x_{i_0}^2 &gt; 0</m>. But then 
+                  <md>
+                    <mrow> \angvec{\boldx,\boldx} \amp = k_{i_0}x_{i_0}^2+\sum_{i\ne i_0}k_ix_i^2 </mrow>
+                    <mrow> \amp \geq k_{i_0}x_{i_0}^2 \amp (k_ix_i^2\geq 0)</mrow>
+                    <mrow> \amp &gt; 0 </mrow>
+                  </md>.
+                  In particular, <m>\angvec{\boldx,\boldx}\ne 0</m>, as desired. 
+                </p>
+                </case>
+            </proof>
+          </theorem>
+          <example xml:id="eg_weights_positive">
+            <title>Why the weights must be positive</title>
+            <statement>
+              <p>
+              Consider the operation on <m>\R^2</m> defined as
+              <md>
+                \langle \boldx, \boldy \rangle =(-1)x_1y_1+2x_2y_2
+              </md>
+              where <m>\boldx=(x_1,x_2), \boldy=(y_1,y_2)</m>. This operation satisfies axioms i-ii of <xref ref="d_innerproduct"/>. (See proof of <xref ref="th_weighted_dot_product"/>.) However, it fails both the positivity and definiteness properties of axiom (iii): <eg/>, 
+              <md>
+                <mrow>\langle (3,1), (3,1) \rangle \amp =-9+2=-7\lt 0</mrow>
+                <mrow> \langle (1,1/\sqrt{2}), (1,1/\sqrt{2})\rangle \amp=-1+2/2=0 </mrow>
+              </md>.
+              </p>
+            </statement>
+          </example>
+          <p>
+            Are there other examples of inner products besides weighted dot products that can be defined on <m>\R^n</m>? Indeed there are! For example, it is possible to show that the operation 
+            <md number="yes" xml:id="eq_inner">
+              \angvec{(x_1,x_2),(y_1,y_2)}=2x_1y_1+x_1y_2+x_2y_1+2x_2y_2
+            </md>
+            defines an inner product on <m>\R^2</m>. In fact, getting ahead of ourselves once again, inner products on <m>\R^n</m> are in one-to-one correspondence with symmetric positive-definite <m>n\times n</m> matrices. For example, the inner product <xref ref="eq_inner"/> corresponds to the matrix 
+            <md>
+              A=\begin{bmatrix}2\amp 1\\ 1\amp 2 \end{bmatrix}
+            </md>.
+            For our purposes, however, the family of weighted dot products will serve as a sufficiently rich source of examples of inner products. Furthermore, as we will see later, any inner product on <m>\R^n</m> can be viewed as being equal to the dot product  <q>after a change of variables</q>. For example, letting <m>\boldx=(x_1,x_2)</m> and <m>\boldy=(y_1,y_2)</m>, the inner product <xref ref="eq_inner"/> satisfies 
+            <md>
+              \angvec{\boldx,\boldy}=\boldx'\cdot \boldy'
+            </md>,
+            where 
+            <md>
+              <mrow>\boldx'\amp =\frac{1}{4}((\sqrt{3}+1)x_1+(\sqrt{3}-1)x_2,(\sqrt{3}-1)x_1+(\sqrt{3}+1)x_2)</mrow>
+              <mrow>\boldy'\amp =\frac{1}{4}((\sqrt{3}+1)y_1+(\sqrt{3}-1)y_2,(\sqrt{3}-1)y_1+(\sqrt{3}+1)y_2)</mrow>
+            </md>.
+            More on this topic later! 
+          </p>
+     <remark xml:id="rm_innerproduct_algebra">
+          <title>Inner products of linear combinations</title>
+          <p>
+            We will have many opportunities to <q>expand out</q> an inner product of two linear combinations of vectors. Using the inner product axioms in series, this process resembles the procedure for multiplying two polynomials. For example, we have
+            <md>
+              <mrow>\langle c\boldv+d\boldw, e\boldv+f\boldw\rangle
+              \amp = c \langle \boldv,  e\boldv+f\boldw \rangle +d \langle \boldw, e\boldv+f\boldw \rangle \amp (<xref ref="d_inner_ii">Axiom</xref>)</mrow>
+              <mrow> \amp=ce \langle \boldv, \boldv\rangle+cf\langle \boldv,\boldw \rangle +de \langle \boldw, \boldv\rangle+df\langle \boldw, \boldw\rangle \amp (<xref ref="d_inner_ii">Axiom</xref>) </mrow>
+              <mrow>  \amp = ce\langle \boldv, \boldv\rangle +(cf+de)\langle \boldv, \boldw\rangle +df\langle \boldw, \boldw\rangle
+              \amp (<xref ref="d_inner_i">Axiom</xref>)</mrow>
+            </md>.
+            Note how in the last step we are able to group the <q>cross terms</q>, <m>\langle \boldv, \boldw\rangle=\langle \boldw, \boldv\rangle</m> using the symmetry axiom (<xref ref="d_inner_i">Axiom</xref>). 
+          </p>
+            <p>
+              More generally, given linear combinations
+            <md>
+              <mrow>
+              \boldv \amp = c_1\boldv_1+c_2\boldv_2+\cdots +c_n\boldv_n=\sum_{i=1}^n c_i\boldv_i </mrow>
+              <mrow> \boldw \amp =d_1\boldv_1+d_2\boldv_2+\cdots +d_n\boldv_n=\sum_{i=1}^nd_i\boldv_i </mrow>
+            </md>,
+            the same reasoning shows that
+            <md>
+              <mrow>\langle \boldv, \boldw \rangle   \amp=
+              c_1d_1 \langle \boldv_1, \boldv_1  \rangle+c_2d_2 \langle \boldv_2, \boldv_2 \rangle +\cdots+c_nd_n \langle \boldv_n, \boldv_n \rangle +\underset{\text{cross terms}}{\underbrace{(c_1d_2+c_2d_1)\langle \boldv_1,\boldv_2  \rangle +\cdots}}  </mrow>
+              <mrow> \amp= \sum_{i=1}^nc_id_i \langle \boldv_i, \boldv_i \rangle +\underset{\text{cross terms}}{\underbrace{\sum_{1\leq i\lt j\leq n}(c_{i}d_j+c_jd_i)\langle \boldv_i, \boldv_j \rangle}}  </mrow>
+            </md>.
+            In particular, we have
+            <md>
+              \langle \boldv, \boldv\rangle =\sum_{i=1}^nc_i^2 \langle \boldv_i, \boldv_i \rangle +\sum_{1\leq i\lt j\leq n}2c_ic_j \langle \boldv_i, \boldv_j \rangle
+            </md>.
+            </p>
+        </remark>
+        <p>
+  Next we introduce an important family of inner products defined on polynomials spaces called <em>evaluation inner products</em>. These are useful when we wish to compare polynomials by how they behave at a specified list of inputs.
+</p>
+<theorem xml:id="th_evaluation_innerproduct">
+  <title>Evaluation inner products on <m>P_n</m></title>
+  <statement>
+    <p>
+    Let <m>V=P_n</m>, and let <m>c_0, c_1, \dots, c_n</m> be any list of <m>n+1</m> distinct real numbers. For any <m>p(x), q(x)\in P_n</m> define
+    <md>
+      \langle p(x), q(x) \rangle =p(c_0)q(c_0)+p(c_1)q(c_1)+\cdots +p(c_n)q(c_n)
+    </md>.
+    This defines an inner product on <m>P_n</m> called an <term>evaluation inner product</term>, or more precisely, <term>evaluation at the inputs <m>c_0, c_1, \dots, c_n</m></term>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      That axioms (i)-(ii) are satisfied is left as an exercise. For axiom (iii), note that
+      <md>
+        \langle p(x), p(x) \rangle =p(c_0)^2+p(c_1)^2+\cdots +p(c_n)^2\geq 0
+      </md>,
+      and we have equality if and only if <m>p(c_0)=p(c_1)=\dots p(c_n)=0</m>. Since a nonzero polynomial of degree <m>n</m> or less has <em>at most</em> <m>n</m> distinct roots, we conclude that <m>p(x)=\boldzero</m>, the zero polynomial.
+    </p>
+  </proof>
+
+</theorem>
+<example>
+  <title>Evaluation at <m>-1, 0, 1</m></title>
+  <statement>
+    <p>
+    Let <m>V=P_2</m>, and let <m>\langle p(x),q(x)  \rangle </m> be the evaluation at <m>-1, 0, 1</m> inner product. Compute <m>\langle x^2-1,x^2+2x+1  \rangle </m> and <m>\langle x^2-1, x^2-1  \rangle. </m>
+    </p>
+  </statement>
+  <solution>
+    <p>
+    Let <m>p(x)=x^2-1</m>, <m>q(x)=x^2+2x+1</m>. We have
+    <md>
+      \langle p(x), q(x)  \rangle=p(-1)q(-1)+p(0)q(0)+p(1)q(1)=0+(-1)1+0=-1
+    </md>
+    and
+    <md>
+      \langle p(x), p(x) \rangle =p(-1)^2+p(0)^2+p(1)^2=0+(-1)^2+0=1
+    </md>.
+    </p>
+  </solution>
+</example>
+<p>
+  Our last example defines an <em>integral inner product</em> on the space <m>C([a,b])</m> of continuous functions on an interval <m>[a,b]</m>. This inner product plays an important role in Fourier analysis, which studies the approximation of arbibitrary continuous functions with linear combinations of certain trigonometric funtions.
+</p>
+<theorem xml:id="th_integral_innerproduct">
+  <title>Integral inner product</title>
+
+
+  <statement>
+    <p>
+    Fix an interval <m>[a,b]</m>, and let <m>V=C([a,b])</m>, the space of all continuous functions on <m>[a,b]</m>. For any <m>f,g\in C([a,b])</m> define
+    <md>
+      \langle f,g \rangle=\int_a^bf(x)g(x)\ dx
+    </md>.
+    This defines an inner product on <m>C([a,b])</m> called the <term>integral inner product</term>.
+    </p>
+  </statement>
+  <proof>
+    <p>
+      First observe that the integral defining the inner product always exists since the product <m>fg</m> is a continuous function on the closed interval <m>[a,b]</m>.
+    </p>
+    <p>
+      Axioms (i)-(ii) follow directly from the definition and various properties of the integral. This is left as an exercise. As for (iii), we have
+      <md>
+        \langle f, f   \rangle=\int_{a}^b f^2(x) \ dx \geq 0
+      </md>,
+      since <m>f^2(x)\geq 0</m> for all <m>x\in [a,b]</m>. (This is a property of integration.) Furthermore, since <m>f^2</m> is continuous and <m>f^2(x)\geq 0</m>, we have
+      <md>\langle f, f \rangle=\int_a^b f^2(x) \ dx=0 </md>
+      if and only if <m>f^2(x)=0</m> for all <m>x\in [a,b]</m> (a property of integrals of <em>continuous</em> functions) if and only if <m>f(x)=0</m> for all <m>x\in [a,b]</m> if and only if <m>f=\boldzero</m>, the zero function.
+    </p>
+  </proof>
+</theorem>
+<example>
+  <title>Integral inner product</title>
+  <statement>
+    <p>
+    Let <m>V=C([0,1])</m>, equipped with integral inner product. Let  <m>f(x)=x</m>, <m>g(x)=e^x</m>. Compute <m>\langle f,g  \rangle </m> and <m>\langle f,f  \rangle </m>.
+    </p>
+  </statement>
+  <solution>
+    <p>
+    We have
+    <md>
+      \langle f,g  \rangle=\int_0^1xe^x\ dx=(xe^x\Bigr\vert_0^1-\int_0^1 e^x\ dx)=e-(e-1)=1
+    </md>
+    and
+    <md>
+      \langle f, f \rangle=\int_0^1 x^2 \ dx=\frac{1}{3}
+    </md>.
+    </p>
+  </solution>
+</example>
+    </subsection>
   <subsection xml:id="ss_norm_distance">
     <title>Norm and distance</title>
     <p>

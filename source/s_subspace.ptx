@@ -273,8 +273,8 @@
   <p>
     The <q>existential axioms</q> (iii) and (iv) of <xref ref="d_vector_space"/>, however, require special consideration. By definition, a subspace <m>W</m> contains the zero vector of <m>V</m>, and clearly this still acts as the zero vector when we restrict the vector operations to <m>W</m>. What about vector inverses? We know that for any <m>\boldv\in W</m> there is a vector inverse <m>-\boldv</m> lying somewhere in <m>V</m>. We must show that in fact <m>-\boldv</m> lies in <m>W</m>: <ie /> we need to show that the operation of taking the vector inverse is well-defined on <m>W</m>. We prove this as follows:
     <md>
-    <mrow>\boldv\in W \amp\implies (-1)\boldv\in W \amp (<xref ref="d_subspace"/>, \text{(iii) } )</mrow>
-    <mrow> \amp\implies -\boldv\in W \amp (<xref ref="vec_"/>, (iii)) </mrow>
+    <mrow>\boldv\in W \amp\implies (-1)\boldv\in W \amp (<xref ref="d_subspace" text="global"/>, \text{(iii) } )</mrow>
+    <mrow> \amp\implies -\boldv\in W \amp (<xref ref="prop_vectorspace_props" text="global"/>, (iii)) </mrow>
     </md>.
   </p>
 <p>

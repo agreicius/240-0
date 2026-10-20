@@ -395,10 +395,10 @@ The example in our warning above is but one instance of the general failure of t
         <p>
           Next, given any <m>(i,j)</m> with <m>1\leq i\leq n</m>, <m>1\leq j\leq m</m>, we have
         <md>
-          <mrow>\left((A+B)^T\right)_{ij}\amp =(A+B)_{ji} \amp (<xref ref="d_transpose"/>)</mrow>
-          <mrow>\amp = A_{ji}+B_{ji} \amp (<xref ref="d_matrix_add_subtract"/>)</mrow>
-          <mrow>\amp =(A^T)_{ij}+(B^T)_{ij} \amp (<xref ref="d_transpose"/> </mrow>
-          <mrow>\amp =(A^T+B^T)_{ij} \amp (<xref ref="d_matrix_add_subtract"/>)</mrow>
+          <mrow>\left((A+B)^T\right)_{ij}\amp =(A+B)_{ji} \amp (<xref ref="d_transpose" text="global"/>)</mrow>
+          <mrow>\amp = A_{ji}+B_{ji} \amp </mrow>
+          <mrow>\amp =(A^T)_{ij}+(B^T)_{ij} \amp (<xref ref="d_transpose" text="global"/>) </mrow>
+          <mrow>\amp =(A^T+B^T)_{ij} \amp </mrow>
         </md>.
           Since the <m>ij</m>-entries of both matrices are equal for each <m>(i,j)</m>,
           it follows that <m>(A+B)^T=A^T+B^T</m>.

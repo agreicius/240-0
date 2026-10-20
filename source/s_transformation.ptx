@@ -696,7 +696,7 @@
           Let <m>\boldv=(a_i)_{i=1}^\infty</m> and <m>\boldw=(b_i)_{i=1}^\infty</m> be two infinite sequences in <m>\R^\infty</m>.
           For any <m>c,d\in\R</m> we have
           <md>
-            <mrow>T_\ell(c\boldv+d\boldw) \amp=T_\ell\left((ca_i+db_i)_{i=1}^\infty \right)\amp (<xref ref="eg_infinite_sequences"/>
+            <mrow>T_\ell(c\boldv+d\boldw) \amp=T_\ell\left((ca_i+db_i)_{i=1}^\infty \right)\amp (<xref ref="d_infinite_sequence"/>
             ) </mrow>
             <mrow> \amp= (ca_{i+1}+db_{i+1})_{i=1}^\infty \amp (\text{by def.})</mrow>
             <mrow>  \amp=c(a_{i+1})_{i=1}^\infty+d(b_{i+1})_{i=1}^\infty </mrow>

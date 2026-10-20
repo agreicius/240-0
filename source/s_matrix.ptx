@@ -826,7 +826,7 @@ DL/.style={
             The usual argument shows that both <m>A\boldb</m> and <m>\boldc</m> are <m>m\times 1</m> column vectors. It remains only to show that the <m>i</m>-th entry <m>[A\boldb]_i</m> of the column <m>A\boldb</m> is equal to the <m>i</m>-th entry <m>[\boldc]_i</m> of <m>\boldc</m> for all <m>1\leq i\leq m</m>. For any such <m>i</m> we have
             <md>
               <mrow>[\boldc]_i \amp = [b_1\bolda_1+b_2\bolda_2+\cdots +b_n\bolda_n]_i</mrow>
-              <mrow> \amp= b_1[\bolda_1]_i+b_2[\bolda_2]_i+\cdots +b_n[\bolda_n]_i \amp (<xref ref="rm_entry_lin_comb"/>)</mrow>
+              <mrow> \amp= b_1[\bolda_1]_i+b_2[\bolda_2]_i+\cdots +b_n[\bolda_n]_i \amp </mrow>
               <mrow>  \amp= b_1a_{i1}+b_2a_{i2}+\cdots +b_n\bolda_{in}\amp (\text{def. of } \bolda_j) </mrow>
               <mrow>  \amp= a_{i1}b_1+a_{i2}b_2+\cdots+a_{in}b_n </mrow>
               <mrow>  \amp =[A\boldb]_i \amp (<xref ref="d_matrix_mult"/>)</mrow>

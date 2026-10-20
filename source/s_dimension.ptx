@@ -241,7 +241,7 @@ Even when we do not have a standard basis at our disposal, there are many situat
   <title>Infinite dimensional space</title>
   <statement>
     <p>
-      Let <m>\R^\infty</m> be the vector space of infinite sequences of real numbers. (See <xref ref="eg_infinite_sequences"/>.) Prove that <m>\dim \R^\infty=\infty</m>. 
+      Let <m>\R^\infty</m> be the vector space of infinite sequences of real numbers. (See <xref ref="d_infinite_sequence"/>.) Prove that <m>\dim \R^\infty=\infty</m>. 
     </p>
   </statement>
   <solution>
