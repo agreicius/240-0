@@ -480,7 +480,7 @@
         </md>.
         Equivalently, using matrix-entry notation, we have 
       <md number="yes" >
-          <mrow xml:id="eq_matrix_mult_entry">[AB]_{i,j} \amp =\sum_{k=1}^{n}a_{i,j}b_{k,j}</mrow>
+          <mrow xml:id="eq_matrix_mult_entry">[AB]_{i,j} \amp =\sum_{k=1}^{n}a_{i,k}b_{k,j}</mrow>
         </md>
         for all <m>1\leq i\leq m</m> and <m>1\leq j\leq r</m>.
       </p>
