@@ -1049,8 +1049,10 @@
     </theorem>
 
     <warning>
-      Although <xref ref="th_matrix_transform"/> is very powerful, mark well its restriction: it only applies in the setting of linear transformations from <m>\R^n</m> to <m>\R^m</m>.
+      <p>
+        Although <xref ref="th_matrix_transform"/> is very powerful, mark well its restriction: it only applies in the setting of linear transformations from <m>\R^n</m> to <m>\R^m</m>.
       It says nothing about linear transformations whose domain or codomain is a vector space like <m>M_{mn}</m> or <m>\R^\infty</m>.
+      </p>
     </warning>
 
     <p>
@@ -1142,8 +1144,10 @@
     </remark>
 
     <warning>
-      Although <xref ref="th_matrix_transform"/> and <xref ref="proc_standard_matrix"/> are powerful results, mark well the restriction on their application: these results can only be used for linear transformations from <m>\R^n</m> to <m>\R^m</m>.
+      <p>
+        Although <xref ref="th_matrix_transform"/> and <xref ref="proc_standard_matrix"/> are powerful results, mark well the restriction on their application: these results can only be used for linear transformations from <m>\R^n</m> to <m>\R^m</m>.
       In particular, they say nothing about linear transformations whose domain or codomain is a vector space like <m>M_{mn}</m> or <m>\R^\infty</m>.
+      </p>
     </warning>
   </subsection>
 
