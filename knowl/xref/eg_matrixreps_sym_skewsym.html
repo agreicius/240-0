@@ -25,14 +25,14 @@
 <div class="para">The function</div>
 <div class="displaymath process-math">
 \begin{align*}
-F\colon M_{22} \amp \rightarrow M_{22}\\
+F\colon \ML_{2,2}(\R) \amp \rightarrow \ML_{2,2}(\R)\\
 A \amp \mapsto A^T-A
 \end{align*}
 </div>
 <div class="para">is linear.</div>
 <ol class="decimal" id="eg_matrixreps_sym_skewsym-2-1-2">
 <li>
-<div class="para">Compute <span class="process-math">\(A=[T]_{B}\text{,}\)</span> where <span class="process-math">\(B=(E_{11},E_{12},E_{21},E_{22})\)</span> is the standard basis of <span class="process-math">\(M_{22}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#eg_matrixreps_sym_skewsym-2-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para">Compute <span class="process-math">\(A=[T]_{B}\text{,}\)</span> where <span class="process-math">\(B=(E_{11},E_{12},E_{21},E_{22})\)</span> is the standard basis of <span class="process-math">\(\ML_{2,2}(\R)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#eg_matrixreps_sym_skewsym-2-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Item 1"><a href="#eg_matrixreps_sym_skewsym-2-1-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
 </li>
@@ -60,7 +60,7 @@ F(E_{21}) \amp =E_{21}^T-E_{21}=\begin{amatrix}[rr]0\amp 1 \\ -1 \amp 0\end{amat
 F(E_{22}) \amp =E_{22}^T-E_{22}=\begin{amatrix}[rr]0 \amp 0 \\ 0 \amp 0\end{amatrix}
 \end{align*}
 </div>
-<div class="para">Next, using the fact that for the standard basis <span class="process-math">\(B\)</span> of <span class="process-math">\(M_{22}\)</span> we have</div>
+<div class="para">Next, using the fact that for the standard basis <span class="process-math">\(B\)</span> of <span class="process-math">\(\ML_{2,2}(\R)\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_fund_spaces.html ./knowl/xref/th_column_method.html">
 \begin{equation*}
 \left[ \begin{bmatrix}a\amp b\\ c\amp d\end{bmatrix}\right]_B=(a,b,c,d)\text{,}
@@ -87,7 +87,7 @@ A\amp =\begin{bmatrix}
 <div class="autopermalink" data-description="Paragraph"><a href="#eg_matrixreps_sym_skewsym-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical">
-<div class="para">To “lift” the bases <span class="process-math">\(\{(1,0,0,0),(0,0,0,1),(0,1,1,0)\}\)</span> and <span class="process-math">\(\{(0,-1,1,0)\}\)</span> to bases of <span class="process-math">\(\NS F\)</span> and <span class="process-math">\(\im F\text{,}\)</span> we simply find the matrices in <span class="process-math">\(M_{22}\)</span> that correspond to these <span class="process-math">\(4\)</span>-vectors via the coordinate vector isomorphism <span class="process-math">\([\phantom{\boldv}]_B\text{:}\)</span> i.e., the matrices that have these <span class="process-math">\(4\)</span>-vectors as their coordinate vectors. This is easily done by inspection. We conclude that</div>
+<div class="para">To “lift” the bases <span class="process-math">\(\{(1,0,0,0),(0,0,0,1),(0,1,1,0)\}\)</span> and <span class="process-math">\(\{(0,-1,1,0)\}\)</span> to bases of <span class="process-math">\(\NS F\)</span> and <span class="process-math">\(\im F\text{,}\)</span> we simply find the matrices in <span class="process-math">\(\ML_{2,2}(\R)\)</span> that correspond to these <span class="process-math">\(4\)</span>-vectors via the coordinate vector isomorphism <span class="process-math">\([\phantom{\boldv}]_B\text{:}\)</span> i.e., the matrices that have these <span class="process-math">\(4\)</span>-vectors as their coordinate vectors. This is easily done by inspection. We conclude that</div>
 <div class="displaymath process-math">
 \begin{equation*}
 B_1=\left\{A_1=\begin{bmatrix}1\amp 0\\ 0\amp 0\end{bmatrix}, A_2=\begin{amatrix}[cc]0\amp 0 \\ 0\amp 1\end{amatrix}, A_3=\begin{amatrix}[cc]0\amp 1 \\ 1\amp 0\end{amatrix}\right\}

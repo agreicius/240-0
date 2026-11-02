@@ -887,7 +887,7 @@ B_5 \amp =(\bolde_3, \bolde_1, \bolde_2) \amp B_6\amp =(\bolde_3, \bolde_2, \bol
 </li>
 <li id="eg_coordinatevector_standard-2-2-2">
 <div class="para logical" id="eg_coordinatevector_standard-2-2-2-1">
-<div class="para">Consider the standard basis <span class="process-math">\(B=(E_{11}, E_{12}, E_{21}, E_{22})\)</span> of <span class="process-math">\(M_{22}\text{.}\)</span> For any <span class="process-math">\(A=\begin{bmatrix}a\amp b\\ c\amp d \end{bmatrix}\)</span> we have <span class="process-math">\([A]_B=(a,b,c,d)\)</span> since</div>
+<div class="para">Consider the standard basis <span class="process-math">\(B=(E_{11}, E_{12}, E_{21}, E_{22})\)</span> of <span class="process-math">\(\ML_{2,2}(\R)\text{.}\)</span> For any <span class="process-math">\(A=\begin{bmatrix}a\amp b\\ c\amp d \end{bmatrix}\)</span> we have <span class="process-math">\([A]_B=(a,b,c,d)\)</span> since</div>
 <div class="displaymath process-math" id="eg_coordinatevector_standard-2-2-2-1-5">
 \begin{equation*}
 \underset{A}{\begin{bmatrix}a\amp b\\ c\amp d \end{bmatrix}}=a\underset{E_{11}}{\begin{bmatrix}1\amp 0 \\ 0\amp 0\end{bmatrix}}+b\underset{E_{12}}{\begin{bmatrix}0\amp 1 \\ 0\amp 0\end{bmatrix}}+c\underset{E_{21}}{\begin{bmatrix}0\amp 0 \\ 1\amp 0\end{bmatrix}}+d\underset{E_{22}}{\begin{bmatrix}0\amp 0 \\ 0\amp 1\end{bmatrix}}\text{.}
@@ -917,7 +917,7 @@ B_5 \amp =(\bolde_3, \bolde_1, \bolde_2) \amp B_6\amp =(\bolde_3, \bolde_2, \bol
 </li>
 <li id="ss_coordinate_vectors-10-2-2-2">
 <div class="para logical" id="ss_coordinate_vectors-10-2-2-2-1">
-<div class="para">Consider the reordered basis <span class="process-math">\(B=(E_{22},E_{21},E_{12},E_{11})\)</span> of <span class="process-math">\(M_{22}\text{.}\)</span> Given <span class="process-math">\(A=\begin{bmatrix}a\amp b\\ c\amp d\end{bmatrix}\text{,}\)</span> we have <span class="process-math">\([A]_B=(d,c,b,a)\text{,}\)</span> since</div>
+<div class="para">Consider the reordered basis <span class="process-math">\(B=(E_{22},E_{21},E_{12},E_{11})\)</span> of <span class="process-math">\(\ML_{2,2}(\R)\text{.}\)</span> Given <span class="process-math">\(A=\begin{bmatrix}a\amp b\\ c\amp d\end{bmatrix}\text{,}\)</span> we have <span class="process-math">\([A]_B=(d,c,b,a)\text{,}\)</span> since</div>
 <div class="displaymath process-math" id="ss_coordinate_vectors-10-2-2-2-1-5">
 \begin{equation*}
 \underset{A}{\begin{bmatrix}a\amp b\\ c\amp d \end{bmatrix}}=d\underset{E_{22}}{\begin{bmatrix}0\amp 0 \\ 0\amp 1\end{bmatrix}}+
@@ -1178,13 +1178,13 @@ T(\boldv)=[\boldv]_{B}=(c_1,c_2,\dots, c_n)\text{.}
 S=\left \{ A_1=\begin{bmatrix}2\amp 1\\ 0\amp -2 \end{bmatrix} , A_2=\begin{bmatrix}1\amp 1\\ 1\amp -1 \end{bmatrix} , A_3=\begin{bmatrix}0\amp 1\\ 2\amp 0 \end{bmatrix} , A_4=\begin{bmatrix}-1\amp 0\\ 1\amp 1 \end{bmatrix} \right\}
 \end{equation*}
 </div>
-<div class="para">is a subset of the space <span class="process-math">\(W=\{ A\in M_{22}\colon \tr A=0\}\text{.}\)</span> Let <span class="process-math">\(W'=\Span S\text{.}\)</span> Contract <span class="process-math">\(S\)</span> to a basis of <span class="process-math">\(W'\)</span> and determine whether <span class="process-math">\(W'=W\text{.}\)</span>
+<div class="para">is a subset of the space <span class="process-math">\(W=\{ A\in \ML_{2,2}(\R)\colon \tr A=0\}\text{.}\)</span> Let <span class="process-math">\(W'=\Span S\text{.}\)</span> Contract <span class="process-math">\(S\)</span> to a basis of <span class="process-math">\(W'\)</span> and determine whether <span class="process-math">\(W'=W\text{.}\)</span>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#ss_coordinate_transformation-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="solutions"><details id="ss_coordinate_transformation-8-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
 <div class="para logical" id="ss_coordinate_transformation-8-2-1">
-<div class="para">Let <span class="process-math">\(B=(E_{11}, E_{12}, E_{21}, E_{22})\)</span> be the standard basis of <span class="process-math">\(M_{22}\text{.}\)</span> Apply <span class="process-math">\([\phantom{\boldv}]_B\)</span> to the elements of the given <span class="process-math">\(S\)</span> to get a corresponding set <span class="process-math">\(S'\subseteq\R^4\text{:}\)</span>
+<div class="para">Let <span class="process-math">\(B=(E_{11}, E_{12}, E_{21}, E_{22})\)</span> be the standard basis of <span class="process-math">\(\ML_{2,2}(\R)\text{.}\)</span> Apply <span class="process-math">\([\phantom{\boldv}]_B\)</span> to the elements of the given <span class="process-math">\(S\)</span> to get a corresponding set <span class="process-math">\(S'\subseteq\R^4\text{:}\)</span>
 </div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_contract_extend.html" id="ss_coordinate_transformation-8-2-1-6">
 \begin{equation*}
@@ -1197,7 +1197,7 @@ S'=\left\{ [A_1]_B=(2,1,0,-2), [A_2]_B=(1,1,1,-1), [A_3]_B=(0,1,2,0), [A_4]_B=(-
 T'=\{[A_1]_B=(2,1,0,-2), [A_2]_B=(1,1,1,-1)\}
 \end{equation*}
 </div>
-<div class="para">Translating back to <span class="process-math">\(V=M_{22}\text{,}\)</span> we conclude that the corresponding set</div>
+<div class="para">Translating back to <span class="process-math">\(V=\ML_{2,2}(\R)\text{,}\)</span> we conclude that the corresponding set</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_contract_extend.html" id="ss_coordinate_transformation-8-2-1-13">
 \begin{equation*}
 B=\{A_1, A_2\}
@@ -1371,7 +1371,7 @@ A_1=\begin{bmatrix}
 \end{bmatrix}\text{.}
 \end{equation*}
 </div>
-<div class="para">You may take for granted that <span class="process-math">\(B\)</span> is an ordered basis of <span class="process-math">\(M_{22}\text{.}\)</span>
+<div class="para">You may take for granted that <span class="process-math">\(B\)</span> is an ordered basis of <span class="process-math">\(\ML_{2,2}(\R)\text{.}\)</span>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#s_coordinatevectors_ex-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <ol class="lower-alpha lower-alpha-level-1" id="s_coordinatevectors_ex-3-1-2">
@@ -1385,7 +1385,7 @@ A_1=\begin{bmatrix}
 <li id="s_coordinatevectors_ex-3-1-2-2">
 <div class="para" id="s_coordinatevectors_ex-3-1-2-2-1">Compute <span class="process-math">\([A]_B\)</span> for an arbitrary matrix <span class="process-math">\(\begin{bmatrix}
 a\amp b\\ c\amp d
-\end{bmatrix}\in M_{22}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_coordinatevectors_ex-3-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+\end{bmatrix}\in \ML_{2,2}(\R)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#s_coordinatevectors_ex-3-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Item 5.3.4.5.b"><a href="#s_coordinatevectors_ex-3-1-2-2" title="Copy heading and permalink for Item 5.3.4.5.b" aria-label="Copy heading and permalink for Item 5.3.4.5.b">🔗</a></div>
 </li>
@@ -1426,7 +1426,7 @@ a\amp b\\ c\amp d
 <div class="para">Let</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/proc_contract_extend_general.html" id="s_coordinatevectors_ex-7-1-1-1">
 \begin{equation*}
-S=\left\{A_1=\begin{amatrix}[rr]1\amp 2\\1\amp 1 \end{amatrix}, \ A_2=\begin{amatrix}[rr] 1\amp 1\\2\amp 1\end{amatrix}, A_3=\begin{amatrix}[rr] -1\amp 1\\ -4\amp -1 \end{amatrix} , A_4=\begin{amatrix}[rr] 0\amp 1\\ 2\amp 0\end{amatrix}\right\}\subseteq M_{22}\text{.}
+S=\left\{A_1=\begin{amatrix}[rr]1\amp 2\\1\amp 1 \end{amatrix}, \ A_2=\begin{amatrix}[rr] 1\amp 1\\2\amp 1\end{amatrix}, A_3=\begin{amatrix}[rr] -1\amp 1\\ -4\amp -1 \end{amatrix} , A_4=\begin{amatrix}[rr] 0\amp 1\\ 2\amp 0\end{amatrix}\right\}\subseteq \ML_{2,2}(\R)\text{.}
 \end{equation*}
 </div>
 <ol class="lower-alpha lower-alpha-level-1" id="s_coordinatevectors_ex-7-1-1-2">
