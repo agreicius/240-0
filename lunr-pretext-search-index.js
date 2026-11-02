@@ -4803,7 +4803,7 @@ var ptx_lunr_docs = [
   "url": "s_basis.html#vid_eg_basis_exotic",
   "type": "Example",
   "number": "4.3.9",
-  "title": "Video example: deciding if a set is a basis (<span class=\"process-math\">\\(M_{nn}\\)<\/span>).",
+  "title": "Video example: deciding if a set is a basis (<span class=\"process-math\">\\(\\ML_{n,n}(\\R)\\)<\/span>).",
   "body": " Video example: deciding if a set is a basis ( )   Video: deciding if a set is a basis    "
 },
 {

@@ -576,7 +576,7 @@ a_{m,1} \amp  a_{m,2} \amp  \cdots \amp  a_{m,n}\amp b_{m}
 <ul class="structural toc-item-list">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace.html#ss_subspace" class="internal"><span class="codenumber">4.1.1</span> <span class="title">Definition of subspace</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace.html#ss_subspaces_tuples" class="internal"><span class="codenumber">4.1.2</span> <span class="title">Subspaces of <span class="process-math">\(\R^n\)</span></span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace.html#ss_subspace_matrices" class="internal"><span class="codenumber">4.1.3</span> <span class="title">Important subspaces of <span class="process-math">\(M_{nn}\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_subspace.html#ss_subspace_matrices" class="internal"><span class="codenumber">4.1.3</span> <span class="title">Important subspaces of <span class="process-math">\(\ML_{n,n}(\R)\)</span></span></a></div></li>
 <li class="toc-item toc-exercises"><div class="toc-title-box"><a href="s_subspace.html#s_subspace_ex" class="internal"><span class="codenumber">4.1.4</span> <span class="title">Exercises</span></a></div></li>
 </ul>
 </li>
@@ -1550,13 +1550,13 @@ D\amp=P^{-1}AP \amp A\amp=PDP^{-1} \tag{6.2.8}
 <div class="para">Let <span class="process-math">\(P\)</span> be an invertible <span class="process-math">\(n\times n\)</span> matrix.</div>
 <ol class="decimal" id="th_conjugation-2-1-3">
 <li id="th_conjugation-2-1-3-1">
-<span class="heading li--heading"><span class="title li--heading-title">Conjugation is linear.</span></span><div class="para" id="th_conjugation-2-1-3-1-2">For all <span class="process-math">\(A_1,A_2\in M_{nn}\)</span> and <span class="process-math">\(c_1,c_2\in \R\text{,}\)</span> we have <span class="process-math">\(P^{-1}(c_1A_1+c_2A_2)P=c_1P^{-1}A_1P+c_2P^{-1}A_2P\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#th_conjugation-2-1-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="heading li--heading"><span class="title li--heading-title">Conjugation is linear.</span></span><div class="para" id="th_conjugation-2-1-3-1-2">For all <span class="process-math">\(A_1,A_2\in \ML_{n,n}(\R)\)</span> and <span class="process-math">\(c_1,c_2\in \R\text{,}\)</span> we have <span class="process-math">\(P^{-1}(c_1A_1+c_2A_2)P=c_1P^{-1}A_1P+c_2P^{-1}A_2P\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#th_conjugation-2-1-3-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Item 1: Conjugation is linear"><a href="#th_conjugation-2-1-3-1" title="Copy heading and permalink for Item 1: Conjugation is linear" aria-label="Copy heading and permalink for Item 1: Conjugation is linear">🔗</a></div>
 </li>
 <li id="th_conjugation-2-1-3-2">
 <span class="heading li--heading"><span class="title li--heading-title">Conjugation commutes with powers.</span></span><div class="para logical" id="th_conjugation-2-1-3-2-2">
-<div class="para">For all <span class="process-math">\(A\in M_{nn}\)</span> and integers <span class="process-math">\(k\geq 0\text{,}\)</span> we have</div>
+<div class="para">For all <span class="process-math">\(A\in \ML_{n,n}(\R)\)</span> and integers <span class="process-math">\(k\geq 0\text{,}\)</span> we have</div>
 <div class="displaymath process-math" id="th_conjugation-2-1-3-2-2-3">
 \begin{equation*}
 (P^{-1}AP)^k=P^{-1}A^kP\text{.}
