@@ -67,9 +67,9 @@
 <div class="para">Moving along the <span class="process-math">\(\ell\)</span>-th row, notice that each submatrix <span class="process-math">\({A'}_{\ell j}\)</span> is the result of swapping the two rows of <span class="process-math">\(A_{\ell j}\)</span> that originally corresponded to the <span class="process-math">\(i\)</span>-th and <span class="process-math">\(k\)</span>-th rows of <span class="process-math">\(A\text{.}\)</span> Since these submatrices are of dimension <span class="process-math">\(n\times n\text{,}\)</span> we have <span class="process-math">\(\det  {A'}_{\ell j}=-\det  A_{\ell j}\)</span> by induction. Lastly, since the <span class="process-math">\(\ell\)</span>-th rows of <span class="process-math">\(A\)</span> and <span class="process-math">\(A'\)</span> are the same we have</div>
 <div class="displaymath process-math">
 \begin{align*}
-\det A \amp=\sum_{j=1}^{n+1}(-1)^{\ell+j}a_{\ell j}\det  A_{\ell j} \\
-\amp = \sum_{j=1}^{n+1}(-1)^{\ell+j}a_{\ell j}(-\det  {A'}_{\ell j})\\
-\amp =-\sum_{j=1}^{n+1}(-1)^{\ell+j}a_{\ell j}\det  {A'}_{\ell j} \\
+\det A \amp=\sum_{j=1}^{n+1}(-1)^{\ell+j}a_{\ell ,j}\det  A_{\ell, j} \\
+\amp = \sum_{j=1}^{n+1}(-1)^{\ell+j}a_{\ell ,j}(-\det  {A'}_{\ell, j})\\
+\amp =-\sum_{j=1}^{n+1}(-1)^{\ell+j}a_{\ell ,j}\det  {A'}_{\ell, j} \\
 \amp=-\det A' \text{.}
 \end{align*}
 </div>

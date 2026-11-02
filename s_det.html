@@ -782,21 +782,21 @@ A \text{ is invertible } \iff \det A \ne 0\text{,}
 <article class="definition definition-like" id="d_minors"><h4 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Submatrix notation.</span>
 </h4>
-<div class="para" id="d_minors-4-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> matrix with <span class="process-math">\(n\geq 2\text{.}\)</span> Given <span class="process-math">\(1\leq i, j\leq n\text{,}\)</span> the <dfn class="terminology">submatrix of <span class="process-math">\(A\)</span></dfn> obtained by removing the <span class="process-math">\(i\)</span>-th row and <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(A\)</span> is denoted <span class="process-math">\(A_{i  j}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#d_minors-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="d_minors-4-1">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> matrix with <span class="process-math">\(n\geq 2\text{.}\)</span> Given <span class="process-math">\(1\leq i, j\leq n\text{,}\)</span> the <dfn class="terminology">submatrix of <span class="process-math">\(A\)</span></dfn> obtained by removing the <span class="process-math">\(i\)</span>-th row and <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(A\)</span> is denoted <span class="process-math">\(A_{i , j}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#d_minors-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Definition 3.5.1: Submatrix notation"><a href="#d_minors" title="Copy heading and permalink for Definition 3.5.1: Submatrix notation" aria-label="Copy heading and permalink for Definition 3.5.1: Submatrix notation">🔗</a></div></article><article class="warning remark-like" id="rm_minors"><h4 class="heading">
 <span class="type">Warning</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="rm_minors-1-1">Do not conflate the submatrix notation <span class="process-math">\(A_{ij}\)</span> with matrix entry notation <span class="process-math">\([A]_{ij}\text{:}\)</span> the former returns the submatrix of <span class="process-math">\(A\)</span> obtained by deleting the <span class="process-math">\(i\)</span>-th row and <span class="process-math">\(j\)</span>-th column; the latter returns the <span class="process-math">\(ij\)</span>-th entry of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#rm_minors-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="rm_minors-1-1">Do not conflate the submatrix notation <span class="process-math">\(A_{i,j}\)</span> with matrix entry notation <span class="process-math">\([A]_{i,j}\text{:}\)</span> the former returns the submatrix of <span class="process-math">\(A\)</span> obtained by deleting the <span class="process-math">\(i\)</span>-th row and <span class="process-math">\(j\)</span>-th column; the latter returns the <span class="process-math">\(ij\)</span>-th entry of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#rm_minors-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Warning 3.5.2"><a href="#rm_minors" title="Copy heading and permalink for Warning 3.5.2" aria-label="Copy heading and permalink for Warning 3.5.2">🔗</a></div></article><article class="definition definition-like" id="d_det"><h4 class="heading">
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The determinant.</span>
 </h4>
 <div class="para logical" id="d_det-4-1">
-<div class="para">Let <span class="process-math">\(A=[a_{ij}]_{n\times n}\text{.}\)</span> The determinant is defined as follows:</div>
+<div class="para">Let <span class="process-math">\(A=[a_{i,j}]_{n\times n}\text{.}\)</span> The determinant is defined as follows:</div>
 <ul class="disc" id="d_det-4-1-2">
 <li id="d_det-4-1-2-1">
-<span class="heading li--heading"><span class="title li--heading-title">Base case: <span class="process-math">\(n=1\)</span>.</span></span><div class="para" id="d_det-4-1-2-1-2">When <span class="process-math">\(n=1\)</span> we have <span class="process-math">\(A=[a_{11}]\)</span> and we define <span class="process-math">\(\det A=a_{11}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#d_det-4-1-2-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<span class="heading li--heading"><span class="title li--heading-title">Base case: <span class="process-math">\(n=1\)</span>.</span></span><div class="para" id="d_det-4-1-2-1-2">When <span class="process-math">\(n=1\)</span> we have <span class="process-math">\(A=[a_{1,1}]\)</span> and we define <span class="process-math">\(\det A=a_{1,1}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#d_det-4-1-2-1-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Item: Base case: n=1"><a href="#d_det-4-1-2-1" title="Copy heading and permalink for Item: Base case: n=1" aria-label="Copy heading and permalink for Item: Base case: n=1">🔗</a></div>
 </li>
@@ -805,8 +805,8 @@ A \text{ is invertible } \iff \det A \ne 0\text{,}
 <div class="para">When <span class="process-math">\(n\geq 2\)</span> we define</div>
 <div class="displaymath process-math" id="d_det-4-1-2-2-2-2">
 \begin{align}
-\det A \amp = \sum_{j=1}^n(-1)^{1+j}a_{1j}\det A_{1, j} \tag{3.5.1}\\
-\amp = a_{11}\det A_{11}-a_{12} A_{12}+\cdots +(-1)^{1+n}a_{1\, n}\det A_{1\, n}\text{.}\tag{3.5.2}
+\det A \amp = \sum_{j=1}^n(-1)^{1+j}a_{1,j}\det A_{1, j} \tag{3.5.1}\\
+\amp = a_{1,1}\det A_{1,1}-a_{1,2} A_{1,2}+\cdots +(-1)^{1+n}a_{1\, n}\det A_{1\, n}\text{.}\tag{3.5.2}
 \end{align}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#d_det-4-1-2-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -824,7 +824,7 @@ A \text{ is invertible } \iff \det A \ne 0\text{,}
 <div class="para">Given <span class="process-math">\(A=\abcdmatrix{a}{b}{c}{d}\text{,}\)</span> we have</div>
 <div class="displaymath process-math" id="rm_det_small_cases-2-2-2">
 \begin{align*}
-\det A\amp = (-1)^{1+1}a\det A_{11}+(-1)^{1+2}b\det A_{12}\amp \text{(recursive case)}\\
+\det A\amp = (-1)^{1+1}a\det A_{1,1}+(-1)^{1+2}b\det A_{1,2}\amp \text{(recursive case)}\\
 \amp =a\det [d]-b\det [c] \amp \text{(base case)}\\
 \amp =ad-bc \text{.}
 \end{align*}
@@ -841,7 +841,7 @@ A=\begin{amatrix}[ccc]a\amp b\amp c\\ d\amp e\amp f\\ g\amp h\amp i  \end{amatri
 <div class="para">we have</div>
 <div class="displaymath process-math" id="rm_det_small_cases-2-3-2">
 \begin{align*}
-\det A \amp =a\det A_{11}-b\det A _{12}+c\det A_{13} \amp \text{(recursive case)}\\
+\det A \amp =a\det A_{1,1}-b\det A _{1,2}+c\det A_{1,3} \amp \text{(recursive case)}\\
 \amp =a\det \abcdmatrix{e}{f}{h}{i}-b\det\abcdmatrix{d}{f}{g}{i}+c\det\abcdmatrix{d}{e}{g}{h}\\
 \amp = a(ei-fh)-b(di-fg)+c(dh-eg) \amp \text{(\(n=2\) case)}\text{.}
 \end{align*}
@@ -854,10 +854,10 @@ A=\begin{amatrix}[ccc]a\amp b\amp c\\ d\amp e\amp f\\ g\amp h\amp i  \end{amatri
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Determinant of triangular matrices.</span>
 </h4>
 <div class="para logical" id="th_det_triangular-2-1">
-<div class="para">Let <span class="process-math">\(A=[a_{ij}]_{n\times n}\)</span> be triangular (upper, lower, or diagonal). Then</div>
+<div class="para">Let <span class="process-math">\(A=[a_{i,j}]_{n\times n}\)</span> be triangular (upper, lower, or diagonal). Then</div>
 <div class="displaymath process-math" id="th_det_triangular-2-1-2">
 \begin{equation*}
-\det A=a_{11}a_{22}\cdots a_{nn}\text{.}
+\det A=a_{1,1}a_{2,2}\cdots a_{n,n}\text{.}
 \end{equation*}
 </div>
 <div class="para">In other words, the determinant of a triangular matrix is the product of its diagonal entries.</div>
@@ -868,17 +868,17 @@ A=\begin{amatrix}[ccc]a\amp b\amp c\\ d\amp e\amp f\\ g\amp h\amp i  \end{amatri
 <div class="para" id="th_det_triangular-3-2">For any <span class="process-math">\(n\geq 1\)</span> let <span class="process-math">\(P(n)\)</span> denote the proposition: “The determinant of any <span class="process-math">\(n\times n\)</span> lower triangular matrix is the product of its diagonal entries”. We prove by induction that <span class="process-math">\(P(n)\)</span> is true for all <span class="process-math">\(n\geq 1\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#th_det_triangular-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="case" id="th_det_triangular-3-3"><h5 class="heading">Base step: show <span class="process-math">\(P(1)\)</span> is true.</h5>
-<div class="para" id="th_det_triangular-3-3-2">In this case <span class="process-math">\(A=[a_{11}]\text{,}\)</span> and <span class="process-math">\(\det A=a_{11} \)</span> is indeed the product of the diagonal entries of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#th_det_triangular-3-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="th_det_triangular-3-3-2">In this case <span class="process-math">\(A=[a_{1,1}]\text{,}\)</span> and <span class="process-math">\(\det A=a_{1,1} \)</span> is indeed the product of the diagonal entries of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#th_det_triangular-3-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Case: Base step: show P(1) is true"><a href="#th_det_triangular-3-3" title="Copy heading and permalink for Case: Base step: show P(1) is true" aria-label="Copy heading and permalink for Case: Base step: show P(1) is true">🔗</a></div></article><article class="case" id="th_det_triangular-3-4"><h5 class="heading">Induction step: show <span class="process-math">\(P(n)\implies P(n+1)\)</span> for all <span class="process-math">\(n\geq 1\)</span>.</h5>
 <div class="para logical" id="th_det_triangular-3-4-2">
-<div class="para">Let <span class="process-math">\(A=[a_{ij}]_{(n+1)\times (n+1)}\)</span> be a lower triangular matrix. Then <span class="process-math">\(a_{1j}=0\)</span> for all <span class="process-math">\(j\geq 2\text{,}\)</span> and hence the determinant of <span class="process-math">\(A\)</span> is given by</div>
+<div class="para">Let <span class="process-math">\(A=[a_{i,j}]_{(n+1)\times (n+1)}\)</span> be a lower triangular matrix. Then <span class="process-math">\(a_{1,j}=0\)</span> for all <span class="process-math">\(j\geq 2\text{,}\)</span> and hence the determinant of <span class="process-math">\(A\)</span> is given by</div>
 <div class="displaymath process-math" id="th_det_triangular-3-4-2-5">
 \begin{equation*}
-\det A=a_{11}\det  A_{11}\text{.}
+\det A=a_{1,1}\det  A_{1,1}\text{.}
 \end{equation*}
 </div>
-<div class="para">Claim: <span class="process-math">\(A_{i  k}\)</span> is lower triangular. Indeed, first observe that we have</div>
+<div class="para">Claim: <span class="process-math">\(A_{i , j}\)</span> is lower triangular. Indeed, first observe that we have</div>
 <div class="displaymath process-math" id="th_det_triangular-3-4-2-7">
 \begin{equation*}
 ( A_{11})_{ij}=a_{i+1,j+1}
@@ -887,7 +887,7 @@ A=\begin{amatrix}[ccc]a\amp b\amp c\\ d\amp e\amp f\\ g\amp h\amp i  \end{amatri
 <div class="para">for all <span class="process-math">\(1\leq i,j\leq n\text{;}\)</span> by deleting the first row and first column we effectively bump each index up by one. Since <span class="process-math">\(A\)</span> is lower triangular we have  <span class="process-math">\(a_{ij}=0\)</span> for all <span class="process-math">\(1\leq i \lt; j\leq n+1\text{,}\)</span> and hence also</div>
 <div class="displaymath process-math" id="th_det_triangular-3-4-2-12">
 \begin{equation*}
-( A_{11})_{ij}=a_{i+1,j+1}=0
+( A_{11})_{i,j}=a_{i+1,j+1}=0
 \end{equation*}
 </div>
 <div class="para">for all <span class="process-math">\(1\leq i &lt; j\leq n \text{,}\)</span> proving the claim.</div>
@@ -897,9 +897,9 @@ A=\begin{amatrix}[ccc]a\amp b\amp c\\ d\amp e\amp f\\ g\amp h\amp i  \end{amatri
 <div class="para">Lastly, assuming <span class="process-math">\(P(n)\)</span> is true (the induction hypothesis) we have</div>
 <div class="displaymath process-math" id="th_det_triangular-3-4-3-2">
 \begin{align*}
-\det A \amp=a_{11}\det A_{11} \\
-\amp =a_{11}(a_{22}a_{33}\cdots a_{n+1,n+1})\amp \text{(induction)} \\
-\amp =a_{11}a_{22}\cdots a_{n+1,n+1} \text{,}
+\det A \amp=a_{1,1}\det A_{1,1} \\
+\amp =a_{1,1}(a_{2,2}a_{3,3}\cdots a_{n+1,n+1})\amp \text{(induction)} \\
+\amp =a_{1,1}a_{2,2}\cdots a_{n+1,n+1} \text{,}
 \end{align*}
 </div>
 <div class="para">as desired.</div>
@@ -920,10 +920,10 @@ A=\begin{amatrix}[ccc]a\amp b\amp c\\ d\amp e\amp f\\ g\amp h\amp i  \end{amatri
 <span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Minors and expansions along rows/columns.</span>
 </h4>
 <div class="para logical" id="d_minors_expansions-5-1">
-<div class="para">Given an <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A\text{,}\)</span> for any pair <span class="process-math">\(1\leq i,j\leq n\)</span> the <dfn class="terminology"><span class="process-math">\(ij\)</span>-th minor of <span class="process-math">\(A\)</span></dfn> is defined as</div>
+<div class="para">Given an <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A\text{,}\)</span> for any pair <span class="process-math">\(1\leq i,j\leq n\)</span> the <dfn class="terminology"><span class="process-math">\(i,j\)</span>-th minor of <span class="process-math">\(A\)</span></dfn> is defined as</div>
 <div class="displaymath process-math" id="d_minors_expansions-5-1-5">
 \begin{equation*}
-M_{ij}=\det A_{i  k}\text{.}
+M_{i,j}=\det A_{i , j}\text{.}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#d_minors_expansions-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -931,7 +931,7 @@ M_{ij}=\det A_{i  k}\text{.}
 <div class="para">For any <span class="process-math">\(1\leq i\leq n\)</span> the expression</div>
 <div class="displaymath process-math" id="d_minors_expansions-5-2-2">
 \begin{equation*}
-\sum_{k=1}^n(-1)^{i+k}a_{ik}M_{ik}
+\sum_{k=1}^n(-1)^{i+k}a_{i,k}M_{i,k}
 \end{equation*}
 </div>
 <div class="para">is called the <dfn class="terminology">expansion along the <span class="process-math">\(i\)</span>-th row of <span class="process-math">\(A\)</span></dfn>.</div>
@@ -940,7 +940,7 @@ M_{ij}=\det A_{i  k}\text{.}
 <div class="para">For any <span class="process-math">\(1\leq j\leq n\text{,}\)</span> the expression</div>
 <div class="displaymath process-math" id="d_minors_expansions-5-3-2">
 \begin{equation*}
-\sum_{k=1}^n(-1)^{k+j}a_{kj}M_{kj}
+\sum_{k=1}^n(-1)^{k+j}a_{k,j}M_{k,j}
 \end{equation*}
 </div>
 <div class="para">is called the <dfn class="terminology">expansion along the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(A\)</span></dfn>.</div>
@@ -950,10 +950,10 @@ M_{ij}=\det A_{i  k}\text{.}
 <span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Expansion along rows.</span>
 </h4>
 <div class="para logical" id="th_expansion_row-2-1">
-<div class="para">Let <span class="process-math">\(A=[a_{ij}]_{n\times n}\text{.}\)</span> For any <span class="process-math">\(1\leq i\leq n\)</span> we have</div>
+<div class="para">Let <span class="process-math">\(A=[a_{i,j}]_{n\times n}\text{.}\)</span> For any <span class="process-math">\(1\leq i\leq n\)</span> we have</div>
 <div class="displaymath process-math" id="th_expansion_row-2-1-3">
 \begin{equation*}
-\det A=  \sum_{k=1}^n(-1)^{i+k}a_{ik}M_{ik}\text{.}
+\det A=  \sum_{k=1}^n(-1)^{i+k}a_{i,k}M_{i,k}\text{.}
 \end{equation*}
 </div>
 <div class="para">In other words, we can compute <span class="process-math">\(\det A\)</span> by expanding along any row of <span class="process-math">\(A\text{.}\)</span>
@@ -975,39 +975,39 @@ A=\begin{bmatrix}a\amp b\\ c\amp d\end{bmatrix}
 </div>
 <div class="autopermalink" data-description="Case: Base step: n=1, 2"><a href="#th_expansion_row-3-2" title="Copy heading and permalink for Case: Base step: n=1, 2" aria-label="Copy heading and permalink for Case: Base step: n=1, 2">🔗</a></div></article><article class="case" id="th_expansion_row-3-3"><h5 class="heading">Induction step.</h5>
 <div class="para logical" id="th_expansion_row-3-3-2">
-<div class="para">Assume the claim is true of any <span class="process-math">\((n-1)\times (n-1)\)</span> matrix.  Given <span class="process-math">\(A=[a_{ij}]_{n\times n}\)</span> we have</div>
+<div class="para">Assume the claim is true of any <span class="process-math">\((n-1)\times (n-1)\)</span> matrix.  Given <span class="process-math">\(A=[a_{i,j}]_{n\times n}\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_det_def.html ./knowl/xref/eq_det_submatrix.html ./knowl/xref/eq_entry_formula_1.html ./knowl/xref/eq_iterated_submatrix.html" id="eq_det_def">
 \begin{equation}
-\det A=\sum_{j=1}^n (-1)^{1+j}a_{1 j}\det  A_{1j}\text{.}\tag{3.5.3}
+\det A=\sum_{j=1}^n (-1)^{1+j}a_{1, j}\det  A_{1,j}\text{.}\tag{3.5.3}
 \end{equation}
 </div>
 <div class="para">Expanding along the <span class="process-math">\(i\)</span>-th row of <span class="process-math">\(A\)</span> for any <span class="process-math">\(2\leq i\leq n\text{,}\)</span> on the other hand, we get</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_det_def.html ./knowl/xref/eq_det_submatrix.html ./knowl/xref/eq_entry_formula_1.html ./knowl/xref/eq_iterated_submatrix.html" id="eq_det_expansion">
 \begin{equation}
-\sum_{k=1}^n (-1)^{i+k}a_{ik}\det A_{i  k}\text{.}\tag{3.5.4}
+\sum_{k=1}^n (-1)^{i+k}a_{i,k}\det A_{i , k}\text{.}\tag{3.5.4}
 \end{equation}
 </div>
 <div class="para">To show these two expressions are equal we use the induction hypothesis to compute each <span class="process-math">\(\det  A_{1  j}\)</span> by expanding along its <span class="process-math">\((i-1)\)</span>-th row:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_det_def.html ./knowl/xref/eq_det_submatrix.html ./knowl/xref/eq_entry_formula_1.html ./knowl/xref/eq_iterated_submatrix.html" id="eq_det_submatrix">
 \begin{equation}
-\det  A_{1j}=\sum_{k=1}^{n-1}(-1)^{i-1+k}[ A_{1j}]_{(i-1) k}\det {( A_{1j})}_{(i-1) k}\text{.}\tag{3.5.5}
+\det  A_{1,j}=\sum_{k=1}^{n-1}(-1)^{i-1+k}[ A_{1,j}]_{(i-1),k}\det {( A_{1,j})}_{(i-1) k}\text{.}\tag{3.5.5}
 \end{equation}
 </div>
-<div class="para">The matrix <span class="process-math">\((A_{1j})_{(i-1) k}\)</span> is the result of first deleting row 1 and column <span class="process-math">\(j\)</span> from <span class="process-math">\(A\text{,}\)</span> and then deleting row <span class="process-math">\((i-1)\)</span> and column <span class="process-math">\(k\)</span> of the resulting matrix.  To deal with such iterated submatrices, we make some simple observations relating the rows and columns of <span class="process-math">\(A_{1 j}\)</span> and <span class="process-math">\(A_{i  k}\)</span> with those of <span class="process-math">\(A\text{.}\)</span>
+<div class="para">The matrix <span class="process-math">\((A_{1,j})_{(i-1), k}\)</span> is the result of first deleting row 1 and column <span class="process-math">\(j\)</span> from <span class="process-math">\(A\text{,}\)</span> and then deleting row <span class="process-math">\((i-1)\)</span> and column <span class="process-math">\(k\)</span> of the resulting matrix.  To deal with such iterated submatrices, we make some simple observations relating the rows and columns of <span class="process-math">\(A_{1 ,j}\)</span> and <span class="process-math">\(A_{i , k}\)</span> with those of <span class="process-math">\(A\text{.}\)</span>
 </div>
 <ul class="disc" id="th_expansion_row-3-3-2-19">
 <li id="th_expansion_row-3-3-2-19-1">
-<div class="para" id="th_expansion_row-3-3-2-19-1-1">The <span class="process-math">\((i-1)\)</span>-th row of <span class="process-math">\(A_{1  j}\)</span> corresponds to the <span class="process-math">\(i\)</span>-th row of <span class="process-math">\(A\text{,}\)</span> and the first row of <span class="process-math">\(A_{i  k}\)</span> corresponds to the first row of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#th_expansion_row-3-3-2-19-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="th_expansion_row-3-3-2-19-1-1">The <span class="process-math">\((i-1)\)</span>-th row of <span class="process-math">\(A_{1 , j}\)</span> corresponds to the <span class="process-math">\(i\)</span>-th row of <span class="process-math">\(A\text{,}\)</span> and the first row of <span class="process-math">\(A_{i , k}\)</span> corresponds to the first row of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#th_expansion_row-3-3-2-19-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Item"><a href="#th_expansion_row-3-3-2-19-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 <li id="th_expansion_row-3-3-2-19-2">
-<div class="para" id="th_expansion_row-3-3-2-19-2-1">If <span class="process-math">\(k\lt j\text{,}\)</span> then the <span class="process-math">\(k\)</span>-th column of <span class="process-math">\(A_{1  j}\)</span> corresponds to the <span class="process-math">\(k\)</span>-th column of <span class="process-math">\(A\text{;}\)</span> if <span class="process-math">\(k\geq j\text{,}\)</span> then the <span class="process-math">\(k\)</span>-th column of <span class="process-math">\(A_{1  j}\)</span> corresponds to the <span class="process-math">\((k+1)\)</span>-th column of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#th_expansion_row-3-3-2-19-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="th_expansion_row-3-3-2-19-2-1">If <span class="process-math">\(k\lt j\text{,}\)</span> then the <span class="process-math">\(k\)</span>-th column of <span class="process-math">\(A_{1 , j}\)</span> corresponds to the <span class="process-math">\(k\)</span>-th column of <span class="process-math">\(A\text{;}\)</span> if <span class="process-math">\(k\geq j\text{,}\)</span> then the <span class="process-math">\(k\)</span>-th column of <span class="process-math">\(A_{1 , j}\)</span> corresponds to the <span class="process-math">\((k+1)\)</span>-th column of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#th_expansion_row-3-3-2-19-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Item"><a href="#th_expansion_row-3-3-2-19-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
 <li id="th_expansion_row-3-3-2-19-3">
-<div class="para" id="th_expansion_row-3-3-2-19-3-1">If <span class="process-math">\(j\lt k\text{,}\)</span> then the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(A_{ik}\)</span> corresponds to the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(A\text{;}\)</span> if <span class="process-math">\(j\geq k\text{,}\)</span> then the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(A_{ik}\)</span> corresponds to the <span class="process-math">\((j+1)\)</span>-th column of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#th_expansion_row-3-3-2-19-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="th_expansion_row-3-3-2-19-3-1">If <span class="process-math">\(j\lt k\text{,}\)</span> then the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(A_{i,k}\)</span> corresponds to the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(A\text{;}\)</span> if <span class="process-math">\(j\geq k\text{,}\)</span> then the <span class="process-math">\(j\)</span>-th column of <span class="process-math">\(A_{i,k}\)</span> corresponds to the <span class="process-math">\((j+1)\)</span>-th column of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#th_expansion_row-3-3-2-19-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Item"><a href="#th_expansion_row-3-3-2-19-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
 </li>
@@ -1015,35 +1015,35 @@ A=\begin{bmatrix}a\amp b\\ c\amp d\end{bmatrix}
 <div class="para">From these observations we derive the following table of formulas:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_det_def.html ./knowl/xref/eq_det_submatrix.html ./knowl/xref/eq_entry_formula_1.html ./knowl/xref/eq_iterated_submatrix.html" id="th_expansion_row-3-3-2-20">
 \begin{align}
-[ A_{1j}]_{(i-1)  k} \amp =\begin{cases}
-a_{i  k} \amp \text{if } k\lt j\\
-a_{i  (k+1)}  \amp \text{if } k\geq j
+[ A_{1,j}]_{(i-1), k} \amp =\begin{cases}
+a_{i, k} \amp \text{if } k\lt j\\
+a_{i, (k+1)}  \amp \text{if } k\geq j
 \end{cases} \tag{3.5.6}\\
-[ A_{i  k}]_{1  j} \amp =\begin{cases}
-a_{1  j}  \amp \text{if } j\lt k\\
-a_{1  (j+1)} \amp \text{if } k\leq j
+[ A_{i, k}]_{1, j} \amp =\begin{cases}
+a_{1, j}  \amp \text{if } j\lt k\\
+a_{1, (j+1)} \amp \text{if } k\leq j
 \end{cases} \tag{3.5.7}\\
-{( A_{1j})}_{i-1  k}\amp=\begin{cases}
-{( A_{i  k})}_{1  (j-1)} \amp\text{if } k\lt j \\
-{( A_{i  (k+1)})}_{1  j} \amp \text{if } k\geq j
+{( A_{1,j})}_{i-1, k}\amp=\begin{cases}
+{( A_{i, k})}_{1, (j-1)} \amp\text{if } k\lt j \\
+{( A_{i, (k+1)})}_{1, j} \amp \text{if } k\geq j
 \text{.}\end{cases}\tag{3.5.8}
 \end{align}
 </div>
 <div class="para">We now begin to unpack <a href="s_det.html#eq_det_def" class="xref" data-knowl="./knowl/xref/eq_det_def.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.5.3">(3.5.3)</a>:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_det_def.html ./knowl/xref/eq_det_submatrix.html ./knowl/xref/eq_entry_formula_1.html ./knowl/xref/eq_iterated_submatrix.html" id="th_expansion_row-3-3-2-22">
 \begin{align*}
-\det A \amp= \sum_{j=1}^n (-1)^{1+j}a_{1 j}\det  A_{1j}\\
-\amp = \sum_{j=1}^n (-1)^{1+j}a_{1 j}\sum_{k=1}^{n-1}(-1)^{i-1+k}[ A_{1j}]_{(i-1)k}\det {( A_{1j})}_{(i-1)k} \amp \knowl{./knowl/xref/eq_det_submatrix.html}{\text{(3.5.5)}}\\
+\det A \amp= \sum_{j=1}^n (-1)^{1+j}a_{1, j}\det  A_{1,j}\\
+\amp = \sum_{j=1}^n (-1)^{1+j}a_{1, j}\sum_{k=1}^{n-1}(-1)^{i-1+k}[ A_{1,j}]_{(i-1),k}\det {( A_{1,j})}_{(i-1),k} \amp \knowl{./knowl/xref/eq_det_submatrix.html}{\text{(3.5.5)}}\\
 \amp
-= \underset{k\lt j \text{ terms}}{\underbrace{\sum_{j=2}^n \sum_{k=1}^{j-1}(-1)^{i+j+k}a_{1 j}a_{i  k}\det (A_{i  k})_{1  (j-1)}}}+\underset{k\geq j \text{ terms}}{\underbrace{\sum_{j=1}^{n-1} \sum_{k=j}^{n-1}(-1)^{i+j+k}a_{1 j}a_{i  (k+1)}\det (A_{i  (k+1)})_{1  j}}}
+= \underset{k\lt j \text{ terms}}{\underbrace{\sum_{j=2}^n \sum_{k=1}^{j-1}(-1)^{i+j+k}a_{1, j}a_{i, k}\det (A_{i, k})_{1, (j-1)}}}+\underset{k\geq j \text{ terms}}{\underbrace{\sum_{j=1}^{n-1} \sum_{k=j}^{n-1}(-1)^{i+j+k}a_{1, j}a_{i, (k+1)}\det (A_{i, (k+1)})_{1, j}}}
 \amp \knowl{./knowl/xref/eq_entry_formula_1.html}{\text{(3.5.6)}}, \knowl{./knowl/xref/eq_iterated_submatrix.html}{\text{(3.5.8)}}\\
-\amp = \underset{j\geq k \text{ terms}}{\underbrace{\sum_{j=1}^{n-1} \sum_{k=1}^{j}(-1)^{i+j+k+1}a_{i  k}[A_{ik}]_{1j}\det (A_{i  k})_{1  j}}}+\underset{j\lt k \text{ terms}}{\underbrace{\sum_{j=1}^{n-1} \sum_{k=j+1}^{n}(-1)^{i+j+k-1}a_{ik}[A_{ik}]_{1 j}\det (A_{ik})_{1  j}}}
+\amp = \underset{j\geq k \text{ terms}}{\underbrace{\sum_{j=1}^{n-1} \sum_{k=1}^{j}(-1)^{i+j+k+1}a_{i , k}[A_{i,k}]_{1,j}\det (A_{i , k})_{1  j}}}+\underset{j\lt k \text{ terms}}{\underbrace{\sum_{j=1}^{n-1} \sum_{k=j+1}^{n}(-1)^{i+j+k-1}a_{i, k}[A_{i,k}]_{1 j}\det (A_{i,k})_{1 , j}}}
 \amp (\text{re-labeled } j=j-1, k=k+1)\\
-\amp = \underset{j\geq k \text{ terms}}{\underbrace{\sum_{j=1}^{n-1} \sum_{k=1}^{j}(-1)^{i+j+k+1}a_{i  k}[A_{ik}]_{1j}\det (A_{i  k})_{1  j}}}+\underset{j\lt k \text{ terms}}{\underbrace{\sum_{j=1}^{n-1} \sum_{k=j+1}^{n}(-1)^{i+j+k+1}a_{ik}[A_{ik}]_{1 j}\det (A_{ik})_{1  j}}}
+\amp = \underset{j\geq k \text{ terms}}{\underbrace{\sum_{j=1}^{n-1} \sum_{k=1}^{j}(-1)^{i+j+k+1}a_{i , k}[A_{i,k}]_{1,j}\det (A_{i , k})_{1  j}}}+\underset{j\lt k \text{ terms}}{\underbrace{\sum_{j=1}^{n-1} \sum_{k=j+1}^{n}(-1)^{i+j+k+1}a_{i, k}[A_{i,k}]_{1 j}\det (A_{i,k})_{1  j}}}
 \amp ((-1)^{c+2}=(-1)^c)\\
-\amp =\sum_{k=1}^{n}(-1)^{i+k}a_{ik}\sum_{j=1}^{n-1}(-1)^{j+1}[A_{ik}]_{1j}\det (A_{ik})_{1j}
+\amp =\sum_{k=1}^{n}(-1)^{i+k}a_{i,k}\sum_{j=1}^{n-1}(-1)^{j+1}[A_{i,k}]_{1,j}\det (A_{i,k})_{1j}
 \amp (\text{re-order terms})\\
-\amp =\sum_{k=1}^{n}(-1)^{i+k}a_{ik}\det A_{ik} \text{.}
+\amp =\sum_{k=1}^{n}(-1)^{i+k}a_{i,k}\det A_{i,k} \text{.}
 \end{align*}
 </div>
 <div class="para">This completes the induction step, and thus the proof is finished.</div>
@@ -1070,10 +1070,10 @@ a_{1  (j+1)} \amp \text{if } k\leq j
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_expansion_row.html ./knowl/xref/th_expansion_row.html" id="th_det_transpose-3-2-6">
 \begin{align*}
 \det A^T \amp = \frac{1}{n}\sum_{i=1}^{n}\det A^T \\
-\amp =\frac{1}{n}\sum_{i=1}^n\sum_{j=1}^n(-1)^{i+j}[A^T]_{ij}\det \left((A^T)_{ij}\right) \amp (\knowl{./knowl/xref/th_expansion_row.html}{\text{Theorem 3.5.8}}) \\
-\amp = \frac{1}{n}\sum_{i=1}^n\sum_{j=1}^n(-1)^{i+j}[A]_{ji}\det (A_{ji})^T \amp ([A^T]_{ij}=A_{ji}, (A^T)_{ij}=(A_{ji})^T)\\
-\amp = \frac{1}{n}\sum_{i=1}^n\sum_{j=1}^n(-1)^{i+j}[A]_{ji}\det A_{ji} \amp (\det (A_{ji})^T=\det A_{ji}, \text{ by induction})\\
-\amp= \frac{1}{n}\sum_{j=1}^n\sum_{i=1}^n(-1)^{i+j}[A]_{ji}\det A_{ji} \amp (\text{props. of addition})\\
+\amp =\frac{1}{n}\sum_{i=1}^n\sum_{j=1}^n(-1)^{i+j}[A^T]_{i,j}\det \left((A^T)_{i,j}\right) \amp (\knowl{./knowl/xref/th_expansion_row.html}{\text{Theorem 3.5.8}}) \\
+\amp = \frac{1}{n}\sum_{i=1}^n\sum_{j=1}^n(-1)^{i+j}[A]_{j,i}\det (A_{j,i})^T \amp ([A^T]_{i,j}=A_{j,i}, (A^T)_{i,j}=(A_{j,i})^T)\\
+\amp = \frac{1}{n}\sum_{i=1}^n\sum_{j=1}^n(-1)^{i+j}[A]_{j,i}\det A_{j,i} \amp (\det (A_{j,i})^T=\det A_{j,i}, \text{ by induction})\\
+\amp= \frac{1}{n}\sum_{j=1}^n\sum_{i=1}^n(-1)^{i+j}[A]_{j,i}\det A_{j,i} \amp (\text{props. of addition})\\
 \amp =\frac{1}{n}\sum_{j=1}^n\det A \amp (\knowl{./knowl/xref/th_expansion_row.html}{\text{Theorem 3.5.8}})\\
 \amp = \det A\text{.}
 \end{align*}
@@ -1085,10 +1085,10 @@ a_{1  (j+1)} \amp \text{if } k\leq j
 <span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Expansion along columns.</span>
 </h4>
 <div class="para logical" id="cor_expansion_columns-2-1">
-<div class="para">Let <span class="process-math">\(A=[a_{ij}]_{n\times n}\text{.}\)</span> For any <span class="process-math">\(1\leq j\leq n\)</span> we have</div>
+<div class="para">Let <span class="process-math">\(A=[a_{i,j}]_{n\times n}\text{.}\)</span> For any <span class="process-math">\(1\leq j\leq n\)</span> we have</div>
 <div class="displaymath process-math" id="cor_expansion_columns-2-1-3">
 \begin{equation*}
-\det A=  \sum_{k=1}^n(-1)^{k+j}a_{kj}M_{kj}\text{.}
+\det A=  \sum_{k=1}^n(-1)^{k+j}a_{k,j}M_{k,j}\text{.}
 \end{equation*}
 </div>
 <div class="para">In other words, we can compute <span class="process-math">\(\det A\)</span> by expanding along any column of <span class="process-math">\(A\text{.}\)</span>
@@ -1099,8 +1099,8 @@ a_{1  (j+1)} \amp \text{if } k\leq j
 <div class="para">For any <span class="process-math">\(1\leq j\leq n\text{,}\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_transpose.html ./knowl/xref/d_det.html ./knowl/xref/th_det_transpose.html" id="cor_expansion_columns-3-1-2">
 \begin{align*}
-\sum_{k=1}^n(-1)^{k+j}a_{kj}M_{kj}\amp =\sum_{k=1}^n(-1)^{k+j}(A^T)_{jk}\det A_{kj} \amp (\knowl{./knowl/xref/d_transpose.html}{\text{Definition 3.1.21}})\\
-\amp = \sum_{k=1}^n(-1)^{k+j}(A^T)_{jk}\det (A^T)_{jk} \amp ( (A^T)_{ij}= A_{ji}) \\
+\sum_{k=1}^n(-1)^{k+j}a_{k,j}M_{k,j}\amp =\sum_{k=1}^n(-1)^{k+j}(A^T)_{j,k}\det A_{j,k} \amp (\knowl{./knowl/xref/d_transpose.html}{\text{Definition 3.1.21}})\\
+\amp = \sum_{k=1}^n(-1)^{k+j}(A^T)_{j,k}\det (A^T)_{j,k} \amp ( (A^T)_{i,j}= A_{j,i}) \\
 \amp= \det A^T  \amp (\knowl{./knowl/xref/d_det.html}{\text{Definition 3.5.3}})\\
 \amp=\det A \amp (\knowl{./knowl/xref/th_det_transpose.html}{\text{Theorem 3.5.9}}) \text{.}
 \end{align*}
@@ -1124,13 +1124,13 @@ A=\begin{bmatrix}2\amp 1\amp 0\amp 3\\ 0\amp 0\amp 0\amp 2\\ 0\amp 2\amp 0\amp 0
 <div class="para">First we compute <span class="process-math">\(A\)</span> by expanding along the second row. The only nonzero term of this expansion is the last one, yielding</div>
 <div class="displaymath process-math" id="ss_expansion_rows_columns-8-2-1-2">
 \begin{equation*}
-\det A=(-1)^{2+4}[A]_{24}M_{24}=2\det A_{24}\text{.}
+\det A=(-1)^{2+4}[A]_{2,4}M_{2,4}=2\det A_{2,4}\text{.}
 \end{equation*}
 </div>
 <div class="para">We have</div>
 <div class="displaymath process-math" id="ss_expansion_rows_columns-8-2-1-3">
 \begin{equation*}
-A_{24}=\begin{bmatrix}
+A_{2,4}=\begin{bmatrix}
 2\amp 1\amp 0\\ 0\amp 2\amp 0\\ 4\amp 2\amp 1
 \end{bmatrix}\text{.}
 \end{equation*}
@@ -1138,7 +1138,7 @@ A_{24}=\begin{bmatrix}
 <div class="para">To compute its determinant we expand along its third column:</div>
 <div class="displaymath process-math" id="ss_expansion_rows_columns-8-2-1-4">
 \begin{equation*}
-\det A_{24}=(-1)^{3+3}1\det \begin{bmatrix}
+\det A_{2,4}=(-1)^{3+3}1\det \begin{bmatrix}
 2\amp 1\\ 0\amp 2
 \end{bmatrix}=4.
 \end{equation*}
@@ -1146,7 +1146,7 @@ A_{24}=\begin{bmatrix}
 <div class="para">We conclude that</div>
 <div class="displaymath process-math" id="ss_expansion_rows_columns-8-2-1-5">
 \begin{equation*}
-\det A=2\det A_{24}=2(4)=8\text{.}
+\det A=2\det A_{2,4}=2(4)=8\text{.}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#ss_expansion_rows_columns-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -1223,9 +1223,9 @@ A_{24}=\begin{bmatrix}
 <div class="para">Moving along the <span class="process-math">\(\ell\)</span>-th row, notice that each submatrix <span class="process-math">\({A'}_{\ell j}\)</span> is the result of swapping the two rows of <span class="process-math">\(A_{\ell j}\)</span> that originally corresponded to the <span class="process-math">\(i\)</span>-th and <span class="process-math">\(k\)</span>-th rows of <span class="process-math">\(A\text{.}\)</span> Since these submatrices are of dimension <span class="process-math">\(n\times n\text{,}\)</span> we have <span class="process-math">\(\det  {A'}_{\ell j}=-\det  A_{\ell j}\)</span> by induction. Lastly, since the <span class="process-math">\(\ell\)</span>-th rows of <span class="process-math">\(A\)</span> and <span class="process-math">\(A'\)</span> are the same we have</div>
 <div class="displaymath process-math" id="th_det_zero_repeated_row-3-5-4-12">
 \begin{align*}
-\det A \amp=\sum_{j=1}^{n+1}(-1)^{\ell+j}a_{\ell j}\det  A_{\ell j} \\
-\amp = \sum_{j=1}^{n+1}(-1)^{\ell+j}a_{\ell j}(-\det  {A'}_{\ell j})\\
-\amp =-\sum_{j=1}^{n+1}(-1)^{\ell+j}a_{\ell j}\det  {A'}_{\ell j} \\
+\det A \amp=\sum_{j=1}^{n+1}(-1)^{\ell+j}a_{\ell ,j}\det  A_{\ell, j} \\
+\amp = \sum_{j=1}^{n+1}(-1)^{\ell+j}a_{\ell ,j}(-\det  {A'}_{\ell, j})\\
+\amp =-\sum_{j=1}^{n+1}(-1)^{\ell+j}a_{\ell ,j}\det  {A'}_{\ell, j} \\
 \amp=-\det A' \text{.}
 \end{align*}
 </div>
@@ -1240,7 +1240,7 @@ A_{24}=\begin{bmatrix}
 <div class="para">Let <span class="process-math">\(A\)</span> be an <span class="process-math">\(n\times n\)</span> matrix. The <dfn class="terminology">adjoint matrix</dfn> of <span class="process-math">\(A\text{,}\)</span> denoted <span class="process-math">\(\adj A\text{,}\)</span> is the <span class="process-math">\(n\times n\)</span> matrix whose <span class="process-math">\(ij\)</span>-th entry is defined as follows:</div>
 <div class="displaymath process-math" id="d_adjoint-4-1-8">
 \begin{equation*}
-(\adj A)_{ij}=(-1)^{i+j}M_{ji}\text{.}
+[\adj A]_{i,j}=(-1)^{i+j}M_{j,i}\text{.}
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#d_adjoint-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -1248,7 +1248,7 @@ A_{24}=\begin{bmatrix}
 <div class="autopermalink" data-description="Definition 3.5.15: Adjoint matrix"><a href="#d_adjoint" title="Copy heading and permalink for Definition 3.5.15: Adjoint matrix" aria-label="Copy heading and permalink for Definition 3.5.15: Adjoint matrix">🔗</a></div></article><article class="remark remark-like" id="rm_adjoint"><h4 class="heading">
 <span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3.5.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
 </h4>
-<div class="para" id="rm_adjoint-1-1">Be careful of the order reversal in this definition. The <span class="process-math">\(ij\)</span>-th entry of <span class="process-math">\(\adj A\)</span> is equal to plus or minus the <span class="process-math">\(ji\)</span>-th minor of <span class="process-math">\(A\text{.}\)</span> Let’s see this in action for some small matrices.<div class="autopermalink" data-description="Paragraph"><a href="#rm_adjoint-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="rm_adjoint-1-1">Be careful of the order reversal in this definition. The <span class="process-math">\(i,j\)</span>-th entry of <span class="process-math">\(\adj A\)</span> is equal to plus or minus the <span class="process-math">\(j,i\)</span>-th minor of <span class="process-math">\(A\text{.}\)</span> Let’s see this in action for some small matrices.<div class="autopermalink" data-description="Paragraph"><a href="#rm_adjoint-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="rm_adjoint-1-2">
 <div class="para">For</div>
 <div class="displaymath process-math" id="rm_adjoint-1-2-1">
@@ -1321,7 +1321,7 @@ AB=BA=\frac{1}{\det A}(A\adj A)=\frac{1}{\det A}((\det A)\, I)=I\text{.}
 <div class="para">Thus it suffices to prove <a href="s_det.html#eq_adj_form" class="xref" data-knowl="./knowl/xref/eq_adj_form.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.5.9">(3.5.9)</a>. To do so, we must show that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_adj_form.html" id="th_adjoint-3-2-2">
 \begin{equation*}
-[A\, \adj A]_{ij}=[\adj A\, A]_{ij}=
+[A\, \adj A]_{i,j}=[\adj A\, A]_{i,j}=
 \begin{cases} \det A\amp \text{if } i=j\\
 0 \amp \text{if } i\ne j
 \text{.}\end{cases}
@@ -1334,13 +1334,13 @@ AB=BA=\frac{1}{\det A}(A\adj A)=\frac{1}{\det A}((\det A)\, I)=I\text{.}
 <div class="para">In this case we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_adjoint.html" id="th_adjoint-3-3-2-1">
 \begin{align*}
-[A\, \adj A]_{ii} \amp =\sum_{k=1}^na_{ik}[\adj A]_{ki}  \\
-\amp =\sum_{k=1}^n a_{ik}((-1)^{i+k}M_{ik}) \amp (\knowl{./knowl/xref/d_adjoint.html}{\text{Definition 3.5.15}} )\\
-\amp =\sum_{k=1}^n(-1)^{i+k}a_{ik}M_{ik} \\
+[A\, \adj A]_{i,i} \amp =\sum_{k=1}^na_{i,k}[\adj A]_{k,i}  \\
+\amp =\sum_{k=1}^n a_{i,k}((-1)^{i+k}M_{i,k}) \amp (\knowl{./knowl/xref/d_adjoint.html}{\text{Definition 3.5.15}} )\\
+\amp =\sum_{k=1}^n(-1)^{i+k}a_{i,k}M_{i,k} \\
 \amp =\det A \text{.}
 \end{align*}
 </div>
-<div class="para">A similar argument shows that <span class="process-math">\((\adj A\, A)_{ii}=\det A\text{,}\)</span> though in this case we use expansion along a column.</div>
+<div class="para">A similar argument shows that <span class="process-math">\((\adj A\, A)_{i,i}=\det A\text{,}\)</span> though in this case we use expansion along a column.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#th_adjoint-3-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Case: Case: i=j"><a href="#th_adjoint-3-3" title="Copy heading and permalink for Case: Case: i=j" aria-label="Copy heading and permalink for Case: Case: i=j">🔗</a></div></article><article class="case" id="th_adjoint-3-4"><h5 class="heading">Case: <span class="process-math">\(i\ne j\)</span>.</h5>
@@ -1348,19 +1348,19 @@ AB=BA=\frac{1}{\det A}(A\adj A)=\frac{1}{\det A}((\det A)\, I)=I\text{.}
 <div class="para">When <span class="process-math">\(i\ne j\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_adjoint.html ./knowl/xref/th_det_zero_repeated_row.html" id="th_adjoint-3-4-2-2">
 \begin{align*}
-[A\, \adj A]_{ij} \amp =\sum_{k=1}^na_{ik}[\adj A]_{kj}  \\
-\amp =\sum_{k=1}^n a_{ik}((-1)^{k+j}M_{jk}) \amp (\knowl{./knowl/xref/d_adjoint.html}{\text{Definition 3.5.15}} )\\
-\amp =\sum_{k=1}^n(-1)^{k+j}a_{ik}M_{jk} \\
+[A\, \adj A]_{i,j} \amp =\sum_{k=1}^na_{i,k}[\adj A]_{k,j}  \\
+\amp =\sum_{k=1}^n a_{i,k}((-1)^{i+k}M_{i,k}) \amp (\knowl{./knowl/xref/d_adjoint.html}{\text{Definition 3.5.15}} )\\
+\amp =\sum_{k=1}^n(-1)^{i+k}a_{i,k}M_{i,k} \\
 \amp =\det C \text{,}
 \end{align*}
 </div>
 <div class="para">where <span class="process-math">\(C\)</span> is the matrix obtained by replacing the <span class="process-math">\(j\)</span>-th row of <span class="process-math">\(A\)</span> with a copy of its <span class="process-math">\(i\)</span>-th row. Since <span class="process-math">\(C\)</span> has two identical rows <a href="s_det.html#th_det_zero_repeated_row" class="xref" data-knowl="./knowl/xref/th_det_zero_repeated_row.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.5.14: Zero rows/columns, swapping rows/columns, identical rows/columns">Theorem 3.5.14</a> implies</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_adjoint.html ./knowl/xref/th_det_zero_repeated_row.html" id="th_adjoint-3-4-2-9">
 \begin{equation*}
-[A\, \adj A]_{ij}=\det C=0\text{,}
+[A\, \adj A]_{i,j}=\det C=0\text{,}
 \end{equation*}
 </div>
-<div class="para">as desired. Once again, a similar argument using expansion along a column shows that <span class="process-math">\([\adj A\, A]_{ij}=0\text{.}\)</span>
+<div class="para">as desired. Once again, a similar argument using expansion along a column shows that <span class="process-math">\([\adj A\, A]_{i,j}=0\text{.}\)</span>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#th_adjoint-3-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>

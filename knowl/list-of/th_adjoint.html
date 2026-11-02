@@ -49,7 +49,7 @@ AB=BA=\frac{1}{\det A}(A\adj A)=\frac{1}{\det A}((\det A)\, I)=I\text{.}
 <div class="para">Thus it suffices to prove <a href="s_det.html#eq_adj_form" class="xref" data-knowl="./knowl/xref/eq_adj_form.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 3.5.9">(3.5.9)</a>. To do so, we must show that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_adj_form.html">
 \begin{equation*}
-[A\, \adj A]_{ij}=[\adj A\, A]_{ij}=
+[A\, \adj A]_{i,j}=[\adj A\, A]_{i,j}=
 \begin{cases} \det A\amp \text{if } i=j\\
 0 \amp \text{if } i\ne j
 \text{.}\end{cases}
@@ -62,13 +62,13 @@ AB=BA=\frac{1}{\det A}(A\adj A)=\frac{1}{\det A}((\det A)\, I)=I\text{.}
 <div class="para">In this case we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_adjoint.html">
 \begin{align*}
-[A\, \adj A]_{ii} \amp =\sum_{k=1}^na_{ik}[\adj A]_{ki}  \\
-\amp =\sum_{k=1}^n a_{ik}((-1)^{i+k}M_{ik}) \amp (\knowl{./knowl/xref/d_adjoint.html}{\text{Definition 3.5.15}} )\\
-\amp =\sum_{k=1}^n(-1)^{i+k}a_{ik}M_{ik} \\
+[A\, \adj A]_{i,i} \amp =\sum_{k=1}^na_{i,k}[\adj A]_{k,i}  \\
+\amp =\sum_{k=1}^n a_{i,k}((-1)^{i+k}M_{i,k}) \amp (\knowl{./knowl/xref/d_adjoint.html}{\text{Definition 3.5.15}} )\\
+\amp =\sum_{k=1}^n(-1)^{i+k}a_{i,k}M_{i,k} \\
 \amp =\det A \text{.}
 \end{align*}
 </div>
-<div class="para">A similar argument shows that <span class="process-math">\((\adj A\, A)_{ii}=\det A\text{,}\)</span> though in this case we use expansion along a column.</div>
+<div class="para">A similar argument shows that <span class="process-math">\((\adj A\, A)_{i,i}=\det A\text{,}\)</span> though in this case we use expansion along a column.</div>
 <div class="autopermalink" data-description="Paragraph"><a href="#th_adjoint-3-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="autopermalink" data-description="Case: Case: i=j"><a href="#th_adjoint-3-3" title="Copy heading and permalink for Case: Case: i=j" aria-label="Copy heading and permalink for Case: Case: i=j">🔗</a></div></article><article class="case"><h5 class="heading">Case: <span class="process-math">\(i\ne j\)</span>.</h5>
@@ -76,19 +76,19 @@ AB=BA=\frac{1}{\det A}(A\adj A)=\frac{1}{\det A}((\det A)\, I)=I\text{.}
 <div class="para">When <span class="process-math">\(i\ne j\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_adjoint.html ./knowl/xref/th_det_zero_repeated_row.html">
 \begin{align*}
-[A\, \adj A]_{ij} \amp =\sum_{k=1}^na_{ik}[\adj A]_{kj}  \\
-\amp =\sum_{k=1}^n a_{ik}((-1)^{k+j}M_{jk}) \amp (\knowl{./knowl/xref/d_adjoint.html}{\text{Definition 3.5.15}} )\\
-\amp =\sum_{k=1}^n(-1)^{k+j}a_{ik}M_{jk} \\
+[A\, \adj A]_{i,j} \amp =\sum_{k=1}^na_{i,k}[\adj A]_{k,j}  \\
+\amp =\sum_{k=1}^n a_{i,k}((-1)^{i+k}M_{i,k}) \amp (\knowl{./knowl/xref/d_adjoint.html}{\text{Definition 3.5.15}} )\\
+\amp =\sum_{k=1}^n(-1)^{i+k}a_{i,k}M_{i,k} \\
 \amp =\det C \text{,}
 \end{align*}
 </div>
 <div class="para">where <span class="process-math">\(C\)</span> is the matrix obtained by replacing the <span class="process-math">\(j\)</span>-th row of <span class="process-math">\(A\)</span> with a copy of its <span class="process-math">\(i\)</span>-th row. Since <span class="process-math">\(C\)</span> has two identical rows <a href="s_det.html#th_det_zero_repeated_row" class="xref" data-knowl="./knowl/xref/th_det_zero_repeated_row.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 3.5.14: Zero rows/columns, swapping rows/columns, identical rows/columns">Theorem 3.5.14</a> implies</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_adjoint.html ./knowl/xref/th_det_zero_repeated_row.html">
 \begin{equation*}
-[A\, \adj A]_{ij}=\det C=0\text{,}
+[A\, \adj A]_{i,j}=\det C=0\text{,}
 \end{equation*}
 </div>
-<div class="para">as desired. Once again, a similar argument using expansion along a column shows that <span class="process-math">\([\adj A\, A]_{ij}=0\text{.}\)</span>
+<div class="para">as desired. Once again, a similar argument using expansion along a column shows that <span class="process-math">\([\adj A\, A]_{i,j}=0\text{.}\)</span>
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#th_adjoint-3-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>

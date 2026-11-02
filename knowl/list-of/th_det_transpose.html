@@ -37,10 +37,10 @@
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_expansion_row.html ./knowl/xref/th_expansion_row.html">
 \begin{align*}
 \det A^T \amp = \frac{1}{n}\sum_{i=1}^{n}\det A^T \\
-\amp =\frac{1}{n}\sum_{i=1}^n\sum_{j=1}^n(-1)^{i+j}[A^T]_{ij}\det \left((A^T)_{ij}\right) \amp (\knowl{./knowl/xref/th_expansion_row.html}{\text{Theorem 3.5.8}}) \\
-\amp = \frac{1}{n}\sum_{i=1}^n\sum_{j=1}^n(-1)^{i+j}[A]_{ji}\det (A_{ji})^T \amp ([A^T]_{ij}=A_{ji}, (A^T)_{ij}=(A_{ji})^T)\\
-\amp = \frac{1}{n}\sum_{i=1}^n\sum_{j=1}^n(-1)^{i+j}[A]_{ji}\det A_{ji} \amp (\det (A_{ji})^T=\det A_{ji}, \text{ by induction})\\
-\amp= \frac{1}{n}\sum_{j=1}^n\sum_{i=1}^n(-1)^{i+j}[A]_{ji}\det A_{ji} \amp (\text{props. of addition})\\
+\amp =\frac{1}{n}\sum_{i=1}^n\sum_{j=1}^n(-1)^{i+j}[A^T]_{i,j}\det \left((A^T)_{i,j}\right) \amp (\knowl{./knowl/xref/th_expansion_row.html}{\text{Theorem 3.5.8}}) \\
+\amp = \frac{1}{n}\sum_{i=1}^n\sum_{j=1}^n(-1)^{i+j}[A]_{j,i}\det (A_{j,i})^T \amp ([A^T]_{i,j}=A_{j,i}, (A^T)_{i,j}=(A_{j,i})^T)\\
+\amp = \frac{1}{n}\sum_{i=1}^n\sum_{j=1}^n(-1)^{i+j}[A]_{j,i}\det A_{j,i} \amp (\det (A_{j,i})^T=\det A_{j,i}, \text{ by induction})\\
+\amp= \frac{1}{n}\sum_{j=1}^n\sum_{i=1}^n(-1)^{i+j}[A]_{j,i}\det A_{j,i} \amp (\text{props. of addition})\\
 \amp =\frac{1}{n}\sum_{j=1}^n\det A \amp (\knowl{./knowl/xref/th_expansion_row.html}{\text{Theorem 3.5.8}})\\
 \amp = \det A\text{.}
 \end{align*}
