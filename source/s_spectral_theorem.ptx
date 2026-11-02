@@ -73,7 +73,7 @@
   <title>Self-adjoint operators and symmetry</title>
   <statement>
     <p>
-      Let <m>A\in M_{nn}</m>. The following statements are equivalent.
+      Let <m>A\in \ML_{n,n}(\R)</m>. The following statements are equivalent.
     </p>
       <ol>
         <li>

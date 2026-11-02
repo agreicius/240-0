@@ -122,7 +122,7 @@
     </figure>
   </example>
 
-  <p>Like real number algebra, there are certain matrices that satisfy special properties with regard to the operations of addition and multiplication. We have seen examples of this already thanks to the natural vector space structure of <m>M_{mn}</m>. For example, the <m>m\times n</m> zero matrix <m>\boldzero_{m\times n}</m> acts as an <em>additive indentity</em> (<ie/>, <m>\boldzero_{m\times n}+A=A</m> for all <m>A\in M_{mn}</m>) and vector inverses <m>-A</m> act as <em>additive inverses</em> (<ie/>, <m>-A+A=\boldzero_{m\times n}</m> for all <m>A\in M_{mn}</m>). We now introduce the identity matrices <m>I_n</m>, which satisfy a <em>multiplicative identity</em> property with respect to matrix multiplication, and thus play a role analogous to the number <m>1</m> among real numbers. 
+  <p>Like real number algebra, there are certain matrices that satisfy special properties with regard to the operations of addition and multiplication. We have seen examples of this already thanks to the natural vector space structure of <m>\ML_{m,n}(\R)</m>. For example, the <m>m\times n</m> zero matrix <m>\boldzero_{m\times n}</m> acts as an <em>additive indentity</em> (<ie/>, <m>\boldzero_{m\times n}+A=A</m> for all <m>A\in \ML_{m,n}(\R)</m>) and vector inverses <m>-A</m> act as <em>additive inverses</em> (<ie/>, <m>-A+A=\boldzero_{m\times n}</m> for all <m>A\in \ML_{m,n}(\R)</m>). We now introduce the identity matrices <m>I_n</m>, which satisfy a <em>multiplicative identity</em> property with respect to matrix multiplication, and thus play a role analogous to the number <m>1</m> among real numbers. 
   </p>
 <definition xml:id="d_identity_matrix">
   <title>Identity matrix</title>
@@ -155,7 +155,7 @@
   <theorem xml:id="th_matrix_add_mult_ident">
     <title>Multiplicative identities</title>
     <statement>
-        <p> Let <m>n</m> be a positive integer. The <m>n\times n</m> identity matrix acts as a multiplicative identity among <m>n\times n</m> matrices in the following sense: for all <m>A\in M_{nn}</m> we have
+        <p> Let <m>n</m> be a positive integer. The <m>n\times n</m> identity matrix acts as a multiplicative identity among <m>n\times n</m> matrices in the following sense: for all <m>A\in \ML_{n,n}(\R)</m> we have
           <md>
             I_n\, A=A\, I_n=A
           </md>.
@@ -368,22 +368,22 @@ The example in our warning above is but one instance of the general failure of t
         <ol>
           <li xml:id="th_trans_add" >
             <p>
-              <m>(A+B)^T=A^T+B^T</m> for all <m>A,B\in M_{mn}</m>.
+              <m>(A+B)^T=A^T+B^T</m> for all <m>A,B\in \ML_{m,n}(\R)</m>.
             </p>
           </li>
           <li xml:id="th_trans_scale" >
             <p>
-              <m>(cA)^T=cA^T</m> for all <m>c\in \R</m> and <m>A\in M_{mn}</m>.
+              <m>(cA)^T=cA^T</m> for all <m>c\in \R</m> and <m>A\in \ML_{m,n}(\R)</m>.
             </p>
           </li>
           <li xml:id="th_trans_prod">
             <p>
-              <m>(AB)^T=B^TA^T</m> for all <m>A\in M_{mr}, B\in M_{rn}</m>. 
+              <m>(AB)^T=B^TA^T</m> for all <m>A\in \ML_{m,r}(\R), B\in \ML_{r,n}(\R)</m>. 
             </p>
           </li>
           <li xml:id="th_trans_owninverse">
             <p>
-              <m>\left(A^T\right)^T=A</m> for all <m>A\in M_{mn}</m>.
+              <m>\left(A^T\right)^T=A</m> for all <m>A\in \ML_{m,n}(\R)</m>.
             </p>
           </li>
         </ol>

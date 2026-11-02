@@ -264,7 +264,7 @@
     <title>Determinant of orthogonal matrices</title>
     <statement>
       <p>
-        Prove: if <m>Q\in M_{nn}</m> is an orthogonal matrix, then <m>\det Q=\pm 1</m>.
+        Prove: if <m>Q\in \ML_{n,n}(\R)</m> is an orthogonal matrix, then <m>\det Q=\pm 1</m>.
       </p>
     </statement>
   </exercise>

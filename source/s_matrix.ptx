@@ -126,7 +126,7 @@
     </idx>
     <statement>
       <p>
-        A matrix <m>A</m> is <term>square</term> if its dimension is <m>n\times n</m>: <ie/>, if <m>A\in M_{nn}</m>. The <term>diagonal</term> of a square matrix <m>A\in M_{nn}</m> consists of the entries of <m>A</m> of the form <m>[A]_{i,i}</m> for <m>1\leq i\leq n</m>.
+        A matrix <m>A</m> is <term>square</term> if its dimension is <m>n\times n</m>: <ie/>, if <m>A\in \ML_{n,n}(\R)</m>. The <term>diagonal</term> of a square matrix <m>A\in \ML_{n,n}(\R)</m> consists of the entries of <m>A</m> of the form <m>[A]_{i,i}</m> for <m>1\leq i\leq n</m>.
       </p>
       <p>
       A <m>1\times n</m> matrix
@@ -243,7 +243,7 @@
 
 </subsection>
   <!-- <subsection xml:id="ss_matrix_arithmetic">
-    <title>Vector space structure of <m>M_{mn}</m></title>
+    <title>Vector space structure of <m>\ML_{m,n}(\R)</m></title>
     <p>
       We now lay out the various algebraic operations we will use to combine and transform matrices; we refer to the use of these operations loosely as <em>matrix arithmetic</em>. Some of these operations resemble familiar operations from real arithmetic in terms of their notation and definition. Do not be lulled into complacency! These are new operations defined for a new class of mathematical objects, and must be treated carefully. In particular, pay close attention to (a) exactly what type of mathematical objects serve as inputs for each operation (the <em>ingredients</em> of the operation), and (b) what type of mathematical object is outputted.
     </p>
@@ -258,7 +258,7 @@
             <li>
               <title>Matrix addition</title>
               <p>
-                Given <m>m\times n</m> matrices <m>A,B\in M_{mn}</m>, we define their <term>matrix sum</term> <m>A+B</m> to be the <m>m\times n</m> matrix satisfying 
+                Given <m>m\times n</m> matrices <m>A,B\in \ML_{m,n}(\R)</m>, we define their <term>matrix sum</term> <m>A+B</m> to be the <m>m\times n</m> matrix satisfying 
                 <md>
                   [A+B]_{ij}=[A]_{ij}+[B]_{ij}
                 </md>
@@ -268,7 +268,7 @@
                 </md>.
                 The operation 
                 <md>
-                  <mrow>M_{mn}\times M_{mn} \amp \rightarrow M_{mn}</mrow>
+                  <mrow>\ML_{m,n}(\R)\times \ML_{m,n}(\R) \amp \rightarrow \ML_{m,n}(\R)</mrow>
                   <mrow>(A,B) \amp \mapsto A+B</mrow>
                 </md>
                 is called <term>matrix addition</term>. 
@@ -276,7 +276,7 @@
             </li>
             <li>
               <p>
-                Given an <m>m\times n</m> matrix <m>A\in M_{mn}</m> and scalar <m>c\in \R</m>, the <term>scalar multiple</term> of <m>A</m> by <m>c</m> is the matrix <m>cA</m> satisfying 
+                Given an <m>m\times n</m> matrix <m>A\in \ML_{m,n}(\R)</m> and scalar <m>c\in \R</m>, the <term>scalar multiple</term> of <m>A</m> by <m>c</m> is the matrix <m>cA</m> satisfying 
                 <md>
                   [cA]_{ij}=c[A]_{ij}
                 </md>
@@ -286,7 +286,7 @@
                 </md>.
                 The operation 
                 <md>
-                  <mrow>\R\times M_{mn} \amp \rightarrow M_{mn}</mrow>
+                  <mrow>\R\times \ML_{m,n}(\R) \amp \rightarrow \ML_{m,n}(\R)</mrow>
                   <mrow>(c,A) \amp \mapsto cA</mrow>
                 </md>
                 is called <term>matrix scalar multiplication</term>. 
@@ -302,7 +302,7 @@
         </p>
         </remark>
         <p>
-          Not surprisingly, as the names of our matrix operations suggest, the set <m>M_{mn}</m> of all <m>m\times n</m> matrices constitutes a vector space with respect to matrix addition and scalar multiplication. Before proving this fact, we introduce what will be the zero vectors and vector inverses of these vector spaces. 
+          Not surprisingly, as the names of our matrix operations suggest, the set <m>\ML_{m,n}(\R)</m> of all <m>m\times n</m> matrices constitutes a vector space with respect to matrix addition and scalar multiplication. Before proving this fact, we introduce what will be the zero vectors and vector inverses of these vector spaces. 
         </p>
         <definition xml:id="d_zero_matrix">
           <title>Zero matrices</title>
@@ -334,24 +334,24 @@
           </p>
         </remark>
         <theorem xml:id="th_matrix_vector_space">
-          <title>Vector space structure of <m>M_{mn}</m></title>
+          <title>Vector space structure of <m>\ML_{m,n}(\R)</m></title>
           <statement>
             <p>
               Let <m>m</m> and <m>n</m> be positive integers. 
               <ol>
                 <li>
                   <p>
-                    The set <m>M_{mn}</m>, together with the matrix addition and scalar multiplication, is a vector space.  
+                    The set <m>\ML_{m,n}(\R)</m>, together with the matrix addition and scalar multiplication, is a vector space.  
                   </p>
                 </li>
                 <li>
                   <p>
-                    The zero vector of <m>M_{mn}</m> is the <m>m\times n</m> zero matrix <m>\boldzero_{m\times n}</m>.
+                    The zero vector of <m>\ML_{m,n}(\R)</m> is the <m>m\times n</m> zero matrix <m>\boldzero_{m\times n}</m>.
                   </p>
                 </li>
                 <li>
                   <p>
-                    Given a matrix <m>A\in M_{mn}</m> its vector inverse is the additive inverse matrix <m>-A</m>.
+                    Given a matrix <m>A\in \ML_{m,n}(\R)</m> its vector inverse is the additive inverse matrix <m>-A</m>.
                   </p>
                 </li>
               </ol>
@@ -384,11 +384,11 @@
         <remark xml:id="rm_matrix_diff">
           <title>Matrix difference and matrix linear combination</title>
           <p>
-            Having established that <m>M_{mn}</m> is a vector space under matrix addition and scalar multiplication, this set of matrices automatically inherits the various features and properties enjoyed by general vector spaces. For example, the <xref ref="d_vec_difference" text="custom">vector difference</xref> operation (defined for any vector space) gives rise in the case of <m>M_{mn}</m> to a <em>matrix difference</em> operation. Namely, for any <m>A,B\in M_{mn}</m> we have 
+            Having established that <m>\ML_{m,n}(\R)</m> is a vector space under matrix addition and scalar multiplication, this set of matrices automatically inherits the various features and properties enjoyed by general vector spaces. For example, the <xref ref="d_vec_difference" text="custom">vector difference</xref> operation (defined for any vector space) gives rise in the case of <m>\ML_{m,n}(\R)</m> to a <em>matrix difference</em> operation. Namely, for any <m>A,B\in \ML_{m,n}(\R)</m> we have 
             <md>
               A-B=A+(-B)=A+(-1)B
             </md>.
-            Similarly, the general notion of a <xref ref="d_lin_comb" text="custom">linear combination</xref> of vectors, gives rise to the notion of <em>matrix linear combinations</em>. Namely, given <m>A_1,A_2,\dots, A_k\in M_{mn}</m>, and scalars <m>c_1,c_2,\dots, c_k\in \R</m>, we have the matrix linear combination 
+            Similarly, the general notion of a <xref ref="d_lin_comb" text="custom">linear combination</xref> of vectors, gives rise to the notion of <em>matrix linear combinations</em>. Namely, given <m>A_1,A_2,\dots, A_k\in \ML_{m,n}(\R)</m>, and scalars <m>c_1,c_2,\dots, c_k\in \R</m>, we have the matrix linear combination 
             <md>
               c_1A_1+c_2A_2+\cdots +c_kA_k
             </md>.
@@ -487,7 +487,7 @@
       <p>
         The operation 
         <md>
-          <mrow>M_{mn}\times M_{nr} \amp \rightarrow M_{mr}</mrow>
+          <mrow>\ML_{m,n}(\R)\times \ML_{n,r}(\R) \amp \rightarrow \ML_{m,r}(\R)</mrow>
           <mrow>(A,B) \amp \mapsto AB</mrow>
         </md>
         is called <term>matrix multiplication</term>. 
@@ -624,7 +624,7 @@ DL/.style={
     <title>Dot product and matrix multiplication</title>
     <statement>
       <p>
-         Let <m>m,n,r</m> be positive integers. Given matrices <m>A\in M_{mn}</m> and <m>B\in M_{nr}</m>, let <m>\bolda_i\in \R^n</m> be the <m>i</m>-th row of <m>A</m> for all <m>1\leq i\leq m</m>, and let <m>\boldb_j\in\R^n</m> be <m>j</m>-th column of <m>B</m> for all <m>1\leq j\leq r</m>, so that 
+         Let <m>m,n,r</m> be positive integers. Given matrices <m>A\in \ML_{m,n}(\R)</m> and <m>B\in \ML_{n,r}(\R)</m>, let <m>\bolda_i\in \R^n</m> be the <m>i</m>-th row of <m>A</m> for all <m>1\leq i\leq m</m>, and let <m>\boldb_j\in\R^n</m> be <m>j</m>-th column of <m>B</m> for all <m>1\leq j\leq r</m>, so that 
          <md>
           <mrow>A\amp=\begin{bmatrix}-\bolda_1-\\
             -\bolda_2-\\

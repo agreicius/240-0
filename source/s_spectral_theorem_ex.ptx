@@ -125,7 +125,7 @@
   <exercise>
     <statement>
       <p>
-        Assume <m>A\in M_{nn}</m> is symmetric and orthogonal. Prove that the characteristic polynomial of <m>A</m> factors as <m>p(x)=(x-1)^r(x+1)^s</m> for some nonnegative integers <m>r,s</m>. In particular, the eigenvalues of <m>A</m> are among <m>1</m> and <m>-1</m>.
+        Assume <m>A\in \ML_{n,n}(\R)</m> is symmetric and orthogonal. Prove that the characteristic polynomial of <m>A</m> factors as <m>p(x)=(x-1)^r(x+1)^s</m> for some nonnegative integers <m>r,s</m>. In particular, the eigenvalues of <m>A</m> are among <m>1</m> and <m>-1</m>.
       </p>
     </statement>
   </exercise>

@@ -155,28 +155,28 @@ For each given <m>V</m> and subspace <m>W\subseteq V</m>, provide a basis for <m
   <title>Bases for important matrix subspaces</title>
   <statement>
     <p>
-      Let <m>V=M_{nn}</m>.
-      For each of the following subspaces <m>W\subset M_{nn}</m>,
+      Let <m>V=\ML_{n,n}(\R)</m>.
+      For each of the following subspaces <m>W\subset \ML_{n,n}(\R)</m>,
       give a basis <m>B</m> of <m>W</m>.
-      You must explicitly describe the elements of your basis as linear combinations of the elements <m>E_{ij}</m> of the standard basis for <m>M_{nn}</m>. No justification needed, as long as your proposed basis is simple enough.
+      You must explicitly describe the elements of your basis as linear combinations of the elements <m>E_{ij}</m> of the standard basis for <m>\ML_{n,n}(\R)</m>. No justification needed, as long as your proposed basis is simple enough.
     </p>
       <ol>
         <li>
           <title>Upper triangular matrices</title>
           <p>
-            <m>W=\{A\in M_{nn}\colon A \text{ is upper triangular}\}</m>
+            <m>W=\{A\in \ML_{n,n}(\R)\colon A \text{ is upper triangular}\}</m>
           </p>
         </li>
         <li>
           <title>Symmetric matrices</title>
           <p>
-            <m>W=\{A\in M_{nn}\colon A^T=A\}</m>
+            <m>W=\{A\in \ML_{n,n}(\R)\colon A^T=A\}</m>
           </p>
         </li>
         <li>
           <title>Skew-symmetric matrices</title>
           <p>
-            <m>W=\{A\in M_{nn}\colon A^T=-A\}</m>
+            <m>W=\{A\in \ML_{n,n}(\R)\colon A^T=-A\}</m>
           </p>
         </li>
       </ol>

@@ -300,7 +300,7 @@
           <li>
             <title>Matrices</title>
             <p>
-            Let <m>V=M_{mn}</m>. For each <m>(i,j)</m> with <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>, define <m>E_{ij}</m> to be the <m>m\times n</m> matrix with a one in the <m>ij</m>-th entry, and zeros elsewhere. Then <m>S=\{E_{ij}\colon 1\leq i\leq m, 1\leq j\leq n\}</m> is a spanning set for <m>M_{mn}</m>.
+            Let <m>V=\ML_{m,n}(\R)</m>. For each <m>(i,j)</m> with <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>, define <m>E_{ij}</m> to be the <m>m\times n</m> matrix with a one in the <m>ij</m>-th entry, and zeros elsewhere. Then <m>S=\{E_{ij}\colon 1\leq i\leq m, 1\leq j\leq n\}</m> is a spanning set for <m>\ML_{m,n}(\R)</m>.
             </p>
           </li>
           <!-- <li>

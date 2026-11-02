@@ -75,7 +75,7 @@
   <li>
     <title>Matrices</title>
     <p>
-    <m>V=M_{mn}</m>, <m>B=\{E_{ij}\colon 1\leq i\leq m, 1\leq j\leq n\}</m>, <m>\dim V=\val{B}=m\, n</m>
+    <m>V=\ML_{m,n}(\R)</m>, <m>B=\{E_{ij}\colon 1\leq i\leq m, 1\leq j\leq n\}</m>, <m>\dim V=\val{B}=m\, n</m>
     </p>
   </li>
   </ul>

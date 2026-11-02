@@ -15,7 +15,7 @@
      <exercise>
       <statement>
         <p>
-          <m>T\colon M_{nn}\rightarrow M_{nn}</m>, <m>T(A)=A^2</m>
+          <m>T\colon \ML_{n,n}(\R)\rightarrow \ML_{n,n}(\R)</m>, <m>T(A)=A^2</m>
         </p>
       </statement>
      </exercise>
@@ -23,7 +23,7 @@
      <exercise>
       <statement>
         <p>
-          <m>T\colon M_{nn}\rightarrow \R</m>, <m>T(A)=\det A</m>
+          <m>T\colon \ML_{n,n}(\R)\rightarrow \R</m>, <m>T(A)=\det A</m>
         </p>
       </statement>
      </exercise>
@@ -60,10 +60,10 @@
       Let <m>B</m> be an <m>r\times m</m> matrix, and let <m>C</m> be an <m>n\times s</m> matrix.
       Define the functions <m>T</m> and <m>S</m> as follows:
         <md>
-          <mrow> T\colon M_{mn} \amp\rightarrow M_{rn} </mrow>
+          <mrow> T\colon \ML_{m,n}(\R) \amp\rightarrow \ML_{r,n}(\R) </mrow>
           <mrow>A \amp\mapsto T(A)=BA </mrow>
           <mrow>  \amp </mrow>
-          <mrow> S\colon M_{mn} \amp\rightarrow M_{ms} </mrow>
+          <mrow> S\colon \ML_{m,n}(\R) \amp\rightarrow M_{ms} </mrow>
           <mrow>  A\amp\mapsto S(A)=AC  </mrow>
         </md>.
         In other words, <m>T</m> is the <q>multiply on the left by <m>B</m></q> operation, and <m>S</m> is the  <q>multiply on the right by C</q> operation

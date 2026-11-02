@@ -771,13 +771,13 @@ makes no assumption about the dimension of <m>V</m> and can thus can be applied 
         <li>
           <title>Conjugation is linear</title>
           <p>
-            For all <m>A_1,A_2\in M_{nn}</m> and <m>c_1,c_2\in \R</m>, we have <m>P^{-1}(c_1A_1+c_2A_2)P=c_1P^{-1}A_1P+c_2P^{-1}A_2P</m>.
+            For all <m>A_1,A_2\in \ML_{n,n}(\R)</m> and <m>c_1,c_2\in \R</m>, we have <m>P^{-1}(c_1A_1+c_2A_2)P=c_1P^{-1}A_1P+c_2P^{-1}A_2P</m>.
           </p>
         </li>
         <li>
           <title>Conjugation commutes with powers</title>
           <p>
-            For all <m>A\in M_{nn}</m> and integers <m>k\geq 0</m>, we have
+            For all <m>A\in \ML_{n,n}(\R)</m> and integers <m>k\geq 0</m>, we have
             <md>(P^{-1}AP)^k=P^{-1}A^kP</md>.
             If <m>A</m> is invertible,
             this equality holds for <em>all</em>

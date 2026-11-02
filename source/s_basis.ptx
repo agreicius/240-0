@@ -86,8 +86,8 @@
 					<li>
 						<title>Matrices</title>
 						<p>
-							Let <m>V=M_{mn}</m>.
-							The set <m>B=\{E_{ij}\colon 1\leq i\leq m, 1\leq j\leq n\}</m> is the standard basis of <m>M_{mn}</m>.
+							Let <m>V=\ML_{m,n}(\R)</m>.
+							The set <m>B=\{E_{ij}\colon 1\leq i\leq m, 1\leq j\leq n\}</m> is the standard basis of <m>\ML_{m,n}(\R)</m>.
 						</p>
 					</li>
 				</ul>
@@ -390,7 +390,7 @@
     </example>
   
 <example xml:id="vid_eg_basis_exotic">
-  <title>Video example: deciding if a set is a basis (<m>M_{nn}</m>)</title>
+  <title>Video example: deciding if a set is a basis (<m>\ML_{n,n}(\R)</m>)</title>
   <figure xml:id="fig_vid_basis_exotic">
 				<caption>Video: deciding if a set is a basis</caption>
 				<video xml:id="vid_basis_exotic" youtube="JvPn5X93lGw" />

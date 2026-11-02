@@ -169,24 +169,24 @@
   <exercise xml:id="ex_dimension_matrix_families">
     <title>Dimensions of important matrix subspaces</title>
     <statement>
-      <p> Let <m>V=M_{nn}</m>. Compute <m>\dim W</m> for each subspace <m>W\subset M_{nn}</m>. </p>
+      <p> Let <m>V=\ML_{n,n}(\R)</m>. Compute <m>\dim W</m> for each subspace <m>W\subset \ML_{n,n}(\R)</m>. </p>
       <ol>
         <li>
           <title>Upper triangular matrices</title>
           <p>
-            <m>W=\{A\in M_{nn}\colon A \text{ is upper triangular}\}</m>
+            <m>W=\{A\in \ML_{n,n}(\R)\colon A \text{ is upper triangular}\}</m>
           </p>
         </li>
         <li>
           <title>Symmetric matrices</title>
           <p>
-            <m>W=\{A\in M_{nn}\colon A^T=A\}</m>
+            <m>W=\{A\in \ML_{n,n}(\R)\colon A^T=A\}</m>
           </p>
         </li>
         <li>
           <title>Skew-symmetric matrices</title>
           <p>
-            <m>W=\{A\in M_{nn}\colon A^T=-A\}</m>
+            <m>W=\{A\in \ML_{n,n}(\R)\colon A^T=-A\}</m>
           </p>
         </li>
       </ol>
@@ -199,7 +199,7 @@
   </exercise>
   <exercise>
     <statement>
-      <p> Let <m>A\in M_{nn}</m>. Show that there is a nonzero polynomial <m>p(x)=a_{n^2}x^{n^2}+a_{n^2-1}x^{n^2-1}+\cdots
+      <p> Let <m>A\in \ML_{n,n}(\R)</m>. Show that there is a nonzero polynomial <m>p(x)=a_{n^2}x^{n^2}+a_{n^2-1}x^{n^2-1}+\cdots
         +a_1x+a_0</m> such that <md>
           p(A)=a_{n^2}A^{n^2}+a_{n^2-1}A^{n^2-1}+\cdots +a_1A+a_0I_n=\underset{n\times n}{\boldzero}
         </md>
@@ -207,7 +207,7 @@
     </p>
     </statement>
     <hint>
-      <p> Consider the set <m>S=\{A^{n^2}, A^{n^2-1}, \dots, A, I\}\subseteq M_{nn}</m> and use a
+      <p> Consider the set <m>S=\{A^{n^2}, A^{n^2-1}, \dots, A, I\}\subseteq \ML_{n,n}(\R)</m> and use a
         relevant statement from <xref ref="th_dimension_compendium" />. Treat two cases separately:
         (a) the powers of <m>A</m> are all distinct; (b) <m>A^i=A^j</m> for some <m>0\leq i &lt;
         j\leq n^2</m>. </p>

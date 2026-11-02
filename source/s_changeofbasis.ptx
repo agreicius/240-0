@@ -885,7 +885,7 @@
   
     <idx><h>similar matrices</h></idx><statement>
       <p>
-        Matrices <m>A, A'\in M_{nn}</m> are <term>similar</term>
+        Matrices <m>A, A'\in \ML_{n,n}(\R)</m> are <term>similar</term>
         if there is an invertible matrix <m>P</m> such that <m>A'=P^{-1}AP</m>.
       </p>
     </statement>

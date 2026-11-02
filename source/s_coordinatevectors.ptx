@@ -114,7 +114,7 @@
     <title>Standard bases</title>
     <statement>
       <p>
-        Computing coordinate vectors relative to one of our standard ordered bases for <m>\R^n</m>, <m>M_{mn}</m>, or <m>P_{n}</m> amounts to just listing the coefficients or entries used to specify the given vector. The examples below serve to illustrate the general method in this setting.
+        Computing coordinate vectors relative to one of our standard ordered bases for <m>\R^n</m>, <m>\ML_{m,n}(\R)</m>, or <m>P_{n}</m> amounts to just listing the coefficients or entries used to specify the given vector. The examples below serve to illustrate the general method in this setting.
       </p>
       <ol>
         <li>

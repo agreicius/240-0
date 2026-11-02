@@ -409,7 +409,7 @@
 
       </theorem>
   <p>
-    As an illustration of <xref ref="th_matrixreps_model"/>, we treat again the linear transformation <m>T\colon M_{nn}\rightarrow M_{nn}</m>, <m>T(A)=A^T-A</m> treated in <xref ref="eg_nullspace_image_transposition"/> and <xref ref="eg_rank_nullity_skew_sym"/>. Recall that we concluded in these examples that <m>\NS T</m> is the space of all symmetric matrices, and that <m>\im T</m> is the space of all skew-symmetric matrices. In <xref ref="eg_matrixreps_sym_skewsym"/> we derive this result yet again in a slightly more computational manner, in the case where <m>n=2</m>.
+    As an illustration of <xref ref="th_matrixreps_model"/>, we treat again the linear transformation <m>T\colon \ML_{n,n}(\R)\rightarrow \ML_{n,n}(\R)</m>, <m>T(A)=A^T-A</m> treated in <xref ref="eg_nullspace_image_transposition"/> and <xref ref="eg_rank_nullity_skew_sym"/>. Recall that we concluded in these examples that <m>\NS T</m> is the space of all symmetric matrices, and that <m>\im T</m> is the space of all skew-symmetric matrices. In <xref ref="eg_matrixreps_sym_skewsym"/> we derive this result yet again in a slightly more computational manner, in the case where <m>n=2</m>.
   </p>
   <example xml:id="eg_matrixreps_sym_skewsym">
     <title>Computing with matrix representations</title>

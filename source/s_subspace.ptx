@@ -327,7 +327,7 @@
     <title>Null space of matrix</title>
     <statement>
       <p>
-        Let <m>A\in M_{mn}</m>. The <term>null space</term> of <m>A</m>, denoted <m>\NS A</m>, is the set of all solutions to the matrix equation 
+        Let <m>A\in \ML_{m,n}(\R)</m>. The <term>null space</term> of <m>A</m>, denoted <m>\NS A</m>, is the set of all solutions to the matrix equation 
         <md number="yes" xml:id="eq_nullspace_matrix">
           A\boldx=\underset{m\times 1}{\boldzero}
         </md>.
@@ -343,7 +343,7 @@
     <title>Null spaces of matrices</title>
     <statement>
       <p>
-        Given any <m>A\in M_{mn}</m>, its null space 
+        Given any <m>A\in \ML_{m,n}(\R)</m>, its null space 
         <md>
           \NS A=\{\boldx\in \R^n\colon A\boldx=\boldzero\}
         </md>
@@ -447,7 +447,7 @@ Geometrically this is the line in <m>\R^3</m> passing through <m>(0,0,0)</m> wit
 <warning>
   <title>Subspace as null space</title>
   <p>
-    As convenient as the method described in <xref ref="rm_subspace_alt"/> and illustrated in <xref ref="eg_subspace_alt"/> may be, bear in mind that it cannot always be used. Indeed, by definition the null space of an <m>m\times n</m> matrix is a subset of <m>\R^n</m>. Thus this method can only be employed when the ambient vector space is <m>\R^n</m>. Don't forget that there are other vector spaces besides <m>\R^n</m>. Indeed, in <xref ref="ss_subspace_matrices"/> we consider subspaces of matrix vector spaces <m>M_{mn}</m>. In this setting, our null space trick does not apply. 
+    As convenient as the method described in <xref ref="rm_subspace_alt"/> and illustrated in <xref ref="eg_subspace_alt"/> may be, bear in mind that it cannot always be used. Indeed, by definition the null space of an <m>m\times n</m> matrix is a subset of <m>\R^n</m>. Thus this method can only be employed when the ambient vector space is <m>\R^n</m>. Don't forget that there are other vector spaces besides <m>\R^n</m>. Indeed, in <xref ref="ss_subspace_matrices"/> we consider subspaces of matrix vector spaces <m>\ML_{m,n}(\R)</m>. In this setting, our null space trick does not apply. 
   </p>
 </warning>
   <p>
@@ -458,7 +458,7 @@ Geometrically this is the line in <m>\R^3</m> passing through <m>(0,0,0)</m> wit
     <title>Null space and linear systems</title>
     <statement>
       <p>
-        Let <m>A\in M_{mn}</m> and <m>\boldb\in \R^m</m>, and let <m>S</m> be the set of all solutions to the linear system 
+        Let <m>A\in \ML_{m,n}(\R)</m> and <m>\boldb\in \R^m</m>, and let <m>S</m> be the set of all solutions to the linear system 
         <md number="yes" xml:id="eq_nullspace_linsys">
           A\boldx=\boldb
         </md>.
@@ -533,7 +533,7 @@ Geometrically this is the line in <m>\R^3</m> passing through <m>(0,0,0)</m> wit
     <title>Null space and linear systems</title>
     <statement>
       <p>
-        Let <m>A\in M_{mn}</m> and <m>\boldb\in \R^m</m>, and suppose the linear system <m>A\boldx=\boldb</m> is consistent.
+        Let <m>A\in \ML_{m,n}(\R)</m> and <m>\boldb\in \R^m</m>, and suppose the linear system <m>A\boldx=\boldb</m> is consistent.
         <ol>
           <li>
             <p>
@@ -668,7 +668,7 @@ Geometrically this is the line in <m>\R^3</m> passing through <m>(0,0,0)</m> wit
  </p>  -->
 </subsection>
 <subsection xml:id="ss_subspace_matrices">
-  <title>Important subspaces of <m>M_{nn}</m></title>
+  <title>Important subspaces of <m>\ML_{n,n}(\R)</m></title>
   <p>
     In <xref ref="s_invertibility_theorem" text="title"/> we met three families of square matrices: namely, the diagonal, upper triangular, and lower triangular matrices. (See <xref ref="d_diagonal_triangular"/>). We now introduce three more naturally occurring families. Before doing so, we give an official definition of the trace function. 
   </p>
@@ -701,17 +701,17 @@ Geometrically this is the line in <m>\R^3</m> passing through <m>(0,0,0)</m> wit
       <ol>
         <li>
           <p>
-            A matrix <m>A\in M_{nn}</m> is said to be a <term>trace-zero</term> matrix if <m>\tr A=0</m>.
+            A matrix <m>A\in \ML_{n,n}(\R)</m> is said to be a <term>trace-zero</term> matrix if <m>\tr A=0</m>.
           </p>
         </li>
         <li>
           <p>
-            A matrix <m>A\in M_{nn}</m> is <term>symmetric</term> if <m>A^T=A</m>: equivalently, if <m>[A]_{ij}=[A]_{ji}</m> for all <m>1\leq i,j\leq n</m>.
+            A matrix <m>A\in \ML_{n,n}(\R)</m> is <term>symmetric</term> if <m>A^T=A</m>: equivalently, if <m>[A]_{ij}=[A]_{ji}</m> for all <m>1\leq i,j\leq n</m>.
           </p>
         </li>
         <li>
           <p>
-            A matrix <m>A\in M_{nn}</m> is <term>skew-symmetric</term> if <m>A^T=-A</m>: equivalently, if <m>[A]_{ij}=-[A]_{ji}</m> for all <m>1\leq i,j\leq n</m>.
+            A matrix <m>A\in \ML_{n,n}(\R)</m> is <term>skew-symmetric</term> if <m>A^T=-A</m>: equivalently, if <m>[A]_{ij}=-[A]_{ji}</m> for all <m>1\leq i,j\leq n</m>.
           </p>
         </li>
       </ol>
@@ -743,7 +743,7 @@ Geometrically this is the line in <m>\R^3</m> passing through <m>(0,0,0)</m> wit
     </p>
   </remark>
   <p>
-    It will come as no surprise that all of the afore mentioned matrix families are in fact subspaces of <m>M_{nn}</m>.
+    It will come as no surprise that all of the afore mentioned matrix families are in fact subspaces of <m>\ML_{n,n}(\R)</m>.
   </p>
   <theorem xml:id="th_matrix_subspaces">
     <title>Matrix subspaces</title>
@@ -751,43 +751,43 @@ Geometrically this is the line in <m>\R^3</m> passing through <m>(0,0,0)</m> wit
     
     <statement>
       <p>
-      Fix an integer <m>n\geq 1</m>.  Each of the following subsets of <m>M_{nn}</m> is a subspace.
+      Fix an integer <m>n\geq 1</m>.  Each of the following subsets of <m>\ML_{n,n}(\R)</m> is a subspace.
   
       <ol>
         <li>
           <title>Diagonal matrices</title>
           <p>
-            <m>W=\{A\in M_{nn}\colon A\text{ is diagonal}\}</m>
+            <m>W=\{A\in \ML_{n,n}(\R)\colon A\text{ is diagonal}\}</m>
           </p>
         </li>
         <li>
           <title>Upper triangular matrices</title>
           <p>
-            <m>W=\{A\in M_{nn}\colon A\text{ is upper triangular}\}</m>
+            <m>W=\{A\in \ML_{n,n}(\R)\colon A\text{ is upper triangular}\}</m>
           </p>
         </li>
         <li>
           <title>Lower triangular matrices</title>
           <p>
-            <m>W=\{A\in M_{nn}\colon A\text{ is lower triangular}\}</m>
+            <m>W=\{A\in \ML_{n,n}(\R)\colon A\text{ is lower triangular}\}</m>
           </p>
         </li>
         <li>
           <title>Trace-zero matrix</title>
           <p>
-            <m>W=\{A\in M_{nn}\colon \tr A=\boldzero \}</m>
+            <m>W=\{A\in \ML_{n,n}(\R)\colon \tr A=\boldzero \}</m>
           </p>
         </li>
         <li>
           <title>Symmetric matrices</title>
           <p>
-            <m>W=\{A\in M_{nn}\colon A^T=A \}</m>
+            <m>W=\{A\in \ML_{n,n}(\R)\colon A^T=A \}</m>
           </p>
         </li>
         <li>
           <title>Skew-symmetric matrices</title>
           <p>
-            <m>W=\{A\in M_{nn}\colon A^T=-A \}</m>
+            <m>W=\{A\in \ML_{n,n}(\R)\colon A^T=-A \}</m>
           </p>
         </li>
       </ol>

@@ -69,10 +69,10 @@
     <remark>
       <title>Fundamental spaces</title>
       <p>
-        Note that the fundamental spaces of a matrix <m>A\in M_{mn}</m> are indeed subspaces. This is a simple consequences of theorems <xref ref="th_subspace_matrix_solutions" text="global"/> and <xref ref="th_span" text="global"/>, which tell us that null spaces of matrices and spans of vectors are subspaces. 
+        Note that the fundamental spaces of a matrix <m>A\in \ML_{m,n}(\R)</m> are indeed subspaces. This is a simple consequences of theorems <xref ref="th_subspace_matrix_solutions" text="global"/> and <xref ref="th_span" text="global"/>, which tell us that null spaces of matrices and spans of vectors are subspaces. 
       </p>
       <p> 
-        A good practice when dealing with fundamental spaces of a matrix, is to first sort out the ambient space where each of these subspaces lives: if <m>A\in M_{mn}</m>, then both <m>\NS A</m> and <m>\RS A</m> are subspaces of <m>\R^n</m>, and <m>\CS A</m> is a subspace of <m>\R^m</m>. 
+        A good practice when dealing with fundamental spaces of a matrix, is to first sort out the ambient space where each of these subspaces lives: if <m>A\in \ML_{m,n}(\R)</m>, then both <m>\NS A</m> and <m>\RS A</m> are subspaces of <m>\R^n</m>, and <m>\CS A</m> is a subspace of <m>\R^m</m>. 
       </p>
     </remark>
     <p>

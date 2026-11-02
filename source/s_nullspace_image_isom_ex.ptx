@@ -85,7 +85,7 @@ For each subset <m>W\subseteq V</m> show <m>W</m> is a subspace by identifying i
   <statement>
     <p>
       <md>
-        W=\{A\in M_{nn}\colon \tr A=0\}
+        W=\{A\in \ML_{n,n}(\R)\colon \tr A=0\}
       </md>
     </p>
   </statement>
@@ -94,7 +94,7 @@ For each subset <m>W\subseteq V</m> show <m>W</m> is a subspace by identifying i
   <statement>
     <p>
       <md>
-        W=\{A\in M_{nn}\colon A^T=-A\}
+        W=\{A\in \ML_{n,n}(\R)\colon A^T=-A\}
       </md>
     </p>
   </statement>

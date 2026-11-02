@@ -589,7 +589,7 @@
               <p>
                 The trace function
                 <md>
-                  <mrow>\tr\colon M_{mn} \amp \rightarrow \R</mrow>
+                  <mrow>\tr\colon \ML_{m,n}(\R) \amp \rightarrow \R</mrow>
                   <mrow>A \amp \mapsto \tr A</mrow>
                 </md>
                 is a linear transformation.
@@ -602,7 +602,7 @@
               <p>
                 The matrix transpose operation
                 <md>
-                  <mrow>F\colon M_{mn} \amp \rightarrow M_{nm}</mrow>
+                  <mrow>F\colon \ML_{m,n}(\R) \amp \rightarrow M_{nm}</mrow>
                   <mrow>A \amp \mapsto A^T</mrow>
                 </md>
                 is a linear transformation.
@@ -615,9 +615,9 @@
 
       <proof>
         <p>
-          We leave the proof of (1) to the reader, and prove that the function <m>F(A)=A^T</m> is a linear transformation from <m>M_{mn}</m> to <m>M_{nm}</m>.
+          We leave the proof of (1) to the reader, and prove that the function <m>F(A)=A^T</m> is a linear transformation from <m>\ML_{m,n}(\R)</m> to <m>M_{nm}</m>.
           We use the one-step technique.
-          Given scalars <m>c,d\in \R</m> and matrices <m>A,B\in M_{mn}</m>, we have
+          Given scalars <m>c,d\in \R</m> and matrices <m>A,B\in \ML_{m,n}(\R)</m>, we have
           <md>
             <mrow>F(cA+dB) \amp = (cA+dB)^T \amp (\text{def. of } F) </mrow>
             <mrow> \amp = cA^T+dB^T \amp (<xref ref="th_trans_props"/>
@@ -639,11 +639,11 @@
 
       <statement>
         <p>
-          Let <m>n</m> be a positive integer, and let <m>Q\in M_{nn}</m> be a fixed invertible matrix.
-          Given <m>A\in M_{mn}</m>, the matrix <m>B=Q^{-1}AQ</m> is called the <term>conjugate</term> of <m>A</m> by <m>Q</m>.
+          Let <m>n</m> be a positive integer, and let <m>Q\in \ML_{n,n}(\R)</m> be a fixed invertible matrix.
+          Given <m>A\in \ML_{m,n}(\R)</m>, the matrix <m>B=Q^{-1}AQ</m> is called the <term>conjugate</term> of <m>A</m> by <m>Q</m>.
           The operation
           <md>
-            <mrow>M_{nn} \amp \rightarrow M_{nn}</mrow>
+            <mrow>\ML_{n,n}(\R) \amp \rightarrow \ML_{n,n}(\R)</mrow>
             <mrow>A \amp \mapsto Q^{-1}AQ</mrow>
           </md>
           is called <term>conjugation</term> by <m>Q</m>.
@@ -656,10 +656,10 @@
 
       <statement>
         <p>
-          Let <m>n</m> be a positive integer, and let <m>Q\in M_{nn}</m> be a fixed invertible matrix.
+          Let <m>n</m> be a positive integer, and let <m>Q\in \ML_{n,n}(\R)</m> be a fixed invertible matrix.
           The conjugation by <m>Q</m> function
           <md>
-            <mrow>T\colon M_{nn} \amp \rightarrow M_{nn}</mrow>
+            <mrow>T\colon \ML_{n,n}(\R) \amp \rightarrow \ML_{n,n}(\R)</mrow>
             <mrow>A \amp \mapsto Q^{-1}AQ</mrow>
           </md>
           is a linear transformation.
@@ -987,7 +987,7 @@
               <title>Matrix transformations are linear</title>
 
               <p>
-                Given any <m>A\in M_{mn}</m>, the function <m>T_A\colon \R^n\rightarrow \R^m</m> is a linear transformation.
+                Given any <m>A\in \ML_{m,n}(\R)</m>, the function <m>T_A\colon \R^n\rightarrow \R^m</m> is a linear transformation.
               </p>
             </li>
 
@@ -1025,7 +1025,7 @@
           <li>
             <p>
               Let <m>B=\{\bolde_1,\bolde_2,\dots, \bolde_n\}</m> be the <xref ref="rm_standard_bases" text="custom">standard basis</xref> of <m>\R^n</m>.
-              Let <m>A\in M_{mn}</m> and let <m>\bolda_j</m> denote the <m>j</m>-th column of <m>A</m> for all <m>1\leq j\leq n</m>.
+              Let <m>A\in \ML_{m,n}(\R)</m> and let <m>\bolda_j</m> denote the <m>j</m>-th column of <m>A</m> for all <m>1\leq j\leq n</m>.
               We have
               <md>
                 <mrow>T=T_{A} \amp \iff T(\bolde_j)=T_A(\bolde_j) \text{ for all } 1\leq j\leq n \amp (<xref ref="th_bases_transformations"/>
@@ -1051,13 +1051,13 @@
     <warning>
       <p>
         Although <xref ref="th_matrix_transform"/> is very powerful, mark well its restriction: it only applies in the setting of linear transformations from <m>\R^n</m> to <m>\R^m</m>.
-      It says nothing about linear transformations whose domain or codomain is a vector space like <m>M_{mn}</m> or <m>\R^\infty</m>.
+      It says nothing about linear transformations whose domain or codomain is a vector space like <m>\ML_{m,n}(\R)</m> or <m>\R^\infty</m>.
       </p>
     </warning>
 
     <p>
       Besides giving a complete description of linear transformations from <m>\R^n</m> to <m>\R^m</m> (they all come from matrices), <xref ref="th_matrix_transform"/>, or rather its proof, provides a recipe for computing a <q>matrix formula</q> for a linear transformation <m>T\colon \R^n\colon \rightarrow \R^m</m>.
-      In other words, it tells us how to build the unique matrix <m>A\in M_{mn}</m> satisfying <m>T\boldx=A\boldx</m> for all <m>\boldx\in R^n</m>.
+      In other words, it tells us how to build the unique matrix <m>A\in \ML_{m,n}(\R)</m> satisfying <m>T\boldx=A\boldx</m> for all <m>\boldx\in R^n</m>.
       We call this matrix the <em>standard matrix</em> of <m>T</m>.
     </p>
 
@@ -1146,7 +1146,7 @@
     <warning>
       <p>
         Although <xref ref="th_matrix_transform"/> and <xref ref="proc_standard_matrix"/> are powerful results, mark well the restriction on their application: these results can only be used for linear transformations from <m>\R^n</m> to <m>\R^m</m>.
-      In particular, they say nothing about linear transformations whose domain or codomain is a vector space like <m>M_{mn}</m> or <m>\R^\infty</m>.
+      In particular, they say nothing about linear transformations whose domain or codomain is a vector space like <m>\ML_{m,n}(\R)</m> or <m>\R^\infty</m>.
       </p>
     </warning>
   </subsection>

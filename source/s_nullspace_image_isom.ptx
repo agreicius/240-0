@@ -170,7 +170,7 @@
   <example xml:id="eg_nullspace_image_transposition">
     <statement>
       <p>
-        Define <m>F\colon M_{nn}\rightarrow M_{nn}</m> as <m>F(A)=A^T-A</m>.
+        Define <m>F\colon \ML_{n,n}(\R)\rightarrow \ML_{n,n}(\R)</m> as <m>F(A)=A^T-A</m>.
       </p>
       <ol>
         <li>
@@ -195,7 +195,7 @@
         <ol>
           <li>
             <p>
-              Linearity is an easy consequence of transpose properties. For any <m>A_1, A_2\in M_{nn}</m> and <m>c_1,c_2\in \R</m>, we have
+              Linearity is an easy consequence of transpose properties. For any <m>A_1, A_2\in \ML_{n,n}(\R)</m> and <m>c_1,c_2\in \R</m>, we have
               <md>
                 <mrow>F(c_1A_1+c_2A_2)  \amp= (c_1A_1+c_2A_2)^T-(c_1A_1+c_2A_2)  </mrow>
                 <mrow> \amp = c_1A_1^T+c_2A_2^T-c_1A_1-c_2A_2\amp (<xref ref="th_transp_linear" text="global"/>) </mrow>
@@ -208,7 +208,7 @@
             <p>
               We have
               <md>
-                <mrow>\NS F \amp= \{A\in M_{nn}\colon F(A)=\boldzero\} </mrow>
+                <mrow>\NS F \amp= \{A\in \ML_{n,n}(\R)\colon F(A)=\boldzero\} </mrow>
                 <mrow> \amp=\{A\in M_{22}\colon A^T-A=\boldzero\} </mrow>
                 <mrow>  \amp=\{A\in M_{22}\colon A^T=A\} </mrow>
               </md>.
@@ -217,10 +217,10 @@
           </li>
           <li>
             <p>
-              Let <m>W=\{B\in M_{nn}\colon B^T=-B\}</m>, subspace of skew-symmetric <m>n\times n</m> matrices. We claim <m>\im F=W</m>. As this is a set equality, we prove it by showing the two set inclusions <m>\im F\subseteq W</m> and <m>W\subseteq \im F</m>. (See <xref ref="ss_set_properties" text="title"/>)
+              Let <m>W=\{B\in \ML_{n,n}(\R)\colon B^T=-B\}</m>, subspace of skew-symmetric <m>n\times n</m> matrices. We claim <m>\im F=W</m>. As this is a set equality, we prove it by showing the two set inclusions <m>\im F\subseteq W</m> and <m>W\subseteq \im F</m>. (See <xref ref="ss_set_properties" text="title"/>)
             </p>
             <p>
-              The inclusion <m>\im F\subseteq W</m> is the easier of the two. If <m>B\in \im F</m>, then <m>B=F(A)=A^T-A</m> for some <m>A\in M_{nn}</m>. Using various properties of transposition, we have
+              The inclusion <m>\im F\subseteq W</m> is the easier of the two. If <m>B\in \im F</m>, then <m>B=F(A)=A^T-A</m> for some <m>A\in \ML_{n,n}(\R)</m>. Using various properties of transposition, we have
               <md>
                 B^T=(A^T-A)^T=(A^T)^T-A^T=-(A^T-A)=-B
               </md>,
@@ -462,7 +462,7 @@ As we will see, this elegant result can be used to significantly simplify comput
   <title>Rank-nullity application</title>
   <statement>
     <p>
-      Let <m>F\colon M_{nn}\rightarrow M_{nn}</m> be defined as <m>F(A)=A^T-A</m> as in <xref ref="eg_nullspace_image_transposition"/>. Prove that <m>\im F</m> is the subspace <m>W</m> of all skew-symmetric matrices following the steps below. 
+      Let <m>F\colon \ML_{n,n}(\R)\rightarrow \ML_{n,n}(\R)</m> be defined as <m>F(A)=A^T-A</m> as in <xref ref="eg_nullspace_image_transposition"/>. Prove that <m>\im F</m> is the subspace <m>W</m> of all skew-symmetric matrices following the steps below. 
     <ul>
       <li>
         <p>
@@ -486,9 +486,9 @@ As we will see, this elegant result can be used to significantly simplify comput
     <p>
       We compute 
       <md>
-        <mrow>\NS F \amp =\{A\in M_{nn}\colon F(A)=\boldzero\}</mrow>
-        <mrow> \amp =\{A\in M_{nn}\colon A^T-A=\boldzero\}</mrow>
-        <mrow> \amp =\{A\in M_{nn}\colon A^T=A\}</mrow>
+        <mrow>\NS F \amp =\{A\in \ML_{n,n}(\R)\colon F(A)=\boldzero\}</mrow>
+        <mrow> \amp =\{A\in \ML_{n,n}(\R)\colon A^T-A=\boldzero\}</mrow>
+        <mrow> \amp =\{A\in \ML_{n,n}(\R)\colon A^T=A\}</mrow>
       </md>.
       Thus <m>\NS F</m> is the subspace of all symmetric matrices. It can be shown that this space has dimension <m>\frac{n(n+1)}{2}</m>. To see why this is true intuitively, note that a symmetric matrix is completely determined by the entries on and above the diagonal: there are  
       <md>
@@ -496,7 +496,7 @@ As we will see, this elegant result can be used to significantly simplify comput
       </md>
       of these. Next, the rank-nullity theorem implies that 
       <md>
-        <mrow>\dim \im F \amp =\dim M_{nn}-\dim \NS F</mrow>
+        <mrow>\dim \im F \amp =\dim \ML_{n,n}(\R)-\dim \NS F</mrow>
         <mrow> \amp =n^2-\frac{n(n+1)}{2}</mrow>
         <mrow> \amp =\frac{n(n-1)}{2}</mrow>
       </md>.
@@ -701,7 +701,7 @@ As we will see, this elegant result can be used to significantly simplify comput
     <title>Transposition is an isomorphism</title>
     <statement>
       <p>
-        Let <m>F\colon M_{mn}\rightarrow M_{nm}</m> be defined as <m>F(A)=A^T</m>. Prove that <m>F</m> is an isomorphism. 
+        Let <m>F\colon \ML_{m,n}(\R)\rightarrow M_{nm}</m> be defined as <m>F(A)=A^T</m>. Prove that <m>F</m> is an isomorphism. 
       </p>
     </statement>
     <solution>
@@ -711,17 +711,17 @@ As we will see, this elegant result can be used to significantly simplify comput
       <case>
       <title>First proof</title>
       <p>
-      Define <m>G\colon M_{nm}\rightarrow M_{mn}</m> as <m>G(B)=B^T</m>. We claim that <m>G=F^{-1}</m>, and hence that <m>F</m> is an isomorphism. To do show we must show 
+      Define <m>G\colon M_{nm}\rightarrow \ML_{m,n}(\R)</m> as <m>G(B)=B^T</m>. We claim that <m>G=F^{-1}</m>, and hence that <m>F</m> is an isomorphism. To do show we must show 
       <md>
-        <mrow>G\circ F \amp = \id_{M_{mn}} \amp F\circ G\amp =\id_{M_{nm}}</mrow>
+        <mrow>G\circ F \amp = \id_{\ML_{m,n}(\R)} \amp F\circ G\amp =\id_{M_{nm}}</mrow>
       </md>.
-      For any <m>A\in M_{mn}</m>, we have 
+      For any <m>A\in \ML_{m,n}(\R)</m>, we have 
       <md>
         <mrow>G(F(A)) \amp =G(A^T)</mrow>
         <mrow> \amp(A^T)^T </mrow>
         <mrow> \amp = A</mrow>
       </md>.
-      Thus <m>G\circ F=\id_{M_{mn}}</m>. Similarly, for any <m>B\in M_{nm}</m>, we have 
+      Thus <m>G\circ F=\id_{\ML_{m,n}(\R)}</m>. Similarly, for any <m>B\in M_{nm}</m>, we have 
       <md>
         <mrow>F(G(B)) \amp = F(B^T)</mrow>
         <mrow> \amp = (B^T)^T</mrow>
@@ -741,7 +741,7 @@ As we will see, this elegant result can be used to significantly simplify comput
       <md>
         F(A)=F(B^T)=(B^T)^T=B
       </md>.
-      This proves that for any <m>B\in M_{nm}</m> there is a matrix  <m>A\in M_{mn}</m> such that <m>F(A)=B</m>. Thus <m>\im F=M_{nm}</m>. 
+      This proves that for any <m>B\in M_{nm}</m> there is a matrix  <m>A\in \ML_{m,n}(\R)</m> such that <m>F(A)=B</m>. Thus <m>\im F=M_{nm}</m>. 
       </p>
 
       </case>
@@ -941,7 +941,7 @@ As we will see, this elegant result can be used to significantly simplify comput
     <subsection xml:id="ss_invert_isom">
       <title>Invertibility and isomorphisms</title>
       <p>
-        We end this section by making a connection between invertible matrices and isomorphisms. It follows easily from <xref ref="th_isomorphisms_finite_dim"/> that a matrix <m>A\in M_{nn}</m> is invertible if and only if its corresponding matrix transformation <m>T_A\colon \R^n\rightarrow \R^n</m> is an isomorphism. Indeed, <m>T_A</m> is an isomorphism if and only if <m>\NS T_A=\{\boldzero\}</m>, if and only if <m>\NS A=\{\boldzero\}</m>, if and only if <m>A</m> is invertible. Furthermore, we see in this case that the inverse function of <m>T_A</m> is the matrix transformation <m>T_{A^{-1}}</m>: <ie/>, <m>(T_A)^{-1}=T_{A^{-1}}</m>. We add this statement to our ever-growing list of equivalent formulations of invertibility.  
+        We end this section by making a connection between invertible matrices and isomorphisms. It follows easily from <xref ref="th_isomorphisms_finite_dim"/> that a matrix <m>A\in \ML_{n,n}(\R)</m> is invertible if and only if its corresponding matrix transformation <m>T_A\colon \R^n\rightarrow \R^n</m> is an isomorphism. Indeed, <m>T_A</m> is an isomorphism if and only if <m>\NS T_A=\{\boldzero\}</m>, if and only if <m>\NS A=\{\boldzero\}</m>, if and only if <m>A</m> is invertible. Furthermore, we see in this case that the inverse function of <m>T_A</m> is the matrix transformation <m>T_{A^{-1}}</m>: <ie/>, <m>(T_A)^{-1}=T_{A^{-1}}</m>. We add this statement to our ever-growing list of equivalent formulations of invertibility.  
       </p>
       <theorem xml:id="th_invertibility_with_isom">
         <title>Invertibility theorem</title>
