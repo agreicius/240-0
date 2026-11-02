@@ -142,7 +142,7 @@
   <exercise>
     <statement>
       <p>
-        Find a symmetric matrix <m>A\in M_{22}</m> satisfying the following property: <m>\boldx=(x,y)</m> satisfies <xref ref="eq_conic_eqn"/> if and only if
+        Find a symmetric matrix <m>A\in \ML_{2,2}(\R)</m> satisfying the following property: <m>\boldx=(x,y)</m> satisfies <xref ref="eq_conic_eqn"/> if and only if
         <md number="yes" xml:id="eq_conic_eqn_matrix">
           \boldx \cdot (A\boldx)=\boldx^TA\boldx=d
         </md>.
@@ -154,7 +154,7 @@
   <exercise>
     <statement>
       <p>
-        Show that there is a rotation matrix <m>Q\in M_{22}</m> satisfying <m>D=Q^TAQ</m>, where
+        Show that there is a rotation matrix <m>Q\in \ML_{2,2}(\R)</m> satisfying <m>D=Q^TAQ</m>, where
         <md>
           D=\begin{amatrix}[rr] e\amp 0\\ 0\amp f \end{amatrix}
         </md>

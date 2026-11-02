@@ -14,7 +14,7 @@ In each exercise, determine whether the given subset <m>S</m> of the vector spac
 </exercise>
 <exercise>
   <p>
-    <m>V=M_{22}</m>, <m>S=\left\{\begin{amatrix}[rr]1\amp 1\\1\amp -3\end{amatrix},
+    <m>V=\ML_{2,2}(\R)</m>, <m>S=\left\{\begin{amatrix}[rr]1\amp 1\\1\amp -3\end{amatrix},
       \begin{amatrix}[rr]1\amp -1\\1\amp -1\end{amatrix},
       \begin{amatrix}[rr]2\amp 1 \\-1\amp -2\end{amatrix},
       \begin{amatrix}[rr]0\amp 1\\1\amp -2\end{amatrix}   \right\}</m>
@@ -24,7 +24,7 @@ In each exercise, determine whether the given subset <m>S</m> of the vector spac
 <exercise>
   <statement>
     <p>
-      Let <m>V=M_{22}</m> and let <m>S=\{ A_1, A_2, A_3\}</m>, where
+      Let <m>V=\ML_{2,2}(\R)</m> and let <m>S=\{ A_1, A_2, A_3\}</m>, where
       <md>
         A_1=\begin{bmatrix}1\amp 0\\ 1\amp c \end{bmatrix},  A_2=\begin{bmatrix}-1\amp 0\\ c\amp 1 \end{bmatrix},  A_3=\begin{bmatrix}2\amp 0\\ 1\amp 3 \end{bmatrix}
       </md>.
@@ -35,7 +35,7 @@ In each exercise, determine whether the given subset <m>S</m> of the vector spac
 <exercise>
   <statement>
     <p>
-      Let <m>V=M_{22}</m>,
+      Let <m>V=\ML_{2,2}(\R)</m>,
       and define <m>A_1=\begin{bmatrix}1\amp 1\\1\amp 1 \end{bmatrix}</m>,
       <m>A_2=\begin{bmatrix}0\amp 1\\1\amp 0 \end{bmatrix}</m>,
       <m>A_3=\begin{bmatrix}1\amp 1\\ 1\amp 0 \end{bmatrix}</m>.

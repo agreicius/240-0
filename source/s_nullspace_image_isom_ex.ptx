@@ -22,7 +22,7 @@
       <statement>
         <p>
           <md>
-            <mrow> T\colon M_{22}\amp \rightarrow M_{22} </mrow>
+            <mrow> T\colon \ML_{2,2}(\R)\amp \rightarrow \ML_{2,2}(\R) </mrow>
             <mrow> A \amp\mapsto \begin{amatrix}[rr]1\amp 1\\ 1\amp 1  \end{amatrix}A </mrow>
           </md>
         </p>

@@ -396,7 +396,7 @@
   <title>Change of basis, <m>B</m> standard</title>
   <statement>
     <p>
-      Let <m>V=M_{22}</m>, <m>B=(E_{11}, E_{12}, E_{21}, E_{22})</m> (standard basis) and <m>B'=(A_1,A_2,A_3,A_4)</m>, where
+      Let <m>V=\ML_{2,2}(\R)</m>, <m>B=(E_{11}, E_{12}, E_{21}, E_{22})</m> (standard basis) and <m>B'=(A_1,A_2,A_3,A_4)</m>, where
       <md>
         A_1=\begin{amatrix}[rr]
           1\amp 1\\ 1\amp 1

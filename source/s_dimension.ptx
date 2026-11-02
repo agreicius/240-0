@@ -108,7 +108,7 @@ Even when we do not have a standard basis at our disposal, there are many situat
 <title>Dimension of symmetric matrices</title>
 <statement>
   <p>
-    Let <m>W\subseteq M_{22}</m> be the space of symmetric <m>2\times 2</m> matrices. Compute <m>\dim W</m> using <xref ref="proc_dimension"/>. You may take for granted that <m>W</m> is a subspace. 
+    Let <m>W\subseteq \ML_{2,2}(\R)</m> be the space of symmetric <m>2\times 2</m> matrices. Compute <m>\dim W</m> using <xref ref="proc_dimension"/>. You may take for granted that <m>W</m> is a subspace. 
   </p>
 </statement>
 <solution>
@@ -485,7 +485,7 @@ The <q>contracting and expanding</q> theorem below is a very useful theoretical 
   <title>Dimension of subspace</title>
   <statement>
     <p>
-      Let <m>W=\Span\{A_1, A_2, A_3\}\subseteq M_{22}</m>, where 
+      Let <m>W=\Span\{A_1, A_2, A_3\}\subseteq \ML_{2,2}(\R)</m>, where 
        <md>
          A_1=
          \begin{amatrix}

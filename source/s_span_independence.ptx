@@ -338,7 +338,7 @@
           </li>
           <li>
             <p>
-              <m>V=M_{22}</m>, <m>S=\{A_1, A_2, A_3, A_4\}</m>,
+              <m>V=\ML_{2,2}(\R)</m>, <m>S=\{A_1, A_2, A_3, A_4\}</m>,
               <md>
                 A_1=\begin{amatrix}[rr]1\amp 1\\ 1\amp 1  \end{amatrix},
                 A_2=\begin{amatrix}[rr]1\amp -1\\ 0\amp 0  \end{amatrix},
@@ -394,7 +394,7 @@
                 0\amp 0\amp 0\amp \boxed{1}\amp \frac{a+b-c-d}{4}
               \end{amatrix}
                 </md>.
-                Since the last column will never contain a leading one, we conclude that the system is consistent for any choice of <m>a,b,c,d</m>, and thus that <m>\Span S=M_{22}</m>, as claimed.
+                Since the last column will never contain a leading one, we conclude that the system is consistent for any choice of <m>a,b,c,d</m>, and thus that <m>\Span S=\ML_{2,2}(\R)</m>, as claimed.
               </p>
             </li>
             <!-- <li>
@@ -611,7 +611,7 @@
   
         <li>
           <p>
-            <m>V=M_{22}</m>, <m>S=\{A_1, A_2, A_3, A_4\}</m>, where
+            <m>V=\ML_{2,2}(\R)</m>, <m>S=\{A_1, A_2, A_3, A_4\}</m>, where
             <md>
               A_1=\begin{bmatrix}3\amp 1\\ 2\amp -3 \end{bmatrix} , A_2= \begin{bmatrix}0\amp 4\\ 2\amp 0 \end{bmatrix} , A_3=\begin{bmatrix}-2\amp -2\\ -2\amp 2 \end{bmatrix}
             </md>.

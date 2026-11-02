@@ -214,7 +214,7 @@
         <p>
           Consider the linear transformation
           <md>
-            <mrow>S\colon M_{22} \amp\rightarrow M_{22} </mrow>
+            <mrow>S\colon \ML_{2,2}(\R) \amp\rightarrow \ML_{2,2}(\R) </mrow>
             <mrow> A \amp\mapsto A^T </mrow>
           </md>.
           Determine all eigenvectors and eigenvalues of <m>S</m>.
@@ -791,7 +791,7 @@ We will show below that <m>p(t)=\det(tI-A)</m> is indeed a polynomial (<xref ref
   <title>Transposition (again)</title>
   <statement>
     <p>
-      Let <m>S\colon M_{22}\rightarrow M_{22}</m> be defined as <m>S(A)=A^T</m>.
+      Let <m>S\colon \ML_{2,2}(\R)\rightarrow \ML_{2,2}(\R)</m> be defined as <m>S(A)=A^T</m>.
     </p>
     <ol>
       <li>
@@ -808,7 +808,7 @@ We will show below that <m>p(t)=\det(tI-A)</m> is indeed a polynomial (<xref ref
   </statement>
   <solution>
     <p>
-      Let <m>B=(E_{11}, E_{12}, E_{21}, E_{22})</m>, the standard ordered basis of <m>M_{22}</m>. Compute <m>A=[S]_B</m>:
+      Let <m>B=(E_{11}, E_{12}, E_{21}, E_{22})</m>, the standard ordered basis of <m>\ML_{2,2}(\R)</m>. Compute <m>A=[S]_B</m>:
       <md>
         <mrow> A=[S]_B \amp =\begin{bmatrix}
           \vert \amp \vert\amp \vert\amp \vert \\

@@ -185,21 +185,21 @@
     <task>
       <statement>
         <p>
-           <m>A\in M_{33}</m>, <m>p(t)=\det(tI-A)=t^3-t^2</m>, <m>\nullity A=2</m>
+           <m>A\in \ML_{3,3}(\R)</m>, <m>p(t)=\det(tI-A)=t^3-t^2</m>, <m>\nullity A=2</m>
         </p>
       </statement>
     </task>
     <task>
       <statement>
         <p>
-          <m>A\in M_{33}</m>, <m>p(t)=\det(tI-A)=t^3+t^2-t</m>
+          <m>A\in \ML_{3,3}(\R)</m>, <m>p(t)=\det(tI-A)=t^3+t^2-t</m>
         </p>
       </statement>
     </task>
     <task>
       <statement>
         <p>
-            <m>A\in M_{22}</m>, <m>\tr A=4</m>, <m>\det A=3</m>
+            <m>A\in \ML_{2,2}(\R)</m>, <m>\tr A=4</m>, <m>\det A=3</m>
         </p>
       </statement>
       <hint>

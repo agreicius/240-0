@@ -60,7 +60,7 @@
       0\amp 0\\ 1\amp 0
   \end{bmatrix}
         </md>.
-        You may take for granted that <m>B</m> is an ordered basis of <m>M_{22}</m>.
+        You may take for granted that <m>B</m> is an ordered basis of <m>\ML_{2,2}(\R)</m>.
       </p>
       <ol>
         <li>
@@ -74,7 +74,7 @@
           <p>
             Compute <m>[A]_B</m> for an arbitrary matrix <m>\begin{bmatrix}
               a\amp b\\ c\amp d
-            \end{bmatrix}\in M_{22}</m>.
+            \end{bmatrix}\in \ML_{2,2}(\R)</m>.
           </p>
         </li>
       </ol>
@@ -132,7 +132,7 @@
       <p>
         Let
         <md>
-          S=\left\{A_1=\begin{amatrix}[rr]1\amp 2\\1\amp 1 \end{amatrix}, \ A_2=\begin{amatrix}[rr] 1\amp 1\\2\amp 1\end{amatrix}, A_3=\begin{amatrix}[rr] -1\amp 1\\ -4\amp -1 \end{amatrix} , A_4=\begin{amatrix}[rr] 0\amp 1\\ 2\amp 0\end{amatrix}\right\}\subseteq M_{22}
+          S=\left\{A_1=\begin{amatrix}[rr]1\amp 2\\1\amp 1 \end{amatrix}, \ A_2=\begin{amatrix}[rr] 1\amp 1\\2\amp 1\end{amatrix}, A_3=\begin{amatrix}[rr] -1\amp 1\\ -4\amp -1 \end{amatrix} , A_4=\begin{amatrix}[rr] 0\amp 1\\ 2\amp 0\end{amatrix}\right\}\subseteq \ML_{2,2}(\R)
         </md>.
         <ol>
           <li>

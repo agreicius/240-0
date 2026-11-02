@@ -487,7 +487,7 @@ makes no assumption about the dimension of <m>V</m> and can thus can be applied 
     <title>Transposition</title>
     <statement>
       <p>
-        Let <m>S\colon M_{22}\rightarrow M_{22}</m> be the linear transformation defined as <m>S(A)=A^T</m>. Decide whether <m>S</m> is diagonalizable. If yes, find an eigenbasis for <m>S</m> and compute the corresponding matrix representing <m>S</m>.
+        Let <m>S\colon \ML_{2,2}(\R)\rightarrow \ML_{2,2}(\R)</m> be the linear transformation defined as <m>S(A)=A^T</m>. Decide whether <m>S</m> is diagonalizable. If yes, find an eigenbasis for <m>S</m> and compute the corresponding matrix representing <m>S</m>.
       </p>
 
     </statement>
@@ -502,7 +502,7 @@ makes no assumption about the dimension of <m>V</m> and can thus can be applied 
             0\amp 0\amp 0\amp 1
           \end{bmatrix}
         </md>,
-        where <m>B=(E_{11}, E_{12}, E_{21}, E_{22})</m> is the standard ordered basis of <m>M_{22}</m>. Furthermore, we saw that <m>1</m> and <m>-1</m> are the distinct eigenvalues of <m>A=[S]_B</m>, and that
+        where <m>B=(E_{11}, E_{12}, E_{21}, E_{22})</m> is the standard ordered basis of <m>\ML_{2,2}(\R)</m>. Furthermore, we saw that <m>1</m> and <m>-1</m> are the distinct eigenvalues of <m>A=[S]_B</m>, and that
         <md>
           S_1=\{(1,0,0,0), (0,1,1,0), (0,0,0,1)\}, S_{-1}=\Span\{(0,1,-1,0)\}
         </md>

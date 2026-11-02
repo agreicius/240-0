@@ -209,8 +209,8 @@
               We have
               <md>
                 <mrow>\NS F \amp= \{A\in \ML_{n,n}(\R)\colon F(A)=\boldzero\} </mrow>
-                <mrow> \amp=\{A\in M_{22}\colon A^T-A=\boldzero\} </mrow>
-                <mrow>  \amp=\{A\in M_{22}\colon A^T=A\} </mrow>
+                <mrow> \amp=\{A\in \ML_{2,2}(\R)\colon A^T-A=\boldzero\} </mrow>
+                <mrow>  \amp=\{A\in \ML_{2,2}(\R)\colon A^T=A\} </mrow>
               </md>.
               Thus <m>\NS F</m> is the subspace of symmetric <m>n\times n</m> matrices!
             </p>

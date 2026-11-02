@@ -71,7 +71,7 @@
     <p>
       The function 
       <md>
-        <mrow>T\colon \R^3 \amp \rightarrow M_{22}</mrow>
+        <mrow>T\colon \R^3 \amp \rightarrow \ML_{2,2}(\R)</mrow>
         <mrow>(x,y,z) \amp \mapsto \begin{bmatrix}
         x+y+z\amp x-z\\
         x+2y\amp y-z
@@ -79,7 +79,7 @@
         </mrow>
       </md>
         is linear. Compute <m>[T]_{B}^{B'}</m>,
-      where <m>B</m> and <m>B'</m> are the standard bases for <m>\R^3</m> and <m>M_{22}</m>,
+      where <m>B</m> and <m>B'</m> are the standard bases for <m>\R^3</m> and <m>\ML_{2,2}(\R)</m>,
       respectively.
     </p>
   </statement>
@@ -99,7 +99,7 @@
         <mrow>T(\bolde_2) \amp = T(0,1,0)=\begin{bmatrix}1\amp 0 \\ 2 \amp 1 \end{bmatrix}</mrow>
         <mrow>T(\bolde_3) \amp = T(0,0,1)=\begin{bmatrix}1\amp -1 \\ 0 \amp -1\end{bmatrix} </mrow>
       </md>.
-      To finish our computation, we must compute <m>[T(\bolde_i)]_{B'}</m> for each <m>1\leq i\leq 3</m>. Since <m>B'</m> is the standard basis of <m>M_{22}</m>, this is not difficult: in general we have 
+      To finish our computation, we must compute <m>[T(\bolde_i)]_{B'}</m> for each <m>1\leq i\leq 3</m>. Since <m>B'</m> is the standard basis of <m>\ML_{2,2}(\R)</m>, this is not difficult: in general we have 
       <md>
        \left[ \begin{bmatrix}a\amp b\\ c\amp d\end{bmatrix}\right]_{B'}=(a,b,c,d)
       </md>.
@@ -417,14 +417,14 @@
       <p>
         The function 
         <md>
-          <mrow>F\colon M_{22} \amp \rightarrow M_{22}</mrow>
+          <mrow>F\colon \ML_{2,2}(\R) \amp \rightarrow \ML_{2,2}(\R)</mrow>
           <mrow>A \amp \mapsto A^T-A</mrow>
         </md>
         is linear. 
         <ol>
           <li>
             <p>
-              Compute <m>A=[T]_{B}</m>, where <m>B=(E_{11},E_{12},E_{21},E_{22})</m> is the standard basis of <m>M_{22}</m>.
+              Compute <m>A=[T]_{B}</m>, where <m>B=(E_{11},E_{12},E_{21},E_{22})</m> is the standard basis of <m>\ML_{2,2}(\R)</m>.
             </p>
           </li>
           <li>
@@ -449,7 +449,7 @@
           <mrow>F(E_{21}) \amp =E_{21}^T-E_{21}=\begin{amatrix}[rr]0\amp 1 \\ -1 \amp 0\end{amatrix}</mrow>
           <mrow>F(E_{22}) \amp =E_{22}^T-E_{22}=\begin{amatrix}[rr]0 \amp 0 \\ 0 \amp 0\end{amatrix}</mrow>
         </md>
-        Next, using the fact that for the standard basis <m>B</m> of <m>M_{22}</m> we have 
+        Next, using the fact that for the standard basis <m>B</m> of <m>\ML_{2,2}(\R)</m> we have 
         <md>
           \left[ \begin{bmatrix}a\amp b\\ c\amp d\end{bmatrix}\right]_B=(a,b,c,d)
         </md>,
@@ -472,7 +472,7 @@
         It is not difficult to compute bases for <m>\NS A</m> and <m>\CS A</m> using <xref ref="proc_fund_spaces"/>, but the matrix <m>A</m> is simple enough that we will compute these by inspection.  For example, we see easily that <m>\CS A=\Span\{(0,-1,1,0)\}</m>. From the rank-nullity theorem, it then follows that <m>\dim \NS A=4-\dim \CS A=4-1=3</m>. Thus we need just three linearly independent elements of <m>\NS A</m> to get a basis. Again, by inspection (using <xref ref="th_column_method" text="global"/>) we see that <m>(1,0,0,0),(0,0,0,1),(0,1,1,0)\in \NS A</m>. It is fairly easy to see the three vectors are independent, and thus form a basis of <m>\NS A</m>.
       </p>
       <p>
-        To <q>lift</q> the bases <m>\{(1,0,0,0),(0,0,0,1),(0,1,1,0)\}</m> and <m>\{(0,-1,1,0)\}</m> to bases of <m>\NS F</m> and <m>\im F</m>, we simply find the matrices in <m>M_{22}</m> that correspond to these <m>4</m>-vectors via the coordinate vector isomorphism <m>[\phantom{\boldv}]_B</m>: <ie/>, the matrices that have these <m>4</m>-vectors as their coordinate vectors. This is easily done by inspection. We conclude that
+        To <q>lift</q> the bases <m>\{(1,0,0,0),(0,0,0,1),(0,1,1,0)\}</m> and <m>\{(0,-1,1,0)\}</m> to bases of <m>\NS F</m> and <m>\im F</m>, we simply find the matrices in <m>\ML_{2,2}(\R)</m> that correspond to these <m>4</m>-vectors via the coordinate vector isomorphism <m>[\phantom{\boldv}]_B</m>: <ie/>, the matrices that have these <m>4</m>-vectors as their coordinate vectors. This is easily done by inspection. We conclude that
         <md>
           B_1=\left\{A_1=\begin{bmatrix}1\amp 0\\ 0\amp 0\end{bmatrix}, A_2=\begin{amatrix}[cc]0\amp 0 \\ 0\amp 1\end{amatrix}, A_3=\begin{amatrix}[cc]0\amp 1 \\ 1\amp 0\end{amatrix}\right\}
         </md>

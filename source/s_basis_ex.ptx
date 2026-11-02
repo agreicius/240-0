@@ -30,7 +30,7 @@ For each vector space <m>V</m> and subset <m>S</m>, use the one-step technique (
 <exercise>
   <statement>
     <p>
-      <m>V=M_{22}</m>
+      <m>V=\ML_{2,2}(\R)</m>
     </p>
     <ol>
       <li>
@@ -96,7 +96,7 @@ For each given <m>V</m> and subspace <m>W\subseteq V</m>, provide a basis for <m
 <exercise>
   <statement>
     <p>
-      <m>V=M_{33}</m>, <m>W=\{A\in M_{33}\colon A^T=A\}</m>
+      <m>V=\ML_{3,3}(\R)</m>, <m>W=\{A\in \ML_{3,3}(\R)\colon A^T=A\}</m>
     </p>
   </statement>
 </exercise>
@@ -104,7 +104,7 @@ For each given <m>V</m> and subspace <m>W\subseteq V</m>, provide a basis for <m
 <exercise>
   <statement>
     <p>
-      <m>V=M_{23}</m>, <m>W</m> is set of all matrices whose rows and columns all sum to zero
+      <m>V=\ML_{2,3}(\R)</m>, <m>W</m> is set of all matrices whose rows and columns all sum to zero
     </p>
   </statement>
 </exercise>

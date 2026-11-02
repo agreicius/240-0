@@ -113,7 +113,7 @@
 
 						<li>
 							<p>
-								<m>V=M_{22}</m>,
+								<m>V=\ML_{2,2}(\R)</m>,
 								<md>
 									B=\left\{ A_1=\begin{bmatrix}0\amp 1\\ 1\amp 1 \end{bmatrix} , A_2=\begin{bmatrix}1\amp 0\\ 1\amp 1 \end{bmatrix} , A_3=\begin{bmatrix}1\amp 1\\ 0\amp 1 \end{bmatrix} , A_4=\begin{bmatrix}1\amp 1\\ 1\amp 0 \end{bmatrix} \right\}
 								</md>.
@@ -144,7 +144,7 @@
 
 					<li>
 						<p>
-							First we show that <m>B=\{A_1,A_2,A_3,A_4\}</m> spans <m>M_{22}</m>.
+							First we show that <m>B=\{A_1,A_2,A_3,A_4\}</m> spans <m>\ML_{2,2}(\R)</m>.
 							Given an arbitrary element
 							<md>
 								A=\begin{bmatrix}a\amp b\\ c\amp d\end{bmatrix}
@@ -474,7 +474,7 @@
 			<title>By-inspection basis technique</title>
 			<statement>
 				<p>
-					Let <m>W\subseteq M_{22}</m> be the subspace of all symmetric matrices.
+					Let <m>W\subseteq \ML_{2,2}(\R)</m> be the subspace of all symmetric matrices.
 					Use <xref ref="proc_provide_basis"/> to compute a basis of <m>W</m>.
 				</p>
 			</statement>

@@ -124,7 +124,7 @@
         </li>
         <li>
           <p>
-            Consider the standard basis <m>B=(E_{11}, E_{12}, E_{21}, E_{22})</m> of <m>M_{22}</m>. For any <m>A=\begin{bmatrix}a\amp b\\ c\amp d \end{bmatrix}</m> we have <m>[A]_B=(a,b,c,d)</m> since
+            Consider the standard basis <m>B=(E_{11}, E_{12}, E_{21}, E_{22})</m> of <m>\ML_{2,2}(\R)</m>. For any <m>A=\begin{bmatrix}a\amp b\\ c\amp d \end{bmatrix}</m> we have <m>[A]_B=(a,b,c,d)</m> since
             <md>
               \underset{A}{\begin{bmatrix}a\amp b\\ c\amp d \end{bmatrix}}=a\underset{E_{11}}{\begin{bmatrix}1\amp 0 \\ 0\amp 0\end{bmatrix}}+b\underset{E_{12}}{\begin{bmatrix}0\amp 1 \\ 0\amp 0\end{bmatrix}}+c\underset{E_{21}}{\begin{bmatrix}0\amp 0 \\ 1\amp 0\end{bmatrix}}+d\underset{E_{22}}{\begin{bmatrix}0\amp 0 \\ 0\amp 1\end{bmatrix}}
             </md>.
@@ -151,7 +151,7 @@
         </li>
         <li>
           <p>
-            Consider the reordered basis <m>B=(E_{22},E_{21},E_{12},E_{11})</m> of <m>M_{22}</m>. Given <m>A=\begin{bmatrix}a\amp b\\ c\amp d\end{bmatrix}</m>, we have <m>[A]_B=(d,c,b,a)</m>, since 
+            Consider the reordered basis <m>B=(E_{22},E_{21},E_{12},E_{11})</m> of <m>\ML_{2,2}(\R)</m>. Given <m>A=\begin{bmatrix}a\amp b\\ c\amp d\end{bmatrix}</m>, we have <m>[A]_B=(d,c,b,a)</m>, since 
             <md>
               \underset{A}{\begin{bmatrix}a\amp b\\ c\amp d \end{bmatrix}}=d\underset{E_{22}}{\begin{bmatrix}0\amp 0 \\ 0\amp 1\end{bmatrix}}+
               c\underset{E_{21}}{\begin{bmatrix}0\amp 0 \\ 1\amp 0\end{bmatrix}}+
@@ -384,14 +384,14 @@
         <md>
           S=\left \{ A_1=\begin{bmatrix}2\amp 1\\ 0\amp -2 \end{bmatrix} , A_2=\begin{bmatrix}1\amp 1\\ 1\amp -1 \end{bmatrix} , A_3=\begin{bmatrix}0\amp 1\\ 2\amp 0 \end{bmatrix} , A_4=\begin{bmatrix}-1\amp 0\\ 1\amp 1 \end{bmatrix} \right\}
         </md>
-        is a subset of the space <m>W=\{ A\in M_{22}\colon \tr A=0\}</m>.
+        is a subset of the space <m>W=\{ A\in \ML_{2,2}(\R)\colon \tr A=0\}</m>.
         Let <m>W'=\Span S</m>. Contract <m>S</m> to a basis of <m>W'</m>
         and determine whether <m>W'=W</m>.
       </p>
     </statement>
     <solution>
       <p>
-        Let <m>B=(E_{11}, E_{12}, E_{21}, E_{22})</m> be the standard basis of <m>M_{22}</m>.
+        Let <m>B=(E_{11}, E_{12}, E_{21}, E_{22})</m> be the standard basis of <m>\ML_{2,2}(\R)</m>.
         Apply <m>[\phantom{\boldv}]_B</m> to the elements of the given <m>S</m> to get a corresponding set <m>S'\subseteq\R^4</m>:
         <md>
           S'=\left\{ [A_1]_B=(2,1,0,-2), [A_2]_B=(1,1,1,-1), [A_3]_B=(0,1,2,0), [A_4]_B=(-1,0,1,1) \right\}
@@ -400,7 +400,7 @@
         <md>
           T'=\{[A_1]_B=(2,1,0,-2), [A_2]_B=(1,1,1,-1)\}
         </md>
-        Translating back to <m>V=M_{22}</m>, we conclude that the corresponding set
+        Translating back to <m>V=\ML_{2,2}(\R)</m>, we conclude that the corresponding set
         <md>
           B=\{A_1, A_2\}
         </md>

@@ -15,7 +15,7 @@
     <exercise>
       <statement>
         <p>
-          <m>T\colon P_2\rightarrow M_{22}</m>, <m>T(p(x))=\begin{bmatrix}
+          <m>T\colon P_2\rightarrow \ML_{2,2}(\R)</m>, <m>T(p(x))=\begin{bmatrix}
             p(-1)\amp p(0)\\
             p(1)\amp p(2)
           \end{bmatrix}</m>; <m>B=(x^2,x,1)</m>; <m>B'=(E_{11}, E_{12}, E_{21}, E_{22})</m>
@@ -76,12 +76,12 @@
   <exercise>
     <statement>
       <p>
-        The function <m>S\colon M_{22}\rightarrow M_{22}</m> defined as <m>S(A)=A^T-A</m> is a linear transformation.
+        The function <m>S\colon \ML_{2,2}(\R)\rightarrow \ML_{2,2}(\R)</m> defined as <m>S(A)=A^T-A</m> is a linear transformation.
       </p>
       <ol>
         <li>
           <p>
-            Compute <m>C=[S]_B</m>, where <m>B</m> is the standard basis of <m>M_{22}</m>.
+            Compute <m>C=[S]_B</m>, where <m>B</m> is the standard basis of <m>\ML_{2,2}(\R)</m>.
           </p>
         </li>
         <li>
@@ -143,11 +143,11 @@
   <exercise>
     <statement>
       <p>
-        Let <m>T\colon P_2\rightarrow M_{22}</m> be the linear transformation defined as
+        Let <m>T\colon P_2\rightarrow \ML_{2,2}(\R)</m> be the linear transformation defined as
         <md>
           T(p(x))=\begin{bmatrix} p(0)\amp p(1)\\ p(-1)\amp p(0) \end{bmatrix}
         </md>,
-        and let  <m>B=(1,x,x^2)</m>, <m>B'=(1, 1+x, 1+x^2)</m>, <m>B''=(E_{11}, E_{12}, E_{21}, E_{22})</m> (the standard basis of <m>M_{22}</m>).
+        and let  <m>B=(1,x,x^2)</m>, <m>B'=(1, 1+x, 1+x^2)</m>, <m>B''=(E_{11}, E_{12}, E_{21}, E_{22})</m> (the standard basis of <m>\ML_{2,2}(\R)</m>).
       </p>
       <ol>
         <li>

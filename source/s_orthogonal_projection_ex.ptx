@@ -38,7 +38,7 @@
   <exercise>
     <statement>
       <p>
-        Recall that the trace <m>\tr A</m> of a square matrix is the sum of its diagonal entries. Let <m>V=M_{22}</m> with inner product <m>\angvec{A,B}=\tr(A^TB)</m>. (You may take for granted that this operation is indeed an inner product on <m>M_{22}</m>.) Define <m>W=\{A\in M_{22}\colon \tr A=0\}</m>.
+        Recall that the trace <m>\tr A</m> of a square matrix is the sum of its diagonal entries. Let <m>V=\ML_{2,2}(\R)</m> with inner product <m>\angvec{A,B}=\tr(A^TB)</m>. (You may take for granted that this operation is indeed an inner product on <m>\ML_{2,2}(\R)</m>.) Define <m>W=\{A\in \ML_{2,2}(\R)\colon \tr A=0\}</m>.
       </p>
       <ol>
         <li>

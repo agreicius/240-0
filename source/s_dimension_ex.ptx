@@ -27,7 +27,7 @@
     </exercise>
     <exercise>
       <p>
-       <m>V=M_{22}</m>, <m>S=\{A_1,A_2,A_3\}</m>, where 
+       <m>V=\ML_{2,2}(\R)</m>, <m>S=\{A_1,A_2,A_3\}</m>, where 
        <md>
         <mrow>A_1\amp = \begin{amatrix}
         -99\amp \sqrt{17} \\
@@ -98,7 +98,7 @@
     <exercise>
       <statement>
         <p>
-          <m>V=M_{33}</m>, <m>W=\{A\in M_{33}\colon A^T=A\}</m>
+          <m>V=\ML_{3,3}(\R)</m>, <m>W=\{A\in \ML_{3,3}(\R)\colon A^T=A\}</m>
         </p>
       </statement>
     </exercise>
@@ -106,7 +106,7 @@
     <exercise>
       <statement>
         <p>
-          <m>V=M_{23}</m>, <m>W</m> is set of all matrices whose rows and columns all sum to zero
+          <m>V=\ML_{2,3}(\R)</m>, <m>W</m> is set of all matrices whose rows and columns all sum to zero
         </p>
       </statement>
     </exercise>
@@ -141,7 +141,7 @@
 
   <exercise>
     <statement>
-      <p> Let <m>V=M_{33}</m>, <m>W=\{A\in M_{33}\colon A^T=-A\}</m>, and <m>W'=\Span\{ A_1, A_2,
+      <p> Let <m>V=\ML_{3,3}(\R)</m>, <m>W=\{A\in \ML_{3,3}(\R)\colon A^T=-A\}</m>, and <m>W'=\Span\{ A_1, A_2,
         A_3\}</m>, where <md>
           A_1=\begin{bmatrix}0\amp 1\amp 2\\ -1\amp 0\amp 1\\ -2\amp -1\amp 0 \end{bmatrix} , \
         A_2=\begin{bmatrix}0\amp 1\amp -1\\ -1\amp 0\amp 1\\ 1\amp -1\amp 0 \end{bmatrix} ,\
@@ -159,8 +159,8 @@
   </exercise>
   <exercise>
     <statement>
-      <p> Let <m>V=M_{23}</m> and define <md>
-          W=\{A\in M_{23}\colon \text{ all rows and columns of \(A\) sum to 0 } \}
+      <p> Let <m>V=\ML_{2,3}(\R)</m> and define <md>
+          W=\{A\in \ML_{2,3}(\R)\colon \text{ all rows and columns of \(A\) sum to 0 } \}
         </md>.
         Find a basis for <m>W</m> by inspection and compute its dimension. </p>
     </statement>
