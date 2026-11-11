@@ -7,9 +7,6 @@
 </introduction>
 <subsection xml:id="ss_dimension">
   <title>Dimension of a vector space</title>
-  <p>
-    [CAUTION! Make sure to edit this sections!!]
-  </p>
   <definition xml:id="d_dimension">
     <title>Dimension of a vector space</title>
     <idx><h>dimension</h><h>of a vector space</h></idx>

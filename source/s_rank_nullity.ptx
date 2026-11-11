@@ -144,12 +144,11 @@
     </p>
     <figure xml:id="fig_fund_spaces_elem">
       <caption>Fundamental spaces of <m>A=\begin{bmatrix}1\amp 2\amp 3\\ 1\amp 2\amp 3\end{bmatrix}</m></caption>
-      <sidebyside widths="50% 50%">
+      <sidebyside widths="50% 50%" valigns="middle middle">
         <figure xml:id="fig_fund_spaces_nullrow">
           <caption><m>\NS A, \RS A\subseteq \R^3</m></caption>
-            
-            <interactive xml:id="geogebra_null_row" platform="geogebra" width="100%" aspect="4:3">
-              <slate surface="geogebra" material="jrcmzgwd" aspect="4:3" material-width="800">
+            <interactive xml:id="geogebra_null_row" platform="geogebra"  >
+              <slate surface="geogebra" material="jrcmzgwd" aspect-ratio="3:2" material-width="400" material-height="400"  >
               <!-- enableLabelDrags(false); -->
               <!-- setCoordSystem(-10, 10, -10, 10,-3,5,false); -->
               </slate>
@@ -158,8 +157,8 @@
         <figure xml:id="fig_fund_spaces_col">
           <caption><m>\CS A\subseteq \R^2</m></caption>
           
-          <interactive xml:id="geogebra_col" platform="geogebra" width="100%" aspect="4:3">
-            <slate surface="geogebra" material="davmcjvd" aspect="4:3">
+          <interactive xml:id="geogebra_col" platform="geogebra" aspect="4:3">
+            <slate surface="geogebra" material="davmcjvd" aspect="4:3" material-width="400" material-height="300"  >
               setAxisSteps(1, 1, 1, 1);
               setCoordSystem(-2, 2, -2, 2);
               <!-- enableShiftDragZoom(false); -->
@@ -193,7 +192,7 @@
               </p>
             </li>
           </ol>
-          As a consequence, we have xre
+          As a consequence, we have
           <mdn>
             <mrow xml:id="eq_col_im">\CS A \amp =\{\boldb\in \R^m \colon \boldb=A\boldx \text{ for some } \boldx\in \R^n\}</mrow>
             <mrow xml:id="eq_col_consistent"> \amp = \{\boldb\in \R^m\colon \text{ the linear system } A\boldx=\boldb \text{ is consistent}\}</mrow>
