@@ -301,7 +301,7 @@
         </md>
         and
         <md>
-          \im T_A=\CS A=\Span\{(1,2)}
+          \im T_A=\CS A=\Span\{(1,2)\}
         </md>.
       </p>
     </solution>
