@@ -837,7 +837,7 @@
         </p>
       </statement>
     </example>
-    <!-- <example xml:id="eg_why_evaluationinner">
+    <example xml:id="eg_why_evaluationinner">
       <title>Evaluation inner product distance</title>
       <statement>
         <p>
@@ -865,7 +865,7 @@
             which we can think of as an aggregate measure of the difference of values <m>f(x)-g(x)</m> for all <m>x\in [a,b]</m>. Thus <m>d(f,g)</m> is a global measure of the similarity between <m>f</m> and <m>g</m> that takes into account their values over the entire interval <m>[a,b]</m>.
           </p>
         </statement>
-      </example> -->
+      </example>
   </subsection>
   <subsection>
   <title>WeBWork Exercises</title>
