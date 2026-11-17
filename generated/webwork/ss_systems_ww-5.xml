@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-ss_systems_ww-5" assembly-id="ss_systems_ww-5">
+  <static seed="21" source="Library/TCNJ/TCNJ_LinearSystems/problem3.pg">
+    <statement><p>Give a geometric description of the following systems of equations</p>
+<p><ol>
+<li>
+<p><m>\left\lbrace\begin{array}{rrrrrr}\amp  7 \,x\amp +\amp   \, y\amp =\amp 9\\\amp  4 \,x\amp +\amp  3 \, y\amp =\amp 2\\\amp  -23 \, x\amp - \amp 13 \,y\amp =\amp -15\\ \end{array}\right.</m></p>
+</li>
+<li>
+<p><m>\left\lbrace\begin{array}{rrrrrr}\amp  -8 \, x\amp +\amp  12 \, y\amp =\amp -4\\\amp  -4 \, x\amp +\amp  6 \, y\amp =\amp -2\\\amp  14 \,x\amp - \amp 21 \,y\amp =\amp 7\\ \end{array}\right.</m></p>
+</li>
+<li>
+<p><m>\left\lbrace\begin{array}{rrrrrr}\amp  7 \,x\amp +\amp   \, y\amp =\amp 9\\\amp  4 \,x\amp +\amp  3 \, y\amp =\amp 2\\\amp  -23 \, x\amp - \amp 13 \,y\amp =\amp -17\\ \end{array}\right.</m></p>
+</li>
+</ol></p>
+</statement>
+  </static>
+  <rendering-data sourceFilePath="Library/TCNJ/TCNJ_LinearSystems/problem3.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/TCNJ/TCNJ_LinearSystems/problem3.pg"/>
+</webwork-reps>

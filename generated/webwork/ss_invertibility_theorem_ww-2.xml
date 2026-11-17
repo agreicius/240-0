@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-ss_invertibility_theorem_ww-2" assembly-id="ss_invertibility_theorem_ww-2">
+  <static seed="42" source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.4.67.pg">
+    <statement><p>True or false: Suppose that <m>E_1</m> and <m>E_2</m> are two elementary matrices. Then <m>E_1E_2 = E_2E_1</m><ul form="popup" name="AnSwEr0001"><li>
+<p>.</p>
+</li><li>
+<p>True</p>
+</li><li>
+<p>False</p>
+</li></ul></p>
+</statement>
+    <answer>
+      <p>
+        <m>\text{False}</m>
+      </p>
+    </answer>
+    <solution><p><alert>SOLUTION:</alert> 
+False. If 
+<me>E_1 = \left[\begin{array}{ccc}
+0 \amp 1 \amp 0\cr
+1 \amp 0 \amp 0\cr
+0 \amp 0 \amp 1
+\end{array}\right] \quad \mbox{and} \quad E_2 = \left[\begin{array}{ccc}
+1 \amp 0 \amp 0\cr
+0 \amp 0 \amp 1\cr
+0 \amp 1 \amp 0
+\end{array}\right],</me>
+then
+<me>E_1 E_2 = \left[\begin{array}{ccc}
+0 \amp 1 \amp 0\cr
+1 \amp 0 \amp 0\cr
+0 \amp 0 \amp 1
+\end{array}\right] \left[\begin{array}{ccc}
+1 \amp 0 \amp 0\cr
+0 \amp 0 \amp 1\cr
+0 \amp 1 \amp 0
+\end{array}\right] = \left[\begin{array}{ccc}
+0 \amp 0 \amp 1\cr
+1 \amp 0 \amp 0\cr
+0 \amp 1 \amp 0
+\end{array}\right],</me>
+but
+<me>E_2 E_1 = \left[\begin{array}{ccc}
+1 \amp 0 \amp 0\cr
+0 \amp 0 \amp 1\cr
+0 \amp 1 \amp 0
+\end{array}\right] \left[\begin{array}{ccc}
+0 \amp 1 \amp 0\cr
+1 \amp 0 \amp 0\cr
+0 \amp 0 \amp 1
+\end{array}\right] = \left[\begin{array}{ccc}
+0 \amp 1 \amp 0\cr
+0 \amp 0 \amp 1\cr
+1 \amp 0 \amp 0
+\end{array}\right] \neq E_1 E_2.</me></p>
+</solution>
+  </static>
+  <rendering-data sourceFilePath="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.4.67.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/WHFreeman/Holt_linear_algebra/Chaps_1-4/3.4.67.pg"/>
+</webwork-reps>

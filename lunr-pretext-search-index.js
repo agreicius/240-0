@@ -995,7 +995,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_real_tuples.html#sage_tuples_matrices",
   "type": "Sage Example",
-  "number": "1",
+  "number": "1.1.12",
   "title": "<span class=\"process-math\">\\(n\\)<\/span>-tuples and matrices.",
   "body": " -tuples and matrices  To create an -tuple in Sage, use the vector() command. The input should be a sequence of numbers enclosed in brackets.   You can make use of sequence routines to create special types of -tuples.   If you prefer the two outputs above to not be listed as a pair, you can use the print() command in sequence. (This is a peculiarity of interactive SageCells, not Sage itself.) Alternatively, use show() for a nicely typeset display of the output.   Once a vector v is created in Sage, various properties of the vector can be computed using the v.foo() syntax. For example, the command v.length() returns the length of the vector v .   Matrices are created in Sage using the matrix() command, and are entered as a list of lists, where the -th list of this list represents the -th row of the matrix, considered as a rectangular array.   To retrieve entries from -tuples or matrices, Sage uses the usual Python list syntax: , v[i] and A[i,j] . As with all things Python, we always count from 0. Thus if A is assigned to a matrix in Sage, A[i,j] is its -th entry.   There are also built-in constructors for matrices consisting entirely of zeros, or entirely of ones.   "
 },
@@ -1004,7 +1004,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_real_tuples.html#eg_image_3d-array",
   "type": "Example",
-  "number": "1.1.12",
+  "number": "1.1.13",
   "title": "Digital image as <span class=\"process-math\">\\(3\\)<\/span>-dimensional array.",
   "body": " Digital image as -dimensional array   Consider a digital image consisting of a array of pixels, each of which displays a color specified by a triple of real numbers that lists the intensities of the red, blue, and green color channels at that pixel. The image can be stored as a tuple , where and is the intensity of the -th color channel (1=red, 2=green, 3=blue) at the pixel in the -th position. Our image is thus a -dimensional array of size . See for a Sage demonstration of this idea.  Similarly to matrices, we can envision our -dimensional array as a -d box array of data consisting of three flat sheets stacked vertically: the first sheet consists of the entries arranged as a grid, and similarly, the second and third sheets consist of the entries and , respectively. The mathematical usefulness of such a conception is up for debate. However, we can give some (somewhat dubious) physical intuition in this case as follows. Imagine the first sheet being a red-tinted translucent that colors the -th pixel red with intensity for all all pairs . Similarly, imagine the second and third sheets as green- and blue-tinted translucents that color the -th pixel green (or blue) with intensity (or ). Now take all three sheets, stack them on top of one another, shine a light through them, and voilà , our image appears!   "
 },
@@ -1013,7 +1013,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_real_tuples.html#sage_image_3d_array",
   "type": "Sage Example",
-  "number": "2",
+  "number": "1.1.14",
   "title": "Digital image as <span class=\"process-math\">\\(3\\)<\/span>-dimensional array.",
   "body": " Digital image as -dimensional array   The Sage cell below creates a -dimensional array representation of a pixel image. Make sure to evaluate that cell!   Recall that Sage captures the double-index nature of a matrix by nesting lists: a matrix is just a list of lists. Sage handles -dimensional arrays by taking this nesting one step further, as you can see from the definition of the object smiley , which is a list of lists of lists. In its current format, to access the -th entry of the array, which tells us the intensity of the -th color channel at -th pixel, we use an iterated indexing syntax: smiley[i][j][k] . Let's examine the color of the top-left pixel by determining the three color intensities there. Adopting the count from zero convention of Python, the top-left pixel is given by , and the three color channels are encoded as 0=red, 1=green, 2=blue.   It looks like this pixel is blue-green, with emphasis on the blue. What about the bottom-left pixel?   Interesting! It appears that this pixel is also blue-green, but considerably more green. Before confirming our results by viewing the image, let's convert smiley into the Python's standard multidimensional array format, a NumPy array (or ndarray). As a NumPy array, we can determine the size of the array using smiley.shape and we can access the -th entry more naturally as smiley[i,j,k] (although you will notice that we are given some additional information about the data-type of the entry).   And now it's time for the big reveal. We will view smiley using the data visualization library matplotlib .    "
 },
@@ -1022,7 +1022,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_real_tuples.html#d_tuples_vec_ops",
   "type": "Definition",
-  "number": "1.1.13",
+  "number": "1.1.15",
   "title": "Vector operations of <span class=\"process-math\">\\(\\R^I\\)<\/span>.",
   "body": " Vector operations of   Let be a nonempty set. We will call the operations below the standard vector operations on .   Vector addition on  Given elements -tuples and , we define their vector sum  as . The operation is called vector addition .    Scalar multiplication on  Given an -tuple and a real number , the -tuple defined as is called the scalar multiple of by . The operation is called scalar multiplication .      "
 },
@@ -1031,7 +1031,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_real_tuples.html#ss_tuples_vector_ops-4",
   "type": "Remark",
-  "number": "1.1.14",
+  "number": "1.1.16",
   "title": "Anatomy lesson: vector operation notation.",
   "body": " Anatomy lesson: vector operation notation  The displayed expressions and used in the definition of the vector operations on use a combination of function notation (see ) and Cartesian product notation (see ). In general, the expression denotes a function that takes as input a pair of elements , where and , and returns as output an element . Thus, the expression describes a function that takes as input a pair of -tuples, and returns as output another -tuple denoted . In contrast, the scalar multiplication operation described in is a sort of hybrid operation that takes as input a pair where is a real number and is an -tuple, and returns as output a new -tuple denoted .  "
 },
@@ -1040,7 +1040,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_real_tuples.html#eg_tuple_vector_ops",
   "type": "Example",
-  "number": "1.1.15",
+  "number": "1.1.17",
   "title": "Tuple vector operations.",
   "body": " Tuple vector operations      Let and . Compute .    Consider the infinite sequences and . Compute and .    Let and .  Compute .          We have .    We have , and .    We have .      "
 },
@@ -1049,7 +1049,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_real_tuples.html#sage_vec_ops",
   "type": "Sage Example",
-  "number": "3",
+  "number": "1.1.18",
   "title": "Vector operations: <span class=\"process-math\">\\(\\R^n\\)<\/span> and <span class=\"process-math\">\\(\\ML_{m, n}(\\R)\\)<\/span>.",
   "body": " Vector operations: and   To create an -tuple in Sage, use the vector() command. The input should be a sequence of numbers enclosed in brackets.   You can make use of sequence routines to create special types of -tuples.   If you prefer the two outputs above to not be listed as a pair, you can use the print() command in sequence. (This is a peculiarity of interactive SageCells, not Sage itself.)   The standard vector operations of are implemented using an intuitive syntax in Sage.   Once a vector v is created in Sage, various properties of the vector can be computed using the v.foo() syntax. For example, the command v.length() returns the length of the vector v .   Matrices are created in Sage using the matrix() command, and are entered as a list of lists, where the -th list of this list represents the -th row of the matrix, considered as a rectangular array. Note that show() outputs a typeset display of the matrix, as contrasted with the text ouput of print() .   The Sage syntax for vector operations in is identical to that for . The command matrix(2,3,range(-4,2)) used below instructs Sage to create a matrix whose entries are the integers from to , arranged by wrapping along the two rows.   Lastly, to retrieve entries from -tuples or matrices, Sage uses the usual Python list syntax: , v[i] and A[i,j] . As with all things Python, we always count from 0. Thus if A is assigned to a matrix in Sage, A[i,j] is its -th entry.   "
 },
@@ -1058,7 +1058,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_real_tuples.html#d_vector_space",
   "type": "Definition",
-  "number": "1.1.16",
+  "number": "1.1.19",
   "title": "Vector space.",
   "body": " Vector space   A real vector space is a set together with two operations , called respectively vector addition and scalar multiplication , that satisfy the following vector space axioms .   Vector addition is commutative   for all .    Vector addition is associative   for all .    Zero vector  There is an element such that for all , we have . We call the zero vector of .    Vector inverses  For all , there is another element satisfying . We call the vector inverse of .    Distribution over vector addition   for all and .    Distribution over scalar addition   for all and .    Scalar multiplication is associative   for all and all .    Scalar multiplication identity   for all .   We call elements of a vector space vectors and the elements of  scalars .   "
 },
@@ -1067,7 +1067,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_real_tuples.html#d_tuples_special_elements",
   "type": "Definition",
-  "number": "1.1.17",
+  "number": "1.1.20",
   "title": "Special elements of <span class=\"process-math\">\\(\\R^I\\)<\/span>.",
   "body": " Special elements of    zero vectors of , and     indicator vector of    Let be a nonempty set.   Zero vector  The zero vector of , denoted (or for short), is the -tuple, all of whose entries are equal to : , .  In the special cases and , we denote the corresponding zero vectors as and , respectively.    Vector inverse  Given an -tuple , the vector inverse of , denoted , is the element of defined as .    Indicator vectors  Given , the -th indicator element of , denoted , is the -tuple whose -th entry is equal to and whose -th entry is equal to for all .  In the case , we call the -th standard basis vector of .  In the case , we write for , and call this the -th standard basis matrix of .      "
 },
@@ -1076,7 +1076,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_real_tuples.html#eg_zero_inverse_indicator",
   "type": "Example",
-  "number": "1.1.18",
+  "number": "1.1.21",
   "title": "Zero, inverse, and indicator vectors.",
   "body": " Zero, inverse, and indicator vectors   For the given index set , provide (a) the zero vector of , (b) a general element of and its vector inverse, and (c) the indicator vectors for all .  Make use of the notational conventions that apply to each particular type of index set.    .               In this case we have . The zero vector of is .  A general element of can be described as , , and its vector inverse is .  The four indicator vectors of are called standard basis vectors, and are given as .    In this case we have . The zero vector of is .  A general element of can be described as , and its vector inverse is . The six indicator vectors of are called standard basis vectors, and are given as .      "
 },
@@ -1085,7 +1085,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_real_tuples.html#th_tuples_vector_space",
   "type": "Theorem",
-  "number": "1.1.19",
+  "number": "1.1.22",
   "title": "<span class=\"process-math\">\\(\\R^I\\)<\/span> is a vector space.",
   "body": " is a vector space   Let be a nonempty set.   The set together with the vector addition and scalar multiplication operations defined in is a vector space.    The zero vector of the vector space , as described by Axiom , is the -tuple : , we have .    Given a vector , its vector inverse , as described by Axiom , is .  Additionally, we have ; that is, the vector inverse of is equal to the scalar multiple .       The statement itself of the theorem has already taken care of some of the steps required to verify that something is a vector space. Namely, it has identified the underlying set and proposed vector operations, and it has identified the elements of that serve as the zero vector and inverse vectors. It remains to show that the eight axioms of are satisfied. We will verify the existential axioms (Axiom iii-iv), as well as one of the algebraic axioms (Axioms ii and vi), and leave the rest as an exercise.   Axiom iii  We claim that satisfies the identity of Axiom . Indeed, for all we have , as desired.    Axiom iv  We claim that given any , the vector satisfies the identity of Axiom , and thus that . Indeed, we have , as desired.   As for the remaining axioms, we will verify Axioms ii and vi, and leave the rest as an exercise. As you see below, the desired identities here all boil down to a familiar property of real number arithmetic: , commutativity of real number addition, real number distributivity, etc. In what follows, will denote arbitrary elements of , and will denote arbitrary elements of .   Axiom ii  We have .    Axiom vi  For all and , we have .    "
 },
@@ -1103,7 +1103,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_real_tuples.html#th_zero_space",
   "type": "Theorem",
-  "number": "1.1.20",
+  "number": "1.1.23",
   "title": "Zero space.",
   "body": " Zero space   Let be a singleton: , is a set containing exactly one element. There is a unique choice of operations making into a vector space.    Let . Since , to define a vector addition operation , we only need to define what is. Furthermore, since by definition we must have , we have no choice here: we must define !  Similarly, it is easy to see that there is only one possible scalar multiplication operation, defined as for all . These two operations being so simple, it is now easy to verify that they satisfy all of the algebriac axioms. Furthermore, we have no choice for the zero vector and inverse vectors: we must choose , and . This seems somewhat odd, since is its own vector inverse, but it is easy to verify that these choices satisfy Axioms iii and iv: . The remaining axioms can be verified in a similar elementary fashion. We leave their verification as an exercise.   "
 },
@@ -1112,7 +1112,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_real_tuples.html#d_zero_space",
   "type": "Definition",
-  "number": "1.1.21",
+  "number": "1.1.24",
   "title": "Zero space.",
   "body": " Zero space   A singleton , together with its uniquely defined vector operations, is called a zero space . Since with respect to this vector space structure, we will write for a zero space.   "
 },
@@ -1121,7 +1121,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_real_tuples.html#d_lin_comb",
   "type": "Definition",
-  "number": "1.1.22",
+  "number": "1.1.25",
   "title": "Linear combination.",
   "body": " Linear combination   Let be a vector space, and let be a nonempty subset of . A linear combination of is a vector of the form , where and for all . The scalars appearing in are called the coefficients of the linear combination. The linear combination is trivial if for all , and nontrivial if for some .  In the special case where is described enumeratively as or , we will call a linear combination of a linear combination of the for short.  We will sometimes use sigma notation for linear combinations, writing for the linear combination of the vectors whose -th coefficient is .   "
 },
@@ -1130,7 +1130,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_real_tuples.html#ss_tuples_vector_ops-23",
   "type": "Example",
-  "number": "1.1.23",
+  "number": "1.1.26",
   "title": "Linear combination: <span class=\"process-math\">\\(n\\)<\/span>-vectors.",
   "body": " Linear combination: -vectors   Show that every vector in is a linear combination of the standard basis vectors , , and .    Given any vector , we have .   "
 },
@@ -1139,7 +1139,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_real_tuples.html#ss_tuples_vector_ops-24",
   "type": "Example",
-  "number": "1.1.24",
+  "number": "1.1.27",
   "title": "Linear combination: matrices.",
   "body": " Linear combination: matrices   Express as a nontrivial linear combination of and .    It is easy to see that , and hence . More explicitly, we have . This is not the only nontrivial linear combination yielding . In fact we have for any scalar (including ).   "
 },
@@ -1148,7 +1148,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_real_tuples.html#d_vec_difference",
   "type": "Definition",
-  "number": "1.1.25",
+  "number": "1.1.28",
   "title": "Vector difference.",
   "body": " Vector difference   Let be a vector space. Given vectors , we define their difference  as .   "
 },
@@ -1157,7 +1157,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_real_tuples.html#fig_point",
   "type": "Figure",
-  "number": "1.1.26",
+  "number": "1.1.29",
   "title": "",
   "body": " Point visualization of triple. Made with GeoGebra .   "
 },
@@ -1175,7 +1175,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_real_tuples.html#fig_vec_vis",
   "type": "Figure",
-  "number": "1.1.27",
+  "number": "1.1.30",
   "title": "",
   "body": " Vector visualization of triple . Drag to change the vector . Drag to change the initial point of . Made with GeoGebra .   "
 },
@@ -1184,7 +1184,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_real_tuples.html#fig_tip_tail",
   "type": "Figure",
-  "number": "1.1.28",
+  "number": "1.1.31",
   "title": "",
   "body": " Tip-to-tail visualization of vector addition. Made with GeoGebra .   "
 },
@@ -1193,7 +1193,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_real_tuples.html#fig_tip_tip",
   "type": "Figure",
-  "number": "1.1.29",
+  "number": "1.1.32",
   "title": "",
   "body": " Tip-to-tip visualization of vector difference. Made with GeoGebra .   "
 },
@@ -1202,7 +1202,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_real_tuples.html#fig_scal_mult",
   "type": "Figure",
-  "number": "1.1.30",
+  "number": "1.1.33",
   "title": "",
   "body": " Visualization of scalar multiplication. Drag point labeled to change scalar. Made with GeoGebra .   "
 },
@@ -1841,7 +1841,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#sage_ge",
   "type": "Sage Example",
-  "number": "4",
+  "number": "2.2.16",
   "title": "Gaussian elimination.",
   "body": " Gaussian elimination  In the first Sage cell below you find a recursive implementation of Gaussian elimination in Sage that includes explanatory comments. Evaluate this cell in order to load the row_echelon_form function. The second cell allows you to apply the Gaussian elimination algorithm to a matrix of your choosing. As you can see, the show function provides a nice latex version of the output.    Sage has its own row reduction method, rref , which transforms a matrix to reduced row echelon form. Let's compare the outputs of these two algorithms.   The function row_echelon_form_steps() defined below ia a non-recursive implementation of Gaussian elimination that also displays all the steps of the algorithm. The last cell applies this function to a random matrix (with a significant number of zero entries). By modifying this cell appropriately, you can check your work when performing Gaussian elimination to the letter on a given matrix.    "
 },
@@ -1850,7 +1850,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#ss_ge_ww-2",
   "type": "WeBWorK",
-  "number": "2.2.16",
+  "number": "2.2.17",
   "title": "",
   "body": "   Determine if the matrix   is in echelon form, reduced row echelon form, or neither. Choose the most appropriate answer.  Answer:  select   echelon form   reduced row echelon form   not in echelon form  .        SOLUTION: Reduced row echelon form.       "
 },
@@ -1859,7 +1859,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_ge.html#ss_ge_ww-3",
   "type": "WeBWorK",
-  "number": "2.2.17",
+  "number": "2.2.18",
   "title": "",
   "body": "    On the augmented matrix below , perform all three row operations in the order given, ((a) followed by (b) followed by (c)) and then write the resulting augmented matrix.                                                                                           "
 },
@@ -2084,7 +2084,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#sage_solve_system",
   "type": "Sage Example",
-  "number": "5",
+  "number": "2.3.12",
   "title": "Solving linear systems.",
   "body": " Solving linear systems  Sage has a number of means of solving systems of equations, both linear and nonlinear. In the cell below we compute the set of solutions to this section's working example. Note that the three equations are entered as a list.   Notice that the algorithm used here does not seem to follow the method we describe: the unknowns and are set as free parameters r1 and r2 , and the rest of the unknowns are expressed in terms of these. The solve routine in Sage allows for an additional option that selects a specific algorithm for solving the system. In the next cell, we specify the sympy algorithm and get an answer more in line with our example.   Now all unknowns are expressed in terms of the second and fourth unknowns and , which are treated as free variables, just as in our computed example.  Lastly, we can take a matrix approach with Sage to solve the system. Below we create the augmented matrix associated to our starting system and then reduce the system to reduced row echelon form using the rref method. From there it is a simple matter of assigning parameter names and using back-substitution, as described in . We will elaborate this method further in    "
 },
@@ -2093,7 +2093,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#c_qualitative",
   "type": "Corollary",
-  "number": "2.3.12",
+  "number": "2.3.13",
   "title": "<span class=\"process-math\">\\(0\\text{,}\\)<\/span> <span class=\"process-math\">\\(1\\text{,}\\)<\/span> or <span class=\"process-math\">\\(\\infty\\)<\/span>-many solutions.",
   "body": " , , or -many solutions   Let be a linear system of equations, let be an equivalent system in row reduced form, and let be the augmented matrix associated to .  The system has either no solutions, exactly one solution, or infinitely many solutions. In more detail:   if has a leading one in its last column, then has no solutions.    if does not have a leading one in its last column and has no free variables, then has a unique solution;    if does not have a leading one in its last column and has a free variable, then has infinitely many solutions.      "
 },
@@ -2102,7 +2102,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#fig_decision_tree",
   "type": "Figure",
-  "number": "2.3.13",
+  "number": "2.3.14",
   "title": "Decision tree for number of solutions to a system",
   "body": " Decision tree for number of solutions to a system  Decision tree for the number of solutions to a linear system with augmented matrix in row echelon form.     "
 },
@@ -2111,7 +2111,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#s_solving_homogeneous",
   "type": "Corollary",
-  "number": "2.3.14",
+  "number": "2.3.15",
   "title": "Solutions to homogeneous equations.",
   "body": " Solutions to homogeneous equations   Fix a homogeneous linear system in variables. There are two possibilities:   if all the variables are leading variables, then the system has a unique solution (i.e., solution);    if there is a free variable, then the system has infinitely many solutions.      "
 },
@@ -2120,7 +2120,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#s_solving-5-3",
   "type": "Example",
-  "number": "2.3.15",
+  "number": "2.3.16",
   "title": "Vector parametrization.",
   "body": " Vector parametrization  Consider the linear equation . The corresponding augmented matrix of this equation is , which is already in row echelon form. Using , we see that the general solution is . This vector parametrization description allows us to visualize the plane with equation as the set of all points obtained by translating the point by various linear combinations of and . In this manner, the two vectors and determine a (non-rectangular) grid on .  Vector parametrization of plane    Vector parametrization of plane      "
 },
@@ -2129,7 +2129,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#ss_solving_ww-2",
   "type": "WeBWorK",
-  "number": "2.3.17",
+  "number": "2.3.18",
   "title": "",
   "body": "    Solve the following system using augmented matrix methods:  (a) The initial matrix is:              (b) First, perform the Row Operation . The resulting matrix is:              (c) Next, perform the operation . The resulting matrix is:              (d) Finish simplifying the augmented matrix to reduced row echelon form. The reduced matrix is:              (e) How many solutions does the system have? If infinitely many, enter \"Infinity\".  (f) What are the solutions to the system?  If there are no solutions, write \"No Solution\" or \"None\" for each answer. If there are infinitely many solutions let and solve for in terms of .                                                                                                                                                  "
 },
@@ -2138,7 +2138,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#ss_solving_ww-3",
   "type": "WeBWorK",
-  "number": "2.3.18",
+  "number": "2.3.19",
   "title": "",
   "body": "    Solve the following system using augmented matrix methods:  (a) The initial matrix is:                      (b) First, perform the Row Operation . The resulting matrix is:                      (c) Next, perform the operations   .  The resulting matrix is:                      (d) Finish simplifying the augmented matrix down to reduced row echelon form. The reduced matrix is:                      Remember: This matrix must be simplified all the way to reduced form.  (e) How many solutions does the system have? If infinitely many, enter \"Infinity\". If none, enter 0.  (f) What are the solutions of the system?        Note: In part (f), if there are no solutions, write \"No Solution\" or \"None\" in the answer blank after each equal sign. If there are infinitely many solutions, and the solution set describes a line (that is, if there is only one free variable), set and solve for the remaining variables in terms of . If there are infinitely many solutions, and the solution set describes a plane (that is, if the solution set has two free variables), set the variables and , and then solve for in terms of and .                                                                                                                                                                                                                                                                           "
 },
@@ -2147,7 +2147,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#ss_solving_ww-4",
   "type": "WeBWorK",
-  "number": "2.3.19",
+  "number": "2.3.20",
   "title": "",
   "body": "    Solve  = , = , = , = .                           "
 },
@@ -2156,7 +2156,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_solving.html#ss_solving_ww-5",
   "type": "WeBWorK",
-  "number": "2.3.20",
+  "number": "2.3.21",
   "title": "",
   "body": "    Determine whether the following system has no solution, an infinite number of solutions or a unique solution.                     "
 },
@@ -2372,7 +2372,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#sage_matrix_entries_rows_cols",
   "type": "Sage Example",
-  "number": "6",
+  "number": "3.1.8",
   "title": "Matrix entries, rows, and columns.",
   "body": " Matrix entries, rows, and columns  Sage syntax for accessing specific entries of a matrix is similar in spirit to our matrix entry notation. However, as with all things Python, we always count from 0. Thus if A is assigned to a matrix in Sage, A[i,j] is its -th entry.   Prescribed subsets of matrix entries are obtained via slicing methods: for example, A[a:b, c:d] returns the collection of entries with and , arranged as a matrix.   Leaving the left or right side of : blank in this notation removes the corresponding restriction bound (left or right) from the index in question. Thus A[2, :] returns the third row of , and A[1:, 3] returns the portion of the fourth column of beginning with its second entry.   Alternatively, we can obtain a list of all rows or columns of using the the methods rows() and columns() .   Use the empty cell below to try out some of these commands.   "
 },
@@ -2381,7 +2381,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#d_matrix_mult",
   "type": "Definition",
-  "number": "3.1.8",
+  "number": "3.1.9",
   "title": "Matrix multiplication.",
   "body": " Matrix multiplication  matrix multiplication   Let be positive integers. Given an matrix and an matrix , we define their product to be the matrix defined as . Equivalently, using matrix-entry notation, we have for all and .  The operation is called matrix multiplication .   "
 },
@@ -2390,7 +2390,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#fig_matrix_mult",
   "type": "Figure",
-  "number": "3.1.9",
+  "number": "3.1.10",
   "title": "Visualizing matrix multiplication",
   "body": " Visualizing matrix multiplication  In , the -th entry is computed by moving across the -th row of and down the -th column of .     "
 },
@@ -2399,7 +2399,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#ss_matrix_mult-6",
   "type": "Remark",
-  "number": "3.1.10",
+  "number": "3.1.11",
   "title": "Size and matrix multiplication.",
   "body": " Size and matrix multiplication  Observe how, like addition, matrix multiplication is not defined for any pair of matrices: there must be a certain agreement in their dimensions.  In more detail, for the product of and to be defined, we need . In other words we need the inner dimensions of and to be equal: . If this condition is met, the dimension of the resulting matrix is determined by the outer dimensions of and . Schematically, you can think of the inner dimensions as being canceled out :   "
 },
@@ -2408,7 +2408,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#eg_matrix_mult",
   "type": "Example",
-  "number": "3.1.11",
+  "number": "3.1.12",
   "title": "Matrix multiplication.",
   "body": " Matrix multiplication  Consider the matrices . Since the inner dimensions of and agree, we can form the product matrix , which has dimension . Let for all . Using , we compute . We conclude that .  "
 },
@@ -2417,7 +2417,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#d_dot_product",
   "type": "Definition",
-  "number": "3.1.12",
+  "number": "3.1.13",
   "title": "Dot product.",
   "body": " Dot product   Given -vectors and , their dot product , denoted , is defined as . The operation is called the dot product on .   "
 },
@@ -2426,7 +2426,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#th_matrix_mult_dot_product",
   "type": "Theorem",
-  "number": "3.1.13",
+  "number": "3.1.14",
   "title": "Dot product and matrix multiplication.",
   "body": " Dot product and matrix multiplication   Let be positive integers. Given matrices and , let be the -th row of for all , and let be -th column of for all , so that . For all , we have . In other words, the -th entry of is the dot product of the -th row of and the -th column of .    Let and , so that for all and . Given any pair with and , we have , as claimed.   "
 },
@@ -2435,7 +2435,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#eg_matrix_mult_dot_prod",
   "type": "Example",
-  "number": "3.1.14",
+  "number": "3.1.15",
   "title": "Matrix multiplication via dot product.",
   "body": " Matrix multiplication via dot product  Consider the matrices . The two rows of are . The two columns of are . Using the dot product description of matrix multiplication, we compute .  "
 },
@@ -2444,7 +2444,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#ss_matrix_mult-13",
   "type": "Sage Example",
-  "number": "7",
+  "number": "3.1.16",
   "title": "Matrix arithmetic.",
   "body": " Matrix arithmetic  We use + and * for matrix addition and multiplication.   As evidence of Sage's flexibility, the same symbol * is also used for scalar multiplication.   Edit the cell below to practice these operations.   "
 },
@@ -2453,7 +2453,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#th_column_method",
   "type": "Theorem",
-  "number": "3.1.15",
+  "number": "3.1.17",
   "title": "Column method of matrix multiplication.",
   "body": " Column method of matrix multiplication  matrix multiplication column method   Let and . The column method of matrix multiplication computes using the two steps below.   Step 1  Let be the -th column of , considered as a column vector. Then .    Step 2  Let be the -th column of , considered as a column vector. Given any column vector we have .       We prove the equalities in both steps separately.   Proof of Step 1  We must show , where . First we show and have the same size. By definition of matrix multiplication, is . By construction has columns and its -th column is . Since and have size and , respectively, has size . Thus each of the columns of is an column vector. It follows that is , as desired.  Next we show that for all , . Since the -th entry of is the -th entry of the -th column of , we have .    Proof of Step 2  We must show that , where . The usual argument shows that both and are column vectors. It remains only to show that the -th entry of the column is equal to the -th entry of for all . For any such we have .    "
 },
@@ -2462,7 +2462,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#s_column_row_method-4",
   "type": "Remark",
-  "number": "3.1.16",
+  "number": "3.1.18",
   "title": "",
   "body": "  amounts to a two-step process for computing an arbitrary matrix product .  The first statement (Step 1) tells us that the -th column of the matrix can be obtained by computing the product of with the -th column of .  The second statement (Step 2) tells us that each product can itself be computed as a certain linear combination of the columns of with coefficients drawn from .  A similar remark applies to computing matrix products using the row method, as described below in .  "
 },
@@ -2471,7 +2471,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#th_row_method",
   "type": "Theorem",
-  "number": "3.1.17",
+  "number": "3.1.19",
   "title": "Row method of matrix multiplication.",
   "body": " Row method of matrix multiplication  matrix multiplication row method   Let and . The row method of matrix multiplication computes using the two steps below.   Step 1  Let be the -th row of . Then .    Step 2  Let be the -th row of . Given any row vector we have .       The proof is very similar to that of and is left to the reader.   "
 },
@@ -2480,7 +2480,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#s_matrix_ex_product",
   "type": "Example",
-  "number": "3.1.18",
+  "number": "3.1.20",
   "title": "Column and row methods.",
   "body": " Column and row methods   Let and   Compute using (a) the definition of matrix multiplication, (b) the column method, (c) the row method.       Using the definition, we see easily that     Let be the columns of , and let be the columns of . We have     Now let be the rows of , and let be the rows of . We have       "
 },
@@ -2489,7 +2489,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#s_column_row_method-7",
   "type": "Sage Example",
-  "number": "8",
+  "number": "3.1.21",
   "title": "Column and row methods.",
   "body": " Column and row methods  Let's verify the validity of the column and row methods using Sage in some specific examples. Below we generate random integer matrices and of dimension and , respectively, and compute their product .   Let's check that the -th column of is equal to the product of with the -th column of .   Alternatively, we can visually confirm these equalities using the display of in the first cell above. Observe that the result of A*colsB[i] is displayed by Sage as a tuple, though technically for us this is a column vector.   Next, let's verify that the result of multiplying and the -th column of is the corresponding linear combination of the columns of given by the coefficients of this column.   Now use the Sage cells below to demonstrate the validity of the row method for the product . Simply modify the code in the two cells above to reflect the row method, as opposed to the column method.    "
 },
@@ -2498,7 +2498,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#video_eg_matrix_mult_vid",
   "type": "Example",
-  "number": "3.1.19",
+  "number": "3.1.22",
   "title": "Video example of matrix multiplication.",
   "body": " Video example of matrix multiplication   Video: three methods of matrix multiplication    "
 },
@@ -2507,7 +2507,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#d_transpose",
   "type": "Definition",
-  "number": "3.1.21",
+  "number": "3.1.24",
   "title": "Matrix transposition.",
   "body": " Matrix transposition  matrix transposition  transpose   Given an matrix its transpose is the matrix whose -entry is the -th entry of . In other words, is the matrix satisfying for all and .   "
 },
@@ -2516,7 +2516,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#s_matrix-6-4",
   "type": "Remark",
-  "number": "3.1.22",
+  "number": "3.1.25",
   "title": "",
   "body": " Given a matrix we can give a column- or row-based description of as follows:    is the matrix whose -th row is the -th column of .     is the matrix whose -th column is the -th row of .     "
 },
@@ -2525,7 +2525,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#eg_transpose",
   "type": "Example",
-  "number": "3.1.23",
+  "number": "3.1.26",
   "title": "Transpose.",
   "body": " Transpose   Let ; then .  Let , then .   "
 },
@@ -2534,7 +2534,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#s_matrix-6-6",
   "type": "Sage Example",
-  "number": "9",
+  "number": "3.1.27",
   "title": "Matrix transposition.",
   "body": " Matrix transposition  Matrix transposition is implemented in Sage as the transpose() method. In the cell below we (a) choose random integers , (b) choose a random matrix with integer entries, and (c) compute the transpose of .   As usual, experiment with the Sage cell below.   "
 },
@@ -2543,7 +2543,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#ss_matrix_ww-2",
   "type": "WeBWorK",
-  "number": "3.1.24",
+  "number": "3.1.28",
   "title": "",
   "body": "    Enter T or F depending on whether the statement is true or false. (You must enter T or F -- True and False will not work.)    If A is a square matrix such that AA equals the 0 matrix, then A must equal the 0 matrix.    If A has dimensions and B has dimensions , then AB has dimensions .         "
 },
@@ -2552,7 +2552,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#ss_matrix_ww-3",
   "type": "WeBWorK",
-  "number": "3.1.25",
+  "number": "3.1.29",
   "title": "",
   "body": "    Matrix Products: Consider the matrices   Of the possible matrix products ,  which make sense?    C       "
 },
@@ -2561,7 +2561,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#ss_matrix_ww-4",
   "type": "WeBWorK",
-  "number": "3.1.26",
+  "number": "3.1.30",
   "title": "",
   "body": "    If A is B is and C is then:  a) BA has dimension    b) CB has dimension    c) AC has dimension                                       "
 },
@@ -2570,7 +2570,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#ss_matrix_ww-5",
   "type": "WeBWorK",
-  "number": "3.1.27",
+  "number": "3.1.31",
   "title": "",
   "body": "    Determine and such that                      "
 },
@@ -2579,7 +2579,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_matrix.html#ss_matrix_ww-6",
   "type": "WeBWorK",
-  "number": "3.1.28",
+  "number": "3.1.32",
   "title": "",
   "body": "    Determine the value(s) of such that   =  Note: If there is more than one value separate them by commas.            "
 },
@@ -2948,7 +2948,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#sage_inv_matrix",
   "type": "Sage Example",
-  "number": "10",
+  "number": "3.3.7",
   "title": "Invertible matrices.",
   "body": " Invertible matrices  Sage has a number of useful tools related to invertibility. The boolean function is_invertible() tests for invertibility, and the method inverse() computes the inverse of an invertible matrix. Below we generate a random matrix with rational coefficients, test whether it is invertible, and compute its inverse if it is invertible. The density=0.5 ensures that roughly half of the matrix entries are zero; and this in turn increases the likelihood that the matrix is singular, for reasons that will become somewhat clearer later.   Evaluate the Sage cell below multiple times.    When the matrix is invertible, verify that . If you like, use the blank Sage cell to compute and .    Try increasing the density setting in random_element() ( , density=0.75 , density=.875 ) and see if the matrix is more or less likely to be invertible.       "
 },
@@ -2957,7 +2957,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#th_invertible_prod",
   "type": "Theorem",
-  "number": "3.3.7",
+  "number": "3.3.8",
   "title": "Products of invertible matrices.",
   "body": " Products of invertible matrices   Let be matrices. If and are both invertible, then so is their product . Using logical notation: . In fact when this is the case we have .   "
 },
@@ -2975,7 +2975,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#c_invertible_prod",
   "type": "Corollary",
-  "number": "3.3.8",
+  "number": "3.3.9",
   "title": "Products of invertible matrices.",
   "body": " Products of invertible matrices   More generally, if are invertible matrices, then their product is invertible. Furthermore, we have in this case .   "
 },
@@ -2993,7 +2993,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#subsec--22",
   "type": "Remark",
-  "number": "3.3.9",
+  "number": "3.3.10",
   "title": "",
   "body": " Whenever confronted with a logical implication of the form , where and denote arbitrary propositions, you should always ask whether the implication goes the other way . In other words, does the converse implication also hold?  The answer with regard to the implication is yes, though the proof of this is more difficult then you think. (See .)  The following argument is a common invalid proof of the reverse implication:   Assume is invertible.    Then has an inverse matrix.    Then the inverse of is .    Then and exist. Hence and are invertible.   Where is the flaw in our logic here? The second statement only allows us to conclude that there is some mystery matrix satisfying . We cannot yet say that , as this formula from only applies when we already know that and are both invertible. But this is exactly what we are trying to prove! As such we are guilty here of begging the question , or petitio principii in Latin.  "
 },
@@ -3002,7 +3002,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#d_matrix_powers",
   "type": "Definition",
-  "number": "3.3.10",
+  "number": "3.3.11",
   "title": "Matrix powers.",
   "body": " Matrix powers  matrix powers    matrix power    Let be an matrix, and let be an integer. We define the power matrix as follows: .   "
 },
@@ -3011,7 +3011,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#d_matrix_polynomials",
   "type": "Definition",
-  "number": "3.3.11",
+  "number": "3.3.12",
   "title": "Matrix polynomials.",
   "body": " Matrix polynomials  matrix polynomials    matrix polynomial   Let be a polynomial with real coefficients. For any square matrix of size , we define the matrix as . We call the result of evaluating the polynomial at the matrix .   "
 },
@@ -3020,7 +3020,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#rem_matrix_polynomials",
   "type": "Remark",
-  "number": "3.3.12",
+  "number": "3.3.13",
   "title": "",
   "body": " It is both easy and perilous to forget the identity matrix in the term appearing in . Take caution not to make this mistake; without an identity matrix of appropriate size, the expression simply does not make sense.  "
 },
@@ -3029,7 +3029,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#eg_matrix_polynomials",
   "type": "Example",
-  "number": "3.3.13",
+  "number": "3.3.14",
   "title": "Matrix polynomials.",
   "body": " Matrix polynomials   Let . Evaluate at the matrices and .    We have and .   "
 },
@@ -3038,7 +3038,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#s_invertible_matrices-4-8",
   "type": "Sage Example",
-  "number": "11",
+  "number": "3.3.15",
   "title": "Matrix polynomials.",
   "body": " Matrix polynomials  An integer matrix power is computed in Sage as A^n .   Of course the matrix needs to be invertible for a negative of power to be computed. Sage will throw an error in this case if the matrix is singular.   Polynomial expressions can then be easily computed manually in Sage. The next cell computes and for .   We took care to heed the warning in , making sure to include for ( identity_matrix(3) ) and for ( identity_matrix(2) ). Interestingly, Sage is smart enough to figure out what we mean even if we are sloppy in this regard.   "
 },
@@ -3047,7 +3047,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#th_power_rules",
   "type": "Theorem",
-  "number": "3.3.14",
+  "number": "3.3.16",
   "title": "Properties of matrix powers.",
   "body": " Properties of matrix powers   The following properties hold for all matrices , all scalars , and all integers for which the given expression makes sense.                        .       The proofs of the first three statements are elementary, and closely resemble proofs of similar results in real number algebra. We leave these as an (unassigned) exercise.  For the fourth statement to make sense, we must assume that is invertible. The claim here is that is invertible, and that its inverse is itself. To prove this we need only show , which follows from the definition of the inverse.  The fifth statement also tacitly assumes is invertible. To prove it, we consider the three cases , and .  If , then by definition .  If , then by definition .  Suppose . Then .   "
 },
@@ -3056,7 +3056,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#th_inverse_trans",
   "type": "Theorem",
-  "number": "3.3.15",
+  "number": "3.3.17",
   "title": "Inverse and transpose.",
   "body": " Inverse and transpose   Let be invertible. We have , in which case .    We prove both implications of the if and only if statement separately.  Suppose is invertible with inverse . To see that is invertible, with inverse as specified in , we need only show that . We verify the two equalities separately:  . In both chains of equality we make use of the obvious claim .  For the other direction, assume is invertible. Setting , we see that . By the first implication, we know that if is invertible, then so is .   "
 },
@@ -3065,7 +3065,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#ss_invertible_matrices_ww-2",
   "type": "WeBWorK",
-  "number": "3.3.16",
+  "number": "3.3.18",
   "title": "",
   "body": "    If and are invertible matrices, then the inverse of is .   True   False         SOLUTION: False. For example, let , and , then , which is not invertible.       "
 },
@@ -3074,7 +3074,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#ss_invertible_matrices_ww-3",
   "type": "WeBWorK",
-  "number": "3.3.17",
+  "number": "3.3.19",
   "title": "",
   "body": "    Solve for the matrix if . Assume that all matrices are and invertible as needed.         SOLUTION: Note that       "
 },
@@ -3083,7 +3083,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#ss_invertible_matrices_ww-4",
   "type": "WeBWorK",
-  "number": "3.3.18",
+  "number": "3.3.20",
   "title": "",
   "body": "    Are the following matrices invertible?                     "
 },
@@ -3092,7 +3092,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#ss_invertible_matrices_ww-5",
   "type": "WeBWorK",
-  "number": "3.3.19",
+  "number": "3.3.21",
   "title": "",
   "body": "    For what values of will be invertible?  For all such that  and  .             SOLUTION: The matrix is invertible provided the columns of are linearly independent, which will be the case if . Thus, we require that and .       "
 },
@@ -3101,7 +3101,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_invertible_matrices.html#ss_invertible_matrices_ww-6",
   "type": "WeBWorK",
-  "number": "3.3.20",
+  "number": "3.3.22",
   "title": "",
   "body": "    Let   Then   where  ,  ,  ,  ,   where  ,  ,  ,  ,  and   where  ,  ,  ,  .                                                                   "
 },
@@ -4280,7 +4280,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_subspace.html#sage_solve_matrix_eqn",
   "type": "Sage Example",
-  "number": "12",
+  "number": "4.1.18",
   "title": "Solving matrix equations.",
   "body": " Solving matrix equations  Let's use Sage and to find the set of solutions to the matrix equation . This is the matrix equation form of the linear system we investigated in . The method solve_right can be used to find a particular solution  to .   We get the entire set of solutions by translating by the particular solution : . We can illustrate this in Sage by taking random elements of (computed using right_kernel ), adding them to xp , and verifying that the result is a solution to . Each time you evaluate the cell below, a randomly generated element of will be outputted.   You may wonder just how random these elements of are, considering that the entries always seem to be integers! Indeed, soliciting information about NS from Sage, we see that it has the structure of a free module defined over the the Integer Ring .   Without getting too far into the weeds, this is a result of our initial definition of using Matrix() . Without further information, Sage interprets this as a matrix with integer coefficients, as opposed to real coefficients. All further computations ( , xp and NS ) are done in a similar spirit. More precisely, the object NS generated by Sage consists of all integer linear combinations of the two rows in the echelon basis matrix displayed in the cell above. The next cell shows you how things change when we alert Sage to the fact that we are dealing with matrices over the reals. The only change is adding RR to Matrix() , which specifies that matrix coefficients should be understood as real numbers.   "
 },
@@ -4289,7 +4289,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_subspace.html#rm_hyperplanes",
   "type": "Remark",
-  "number": "4.1.18",
+  "number": "4.1.19",
   "title": "Hyperplanes and subspaces.",
   "body": " Hyperplanes and subspaces  Recall that a hyperplane is the set of solutions to a linear system of the form , where for some . In terms of , is just the set of solutions to the matrix equation , where . It follows from that is a subspace if and only if : , if and only if passes through the origin. Furthermore, if , we have , where is any solution to , and is the set of solutions to the corresponding homogeneous equation . In other words, although it is not true in general that every hyperplane is a subspace (since it may not pass through the origin), it is true that is a translate of a hyperplane that is a subspace (since passes through the origin).  "
 },
@@ -4298,7 +4298,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_subspace.html#d_trace",
   "type": "Definition",
-  "number": "4.1.19",
+  "number": "4.1.20",
   "title": "Trace of a matrix.",
   "body": " Trace of a matrix  trace of a matrix    the trace of    Let be an matrix. The trace of , denoted is defined as the sum of the diagonal entries of : , .   "
 },
@@ -4307,7 +4307,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_subspace.html#d_tracezero_symmetric_skewsymmetric",
   "type": "Definition",
-  "number": "4.1.20",
+  "number": "4.1.21",
   "title": "Trace-zero, symmetric, and skew-symmetric.",
   "body": " Trace-zero, symmetric, and skew-symmetric  trace-zero matrix  symmetric matrix  skew-symmetric matrix   Fix an integer .   A matrix is said to be a trace-zero matrix if .    A matrix is symmetric if : equivalently, if for all .    A matrix is skew-symmetric if : equivalently, if for all .      "
 },
@@ -4316,7 +4316,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_subspace.html#ss_subspace_matrices-5",
   "type": "Example",
-  "number": "4.1.21",
+  "number": "4.1.22",
   "title": "Trace-zero symmetric, and skew-symmetric <span class=\"process-math\">\\(2\\times 2\\)<\/span> matrices.",
   "body": " Trace-zero symmetric, and skew-symmetric matrices   The set of all trace-zero matrices can be described as . The set of all symmetric matrices can be described as . The set of all skew-symmetric matrices can be described as .   "
 },
@@ -4325,7 +4325,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_subspace.html#rm_skew-symmetric",
   "type": "Remark",
-  "number": "4.1.22",
+  "number": "4.1.23",
   "title": "",
   "body": " Assume is a skew-symmetric matrix. By definition, for all we must have . It follows that for all . Thus the diagonal entries of a skew-symmetric matrix are always equal to 0.  "
 },
@@ -4334,7 +4334,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_subspace.html#th_matrix_subspaces",
   "type": "Theorem",
-  "number": "4.1.23",
+  "number": "4.1.24",
   "title": "Matrix subspaces.",
   "body": " Matrix subspaces   Fix an integer . Each of the following subsets of is a subspace.   Diagonal matrices       Upper triangular matrices       Lower triangular matrices       Trace-zero matrix       Symmetric matrices       Skew-symmetric matrices          See    "
 },
@@ -9313,7 +9313,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "7.3",
   "title": "Orthogonal projection",
-  "body": " Orthogonal projection   A trick we learn early on in physics-- specifically, in dynamics problems in -- is to pick a convenient axis and then decompose any relevant vectors (force, acceleration, velocity, position, ) into a sum of two components: one that points along the chosen axis, and one that points perpendicularly to it. As we will see in this section, this technique can be vastly generalized. Namely, instead of we can take any inner product space ; and instead of a chosen axis in , we can choose any finite-dimensional subspace ; then any can be decomposed in the form where and is a vector orthogonal to , in a sense we will make precise below. Just as in our toy physics example, this manner of decomposing vectors helps simplify computations in problems where the subspace chosen is of central importance.    Orthogonal complement   We begin by making sense of what it means for a vector to be orthogonal to a subspace.    Orthogonal complement  orthogonal complement (of a subspace)    the orthogonal complement of    . Let be an inner product vector space, and let be a subspace.  A vector is orthogonal to if it is orthogonal to every element of : , if for all .  The orthogonal complement of , denoted , is the set of all elements of orthogonal to : , .     Computing  According to , to verify that a vector lies in , we must show that for all . The for all quantifier here can potentially make this an onerous task: there are in principle infinitely many to check! In the special case where has a finite spanning set, so that for some vectors , deciding whether reduces to checking whether for all . In other words, we have . The forward implication of this equivalence is clear: if is orthogonal to all elements of , then clearly it is orthogonal to each . The reverse implication is left as an exercise. (See .)  We illustrate this computational technique in the next examples.     Consider the inner product space together with the dot product. Let : the line with equation . Compute and identify it as a familiar geometric object in .    According to , since , we have . Letting , we see that if and only if , if and only if . Thus is the line with equation . Observe that the lines and are indeed perpendicular to one another. (Graph them!)      Consider the inner product space together with the dot product. Let be the plane with equation . Compute and identify this as a familiar geometric object in .    First, solving for , we see that . Next, according to we have . It follows that is the set of vectors satisfying the linear system Solving this system using Gaussian elimination we conclude that , which we recognize as the line passing through the origin with direction vector . This is none other than the normal line to the plane passing through the origin.     Orthogonal complement   Let be an inner product vector space, and let be a subspace.   The orthogonal complement is a subspace of .    We have .    If then .       The proof is left as an exercise. (See .)      Consider the inner product space with the dot product. Let , the line passing through the origin with direction vector . The orthogonal complement is the set of vectors orthogonal to . Using the definition of dot product, this is the set of solutions to the equation , which we recognize as the plane passing through the origin with normal vector . Note that we have as predicted in .    The notion of orthogonal complement gives us a more conceptual way of understanding the relationship between the various fundamental spaces of a matrix.   Fundamental spaces and orthogonal complements   Let be , and consider and as inner product spaces with respect to the dot product. Then:    , and thus .     , and thus .         Using the dot product method of matrix multiplication, we see that a vector if and only if for each row of , if and only if for all (see ), if and only if . This shows .  We can use to conclude . Alternatively, and more directly, the argument above shows that , proving . Next, by the rank-nullity theorem we have ; and by we have . It follows that . Since and , we conclude by that .    This follows from (1) and the fact that .        Understanding the orthogonal relationship between and allows us in many cases to quickly determine\/visualize the one from the other. As an example, consider . Looking at the columns, we see easily that , which implies that . Since is an element of and , we must have , a line. By orthogonality, we conclude that , which is the plane with normal vector passing through the origin.      Orthogonal Projection   Orthogonal projection theorem   Let be an inner product space, and let be a finite-dimensional subspace.   Orthogonal decomposition  For all there are vectors and satisfying . Furthermore, the pair is unique in the following sense: if we have for some and , then and . Accordingly, the vector equation is called the orthogonal decomposition of with respect to ; and the vector is called the orthogonal projection of onto , denoted .    Orthogonal projection formula  Choose any orthogonal basis of . We have .    Distance to  The orthogonal projection is the element of that is closest to in the following sense: for all we have , or equivalently, . Accordingly, we define the distance  between and to be .       Let . We first show that the vectors and satisfy the conditions in . It is clear that the defined in is an element of , since it is a linear combination of the . Furthermore, we see easily that our choice satisfies . It remains only to show that . Since is a basis of , it suffices to show that for all . We compute: , as desired.  Having shown that a decomposition of of the form exists, we now show it is unique in the sense specified. Suppose we have , where and . Rearranging, we see that . We now claim that , in which case and , as desired. To see why the claim is true, consider the vector . Since , and , we have . On the other hand, since , and , we have . Thus . Since ( ), we conclude , as claimed.  At this point we have proved both (1) and (2), and it remains only to show that holds for all . To this end we compute: . This shows . Taking square-roots now proves the desired inequality.     Orthogonal projection formula  The formula is very convenient for computing an orthogonal projection , but mark well this important detail: to apply the formula we must first provide an orthogonal basis of . Thus unless one is provided, our first step in an orthogonal projection computation is to produce an orthogonal basis of . In some simple cases ( , when is 1- or 2-dimensional) this can be done by inspection. Otherwise, we use the Gram-Schmidt procedure.   Next we consider the operation of orthogonally projecting a vector onto a line (in or ) or a plane in .   Projection onto a line   Let be a fixed nonzero vector in , where or . The set of all scalar multiples of defines a line in passing through the origin: we call the direction vector of this line. Given a point there is a unique point such that the vector is orthogonal to : , there is a unique such that . The point is called the orthogonal projection of onto the line . We define orthogonal projection onto to be the function that maps a point to its orthogonal projection onto .     Orthogonal projection onto a line   Fix a nonzero vector , where or , and let be the line obtained by taking all scalar multiples of . The orthogonal projection function is a linear transformation. In fact, we have where is the matrix described below for each case ( and ).   Case:  Assume . We have , where .    Case:  Assume . We have , where .       We prove the matrix formula in the case . (The case is exactly similar.) Let . In multivariable calculus we learn that given a point with position vector , its orthogonal projection onto is the point whose position vector is . This proves that , where , as desired.     Orthogonal projection onto line   Let be orthogonal projection onto the line passing through the origin with direction vector . Find the matrix such that . Use to compute the orthogonal projection of onto .    Using the formula for in , where , we see that and hence for any we have . In particular, we have . Let's check that this truly is the orthogonal projection of onto . Letting , we have , which is indeed orthogonal to : . The formula really works! In case you need more convincing, here is a Sage Cell that computes the projections and produces a diagram.   Orthogonal projection onto a line  Orthogonal projection onto the line passing through the origin with direction vector   Orthogonal projection onto a line        Orthogonal projection onto a plane   Let be a nonzero vector in , and let be the plane passing through the origin with normal vector : , is the plane with equation . Given a point , there is a unique point such that is orthogonal to . We call the orthogonal projection of onto . We define orthogonal projection onto to be the function that maps a point to its orthogonal projection in .     Orthogonal projection onto a plane   Let be a nonzero vector of , and let be the plane passing through the origin with normal vector . The orthogonal projection map is a linear transformation. In fact, we have where .    Let be the line passing through the origin with direction vector . Given any , let be the point with coordinates . The orthogonal projection of onto satisfies . Let be the point of with position vector satisfying so that . Since , the point lies in the plane . Furthermore, we have . Since is the orthogonal projection of onto , we have by definition, which means is a scalar multiple of . Since is a normal vector to , we conclude that is orthogonal to . We have shown that lies in and that is orthogonal to . We conclude that is the orthogonal projection of onto . Thus, using we have . Since , where by , we have . We conclude that where , as desired.     Visualizing orthogonal projection  In the course of the proof of we discovered an illuminating relationship between orthogonal projection onto a line and orthogonal projection onto the plane orthogonal to this line. In more detail, let be a nonzero vector, the line passing through the origin with as a direction vector, and the plane passing through the origin with normal vector . From our argument in the proof of we see that , or . Equation indicates how we can derive the orthogonal projection onto from the orthogonal projection onto (and conversely). Equation shows how every vector can be decomposed as a sum of two orthogonal vectors: one pointing parallel to and the other pointing parallel to .  The GeoGebra interactive below helps visualize these two orthogonal projections, understood as operations on .   Drag the point to change the normal vector , and hence also the plane .    Drag the point to change the input of the transformations and .    In keeping with our dual interpretation of vectors in , all the relevant vectors ( , , ) are rendered here both as points and the corresponding position vectors of these points.      Orthogonal projection onto plane and normal line   Orthogonal projection onto plane and normal line. Made with GeoGebra .      Consider the inner product space with the dot product. Let be the plane with equation . Compute for each below.                     According to our first step is to produce an orthogonal basis of . We do so by inspection. Since , we simply need to find two solutions to that are orthogonal to one another: , and . Thus we choose as our orthogonal basis, and our computations become a matter of applying , which in this case becomes . Now compute: . The last two computations might give you pause. Why do we have and ? The answer is that is already an element of , so it stands to reason that its projection is itself; and is already orthogonal to (it is a scalar multiple of ), so it stands to reason that its projection is equal to . See for a rigorous proof of these claims.     Video example: orthogonal projection in function space   Video: orthogonal projection in function space      Complement of a complement   Let be an inner product space, and let be a finite-dimensional subspace. Then .     Clearly . For the other direction, take . Using the orthogonal projection theorem , we can write with and . We will show .  Since we have . Then we have   Thus . It follows that , and hence .    Orthgonal projection is linear   Let be an inner product space, and let be a finite-dimensional subspace.    The function is a linear transformation.    We have and .          We must show that for all and . We pick an orthogonal basis of and compute, using formula : .    By definition we have for all , and thus . For the other direction, if , then ( ), and thus . This proves .  The fact that follows from the equivalence stated in (b) of .        Orthogonal projection in and   For this subsection we will always work within Euclidean space: , with the dot product. In applications we often want to compute the projection of a point onto a line (in or ) or plane (in ). According to the operation of projecting onto any subspace is in fact a linear transformation . By we have , where . Lastly, gives us an easy formula for computing for all , once we have selected an orthogonal basis for . As a result we can easily derive matrix formulas for projection onto any subspace of any Euclidean space . We illustrate this with some examples in and below.    Projection onto a line   Any line in passing through the origin can be described as , for some . The set is trivially an orthogonal basis of . Using , we have . It follows that , where .      Consider the line .    Find the matrix such that .    Use your matrix formula from (a) to compute , , and .    Compute and .        Using the general formula described in , we have .    Now compute . The last two computations, and , should come as no surprise, since and . (See .)    We have . Again, the second computation should come as no surprise. Since is itself an element of , it stands to reason that its distance to is equal to zero.       Projection onto planes in   Any plane passing through the origin can be described as . Equivalently, is the set of all satisfying : , , where . Consider the orthogonal decomposition with respect to : . Since and , we see that this is also an orthogonal decomposition with respect to ! Using the matrix formula for from , we have . We conclude that , where .      Consider the plane .    Find the matrix such that .    Use your matrix formula from (a) to compute and .    Compute and .        Using the general formula described in , we have .    Now compute .    We have .         Trigonometric polynomial approximation  Consider the inner product space consisting of along with the integral inner product . In we saw that the set is orthogonal with respect to this inner product. Thus is an orthogonal basis of . We call the space of trigonometric polynomials of degree at most .  Since is an orthogonal basis of , given an arbitrary function , its orthogonal projection is given by , where . Here we are using , as well as the inner product formulas and from .  What is the relationship between and ? tells us that is the best trigonometric polynomial approximation of of degree at most in the following sense: given any any other trigonometric polynomial , we have . Unpacking the definition of norm in this inner product space, we conclude that for all .  Thus, given a continuous function on , linear algebra shows us how to find its best trigonometric polynomial approximation of the form . However, linear algebra does not tell us just how good this approximation is. This question, among others, is tackled by another mathematical theory: Fourier analysis . There we learn that the trigonometric polynomial approximations get arbitrarily close to as we let increase. More precisely, letting be the orthogonal projection of onto the space of trigonometric polynomials of degree at most , we have .    Least-squares solution to linear systems  In statistics we often wish to approximate a scatter plot of points , , with a line that best fits the data. Finding this line amounts to finding the appropriate slope and -intercept : , in this setup, the points are given, and and are the unknowns we wish to find. For the line to perfectly fit the data, we would want . In other words would be a solution to the matrix equation , where . Of course in most situations the provided points do not lie on a line, and thus there is no solution to the given matrix equation . When this is the case we can use the theory of orthogonal projection to find what is called a least-squares solution, which we now describe in detail.  The least-squares method applies to any matrix equation , where and are given, and is treated as an unknown vector. Recall that . When , and hence does not have a solution, the least-squares method proceeds by replacing with the element of closest to it: that is, with its orthogonal projection onto . Let , where orthogonal projection is taken with respect to the dot product on , and consider the adjusted matrix equation . By definition of , we have , and thus there is a solution to . We call a least-squares solution to . Observe that does not necessarily satisfy ; rather, it satisfies . What makes this a least-squares solution is that is the element of closest to . With respect to the dot product, this means that a least-squares solution minimizes the quantity , among all .   Best fitting line   Suppose we wish to find a line that best fits (in the least-square sense) the following data points: . Following the discussion above, we seek a solution to the matrix equation , where . Using Gaussian elimination, we see easily that this equation has no solution: equivalently, . Accordingly, we compute and find a solution to . Conveniently, the set is already an orthogonal basis of , allowing us to use : . Lastly, solving yields , and we conclude the line is the one that best fits the data in the least-squares sense.     Visualizing least-squares    helps us give a graphical interpretation of how the line best approximates the points .  Least-squares visualization  Least-squares visualization   Let be the given -values of the points, and let be the orthogonal projection of onto . In the graph the values denote the vertical difference between the data points, and our fitting line. The projection makes the error as small as possible. This means if I draw any other line and compute the corresponding differences at the -values -3, 1 and 2, then     To compute a least-squares solution to we must first compute the orthogonal projection of onto ; and this in turn requires first producing an orthogonal basis of , which may require using the Gram-Schmidt procedure. The following result bypasses these potentially onerous steps by characterizing a least-squares solution to as a solution to the matrix equation .   Least-squares matrix formula   Given an matrix and column vector , a vector is a least-squares solution to if and only if . In other words, we can find a least-squares solution by solving the matrix equation directly.    Let , and let . The key observation is that a vector satisfies if and only if is an orthogonal decomposition of with respect to ; and this is true if and only if . Thus we have .      Consider again the matrix equation from . According to the least-squares solution can be found by solving the equation for . We compute and solve just as before.      WeBWork Exercises      Compute the orthogonal projection of onto the line through and the origin.   .            Let and . Write as the sum of two orthogonal vectors, in and orthogonal to .   ,  .            (a) Find the distance from the point to the plane . Use sqrt() to enter square roots.  Distance:  (b) Find the equation of the plane that passes through the points , , and . Write your answer in terms of the variables , , .  Answer:             Solution: (a) The idea is to find a convenient point lying in the given plane. For example, let us pick , and let be the vector from to . Then the distance from to the plane is the absolute value of the scalar projection of onto the normal vector   So, we get that the distance is .  (b) To find an equation of the plane in question, we can work with the point and the normal vector given by the cross product of the vector from to , and the vector from to . It turns out that   So, an equation of the plane is .            Find bases of the kernel and image of the orthogonal projection onto the plane in .  A basis for the kernel is    A basis for the image is  ,             Let Use the Gram-Schmidt process to determine an orthonormal basis for the subspace of spanned by , , and .   , ,             Find the least-squares solution of the system              By using the method of least squares, find the best line through the points:  , , .  Step 1. The general equation of a line is . Plugging the data points into this formula gives a matrix equation .      Step 2. The matrix equation has no solution, so instead we use the normal equation       Step 3. Solving the normal equation gives the answer    which corresponds to the formula    Analysis. Compute the predicted values: .    Compute the error vector: .    Compute the total error: .                        By using the method of least squares, find the best parabola through the points:  , , ,  Step 1. The general equation of a parabola is . Plugging the data points into this formula gives a matrix equation .      Step 2. The matrix equation has no solution, so instead we use the normal equation       Step 3. Solving the normal equation gives the answer    which corresponds to the formula                   In each exercise below you are given an inner product space , a subspace where is orthogonal, and a vector . Compute .     with the dot product; ;        with dot product with weights ; ;        with the integral inner product; ; for all        Let be the plane passing through the origin with normal vector . Find the orthogonal projection of onto with respect to the dot product.      Recall that the trace of a square matrix is the sum of its diagonal entries. Let with inner product . (You may take for granted that this operation is indeed an inner product on .) Define .    Compute an orthogonal basis for . You can do this either by inspection (the space is manageable), or by starting with any basis of and applying the Gram-Schmidt procedure.    Compute , where .        Let with the integral inner product, and let . Find the function of the form that best approximates  in terms of this inner product: find the the of this form that minimizes .    The set is orthogonal with respect to the given inner product.      Let be an inner product space, let , and let . Prove: . In other words, to check whether an element is in , it suffices to check that it is orthogonal to each element of its spanning set .      Consider the inner product space together with the dot product. Let Provide orthogonal bases for and .      Prove statements (1) and (2) of .     Dimension of   Prove statement (3) of : if is an inner product space of dimension , and is a subspace of , then .    By there is an orthogonal basis of , and furthermore, we can extend to an orthogonal basis of all of . Show the form a basis for .      Prove following the suggestion in the text.      Let an inner product space, and let be a finite-dimensional subspace. Prove the following statements:     if and only if ;     if and only if .        We consider the problem of fitting a collection of data points with a quadratic curve of the form . Thus we are given some collection of points , and we seek parameters for which the graph of  best fits the points in some way.    Show, using linear algebra, that if we are given any three points , where the -coordinates are all distinct, then there is a unique choice of such that the corresponding quadratic function agrees precisely with the data. In other words, given just about any three points in the plane, there is a unique quadratic curve connecting them.    Now suppose we are given the four data points .    Use the least-squares method described in the lecture notes to come up with a quadratic function that best fits the data.    Graph the function you found, along with the points . (You may want to use technology.) Use your graph to explain precisely in what sense  best fits the data.         "
+  "body": " Orthogonal projection   A trick we learn early on in physics-- specifically, in dynamics problems in -- is to pick a convenient axis and then decompose any relevant vectors (force, acceleration, velocity, position, ) into a sum of two components: one that points along the chosen axis, and one that points perpendicularly to it. As we will see in this section, this technique can be vastly generalized. Namely, instead of we can take any inner product space ; and instead of a chosen axis in , we can choose any finite-dimensional subspace ; then any can be decomposed in the form where and is a vector orthogonal to , in a sense we will make precise below. Just as in our toy physics example, this manner of decomposing vectors helps simplify computations in problems where the subspace chosen is of central importance.    Orthogonal complement   We begin by making sense of what it means for a vector to be orthogonal to a subspace.    Orthogonal complement  orthogonal complement (of a subspace)    the orthogonal complement of    . Let be an inner product vector space, and let be a subspace.  A vector is orthogonal to if it is orthogonal to every element of : , if for all .  The orthogonal complement of , denoted , is the set of all elements of orthogonal to : , .     Computing  According to , to verify that a vector lies in , we must show that for all . The for all quantifier here can potentially make this an onerous task: there are in principle infinitely many to check! In the special case where has a finite spanning set, so that for some vectors , deciding whether reduces to checking whether for all . In other words, we have . The forward implication of this equivalence is clear: if is orthogonal to all elements of , then clearly it is orthogonal to each . The reverse implication is left as an exercise. (See .)  We illustrate this computational technique in the next examples.     Consider the inner product space together with the dot product. Let : the line with equation . Compute and identify it as a familiar geometric object in .    According to , since , we have . Letting , we see that if and only if , if and only if . Thus is the line with equation . Observe that the lines and are indeed perpendicular to one another. (Graph them!)      Consider the inner product space together with the dot product. Let be the plane with equation . Compute and identify this as a familiar geometric object in .    First, solving for , we see that . Next, according to we have . It follows that is the set of vectors satisfying the linear system Solving this system using Gaussian elimination we conclude that , which we recognize as the line passing through the origin with direction vector . This is none other than the normal line to the plane passing through the origin.     Orthogonal complement   Let be an inner product vector space, and let be a subspace.   The orthogonal complement is a subspace of .    We have .    If then .       The proof is left as an exercise. (See .)      Consider the inner product space with the dot product. Let , the line passing through the origin with direction vector . The orthogonal complement is the set of vectors orthogonal to . Using the definition of dot product, this is the set of solutions to the equation , which we recognize as the plane passing through the origin with normal vector . Note that we have as predicted in .    The notion of orthogonal complement gives us a more conceptual way of understanding the relationship between the various fundamental spaces of a matrix.   Fundamental spaces and orthogonal complements   Let be , and consider and as inner product spaces with respect to the dot product. Then:    , and thus .     , and thus .         Using the dot product method of matrix multiplication, we see that a vector if and only if for each row of , if and only if for all (see ), if and only if . This shows .  We can use to conclude . Alternatively, and more directly, the argument above shows that , proving . Next, by the rank-nullity theorem we have ; and by we have . It follows that . Since and , we conclude by that .    This follows from (1) and the fact that .        Understanding the orthogonal relationship between and allows us in many cases to quickly determine\/visualize the one from the other. As an example, consider . Looking at the columns, we see easily that , which implies that . Since is an element of and , we must have , a line. By orthogonality, we conclude that , which is the plane with normal vector passing through the origin.      Orthogonal Projection   Orthogonal projection theorem   Let be an inner product space, and let be a finite-dimensional subspace.   Orthogonal decomposition  For all there are vectors and satisfying . Furthermore, the pair is unique in the following sense: if we have for some and , then and . Accordingly, the vector equation is called the orthogonal decomposition of with respect to ; and the vector is called the orthogonal projection of onto , denoted .    Orthogonal projection formula  Choose any orthogonal basis of . We have .    Distance to  The orthogonal projection is the element of that is closest to in the following sense: for all we have , or equivalently, . Accordingly, we define the distance  between and to be .       Let . We first show that the vectors and satisfy the conditions in . It is clear that the defined in is an element of , since it is a linear combination of the . Furthermore, we see easily that our choice satisfies . It remains only to show that . Since is a basis of , it suffices to show that for all . We compute: , as desired.  Having shown that a decomposition of of the form exists, we now show it is unique in the sense specified. Suppose we have , where and . Rearranging, we see that . We now claim that , in which case and , as desired. To see why the claim is true, consider the vector . Since , and , we have . On the other hand, since , and , we have . Thus . Since ( ), we conclude , as claimed.  At this point we have proved both (1) and (2), and it remains only to show that holds for all . To this end we compute: . This shows . Taking square-roots now proves the desired inequality.     Orthogonal projection formula  The formula is very convenient for computing an orthogonal projection , but mark well this important detail: to apply the formula we must first provide an orthogonal basis of . Thus unless one is provided, our first step in an orthogonal projection computation is to produce an orthogonal basis of . In some simple cases ( , when is 1- or 2-dimensional) this can be done by inspection. Otherwise, we use the Gram-Schmidt procedure.   Next we consider the operation of orthogonally projecting a vector onto a line (in or ) or a plane in .   Projection onto a line   Let be a fixed nonzero vector in , where or . The set of all scalar multiples of defines a line in passing through the origin: we call the direction vector of this line. Given a point there is a unique point such that the vector is orthogonal to : , there is a unique such that . The point is called the orthogonal projection of onto the line . We define orthogonal projection onto to be the function that maps a point to its orthogonal projection onto .     Orthogonal projection onto a line   Fix a nonzero vector , where or , and let be the line obtained by taking all scalar multiples of . The orthogonal projection function is a linear transformation. In fact, we have where is the matrix described below for each case ( and ).   Case:  Assume . We have , where .    Case:  Assume . We have , where .       We prove the matrix formula in the case . (The case is exactly similar.) Let . In multivariable calculus we learn that given a point with position vector , its orthogonal projection onto is the point whose position vector is . This proves that , where , as desired.     Orthogonal projection onto line   Let be orthogonal projection onto the line passing through the origin with direction vector . Find the matrix such that . Use to compute the orthogonal projection of onto .    Using the formula for in , where , we see that and hence for any we have . In particular, we have . Let's check that this truly is the orthogonal projection of onto . Letting , we have , which is indeed orthogonal to : . The formula really works! In case you need more convincing, here is a Sage Cell that computes the projections and produces a diagram.   Orthogonal projection onto a line  Orthogonal projection onto the line passing through the origin with direction vector   Orthogonal projection onto a line        Orthogonal projection onto a plane   Let be a nonzero vector in , and let be the plane passing through the origin with normal vector : , is the plane with equation . Given a point , there is a unique point such that is orthogonal to . We call the orthogonal projection of onto . We define orthogonal projection onto to be the function that maps a point to its orthogonal projection in .     Orthogonal projection onto a plane   Let be a nonzero vector of , and let be the plane passing through the origin with normal vector . The orthogonal projection map is a linear transformation. In fact, we have where .    Let be the line passing through the origin with direction vector . Given any , let be the point with coordinates . The orthogonal projection of onto satisfies . Let be the point of with position vector satisfying so that . Since , the point lies in the plane . Furthermore, we have . Since is the orthogonal projection of onto , we have by definition, which means is a scalar multiple of . Since is a normal vector to , we conclude that is orthogonal to . We have shown that lies in and that is orthogonal to . We conclude that is the orthogonal projection of onto . Thus, using we have . Since , where by , we have . We conclude that where , as desired.     Visualizing orthogonal projection  In the course of the proof of we discovered an illuminating relationship between orthogonal projection onto a line and orthogonal projection onto the plane orthogonal to this line. In more detail, let be a nonzero vector, the line passing through the origin with as a direction vector, and the plane passing through the origin with normal vector . From our argument in the proof of we see that , or . Equation indicates how we can derive the orthogonal projection onto from the orthogonal projection onto (and conversely). Equation shows how every vector can be decomposed as a sum of two orthogonal vectors: one pointing parallel to and the other pointing parallel to .  The GeoGebra interactive below helps visualize these two orthogonal projections, understood as operations on .   Drag the point to change the normal vector , and hence also the plane .    Drag the point to change the input of the transformations and .    In keeping with our dual interpretation of vectors in , all the relevant vectors ( , , ) are rendered here both as points and the corresponding position vectors of these points.      Orthogonal projection onto plane and normal line   Orthogonal projection onto plane and normal line. Made with GeoGebra .      Consider the inner product space with the dot product. Let be the plane with equation . Compute for each below.                     According to our first step is to produce an orthogonal basis of . We do so by inspection. Since , we simply need to find two solutions to that are orthogonal to one another: , and . Thus we choose as our orthogonal basis, and our computations become a matter of applying , which in this case becomes . Now compute: . The last two computations might give you pause. Why do we have and ? The answer is that is already an element of , so it stands to reason that its projection is itself; and is already orthogonal to (it is a scalar multiple of ), so it stands to reason that its projection is equal to . See for a rigorous proof of these claims.     Video example: orthogonal projection in function space   Video: orthogonal projection in function space      Complement of a complement   Let be an inner product space, and let be a finite-dimensional subspace. Then .     Clearly . For the other direction, take . Using the orthogonal projection theorem , we can write with and . We will show .  Since we have . Then we have   Thus . It follows that , and hence .    Orthgonal projection is linear   Let be an inner product space, and let be a finite-dimensional subspace.    The function is a linear transformation.    We have and .          We must show that for all and . We pick an orthogonal basis of and compute, using formula : .    By definition we have for all , and thus . For the other direction, if , then ( ), and thus . This proves .  The fact that follows from the equivalence stated in (b) of .        Orthogonal projection in and   For this subsection we will always work within Euclidean space: , with the dot product. In applications we often want to compute the projection of a point onto a line (in or ) or plane (in ). According to the operation of projecting onto any subspace is in fact a linear transformation . By we have , where . Lastly, gives us an easy formula for computing for all , once we have selected an orthogonal basis for . As a result we can easily derive matrix formulas for projection onto any subspace of any Euclidean space . We illustrate this with some examples in and below.    Projection onto a line   Any line in passing through the origin can be described as , for some . The set is trivially an orthogonal basis of . Using , we have . It follows that , where .      Consider the line .    Find the matrix such that .    Use your matrix formula from (a) to compute , , and .    Compute and .        Using the general formula described in , we have .    Now compute . The last two computations, and , should come as no surprise, since and . (See .)    We have . Again, the second computation should come as no surprise. Since is itself an element of , it stands to reason that its distance to is equal to zero.       Projection onto planes in   Any plane passing through the origin can be described as . Equivalently, is the set of all satisfying : , , where . Consider the orthogonal decomposition with respect to : . Since and , we see that this is also an orthogonal decomposition with respect to ! Using the matrix formula for from , we have . We conclude that , where .      Consider the plane .    Find the matrix such that .    Use your matrix formula from (a) to compute and .    Compute and .        Using the general formula described in , we have .    Now compute .    We have .         Trigonometric polynomial approximation  Consider the inner product space consisting of along with the integral inner product . In we saw that the set is orthogonal with respect to this inner product. Thus is an orthogonal basis of . We call the space of trigonometric polynomials of degree at most .  Since is an orthogonal basis of , given an arbitrary function , its orthogonal projection is given by , where . Here we are using , as well as the inner product formulas and from .  What is the relationship between and ? tells us that is the best trigonometric polynomial approximation of of degree at most in the following sense: given any any other trigonometric polynomial , we have . Unpacking the definition of norm in this inner product space, we conclude that for all .  Thus, given a continuous function on , linear algebra shows us how to find its best trigonometric polynomial approximation of the form . However, linear algebra does not tell us just how good this approximation is. This question, among others, is tackled by another mathematical theory: Fourier analysis . There we learn that the trigonometric polynomial approximations get arbitrarily close to as we let increase. More precisely, letting be the orthogonal projection of onto the space of trigonometric polynomials of degree at most , we have .    Least-squares solution to linear systems  In statistics we often wish to approximate a scatter plot of points , , with a line that best fits the data. Finding this line amounts to finding the appropriate slope and -intercept : , in this setup, the points are given, and and are the unknowns we wish to find. For the line to perfectly fit the data, we would want . In other words would be a solution to the matrix equation , where . Of course in most situations the provided points do not lie on a line, and thus there is no solution to the given matrix equation . When this is the case we can use the theory of orthogonal projection to find what is called a least-squares solution, which we now describe in detail.  The least-squares method applies to any matrix equation , where and are given, and is treated as an unknown vector. Recall that . When , and hence does not have a solution, the least-squares method proceeds by replacing with the element of closest to it: that is, with its orthogonal projection onto . Let , where orthogonal projection is taken with respect to the dot product on , and consider the adjusted matrix equation . By definition of , we have , and thus there is a solution to . We call a least-squares solution to . Observe that does not necessarily satisfy ; rather, it satisfies . What makes this a least-squares solution is that is the element of closest to . With respect to the dot product, this means that a least-squares solution minimizes the quantity , among all .   Best fitting line   Suppose we wish to find a line that best fits (in the least-square sense) the following data points: . Following the discussion above, we seek a solution to the matrix equation , where . Using Gaussian elimination, we see easily that this equation has no solution: equivalently, . Accordingly, we compute and find a solution to . Conveniently, the set is already an orthogonal basis of , allowing us to use : . Lastly, solving yields , and we conclude the line is the one that best fits the data in the least-squares sense.     Visualizing least-squares    helps us give a graphical interpretation of how the line best approximates the points .  Least-squares visualization  Least-squares visualization   Let be the given -values of the points, and let be the orthogonal projection of onto . In the graph the values denote the vertical difference between the data points, and our fitting line. The projection makes the error as small as possible. This means if I draw any other line and compute the corresponding differences at the -values -3, 1 and 2, then     To compute a least-squares solution to we must first compute the orthogonal projection of onto ; and this in turn requires first producing an orthogonal basis of , which may require using the Gram-Schmidt procedure. The following result bypasses these potentially onerous steps by characterizing a least-squares solution to as a solution to the matrix equation .   Least-squares matrix formula   Given an matrix and column vector , a vector is a least-squares solution to if and only if . In other words, we can find a least-squares solution by solving the matrix equation directly.    Let , and let . The key observation is that a vector satisfies if and only if is an orthogonal decomposition of with respect to ; and this is true if and only if . Thus we have .      Consider again the matrix equation from . According to the least-squares solution can be found by solving the equation for . We compute and solve just as before.      WeBWork Exercises      Compute the orthogonal projection of onto the line through and the origin.   .            Let and . Write as the sum of two orthogonal vectors, in and orthogonal to .   ,  .            (a) Find the distance from the point to the plane . Use sqrt() to enter square roots.  Distance:  (b) Find the equation of the plane that passes through the points , , and . Write your answer in terms of the variables , , .  Answer:             Solution: (a) The idea is to find a convenient point lying in the given plane. For example, let us pick , and let be the vector from to . Then the distance from to the plane is the absolute value of the scalar projection of onto the normal vector   So, we get that the distance is .  (b) To find an equation of the plane in question, we can work with the point and the normal vector given by the cross product of the vector from to , and the vector from to . It turns out that   So, an equation of the plane is .            Find bases of the kernel and image of the orthogonal projection onto the plane in .  A basis for the kernel is    A basis for the image is  ,             Let Use the Gram-Schmidt process to determine an orthonormal basis for the subspace of spanned by , , and .   , ,             Find the least-squares solution of the system              By using the method of least squares, find the best line through the points:  , , .  Step 1. The general equation of a line is . Plugging the data points into this formula gives a matrix equation .      Step 2. The matrix equation has no solution, so instead we use the normal equation       Step 3. Solving the normal equation gives the answer    which corresponds to the formula    Analysis. Compute the predicted values: .    Compute the error vector: .    Compute the total error: .                        By using the method of least squares, find the best parabola through the points:  , , ,  Step 1. The general equation of a parabola is . Plugging the data points into this formula gives a matrix equation .      Step 2. The matrix equation has no solution, so instead we use the normal equation       Step 3. Solving the normal equation gives the answer    which corresponds to the formula                  Orthogonal projections   In each exercise below you are given an inner product space , a subspace where is orthogonal, and a vector . Compute .      with the dot product; ;        with dot product with weights ; ;        with the integral inner product; ; for all        Let be the plane passing through the origin with normal vector . Find the orthogonal projection of onto with respect to the dot product.      Recall that the trace of a square matrix is the sum of its diagonal entries. Let with inner product . (You may take for granted that this operation is indeed an inner product on .) Define .   Compute an orthogonal basis for . You can do this either by inspection (the space is manageable), or by starting with any basis of and applying the Gram-Schmidt procedure.    Compute , where .         Let with the integral inner product, and let . Find the function of the form that best approximates  in terms of this inner product: find the the of this form that minimizes .    The set is orthogonal with respect to the given inner product.      Let be an inner product space, let , and let . Prove: . In other words, to check whether an element is in , it suffices to check that it is orthogonal to each element of its spanning set .      Consider the inner product space together with the dot product. Let Provide orthogonal bases for and .      Prove statements (1) and (2) of .     Dimension of   Prove statement (3) of : if is an inner product space of dimension , and is a subspace of , then .    By there is an orthogonal basis of , and furthermore, we can extend to an orthogonal basis of all of . Show the form a basis for .      Prove following the suggestion in the text.      Let an inner product space, and let be a finite-dimensional subspace. Prove the following statements:     if and only if ;     if and only if .        We consider the problem of fitting a collection of data points with a quadratic curve of the form . Thus we are given some collection of points , and we seek parameters for which the graph of  best fits the points in some way.    Show, using linear algebra, that if we are given any three points , where the -coordinates are all distinct, then there is a unique choice of such that the corresponding quadratic function agrees precisely with the data. In other words, given just about any three points in the plane, there is a unique quadratic curve connecting them.    Now suppose we are given the four data points .    Use the least-squares method described in the lecture notes to come up with a quadratic function that best fits the data.    Graph the function you found, along with the points . (You may want to use technology.) Use your graph to explain precisely in what sense  best fits the data.         "
 },
 {
   "id": "d_orthogonal_complement",
@@ -9718,7 +9718,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "7.3.7.5",
   "title": "",
-  "body": "  Recall that the trace of a square matrix is the sum of its diagonal entries. Let with inner product . (You may take for granted that this operation is indeed an inner product on .) Define .    Compute an orthogonal basis for . You can do this either by inspection (the space is manageable), or by starting with any basis of and applying the Gram-Schmidt procedure.    Compute , where .     "
+  "body": "  Recall that the trace of a square matrix is the sum of its diagonal entries. Let with inner product . (You may take for granted that this operation is indeed an inner product on .) Define .   Compute an orthogonal basis for . You can do this either by inspection (the space is manageable), or by starting with any basis of and applying the Gram-Schmidt procedure.    Compute , where .      "
 },
 {
   "id": "s_orthogonal_projection_ex-4",

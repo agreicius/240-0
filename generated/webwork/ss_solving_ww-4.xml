@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-ss_solving_ww-4" assembly-id="ss_solving_ww-4">
+  <static seed="27" source="Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p02.pg">
+    <statement><p>Solve
+<me>\begin{array}{rcrcrcrcr}
+    x \amp  - \amp   y \amp  + \amp   z \amp  - \amp   w \amp  = \amp  4 \\ 
+      \amp    \amp   y \amp  + \amp  2z \amp  + \amp   w \amp  = \amp  3 \\
+      \amp    \amp     \amp    \amp  -z \amp  + \amp   w \amp  = \amp  1 \\
+   -x \amp  + \amp  2y \amp  - \amp  3z \amp  + \amp  5w \amp  = \amp  3
+\end{array}</me></p>
+<p><m>x</m> = <fillin characters="10" name="AnSwEr0001"/>,            
+<m>y</m> = <fillin characters="10" name="AnSwEr0002"/>, 
+<m>z</m> = <fillin characters="10" name="AnSwEr0003"/>,  
+<m>w</m> = <fillin characters="10" name="AnSwEr0004"/>.</p>
+</statement>
+    <answer>
+      <p>
+        <m>10</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>5</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>-1</m>
+      </p>
+    </answer>
+    <answer>
+      <p>
+        <m>0</m>
+      </p>
+    </answer>
+  </static>
+  <rendering-data sourceFilePath="Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p02.pg" origin="webwork2" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg source="Library/Utah/Business_Algebra/set11_Inequalities_and_Linear_Programming/p02.pg"/>
+</webwork-reps>
