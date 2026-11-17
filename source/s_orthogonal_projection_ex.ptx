@@ -1,8 +1,10 @@
 <exercises xml:id="s_orthogonal_projection_ex">
   <exercisegroup>
-    <title></title>
+    <title>Orthogonal projections</title>
     <introduction>
-      In each exercise below you are given an inner product space <m>V</m>, a subspace <m>W=\Span B</m> where <m>B</m> is orthogonal, and a vector <m>\boldv\in V</m>. Compute <m>\proj{\boldv}{W}</m>.
+      <p>
+        In each exercise below you are given an inner product space <m>V</m>, a subspace <m>W=\Span B</m> where <m>B</m> is orthogonal, and a vector <m>\boldv\in V</m>. Compute <m>\proj{\boldv}{W}</m>.
+      </p>
     </introduction>
     <exercise>
       <statement>
@@ -39,7 +41,7 @@
     <statement>
       <p>
         Recall that the trace <m>\tr A</m> of a square matrix is the sum of its diagonal entries. Let <m>V=\ML_{2,2}(\R)</m> with inner product <m>\angvec{A,B}=\tr(A^TB)</m>. (You may take for granted that this operation is indeed an inner product on <m>\ML_{2,2}(\R)</m>.) Define <m>W=\{A\in \ML_{2,2}(\R)\colon \tr A=0\}</m>.
-      </p>
+      
       <ol>
         <li>
           <p>
@@ -55,6 +57,7 @@
           </p>
         </li>
       </ol>
+      </p>
     </statement>
 
   </exercise>
